@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/globals.css"],"sourcesContent":["@import \"swiper/css\";\n@import \"swiper/css/navigation\";\n@import \"swiper/css/pagination\";\n\nhtml,\nbody {\n  padding: 0;\n  margin: 0;\n}\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\na,\na:hover,\na:focus,\na:active {\n  text-decoration: none !important;\n  color: inherit !important;\n}\n.main-container {\n  position: relative;\n}\n\n/* .hamburger-right-banner {\n  object-fit: cover;\n  width: 80%;\n  height: auto;\n} */\n"],"names":[],"mappings":"AAIA;;;;;AAMA;;;;;;AAMA;;;;;AAOA"}}]
+}
