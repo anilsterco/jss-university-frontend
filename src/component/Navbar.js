@@ -8,10 +8,11 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [admissionOpen, setAdmissionOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [activeLink, setActiveLink] = useState(0);
 
   const admissionRef = useRef(null);
-
-  const [scrolled, setScrolled] = useState(null);
 
   const navLinks = [
     {
@@ -21,6 +22,28 @@ export default function Header() {
         { name: "About JSS", href: "/" },
         { name: "Heritage", href: "/" },
       ],
+      right: {
+        subtitle: "ABOUT JSS",
+        title: "Know Our Heritage",
+        desc: "Learn more about JSS legacy, history and leadership.",
+        ctas: [
+          { text: "Read More", href: "#", type: "primary" },
+          { text: "Leadership", href: "#", type: "secondary" },
+        ],
+        banners: [
+          {
+            title: "UNDER GRADUTE",
+            href: "#",
+            img: "/images/header/nav-hover-banner.png",
+          },
+          {
+            title: "POST GRADUTE",
+            href: "#",
+            img: "/images/nav-hover-banner.png",
+          },
+          { title: "PHD", href: "#", img: "/images/nav-hover-banner.png" },
+        ],
+      },
     },
     {
       name: "ACADEMICS",
@@ -30,6 +53,29 @@ export default function Header() {
         { name: "Departments", href: "/" },
         { name: "Programs", href: "/" },
       ],
+      right: {
+        subtitle: "EXPLORE ACADEMICS",
+        title: "Learning at JSS",
+        desc: "Offering UG, PG and PhD programmes with global standards.",
+        ctas: [{ text: "VIEW ALL PROGRAMMES", href: "#", type: "primary" }],
+        banners: [
+          {
+            title: "Under Graduate",
+            href: "#",
+            img: "/images/nav-hover-banner.png",
+          },
+          {
+            title: "Post Graduate",
+            href: "#",
+            img: "/images/nav-hover-banner.png",
+          },
+          {
+            title: "PhD Programmes",
+            href: "#",
+            img: "/images/nav-hover-banner.png",
+          },
+        ],
+      },
     },
     {
       name: "ADMISSIONS",
@@ -39,6 +85,20 @@ export default function Header() {
         { name: "Admission", href: "/" },
         { name: "UG Program", href: "/" },
       ],
+      right: {
+        subtitle: "JOIN JSS",
+        title: "Admissions Open 2025-26",
+        desc: "Apply now and step into your future at JSS Noida.",
+        ctas: [
+          { text: "Apply Now", href: "#", type: "primary" },
+          { text: "Download Syllabus", href: "#", type: "secondary" },
+        ],
+        banners: [
+          { title: "Scholarships", href: "#", img: "/images/banner1.png" },
+          { title: "Eligibility", href: "#", img: "/images/banner2.png" },
+          { title: "FAQs", href: "#", img: "/images/banner3.png" },
+        ],
+      },
     },
     {
       name: "FACILITIES",
@@ -48,6 +108,17 @@ export default function Header() {
         { name: "Boys Hostel", href: "/" },
         { name: "Amenities Centre", href: "/" },
       ],
+      right: {
+        subtitle: "CAMPUS FACILITIES",
+        title: "Modern & Student Friendly",
+        desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
+        ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
+        banners: [
+          { title: "Hostels", href: "#", img: "/images/banner1.png" },
+          { title: "Clubs", href: "#", img: "/images/banner2.png" },
+          { title: "Events", href: "#", img: "/images/banner3.png" },
+        ],
+      },
     },
     {
       name: "STUDENTS SUPPORT",
@@ -57,6 +128,17 @@ export default function Header() {
         { name: "Mentoring Scheme", href: "/" },
         { name: "Internal Complaint Committee", href: "/" },
       ],
+      right: {
+        subtitle: "SUPPORT & LIFE",
+        title: "Helping Students Thrive",
+        desc: "Guidance, mentoring and vibrant student support activities.",
+        ctas: [{ text: "Get Support", href: "#", type: "primary" }],
+        banners: [
+          { title: "Life @ JSS", href: "#", img: "/images/banner1.png" },
+          { title: "Mentoring", href: "#", img: "/images/banner2.png" },
+          { title: "Clubs", href: "#", img: "/images/banner3.png" },
+        ],
+      },
     },
   ];
 
@@ -64,7 +146,7 @@ export default function Header() {
     {
       name: "About JSS University",
       subMenu: ["Overview", "Scholarships", "International Students"],
-      img: "/images/hambuger-banner.png",
+      img: "/images/header/hambuger-banner.png",
     },
     {
       name: "Academics",
@@ -110,45 +192,54 @@ export default function Header() {
       },
     },
     right: {
-      img: "https://picsum.photos/500/400?random=5",
+      img: "/images/header/admission-banner.png",
       alt: "Admissions Image",
     },
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setIsMounted(true);
   }, []);
 
-  console.log("Hamburger Menu Data:", scrolled);
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 300);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMounted]);
 
   const openMenu = () => {
     setMenuOpen(true);
     setActiveIndex(0);
   };
+
   const closeMenu = () => {
     setMenuOpen(false);
     setActiveIndex(null);
   };
 
-  // Close with ESC key
   useEffect(() => {
+    if (!isMounted) return;
+
     const handleEsc = (e) => {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape") {
+        closeMenu();
+        setAdmissionOpen(false);
+      }
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+  }, [isMounted]);
 
-  // Close admission dropdown when clicking outside
   useEffect(() => {
+    if (!isMounted) return;
+
     const handleClickOutside = (e) => {
       if (admissionRef.current && !admissionRef.current.contains(e.target)) {
         setAdmissionOpen(false);
@@ -156,9 +247,24 @@ export default function Header() {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMounted]);
 
   const activeData = hamburgerMenudata[activeIndex] || hamburgerMenudata[0];
+
+  if (!isMounted) {
+    return (
+      <header
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1100,
+          height: "80px",
+        }}
+      ></header>
+    );
+  }
 
   return (
     <header className="site-header">
@@ -166,7 +272,8 @@ export default function Header() {
         <div className="brand-wrap">
           <Link href="/" aria-label="Home">
             <Image
-              src="/images/logo.png"
+              src="/images/header/header-logo.png"
+              className="site-logo"
               alt="Site Logo"
               width={250}
               height={90}
@@ -176,31 +283,90 @@ export default function Header() {
         </div>
 
         <div className="right-navbar">
-          {/* main nav */}
           <nav className="desktop-nav" aria-label="Main navigation">
             <ul className="nav-list">
               {navLinks.map((l, i) => (
-                <li key={i} className="nav-item">
-                  <Link href={l.href} className="nav-link">
+                <li
+                  key={i}
+                  className="nav-item"
+                  onClick={() => setActiveLink(i)}
+                >
+                  <Link
+                    href={l.href}
+                    className={`nav-link ${
+                      activeLink == i ? "active-link" : ""
+                    }`}
+                  >
                     {l.name}
                   </Link>
                   {l.dropdown && (
-                    <ul className="dropdown">
-                      {l.dropdown.map((d, j) => (
-                        <li key={j}>
-                          <Link href={d.href} className="dropdown-item">
-                            {d.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mega-dropdown" role="menu">
+                      <div className="mega-left">
+                        <ul>
+                          {l.dropdown.map((d, j) => (
+                            <li key={j} className="mega-left-item">
+                              <Link href={d.href} className="dropdown-item">
+                                {d.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mega-right">
+                        {l.right ? (
+                          <>
+                            <div className="mega-right-text">
+                              <p className="mega-subtitle">
+                                {l.right.subtitle}
+                              </p>
+                              <h2 className="mega-title">{l.right.title}</h2>
+                              <p className="mega-desc">{l.right.desc}</p>
+                              <div className="mega-ctas">
+                                {l.right.ctas?.map((cta, idx) => (
+                                  <a
+                                    key={idx}
+                                    href={cta.href}
+                                    className={`cta ${cta.type}`}
+                                  >
+                                    {cta.text}
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className="mega-right-banners">
+                              {l.right.banners?.map((b, idx) => (
+                                <a key={idx} href={b.href} className="banner">
+                                  <Image
+                                    src={b.img}
+                                    alt={b.title}
+                                    width={260}
+                                    height={160}
+                                  />
+                                  <span className="banner-label">
+                                    {b.title}
+                                  </span>
+                                </a>
+                              ))}
+                            </div>
+                          </>
+                        ) : (
+                          <div className="mega-right-text">
+                            <h3 className="mega-title">
+                              {l.dropdown && l.dropdown[0]?.name}
+                            </h3>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   )}
                 </li>
               ))}
             </ul>
           </nav>
+
           <div className="right-navbar-section">
-            {/* Admissions Button */}
             <div className="admission-wrap" ref={admissionRef}>
               <button
                 className="admission-btn"
@@ -212,7 +378,6 @@ export default function Header() {
               {admissionOpen && (
                 <div className="admission-dropdown">
                   <span className="dropdown-arrow"></span>
-                  {/* Left */}
                   <div className="ad-left">
                     <p className="ad-subtitle">
                       {admissionsData.left.subtitle}
@@ -236,7 +401,6 @@ export default function Header() {
                     </div>
                   </div>
 
-                  {/* Middle */}
                   <div className="ad-middle">
                     <ul>
                       {admissionsData.middle.links.map((link, idx) => (
@@ -254,21 +418,21 @@ export default function Header() {
                     </div>
                   </div>
 
-                  {/* Right */}
-                  <div className="ad-right">
-                    <Image
-                      src={admissionsData.right.img}
-                      alt={admissionsData.right.alt}
-                      width={400}
-                      height={400}
-                      className="ad-img"
-                    />
-                  </div>
+                  {admissionsData.right && (
+                    <div className="ad-right">
+                      <Image
+                        src={admissionsData.right.img}
+                        alt={admissionsData.right.alt}
+                        width={400}
+                        height={400}
+                        className="addmision-section-img"
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
 
-            {/* hamburger */}
             <button
               aria-label="Open menu"
               className="hamburger"
@@ -280,13 +444,11 @@ export default function Header() {
         </div>
       </div>
 
-      {/* backdrop */}
       <div
         className={`backdrop ${menuOpen ? "show" : ""}`}
         onClick={closeMenu}
       />
 
-      {/* overlay */}
       <div className={`menu-overlay ${menuOpen ? "open" : ""}`} role="dialog">
         <button
           className="close-btn"
@@ -297,7 +459,6 @@ export default function Header() {
         </button>
 
         <div className="hamburger-layout">
-          {/* left */}
           <aside className="menu-left">
             <ul>
               {hamburgerMenudata.map((item, idx) => (
@@ -314,7 +475,6 @@ export default function Header() {
             </ul>
           </aside>
 
-          {/* middle */}
           <section className="menu-middle">
             <h4 className="middle-title">
               ABOUT JSSMVP HERITAGE ABOUT JSS LEADERSHIP
@@ -328,7 +488,6 @@ export default function Header() {
             </ul>
           </section>
 
-          {/* right */}
           <section className="menu-right">
             <div className="right-inner">
               <div className="image-box">
@@ -337,7 +496,7 @@ export default function Header() {
                   alt={activeData.name}
                   width={620}
                   height={400}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   sizes="100vw"
                 />
               </div>
@@ -347,12 +506,22 @@ export default function Header() {
       </div>
 
       <style jsx>{`
+        
         .site-header {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
           z-index: 1100;
+        }
+        .mega-right-banners {
+          justify-content: end;
+          gap: 1rem;
+          width: 70%;
+          display: flex;
+          margin-top: 10rem;
+          margin-bottom: 5rem;
+          height: 70%;
         }
         .right-navbar-section,
         .right-navbar {
@@ -366,11 +535,12 @@ export default function Header() {
           margin: 0 auto;
           padding: 20px 20px;
           display: flex;
+          transition: all 0.3s ease;
         }
         .nav-list {
           gap: 30px;
           margin: 0;
-          padding: 0.4rem 2rem;
+          padding: 0.1rem 2rem;
           list-style: none;
           display: flex;
           font-size: 20px;
@@ -381,18 +551,23 @@ export default function Header() {
         .nav-item {
           position: relative;
         }
-          .nav-container.header-scrolled .nav-list{
-            background-color: transparent;
-            color: #000;
-          }
+        .header-scrolled .nav-list {
+          background-color: transparent !important;
+          color: #000 !important;
+        }
         .nav-link {
           text-decoration: none;
-          color: #16344e;
+          color: inherit;
           font-weight: 600;
           font-size: 16px;
           padding: 6px 8px;
           display: inline-block;
+          transition: color 0.3s ease;
         }
+        .header-scrolled .nav-link {
+          color: #16344e;
+        }
+
         .dropdown {
           display: none;
           position: absolute;
@@ -416,11 +591,6 @@ export default function Header() {
         .dropdown-item:hover {
           background: #f5f5f5;
         }
-        .nav-item:hover > .dropdown {
-          display: block;
-        }
-
-        /* Admissions Button */
         .admission-wrap {
           position: relative;
           margin-right: 12px;
@@ -432,17 +602,21 @@ export default function Header() {
           border: none;
           padding: 10px 18px;
           cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        .admission-btn:hover {
+          background: #e6b000;
         }
         .admission-dropdown {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          margin-top: 6px;
-          width: 1000px;
-          display: flex;
-          background: #fff;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
           z-index: 1200;
+          background: #fff;
+          width: 70%;
+          margin-top: 6px;
+          display: flex;
+          position: fixed;
+          top: 6rem;
+          right: 10rem;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
         }
         .dropdown-arrow {
           position: absolute;
@@ -455,13 +629,16 @@ export default function Header() {
           border-bottom: 10px solid #fff;
         }
         .ad-left {
-          width: 33.33%;
+          width: 100%;
           background: #2f7de8;
           color: #fff;
           padding: 24px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+        }
+        .ad-right {
+          width: 100%;
         }
         .ad-subtitle {
           text-transform: uppercase;
@@ -491,17 +668,23 @@ export default function Header() {
           font-size: 14px;
           font-weight: 600;
           text-decoration: none;
+          border: none;
+          cursor: pointer;
+          transition: opacity 0.3s ease;
+        }
+        .cta:hover {
+          opacity: 0.9;
         }
         .cta.primary {
           background: #ffc100;
           color: #000;
         }
         .cta.secondary {
-          background: #fff;
           color: #2f7de8;
+          border: 1px solid #fff;
         }
         .ad-middle {
-          width: 33.33%;
+          width: 100%;
           padding: 24px;
           border-right: 1px solid #eee;
         }
@@ -516,8 +699,10 @@ export default function Header() {
           font-weight: 500;
           cursor: pointer;
           color: #333;
+          transition: color 0.3s ease;
         }
         .ad-link:hover {
+          color: #2f7de8;
           text-decoration: underline;
         }
         .ad-stats {
@@ -539,11 +724,14 @@ export default function Header() {
           padding: 6px 12px;
           cursor: pointer;
           font-weight: 600;
+          transition: all 0.3s ease;
         }
-        .ad-right {
-          width: 33.33%;
+        .stats-btn:hover {
+          background: #000;
+          color: #fff;
         }
-        .ad-img {
+
+        .addmision-section-img {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -557,6 +745,10 @@ export default function Header() {
           padding: 4px 10px;
           background-color: #16344e;
           color: #fff;
+          transition: background 0.3s ease;
+        }
+        .hamburger:hover {
+          background-color: #1e4264;
         }
 
         .backdrop {
@@ -610,6 +802,10 @@ export default function Header() {
           padding-left: 5rem;
           margin-bottom: 6px;
           font-size: 21px;
+          transition: all 0.3s ease;
+        }
+        .menu-left-item:hover {
+          background: #1e6fd8;
         }
         .menu-left-item.active {
           background: #ffc100;
@@ -637,6 +833,11 @@ export default function Header() {
           padding: 8px 0;
           font-weight: 700;
           border-bottom: 1px dashed #eee;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+        .middle-item:hover {
+          color: #2f7de8;
         }
 
         .menu-right {
@@ -670,6 +871,166 @@ export default function Header() {
           font-size: 24px;
           font-weight: bold;
           cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        .menu-overlay.open .close-btn:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        .mega-dropdown {
+          z-index: -1;
+          background: #fff;
+          gap: 20px;
+          width: 100%;
+          height: auto;
+          min-width: max-content;
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-item:hover > .mega-dropdown,
+        .nav-item:focus-within > .mega-dropdown {
+          display: flex;
+        }
+
+        .mega-left {
+          background: #2f7de8;
+          color: #fff;
+          width: 20%;
+          position: relative;
+        }
+        .mega-left ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          text-align: center;
+          position: absolute;
+          width: 100%;
+          top: 35%;
+        }
+        .mega-left-item {
+          cursor: pointer;
+          font-weight: 700;
+          padding: 8px 0;
+        }
+
+        .mega-left-item .dropdown-item {
+          color: #fff;
+          text-decoration: none;
+        }
+        .mega-left-item:hover {
+          background: #ffc100;
+          color: #000;
+        }
+
+        .mega-right {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          width: 80%;
+          display: flex;
+        }
+        .mega-right-text {
+          width: 20%;
+        }
+        .mega-subtitle {
+          font-size: 13px;
+          color: #555;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        }
+        .mega-title {
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 8px;
+          color: #16344e;
+        }
+        .mega-desc {
+          font-size: 14px;
+          margin-bottom: 12px;
+          color: #444;
+        }
+        .mega-ctas {
+          display: flex;
+          gap: 12px;
+        }
+        .mega-banners {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+        }
+        .banner {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          border-radius: 6px;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+        }
+        .banner img,
+        .banner :global(img) {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .banner-label {
+          color: #fff;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 2px;
+          width: 100%;
+          padding: 15px 10px;
+          font-size: 14px;
+          font-weight: 700;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1420px) {
+          .mega-right-banners {
+            height: 70%;
+            margin-top: 8rem;
+            margin-bottom: 3rem;
+          }
+          .nav-container {
+            max-width: 95%;
+            padding: 20px 0;
+          }
+          .nav-list {
+            gap: 20px;
+            font-size: 16px;
+          }
+          .mega-right {
+            gap: 1.5rem;
+          }
+          .banner {
+            width: 240px;
+            height: 200px;
+          }
+          .admission-dropdown {
+            top: 6rem;
+            right: 5rem;
+            width: 85%;
+          }
+        }
+
+        @media (max-width: 1100px) {
+          .mega-dropdown {
+            min-width: 700px;
+            grid-template-columns: 1fr;
+          }
+          .mega-right-text {
+            max-width: 100%;
+          }
+          .banner {
+            width: 200px;
+            height: 130px;
+          }
         }
       `}</style>
     </header>

@@ -24,9 +24,31 @@ a:active {
 .main-container {
   position: relative;
 }
+.nav-link.active-link::after {
+  content: '';
+  width: 70%;
+  height: 8px;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 3px solid #b08f29 !important;
+  color: #b08f29 !important;
+}
+.nav-link.active-link{
+  color: #b08f29 !important;
+}
 
-/* .hamburger-right-banner {
+.logo {
+  position: relative;
+}
+.addmision-section-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  width: 80%;
-  height: auto;
-} */
+}
+
+@media (min-width: 1024px) and (max-width: 1420px) {
+  .site-logo {
+    width: 200px;
+    height: 70px;
+  }
+}

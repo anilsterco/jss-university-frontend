@@ -18,7 +18,7 @@ export default function HeroSlider() {
     >
       <SwiperSlide>
         <Image
-          src="/images/placeholder-banner.png"
+          src="/images/home-page/placeholder-banner.png"
           alt="Slide 1"
           fill
           style={{ objectFit: "cover" }}
@@ -28,7 +28,7 @@ export default function HeroSlider() {
       <SwiperSlide>
         <h1>Slide 2</h1>
         <Image
-          src="/images/home-banner.png"
+          src="/images/home-page/home-banner.png"
           alt="Slide 2"
           fill
           style={{ objectFit: "cover" }}

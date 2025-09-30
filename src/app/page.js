@@ -1,5 +1,4 @@
 "use client";
-// import Image from "next/image";
 import { useState } from "react";
 import HeroSlider from "../component/HeroSlider";
 
@@ -11,7 +10,6 @@ export default function HomePage() {
   };
   return (
     <div>
-      <HeroSlider />
       <HeroSlider />
     </div>
   );

@@ -4,7 +4,7 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata = {
-  title: "My Next App",
+  title: "Jss University",
   description: "A Next.js project with Zustand and SEO setup",
 };
 
