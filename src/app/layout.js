@@ -1,4 +1,4 @@
-import Header from "../component/Navbar";
+import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";

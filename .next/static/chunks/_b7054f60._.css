@@ -793,6 +793,43 @@ a, a:hover, a:focus, a:active {
   position: relative;
 }
 
+.testimonials-container img {
+  height: 100%;
+}
+
+.fifth-middle-section .button {
+  background: #16344e;
+  padding: .5rem 2rem;
+  color: #fff !important;
+}
+
+.fifth-middle-section .button:last-child {
+  background: unset;
+  border: 2px solid #16344e;
+  font-weight: 500;
+  color: #16344e !important;
+}
+
+.fourth-slider-section .slider-sticky-wrapper .slide-container:before, .fourth-slider-section .slider-sticky-wrapper .slide-container:after {
+  content: "";
+  pointer-events: none;
+  z-index: 10;
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  left: 0;
+}
+
+.fourth-slider-section .slider-sticky-wrapper .slide-container:before {
+  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+  top: 0;
+}
+
+.fourth-slider-section .slider-sticky-wrapper .slide-container:after {
+  background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+  bottom: 0;
+}
+
 .nav-link.active-link:after {
   content: "";
   width: 70%;
@@ -807,6 +844,71 @@ a, a:hover, a:focus, a:active {
   color: #b08f29 !important;
 }
 
+.dark-blue-text {
+  color: #00489a;
+}
+
+.blue-text {
+  color: #018ce8;
+}
+
+.yellow-text {
+  color: #b08f29;
+}
+
+.second-section-cards-image {
+  position: relative;
+}
+
+.third-section .testimonial-slider :-webkit-any(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.third-section .testimonial-slider :-moz-any(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.third-section .testimonial-slider :is(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.fourth-slider-section .banner-links a {
+  border-bottom: 1px dotted #f8c326;
+}
+
+.third-section .testimonial-slider p {
+  font-size: 1.1rem;
+}
+
+.third-section .testimonial-slider h6, .third-section .testimonial-slider small {
+  font-size: .8rem;
+}
+
+.explore-program-section a {
+  background: #fff;
+  width: 30%;
+}
+
+.third-section .wall-of-fame-link {
+  bottom: 4%;
+  left: 6%;
+}
+
 .logo {
   position: relative;
 }
@@ -818,9 +920,9 @@ a, a:hover, a:focus, a:active {
 }
 
 @media (min-width: 1024px) and (max-width: 1420px) {
-  .site-logo {
+  .second-section-cards-image image {
     width: 200px;
-    height: 70px;
+    height: 80px;
   }
 }
 

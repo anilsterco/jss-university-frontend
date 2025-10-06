@@ -1,16 +1,22 @@
 "use client";
-import { useState } from "react";
-import HeroSlider from "../component/HeroSlider";
+import FirstSection from "../component/home-components/FirstSection";
+import SecondSection from "../component/home-components/SecondSection";
+import ThirdSection from "../component/home-components/ThirdSection";
+import FourthSection from "../component/home-components/FourthSection";
+import FifthSection from "../component/home-components/FifthSection";
+import SixthSection from "../component/home-components/SixthSection";
+import SeventhSection from "../component/home-components/SeventhSection";
 
 export default function HomePage() {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
   return (
     <div>
-      <HeroSlider />
+      <FirstSection />
+      <SecondSection />
+      <ThirdSection />
+      <FourthSection />
+      <FifthSection />
+      <SixthSection />
+      <SeventhSection />
     </div>
   );
 }

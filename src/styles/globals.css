@@ -24,8 +24,42 @@ a:active {
 .main-container {
   position: relative;
 }
+.testimonials-container img {
+  height: 100%;
+}
+.fifth-middle-section .button {
+  background: #16344e;
+  color: #fff !important;
+  padding: 0.5rem 2rem;
+}
+.fifth-middle-section .button:last-child {
+  background: unset;
+  border: 2px solid #16344e;
+  color: #16344e !important ;
+  font-weight: 500;
+}
+
+.fourth-slider-section .slider-sticky-wrapper .slide-container::before,
+.fourth-slider-section .slider-sticky-wrapper .slide-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 10;
+}
+.fourth-slider-section .slider-sticky-wrapper .slide-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+.fourth-slider-section .slider-sticky-wrapper .slide-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
 .nav-link.active-link::after {
-  content: '';
+  content: "";
   width: 70%;
   height: 8px;
   display: block;
@@ -33,10 +67,50 @@ a:active {
   border-bottom: 3px solid #b08f29 !important;
   color: #b08f29 !important;
 }
-.nav-link.active-link{
+.nav-link.active-link {
   color: #b08f29 !important;
 }
-
+.dark-blue-text {
+  color: #00489a;
+}
+.blue-text {
+  color: #018ce8;
+}
+.yellow-text {
+  color: #b08f29;
+}
+.second-section-cards-image {
+  position: relative;
+}
+.third-section
+  .testimonial-slider
+  :is(.swiper-button-prev, .swiper-button-next)
+  svg {
+  pointer-events: none;
+  width: 50%;
+  height: 50%;
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 30px;
+  padding: 0 8px;
+}
+.fourth-slider-section .banner-links a {
+  border-bottom: 1px dotted #f8c326;
+}
+.third-section .testimonial-slider p {
+  font-size: 1.1rem;
+}
+.third-section .testimonial-slider h6,
+.third-section .testimonial-slider small {
+  font-size: 0.8rem;
+}
+.explore-program-section a {
+  background: #fff;
+  width: 30%;
+}
+.third-section .wall-of-fame-link {
+  bottom: 4%;
+  left: 6%;
+}
 .logo {
   position: relative;
 }
@@ -47,8 +121,12 @@ a:active {
 }
 
 @media (min-width: 1024px) and (max-width: 1420px) {
-  .site-logo {
+  /* .site-logo {
     width: 200px;
     height: 70px;
+  } */
+  .second-section-cards-image image {
+    width: 200px;
+    height: 80px;
   }
 }

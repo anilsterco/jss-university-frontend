@@ -10,7 +10,7 @@ export default function Header() {
   const [admissionOpen, setAdmissionOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState(null);
 
   const admissionRef = useRef(null);
 
@@ -269,16 +269,46 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className={`nav-container ${scrolled ? "header-scrolled" : ""}`}>
-        <div className="brand-wrap">
-          <Link href="/" aria-label="Home">
+        <div className="brand-wrap logo-content">
+          <Link href="/" aria-label="Home" className="d-flex gap-4">
             <Image
-              src="/images/header/header-logo.png"
+              src="/images/footer/footer-logo.png"
               className="site-logo"
               alt="Site Logo"
-              width={250}
-              height={90}
+              width={100}
+              height={100}
               priority
             />
+            <div className="logo-text">
+              <div className="d-flex  align-items-center gap-2">
+                <div>
+                  <h1
+                    className={`${
+                      scrolled ? "dark-blue-text" : ""
+                    } mb-0 logo-primary-text`}
+                  >
+                    NAAC
+                  </h1>
+                  <h1
+                    className={`${
+                      scrolled ? "dark-blue-text" : ""
+                    } mb-0 logo-secondry-text`}
+                  >
+                    GRADE
+                  </h1>
+                </div>
+                <h1
+                  className={`${
+                    scrolled ? "yellow-text" : ""
+                  } mb-0 logo-tertiary-text`}
+                >
+                  A
+                </h1>
+              </div>
+              <p className={`${scrolled ? "text-dark" : ""} mb-0`}>
+                JSS is NAAC 'A' Grade Accredited
+              </p>
+            </div>
           </Link>
         </div>
 
@@ -506,7 +536,6 @@ export default function Header() {
       </div>
 
       <style jsx>{`
-        
         .site-header {
           position: fixed;
           top: 0;
@@ -528,14 +557,32 @@ export default function Header() {
           display: flex;
           align-items: center;
         }
+        .logo-tertiary-text {
+          font-size: 55px;
+        }
+        .logo-secondry-text,
+        .logo-primary-text {
+          font-size: 22px;
+          font-weight: 700;
+        }
+        .logo-text p {
+          font-size: 12px;
+          border-bottom: 2px solid #f8c326;
+          padding-bottom: 8px;
+        }
+        .logo-text {
+          color: #fff;
+          border-left: 1px solid #cfc7c7;
+          padding-left: 1.5rem;
+        }
         .nav-container {
           justify-content: space-between;
           align-items: center;
-          max-width: 90%;
+          max-width: 100%;
           margin: 0 auto;
-          padding: 20px 20px;
+          padding: 1rem 5rem;
+          transition: all 0.3s;
           display: flex;
-          transition: all 0.3s ease;
         }
         .nav-list {
           gap: 30px;
@@ -551,9 +598,8 @@ export default function Header() {
         .nav-item {
           position: relative;
         }
-        .header-scrolled .nav-list {
-          background-color: transparent !important;
-          color: #000 !important;
+        .nav-container.header-scrolled {
+          background-color: #fff;
         }
         .nav-link {
           text-decoration: none;
@@ -998,8 +1044,7 @@ export default function Header() {
             margin-bottom: 3rem;
           }
           .nav-container {
-            max-width: 95%;
-            padding: 20px 0;
+            padding: 1rem 2rem;
           }
           .nav-list {
             gap: 20px;
