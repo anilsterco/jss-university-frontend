@@ -56,20 +56,67 @@ const legacyData = {
 };
 
 export default function LegacySection() {
+  const styles = {
+    fifthSection: {
+      padding: '5rem 10rem',
+      background: '#e6ffff',
+    },
+    topSection: {
+      marginBottom: '1rem',
+    },
+    topSectionHeading: {
+      width: '40%',
+      fontSize: '3.7rem',
+      fontWeight: 'bold',
+    },
+    violetText: {
+      color: '#9852a1',
+    },
+    fifthMiddleSection: {
+      alignItems: 'center',
+    },
+    navButtons: {
+    background: "#16344e",
+    padding: ".5rem 2rem",
+    color: "#fff !important"
+},
+    leftColumn: {
+      borderRight: '1px solid #d4d4d4cb',
+      paddingRight: '4rem',
+    },
+    rightColumn: {
+      paddingLeft: '5rem',
+    },
+    contentPart: {
+      position: 'absolute',
+      bottom: '0',
+      background: 'rgba(0, 0, 0, 0.3)',
+      width: '100%',
+      color: 'white',
+      padding: '0.5rem',
+      marginTop: '0.5rem',
+      borderRadius: '0.25rem',
+      display: 'flex',
+      gap: '1rem',
+      fontSize: '0.875rem',
+    },
+  };
+
   return (
-    <section className="container-fluid fifth-section">
+    <section className="container-fluid" style={styles.fifthSection}>
       <div className="container-fluid ">
-        <div className="mb-3 top-section">
+        <div className="mb-3" style={styles.topSection}>
           <p className="fw-bold small text-uppercase">{legacyData.subtitle}</p>
           <h2
             className="fw-bold display-6"
+            style={styles.topSectionHeading}
             dangerouslySetInnerHTML={{ __html: legacyData.title }}
           />
         </div>
 
-        <div className="row align-items-center g-4 fifth-middle-section">
+        <div className="row g-4" style={styles.fifthMiddleSection}>
           {/* Chancellor Image */}
-          <div className="col-lg-5 left">
+          <div className="col-lg-5" style={styles.leftColumn}>
             <div className="position-relative">
               <Image
                 src={legacyData.chancellor.img}
@@ -80,7 +127,7 @@ export default function LegacySection() {
               />
               {/* Play Button Overlay */}
 
-              <div className="text-white p-2 mt-2 rounded small d-flex gap-3 content-part">
+              <div style={styles.contentPart}>
                 <IoPlayCircleOutline fontSize={30} className="text-warning" />
                 <div className="">
                   <strong>{legacyData.chancellor.message}</strong>
@@ -92,10 +139,10 @@ export default function LegacySection() {
           </div>
 
           {/* Right Content */}
-          <div className="col-lg-7 right">
+          <div className="col-lg-7" style={styles.rightColumn}>
             <p className="fw-light w-75">{legacyData.description}</p>
             <div className="divider mb-4">
-              <Link href={legacyData.url}>
+              <Link href={legacyData.url} className="nav-buttons">
                 <BsArrowRightCircle
                   className="fw-light"
                   color="rgba(146, 142, 142, 1)"
@@ -106,7 +153,9 @@ export default function LegacySection() {
             <div className="row g-3 mb-4 d-flex gap-4">
               {legacyData.highlights.map((h, i) => (
                 <div key={i} className="col-md-5 border p-3 d-flex gap-3 ">
-                  <h1 className="fw-bold violet-text">{h.number}</h1>
+                  <h1 className="fw-bold" style={styles.violetText}>
+                    {h.number}
+                  </h1>
                   <div className="left-content">
                     <p className="mb-1 ">{h.text}</p>
                     <p className="fw-bold fs-5">{h.source}</p>
@@ -118,7 +167,7 @@ export default function LegacySection() {
             {/* Buttons */}
             <div className="d-flex gap-3">
               {legacyData.buttons.map((btn, i) => (
-                <Link key={i} href={btn.link} className="button">
+                <Link key={i} href={btn.link} style={styles.navButtons}>
                   {btn.text}
                 </Link>
               ))}
@@ -158,32 +207,6 @@ export default function LegacySection() {
           </Swiper>
         </div>
       </div>
-      <style jsx>{`
-        .violet-text {
-          color: #9852a1;
-        }
-        .fifth-middle-section .left {
-          border-right: 1px solid #d4d4d4cb;
-          padding-right: 4rem;
-        }
-        .fifth-middle-section .right {
-          padding-left: 5rem;
-        }
-        .fifth-section {
-          padding: 5rem 10rem;
-          background: #e6ffff;
-        }
-        .fifth-middle-section .content-part {
-          position: absolute;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.3);
-          width: 100%;
-        }
-        .fifth-section .top-section h2 {
-          width: 40%;
-          font-size: 3.7rem;
-        }
-      `}</style>
     </section>
   );
 }

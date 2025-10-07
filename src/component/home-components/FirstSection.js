@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
+
 export default function HeroSlider() {
   const slides = [
     {
@@ -29,13 +30,43 @@ export default function HeroSlider() {
       url: "/",
     },
   ];
+
+  // Styles object
+  const styles = {
+    firstBannerSlide: {
+      position: 'relative'
+    },
+    bannerContent: {
+      color: '#fff',
+      width: '30%',
+      position: 'absolute',
+      bottom: '20%',
+      left: '10%'
+    },
+    bannerContentH1: {
+      fontSize: '60px',
+      marginBottom: '2rem'
+    },
+    bannerContentP: {
+      fontSize: '16px',
+      fontWeight: 300,
+      marginBottom: '2rem'
+    },
+    bannerContentA: {
+      paddingBottom: '8px',
+      borderBottom: '1px solid',
+      fontSize: '18px'
+    },
+    // Media query styles would need to be handled differently
+    // since inline styles don't support media queries
+  };
+
   return (
-    <div className="first-banner-slide">
+    <div className="first-banner-slide" style={styles.firstBannerSlide}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
         pagination={{ clickable: true }}
-        // autoplay={{ delay: 3000 }}
         loop={true}
         spaceBetween={20}
         slidesPerView={1}
@@ -50,11 +81,11 @@ export default function HeroSlider() {
               priority
               style={{ objectFit: "cover" }}
             />
-            <div className="banner-content">
-              <h1>{slide.title}</h1>
-              <p>{slide.desc}</p>
+            <div className="banner-content" style={styles.bannerContent}>
+              <h1 style={styles.bannerContentH1}>{slide.title}</h1>
+              <p style={styles.bannerContentP}>{slide.desc}</p>
               {slide.url && (
-                <Link href={slide.url}>
+                <Link href={slide.url} style={styles.bannerContentA}>
                   Learn more about JSS{" "}
                   <FiArrowRightCircle style={{ marginLeft: "20px" }} />
                 </Link>
@@ -63,37 +94,6 @@ export default function HeroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <style jsx>{`
-        .first-banner-slide {
-          position: relative;
-        }
-        .banner-content a {
-          padding-bottom: 8px;
-          border-bottom: 1px solid;
-          font-size: 18px;
-        }
-        .first-banner-slide .banner-content h1 {
-          font-size: 60px;
-          margin-bottom: 2rem;
-        }
-        .first-banner-slide .banner-content p {
-          font-size: 16px;
-          font-weight: 300;
-          margin-bottom: 2rem;
-        }
-        .first-banner-slide .banner-content {
-          color: #fff;
-          width: 30%;
-          position: absolute;
-          bottom: 20%;
-          left: 10%;
-        }
-        @media (min-width: 1024px) and (max-width: 1420px) {
-          .first-banner-slide .banner-content {
-            width: 50%;
-          }
-        }
-      `}</style>
     </div>
   );
 }

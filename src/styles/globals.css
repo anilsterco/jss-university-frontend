@@ -105,7 +105,9 @@ a:active {
 }
 .explore-program-section a {
   background: #fff;
+  color: #b08f29 !important;
   width: 30%;
+  font-weight: 500;
 }
 .third-section .wall-of-fame-link {
   bottom: 4%;

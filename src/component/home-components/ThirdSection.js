@@ -57,9 +57,40 @@ const placementsData = {
 };
 
 export default function PlacementsSection() {
+  // Styles object
+  const styles = {
+    wallOfFameText: {
+      left: '6%',
+      width: '35%',
+      bottom: '10%'
+    },
+    thirdSection: {
+      padding: '10rem 0rem 10rem 10rem',
+      width: '100%',
+      margin: 'auto',
+      background: '#f6f6f6'
+    },
+    blueBg: {
+      background: '#16344e',
+      width: '100%',
+      maxWidth: '13%',
+      height: '100%',
+      position: 'absolute',
+      top: 0,
+      left: 0
+    },
+    thirdSectionStatsH3: {
+      fontSize: '3rem'
+    },
+    thirdSectionStatsP: {
+      fontSize: '0.9rem',
+      fontWeight: 500
+    }
+  };
+
   return (
     <>
-      <section className="container-fluid py-5 third-section">
+      <section className="container-fluid py-5 third-section" style={styles.thirdSection}>
         {/* Section Header */}
         <div className="mb-5">
           <p className="fw-bold text-uppercase small text-muted mb-2">
@@ -78,8 +109,8 @@ export default function PlacementsSection() {
             <div className="row mb-5 pb-4 w-100 m-auto third-section-stats">
               {placementsData.stats.map((stat, i) => (
                 <div key={i} className="col-md-4 text-center border p-3">
-                  <h3 className="fw-bold">{stat.number}</h3>
-                  <p className=" mb-0">{stat.label}</p>
+                  <h3 className="fw-bold" style={styles.thirdSectionStatsH3}>{stat.number}</h3>
+                  <p className="mb-0" style={styles.thirdSectionStatsP}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -87,19 +118,17 @@ export default function PlacementsSection() {
             {/* Testimonial Slider */}
             <Swiper
               modules={[Navigation, Autoplay]}
-              //   navigation
               navigation={{
                 nextEl: ".testimonial-next",
                 prevEl: ".testimonial-prev",
               }}
-              // autoplay={{ delay: 4000 }}
               loop={true}
               spaceBetween={30}
               slidesPerView={1}
               style={{ padding: "20px 20px" }}
               className="testimonial-slider"
             >
-              <div className="blue-bg"></div>
+              <div style={styles.blueBg}></div>
               {placementsData.testimonials.map((t, i) => (
                 <SwiperSlide key={i}>
                   <div className="d-flex align-items-center gap-4">
@@ -154,6 +183,7 @@ export default function PlacementsSection() {
               />
               <div
                 className="position-absolute text-white fw-bold fs-3 wall-of-fame-text"
+                style={styles.wallOfFameText}
                 dangerouslySetInnerHTML={{
                   __html: placementsData.wallOfFame.text,
                 }}
@@ -177,7 +207,6 @@ export default function PlacementsSection() {
             <Swiper
               modules={[Navigation, Autoplay]}
               navigation={false}
-              // autoplay={{ delay: 4000 }}
               loop={true}
               spaceBetween={10}
               slidesPerView={7}
@@ -199,36 +228,6 @@ export default function PlacementsSection() {
           </div>
         </div>
       </section>
-      <style jsx>{`
-        .wall-of-fame-text {
-          left: 6%;
-          width: 35%;
-          bottom: 10%;
-        }
-
-        .third-section {
-          padding: 10rem 0rem 10rem 10rem;
-          width: 100%;
-          margin: auto;
-          background: #f6f6f6;
-        }
-        .blue-bg {
-          background: #16344e;
-          width: 100%;
-          max-width: 13%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        .third-section-stats h3 {
-          font-size: 3rem;
-        }
-        .third-section-stats p {
-          font-size: 0.9rem;
-          font-weight: 500;
-        }
-      `}</style>
     </>
   );
 }

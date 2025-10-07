@@ -47,17 +47,102 @@ const coursesData = {
 };
 
 export default function CoursesOffered() {
+  // Styles object
+  const styles = {
+    secondSection: {
+      padding: "6rem 10rem",
+      background: "#f6f6f6",
+    },
+    programsCount: {
+      color: "#b08f29",
+      fontWeight: 500,
+      fontSize: "5rem !important",
+    },
+    bottomSectionH6: {
+      background: "#f6f6f6",
+      width: "fit-content",
+      paddingRight: "3rem",
+      position: "relative",
+      bottom: "20px",
+      fontSize: "20px",
+      right: "10px",
+      margin: "0 !important",
+    },
+    bannerLabel: {
+      color: "#fff",
+      background: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))",
+      borderRadius: "2px",
+      width: "100%",
+      padding: "10px 10px",
+      fontSize: "20px",
+      fontWeight: 700,
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      borderLeft: "4px solid #ffc100",
+    },
+    topSection: {
+      width: "100%",
+      margin: "auto",
+    },
+    topSectionH1: {
+      fontSize: "3.5rem",
+      textTransform: "uppercase",
+    },
+    topSectionCol4: {
+      width: "30%",
+    },
+    topSectionCol8: {
+      width: "70%",
+    },
+    mediaQuery: {
+      padding: "5rem 5rem",
+    },
+    mediaQueryH1: {
+      fontSize: "2.5rem",
+    },
+  };
+
+  // Create ProgramsCount component for the complex styling
+  const ProgramsCount = () => (
+    <div style={{ position: "relative", display: "inline-block" }}>
+      <h1 className="display-4 programs-count" style={styles.programsCount}>
+        {coursesData.programsCount}
+      </h1>
+      <span
+        style={{
+          content: '"+"',
+          position: "absolute",
+          top: "-2rem",
+          fontSize: "3rem",
+          fontWeight: 400,
+          right: "-2rem",
+          color: "#ac9031",
+        }}
+      >
+        +
+      </span>
+    </div>
+  );
+
   return (
     <>
-      <section className="container-fluid second-section">
-        <div className="row align-items-center mb-5 top-section">
+      <section
+        className="container-fluid second-section"
+        style={styles.secondSection}
+      >
+        <div
+          className="row align-items-center mb-5 top-section"
+          style={styles.topSection}
+        >
           {/* Left side */}
-          <div className="col-lg-4 mb-4 mb-lg-0">
+          <div className="col-lg-4 mb-4 mb-lg-0" style={styles.topSectionCol4}>
             <h5 className="text-uppercase small mb-2">
               {coursesData.subtitle}
             </h5>
             <h1
               className="fw-bold"
+              style={styles.topSectionH1}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
             />
 
@@ -74,21 +159,22 @@ export default function CoursesOffered() {
             </div>
 
             {/* Programs count */}
-            <div className="d-flex align-items-center gap-3">
-              <h1 className="display-4 programs-count">
-                {coursesData.programsCount}
-              </h1>
-              <p className="">{coursesData.programsText}</p>
+            <div className="d-flex align-items-center gap-5">
+              <ProgramsCount />
+              <p style={{ fontSize: "20px" }}>{coursesData.programsText}</p>
             </div>
           </div>
 
           {/* Right side cards */}
-          <div className="col-lg-8 d-flex justify-content-end gap-3">
+          <div
+            className="col-lg-8 d-flex justify-content-end gap-3"
+            style={styles.topSectionCol8}
+          >
             {coursesData.levels.map((level, i) => (
               <Link
                 href={level.link}
                 key={i}
-                className="second-section-cards-image"
+                className="second-section-cards-image position-relative"
               >
                 <Image
                   src={level.img}
@@ -97,7 +183,10 @@ export default function CoursesOffered() {
                   height={300}
                   priority
                 />
-                <span className="banner-label d-flex align-items-center gap-2">
+                <span
+                  className="banner-label d-flex align-items-center gap-2"
+                  style={styles.bannerLabel}
+                >
                   {level.name} <FaChevronRight fontSize={15} color="#b08f29" />
                 </span>
               </Link>
@@ -106,9 +195,11 @@ export default function CoursesOffered() {
         </div>
 
         {/* Bottom section */}
-        <div className="row border-top border-bottom align-items-center bottom-section">
+        <div className="row border-top border-bottom align-items-center bottom-section w-100 m-auto">
           <div className="col-lg-8 pb-4 pt-1 border-end">
-            <h6 className="fw-bold mb-3">Explore Programs by School of</h6>
+            <h6 className="fw-bold mb-3" style={styles.bottomSectionH6}>
+              Explore Programs by School of
+            </h6>
             <div className="d-flex flex-wrap explore-program-section gap-3">
               {coursesData.schools.map((school, i) => (
                 <Link
@@ -142,74 +233,6 @@ export default function CoursesOffered() {
           </div>
         </div>
       </section>
-      <style jsx>{`
-        .second-section {
-          padding: 6rem 10rem;
-          background: #f6f6f6;
-        }
-        .programs-count {
-          color: #b08f29;
-          font-weight: 500;
-          font-size: 5rem !important;
-        }
-        .bottom-section h6 {
-          background: #f6f6f6;
-          width: fit-content;
-          padding-right: 3rem;
-          position: relative;
-          bottom: 20px;
-          font-size: 20px;
-          right: 10px;
-          margin: 0 !important;
-        }
-        .programs-count::after {
-          content: "+";
-          position: relative;
-          bottom: 40px;
-          font-size: 4rem;
-          font-weight: 200;
-          right: 10px;
-        }
-        .programs-count + p {
-          font-size: 20px;
-        }
-        .banner-label {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.3);
-          border-radius: 2px;
-          width: 100%;
-          padding: 10px 10px;
-          font-size: 20px;
-          font-weight: 700;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          border-left: 4px solid #ffc100;
-        }
-        .second-section .top-section {
-          width: 100%;
-          margin: auto;
-        }
-        .top-section h1 {
-          font-size: 3.5rem;
-          text-transform: uppercase;
-        }
-        .top-section .col-lg-4 {
-          width: 30%;
-        }
-        .top-section .col-lg-8 {
-          width: 70%;
-        }
-
-        @media (min-width: 1024px) and (max-width: 1420px) {
-          .second-section {
-            padding: 5rem 5rem;
-          }
-          .top-section h1 {
-            font-size: 2.5rem;
-          }
-        }
-      `}</style>
     </>
   );
 }

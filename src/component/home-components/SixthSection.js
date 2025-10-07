@@ -44,24 +44,195 @@ const testimonialsData = [
 export default function TestimonialsSection() {
   const [naman, apoorv, yashika, nadeem, ritika] = testimonialsData;
 
+  const styles = {
+    testimonialsSection: {
+      background: '#f5f5f5',
+      padding: '80px 60px',
+    },
+    testimonialsContainer: {
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      gap: '5rem',
+      width: '100%',
+      maxWidth: '100%',
+      margin: '0 auto',
+      display: 'flex',
+    },
+    column: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '28px',
+    },
+    columnLeft: {
+      flex: '0 0 auto',
+      width: '330px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '28px',
+    },
+    columnMiddle: {
+      flex: '0 0 auto',
+      width: '290px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '28px',
+    },
+    columnRight: {
+      marginTop: '5rem',
+      width: '330px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '28px',
+    },
+    headerContent: {
+      marginBottom: '40px',
+    },
+    testimonialsLabel: {
+      fontSize: '15px',
+      fontWeight: '700',
+      color: '#000',
+      margin: '0 0 16px 0',
+    },
+    mainHeading: {
+      fontSize: '3rem',
+      fontWeight: '700',
+      lineHeight: '1.2',
+      color: '#000',
+      margin: '0 0 24px 0',
+    },
+    blueText: {
+      color: '#4a90e2',
+    },
+    circleArrowBtn: {
+      cursor: 'pointer',
+      color: '#666',
+      background: 'transparent',
+      border: '2px solid #ccc',
+      borderRadius: '50%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '24px',
+      height: '24px',
+      transition: 'all 0.3s',
+      display: 'flex',
+    },
+    testimonialCard: {
+      borderTopLeftRadius: '30px',
+      borderBottomRightRadius: '30px',
+      overflow: 'hidden',
+    },
+    cardImgContainer: {
+      position: 'relative',
+      width: '100%',
+      overflow: 'hidden',
+    },
+    cardImgContainerNaman: {
+      position: 'relative',
+      width: '100%',
+      overflow: 'hidden',
+      height: '100%',
+    },
+    cardImgContainerYashika: {
+      position: 'relative',
+      width: '100%',
+      overflow: 'hidden',
+      height: '100%',
+    },
+    cardImgContainerNadeem: {
+      position: 'relative',
+      width: '100%',
+      overflow: 'hidden',
+      height: '100%',
+    },
+    cardImgContainerRitika: {
+      position: 'relative',
+      width: '100%',
+      overflow: 'hidden',
+      height: '100%',
+    },
+    cardImg: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      display: 'block',
+    },
+    quoteBar: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      right: '0',
+      padding: '20px 24px',
+      background: 'linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)',
+    },
+    yellowLine: {
+      width: '40px',
+      height: '3px',
+      background: '#fbbf24',
+      marginBottom: '10px',
+    },
+    quoteTextOverlay: {
+      color: 'white',
+      fontSize: '13px',
+      lineHeight: '1.5',
+      margin: '0',
+    },
+    playBtn: {
+      position: 'absolute',
+      top: '18px',
+      right: '18px',
+      width: '44px',
+      height: '44px',
+      background: '#fbbf24',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#000',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+      cursor: 'pointer',
+    },
+    cardInfo: {
+      padding: '18px 22px',
+      background: 'white',
+    },
+    personName: {
+      fontSize: '15px',
+      fontWeight: '700',
+      color: '#000',
+      margin: '0 0 4px 0',
+      letterSpacing: '0.3px',
+    },
+    personBatch: {
+      fontSize: '12px',
+      color: '#666',
+      margin: '0 0 4px 0',
+    },
+    personRole: {
+      fontSize: '12px',
+      color: '#000',
+      margin: '0',
+      lineHeight: '1.4',
+    },
+  };
+
   return (
-    <section className="testimonials-section">
-      <div className="testimonials-container">
+    <section style={styles.testimonialsSection}>
+      <div style={styles.testimonialsContainer}>
         {/* LEFT COLUMN - Header + Large Card */}
-        <div className="column column-left">
-          <div className="header-content">
-            <p className="testimonials-label">TESTIMONIALS</p>
-            <h2 className="main-heading">
-              IN <span className="blue-text">CONVERSATION</span>
+        <div style={styles.columnLeft}>
+          <div style={styles.headerContent}>
+            <p style={styles.testimonialsLabel}>TESTIMONIALS</p>
+            <h2 style={styles.mainHeading}>
+              IN <span style={styles.blueText}>CONVERSATION</span>
               <br />
               WITH THE{" "}
-              <span className="blue-text">
+              <span style={styles.blueText}>
                 JSS
                 <br />
                 COMMUNITY
               </span>
             </h2>
-            <button className="circle-arrow-btn">
+            <button style={styles.circleArrowBtn}>
               <svg
                 width="20"
                 height="20"
@@ -75,41 +246,41 @@ export default function TestimonialsSection() {
             </button>
           </div>
 
-          <article className="testimonial-card card-naman">
-            <div className="card-img-container">
+          <article style={styles.testimonialCard}>
+            <div style={styles.cardImgContainerNaman}>
               <Image
                 src={naman.img}
                 alt={naman.name}
                 width={380}
                 height={520}
-                className="card-img"
+                style={styles.cardImg}
               />
-              <div className="quote-bar">
-                <div className="yellow-line"></div>
-                <p className="quote-text-overlay">{naman.quote}</p>
+              <div style={styles.quoteBar}>
+                <div style={styles.yellowLine}></div>
+                <p style={styles.quoteTextOverlay}>{naman.quote}</p>
               </div>
             </div>
-            <div className="card-info">
-              <h3 className="person-name">{naman.name}</h3>
-              <p className="person-batch">{naman.batch}</p>
-              <p className="person-role">{naman.role}</p>
+            <div style={styles.cardInfo}>
+              <h3 style={styles.personName}>{naman.name}</h3>
+              <p style={styles.personBatch}>{naman.batch}</p>
+              <p style={styles.personRole}>{naman.role}</p>
             </div>
           </article>
         </div>
 
         {/* MIDDLE COLUMN - Two Cards */}
-        <div className="column column-middle">
-          <article className="testimonial-card card-yashika rounded-card">
-            <div className="card-img-container">
+        <div style={styles.columnMiddle}>
+          <article style={styles.testimonialCard}>
+            <div style={styles.cardImgContainerYashika}>
               <Image
                 src={yashika.img}
                 alt={yashika.name}
                 width={340}
                 height={280}
-                className="card-img"
+                style={styles.cardImg}
               />
               {yashika.video && (
-                <div className="play-btn">
+                <div style={styles.playBtn}>
                   <svg
                     width="14"
                     height="14"
@@ -121,23 +292,23 @@ export default function TestimonialsSection() {
                 </div>
               )}
             </div>
-            <div className="card-info">
-              <h3 className="person-name">{yashika.name}</h3>
-              <p className="person-batch">{yashika.batch}</p>
-              <p className="person-role">{yashika.role}</p>
+            <div style={styles.cardInfo}>
+              <h3 style={styles.personName}>{yashika.name}</h3>
+              <p style={styles.personBatch}>{yashika.batch}</p>
+              <p style={styles.personRole}>{yashika.role}</p>
             </div>
           </article>
-          <article className="testimonial-card card-yashika rounded-card">
-            <div className="card-img-container">
+          <article style={styles.testimonialCard}>
+            <div style={styles.cardImgContainerYashika}>
               <Image
                 src={yashika.img}
                 alt={yashika.name}
                 width={340}
                 height={280}
-                className="card-img"
+                style={styles.cardImg}
               />
               {yashika.video && (
-                <div className="play-btn">
+                <div style={styles.playBtn}>
                   <svg
                     width="14"
                     height="14"
@@ -149,27 +320,27 @@ export default function TestimonialsSection() {
                 </div>
               )}
             </div>
-            <div className="card-info">
-              <h3 className="person-name">{yashika.name}</h3>
-              <p className="person-batch">{yashika.batch}</p>
-              <p className="person-role">{yashika.role}</p>
+            <div style={styles.cardInfo}>
+              <h3 style={styles.personName}>{yashika.name}</h3>
+              <p style={styles.personBatch}>{yashika.batch}</p>
+              <p style={styles.personRole}>{yashika.role}</p>
             </div>
           </article>
         </div>
 
         {/* RIGHT COLUMN - Two Cards */}
-        <div className="column column-right">
-          <article className="testimonial-card card-nadeem">
-            <div className="card-img-container">
+        <div style={styles.columnRight}>
+          <article style={styles.testimonialCard}>
+            <div style={styles.cardImgContainerNadeem}>
               <Image
                 src={nadeem.img}
                 alt={nadeem.name}
                 width={380}
                 height={380}
-                className=""
+                style={styles.cardImg}
               />
               {nadeem.video && (
-                <div className="play-btn">
+                <div style={styles.playBtn}>
                   <svg
                     width="14"
                     height="14"
@@ -181,292 +352,34 @@ export default function TestimonialsSection() {
                 </div>
               )}
             </div>
-            <div className="card-info">
-              <h3 className="person-name">{nadeem.name}</h3>
-              <p className="person-batch">{nadeem.batch}</p>
-              <p className="person-role">{nadeem.role}</p>
+            <div style={styles.cardInfo}>
+              <h3 style={styles.personName}>{nadeem.name}</h3>
+              <p style={styles.personBatch}>{nadeem.batch}</p>
+              <p style={styles.personRole}>{nadeem.role}</p>
             </div>
           </article>
 
-          <article className="testimonial-card card-ritika rounded-card">
-            <div className="card-img-container">
+          <article style={styles.testimonialCard}>
+            <div style={styles.cardImgContainerRitika}>
               <Image
                 src={ritika.img}
                 alt={ritika.name}
                 width={340}
                 height={280}
-                className="card-img"
+                style={styles.cardImg}
               />
-              <div className="quote-bar bottom-quote">
-                <div className="yellow-line"></div>
-                <p className="quote-text-overlay">{ritika.quote}</p>
+              <div style={styles.quoteBar}>
+                <div style={styles.yellowLine}></div>
+                <p style={styles.quoteTextOverlay}>{ritika.quote}</p>
               </div>
             </div>
-            <div className="card-info">
-              <h3 className="person-name">{ritika.name}</h3>
-              <p className="person-batch">{ritika.batch}</p>
+            <div style={styles.cardInfo}>
+              <h3 style={styles.personName}>{ritika.name}</h3>
+              <p style={styles.personBatch}>{ritika.batch}</p>
             </div>
           </article>
         </div>
       </div>
-
-      <style jsx>{`
-        .testimonials-section {
-          background: #f5f5f5;
-          padding: 80px 60px;
-        }
-
-        .testimonials-container {
-          align-items: flex-start;
-          justify-content: center;
-          gap: 5rem;
-          width: 100%;
-          max-width: 100%;
-          margin: 0 auto;
-          display: flex;
-        }
-
-        .column {
-          display: flex;
-          flex-direction: column;
-          gap: 28px;
-        }
-
-        .column-left {
-          flex: 0 0 auto;
-          width: 330px;
-        }
-
-        .column-middle {
-          flex: 0 0 auto;
-          width: 290px;
-        }
-
-        .column-right {
-          margin-top: 5rem;
-          width: 330px;
-        }
-
-        /* Header Styling */
-        .header-content {
-          margin-bottom: 40px;
-        }
-
-        .testimonials-label {
-          font-size: 15px;
-          font-weight: 700;
-          color: #000;
-          margin: 0 0 16px 0;
-        }
-
-        .main-heading {
-          font-size: 3rem;
-          font-weight: 700;
-          line-height: 1.2;
-          color: #000;
-          margin: 0 0 24px 0;
-        }
-
-        .blue-text {
-          color: #4a90e2;
-        }
-
-        .circle-arrow-btn {
-          cursor: pointer;
-          color: #666;
-          background: 0 0;
-          border: 2px solid #ccc;
-          border-radius: 50%;
-          justify-content: center;
-          align-items: center;
-          width: 24px;
-          height: 24px;
-          transition: all 0.3s;
-          display: flex;
-        }
-
-        .circle-arrow-btn:hover {
-          border-color: #4a90e2;
-          color: #4a90e2;
-        }
-
-        /* Card Styling */
-        .testimonial-card {
-          border-top-left-radius: 30px;
-          border-bottom-right-radius: 30px;
-          overflow: hidden;
-        }
-
-        .card-img-container {
-          position: relative;
-          width: 100%;
-          overflow: hidden;
-        }
-
-        .card-naman .card-img-container {
-          height: 100%;
-        }
-
-        .card-apoorv .card-img-container {
-          height: 400px;
-          background: #c8c8c8;
-        }
-
-        .card-yashika .card-img-container {
-          height: 100%;
-        }
-
-        .card-nadeem .card-img-container {
-          height: 100%;
-        }
-
-        .card-ritika .card-img-container {
-          height: 100%;
-        }
-
-        .card-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-
-        /* Gray Placeholder */
-        .gray-placeholder {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-        }
-
-        .placeholder-icon {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .placeholder-text {
-          font-size: 13px;
-          color: #999;
-          font-weight: 500;
-          margin: 0;
-        }
-
-        /* Quote Bar */
-        .quote-bar {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 20px 24px;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.75) 0%,
-            rgba(0, 0, 0, 0.4) 60%,
-            transparent 100%
-          );
-        }
-
-        .middle-quote {
-          bottom: 60px;
-        }
-
-        .bottom-quote {
-          bottom: 0;
-        }
-
-        .yellow-line {
-          width: 40px;
-          height: 3px;
-          background: #fbbf24;
-          margin-bottom: 10px;
-        }
-
-        .quote-text-overlay {
-          color: white;
-          font-size: 13px;
-          line-height: 1.5;
-          margin: 0;
-        }
-
-        /* Play Button */
-        .play-btn {
-          position: absolute;
-          top: 18px;
-          right: 18px;
-          width: 44px;
-          height: 44px;
-          background: #fbbf24;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #000;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          cursor: pointer;
-        }
-
-        /* Card Info */
-        .card-info {
-          padding: 18px 22px;
-          background: white;
-        }
-
-        .person-name {
-          font-size: 15px;
-          font-weight: 700;
-          color: #000;
-          margin: 0 0 4px 0;
-          letter-spacing: 0.3px;
-        }
-
-        .person-batch {
-          font-size: 12px;
-          color: #666;
-          margin: 0 0 4px 0;
-        }
-
-        .person-role {
-          font-size: 12px;
-          color: #000;
-          margin: 0;
-          line-height: 1.4;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-          .testimonials-container {
-            flex-wrap: wrap;
-          }
-
-          .column-left,
-          .column-middle,
-          .column-right {
-            width: calc(50% - 14px);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .testimonials-section {
-            padding: 60px 20px;
-          }
-
-          .testimonials-container {
-            flex-direction: column;
-          }
-
-          .column-left,
-          .column-middle,
-          .column-right {
-            width: 100%;
-          }
-
-          .main-heading {
-            font-size: 32px;
-          }
-        }
-      `}</style>
     </section>
   );
 }
