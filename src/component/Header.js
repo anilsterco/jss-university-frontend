@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -146,22 +147,78 @@ export default function Header() {
     {
       name: "About JSS University",
       subMenu: ["Overview", "Scholarships", "International Students"],
-      img: "/images/header/hambuger-banner.png",
+      firstContent: {
+        title:
+          "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+        desc: "The Genesis of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-first-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
+      secondContent: {
+        title: "<span class='blue-text'>21+</span> Acres",
+        desc: "Campus Area of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-second-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
     },
     {
       name: "Academics",
       subMenu: ["Undergraduate", "Postgraduate", "Doctoral"],
-      img: "/images/hambuger-banner.png",
+      firstContent: {
+        title:
+          "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+        desc: "The Genesis of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-first-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
+      secondContent: {
+        title: "<span class='blue-text'>21+</span> Acres",
+        desc: "Campus Area of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-second-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
     },
     {
       name: "Facilities",
       subMenu: ["Hostels", "Clubs & Societies", "Events"],
-      img: "/images/hambuger-banner.png",
+      firstContent: {
+        title:
+          "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+        desc: "The Genesis of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-first-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
+      secondContent: {
+        title: "<span class='blue-text'>21+</span> Acres",
+        desc: "Campus Area of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-second-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
     },
     {
       name: "Students Support",
       subMenu: ["Apply Now", "Eligibility", "FAQs"],
-      img: "/images/home-banner.png",
+      firstContent: {
+        title:
+          "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+        desc: "The Genesis of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-first-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
+      secondContent: {
+        title: "<span class='blue-text'>21+</span> Acres",
+        desc: "Campus Area of the social-educational-spritual philosophy.",
+        img: "/images/header/humburger-second-banner.png",
+        alt: "hambuger banner",
+        url: "/",
+      },
     },
   ];
 
@@ -519,16 +576,51 @@ export default function Header() {
           </section>
 
           <section className="menu-right">
-            <div className="right-inner">
+            <div className="right-inner h-100">
               <div className="image-box">
-                <Image
-                  src={activeData.img}
-                  alt={activeData.name}
-                  width={620}
-                  height={400}
-                  style={{ objectFit: "cover" }}
-                  sizes="100vw"
-                />
+                <div className="first-content">
+                  <h1
+                    dangerouslySetInnerHTML={{
+                      __html: activeData.firstContent.title,
+                    }}
+                  />
+                  <p>{activeData.firstContent.desc}</p>
+                  <Link href={activeData.firstContent.url}>
+                    <FiArrowRightCircle className="mb-5" />
+                  </Link>
+                  <div className="hamburger-section-img">
+                    <Link href={activeData.firstContent.url}>
+                      <Image
+                        src={activeData.firstContent.img}
+                        alt={activeData.firstContent.alt}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="100vw"
+                      />
+                    </Link>
+                  </div>
+                </div>
+                <div className="second-content">
+                  <div className="hamburger-section-img">
+                    <Link href={activeData.secondContent.url}>
+                      <Image
+                        src={activeData.secondContent.img}
+                        alt={activeData.secondContent.alt}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="100vw"
+                      />
+                    </Link>
+                  </div>
+                  <div className="d-flex align-items-start mt-5 flex-wrap">
+                    <h1
+                      dangerouslySetInnerHTML={{
+                        __html: activeData.secondContent.title,
+                      }}
+                    />
+                    <p>{activeData.secondContent.desc}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -536,6 +628,19 @@ export default function Header() {
       </div>
 
       <style jsx>{`
+        .right-inner .hamburger-section-img {
+          position: relative;
+          height: 50%;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 12px;
+        }
+        .right-inner .first-content {
+          width: 30%;
+        }
+        .right-inner .second-content {
+          width: 40%;
+        }
         .site-header {
           position: fixed;
           top: 0;
@@ -551,6 +656,28 @@ export default function Header() {
           margin-top: 10rem;
           margin-bottom: 5rem;
           height: 70%;
+        }
+        .right-inner .second-content h1 {
+          font-size: 4rem;
+          width: 50%;
+          font-weight: 700;
+          line-height: 60px;
+        }
+        .right-inner .second-content p {
+          font-size: 0.9rem;
+          width: 50%;
+          margin-top: 1rem;
+          padding-bottom: 1rem;
+          border-bottom: 2px solid #ffcc00;
+        }
+        .right-inner .first-content h1 {
+          font-size: 2.2rem;
+          font-weight: 700;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+        .right-inner .first-content p {
+          font-size: 0.9rem;
         }
         .right-navbar-section,
         .right-navbar {
@@ -824,7 +951,7 @@ export default function Header() {
           position: absolute;
           top: 0;
           right: 0;
-          height: 55%;
+          height: 80%;
           width: 0;
           display: flex;
           overflow: hidden;
@@ -889,12 +1016,15 @@ export default function Header() {
         .menu-right {
           flex: 1;
           background: #fafafa;
-          padding: 28px;
+          padding: 5rem 3rem;
+          width: 60%;
           overflow-y: auto;
         }
         .image-box {
           display: flex;
           justify-content: center;
+          height: 100%;
+          gap: 3rem;
         }
 
         .close-btn {
