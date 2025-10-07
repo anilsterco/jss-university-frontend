@@ -11,9 +11,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$js
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.mjs [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -278,7 +280,20 @@ function Header() {
                 "Scholarships",
                 "International Students"
             ],
-            img: "/images/header/hambuger-banner.png"
+            firstContent: {
+                title: "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+                desc: "The Genesis of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-first-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            },
+            secondContent: {
+                title: "<span class='blue-text'>21+</span> Acres",
+                desc: "Campus Area of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-second-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            }
         },
         {
             name: "Academics",
@@ -287,7 +302,20 @@ function Header() {
                 "Postgraduate",
                 "Doctoral"
             ],
-            img: "/images/hambuger-banner.png"
+            firstContent: {
+                title: "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+                desc: "The Genesis of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-first-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            },
+            secondContent: {
+                title: "<span class='blue-text'>21+</span> Acres",
+                desc: "Campus Area of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-second-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            }
         },
         {
             name: "Facilities",
@@ -296,7 +324,20 @@ function Header() {
                 "Clubs & Societies",
                 "Events"
             ],
-            img: "/images/hambuger-banner.png"
+            firstContent: {
+                title: "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+                desc: "The Genesis of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-first-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            },
+            secondContent: {
+                title: "<span class='blue-text'>21+</span> Acres",
+                desc: "Campus Area of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-second-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            }
         },
         {
             name: "Students Support",
@@ -305,7 +346,20 @@ function Header() {
                 "Eligibility",
                 "FAQs"
             ],
-            img: "/images/home-banner.png"
+            firstContent: {
+                title: "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
+                desc: "The Genesis of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-first-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            },
+            secondContent: {
+                title: "<span class='blue-text'>21+</span> Acres",
+                desc: "Campus Area of the social-educational-spritual philosophy.",
+                img: "/images/header/humburger-second-banner.png",
+                alt: "hambuger banner",
+                url: "/"
+            }
         }
     ];
     const admissionsData = {
@@ -427,18 +481,18 @@ function Header() {
             }
         }, void 0, false, {
             fileName: "[project]/src/component/Header.js",
-            lineNumber: 256,
+            lineNumber: 313,
             columnNumber: 7
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "jsx-64ca288ec2be7095" + " " + "site-header",
+        className: "jsx-2e0387e3b863dcba" + " " + "site-header",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-64ca288ec2be7095" + " " + "nav-container ".concat(scrolled ? "header-scrolled" : ""),
+                className: "jsx-2e0387e3b863dcba" + " " + "nav-container ".concat(scrolled ? "header-scrolled" : ""),
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-64ca288ec2be7095" + " " + "brand-wrap logo-content",
+                        className: "jsx-2e0387e3b863dcba" + " " + "brand-wrap logo-content",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/",
                             "aria-label": "Home",
@@ -453,92 +507,92 @@ function Header() {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 274,
+                                    lineNumber: 331,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-64ca288ec2be7095" + " " + "logo-text",
+                                    className: "jsx-2e0387e3b863dcba" + " " + "logo-text",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-64ca288ec2be7095" + " " + "d-flex  align-items-center gap-2",
+                                            className: "jsx-2e0387e3b863dcba" + " " + "d-flex  align-items-center gap-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-64ca288ec2be7095",
+                                                    className: "jsx-2e0387e3b863dcba",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                            className: "jsx-64ca288ec2be7095" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-primary-text"),
+                                                            className: "jsx-2e0387e3b863dcba" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-primary-text"),
                                                             children: "NAAC"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 285,
+                                                            lineNumber: 342,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                            className: "jsx-64ca288ec2be7095" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-secondry-text"),
+                                                            className: "jsx-2e0387e3b863dcba" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-secondry-text"),
                                                             children: "GRADE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 292,
+                                                            lineNumber: 349,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 284,
+                                                    lineNumber: 341,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                    className: "jsx-64ca288ec2be7095" + " " + "".concat(scrolled ? "yellow-text" : "", " mb-0 logo-tertiary-text"),
+                                                    className: "jsx-2e0387e3b863dcba" + " " + "".concat(scrolled ? "yellow-text" : "", " mb-0 logo-tertiary-text"),
                                                     children: "A"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 300,
+                                                    lineNumber: 357,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 283,
+                                            lineNumber: 340,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "jsx-64ca288ec2be7095" + " " + "".concat(scrolled ? "text-dark" : "", " mb-0"),
+                                            className: "jsx-2e0387e3b863dcba" + " " + "".concat(scrolled ? "text-dark" : "", " mb-0"),
                                             children: "JSS is NAAC 'A' Grade Accredited"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 308,
+                                            lineNumber: 365,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 282,
+                                    lineNumber: 339,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/Header.js",
-                            lineNumber: 273,
+                            lineNumber: 330,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 272,
+                        lineNumber: 329,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-64ca288ec2be7095" + " " + "right-navbar",
+                        className: "jsx-2e0387e3b863dcba" + " " + "right-navbar",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                 "aria-label": "Main navigation",
-                                className: "jsx-64ca288ec2be7095" + " " + "desktop-nav",
+                                className: "jsx-2e0387e3b863dcba" + " " + "desktop-nav",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "jsx-64ca288ec2be7095" + " " + "nav-list",
+                                    className: "jsx-2e0387e3b863dcba" + " " + "nav-list",
                                     children: navLinks.map((l, i)=>{
                                         var _l_right_ctas, _l_right_banners, _l_dropdown_;
                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             onClick: ()=>setActiveLink(i),
-                                            className: "jsx-64ca288ec2be7095" + " " + "nav-item",
+                                            className: "jsx-2e0387e3b863dcba" + " " + "nav-item",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: l.href,
@@ -546,101 +600,101 @@ function Header() {
                                                     children: l.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 324,
+                                                    lineNumber: 381,
                                                     columnNumber: 19
                                                 }, this),
                                                 l.dropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     role: "menu",
-                                                    className: "jsx-64ca288ec2be7095" + " " + "mega-dropdown",
+                                                    className: "jsx-2e0387e3b863dcba" + " " + "mega-dropdown",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-64ca288ec2be7095" + " " + "mega-left",
+                                                            className: "jsx-2e0387e3b863dcba" + " " + "mega-left",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                className: "jsx-64ca288ec2be7095",
+                                                                className: "jsx-2e0387e3b863dcba",
                                                                 children: l.dropdown.map((d, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "mega-left-item",
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "mega-left-item",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                             href: d.href,
                                                                             className: "dropdown-item",
                                                                             children: d.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/component/Header.js",
-                                                                            lineNumber: 338,
+                                                                            lineNumber: 395,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     }, j, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 337,
+                                                                        lineNumber: 394,
                                                                         columnNumber: 29
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 335,
+                                                                lineNumber: 392,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 334,
+                                                            lineNumber: 391,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-64ca288ec2be7095" + " " + "mega-right",
+                                                            className: "jsx-2e0387e3b863dcba" + " " + "mega-right",
                                                             children: l.right ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "mega-right-text",
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "mega-right-text",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "jsx-64ca288ec2be7095" + " " + "mega-subtitle",
+                                                                                className: "jsx-2e0387e3b863dcba" + " " + "mega-subtitle",
                                                                                 children: l.right.subtitle
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 350,
+                                                                                lineNumber: 407,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                                                className: "jsx-64ca288ec2be7095" + " " + "mega-title",
+                                                                                className: "jsx-2e0387e3b863dcba" + " " + "mega-title",
                                                                                 children: l.right.title
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 353,
+                                                                                lineNumber: 410,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "jsx-64ca288ec2be7095" + " " + "mega-desc",
+                                                                                className: "jsx-2e0387e3b863dcba" + " " + "mega-desc",
                                                                                 children: l.right.desc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 354,
+                                                                                lineNumber: 411,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                className: "jsx-64ca288ec2be7095" + " " + "mega-ctas",
+                                                                                className: "jsx-2e0387e3b863dcba" + " " + "mega-ctas",
                                                                                 children: (_l_right_ctas = l.right.ctas) === null || _l_right_ctas === void 0 ? void 0 : _l_right_ctas.map((cta, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                                         href: cta.href,
-                                                                                        className: "jsx-64ca288ec2be7095" + " " + "cta ".concat(cta.type),
+                                                                                        className: "jsx-2e0387e3b863dcba" + " " + "cta ".concat(cta.type),
                                                                                         children: cta.text
                                                                                     }, idx, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 357,
+                                                                                        lineNumber: 414,
                                                                                         columnNumber: 35
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 355,
+                                                                                lineNumber: 412,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 349,
+                                                                        lineNumber: 406,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "mega-right-banners",
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "mega-right-banners",
                                                                         children: (_l_right_banners = l.right.banners) === null || _l_right_banners === void 0 ? void 0 : _l_right_banners.map((b, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                                 href: b.href,
-                                                                                className: "jsx-64ca288ec2be7095" + " " + "banner",
+                                                                                className: "jsx-2e0387e3b863dcba" + " " + "banner",
                                                                                 children: [
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                                         src: b.img,
@@ -649,243 +703,243 @@ function Header() {
                                                                                         height: 160
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 371,
+                                                                                        lineNumber: 428,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                        className: "jsx-64ca288ec2be7095" + " " + "banner-label",
+                                                                                        className: "jsx-2e0387e3b863dcba" + " " + "banner-label",
                                                                                         children: b.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 377,
+                                                                                        lineNumber: 434,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 ]
                                                                             }, idx, true, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 370,
+                                                                                lineNumber: 427,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 368,
+                                                                        lineNumber: 425,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "mega-right-text",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "mega-right-text",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                    className: "jsx-64ca288ec2be7095" + " " + "mega-title",
+                                                                    className: "jsx-2e0387e3b863dcba" + " " + "mega-title",
                                                                     children: l.dropdown && ((_l_dropdown_ = l.dropdown[0]) === null || _l_dropdown_ === void 0 ? void 0 : _l_dropdown_.name)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/Header.js",
-                                                                    lineNumber: 386,
+                                                                    lineNumber: 443,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 385,
+                                                                lineNumber: 442,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 346,
+                                                            lineNumber: 403,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 333,
+                                                    lineNumber: 390,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 319,
+                                            lineNumber: 376,
                                             columnNumber: 17
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 317,
+                                    lineNumber: 374,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 316,
+                                lineNumber: 373,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-64ca288ec2be7095" + " " + "right-navbar-section",
+                                className: "jsx-2e0387e3b863dcba" + " " + "right-navbar-section",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         ref: admissionRef,
-                                        className: "jsx-64ca288ec2be7095" + " " + "admission-wrap",
+                                        className: "jsx-2e0387e3b863dcba" + " " + "admission-wrap",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setAdmissionOpen((prev)=>!prev),
-                                                className: "jsx-64ca288ec2be7095" + " " + "admission-btn",
+                                                className: "jsx-2e0387e3b863dcba" + " " + "admission-btn",
                                                 children: "ADMISSIONS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 401,
+                                                lineNumber: 458,
                                                 columnNumber: 15
                                             }, this),
                                             admissionOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-64ca288ec2be7095" + " " + "admission-dropdown",
+                                                className: "jsx-2e0387e3b863dcba" + " " + "admission-dropdown",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-64ca288ec2be7095" + " " + "dropdown-arrow"
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "dropdown-arrow"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 410,
+                                                        lineNumber: 467,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-64ca288ec2be7095" + " " + "ad-left",
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "ad-left",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-subtitle",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-subtitle",
                                                                 children: admissionsData.left.subtitle
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 412,
+                                                                lineNumber: 469,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-title",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-title",
                                                                 children: admissionsData.left.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 415,
+                                                                lineNumber: 472,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-desc",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-desc",
                                                                 children: admissionsData.left.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 416,
+                                                                lineNumber: 473,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-contact",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-contact",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-64ca288ec2be7095",
+                                                                        className: "jsx-2e0387e3b863dcba",
                                                                         children: [
                                                                             "📧 ",
                                                                             admissionsData.left.email
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 418,
+                                                                        lineNumber: 475,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-64ca288ec2be7095",
+                                                                        className: "jsx-2e0387e3b863dcba",
                                                                         children: [
                                                                             "📞 ",
                                                                             admissionsData.left.phone
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 419,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 417,
+                                                                lineNumber: 474,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-ctas",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-ctas",
                                                                 children: admissionsData.left.ctas.map((cta, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                         href: cta.href,
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "cta ".concat(cta.type),
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "cta ".concat(cta.type),
                                                                         children: cta.text
                                                                     }, idx, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 423,
+                                                                        lineNumber: 480,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 421,
+                                                                lineNumber: 478,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 411,
+                                                        lineNumber: 468,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-64ca288ec2be7095" + " " + "ad-middle",
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "ad-middle",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                className: "jsx-64ca288ec2be7095",
+                                                                className: "jsx-2e0387e3b863dcba",
                                                                 children: admissionsData.middle.links.map((link, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "ad-link",
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "ad-link",
                                                                         children: [
                                                                             link,
                                                                             " →"
                                                                         ]
                                                                     }, idx, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 437,
+                                                                        lineNumber: 494,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 435,
+                                                                lineNumber: 492,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-64ca288ec2be7095" + " " + "ad-stats",
+                                                                className: "jsx-2e0387e3b863dcba" + " " + "ad-stats",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                        className: "jsx-64ca288ec2be7095",
+                                                                        className: "jsx-2e0387e3b863dcba",
                                                                         children: admissionsData.middle.stats.text
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 443,
+                                                                        lineNumber: 500,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-64ca288ec2be7095",
+                                                                        className: "jsx-2e0387e3b863dcba",
                                                                         children: admissionsData.middle.stats.subtext
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 444,
+                                                                        lineNumber: 501,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: "jsx-64ca288ec2be7095" + " " + "stats-btn",
+                                                                        className: "jsx-2e0387e3b863dcba" + " " + "stats-btn",
                                                                         children: [
                                                                             admissionsData.middle.stats.btnText,
                                                                             " →"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 445,
+                                                                        lineNumber: 502,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 442,
+                                                                lineNumber: 499,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 434,
+                                                        lineNumber: 491,
                                                         columnNumber: 19
                                                     }, this),
                                                     admissionsData.right && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-64ca288ec2be7095" + " " + "ad-right",
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "ad-right",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             src: admissionsData.right.img,
                                                             alt: admissionsData.right.alt,
@@ -894,189 +948,308 @@ function Header() {
                                                             className: "addmision-section-img"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 453,
+                                                            lineNumber: 510,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 452,
+                                                        lineNumber: 509,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 409,
+                                                lineNumber: 466,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 400,
+                                        lineNumber: 457,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         "aria-label": "Open menu",
                                         onClick: openMenu,
-                                        className: "jsx-64ca288ec2be7095" + " " + "hamburger",
+                                        className: "jsx-2e0387e3b863dcba" + " " + "hamburger",
                                         children: "☰"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 466,
+                                        lineNumber: 523,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 399,
+                                lineNumber: 456,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 315,
+                        lineNumber: 372,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 271,
+                lineNumber: 328,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 onClick: closeMenu,
-                className: "jsx-64ca288ec2be7095" + " " + "backdrop ".concat(menuOpen ? "show" : "")
+                className: "jsx-2e0387e3b863dcba" + " " + "backdrop ".concat(menuOpen ? "show" : "")
             }, void 0, false, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 477,
+                lineNumber: 534,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 role: "dialog",
-                className: "jsx-64ca288ec2be7095" + " " + "menu-overlay ".concat(menuOpen ? "open" : ""),
+                className: "jsx-2e0387e3b863dcba" + " " + "menu-overlay ".concat(menuOpen ? "open" : ""),
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         "aria-label": "Close menu",
                         onClick: closeMenu,
-                        className: "jsx-64ca288ec2be7095" + " " + "close-btn",
+                        className: "jsx-2e0387e3b863dcba" + " " + "close-btn",
                         children: "×"
                     }, void 0, false, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 483,
+                        lineNumber: 540,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-64ca288ec2be7095" + " " + "hamburger-layout",
+                        className: "jsx-2e0387e3b863dcba" + " " + "hamburger-layout",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
-                                className: "jsx-64ca288ec2be7095" + " " + "menu-left",
+                                className: "jsx-2e0387e3b863dcba" + " " + "menu-left",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "jsx-64ca288ec2be7095",
+                                    className: "jsx-2e0387e3b863dcba",
                                     children: hamburgerMenudata.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             onClick: ()=>setActiveIndex(idx),
-                                            className: "jsx-64ca288ec2be7095" + " " + "menu-left-item ".concat(activeIndex === idx ? "active" : ""),
+                                            className: "jsx-2e0387e3b863dcba" + " " + "menu-left-item ".concat(activeIndex === idx ? "active" : ""),
                                             children: item.name
                                         }, idx, false, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 495,
+                                            lineNumber: 552,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 493,
+                                    lineNumber: 550,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 492,
+                                lineNumber: 549,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-64ca288ec2be7095" + " " + "menu-middle",
+                                className: "jsx-2e0387e3b863dcba" + " " + "menu-middle",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "jsx-64ca288ec2be7095" + " " + "middle-title",
+                                        className: "jsx-2e0387e3b863dcba" + " " + "middle-title",
                                         children: "ABOUT JSSMVP HERITAGE ABOUT JSS LEADERSHIP"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 509,
+                                        lineNumber: 566,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "jsx-64ca288ec2be7095",
+                                        className: "jsx-2e0387e3b863dcba",
                                         children: activeData.subMenu.map((s, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "jsx-64ca288ec2be7095" + " " + "middle-item",
+                                                className: "jsx-2e0387e3b863dcba" + " " + "middle-item",
                                                 children: s
                                             }, i, false, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 514,
+                                                lineNumber: 571,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 512,
+                                        lineNumber: 569,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 508,
+                                lineNumber: 565,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-64ca288ec2be7095" + " " + "menu-right",
+                                className: "jsx-2e0387e3b863dcba" + " " + "menu-right",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-64ca288ec2be7095" + " " + "right-inner",
+                                    className: "jsx-2e0387e3b863dcba" + " " + "right-inner h-100",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-64ca288ec2be7095" + " " + "image-box",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            src: activeData.img,
-                                            alt: activeData.name,
-                                            width: 620,
-                                            height: 400,
-                                            style: {
-                                                objectFit: "cover"
-                                            },
-                                            sizes: "100vw"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 524,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
+                                        className: "jsx-2e0387e3b863dcba" + " " + "image-box",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-2e0387e3b863dcba" + " " + "first-content",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                                        dangerouslySetInnerHTML: {
+                                                            __html: activeData.firstContent.title
+                                                        },
+                                                        className: "jsx-2e0387e3b863dcba"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 582,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "jsx-2e0387e3b863dcba",
+                                                        children: activeData.firstContent.desc
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 587,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                        href: activeData.firstContent.url,
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiArrowRightCircle"], {
+                                                            className: "mb-5"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/component/Header.js",
+                                                            lineNumber: 589,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 588,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "hamburger-section-img",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: activeData.firstContent.url,
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                src: activeData.firstContent.img,
+                                                                alt: activeData.firstContent.alt,
+                                                                fill: true,
+                                                                style: {
+                                                                    objectFit: "cover"
+                                                                },
+                                                                sizes: "100vw"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/component/Header.js",
+                                                                lineNumber: 593,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/component/Header.js",
+                                                            lineNumber: 592,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 591,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/component/Header.js",
+                                                lineNumber: 581,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-2e0387e3b863dcba" + " " + "second-content",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "hamburger-section-img",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: activeData.secondContent.url,
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                src: activeData.secondContent.img,
+                                                                alt: activeData.secondContent.alt,
+                                                                fill: true,
+                                                                style: {
+                                                                    objectFit: "cover"
+                                                                },
+                                                                sizes: "100vw"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/component/Header.js",
+                                                                lineNumber: 606,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/component/Header.js",
+                                                            lineNumber: 605,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 604,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-2e0387e3b863dcba" + " " + "d-flex align-items-start mt-5 flex-wrap",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                                                dangerouslySetInnerHTML: {
+                                                                    __html: activeData.secondContent.title
+                                                                },
+                                                                className: "jsx-2e0387e3b863dcba"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/component/Header.js",
+                                                                lineNumber: 616,
+                                                                columnNumber: 21
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "jsx-2e0387e3b863dcba",
+                                                                children: activeData.secondContent.desc
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/component/Header.js",
+                                                                lineNumber: 621,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/component/Header.js",
+                                                        lineNumber: 615,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/component/Header.js",
+                                                lineNumber: 603,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 523,
+                                        lineNumber: 580,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 522,
+                                    lineNumber: 579,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 521,
+                                lineNumber: 578,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 491,
+                        lineNumber: 548,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 482,
+                lineNumber: 539,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "64ca288ec2be7095",
-                children: ".site-header.jsx-64ca288ec2be7095{z-index:1100;position:fixed;top:0;left:0;right:0}.mega-right-banners.jsx-64ca288ec2be7095{justify-content:end;gap:1rem;width:70%;height:70%;margin-top:10rem;margin-bottom:5rem;display:flex}.right-navbar-section.jsx-64ca288ec2be7095,.right-navbar.jsx-64ca288ec2be7095{align-items:center;display:flex}.logo-tertiary-text.jsx-64ca288ec2be7095{font-size:55px}.logo-secondry-text.jsx-64ca288ec2be7095,.logo-primary-text.jsx-64ca288ec2be7095{font-size:22px;font-weight:700}.logo-text.jsx-64ca288ec2be7095 p.jsx-64ca288ec2be7095{border-bottom:2px solid #f8c326;padding-bottom:8px;font-size:12px}.logo-text.jsx-64ca288ec2be7095{color:#fff;border-left:1px solid #cfc7c7;padding-left:1.5rem}.nav-container.jsx-64ca288ec2be7095{justify-content:space-between;align-items:center;max-width:100%;margin:0 auto;padding:1rem 5rem;transition:all .3s;display:flex}.nav-list.jsx-64ca288ec2be7095{color:#fff;background-color:#16344e;gap:30px;margin:0 1rem 0 0;padding:.1rem 2rem;font-size:20px;list-style:none;display:flex}.nav-item.jsx-64ca288ec2be7095{position:relative}.nav-container.header-scrolled.jsx-64ca288ec2be7095{background-color:#fff}.nav-link.jsx-64ca288ec2be7095{color:inherit;padding:6px 8px;font-size:16px;font-weight:600;text-decoration:none;transition:color .3s;display:inline-block}.header-scrolled.jsx-64ca288ec2be7095 .nav-link.jsx-64ca288ec2be7095{color:#16344e}.dropdown.jsx-64ca288ec2be7095{z-index:1;color:#000;background:#fff;border:1px solid #eee;min-width:200px;padding:8px 15px;list-style:none;display:none;position:absolute;top:100%;left:0;box-shadow:0 4px 12px rgba(0,0,0,.1)}.dropdown-item.jsx-64ca288ec2be7095{color:#16344e;padding:8px 14px;text-decoration:none;display:block}.dropdown-item.jsx-64ca288ec2be7095:hover{background:#f5f5f5}.admission-wrap.jsx-64ca288ec2be7095{margin-right:12px;position:relative}.admission-btn.jsx-64ca288ec2be7095{cursor:pointer;background:#ffc100;border:none;padding:10px 18px;font-size:15px;font-weight:700;transition:background .3s}.admission-btn.jsx-64ca288ec2be7095:hover{background:#e6b000}.admission-dropdown.jsx-64ca288ec2be7095{z-index:1200;background:#fff;width:70%;margin-top:6px;display:flex;position:fixed;top:6rem;right:10rem;box-shadow:0 6px 18px rgba(0,0,0,.2)}.dropdown-arrow.jsx-64ca288ec2be7095{border-bottom:10px solid #fff;border-left:10px solid transparent;border-right:10px solid transparent;width:0;height:0;position:absolute;top:-10px;right:40px}.ad-left.jsx-64ca288ec2be7095{color:#fff;background:#2f7de8;flex-direction:column;justify-content:space-between;width:100%;padding:24px;display:flex}.ad-right.jsx-64ca288ec2be7095{width:100%}.ad-subtitle.jsx-64ca288ec2be7095{text-transform:uppercase;margin-bottom:8px;font-size:13px}.ad-title.jsx-64ca288ec2be7095{margin-bottom:12px;font-size:22px;font-weight:700}.ad-desc.jsx-64ca288ec2be7095,.ad-contact.jsx-64ca288ec2be7095{margin-bottom:16px;font-size:14px}.ad-ctas.jsx-64ca288ec2be7095{flex-wrap:wrap;gap:8px;display:flex}.cta.jsx-64ca288ec2be7095{cursor:pointer;border:none;padding:8px 14px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .3s}.cta.jsx-64ca288ec2be7095:hover{opacity:.9}.cta.primary.jsx-64ca288ec2be7095{color:#000;background:#ffc100}.cta.secondary.jsx-64ca288ec2be7095{color:#2f7de8;border:1px solid #fff}.ad-middle.jsx-64ca288ec2be7095{border-right:1px solid #eee;width:100%;padding:24px}.ad-middle.jsx-64ca288ec2be7095 ul.jsx-64ca288ec2be7095{margin:0;padding:0;list-style:none}.ad-link.jsx-64ca288ec2be7095{cursor:pointer;color:#333;padding:6px 0;font-size:15px;font-weight:500;transition:color .3s}.ad-link.jsx-64ca288ec2be7095:hover{color:#2f7de8;text-decoration:underline}.ad-stats.jsx-64ca288ec2be7095{margin-top:20px}.ad-stats.jsx-64ca288ec2be7095 h3.jsx-64ca288ec2be7095{margin-bottom:4px;font-size:18px;font-weight:700}.ad-stats.jsx-64ca288ec2be7095 p.jsx-64ca288ec2be7095{color:#777;margin-bottom:10px;font-size:13px}.stats-btn.jsx-64ca288ec2be7095{cursor:pointer;background:#fff;border:1px solid #000;padding:6px 12px;font-weight:600;transition:all .3s}.stats-btn.jsx-64ca288ec2be7095:hover{color:#fff;background:#000}.addmision-section-img.jsx-64ca288ec2be7095{object-fit:cover;width:100%;height:100%}.hamburger.jsx-64ca288ec2be7095{cursor:pointer;color:#fff;background:#16344e;border:none;padding:4px 10px;font-size:22px;transition:background .3s}.hamburger.jsx-64ca288ec2be7095:hover{background-color:#1e4264}.backdrop.jsx-64ca288ec2be7095{opacity:0;pointer-events:none;z-index:1190;background:rgba(0,0,0,.35);transition:opacity .25s;position:fixed;top:0;bottom:0;left:0;right:0}.backdrop.show.jsx-64ca288ec2be7095{opacity:1;pointer-events:all}.menu-overlay.jsx-64ca288ec2be7095{z-index:1200;pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}.menu-overlay.open.jsx-64ca288ec2be7095{pointer-events:auto}.hamburger-layout.jsx-64ca288ec2be7095{background:#fff;width:0;height:55%;transition:width .45s cubic-bezier(.2,.9,.2,1);display:flex;position:absolute;top:0;right:0;overflow:hidden}.menu-overlay.open.jsx-64ca288ec2be7095 .hamburger-layout.jsx-64ca288ec2be7095{width:100%}.menu-left.jsx-64ca288ec2be7095{color:#fff;background:#2f7de8;width:20%;padding-top:5rem}.menu-left-item.jsx-64ca288ec2be7095{cursor:pointer;margin-bottom:6px;padding:12px 14px 12px 5rem;font-size:21px;font-weight:600;transition:all .3s}.menu-left-item.jsx-64ca288ec2be7095:hover{background:#1e6fd8}.menu-left-item.active.jsx-64ca288ec2be7095{color:#000;background:#ffc100}.menu-left.jsx-64ca288ec2be7095 ul.jsx-64ca288ec2be7095{padding:0;list-style:none}.menu-middle.jsx-64ca288ec2be7095{background:#fff;border-right:1px solid #eee;width:20%;padding:5rem 3rem 1rem}.middle-title.jsx-64ca288ec2be7095{color:#000;text-transform:uppercase;margin-bottom:10px;font-size:21px}.middle-item.jsx-64ca288ec2be7095{cursor:pointer;border-bottom:1px dashed #eee;padding:8px 0;font-weight:700;transition:color .3s}.middle-item.jsx-64ca288ec2be7095:hover{color:#2f7de8}.menu-right.jsx-64ca288ec2be7095{background:#fafafa;flex:1;padding:28px;overflow-y:auto}.image-box.jsx-64ca288ec2be7095{justify-content:center;display:flex}.close-btn.jsx-64ca288ec2be7095{display:none}.menu-overlay.open.jsx-64ca288ec2be7095 .close-btn.jsx-64ca288ec2be7095{z-index:1300;background:unset;color:#000;cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;font-size:24px;font-weight:700;transition:background .3s;display:flex;position:absolute;top:20px;right:20px}.menu-overlay.open.jsx-64ca288ec2be7095 .close-btn.jsx-64ca288ec2be7095:hover{background:rgba(0,0,0,.1)}.mega-dropdown.jsx-64ca288ec2be7095{z-index:-1;background:#fff;gap:20px;width:100%;min-width:max-content;height:auto;display:none;position:fixed;top:0;left:0;box-shadow:0 8px 30px rgba(0,0,0,.15)}.nav-item.jsx-64ca288ec2be7095:hover>.mega-dropdown.jsx-64ca288ec2be7095,.nav-item.jsx-64ca288ec2be7095:focus-within>.mega-dropdown.jsx-64ca288ec2be7095{display:flex}.mega-left.jsx-64ca288ec2be7095{color:#fff;background:#2f7de8;width:20%;position:relative}.mega-left.jsx-64ca288ec2be7095 ul.jsx-64ca288ec2be7095{text-align:center;width:100%;margin:0;padding:0;list-style:none;position:absolute;top:35%}.mega-left-item.jsx-64ca288ec2be7095{cursor:pointer;padding:8px 0;font-weight:700}.mega-left-item.jsx-64ca288ec2be7095 .dropdown-item.jsx-64ca288ec2be7095{color:#fff;text-decoration:none}.mega-left-item.jsx-64ca288ec2be7095:hover{color:#000;background:#ffc100}.mega-right.jsx-64ca288ec2be7095{align-items:center;gap:3rem;width:80%;display:flex}.mega-right-text.jsx-64ca288ec2be7095{width:20%}.mega-subtitle.jsx-64ca288ec2be7095{color:#555;text-transform:uppercase;margin-bottom:6px;font-size:13px}.mega-title.jsx-64ca288ec2be7095{color:#16344e;margin-bottom:8px;font-size:24px;font-weight:700}.mega-desc.jsx-64ca288ec2be7095{color:#444;margin-bottom:12px;font-size:14px}.mega-ctas.jsx-64ca288ec2be7095{gap:12px;display:flex}.mega-banners.jsx-64ca288ec2be7095{align-items:center;gap:12px;display:flex}.banner.jsx-64ca288ec2be7095{border-radius:6px;width:100%;height:100%;text-decoration:none;display:block;position:relative;overflow:hidden}.banner.jsx-64ca288ec2be7095 img.jsx-64ca288ec2be7095,.banner.jsx-64ca288ec2be7095 img{object-fit:cover;width:100%;height:100%;display:block}.banner-label.jsx-64ca288ec2be7095{color:#fff;background:rgba(0,0,0,.5);border-radius:2px;width:100%;padding:15px 10px;font-size:14px;font-weight:700;position:absolute;bottom:0;left:0}@media (min-width:1024px) and (max-width:1420px){.mega-right-banners.jsx-64ca288ec2be7095{height:70%;margin-top:8rem;margin-bottom:3rem}.nav-container.jsx-64ca288ec2be7095{padding:1rem 2rem}.nav-list.jsx-64ca288ec2be7095{gap:20px;font-size:16px}.mega-right.jsx-64ca288ec2be7095{gap:1.5rem}.banner.jsx-64ca288ec2be7095{width:240px;height:200px}.admission-dropdown.jsx-64ca288ec2be7095{width:85%;top:6rem;right:5rem}}@media (max-width:1100px){.mega-dropdown.jsx-64ca288ec2be7095{grid-template-columns:1fr;min-width:700px}.mega-right-text.jsx-64ca288ec2be7095{max-width:100%}.banner.jsx-64ca288ec2be7095{width:200px;height:130px}}"
+                id: "2e0387e3b863dcba",
+                children: ".right-inner.jsx-2e0387e3b863dcba .hamburger-section-img.jsx-2e0387e3b863dcba{border-radius:12px;width:100%;height:50%;position:relative;overflow:hidden}.right-inner.jsx-2e0387e3b863dcba .first-content.jsx-2e0387e3b863dcba{width:30%}.right-inner.jsx-2e0387e3b863dcba .second-content.jsx-2e0387e3b863dcba{width:40%}.site-header.jsx-2e0387e3b863dcba{z-index:1100;position:fixed;top:0;left:0;right:0}.mega-right-banners.jsx-2e0387e3b863dcba{justify-content:end;gap:1rem;width:70%;height:70%;margin-top:10rem;margin-bottom:5rem;display:flex}.right-inner.jsx-2e0387e3b863dcba .second-content.jsx-2e0387e3b863dcba h1.jsx-2e0387e3b863dcba{width:50%;font-size:4rem;font-weight:700;line-height:60px}.right-inner.jsx-2e0387e3b863dcba .second-content.jsx-2e0387e3b863dcba p.jsx-2e0387e3b863dcba{border-bottom:2px solid #fc0;width:50%;margin-top:1rem;padding-bottom:1rem;font-size:.9rem}.right-inner.jsx-2e0387e3b863dcba .first-content.jsx-2e0387e3b863dcba h1.jsx-2e0387e3b863dcba{margin-top:2rem;margin-bottom:1rem;font-size:2.2rem;font-weight:700}.right-inner.jsx-2e0387e3b863dcba .first-content.jsx-2e0387e3b863dcba p.jsx-2e0387e3b863dcba{font-size:.9rem}.right-navbar-section.jsx-2e0387e3b863dcba,.right-navbar.jsx-2e0387e3b863dcba{align-items:center;display:flex}.logo-tertiary-text.jsx-2e0387e3b863dcba{font-size:55px}.logo-secondry-text.jsx-2e0387e3b863dcba,.logo-primary-text.jsx-2e0387e3b863dcba{font-size:22px;font-weight:700}.logo-text.jsx-2e0387e3b863dcba p.jsx-2e0387e3b863dcba{border-bottom:2px solid #f8c326;padding-bottom:8px;font-size:12px}.logo-text.jsx-2e0387e3b863dcba{color:#fff;border-left:1px solid #cfc7c7;padding-left:1.5rem}.nav-container.jsx-2e0387e3b863dcba{justify-content:space-between;align-items:center;max-width:100%;margin:0 auto;padding:1rem 5rem;transition:all .3s;display:flex}.nav-list.jsx-2e0387e3b863dcba{color:#fff;background-color:#16344e;gap:30px;margin:0 1rem 0 0;padding:.1rem 2rem;font-size:20px;list-style:none;display:flex}.nav-item.jsx-2e0387e3b863dcba{position:relative}.nav-container.header-scrolled.jsx-2e0387e3b863dcba{background-color:#fff}.nav-link.jsx-2e0387e3b863dcba{color:inherit;padding:6px 8px;font-size:16px;font-weight:600;text-decoration:none;transition:color .3s;display:inline-block}.header-scrolled.jsx-2e0387e3b863dcba .nav-link.jsx-2e0387e3b863dcba{color:#16344e}.dropdown.jsx-2e0387e3b863dcba{z-index:1;color:#000;background:#fff;border:1px solid #eee;min-width:200px;padding:8px 15px;list-style:none;display:none;position:absolute;top:100%;left:0;box-shadow:0 4px 12px rgba(0,0,0,.1)}.dropdown-item.jsx-2e0387e3b863dcba{color:#16344e;padding:8px 14px;text-decoration:none;display:block}.dropdown-item.jsx-2e0387e3b863dcba:hover{background:#f5f5f5}.admission-wrap.jsx-2e0387e3b863dcba{margin-right:12px;position:relative}.admission-btn.jsx-2e0387e3b863dcba{cursor:pointer;background:#ffc100;border:none;padding:10px 18px;font-size:15px;font-weight:700;transition:background .3s}.admission-btn.jsx-2e0387e3b863dcba:hover{background:#e6b000}.admission-dropdown.jsx-2e0387e3b863dcba{z-index:1200;background:#fff;width:70%;margin-top:6px;display:flex;position:fixed;top:6rem;right:10rem;box-shadow:0 6px 18px rgba(0,0,0,.2)}.dropdown-arrow.jsx-2e0387e3b863dcba{border-bottom:10px solid #fff;border-left:10px solid transparent;border-right:10px solid transparent;width:0;height:0;position:absolute;top:-10px;right:40px}.ad-left.jsx-2e0387e3b863dcba{color:#fff;background:#2f7de8;flex-direction:column;justify-content:space-between;width:100%;padding:24px;display:flex}.ad-right.jsx-2e0387e3b863dcba{width:100%}.ad-subtitle.jsx-2e0387e3b863dcba{text-transform:uppercase;margin-bottom:8px;font-size:13px}.ad-title.jsx-2e0387e3b863dcba{margin-bottom:12px;font-size:22px;font-weight:700}.ad-desc.jsx-2e0387e3b863dcba,.ad-contact.jsx-2e0387e3b863dcba{margin-bottom:16px;font-size:14px}.ad-ctas.jsx-2e0387e3b863dcba{flex-wrap:wrap;gap:8px;display:flex}.cta.jsx-2e0387e3b863dcba{cursor:pointer;border:none;padding:8px 14px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .3s}.cta.jsx-2e0387e3b863dcba:hover{opacity:.9}.cta.primary.jsx-2e0387e3b863dcba{color:#000;background:#ffc100}.cta.secondary.jsx-2e0387e3b863dcba{color:#2f7de8;border:1px solid #fff}.ad-middle.jsx-2e0387e3b863dcba{border-right:1px solid #eee;width:100%;padding:24px}.ad-middle.jsx-2e0387e3b863dcba ul.jsx-2e0387e3b863dcba{margin:0;padding:0;list-style:none}.ad-link.jsx-2e0387e3b863dcba{cursor:pointer;color:#333;padding:6px 0;font-size:15px;font-weight:500;transition:color .3s}.ad-link.jsx-2e0387e3b863dcba:hover{color:#2f7de8;text-decoration:underline}.ad-stats.jsx-2e0387e3b863dcba{margin-top:20px}.ad-stats.jsx-2e0387e3b863dcba h3.jsx-2e0387e3b863dcba{margin-bottom:4px;font-size:18px;font-weight:700}.ad-stats.jsx-2e0387e3b863dcba p.jsx-2e0387e3b863dcba{color:#777;margin-bottom:10px;font-size:13px}.stats-btn.jsx-2e0387e3b863dcba{cursor:pointer;background:#fff;border:1px solid #000;padding:6px 12px;font-weight:600;transition:all .3s}.stats-btn.jsx-2e0387e3b863dcba:hover{color:#fff;background:#000}.addmision-section-img.jsx-2e0387e3b863dcba{object-fit:cover;width:100%;height:100%}.hamburger.jsx-2e0387e3b863dcba{cursor:pointer;color:#fff;background:#16344e;border:none;padding:4px 10px;font-size:22px;transition:background .3s}.hamburger.jsx-2e0387e3b863dcba:hover{background-color:#1e4264}.backdrop.jsx-2e0387e3b863dcba{opacity:0;pointer-events:none;z-index:1190;background:rgba(0,0,0,.35);transition:opacity .25s;position:fixed;top:0;bottom:0;left:0;right:0}.backdrop.show.jsx-2e0387e3b863dcba{opacity:1;pointer-events:all}.menu-overlay.jsx-2e0387e3b863dcba{z-index:1200;pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}.menu-overlay.open.jsx-2e0387e3b863dcba{pointer-events:auto}.hamburger-layout.jsx-2e0387e3b863dcba{background:#fff;width:0;height:80%;transition:width .45s cubic-bezier(.2,.9,.2,1);display:flex;position:absolute;top:0;right:0;overflow:hidden}.menu-overlay.open.jsx-2e0387e3b863dcba .hamburger-layout.jsx-2e0387e3b863dcba{width:100%}.menu-left.jsx-2e0387e3b863dcba{color:#fff;background:#2f7de8;width:20%;padding-top:5rem}.menu-left-item.jsx-2e0387e3b863dcba{cursor:pointer;margin-bottom:6px;padding:12px 14px 12px 5rem;font-size:21px;font-weight:600;transition:all .3s}.menu-left-item.jsx-2e0387e3b863dcba:hover{background:#1e6fd8}.menu-left-item.active.jsx-2e0387e3b863dcba{color:#000;background:#ffc100}.menu-left.jsx-2e0387e3b863dcba ul.jsx-2e0387e3b863dcba{padding:0;list-style:none}.menu-middle.jsx-2e0387e3b863dcba{background:#fff;border-right:1px solid #eee;width:20%;padding:5rem 3rem 1rem}.middle-title.jsx-2e0387e3b863dcba{color:#000;text-transform:uppercase;margin-bottom:10px;font-size:21px}.middle-item.jsx-2e0387e3b863dcba{cursor:pointer;border-bottom:1px dashed #eee;padding:8px 0;font-weight:700;transition:color .3s}.middle-item.jsx-2e0387e3b863dcba:hover{color:#2f7de8}.menu-right.jsx-2e0387e3b863dcba{background:#fafafa;flex:1;width:60%;padding:5rem 3rem;overflow-y:auto}.image-box.jsx-2e0387e3b863dcba{justify-content:center;gap:3rem;height:100%;display:flex}.close-btn.jsx-2e0387e3b863dcba{display:none}.menu-overlay.open.jsx-2e0387e3b863dcba .close-btn.jsx-2e0387e3b863dcba{z-index:1300;background:unset;color:#000;cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;font-size:24px;font-weight:700;transition:background .3s;display:flex;position:absolute;top:20px;right:20px}.menu-overlay.open.jsx-2e0387e3b863dcba .close-btn.jsx-2e0387e3b863dcba:hover{background:rgba(0,0,0,.1)}.mega-dropdown.jsx-2e0387e3b863dcba{z-index:-1;background:#fff;gap:20px;width:100%;min-width:max-content;height:auto;display:none;position:fixed;top:0;left:0;box-shadow:0 8px 30px rgba(0,0,0,.15)}.nav-item.jsx-2e0387e3b863dcba:hover>.mega-dropdown.jsx-2e0387e3b863dcba,.nav-item.jsx-2e0387e3b863dcba:focus-within>.mega-dropdown.jsx-2e0387e3b863dcba{display:flex}.mega-left.jsx-2e0387e3b863dcba{color:#fff;background:#2f7de8;width:20%;position:relative}.mega-left.jsx-2e0387e3b863dcba ul.jsx-2e0387e3b863dcba{text-align:center;width:100%;margin:0;padding:0;list-style:none;position:absolute;top:35%}.mega-left-item.jsx-2e0387e3b863dcba{cursor:pointer;padding:8px 0;font-weight:700}.mega-left-item.jsx-2e0387e3b863dcba .dropdown-item.jsx-2e0387e3b863dcba{color:#fff;text-decoration:none}.mega-left-item.jsx-2e0387e3b863dcba:hover{color:#000;background:#ffc100}.mega-right.jsx-2e0387e3b863dcba{align-items:center;gap:3rem;width:80%;display:flex}.mega-right-text.jsx-2e0387e3b863dcba{width:20%}.mega-subtitle.jsx-2e0387e3b863dcba{color:#555;text-transform:uppercase;margin-bottom:6px;font-size:13px}.mega-title.jsx-2e0387e3b863dcba{color:#16344e;margin-bottom:8px;font-size:24px;font-weight:700}.mega-desc.jsx-2e0387e3b863dcba{color:#444;margin-bottom:12px;font-size:14px}.mega-ctas.jsx-2e0387e3b863dcba{gap:12px;display:flex}.mega-banners.jsx-2e0387e3b863dcba{align-items:center;gap:12px;display:flex}.banner.jsx-2e0387e3b863dcba{border-radius:6px;width:100%;height:100%;text-decoration:none;display:block;position:relative;overflow:hidden}.banner.jsx-2e0387e3b863dcba img.jsx-2e0387e3b863dcba,.banner.jsx-2e0387e3b863dcba img{object-fit:cover;width:100%;height:100%;display:block}.banner-label.jsx-2e0387e3b863dcba{color:#fff;background:rgba(0,0,0,.5);border-radius:2px;width:100%;padding:15px 10px;font-size:14px;font-weight:700;position:absolute;bottom:0;left:0}@media (min-width:1024px) and (max-width:1420px){.mega-right-banners.jsx-2e0387e3b863dcba{height:70%;margin-top:8rem;margin-bottom:3rem}.nav-container.jsx-2e0387e3b863dcba{padding:1rem 2rem}.nav-list.jsx-2e0387e3b863dcba{gap:20px;font-size:16px}.mega-right.jsx-2e0387e3b863dcba{gap:1.5rem}.banner.jsx-2e0387e3b863dcba{width:240px;height:200px}.admission-dropdown.jsx-2e0387e3b863dcba{width:85%;top:6rem;right:5rem}}@media (max-width:1100px){.mega-dropdown.jsx-2e0387e3b863dcba{grid-template-columns:1fr;min-width:700px}.mega-right-text.jsx-2e0387e3b863dcba{max-width:100%}.banner.jsx-2e0387e3b863dcba{width:200px;height:130px}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/Header.js",
-        lineNumber: 270,
+        lineNumber: 327,
         columnNumber: 5
     }, this);
 }
