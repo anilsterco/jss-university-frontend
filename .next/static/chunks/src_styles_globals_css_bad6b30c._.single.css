@@ -113,6 +113,28 @@ a, a:hover, a:focus, a:active {
   padding: 0 8px;
 }
 
+.engineering-dropdown .triangle-icon {
+  position: absolute;
+  top: -14px;
+  left: 31%;
+}
+
+.departments-list .link-content a {
+  border-bottom: 1px dotted rgba(255, 255, 255, .35);
+  width: 80%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+}
+
+.departments-list .link-content a:last-child {
+  border: unset;
+}
+
+.departments-list .link-content a:hover {
+  color: #fff !important;
+}
+
 .fourth-slider-section .banner-links a {
   border-bottom: 1px dotted #f8c326;
 }

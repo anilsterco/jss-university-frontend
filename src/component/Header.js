@@ -4,16 +4,22 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { usePathname } from "next/navigation";
+import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 
 export default function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [admissionOpen, setAdmissionOpen] = useState(false);
+  const [engineeringDropdown, setEngineeringDropdown] = useState(false);
+  const [selectedSchool, setSelectedSchool] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
 
   const admissionRef = useRef(null);
+  const engineeringRef = useRef(null);
 
   const navLinks = [
     {
@@ -253,6 +259,94 @@ export default function Header() {
       alt: "Admissions Image",
     },
   };
+  const engineeringData = {
+    schools: [
+      {
+        name: "Computer Science & Engineering",
+        departments: [
+          {
+            text: "Artificial Intelligence",
+            url: "/",
+          },
+          {
+            text: "Data Science",
+            url: "/",
+          },
+          {
+            text: "Cyber Security",
+            url: "/",
+          },
+          {
+            text: "IoT and Cloud",
+            url: "/",
+          },
+        ],
+      },
+      {
+        name: "Electronics & Communication",
+        departments: [
+          {
+            text: "Data Science",
+            url: "/",
+          },
+          {
+            text: "Cyber Security",
+            url: "/",
+          },
+          {
+            text: "Artificial Intelligence",
+            url: "/",
+          },
+          {
+            text: "IoT and Cloud",
+            url: "/",
+          },
+        ],
+      },
+      {
+        name: "Mechanical Engineering",
+        departments: [
+          {
+            text: "Artificial Intelligence",
+            url: "/",
+          },
+          {
+            text: "Data Science",
+            url: "/",
+          },
+          {
+            text: "Cyber Security",
+            url: "/",
+          },
+          {
+            text: "IoT and Cloud",
+            url: "/",
+          },
+        ],
+      },
+      {
+        name: "Electronics & Communication",
+        departments: [
+          {
+            text: "Data Science",
+            url: "/",
+          },
+          {
+            text: "Cyber Security",
+            url: "/",
+          },
+          {
+            text: "Artificial Intelligence",
+            url: "/",
+          },
+          {
+            text: "IoT and Cloud",
+            url: "/",
+          },
+        ],
+      },
+    ],
+  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -288,6 +382,7 @@ export default function Header() {
       if (e.key === "Escape") {
         closeMenu();
         setAdmissionOpen(false);
+        setEngineeringDropdown(false);
       }
     };
     window.addEventListener("keydown", handleEsc);
@@ -300,6 +395,14 @@ export default function Header() {
     const handleClickOutside = (e) => {
       if (admissionRef.current && !admissionRef.current.contains(e.target)) {
         setAdmissionOpen(false);
+      }
+      if (
+        engineeringRef.current &&
+        !engineeringRef.current.contains(e.target) &&
+        // also allow clicking the toggle button without closing
+        !e.target.closest(".school-toggle")
+      ) {
+        setEngineeringDropdown(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -368,6 +471,65 @@ export default function Header() {
             </div>
           </Link>
         </div>
+
+        {pathname === "/schools" && (
+          <>
+            <div
+              className="school-toggle"
+              onClick={() => setEngineeringDropdown((prev) => !prev)}
+            >
+              <p className="mb-0">School of</p>
+              <h5 className="fw-bold">
+                ENGINEERING <IoChevronDownOutline fontSize={15} />
+              </h5>
+            </div>
+
+            {engineeringDropdown && (
+              <div
+                className="engineering-dropdown-container"
+                ref={engineeringRef}
+              >
+                <div className="engineering-dropdown">
+                  {/* LEFT SIDE: Schools List */}
+                  <div className="schools-list">
+                    <h6>Schools</h6>
+                    {engineeringData.schools.map((school, idx) => (
+                      <div
+                        key={idx}
+                        className={`school-item ${
+                          selectedSchool === idx ? "active" : ""
+                        }`}
+                        onClick={() => setSelectedSchool(idx)}
+                      >
+                        {school.name}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* RIGHT SIDE: Departments */}
+                  <div className="departments-list">
+                    <span className="dropdown-arrow"></span>
+                    <h6 className="text-white">Department</h6>
+                    <div className="link-content">
+                      {engineeringData.schools[selectedSchool].departments.map(
+                        (dept, i) => (
+                          <Link
+                            href={dept.url}
+                            key={i}
+                            className="department-links text-white"
+                          >
+                            {dept.text}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                    <IoTriangleSharp className="triangle-icon" />
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
 
         <div className="right-navbar">
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -628,6 +790,79 @@ export default function Header() {
       </div>
 
       <style jsx>{`
+        /* --- Engineering Dropdown --- */
+        .school-toggle {
+          cursor: pointer;
+          color: #fff;
+          font-weight: 600;
+          transition: color 0.3s;
+          display: flex;
+          flex-direction: column;
+        }
+        .header-scrolled .school-toggle {
+          color: #16344e;
+        }
+        .engineering-dropdown-container {
+          z-index: 1000;
+          width: 100%;
+          display: flex;
+          position: absolute;
+          top: 130px;
+        }
+
+        .engineering-dropdown {
+          background: #fff;
+          width: 35%;
+          min-height: 320px;
+          display: flex;
+          overflow: hidden;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+          border-radius: 8px;
+        }
+
+        .schools-list {
+          color: #fff;
+          background: #16344e;
+          flex-direction: column;
+          width: 50%;
+          display: flex;
+        }
+
+        .school-item {
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        .school-item:hover {
+          background: #1e4b6b;
+        }
+        .school-item.active {
+          background: #ffc100;
+          color: #000;
+        }
+
+        .departments-list {
+          background: #224666;
+          display: block;
+          width: 50%;
+        }
+        .departments-list .link-content {
+          padding-left: 1.2rem;
+        }
+        .engineering-dropdown h6 {
+          font-size: 18px;
+          padding-left: 1.2rem;
+          padding-top: 1.2rem;
+        }
+        .department-item {
+          cursor: pointer;
+          border-radius: 8px;
+          padding: 8px;
+          font-weight: 500;
+          transition: all 0.3s;
+          color: #fff;
+        }
+
         .right-inner .hamburger-section-img {
           position: relative;
           height: 50%;
