@@ -85,7 +85,8 @@ export default function EventsGrid() {
             style={{
               ...styles.card,
               ...styles.cardLarge,
-              backgroundColor: events[0].bgColor, borderTopLeftRadius: "50px"
+              backgroundColor: events[0].bgColor,
+              borderTopLeftRadius: "50px",
             }}
           >
             <Image
@@ -171,7 +172,8 @@ export default function EventsGrid() {
             style={{
               ...styles.card,
               ...styles.cardLarge,
-              backgroundColor: events[5].bgColor,borderBottomRightRadius: "50px"
+              backgroundColor: events[5].bgColor,
+              borderBottomRightRadius: "50px",
             }}
           >
             <Image

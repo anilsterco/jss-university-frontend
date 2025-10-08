@@ -1,4 +1,3 @@
-"use client";
 import FirstSection from "../component/home-components/FirstSection";
 import SecondSection from "../component/home-components/SecondSection";
 import ThirdSection from "../component/home-components/ThirdSection";
