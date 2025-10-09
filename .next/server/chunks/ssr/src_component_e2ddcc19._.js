@@ -275,7 +275,7 @@ function HomePage() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 72,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -285,13 +285,13 @@ function HomePage() {
                                         children: departmentSection.desc
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 76,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 71,
+                                lineNumber: 74,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -310,7 +310,7 @@ function HomePage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 80,
+                                        lineNumber: 87,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -322,7 +322,7 @@ function HomePage() {
                                         children: departmentSection.programsText
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 83,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -335,12 +335,12 @@ function HomePage() {
                                         children: "VIEW ALL PROGRAMMES →"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 89,
+                                        lineNumber: 96,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 99,
+                                        lineNumber: 106,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -355,19 +355,19 @@ function HomePage() {
                                         children: "APPLY NOW"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 100,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 79,
+                                lineNumber: 86,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                        lineNumber: 70,
+                        lineNumber: 73,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -400,7 +400,7 @@ function HomePage() {
                                                         priority: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                        lineNumber: 133,
+                                                        lineNumber: 140,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -414,7 +414,7 @@ function HomePage() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                        lineNumber: 141,
+                                                        lineNumber: 148,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -429,7 +429,7 @@ function HomePage() {
                                                         children: prog.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                        lineNumber: 153,
+                                                        lineNumber: 160,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -444,33 +444,33 @@ function HomePage() {
                                                             fontWeight: 300
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                            lineNumber: 175,
+                                                            lineNumber: 182,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                        lineNumber: 166,
+                                                        lineNumber: 173,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                lineNumber: 125,
+                                                lineNumber: 132,
                                                 columnNumber: 21
                                             }, this)
                                         }, index, false, {
                                             fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                            lineNumber: 124,
+                                            lineNumber: 131,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 123,
+                                        lineNumber: 130,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 120,
+                                lineNumber: 127,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
@@ -485,7 +485,7 @@ function HomePage() {
                                         children: "BROWSE BY DEPARTMENT"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 192,
+                                        lineNumber: 199,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -499,13 +499,13 @@ function HomePage() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 193,
+                                        lineNumber: 200,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 185,
+                                lineNumber: 192,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
@@ -514,7 +514,7 @@ function HomePage() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 205,
+                                lineNumber: 212,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -541,45 +541,45 @@ function HomePage() {
                                                         },
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$sl$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SlArrowRightCircle"], {}, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                            lineNumber: 223,
+                                                            lineNumber: 230,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                        lineNumber: 222,
+                                                        lineNumber: 229,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                                lineNumber: 211,
+                                                lineNumber: 218,
                                                 columnNumber: 21
                                             }, this)
                                         }, index, false, {
                                             fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                            lineNumber: 210,
+                                            lineNumber: 217,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                        lineNumber: 209,
+                                        lineNumber: 216,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                                lineNumber: 207,
+                                lineNumber: 214,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                        lineNumber: 116,
+                        lineNumber: 123,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/school-components/DepartmentSection.js",
-                lineNumber: 68,
+                lineNumber: 71,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
@@ -593,18 +593,6 @@ function HomePage() {
         columnNumber: 5
     }, this);
 }
-const styles = {
-    borderBottom: {
-        content: "",
-        width: "80%",
-        height: "2px",
-        display: "block",
-        background: "#b29d542e",
-        position: "absolute",
-        top: "10px",
-        right: "0"
-    }
-};
 }),
 "[project]/src/component/home-components/ThirdSection.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

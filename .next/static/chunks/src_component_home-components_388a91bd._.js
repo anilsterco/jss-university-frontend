@@ -70,7 +70,8 @@ function HeroSlider() {
         bannerContentA: {
             paddingBottom: '8px',
             borderBottom: '1px solid',
-            fontSize: '18px'
+            fontSize: '18px',
+            color: '#fff'
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -105,7 +106,7 @@ function HeroSlider() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/FirstSection.js",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -117,7 +118,7 @@ function HeroSlider() {
                                     children: slide.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/FirstSection.js",
-                                    lineNumber: 85,
+                                    lineNumber: 86,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -125,7 +126,7 @@ function HeroSlider() {
                                     children: slide.desc
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/FirstSection.js",
-                                    lineNumber: 86,
+                                    lineNumber: 87,
                                     columnNumber: 15
                                 }, this),
                                 slide.url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -140,35 +141,35 @@ function HeroSlider() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/FirstSection.js",
-                                            lineNumber: 90,
+                                            lineNumber: 91,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/FirstSection.js",
-                                    lineNumber: 88,
+                                    lineNumber: 89,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/FirstSection.js",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 13
                         }, this)
                     ]
                 }, slide.id, true, {
                     fileName: "[project]/src/component/home-components/FirstSection.js",
-                    lineNumber: 76,
+                    lineNumber: 77,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/src/component/home-components/FirstSection.js",
-            lineNumber: 66,
+            lineNumber: 67,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/home-components/FirstSection.js",
-        lineNumber: 65,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
@@ -1504,6 +1505,9 @@ function HeroSlider() {
                                         className: "jsx-9001a9b0c0c3b2c3" + " " + "banner-links",
                                         children: slide.url && slide.url.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 href: item.link,
+                                                style: {
+                                                    color: "#fff"
+                                                },
                                                 children: [
                                                     item.text,
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaChevronRight"], {}, void 0, false, {
@@ -1903,6 +1907,7 @@ function LegacySection() {
                                     children: legacyData.buttons.map((btn, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: btn.link,
                                             style: styles.navButtons,
+                                            className: "text-white",
                                             children: btn.text
                                         }, i, false, {
                                             fileName: "[project]/src/component/home-components/FifthSection.js",

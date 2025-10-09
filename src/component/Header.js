@@ -1092,7 +1092,7 @@ export default function Header() {
           color: #000;
         }
         .cta.secondary {
-          color: #2f7de8;
+          color: #fff;
           border: 1px solid #fff;
         }
         .ad-middle {

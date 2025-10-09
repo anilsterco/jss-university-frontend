@@ -88,13 +88,14 @@ export default function CoursesOffered() {
     topSectionH1: {
       fontSize: "3.5rem",
       textTransform: "uppercase",
+      width: "75%",
     },
-    topSectionCol4: {
-      width: "30%",
-    },
-    topSectionCol8: {
-      width: "70%",
-    },
+    // topSectionCol4: {
+    //   width: "30%",
+    // },
+    // topSectionCol8: {
+    //   width: "70%",
+    // },
     mediaQuery: {
       padding: "5rem 5rem",
     },
@@ -181,6 +182,7 @@ export default function CoursesOffered() {
                   alt="slide image"
                   width={200}
                   height={300}
+                  style={{ width: "100%", height: "auto" }}
                   priority
                 />
                 <span

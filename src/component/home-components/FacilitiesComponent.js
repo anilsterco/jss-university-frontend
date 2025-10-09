@@ -234,7 +234,7 @@ export default function HeroSlider() {
                 <div className="banner-links">
                   {slide.url &&
                     slide.url.map((item, index) => (
-                      <Link key={index} href={item.link}>
+                      <Link key={index} href={item.link} style={{color: "#fff"}}>
                         {item.text}
                         <FaChevronRight />
                       </Link>

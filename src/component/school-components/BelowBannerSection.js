@@ -20,7 +20,7 @@ export default function BelowBannerSection() {
           {listOfLinks &&
             listOfLinks.map((link, i) => (
               <li key={i} style={styles.linksList}>
-                <Link href={link.url}>{link.label}</Link>
+                <Link href={link.url} style={{color: "#000"}}>{link.label}</Link>
               </li>
             ))}
         </ul>

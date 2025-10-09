@@ -58,47 +58,47 @@ const legacyData = {
 export default function LegacySection() {
   const styles = {
     fifthSection: {
-      padding: '5rem 10rem',
-      background: '#e6ffff',
+      padding: "5rem 10rem",
+      background: "#e6ffff",
     },
     topSection: {
-      marginBottom: '1rem',
+      marginBottom: "1rem",
     },
     topSectionHeading: {
-      width: '40%',
-      fontSize: '3.7rem',
-      fontWeight: 'bold',
+      width: "40%",
+      fontSize: "3.7rem",
+      fontWeight: "bold",
     },
     violetText: {
-      color: '#9852a1',
+      color: "#9852a1",
     },
     fifthMiddleSection: {
-      alignItems: 'center',
+      alignItems: "center",
     },
     navButtons: {
-    background: "#16344e",
-    padding: ".5rem 2rem",
-    color: "#fff !important"
-},
+      background: "#16344e",
+      padding: ".5rem 2rem",
+      color: "#fff !important",
+    },
     leftColumn: {
-      borderRight: '1px solid #d4d4d4cb',
-      paddingRight: '4rem',
+      borderRight: "1px solid #d4d4d4cb",
+      paddingRight: "4rem",
     },
     rightColumn: {
-      paddingLeft: '5rem',
+      paddingLeft: "5rem",
     },
     contentPart: {
-      position: 'absolute',
-      bottom: '0',
-      background: 'rgba(0, 0, 0, 0.3)',
-      width: '100%',
-      color: 'white',
-      padding: '0.5rem',
-      marginTop: '0.5rem',
-      borderRadius: '0.25rem',
-      display: 'flex',
-      gap: '1rem',
-      fontSize: '0.875rem',
+      position: "absolute",
+      bottom: "0",
+      background: "rgba(0, 0, 0, 0.3)",
+      width: "100%",
+      color: "white",
+      padding: "0.5rem",
+      marginTop: "0.5rem",
+      borderRadius: "0.25rem",
+      display: "flex",
+      gap: "1rem",
+      fontSize: "0.875rem",
     },
   };
 
@@ -123,7 +123,8 @@ export default function LegacySection() {
                 alt={legacyData.chancellor.name}
                 width={500}
                 height={350}
-                className="img-fluid rounded w-100"
+                style={{ width: "100%", height: "auto" }}
+                className="img-fluid rounded"
               />
               {/* Play Button Overlay */}
 
@@ -165,9 +166,14 @@ export default function LegacySection() {
             </div>
 
             {/* Buttons */}
-            <div className="d-flex gap-3">
+            <div className="d-flex gap-3 about-home-buttons">
               {legacyData.buttons.map((btn, i) => (
-                <Link key={i} href={btn.link} style={styles.navButtons}>
+                <Link
+                  key={i}
+                  href={btn.link}
+                  style={styles.navButtons}
+                  className="text-white"
+                >
                   {btn.text}
                 </Link>
               ))}

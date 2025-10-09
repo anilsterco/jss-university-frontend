@@ -19,7 +19,7 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none !important;
-  color: inherit !important;
+  color: inherit;
 }
 .main-container {
   position: relative;
@@ -103,6 +103,18 @@ a:active {
 }
 .school-below-banner-section ul li:first-child::marker {
   color: transparent;
+}
+.about-home-buttons a:last-child{
+  background: unset !important;
+  border: 1px solid #16344e;
+  color: #16344e !important ;
+  font-weight: 500;
+}
+.about-school-buttons a:last-child{
+  background: unset !important;
+  border: 1px solid #16344e;
+  color: #16344e !important ;
+  font-weight: 500;
 }
 .departments-list .link-content a {
   width: 80%;

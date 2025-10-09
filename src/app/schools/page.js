@@ -1,23 +1,21 @@
-import FirstSection from "@/component/home-components/FirstSection";
+import BannerComponent from "@/component/home-components/BannerComponent";
 import BelowBannerSection from "@/component/school-components/BelowBannerSection";
 import DepartmentSection from "@/component/school-components/DepartmentSection";
-import ThirdSection from "@/component/home-components/ThirdSection";
-import FourthSection from "@/component/home-components/FourthSection";
-import FifthSection from "@/component/home-components/FifthSection";
-import SixthSection from "@/component/home-components/SixthSection";
-import SeventhSection from "@/component/home-components/SeventhSection";
+import PlacementComponent from "@/component/home-components/PlacementComponent";
+import AboutSchoolSection from "@/component/school-components/AboutSchoolSection";
+import TestimonialComponent from "@/component/home-components/TestimonialComponent";
+import HappingsHomeComponent from "@/component/home-components/HappingsHomeComponent";
 
 export default function SchoolPage() {
   return (
     <div>
-      <FirstSection />
+      <BannerComponent />
       <BelowBannerSection />
       <DepartmentSection />
-      <ThirdSection />
-      <FourthSection />
-      <FifthSection />
-      <SixthSection />
-      <SeventhSection />
+      <PlacementComponent />
+      <AboutSchoolSection />
+      <TestimonialComponent />
+      <HappingsHomeComponent />
     </div>
   );
 }

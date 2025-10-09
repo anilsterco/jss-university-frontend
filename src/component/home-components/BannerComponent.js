@@ -55,7 +55,8 @@ export default function HeroSlider() {
     bannerContentA: {
       paddingBottom: '8px',
       borderBottom: '1px solid',
-      fontSize: '18px'
+      fontSize: '18px',
+      color: '#fff'
     },
     // Media query styles would need to be handled differently
     // since inline styles don't support media queries

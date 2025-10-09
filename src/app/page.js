@@ -1,21 +1,21 @@
-import FirstSection from "../component/home-components/FirstSection";
-import SecondSection from "../component/home-components/SecondSection";
-import ThirdSection from "../component/home-components/ThirdSection";
-import FourthSection from "../component/home-components/FourthSection";
-import FifthSection from "../component/home-components/FifthSection";
-import SixthSection from "../component/home-components/SixthSection";
-import SeventhSection from "../component/home-components/SeventhSection";
+import BannerComponent from "../component/home-components/BannerComponent";
+import CourseOfferedComponent from "../component/home-components/CourseOfferedComponent";
+import PlacementComponent from "../component/home-components/PlacementComponent";
+import FacilitiesComponent from "../component/home-components/FacilitiesComponent";
+import AboutHomeComponent from "../component/home-components/AboutHomeComponent";
+import TestimonialComponent from "../component/home-components/TestimonialComponent";
+import HappingsHomeComponent from "../component/home-components/HappingsHomeComponent";
 
 export default function HomePage() {
   return (
     <div>
-      <FirstSection />
-      <SecondSection />
-      <ThirdSection />
-      <FourthSection />
-      <FifthSection />
-      <SixthSection />
-      <SeventhSection />
+      <BannerComponent />
+      <CourseOfferedComponent />
+      <PlacementComponent />
+      <FacilitiesComponent />
+      <AboutHomeComponent />
+      <TestimonialComponent />
+      <HappingsHomeComponent />
     </div>
   );
 }

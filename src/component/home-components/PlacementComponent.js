@@ -177,8 +177,9 @@ export default function PlacementsSection() {
               <Image
                 src={placementsData.wallOfFame.img}
                 alt="Wall of Fame"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={400}
+                height={700}
+                style={{ width: "100%", height: "auto",objectFit:"cover" }}
                 className="rounded"
               />
               <div

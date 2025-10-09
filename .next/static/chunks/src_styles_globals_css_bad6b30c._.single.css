@@ -11,7 +11,7 @@ html, body {
 }
 
 a, a:hover, a:focus, a:active {
-  color: inherit !important;
+  color: inherit;
   text-decoration: none !important;
 }
 
@@ -125,6 +125,13 @@ a, a:hover, a:focus, a:active {
 
 .school-below-banner-section ul li:first-child::marker {
   color: rgba(0, 0, 0, 0);
+}
+
+.about-home-buttons a:last-child, .about-school-buttons a:last-child {
+  border: 1px solid #16344e;
+  font-weight: 500;
+  background: unset !important;
+  color: #16344e !important;
 }
 
 .departments-list .link-content a {

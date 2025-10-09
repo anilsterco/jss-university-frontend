@@ -64,14 +64,21 @@ export default function HomePage() {
         padding: "6rem 10rem 5rem 10rem",
       }}
     >
-      <div className="container-fluid" style={{ borderBottom: "1px solid #d1cbcb", paddingBottom: "4rem" }}>
+      <div
+        className="container-fluid"
+        style={{ borderBottom: "1px solid #d1cbcb", paddingBottom: "4rem" }}
+      >
         <div className="row  justify-content-center">
           {/* LEFT SIDE */}
           <div className="col-md-3 d-flex flex-column justify-content-between">
             <div style={{ marginTop: "4rem" }}>
               <h1
                 dangerouslySetInnerHTML={{ __html: departmentSection.title }}
-                style={{ fontWeight: "bold", lineHeight: "1.2", fontSize: "55px" }}
+                style={{
+                  fontWeight: "bold",
+                  lineHeight: "1.2",
+                  fontSize: "55px",
+                }}
               />
               <p style={{ marginTop: "15px" }}>{departmentSection.desc}</p>
             </div>
@@ -233,16 +240,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-const styles = {
-  borderBottom: {
-    content: "",
-    width: "80%",
-    height: "2px",
-    display: "block",
-    background: "#b29d542e",
-    position: "absolute",
-    top: "10px",
-    right: "0",
-  },
-};
