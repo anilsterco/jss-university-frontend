@@ -1550,8 +1550,13 @@ __turbopack_context__.s([
     ()=>TestimonialsSection
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 const testimonialsData = [
@@ -1559,230 +1564,297 @@ const testimonialsData = [
         name: "NAMAN SUKHIJA",
         batch: "B. Tech (CE), 2012-16 Batch",
         role: "Designer & Certifier, Passive House Institute, Germany",
+        quote: "Studying at JSS Noida has been a transformative journey...",
         img: "/images/home-page/sixth-section-first-banner.png",
-        quote: "Studying at JSS Noida has been a transformative journey..."
+        videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
+        url: "#1"
     },
     {
         name: "APOORV SHIKHAR",
         batch: "B. Tech (ES), 2013-17 Batch",
         role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
         img: "/images/home-page/sixth-section-second-banner.png",
-        quote: "I have gained both theoretical and practical knowledge and was exposed to real-world challenges."
+        quote: "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
+        videoUrl: "",
+        url: "#2"
     },
     {
         name: "YASHIKA MATHUR",
         batch: "B. Tech (CE), 2013-17 Batch",
         role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
         img: "/images/home-page/sixth-section-third-banner.png",
-        video: true
+        videoUrl: "",
+        url: "#3"
     },
     {
         name: "NADEEM KHAN",
         batch: "B. Tech (ME), 2015-19 Batch",
         role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
         img: "/images/home-page/sixth-section-fourth-banner.png",
-        video: true
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        url: "#4"
     },
     {
         name: "RITIKA SHARMA",
         batch: "B. Tech (CSE), Batch of 2024",
-        role: "",
         img: "/images/home-page/sixth-section-fifth-banner.png",
-        quote: "JSS University has truly shaped my journey—both academically and personally."
+        quote: "JSS University has truly shaped my journey—both academically and personally.",
+        videoUrl: "",
+        url: "#5"
     }
 ];
 function TestimonialsSection() {
-    // distribute testimonials dynamically into 3 columns
-    const column1 = testimonialsData.slice(0, 1); // first (with header)
+    _s();
+    const [selectedVideo, setSelectedVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    // distribute testimonials dynamically into columns
+    const column1 = testimonialsData.slice(0, 1);
     const column2 = testimonialsData.slice(1, 3);
     const column3 = testimonialsData.slice(3);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         style: styles.testimonialsSection,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            style: styles.testimonialsContainer,
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    style: styles.columnLeft,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            style: styles.headerContent,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    style: styles.testimonialsLabel,
-                                    children: "TESTIMONIALS"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                    lineNumber: 57,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    style: styles.mainHeading,
-                                    children: [
-                                        "IN ",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            style: styles.blueText,
-                                            children: "CONVERSATION"
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: styles.testimonialsContainer,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: styles.columnLeft,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                style: styles.headerContent,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        style: styles.testimonialsLabel,
+                                        children: "TESTIMONIALS"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                        lineNumber: 68,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        style: styles.mainHeading,
+                                        children: [
+                                            "IN ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                style: styles.blueText,
+                                                children: "CONVERSATION"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                                lineNumber: 70,
+                                                columnNumber: 18
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                                lineNumber: 71,
+                                                columnNumber: 15
+                                            }, this),
+                                            "WITH THE",
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                style: styles.blueText,
+                                                children: [
+                                                    "JSS",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                                        lineNumber: 75,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    "COMMUNITY"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                                lineNumber: 73,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                        lineNumber: 69,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        style: styles.circleArrowBtn,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            width: "20",
+                                            height: "20",
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: "2",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                d: "M5 12h14M12 5l7 7-7 7"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                                lineNumber: 88,
+                                                columnNumber: 17
+                                            }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                            lineNumber: 59,
-                                            columnNumber: 18
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                            lineNumber: 60,
+                                            lineNumber: 80,
                                             columnNumber: 15
-                                        }, this),
-                                        "WITH THE",
-                                        " ",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            style: styles.blueText,
-                                            children: [
-                                                "JSS",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                                    lineNumber: 64,
-                                                    columnNumber: 17
-                                                }, this),
-                                                "COMMUNITY"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                            lineNumber: 62,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                    lineNumber: 58,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    style: styles.circleArrowBtn,
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                        width: "20",
-                                        height: "20",
-                                        viewBox: "0 0 24 24",
-                                        fill: "none",
-                                        stroke: "currentColor",
-                                        strokeWidth: "2",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            d: "M5 12h14M12 5l7 7-7 7"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                            lineNumber: 77,
-                                            columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                        lineNumber: 69,
-                                        columnNumber: 15
+                                        lineNumber: 79,
+                                        columnNumber: 13
                                     }, this)
-                                }, void 0, false, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                lineNumber: 67,
+                                columnNumber: 11
+                            }, this),
+                            column1.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
+                                    data: item,
+                                    onPlay: ()=>setSelectedVideo(item.videoUrl)
+                                }, i, false, {
                                     fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                    lineNumber: 68,
+                                    lineNumber: 94,
                                     columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                            lineNumber: 56,
-                            columnNumber: 11
-                        }, this),
-                        column1.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
-                                data: item
+                                }, this))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                        lineNumber: 66,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: styles.columnMiddle,
+                        children: column2.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
+                                data: item,
+                                onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                lineNumber: 84,
+                                lineNumber: 105,
                                 columnNumber: 13
                             }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                        lineNumber: 103,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: styles.columnRight,
+                        children: column3.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
+                                data: item,
+                                onPlay: ()=>setSelectedVideo(item.videoUrl)
+                            }, i, false, {
+                                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                        lineNumber: 114,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                lineNumber: 64,
+                columnNumber: 7
+            }, this),
+            selectedVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                style: styles.videoModalOverlay,
+                onClick: ()=>setSelectedVideo(null),
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    style: styles.videoModalContent,
+                    onClick: (e)=>e.stopPropagation(),
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                            width: "100%",
+                            height: "100%",
+                            src: selectedVideo,
+                            title: "Testimonial Video",
+                            allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                            allowFullScreen: true,
+                            style: {
+                                border: "none",
+                                borderRadius: "10px"
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 135,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            style: styles.closeBtn,
+                            onClick: ()=>setSelectedVideo(null),
+                            children: "✕"
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 144,
+                            columnNumber: 13
+                        }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                    lineNumber: 54,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    style: styles.columnMiddle,
-                    children: column2.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
-                            data: item
-                        }, i, false, {
-                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                            lineNumber: 91,
-                            columnNumber: 13
-                        }, this))
-                }, void 0, false, {
-                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                    lineNumber: 89,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    style: styles.columnRight,
-                    children: column3.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
-                            data: item
-                        }, i, false, {
-                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                            lineNumber: 98,
-                            columnNumber: 13
-                        }, this))
-                }, void 0, false, {
-                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                    lineNumber: 96,
-                    columnNumber: 9
+                    lineNumber: 131,
+                    columnNumber: 11
                 }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-            lineNumber: 52,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+            }, void 0, false, {
+                fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                lineNumber: 127,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-        lineNumber: 51,
+        lineNumber: 63,
         columnNumber: 5
     }, this);
 }
+_s(TestimonialsSection, "sxgy0ooEX+Me+y0n/sMclmbujtY=");
 _c = TestimonialsSection;
-/* ✅ Reusable card component */ function TestimonialCard(param) {
-    let { data } = param;
+function TestimonialCard(param) {
+    let { data, onPlay } = param;
+    const hasVideo = data.videoUrl && data.videoUrl.length > 0;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
         style: styles.testimonialCard,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 style: styles.cardImgContainer,
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        src: data.img,
-                        alt: data.name,
-                        width: 380,
-                        height: 380,
-                        style: styles.cardImg
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        href: data.url,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: data.img,
+                            alt: data.name,
+                            width: 380,
+                            height: 380,
+                            style: styles.cardImg
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 164,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 111,
+                        lineNumber: 163,
                         columnNumber: 9
                     }, this),
-                    data.video && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    hasVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         style: styles.playBtn,
+                        onClick: onPlay,
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                            width: "14",
-                            height: "14",
+                            width: "25",
+                            height: "25",
                             viewBox: "0 0 24 24",
                             fill: "currentColor",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                 d: "M8 5v14l11-7z"
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                lineNumber: 123,
+                                lineNumber: 176,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                            lineNumber: 122,
+                            lineNumber: 175,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 121,
+                        lineNumber: 174,
                         columnNumber: 11
                     }, this),
                     data.quote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1792,7 +1864,7 @@ _c = TestimonialsSection;
                                 style: styles.yellowLine
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                lineNumber: 131,
+                                lineNumber: 184,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1800,58 +1872,65 @@ _c = TestimonialsSection;
                                 children: data.quote
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                                lineNumber: 132,
+                                lineNumber: 185,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 130,
+                        lineNumber: 183,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                lineNumber: 110,
+                lineNumber: 162,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: styles.cardInfo,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        style: styles.personName,
-                        children: data.name
-                    }, void 0, false, {
-                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 138,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        style: styles.personBatch,
-                        children: data.batch
-                    }, void 0, false, {
-                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 139,
-                        columnNumber: 9
-                    }, this),
-                    data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        style: styles.personRole,
-                        children: data.role
-                    }, void 0, false, {
-                        fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                        lineNumber: 140,
-                        columnNumber: 23
-                    }, this)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                href: data.url,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    style: styles.cardInfo,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                            style: styles.personName,
+                            children: data.name
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 191,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            style: styles.personBatch,
+                            children: data.batch
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 192,
+                            columnNumber: 11
+                        }, this),
+                        data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            style: styles.personRole,
+                            children: data.role
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                            lineNumber: 193,
+                            columnNumber: 25
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/component/home-components/TestimonialComponent.js",
+                    lineNumber: 190,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-                lineNumber: 137,
+                lineNumber: 189,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/TestimonialComponent.js",
-        lineNumber: 109,
+        lineNumber: 161,
         columnNumber: 5
     }, this);
 }
@@ -1922,10 +2001,11 @@ _c1 = TestimonialCard;
         justifyContent: "center"
     },
     testimonialCard: {
-        borderTopLeftRadius: "50px",
+        borderTopLeftRadius: "30px",
         borderBottomRightRadius: "30px",
         overflow: "hidden",
-        background: "white"
+        background: "white",
+        position: "relative"
     },
     cardImgContainer: {
         position: "relative",
@@ -1961,15 +2041,17 @@ _c1 = TestimonialCard;
         position: "absolute",
         top: "18px",
         right: "18px",
-        width: "44px",
-        height: "44px",
-        background: "#fbbf24",
+        width: "35px",
+        height: "35px",
+        background: "#fbbf24de",
         borderRadius: "50%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: "#000",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+        color: "#fff",
+        cursor: "pointer",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+        transition: "transform 0.2s ease"
     },
     cardInfo: {
         padding: "18px 22px",
@@ -1991,6 +2073,34 @@ _c1 = TestimonialCard;
         color: "#000",
         margin: 0,
         lineHeight: "1.4"
+    },
+    /* --- Video Modal --- */ videoModalOverlay: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: "rgba(0,0,0,0.8)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999
+    },
+    videoModalContent: {
+        width: "80%",
+        maxWidth: "900px",
+        height: "70vh",
+        position: "relative"
+    },
+    closeBtn: {
+        position: "absolute",
+        top: "-35px",
+        right: "0",
+        background: "transparent",
+        border: "none",
+        color: "white",
+        fontSize: "28px",
+        cursor: "pointer"
     }
 };
 var _c, _c1;

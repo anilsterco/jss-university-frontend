@@ -1,13 +1,17 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonialsData = [
   {
     name: "NAMAN SUKHIJA",
     batch: "B. Tech (CE), 2012-16 Batch",
     role: "Designer & Certifier, Passive House Institute, Germany",
-    img: "/images/home-page/sixth-section-first-banner.png",
     quote: "Studying at JSS Noida has been a transformative journey...",
+    img: "/images/home-page/sixth-section-first-banner.png",
+    videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
+    url: "#1",
   },
   {
     name: "APOORV SHIKHAR",
@@ -16,34 +20,42 @@ const testimonialsData = [
     img: "/images/home-page/sixth-section-second-banner.png",
     quote:
       "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
+    videoUrl: "",
+    url: "#2",
   },
   {
     name: "YASHIKA MATHUR",
     batch: "B. Tech (CE), 2013-17 Batch",
     role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
     img: "/images/home-page/sixth-section-third-banner.png",
-    video: true,
+    videoUrl: "",
+    url: "#3",
   },
   {
     name: "NADEEM KHAN",
     batch: "B. Tech (ME), 2015-19 Batch",
     role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
     img: "/images/home-page/sixth-section-fourth-banner.png",
-    video: true,
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    url: "#4",
   },
   {
     name: "RITIKA SHARMA",
     batch: "B. Tech (CSE), Batch of 2024",
-    role: "",
     img: "/images/home-page/sixth-section-fifth-banner.png",
     quote:
       "JSS University has truly shaped my journey—both academically and personally.",
+    videoUrl: "",
+    url: "#5",
   },
 ];
 
 export default function TestimonialsSection() {
-  // distribute testimonials dynamically into 3 columns
-  const column1 = testimonialsData.slice(0, 1); // first (with header)
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  // distribute testimonials dynamically into columns
+  const column1 = testimonialsData.slice(0, 1);
   const column2 = testimonialsData.slice(1, 3);
   const column3 = testimonialsData.slice(3);
 
@@ -52,7 +64,6 @@ export default function TestimonialsSection() {
       <div style={styles.testimonialsContainer}>
         {/* LEFT COLUMN */}
         <div style={styles.columnLeft}>
-          {/* Header */}
           <div style={styles.headerContent}>
             <p style={styles.testimonialsLabel}>TESTIMONIALS</p>
             <h2 style={styles.mainHeading}>
@@ -79,53 +90,95 @@ export default function TestimonialsSection() {
             </button>
           </div>
 
-          {/* Testimonial cards in first column */}
           {column1.map((item, i) => (
-            <TestimonialCard key={i} data={item} />
+            <TestimonialCard
+              key={i}
+              data={item}
+              onPlay={() => setSelectedVideo(item.videoUrl)}
+            />
           ))}
         </div>
 
         {/* MIDDLE COLUMN */}
         <div style={styles.columnMiddle}>
           {column2.map((item, i) => (
-            <TestimonialCard key={i} data={item} />
+            <TestimonialCard
+              key={i}
+              data={item}
+              onPlay={() => setSelectedVideo(item.videoUrl)}
+            />
           ))}
         </div>
 
         {/* RIGHT COLUMN */}
         <div style={styles.columnRight}>
           {column3.map((item, i) => (
-            <TestimonialCard key={i} data={item} />
+            <TestimonialCard
+              key={i}
+              data={item}
+              onPlay={() => setSelectedVideo(item.videoUrl)}
+            />
           ))}
         </div>
       </div>
+
+      {/* ✅ Video Popup */}
+      {selectedVideo && (
+        <div
+          style={styles.videoModalOverlay}
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            style={styles.videoModalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={selectedVideo}
+              title="Testimonial Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ border: "none", borderRadius: "10px" }}
+            ></iframe>
+            <button
+              style={styles.closeBtn}
+              onClick={() => setSelectedVideo(null)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-/* ✅ Reusable card component */
-function TestimonialCard({ data }) {
+function TestimonialCard({ data, onPlay }) {
+  const hasVideo = data.videoUrl && data.videoUrl.length > 0;
+
   return (
     <article style={styles.testimonialCard}>
       <div style={styles.cardImgContainer}>
-        <Image
-          src={data.img}
-          alt={data.name}
-          width={380}
-          height={380}
-          style={styles.cardImg}
-        />
-
-        {/* Optional video button */}
-        {data.video && (
-          <div style={styles.playBtn}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <Link href={data.url}>
+          <Image
+            src={data.img}
+            alt={data.name}
+            width={380}
+            height={380}
+            style={styles.cardImg}
+          />
+        </Link>
+        {/* Play Button if video exists */}
+        {hasVideo && (
+          <div style={styles.playBtn} onClick={onPlay}>
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
         )}
 
-        {/* Optional quote overlay */}
+        {/* Optional Quote */}
         {data.quote && (
           <div style={styles.quoteBar}>
             <div style={styles.yellowLine}></div>
@@ -133,12 +186,13 @@ function TestimonialCard({ data }) {
           </div>
         )}
       </div>
-
-      <div style={styles.cardInfo}>
-        <h3 style={styles.personName}>{data.name}</h3>
-        <p style={styles.personBatch}>{data.batch}</p>
-        {data.role && <p style={styles.personRole}>{data.role}</p>}
-      </div>
+      <Link href={data.url}>
+        <div style={styles.cardInfo}>
+          <h3 style={styles.personName}>{data.name}</h3>
+          <p style={styles.personBatch}>{data.batch}</p>
+          {data.role && <p style={styles.personRole}>{data.role}</p>}
+        </div>
+      </Link>
     </article>
   );
 }
@@ -208,10 +262,11 @@ const styles = {
     justifyContent: "center",
   },
   testimonialCard: {
-    borderTopLeftRadius: "50px",
+    borderTopLeftRadius: "30px",
     borderBottomRightRadius: "30px",
     overflow: "hidden",
     background: "white",
+    position: "relative",
   },
   cardImgContainer: {
     position: "relative",
@@ -248,15 +303,17 @@ const styles = {
     position: "absolute",
     top: "18px",
     right: "18px",
-    width: "44px",
-    height: "44px",
-    background: "#fbbf24",
+    width: "35px",
+    height: "35px",
+    background: "#fbbf24de",
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#000",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+    color: "#fff",
+    cursor: "pointer",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    transition: "transform 0.2s ease",
   },
   cardInfo: {
     padding: "18px 22px",
@@ -278,5 +335,34 @@ const styles = {
     color: "#000",
     margin: 0,
     lineHeight: "1.4",
+  },
+  /* --- Video Modal --- */
+  videoModalOverlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "rgba(0,0,0,0.8)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 9999,
+  },
+  videoModalContent: {
+    width: "80%",
+    maxWidth: "900px",
+    height: "70vh",
+    position: "relative",
+  },
+  closeBtn: {
+    position: "absolute",
+    top: "-35px",
+    right: "0",
+    background: "transparent",
+    border: "none",
+    color: "white",
+    fontSize: "28px",
+    cursor: "pointer",
   },
 };
