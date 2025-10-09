@@ -13,7 +13,7 @@ const testimonialsData = [
     name: "APOORV SHIKHAR",
     batch: "B. Tech (ES), 2013-17 Batch",
     role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
-    img: "/images/home-page/sixth-section-fifth-banner.png",
+    img: "/images/home-page/sixth-section-second-banner.png",
     quote:
       "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
   },
@@ -22,14 +22,14 @@ const testimonialsData = [
     batch: "B. Tech (CE), 2013-17 Batch",
     role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
     img: "/images/home-page/sixth-section-third-banner.png",
-    // video: true,
+    video: true,
   },
   {
     name: "NADEEM KHAN",
     batch: "B. Tech (ME), 2015-19 Batch",
     role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
     img: "/images/home-page/sixth-section-fourth-banner.png",
-    // video: true,
+    video: true,
   },
   {
     name: "RITIKA SHARMA",
@@ -42,13 +42,17 @@ const testimonialsData = [
 ];
 
 export default function TestimonialsSection() {
-  const [naman, apoorv, yashika, nadeem, ritika] = testimonialsData;
+  // distribute testimonials dynamically into 3 columns
+  const column1 = testimonialsData.slice(0, 1); // first (with header)
+  const column2 = testimonialsData.slice(1, 3);
+  const column3 = testimonialsData.slice(3);
 
   return (
     <section style={styles.testimonialsSection}>
       <div style={styles.testimonialsContainer}>
-        {/* LEFT COLUMN - Header + Large Card */}
+        {/* LEFT COLUMN */}
         <div style={styles.columnLeft}>
+          {/* Header */}
           <div style={styles.headerContent}>
             <p style={styles.testimonialsLabel}>TESTIMONIALS</p>
             <h2 style={styles.mainHeading}>
@@ -75,161 +79,82 @@ export default function TestimonialsSection() {
             </button>
           </div>
 
-          <article style={styles.testimonialCard}>
-            <div style={styles.cardImgContainerNaman}>
-              <Image
-                src={naman.img}
-                alt={naman.name}
-                width={380}
-                height={520}
-                style={styles.cardImg}
-              />
-              <div style={styles.quoteBar}>
-                <div style={styles.yellowLine}></div>
-                <p style={styles.quoteTextOverlay}>{naman.quote}</p>
-              </div>
-            </div>
-            <div style={styles.cardInfo}>
-              <h3 style={styles.personName}>{naman.name}</h3>
-              <p style={styles.personBatch}>{naman.batch}</p>
-              <p style={styles.personRole}>{naman.role}</p>
-            </div>
-          </article>
+          {/* Testimonial cards in first column */}
+          {column1.map((item, i) => (
+            <TestimonialCard key={i} data={item} />
+          ))}
         </div>
 
-        {/* MIDDLE COLUMN - Two Cards */}
+        {/* MIDDLE COLUMN */}
         <div style={styles.columnMiddle}>
-          <article style={styles.testimonialCard}>
-            <div style={styles.cardImgContainerYashika}>
-              <Image
-                src={yashika.img}
-                alt={yashika.name}
-                width={340}
-                height={280}
-                style={styles.cardImg}
-              />
-              {yashika.video && (
-                <div style={styles.playBtn}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              )}
-            </div>
-            <div style={styles.cardInfo}>
-              <h3 style={styles.personName}>{yashika.name}</h3>
-              <p style={styles.personBatch}>{yashika.batch}</p>
-              <p style={styles.personRole}>{yashika.role}</p>
-            </div>
-          </article>
-          <article style={styles.testimonialCard}>
-            <div style={styles.cardImgContainerYashika}>
-              <Image
-                src={yashika.img}
-                alt={yashika.name}
-                width={340}
-                height={280}
-                style={styles.cardImg}
-              />
-              {yashika.video && (
-                <div style={styles.playBtn}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              )}
-            </div>
-            <div style={styles.cardInfo}>
-              <h3 style={styles.personName}>{yashika.name}</h3>
-              <p style={styles.personBatch}>{yashika.batch}</p>
-              <p style={styles.personRole}>{yashika.role}</p>
-            </div>
-          </article>
+          {column2.map((item, i) => (
+            <TestimonialCard key={i} data={item} />
+          ))}
         </div>
 
-        {/* RIGHT COLUMN - Two Cards */}
+        {/* RIGHT COLUMN */}
         <div style={styles.columnRight}>
-          <article style={styles.testimonialCard}>
-            <div style={styles.cardImgContainerNadeem}>
-              <Image
-                src={nadeem.img}
-                alt={nadeem.name}
-                width={380}
-                height={380}
-                style={styles.cardImg}
-              />
-              {nadeem.video && (
-                <div style={styles.playBtn}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              )}
-            </div>
-            <div style={styles.cardInfo}>
-              <h3 style={styles.personName}>{nadeem.name}</h3>
-              <p style={styles.personBatch}>{nadeem.batch}</p>
-              <p style={styles.personRole}>{nadeem.role}</p>
-            </div>
-          </article>
-
-          <article style={styles.testimonialCard}>
-            <div style={styles.cardImgContainerRitika}>
-              <Image
-                src={ritika.img}
-                alt={ritika.name}
-                width={340}
-                height={280}
-                style={styles.cardImg}
-              />
-              <div style={styles.quoteBar}>
-                <div style={styles.yellowLine}></div>
-                <p style={styles.quoteTextOverlay}>{ritika.quote}</p>
-              </div>
-            </div>
-            <div style={styles.cardInfo}>
-              <h3 style={styles.personName}>{ritika.name}</h3>
-              <p style={styles.personBatch}>{ritika.batch}</p>
-            </div>
-          </article>
+          {column3.map((item, i) => (
+            <TestimonialCard key={i} data={item} />
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+/* ✅ Reusable card component */
+function TestimonialCard({ data }) {
+  return (
+    <article style={styles.testimonialCard}>
+      <div style={styles.cardImgContainer}>
+        <Image
+          src={data.img}
+          alt={data.name}
+          width={380}
+          height={380}
+          style={styles.cardImg}
+        />
+
+        {/* Optional video button */}
+        {data.video && (
+          <div style={styles.playBtn}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        )}
+
+        {/* Optional quote overlay */}
+        {data.quote && (
+          <div style={styles.quoteBar}>
+            <div style={styles.yellowLine}></div>
+            <p style={styles.quoteTextOverlay}>{data.quote}</p>
+          </div>
+        )}
+      </div>
+
+      <div style={styles.cardInfo}>
+        <h3 style={styles.personName}>{data.name}</h3>
+        <p style={styles.personBatch}>{data.batch}</p>
+        {data.role && <p style={styles.personRole}>{data.role}</p>}
+      </div>
+    </article>
+  );
+}
+
+/* --- STYLES --- */
 const styles = {
   testimonialsSection: {
     background: "#f5f5f5",
     padding: "80px 60px",
   },
   testimonialsContainer: {
-    alignItems: "flex-start",
+    display: "flex",
     justifyContent: "center",
+    alignItems: "flex-start",
     gap: "5rem",
-    width: "100%",
-    maxWidth: "100%",
-    margin: "0 auto",
-    display: "flex",
-  },
-  column: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "28px",
+    flexWrap: "wrap",
   },
   columnLeft: {
     flex: "0 0 auto",
@@ -246,11 +171,12 @@ const styles = {
     gap: "28px",
   },
   columnRight: {
-    marginTop: "5rem",
+    flex: "0 0 auto",
     width: "330px",
     display: "flex",
     flexDirection: "column",
     gap: "28px",
+    marginTop: "5rem",
   },
   headerContent: {
     marginBottom: "40px",
@@ -259,79 +185,53 @@ const styles = {
     fontSize: "15px",
     fontWeight: "700",
     color: "#000",
-    margin: "0 0 16px 0",
+    marginBottom: "16px",
   },
   mainHeading: {
     fontSize: "3rem",
     fontWeight: "700",
     lineHeight: "1.2",
     color: "#000",
-    margin: "0 0 24px 0",
+    marginBottom: "24px",
   },
-  blueText: {
-    color: "#4a90e2",
-  },
+  blueText: { color: "#4a90e2" },
   circleArrowBtn: {
     cursor: "pointer",
     color: "#666",
     background: "transparent",
     border: "2px solid #ccc",
     borderRadius: "50%",
-    justifyContent: "center",
-    alignItems: "center",
     width: "24px",
     height: "24px",
-    transition: "all 0.3s",
     display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   testimonialCard: {
-    borderTopLeftRadius: "30px",
+    borderTopLeftRadius: "50px",
     borderBottomRightRadius: "30px",
     overflow: "hidden",
+    background: "white",
   },
   cardImgContainer: {
     position: "relative",
     width: "100%",
-    overflow: "hidden",
-  },
-  cardImgContainerNaman: {
-    position: "relative",
-    width: "100%",
-    overflow: "hidden",
     height: "100%",
-  },
-  cardImgContainerYashika: {
-    position: "relative",
-    width: "100%",
     overflow: "hidden",
-    height: "100%",
-  },
-  cardImgContainerNadeem: {
-    position: "relative",
-    width: "100%",
-    overflow: "hidden",
-    height: "100%",
-  },
-  cardImgContainerRitika: {
-    position: "relative",
-    width: "100%",
-    overflow: "hidden",
-    height: "100%",
   },
   cardImg: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    display: "block",
   },
   quoteBar: {
     position: "absolute",
-    bottom: "0",
-    left: "0",
-    right: "0",
+    bottom: 0,
+    left: 0,
+    right: 0,
     padding: "20px 24px",
     background:
-      "linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)",
+      "linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.4) 60%, transparent 100%)",
   },
   yellowLine: {
     width: "40px",
@@ -340,10 +240,9 @@ const styles = {
     marginBottom: "10px",
   },
   quoteTextOverlay: {
-    color: "white",
+    color: "#fff",
     fontSize: "13px",
-    lineHeight: "1.5",
-    margin: "0",
+    margin: 0,
   },
   playBtn: {
     position: "absolute",
@@ -357,29 +256,27 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     color: "#000",
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-    cursor: "pointer",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
   },
   cardInfo: {
     padding: "18px 22px",
-    background: "white",
+    background: "#fff",
   },
   personName: {
     fontSize: "15px",
     fontWeight: "700",
     color: "#000",
-    margin: "0 0 4px 0",
-    letterSpacing: "0.3px",
+    marginBottom: "4px",
   },
   personBatch: {
     fontSize: "12px",
     color: "#666",
-    margin: "0 0 4px 0",
+    marginBottom: "4px",
   },
   personRole: {
     fontSize: "12px",
     color: "#000",
-    margin: "0",
+    margin: 0,
     lineHeight: "1.4",
   },
 };
