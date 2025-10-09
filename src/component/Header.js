@@ -14,6 +14,7 @@ export default function Header() {
   const [admissionOpen, setAdmissionOpen] = useState(false);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
+  const [selectedSchoolName, setSelectedSchoolName] = useState("ENGINEERING");
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
@@ -480,7 +481,7 @@ export default function Header() {
             >
               <p className="mb-0">School of</p>
               <h5 className="fw-bold">
-                ENGINEERING <IoChevronDownOutline fontSize={15} />
+                {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
               </h5>
             </div>
 
@@ -499,7 +500,10 @@ export default function Header() {
                         className={`school-item ${
                           selectedSchool === idx ? "active" : ""
                         }`}
-                        onClick={() => setSelectedSchool(idx)}
+                        onClick={() => {
+                          setSelectedSchool(idx);
+                          setSelectedSchoolName(school.name);
+                        }}
                       >
                         {school.name}
                       </div>

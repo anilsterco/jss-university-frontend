@@ -1,5 +1,6 @@
 import FirstSection from "@/component/home-components/FirstSection";
-import SecondSection from "@/component/home-components/SecondSection";
+import BelowBannerSection from "@/component/school-components/BelowBannerSection";
+import DepartmentSection from "@/component/school-components/DepartmentSection";
 import ThirdSection from "@/component/home-components/ThirdSection";
 import FourthSection from "@/component/home-components/FourthSection";
 import FifthSection from "@/component/home-components/FifthSection";
@@ -10,7 +11,8 @@ export default function SchoolPage() {
   return (
     <div>
       <FirstSection />
-      <SecondSection />
+      <BelowBannerSection />
+      <DepartmentSection />
       <ThirdSection />
       <FourthSection />
       <FifthSection />

@@ -98,6 +98,12 @@ a:active {
   top: -14px;
   left: 31%;
 }
+.school-below-banner-section ul li::marker {
+  color: #b08f29;
+}
+.school-below-banner-section ul li:first-child::marker {
+  color: transparent;
+}
 .departments-list .link-content a {
   width: 80%;
   display: block;

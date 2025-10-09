@@ -893,6 +893,14 @@ a, a:hover, a:focus, a:active {
   left: 31%;
 }
 
+.school-below-banner-section ul li::marker {
+  color: #b08f29;
+}
+
+.school-below-banner-section ul li:first-child::marker {
+  color: rgba(0, 0, 0, 0);
+}
+
 .departments-list .link-content a {
   border-bottom: 1px dotted rgba(255, 255, 255, .35);
   width: 80%;

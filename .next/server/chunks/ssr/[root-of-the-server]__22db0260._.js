@@ -54,6 +54,7 @@ function Header() {
     const [admissionOpen, setAdmissionOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [engineeringDropdown, setEngineeringDropdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [selectedSchool, setSelectedSchool] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [selectedSchoolName, setSelectedSchoolName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("ENGINEERING");
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isMounted, setIsMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [activeLink, setActiveLink] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -584,7 +585,7 @@ function Header() {
             }
         }, void 0, false, {
             fileName: "[project]/src/component/Header.js",
-            lineNumber: 416,
+            lineNumber: 417,
             columnNumber: 7
         }, this);
     }
@@ -610,7 +611,7 @@ function Header() {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 434,
+                                    lineNumber: 435,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -627,7 +628,7 @@ function Header() {
                                                             children: "NAAC"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 445,
+                                                            lineNumber: 446,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -635,13 +636,13 @@ function Header() {
                                                             children: "GRADE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 452,
+                                                            lineNumber: 453,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 444,
+                                                    lineNumber: 445,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -649,13 +650,13 @@ function Header() {
                                                     children: "A"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 460,
+                                                    lineNumber: 461,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 443,
+                                            lineNumber: 444,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -663,24 +664,24 @@ function Header() {
                                             children: "JSS is NAAC 'A' Grade Accredited"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 468,
+                                            lineNumber: 469,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 442,
+                                    lineNumber: 443,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/Header.js",
-                            lineNumber: 433,
+                            lineNumber: 434,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 432,
+                        lineNumber: 433,
                         columnNumber: 9
                     }, this),
                     pathname === "/schools" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -694,30 +695,31 @@ function Header() {
                                         children: "School of"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 481,
+                                        lineNumber: 482,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                         className: "jsx-949e0bccdc53b34a" + " " + "fw-bold",
                                         children: [
-                                            "ENGINEERING ",
+                                            selectedSchoolName,
+                                            " ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IoChevronDownOutline"], {
                                                 fontSize: 15
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 483,
-                                                columnNumber: 29
+                                                lineNumber: 484,
+                                                columnNumber: 38
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 482,
+                                        lineNumber: 483,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 477,
+                                lineNumber: 478,
                                 columnNumber: 13
                             }, this),
                             engineeringDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -734,22 +736,25 @@ function Header() {
                                                     children: "Schools"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 495,
+                                                    lineNumber: 496,
                                                     columnNumber: 21
                                                 }, this),
                                                 engineeringData.schools.map((school, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        onClick: ()=>setSelectedSchool(idx),
+                                                        onClick: ()=>{
+                                                            setSelectedSchool(idx);
+                                                            setSelectedSchoolName(school.name);
+                                                        },
                                                         className: "jsx-949e0bccdc53b34a" + " " + `school-item ${selectedSchool === idx ? "active" : ""}`,
                                                         children: school.name
                                                     }, idx, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 497,
+                                                        lineNumber: 498,
                                                         columnNumber: 23
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 494,
+                                            lineNumber: 495,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -759,7 +764,7 @@ function Header() {
                                                     className: "jsx-949e0bccdc53b34a" + " " + "dropdown-arrow"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 511,
+                                                    lineNumber: 515,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
@@ -767,7 +772,7 @@ function Header() {
                                                     children: "Department"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 512,
+                                                    lineNumber: 516,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -778,36 +783,36 @@ function Header() {
                                                             children: dept.text
                                                         }, i, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 516,
+                                                            lineNumber: 520,
                                                             columnNumber: 27
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 513,
+                                                    lineNumber: 517,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$io5$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IoTriangleSharp"], {
                                                     className: "triangle-icon"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 526,
+                                                    lineNumber: 530,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 510,
+                                            lineNumber: 514,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 492,
+                                    lineNumber: 493,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 488,
+                                lineNumber: 489,
                                 columnNumber: 15
                             }, this)
                         ]
@@ -830,7 +835,7 @@ function Header() {
                                                     children: l.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 543,
+                                                    lineNumber: 547,
                                                     columnNumber: 19
                                                 }, this),
                                                 l.dropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -849,22 +854,22 @@ function Header() {
                                                                             children: d.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/component/Header.js",
-                                                                            lineNumber: 557,
+                                                                            lineNumber: 561,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     }, j, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 556,
+                                                                        lineNumber: 560,
                                                                         columnNumber: 29
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 554,
+                                                                lineNumber: 558,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 553,
+                                                            lineNumber: 557,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -879,7 +884,7 @@ function Header() {
                                                                                 children: l.right.subtitle
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 569,
+                                                                                lineNumber: 573,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -887,7 +892,7 @@ function Header() {
                                                                                 children: l.right.title
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 572,
+                                                                                lineNumber: 576,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -895,7 +900,7 @@ function Header() {
                                                                                 children: l.right.desc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 573,
+                                                                                lineNumber: 577,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -906,18 +911,18 @@ function Header() {
                                                                                         children: cta.text
                                                                                     }, idx, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 576,
+                                                                                        lineNumber: 580,
                                                                                         columnNumber: 35
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 574,
+                                                                                lineNumber: 578,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 568,
+                                                                        lineNumber: 572,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -933,7 +938,7 @@ function Header() {
                                                                                         height: 160
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 590,
+                                                                                        lineNumber: 594,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -941,18 +946,18 @@ function Header() {
                                                                                         children: b.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
-                                                                                        lineNumber: 596,
+                                                                                        lineNumber: 600,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 ]
                                                                             }, idx, true, {
                                                                                 fileName: "[project]/src/component/Header.js",
-                                                                                lineNumber: 589,
+                                                                                lineNumber: 593,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 587,
+                                                                        lineNumber: 591,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
@@ -963,39 +968,39 @@ function Header() {
                                                                     children: l.dropdown && l.dropdown[0]?.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/Header.js",
-                                                                    lineNumber: 605,
+                                                                    lineNumber: 609,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 604,
+                                                                lineNumber: 608,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 565,
+                                                            lineNumber: 569,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/Header.js",
-                                                    lineNumber: 552,
+                                                    lineNumber: 556,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 538,
+                                            lineNumber: 542,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 536,
+                                    lineNumber: 540,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 535,
+                                lineNumber: 539,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1011,7 +1016,7 @@ function Header() {
                                                 children: "ADMISSIONS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 620,
+                                                lineNumber: 624,
                                                 columnNumber: 15
                                             }, this),
                                             admissionOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1021,7 +1026,7 @@ function Header() {
                                                         className: "jsx-949e0bccdc53b34a" + " " + "dropdown-arrow"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 629,
+                                                        lineNumber: 633,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1032,7 +1037,7 @@ function Header() {
                                                                 children: admissionsData.left.subtitle
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 631,
+                                                                lineNumber: 635,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1040,7 +1045,7 @@ function Header() {
                                                                 children: admissionsData.left.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 634,
+                                                                lineNumber: 638,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1048,7 +1053,7 @@ function Header() {
                                                                 children: admissionsData.left.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 635,
+                                                                lineNumber: 639,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1062,7 +1067,7 @@ function Header() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 637,
+                                                                        lineNumber: 641,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1073,13 +1078,13 @@ function Header() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 638,
+                                                                        lineNumber: 642,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 636,
+                                                                lineNumber: 640,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1090,18 +1095,18 @@ function Header() {
                                                                         children: cta.text
                                                                     }, idx, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 642,
+                                                                        lineNumber: 646,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 640,
+                                                                lineNumber: 644,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 630,
+                                                        lineNumber: 634,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1117,12 +1122,12 @@ function Header() {
                                                                         ]
                                                                     }, idx, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 656,
+                                                                        lineNumber: 660,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 654,
+                                                                lineNumber: 658,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1133,7 +1138,7 @@ function Header() {
                                                                         children: admissionsData.middle.stats.text
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 662,
+                                                                        lineNumber: 666,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1141,7 +1146,7 @@ function Header() {
                                                                         children: admissionsData.middle.stats.subtext
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 663,
+                                                                        lineNumber: 667,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1152,19 +1157,19 @@ function Header() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/component/Header.js",
-                                                                        lineNumber: 664,
+                                                                        lineNumber: 668,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 661,
+                                                                lineNumber: 665,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 653,
+                                                        lineNumber: 657,
                                                         columnNumber: 19
                                                     }, this),
                                                     admissionsData.right && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1177,24 +1182,24 @@ function Header() {
                                                             className: "addmision-section-img"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 672,
+                                                            lineNumber: 676,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 671,
+                                                        lineNumber: 675,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 628,
+                                                lineNumber: 632,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 619,
+                                        lineNumber: 623,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1204,25 +1209,25 @@ function Header() {
                                         children: "☰"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 685,
+                                        lineNumber: 689,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 618,
+                                lineNumber: 622,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 534,
+                        lineNumber: 538,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 431,
+                lineNumber: 432,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1230,7 +1235,7 @@ function Header() {
                 className: "jsx-949e0bccdc53b34a" + " " + `backdrop ${menuOpen ? "show" : ""}`
             }, void 0, false, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 696,
+                lineNumber: 700,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1244,7 +1249,7 @@ function Header() {
                         children: "×"
                     }, void 0, false, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 702,
+                        lineNumber: 706,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1260,17 +1265,17 @@ function Header() {
                                             children: item.name
                                         }, idx, false, {
                                             fileName: "[project]/src/component/Header.js",
-                                            lineNumber: 714,
+                                            lineNumber: 718,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 712,
+                                    lineNumber: 716,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 711,
+                                lineNumber: 715,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1281,7 +1286,7 @@ function Header() {
                                         children: "ABOUT JSSMVP HERITAGE ABOUT JSS LEADERSHIP"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 728,
+                                        lineNumber: 732,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1291,18 +1296,18 @@ function Header() {
                                                 children: s
                                             }, i, false, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 733,
+                                                lineNumber: 737,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 731,
+                                        lineNumber: 735,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 727,
+                                lineNumber: 731,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1322,7 +1327,7 @@ function Header() {
                                                         className: "jsx-949e0bccdc53b34a"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 744,
+                                                        lineNumber: 748,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1330,7 +1335,7 @@ function Header() {
                                                         children: activeData.firstContent.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 749,
+                                                        lineNumber: 753,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1339,12 +1344,12 @@ function Header() {
                                                             className: "mb-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 751,
+                                                            lineNumber: 755,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 750,
+                                                        lineNumber: 754,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1361,23 +1366,23 @@ function Header() {
                                                                 sizes: "100vw"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 755,
+                                                                lineNumber: 759,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 754,
+                                                            lineNumber: 758,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 753,
+                                                        lineNumber: 757,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 743,
+                                                lineNumber: 747,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1397,17 +1402,17 @@ function Header() {
                                                                 sizes: "100vw"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 768,
+                                                                lineNumber: 772,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
-                                                            lineNumber: 767,
+                                                            lineNumber: 771,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 766,
+                                                        lineNumber: 770,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1420,7 +1425,7 @@ function Header() {
                                                                 className: "jsx-949e0bccdc53b34a"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 778,
+                                                                lineNumber: 782,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1428,47 +1433,47 @@ function Header() {
                                                                 children: activeData.secondContent.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
-                                                                lineNumber: 783,
+                                                                lineNumber: 787,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/component/Header.js",
-                                                        lineNumber: 777,
+                                                        lineNumber: 781,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/Header.js",
-                                                lineNumber: 765,
+                                                lineNumber: 769,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/Header.js",
-                                        lineNumber: 742,
+                                        lineNumber: 746,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/Header.js",
-                                    lineNumber: 741,
+                                    lineNumber: 745,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/Header.js",
-                                lineNumber: 740,
+                                lineNumber: 744,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/Header.js",
-                        lineNumber: 710,
+                        lineNumber: 714,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/Header.js",
-                lineNumber: 701,
+                lineNumber: 705,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1478,7 +1483,7 @@ function Header() {
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/Header.js",
-        lineNumber: 430,
+        lineNumber: 431,
         columnNumber: 5
     }, this);
 }
