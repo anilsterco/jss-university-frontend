@@ -1,21 +1,21 @@
-import BannerComponent from "@/component/home-components/BannerComponent";
-import BelowBannerSection from "@/component/school-components/BelowBannerSection";
-import DepartmentSection from "@/component/school-components/DepartmentSection";
+import BannerComponent from "@/component/home-components/banner/BannerComponent";
+import BelowBannerComponent from "@/component/school-components/BelowBannerComponent";
+import DepartmentComponent from "@/component/school-components/DepartmentComponent";
 import PlacementComponent from "@/component/home-components/PlacementComponent";
-import AboutSchoolSection from "@/component/school-components/AboutSchoolSection";
+import AboutSchoolComponent from "@/component/school-components/AboutSchoolComponent";
 import TestimonialComponent from "@/component/home-components/TestimonialComponent";
 import HappingsHomeComponent from "@/component/home-components/HappingsHomeComponent";
 
 export default function SchoolPage() {
   return (
-    <div>
+    <>
       <BannerComponent />
-      <BelowBannerSection />
-      <DepartmentSection />
+      <BelowBannerComponent />
+      <DepartmentComponent />
       <PlacementComponent />
-      <AboutSchoolSection />
+      <AboutSchoolComponent />
       <TestimonialComponent />
       <HappingsHomeComponent />
-    </div>
+    </>
   );
 }

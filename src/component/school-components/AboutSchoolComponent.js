@@ -1,19 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { SlArrowRightCircle } from "react-icons/sl";
 export default function AboutSchool() {
-  const stats = [
-    {
-      rank: "#20",
-      label: "ENGINEERING COLLEGES IN UTTAR PRADESH",
-      source: "Outlook 2020",
-    },
-    {
-      rank: "#201-250",
-      label: "NATIONALLY ENGINEERING RANK (2024)",
-      source: "NIRF",
-    },
-  ];
   const aboutSchoolContent = {
     title:
       "EMPOWERING INNOVATION.<span class='blue-text'> ENGINEERING EXCELLENCE.</span>",
@@ -86,9 +75,9 @@ export default function AboutSchool() {
             <div>
               <button
                 className="btn btn-link p-0 text-decoration-none"
-                style={{ fontSize: "24px", color: "#0d1b2a" }}
+                style={{ fontSize: "18px", color: "#7a7a7aff" }}
               >
-                →
+                <SlArrowRightCircle />
               </button>
             </div>
 
@@ -99,7 +88,7 @@ export default function AboutSchool() {
                   <div
                     className="border p-3 bg-white d-flex  flex-wrap"
                     style={{
-                      borderRadius: "8px",
+                      borderRadius: "3px",
                       height: "auto",
                       boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
                     }}
@@ -257,5 +246,6 @@ const styles = {
     background: "#16344e",
     padding: ".5rem 1.5rem",
     color: "#fff",
+    fontSize: "14px",
   },
 };

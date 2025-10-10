@@ -1,4 +1,4 @@
-import BannerComponent from "../component/home-components/BannerComponent";
+import BannerComponent from "../component/home-components/banner/BannerComponent";
 import CourseOfferedComponent from "../component/home-components/CourseOfferedComponent";
 import PlacementComponent from "../component/home-components/PlacementComponent";
 import FacilitiesComponent from "../component/home-components/FacilitiesComponent";
