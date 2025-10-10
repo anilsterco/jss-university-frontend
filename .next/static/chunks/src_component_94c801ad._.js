@@ -1135,23 +1135,13 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$sl$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/sl/index.mjs [app-client] (ecmascript)");
 "use client";
 ;
 ;
 ;
+;
 function AboutSchool() {
-    const stats = [
-        {
-            rank: "#20",
-            label: "ENGINEERING COLLEGES IN UTTAR PRADESH",
-            source: "Outlook 2020"
-        },
-        {
-            rank: "#201-250",
-            label: "NATIONALLY ENGINEERING RANK (2024)",
-            source: "NIRF"
-        }
-    ];
     const aboutSchoolContent = {
         title: "EMPOWERING INNOVATION.<span class='blue-text'> ENGINEERING EXCELLENCE.</span>",
         subtitle: "ABOUT SCHOOL OF ENGINEERING",
@@ -1211,7 +1201,7 @@ function AboutSchool() {
                                 children: aboutSchoolContent.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 62,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1226,7 +1216,7 @@ function AboutSchool() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 64,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1240,25 +1230,29 @@ function AboutSchool() {
                                 children: aboutSchoolContent.description
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 74,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     className: "btn btn-link p-0 text-decoration-none",
                                     style: {
-                                        fontSize: "24px",
-                                        color: "#0d1b2a"
+                                        fontSize: "18px",
+                                        color: "#7a7a7aff"
                                     },
-                                    children: "→"
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$sl$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SlArrowRightCircle"], {}, void 0, false, {
+                                        fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
+                                        lineNumber: 80,
+                                        columnNumber: 17
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                    lineNumber: 87,
+                                    lineNumber: 76,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 86,
+                                lineNumber: 75,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1268,7 +1262,7 @@ function AboutSchool() {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "border p-3 bg-white d-flex  flex-wrap",
                                             style: {
-                                                borderRadius: "8px",
+                                                borderRadius: "3px",
                                                 height: "auto",
                                                 boxShadow: "0 2px 6px rgba(0,0,0,0.05)"
                                             },
@@ -1283,7 +1277,7 @@ function AboutSchool() {
                                                     children: item.rank
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                                    lineNumber: 107,
+                                                    lineNumber: 96,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1300,7 +1294,7 @@ function AboutSchool() {
                                                             children: item.text
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                                            lineNumber: 118,
+                                                            lineNumber: 107,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1311,29 +1305,29 @@ function AboutSchool() {
                                                             children: item.source
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                                            lineNumber: 127,
+                                                            lineNumber: 116,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                                    lineNumber: 117,
+                                                    lineNumber: 106,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 99,
+                                            lineNumber: 88,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                        lineNumber: 98,
+                                        lineNumber: 87,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 96,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1345,18 +1339,18 @@ function AboutSchool() {
                                         children: btn.text
                                     }, i, false, {
                                         fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                        lineNumber: 144,
+                                        lineNumber: 133,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                lineNumber: 142,
+                                lineNumber: 131,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                        lineNumber: 61,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1377,7 +1371,7 @@ function AboutSchool() {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                    lineNumber: 159,
+                                    lineNumber: 148,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1392,7 +1386,7 @@ function AboutSchool() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                    lineNumber: 169,
+                                    lineNumber: 158,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1416,7 +1410,7 @@ function AboutSchool() {
                                             children: "28+"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 196,
+                                            lineNumber: 185,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1428,7 +1422,7 @@ function AboutSchool() {
                                             children: aboutSchoolContent.chancellor.statsContent
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 197,
+                                            lineNumber: 186,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1442,13 +1436,13 @@ function AboutSchool() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 202,
+                                            lineNumber: 191,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                    lineNumber: 183,
+                                    lineNumber: 172,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1480,7 +1474,7 @@ function AboutSchool() {
                                             priority: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 231,
+                                            lineNumber: 220,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1491,40 +1485,40 @@ function AboutSchool() {
                                             children: aboutSchoolContent.chancellor.logoContent
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                            lineNumber: 243,
+                                            lineNumber: 232,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                                    lineNumber: 215,
+                                    lineNumber: 204,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                            lineNumber: 158,
+                            lineNumber: 147,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                        lineNumber: 157,
+                        lineNumber: 146,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-                lineNumber: 59,
+                lineNumber: 48,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-            lineNumber: 58,
+            lineNumber: 47,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/school-components/AboutSchoolSection.js",
-        lineNumber: 52,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }
@@ -1533,7 +1527,8 @@ const styles = {
     navButtons: {
         background: "#16344e",
         padding: ".5rem 1.5rem",
-        color: "#fff"
+        color: "#fff",
+        fontSize: "14px"
     }
 };
 var _c;
