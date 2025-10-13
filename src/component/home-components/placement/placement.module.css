@@ -1,0 +1,49 @@
+/* components/home-components/PlacementsSection/PlacementsSection.module.css */
+
+.thirdSection {
+  padding: 10rem 0rem 10rem 10rem;
+  width: 100%;
+  margin: auto;
+  background: #f6f6f6;
+}
+
+.blueBg {
+  background: #16344e;
+  width: 100%;
+  max-width: 13%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.statsNumber {
+  font-size: 3rem;
+}
+
+.statsLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.wallOfFameText {
+  left: 6%;
+  width: 35%;
+  bottom: 10%;
+}
+
+.testimonialImageContainer {
+  width: 140px;
+  height: 160px;
+}
+
+.wallOfFameContainer {
+  height: 100%;
+  width: 80%;
+}
+
+.wallOfFameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

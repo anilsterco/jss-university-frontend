@@ -1,0 +1,252 @@
+/* components/home-components/EventsGrid/EventsGrid.module.css */
+
+.eventSection {
+  padding: 5rem;
+  background: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.headerSmall {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.headerTitle {
+  font-size: 42px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 280px;
+  gap: 0;
+}
+
+.card {
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.cardLargeTopLeft {
+  border-top-left-radius: 50px;
+}
+
+.cardLargeBottomRight {
+  border-bottom-right-radius: 50px;
+}
+
+.contentPart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  line-height: 2.5;
+  padding: 2rem;
+  width: 100%;
+  z-index: 2;
+}
+
+.miniContentPart {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  width: 90%;
+  line-height: 2.5;
+  z-index: 2;
+}
+
+.cardTag {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.cardTagDark {
+  color: #333;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 auto 0;
+  color: #333;
+}
+
+.cardTitleWhite {
+  color: #fff;
+}
+
+.cardTitleLarge {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+  margin: auto 0;
+}
+
+.cardSubtitle {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 10px;
+  color: #333;
+}
+
+.cardSubtitleWhite {
+  color: #fff;
+}
+
+.cardDate {
+  font-size: 13px;
+  margin-top: 15px;
+  color: #333;
+}
+
+.cardDateWhite {
+  color: #fff;
+}
+
+.orangeLine {
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin-bottom: 20px;
+}
+
+.seamEduLogo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.seamEduBold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.seamEduTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.seamEduLight {
+  font-weight: 300;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .eventSection {
+    padding: 4rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .headerTitle {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  .eventSection {
+    padding: 3rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .headerTitle {
+    font-size: 32px;
+  }
+
+  .cardTitleLarge {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventSection {
+    padding: 2rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+
+  .headerTitle {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .cardTitleLarge {
+    font-size: 24px;
+  }
+
+  .contentPart {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .headerTitle {
+    font-size: 24px;
+  }
+
+  .cardTitleLarge {
+    font-size: 20px;
+  }
+
+  .contentPart {
+    padding: 1rem;
+  }
+
+  .cardLargeTopLeft {
+    border-top-left-radius: 30px;
+  }
+
+  .cardLargeBottomRight {
+    border-bottom-right-radius: 30px;
+  }
+}

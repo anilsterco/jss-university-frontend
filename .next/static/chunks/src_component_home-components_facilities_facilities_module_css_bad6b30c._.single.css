@@ -1,0 +1,216 @@
+/* [project]/src/component/home-components/facilities/facilities.module.css [app-client] (css) */
+.facilities-module__UE4CmG__fourthSliderSection {
+  background: #f6f6f6;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.facilities-module__UE4CmG__fourthSliderSection h1 {
+  font-size: 3.5rem;
+}
+
+.facilities-module__UE4CmG__headingContainer {
+  background: #f6f6f6;
+  width: 100%;
+  padding: 4rem 10rem 0;
+  position: relative;
+}
+
+.facilities-module__UE4CmG__headingContent {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+}
+
+.facilities-module__UE4CmG__blueText {
+  color: #007bff;
+}
+
+.facilities-module__UE4CmG__sliderStickyWrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.facilities-module__UE4CmG__fixedSlider {
+  z-index: 10;
+  position: fixed;
+  top: 14%;
+  left: 0;
+  right: 0;
+}
+
+.facilities-module__UE4CmG__swiperContainer {
+  width: 100%;
+  height: 100vh;
+}
+
+.facilities-module__UE4CmG__slideContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.facilities-module__UE4CmG__slideContainer:before, .facilities-module__UE4CmG__slideContainer:after {
+  content: "";
+  pointer-events: none;
+  z-index: 10;
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  left: 0;
+}
+
+.facilities-module__UE4CmG__slideContainer:before {
+  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+  top: 0;
+}
+
+.facilities-module__UE4CmG__slideContainer:after {
+  background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+  bottom: 0;
+}
+
+.facilities-module__UE4CmG__slideImage {
+  object-fit: cover;
+}
+
+.facilities-module__UE4CmG__bannerContent {
+  z-index: 20;
+  color: #fff;
+  width: 45%;
+  position: absolute;
+  top: 10%;
+  left: 14%;
+}
+
+.facilities-module__UE4CmG__bannerContent h2 {
+  margin-bottom: 1.5rem;
+  font-size: max(2.5rem, min(5vw, 4rem));
+}
+
+.facilities-module__UE4CmG__bannerContent p {
+  color: #fff;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.facilities-module__UE4CmG__bannerLinks {
+  color: #fff;
+  z-index: 20;
+  gap: 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  bottom: 25%;
+  left: 14%;
+}
+
+.facilities-module__UE4CmG__bannerLink {
+  color: #fff;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  display: flex;
+}
+
+.facilities-module__UE4CmG__bannerLink:hover {
+  opacity: .8;
+}
+
+.facilities-module__UE4CmG__verticalLine {
+  z-index: 15;
+  background-color: rgba(231, 231, 231, .5);
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10%;
+}
+
+.facilities-module__UE4CmG__slideNumberBox {
+  z-index: 20;
+  background-color: #f8c326;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 16px;
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: -15px;
+}
+
+.facilities-module__UE4CmG__slideProgress {
+  color: #fff;
+  z-index: 20;
+  background: rgba(0, 0, 0, .3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+@media (max-width: 768px) {
+  .facilities-module__UE4CmG__headingContainer {
+    padding: 2rem 1rem 0;
+  }
+
+  .facilities-module__UE4CmG__fourthSliderSection h1 {
+    font-size: 2rem;
+  }
+
+  .facilities-module__UE4CmG__bannerContent {
+    width: 80%;
+    left: 5%;
+  }
+
+  .facilities-module__UE4CmG__bannerLinks {
+    flex-direction: column;
+    gap: 1rem;
+    bottom: 20%;
+    left: 5%;
+  }
+
+  .facilities-module__UE4CmG__verticalLine {
+    left: 5%;
+  }
+
+  .facilities-module__UE4CmG__slideContainer:before, .facilities-module__UE4CmG__slideContainer:after {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .facilities-module__UE4CmG__fourthSliderSection h1 {
+    font-size: 1.5rem;
+  }
+
+  .facilities-module__UE4CmG__bannerContent {
+    width: 90%;
+  }
+
+  .facilities-module__UE4CmG__bannerContent h2 {
+    font-size: 1.8rem;
+  }
+
+  .facilities-module__UE4CmG__slideProgress {
+    top: 20px;
+    right: 20px;
+  }
+
+  .facilities-module__UE4CmG__slideContainer:before, .facilities-module__UE4CmG__slideContainer:after {
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=src_component_home-components_facilities_facilities_module_css_bad6b30c._.single.css.map*/

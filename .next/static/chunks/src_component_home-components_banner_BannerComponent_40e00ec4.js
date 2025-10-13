@@ -2,6 +2,7 @@
 "[project]/src/component/home-components/banner/BannerComponent.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// components/home-components/Banner/index.js
 __turbopack_context__.s([
     "default",
     ()=>HeroSlider
@@ -15,7 +16,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$mo
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.mjs [app-client] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module './nanner.module.css'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 "use client";
+;
 ;
 ;
 ;
@@ -46,37 +53,8 @@ function HeroSlider() {
             url: "/"
         }
     ];
-    // Styles object
-    const styles = {
-        firstBannerSlide: {
-            position: 'relative'
-        },
-        bannerContent: {
-            color: '#fff',
-            width: '30%',
-            position: 'absolute',
-            bottom: '20%',
-            left: '10%'
-        },
-        bannerContentH1: {
-            fontSize: '60px',
-            marginBottom: '2rem'
-        },
-        bannerContentP: {
-            fontSize: '16px',
-            fontWeight: 300,
-            marginBottom: '2rem'
-        },
-        bannerContentA: {
-            paddingBottom: '8px',
-            borderBottom: '1px solid',
-            fontSize: '18px',
-            color: '#fff'
-        }
-    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "first-banner-slide",
-        style: styles.firstBannerSlide,
+        className: styles.firstBannerSlide,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
             modules: [
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$navigation$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navigation$3e$__["Navigation"],
@@ -106,32 +84,31 @@ function HeroSlider() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                            lineNumber: 78,
+                            lineNumber: 49,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "banner-content",
-                            style: styles.bannerContent,
+                            className: styles.bannerContent,
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    style: styles.bannerContentH1,
+                                    className: styles.bannerContentH1,
                                     children: slide.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 86,
+                                    lineNumber: 57,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    style: styles.bannerContentP,
+                                    className: styles.bannerContentP,
                                     children: slide.desc
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 87,
+                                    lineNumber: 58,
                                     columnNumber: 15
                                 }, this),
                                 slide.url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: slide.url,
-                                    style: styles.bannerContentA,
+                                    className: styles.bannerContentA,
                                     children: [
                                         "Learn more about JSS",
                                         " ",
@@ -141,35 +118,35 @@ function HeroSlider() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                            lineNumber: 91,
+                                            lineNumber: 62,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 89,
+                                    lineNumber: 60,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                            lineNumber: 85,
+                            lineNumber: 56,
                             columnNumber: 13
                         }, this)
                     ]
                 }, slide.id, true, {
                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                    lineNumber: 77,
+                    lineNumber: 48,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-            lineNumber: 67,
+            lineNumber: 38,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-        lineNumber: 66,
+        lineNumber: 37,
         columnNumber: 5
     }, this);
 }

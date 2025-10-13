@@ -1,0 +1,222 @@
+/* components/home-components/FacilitiesSlider/FacilitiesSlider.module.css */
+
+.fourthSliderSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.fourthSliderSection h1 {
+  font-size: 3.5rem;
+}
+
+.headingContainer {
+  position: relative;
+  background: #f6f6f6;
+  width: 100%;
+  padding: 4rem 10rem 0;
+}
+
+.headingContent {
+  background: #fff;
+  padding: 1rem 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blueText {
+  color: #007bff;
+}
+
+.sliderStickyWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fixedSlider {
+  z-index: 10;
+  position: fixed;
+  top: 14%;
+  left: 0;
+  right: 0;
+}
+
+.swiperContainer {
+  width: 100%;
+  height: 100vh;
+}
+
+.slideContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Gradient Overlays */
+.slideContainer::before,
+.slideContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.slideContainer::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.slideContainer::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.slideImage {
+  object-fit: cover;
+}
+
+.bannerContent {
+  z-index: 20;
+  color: #fff;
+  width: 45%;
+  position: absolute;
+  top: 10%;
+  left: 14%;
+}
+
+.bannerContent h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.bannerContent p {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #fff;
+  max-width: 500px;
+}
+
+.bannerLinks {
+  gap: 2rem;
+  font-size: 14px;
+  display: flex;
+  position: absolute;
+  bottom: 25%;
+  left: 14%;
+  color: #fff;
+  font-weight: 600;
+  z-index: 20;
+}
+
+.bannerLink {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bannerLink:hover {
+  opacity: 0.8;
+}
+
+.verticalLine {
+  z-index: 15;
+  background-color: rgba(231, 231, 231, 0.5);
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10%;
+}
+
+.slideNumberBox {
+  z-index: 20;
+  background-color: #f8c326;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 16px;
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: -15px;
+}
+
+.slideProgress {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #fff;
+  font-size: 14px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headingContainer {
+    padding: 2rem 1rem 0;
+  }
+  
+  .fourthSliderSection h1 {
+    font-size: 2rem;
+  }
+  
+  .bannerContent {
+    width: 80%;
+    left: 5%;
+  }
+  
+  .bannerLinks {
+    left: 5%;
+    bottom: 20%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .verticalLine {
+    left: 5%;
+  }
+  
+  /* Adjust gradient height for mobile */
+  .slideContainer::before,
+  .slideContainer::after {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fourthSliderSection h1 {
+    font-size: 1.5rem;
+  }
+  
+  .bannerContent {
+    width: 90%;
+  }
+  
+  .bannerContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .slideProgress {
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Further adjust gradient height for small mobile */
+  .slideContainer::before,
+  .slideContainer::after {
+    height: 60px;
+  }
+}

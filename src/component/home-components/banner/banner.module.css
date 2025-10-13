@@ -1,0 +1,109 @@
+/* components/home-components/Banner/banner.module.css */
+
+.firstBannerSlide {
+  position: relative;
+}
+
+.bannerContent {
+  color: #fff;
+  width: 30%;
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+}
+
+.bannerContentH1 {
+  font-size: 60px;
+  margin-bottom: 2rem;
+}
+
+.bannerContentP {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.bannerContentA {
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.bannerContentA:hover {
+  opacity: 0.8;
+}
+
+.swiperContainer {
+  width: 100%;
+  height: 700px;
+}
+
+.slideImage {
+  object-fit: cover;
+}
+
+.iconSpacing {
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .bannerContentH1 {
+    font-size: 48px;
+  }
+  
+  .bannerContent {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerContent {
+    width: 80%;
+    left: 5%;
+    bottom: 15%;
+  }
+  
+  .bannerContentH1 {
+    font-size: 32px;
+    margin-bottom: 1rem;
+  }
+  
+  .bannerContentP {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bannerContentA {
+    font-size: 16px;
+  }
+  
+  .swiperContainer {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerContent {
+    width: 90%;
+    left: 5%;
+    bottom: 10%;
+  }
+  
+  .bannerContentH1 {
+    font-size: 24px;
+  }
+  
+  .bannerContentP {
+    font-size: 12px;
+  }
+  
+  .swiperContainer {
+    height: 400px;
+  }
+}

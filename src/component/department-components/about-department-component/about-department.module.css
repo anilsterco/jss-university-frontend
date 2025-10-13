@@ -1,0 +1,300 @@
+/* components/department-components/AboutDepartment/AboutDepartment.module.css */
+
+.aboutDepartment {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #16344e;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: #212121;
+  font-size: 16px;
+  font-weight: normal;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.statsSection {
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.onecard {
+  background-color: #16344e;
+  color: #fff;
+}
+
+.twocard {
+  background-color: unset;
+}
+
+.threecard {
+  background-color: #fff;
+}
+
+.statCardBody {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.statLabel {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.nbaBadge {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border: 3px solid #3498db;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.nbaTitle {
+  color: #3498db;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.nbaSubtitle {
+  font-size: 10px;
+  color: #666;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+.nbaLabel {
+  font-size: 16px;
+  margin: 0;
+}
+
+.contentSection {
+  margin-top: 2rem;
+}
+
+.imagePlaceholder {
+  background-color: #c4c4c4;
+  border: none;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderIcon {
+  color: #999;
+  text-align: center;
+}
+
+.placeholderText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #999;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.visionMission {
+  height: 100%;
+  padding-left: 0;
+}
+
+.visionCard {
+  background: white;
+  padding-left: 3rem;
+  padding: 2rem 2rem 2rem 3rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.visionTitle {
+  color: #b08f29;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.visionDescription {
+  line-height: 1.8;
+  font-size: 18px;
+  color: #16344e;
+  font-weight: 600;
+  width: 75%;
+  margin: 0;
+}
+
+.missionSection {
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
+.missionTitle {
+  color: #b08f29;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.missionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.missionItem {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.missionBullet {
+  color: #f39c12;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.missionText {
+  line-height: 1.8;
+  margin: 0;
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .visionDescription {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .aboutDepartment {
+    padding: 2rem 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .visionMission {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .missionSection {
+    margin-left: 0;
+  }
+
+  .visionCard {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .statValue {
+    font-size: 3rem;
+  }
+
+  .visionCard {
+    padding: 1.5rem;
+  }
+
+  .visionDescription {
+    width: 100%;
+  }
+
+  .missionSection {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutDepartment {
+    padding: 1.5rem 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .statCardBody {
+    padding: 2rem 1rem;
+  }
+
+  .statValue {
+    font-size: 2.5rem;
+  }
+
+  .visionCard {
+    padding: 1rem;
+  }
+
+  .visionTitle,
+  .missionTitle {
+    font-size: 20px;
+  }
+
+  .imagePlaceholder {
+    min-height: 300px;
+  }
+}
