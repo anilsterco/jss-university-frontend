@@ -16,14 +16,17 @@
 .happening-module__EQ7KYq__headerSmall {
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #16344e;
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .happening-module__EQ7KYq__headerTitle {
   color: #1a1a1a;
-  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
   font-size: 42px;
   font-weight: bold;
 }

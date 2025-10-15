@@ -7,7 +7,7 @@ import styles from "./department.module.css";
 
 export default function DepartmentSection() {
   const departmentSection = {
-    title: "<span class='blue-text'>Start Your</span> JSS Journey",
+    title: "Start Your JSS Journey",
     desc: "Leading the revolution in integrated learning where students shape their own future.",
     programsCount: "200",
     programsText: "SED UT PERSPICIATIS UNDE",
@@ -64,10 +64,9 @@ export default function DepartmentSection() {
           <div className="col-md-3">
             <div className={styles.leftSide}>
               <div>
-                <h1
-                  className={styles.title}
-                  dangerouslySetInnerHTML={{ __html: departmentSection.title }}
-                />
+                <h1 className={`highlighted-title-top-to-botom  ${styles.title}`}>
+                  {departmentSection.title}
+                </h1>
                 <p className={styles.description}>{departmentSection.desc}</p>
               </div>
 

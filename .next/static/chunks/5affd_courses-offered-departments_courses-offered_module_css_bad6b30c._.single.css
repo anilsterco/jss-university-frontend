@@ -1,7 +1,6 @@
 /* [project]/src/component/department-components/courses-offered-departments/courses-offered.module.css [app-client] (css) */
 .courses-offered-module__ivUW_W__container {
   background: linear-gradient(#e9ecef 50%, #f6fbfb 50%);
-  min-height: 100vh;
   padding: 4rem 4rem 6rem;
 }
 

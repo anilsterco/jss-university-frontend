@@ -1,13 +1,11 @@
 import styles from "./courses-offered.module.css";
 import Image from "next/image";
+import Link from "next/link";
 const CoursesOffered = () => {
   // Dynamic data structure
   const coursesData = {
     subtitle: "COURSES OFFERED",
-    title: {
-      normal: "AT JSS THE ",
-      highlighted: "EMPHASIS IS ON YOU",
-    },
+    title: "AT JSS THE EMPHASIS IS ON YOU",
     imagePlaceholder: true,
     img: "/images/home-page/seven-dummy-img.png",
     // img: "/images/home-page/third-section-banner.png",
@@ -34,9 +32,9 @@ const CoursesOffered = () => {
     admissionBar: {
       title: "Admission 2025-26",
       links: [
-        "Scholarships Criteria & Success",
-        "Student Cells Activities Coverage",
-        "Recruitment Vacancies Internships",
+        { title: "Scholarships Criteria & Success", url: "#1" },
+        { title: "Student Cells Activities Coverage", url: "#2" },
+        { title: "Recruitment Vacancies Internships", url: "#3" },
       ],
       downloadButton: "DOWNLOAD BROCHURE",
       applyButton: "APPLY NOW",
@@ -48,11 +46,8 @@ const CoursesOffered = () => {
       {/* Header Section */}
       <div className={styles.headerSection}>
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
-        <h2 className={styles.title}>
-          <span className={styles.titleNormal}>{coursesData.title.normal}</span>
-          <span className={styles.titleHighlighted}>
-            {coursesData.title.highlighted}
-          </span>
+        <h2 className={`${styles.title} highlighted-title`}>
+          {coursesData.title}
         </h2>
       </div>
 
@@ -81,10 +76,12 @@ const CoursesOffered = () => {
                 <div className={styles.admissionLinks}>
                   {coursesData.admissionBar.links.map((link, index) => (
                     <div key={index}>
-                      <span className={styles.admissionLink}>{link}</span>
-                      {index < coursesData.admissionBar.links.length - 1 && (
-                        <span className={styles.separator}>•</span>
-                      )}
+                      <Link href={link.url} key={index}>
+                        <span className={styles.admissionLink}>{link.title}</span>
+                        {index < coursesData.admissionBar.links.length - 1 && (
+                          <span className={styles.separator}>•</span>
+                        )}
+                      </Link>
                     </div>
                   ))}
                 </div>

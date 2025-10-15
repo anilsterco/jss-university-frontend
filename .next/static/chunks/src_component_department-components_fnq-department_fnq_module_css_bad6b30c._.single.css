@@ -1,0 +1,128 @@
+/* [project]/src/component/department-components/fnq-department/fnq.module.css [app-client] (css) */
+.fnq-module__LdZQsG__faqSection {
+  background: #f8f9fa;
+  padding: 60px 0;
+}
+
+.fnq-module__LdZQsG__heading {
+  text-align: center;
+  color: #0b2545;
+  letter-spacing: .5px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.fnq-module__LdZQsG__faqList {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.fnq-module__LdZQsG__faqItem {
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: all .3s;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #e5e5e5;
+}
+
+.fnq-module__LdZQsG__faqItem[open] {
+  color: #fff;
+  background: #b59730;
+}
+
+.fnq-module__LdZQsG__faqQuestion {
+  cursor: pointer;
+  color: #0b2545;
+  align-items: center;
+  gap: 1rem;
+  padding: 16px 22px;
+  font-size: 18px;
+  font-weight: 600;
+  list-style: none;
+  transition: all .3s;
+  display: flex;
+  position: relative;
+}
+
+.fnq-module__LdZQsG__faqItem[open] .fnq-module__LdZQsG__faqQuestion {
+  color: #fff;
+}
+
+.fnq-module__LdZQsG__faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.fnq-module__LdZQsG__icon {
+  color: #0b2545;
+  font-size: 18px;
+  transition: transform .3s, color .3s;
+}
+
+.fnq-module__LdZQsG__icon:after {
+  content: "+";
+  text-align: center;
+  border: 1px solid;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+}
+
+.fnq-module__LdZQsG__faqItem[open] .fnq-module__LdZQsG__icon:after {
+  content: "-";
+  border: unset;
+  background: #fff;
+}
+
+.fnq-module__LdZQsG__faqAnswer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 16px 22px;
+  animation: .3s fnq-module__LdZQsG__fadeIn;
+}
+
+.fnq-module__LdZQsG__faqItem[open] .fnq-module__LdZQsG__faqAnswer {
+  color: #fff;
+  background: #b59730;
+  border-top: none;
+}
+
+.fnq-module__LdZQsG__faqAnswer p {
+  color: inherit;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@keyframes fnq-module__LdZQsG__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .fnq-module__LdZQsG__faqSection {
+    padding: 40px 0;
+  }
+
+  .fnq-module__LdZQsG__faqQuestion {
+    font-size: 14px;
+  }
+
+  .fnq-module__LdZQsG__faqAnswer p {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=src_component_department-components_fnq-department_fnq_module_css_bad6b30c._.single.css.map*/

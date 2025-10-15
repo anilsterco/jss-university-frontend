@@ -810,6 +810,24 @@ a, a:hover, a:focus, a:active {
   color: #16344e !important;
 }
 
+.highlighted-title {
+  background: linear-gradient(to right, #018ce8 40%, #263868 50%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.highlighted-title-top-to-botom {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#018ce8 50%, #263868 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 700;
+}
+
 .nav-link.active-link:after {
   content: "";
   width: 70%;

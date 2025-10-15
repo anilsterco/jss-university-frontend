@@ -7,8 +7,7 @@ import styles from "./about-school.module.css";
 
 export default function AboutSchool() {
   const aboutSchoolContent = {
-    title:
-      "EMPOWERING INNOVATION.<span class='blue-text'> ENGINEERING EXCELLENCE.</span>",
+    title: "EMPOWERING INNOVATION. ENGINEERING EXCELLENCE.",
     subtitle: "ABOUT SCHOOL OF ENGINEERING",
     description:
       "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
@@ -48,10 +47,9 @@ export default function AboutSchool() {
           <div className="col-md-6 mb-4">
             <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
 
-            <h1
-              className={styles.title}
-              dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
-            />
+            <h1 className={`${styles.title} highlighted-title-top-to-botom `}>
+              {aboutSchoolContent.title}
+            </h1>
 
             <p className={styles.description}>
               {aboutSchoolContent.description}

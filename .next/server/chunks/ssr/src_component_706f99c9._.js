@@ -222,7 +222,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2
 ;
 function DepartmentSection() {
     const departmentSection = {
-        title: "<span class='blue-text'>Start Your</span> JSS Journey",
+        title: "Start Your JSS Journey",
         desc: "Leading the revolution in integrated learning where students shape their own future.",
         programsCount: "200",
         programsText: "SED UT PERSPICIATIS UNDE",
@@ -285,10 +285,8 @@ function DepartmentSection() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
-                                            dangerouslySetInnerHTML: {
-                                                __html: departmentSection.title
-                                            }
+                                            className: `highlighted-title-top-to-botom  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title}`,
+                                            children: departmentSection.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
                                             lineNumber: 67,
@@ -299,7 +297,7 @@ function DepartmentSection() {
                                             children: departmentSection.desc
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 71,
+                                            lineNumber: 70,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -318,7 +316,7 @@ function DepartmentSection() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 75,
+                                            lineNumber: 74,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -326,7 +324,7 @@ function DepartmentSection() {
                                             children: departmentSection.programsText
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 78,
+                                            lineNumber: 77,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -334,12 +332,12 @@ function DepartmentSection() {
                                             children: "VIEW ALL PROGRAMMES →"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 81,
+                                            lineNumber: 80,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 84,
+                                            lineNumber: 83,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -347,13 +345,13 @@ function DepartmentSection() {
                                             children: "APPLY NOW"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 85,
+                                            lineNumber: 84,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                    lineNumber: 74,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -388,14 +386,14 @@ function DepartmentSection() {
                                                         priority: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                        lineNumber: 100,
+                                                        lineNumber: 99,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].gradientOverlay
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                        lineNumber: 108,
+                                                        lineNumber: 107,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -403,7 +401,7 @@ function DepartmentSection() {
                                                         children: prog.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                        lineNumber: 109,
+                                                        lineNumber: 108,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -412,33 +410,33 @@ function DepartmentSection() {
                                                             fontWeight: 300
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                            lineNumber: 111,
+                                                            lineNumber: 110,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                        lineNumber: 110,
+                                                        lineNumber: 109,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                lineNumber: 97,
+                                                lineNumber: 96,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 96,
+                                            lineNumber: 95,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                        lineNumber: 95,
+                                        lineNumber: 94,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                lineNumber: 93,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -449,27 +447,27 @@ function DepartmentSection() {
                                         children: "BROWSE BY DEPARTMENT"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                        lineNumber: 121,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].browseLine
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                        lineNumber: 122,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                lineNumber: 120,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].divider
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                lineNumber: 125,
+                                lineNumber: 124,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -484,41 +482,41 @@ function DepartmentSection() {
                                                     children: dept.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                    lineNumber: 131,
+                                                    lineNumber: 130,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$browse$2d$department$2f$department$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].departmentArrow,
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$sl$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SlArrowRightCircle"], {}, void 0, false, {
                                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                        lineNumber: 133,
+                                                        lineNumber: 132,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                                    lineNumber: 132,
+                                                    lineNumber: 131,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                            lineNumber: 130,
+                                            lineNumber: 129,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                        lineNumber: 129,
+                                        lineNumber: 128,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                                lineNumber: 127,
+                                lineNumber: 126,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/school-components/browse-department/DepartmentComponent.js",
-                        lineNumber: 91,
+                        lineNumber: 90,
                         columnNumber: 11
                     }, this)
                 ]
@@ -584,7 +582,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 const placementsData = {
-    title: "FROM <span class='blue-text'>CAMPUS</span> TO <span class='blue-text'>CORPORATE</span>",
+    title: "FROM CAMPUS TO CORPORATE",
     stats: [
         {
             number: "5000+",
@@ -684,10 +682,11 @@ function PlacementsSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "fw-bold display-6",
-                            dangerouslySetInnerHTML: {
-                                __html: placementsData.title
-                            }
+                            className: `fw-bold display-6 highlighted-title`,
+                            style: {
+                                width: "fit-content"
+                            },
+                            children: placementsData.title
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
                             lineNumber: 70,
@@ -1071,7 +1070,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2
 ;
 function AboutSchool() {
     const aboutSchoolContent = {
-        title: "EMPOWERING INNOVATION.<span class='blue-text'> ENGINEERING EXCELLENCE.</span>",
+        title: "EMPOWERING INNOVATION. ENGINEERING EXCELLENCE.",
         subtitle: "ABOUT SCHOOL OF ENGINEERING",
         description: "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
         url: "/",
@@ -1124,17 +1123,15 @@ function AboutSchool() {
                                 children: aboutSchoolContent.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 49,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$about$2d$school$2d$component$2f$about$2d$school$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
-                                dangerouslySetInnerHTML: {
-                                    __html: aboutSchoolContent.title
-                                }
+                                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$about$2d$school$2d$component$2f$about$2d$school$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title} highlighted-title-top-to-botom `,
+                                children: aboutSchoolContent.title
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 51,
+                                lineNumber: 50,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1142,7 +1139,7 @@ function AboutSchool() {
                                 children: aboutSchoolContent.description
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 56,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1150,17 +1147,17 @@ function AboutSchool() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$about$2d$school$2d$component$2f$about$2d$school$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].arrowButton,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$sl$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SlArrowRightCircle"], {}, void 0, false, {
                                         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                        lineNumber: 62,
+                                        lineNumber: 60,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                    lineNumber: 61,
+                                    lineNumber: 59,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 60,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1175,7 +1172,7 @@ function AboutSchool() {
                                                     children: item.rank
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                                    lineNumber: 71,
+                                                    lineNumber: 69,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1185,7 +1182,7 @@ function AboutSchool() {
                                                             children: item.text
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                                            lineNumber: 73,
+                                                            lineNumber: 71,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1193,29 +1190,29 @@ function AboutSchool() {
                                                             children: item.source
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                                            lineNumber: 74,
+                                                            lineNumber: 72,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                                    lineNumber: 72,
+                                                    lineNumber: 70,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 70,
+                                            lineNumber: 68,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                        lineNumber: 69,
+                                        lineNumber: 67,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 67,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1226,18 +1223,18 @@ function AboutSchool() {
                                         children: btn.text
                                     }, i, false, {
                                         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                        lineNumber: 84,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                lineNumber: 82,
+                                lineNumber: 80,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                        lineNumber: 48,
+                        lineNumber: 47,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1254,14 +1251,14 @@ function AboutSchool() {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                    lineNumber: 94,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$about$2d$school$2d$component$2f$about$2d$school$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].gradientOverlay
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                    lineNumber: 104,
+                                    lineNumber: 102,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1272,7 +1269,7 @@ function AboutSchool() {
                                             children: aboutSchoolContent.chancellor.statsNumber
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 108,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1280,20 +1277,20 @@ function AboutSchool() {
                                             children: aboutSchoolContent.chancellor.statsContent
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 111,
+                                            lineNumber: 109,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$school$2d$components$2f$about$2d$school$2d$component$2f$about$2d$school$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].yellowLine
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 114,
+                                            lineNumber: 112,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                    lineNumber: 107,
+                                    lineNumber: 105,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1308,7 +1305,7 @@ function AboutSchool() {
                                             priority: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 119,
+                                            lineNumber: 117,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1316,40 +1313,40 @@ function AboutSchool() {
                                             children: aboutSchoolContent.chancellor.logoContent
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                            lineNumber: 127,
+                                            lineNumber: 125,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                                    lineNumber: 118,
+                                    lineNumber: 116,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                            lineNumber: 93,
+                            lineNumber: 91,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                        lineNumber: 92,
+                        lineNumber: 90,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-                lineNumber: 46,
+                lineNumber: 45,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-            lineNumber: 45,
+            lineNumber: 44,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/school-components/about-school-component/AboutSchoolComponent.js",
-        lineNumber: 44,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }
@@ -1474,40 +1471,21 @@ function TestimonialsSection() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mainHeading,
+                                        className: `highlighted-title-top-to-botom ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mainHeading}`,
                                         children: [
-                                            "IN ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].blueText,
-                                                children: "CONVERSATION"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 72,
-                                                columnNumber: 18
-                                            }, this),
+                                            "IN CONVERSATION",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
                                                 lineNumber: 73,
                                                 columnNumber: 15
                                             }, this),
-                                            "WITH THE",
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].blueText,
-                                                children: [
-                                                    "JSS",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                        fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                        lineNumber: 77,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    "COMMUNITY"
-                                                ]
-                                            }, void 0, true, {
+                                            "WITH THE JSS",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
                                                 lineNumber: 75,
                                                 columnNumber: 15
-                                            }, this)
+                                            }, this),
+                                            "COMMUNITY"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
@@ -1527,17 +1505,17 @@ function TestimonialsSection() {
                                                 d: "M5 12h14M12 5l7 7-7 7"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 90,
+                                                lineNumber: 87,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                            lineNumber: 82,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 81,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -1551,7 +1529,7 @@ function TestimonialsSection() {
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 96,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this))
                         ]
@@ -1567,12 +1545,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 107,
+                                lineNumber: 104,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 105,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1582,12 +1560,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 118,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 116,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1613,7 +1591,7 @@ function TestimonialsSection() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].videoIframe
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 137,
+                            lineNumber: 134,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1622,18 +1600,18 @@ function TestimonialsSection() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 146,
+                            lineNumber: 143,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 133,
+                    lineNumber: 130,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 129,
+                lineNumber: 126,
                 columnNumber: 9
             }, this)
         ]
@@ -1661,12 +1639,12 @@ function TestimonialCard({ data, onPlay }) {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].cardImg
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 166,
+                            lineNumber: 163,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 165,
+                        lineNumber: 162,
                         columnNumber: 9
                     }, this),
                     hasVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1681,17 +1659,17 @@ function TestimonialCard({ data, onPlay }) {
                                 d: "M8 5v14l11-7z"
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 178,
+                                lineNumber: 175,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 177,
+                            lineNumber: 174,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 176,
+                        lineNumber: 173,
                         columnNumber: 11
                     }, this),
                     data.quote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1701,7 +1679,7 @@ function TestimonialCard({ data, onPlay }) {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].yellowLine
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 186,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1709,19 +1687,19 @@ function TestimonialCard({ data, onPlay }) {
                                 children: data.quote
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 187,
+                                lineNumber: 184,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 185,
+                        lineNumber: 182,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 164,
+                lineNumber: 161,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1734,7 +1712,7 @@ function TestimonialCard({ data, onPlay }) {
                             children: data.name
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 193,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1742,7 +1720,7 @@ function TestimonialCard({ data, onPlay }) {
                             children: data.batch
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 194,
+                            lineNumber: 191,
                             columnNumber: 11
                         }, this),
                         data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1750,24 +1728,24 @@ function TestimonialCard({ data, onPlay }) {
                             children: data.role
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 195,
+                            lineNumber: 192,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 192,
+                    lineNumber: 189,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 191,
+                lineNumber: 188,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 163,
+        lineNumber: 160,
         columnNumber: 5
     }, this);
 }

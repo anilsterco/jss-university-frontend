@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///D:/jss-university-frontend/src/app/happenings/page.module.css"],"sourcesContent":[".happeningsContainer {\r\n  padding: 10rem 9rem;\r\n  height: 100vh;\r\n}\r\n.happeningsTitle {\r\n  width: fit-content;\r\n  margin: auto;\r\n  margin-bottom: 2rem;\r\n  background: linear-gradient(to right, #018ce8 30%, #263868 40%);\r\n  -webkit-text-fill-color: transparent;\r\n  -webkit-background-clip: text;\r\n  background-clip: text;\r\n  font-weight: 700;\r\n}\r\n.happeningsSubTitle{\r\n    font-weight: 600;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;;;;;;;;AAUA","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///D:/jss-university-frontend/src/component/happening-components/news-events/news-events.module.css"],"sourcesContent":[""],"names":[],"mappings":"","debugId":null}}]
+}

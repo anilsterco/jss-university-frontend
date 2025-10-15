@@ -8,7 +8,7 @@ import styles from "./courses-offered.module.css";
 
 // ✅ All data stored separately for easy replacement (API later)
 const coursesData = {
-  title: "<span class='blue-text'>Start Your</span> JSS Journey",
+  title: "Start Your JSS Journey",
   subtitle: "Courses Offered",
   searchPlaceholder: "Search Course",
   programsCount: "200",
@@ -73,9 +73,10 @@ export default function CoursesOffered() {
               {coursesData.subtitle}
             </h5>
             <h1
-              className={`fw-bold ${styles.topSectionH1}`}
-              dangerouslySetInnerHTML={{ __html: coursesData.title }}
-            />
+              className={`fw-bold highlighted-title-top-to-botom ${styles.topSectionH1}`}
+            >
+              {coursesData.title}
+            </h1>
 
             {/* Search box */}
             <div className="input-group my-4 shadow-sm rounded-pill overflow-hidden">

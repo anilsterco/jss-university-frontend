@@ -438,20 +438,9 @@ function EventsGrid() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].headerTitle,
-                            children: [
-                                "WHAT'S ",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "blue-text",
-                                    children: "HAPPENING"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 79,
-                                    columnNumber: 20
-                                }, this),
-                                " @JSS NOIDA"
-                            ]
-                        }, void 0, true, {
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].headerTitle} highlighted-title`,
+                            children: "WHAT'S HAPPENING @JSS NOIDA"
+                        }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
                             lineNumber: 78,
                             columnNumber: 11
@@ -478,7 +467,7 @@ function EventsGrid() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 89,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -488,7 +477,7 @@ function EventsGrid() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].orangeLine
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 96,
+                                            lineNumber: 94,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -496,7 +485,7 @@ function EventsGrid() {
                                             children: events[0].type
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 97,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -504,7 +493,7 @@ function EventsGrid() {
                                             children: events[0].title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 98,
+                                            lineNumber: 96,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FiArrowRightCircle"], {
@@ -512,19 +501,19 @@ function EventsGrid() {
                                             fontSize: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 99,
+                                            lineNumber: 97,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 95,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 85,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -538,7 +527,7 @@ function EventsGrid() {
                                     children: events[1].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 108,
+                                    lineNumber: 106,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -546,7 +535,7 @@ function EventsGrid() {
                                     children: events[1].title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 109,
+                                    lineNumber: 107,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -554,13 +543,13 @@ function EventsGrid() {
                                     children: events[1].date
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 112,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 104,
+                            lineNumber: 102,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -576,7 +565,7 @@ function EventsGrid() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 122,
+                                    lineNumber: 120,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -587,7 +576,7 @@ function EventsGrid() {
                                             children: events[2].type
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 129,
+                                            lineNumber: 127,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -595,7 +584,7 @@ function EventsGrid() {
                                             children: events[2].title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 130,
+                                            lineNumber: 128,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -603,19 +592,19 @@ function EventsGrid() {
                                             children: events[2].date
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 133,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 128,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 118,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -629,7 +618,7 @@ function EventsGrid() {
                                     children: events[3].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 144,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -640,7 +629,7 @@ function EventsGrid() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 147,
+                                    lineNumber: 145,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -648,7 +637,7 @@ function EventsGrid() {
                                     children: events[3].title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 154,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -656,13 +645,13 @@ function EventsGrid() {
                                     children: events[3].date
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 155,
+                                    lineNumber: 153,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 140,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -677,12 +666,12 @@ function EventsGrid() {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                lineNumber: 163,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 159,
+                            lineNumber: 157,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -698,7 +687,7 @@ function EventsGrid() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 176,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -708,7 +697,7 @@ function EventsGrid() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].orangeLine
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 183,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -716,7 +705,7 @@ function EventsGrid() {
                                             children: events[5].title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 184,
+                                            lineNumber: 182,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -724,7 +713,7 @@ function EventsGrid() {
                                             children: events[5].subtitle
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 185,
+                                            lineNumber: 183,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FiArrowRightCircle"], {
@@ -732,19 +721,19 @@ function EventsGrid() {
                                             fontSize: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 190,
+                                            lineNumber: 188,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 182,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 172,
+                            lineNumber: 170,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -759,12 +748,12 @@ function EventsGrid() {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                lineNumber: 199,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 195,
+                            lineNumber: 193,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -778,7 +767,7 @@ function EventsGrid() {
                                     children: events[7].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 212,
+                                    lineNumber: 210,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -791,7 +780,7 @@ function EventsGrid() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 214,
+                                            lineNumber: 212,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -799,7 +788,7 @@ function EventsGrid() {
                                             children: events[7].subtitle
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 221,
+                                            lineNumber: 219,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -807,19 +796,19 @@ function EventsGrid() {
                                             children: events[7].date
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 226,
+                                            lineNumber: 224,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 213,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 208,
+                            lineNumber: 206,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -833,7 +822,7 @@ function EventsGrid() {
                                     children: events[8].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 237,
+                                    lineNumber: 235,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -844,7 +833,7 @@ function EventsGrid() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 240,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -855,7 +844,7 @@ function EventsGrid() {
                                             children: "Knowledge Partner"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 248,
+                                            lineNumber: 246,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -867,19 +856,19 @@ function EventsGrid() {
                                                     children: "edu"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                                    lineNumber: 250,
+                                                    lineNumber: 248,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 249,
+                                            lineNumber: 247,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 247,
+                                    lineNumber: 245,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -887,7 +876,7 @@ function EventsGrid() {
                                     children: events[8].title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 253,
+                                    lineNumber: 251,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -895,19 +884,19 @@ function EventsGrid() {
                                     children: events[8].date
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 254,
+                                    lineNumber: 252,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 233,
+                            lineNumber: 231,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                    lineNumber: 83,
+                    lineNumber: 81,
                     columnNumber: 9
                 }, this)
             ]

@@ -222,7 +222,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 // ✅ All data stored separately for easy replacement (API later)
 const coursesData = {
-    title: "<span class='blue-text'>Start Your</span> JSS Journey",
+    title: "Start Your JSS Journey",
     subtitle: "Courses Offered",
     searchPlaceholder: "Search Course",
     programsCount: "200",
@@ -322,10 +322,8 @@ function CoursesOffered() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "fw-bold ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$courses$2d$offered$2d$home$2f$courses$2d$offered$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].topSectionH1),
-                                    dangerouslySetInnerHTML: {
-                                        __html: coursesData.title
-                                    }
+                                    className: "fw-bold highlighted-title-top-to-botom ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$courses$2d$offered$2d$home$2f$courses$2d$offered$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].topSectionH1),
+                                    children: coursesData.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
                                     lineNumber: 75,
@@ -340,25 +338,25 @@ function CoursesOffered() {
                                             placeholder: coursesData.searchPlaceholder
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 82,
+                                            lineNumber: 83,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "input-group-text bg-white border-0",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$ci$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CiSearch"], {}, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                                lineNumber: 88,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 87,
+                                            lineNumber: 88,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 81,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -366,7 +364,7 @@ function CoursesOffered() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProgramsCount, {}, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 94,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -374,13 +372,13 @@ function CoursesOffered() {
                                             children: coursesData.programsText
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 95,
+                                            lineNumber: 96,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 93,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -404,7 +402,7 @@ function CoursesOffered() {
                                             priority: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 107,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -417,24 +415,24 @@ function CoursesOffered() {
                                                     color: "#b08f29"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                                    lineNumber: 118,
+                                                    lineNumber: 119,
                                                     columnNumber: 32
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 115,
+                                            lineNumber: 116,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 102,
+                                    lineNumber: 103,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                            lineNumber: 100,
+                            lineNumber: 101,
                             columnNumber: 11
                         }, this)
                     ]
@@ -454,7 +452,7 @@ function CoursesOffered() {
                                     children: "Explore Programs by School of"
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 128,
+                                    lineNumber: 129,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -469,24 +467,24 @@ function CoursesOffered() {
                                                     fontSize: 10
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                                    lineNumber: 138,
+                                                    lineNumber: 139,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 133,
+                                            lineNumber: 134,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 131,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                            lineNumber: 127,
+                            lineNumber: 128,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -504,13 +502,13 @@ function CoursesOffered() {
                                                     children: coursesData.admission.year
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                                    lineNumber: 149,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 147,
+                                            lineNumber: 148,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -518,13 +516,13 @@ function CoursesOffered() {
                                             children: coursesData.admission.desc
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                            lineNumber: 153,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 146,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -533,19 +531,19 @@ function CoursesOffered() {
                                     children: "Apply Now"
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                                    lineNumber: 155,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                            lineNumber: 145,
+                            lineNumber: 146,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/courses-offered-home/CourseOfferedComponent.js",
-                    lineNumber: 126,
+                    lineNumber: 127,
                     columnNumber: 9
                 }, this)
             ]
@@ -608,7 +606,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 const placementsData = {
-    title: "FROM <span class='blue-text'>CAMPUS</span> TO <span class='blue-text'>CORPORATE</span>",
+    title: "FROM CAMPUS TO CORPORATE",
     stats: [
         {
             number: "5000+",
@@ -708,10 +706,11 @@ function PlacementsSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "fw-bold display-6",
-                            dangerouslySetInnerHTML: {
-                                __html: placementsData.title
-                            }
+                            className: "fw-bold display-6 highlighted-title",
+                            style: {
+                                width: "fit-content"
+                            },
+                            children: placementsData.title
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
                             lineNumber: 70,
@@ -1565,7 +1564,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 const legacyData = {
-    title: "SRI SUTTUR MATH THE <span class='blue-text'>1000-YEAR LEGACY</span>",
+    title: "SRI SUTTUR MATH THE 1000-YEAR LEGACY",
     subtitle: "ABOUT JSS UNIVERSITY",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.",
     url: "/",
@@ -1636,10 +1635,8 @@ function LegacySection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "fw-bold display-6 ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].topSectionHeading),
-                            dangerouslySetInnerHTML: {
-                                __html: legacyData.title
-                            }
+                            className: "fw-bold display-6 highlighted-title-top-to-botom ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].topSectionHeading),
+                            children: legacyData.title
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
                             lineNumber: 66,
@@ -1667,7 +1664,7 @@ function LegacySection() {
                                         className: "img-fluid rounded ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].chancellorImage)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                        lineNumber: 76,
+                                        lineNumber: 77,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1678,7 +1675,7 @@ function LegacySection() {
                                                 className: "text-warning"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                lineNumber: 85,
+                                                lineNumber: 86,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1688,36 +1685,36 @@ function LegacySection() {
                                                         children: legacyData.chancellor.message
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                        lineNumber: 87,
+                                                        lineNumber: 88,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                        lineNumber: 88,
+                                                        lineNumber: 89,
                                                         columnNumber: 19
                                                     }, this),
                                                     legacyData.chancellor.name
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                lineNumber: 86,
+                                                lineNumber: 87,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                        lineNumber: 84,
+                                        lineNumber: 85,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                lineNumber: 75,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1728,7 +1725,7 @@ function LegacySection() {
                                     children: legacyData.description
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 97,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1741,30 +1738,30 @@ function LegacySection() {
                                             color: "rgba(146, 142, 142, 1)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 102,
+                                            lineNumber: 103,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                        lineNumber: 101,
+                                        lineNumber: 102,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 100,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "row g-3 mb-4 d-flex gap-4",
                                     children: legacyData.highlights.map((h, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].highlightBox,
+                                            className: "col-md-5 ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].highlightBox),
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                     className: "fw-bold ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].highlightNumber),
                                                     children: h.number
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                    lineNumber: 112,
+                                                    lineNumber: 113,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1775,7 +1772,7 @@ function LegacySection() {
                                                             children: h.text
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                            lineNumber: 116,
+                                                            lineNumber: 117,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1783,24 +1780,24 @@ function LegacySection() {
                                                             children: h.source
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                            lineNumber: 117,
+                                                            lineNumber: 118,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                    lineNumber: 115,
+                                                    lineNumber: 116,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 111,
+                                            lineNumber: 112,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 109,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1811,24 +1808,24 @@ function LegacySection() {
                                             children: btn.text
                                         }, i, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 126,
+                                            lineNumber: 127,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 124,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                            lineNumber: 96,
+                            lineNumber: 97,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                    lineNumber: 72,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1869,7 +1866,7 @@ function LegacySection() {
                                             className: "img-fluid mb-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 151,
+                                            lineNumber: 152,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1877,28 +1874,28 @@ function LegacySection() {
                                             children: acc.text
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 158,
+                                            lineNumber: 159,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 150,
+                                    lineNumber: 151,
                                     columnNumber: 17
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                lineNumber: 149,
+                                lineNumber: 150,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                        lineNumber: 136,
+                        lineNumber: 137,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                    lineNumber: 135,
+                    lineNumber: 136,
                     columnNumber: 9
                 }, this)
             ]
@@ -2042,40 +2039,21 @@ function TestimonialsSection() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].mainHeading,
+                                        className: "highlighted-title-top-to-botom ".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].mainHeading),
                                         children: [
-                                            "IN ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].blueText,
-                                                children: "CONVERSATION"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 72,
-                                                columnNumber: 18
-                                            }, this),
+                                            "IN CONVERSATION",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
                                                 lineNumber: 73,
                                                 columnNumber: 15
                                             }, this),
-                                            "WITH THE",
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].blueText,
-                                                children: [
-                                                    "JSS",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                        fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                        lineNumber: 77,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    "COMMUNITY"
-                                                ]
-                                            }, void 0, true, {
+                                            "WITH THE JSS",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
                                                 lineNumber: 75,
                                                 columnNumber: 15
-                                            }, this)
+                                            }, this),
+                                            "COMMUNITY"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
@@ -2095,17 +2073,17 @@ function TestimonialsSection() {
                                                 d: "M5 12h14M12 5l7 7-7 7"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 90,
+                                                lineNumber: 87,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                            lineNumber: 82,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 81,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -2119,7 +2097,7 @@ function TestimonialsSection() {
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 96,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this))
                         ]
@@ -2135,12 +2113,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 107,
+                                lineNumber: 104,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 105,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2150,12 +2128,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 118,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 116,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this)
                 ]
@@ -2181,7 +2159,7 @@ function TestimonialsSection() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].videoIframe
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 137,
+                            lineNumber: 134,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2190,18 +2168,18 @@ function TestimonialsSection() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 146,
+                            lineNumber: 143,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 133,
+                    lineNumber: 130,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 129,
+                lineNumber: 126,
                 columnNumber: 9
             }, this)
         ]
@@ -2232,12 +2210,12 @@ function TestimonialCard(param) {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardImg
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 166,
+                            lineNumber: 163,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 165,
+                        lineNumber: 162,
                         columnNumber: 9
                     }, this),
                     hasVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2252,17 +2230,17 @@ function TestimonialCard(param) {
                                 d: "M8 5v14l11-7z"
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 178,
+                                lineNumber: 175,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 177,
+                            lineNumber: 174,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 176,
+                        lineNumber: 173,
                         columnNumber: 11
                     }, this),
                     data.quote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2272,7 +2250,7 @@ function TestimonialCard(param) {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].yellowLine
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 186,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2280,19 +2258,19 @@ function TestimonialCard(param) {
                                 children: data.quote
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 187,
+                                lineNumber: 184,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 185,
+                        lineNumber: 182,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 164,
+                lineNumber: 161,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2305,7 +2283,7 @@ function TestimonialCard(param) {
                             children: data.name
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 193,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2313,7 +2291,7 @@ function TestimonialCard(param) {
                             children: data.batch
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 194,
+                            lineNumber: 191,
                             columnNumber: 11
                         }, this),
                         data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2321,24 +2299,24 @@ function TestimonialCard(param) {
                             children: data.role
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 195,
+                            lineNumber: 192,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 192,
+                    lineNumber: 189,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 191,
+                lineNumber: 188,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 163,
+        lineNumber: 160,
         columnNumber: 5
     }, this);
 }

@@ -13,7 +13,7 @@ import styles from "./placement.module.css";
 
 const placementsData = {
   title:
-    "FROM <span class='blue-text'>CAMPUS</span> TO <span class='blue-text'>CORPORATE</span>",
+    "FROM CAMPUS TO CORPORATE",
   stats: [
     { number: "5000+", label: "STUDENTS HIRED" },
     { number: "22.5", label: "LPA MAX" },
@@ -68,9 +68,9 @@ export default function PlacementsSection() {
             Placements
           </p>
           <h2
-            className="fw-bold display-6"
-            dangerouslySetInnerHTML={{ __html: placementsData.title }}
-          />
+            className={`fw-bold display-6 highlighted-title`}
+            style={{ width: "fit-content" }}
+          >{placementsData.title }</h2>
         </div>
 
         <div className="row g-4 w-100 m-auto">

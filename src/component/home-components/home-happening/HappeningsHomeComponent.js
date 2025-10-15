@@ -75,9 +75,7 @@ export default function EventsGrid() {
       <div className={styles.container}>
         <div className={styles.header}>
           <p className={styles.headerSmall}>HAPPENINGS</p>
-          <h1 className={styles.headerTitle}>
-            WHAT'S <span className="blue-text">HAPPENING</span> @JSS NOIDA
-          </h1>
+          <h1 className={`${styles.headerTitle} highlighted-title`}>WHAT'S HAPPENING @JSS NOIDA</h1>
         </div>
 
         <div className={styles.grid}>

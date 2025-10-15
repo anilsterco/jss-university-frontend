@@ -1,0 +1,37 @@
+/* [project]/src/app/happenings/page.module.css [app-client] (css) */
+.page-module__yFOS7q__happeningsContainer {
+  height: 100vh;
+  padding: 10rem 9rem;
+}
+
+.page-module__yFOS7q__happeningsTitle {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #018ce8 30%, #263868 40%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto auto 2rem;
+  font-weight: 700;
+}
+
+.page-module__yFOS7q__happeningsSubTitle {
+  font-weight: 600;
+}
+
+.page-module__yFOS7q__tabButton {
+  background: unset;
+  border: unset;
+}
+
+.page-module__yFOS7q__tabHeaders {
+  border-top: 1px solid #d1cbcb;
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+  margin: auto;
+  padding-top: 1rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_app_happenings_page_module_css_bad6b30c._.single.css.map*/

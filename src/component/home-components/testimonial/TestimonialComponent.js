@@ -68,15 +68,12 @@ export default function TestimonialsSection() {
         <div className={styles.columnLeft}>
           <div className={styles.headerContent}>
             <p className={styles.testimonialsLabel}>TESTIMONIALS</p>
-            <h2 className={styles.mainHeading}>
-              IN <span className={styles.blueText}>CONVERSATION</span>
+            <h2 className={`highlighted-title-top-to-botom ${styles.mainHeading}`}>
+              IN CONVERSATION
               <br />
-              WITH THE{" "}
-              <span className={styles.blueText}>
-                JSS
-                <br />
-                COMMUNITY
-              </span>
+              WITH THE JSS
+              <br />
+              COMMUNITY
             </h2>
             <button className={styles.circleArrowBtn}>
               <svg

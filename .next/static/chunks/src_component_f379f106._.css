@@ -259,7 +259,7 @@
 
 .department-module__X03b-a__title {
   margin-bottom: 1rem;
-  font-size: 55px;
+  font-size: 58px;
   font-weight: bold;
   line-height: 1.2;
 }
@@ -971,7 +971,7 @@
 
 .testimonial-module__MpJH1q__testimonialCard {
   background: #fff;
-  border-top-left-radius: 30px;
+  border-top-left-radius: 50px;
   border-bottom-right-radius: 30px;
   transition: transform .3s, box-shadow .3s;
   position: relative;
@@ -1205,14 +1205,17 @@
 .happening-module__EQ7KYq__headerSmall {
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #16344e;
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .happening-module__EQ7KYq__headerTitle {
   color: #1a1a1a;
-  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
   font-size: 42px;
   font-weight: bold;
 }

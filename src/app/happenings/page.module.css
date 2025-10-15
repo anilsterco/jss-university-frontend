@@ -1,0 +1,30 @@
+.happeningsContainer {
+  padding: 10rem 9rem;
+  height: 100vh;
+}
+.happeningsTitle {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #018ce8 30%, #263868 40%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 700;
+}
+.happeningsSubTitle {
+  font-weight: 600;
+}
+.tabButton {
+  background: unset;
+  border: unset;
+}
+.tabHeaders {
+  border-top: 1px solid #d1cbcb;
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
+  padding-top: 1rem;
+  width: 80%;
+  margin: auto;
+}
