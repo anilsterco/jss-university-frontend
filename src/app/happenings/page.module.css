@@ -1,6 +1,6 @@
 .happeningsContainer {
   padding: 10rem 9rem;
-  height: 100vh;
+  background: linear-gradient(rgba(1, 140, 232, 0.16) 20%, #f6fbfb 20%);
 }
 .happeningsTitle {
   width: fit-content;
@@ -18,13 +18,19 @@
 .tabButton {
   background: unset;
   border: unset;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 1rem;
 }
 .tabHeaders {
-  border-top: 1px solid #d1cbcb;
+  border-top: 2px solid #d1cbcb75;
   justify-content: center;
   gap: 2rem;
   display: flex;
-  padding-top: 1rem;
-  width: 80%;
+  width: 70%;
   margin: auto;
+}
+.activeTab {
+  color: #ff6600;
+  border-top: 2px solid orange;
 }

@@ -12,8 +12,7 @@ import "swiper/css/navigation";
 import styles from "./placement.module.css";
 
 const placementsData = {
-  title:
-    "FROM CAMPUS TO CORPORATE",
+  title: "FROM CAMPUS TO CORPORATE",
   stats: [
     { number: "5000+", label: "STUDENTS HIRED" },
     { number: "22.5", label: "LPA MAX" },
@@ -61,7 +60,7 @@ const placementsData = {
 export default function PlacementsSection() {
   return (
     <>
-      <section className={`container-fluid py-5 ${styles.thirdSection}`}>
+      <section className={`container-fluid ${styles.thirdSection}`}>
         {/* Section Header */}
         <div className="mb-5">
           <p className="fw-bold text-uppercase small text-muted mb-2">
@@ -70,7 +69,9 @@ export default function PlacementsSection() {
           <h2
             className={`fw-bold display-6 highlighted-title`}
             style={{ width: "fit-content" }}
-          >{placementsData.title }</h2>
+          >
+            {placementsData.title}
+          </h2>
         </div>
 
         <div className="row g-4 w-100 m-auto">
@@ -159,7 +160,7 @@ export default function PlacementsSection() {
               <Link
                 href={placementsData.wallOfFame.link}
                 className={`position-absolute`}
-                style={{bottom: "4%", left: "6%"}}
+                style={{ bottom: "4%", left: "6%" }}
               >
                 <LuCircleArrowRight size={20} color="#fff" />
               </Link>
