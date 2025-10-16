@@ -1,29 +1,24 @@
-// components/home-components/FacilitiesSlider/index.js
 "use client";
-
-import { useRef, useEffect, useState, useCallback } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Keyboard } from "swiper/modules";
-import Image from "next/image";
-import Link from "next/link";
-import { FiArrowRightCircle } from "react-icons/fi";
-import { CiCirclePlus } from "react-icons/ci";
-import { FaChevronRight } from "react-icons/fa6";
+import React, { useEffect, useRef } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./facilities.module.css";
+import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa6";
+import { BsArrowRightCircle } from "react-icons/bs";
 
-import "swiper/css";
-import "swiper/css/mousewheel";
-import "swiper/css/keyboard";
+gsap.registerPlugin(ScrollTrigger);
 
-export default function HeroSlider() {
-  const swiperRef = useRef(null);
-  const sectionRef = useRef(null);
-  const [isPinned, setIsPinned] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isLastSlide, setIsLastSlide] = useState(false);
-  const [isFirstSlide, setIsFirstSlide] = useState(true);
+const App = () => {
+  const home41Ref = useRef(null);
+  const home5Ref = useRef(null);
+  const home6Ref = useRef(null);
 
-  const slides = [
+  // Dynamic data
+  const mainBanner = "/images/header/header-img.webp";
+
+  const panels = [
     {
       id: 1,
       title: "CLASSROOM",
@@ -32,15 +27,15 @@ export default function HeroSlider() {
       url: [
         {
           link: "/",
-          text: "SMART CLASSROOM",
+          text: "SMART CLASSROOM1",
         },
         {
           link: "/",
-          text: "VIRTUAL CLASSROOM",
+          text: "VIRTUAL CLASSROOM1",
         },
         {
           link: "/",
-          text: "LECTURE HALL",
+          text: "LECTURE HALL1",
         },
       ],
     },
@@ -52,15 +47,15 @@ export default function HeroSlider() {
       url: [
         {
           link: "/",
-          text: "SMART CLASSROOM",
+          text: "SMART CLASSROOM2",
         },
         {
           link: "/",
-          text: "VIRTUAL CLASSROOM",
+          text: "VIRTUAL CLASSROOM2",
         },
         {
           link: "/",
-          text: "LECTURE HALL",
+          text: "LECTURE HALL2",
         },
       ],
     },
@@ -72,15 +67,15 @@ export default function HeroSlider() {
       url: [
         {
           link: "/",
-          text: "SMART CLASSROOM",
+          text: "SMART CLASSROOM3",
         },
         {
           link: "/",
-          text: "VIRTUAL CLASSROOM",
+          text: "VIRTUAL CLASSROOM3",
         },
         {
           link: "/",
-          text: "LECTURE HALL",
+          text: "LECTURE HALL3",
         },
       ],
     },
@@ -92,172 +87,138 @@ export default function HeroSlider() {
       url: [
         {
           link: "/",
-          text: "SMART CLASSROOM",
+          text: "SMART CLASSROOM4",
         },
         {
           link: "/",
-          text: "VIRTUAL CLASSROOM",
+          text: "VIRTUAL CLASSROOM4",
         },
         {
           link: "/",
-          text: "LECTURE HALL",
+          text: "LECTURE HALL4",
         },
       ],
     },
   ];
 
-  // Detect when slider section is in viewport
   useEffect(() => {
-    const section = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsPinned(entry.isIntersecting);
+    const root = home41Ref.current;
+    const lastPanel = home5Ref.current?.lastElementChild;
+    const panelsEl = home5Ref.current?.children;
+    const home6 = home6Ref.current;
+
+    if (!root || !lastPanel || !home6) return;
+
+    // Pin the top banner
+    ScrollTrigger.create({
+      trigger: root,
+      pin: true,
+      pinSpacing: false,
+      start: "top -20px",
+      endTrigger: lastPanel,
+      end: () => {
+        const offset = window.innerHeight * 0.01; // ~70px dynamic
+        return `bottom-=${offset} bottom`;
       },
-      { threshold: 0.3 }
-    );
-    if (section) observer.observe(section);
-    return () => observer.disconnect();
+      scrub: false,
+    });
+
+    // Adjust sticky top dynamically
+    function updateStickyTop() {
+      const headerHeight = root.offsetHeight;
+      const scrollOffset = -60; // matches "top -20px"
+      const totalOffset = headerHeight + scrollOffset;
+
+      Array.from(panelsEl).forEach((panel) => {
+        panel.style.top = totalOffset + "px";
+      });
+    }
+
+    updateStickyTop();
+    window.addEventListener("resize", updateStickyTop);
+
+    return () => window.removeEventListener("resize", updateStickyTop);
   }, []);
 
-  const handleSlideChange = (swiper) => {
-    setIsFirstSlide(swiper.activeIndex === 0);
-    setIsLastSlide(swiper.activeIndex === slides.length - 1);
-  };
-
-  const handleWheel = useCallback(
-    (e) => {
-      if (!isPinned || isTransitioning) return;
-      const swiper = swiperRef.current.swiper;
-      const delta = e.deltaY;
-
-      // Scroll down
-      if (delta > 40) {
-        if (!isLastSlide) {
-          swiper.slideNext(800);
-        } else {
-          // Instantly move to next section (no delay/freeze)
-          setIsTransitioning(true);
-          const next = sectionRef.current.nextElementSibling;
-          if (next) {
-            document.body.style.overflow = "auto";
-            next.scrollIntoView({ behavior: "smooth" });
-          }
-          // small timeout to avoid double-trigger
-          setTimeout(() => setIsTransitioning(false), 300);
-        }
-      }
-
-      // Scroll up
-      else if (delta < -40) {
-        if (!isFirstSlide) {
-          swiper.slidePrev(800);
-        } else {
-          // Instantly move to previous section
-          setIsTransitioning(true);
-          const prev = sectionRef.current.previousElementSibling;
-          if (prev) {
-            document.body.style.overflow = "auto";
-            prev.scrollIntoView({ behavior: "smooth" });
-          }
-          setTimeout(() => setIsTransitioning(false), 300);
-        }
-      }
-    },
-    [isPinned, isTransitioning, isLastSlide, isFirstSlide]
-  );
-
-  // Listen for mousewheel only while slider is visible
-  useEffect(() => {
-    const handleGlobalWheel = (e) => {
-      const rect = sectionRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      const inView =
-        rect.top <= window.innerHeight * 0.7 &&
-        rect.bottom >= window.innerHeight * 0.3;
-
-      if (inView) {
-        e.preventDefault();
-        handleWheel(e);
-      }
-    };
-    window.addEventListener("wheel", handleGlobalWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleGlobalWheel);
-  }, [handleWheel]);
-
   return (
-    <section ref={sectionRef} className={styles.fourthSliderSection}>
-      <div className={styles.headingContainer}>
-        <div className={`${styles.headingContent} d-flex gap-5`}>
-          <div className={styles.headingIcon}>
-            <CiCirclePlus color="#b08f29" fontSize={30} />
-          </div>
-          <div className="">
-            <h6 className="mb-2">FACILITIES @ JSS UNIVERSITY</h6>
-            <h1 className="mb-0">
-              INFRA THAT <span className={styles.blueText}>ELEVATES</span>
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div
-        className={`${styles.sliderStickyWrapper} ${
-          isPinned ? styles.fixedSlider : ""
-        }`}
-      >
-        <Swiper
-          ref={swiperRef}
-          modules={[Mousewheel, Keyboard]}
-          direction="vertical"
-          speed={3000}
-          slidesPerView={1}
-          onSlideChange={handleSlideChange}
-          allowTouchMove={false}
-          className={styles.swiperContainer}
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={slide.id}>
-              <div className={styles.slideContainer}>
-                <Image
-                  src={slide.img}
-                  alt="slide image"
-                  fill
-                  priority={index === 0}
-                  quality={85}
-                  sizes="100vw"
-                  className={styles.slideImage}
-                />
-                <div className={styles.verticalLine}>
-                  <div className={styles.slideNumberBox}>{index + 1}</div>
-                </div>
-                <div className={styles.bannerContent}>
-                  <div>
-                    <h2>{slide.title}</h2>
-                    <p>{slide.desc}</p>
-                  </div>
-                </div>
-                <div className={styles.bannerLinks}>
-                  {slide.url &&
-                    slide.url.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.link}
-                        className={styles.bannerLink}
-                      >
-                        {item.text}
-                        <FaChevronRight />
-                      </Link>
-                    ))}
-                </div>
-                <div className={styles.slideProgress}>
-                  <span>
-                    {index + 1} / {slides.length}
-                  </span>
+    <div>
+      {/* Custom CSS */}
+
+      {/* Main Banner */}
+      <section className="home-41" ref={home41Ref}>
+        <article className="imageWrapper zero">
+          <figure>
+            <img
+              className="image"
+              src={mainBanner}
+              alt="Main Banner"
+              style={{ width: "100%", objectFit: "cover" }}
+            />
+          </figure>
+        </article>
+      </section>
+
+      {/* Panels */}
+      <section className="home5" ref={home5Ref}>
+        {panels.map((panel, index) => (
+          <article
+            key={index}
+            className={`panel imageWrapper panel-${index + 1}`}
+          >
+            <figure className={styles.slideContainer}>
+              <img
+                className="img-fluid image"
+                src={panel.img}
+                alt={`Panel ${index + 1}`}
+                style={{ width: "100%", objectFit: "cover" }}
+              />
+              <div className={styles.verticalLine}>
+                <div className={styles.slideNumberBox}>{index + 1}</div>
+              </div>
+              <div className={styles.bannerContent}>
+                <div>
+                  <h2>{panel.title} <BsArrowRightCircle fontSize={23}/></h2>
+                  <p>{panel.desc}</p>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+              <div className={styles.bannerLinks}>
+                {panel.url &&
+                  panel.url.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.link}
+                      className={styles.bannerLink}
+                    >
+                      {item.text}
+                      <FaChevronRight />
+                    </Link>
+                  ))}
+              </div>
+            </figure>
+          </article>
+        ))}
+      </section>
+
+      {/* Placeholder Section */}
+      <section className="home6" ref={home6Ref}>
+        <figure></figure>
+      </section>
+      <style>{`
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        section.home2, section.home3, section.home-41, .home7 { margin-top: -.5rem; }
+        .home5, .how-we-jam { width: 100%; padding: 0; margin: 0; }
+        .panel figure { margin: 0; padding: 0; }
+        .panel .image { width: 100%; height: 100%; object-fit: cover; display: block; }
+        section.home8 { margin-top: -.5rem; }
+        .home5 { position: relative; }
+        section.home9 { background: #333333; }
+        .zero { z-index: 2; top: -5rem; }
+        section.home-41 { z-index: 1; }
+        .panel { position: sticky; background: #fff; }
+        .home8 figure img { display: block; }
+      `}</style>
+    </div>
   );
-}
+};
+
+export default App;
