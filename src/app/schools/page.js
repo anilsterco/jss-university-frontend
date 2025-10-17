@@ -5,12 +5,10 @@ import PlacementComponent from "@/component/home-components/placement/PlacementC
 import AboutSchoolComponent from "@/component/school-components/about-school-component/AboutSchoolComponent";
 import TestimonialComponent from "@/component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
-import { Api } from "@/lib/api";
 export default async function SchoolPage() {
-  const [departmentBannerData] = await Promise.all([Api.getHomeBanners()]);
   return (
     <>
-      <BannerComponent data={departmentBannerData} />
+      <BannerComponent />
       <BelowBannerComponent />
       <DepartmentComponent />
       <PlacementComponent />

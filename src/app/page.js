@@ -5,13 +5,11 @@ import FacilitiesComponent from "../component/home-components/facilities/Facilit
 import AboutHomeComponent from "../component/home-components/about-home-jss/AboutHomeComponent";
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
-import { Api } from "@/lib/api";
 
 export default async function HomePage() {
-  const [homeBannerData] = await Promise.all([Api.getHomeBanners()]);
   return (
     <div>
-      <BannerComponent data={homeBannerData} />
+      <BannerComponent />
       <CourseOfferedComponent />
       <PlacementComponent />
       <FacilitiesComponent />

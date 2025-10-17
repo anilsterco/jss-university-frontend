@@ -1,128 +1,151 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import styles from "./news-events.module.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
+import { BsArrowRightCircle } from "react-icons/bs";
+import Link from "next/link";
+import { LuLoader } from "react-icons/lu";
+import { useQuery } from "@tanstack/react-query";
+import { happeningAPI } from "@/lib/api";
 
 export default function EventsSection() {
-  const allEvents = [
-    {
-      id: 1,
-      title: "Sed ut perspiciatis unde omnis iste natus error sit",
-      date: "October 18, 2024",
-      category: "Technology",
-      type: "Event",
-      month: "October",
-      school: "Engineering",
-      img: "/images/home-page/card-img.png",
-      upcoming: true,
-    },
-    {
-      id: 2,
-      title: "Lorem ipsum dolor sit amet, consectet adipiscing elit.",
-      date: "October 16, 2025",
-      category: "Festival",
-      month: "October",
-      school: "Design",
-      img: "/images/home-page/card-img.png",
-      description:
-        "Writing for The Conversation, Professor Hayley Fowler, Paul Davies, and Simon Lee discuss how the rapidly warming climate impacts creativity.",
-    },
-    {
-      id: 3,
-      title: "Business Today Codestorm 2.0",
-      date: "October 10, 2024",
-      category: "Business",
-      month: "October",
-      school: "Management",
-      img: null,
-      bgColor: "#B72833",
-    },
-    {
-      id: 4,
-      title: "dolor sit amet, consectetur adipiscing elit.",
-      date: "July 10, 2024",
-      category: "Education",
-      month: "July",
-      school: "Architecture",
-      img: "/images/home-page/card-img.png",
-    },
-    {
-      id: 5,
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      date: "July 20, 2024",
-      category: "Education",
-      month: "July",
-      school: "Architecture",
-      img: "/images/home-page/card-img.png",
-    },
-    {
-      id: 6,
-      title: "Annual Fest that celebrates everything JSS stands for",
-      date: "August 18, 2024",
-      category: "Cultural",
-      month: "August",
-      school: "Engineering",
-      img: null,
-      bgColor: "#002E6E",
-    },
-    {
-      id: 7,
-      title: "Sed ut perspiciatis unde omnis iste natus error sit.",
-      date: "August 14, 2024",
-      category: "Workshop",
-      month: "August",
-      school: "Robotics",
-      img: "/images/home-page/card-img.png",
-    },
-    {
-      id: 8,
-      title: "Perspiciatis unde omnis iste natus error sit.",
-      date: "August 14, 2024",
-      category: "Workshop",
-      month: "August",
-      school: "Robotics",
-      img: "/images/home-page/card-img.png",
-    },
-  ];
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["news-events"],
+    queryFn: () => happeningAPI.getEvents(),
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+  });
 
-  const upCommingEvents = [
-    {
-      id: 1,
-      title: "Techtonic Summit: Ideas That Shake The Future",
-      date: "October 18, 2024",
-      category: "Technology",
-      month: "October",
-      school: "Engineering",
-      img: "/images/home-page/upcoming-banner.png",
-      upcoming: true,
-    },
-    {
-      id: 2,
-      title: "Ideas That Shake The Future",
-      date: "October 18, 2024",
-      category: "Technology",
-      month: "October",
-      school: "Engineering",
-      img: "/images/home-page/upcoming-banner.png",
-      upcoming: true,
-    },
-  ];
-
-  const secondryItem = {
-    id: 1,
-    title: "SUMMER BEATS FESTIVAL 2025",
-    desc: "Writing for The Conversation, Professor Hayley Fowler, Paul Davies and Dr Simon Lee discuss how the rapidly warming climate",
-    date: "October 16, 2025",
-    category: "Technology",
-    month: "October",
-    school: "Engineering",
-    img: "/images/home-page/secondry-banner.png",
-    // upcoming: true,
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   };
+
+  // const allEvents = [
+  //   {
+  //     id: 1,
+  //     title: "Sed ut perspiciatis unde omnis iste natus error sit",
+  //     date: "October 18, 2024",
+  //     category: "Technology",
+  //     type: "Event",
+  //     month: "October",
+  //     school: "Engineering",
+  //     img: "/images/home-page/card-img.png",
+  //     upcoming: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Lorem ipsum dolor sit amet, consectet adipiscing elit.",
+  //     date: "October 16, 2025",
+  //     category: "Festival",
+  //     month: "October",
+  //     school: "Design",
+  //     img: "/images/home-page/card-img.png",
+  //     description:
+  //       "Writing for The Conversation, Professor Hayley Fowler, Paul Davies, and Simon Lee discuss how the rapidly warming climate impacts creativity.",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Business Today Codestorm 2.0",
+  //     date: "October 10, 2024",
+  //     category: "Business",
+  //     month: "October",
+  //     school: "Management",
+  //     img: null,
+  //     bgColor: "#B72833",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "dolor sit amet, consectetur adipiscing elit.",
+  //     date: "July 10, 2024",
+  //     category: "Education",
+  //     month: "July",
+  //     school: "Architecture",
+  //     img: "/images/home-page/card-img.png",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //     date: "July 20, 2024",
+  //     category: "Education",
+  //     month: "July",
+  //     school: "Architecture",
+  //     img: "/images/home-page/card-img.png",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Annual Fest that celebrates everything JSS stands for",
+  //     date: "August 18, 2024",
+  //     category: "Cultural",
+  //     month: "August",
+  //     school: "Engineering",
+  //     img: null,
+  //     bgColor: "#002E6E",
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "Sed ut perspiciatis unde omnis iste natus error sit.",
+  //     date: "August 14, 2024",
+  //     category: "Workshop",
+  //     month: "August",
+  //     school: "Robotics",
+  //     img: "/images/home-page/card-img.png",
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Perspiciatis unde omnis iste natus error sit.",
+  //     date: "August 14, 2024",
+  //     category: "Workshop",
+  //     month: "August",
+  //     school: "Robotics",
+  //     img: "/images/home-page/card-img.png",
+  //   },
+  // ];
+
+  const upCommingEvents = data?.data?.upcoming_events || [];
+  const secondryItem = data?.data?.first_event || [];
+  const allEvents = data?.data?.other_events || [];
+  // const upCommingEvents = [
+  //   {
+  //     id: 1,
+  //     title: "Techtonic Summit: Ideas That Shake The Future",
+  //     date: "October 18, 2024",
+  //     category: "Technology",
+  //     month: "October",
+  //     school: "Engineering",
+  //     img: "/images/home-page/upcoming-banner.png",
+  //     upcoming: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Ideas That Shake The Future",
+  //     date: "October 18, 2024",
+  //     category: "Technology",
+  //     month: "October",
+  //     school: "Engineering",
+  //     img: "/images/home-page/upcoming-banner.png",
+  //     upcoming: true,
+  //   },
+  // ];
+  // const upCommingEvents = apidata?.data?.upcoming_events || [];
+
+  // const secondryItem = {
+  //   id: 1,
+  //   title: "SUMMER BEATS FESTIVAL 2025",
+  //   desc: "Writing for The Conversation, Professor Hayley Fowler, Paul Davies and Dr Simon Lee discuss how the rapidly warming climate",
+  //   date: "October 16, 2025",
+  //   category: "Technology",
+  //   month: "October",
+  //   school: "Engineering",
+  //   img: "/images/home-page/secondry-banner.png",
+  //   // upcoming: true,
+  // };
 
   const [filters, setFilters] = useState({
     category: "All",
@@ -151,6 +174,14 @@ export default function EventsSection() {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
+  if (isLoading)
+    return (
+      <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
+        <LuLoader />
+      </div>
+    );
+  if (error) return <div>Error loading data</div>;
+
   return (
     <section className={styles.eventsSection}>
       {/* Main Banner */}
@@ -168,21 +199,27 @@ export default function EventsSection() {
         >
           {upCommingEvents.map((event) => (
             <SwiperSlide key={event.id}>
-              <Image
-                src={event.img}
-                alt={event.title}
-                layout="responsive"
-                width={1200}
-                height={400}
-                style={{ width: "100%", height: "auto" }}
-                className={styles.bannerImage}
-              />
+              <Link href={"#"}>
+                <Image
+                  src={event.banner_image}
+                  alt={event.title}
+                  layout="responsive"
+                  width={1200}
+                  height={400}
+                  style={{ width: "100%", height: "auto" }}
+                  className={styles.bannerImage}
+                />
+              </Link>
               <div className={styles.bannerTextBox}>
-                <p className={styles.upcomingTag}>UPCOMING EVENTS</p>
+                <p className={styles.upcomingTag}>
+                  {event.event_type.toUpperCase()}
+                </p>
                 <h3 className={styles.bannerTitle}>
                   {event.title.toUpperCase()}
                 </h3>
-                <p className={styles.bannerDate}>{event.date}</p>
+                <p className={styles.bannerDate}>
+                  {formatDate(event.event_date_from)}
+                </p>
                 <div className="d-flex gap-2">
                   <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
                     <FaChevronLeft size={8} color={"white"} />
@@ -221,7 +258,7 @@ export default function EventsSection() {
         <div className="col-md-7">
           <div className={styles.secondaryImageWrapper}>
             <Image
-              src={secondryItem.img}
+              src={secondryItem.banner_image}
               alt="Secondary Event"
               layout="responsive"
               width={700}
@@ -232,48 +269,67 @@ export default function EventsSection() {
         </div>
         <div className="col-md-5">
           <div className={styles.secondaryText}>
-            <p className={styles.eventDate}>October 16, 2025</p>
+            <p className={styles.eventDate}>
+              {formatDate(secondryItem.event_date_from)}
+            </p>
             <h3 className={styles.eventTitle}>SUMMER BEATS FESTIVAL 2025</h3>
             <p className={styles.eventDesc}>
               Writing for The Conversation, Professor Hayley Fowler and Simon
               Lee discuss how the rapidly warming climate influences creativity.
             </p>
+            <Link href={"#"} style={{ color: "inherit" }}>
+              <BsArrowRightCircle fontSize={20} />
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Event Cards */}
       <div className={`row  w-100 m-auto ${styles.cardsRow}`}>
-        {filteredEvents.map((event) => (
-          <div key={event.id} className="col-md-3 mb-4">
-            <div
-              className={`${styles.eventCard} ${
-                !event.img ? styles.textOnlyCard : ""
-              }`}
-              style={
-                !event.img ? { backgroundColor: event.bgColor || "#EEE" } : {}
-              }
-            >
-              <p className={styles.eventType}>
-                {event.img === null ? "Event" : ""}
-              </p>
-              {event.img ? (
-                <Image
-                  src={event.img}
-                  alt={event.title}
-                  width={400}
-                  height={250}
-                  layout="responsive"
-                  className={styles.eventImage}
-                />
-              ) : null}
-              <div className={styles.cardBody}>
-                <h5 className={styles.cardTitle}>{event.title}</h5>
-                <p className={styles.cardDate}>{event.date}</p>
-              </div>
+        {filteredEvents.map((event, index) => {
+          const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
+          const shuffledColors = [...darkColors].sort(
+            () => Math.random() - 0.5
+          );
+          const bgColor = shuffledColors[index % 4];
+
+          return (
+            <div key={event.id} className="col-md-3 mb-4">
+              <Link href={`#`} style={{ color: "inherit" }}>
+                <div
+                  className={`${styles.eventCard} ${
+                    !event.banner_image ? styles.textOnlyCard : ""
+                  }`}
+                  style={
+                    !event.banner_image
+                      ? { backgroundColor: event.bgColor || bgColor }
+                      : {}
+                  }
+                >
+                  <p className={styles.eventType}>
+                    {event.img === null ? "Event" : ""}
+                  </p>
+                  {event.banner_image ? (
+                    <Image
+                      src={event.banner_image}
+                      alt={event.title}
+                      width={400}
+                      height={250}
+                      layout="responsive"
+                      className={styles.eventImage}
+                    />
+                  ) : null}
+                  <div className={styles.cardBody}>
+                    <h5 className={styles.cardTitle}>{event.title}</h5>
+                    <p className={styles.cardDate}>
+                      {formatDate(event.event_date_from)}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -64,8 +64,10 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function EventsSection() {
+function EventsSection(param) {
+    let { data } = param;
     _s();
+    console.log(data, "data");
     const allEvents = [
         {
             id: 1,
@@ -243,7 +245,7 @@ function EventsSection() {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$news$2d$events$2f$news$2d$events$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].bannerImage
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                        lineNumber: 171,
+                                        lineNumber: 172,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,7 +256,7 @@ function EventsSection() {
                                                 children: "UPCOMING EVENTS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                lineNumber: 181,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -262,7 +264,7 @@ function EventsSection() {
                                                 children: event.title.toUpperCase()
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                lineNumber: 182,
+                                                lineNumber: 183,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -270,7 +272,7 @@ function EventsSection() {
                                                 children: event.date
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                lineNumber: 185,
+                                                lineNumber: 186,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -283,12 +285,12 @@ function EventsSection() {
                                                             color: "white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                            lineNumber: 188,
+                                                            lineNumber: 189,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                        lineNumber: 187,
+                                                        lineNumber: 188,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -298,35 +300,35 @@ function EventsSection() {
                                                             color: "white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                            lineNumber: 191,
+                                                            lineNumber: 192,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                        lineNumber: 190,
+                                                        lineNumber: 191,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                                lineNumber: 186,
+                                                lineNumber: 187,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                        lineNumber: 180,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, event.id, true, {
                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                lineNumber: 170,
+                                lineNumber: 171,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                        lineNumber: 158,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -340,12 +342,12 @@ function EventsSection() {
                                         children: m
                                     }, m, false, {
                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                        lineNumber: 205,
+                                        lineNumber: 206,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                lineNumber: 199,
+                                lineNumber: 200,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -356,24 +358,24 @@ function EventsSection() {
                                         children: s
                                     }, s, false, {
                                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                        lineNumber: 214,
+                                        lineNumber: 215,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                lineNumber: 208,
+                                lineNumber: 209,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                        lineNumber: 198,
+                        lineNumber: 199,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                lineNumber: 157,
+                lineNumber: 158,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -392,17 +394,17 @@ function EventsSection() {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$news$2d$events$2f$news$2d$events$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].secondaryImage
                             }, void 0, false, {
                                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                lineNumber: 223,
+                                lineNumber: 224,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                            lineNumber: 222,
+                            lineNumber: 223,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                        lineNumber: 221,
+                        lineNumber: 222,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -415,7 +417,7 @@ function EventsSection() {
                                     children: "October 16, 2025"
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 235,
+                                    lineNumber: 236,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -423,7 +425,7 @@ function EventsSection() {
                                     children: "SUMMER BEATS FESTIVAL 2025"
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 236,
+                                    lineNumber: 237,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -431,24 +433,24 @@ function EventsSection() {
                                     children: "Writing for The Conversation, Professor Hayley Fowler and Simon Lee discuss how the rapidly warming climate influences creativity."
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 237,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                            lineNumber: 234,
+                            lineNumber: 235,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                        lineNumber: 233,
+                        lineNumber: 234,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                lineNumber: 220,
+                lineNumber: 221,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -466,7 +468,7 @@ function EventsSection() {
                                     children: event.img === null ? "Event" : ""
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 257,
+                                    lineNumber: 258,
                                     columnNumber: 15
                                 }, this),
                                 event.img ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -478,7 +480,7 @@ function EventsSection() {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$news$2d$events$2f$news$2d$events$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].eventImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 261,
+                                    lineNumber: 262,
                                     columnNumber: 17
                                 }, this) : null,
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -489,7 +491,7 @@ function EventsSection() {
                                             children: event.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                            lineNumber: 271,
+                                            lineNumber: 272,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -497,35 +499,35 @@ function EventsSection() {
                                             children: event.date
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                            lineNumber: 272,
+                                            lineNumber: 273,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                                    lineNumber: 270,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                            lineNumber: 249,
+                            lineNumber: 250,
                             columnNumber: 13
                         }, this)
                     }, event.id, false, {
                         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                        lineNumber: 248,
+                        lineNumber: 249,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-                lineNumber: 246,
+                lineNumber: 247,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/happening-components/news-events/NewsEvents.js",
-        lineNumber: 155,
+        lineNumber: 156,
         columnNumber: 5
     }, this);
 }
@@ -667,41 +669,25 @@ function Happenings() {
         {
             id: "news",
             label: "News & Events",
-            component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$news$2d$events$2f$NewsEvents$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                fileName: "[project]/src/app/happenings/page.js",
-                lineNumber: 11,
-                columnNumber: 54
-            }, this)
+            component: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$news$2d$events$2f$NewsEvents$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
         },
         {
             id: "gallery",
             label: "Gallery",
-            component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$gallery$2f$Gallery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                fileName: "[project]/src/app/happenings/page.js",
-                lineNumber: 12,
-                columnNumber: 51
-            }, this)
+            component: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$gallery$2f$Gallery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
         },
         {
             id: "media",
             label: "Media Coverage",
-            component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$media$2d$coverage$2f$MediaCoverage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                fileName: "[project]/src/app/happenings/page.js",
-                lineNumber: 13,
-                columnNumber: 56
-            }, this)
+            component: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$media$2d$coverage$2f$MediaCoverage$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
         },
         {
             id: "press",
             label: "Press Release",
-            component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$notice$2d$announcement$2f$NoticeAnnouncement$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                fileName: "[project]/src/app/happenings/page.js",
-                lineNumber: 14,
-                columnNumber: 55
-            }, this)
+            component: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$happening$2d$components$2f$notice$2d$announcement$2f$NoticeAnnouncement$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
         }
     ];
-    const activeComponent = (_tabs_find = tabs.find((tab)=>tab.id === activeTab)) === null || _tabs_find === void 0 ? void 0 : _tabs_find.component;
+    const ActiveComponent = (_tabs_find = tabs.find((tab)=>tab.id === activeTab)) === null || _tabs_find === void 0 ? void 0 : _tabs_find.component;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$happenings$2f$page$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].happeningsContainer,
         children: [
@@ -744,7 +730,11 @@ function Happenings() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$happenings$2f$page$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].tabContent,
-                children: activeComponent
+                children: ActiveComponent ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ActiveComponent, {}, void 0, false, {
+                    fileName: "[project]/src/app/happenings/page.js",
+                    lineNumber: 42,
+                    columnNumber: 28
+                }, this) : null
             }, void 0, false, {
                 fileName: "[project]/src/app/happenings/page.js",
                 lineNumber: 40,
