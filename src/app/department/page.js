@@ -1,4 +1,4 @@
-import { Api } from "@/lib/api";
+
 import BannerComponent from "@/component/home-components/banner/BannerComponent";
 import AboutDepartmentComponent from "@/component/department-components/about-department-component/AboutDepartmentComponent";
 import HodMessageComponent from "@/component/department-components/hod-message-component/HodMessageComponent";
@@ -8,10 +8,9 @@ import LaboratoryComponent from "@/component/department-components/laboratory-de
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import FnqComponent from "@/component/department-components/fnq-department/FnqComponent";
 export default async function DepartmentPage() {
-  const [departmentBannerData] = await Promise.all([Api.getHomeBanners()]);
   return (
     <>
-      <BannerComponent data={departmentBannerData} />
+      <BannerComponent />
       <AboutDepartmentComponent />
       <HodMessageComponent />
       <CoursesOfferedDepartment />

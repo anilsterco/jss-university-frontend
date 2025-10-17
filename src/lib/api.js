@@ -1,39 +1,35 @@
-// lib/api.js
-const API_BASE = "http://sd7:8080/jss/api";
+// ✅ CENTRALIZED API FILE
+// All your API logic — Home, SchoolPage, DepartmentPage — in one place
 
-// Simple fetch function
-async function fetchAPI(endpoint) {
-  try {
-    const res = await fetch(`${API_BASE}${endpoint}`, {
-      cache: "no-store",
-    });
+const BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://project-demo.in/jss/api";
 
-    if (res.status !== 200) {
-      return {
-        status: res.status,
-        error: `API returned status ${res.status}`,
-        data: null,
-      };
-    }
+// --- Generic fetch function with SSR caching ---
+async function fetchData(endpoint, options = {}) {
+  const res = await fetch(`${BASE_URL}${endpoint}`, {
+    next: { revalidate: 120 }, // cache for 2 mins, change as needed
+    ...options,
+  });
 
-    const data = await res.json();
-    return {
-      status: res.status,
-      data: data,
-      error: null,
-    };
-  } catch (error) {
-    console.error(`API Error ${endpoint}:`, error);
+  if (!res.ok) {
+    console.error("❌ API Fetch Error:", res.status, endpoint);
+    throw new Error(`Failed to fetch ${endpoint}`);
   }
+
+  return res.json();
 }
 
-// Homepage APIs
-export const Api = {
-  getHomeBanners: () => fetchAPI("/homepage/banners"),
-  //   getCourses: () => fetchAPI('/homepage/courses'),
-  //   getPlacements: () => fetchAPI('/homepage/placements'),
-  //   getFacilities: () => fetchAPI('/homepage/facilities'),
-  //   getAbout: () => fetchAPI('/homepage/about'),
-  //   getTestimonials: () => fetchAPI('/homepage/testimonials'),
-  //   getHappenings: () => fetchAPI('/homepage/happenings'),
+// --- 🔹 HOME PAGE APIs ---
+export const happeningAPI = {
+  getEvents: () => fetchData("/happenings"),
+  getMedia: () => fetchData("/happenings/media"),
+  getNotice: () => fetchData("/happenings/notice"),
 };
+
+// --- 🔹 SCHOOL PAGE APIs ---
+// export const schoolAPI = {
+//   getAllSchools: () => fetchData("/schools"),
+//   getSchoolDetails: (slug) => fetchData(`/schools/${slug}`),
+// };
+
+

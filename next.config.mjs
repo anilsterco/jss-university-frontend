@@ -11,7 +11,8 @@ const nextConfig = {
       // Add other domains if needed
       {
         protocol: "https",
-        hostname: "your-production-domain.com",
+        hostname: "project-demo.in",
+        port: "",
         pathname: "/**",
       },
     ],

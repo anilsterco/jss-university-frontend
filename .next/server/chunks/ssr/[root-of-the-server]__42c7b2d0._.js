@@ -834,38 +834,45 @@ function EventsGrid() {
 "[project]/src/lib/api.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// lib/api.js
+// ✅ CENTRALIZED API FILE
+// All your API logic — Home, SchoolPage, DepartmentPage — in one place
 __turbopack_context__.s([
-    "Api",
-    ()=>Api
+    "happeningAPI",
+    ()=>happeningAPI
 ]);
-const API_BASE = "http://sd7:8080/jss/api";
-// Simple fetch function
-async function fetchAPI(endpoint) {
-    try {
-        const res = await fetch(`${API_BASE}${endpoint}`, {
-            cache: "no-store"
-        });
-        if (res.status !== 200) {
-            return {
-                status: res.status,
-                error: `API returned status ${res.status}`,
-                data: null
-            };
-        }
-        const data = await res.json();
-        return {
-            status: res.status,
-            data: data,
-            error: null
-        };
-    } catch (error) {
-        console.error(`API Error ${endpoint}:`, error);
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://project-demo.in/jss/api";
+// --- Generic fetch function with SSR caching ---
+async function fetchData(endpoint, options = {}) {
+    const res = await fetch(`${BASE_URL}${endpoint}`, {
+        next: {
+            revalidate: 120
+        },
+        ...options
+    });
+    if (!res.ok) {
+        console.error("❌ API Fetch Error:", res.status, endpoint);
+        throw new Error(`Failed to fetch ${endpoint}`);
     }
+    return res.json();
 }
-const Api = {
-    getHomeBanners: ()=>fetchAPI("/homepage/banners")
-};
+const happeningAPI = {
+    getNews: ()=>fetchData("/happenings")
+}; // --- 🔹 SCHOOL PAGE APIs ---
+ // export const schoolAPI = {
+ //   getAllSchools: () => fetchData("/schools"),
+ //   getSchoolDetails: (slug) => fetchData(`/schools/${slug}`),
+ // };
+ // // --- 🔹 DEPARTMENT PAGE APIs ---
+ // export const departmentAPI = {
+ //   getAllDepartments: () => fetchData("/departments"),
+ //   getDepartmentDetails: (slug) => fetchData(`/departments/${slug}`),
+ //   getFaculty: (slug) => fetchData(`/departments/${slug}/faculty`),
+ // };
+ // // --- 🔹 COMMON (reusable) APIs ---
+ // export const commonAPI = {
+ //   getNotices: () => fetchData("/notices"),
+ //   getGallery: () => fetchData("/gallery"),
+ // };
 }),
 "[project]/src/app/page.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

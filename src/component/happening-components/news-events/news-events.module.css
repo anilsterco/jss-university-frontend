@@ -44,7 +44,7 @@
   margin-right: 20px;
   position: absolute;
   right: 5rem;
-  bottom: 7rem;
+  bottom: 5rem;
   z-index: 1;
 }
 
@@ -106,7 +106,19 @@
   text-transform: uppercase;
   margin: 0;
 }
-
+.eventDate:before {
+    content: '';
+    height: 4px;
+    width: 5rem;
+    background: #FFA600;
+    display: block;
+    margin-bottom: 10px;
+}
+.eventDate {
+  color: #16344e;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
 .textOnlyCard .cardBody {
   color: #fff;
   padding: 0;
@@ -177,11 +189,7 @@
   padding-top: 2rem;
 }
 
-.eventDate {
-  color: #16344e;
-  font-size: 16px;
-  margin-bottom: 6px;
-}
+
 
 .eventTitle {
   margin-bottom: 12px;
@@ -195,7 +203,7 @@
 }
 
 .eventDesc {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
