@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -12,10 +12,72 @@ import { useQuery } from "@tanstack/react-query";
 import { happeningAPI } from "@/lib/api";
 
 export default function EventsSection() {
+  const [filters, setFilters] = useState({
+    month: "All",
+    school: "All",
+  });
+
+  // Format month name to number (January -> 1, February -> 2, etc.)
+  const formatMonthToNumber = (monthName) => {
+    const months = {
+      All: "All",
+      January: 1,
+      February: 2,
+      March: 3,
+      April: 4,
+      May: 5,
+      June: 6,
+      July: 7,
+      August: 8,
+      September: 9,
+      October: 10,
+      November: 11,
+      December: 12,
+    };
+    return months[monthName];
+  };
+
+  // Build query parameters based on filters
+  const buildQueryParams = () => {
+    const params = new URLSearchParams();
+
+    if (filters.month !== "All") {
+      const monthNumber = formatMonthToNumber(filters.month);
+      params.append("month", monthNumber);
+    }
+
+    if (filters.school !== "All") {
+      const schoolId = getSchoolId(filters.school);
+      params.append("school", schoolId);
+    }
+
+    return params.toString();
+  };
+
+  // Map school names to IDs
+  const getSchoolId = (schoolName) => {
+    const schoolMap = {
+      Engineering: 3,
+      Design: 2,
+      Management: 3,
+      Architecture: 4,
+      Robotics: 5,
+    };
+    return schoolMap[schoolName] || 3;
+  };
+
+  // Use React Query with dynamic query key based on filters
   const { data, isLoading, error } = useQuery({
-    queryKey: ["news-events"],
-    queryFn: () => happeningAPI.getEvents(),
+    queryKey: ["news-events", filters.month, filters.school], // More specific query key
+    queryFn: () => {
+      const queryParams = buildQueryParams();
+      const endpoint = queryParams
+        ? `/happenings?${queryParams}`
+        : "/happenings";
+      return happeningAPI.getEvents(endpoint);
+    },
     staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    cacheTime: 10 * 60 * 1000, // Keep in cache for 10 minutes
   });
 
   const formatDate = (dateString) => {
@@ -27,133 +89,26 @@ export default function EventsSection() {
     });
   };
 
-  // const allEvents = [
-  //   {
-  //     id: 1,
-  //     title: "Sed ut perspiciatis unde omnis iste natus error sit",
-  //     date: "October 18, 2024",
-  //     category: "Technology",
-  //     type: "Event",
-  //     month: "October",
-  //     school: "Engineering",
-  //     img: "/images/home-page/card-img.png",
-  //     upcoming: true,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Lorem ipsum dolor sit amet, consectet adipiscing elit.",
-  //     date: "October 16, 2025",
-  //     category: "Festival",
-  //     month: "October",
-  //     school: "Design",
-  //     img: "/images/home-page/card-img.png",
-  //     description:
-  //       "Writing for The Conversation, Professor Hayley Fowler, Paul Davies, and Simon Lee discuss how the rapidly warming climate impacts creativity.",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Business Today Codestorm 2.0",
-  //     date: "October 10, 2024",
-  //     category: "Business",
-  //     month: "October",
-  //     school: "Management",
-  //     img: null,
-  //     bgColor: "#B72833",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "dolor sit amet, consectetur adipiscing elit.",
-  //     date: "July 10, 2024",
-  //     category: "Education",
-  //     month: "July",
-  //     school: "Architecture",
-  //     img: "/images/home-page/card-img.png",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //     date: "July 20, 2024",
-  //     category: "Education",
-  //     month: "July",
-  //     school: "Architecture",
-  //     img: "/images/home-page/card-img.png",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Annual Fest that celebrates everything JSS stands for",
-  //     date: "August 18, 2024",
-  //     category: "Cultural",
-  //     month: "August",
-  //     school: "Engineering",
-  //     img: null,
-  //     bgColor: "#002E6E",
-  //   },
-  //   {
-  //     id: 7,
-  //     title: "Sed ut perspiciatis unde omnis iste natus error sit.",
-  //     date: "August 14, 2024",
-  //     category: "Workshop",
-  //     month: "August",
-  //     school: "Robotics",
-  //     img: "/images/home-page/card-img.png",
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "Perspiciatis unde omnis iste natus error sit.",
-  //     date: "August 14, 2024",
-  //     category: "Workshop",
-  //     month: "August",
-  //     school: "Robotics",
-  //     img: "/images/home-page/card-img.png",
-  //   },
-  // ];
-
   const upCommingEvents = data?.data?.upcoming_events || [];
-  const secondryItem = data?.data?.first_event || [];
+  const secondryItem = data?.data?.first_event || null;
   const allEvents = data?.data?.other_events || [];
-  // const upCommingEvents = [
-  //   {
-  //     id: 1,
-  //     title: "Techtonic Summit: Ideas That Shake The Future",
-  //     date: "October 18, 2024",
-  //     category: "Technology",
-  //     month: "October",
-  //     school: "Engineering",
-  //     img: "/images/home-page/upcoming-banner.png",
-  //     upcoming: true,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Ideas That Shake The Future",
-  //     date: "October 18, 2024",
-  //     category: "Technology",
-  //     month: "October",
-  //     school: "Engineering",
-  //     img: "/images/home-page/upcoming-banner.png",
-  //     upcoming: true,
-  //   },
-  // ];
-  // const upCommingEvents = apidata?.data?.upcoming_events || [];
 
-  // const secondryItem = {
-  //   id: 1,
-  //   title: "SUMMER BEATS FESTIVAL 2025",
-  //   desc: "Writing for The Conversation, Professor Hayley Fowler, Paul Davies and Dr Simon Lee discuss how the rapidly warming climate",
-  //   date: "October 16, 2025",
-  //   category: "Technology",
-  //   month: "October",
-  //   school: "Engineering",
-  //   img: "/images/home-page/secondry-banner.png",
-  //   // upcoming: true,
-  // };
+  const months = [
+    "All",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const [filters, setFilters] = useState({
-    category: "All",
-    month: "All",
-    school: "All",
-  });
-
-  const months = ["All", "January", "July", "August", "October"];
   const schools = [
     "All",
     "Engineering",
@@ -162,13 +117,6 @@ export default function EventsSection() {
     "Architecture",
     "Robotics",
   ];
-
-  const filteredEvents = allEvents.filter((event) => {
-    const byMonth = filters.month === "All" || event.month === filters.month;
-    const bySchool =
-      filters.school === "All" || event.school === filters.school;
-    return byMonth && bySchool;
-  });
 
   const handleFilter = (key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
@@ -186,52 +134,59 @@ export default function EventsSection() {
     <section className={styles.eventsSection}>
       {/* Main Banner */}
       <div className={styles.bannerWrapper}>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation={{
-            nextEl: ".upcoming-next",
-            prevEl: ".upcoming-prev",
-          }}
-          loop={true}
-          spaceBetween={20}
-          slidesPerView={1}
-          className={styles.swiperContainer}
-        >
-          {upCommingEvents.map((event) => (
-            <SwiperSlide key={event.id}>
-              <Link href={"#"}>
-                <Image
-                  src={event.banner_image}
-                  alt={event.title}
-                  layout="responsive"
-                  width={1200}
-                  height={400}
-                  style={{ width: "100%", height: "auto" }}
-                  className={styles.bannerImage}
-                />
-              </Link>
-              <div className={styles.bannerTextBox}>
-                <p className={styles.upcomingTag}>
-                  {event.event_type.toUpperCase()}
-                </p>
-                <h3 className={styles.bannerTitle}>
-                  {event.title.toUpperCase()}
-                </h3>
-                <p className={styles.bannerDate}>
-                  {formatDate(event.event_date_from)}
-                </p>
-                <div className="d-flex gap-2">
-                  <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                    <FaChevronLeft size={8} color={"white"} />
-                  </button>
-                  <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                    <FaChevronRight size={8} color={"white"} />
-                  </button>
+        {upCommingEvents.length > 0 ? (
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation={{
+              nextEl: ".upcoming-next",
+              prevEl: ".upcoming-prev",
+            }}
+            loop={true}
+            spaceBetween={20}
+            slidesPerView={1}
+            className={styles.swiperContainer}
+          >
+            {upCommingEvents.map((event) => (
+              <SwiperSlide key={event.id}>
+                <Link href={"#"}>
+                  <Image
+                    src={event.banner_image}
+                    alt={event.title}
+                    layout="responsive"
+                    width={1200}
+                    height={400}
+                    style={{ width: "100%", height: "auto" }}
+                    className={styles.bannerImage}
+                  />
+                </Link>
+                <div className={styles.bannerTextBox}>
+                  <p className={styles.upcomingTag}>
+                    {event.event_type?.toUpperCase() || "EVENT"}
+                  </p>
+                  <h3 className={styles.bannerTitle}>
+                    {event.title?.toUpperCase()}
+                  </h3>
+                  <p className={styles.bannerDate}>
+                    {formatDate(event.event_date_from)}
+                  </p>
+                  <div className="d-flex gap-2">
+                    <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                      <FaChevronLeft size={8} color={"white"} />
+                    </button>
+                    <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                      <FaChevronRight size={8} color={"white"} />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div style={{ textAlign: "center", padding: "4rem" }}>
+            No Upcoming Events
+          </div>
+        )}
+
         <div className={`d-flex justify-content-end gap-2 ${styles.filters}`}>
           <select
             className="form-select"
@@ -239,7 +194,9 @@ export default function EventsSection() {
             value={filters.month}
           >
             {months.map((m) => (
-              <option key={m}>{m}</option>
+              <option key={m} value={m}>
+                {m}
+              </option>
             ))}
           </select>
           <select
@@ -248,89 +205,100 @@ export default function EventsSection() {
             value={filters.school}
           >
             {schools.map((s) => (
-              <option key={s}>{s}</option>
+              <option key={s} value={s}>
+                {s}
+              </option>
             ))}
           </select>
         </div>
       </div>
-      {/* Secondary Banner with Text */}
-      <div className={`row mt-5 w-100 m-auto ${styles.secondarySection}`}>
-        <div className="col-md-7">
-          <div className={styles.secondaryImageWrapper}>
-            <Image
-              src={secondryItem.banner_image}
-              alt="Secondary Event"
-              layout="responsive"
-              width={700}
-              height={400}
-              className={styles.secondaryImage}
-            />
-          </div>
-        </div>
-        <div className="col-md-5">
-          <div className={styles.secondaryText}>
-            <p className={styles.eventDate}>
-              {formatDate(secondryItem.event_date_from)}
-            </p>
-            <h3 className={styles.eventTitle}>SUMMER BEATS FESTIVAL 2025</h3>
-            <p className={styles.eventDesc}>
-              Writing for The Conversation, Professor Hayley Fowler and Simon
-              Lee discuss how the rapidly warming climate influences creativity.
-            </p>
-            <Link href={"#"} style={{ color: "inherit" }}>
-              <BsArrowRightCircle fontSize={20} />
-            </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* Event Cards */}
-      <div className={`row  w-100 m-auto ${styles.cardsRow}`}>
-        {filteredEvents.map((event, index) => {
-          const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
-          const shuffledColors = [...darkColors].sort(
-            () => Math.random() - 0.5
-          );
-          const bgColor = shuffledColors[index % 4];
-
-          return (
-            <div key={event.id} className="col-md-3 mb-4">
-              <Link href={`#`} style={{ color: "inherit" }}>
-                <div
-                  className={`${styles.eventCard} ${
-                    !event.banner_image ? styles.textOnlyCard : ""
-                  }`}
-                  style={
-                    !event.banner_image
-                      ? { backgroundColor: event.bgColor || bgColor }
-                      : {}
-                  }
-                >
-                  <p className={styles.eventType}>
-                    {event.img === null ? "Event" : ""}
-                  </p>
-                  {event.banner_image ? (
-                    <Image
-                      src={event.banner_image}
-                      alt={event.title}
-                      width={400}
-                      height={250}
-                      layout="responsive"
-                      className={styles.eventImage}
-                    />
-                  ) : null}
-                  <div className={styles.cardBody}>
-                    <h5 className={styles.cardTitle}>{event.title}</h5>
-                    <p className={styles.cardDate}>
-                      {formatDate(event.event_date_from)}
-                    </p>
-                  </div>
-                </div>
+      {secondryItem != null ? (
+        <div className={`row mt-5 w-100 m-auto ${styles.secondarySection}`}>
+          <div className="col-md-7">
+            <div className={styles.secondaryImageWrapper}>
+              <Image
+                src={secondryItem.banner_image}
+                alt="Secondary Event"
+                layout="responsive"
+                width={700}
+                height={400}
+                className={styles.secondaryImage}
+              />
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div className={styles.secondaryText}>
+              <p className={styles.eventDate}>
+                {formatDate(secondryItem.event_date_from)}
+              </p>
+              <h3 className={styles.eventTitle}>{secondryItem.title}</h3>
+              <p className={styles.eventDesc}>{secondryItem.desc}</p>
+              <Link href={"#"} style={{ color: "inherit" }}>
+                <BsArrowRightCircle fontSize={20} />
               </Link>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        </div>
+      ) : (
+        <div style={{ textAlign: "center", marginTop: "5rem" }}>
+          No Result Found
+        </div>
+      )}
+
+      {/* Event Cards */}
+      {allEvents.length > 0 ? (
+        <div className={`row w-100 m-auto ${styles.cardsRow}`}>
+          {allEvents.map((event, index) => {
+            const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
+            const shuffledColors = [...darkColors].sort(
+              () => Math.random() - 0.5
+            );
+            const bgColor = shuffledColors[index % 4];
+
+            return (
+              <div key={event.id} className="col-md-3 mb-4">
+                <Link href={`#`} style={{ color: "inherit" }}>
+                  <div
+                    className={`${styles.eventCard} ${
+                      !event.banner_image ? styles.textOnlyCard : ""
+                    }`}
+                    style={
+                      !event.banner_image
+                        ? { backgroundColor: event.bgColor || bgColor }
+                        : {}
+                    }
+                  >
+                    <p className={styles.eventType}>
+                      {!event.banner_image ? "Event" : ""}
+                    </p>
+                    {event.banner_image ? (
+                      <Image
+                        src={event.banner_image}
+                        alt={event.title}
+                        width={400}
+                        height={250}
+                        layout="responsive"
+                        className={styles.eventImage}
+                      />
+                    ) : null}
+                    <div className={styles.cardBody}>
+                      <h5 className={styles.cardTitle}>{event.title}</h5>
+                      <p className={styles.cardDate}>
+                        {formatDate(event.event_date_from)}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div style={{ textAlign: "center", marginTop: "5rem" }}>
+          No Result Found
+        </div>
+      )}
     </section>
   );
 }

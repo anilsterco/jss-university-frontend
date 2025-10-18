@@ -1,6 +1,3 @@
-// ✅ CENTRALIZED API FILE
-// All your API logic — Home, SchoolPage, DepartmentPage — in one place
-
 const BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "https://project-demo.in/jss/api";
 
@@ -21,15 +18,5 @@ async function fetchData(endpoint, options = {}) {
 
 // --- 🔹 HOME PAGE APIs ---
 export const happeningAPI = {
-  getEvents: () => fetchData("/happenings"),
-  getMedia: () => fetchData("/happenings/media"),
-  getNotice: () => fetchData("/happenings/notice"),
+  getEvents: (endpoint = "/happenings") => fetchData(endpoint),
 };
-
-// --- 🔹 SCHOOL PAGE APIs ---
-// export const schoolAPI = {
-//   getAllSchools: () => fetchData("/schools"),
-//   getSchoolDetails: (slug) => fetchData(`/schools/${slug}`),
-// };
-
-
