@@ -20,3 +20,6 @@ async function fetchData(endpoint, options = {}) {
 export const happeningAPI = {
   getEvents: (endpoint = "/happenings") => fetchData(endpoint),
 };
+export const schoolListAPI = {
+  getSchoolList: (endpoint = "/schools/all") => fetchData(endpoint),
+};

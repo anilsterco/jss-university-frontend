@@ -15,7 +15,6 @@ __turbopack_context__.v({
 "[project]/src/component/home-components/banner/BannerComponent.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// components/home-components/Banner/index.js
 __turbopack_context__.s([
     "default",
     ()=>HeroSlider
@@ -39,35 +38,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 function HeroSlider() {
-    // console.log(data, "data");
-    const banners = [
+    const bannerData = [
         {
             id: 1,
-            title: "A TRADITION OF INNOVATION AND LEADERSHI",
-            desc: "Perfect 👍 You want to use a Bootstrap modal (confirmation popup) for deletion instead of the default JavaScript confirm() — integrated cleanly with your Inertia + React banner carousel.",
+            title: "A TRADITION OF INNOVATION AND LEADERSHIP",
+            desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
             display_order: 100,
-            linked_text: "Learn More About JSS",
+            linked_text: "Learn more about JSS",
             url: "#",
-            img: "http://sd7:8080/jss/assets/img/banners/1760163859_68e9f81352a2d.png"
+            img: "/images/home-page/placeholder-banner.png"
         }
     ];
-    // Show loading if no data
-    // if (!data) {
-    //   return (
-    //     <section className="container-fluid">
-    //       <div className="text-center py-5">
-    //         <div className="spinner-border text-primary" role="status">
-    //           <span className="visually-hidden">Loading...</span>
-    //         </div>
-    //         <p className="mt-2">Loading banners...</p>
-    //       </div>
-    //     </section>
-    //   );
-    // }
-    // Show banners
-    const bannerData = banners;
-    console.log(bannerData);
-    // if (data.status === 200) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$banner$2f$banner$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].firstBannerSlide,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Swiper"], {
@@ -77,9 +58,6 @@ function HeroSlider() {
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$autoplay$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Autoplay$3e$__["Autoplay"]
             ],
             navigation: false,
-            pagination: {
-                clickable: true
-            },
             loop: true,
             spaceBetween: 20,
             slidesPerView: 1,
@@ -94,7 +72,7 @@ function HeroSlider() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$banner$2f$banner$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].slideImage
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                            lineNumber: 58,
+                            lineNumber: 35,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -105,7 +83,7 @@ function HeroSlider() {
                                     children: slide.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 66,
+                                    lineNumber: 43,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -113,7 +91,7 @@ function HeroSlider() {
                                     children: slide.desc
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 67,
+                                    lineNumber: 44,
                                     columnNumber: 15
                                 }, this),
                                 slide.url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -125,38 +103,37 @@ function HeroSlider() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$banner$2f$banner$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].iconSpacing
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                            lineNumber: 71,
+                                            lineNumber: 48,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                                    lineNumber: 69,
+                                    lineNumber: 46,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                            lineNumber: 65,
+                            lineNumber: 42,
                             columnNumber: 13
                         }, this)
                     ]
                 }, slide.id, true, {
                     fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-                    lineNumber: 57,
+                    lineNumber: 34,
                     columnNumber: 11
                 }, this))
         }, void 0, false, {
             fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-            lineNumber: 47,
+            lineNumber: 25,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/home-components/banner/BannerComponent.js",
-        lineNumber: 46,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
-// }
 }
 }),
 "[project]/src/component/department-components/faculty-list-department/faculty-list.module.css [app-ssr] (css module)", ((__turbopack_context__) => {

@@ -178,7 +178,7 @@ export default function PlacementsSection() {
               modules={[Navigation, Autoplay]}
               navigation={false}
               loop={true}
-              spaceBetween={10}
+              spaceBetween={1}
               slidesPerView={7}
               className="recruiters-slider"
             >

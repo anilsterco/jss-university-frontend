@@ -1,6 +1,6 @@
 .happeningsContainer {
   padding: 10rem 9rem;
-  background: linear-gradient(rgba(1, 140, 232, 0.16) 20%, #f6fbfb 20%);
+  background: linear-gradient(rgba(1, 140, 232, 0.16) 32rem, #f6fbfb 32rem);
 }
 .happeningsTitle {
   width: fit-content;

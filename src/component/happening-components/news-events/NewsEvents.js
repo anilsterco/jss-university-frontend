@@ -2,25 +2,63 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import {
+  Navigation,
+  Pagination as SwiperPagination,
+  Autoplay,
+} from "swiper/modules";
 import styles from "./news-events.module.css";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
+import { FaChevronRight, FaChevronLeft, FaChevronDown } from "react-icons/fa6";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Link from "next/link";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
-import { happeningAPI } from "@/lib/api";
+import { happeningAPI, schoolListAPI } from "@/lib/api";
+import Pagination from "@/component/common/pagination-component/Pagination";
 
 export default function EventsSection() {
   const [filters, setFilters] = useState({
-    month: "All",
-    school: "All",
+    month: "",
+    school: "",
+    page: 1,
   });
+
+  const {
+    data: schoolsList,
+    isLoading: schoolsLoading,
+    error: schoolsError,
+  } = useQuery({
+    queryKey: ["schools"],
+    queryFn: () => schoolListAPI.getSchoolList(),
+    staleTime: 10 * 60 * 1000, // Cache longer since schools don't change often
+  });
+  console.log(schoolsList, "schoolsList");
+  // Use React Query with dynamic query key based on filters including page
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["news-events", filters.month, filters.school, filters.page],
+    queryFn: () => {
+      const queryParams = buildQueryParams();
+      console.log(queryParams);
+      const endpoint = `/happenings?${queryParams}`;
+      return happeningAPI.getEvents(endpoint);
+    },
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    cacheTime: 10 * 60 * 1000, // Keep in cache for 10 minutes
+    keepPreviousData: true, // Keep previous data while fetching new page
+  });
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   // Format month name to number (January -> 1, February -> 2, etc.)
   const formatMonthToNumber = (monthName) => {
     const months = {
-      All: "All",
       January: 1,
       February: 2,
       March: 3,
@@ -37,16 +75,28 @@ export default function EventsSection() {
     return months[monthName];
   };
 
+  const schools = schoolsList?.data || [];
+  const upCommingEvents = data?.data?.upcoming_events || [];
+  const secondryItem = data?.data?.first_event || null;
+  const allEvents = data?.data?.other_events || [];
+
+  // Get pagination data from API response
+  const currentPage = data?.data?.pagination?.current_page || filters.page;
+  const totalPages = data?.data?.pagination?.last_page || 1;
+
   // Build query parameters based on filters
   const buildQueryParams = () => {
     const params = new URLSearchParams();
 
-    if (filters.month !== "All") {
+    // Always add page parameter
+    params.append("page", filters.page);
+
+    if (filters.month !== "") {
       const monthNumber = formatMonthToNumber(filters.month);
       params.append("month", monthNumber);
     }
 
-    if (filters.school !== "All") {
+    if (filters.school !== "") {
       const schoolId = getSchoolId(filters.school);
       params.append("school", schoolId);
     }
@@ -56,45 +106,11 @@ export default function EventsSection() {
 
   // Map school names to IDs
   const getSchoolId = (schoolName) => {
-    const schoolMap = {
-      Engineering: 3,
-      Design: 2,
-      Management: 3,
-      Architecture: 4,
-      Robotics: 5,
-    };
-    return schoolMap[schoolName] || 3;
+    const school = schools.find((s) => s.name === schoolName);
+    return school?.id || null;
   };
-
-  // Use React Query with dynamic query key based on filters
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["news-events", filters.month, filters.school], // More specific query key
-    queryFn: () => {
-      const queryParams = buildQueryParams();
-      const endpoint = queryParams
-        ? `/happenings?${queryParams}`
-        : "/happenings";
-      return happeningAPI.getEvents(endpoint);
-    },
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
-    cacheTime: 10 * 60 * 1000, // Keep in cache for 10 minutes
-  });
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  const upCommingEvents = data?.data?.upcoming_events || [];
-  const secondryItem = data?.data?.first_event || null;
-  const allEvents = data?.data?.other_events || [];
 
   const months = [
-    "All",
     "January",
     "February",
     "March",
@@ -109,26 +125,37 @@ export default function EventsSection() {
     "December",
   ];
 
-  const schools = [
-    "All",
-    "Engineering",
-    "Design",
-    "Management",
-    "Architecture",
-    "Robotics",
-  ];
-
   const handleFilter = (key, value) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value,
+      // Reset to page 1 when changing filters
+      ...(key !== "page" && { page: 1 }),
+    }));
   };
 
-  if (isLoading)
+  const handlePageChange = (page) => {
+    setFilters((prev) => ({ ...prev, page }));
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  if ((isLoading && !data) || (schoolsLoading && !schoolsList))
     return (
       <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
         <LuLoader />
       </div>
     );
-  if (error) return <div>Error loading data</div>;
+  if (error || schoolsError) return <div>Error loading data</div>;
+
+  console.log("setFilters", filters);
+  const resetFilters = () => {
+    setFilters({
+      page: 1,
+      month: "",
+      school: "",
+    });
+  };
 
   return (
     <section className={styles.eventsSection}>
@@ -136,7 +163,7 @@ export default function EventsSection() {
       <div className={styles.bannerWrapper}>
         {upCommingEvents.length > 0 ? (
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Navigation, SwiperPagination, Autoplay]}
             navigation={{
               nextEl: ".upcoming-next",
               prevEl: ".upcoming-prev",
@@ -188,28 +215,46 @@ export default function EventsSection() {
         )}
 
         <div className={`d-flex justify-content-end gap-2 ${styles.filters}`}>
-          <select
-            className="form-select"
-            onChange={(e) => handleFilter("month", e.target.value)}
-            value={filters.month}
-          >
-            {months.map((m) => (
-              <option key={m} value={m}>
-                {m}
+          {filters.month !== "" || filters.school !== "" ? (
+            <button className={styles.resetFilterButton} onClick={resetFilters}>
+              Reset Filters
+            </button>
+          ) : null}
+          <div className={styles.filterItem}>
+            <select
+              className="form-select"
+              onChange={(e) => handleFilter("month", e.target.value)}
+              value={filters.month}
+            >
+              <option value="" disabled hidden>
+                Select Month
               </option>
-            ))}
-          </select>
-          <select
-            className="form-select"
-            onChange={(e) => handleFilter("school", e.target.value)}
-            value={filters.school}
-          >
-            {schools.map((s) => (
-              <option key={s} value={s}>
-                {s}
+
+              {months.map((m) => (
+                <option key={m} value={m}>
+                  {m}
+                </option>
+              ))}
+            </select>
+            <FaChevronDown />
+          </div>
+          <div className={styles.filterItem}>
+            <select
+              className="form-select"
+              onChange={(e) => handleFilter("school", e.target.value)}
+              value={filters.school}
+            >
+              <option value="" disabled hidden>
+                Select School
               </option>
-            ))}
-          </select>
+              {schools.map((s) => (
+                <option key={s.id} value={s.name}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+            <FaChevronDown />
+          </div>
         </div>
       </div>
 
@@ -248,52 +293,62 @@ export default function EventsSection() {
 
       {/* Event Cards */}
       {allEvents.length > 0 ? (
-        <div className={`row w-100 m-auto ${styles.cardsRow}`}>
-          {allEvents.map((event, index) => {
-            const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
-            const shuffledColors = [...darkColors].sort(
-              () => Math.random() - 0.5
-            );
-            const bgColor = shuffledColors[index % 4];
+        <>
+          <div className={`row w-100 m-auto ${styles.cardsRow}`}>
+            {allEvents.map((event, index) => {
+              const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
+              const shuffledColors = [...darkColors].sort(
+                () => Math.random() - 0.5
+              );
+              const bgColor = shuffledColors[index % 4];
 
-            return (
-              <div key={event.id} className="col-md-3 mb-4">
-                <Link href={`#`} style={{ color: "inherit" }}>
-                  <div
-                    className={`${styles.eventCard} ${
-                      !event.banner_image ? styles.textOnlyCard : ""
-                    }`}
-                    style={
-                      !event.banner_image
-                        ? { backgroundColor: event.bgColor || bgColor }
-                        : {}
-                    }
-                  >
-                    <p className={styles.eventType}>
-                      {!event.banner_image ? "Event" : ""}
-                    </p>
-                    {event.banner_image ? (
-                      <Image
-                        src={event.banner_image}
-                        alt={event.title}
-                        width={400}
-                        height={250}
-                        layout="responsive"
-                        className={styles.eventImage}
-                      />
-                    ) : null}
-                    <div className={styles.cardBody}>
-                      <h5 className={styles.cardTitle}>{event.title}</h5>
-                      <p className={styles.cardDate}>
-                        {formatDate(event.event_date_from)}
+              return (
+                <div key={event.id} className="col-md-3 mb-4">
+                  <Link href={`#`} style={{ color: "inherit" }}>
+                    <div
+                      className={`${styles.eventCard} ${
+                        !event.banner_image ? styles.textOnlyCard : ""
+                      }`}
+                      style={
+                        !event.banner_image
+                          ? { backgroundColor: event.bgColor || bgColor }
+                          : {}
+                      }
+                    >
+                      <p className={styles.eventType}>
+                        {!event.banner_image ? "Event" : ""}
                       </p>
+                      {event.banner_image ? (
+                        <Image
+                          src={event.banner_image}
+                          alt={event.title}
+                          width={400}
+                          height={250}
+                          layout="responsive"
+                          className={styles.eventImage}
+                        />
+                      ) : null}
+                      <div className={styles.cardBody}>
+                        <h5 className={styles.cardTitle}>{event.title}</h5>
+                        <p className={styles.cardDate}>
+                          {formatDate(event.event_date_from)}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Pagination Component */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            maxVisiblePages={5}
+          />
+        </>
       ) : (
         <div style={{ textAlign: "center", marginTop: "5rem" }}>
           No Result Found
