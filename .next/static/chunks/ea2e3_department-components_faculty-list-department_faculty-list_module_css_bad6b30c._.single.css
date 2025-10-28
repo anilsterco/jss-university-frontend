@@ -1,0 +1,230 @@
+/* [project]/src/component/department-components/faculty-list-department/faculty-list.module.css [app-client] (css) */
+.faculty-list-module__TtERDW__container {
+  background-color: #f5f5f5;
+  padding: 4rem 0;
+}
+
+.faculty-list-module__TtERDW__headerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faculty-list-module__TtERDW__sliderContainer {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.faculty-list-module__TtERDW__slideImage {
+  border-radius: 10px;
+}
+
+.faculty-list-module__TtERDW__subtitle {
+  color: #2c3e50;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.faculty-list-module__TtERDW__title {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.faculty-list-module__TtERDW__titleHighlighted {
+  color: #3498db;
+}
+
+.faculty-list-module__TtERDW__titleNormal {
+  color: #2c3e50;
+}
+
+.faculty-list-module__TtERDW__sliderWrapper {
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  position: relative;
+}
+
+.faculty-list-module__TtERDW__navButton {
+  cursor: pointer;
+  color: #e74c3c;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #e74c3c;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  transition: all .3s;
+  display: flex;
+}
+
+.faculty-list-module__TtERDW__navButton:hover {
+  color: #fff;
+  background-color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.faculty-list-module__TtERDW__navButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.faculty-list-module__TtERDW__slider {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  display: flex;
+  overflow-x: auto;
+}
+
+.faculty-list-module__TtERDW__slider::-webkit-scrollbar {
+  display: none;
+}
+
+.faculty-list-module__TtERDW__facultyCard {
+  border-radius: 0;
+  transition: transform .3s, box-shadow .3s;
+  overflow: hidden;
+}
+
+.faculty-list-module__TtERDW__facultyCard:hover {
+  transform: translateY(-10px);
+}
+
+.faculty-list-module__TtERDW__imageContainer {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.faculty-list-module__TtERDW__imagePlaceholder {
+  color: #888;
+  background-color: #b8b8b8;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.faculty-list-module__TtERDW__imageText {
+  color: #666;
+  margin-top: .5rem;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.faculty-list-module__TtERDW__facultyImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.faculty-list-module__TtERDW__facultyInfo {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.faculty-list-module__TtERDW__facultyName {
+  color: #2c3e50;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.faculty-list-module__TtERDW__facultyDesignation {
+  color: #3498db;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+.faculty-list-module__TtERDW__underline {
+  background-color: #f39c12;
+  width: 60px;
+  height: 3px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .faculty-list-module__TtERDW__title {
+    font-size: 1.75rem;
+  }
+
+  .faculty-list-module__TtERDW__sliderWrapper {
+    padding: 0 .5rem;
+  }
+
+  .faculty-list-module__TtERDW__navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .faculty-list-module__TtERDW__navButton svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .faculty-list-module__TtERDW__facultyCard {
+    flex: 0 0 250px;
+  }
+
+  .faculty-list-module__TtERDW__imageContainer {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .faculty-list-module__TtERDW__container {
+    padding: 3rem 0;
+  }
+
+  .faculty-list-module__TtERDW__title {
+    font-size: 1.5rem;
+  }
+
+  .faculty-list-module__TtERDW__sliderWrapper {
+    padding: 0;
+  }
+
+  .faculty-list-module__TtERDW__navButton {
+    display: none;
+  }
+
+  .faculty-list-module__TtERDW__facultyCard {
+    flex: 0 0 220px;
+  }
+
+  .faculty-list-module__TtERDW__imageContainer {
+    height: 220px;
+  }
+
+  .faculty-list-module__TtERDW__facultyInfo {
+    padding: 1rem;
+  }
+
+  .faculty-list-module__TtERDW__facultyName {
+    font-size: 1rem;
+  }
+
+  .faculty-list-module__TtERDW__facultyDesignation {
+    font-size: .85rem;
+  }
+}
+
+/*# sourceMappingURL=ea2e3_department-components_faculty-list-department_faculty-list_module_css_bad6b30c._.single.css.map*/

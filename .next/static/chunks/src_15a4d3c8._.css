@@ -1,0 +1,25 @@
+/* [project]/src/app/happenings/page.module.css [app-client] (css) */
+.page-module__yFOS7q__happeningsContainer {
+  height: 100vh;
+  padding: 10rem 9rem;
+}
+
+.page-module__yFOS7q__happeningsTitle {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #018ce8 30%, #263868 40%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto auto 2rem;
+  font-weight: 700;
+}
+
+.page-module__yFOS7q__happeningsSubTitle {
+  font-weight: 600;
+}
+
+/* [project]/src/component/happening-components/news-events/news-events.module.css [app-client] (css) */
+
+
+/*# sourceMappingURL=src_15a4d3c8._.css.map*/

@@ -1,0 +1,301 @@
+/* Container */
+.container {
+  background: #00489a;
+  padding: 6rem 0 4rem 10rem;
+  position: relative;
+}
+
+/* Header Section */
+.headerSection {
+  text-align: left;
+  margin-bottom: 2.5rem;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  background: linear-gradient(to right, #ffffff 28%, #ffc100 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: 85%;
+}
+
+.description {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.scrollIndicator:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.scrollIndicator svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Slider Wrapper */
+.sliderWrapper {
+  position: relative;
+  padding: 0 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Lab Card */
+.labCard {
+  flex: 0 0 320px;
+  background-color: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.labCard:hover {
+  transform: translateY(-10px);
+}
+
+/* Image Container */
+.imageContainer {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #b8b8b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.imageText {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #666;
+}
+
+.labImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gradient Overlay */
+.gradientOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Lab Info */
+.labInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  gap: 1rem;
+}
+
+.labTitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  max-width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* View Button */
+.viewButton {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.viewButton:hover {
+  background-color: #ffffff;
+  color: #1e3c72;
+  transform: rotate(90deg);
+}
+
+.viewButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Button Wrapper */
+.buttonWrapper {
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.applyButton {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 0.55rem 1.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.applyButton:hover {
+  background-color: #ffffff;
+  color: #1e3c72;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .headerSection {
+    padding: 0 1rem;
+  }
+
+  .sliderWrapper {
+    padding: 0 1rem;
+  }
+
+  .buttonWrapper {
+    padding: 0 1rem;
+  }
+
+  .labCard {
+    flex: 0 0 280px;
+  }
+
+  .imageContainer {
+    height: 340px;
+  }
+
+  .labTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 3rem 0 2rem 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .labCard {
+    flex: 0 0 260px;
+  }
+
+  .imageContainer {
+    height: 320px;
+  }
+
+  .labInfo {
+    padding: 1rem;
+  }
+
+  .labTitle {
+    font-size: 0.9rem;
+    max-width: 65%;
+  }
+
+  .viewButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .applyButton {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}

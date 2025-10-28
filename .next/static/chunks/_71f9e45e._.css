@@ -1,24 +1,5 @@
 /* [project]/src/styles/globals.css [app-client] (css) */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-a, a:hover, a:focus, a:active {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-.main-container {
-  position: relative;
-}
-
+/* unparsable [project]/src/styles/globals.css [app-client] (css) */
 /* [project]/node_modules/bootstrap/dist/css/bootstrap.min.css [app-client] (css) */
 :root, [data-bs-theme="light"] {
   --bs-blue: #0d6efd;

@@ -1,0 +1,154 @@
+.contactSection {
+  padding: 12rem 0;
+  padding-bottom: 8rem;
+  background: linear-gradient(rgba(1, 140, 232, 0.16) 30%, #f6fbfb 30%);
+}
+
+.topText {
+  font-size: 15px;
+  color: #16344e;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.mapContainer {
+  padding-top: 8rem;
+}
+.mapContainer .topText {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.mainHeading {
+  font-size: 38px;
+  font-weight: 700;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.mainHeading span {
+  color: #2b66e3;
+}
+
+.imageWrapper {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  width: 70%;
+}
+.formBox input::placeholder {
+  color: #fff;
+}
+.formBox input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid #ffffff47;
+  border-radius: 0;
+  padding-left: 0;
+  padding-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+  color: #fff;
+}
+
+.formBox {
+  background: #0b2545;
+  color: #fff;
+  border-bottom-right-radius: 40px;
+  padding: 2rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 30%;
+}
+.mailIcon {
+  background: #018ce83d;
+  padding: 10px 10px;
+  border-radius: 40px;
+  width: fit-content;
+  display: flex;
+}
+.formHeading {
+  color: #ecc820;
+  margin-bottom: 10px;
+}
+.yellowLine {
+  background-color: #f5c518;
+  width: 4px;
+  height: 160px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.formSubText {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.form-control {
+  border-radius: 6px !important;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.submitBtn {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+  padding: 8px 28px;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  font-size: 13px;
+}
+
+.submitBtn:hover {
+  background: #b59730;
+  border-color: #b59730;
+  color: #fff;
+}
+
+.infoRow {
+  align-items: center;
+  position: relative;
+  margin-left: 6rem;
+  padding-top: 2%;
+}
+.borderBox {
+  height: 70px;
+  border-right: 1px solid #80808059;
+  border-left: 1px solid #80808059;
+}
+.address {
+  color: #111;
+  margin-bottom: 10px;
+  padding-left: 1rem;
+  font-size: 18px;
+  font-weight: 700;
+  width: 90%;
+}
+
+.infoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #0b2545;
+  font-size: 20px;
+}
+
+.infoBox i {
+  font-size: 18px;
+  color: #2b66e3;
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 50px 0;
+  }
+
+  .mainHeading {
+    font-size: 22px;
+  }
+
+  .formBox {
+    margin-top: 20px;
+  }
+}

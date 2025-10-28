@@ -1,0 +1,131 @@
+/* components/home-components/BelowBannerSection/BelowBannerSection.module.css */
+
+.belowBannerSection {
+  padding: 1rem 12rem;
+  background: #f6f6f6;
+}
+
+.borderBelow {
+  border-bottom: 1px solid rgb(227, 225, 220);
+  padding-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yellowText {
+  color: #b08f29;
+  margin: 0;
+  font-weight: bold;
+}
+
+.linksList {
+  font-weight: 600;
+  list-style: none;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #b08f29;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid #b08f29;
+  color: #b08f29;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.button:hover {
+  background: #b08f29;
+  color: white;
+}
+
+.buttonPrimary {
+  background: #ffc100;
+  color: #000;
+  border: unset;
+}
+
+.buttonPrimary:hover {
+  background: #9a7b24;
+  border-color: #9a7b24;
+  color: #fff;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .belowBannerSection {
+    padding: 1rem 6rem;
+  }
+
+  .borderBelow {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .linksContainer {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .belowBannerSection {
+    padding: 1rem 2rem;
+  }
+
+  .linksContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .belowBannerSection {
+    padding: 1rem 1rem;
+  }
+
+  .yellowText {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    padding: 0.75rem 1rem;
+    font-size: 13px;
+  }
+}
