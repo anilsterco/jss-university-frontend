@@ -785,12 +785,47 @@ html, body {
 }
 
 a, a:hover, a:focus, a:active {
-  color: inherit !important;
+  color: inherit;
   text-decoration: none !important;
 }
 
 .main-container {
   position: relative;
+}
+
+.testimonials-container img {
+  height: 100%;
+}
+
+.fifth-middle-section .button {
+  background: #16344e;
+  padding: .5rem 2rem;
+  color: #fff !important;
+}
+
+.fifth-middle-section .button:last-child {
+  background: unset;
+  border: 2px solid #16344e;
+  font-weight: 500;
+  color: #16344e !important;
+}
+
+.highlighted-title {
+  background: linear-gradient(to right, #018ce8 40%, #263868 50%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.highlighted-title-top-to-botom {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#018ce8 50%, #263868 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 .nav-link.active-link:after {
@@ -807,6 +842,105 @@ a, a:hover, a:focus, a:active {
   color: #b08f29 !important;
 }
 
+.dark-blue-text {
+  color: #00489a;
+}
+
+.blue-text {
+  color: #018ce8;
+}
+
+.yellow-text {
+  color: #b08f29;
+}
+
+.second-section-cards-image {
+  position: relative;
+}
+
+.third-section .testimonial-slider :-webkit-any(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.third-section .testimonial-slider :-moz-any(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.third-section .testimonial-slider :is(.swiper-button-prev, .swiper-button-next) svg {
+  pointer-events: none;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  width: 50%;
+  height: 50%;
+  padding: 0 8px;
+}
+
+.engineering-dropdown .triangle-icon {
+  position: absolute;
+  top: -14px;
+  left: 31%;
+}
+
+.school-below-banner-section ul li::marker {
+  color: #b08f29;
+}
+
+.school-below-banner-section ul li:first-child::marker {
+  color: rgba(0, 0, 0, 0);
+}
+
+.about-home-buttons a:last-child, .about-school-buttons a:last-child {
+  border: 1px solid #16344e;
+  font-weight: 500;
+  background: unset !important;
+  color: #16344e !important;
+}
+
+.departments-list .link-content a {
+  border-bottom: 1px dotted rgba(255, 255, 255, .35);
+  width: 80%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+}
+
+.departments-list .link-content a:last-child {
+  border: unset;
+}
+
+.departments-list .link-content a:hover {
+  color: #fff !important;
+}
+
+.fourth-slider-section .banner-links a {
+  border-bottom: 1px dotted #f8c326;
+}
+
+.third-section .testimonial-slider p {
+  font-size: 1.1rem;
+}
+
+.third-section .testimonial-slider h6, .third-section .testimonial-slider small {
+  font-size: .8rem;
+}
+
+.explore-program-section a {
+  background: #fff;
+  width: 30%;
+  font-weight: 500;
+  color: #b08f29 !important;
+}
+
 .logo {
   position: relative;
 }
@@ -818,9 +952,9 @@ a, a:hover, a:focus, a:active {
 }
 
 @media (min-width: 1024px) and (max-width: 1420px) {
-  .site-logo {
+  .second-section-cards-image image {
     width: 200px;
-    height: 70px;
+    height: 80px;
   }
 }
 

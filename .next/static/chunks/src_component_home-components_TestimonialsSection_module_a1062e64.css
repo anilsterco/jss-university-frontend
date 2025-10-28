@@ -1,0 +1,209 @@
+/* [project]/src/component/home-components/TestimonialsSection.module.css [app-client] (css) */
+.TestimonialsSection-module__RY1Zba__testimonialsSection {
+  background: #f5f5f5;
+  padding: 80px 60px;
+}
+
+.TestimonialsSection-module__RY1Zba__testimonialsContainer {
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.TestimonialsSection-module__RY1Zba__column {
+  flex-direction: column;
+  gap: 28px;
+  display: flex;
+}
+
+.TestimonialsSection-module__RY1Zba__columnLeft {
+  flex: none;
+  width: 330px;
+}
+
+.TestimonialsSection-module__RY1Zba__columnMiddle {
+  flex: none;
+  width: 290px;
+}
+
+.TestimonialsSection-module__RY1Zba__columnRight {
+  width: 330px;
+  margin-top: 5rem;
+}
+
+.TestimonialsSection-module__RY1Zba__headerContent {
+  margin-bottom: 40px;
+}
+
+.TestimonialsSection-module__RY1Zba__testimonialsLabel {
+  color: #000;
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.TestimonialsSection-module__RY1Zba__mainHeading {
+  color: #000;
+  margin: 0 0 24px;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.TestimonialsSection-module__RY1Zba__blueText {
+  color: #4a90e2;
+}
+
+.TestimonialsSection-module__RY1Zba__circleArrowBtn {
+  cursor: pointer;
+  color: #666;
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  transition: all .3s;
+  display: flex;
+}
+
+.TestimonialsSection-module__RY1Zba__circleArrowBtn:hover {
+  color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+.TestimonialsSection-module__RY1Zba__testimonialCard {
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+}
+
+.TestimonialsSection-module__RY1Zba__cardImgContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.TestimonialsSection-module__RY1Zba__cardNaman .TestimonialsSection-module__RY1Zba__cardImgContainer {
+  height: 100%;
+}
+
+.TestimonialsSection-module__RY1Zba__cardApoorv .TestimonialsSection-module__RY1Zba__cardImgContainer {
+  background: #c8c8c8;
+  height: 400px;
+}
+
+.TestimonialsSection-module__RY1Zba__cardYashika .TestimonialsSection-module__RY1Zba__cardImgContainer, .TestimonialsSection-module__RY1Zba__cardNadeem .TestimonialsSection-module__RY1Zba__cardImgContainer, .TestimonialsSection-module__RY1Zba__cardRitika .TestimonialsSection-module__RY1Zba__cardImgContainer {
+  height: 100%;
+}
+
+.TestimonialsSection-module__RY1Zba__cardImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.TestimonialsSection-module__RY1Zba__quoteBar {
+  background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .4) 60%, rgba(0, 0, 0, 0) 100%);
+  padding: 20px 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.TestimonialsSection-module__RY1Zba__bottomQuote {
+  bottom: 0;
+}
+
+.TestimonialsSection-module__RY1Zba__yellowLine {
+  background: #fbbf24;
+  width: 40px;
+  height: 3px;
+  margin-bottom: 10px;
+}
+
+.TestimonialsSection-module__RY1Zba__quoteTextOverlay {
+  color: #fff;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.TestimonialsSection-module__RY1Zba__playBtn {
+  color: #000;
+  cursor: pointer;
+  background: #fbbf24;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+.TestimonialsSection-module__RY1Zba__cardInfo {
+  background: #fff;
+  padding: 18px 22px;
+}
+
+.TestimonialsSection-module__RY1Zba__personName {
+  color: #000;
+  letter-spacing: .3px;
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.TestimonialsSection-module__RY1Zba__personBatch {
+  color: #666;
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+.TestimonialsSection-module__RY1Zba__personRole {
+  color: #000;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  .TestimonialsSection-module__RY1Zba__testimonialsContainer {
+    flex-wrap: wrap;
+  }
+
+  .TestimonialsSection-module__RY1Zba__columnLeft, .TestimonialsSection-module__RY1Zba__columnMiddle, .TestimonialsSection-module__RY1Zba__columnRight {
+    width: calc(50% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .TestimonialsSection-module__RY1Zba__testimonialsSection {
+    padding: 60px 20px;
+  }
+
+  .TestimonialsSection-module__RY1Zba__testimonialsContainer {
+    flex-direction: column;
+  }
+
+  .TestimonialsSection-module__RY1Zba__columnLeft, .TestimonialsSection-module__RY1Zba__columnMiddle, .TestimonialsSection-module__RY1Zba__columnRight {
+    width: 100%;
+  }
+
+  .TestimonialsSection-module__RY1Zba__mainHeading {
+    font-size: 32px;
+  }
+}
+
+/*# sourceMappingURL=src_component_home-components_TestimonialsSection_module_a1062e64.css.map*/
