@@ -8,15 +8,15 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import styles from "./banner.module.css";
 
 export default function HeroSlider() {
-  const banners = [
+  const bannerData = [
     {
       id: 1,
-      title: "A TRADITION OF INNOVATION AND LEADERSHI",
-      desc: "Perfect 👍 You want to use a Bootstrap modal (confirmation popup) for deletion instead of the default JavaScript confirm() — integrated cleanly with your Inertia + React banner carousel.",
+      title: "A TRADITION OF INNOVATION AND LEADERSHIP",
+      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
       display_order: 100,
-      linked_text: "Learn More About JSS",
+      linked_text: "Learn more about JSS",
       url: "#",
-      img: "http://sd7:8080/jss/assets/img/banners/1760163859_68e9f81352a2d.png",
+      img: "/images/home-page/placeholder-banner.png",
     },
   ];
 
@@ -25,7 +25,6 @@ export default function HeroSlider() {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
-        pagination={{ clickable: true }}
         loop={true}
         spaceBetween={20}
         slidesPerView={1}
