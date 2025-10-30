@@ -1,25 +1,34 @@
-/* components/home-components/CoursesOffered/courses-offered.module.css */
-
 .secondSection {
-  padding: 6rem 10rem;
   background: #f6f6f6;
+  padding: 8rem 12rem;
 }
 
 .topSection {
   width: 100%;
   margin: auto;
 }
-
+.topSectionH5 {
+  text-transform: uppercase;
+  color: #16344e;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 .topSectionH1 {
   font-size: 3.5rem;
   text-transform: uppercase;
   width: 75%;
 }
+.searchBox {
+  width: 86%;
+  height: 45px;
+  margin: 2rem 0;
+}
 
 .programsCount {
   color: #b08f29;
-  font-weight: 500;
-  font-size: 5rem !important;
+  font-size: 110px;
+  font-family: "Oswald", sans-serif;
 }
 
 .programsCountWrapper {
@@ -28,18 +37,45 @@
 }
 
 .programsCountPlus {
-  position: absolute;
-  top: -2rem;
+  color: #ac9031;
   font-size: 3rem;
   font-weight: 400;
-  right: -2rem;
-  color: #ac9031;
+  position: absolute;
+  top: -10px;
+  right: -24px;
 }
-
+.cardOverlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 10px;
+}
 .programsText {
-  font-size: 20px;
+  font-family: "Geist", sans-serif;
+  font-size: 24px;
 }
-
+.admissionYearText {
+  color: #018ce8;
+}
+.admissionSection h4 {
+  font-size: 26px;
+}
+.admissionSection p {
+  font-size: 18px;
+  font-weight: 300;
+}
+.admissionSection a {
+  padding: 8px 30px;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+}
 .bottomSectionH6 {
   background: #f6f6f6;
   width: fit-content;
@@ -49,23 +85,103 @@
   font-size: 20px;
   right: 10px;
   margin: 0 !important;
+  text-transform: uppercase;
 }
 
 .bannerLabel {
   color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  border-left: 4px solid #ffc100;
   border-radius: 2px;
   width: 100%;
-  padding: 10px 10px;
-  font-size: 20px;
+  font-family: Geist, sans-serif;
+  font-size: 28px;
   font-weight: 700;
   position: absolute;
-  bottom: 0;
+  bottom: 14px;
+  padding-left: 10px;
+  gap: 7px;
   left: 0;
-  border-left: 4px solid #ffc100;
+}
+.searchBox input::placeholder {
+  font-size: 14px;
+  opacity: 0.6;
+  font-style: italic;
 }
 
 .cardImage {
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .secondSection {
+    padding: 8rem 11rem;
+  }
+  .topSectionH1 {
+    font-size: 2.5rem;
+  }
+  .topSectionH5 {
+    font-size: 16px;
+  }
+  .programsCount {
+    font-size: 90px;
+  }
+  .programsText {
+    font-size: 18px;
+  }
+  .bannerLabel {
+    font-size: 20px;
+  }
+  .admissionSection h4 {
+    font-size: 22px;
+  }
+  .schoolsList a {
+    font-size: 16px;
+  }
+  .admissionSection p {
+    font-size: 15px;
+  }
+  .admissionSection a {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .secondSection {
+    padding: 8rem 8rem;
+  }
+  .topSectionH1 {
+    font-size: 2rem;
+  }
+  .topSectionH5 {
+    font-size: 14px;
+  }
+  .programsCount {
+    font-size: 80px;
+  }
+  .programsText {
+    font-size: 16px;
+  }
+  .bannerLabel {
+    font-size: 20px;
+  }
+  .programsCountPlus {
+    font-size: 2.7rem;
+    top: -20px;
+    right: -20px;
+  }
+  .bottomSectionH6 {
+    font-size: 18px;
+  }
+  .schoolsList a {
+    font-size: 15px;
+  }
+  .admissionSection h4 {
+    font-size: 20px;
+  }
+  .admissionSection p {
+    font-size: 12px;
+  }
+  .admissionSection a {
+    font-size: 12px;
+}
 }

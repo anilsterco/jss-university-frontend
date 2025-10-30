@@ -17,7 +17,7 @@
   font-size: 16px;
   display: flex;
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: -15px;
 }
 .bannerContent {
@@ -25,7 +25,7 @@
   color: #fff;
   width: 45%;
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: 14%;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .bannerContent p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   margin-bottom: 2rem;
   color: #fff;
@@ -74,7 +74,7 @@
   font-size: 14px;
   display: flex;
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   left: 14%;
   color: #fff;
   font-weight: 600;
@@ -87,12 +87,19 @@
   align-items: center;
   gap: 8px;
   border-bottom: 2px dotted #ffc100;
+  font-size: 14px;
 }
 .headingContainer {
   position: relative;
   background: #f6f6f6;
   width: 100%;
   padding: 4rem 10rem 0;
+}
+.plusIcon {
+  color: #cba632;
+  font-size: 32px;
+  border: 1px solid #16344e;
+  border-radius: 40px;
 }
 .headingContent {
   background: #fff;
@@ -101,4 +108,89 @@
 }
 .blueText {
   color: #007bff;
+}
+.sectionHeader h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.sectionHeader h1 {
+  font-size: 60px;
+  font-weight: 600;
+}
+.headerContent {
+  background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
+  gap: 2rem;
+  width: 81.3vw;
+  margin: auto;
+  padding: 25px 25px 0 34px;
+  display: flex;
+  height: 170px;
+}
+.facilitiesContainer {
+  background: #f6f6f6;
+}
+.straightLine {
+  height: 100%;
+  width: 1px;
+  background-color: #16344e;
+  margin-left: 15px;
+  display: block;
+}
+.headerContent h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.headerContent h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+@media (min-width: 1090px) and (max-width: 1199px) {
+  .headerContent {
+    width: 85.1vw;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1535px) {
+  .headerContent {
+    width: 83.9vw;
+  }
+}
+@media (min-width: 1536px) and (max-width: 1689px) {
+  .headerContent {
+    width: 82.6vw;
+  }
+}
+@media (min-width: 1690px) and (max-width: 1919px) {
+  .headerContent {
+    width: 81.8vw;
+  }
+}
+@media (min-width: 2020px) and (max-width: 2309px) {
+  .headerContent {
+    width: 80.8vw;
+  }
+}
+@media (min-width: 2310px) and (max-width: 2690px) {
+  .headerContent {
+    width: 80.2vw;
+  }
+}
+@media (min-width: 2691px) and (max-width: 2890px) {
+  .headerContent {
+    width: 80.4vw;
+  }
+}
+@media (min-width: 2691px) and (max-width: 3140px) {
+  .headerContent {
+    width: 79.6vw;
+  }
+}
+@media (min-width: 3141px) and (max-width: 3440px) {
+  .headerContent {
+    width: 79.8vw;
+  }
+}
+@media (min-width: 3441px) and (max-width: 3850px) {
+  .headerContent {
+    width: 78.8vw;
+  }
 }

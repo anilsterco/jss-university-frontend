@@ -7,6 +7,7 @@ import styles from "./facilities.module.css";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { FiPlus } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,90 +17,177 @@ const App = () => {
   const home6Ref = useRef(null);
 
   // Dynamic data
-  const mainBanner = "/images/header/header-img.webp";
+  // const mainBanner = "/images/header/header-img.webp";
+  const facilitiesData = {
+    subTitle: "FACILITIES @ JSS UNIVERSITY",
+    title:
+      '<span class="dark-blue-text ">INFRA THAT </span> <span class="blue-text">ELEVATES</span>',
+    facilities: [
+      {
+        id: 1,
+        title: "CLASSROOM",
+        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        img: "/images/home-page/fourth-section-first-banner.png",
+        url: [
+          {
+            link: "/",
+            text: "SMART CLASSROOM1",
+          },
+          {
+            link: "/",
+            text: "VIRTUAL CLASSROOM1",
+          },
+          {
+            link: "/",
+            text: "LECTURE HALL1",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "ACADEMICS LABS",
+        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        img: "/images/home-page/fourth-section-second-banner.png",
+        url: [
+          {
+            link: "/",
+            text: "SMART CLASSROOM2",
+          },
+          {
+            link: "/",
+            text: "VIRTUAL CLASSROOM2",
+          },
+          {
+            link: "/",
+            text: "LECTURE HALL2",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "CAMPUS",
+        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        img: "/images/home-page/fourth-section-third-banner.png",
+        url: [
+          {
+            link: "/",
+            text: "SMART CLASSROOM3",
+          },
+          {
+            link: "/",
+            text: "VIRTUAL CLASSROOM3",
+          },
+          {
+            link: "/",
+            text: "LECTURE HALL3",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "SPORTS AND HEALTH",
+        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        img: "/images/home-page/fourth-section-fourth-banner.png",
+        url: [
+          {
+            link: "/",
+            text: "SMART CLASSROOM4",
+          },
+          {
+            link: "/",
+            text: "VIRTUAL CLASSROOM4",
+          },
+          {
+            link: "/",
+            text: "LECTURE HALL4",
+          },
+        ],
+      },
+    ],
+  };
 
-  const panels = [
-    {
-      id: 1,
-      title: "CLASSROOM",
-      desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-      img: "/images/home-page/fourth-section-first-banner.png",
-      url: [
-        {
-          link: "/",
-          text: "SMART CLASSROOM1",
-        },
-        {
-          link: "/",
-          text: "VIRTUAL CLASSROOM1",
-        },
-        {
-          link: "/",
-          text: "LECTURE HALL1",
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: "ACADEMICS LABS",
-      desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-      img: "/images/home-page/fourth-section-second-banner.png",
-      url: [
-        {
-          link: "/",
-          text: "SMART CLASSROOM2",
-        },
-        {
-          link: "/",
-          text: "VIRTUAL CLASSROOM2",
-        },
-        {
-          link: "/",
-          text: "LECTURE HALL2",
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: "CAMPUS",
-      desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-      img: "/images/home-page/fourth-section-third-banner.png",
-      url: [
-        {
-          link: "/",
-          text: "SMART CLASSROOM3",
-        },
-        {
-          link: "/",
-          text: "VIRTUAL CLASSROOM3",
-        },
-        {
-          link: "/",
-          text: "LECTURE HALL3",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "SPORTS AND HEALTH",
-      desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-      img: "/images/home-page/fourth-section-fourth-banner.png",
-      url: [
-        {
-          link: "/",
-          text: "SMART CLASSROOM4",
-        },
-        {
-          link: "/",
-          text: "VIRTUAL CLASSROOM4",
-        },
-        {
-          link: "/",
-          text: "LECTURE HALL4",
-        },
-      ],
-    },
-  ];
+  // const panels = [
+  //   {
+  //     id: 1,
+  //     title: "CLASSROOM",
+  //     desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+  //     img: "/images/home-page/fourth-section-first-banner.png",
+  //     url: [
+  //       {
+  //         link: "/",
+  //         text: "SMART CLASSROOM1",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "VIRTUAL CLASSROOM1",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "LECTURE HALL1",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "ACADEMICS LABS",
+  //     desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+  //     img: "/images/home-page/fourth-section-second-banner.png",
+  //     url: [
+  //       {
+  //         link: "/",
+  //         text: "SMART CLASSROOM2",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "VIRTUAL CLASSROOM2",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "LECTURE HALL2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "CAMPUS",
+  //     desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+  //     img: "/images/home-page/fourth-section-third-banner.png",
+  //     url: [
+  //       {
+  //         link: "/",
+  //         text: "SMART CLASSROOM3",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "VIRTUAL CLASSROOM3",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "LECTURE HALL3",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "SPORTS AND HEALTH",
+  //     desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+  //     img: "/images/home-page/fourth-section-fourth-banner.png",
+  //     url: [
+  //       {
+  //         link: "/",
+  //         text: "SMART CLASSROOM4",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "VIRTUAL CLASSROOM4",
+  //       },
+  //       {
+  //         link: "/",
+  //         text: "LECTURE HALL4",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   useEffect(() => {
     const root = home41Ref.current;
@@ -141,26 +229,38 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.facilitiesContainer}>
       {/* Custom CSS */}
 
       {/* Main Banner */}
-      <section className="home-41" ref={home41Ref}>
+      <div className={styles.headerContent}>
+        <div>
+          <FiPlus className={styles.plusIcon} />
+          <span className={styles.straightLine}></span>
+        </div>
+        <div>
+          <h5
+            dangerouslySetInnerHTML={{ __html: facilitiesData.subTitle }}
+          ></h5>
+          <h1 dangerouslySetInnerHTML={{ __html: facilitiesData.title }}></h1>
+        </div>
+      </div>
+      <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>
         <article className="imageWrapper zero">
-          <figure>
+          {/* <figure>
             <img
               className="image"
               src={mainBanner}
               alt="Main Banner"
               style={{ width: "100%", objectFit: "cover" }}
             />
-          </figure>
+          </figure> */}
         </article>
       </section>
 
       {/* Panels */}
       <section className="home5" ref={home5Ref}>
-        {panels.map((panel, index) => (
+        {facilitiesData.facilities.map((panel, index) => (
           <article
             key={index}
             className={`panel imageWrapper panel-${index + 1}`}
@@ -177,7 +277,9 @@ const App = () => {
               </div>
               <div className={styles.bannerContent}>
                 <div>
-                  <h2>{panel.title} <BsArrowRightCircle fontSize={23}/></h2>
+                  <h2>
+                    {panel.title} <BsArrowRightCircle fontSize={23} />
+                  </h2>
                   <p>{panel.desc}</p>
                 </div>
               </div>

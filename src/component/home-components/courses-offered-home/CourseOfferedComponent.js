@@ -8,7 +8,9 @@ import styles from "./courses-offered.module.css";
 
 // ✅ All data stored separately for easy replacement (API later)
 const coursesData = {
-  title: "Start Your JSS Journey",
+  // title: "Start Your JSS Journey",
+  title:
+    '<span class="blue-text">Start Your</span> <span class="dark-blue-text ">JSS Journey</span>',
   subtitle: "Courses Offered",
   searchPlaceholder: "Search Course",
   programsCount: "200",
@@ -69,17 +71,16 @@ export default function CoursesOffered() {
         >
           {/* Left side */}
           <div className="col-lg-4 mb-4 mb-lg-0">
-            <h5 className="text-uppercase small mb-2">
-              {coursesData.subtitle}
-            </h5>
+            <h5 className={`${styles.topSectionH5}`}>{coursesData.subtitle}</h5>
             <h1
-              className={`fw-bold highlighted-title-top-to-botom ${styles.topSectionH1}`}
-            >
-              {coursesData.title}
-            </h1>
+              className={`fw-bold  ${styles.topSectionH1}`}
+              dangerouslySetInnerHTML={{ __html: coursesData.title }}
+            ></h1>
 
             {/* Search box */}
-            <div className="input-group my-4 shadow-sm rounded-pill overflow-hidden">
+            <div
+              className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
+            >
               <input
                 type="text"
                 className="form-control border-0"
@@ -91,7 +92,7 @@ export default function CoursesOffered() {
             </div>
 
             {/* Programs count */}
-            <div className="d-flex align-items-center gap-5">
+            <div className="d-flex align-items-center gap-5 my-5">
               <ProgramsCount />
               <p className={styles.programsText}>{coursesData.programsText}</p>
             </div>
@@ -113,11 +114,14 @@ export default function CoursesOffered() {
                   className={styles.cardImage}
                   priority
                 />
-                <span
-                  className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
-                >
-                  {level.name} <FaChevronRight fontSize={15} color="#b08f29" />
-                </span>
+                <div className={styles.cardOverlay}>
+                  <span
+                    className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
+                  >
+                    {level.name}{" "}
+                    <FaChevronRight fontSize={15} color="#b08f29" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -129,25 +133,29 @@ export default function CoursesOffered() {
             <h6 className={`fw-bold mb-3 ${styles.bottomSectionH6}`}>
               Explore Programs by School of
             </h6>
-            <div className="d-flex flex-wrap explore-program-section gap-3">
+            <div
+              className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
+            >
               {coursesData.schools.map((school, i) => (
                 <Link
                   href={school.link}
                   key={i}
                   className="py-2 px-4 d-flex justify-content-between align-items-center"
                 >
-                  {school.name} <FaChevronRight fontSize={10} />
+                  {school.name} <FaChevronRight fontSize={10} color="#000" />
                 </Link>
               ))}
             </div>
           </div>
 
           {/* Admission section */}
-          <div className="col-lg-4 d-flex justify-content-between align-items-center ps-5">
+          <div
+            className={`col-lg-4 d-flex justify-content-between align-items-center ps-5 ${styles.admissionSection}`}
+          >
             <div>
               <h4 className="fw-bold mb-1">
                 Admission{" "}
-                <span className="text-primary">
+                <span className={styles.admissionYearText}>
                   {coursesData.admission.year}
                 </span>
               </h4>
@@ -155,7 +163,7 @@ export default function CoursesOffered() {
             </div>
             <Link
               href={coursesData.admission.applyLink}
-              className="btn btn-warning rounded-pill px-3"
+              className="btn btn-warning rounded-pill"
             >
               Apply Now
             </Link>

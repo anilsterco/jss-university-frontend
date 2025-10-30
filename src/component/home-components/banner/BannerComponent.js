@@ -21,7 +21,7 @@ export default function HeroSlider() {
   ];
 
   return (
-    <div className={styles.firstBannerSlide}>
+    <div >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
@@ -35,19 +35,23 @@ export default function HeroSlider() {
             <Image
               src={slide.img}
               alt="slide image"
-              fill
+              width={1920}
+              height={400}
               priority
+              style={{ width: "100%", height: "100%" }}
               className={styles.slideImage}
             />
-            <div className={styles.bannerContent}>
-              <h1 className={styles.bannerContentH1}>{slide.title}</h1>
-              <p className={styles.bannerContentP}>{slide.desc}</p>
-              {slide.url && (
-                <Link href={slide.url} className={styles.bannerContentA}>
-                  {slide.linked_text}
-                  <FiArrowRightCircle className={styles.iconSpacing} />
-                </Link>
-              )}
+            <div className={styles.bannerOverlay}>
+              <div className={styles.bannerContent}>
+                <h1 className={styles.bannerContentH1}>{slide.title}</h1>
+                <p className={styles.bannerContentP}>{slide.desc}</p>
+                {slide.url && (
+                  <Link href={slide.url} className={styles.bannerContentA}>
+                    {slide.linked_text}
+                    <FiArrowRightCircle className={styles.iconSpacing} />
+                  </Link>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}
