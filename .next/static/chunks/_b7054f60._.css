@@ -782,6 +782,8 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
 }
 
 a, a:hover, a:focus, a:active {
@@ -843,7 +845,7 @@ a, a:hover, a:focus, a:active {
 }
 
 .dark-blue-text {
-  color: #00489a;
+  color: #16344e;
 }
 
 .blue-text {
@@ -934,10 +936,16 @@ a, a:hover, a:focus, a:active {
   font-size: .8rem;
 }
 
+.testimonial-slider .swiper-wrapper {
+  align-items: center;
+}
+
 .explore-program-section a {
+  text-transform: uppercase;
   background: #fff;
   width: 30%;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   color: #b08f29 !important;
 }
 

@@ -11,7 +11,8 @@ import styles from "./about-home-jss.module.css";
 import "swiper/css";
 
 const legacyData = {
-  title: "SRI SUTTUR MATH THE 1000-YEAR LEGACY",
+  title:
+    '<span class="dark-blue-text ">SRI SUTTUR MATH THE</span> <span class="blue-text">1000-YEAR LEGACY </span>',
   subtitle: "ABOUT JSS UNIVERSITY",
   description:
     "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.",
@@ -62,12 +63,11 @@ export default function LegacySection() {
     <section className={`container-fluid ${styles.fifthSection}`}>
       <div className="container-fluid">
         <div className={`mb-3 ${styles.topSection}`}>
-          <p className="fw-bold small text-uppercase">{legacyData.subtitle}</p>
+          <p className="fw-bold text-uppercase">{legacyData.subtitle}</p>
           <h2
-            className={`fw-bold display-6 highlighted-title-top-to-botom ${styles.topSectionHeading}`}
-          >
-            {legacyData.title}
-          </h2>
+            className={` ${styles.topSectionHeading}`}
+            dangerouslySetInnerHTML={{ __html: legacyData.title }}
+          ></h2>
         </div>
 
         <div className={`row g-4 ${styles.fifthMiddleSection}`}>

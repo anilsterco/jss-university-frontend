@@ -1,14 +1,19 @@
 /* [project]/src/component/home-components/banner/banner.module.css [app-client] (css) */
-.banner-module__TnqM8q__firstBannerSlide {
-  position: relative;
-}
-
 .banner-module__TnqM8q__bannerContent {
   color: #fff;
-  width: 30%;
+  width: 40%;
   position: absolute;
-  bottom: 20%;
-  left: 10%;
+  top: 52%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-module__TnqM8q__bannerOverlay {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .4) 70%, rgba(0, 0, 0, .8) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .banner-module__TnqM8q__bannerContentH1 {
@@ -40,7 +45,6 @@
 
 .banner-module__TnqM8q__swiperContainer {
   width: 100%;
-  height: 700px;
 }
 
 .banner-module__TnqM8q__slideImage {
@@ -51,13 +55,49 @@
   margin-left: 20px;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1040px) and (max-width: 1380px) {
   .banner-module__TnqM8q__bannerContentH1 {
-    font-size: 48px;
+    margin-bottom: 1rem;
+    font-size: 34px;
   }
 
   .banner-module__TnqM8q__bannerContent {
     width: 40%;
+  }
+
+  .banner-module__TnqM8q__bannerContentP {
+    margin-bottom: 1rem;
+    font-size: 12px;
+  }
+
+  .banner-module__TnqM8q__bannerContentA {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1921px) and (max-width: 3840px) {
+  .banner-module__TnqM8q__bannerContent {
+    left: 29%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-module__TnqM8q__bannerContent {
+    width: 90%;
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .banner-module__TnqM8q__bannerContentH1 {
+    font-size: 24px;
+  }
+
+  .banner-module__TnqM8q__bannerContentP {
+    font-size: 12px;
+  }
+
+  .banner-module__TnqM8q__swiperContainer {
+    height: 400px;
   }
 }
 
@@ -87,35 +127,23 @@
   }
 }
 
-@media (max-width: 480px) {
-  .banner-module__TnqM8q__bannerContent {
-    width: 90%;
-    bottom: 10%;
-    left: 5%;
-  }
-
-  .banner-module__TnqM8q__bannerContentH1 {
-    font-size: 24px;
-  }
-
-  .banner-module__TnqM8q__bannerContentP {
-    font-size: 12px;
-  }
-
-  .banner-module__TnqM8q__swiperContainer {
-    height: 400px;
-  }
-}
-
 /* [project]/src/component/home-components/courses-offered-home/courses-offered.module.css [app-client] (css) */
 .courses-offered-module__x5Lqha__secondSection {
   background: #f6f6f6;
-  padding: 6rem 10rem;
+  padding: 8rem 12rem;
 }
 
 .courses-offered-module__x5Lqha__topSection {
   width: 100%;
   margin: auto;
+}
+
+.courses-offered-module__x5Lqha__topSectionH5 {
+  text-transform: uppercase;
+  color: #16344e;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .courses-offered-module__x5Lqha__topSectionH1 {
@@ -124,10 +152,16 @@
   font-size: 3.5rem;
 }
 
+.courses-offered-module__x5Lqha__searchBox {
+  width: 86%;
+  height: 45px;
+  margin: 2rem 0;
+}
+
 .courses-offered-module__x5Lqha__programsCount {
   color: #b08f29;
-  font-weight: 500;
-  font-size: 5rem !important;
+  font-family: Oswald, sans-serif;
+  font-size: 110px;
 }
 
 .courses-offered-module__x5Lqha__programsCountWrapper {
@@ -140,15 +174,45 @@
   font-size: 3rem;
   font-weight: 400;
   position: absolute;
-  top: -2rem;
-  right: -2rem;
+  top: -10px;
+  right: -24px;
+}
+
+.courses-offered-module__x5Lqha__cardOverlay {
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .4) 70%, rgba(0, 0, 0, .8) 100%);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .courses-offered-module__x5Lqha__programsText {
-  font-size: 20px;
+  font-family: Geist, sans-serif;
+  font-size: 24px;
+}
+
+.courses-offered-module__x5Lqha__admissionYearText {
+  color: #018ce8;
+}
+
+.courses-offered-module__x5Lqha__admissionSection h4 {
+  font-size: 26px;
+}
+
+.courses-offered-module__x5Lqha__admissionSection p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.courses-offered-module__x5Lqha__admissionSection a {
+  padding: 8px 30px;
+  font-family: Noto Sans, sans-serif;
+  font-size: 16px;
 }
 
 .courses-offered-module__x5Lqha__bottomSectionH6 {
+  text-transform: uppercase;
   background: #f6f6f6;
   width: -moz-fit-content;
   width: fit-content;
@@ -162,16 +226,23 @@
 
 .courses-offered-module__x5Lqha__bannerLabel {
   color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8));
   border-left: 4px solid #ffc100;
   border-radius: 2px;
+  gap: 7px;
   width: 100%;
-  padding: 10px;
-  font-size: 20px;
+  padding-left: 10px;
+  font-family: Geist, sans-serif;
+  font-size: 28px;
   font-weight: 700;
   position: absolute;
-  bottom: 0;
+  bottom: 14px;
   left: 0;
+}
+
+.courses-offered-module__x5Lqha__searchBox input::placeholder {
+  opacity: .6;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .courses-offered-module__x5Lqha__cardImage {
@@ -179,12 +250,98 @@
   height: 100%;
 }
 
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .courses-offered-module__x5Lqha__secondSection {
+    padding: 8rem 11rem;
+  }
+
+  .courses-offered-module__x5Lqha__topSectionH1 {
+    font-size: 2.5rem;
+  }
+
+  .courses-offered-module__x5Lqha__topSectionH5 {
+    font-size: 16px;
+  }
+
+  .courses-offered-module__x5Lqha__programsCount {
+    font-size: 90px;
+  }
+
+  .courses-offered-module__x5Lqha__programsText {
+    font-size: 18px;
+  }
+
+  .courses-offered-module__x5Lqha__bannerLabel {
+    font-size: 20px;
+  }
+
+  .courses-offered-module__x5Lqha__admissionSection h4 {
+    font-size: 22px;
+  }
+
+  .courses-offered-module__x5Lqha__schoolsList a {
+    font-size: 16px;
+  }
+
+  .courses-offered-module__x5Lqha__admissionSection p, .courses-offered-module__x5Lqha__admissionSection a {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .courses-offered-module__x5Lqha__secondSection {
+    padding: 8rem;
+  }
+
+  .courses-offered-module__x5Lqha__topSectionH1 {
+    font-size: 2rem;
+  }
+
+  .courses-offered-module__x5Lqha__topSectionH5 {
+    font-size: 14px;
+  }
+
+  .courses-offered-module__x5Lqha__programsCount {
+    font-size: 80px;
+  }
+
+  .courses-offered-module__x5Lqha__programsText {
+    font-size: 16px;
+  }
+
+  .courses-offered-module__x5Lqha__bannerLabel {
+    font-size: 20px;
+  }
+
+  .courses-offered-module__x5Lqha__programsCountPlus {
+    font-size: 2.7rem;
+    top: -20px;
+    right: -20px;
+  }
+
+  .courses-offered-module__x5Lqha__bottomSectionH6 {
+    font-size: 18px;
+  }
+
+  .courses-offered-module__x5Lqha__schoolsList a {
+    font-size: 15px;
+  }
+
+  .courses-offered-module__x5Lqha__admissionSection h4 {
+    font-size: 20px;
+  }
+
+  .courses-offered-module__x5Lqha__admissionSection p, .courses-offered-module__x5Lqha__admissionSection a {
+    font-size: 12px;
+  }
+}
+
 /* [project]/src/component/home-components/placement/placement.module.css [app-client] (css) */
 .placement-module__VSLvPW__thirdSection {
   background: #f6f6f6;
   width: 100%;
   margin: auto;
-  padding: 2rem 0 12rem 10rem;
+  padding: 2rem 0 12rem 12rem;
 }
 
 .placement-module__VSLvPW__blueBg {
@@ -201,24 +358,38 @@
   font-size: 3rem;
 }
 
+.placement-module__VSLvPW__testimonialSwiper .placement-module__VSLvPW__eachSlide {
+  gap: 6rem;
+}
+
+.placement-module__VSLvPW__testimonialSwiper small {
+  font-family: Noto Sans, sans-serif;
+  font-style: italic;
+}
+
+.placement-module__VSLvPW__testimonialSwiper h6 {
+  color: #0036a1;
+  font-family: Noto Sans, sans-serif;
+}
+
 .placement-module__VSLvPW__statsLabel {
-  font-size: .9rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.placement-module__VSLvPW__testimonialSwiper p {
+  font-size: 20px;
 }
 
 .placement-module__VSLvPW__wallOfFameText {
-  width: 35%;
+  width: 65%;
+  font-size: 50px;
   bottom: 10%;
   left: 6%;
 }
 
-.placement-module__VSLvPW__testimonialImageContainer {
-  width: 140px;
-  height: 160px;
-}
-
 .placement-module__VSLvPW__wallOfFameContainer {
-  width: 80%;
+  width: 90%;
   height: 100%;
 }
 
@@ -226,6 +397,122 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.placement-module__VSLvPW__sectionHeader p {
+  font-size: 18px;
+}
+
+.placement-module__VSLvPW__sectionHeader h2 {
+  font-size: 60px;
+}
+
+.placement-module__VSLvPW__sectionHeader {
+  margin-bottom: 1.5rem;
+}
+
+.placement-module__VSLvPW__leftContent {
+  border-bottom: 1px solid #f1d9d9;
+  padding-bottom: 2rem;
+}
+
+.placement-module__VSLvPW__testimonialImageContainer {
+  width: 20%;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .placement-module__VSLvPW__testimonialImageContainer {
+    width: 30%;
+    padding: 0;
+  }
+
+  .placement-module__VSLvPW__sectionHeader h2 {
+    font-size: 40px;
+  }
+
+  .placement-module__VSLvPW__sectionHeader p {
+    font-size: 14px;
+  }
+
+  .placement-module__VSLvPW__statsNumber {
+    font-size: 2rem;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper p {
+    font-size: 16px;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper .placement-module__VSLvPW__eachSlide {
+    gap: 3rem;
+  }
+
+  .placement-module__VSLvPW__blueBg {
+    max-width: 15%;
+  }
+
+  .placement-module__VSLvPW__wallOfFameText {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .placement-module__VSLvPW__testimonialImageContainer {
+    width: 30%;
+    padding: 0;
+  }
+
+  .placement-module__VSLvPW__thirdSection {
+    padding: 0 0 12rem 8rem;
+  }
+
+  .placement-module__VSLvPW__sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .placement-module__VSLvPW__sectionHeader p {
+    font-size: 14px;
+  }
+
+  .placement-module__VSLvPW__statsNumber {
+    font-size: 1.5rem;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper p {
+    font-size: 13px;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper .placement-module__VSLvPW__eachSlide {
+    gap: 2rem;
+  }
+
+  .placement-module__VSLvPW__wallOfFameText {
+    font-size: 2rem;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper .placement-module__VSLvPW__eachSlide svg {
+    font-size: 20px;
+  }
+
+  .placement-module__VSLvPW__testimonialSwiper h6, .placement-module__VSLvPW__testimonialSwiper small {
+    font-size: .7rem;
+  }
+
+  .placement-module__VSLvPW__wallOfFameContainer {
+    width: 100%;
+  }
+
+  .placement-module__VSLvPW__blueBg {
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2400px) {
+  .placement-module__VSLvPW__testimonialImageContainer {
+    width: 21%;
+    padding: 0;
+  }
 }
 
 /* [project]/src/component/home-components/facilities/facilities.module.css [app-client] (css) */
@@ -249,7 +536,7 @@
   font-size: 16px;
   display: flex;
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: -15px;
 }
 
@@ -258,7 +545,7 @@
   color: #fff;
   width: 45%;
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: 14%;
 }
 
@@ -270,7 +557,7 @@
   color: #fff;
   max-width: 500px;
   margin-bottom: 2rem;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -308,7 +595,7 @@
   font-weight: 600;
   display: flex;
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   left: 14%;
 }
 
@@ -317,6 +604,7 @@
   border-bottom: 2px dotted #ffc100;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
   text-decoration: none;
   display: flex;
 }
@@ -328,6 +616,13 @@
   position: relative;
 }
 
+.facilities-module__UE4CmG__plusIcon {
+  color: #cba632;
+  border: 1px solid #16344e;
+  border-radius: 40px;
+  font-size: 32px;
+}
+
 .facilities-module__UE4CmG__headingContent {
   background: #fff;
   padding: 1rem;
@@ -336,6 +631,108 @@
 
 .facilities-module__UE4CmG__blueText {
   color: #007bff;
+}
+
+.facilities-module__UE4CmG__sectionHeader h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.facilities-module__UE4CmG__sectionHeader h1 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.facilities-module__UE4CmG__headerContent {
+  background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
+  gap: 2rem;
+  width: 81.3vw;
+  height: 170px;
+  margin: auto;
+  padding: 25px 25px 0 34px;
+  display: flex;
+}
+
+.facilities-module__UE4CmG__facilitiesContainer {
+  background: #f6f6f6;
+}
+
+.facilities-module__UE4CmG__straightLine {
+  background-color: #16344e;
+  width: 1px;
+  height: 100%;
+  margin-left: 15px;
+  display: block;
+}
+
+.facilities-module__UE4CmG__headerContent h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.facilities-module__UE4CmG__headerContent h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (min-width: 1090px) and (max-width: 1199px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 85.1vw;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1535px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 83.9vw;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1689px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 82.6vw;
+  }
+}
+
+@media (min-width: 1690px) and (max-width: 1919px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 81.8vw;
+  }
+}
+
+@media (min-width: 2020px) and (max-width: 2309px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 80.8vw;
+  }
+}
+
+@media (min-width: 2310px) and (max-width: 2690px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 80.2vw;
+  }
+}
+
+@media (min-width: 2691px) and (max-width: 2890px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 80.4vw;
+  }
+}
+
+@media (min-width: 2691px) and (max-width: 3140px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 79.6vw;
+  }
+}
+
+@media (min-width: 3141px) and (max-width: 3440px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 79.8vw;
+  }
+}
+
+@media (min-width: 3441px) and (max-width: 3850px) {
+  .facilities-module__UE4CmG__headerContent {
+    width: 78.8vw;
+  }
 }
 
 /* [project]/src/component/home-components/about-home-jss/about-home-jss.module.css [app-client] (css) */
@@ -350,7 +747,7 @@
 
 .about-home-jss-module__Uc86oW__topSectionHeading {
   width: 40%;
-  font-size: 3rem;
+  font-size: 60px;
   font-weight: bold;
 }
 
@@ -426,70 +823,9 @@
   font-weight: bold;
 }
 
-@media (max-width: 1200px) {
-  .about-home-jss-module__Uc86oW__fifthSection {
-    padding: 4rem 5rem;
-  }
-
-  .about-home-jss-module__Uc86oW__topSectionHeading {
-    width: 60%;
-    font-size: 3rem;
-  }
-
-  .about-home-jss-module__Uc86oW__leftColumn {
-    padding-right: 2rem;
-  }
-
-  .about-home-jss-module__Uc86oW__rightColumn {
-    padding-left: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-home-jss-module__Uc86oW__fifthSection {
-    padding: 3rem 2rem;
-  }
-
-  .about-home-jss-module__Uc86oW__topSectionHeading {
-    width: 100%;
-    font-size: 2.5rem;
-  }
-
-  .about-home-jss-module__Uc86oW__leftColumn {
-    border-bottom: 1px solid rgba(212, 212, 212, .8);
-    border-right: none;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    padding-right: 0;
-  }
-
-  .about-home-jss-module__Uc86oW__rightColumn {
-    padding-left: 0;
-  }
-
-  .about-home-jss-module__Uc86oW__description, .about-home-jss-module__Uc86oW__highlightBox {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-home-jss-module__Uc86oW__fifthSection {
-    padding: 2rem 1rem;
-  }
-
-  .about-home-jss-module__Uc86oW__topSectionHeading {
-    font-size: 2rem;
-  }
-
-  .about-home-jss-module__Uc86oW__navButtons {
-    padding: .5rem 1rem;
-    font-size: .875rem;
-  }
-
-  .about-home-jss-module__Uc86oW__contentPart {
-    gap: .5rem;
-    font-size: .75rem;
-  }
+.about-home-jss-module__Uc86oW__topSection p {
+  color: #16344e;
+  font-size: 18px;
 }
 
 /* [project]/src/component/home-components/testimonial/testimonial.module.css [app-client] (css) */

@@ -946,14 +946,14 @@ export default function Header() {
           align-items: center;
           max-width: 100%;
           margin: 0 auto;
-          padding: 1rem 5rem;
+          padding: 1.6rem 5rem;
           transition: all 0.3s;
           display: flex;
         }
         .nav-list {
           gap: 30px;
           margin: 0;
-          padding: 0.1rem 2rem;
+          padding: 0.4rem 2rem;
           list-style: none;
           display: flex;
           font-size: 20px;

@@ -1,7 +1,7 @@
 /* components/home-components/PlacementsSection/PlacementsSection.module.css */
 
 .thirdSection {
-  padding: 2rem 0 12rem 10rem;
+  padding: 2rem 0 12rem 12rem;
   width: 100%;
   margin: auto;
   background: #f6f6f6;
@@ -20,30 +20,137 @@
 .statsNumber {
   font-size: 3rem;
 }
-
+.testimonialSwiper .eachSlide {
+  gap: 6rem;
+}
+.testimonialSwiper small {
+  font-style: italic;
+  font-family: "Noto Sans", sans-serif;
+}
+.testimonialSwiper h6 {
+  font-family: "Noto Sans", sans-serif;
+  color: #0036a1;
+}
 .statsLabel {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
 }
-
+.testimonialSwiper p {
+  font-size: 20px;
+}
 .wallOfFameText {
-  left: 6%;
-  width: 35%;
+  width: 65%;
   bottom: 10%;
+  left: 6%;
+  font-size: 50px;
 }
 
-.testimonialImageContainer {
+/* .testimonialImageContainer {
   width: 140px;
   height: 160px;
-}
+} */
 
 .wallOfFameContainer {
   height: 100%;
-  width: 80%;
+  width: 90%;
 }
 
 .wallOfFameImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.sectionHeader p {
+  font-size: 18px;
+}
+.sectionHeader h2 {
+  font-size: 60px;
+}
+.sectionHeader {
+  margin-bottom: 1.5rem;
+}
+.leftContent {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f1d9d9;
+}
+.testimonialImageContainer {
+  width: 20%;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .testimonialImageContainer {
+    width: 30%;
+    padding: 0;
+  }
+  .sectionHeader h2 {
+    font-size: 40px;
+  }
+  .sectionHeader p {
+    font-size: 14px;
+  }
+  .statsNumber {
+    font-size: 2rem;
+  }
+  .testimonialSwiper p {
+    font-size: 16px;
+  }
+  .testimonialSwiper .eachSlide {
+    gap: 3rem;
+  }
+  .blueBg {
+    max-width: 15%;
+  }
+  .wallOfFameText {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .testimonialImageContainer {
+    width: 30%;
+    padding: 0;
+  }
+  .thirdSection {
+    padding: 0rem 0 12rem 8rem;
+  }
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+  .sectionHeader p {
+    font-size: 14px;
+  }
+  .statsNumber {
+    font-size: 1.5rem;
+  }
+  .testimonialSwiper p {
+    font-size: 13px;
+  }
+  .testimonialSwiper .eachSlide {
+    gap: 2rem;
+  }
+  .wallOfFameText {
+    font-size: 2rem;
+  }
+  .testimonialSwiper .eachSlide svg {
+    font-size: 20px;
+  }
+  .testimonialSwiper h6 {
+    font-size: 0.7rem;
+  }
+  .testimonialSwiper small {
+    font-size: 0.7rem;
+  }
+  .wallOfFameContainer {
+    width: 100%;
+  }
+  .blueBg {
+    max-width: 20%;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2400px) {
+  .testimonialImageContainer {
+    width: 21%;
+    padding: 0;
+  }
 }
