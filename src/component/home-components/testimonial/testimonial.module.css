@@ -2,7 +2,7 @@
 
 .testimonialsSection {
   background: #f5f5f5;
-  padding: 80px 60px;
+  padding-top: 10rem;
 }
 
 .testimonialsContainer {
@@ -113,7 +113,12 @@
   left: 0;
   right: 0;
   padding: 20px 24px;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.4) 60%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
 }
 
 .yellowLine {
@@ -225,81 +230,8 @@
   border-radius: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .testimonialsContainer {
-    gap: 3rem;
-  }
-  
-  .columnLeft,
-  .columnMiddle,
-  .columnRight {
-    width: 300px;
-  }
-  
-  .mainHeading {
-    font-size: 2.5rem;
-  }
+@media (min-width: 1381px) and (max-width: 1919px) {
 }
 
-@media (max-width: 992px) {
-  .testimonialsSection {
-    padding: 60px 40px;
-  }
-  
-  .testimonialsContainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .columnLeft,
-  .columnMiddle,
-  .columnRight {
-    width: 100%;
-    max-width: 400px;
-    margin-top: 0;
-  }
-  
-  .columnRight {
-    margin-top: 0;
-  }
-  
-  .mainHeading {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonialsSection {
-    padding: 40px 20px;
-  }
-  
-  .mainHeading {
-    font-size: 1.8rem;
-  }
-  
-  .videoModalContent {
-    width: 95%;
-    height: 50vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonialsSection {
-    padding: 30px 15px;
-  }
-  
-  .mainHeading {
-    font-size: 1.5rem;
-  }
-  
-  .testimonialCard {
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  
-  .cardInfo {
-    padding: 15px 18px;
-  }
+@media (min-width: 1040px) and (max-width: 1380px) {
 }

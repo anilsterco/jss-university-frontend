@@ -79,7 +79,8 @@ export default function LegacySection() {
                 alt={legacyData.chancellor.name}
                 width={500}
                 height={350}
-                className={`img-fluid rounded ${styles.chancellorImage}`}
+                style={{ height: "100%", width: "100%" }}
+                className={`rounded ${styles.chancellorImage}`}
               />
               {/* Play Button Overlay */}
               <div className={styles.contentPart}>
@@ -114,7 +115,7 @@ export default function LegacySection() {
                     {h.number}
                   </h1>
                   <div className="left-content">
-                    <p className="mb-1">{h.text}</p>
+                    <p className={styles.cardTitle}>{h.text}</p>
                     <p className={styles.sourceText}>{h.source}</p>
                   </div>
                 </div>
@@ -133,28 +134,29 @@ export default function LegacySection() {
         </div>
 
         {/* Accreditation Logos Slider */}
-        <div className="mt-5 pt-4 fifth-section-slider">
+        <div className={styles.fifthSectionSlider}>
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 3000 }}
-            spaceBetween={30}
+            spaceBetween={100}
             pagination={{ clickable: true }}
             slidesPerView={3}
             breakpoints={{
               0: { slidesPerView: 1 },
               576: { slidesPerView: 2 },
-              992: { slidesPerView: 3 },
+              992: { slidesPerView: 3, spaceBetween: 0 },
+              
             }}
           >
             {legacyData.accreditations.map((acc, i) => (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={i} className={styles.accreditationSlide}>
                 <div className="gap-3 px-3 d-flex align-items-center content">
                   <Image
                     src={acc.img}
                     alt={acc.name}
                     width={80}
                     height={80}
-                    className="img-fluid mb-2"
+                    className={styles.accreditationLogo}
                   />
                   <p className="small w-50">{acc.text}</p>
                 </div>

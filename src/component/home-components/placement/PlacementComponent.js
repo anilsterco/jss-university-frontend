@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
 import { LuCircleArrowRight } from "react-icons/lu";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
@@ -22,19 +22,22 @@ const placementsData = {
   ],
   testimonials: [
     {
-      img: "/images/home-page/testimonial-placeholder.png",
+      img: "/images/home-page/flipkart-logo.png",
+      // img: "/images/home-page/testimonial-placeholder.png",
       text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
       name: "Jane Doe",
       role: "Product Engineer, TCS",
     },
     {
-      img: "/images/home-page/testimonial-placeholder.png",
+      // img: "/images/home-page/testimonial-placeholder.png",
+      img: "/images/home-page/tcs-logo.png",
       text: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
       name: "John Smith",
       role: "Software Engineer, Infosys",
     },
     {
-      img: "/images/home-page/testimonial-placeholder.png",
+      // img: "/images/home-page/testimonial-placeholder.png",
+      img: "/images/home-page/flipkart-logo.png",
       text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       name: "Anita Verma",
       role: "Business Analyst, IBM",
@@ -52,7 +55,7 @@ const placementsData = {
     { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
     { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
     { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
-     { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
+    { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
     { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
   ],
 };
@@ -90,12 +93,13 @@ export default function PlacementsSection() {
 
             {/* Testimonial Slider */}
             <Swiper
-              modules={[Navigation, Autoplay]}
+              modules={[Navigation, EffectFade]}
+              effect="fade"
+              fadeEffect={{ crossFade: true }}
               navigation={{
                 nextEl: ".testimonial-next",
                 prevEl: ".testimonial-prev",
               }}
-              loop={true}
               spaceBetween={30}
               slidesPerView={1}
               style={{ padding: "20px 20px" }}
@@ -179,7 +183,10 @@ export default function PlacementsSection() {
 
         {/* Recruiters Row */}
         <div className="pt-5">
-          <p className="fw-bold small text-uppercase mb-3" style={{ color: "#0036A1" }}>
+          <p
+            className="fw-bold small text-uppercase mb-3"
+            style={{ color: "#0036A1" }}
+          >
             Our Recruiters
           </p>
           <div className="d-flex flex-wrap gap-4 align-items-center">
@@ -199,7 +206,11 @@ export default function PlacementsSection() {
                     alt={rec.name}
                     width={150}
                     height={80}
-                    style={{ width: "100%", height: "75px", objectFit: "cover" }}
+                    style={{
+                      width: "100%",
+                      height: "75px",
+                      objectFit: "cover",
+                    }}
                     className="img-fluid"
                   />
                 </SwiperSlide>

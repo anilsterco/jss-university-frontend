@@ -252,6 +252,7 @@ __turbopack_context__.v({
   "headerTitle": "happening-module__EQ7KYq__headerTitle",
   "miniContentPart": "happening-module__EQ7KYq__miniContentPart",
   "orangeLine": "happening-module__EQ7KYq__orangeLine",
+  "rightArrow": "happening-module__EQ7KYq__rightArrow",
   "seamEduBold": "happening-module__EQ7KYq__seamEduBold",
   "seamEduLight": "happening-module__EQ7KYq__seamEduLight",
   "seamEduLogo": "happening-module__EQ7KYq__seamEduLogo",
@@ -269,7 +270,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.mjs [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$go$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/go/index.mjs [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/component/home-components/home-happening/happening.module.css [app-rsc] (css module)");
 ;
 ;
@@ -277,69 +278,73 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 function EventsGrid() {
-    const events = [
-        {
-            type: "UPCOMING EVENTS",
-            title: 'TECHTONIC SUMMIT: IDEAS THAT SHAKE THE FUTURE"',
-            bgColor: "#4A4A4A",
-            isLarge: true,
-            img: "/images/home-page/seven-first-banner.png"
-        },
-        {
-            type: "EVENT",
-            title: "Annual fest that celebrates everything JSS stands for",
-            date: "August 16, 2024",
-            bgColor: "#C84B3A"
-        },
-        {
-            type: "NEWS",
-            title: "SmashZone League: The Ultimate Badminton Battle",
-            date: "October 04, 2024",
-            bgColor: "#9B9B9B",
-            img: "/images/home-page/seven-dummy-img.png"
-        },
-        {
-            type: "EVENT",
-            title: "Smart Energy Council: Powering Australia's Renewable Future",
-            date: "October 11, 2024",
-            logo: true,
-            bgColor: "#FFFFFF",
-            img: "/images/home-page/seven-first-logo.png"
-        },
-        {
-            img: "/images/home-page/seven-dummy-img.png",
-            alt: "Event logo"
-        },
-        {
-            type: "UPCOMING",
-            title: "SUMMER BEATS FESTIVAL 2025",
-            subtitle: "A fusion of tech and music, featuring DJ sets and app showcases",
-            bgColor: "#4A4A4A",
-            isLarge: true,
-            img: "/images/home-page/seven-last-banner.png"
-        },
-        {
-            img: "/images/home-page/seven-dummy-img.png",
-            alt: "Event logo"
-        },
-        {
-            type: "EVENT",
-            title: "Business Today CODESTORM 2.0",
-            subtitle: "A tech showdown with coding battles and hackathons",
-            date: "October 16, 2024",
-            bgColor: "#2B5DAA",
-            img: "/images/home-page/seven-second-logo.png",
-            alt: "Event logo"
-        },
-        {
-            type: "EVENT",
-            subtitle: "Hosts the 18th International Olympiad on Astronomy",
-            date: "October 16, 2024",
-            alt: "Event logo",
-            bgColor: "#fff",
-            img: "/images/home-page/seven-third-logo.png"
-        }
-    ];
+    const eventsData = {
+        title: '<span class="dark-blue-text ">WHAT’S </span> <span class="blue-text">HAPPENING</span> <span class="dark-blue-text ">@JSS NOIDA</span>',
+        subTitle: "HAPPENINGS",
+        events: [
+            {
+                type: "UPCOMING EVENTS",
+                title: 'TECHTONIC SUMMIT: IDEAS THAT SHAKE THE FUTURE"',
+                bgColor: "#4A4A4A",
+                isLarge: true,
+                img: "/images/home-page/seven-first-banner.png"
+            },
+            {
+                type: "EVENT",
+                title: "Annual fest that celebrates everything JSS stands for",
+                date: "August 16, 2024",
+                bgColor: "#C84B3A"
+            },
+            {
+                type: "NEWS",
+                title: "SmashZone League: The Ultimate Badminton Battle",
+                date: "October 04, 2024",
+                bgColor: "#9B9B9B",
+                img: "/images/home-page/seven-dummy-img.png"
+            },
+            {
+                type: "EVENT",
+                title: "Smart Energy Council: Powering Australia's Renewable Future",
+                date: "October 11, 2024",
+                logo: true,
+                bgColor: "#FFFFFF",
+                img: "/images/home-page/seven-first-logo.png"
+            },
+            {
+                img: "/images/home-page/seven-dummy-img.png",
+                alt: "Event logo"
+            },
+            {
+                type: "UPCOMING",
+                title: "SUMMER BEATS FESTIVAL 2025",
+                subtitle: "A fusion of tech and music, featuring DJ sets and app showcases",
+                bgColor: "#4A4A4A",
+                isLarge: true,
+                img: "/images/home-page/seven-last-banner.png"
+            },
+            {
+                img: "/images/home-page/seven-dummy-img.png",
+                alt: "Event logo"
+            },
+            {
+                type: "EVENT",
+                title: "Business Today CODESTORM 2.0",
+                subtitle: "A tech showdown with coding battles and hackathons",
+                date: "October 16, 2024",
+                bgColor: "#2B5DAA",
+                img: "/images/home-page/seven-second-logo.png",
+                alt: "Event logo"
+            },
+            {
+                type: "EVENT",
+                subtitle: "Hosts the 18th International Olympiad on Astronomy",
+                date: "October 16, 2024",
+                alt: "Event logo",
+                bgColor: "#fff",
+                img: "/images/home-page/seven-third-logo.png"
+            }
+        ]
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].eventSection,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -350,24 +355,26 @@ function EventsGrid() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].headerSmall,
-                            children: "HAPPENINGS"
+                            children: eventsData.subTitle
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 77,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].headerTitle} highlighted-title`,
-                            children: "WHAT'S HAPPENING @JSS NOIDA"
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].headerTitle}`,
+                            dangerouslySetInnerHTML: {
+                                __html: eventsData.title
+                            }
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 78,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                    lineNumber: 76,
+                    lineNumber: 81,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -376,17 +383,17 @@ function EventsGrid() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardLarge} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardLargeTopLeft}`,
                             style: {
-                                backgroundColor: events[0].bgColor
+                                backgroundColor: eventsData.events[0].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: events[0].img,
-                                    alt: events[0].title,
+                                    src: eventsData.events[0].img,
+                                    alt: eventsData.events[0].title,
                                     fill: true,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 87,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -396,95 +403,102 @@ function EventsGrid() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].orangeLine
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 94,
+                                            lineNumber: 102,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag,
-                                            children: events[0].type
+                                            children: eventsData.events[0].type
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 95,
+                                            lineNumber: 103,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleLarge,
-                                            children: events[0].title
+                                            children: eventsData.events[0].title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 96,
+                                            lineNumber: 104,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FiArrowRightCircle"], {
-                                            color: "#fff",
-                                            fontSize: 20
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$go$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GoArrowRight"], {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].rightArrow
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 97,
+                                            lineNumber: 107,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 93,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 83,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[1].bgColor
+                                backgroundColor: eventsData.events[1].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag,
-                                    children: events[1].type
+                                    children: eventsData.events[1].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 106,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleWhite}`,
-                                    children: events[1].title
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleWhite}`,
+                                            children: eventsData.events[1].title
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
+                                            lineNumber: 118,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDateWhite}`,
+                                            children: eventsData.events[1].date
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
+                                            lineNumber: 121,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 107,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDateWhite}`,
-                                    children: events[1].date
-                                }, void 0, false, {
-                                    fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 110,
+                                    lineNumber: 117,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 102,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[2].bgColor
+                                backgroundColor: eventsData.events[2].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: events[2].img,
-                                    alt: events[2].title,
+                                    src: eventsData.events[2].img,
+                                    alt: eventsData.events[2].title,
                                     fill: true,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 120,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -492,121 +506,129 @@ function EventsGrid() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag,
-                                            children: events[2].type
+                                            children: eventsData.events[2].type
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 127,
+                                            lineNumber: 139,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleWhite}`,
-                                            children: events[2].title
-                                        }, void 0, false, {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleWhite}`,
+                                                    children: eventsData.events[2].title
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
+                                                    lineNumber: 141,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDateWhite}`,
+                                                    children: eventsData.events[2].date
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
+                                                    lineNumber: 144,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 128,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDateWhite}`,
-                                            children: events[2].date
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 131,
+                                            lineNumber: 140,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 126,
+                                    lineNumber: 138,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 116,
+                            lineNumber: 128,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[3].bgColor
+                                backgroundColor: eventsData.events[3].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTagDark}`,
-                                    children: events[3].type
+                                    children: eventsData.events[3].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 142,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: events[3].img,
-                                    alt: events[3].title,
+                                    src: eventsData.events[3].img,
+                                    alt: eventsData.events[3].title,
                                     width: 100,
                                     height: 90,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 145,
+                                    lineNumber: 159,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle,
-                                    children: events[3].title
+                                    children: eventsData.events[3].title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 152,
+                                    lineNumber: 166,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate,
-                                    children: events[3].date
+                                    children: eventsData.events[3].date
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 153,
+                                    lineNumber: 167,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 138,
+                            lineNumber: 152,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[5].bgColor
+                                backgroundColor: eventsData.events[5].bgColor
                             },
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                src: events[4].img,
-                                alt: events[4].alt,
+                                src: eventsData.events[4].img,
+                                alt: eventsData.events[4].alt,
                                 fill: true,
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                lineNumber: 161,
+                                lineNumber: 175,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 157,
+                            lineNumber: 171,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardLarge} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardLargeBottomRight}`,
                             style: {
-                                backgroundColor: events[5].bgColor
+                                backgroundColor: eventsData.events[5].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: events[5].img,
-                                    alt: events[5].title,
+                                    src: eventsData.events[5].img,
+                                    alt: eventsData.events[5].title,
                                     fill: true,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 174,
+                                    lineNumber: 188,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -616,143 +638,142 @@ function EventsGrid() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].orangeLine
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 181,
+                                            lineNumber: 195,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitleLarge,
-                                            children: events[5].title
+                                            children: eventsData.events[5].title
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 182,
+                                            lineNumber: 196,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardSubtitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardSubtitleWhite}`,
-                                            children: events[5].subtitle
+                                            children: eventsData.events[5].subtitle
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 183,
+                                            lineNumber: 199,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FiArrowRightCircle"], {
-                                            color: "#fff",
-                                            fontSize: 20
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$go$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GoArrowRight"], {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].rightArrow
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 188,
+                                            lineNumber: 204,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 180,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 170,
+                            lineNumber: 184,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[5].bgColor
+                                backgroundColor: eventsData.events[5].bgColor
                             },
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                src: events[6].img,
-                                alt: events[6].alt,
+                                src: eventsData.events[6].img,
+                                alt: eventsData.events[6].alt,
                                 fill: true,
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                lineNumber: 197,
+                                lineNumber: 213,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 193,
+                            lineNumber: 209,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[7].bgColor
+                                backgroundColor: eventsData.events[7].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag,
-                                    children: events[7].type
+                                    children: eventsData.events[7].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 210,
+                                    lineNumber: 226,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                            src: events[7].img,
-                                            alt: events[7].alt,
+                                            src: eventsData.events[7].img,
+                                            alt: eventsData.events[7].alt,
                                             height: 50,
                                             width: 200,
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 212,
+                                            lineNumber: 228,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardSubtitle} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardSubtitleWhite}`,
-                                            children: events[7].subtitle
+                                            children: eventsData.events[7].subtitle
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 219,
+                                            lineNumber: 235,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDateWhite}`,
-                                            children: events[7].date
+                                            children: eventsData.events[7].date
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 224,
+                                            lineNumber: 240,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 211,
+                                    lineNumber: 227,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 206,
+                            lineNumber: 222,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                             style: {
-                                backgroundColor: events[8].bgColor
+                                backgroundColor: eventsData.events[8].bgColor
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTag} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTagDark}`,
-                                    children: events[8].type
+                                    children: eventsData.events[8].type
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 235,
+                                    lineNumber: 251,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: events[8].img,
-                                    alt: events[8].alt,
+                                    src: eventsData.events[8].img,
+                                    alt: eventsData.events[8].alt,
                                     height: 50,
                                     width: 200,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardImage
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 238,
+                                    lineNumber: 254,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -763,7 +784,7 @@ function EventsGrid() {
                                             children: "Knowledge Partner"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 246,
+                                            lineNumber: 262,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -775,58 +796,58 @@ function EventsGrid() {
                                                     children: "edu"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                                    lineNumber: 248,
+                                                    lineNumber: 264,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                            lineNumber: 247,
+                                            lineNumber: 263,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 245,
+                                    lineNumber: 261,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardTitle,
-                                    children: events[8].title
+                                    children: eventsData.events[8].title
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 251,
+                                    lineNumber: 267,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$home$2d$happening$2f$happening$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].cardDate,
-                                    children: events[8].date
+                                    children: eventsData.events[8].date
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                                    lineNumber: 252,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                            lineNumber: 231,
+                            lineNumber: 247,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-                    lineNumber: 81,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-            lineNumber: 75,
+            lineNumber: 80,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/component/home-components/home-happening/HappeningsHomeComponent.js",
-        lineNumber: 74,
+        lineNumber: 79,
         columnNumber: 5
     }, this);
 }

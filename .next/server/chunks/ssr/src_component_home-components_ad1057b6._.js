@@ -567,6 +567,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$sw
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/swiper/modules/index.mjs [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$navigation$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Navigation$3e$__ = __turbopack_context__.i("[project]/node_modules/swiper/modules/navigation.mjs [app-ssr] (ecmascript) <export default as Navigation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$autoplay$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Autoplay$3e$__ = __turbopack_context__.i("[project]/node_modules/swiper/modules/autoplay.mjs [app-ssr] (ecmascript) <export default as Autoplay>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$effect$2d$fade$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__EffectFade$3e$__ = __turbopack_context__.i("[project]/node_modules/swiper/modules/effect-fade.mjs [app-ssr] (ecmascript) <export default as EffectFade>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fa/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$lu$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/lu/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fa6/index.mjs [app-ssr] (ecmascript)");
@@ -602,19 +603,22 @@ const placementsData = {
     ],
     testimonials: [
         {
-            img: "/images/home-page/testimonial-placeholder.png",
+            img: "/images/home-page/flipkart-logo.png",
+            // img: "/images/home-page/testimonial-placeholder.png",
             text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
             name: "Jane Doe",
             role: "Product Engineer, TCS"
         },
         {
-            img: "/images/home-page/testimonial-placeholder.png",
+            // img: "/images/home-page/testimonial-placeholder.png",
+            img: "/images/home-page/tcs-logo.png",
             text: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
             name: "John Smith",
             role: "Software Engineer, Infosys"
         },
         {
-            img: "/images/home-page/testimonial-placeholder.png",
+            // img: "/images/home-page/testimonial-placeholder.png",
+            img: "/images/home-page/flipkart-logo.png",
             text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
             name: "Anita Verma",
             role: "Business Analyst, IBM"
@@ -673,7 +677,7 @@ function PlacementsSection() {
                             children: "Placements"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 66,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -686,13 +690,13 @@ function PlacementsSection() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 69,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                    lineNumber: 65,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -711,7 +715,7 @@ function PlacementsSection() {
                                                     children: stat.number
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                    lineNumber: 83,
+                                                    lineNumber: 86,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -719,30 +723,33 @@ function PlacementsSection() {
                                                     children: stat.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                    lineNumber: 86,
+                                                    lineNumber: 89,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                            lineNumber: 82,
+                                            lineNumber: 85,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                    lineNumber: 80,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Swiper"], {
                                     modules: [
                                         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$navigation$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Navigation$3e$__["Navigation"],
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$autoplay$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Autoplay$3e$__["Autoplay"]
+                                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$effect$2d$fade$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__EffectFade$3e$__["EffectFade"]
                                     ],
+                                    effect: "fade",
+                                    fadeEffect: {
+                                        crossFade: true
+                                    },
                                     navigation: {
                                         nextEl: ".testimonial-next",
                                         prevEl: ".testimonial-prev"
                                     },
-                                    loop: true,
                                     spaceBetween: 30,
                                     slidesPerView: 1,
                                     style: {
@@ -754,7 +761,7 @@ function PlacementsSection() {
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$placement$2f$placement$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].blueBg
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                            lineNumber: 104,
+                                            lineNumber: 108,
                                             columnNumber: 15
                                         }, this),
                                         placementsData.testimonials.map((t, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SwiperSlide"], {
@@ -777,12 +784,12 @@ function PlacementsSection() {
                                                                 className: "top-0 start-0 rounded"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                lineNumber: 112,
+                                                                lineNumber: 116,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                            lineNumber: 111,
+                                                            lineNumber: 115,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -793,7 +800,7 @@ function PlacementsSection() {
                                                                     fontSize: 30
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                    lineNumber: 128,
+                                                                    lineNumber: 132,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -804,7 +811,7 @@ function PlacementsSection() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                    lineNumber: 133,
+                                                                    lineNumber: 137,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
@@ -812,7 +819,7 @@ function PlacementsSection() {
                                                                     children: t.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
@@ -820,7 +827,7 @@ function PlacementsSection() {
                                                                     children: t.role
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                    lineNumber: 135,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -832,12 +839,12 @@ function PlacementsSection() {
                                                                                 size: 8
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                                lineNumber: 138,
+                                                                                lineNumber: 142,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                            lineNumber: 137,
+                                                                            lineNumber: 141,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -846,47 +853,47 @@ function PlacementsSection() {
                                                                                 size: 8
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                                lineNumber: 141,
+                                                                                lineNumber: 145,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                            lineNumber: 140,
+                                                                            lineNumber: 144,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 140,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                            lineNumber: 127,
+                                                            lineNumber: 131,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                    lineNumber: 107,
+                                                    lineNumber: 111,
                                                     columnNumber: 19
                                                 }, this)
                                             }, i, false, {
                                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                                lineNumber: 106,
+                                                lineNumber: 110,
                                                 columnNumber: 17
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                    lineNumber: 92,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 78,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -905,7 +912,7 @@ function PlacementsSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                        lineNumber: 156,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -915,7 +922,7 @@ function PlacementsSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                        lineNumber: 163,
+                                        lineNumber: 167,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -930,29 +937,29 @@ function PlacementsSection() {
                                             color: "#fff"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                            lineNumber: 174,
+                                            lineNumber: 178,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                        lineNumber: 169,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                lineNumber: 153,
+                                lineNumber: 157,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 152,
+                            lineNumber: 156,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                    lineNumber: 76,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -966,7 +973,7 @@ function PlacementsSection() {
                             children: "Our Recruiters"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 182,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -995,34 +1002,34 @@ function PlacementsSection() {
                                             className: "img-fluid"
                                         }, i, false, {
                                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                            lineNumber: 196,
+                                            lineNumber: 203,
                                             columnNumber: 19
                                         }, this)
                                     }, i, false, {
                                         fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                        lineNumber: 195,
+                                        lineNumber: 202,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                                lineNumber: 186,
+                                lineNumber: 193,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                            lineNumber: 185,
+                            lineNumber: 192,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-                    lineNumber: 181,
+                    lineNumber: 185,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/component/home-components/placement/PlacementComponent.js",
-            lineNumber: 63,
+            lineNumber: 66,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -1515,11 +1522,16 @@ const __TURBOPACK__default__export__ = App;
 "[project]/src/component/home-components/about-home-jss/about-home-jss.module.css [app-ssr] (css module)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({
+  "about-home-jss-module__Uc86oW__topSection": "about-home-jss-module__Uc86oW__about-home-jss-module__Uc86oW__topSection",
+  "accreditationLogo": "about-home-jss-module__Uc86oW__accreditationLogo",
+  "accreditationSlide": "about-home-jss-module__Uc86oW__accreditationSlide",
+  "cardTitle": "about-home-jss-module__Uc86oW__cardTitle",
   "chancellorImage": "about-home-jss-module__Uc86oW__chancellorImage",
   "contentPart": "about-home-jss-module__Uc86oW__contentPart",
   "description": "about-home-jss-module__Uc86oW__description",
   "fifthMiddleSection": "about-home-jss-module__Uc86oW__fifthMiddleSection",
   "fifthSection": "about-home-jss-module__Uc86oW__fifthSection",
+  "fifthSectionSlider": "about-home-jss-module__Uc86oW__fifthSectionSlider",
   "highlightBox": "about-home-jss-module__Uc86oW__highlightBox",
   "highlightNumber": "about-home-jss-module__Uc86oW__highlightNumber",
   "leftColumn": "about-home-jss-module__Uc86oW__leftColumn",
@@ -1660,7 +1672,11 @@ function LegacySection() {
                                         alt: legacyData.chancellor.name,
                                         width: 500,
                                         height: 350,
-                                        className: `img-fluid rounded ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].chancellorImage}`
+                                        style: {
+                                            height: "100%",
+                                            width: "100%"
+                                        },
+                                        className: `rounded ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].chancellorImage}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
                                         lineNumber: 77,
@@ -1674,7 +1690,7 @@ function LegacySection() {
                                                 className: "text-warning"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                lineNumber: 86,
+                                                lineNumber: 87,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1684,25 +1700,25 @@ function LegacySection() {
                                                         children: legacyData.chancellor.message
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                        lineNumber: 88,
+                                                        lineNumber: 89,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                        lineNumber: 89,
+                                                        lineNumber: 90,
                                                         columnNumber: 19
                                                     }, this),
                                                     legacyData.chancellor.name
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                lineNumber: 87,
+                                                lineNumber: 88,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                        lineNumber: 85,
+                                        lineNumber: 86,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -1724,7 +1740,7 @@ function LegacySection() {
                                     children: legacyData.description
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 98,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1737,17 +1753,17 @@ function LegacySection() {
                                             color: "rgba(146, 142, 142, 1)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 103,
+                                            lineNumber: 104,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                        lineNumber: 102,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 101,
+                                    lineNumber: 102,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1760,18 +1776,18 @@ function LegacySection() {
                                                     children: h.number
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                    lineNumber: 113,
+                                                    lineNumber: 114,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "left-content",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "mb-1",
+                                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].cardTitle,
                                                             children: h.text
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                            lineNumber: 117,
+                                                            lineNumber: 118,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1779,24 +1795,24 @@ function LegacySection() {
                                                             children: h.source
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                            lineNumber: 118,
+                                                            lineNumber: 119,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                                    lineNumber: 116,
+                                                    lineNumber: 117,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 112,
+                                            lineNumber: 113,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 110,
+                                    lineNumber: 111,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1807,18 +1823,18 @@ function LegacySection() {
                                             children: btn.text
                                         }, i, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 127,
+                                            lineNumber: 128,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 125,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                            lineNumber: 97,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1828,7 +1844,7 @@ function LegacySection() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mt-5 pt-4 fifth-section-slider",
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].fifthSectionSlider,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Swiper"], {
                         modules: [
                             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$modules$2f$autoplay$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Autoplay$3e$__["Autoplay"],
@@ -1837,7 +1853,7 @@ function LegacySection() {
                         autoplay: {
                             delay: 3000
                         },
-                        spaceBetween: 30,
+                        spaceBetween: 100,
                         pagination: {
                             clickable: true
                         },
@@ -1850,10 +1866,12 @@ function LegacySection() {
                                 slidesPerView: 2
                             },
                             992: {
-                                slidesPerView: 3
+                                slidesPerView: 3,
+                                spaceBetween: 0
                             }
                         },
                         children: legacyData.accreditations.map((acc, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SwiperSlide"], {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].accreditationSlide,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "gap-3 px-3 d-flex align-items-center content",
                                     children: [
@@ -1862,10 +1880,10 @@ function LegacySection() {
                                             alt: acc.name,
                                             width: 80,
                                             height: 80,
-                                            className: "img-fluid mb-2"
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$about$2d$home$2d$jss$2f$about$2d$home$2d$jss$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].accreditationLogo
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 152,
+                                            lineNumber: 154,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1873,28 +1891,28 @@ function LegacySection() {
                                             children: acc.text
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                            lineNumber: 159,
+                                            lineNumber: 161,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                    lineNumber: 151,
+                                    lineNumber: 153,
                                     columnNumber: 17
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                                lineNumber: 150,
+                                lineNumber: 152,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                        lineNumber: 137,
+                        lineNumber: 138,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/component/home-components/about-home-jss/AboutHomeComponent.js",
-                    lineNumber: 136,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this)
             ]
@@ -1959,51 +1977,54 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$
 ;
 ;
 ;
-const testimonialsData = [
-    {
-        name: "NAMAN SUKHIJA",
-        batch: "B. Tech (CE), 2012-16 Batch",
-        role: "Designer & Certifier, Passive House Institute, Germany",
-        quote: "Studying at JSS Noida has been a transformative journey...",
-        img: "/images/home-page/sixth-section-first-banner.png",
-        videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc"
-    },
-    {
-        name: "APOORV SHIKHAR",
-        batch: "B. Tech (ES), 2013-17 Batch",
-        role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
-        img: "/images/home-page/sixth-section-second-banner.png",
-        quote: "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
-        videoUrl: ""
-    },
-    {
-        name: "YASHIKA MATHUR",
-        batch: "B. Tech (CE), 2013-17 Batch",
-        role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
-        img: "/images/home-page/sixth-section-third-banner.png",
-        videoUrl: ""
-    },
-    {
-        name: "NADEEM KHAN",
-        batch: "B. Tech (ME), 2015-19 Batch",
-        role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
-        img: "/images/home-page/sixth-section-fourth-banner.png",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-    },
-    {
-        name: "RITIKA SHARMA",
-        batch: "B. Tech (CSE), Batch of 2024",
-        img: "/images/home-page/sixth-section-fifth-banner.png",
-        quote: "JSS University has truly shaped my journey—both academically and personally.",
-        videoUrl: ""
-    }
-];
+const testimonialsData = {
+    title: '<span class="dark-blue-text ">IN</span> <span class="blue-text">CONVERSATION</span> <span class="dark-blue-text ">WITH THE</span>  <span class="blue-text">JSS COMMUNITY</span>',
+    testimonials: [
+        {
+            name: "NAMAN SUKHIJA",
+            batch: "B. Tech (CE), 2012-16 Batch",
+            role: "Designer & Certifier, Passive House Institute, Germany",
+            quote: "Studying at JSS Noida has been a transformative journey...",
+            img: "/images/home-page/sixth-section-first-banner.png",
+            videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc"
+        },
+        {
+            name: "APOORV SHIKHAR",
+            batch: "B. Tech (ES), 2013-17 Batch",
+            role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
+            img: "/images/home-page/sixth-section-second-banner.png",
+            quote: "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
+            videoUrl: ""
+        },
+        {
+            name: "YASHIKA MATHUR",
+            batch: "B. Tech (CE), 2013-17 Batch",
+            role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
+            img: "/images/home-page/sixth-section-third-banner.png",
+            videoUrl: ""
+        },
+        {
+            name: "NADEEM KHAN",
+            batch: "B. Tech (ME), 2015-19 Batch",
+            role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
+            img: "/images/home-page/sixth-section-fourth-banner.png",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        },
+        {
+            name: "RITIKA SHARMA",
+            batch: "B. Tech (CSE), Batch of 2024",
+            img: "/images/home-page/sixth-section-fifth-banner.png",
+            quote: "JSS University has truly shaped my journey—both academically and personally.",
+            videoUrl: ""
+        }
+    ]
+};
 function TestimonialsSection() {
     const [selectedVideo, setSelectedVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     // distribute testimonials dynamically into columns
-    const column1 = testimonialsData.slice(0, 1);
-    const column2 = testimonialsData.slice(1, 3);
-    const column3 = testimonialsData.slice(3);
+    const column1 = testimonialsData.testimonials.slice(0, 1);
+    const column2 = testimonialsData.testimonials.slice(1, 3);
+    const column3 = testimonialsData.testimonials.slice(3);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].testimonialsSection,
         children: [
@@ -2021,29 +2042,17 @@ function TestimonialsSection() {
                                         children: "TESTIMONIALS"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 65,
+                                        lineNumber: 112,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: `highlighted-title-top-to-botom ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mainHeading}`,
-                                        children: [
-                                            "IN CONVERSATION",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 70,
-                                                columnNumber: 15
-                                            }, this),
-                                            "WITH THE JSS",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 72,
-                                                columnNumber: 15
-                                            }, this),
-                                            "COMMUNITY"
-                                        ]
-                                    }, void 0, true, {
+                                        className: ` ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mainHeading}`,
+                                        dangerouslySetInnerHTML: {
+                                            __html: testimonialsData.title
+                                        }
+                                    }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 66,
+                                        lineNumber: 113,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2061,28 +2070,28 @@ function TestimonialsSection() {
                                                     d: "M5 12h14M12 5l7 7-7 7"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                    lineNumber: 85,
+                                                    lineNumber: 127,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 77,
+                                                lineNumber: 119,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                            lineNumber: 76,
-                                            columnNumber: 13
+                                            lineNumber: 118,
+                                            columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 75,
-                                        columnNumber: 15
+                                        lineNumber: 117,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 64,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this),
                             column1.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
@@ -2090,13 +2099,13 @@ function TestimonialsSection() {
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 92,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 63,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2106,12 +2115,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 103,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 101,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2121,18 +2130,18 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 114,
+                                lineNumber: 156,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 112,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 61,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             selectedVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2152,7 +2161,7 @@ function TestimonialsSection() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].videoIframe
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 133,
+                            lineNumber: 175,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2161,24 +2170,24 @@ function TestimonialsSection() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 142,
+                            lineNumber: 184,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 129,
+                    lineNumber: 171,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 125,
+                lineNumber: 167,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 60,
+        lineNumber: 107,
         columnNumber: 5
     }, this);
 }
@@ -2198,7 +2207,7 @@ function TestimonialCard({ data, onPlay }) {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].cardImg
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 161,
+                        lineNumber: 203,
                         columnNumber: 9
                     }, this),
                     hasVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2213,17 +2222,17 @@ function TestimonialCard({ data, onPlay }) {
                                 d: "M8 5v14l11-7z"
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 172,
+                                lineNumber: 214,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 171,
+                            lineNumber: 213,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 170,
+                        lineNumber: 212,
                         columnNumber: 11
                     }, this),
                     data.quote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2233,7 +2242,7 @@ function TestimonialCard({ data, onPlay }) {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].yellowLine
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 180,
+                                lineNumber: 222,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2241,19 +2250,19 @@ function TestimonialCard({ data, onPlay }) {
                                 children: data.quote
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 181,
+                                lineNumber: 223,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 179,
+                        lineNumber: 221,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 160,
+                lineNumber: 202,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2264,7 +2273,7 @@ function TestimonialCard({ data, onPlay }) {
                         children: data.name
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 186,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2272,7 +2281,7 @@ function TestimonialCard({ data, onPlay }) {
                         children: data.batch
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 187,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this),
                     data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2280,19 +2289,19 @@ function TestimonialCard({ data, onPlay }) {
                         children: data.role
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 188,
+                        lineNumber: 230,
                         columnNumber: 23
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 185,
+                lineNumber: 227,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 159,
+        lineNumber: 201,
         columnNumber: 5
     }, this);
 }
