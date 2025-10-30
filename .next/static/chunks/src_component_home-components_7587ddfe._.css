@@ -1239,10 +1239,9 @@
 }
 
 .happening-module__EQ7KYq__cardTitle {
-  color: #333;
   margin: 0 0 auto;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
 }
 
@@ -1272,7 +1271,7 @@
 .happening-module__EQ7KYq__cardDate {
   color: #333;
   margin-top: 15px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .happening-module__EQ7KYq__cardDateWhite {
@@ -1319,6 +1318,44 @@
 
 .happening-module__EQ7KYq__cardImage {
   object-fit: cover;
+}
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .happening-module__EQ7KYq__cardTag, .happening-module__EQ7KYq__cardTitle {
+    font-size: 14px;
+  }
+
+  .happening-module__EQ7KYq__cardDate {
+    font-size: 12px;
+  }
+
+  .happening-module__EQ7KYq__cardTitleLarge {
+    font-size: 30px;
+  }
+
+  .happening-module__EQ7KYq__rightArrow {
+    padding: 4px;
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .happening-module__EQ7KYq__cardTag, .happening-module__EQ7KYq__cardTitle {
+    font-size: 14px;
+  }
+
+  .happening-module__EQ7KYq__cardDate {
+    font-size: 12px;
+  }
+
+  .happening-module__EQ7KYq__cardTitleLarge {
+    font-size: 30px;
+  }
+
+  .happening-module__EQ7KYq__rightArrow {
+    padding: 4px;
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 1200px) {
