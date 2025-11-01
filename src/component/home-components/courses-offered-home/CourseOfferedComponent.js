@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import { FaChevronRight } from "react-icons/fa";
+import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
 
 // ✅ All data stored separately for easy replacement (API later)
@@ -76,7 +77,7 @@ export default function CoursesOffered() {
               className={`fw-bold  ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
             ></h1>
-
+            <p className={styles.showOnlyMobileSubHeading}>{coursesData.programsText}</p>
             {/* Search box */}
             <div
               className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
@@ -92,14 +93,18 @@ export default function CoursesOffered() {
             </div>
 
             {/* Programs count */}
-            <div className="d-flex align-items-center gap-5 my-5">
+            <div
+              className={`d-flex align-items-center gap-5 ${styles.programsCountSection}`}
+            >
               <ProgramsCount />
               <p className={styles.programsText}>{coursesData.programsText}</p>
             </div>
           </div>
 
           {/* Right side cards */}
-          <div className="col-lg-8 d-flex justify-content-end gap-3">
+          <div
+            className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
+          >
             {coursesData.levels.map((level, i) => (
               <Link
                 href={level.link}
@@ -119,16 +124,39 @@ export default function CoursesOffered() {
                     className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
                   >
                     {level.name}{" "}
-                    <FaChevronRight fontSize={15} color="#b08f29" />
+                    <FaChevronRight
+                      fontSize={15}
+                      color="#b08f29"
+                      className={styles.rightDesktopArrow}
+                    />
+                    <PiArrowCircleRightThin
+                      fontSize={20}
+                      color="#fff"
+                      className={styles.rightMobileArrow}
+                    />
                   </span>
                 </div>
               </Link>
             ))}
+            <div className={styles.showOnlyMobileCard}>
+              <Link href="#" className={styles.exploreAllLink}>
+                <div className={styles.lastCardContentSection}>
+                  <p>Explore All</p>
+                  <h1 className="blue-text">26+</h1>
+                  <h5>ACADEMIC PROGRAMS</h5>
+                </div>
+                <div className={styles.lastCardArrow}>
+                  <PiArrowCircleRightThin fontSize={20} color="#16344E" />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Bottom section */}
-        <div className="row border-top border-bottom align-items-center bottom-section w-100 m-auto">
+        <div
+          className={`row border-top border-bottom align-items-center bottom-section w-100 m-auto ${styles.exploreProgramSectionWrapper}`}
+        >
           <div className="col-lg-8 pb-4 pt-1 border-end">
             <h6 className={`fw-bold mb-3 ${styles.bottomSectionH6}`}>
               Explore Programs by School of
@@ -150,7 +178,7 @@ export default function CoursesOffered() {
 
           {/* Admission section */}
           <div
-            className={`col-lg-4 d-flex justify-content-between align-items-center ps-5 ${styles.admissionSection}`}
+            className={`col-lg-4 d-flex justify-content-between align-items-center ${styles.admissionSection}`}
           >
             <div>
               <h4 className="fw-bold mb-1">

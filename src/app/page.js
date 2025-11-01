@@ -12,10 +12,10 @@ export default async function HomePage() {
       <BannerComponent />
       <CourseOfferedComponent />
       <PlacementComponent />
-      <FacilitiesComponent />
+      {/* <FacilitiesComponent /> */}
       <AboutHomeComponent />
       <TestimonialComponent />
-      <HappingsHomeComponent />
+      {/* <HappingsHomeComponent /> */}
     </div>
   );
 }

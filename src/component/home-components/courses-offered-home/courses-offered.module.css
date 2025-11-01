@@ -64,6 +64,9 @@
 .admissionYearText {
   color: #018ce8;
 }
+.admissionSection {
+  padding-left: 3rem;
+}
 .admissionSection h4 {
   font-size: 26px;
 }
@@ -112,7 +115,24 @@
   width: 100%;
   height: 100%;
 }
-
+.programsCountSection {
+  margin: 3rem 0;
+}
+.programsCardsSection {
+  justify-content: end;
+}
+.rightDesktopArrow {
+  display: block;
+}
+.rightMobileArrow {
+  display: none;
+}
+.showOnlyMobileCard {
+  display: none;
+}
+.showOnlyMobileSubHeading {
+  display: none;
+}
 @media (min-width: 1381px) and (max-width: 1919px) {
   .secondSection {
     padding: 8rem 11rem;
@@ -183,5 +203,179 @@
   }
   .admissionSection a {
     font-size: 12px;
+  }
 }
+@media (min-width: 768px) and (max-width: 1040px) {
+  .explore-program-section a {
+    font-size: 14px;
+  }
+  .programsCardsSection {
+    justify-content: space-between;
+  }
+  .programsCountSection {
+    margin: 0;
+  }
+  .bottomSectionH6 {
+    font-size: 14px;
+  }
+  .explore-program-section a {
+    font-size: 14px;
+  }
+  .admissionSection h4 {
+    font-size: 20px;
+  }
+  .admissionSection {
+    padding-bottom: 16px;
+    padding-left: 1rem;
+    padding-right: 4rem;
+    border-right: 1px solid #e9e4e4;
+  }
+  .admissionSection a {
+    font-size: 14px;
+  }
+  .explore-program-section a {
+    font-size: 14px;
+  }
+  .admissionSection p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .searchBox {
+    width: fit-content;
+    height: 35px;
+    margin: 1rem 0;
+  }
+  .courses-offered-module__x5Lqha__programsCountPlus {
+    font-size: 1.5rem;
+    top: -5px;
+    right: -15px;
+  }
+  .secondSection {
+    padding: 4rem 4rem;
+  }
+  .topSectionH5 {
+    font-size: 12px;
+    margin-bottom: 0.6rem;
+  }
+  .topSectionH1 {
+    font-size: 25px;
+  }
+  .programsCount {
+    font-size: 50px;
+  }
+  .programsText {
+    font-size: 14px;
+  }
+  .bannerLabel {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .showOnlyMobileSubHeading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 0 1rem;
+    margin: 0;
+  }
+  .topSectionH5 {
+    display: none;
+  }
+  .secondSection {
+    padding: 0;
+    background: #16344e;
+    padding-bottom: 5rem;
+  }
+  .topSection {
+    background: #f6f6f6;
+    padding: 2.5rem 1rem;
+    margin: 0 !important;
+    padding-bottom: 1rem;
+  }
+  .topSectionH1 {
+    width: 100%;
+    font-size: 34px;
+    text-align: center;
+  }
+  .searchBox {
+    display: none;
+  }
+  .programsCountSection {
+    display: none !important;
+  }
+  .exploreProgramSectionWrapper {
+    display: none;
+  }
+  .programsCardsSection {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 12px !important;
+    padding: 0;
+  }
+  .second-section-cards-image {
+    width: 45%;
+  }
+  .programsCardsSection a {
+    width: 47%;
+  }
+  .bannerLabel {
+    font-size: 20px;
+    justify-content: space-between;
+    padding-right: 10px;
+    border: unset;
+  }
+  .rightDesktopArrow {
+    display: none;
+  }
+  .rightMobileArrow {
+    display: block;
+  }
+  .showOnlyMobileCard {
+    background: #fff;
+    border-radius: 30px 4px 10px 10px;
+    width: 45%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+  }
+  .lastCardArrow {
+    position: absolute;
+    bottom: 0;
+  }
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+  }
+  .cardOverlay {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    border-radius: 4px;
+  }
+  .showOnlyMobileCard p {
+    color: #16344e;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .showOnlyMobileCard h1 {
+    font-size: 48px;
+  }
+  .showOnlyMobileCard div {
+    padding: 1rem;
+  }
+  .showOnlyMobileCard h5 {
+    color: #16344e;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .exploreAllLink {
+    width: 100% !important;
+  }
 }

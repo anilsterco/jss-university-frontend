@@ -144,6 +144,12 @@
   font-size: 18px;
   font-weight: 700;
 }
+.mobileContainer {
+  display: none;
+}
+.facilitiesContainer {
+  display: block;
+}
 @media (min-width: 1090px) and (max-width: 1199px) {
   .headerContent {
     width: 85.1vw;
@@ -192,5 +198,117 @@
 @media (min-width: 3441px) and (max-width: 3850px) {
   .headerContent {
     width: 78.8vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .headerContent h1 {
+    font-size: 25px;
+  }
+  .headerContent h5 {
+    font-size: 12px;
+  }
+  .headerContent {
+    width: 86.7vw;
+    height: 110px;
+  }
+  .bannerContent h2 {
+    font-size: 20px;
+  }
+  .bannerContent p {
+    font-size: 14px;
+  }
+  .bannerContent svg {
+    font-size: 18px;
+  }
+  .bannerContent {
+    left: 16%;
+  }
+}
+@media (max-width: 768px) {
+  .mobileContainer {
+    display: block;
+    background: #16344e;
+    padding: 5rem 0;
+  }
+  .facilitiesContainer {
+    display: none;
+  }
+  .cardImageContainer {
+    position: relative;
+    width: 47%;
+  }
+  .cardContent {
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cardOverlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.4) 15%,
+      rgba(0, 0, 0, 0) 80%
+    );
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .cardSection {
+    flex-wrap: wrap;
+    display: flex;
+    padding: 1rem 0.8rem;
+    gap: 13px;
+  }
+  .cardImageContainer img {
+    height: 191px;
+    border-radius: 8px;
+  }
+  .mobileContainer p {
+    font-size: 14px;
+    color: #16344e;
+    font-weight: 600;
+  }
+  .showOnlyMobileCard {
+    background: #fff;
+    border-radius: 8px;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 47%;
+    display: flex;
+    position: relative;
+  }
+  .showOnlyMobileCard a {
+    height: 191px;
+  }
+  .showOnlyMobileCard p {
+    color: #16344e;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  .showOnlyMobileCard h1 {
+    font-size: 48px;
+  }
+  .showOnlyMobileCard div {
+    padding: 0.5rem 1rem 0;
+  }
+  .showOnlyMobileCard h5 {
+    color: #16344e;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .mobileCardsContainer {
+    background: #f6f6f6;
+    padding-top: 2.5rem;
   }
 }

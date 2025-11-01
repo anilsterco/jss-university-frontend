@@ -229,9 +229,57 @@
   border: none;
   border-radius: 10px;
 }
+.desktopView {
+  display: flex;
+}
+.mobileView {
+  display: none;
+}
 
 @media (min-width: 1381px) and (max-width: 1919px) {
 }
 
 @media (min-width: 1040px) and (max-width: 1380px) {
+}
+@media (min-width: 768px) and (max-width: 1040px) {
+  .testimonialsContainer {
+    padding: 0 6rem;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .testimonialsLabel {
+    font-size: 12px;
+  }
+  .mainHeading {
+    font-size: 30px;
+  }
+  .columnLeft,
+  .columnMiddle,
+  .columnRight {
+    width: 220px;
+  }
+  .quoteTextOverlay {
+    font-size: 12px;
+  }
+  .testimonialsSection {
+    padding-top: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .desktopView {
+    display: none;
+  }
+  .mobileView {
+    display: block;
+  }
+  .testimonialsSection {
+    padding: 2rem;
+  }
+  /* .cardImg {
+    height: auto;
+  }
+  .cardImgContainer {
+    height: 200px;
+  } */
 }

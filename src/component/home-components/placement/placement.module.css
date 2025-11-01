@@ -78,6 +78,12 @@
   height: 100%;
   padding: 1rem;
 }
+.mobileQuoteIcon {
+  display: none;
+}
+.desktopQuoteIcon {
+  display: block;
+}
 
 @media (min-width: 1381px) and (max-width: 1919px) {
   .testimonialImageContainer {
@@ -152,5 +158,128 @@
   .testimonialImageContainer {
     width: 21%;
     padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1040px) {
+  .testimonialImageContainer {
+    width: 30%;
+  }
+  .thirdSection {
+    padding: 2rem 0 4rem 4rem;
+  }
+  .sectionHeader p {
+    font-size: 12px;
+  }
+  .sectionHeader h2 {
+    font-size: 25px;
+  }
+  .statsNumber {
+    font-size: 1.5rem;
+  }
+  .sectionHeader {
+    margin-bottom: 0;
+  }
+  .wallOfFameContainer {
+    width: 100%;
+  }
+  .testimonialSwiper .eachSlide {
+    gap: 1rem;
+  }
+  .wallOfFameText {
+    font-size: 30px;
+  }
+  .testimonialSwiper p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .thirdSection {
+    padding: 3rem 1.3rem 2rem;
+  }
+  .sectionHeader p {
+    font-size: 14px;
+    text-align: center;
+  }
+  .sectionHeader h2 {
+    font-size: 34px;
+    text-align: center;
+  }
+  .statsNumber {
+    font-size: 40px;
+  }
+  .statsRow {
+    display: flex;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .statsRow > div {
+    width: 50%;
+  }
+  .statsRow > div:last-child {
+    display: none;
+  }
+  .rightContent {
+    display: none !important;
+  }
+  .testimonialImageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonialSwiper .eachSlide {
+    gap: 0rem;
+    flex-wrap: wrap;
+  }
+  .blueBg {
+    display: none;
+  }
+  .estimonialSwiper p {
+    font-size: 18px;
+  }
+  .testimonialSwiper p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .testimonialSwiper h6 {
+    font-size: 12px;
+    text-align: center;
+  }
+  .testimonialSwiper small {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+  }
+  .testimonialIconContainer {
+    justify-content: center;
+  }
+  .testimonialImage {
+    height: 90px !important;
+    width: 90px !important;
+    border-radius: 50px !important;
+    object-fit: cover;
+  }
+  .mobileQuoteIcon {
+    display: block;
+  }
+  .desktopQuoteIcon {
+    display: none;
+  }
+  .sectionHeader {
+    margin-bottom: 0;
+  }
+  .leftContent {
+    padding-bottom: 0;
+    margin-top: 5px;
+    padding-right: 0;
+  }
+  .testimonialSwiper {
+    padding-top: 0 !important;
+  }
+  .recruiterSection {
+    padding-top: 1rem !important;
+  }
+  .recruiterSection p {
+    text-align: center;
   }
 }

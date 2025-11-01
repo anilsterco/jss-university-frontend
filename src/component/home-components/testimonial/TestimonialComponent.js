@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./testimonial.module.css";
+import "swiper/css";
 
 const testimonialsData = {
   title:
@@ -52,48 +54,6 @@ const testimonialsData = {
     },
   ],
 };
-// const testimonialsData = [
-//   {
-//     name: "NAMAN SUKHIJA",
-//     batch: "B. Tech (CE), 2012-16 Batch",
-//     role: "Designer & Certifier, Passive House Institute, Germany",
-//     quote: "Studying at JSS Noida has been a transformative journey...",
-//     img: "/images/home-page/sixth-section-first-banner.png",
-//     videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
-//   },
-//   {
-//     name: "APOORV SHIKHAR",
-//     batch: "B. Tech (ES), 2013-17 Batch",
-//     role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
-//     img: "/images/home-page/sixth-section-second-banner.png",
-//     quote:
-//       "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
-//     videoUrl: "",
-//   },
-//   {
-//     name: "YASHIKA MATHUR",
-//     batch: "B. Tech (CE), 2013-17 Batch",
-//     role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
-//     img: "/images/home-page/sixth-section-third-banner.png",
-//     videoUrl: "",
-//   },
-//   {
-//     name: "NADEEM KHAN",
-//     batch: "B. Tech (ME), 2015-19 Batch",
-//     role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
-//     img: "/images/home-page/sixth-section-fourth-banner.png",
-//     videoUrl:
-//       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-//   },
-//   {
-//     name: "RITIKA SHARMA",
-//     batch: "B. Tech (CSE), Batch of 2024",
-//     img: "/images/home-page/sixth-section-fifth-banner.png",
-//     quote:
-//       "JSS University has truly shaped my journey—both academically and personally.",
-//     videoUrl: "",
-//   },
-// ];
 
 export default function TestimonialsSection() {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -103,9 +63,11 @@ export default function TestimonialsSection() {
   const column2 = testimonialsData.testimonials.slice(1, 3);
   const column3 = testimonialsData.testimonials.slice(3);
 
+  const columnForMobile  = [...column1, ...column2];
+
   return (
     <section className={styles.testimonialsSection}>
-      <div className={styles.testimonialsContainer}>
+      <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
         {/* LEFT COLUMN */}
         <div className={styles.columnLeft}>
           <div className={styles.headerContent}>
@@ -160,6 +122,33 @@ export default function TestimonialsSection() {
             />
           ))}
         </div>
+      </div>
+      <div className={styles.mobileView}>
+        <p className={`${styles.testimonialsLabel} text-center`}>
+          TESTIMONIALS
+        </p>
+        <Swiper spaceBetween={100} slidesPerView={1}>
+          {columnForMobile.map((item, i) => (
+            <SwiperSlide key={i}>
+              <TestimonialCard
+                key={i}
+                data={item}
+                onPlay={() => setSelectedVideo(item.videoUrl)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <Swiper spaceBetween={100} slidesPerView={1}>
+          {column3.map((item, i) => (
+            <SwiperSlide key={i}>
+              <TestimonialCard
+                key={i}
+                data={item}
+                onPlay={() => setSelectedVideo(item.videoUrl)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       {/* ✅ Video Popup */}
