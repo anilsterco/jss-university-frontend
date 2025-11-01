@@ -22,22 +22,19 @@ const placementsData = {
   ],
   testimonials: [
     {
-      img: "/images/home-page/flipkart-logo.png",
-      // img: "/images/home-page/testimonial-placeholder.png",
+      img: "/images/home-page/testimonial-placeholder.png",
       text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
       name: "Jane Doe",
       role: "Product Engineer, TCS",
     },
     {
-      // img: "/images/home-page/testimonial-placeholder.png",
-      img: "/images/home-page/tcs-logo.png",
+      img: "/images/home-page/testimonial-placeholder.png",
       text: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
       name: "John Smith",
       role: "Software Engineer, Infosys",
     },
     {
-      // img: "/images/home-page/testimonial-placeholder.png",
-      img: "/images/home-page/flipkart-logo.png",
+      img: "/images/home-page/testimonial-placeholder.png",
       text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       name: "Anita Verma",
       role: "Business Analyst, IBM",
@@ -80,7 +77,7 @@ export default function PlacementsSection() {
           {/* Left Content */}
           <div className={`col-lg-7 ps-0 ${styles.leftContent}`}>
             {/* Stats Row */}
-            <div className="row mb-5 pb-4 w-100 m-auto">
+            <div className={`row mb-5 pb-4 w-100 m-auto ${styles.statsRow}`}>
               {placementsData.stats.map((stat, i) => (
                 <div key={i} className="col-md-4 text-center border p-3">
                   <h3 className={`fw-bold ${styles.statsNumber}`}>
@@ -113,6 +110,11 @@ export default function PlacementsSection() {
                   >
                     {/* Testimonial Image */}
                     <div className={` ${styles.testimonialImageContainer}`}>
+                      <FaQuoteLeft
+                        className={`mb-3 ${styles.mobileQuoteIcon}`}
+                        color="#b08f29"
+                        fontSize={30}
+                      />
                       <Image
                         src={t.img}
                         alt={t.name}
@@ -124,20 +126,22 @@ export default function PlacementsSection() {
                           position: "relative",
                         }}
                         priority
-                        className="top-0 start-0 rounded"
+                        className={`top-0 start-0 rounded ${styles.testimonialImage}`}
                       />
                     </div>
                     {/* Testimonial Text */}
                     <div>
                       <FaQuoteLeft
-                        className="mb-3"
+                        className={`mb-3 ${styles.desktopQuoteIcon}`}
                         color="#b08f29"
                         fontSize={30}
                       />
                       <p className="">{t.text}”</p>
                       <h6 className="small mb-0 fw-bold">{t.name}</h6>
                       <small className="">{t.role}</small>
-                      <div className="d-flex gap-2 mt-3">
+                      <div
+                        className={`d-flex gap-2 mt-3 ${styles.testimonialIconContainer}`}
+                      >
                         <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
                           <FaChevronLeft size={8} />
                         </button>
@@ -153,7 +157,9 @@ export default function PlacementsSection() {
           </div>
 
           {/* Right Wall of Fame */}
-          <div className="col-lg-5 d-flex justify-content-end px-0">
+          <div
+            className={`col-lg-5 d-flex justify-content-end px-0 ${styles.rightContent}`}
+          >
             <div
               className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
             >
@@ -182,7 +188,7 @@ export default function PlacementsSection() {
         </div>
 
         {/* Recruiters Row */}
-        <div className="pt-5">
+        <div className={`pt-5 ${styles.recruiterSection}`}>
           <p
             className="fw-bold small text-uppercase mb-3"
             style={{ color: "#0036A1" }}
@@ -197,6 +203,12 @@ export default function PlacementsSection() {
               spaceBetween={60}
               slidesPerView={7}
               className="recruiters-slider"
+              breakpoints={{
+              0: { slidesPerView: 1 },
+              576: { slidesPerView: 2 },
+              992: { slidesPerView: 3},
+              1040: { slidesPerView: 7 },
+            }}
             >
               {placementsData.recruiters.map((rec, i) => (
                 <SwiperSlide key={i}>

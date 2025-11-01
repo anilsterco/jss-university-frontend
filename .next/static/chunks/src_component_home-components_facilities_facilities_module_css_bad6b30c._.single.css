@@ -158,6 +158,14 @@
   font-weight: 700;
 }
 
+.facilities-module__UE4CmG__mobileContainer {
+  display: none;
+}
+
+.facilities-module__UE4CmG__facilitiesContainer {
+  display: block;
+}
+
 @media (min-width: 1090px) and (max-width: 1199px) {
   .facilities-module__UE4CmG__headerContent {
     width: 85.1vw;
@@ -215,6 +223,134 @@
 @media (min-width: 3441px) and (max-width: 3850px) {
   .facilities-module__UE4CmG__headerContent {
     width: 78.8vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .facilities-module__UE4CmG__headerContent h1 {
+    font-size: 25px;
+  }
+
+  .facilities-module__UE4CmG__headerContent h5 {
+    font-size: 12px;
+  }
+
+  .facilities-module__UE4CmG__headerContent {
+    width: 86.7vw;
+    height: 110px;
+  }
+
+  .facilities-module__UE4CmG__bannerContent h2 {
+    font-size: 20px;
+  }
+
+  .facilities-module__UE4CmG__bannerContent p {
+    font-size: 14px;
+  }
+
+  .facilities-module__UE4CmG__bannerContent svg {
+    font-size: 18px;
+  }
+
+  .facilities-module__UE4CmG__bannerContent {
+    left: 16%;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-module__UE4CmG__mobileContainer {
+    background: #16344e;
+    padding: 5rem 0;
+    display: block;
+  }
+
+  .facilities-module__UE4CmG__facilitiesContainer {
+    display: none;
+  }
+
+  .facilities-module__UE4CmG__cardImageContainer {
+    width: 47%;
+    position: relative;
+  }
+
+  .facilities-module__UE4CmG__cardContent {
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+  }
+
+  .facilities-module__UE4CmG__cardOverlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, .4) 15%, rgba(0, 0, 0, 0) 80%);
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .facilities-module__UE4CmG__cardSection {
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 1rem .8rem;
+    display: flex;
+  }
+
+  .facilities-module__UE4CmG__cardImageContainer img {
+    border-radius: 8px;
+    height: 191px;
+  }
+
+  .facilities-module__UE4CmG__mobileContainer p {
+    color: #16344e;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard {
+    background: #fff;
+    border-radius: 8px;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 47%;
+    display: flex;
+    position: relative;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard a {
+    height: 191px;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard p {
+    color: #16344e;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard h1 {
+    font-size: 48px;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard div {
+    padding: .5rem 1rem 0;
+  }
+
+  .facilities-module__UE4CmG__showOnlyMobileCard h5 {
+    color: #16344e;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .facilities-module__UE4CmG__mobileCardsContainer {
+    background: #f6f6f6;
+    padding-top: 2.5rem;
   }
 }
 
