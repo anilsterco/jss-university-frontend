@@ -3,6 +3,10 @@ import Footer from "../component/Footer";
 import Providers from "./providers";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/roboto-condensed/300.css"; 
+import "@fontsource/roboto-condensed/400.css"; 
+import "@fontsource/roboto-condensed/700.css"; 
+import "../styles/globals.css"; 
 
 
 export const metadata = {

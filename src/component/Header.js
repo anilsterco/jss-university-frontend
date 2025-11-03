@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
+import '@fontsource/roboto-condensed';
+
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,10 +20,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
-
   const navLinks = [
     {
       name: "ABOUT",
@@ -433,14 +433,10 @@ export default function Header() {
         <div className="brand-wrap logo-content">
           <Link href="/" aria-label="Home" className="d-flex gap-4">
             <Image
-              src="/images/footer/footer-logo.png"
+              src="/images/header/header-logo.png"
               className="site-logo"
-              alt="Site Logo"
-              width={100}
-              height={100}
-              priority
-            />
-            <div className="logo-text">
+              alt="Site Logo" width={299} height={108} priority/>
+            {/* <div className="logo-text">
               <div className="d-flex  align-items-center gap-2">
                 <div>
                   <h1
@@ -469,7 +465,7 @@ export default function Header() {
               <p className={`${scrolled ? "text-dark" : ""} mb-0`}>
                 JSS is NAAC 'A' Grade Accredited
               </p>
-            </div>
+            </div> */}
           </Link>
         </div>
 
@@ -546,7 +542,7 @@ export default function Header() {
                 >
                   <Link
                     href={l.href}
-                    className={`nav-link ${
+                    className={`nav-link nav-lists  ${
                       activeLink == i ? "active-link" : ""
                     }`}
                   >
@@ -691,7 +687,10 @@ export default function Header() {
               className="hamburger"
               onClick={openMenu}
             >
-              ☰
+              <Image
+              src="/images/header/hum-icon.svg"
+              className="site-logo"
+              alt="Site Logo" width={17} height={16} priority/>
             </button>
           </div>
         </div>
@@ -803,6 +802,11 @@ export default function Header() {
           display: flex;
           flex-direction: column;
         }
+         .logo-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
         .header-scrolled .school-toggle {
           color: #16344e;
         }
@@ -941,31 +945,54 @@ export default function Header() {
           border-left: 1px solid #cfc7c7;
           padding-left: 1.5rem;
         }
-        .nav-container {
-          justify-content: space-between;
-          align-items: center;
-          max-width: 100%;
-          margin: 0 auto;
-          padding: 1.6rem 5rem;
-          transition: all 0.3s;
-          display: flex;
+       
+        .site-header>.nav-container{
+        padding-inline: 98px;
+        padding-block: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 618px;
+            z-index: 2;
+            background: linear-gradient(
+            to bottom,
+            #ffc100 0%,    
+            #ffb000 20%,   
+            #B08F29 20%,   
+            #B08F29 40%,   
+            #16344e 40%,   
+            #16344e 100%
+          );
+          
         }
         .nav-list {
-          gap: 30px;
+          gap: 5.9rem;
           margin: 0;
-          padding: 0.4rem 2rem;
           list-style: none;
           display: flex;
-          font-size: 20px;
-          background-color: #16344e;
+          padding: 0 2.8rem;
+          background-color: rgb(22, 52, 78, 78%);
           color: #fff;
-          margin-right: 1rem;
         }
+          .nav-list>ul{
+          display: flex;
+          padding: 0;
+          margin: 0;
+          gap: 0 6rem;
+          }
+   
         .nav-item {
           position: relative;
         }
         .nav-container.header-scrolled {
-          background-color: #fff;
+          background-color:var(--color-4e);;
         }
         .nav-link {
           text-decoration: none;
@@ -1005,16 +1032,16 @@ export default function Header() {
         }
         .admission-wrap {
           position: relative;
-          margin-right: 12px;
+          margin: 0 0.5rem;
         }
         .admission-btn {
-          background: #ffc100;
-          font-weight: 700;
-          font-size: 15px;
+          color: var(--color-black);
+          padding: 1.4rem 2rem 1.2rem;
+          letter-spacing: 0.8px;
+          background-color: var(--color-100);
           border: none;
-          padding: 10px 18px;
-          cursor: pointer;
-          transition: background 0.3s ease;
+          font: var(--font-20);
+          font-family: var(--font-Condensed);
         }
         .admission-btn:hover {
           background: #e6b000;
@@ -1150,11 +1177,10 @@ export default function Header() {
         }
 
         .hamburger {
-          font-size: 22px;
           background: none;
           border: none;
           cursor: pointer;
-          padding: 4px 10px;
+          padding: 16px 15px 16px;
           background-color: #16344e;
           color: #fff;
           transition: background 0.3s ease;

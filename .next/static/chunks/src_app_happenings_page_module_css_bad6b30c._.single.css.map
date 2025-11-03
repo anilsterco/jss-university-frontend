@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/happenings/page.module.css"],"sourcesContent":[".happeningsContainer {\r\n  padding: 10rem 9rem;\r\n  background: linear-gradient(rgba(1, 140, 232, 0.16) 32rem, #f6fbfb 32rem);\r\n}\r\n.happeningsTitle {\r\n  width: fit-content;\r\n  margin: auto;\r\n  margin-bottom: 2rem;\r\n  background: linear-gradient(to right, #018ce8 30%, #263868 40%);\r\n  -webkit-text-fill-color: transparent;\r\n  -webkit-background-clip: text;\r\n  background-clip: text;\r\n  font-weight: 700;\r\n}\r\n.happeningsSubTitle {\r\n  font-weight: 600;\r\n}\r\n.tabButton {\r\n  background: unset;\r\n  border: unset;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  padding-top: 1rem;\r\n}\r\n.tabHeaders {\r\n  border-top: 2px solid #d1cbcb75;\r\n  justify-content: center;\r\n  gap: 2rem;\r\n  display: flex;\r\n  width: 70%;\r\n  margin: auto;\r\n}\r\n.activeTab {\r\n  color: #ff6600;\r\n  border-top: 2px solid orange;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;;;;;;;;AAUA;;;;AAGA;;;;;;;;AAOA;;;;;;;;;AAQA"}}]
-}

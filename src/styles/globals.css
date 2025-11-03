@@ -12,6 +12,18 @@ body {
   padding: 0;
   margin: 0;
 }
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-Condensed);
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
 * {
   box-sizing: border-box;
@@ -20,6 +32,187 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
 }
+
+
+/* Base root variables (Desktop default, 1920px+) */
+:root {
+    --font-Roboto: "Roboto", sans-serif;
+    --font-main: 'Roboto Condensed', sans-serif;
+    --font-Geist: "Geist", sans-serif;
+    --font-Condensed: "Roboto Condensed", sans-serif;
+
+    /* Colors */
+    --color-f6: #F6F6F6;
+    --color-e8: #018CE8;
+    --color-f5: #ddebf5;
+    --color-d4: #D4D4D4;
+    --color-d6: #D6D6D6;
+    --color-be: #BEBEBE;
+    --color-4e: #16344E;
+    --color-29: #B08F29;
+    --color-21: #212121;
+    --color-27: #272727;
+    --color-100: #FFC100;
+    --color-ai: #0036A1;
+    --color-fff: #E6FFFF;
+    --color-73: #994073;
+    --color-36: #EB5F36;
+    --color-ff: #0099FF;
+    --color-d9: #D9D9D9;
+    --color-a0: #A02B2D;
+    --color-00: #FFA600;
+    --color-1c: #AF251C;
+    --color-9a: #00489A;
+    --color-60: #FF6600;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-ec: #ECC820;
+
+    /* Font Sizes */
+    --font-110: normal 300 11rem / 1.218 var(--font-Geist);
+    --font-100: normal 100 10rem / 1.218 var(--font-Roboto);
+    --font-80: normal bold 8rem / 1.2 var(--font-Roboto);
+    --font-60: normal bold 6rem / 1 var(--font-Roboto);
+    --font-52: normal bold 5.2rem / 1.2 var(--font-Roboto);
+    --font-51: normal bold 5.1rem / 1.2 var(--font-Roboto);
+    --font-50: normal bold 5rem / 1.2 var(--font-Roboto);
+    --font-48: normal 500 4.8rem / 1.2 var(--font-Roboto);
+    --font-45: normal bold 4.5rem / 1.2 var(--font-Roboto);
+    --font-42: normal bold 4.2rem / 1.2 var(--font-Roboto);
+    --font-40: normal bold 4rem / 1.2 var(--font-Roboto);
+    --font-38: normal 500 3.8rem / 1.2 var(--font-Roboto);
+    --font-36: normal bold 3.6rem / 1.2 var(--font-Roboto);
+    --font-34: normal bold 3.4rem / 1.2 var(--font-Roboto);
+    --font-32: normal bold 3.2rem / 1.2 var(--font-Roboto);
+    --font-30: normal bold 3rem / 1.2 var(--font-Roboto);
+    --font-29: normal bold 2.9rem / 1.2 var(--font-Roboto);
+    --font-28: normal bold 2.8rem / 1.2 var(--font-Roboto);
+    --font-26: normal bold 2.6rem / 1.4 var(--font-Roboto);
+    --font-24: normal 500 2.4rem / 1.2 var(--font-Roboto);
+    --font-22: normal 500 2.2rem / 1.2 var(--font-Roboto);
+    --font-21: normal normal 2.1rem / 1.2 var(--font-Roboto);
+    --font-20: normal bold 2rem / 1.2 var(--font-Roboto);
+    --font-19: normal normal 1.8rem / 1.2 var(--font-Roboto);
+    --font-18: normal normal 1.8rem / 1.2 var(--font-Roboto);
+    --font-17: normal normal 1.7rem / 1.1 var(--font-Roboto);
+    --font-16: normal normal 1.6rem / 1.5 var(--font-Roboto);
+    --font-15: normal normal 1.5rem / 1.2 var(--font-Roboto);
+    --font-14: normal normal 1.4rem / 1.2 var(--font-Roboto);
+    --font-13: normal normal 1.3rem / 1.2 var(--font-Roboto);
+    --font-12: normal normal 1.2rem / 1.2 var(--font-Roboto);
+    --line-height-31: calc(3.1rem / 2.6rem);
+    --line-height-30: calc(3rem / 2.1rem);
+    --line-height-22: calc(2.2rem / 1.4rem);
+    --line-height-21: calc(2.1rem / 1.4rem);
+    --line-height-19: calc(1.9rem / 1.2rem);
+    --line-height-15: calc(1.5rem / 1.2rem);
+}
+
+/* Medium Desktop */
+@media (max-width: 1440px) {
+    :root {
+        --font-110: normal 300 9rem / 1.218 var(--font-Geist);
+        --font-100: normal 100 9rem / 1.218 var(--font-Roboto);
+        --font-80: normal bold 6.5rem / 1.2 var(--font-Roboto);
+        --font-60: normal bold 5rem / 1 var(--font-Roboto);
+        --font-52: normal bold 4.5rem / 1.2 var(--font-Roboto);
+        --font-50: normal bold 4.8rem / 1.2 var(--font-Roboto);
+        --font-48: normal 500 4.5rem / 1.2 var(--font-Roboto);
+        --font-45: normal bold 4rem / 1.2 var(--font-Roboto);
+        --font-42: normal bold 3.8rem / 1.2 var(--font-Roboto);
+        --font-40: normal bold 3.5rem / 1.2 var(--font-Roboto);
+        --font-38: normal 500 3.3rem / 1.2 var(--font-Roboto);
+        --font-36: normal bold 3.2rem / 1.2 var(--font-Roboto);
+        --font-34: normal bold 3rem / 1.2 var(--font-Roboto);
+        --font-32: normal bold 2.8rem / 1.2 var(--font-Roboto);
+        --font-30: normal bold 2.6rem / 1.2 var(--font-Roboto);
+        --font-28: normal bold 2.4rem / 1.2 var(--font-Roboto);
+        --font-26: normal bold 2.3rem / 1.4 var(--font-Roboto);
+        --font-24: normal 500 2.1rem / 1.2 var(--font-Roboto);
+        --font-22: normal 500 2rem / 1.2 var(--font-Roboto);
+        --font-21: normal normal 1.9rem / 1.2 var(--font-Roboto);
+        --font-20: normal bold 1.8rem / 1.2 var(--font-Roboto);
+        --font-19: normal normal 1.7rem / 1.2 var(--font-Roboto);
+        --font-18: normal normal 1.6rem / 1.2 var(--font-Roboto);
+        --font-17: normal normal 1.5rem / 1.1 var(--font-Roboto);
+        --font-16: normal normal 1.4rem / 1.5 var(--font-Roboto);
+        --font-15: normal normal 1.3rem / 1.2 var(--font-Roboto);
+        --font-14: normal normal 1.2rem / 1.2 var(--font-Roboto);
+        --font-13: normal normal 1.1rem / 1.2 var(--font-Roboto);
+        --font-12: normal normal 1rem / 1.2 var(--font-Roboto);
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    :root {
+        --font-110: normal 300 8rem / 1.218 var(--font-Geist);
+        --font-100: normal 100 7rem / 1.218 var(--font-Roboto);
+        --font-80: normal bold 5.5rem / 1.2 var(--font-Roboto);
+        --font-60: normal bold 4.5rem / 1 var(--font-Roboto);
+        --font-52: normal bold 4rem / 1.2 var(--font-Roboto);
+        --font-50: normal bold 4.2rem / 1.2 var(--font-Roboto);
+        --font-48: normal 500 4rem / 1.2 var(--font-Roboto);
+        --font-45: normal bold 3.5rem / 1.2 var(--font-Roboto);
+        --font-42: normal bold 3.2rem / 1.2 var(--font-Roboto);
+        --font-40: normal bold 3rem / 1.2 var(--font-Roboto);
+        --font-38: normal 500 2.8rem / 1.2 var(--font-Roboto);
+        --font-36: normal bold 2.6rem / 1.2 var(--font-Roboto);
+        --font-34: normal bold 2.4rem / 1.2 var(--font-Roboto);
+        --font-32: normal bold 2.2rem / 1.2 var(--font-Roboto);
+        --font-30: normal bold 2rem / 1.2 var(--font-Roboto);
+        --font-28: normal bold 1.9rem / 1.2 var(--font-Roboto);
+        --font-26: normal bold 1.8rem / 1.4 var(--font-Roboto);
+        --font-24: normal 500 1.7rem / 1.2 var(--font-Roboto);
+        --font-22: normal 500 1.6rem / 1.2 var(--font-Roboto);
+        --font-21: normal normal 1.5rem / 1.2 var(--font-Roboto);
+        --font-20: normal bold 1.4rem / 1.2 var(--font-Roboto);
+        --font-19: normal normal 1.3rem / 1.2 var(--font-Roboto);
+        --font-18: normal normal 1.2rem / 1.2 var(--font-Roboto);
+        --font-17: normal normal 1.1rem / 1.1 var(--font-Roboto);
+        --font-16: normal normal 1rem / 1.5 var(--font-Roboto);
+        --font-15: normal normal 0.95rem / 1.2 var(--font-Roboto);
+        --font-14: normal normal 0.9rem / 1.2 var(--font-Roboto);
+        --font-13: normal normal 0.85rem / 1.2 var(--font-Roboto);
+        --font-12: normal normal 0.8rem / 1.2 var(--font-Roboto);
+    }
+}
+
+/* Mobile */
+@media (max-width: 380px) {
+    :root {
+        --font-110: normal 300 6rem / 1.218 var(--font-Geist);
+        --font-100: normal 100 5rem / 1.218 var(--font-Roboto);
+        --font-80: normal bold 4rem / 1.2 var(--font-Roboto);
+        --font-60: normal bold 3rem / 1 var(--font-Roboto);
+        --font-52: normal bold 2.5rem / 1.2 var(--font-Roboto);
+        --font-50: normal bold 2.4rem / 1.2 var(--font-Roboto);
+        --font-48: normal 500 2.2rem / 1.2 var(--font-Roboto);
+        --font-45: normal bold 2rem / 1.2 var(--font-Roboto);
+        --font-42: normal bold 1.8rem / 1.2 var(--font-Roboto);
+        --font-40: normal bold 1.6rem / 1.2 var(--font-Roboto);
+        --font-38: normal 500 1.5rem / 1.2 var(--font-Roboto);
+        --font-36: normal bold 1.4rem / 1.2 var(--font-Roboto);
+        --font-34: normal bold 1.3rem / 1.2 var(--font-Roboto);
+        --font-32: normal bold 1.2rem / 1.2 var(--font-Roboto);
+        --font-30: normal bold 1.1rem / 1.2 var(--font-Roboto);
+        --font-28: normal bold 1rem / 1.2 var(--font-Roboto);
+        --font-26: normal bold 0.95rem / 1.4 var(--font-Roboto);
+        --font-24: normal 500 0.9rem / 1.2 var(--font-Roboto);
+        --font-22: normal 500 0.85rem / 1.2 var(--font-Roboto);
+        --font-21: normal normal 0.8rem / 1.2 var(--font-Roboto);
+        --font-20: normal bold 0.75rem / 1.2 var(--font-Roboto);
+        --font-19: normal normal 0.7rem / 1.2 var(--font-Roboto);
+        --font-18: normal normal 0.7rem / 1.2 var(--font-Roboto);
+        --font-17: normal normal 0.65rem / 1.1 var(--font-Roboto);
+        --font-16: normal normal 0.6rem / 1.5 var(--font-Roboto);
+        --font-15: normal normal 0.55rem / 1.2 var(--font-Roboto);
+        --font-14: normal normal 0.5rem / 1.2 var(--font-Roboto);
+        --font-13: normal normal 0.45rem / 1.2 var(--font-Roboto);
+        --font-12: normal normal 0.4rem / 1.2 var(--font-Roboto);
+    }
+}
+
 
 a,
 a:hover,
@@ -61,6 +254,18 @@ a:active {
   font-size: 40px;
   font-weight: 700;
 }
+
+.nav-link.nav-lists {
+    display: block;
+    font: var(--font-20);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-white);
+    padding: 1.4rem 0 1.2rem;
+    font-family: var(--font-Condensed);
+}
+
 .nav-link.active-link::after {
   content: "";
   width: 70%;

@@ -1,10 +1,10 @@
 .bannerContent {
-  color: #fff;
-  width: 40%;
-  position: absolute;
-  top: 52%;
-  left: 32%;
-  transform: translate(-50%, -50%);
+ color: #fff;
+    width: 30%;
+    position: absolute;
+    top: 48%;
+    left: 28.7%;
+    transform: translate(-50%, -50%);
 }
 .bannerOverlay {
   height: 100%;
@@ -20,14 +20,21 @@
 }
 
 .bannerContentH1 {
-  font-size: 60px;
-  margin-bottom: 2rem;
+     font: var(--font-60);
+    color: var(--color-white);
+    font-weight: bold;
+    letter-spacing: -2.88px;
+    font-family: var(--font-Condensed);
+    padding-bottom: 4rem;
+    margin: 10rem 0 0 0;
 }
 
 .bannerContentP {
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 2rem;
+   font: var(--font-16);
+    color: var(--color-white);
+    font-family: var(--font-Roboto);
+    font-weight: 300;
+    padding-right: 5rem
 }
 
 .bannerContentA {
