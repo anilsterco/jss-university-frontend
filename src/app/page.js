@@ -15,7 +15,7 @@ export default async function HomePage() {
       {/* <FacilitiesComponent /> */}
       <AboutHomeComponent />
       <TestimonialComponent />
-      {/* <HappingsHomeComponent /> */}
+      <HappingsHomeComponent />
     </div>
   );
 }

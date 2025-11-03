@@ -239,7 +239,7 @@
   }
 }
 @media (max-width: 768px) {
-  .accreditationHeading{
+  .accreditationHeading {
     text-align: center;
     color: rgb(0, 54, 161);
     font-size: 14px;
@@ -299,6 +299,7 @@
     padding-top: 1.3rem;
     flex-wrap: wrap;
     gap: 10px !important;
+    justify-content: center;
   }
   .navButtons {
     padding: 0.5rem 1rem;

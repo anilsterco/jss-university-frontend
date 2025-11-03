@@ -337,6 +337,7 @@
 
   .about-home-jss-module__Uc86oW__aboutBtnDiv {
     flex-wrap: wrap;
+    justify-content: center;
     padding-top: 1.3rem;
     gap: 10px !important;
   }

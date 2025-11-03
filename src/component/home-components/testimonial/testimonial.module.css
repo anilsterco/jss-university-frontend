@@ -272,14 +272,38 @@
   }
   .mobileView {
     display: block;
+    background: #e6ffff;
+    padding: 3rem 1.3rem 1.5rem;
   }
   .testimonialsSection {
-    padding: 2rem;
+    padding: 0 0 5rem 0;
+    background: #16344e;
   }
-  /* .cardImg {
+  .cardImg {
     height: auto;
   }
   .cardImgContainer {
     height: 200px;
-  } */
+  }
+  .quoteTextOverlay {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .personBatch {
+    color: #000;
+  }
+  .personRole {
+    font-weight: 300;
+  }
+  .testimonialCard {
+    height: 100%;
+  }
+  .mobileView :global(.swiper-wrapper) {
+    height: 315px;
+  }
+  .mobileViewArrow {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
 }

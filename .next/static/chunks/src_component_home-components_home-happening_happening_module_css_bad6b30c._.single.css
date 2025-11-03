@@ -175,6 +175,14 @@
   object-fit: cover;
 }
 
+.happening-module__EQ7KYq__mobileView {
+  display: none;
+}
+
+.happening-module__EQ7KYq__desktopView {
+  display: block;
+}
+
 @media (min-width: 1381px) and (max-width: 1919px) {
   .happening-module__EQ7KYq__cardTag, .happening-module__EQ7KYq__cardTitle {
     font-size: 14px;
@@ -237,38 +245,7 @@
   }
 
   .happening-module__EQ7KYq__headerTitle {
-    font-size: 32px;
-  }
-
-  .happening-module__EQ7KYq__cardTitleLarge {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .happening-module__EQ7KYq__eventSection {
-    padding: 2rem 1rem;
-  }
-
-  .happening-module__EQ7KYq__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
-  }
-
-  .happening-module__EQ7KYq__headerTitle {
-    font-size: 28px;
-  }
-
-  .happening-module__EQ7KYq__card {
-    padding: 20px;
-  }
-
-  .happening-module__EQ7KYq__cardTitleLarge {
-    font-size: 24px;
-  }
-
-  .happening-module__EQ7KYq__contentPart {
-    padding: 1.5rem;
+    font-size: 30px;
   }
 }
 
@@ -282,10 +259,6 @@
     font-size: 24px;
   }
 
-  .happening-module__EQ7KYq__cardTitleLarge {
-    font-size: 20px;
-  }
-
   .happening-module__EQ7KYq__contentPart {
     padding: 1rem;
   }
@@ -296,6 +269,78 @@
 
   .happening-module__EQ7KYq__cardLargeBottomRight {
     border-bottom-right-radius: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .happening-module__EQ7KYq__headerSmall {
+    font-size: 12px;
+  }
+
+  .happening-module__EQ7KYq__header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .happening-module__EQ7KYq__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+
+  .happening-module__EQ7KYq__cardTag {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .happening-module__EQ7KYq__orangeLine {
+    margin-bottom: 10px;
+  }
+
+  .happening-module__EQ7KYq__cardTitle {
+    font-size: 15px;
+  }
+
+  .happening-module__EQ7KYq__cardDate {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .happening-module__EQ7KYq__mobileView {
+    display: block;
+  }
+
+  .happening-module__EQ7KYq__desktopView {
+    display: none;
+  }
+
+  .happening-module__EQ7KYq__mobileCard {
+    height: 300px;
+  }
+
+  .happening-module__EQ7KYq__headerSmall {
+    font-size: 14px;
+  }
+
+  .happening-module__EQ7KYq__cardTitleLarge {
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  .happening-module__EQ7KYq__rightArrow {
+    padding: 2px;
+    font-size: 20px;
+  }
+
+  .happening-module__EQ7KYq__eventSection {
+    padding: 3rem 1rem;
+  }
+
+  .happening-module__EQ7KYq__orangeLine {
+    background-color: #ffa600;
+    width: 20%;
+    height: 3px;
+    margin-bottom: 20px;
   }
 }
 

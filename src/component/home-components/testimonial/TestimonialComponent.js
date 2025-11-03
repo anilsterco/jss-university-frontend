@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./testimonial.module.css";
 import "swiper/css";
+import styles from "./testimonial.module.css";
 
 const testimonialsData = {
   title:
@@ -63,8 +63,7 @@ export default function TestimonialsSection() {
   const column2 = testimonialsData.testimonials.slice(1, 3);
   const column3 = testimonialsData.testimonials.slice(3);
 
-  const columnForMobile  = [...column1, ...column2];
-
+  const columnForMobile = [...column1, ...column2];
   return (
     <section className={styles.testimonialsSection}>
       <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
@@ -127,7 +126,11 @@ export default function TestimonialsSection() {
         <p className={`${styles.testimonialsLabel} text-center`}>
           TESTIMONIALS
         </p>
-        <Swiper spaceBetween={100} slidesPerView={1}>
+        <Swiper
+          spaceBetween={100}
+          slidesPerView={1}
+          style={{ paddingBottom: "1.1rem" }}
+        >
           {columnForMobile.map((item, i) => (
             <SwiperSlide key={i}>
               <TestimonialCard
@@ -149,6 +152,22 @@ export default function TestimonialsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className={`${styles.mobileViewArrow}`}>
+          <Link href="#testimonials">
+            <button className={styles.circleArrowBtn}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </Link>
+        </div>
       </div>
 
       {/* ✅ Video Popup */}

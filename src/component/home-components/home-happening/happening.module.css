@@ -175,6 +175,12 @@
 .cardImage {
   object-fit: cover;
 }
+.mobileView {
+  display: none;
+}
+.desktopView {
+  display: block;
+}
 
 /* Responsive Design */
 
@@ -239,15 +245,11 @@
   }
 
   .headerTitle {
-    font-size: 32px;
-  }
-
-  .cardTitleLarge {
-    font-size: 28px;
+    font-size: 30px;
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .eventSection {
     padding: 2rem 1rem;
   }
@@ -272,7 +274,7 @@
   .contentPart {
     padding: 1.5rem;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .grid {
@@ -282,10 +284,6 @@
 
   .headerTitle {
     font-size: 24px;
-  }
-
-  .cardTitleLarge {
-    font-size: 20px;
   }
 
   .contentPart {
@@ -298,5 +296,64 @@
 
   .cardLargeBottomRight {
     border-bottom-right-radius: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .headerSmall {
+    font-size: 12px;
+  }
+  .header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+  .cardTag {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .orangeLine {
+    margin-bottom: 10px;
+  }
+  .cardTitle {
+    font-size: 15px;
+  }
+  .cardDate {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .mobileView {
+    display: block;
+  }
+  .desktopView {
+    display: none;
+  }
+
+  .mobileCard {
+    height: 300px;
+  }
+  .headerSmall {
+    font-size: 14px;
+  }
+  .cardTitleLarge {
+    font-size: 26px;
+    font-weight: 400;
+  }
+  .rightArrow {
+    padding: 2px;
+    font-size: 20px;
+  }
+  .eventSection {
+    padding: 3rem 1rem;
+  }
+  .orangeLine {
+    background-color: #ffa600;
+    width: 20%;
+    height: 3px;
+    margin-bottom: 20px;
   }
 }

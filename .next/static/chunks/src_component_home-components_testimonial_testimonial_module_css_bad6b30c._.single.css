@@ -265,11 +265,49 @@
   }
 
   .testimonial-module__MpJH1q__mobileView {
+    background: #e6ffff;
+    padding: 3rem 1.3rem 1.5rem;
     display: block;
   }
 
   .testimonial-module__MpJH1q__testimonialsSection {
-    padding: 2rem;
+    background: #16344e;
+    padding: 0 0 5rem;
+  }
+
+  .testimonial-module__MpJH1q__cardImg {
+    height: auto;
+  }
+
+  .testimonial-module__MpJH1q__cardImgContainer {
+    height: 200px;
+  }
+
+  .testimonial-module__MpJH1q__quoteTextOverlay {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .testimonial-module__MpJH1q__personBatch {
+    color: #000;
+  }
+
+  .testimonial-module__MpJH1q__personRole {
+    font-weight: 300;
+  }
+
+  .testimonial-module__MpJH1q__testimonialCard {
+    height: 100%;
+  }
+
+  .testimonial-module__MpJH1q__mobileView .swiper-wrapper {
+    height: 315px;
+  }
+
+  .testimonial-module__MpJH1q__mobileViewArrow {
+    justify-content: center;
+    padding-top: 1rem;
+    display: flex;
   }
 }
 

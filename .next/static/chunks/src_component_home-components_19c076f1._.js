@@ -2287,6 +2287,7 @@ __turbopack_context__.v({
   "headerContent": "testimonial-module__MpJH1q__headerContent",
   "mainHeading": "testimonial-module__MpJH1q__mainHeading",
   "mobileView": "testimonial-module__MpJH1q__mobileView",
+  "mobileViewArrow": "testimonial-module__MpJH1q__mobileViewArrow",
   "personBatch": "testimonial-module__MpJH1q__personBatch",
   "personName": "testimonial-module__MpJH1q__personName",
   "personRole": "testimonial-module__MpJH1q__personRole",
@@ -2396,7 +2397,7 @@ function TestimonialsSection() {
                                         children: "TESTIMONIALS"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 74,
+                                        lineNumber: 73,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2406,7 +2407,7 @@ function TestimonialsSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 75,
+                                        lineNumber: 74,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2424,28 +2425,28 @@ function TestimonialsSection() {
                                                     d: "M5 12h14M12 5l7 7-7 7"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                    lineNumber: 89,
+                                                    lineNumber: 88,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                                lineNumber: 81,
+                                                lineNumber: 80,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                            lineNumber: 80,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                        lineNumber: 79,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 73,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, this),
                             column1.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
@@ -2453,13 +2454,13 @@ function TestimonialsSection() {
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 96,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 72,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2469,12 +2470,12 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 107,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 105,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2484,18 +2485,18 @@ function TestimonialsSection() {
                                 onPlay: ()=>setSelectedVideo(item.videoUrl)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 118,
+                                lineNumber: 117,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 116,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 70,
+                lineNumber: 69,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2506,29 +2507,32 @@ function TestimonialsSection() {
                         children: "TESTIMONIALS"
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 127,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
                         spaceBetween: 100,
                         slidesPerView: 1,
+                        style: {
+                            paddingBottom: "1.1rem"
+                        },
                         children: columnForMobile.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SwiperSlide"], {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
                                     data: item,
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 133,
+                                    lineNumber: 136,
                                     columnNumber: 15
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 132,
+                                lineNumber: 135,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 130,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
@@ -2540,23 +2544,63 @@ function TestimonialsSection() {
                                     onPlay: ()=>setSelectedVideo(item.videoUrl)
                                 }, i, false, {
                                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                    lineNumber: 144,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 143,
+                                lineNumber: 146,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 141,
+                        lineNumber: 144,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "".concat(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].mobileViewArrow),
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            href: "#testimonials",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].circleArrowBtn,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    width: "20",
+                                    height: "20",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "currentColor",
+                                    strokeWidth: "2",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                        d: "M5 12h14M12 5l7 7-7 7"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
+                                        lineNumber: 166,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
+                                    lineNumber: 158,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
+                                lineNumber: 157,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
+                            lineNumber: 156,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 126,
+                lineNumber: 125,
                 columnNumber: 7
             }, this),
             selectedVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2576,7 +2620,7 @@ function TestimonialsSection() {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].videoIframe
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 164,
+                            lineNumber: 183,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2585,24 +2629,24 @@ function TestimonialsSection() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 173,
+                            lineNumber: 192,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                    lineNumber: 160,
+                    lineNumber: 179,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 156,
+                lineNumber: 175,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 69,
+        lineNumber: 68,
         columnNumber: 5
     }, this);
 }
@@ -2625,7 +2669,7 @@ function TestimonialCard(param) {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].cardImg
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 192,
+                        lineNumber: 211,
                         columnNumber: 9
                     }, this),
                     hasVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2640,17 +2684,17 @@ function TestimonialCard(param) {
                                 d: "M8 5v14l11-7z"
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 203,
+                                lineNumber: 222,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                            lineNumber: 202,
+                            lineNumber: 221,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 201,
+                        lineNumber: 220,
                         columnNumber: 11
                     }, this),
                     data.quote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2660,7 +2704,7 @@ function TestimonialCard(param) {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$component$2f$home$2d$components$2f$testimonial$2f$testimonial$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].yellowLine
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 211,
+                                lineNumber: 230,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2668,19 +2712,19 @@ function TestimonialCard(param) {
                                 children: data.quote
                             }, void 0, false, {
                                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                                lineNumber: 212,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 210,
+                        lineNumber: 229,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 191,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2691,7 +2735,7 @@ function TestimonialCard(param) {
                         children: data.name
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 217,
+                        lineNumber: 236,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2699,7 +2743,7 @@ function TestimonialCard(param) {
                         children: data.batch
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 218,
+                        lineNumber: 237,
                         columnNumber: 9
                     }, this),
                     data.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2707,19 +2751,19 @@ function TestimonialCard(param) {
                         children: data.role
                     }, void 0, false, {
                         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                        lineNumber: 219,
+                        lineNumber: 238,
                         columnNumber: 23
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-                lineNumber: 216,
+                lineNumber: 235,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/component/home-components/testimonial/TestimonialComponent.js",
-        lineNumber: 190,
+        lineNumber: 209,
         columnNumber: 5
     }, this);
 }
