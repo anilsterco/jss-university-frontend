@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/next/static
 /.pnp
 .pnp.*
 .yarn/*
@@ -14,7 +15,13 @@
 /coverage
 
 # next.js
+/.next/
 /out/
+next-env.d.ts
+.next/cache/
+.next/static/chunks/
+.next/static/media/
+.next/static/css/
 
 # production
 /build

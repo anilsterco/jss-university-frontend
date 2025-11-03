@@ -11,25 +11,26 @@
 
 .header {
   text-align: center;
-  margin-bottom: 5rem;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 5rem;
+  border-top: 1px solid #d5d1d1;
+  padding-top: 4rem;
 }
 
 .headerSmall {
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 1px;
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   color: #16344e;
 }
 
 .headerTitle {
-  font-size: 42px;
-  font-weight: bold;
   color: #1a1a1a;
-  margin: 0;
-  width: fit-content;
-  margin: auto;
+  font-size: 60px;
+  font-weight: bold;
 }
 
 .grid {
@@ -73,16 +74,16 @@
 }
 
 .miniContentPart {
-  position: absolute;
-  bottom: 1rem;
-  left: 1.5rem;
-  width: 90%;
-  line-height: 2.5;
   z-index: 2;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .cardTag {
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: 300;
   margin-bottom: 15px;
@@ -96,10 +97,9 @@
 
 .cardTitle {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
   margin: 0 0 auto 0;
-  color: #333;
 }
 
 .cardTitleWhite {
@@ -107,11 +107,11 @@
 }
 
 .cardTitleLarge {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.3;
   color: #fff;
   margin: auto 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .cardSubtitle {
@@ -126,7 +126,7 @@
 }
 
 .cardDate {
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 15px;
   color: #333;
 }
@@ -136,10 +136,19 @@
 }
 
 .orangeLine {
-  width: 60px;
+  background-color: #ffa600;
+  width: 10%;
   height: 3px;
-  background-color: #ff8c00;
   margin-bottom: 20px;
+}
+.rightArrow {
+  color: #fff;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px;
+  font-size: 30px;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .seamEduLogo {
@@ -166,8 +175,52 @@
 .cardImage {
   object-fit: cover;
 }
+.mobileView {
+  display: none;
+}
+.desktopView {
+  display: block;
+}
 
 /* Responsive Design */
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .cardTag {
+    font-size: 14px;
+  }
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardDate {
+    font-size: 12px;
+  }
+  .cardTitleLarge {
+    font-size: 30px;
+  }
+  .rightArrow {
+    padding: 4px;
+    font-size: 23px;
+  }
+}
+@media (min-width: 1040px) and (max-width: 1380px) {
+  .cardTag {
+    font-size: 14px;
+  }
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardDate {
+    font-size: 12px;
+  }
+  .cardTitleLarge {
+    font-size: 30px;
+  }
+  .rightArrow {
+    padding: 4px;
+    font-size: 23px;
+  }
+}
+
 @media (max-width: 1200px) {
   .eventSection {
     padding: 4rem 3rem;
@@ -192,15 +245,11 @@
   }
 
   .headerTitle {
-    font-size: 32px;
-  }
-
-  .cardTitleLarge {
-    font-size: 28px;
+    font-size: 30px;
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .eventSection {
     padding: 2rem 1rem;
   }
@@ -225,7 +274,7 @@
   .contentPart {
     padding: 1.5rem;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .grid {
@@ -235,10 +284,6 @@
 
   .headerTitle {
     font-size: 24px;
-  }
-
-  .cardTitleLarge {
-    font-size: 20px;
   }
 
   .contentPart {
@@ -251,5 +296,64 @@
 
   .cardLargeBottomRight {
     border-bottom-right-radius: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1040px) {
+  .headerSmall {
+    font-size: 12px;
+  }
+  .header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+  .cardTag {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .orangeLine {
+    margin-bottom: 10px;
+  }
+  .cardTitle {
+    font-size: 15px;
+  }
+  .cardDate {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .mobileView {
+    display: block;
+  }
+  .desktopView {
+    display: none;
+  }
+
+  .mobileCard {
+    height: 300px;
+  }
+  .headerSmall {
+    font-size: 14px;
+  }
+  .cardTitleLarge {
+    font-size: 26px;
+    font-weight: 400;
+  }
+  .rightArrow {
+    padding: 2px;
+    font-size: 20px;
+  }
+  .eventSection {
+    padding: 3rem 1rem;
+  }
+  .orangeLine {
+    background-color: #ffa600;
+    width: 20%;
+    height: 3px;
+    margin-bottom: 20px;
   }
 }

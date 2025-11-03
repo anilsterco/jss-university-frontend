@@ -588,13 +588,13 @@ function Header() {
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "jsx-d7acbe4ed7f581b9" + " " + "site-header",
+        className: "jsx-48e229bd5a056b2d" + " " + "site-header",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-d7acbe4ed7f581b9" + " " + "nav-container ".concat(scrolled ? "header-scrolled" : ""),
+                className: "jsx-48e229bd5a056b2d" + " " + "nav-container ".concat(scrolled ? "header-scrolled" : ""),
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-d7acbe4ed7f581b9" + " " + "brand-wrap logo-content",
+                        className: "jsx-48e229bd5a056b2d" + " " + "brand-wrap logo-content",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/",
                             "aria-label": "Home",
@@ -613,16 +613,16 @@ function Header() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-d7acbe4ed7f581b9" + " " + "logo-text",
+                                    className: "jsx-48e229bd5a056b2d" + " " + "logo-text",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "d-flex  align-items-center gap-2",
+                                            className: "jsx-48e229bd5a056b2d" + " " + "d-flex  align-items-center gap-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-d7acbe4ed7f581b9",
+                                                    className: "jsx-48e229bd5a056b2d",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                            className: "jsx-d7acbe4ed7f581b9" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-primary-text"),
+                                                            className: "jsx-48e229bd5a056b2d" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-primary-text"),
                                                             children: "NAAC"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
@@ -630,7 +630,7 @@ function Header() {
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                            className: "jsx-d7acbe4ed7f581b9" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-secondry-text"),
+                                                            className: "jsx-48e229bd5a056b2d" + " " + "".concat(scrolled ? "dark-blue-text" : "", " mb-0 logo-secondry-text"),
                                                             children: "GRADE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/component/Header.js",
@@ -644,7 +644,7 @@ function Header() {
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "".concat(scrolled ? "yellow-text" : "", " mb-0 logo-tertiary-text"),
+                                                    className: "jsx-48e229bd5a056b2d" + " " + "".concat(scrolled ? "yellow-text" : "", " mb-0 logo-tertiary-text"),
                                                     children: "A"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
@@ -658,7 +658,7 @@ function Header() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "".concat(scrolled ? "text-dark" : "", " mb-0"),
+                                            className: "jsx-48e229bd5a056b2d" + " " + "".concat(scrolled ? "text-dark" : "", " mb-0"),
                                             children: "JSS is NAAC 'A' Grade Accredited"
                                         }, void 0, false, {
                                             fileName: "[project]/src/component/Header.js",
@@ -686,10 +686,10 @@ function Header() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 onClick: ()=>setEngineeringDropdown((prev)=>!prev),
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "school-toggle",
+                                className: "jsx-48e229bd5a056b2d" + " " + "school-toggle",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "mb-0",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "mb-0",
                                         children: "School of"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
@@ -697,7 +697,7 @@ function Header() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "fw-bold",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "fw-bold",
                                         children: [
                                             selectedSchoolName,
                                             " ",
@@ -722,15 +722,15 @@ function Header() {
                             }, this),
                             engineeringDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 ref: engineeringRef,
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "engineering-dropdown-container",
+                                className: "jsx-48e229bd5a056b2d" + " " + "engineering-dropdown-container",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-d7acbe4ed7f581b9" + " " + "engineering-dropdown",
+                                    className: "jsx-48e229bd5a056b2d" + " " + "engineering-dropdown",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "schools-list",
+                                            className: "jsx-48e229bd5a056b2d" + " " + "schools-list",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
-                                                    className: "jsx-d7acbe4ed7f581b9",
+                                                    className: "jsx-48e229bd5a056b2d",
                                                     children: "Schools"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
@@ -742,7 +742,7 @@ function Header() {
                                                             setSelectedSchool(idx);
                                                             setSelectedSchoolName(school.name);
                                                         },
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "school-item ".concat(selectedSchool === idx ? "active" : ""),
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "school-item ".concat(selectedSchool === idx ? "active" : ""),
                                                         children: school.name
                                                     }, idx, false, {
                                                         fileName: "[project]/src/component/Header.js",
@@ -756,17 +756,17 @@ function Header() {
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "departments-list",
+                                            className: "jsx-48e229bd5a056b2d" + " " + "departments-list",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "dropdown-arrow"
+                                                    className: "jsx-48e229bd5a056b2d" + " " + "dropdown-arrow"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
                                                     lineNumber: 515,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
-                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "text-white",
+                                                    className: "jsx-48e229bd5a056b2d" + " " + "text-white",
                                                     children: "Department"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/component/Header.js",
@@ -774,7 +774,7 @@ function Header() {
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "link-content",
+                                                    className: "jsx-48e229bd5a056b2d" + " " + "link-content",
                                                     children: engineeringData.schools[selectedSchool].departments.map((dept, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: dept.url,
                                                             className: "department-links text-white",
@@ -816,18 +816,18 @@ function Header() {
                         ]
                     }, void 0, true),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-d7acbe4ed7f581b9" + " " + "right-navbar",
+                        className: "jsx-48e229bd5a056b2d" + " " + "right-navbar",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                 "aria-label": "Main navigation",
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "desktop-nav",
+                                className: "jsx-48e229bd5a056b2d" + " " + "desktop-nav",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "jsx-d7acbe4ed7f581b9" + " " + "nav-list",
+                                    className: "jsx-48e229bd5a056b2d" + " " + "nav-list",
                                     children: navLinks.map((l, i)=>{
                                         var _l_right_ctas, _l_right_banners, _l_dropdown_;
                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             onClick: ()=>setActiveLink(i),
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "nav-item",
+                                            className: "jsx-48e229bd5a056b2d" + " " + "nav-item",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: l.href,
@@ -840,14 +840,14 @@ function Header() {
                                                 }, this),
                                                 l.dropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     role: "menu",
-                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "mega-dropdown",
+                                                    className: "jsx-48e229bd5a056b2d" + " " + "mega-dropdown",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-d7acbe4ed7f581b9" + " " + "mega-left",
+                                                            className: "jsx-48e229bd5a056b2d" + " " + "mega-left",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                className: "jsx-d7acbe4ed7f581b9",
+                                                                className: "jsx-48e229bd5a056b2d",
                                                                 children: l.dropdown.map((d, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "mega-left-item",
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "mega-left-item",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                             href: d.href,
                                                                             className: "dropdown-item",
@@ -873,14 +873,14 @@ function Header() {
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-d7acbe4ed7f581b9" + " " + "mega-right",
+                                                            className: "jsx-48e229bd5a056b2d" + " " + "mega-right",
                                                             children: l.right ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "mega-right-text",
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "mega-right-text",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "mega-subtitle",
+                                                                                className: "jsx-48e229bd5a056b2d" + " " + "mega-subtitle",
                                                                                 children: l.right.subtitle
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
@@ -888,7 +888,7 @@ function Header() {
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "mega-title",
+                                                                                className: "jsx-48e229bd5a056b2d" + " " + "mega-title",
                                                                                 children: l.right.title
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
@@ -896,7 +896,7 @@ function Header() {
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "mega-desc",
+                                                                                className: "jsx-48e229bd5a056b2d" + " " + "mega-desc",
                                                                                 children: l.right.desc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/component/Header.js",
@@ -904,10 +904,10 @@ function Header() {
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "mega-ctas",
+                                                                                className: "jsx-48e229bd5a056b2d" + " " + "mega-ctas",
                                                                                 children: (_l_right_ctas = l.right.ctas) === null || _l_right_ctas === void 0 ? void 0 : _l_right_ctas.map((cta, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                                         href: cta.href,
-                                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "cta ".concat(cta.type),
+                                                                                        className: "jsx-48e229bd5a056b2d" + " " + "cta ".concat(cta.type),
                                                                                         children: cta.text
                                                                                     }, idx, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
@@ -926,10 +926,10 @@ function Header() {
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "mega-right-banners",
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "mega-right-banners",
                                                                         children: (_l_right_banners = l.right.banners) === null || _l_right_banners === void 0 ? void 0 : _l_right_banners.map((b, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                                 href: b.href,
-                                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "banner",
+                                                                                className: "jsx-48e229bd5a056b2d" + " " + "banner",
                                                                                 children: [
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                                         src: b.img,
@@ -942,7 +942,7 @@ function Header() {
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "banner-label",
+                                                                                        className: "jsx-48e229bd5a056b2d" + " " + "banner-label",
                                                                                         children: b.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/component/Header.js",
@@ -962,9 +962,9 @@ function Header() {
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "mega-right-text",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "mega-right-text",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                    className: "jsx-d7acbe4ed7f581b9" + " " + "mega-title",
+                                                                    className: "jsx-48e229bd5a056b2d" + " " + "mega-title",
                                                                     children: l.dropdown && ((_l_dropdown_ = l.dropdown[0]) === null || _l_dropdown_ === void 0 ? void 0 : _l_dropdown_.name)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/component/Header.js",
@@ -1005,15 +1005,15 @@ function Header() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "right-navbar-section",
+                                className: "jsx-48e229bd5a056b2d" + " " + "right-navbar-section",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         ref: admissionRef,
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "admission-wrap",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "admission-wrap",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setAdmissionOpen((prev)=>!prev),
-                                                className: "jsx-d7acbe4ed7f581b9" + " " + "admission-btn",
+                                                className: "jsx-48e229bd5a056b2d" + " " + "admission-btn",
                                                 children: "ADMISSIONS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/component/Header.js",
@@ -1021,20 +1021,20 @@ function Header() {
                                                 columnNumber: 15
                                             }, this),
                                             admissionOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-d7acbe4ed7f581b9" + " " + "admission-dropdown",
+                                                className: "jsx-48e229bd5a056b2d" + " " + "admission-dropdown",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "dropdown-arrow"
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "dropdown-arrow"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
                                                         lineNumber: 633,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "ad-left",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "ad-left",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-subtitle",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-subtitle",
                                                                 children: admissionsData.left.subtitle
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
@@ -1042,7 +1042,7 @@ function Header() {
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-title",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-title",
                                                                 children: admissionsData.left.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
@@ -1050,7 +1050,7 @@ function Header() {
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-desc",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-desc",
                                                                 children: admissionsData.left.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
@@ -1058,10 +1058,10 @@ function Header() {
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-contact",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-contact",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-d7acbe4ed7f581b9",
+                                                                        className: "jsx-48e229bd5a056b2d",
                                                                         children: [
                                                                             "📧 ",
                                                                             admissionsData.left.email
@@ -1072,7 +1072,7 @@ function Header() {
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-d7acbe4ed7f581b9",
+                                                                        className: "jsx-48e229bd5a056b2d",
                                                                         children: [
                                                                             "📞 ",
                                                                             admissionsData.left.phone
@@ -1089,10 +1089,10 @@ function Header() {
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-ctas",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-ctas",
                                                                 children: admissionsData.left.ctas.map((cta, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                         href: cta.href,
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "cta ".concat(cta.type),
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "cta ".concat(cta.type),
                                                                         children: cta.text
                                                                     }, idx, false, {
                                                                         fileName: "[project]/src/component/Header.js",
@@ -1111,12 +1111,12 @@ function Header() {
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "ad-middle",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "ad-middle",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                className: "jsx-d7acbe4ed7f581b9",
+                                                                className: "jsx-48e229bd5a056b2d",
                                                                 children: admissionsData.middle.links.map((link, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "ad-link",
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "ad-link",
                                                                         children: [
                                                                             link,
                                                                             " →"
@@ -1132,10 +1132,10 @@ function Header() {
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-d7acbe4ed7f581b9" + " " + "ad-stats",
+                                                                className: "jsx-48e229bd5a056b2d" + " " + "ad-stats",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                        className: "jsx-d7acbe4ed7f581b9",
+                                                                        className: "jsx-48e229bd5a056b2d",
                                                                         children: admissionsData.middle.stats.text
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
@@ -1143,7 +1143,7 @@ function Header() {
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "jsx-d7acbe4ed7f581b9",
+                                                                        className: "jsx-48e229bd5a056b2d",
                                                                         children: admissionsData.middle.stats.subtext
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/component/Header.js",
@@ -1151,7 +1151,7 @@ function Header() {
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "stats-btn",
+                                                                        className: "jsx-48e229bd5a056b2d" + " " + "stats-btn",
                                                                         children: [
                                                                             admissionsData.middle.stats.btnText,
                                                                             " →"
@@ -1174,7 +1174,7 @@ function Header() {
                                                         columnNumber: 19
                                                     }, this),
                                                     admissionsData.right && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "ad-right",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "ad-right",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             src: admissionsData.right.img,
                                                             alt: admissionsData.right.alt,
@@ -1206,7 +1206,7 @@ function Header() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         "aria-label": "Open menu",
                                         onClick: openMenu,
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "hamburger",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "hamburger",
                                         children: "☰"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
@@ -1233,7 +1233,7 @@ function Header() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 onClick: closeMenu,
-                className: "jsx-d7acbe4ed7f581b9" + " " + "backdrop ".concat(menuOpen ? "show" : "")
+                className: "jsx-48e229bd5a056b2d" + " " + "backdrop ".concat(menuOpen ? "show" : "")
             }, void 0, false, {
                 fileName: "[project]/src/component/Header.js",
                 lineNumber: 700,
@@ -1241,12 +1241,12 @@ function Header() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 role: "dialog",
-                className: "jsx-d7acbe4ed7f581b9" + " " + "menu-overlay ".concat(menuOpen ? "open" : ""),
+                className: "jsx-48e229bd5a056b2d" + " " + "menu-overlay ".concat(menuOpen ? "open" : ""),
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         "aria-label": "Close menu",
                         onClick: closeMenu,
-                        className: "jsx-d7acbe4ed7f581b9" + " " + "close-btn",
+                        className: "jsx-48e229bd5a056b2d" + " " + "close-btn",
                         children: "×"
                     }, void 0, false, {
                         fileName: "[project]/src/component/Header.js",
@@ -1254,15 +1254,15 @@ function Header() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-d7acbe4ed7f581b9" + " " + "hamburger-layout",
+                        className: "jsx-48e229bd5a056b2d" + " " + "hamburger-layout",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "menu-left",
+                                className: "jsx-48e229bd5a056b2d" + " " + "menu-left",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "jsx-d7acbe4ed7f581b9",
+                                    className: "jsx-48e229bd5a056b2d",
                                     children: hamburgerMenudata.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             onClick: ()=>setActiveIndex(idx),
-                                            className: "jsx-d7acbe4ed7f581b9" + " " + "menu-left-item ".concat(activeIndex === idx ? "active" : ""),
+                                            className: "jsx-48e229bd5a056b2d" + " " + "menu-left-item ".concat(activeIndex === idx ? "active" : ""),
                                             children: item.name
                                         }, idx, false, {
                                             fileName: "[project]/src/component/Header.js",
@@ -1280,10 +1280,10 @@ function Header() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "menu-middle",
+                                className: "jsx-48e229bd5a056b2d" + " " + "menu-middle",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "middle-title",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "middle-title",
                                         children: "ABOUT JSSMVP HERITAGE ABOUT JSS LEADERSHIP"
                                     }, void 0, false, {
                                         fileName: "[project]/src/component/Header.js",
@@ -1291,9 +1291,9 @@ function Header() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "jsx-d7acbe4ed7f581b9",
+                                        className: "jsx-48e229bd5a056b2d",
                                         children: activeData.subMenu.map((s, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "jsx-d7acbe4ed7f581b9" + " " + "middle-item",
+                                                className: "jsx-48e229bd5a056b2d" + " " + "middle-item",
                                                 children: s
                                             }, i, false, {
                                                 fileName: "[project]/src/component/Header.js",
@@ -1312,27 +1312,27 @@ function Header() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-d7acbe4ed7f581b9" + " " + "menu-right",
+                                className: "jsx-48e229bd5a056b2d" + " " + "menu-right",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-d7acbe4ed7f581b9" + " " + "right-inner h-100",
+                                    className: "jsx-48e229bd5a056b2d" + " " + "right-inner h-100",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-d7acbe4ed7f581b9" + " " + "image-box",
+                                        className: "jsx-48e229bd5a056b2d" + " " + "image-box",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-d7acbe4ed7f581b9" + " " + "first-content",
+                                                className: "jsx-48e229bd5a056b2d" + " " + "first-content",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                         dangerouslySetInnerHTML: {
                                                             __html: activeData.firstContent.title
                                                         },
-                                                        className: "jsx-d7acbe4ed7f581b9"
+                                                        className: "jsx-48e229bd5a056b2d"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
                                                         lineNumber: 748,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-d7acbe4ed7f581b9",
+                                                        className: "jsx-48e229bd5a056b2d",
                                                         children: activeData.firstContent.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/component/Header.js",
@@ -1354,7 +1354,7 @@ function Header() {
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "hamburger-section-img",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "hamburger-section-img",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: activeData.firstContent.url,
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1387,10 +1387,10 @@ function Header() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-d7acbe4ed7f581b9" + " " + "second-content",
+                                                className: "jsx-48e229bd5a056b2d" + " " + "second-content",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "hamburger-section-img",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "hamburger-section-img",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: activeData.secondContent.url,
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1417,20 +1417,20 @@ function Header() {
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-d7acbe4ed7f581b9" + " " + "d-flex align-items-start mt-5 flex-wrap",
+                                                        className: "jsx-48e229bd5a056b2d" + " " + "d-flex align-items-start mt-5 flex-wrap",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                                 dangerouslySetInnerHTML: {
                                                                     __html: activeData.secondContent.title
                                                                 },
-                                                                className: "jsx-d7acbe4ed7f581b9"
+                                                                className: "jsx-48e229bd5a056b2d"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
                                                                 lineNumber: 782,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "jsx-d7acbe4ed7f581b9",
+                                                                className: "jsx-48e229bd5a056b2d",
                                                                 children: activeData.secondContent.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/component/Header.js",
@@ -1478,8 +1478,8 @@ function Header() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "d7acbe4ed7f581b9",
-                children: ".school-toggle.jsx-d7acbe4ed7f581b9{cursor:pointer;color:#fff;flex-direction:column;font-weight:600;transition:color .3s;display:flex}.header-scrolled.jsx-d7acbe4ed7f581b9 .school-toggle.jsx-d7acbe4ed7f581b9{color:#16344e}.engineering-dropdown-container.jsx-d7acbe4ed7f581b9{z-index:1000;width:100%;display:flex;position:absolute;top:130px}.engineering-dropdown.jsx-d7acbe4ed7f581b9{background:#fff;border-radius:8px;width:35%;min-height:320px;display:flex;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.15)}.schools-list.jsx-d7acbe4ed7f581b9{color:#fff;background:#16344e;flex-direction:column;width:50%;display:flex}.school-item.jsx-d7acbe4ed7f581b9{cursor:pointer;padding:10px 20px;transition:background .3s}.school-item.jsx-d7acbe4ed7f581b9:hover{background:#1e4b6b}.school-item.active.jsx-d7acbe4ed7f581b9{color:#000;background:#ffc100}.departments-list.jsx-d7acbe4ed7f581b9{background:#224666;width:50%;display:block}.departments-list.jsx-d7acbe4ed7f581b9 .link-content.jsx-d7acbe4ed7f581b9{padding-left:1.2rem}.engineering-dropdown.jsx-d7acbe4ed7f581b9 h6.jsx-d7acbe4ed7f581b9{padding-top:1.2rem;padding-left:1.2rem;font-size:18px}.department-item.jsx-d7acbe4ed7f581b9{cursor:pointer;color:#fff;border-radius:8px;padding:8px;font-weight:500;transition:all .3s}.right-inner.jsx-d7acbe4ed7f581b9 .hamburger-section-img.jsx-d7acbe4ed7f581b9{border-radius:12px;width:100%;height:50%;position:relative;overflow:hidden}.right-inner.jsx-d7acbe4ed7f581b9 .first-content.jsx-d7acbe4ed7f581b9{width:30%}.right-inner.jsx-d7acbe4ed7f581b9 .second-content.jsx-d7acbe4ed7f581b9{width:40%}.site-header.jsx-d7acbe4ed7f581b9{z-index:1100;position:fixed;top:0;left:0;right:0}.mega-right-banners.jsx-d7acbe4ed7f581b9{justify-content:end;gap:1rem;width:70%;height:70%;margin-top:10rem;margin-bottom:5rem;display:flex}.right-inner.jsx-d7acbe4ed7f581b9 .second-content.jsx-d7acbe4ed7f581b9 h1.jsx-d7acbe4ed7f581b9{width:50%;font-size:4rem;font-weight:700;line-height:60px}.right-inner.jsx-d7acbe4ed7f581b9 .second-content.jsx-d7acbe4ed7f581b9 p.jsx-d7acbe4ed7f581b9{border-bottom:2px solid #fc0;width:50%;margin-top:1rem;padding-bottom:1rem;font-size:.9rem}.right-inner.jsx-d7acbe4ed7f581b9 .first-content.jsx-d7acbe4ed7f581b9 h1.jsx-d7acbe4ed7f581b9{margin-top:2rem;margin-bottom:1rem;font-size:2.2rem;font-weight:700}.right-inner.jsx-d7acbe4ed7f581b9 .first-content.jsx-d7acbe4ed7f581b9 p.jsx-d7acbe4ed7f581b9{font-size:.9rem}.right-navbar-section.jsx-d7acbe4ed7f581b9,.right-navbar.jsx-d7acbe4ed7f581b9{align-items:center;display:flex}.logo-tertiary-text.jsx-d7acbe4ed7f581b9{font-size:55px}.logo-secondry-text.jsx-d7acbe4ed7f581b9,.logo-primary-text.jsx-d7acbe4ed7f581b9{font-size:22px;font-weight:700}.logo-text.jsx-d7acbe4ed7f581b9 p.jsx-d7acbe4ed7f581b9{border-bottom:2px solid #f8c326;padding-bottom:8px;font-size:12px}.logo-text.jsx-d7acbe4ed7f581b9{color:#fff;border-left:1px solid #cfc7c7;padding-left:1.5rem}.nav-container.jsx-d7acbe4ed7f581b9{justify-content:space-between;align-items:center;max-width:100%;margin:0 auto;padding:1rem 5rem;transition:all .3s;display:flex}.nav-list.jsx-d7acbe4ed7f581b9{color:#fff;background-color:#16344e;gap:30px;margin:0 1rem 0 0;padding:.1rem 2rem;font-size:20px;list-style:none;display:flex}.nav-item.jsx-d7acbe4ed7f581b9{position:relative}.nav-container.header-scrolled.jsx-d7acbe4ed7f581b9{background-color:#fff}.nav-link.jsx-d7acbe4ed7f581b9{color:inherit;padding:6px 8px;font-size:16px;font-weight:600;text-decoration:none;transition:color .3s;display:inline-block}.header-scrolled.jsx-d7acbe4ed7f581b9 .nav-link.jsx-d7acbe4ed7f581b9{color:#16344e}.dropdown.jsx-d7acbe4ed7f581b9{z-index:1;color:#000;background:#fff;border:1px solid #eee;min-width:200px;padding:8px 15px;list-style:none;display:none;position:absolute;top:100%;left:0;box-shadow:0 4px 12px rgba(0,0,0,.1)}.dropdown-item.jsx-d7acbe4ed7f581b9{color:#16344e;padding:8px 14px;text-decoration:none;display:block}.dropdown-item.jsx-d7acbe4ed7f581b9:hover{background:#f5f5f5}.admission-wrap.jsx-d7acbe4ed7f581b9{margin-right:12px;position:relative}.admission-btn.jsx-d7acbe4ed7f581b9{cursor:pointer;background:#ffc100;border:none;padding:10px 18px;font-size:15px;font-weight:700;transition:background .3s}.admission-btn.jsx-d7acbe4ed7f581b9:hover{background:#e6b000}.admission-dropdown.jsx-d7acbe4ed7f581b9{z-index:1200;background:#fff;width:70%;margin-top:6px;display:flex;position:fixed;top:6rem;right:10rem;box-shadow:0 6px 18px rgba(0,0,0,.2)}.dropdown-arrow.jsx-d7acbe4ed7f581b9{border-bottom:10px solid #fff;border-left:10px solid transparent;border-right:10px solid transparent;width:0;height:0;position:absolute;top:-10px;right:40px}.ad-left.jsx-d7acbe4ed7f581b9{color:#fff;background:#2f7de8;flex-direction:column;justify-content:space-between;width:100%;padding:24px;display:flex}.ad-right.jsx-d7acbe4ed7f581b9{width:100%}.ad-subtitle.jsx-d7acbe4ed7f581b9{text-transform:uppercase;margin-bottom:8px;font-size:13px}.ad-title.jsx-d7acbe4ed7f581b9{margin-bottom:12px;font-size:22px;font-weight:700}.ad-desc.jsx-d7acbe4ed7f581b9,.ad-contact.jsx-d7acbe4ed7f581b9{margin-bottom:16px;font-size:14px}.ad-ctas.jsx-d7acbe4ed7f581b9{flex-wrap:wrap;gap:8px;display:flex}.cta.jsx-d7acbe4ed7f581b9{cursor:pointer;border:none;padding:8px 14px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .3s}.cta.jsx-d7acbe4ed7f581b9:hover{opacity:.9}.cta.primary.jsx-d7acbe4ed7f581b9{color:#000;background:#ffc100}.cta.secondary.jsx-d7acbe4ed7f581b9{color:#fff;border:1px solid #fff}.ad-middle.jsx-d7acbe4ed7f581b9{border-right:1px solid #eee;width:100%;padding:24px}.ad-middle.jsx-d7acbe4ed7f581b9 ul.jsx-d7acbe4ed7f581b9{margin:0;padding:0;list-style:none}.ad-link.jsx-d7acbe4ed7f581b9{cursor:pointer;color:#333;padding:6px 0;font-size:15px;font-weight:500;transition:color .3s}.ad-link.jsx-d7acbe4ed7f581b9:hover{color:#2f7de8;text-decoration:underline}.ad-stats.jsx-d7acbe4ed7f581b9{margin-top:20px}.ad-stats.jsx-d7acbe4ed7f581b9 h3.jsx-d7acbe4ed7f581b9{margin-bottom:4px;font-size:18px;font-weight:700}.ad-stats.jsx-d7acbe4ed7f581b9 p.jsx-d7acbe4ed7f581b9{color:#777;margin-bottom:10px;font-size:13px}.stats-btn.jsx-d7acbe4ed7f581b9{cursor:pointer;background:#fff;border:1px solid #000;padding:6px 12px;font-weight:600;transition:all .3s}.stats-btn.jsx-d7acbe4ed7f581b9:hover{color:#fff;background:#000}.addmision-section-img.jsx-d7acbe4ed7f581b9{object-fit:cover;width:100%;height:100%}.hamburger.jsx-d7acbe4ed7f581b9{cursor:pointer;color:#fff;background:#16344e;border:none;padding:4px 10px;font-size:22px;transition:background .3s}.hamburger.jsx-d7acbe4ed7f581b9:hover{background-color:#1e4264}.backdrop.jsx-d7acbe4ed7f581b9{opacity:0;pointer-events:none;z-index:1190;background:rgba(0,0,0,.35);transition:opacity .25s;position:fixed;top:0;bottom:0;left:0;right:0}.backdrop.show.jsx-d7acbe4ed7f581b9{opacity:1;pointer-events:all}.menu-overlay.jsx-d7acbe4ed7f581b9{z-index:1200;pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}.menu-overlay.open.jsx-d7acbe4ed7f581b9{pointer-events:auto}.hamburger-layout.jsx-d7acbe4ed7f581b9{background:#fff;width:0;height:80%;transition:width .45s cubic-bezier(.2,.9,.2,1);display:flex;position:absolute;top:0;right:0;overflow:hidden}.menu-overlay.open.jsx-d7acbe4ed7f581b9 .hamburger-layout.jsx-d7acbe4ed7f581b9{width:100%}.menu-left.jsx-d7acbe4ed7f581b9{color:#fff;background:#2f7de8;width:20%;padding-top:5rem}.menu-left-item.jsx-d7acbe4ed7f581b9{cursor:pointer;margin-bottom:6px;padding:12px 14px 12px 5rem;font-size:21px;font-weight:600;transition:all .3s}.menu-left-item.jsx-d7acbe4ed7f581b9:hover{background:#1e6fd8}.menu-left-item.active.jsx-d7acbe4ed7f581b9{color:#000;background:#ffc100}.menu-left.jsx-d7acbe4ed7f581b9 ul.jsx-d7acbe4ed7f581b9{padding:0;list-style:none}.menu-middle.jsx-d7acbe4ed7f581b9{background:#fff;border-right:1px solid #eee;width:20%;padding:5rem 3rem 1rem}.middle-title.jsx-d7acbe4ed7f581b9{color:#000;text-transform:uppercase;margin-bottom:10px;font-size:21px}.middle-item.jsx-d7acbe4ed7f581b9{cursor:pointer;border-bottom:1px dashed #eee;padding:8px 0;font-weight:700;transition:color .3s}.middle-item.jsx-d7acbe4ed7f581b9:hover{color:#2f7de8}.menu-right.jsx-d7acbe4ed7f581b9{background:#fafafa;flex:1;width:60%;padding:5rem 3rem;overflow-y:auto}.image-box.jsx-d7acbe4ed7f581b9{justify-content:center;gap:3rem;height:100%;display:flex}.close-btn.jsx-d7acbe4ed7f581b9{display:none}.menu-overlay.open.jsx-d7acbe4ed7f581b9 .close-btn.jsx-d7acbe4ed7f581b9{z-index:1300;background:unset;color:#000;cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;font-size:24px;font-weight:700;transition:background .3s;display:flex;position:absolute;top:20px;right:20px}.menu-overlay.open.jsx-d7acbe4ed7f581b9 .close-btn.jsx-d7acbe4ed7f581b9:hover{background:rgba(0,0,0,.1)}.mega-dropdown.jsx-d7acbe4ed7f581b9{z-index:-1;background:#fff;gap:20px;width:100%;min-width:max-content;height:auto;display:none;position:fixed;top:0;left:0;box-shadow:0 8px 30px rgba(0,0,0,.15)}.nav-item.jsx-d7acbe4ed7f581b9:hover>.mega-dropdown.jsx-d7acbe4ed7f581b9,.nav-item.jsx-d7acbe4ed7f581b9:focus-within>.mega-dropdown.jsx-d7acbe4ed7f581b9{display:flex}.mega-left.jsx-d7acbe4ed7f581b9{color:#fff;background:#2f7de8;width:20%;position:relative}.mega-left.jsx-d7acbe4ed7f581b9 ul.jsx-d7acbe4ed7f581b9{text-align:center;width:100%;margin:0;padding:0;list-style:none;position:absolute;top:35%}.mega-left-item.jsx-d7acbe4ed7f581b9{cursor:pointer;padding:8px 0;font-weight:700}.mega-left-item.jsx-d7acbe4ed7f581b9 .dropdown-item.jsx-d7acbe4ed7f581b9{color:#fff;text-decoration:none}.mega-left-item.jsx-d7acbe4ed7f581b9:hover{color:#000;background:#ffc100}.mega-right.jsx-d7acbe4ed7f581b9{align-items:center;gap:3rem;width:80%;display:flex}.mega-right-text.jsx-d7acbe4ed7f581b9{width:20%}.mega-subtitle.jsx-d7acbe4ed7f581b9{color:#555;text-transform:uppercase;margin-bottom:6px;font-size:13px}.mega-title.jsx-d7acbe4ed7f581b9{color:#16344e;margin-bottom:8px;font-size:24px;font-weight:700}.mega-desc.jsx-d7acbe4ed7f581b9{color:#444;margin-bottom:12px;font-size:14px}.mega-ctas.jsx-d7acbe4ed7f581b9{gap:12px;display:flex}.mega-banners.jsx-d7acbe4ed7f581b9{align-items:center;gap:12px;display:flex}.banner.jsx-d7acbe4ed7f581b9{border-radius:6px;width:100%;height:100%;text-decoration:none;display:block;position:relative;overflow:hidden}.banner.jsx-d7acbe4ed7f581b9 img.jsx-d7acbe4ed7f581b9,.banner.jsx-d7acbe4ed7f581b9 img{object-fit:cover;width:100%;height:100%;display:block}.banner-label.jsx-d7acbe4ed7f581b9{color:#fff;background:rgba(0,0,0,.5);border-radius:2px;width:100%;padding:15px 10px;font-size:14px;font-weight:700;position:absolute;bottom:0;left:0}@media (min-width:1024px) and (max-width:1420px){.mega-right-banners.jsx-d7acbe4ed7f581b9{height:70%;margin-top:8rem;margin-bottom:3rem}.nav-container.jsx-d7acbe4ed7f581b9{padding:1rem 2rem}.nav-list.jsx-d7acbe4ed7f581b9{gap:20px;font-size:16px}.mega-right.jsx-d7acbe4ed7f581b9{gap:1.5rem}.banner.jsx-d7acbe4ed7f581b9{width:240px;height:200px}.admission-dropdown.jsx-d7acbe4ed7f581b9{width:85%;top:6rem;right:5rem}}@media (max-width:1100px){.mega-dropdown.jsx-d7acbe4ed7f581b9{grid-template-columns:1fr;min-width:700px}.mega-right-text.jsx-d7acbe4ed7f581b9{max-width:100%}.banner.jsx-d7acbe4ed7f581b9{width:200px;height:130px}}"
+                id: "48e229bd5a056b2d",
+                children: ".school-toggle.jsx-48e229bd5a056b2d{cursor:pointer;color:#fff;flex-direction:column;font-weight:600;transition:color .3s;display:flex}.header-scrolled.jsx-48e229bd5a056b2d .school-toggle.jsx-48e229bd5a056b2d{color:#16344e}.engineering-dropdown-container.jsx-48e229bd5a056b2d{z-index:1000;width:100%;display:flex;position:absolute;top:130px}.engineering-dropdown.jsx-48e229bd5a056b2d{background:#fff;border-radius:8px;width:35%;min-height:320px;display:flex;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.15)}.schools-list.jsx-48e229bd5a056b2d{color:#fff;background:#16344e;flex-direction:column;width:50%;display:flex}.school-item.jsx-48e229bd5a056b2d{cursor:pointer;padding:10px 20px;transition:background .3s}.school-item.jsx-48e229bd5a056b2d:hover{background:#1e4b6b}.school-item.active.jsx-48e229bd5a056b2d{color:#000;background:#ffc100}.departments-list.jsx-48e229bd5a056b2d{background:#224666;width:50%;display:block}.departments-list.jsx-48e229bd5a056b2d .link-content.jsx-48e229bd5a056b2d{padding-left:1.2rem}.engineering-dropdown.jsx-48e229bd5a056b2d h6.jsx-48e229bd5a056b2d{padding-top:1.2rem;padding-left:1.2rem;font-size:18px}.department-item.jsx-48e229bd5a056b2d{cursor:pointer;color:#fff;border-radius:8px;padding:8px;font-weight:500;transition:all .3s}.right-inner.jsx-48e229bd5a056b2d .hamburger-section-img.jsx-48e229bd5a056b2d{border-radius:12px;width:100%;height:50%;position:relative;overflow:hidden}.right-inner.jsx-48e229bd5a056b2d .first-content.jsx-48e229bd5a056b2d{width:30%}.right-inner.jsx-48e229bd5a056b2d .second-content.jsx-48e229bd5a056b2d{width:40%}.site-header.jsx-48e229bd5a056b2d{z-index:1100;position:fixed;top:0;left:0;right:0}.mega-right-banners.jsx-48e229bd5a056b2d{justify-content:end;gap:1rem;width:70%;height:70%;margin-top:10rem;margin-bottom:5rem;display:flex}.right-inner.jsx-48e229bd5a056b2d .second-content.jsx-48e229bd5a056b2d h1.jsx-48e229bd5a056b2d{width:50%;font-size:4rem;font-weight:700;line-height:60px}.right-inner.jsx-48e229bd5a056b2d .second-content.jsx-48e229bd5a056b2d p.jsx-48e229bd5a056b2d{border-bottom:2px solid #fc0;width:50%;margin-top:1rem;padding-bottom:1rem;font-size:.9rem}.right-inner.jsx-48e229bd5a056b2d .first-content.jsx-48e229bd5a056b2d h1.jsx-48e229bd5a056b2d{margin-top:2rem;margin-bottom:1rem;font-size:2.2rem;font-weight:700}.right-inner.jsx-48e229bd5a056b2d .first-content.jsx-48e229bd5a056b2d p.jsx-48e229bd5a056b2d{font-size:.9rem}.right-navbar-section.jsx-48e229bd5a056b2d,.right-navbar.jsx-48e229bd5a056b2d{align-items:center;display:flex}.logo-tertiary-text.jsx-48e229bd5a056b2d{font-size:55px}.logo-secondry-text.jsx-48e229bd5a056b2d,.logo-primary-text.jsx-48e229bd5a056b2d{font-size:22px;font-weight:700}.logo-text.jsx-48e229bd5a056b2d p.jsx-48e229bd5a056b2d{border-bottom:2px solid #f8c326;padding-bottom:8px;font-size:12px}.logo-text.jsx-48e229bd5a056b2d{color:#fff;border-left:1px solid #cfc7c7;padding-left:1.5rem}.nav-container.jsx-48e229bd5a056b2d{justify-content:space-between;align-items:center;max-width:100%;margin:0 auto;padding:1.6rem 5rem;transition:all .3s;display:flex}.nav-list.jsx-48e229bd5a056b2d{color:#fff;background-color:#16344e;gap:30px;margin:0 1rem 0 0;padding:.4rem 2rem;font-size:20px;list-style:none;display:flex}.nav-item.jsx-48e229bd5a056b2d{position:relative}.nav-container.header-scrolled.jsx-48e229bd5a056b2d{background-color:#fff}.nav-link.jsx-48e229bd5a056b2d{color:inherit;padding:6px 8px;font-size:16px;font-weight:600;text-decoration:none;transition:color .3s;display:inline-block}.header-scrolled.jsx-48e229bd5a056b2d .nav-link.jsx-48e229bd5a056b2d{color:#16344e}.dropdown.jsx-48e229bd5a056b2d{z-index:1;color:#000;background:#fff;border:1px solid #eee;min-width:200px;padding:8px 15px;list-style:none;display:none;position:absolute;top:100%;left:0;box-shadow:0 4px 12px rgba(0,0,0,.1)}.dropdown-item.jsx-48e229bd5a056b2d{color:#16344e;padding:8px 14px;text-decoration:none;display:block}.dropdown-item.jsx-48e229bd5a056b2d:hover{background:#f5f5f5}.admission-wrap.jsx-48e229bd5a056b2d{margin-right:12px;position:relative}.admission-btn.jsx-48e229bd5a056b2d{cursor:pointer;background:#ffc100;border:none;padding:10px 18px;font-size:15px;font-weight:700;transition:background .3s}.admission-btn.jsx-48e229bd5a056b2d:hover{background:#e6b000}.admission-dropdown.jsx-48e229bd5a056b2d{z-index:1200;background:#fff;width:70%;margin-top:6px;display:flex;position:fixed;top:6rem;right:10rem;box-shadow:0 6px 18px rgba(0,0,0,.2)}.dropdown-arrow.jsx-48e229bd5a056b2d{border-bottom:10px solid #fff;border-left:10px solid transparent;border-right:10px solid transparent;width:0;height:0;position:absolute;top:-10px;right:40px}.ad-left.jsx-48e229bd5a056b2d{color:#fff;background:#2f7de8;flex-direction:column;justify-content:space-between;width:100%;padding:24px;display:flex}.ad-right.jsx-48e229bd5a056b2d{width:100%}.ad-subtitle.jsx-48e229bd5a056b2d{text-transform:uppercase;margin-bottom:8px;font-size:13px}.ad-title.jsx-48e229bd5a056b2d{margin-bottom:12px;font-size:22px;font-weight:700}.ad-desc.jsx-48e229bd5a056b2d,.ad-contact.jsx-48e229bd5a056b2d{margin-bottom:16px;font-size:14px}.ad-ctas.jsx-48e229bd5a056b2d{flex-wrap:wrap;gap:8px;display:flex}.cta.jsx-48e229bd5a056b2d{cursor:pointer;border:none;padding:8px 14px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .3s}.cta.jsx-48e229bd5a056b2d:hover{opacity:.9}.cta.primary.jsx-48e229bd5a056b2d{color:#000;background:#ffc100}.cta.secondary.jsx-48e229bd5a056b2d{color:#fff;border:1px solid #fff}.ad-middle.jsx-48e229bd5a056b2d{border-right:1px solid #eee;width:100%;padding:24px}.ad-middle.jsx-48e229bd5a056b2d ul.jsx-48e229bd5a056b2d{margin:0;padding:0;list-style:none}.ad-link.jsx-48e229bd5a056b2d{cursor:pointer;color:#333;padding:6px 0;font-size:15px;font-weight:500;transition:color .3s}.ad-link.jsx-48e229bd5a056b2d:hover{color:#2f7de8;text-decoration:underline}.ad-stats.jsx-48e229bd5a056b2d{margin-top:20px}.ad-stats.jsx-48e229bd5a056b2d h3.jsx-48e229bd5a056b2d{margin-bottom:4px;font-size:18px;font-weight:700}.ad-stats.jsx-48e229bd5a056b2d p.jsx-48e229bd5a056b2d{color:#777;margin-bottom:10px;font-size:13px}.stats-btn.jsx-48e229bd5a056b2d{cursor:pointer;background:#fff;border:1px solid #000;padding:6px 12px;font-weight:600;transition:all .3s}.stats-btn.jsx-48e229bd5a056b2d:hover{color:#fff;background:#000}.addmision-section-img.jsx-48e229bd5a056b2d{object-fit:cover;width:100%;height:100%}.hamburger.jsx-48e229bd5a056b2d{cursor:pointer;color:#fff;background:#16344e;border:none;padding:4px 10px;font-size:22px;transition:background .3s}.hamburger.jsx-48e229bd5a056b2d:hover{background-color:#1e4264}.backdrop.jsx-48e229bd5a056b2d{opacity:0;pointer-events:none;z-index:1190;background:rgba(0,0,0,.35);transition:opacity .25s;position:fixed;top:0;bottom:0;left:0;right:0}.backdrop.show.jsx-48e229bd5a056b2d{opacity:1;pointer-events:all}.menu-overlay.jsx-48e229bd5a056b2d{z-index:1200;pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}.menu-overlay.open.jsx-48e229bd5a056b2d{pointer-events:auto}.hamburger-layout.jsx-48e229bd5a056b2d{background:#fff;width:0;height:80%;transition:width .45s cubic-bezier(.2,.9,.2,1);display:flex;position:absolute;top:0;right:0;overflow:hidden}.menu-overlay.open.jsx-48e229bd5a056b2d .hamburger-layout.jsx-48e229bd5a056b2d{width:100%}.menu-left.jsx-48e229bd5a056b2d{color:#fff;background:#2f7de8;width:20%;padding-top:5rem}.menu-left-item.jsx-48e229bd5a056b2d{cursor:pointer;margin-bottom:6px;padding:12px 14px 12px 5rem;font-size:21px;font-weight:600;transition:all .3s}.menu-left-item.jsx-48e229bd5a056b2d:hover{background:#1e6fd8}.menu-left-item.active.jsx-48e229bd5a056b2d{color:#000;background:#ffc100}.menu-left.jsx-48e229bd5a056b2d ul.jsx-48e229bd5a056b2d{padding:0;list-style:none}.menu-middle.jsx-48e229bd5a056b2d{background:#fff;border-right:1px solid #eee;width:20%;padding:5rem 3rem 1rem}.middle-title.jsx-48e229bd5a056b2d{color:#000;text-transform:uppercase;margin-bottom:10px;font-size:21px}.middle-item.jsx-48e229bd5a056b2d{cursor:pointer;border-bottom:1px dashed #eee;padding:8px 0;font-weight:700;transition:color .3s}.middle-item.jsx-48e229bd5a056b2d:hover{color:#2f7de8}.menu-right.jsx-48e229bd5a056b2d{background:#fafafa;flex:1;width:60%;padding:5rem 3rem;overflow-y:auto}.image-box.jsx-48e229bd5a056b2d{justify-content:center;gap:3rem;height:100%;display:flex}.close-btn.jsx-48e229bd5a056b2d{display:none}.menu-overlay.open.jsx-48e229bd5a056b2d .close-btn.jsx-48e229bd5a056b2d{z-index:1300;background:unset;color:#000;cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;font-size:24px;font-weight:700;transition:background .3s;display:flex;position:absolute;top:20px;right:20px}.menu-overlay.open.jsx-48e229bd5a056b2d .close-btn.jsx-48e229bd5a056b2d:hover{background:rgba(0,0,0,.1)}.mega-dropdown.jsx-48e229bd5a056b2d{z-index:-1;background:#fff;gap:20px;width:100%;min-width:max-content;height:auto;display:none;position:fixed;top:0;left:0;box-shadow:0 8px 30px rgba(0,0,0,.15)}.nav-item.jsx-48e229bd5a056b2d:hover>.mega-dropdown.jsx-48e229bd5a056b2d,.nav-item.jsx-48e229bd5a056b2d:focus-within>.mega-dropdown.jsx-48e229bd5a056b2d{display:flex}.mega-left.jsx-48e229bd5a056b2d{color:#fff;background:#2f7de8;width:20%;position:relative}.mega-left.jsx-48e229bd5a056b2d ul.jsx-48e229bd5a056b2d{text-align:center;width:100%;margin:0;padding:0;list-style:none;position:absolute;top:35%}.mega-left-item.jsx-48e229bd5a056b2d{cursor:pointer;padding:8px 0;font-weight:700}.mega-left-item.jsx-48e229bd5a056b2d .dropdown-item.jsx-48e229bd5a056b2d{color:#fff;text-decoration:none}.mega-left-item.jsx-48e229bd5a056b2d:hover{color:#000;background:#ffc100}.mega-right.jsx-48e229bd5a056b2d{align-items:center;gap:3rem;width:80%;display:flex}.mega-right-text.jsx-48e229bd5a056b2d{width:20%}.mega-subtitle.jsx-48e229bd5a056b2d{color:#555;text-transform:uppercase;margin-bottom:6px;font-size:13px}.mega-title.jsx-48e229bd5a056b2d{color:#16344e;margin-bottom:8px;font-size:24px;font-weight:700}.mega-desc.jsx-48e229bd5a056b2d{color:#444;margin-bottom:12px;font-size:14px}.mega-ctas.jsx-48e229bd5a056b2d{gap:12px;display:flex}.mega-banners.jsx-48e229bd5a056b2d{align-items:center;gap:12px;display:flex}.banner.jsx-48e229bd5a056b2d{border-radius:6px;width:100%;height:100%;text-decoration:none;display:block;position:relative;overflow:hidden}.banner.jsx-48e229bd5a056b2d img.jsx-48e229bd5a056b2d,.banner.jsx-48e229bd5a056b2d img{object-fit:cover;width:100%;height:100%;display:block}.banner-label.jsx-48e229bd5a056b2d{color:#fff;background:rgba(0,0,0,.5);border-radius:2px;width:100%;padding:15px 10px;font-size:14px;font-weight:700;position:absolute;bottom:0;left:0}@media (min-width:1024px) and (max-width:1420px){.mega-right-banners.jsx-48e229bd5a056b2d{height:70%;margin-top:8rem;margin-bottom:3rem}.nav-container.jsx-48e229bd5a056b2d{padding:1rem 2rem}.nav-list.jsx-48e229bd5a056b2d{gap:20px;font-size:16px}.mega-right.jsx-48e229bd5a056b2d{gap:1.5rem}.banner.jsx-48e229bd5a056b2d{width:240px;height:200px}.admission-dropdown.jsx-48e229bd5a056b2d{width:85%;top:6rem;right:5rem}}@media (max-width:1100px){.mega-dropdown.jsx-48e229bd5a056b2d{grid-template-columns:1fr;min-width:700px}.mega-right-text.jsx-48e229bd5a056b2d{max-width:100%}.banner.jsx-48e229bd5a056b2d{width:200px;height:130px}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
