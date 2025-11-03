@@ -3,77 +3,80 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import styles from "./testimonial.module.css";
 
-const testimonialsData = [
-  {
-    name: "NAMAN SUKHIJA",
-    batch: "B. Tech (CE), 2012-16 Batch",
-    role: "Designer & Certifier, Passive House Institute, Germany",
-    quote: "Studying at JSS Noida has been a transformative journey...",
-    img: "/images/home-page/sixth-section-first-banner.png",
-    videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
-  },
-  {
-    name: "APOORV SHIKHAR",
-    batch: "B. Tech (ES), 2013-17 Batch",
-    role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
-    img: "/images/home-page/sixth-section-second-banner.png",
-    quote:
-      "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
-    videoUrl: "",
-  },
-  {
-    name: "YASHIKA MATHUR",
-    batch: "B. Tech (CE), 2013-17 Batch",
-    role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
-    img: "/images/home-page/sixth-section-third-banner.png",
-    videoUrl: "",
-  },
-  {
-    name: "NADEEM KHAN",
-    batch: "B. Tech (ME), 2015-19 Batch",
-    role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
-    img: "/images/home-page/sixth-section-fourth-banner.png",
-    videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  },
-  {
-    name: "RITIKA SHARMA",
-    batch: "B. Tech (CSE), Batch of 2024",
-    img: "/images/home-page/sixth-section-fifth-banner.png",
-    quote:
-      "JSS University has truly shaped my journey—both academically and personally.",
-    videoUrl: "",
-  },
-];
+const testimonialsData = {
+  title:
+    '<span class="dark-blue-text ">IN</span> <span class="blue-text">CONVERSATION</span> <span class="dark-blue-text ">WITH THE</span>  <span class="blue-text">JSS COMMUNITY</span>',
+
+  testimonials: [
+    {
+      name: "NAMAN SUKHIJA",
+      batch: "B. Tech (CE), 2012-16 Batch",
+      role: "Designer & Certifier, Passive House Institute, Germany",
+      quote: "Studying at JSS Noida has been a transformative journey...",
+      img: "/images/home-page/sixth-section-first-banner.png",
+      videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
+    },
+    {
+      name: "APOORV SHIKHAR",
+      batch: "B. Tech (ES), 2013-17 Batch",
+      role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
+      img: "/images/home-page/sixth-section-second-banner.png",
+      quote:
+        "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
+      videoUrl: "",
+    },
+    {
+      name: "YASHIKA MATHUR",
+      batch: "B. Tech (CE), 2013-17 Batch",
+      role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
+      img: "/images/home-page/sixth-section-third-banner.png",
+      videoUrl: "",
+    },
+    {
+      name: "NADEEM KHAN",
+      batch: "B. Tech (ME), 2015-19 Batch",
+      role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
+      img: "/images/home-page/sixth-section-fourth-banner.png",
+      videoUrl:
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    },
+    {
+      name: "RITIKA SHARMA",
+      batch: "B. Tech (CSE), Batch of 2024",
+      img: "/images/home-page/sixth-section-fifth-banner.png",
+      quote:
+        "JSS University has truly shaped my journey—both academically and personally.",
+      videoUrl: "",
+    },
+  ],
+};
 
 export default function TestimonialsSection() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   // distribute testimonials dynamically into columns
-  const column1 = testimonialsData.slice(0, 1);
-  const column2 = testimonialsData.slice(1, 3);
-  const column3 = testimonialsData.slice(3);
+  const column1 = testimonialsData.testimonials.slice(0, 1);
+  const column2 = testimonialsData.testimonials.slice(1, 3);
+  const column3 = testimonialsData.testimonials.slice(3);
 
+  const columnForMobile = [...column1, ...column2];
   return (
     <section className={styles.testimonialsSection}>
-      <div className={styles.testimonialsContainer}>
+      <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
         {/* LEFT COLUMN */}
         <div className={styles.columnLeft}>
           <div className={styles.headerContent}>
             <p className={styles.testimonialsLabel}>TESTIMONIALS</p>
             <h2
-              className={`highlighted-title-top-to-botom ${styles.mainHeading}`}
-            >
-              IN CONVERSATION
-              <br />
-              WITH THE JSS
-              <br />
-              COMMUNITY
-            </h2>
-              <Link href="#testimonials">
-            <button className={styles.circleArrowBtn}>
+              className={` ${styles.mainHeading}`}
+              dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
+            ></h2>
+            <Link href="#testimonials">
+              <button className={styles.circleArrowBtn}>
                 <svg
                   width="20"
                   height="20"
@@ -84,8 +87,8 @@ export default function TestimonialsSection() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-            </button>
-              </Link>
+              </button>
+            </Link>
           </div>
 
           {column1.map((item, i) => (
@@ -117,6 +120,53 @@ export default function TestimonialsSection() {
               onPlay={() => setSelectedVideo(item.videoUrl)}
             />
           ))}
+        </div>
+      </div>
+      <div className={styles.mobileView}>
+        <p className={`${styles.testimonialsLabel} text-center`}>
+          TESTIMONIALS
+        </p>
+        <Swiper
+          spaceBetween={100}
+          slidesPerView={1}
+          style={{ paddingBottom: "1.1rem" }}
+        >
+          {columnForMobile.map((item, i) => (
+            <SwiperSlide key={i}>
+              <TestimonialCard
+                key={i}
+                data={item}
+                onPlay={() => setSelectedVideo(item.videoUrl)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <Swiper spaceBetween={100} slidesPerView={1}>
+          {column3.map((item, i) => (
+            <SwiperSlide key={i}>
+              <TestimonialCard
+                key={i}
+                data={item}
+                onPlay={() => setSelectedVideo(item.videoUrl)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className={`${styles.mobileViewArrow}`}>
+          <Link href="#testimonials">
+            <button className={styles.circleArrowBtn}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
 

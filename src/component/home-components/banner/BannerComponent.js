@@ -16,12 +16,13 @@ export default function HeroSlider() {
       display_order: 100,
       linked_text: "Learn more about JSS",
       url: "#",
-      img: "/images/home-page/placeholder-banner.png",
+      desktopBanner: "/images/home-page/placeholder-banner.png",
+      mobileBanner: "/images/home-page/mobile-main-banner.png",
     },
   ];
 
   return (
-    <div className={styles.firstBannerSlide}>
+    <div>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
@@ -33,21 +34,34 @@ export default function HeroSlider() {
         {bannerData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <Image
-              src={slide.img}
+              src={slide.desktopBanner}
               alt="slide image"
-              fill
+              width={1920}
+              height={400}
               priority
-              className={styles.slideImage}
+              style={{ width: "100%", height: "100%" }}
+              className={styles.desktopBanner}
             />
-            <div className={styles.bannerContent}>
-              <h1 className={styles.bannerContentH1}>{slide.title}</h1>
-              <p className={styles.bannerContentP}>{slide.desc}</p>
-              {slide.url && (
-                <Link href={slide.url} className={styles.bannerContentA}>
-                  {slide.linked_text}
-                  <FiArrowRightCircle className={styles.iconSpacing} />
-                </Link>
-              )}
+            <Image
+              src={slide.mobileBanner}
+              alt="slide image"
+              width={500}
+              height={300}
+              priority
+              style={{ width: "100%", height: "100%" }}
+              className={styles.mobileBanner}
+            />
+            <div className={styles.bannerOverlay}>
+              <div className={styles.bannerContent}>
+                <h1 className={styles.bannerContentH1}>{slide.title}</h1>
+                <p className={styles.bannerContentP}>{slide.desc}</p>
+                {slide.url && (
+                  <Link href={slide.url} className={styles.bannerContentA}>
+                    {slide.linked_text}
+                    <FiArrowRightCircle className={styles.iconSpacing} />
+                  </Link>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}
