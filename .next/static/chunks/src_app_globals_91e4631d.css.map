@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///D:/my-org-site/src/app/globals.css"],"sourcesContent":["\n\nhtml,\nbody {\n  max-width: 100vw;\n  overflow-x: hidden;\n}\n\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\n"],"names":[],"mappings":"AAEA;;;;;AAOA;;;;;;AAMA","debugId":null}}]
-}
