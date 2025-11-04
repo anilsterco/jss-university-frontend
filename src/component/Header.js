@@ -32,24 +32,27 @@ export default function Header() {
       ],
       right: {
         subtitle: "ABOUT JSS",
-        title: "Know Our Heritage",
-        desc: "Learn more about JSS legacy, history and leadership.",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
+        desc: "Learn more about JSS legacy, history and leadership history and leadership.",
         ctas: [
           { text: "Read More", href: "#", type: "primary" },
-          { text: "Leadership", href: "#", type: "secondary" },
+          // { text: "Leadership", href: "#", type: "secondary" },
         ],
         banners: [
           {
             title: "UNDER GRADUTE",
             href: "#",
-            img: "/images/header/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
           {
             title: "POST GRADUTE",
             href: "#",
-            img: "/images/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
-          { title: "PHD", href: "#", img: "/images/nav-hover-banner.png" },
+          { title: "PHD", href: "#", img: "/images/header/nav-hover-banner.webp" },
         ],
       },
     },
@@ -61,29 +64,32 @@ export default function Header() {
         { name: "Departments", href: "/" },
         { name: "Programs", href: "/" },
       ],
-      right: {
-        subtitle: "EXPLORE ACADEMICS",
-        title: "Learning at JSS",
-        desc: "Offering UG, PG and PhD programmes with global standards.",
-        ctas: [{ text: "VIEW ALL PROGRAMMES", href: "#", type: "primary" }],
-        banners: [
-          {
-            title: "Under Graduate",
-            href: "#",
-            img: "/images/nav-hover-banner.png",
-          },
-          {
-            title: "Post Graduate",
-            href: "#",
-            img: "/images/nav-hover-banner.png",
-          },
-          {
-            title: "PhD Programmes",
-            href: "#",
-            img: "/images/nav-hover-banner.png",
-          },
-        ],
-      },
+        right: {
+      subtitle: "PROGRAMS",
+      title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
+      desc: "Leading the revolution in integrated learning where students shape their own future.",
+      ctas: [{ text: "VIEW ALL PROGRAMMES", href: "#", type: "primary" }],
+      banners: [
+        {
+          title: "Under Graduate",
+          href: "#",
+          img: "/images/header/nav-hover-banner.webp",
+        },
+        {
+          title: "Post Graduate",
+          href: "#",
+          img: "/images/header/nav-hover-banner.webp",
+        },
+        {
+          title: "PhD Programmes",
+          href: "#",
+          img: "/images/header/nav-hover-banner.webp",
+        },
+      ],
+    }
     },
     {
       name: "ADMISSIONS",
@@ -95,16 +101,19 @@ export default function Header() {
       ],
       right: {
         subtitle: "JOIN JSS",
-        title: "Admissions Open 2025-26",
+         title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Apply now and step into your future at JSS Noida.",
         ctas: [
           { text: "Apply Now", href: "#", type: "primary" },
-          { text: "Download Syllabus", href: "#", type: "secondary" },
+          // { text: "Download Syllabus", href: "#", type: "secondary" },
         ],
         banners: [
-          { title: "Scholarships", href: "#", img: "/images/banner1.png" },
-          { title: "Eligibility", href: "#", img: "/images/banner2.png" },
-          { title: "FAQs", href: "#", img: "/images/banner3.png" },
+          { title: "Scholarships", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "Eligibility", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "FAQs", href: "#", img: "/images/header/nav-hover-banner.webp" },
         ],
       },
     },
@@ -118,13 +127,16 @@ export default function Header() {
       ],
       right: {
         subtitle: "CAMPUS FACILITIES",
-        title: "Modern & Student Friendly",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
         ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
         banners: [
-          { title: "Hostels", href: "#", img: "/images/banner1.png" },
-          { title: "Clubs", href: "#", img: "/images/banner2.png" },
-          { title: "Events", href: "#", img: "/images/banner3.png" },
+          { title: "Hostels", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "Clubs", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "Events", href: "#", img: "/images/header/nav-hover-banner.webp" },
         ],
       },
     },
@@ -138,13 +150,16 @@ export default function Header() {
       ],
       right: {
         subtitle: "SUPPORT & LIFE",
-        title: "Helping Students Thrive",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Guidance, mentoring and vibrant student support activities.",
         ctas: [{ text: "Get Support", href: "#", type: "primary" }],
         banners: [
-          { title: "Life @ JSS", href: "#", img: "/images/banner1.png" },
-          { title: "Mentoring", href: "#", img: "/images/banner2.png" },
-          { title: "Clubs", href: "#", img: "/images/banner3.png" },
+          { title: "Life @ JSS", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "Mentoring", href: "#", img: "/images/header/nav-hover-banner.webp" },
+          { title: "Clubs", href: "#", img: "/images/header/nav-hover-banner.webp" },
         ],
       },
     },
@@ -234,6 +249,7 @@ export default function Header() {
       subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
       title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
       desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
+      querytext: "Any Query ? please mail us.",
       email: "principal@jssaten.ac.in",
       phone: "+91-9311830458",
       ctas: [
@@ -357,7 +373,7 @@ export default function Header() {
     if (!isMounted) return;
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 300);
+      setScrolled(window.scrollY > 100);
     };
 
     handleScroll();
@@ -430,44 +446,19 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className={`nav-container ${scrolled ? "header-scrolled" : ""}`}>
-        <div className="brand-wrap logo-content">
-          <Link href="/" aria-label="Home" className="d-flex gap-4">
-            <Image
-              src="/images/header/header-logo.png"
-              className="site-logo"
-              alt="Site Logo" width={299} height={108} priority/>
-            {/* <div className="logo-text">
-              <div className="d-flex  align-items-center gap-2">
-                <div>
-                  <h1
-                    className={`${
-                      scrolled ? "dark-blue-text" : ""
-                    } mb-0 logo-primary-text`}
-                  >
-                    NAAC
-                  </h1>
-                  <h1
-                    className={`${
-                      scrolled ? "dark-blue-text" : ""
-                    } mb-0 logo-secondry-text`}
-                  >
-                    GRADE
-                  </h1>
-                </div>
-                <h1
-                  className={`${
-                    scrolled ? "yellow-text" : ""
-                  } mb-0 logo-tertiary-text`}
-                >
-                  A
-                </h1>
-              </div>
-              <p className={`${scrolled ? "text-dark" : ""} mb-0`}>
-                JSS is NAAC 'A' Grade Accredited
-              </p>
-            </div> */}
-          </Link>
-        </div>
+       <div className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}>
+        <Link href="/" aria-label="Home">
+          <Image
+            src="/images/header/header-logo.png"
+            className="site-logo"
+            alt="Site Logo"
+            width={299} 
+            height={108} 
+            priority
+          />
+        </Link>
+      </div>
+
 
         {pathname === "/schools" && (
           <>
@@ -569,19 +560,30 @@ export default function Header() {
                               <p className="mega-subtitle">
                                 {l.right.subtitle}
                               </p>
-                              <h2 className="mega-title">{l.right.title}</h2>
+                              <h2 className="mega-title" dangerouslySetInnerHTML={{ __html: l.right.title }}/>
                               <p className="mega-desc">{l.right.desc}</p>
-                              <div className="mega-ctas">
-                                {l.right.ctas?.map((cta, idx) => (
-                                  <a
-                                    key={idx}
-                                    href={cta.href}
-                                    className={`cta ${cta.type}`}
+                             <div className="mega-ctas">
+                              {l.right.ctas?.map((cta, idx) => (
+                                <a
+                                  key={idx}
+                                  href={cta.href}
+                                  className={`cta program_btn ${cta.type}`}
+                                >
+                                  {cta.text}
+                                  <svg
+                                    className="cta-arrow"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
                                   >
-                                    {cta.text}
-                                  </a>
-                                ))}
-                              </div>
+                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                                </a>
+                              ))}
+                            </div>
+
                             </div>
 
                             <div className="mega-right-banners">
@@ -634,15 +636,16 @@ export default function Header() {
                     <h2 className="ad-title">{admissionsData.left.title}</h2>
                     <p className="ad-desc">{admissionsData.left.desc}</p>
                     <div className="ad-contact">
-                      <p>📧 {admissionsData.left.email}</p>
-                      <p>📞 {admissionsData.left.phone}</p>
+                      <span>{admissionsData.left.querytext}</span>
+                      <p> <img src="images/header/mailicon.svg" className="img-fluid" alt="mail"/> {admissionsData.left.email}</p>
+                      <p> <img src="images/header/phoneicon.svg" className="img-fluid" alt="mail"/>  {admissionsData.left.phone}</p>
                     </div>
                     <div className="ad-ctas">
                       {admissionsData.left.ctas.map((cta, idx) => (
                         <a
                           key={idx}
                           href={cta.href}
-                          className={`cta ${cta.type}`}
+                          className={`cta applynow ${cta.type}`}
                         >
                           {cta.text}
                         </a>
@@ -654,7 +657,8 @@ export default function Header() {
                     <ul>
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
-                          {link} →
+                          {link} 
+                           <img src="/images/header/listicon.svg" class="img-fluid" alt="mail"/>
                         </li>
                       ))}
                     </ul>
@@ -662,7 +666,7 @@ export default function Header() {
                       <h3>{admissionsData.middle.stats.text}</h3>
                       <p>{admissionsData.middle.stats.subtext}</p>
                       <button className="stats-btn">
-                        {admissionsData.middle.stats.btnText} →
+                        {admissionsData.middle.stats.btnText} 
                       </button>
                     </div>
                   </div>
@@ -893,12 +897,14 @@ export default function Header() {
         }
         .mega-right-banners {
           justify-content: end;
-          gap: 1rem;
-          width: 70%;
-          display: flex;
-          margin-top: 10rem;
-          margin-bottom: 5rem;
-          height: 70%;
+          justify-content: end;
+    gap: 2.5rem;
+    width: 100%;
+    height: auto;
+    margin-top: 18rem;
+    padding-bottom: 10rem;
+    display: flex
+;
         }
         .right-inner .second-content h1 {
           font-size: 4rem;
@@ -947,8 +953,8 @@ export default function Header() {
         }
        
         .site-header>.nav-container{
-        padding-inline: 98px;
-        padding-block: 24px;
+        padding-inline: 9.8rem;
+        padding-block: 2.4rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -994,6 +1000,7 @@ export default function Header() {
         .nav-container.header-scrolled {
           background-color:var(--color-4e);;
         }
+        
         .nav-link {
           text-decoration: none;
           color: inherit;
@@ -1049,54 +1056,70 @@ export default function Header() {
         .admission-dropdown {
           z-index: 1200;
           background: #fff;
-          width: 70%;
-          margin-top: 6px;
+          width: 85%;
           display: flex;
           position: fixed;
-          top: 6rem;
+          top: 14rem;
           right: 10rem;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+          
         }
         .dropdown-arrow {
-          position: absolute;
-          top: -10px;
-          right: 40px;
-          width: 0;
-          height: 0;
+          border-bottom: 18px solid #fff;
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
-          border-bottom: 10px solid #fff;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: -18px;
+          right: 7%;
         }
         .ad-left {
           width: 100%;
-          background: #2f7de8;
+          background: var(--color-e8);
           color: #fff;
-          padding: 24px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          padding: 9rem 9.2rem 8rem 8rem ;
         }
         .ad-right {
           width: 100%;
         }
         .ad-subtitle {
-          text-transform: uppercase;
-          font-size: 13px;
-          margin-bottom: 8px;
+         font: var(--font-16);
+          font-family: var(--font-Condensed);
+          color: var(--color-white);
+          margin-bottom: 1rem;
         }
         .ad-title {
-          font-size: 22px;
+          font: var(--font-48);
+          font-family: var(--font-Condensed);
+          color: var(--color-white);
+          letter-spacing: -2.3px;
           font-weight: 700;
-          margin-bottom: 12px;
+          line-height: 1;
         }
         .ad-desc {
-          font-size: 14px;
-          margin-bottom: 16px;
+         font: var(--font-16);
+          color: var(--color-white);
+          font-weight: 300;
+          margin-top: 1rem;
+          padding-right: 2rem;
+          padding-bottom:6rem;
+          position:relative;
+
         }
-        .ad-contact {
-          font-size: 14px;
-          margin-bottom: 16px;
-        }
+          .ad-desc::before{content: '';position: absolute; background-color: #fff;bottom: 0; left: 0;width: 50rem;height: 0.1rem;opacity: 0.3;}
+        .ad-contact {padding-top:6rem;}
+          .ad-contact span {
+          font: var(--font-16);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);margin-bottom:0.8rem;display: block;}
+          .ad-contact p{
+          font: var(--font-24);
+          color: var(--color-white);
+          letter-spacing: -0.24px
+          font-family: var(--font-Condensed);
+          margin-bottom:1.4rem
+          }
         .ad-ctas {
           display: flex;
           gap: 8px;
@@ -1114,17 +1137,26 @@ export default function Header() {
         .cta:hover {
           opacity: 0.9;
         }
-        .cta.primary {
-          background: #ffc100;
-          color: #000;
-        }
-        .cta.secondary {
-          color: #fff;
-          border: 1px solid #fff;
+          .cta.primary:hover {
+          background-color: var(--color-4e);
+          color: var(--color-white);}
+       .cta.primary {
+        background: transparent;
+         border: 1px solid var(--color-4e);
+        padding: 1rem 2rem;
+        display: inline-flex;
+        color: var(--color-4e);
+        font: var(--font-13);
+        font-family: var(--font-Condensed);
+        font-weight: 700;
+        align-items: center;
+        gap: 3rem;
+        white-space: nowrap;
+        -webkit-transition: all 0.5s ease;
         }
         .ad-middle {
           width: 100%;
-          padding: 24px;
+           padding: 9rem 9.2rem 8rem 8rem ;
           border-right: 1px solid #eee;
         }
         .ad-middle ul {
@@ -1133,34 +1165,43 @@ export default function Header() {
           margin: 0;
         }
         .ad-link {
-          padding: 6px 0;
-          font-size: 15px;
-          font-weight: 500;
+          font: var(--font-21);
+          color: var(--color-4e);
+          padding-block: 1rem;
+          border-bottom: 1px dashed #16344E33;
+          display: block;
+          position: relative;
           cursor: pointer;
-          color: #333;
-          transition: color 0.3s ease;
         }
         .ad-link:hover {
-          color: #2f7de8;
-          text-decoration: underline;
+          color: var(--color-e8);
+          text-decoration: none;
         }
         .ad-stats {
-          margin-top: 20px;
+          margin-top: 5.8rem;
         }
         .ad-stats h3 {
-          font-size: 18px;
-          font-weight: 700;
-          margin-bottom: 4px;
+          font: var(--font-36);
+          font-family: var(--font-Condensed);
+          color: var(--color-4e);
+          letter-spacing: -1.01px;
+          padding-right: 8rem;
         }
         .ad-stats p {
-          font-size: 13px;
-          color: #777;
-          margin-bottom: 10px;
+          font: var(--font-16);
+          font-family: var(--font-Condensed);
+          color: var(--color-4e);
+          text-transform: uppercase;
+          margin-block:1.4rem 1.8rem;
         }
         .stats-btn {
           background: #fff;
           border: 1px solid #000;
-          padding: 6px 12px;
+          font: var(--font-18);
+          font-family: var(--font-Condensed);
+          font-weight: 700;
+          letter-spacing: 0.72px;
+          padding: 1rem 1.5rem;
           cursor: pointer;
           font-weight: 600;
           transition: all 0.3s ease;
@@ -1228,10 +1269,11 @@ export default function Header() {
         }
 
         .menu-left {
-          width: 20%;
-          background: #2f7de8;
+          width: 23%;
+          background: var(--color-e8);
           color: #fff;
-          padding-top: 5rem;
+          padding-top: 10rem;
+          padding-inline: 14rem 7rem;
         }
         .menu-left-item {
           padding: 12px 14px;
@@ -1275,7 +1317,7 @@ export default function Header() {
           transition: color 0.3s ease;
         }
         .middle-item:hover {
-          color: #2f7de8;
+          color: var(--color-e8);
         }
 
         .menu-right {
@@ -1321,10 +1363,9 @@ export default function Header() {
         .mega-dropdown {
           z-index: -1;
           background: #fff;
-          gap: 20px;
+          gap: 6rem;
           width: 100%;
           height: auto;
-          min-width: max-content;
           display: none;
           position: fixed;
           top: 0;
@@ -1338,9 +1379,9 @@ export default function Header() {
         }
 
         .mega-left {
-          background: #2f7de8;
+          background: var(--color-e8);
           color: #fff;
-          width: 20%;
+          width: 43rem;
           position: relative;
         }
         .mega-left ul {
@@ -1350,49 +1391,44 @@ export default function Header() {
           text-align: center;
           position: absolute;
           width: 100%;
-          top: 35%;
+          top: 26%;
         }
         .mega-left-item {
           cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease;
           font-weight: 700;
-          padding: 8px 0;
+          padding: 1px 0;
         }
 
-        .mega-left-item .dropdown-item {
-          color: #fff;
-          text-decoration: none;
-        }
-        .mega-left-item:hover {
-          background: #ffc100;
-          color: #000;
-        }
+        
+        
 
         .mega-right {
           display: flex;
           align-items: center;
-          gap: 3rem;
-          width: 80%;
+          gap: 3.4rem;
+          width: 76%;
           display: flex;
+          padding-right: 9.8rem;
         }
         .mega-right-text {
-          width: 20%;
+          width: 23%;
+          padding-top: 3rem;
         }
         .mega-subtitle {
-          font-size: 13px;
-          color: #555;
-          text-transform: uppercase;
-          margin-bottom: 6px;
+         font: var(--font-13);
+          color: var(--color-e8);
+          font-weight: 800;
+          display: inline-block;
+          padding-bottom: 0rem;
         }
-        .mega-title {
-          font-size: 24px;
-          font-weight: 700;
-          margin-bottom: 8px;
-          color: #16344e;
-        }
+        
         .mega-desc {
-          font-size: 14px;
-          margin-bottom: 12px;
-          color: #444;
+          max-width: 100%;
+          font: var(--font-16);
+          font-weight: 200;
+          color: var(--color-4e);
+          margin-bottom:5.6rem;
         }
         .mega-ctas {
           display: flex;
@@ -1420,21 +1456,24 @@ export default function Header() {
           display: block;
         }
         .banner-label {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.5);
-          border-radius: 2px;
+          background: rgba(85, 85, 85, 0.5);
           width: 100%;
-          padding: 15px 10px;
-          font-size: 14px;
+          padding-inline: 2.2rem;
+          padding-block:1.6rem;
           font-weight: 700;
           position: absolute;
           bottom: 0;
           left: 0;
+          font: var(--font-28);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);
+          font-weight: 600;
+          text-transform: uppercase;
         }
 
         @media (min-width: 1024px) and (max-width: 1420px) {
           .mega-right-banners {
-            height: 70%;
+            height: 68%;
             margin-top: 8rem;
             margin-bottom: 3rem;
           }
