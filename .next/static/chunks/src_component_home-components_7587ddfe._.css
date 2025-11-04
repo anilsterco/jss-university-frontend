@@ -2100,7 +2100,7 @@
 .happening-module__EQ7KYq__orangeLine {
   background-color: #ffa600;
   width: 10%;
-  height: 3px;
+  height: 5px;
   margin-bottom: 20px;
 }
 
@@ -2133,10 +2133,6 @@
 
 .happening-module__EQ7KYq__seamEduLight {
   font-weight: 300;
-}
-
-.happening-module__EQ7KYq__cardImage {
-  object-fit: cover;
 }
 
 .happening-module__EQ7KYq__mobileView {

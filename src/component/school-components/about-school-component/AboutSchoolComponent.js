@@ -5,22 +5,21 @@ import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
 import styles from "./about-school.module.css";
 
-export default function AboutSchool() {
-  const aboutSchoolContent = {
-    title: "EMPOWERING INNOVATION. ENGINEERING EXCELLENCE.",
+export default function AboutSchool({ data }) {
+  const dummyAboutSchoolContent = {
+    title:
+      '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text ">ENGINEERING EXCELLENCE.</span>',
     subtitle: "ABOUT SCHOOL OF ENGINEERING",
     description:
       "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
     url: "/",
-    chancellor: {
-      img: "/images/school-page/about-school-banner.png",
-      logo: "/images/home-page/fifth-slider-second-img.png",
-      logoContent:
-        "Approved by All India Council for Technical Education (AICTE)",
-      statsNumber: "28+",
-      statsContent: "ACRES CAMPUS AREA",
-    },
-    highlights: [
+    chancellor_img: "/images/school-page/about-school-banner.png",
+    chancellor_logo: "/images/home-page/fifth-slider-second-img.png",
+    logo_content:
+      "Approved by All India Council for Technical Education (AICTE)",
+    stats_number: "28+",
+    stats_content: "ACRES CAMPUS AREA",
+    highlight: [
       {
         rank: "#20",
         text: "ENGINEERING COLLEGES IN UTTAR PRADESH",
@@ -38,7 +37,7 @@ export default function AboutSchool() {
       { text: "APPLY NOW", url: "#3" },
     ],
   };
-
+  const aboutSchoolContent = data ? data : dummyAboutSchoolContent;
   return (
     <div className={styles.aboutSchoolSection}>
       <div className="container-fluid">
@@ -47,9 +46,10 @@ export default function AboutSchool() {
           <div className="col-md-6 mb-4">
             <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
 
-            <h1 className={`${styles.title} highlighted-title-top-to-botom `}>
-              {aboutSchoolContent.title}
-            </h1>
+            <h1
+              className={`${styles.title} `}
+              dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
+            ></h1>
 
             <p className={styles.description}>
               {aboutSchoolContent.description}
@@ -90,7 +90,7 @@ export default function AboutSchool() {
           <div className="col-md-6 px-5 py-5">
             <div className={styles.imageCard}>
               <Image
-                src={aboutSchoolContent.chancellor.img}
+                src={aboutSchoolContent.chancellor_img}
                 alt="School campus"
                 width={350}
                 height={476}
@@ -104,10 +104,10 @@ export default function AboutSchool() {
               {/* Bottom Left Text */}
               <div className={styles.statsContainer}>
                 <span className={styles.statsNumber}>
-                  {aboutSchoolContent.chancellor.statsNumber}
+                  {aboutSchoolContent.stats_number}
                 </span>
                 <span className={styles.statsText}>
-                  {aboutSchoolContent.chancellor.statsContent}
+                  {aboutSchoolContent.stats_content}
                 </span>
                 <div className={styles.yellowLine}></div>
               </div>
@@ -115,7 +115,7 @@ export default function AboutSchool() {
               {/* Bottom Right Badge */}
               <div className={styles.badgeContainer}>
                 <Image
-                  src={aboutSchoolContent.chancellor.logo}
+                  src={aboutSchoolContent.chancellor_logo}
                   alt="AICTE Logo"
                   width={350}
                   height={476}
@@ -123,7 +123,7 @@ export default function AboutSchool() {
                   priority
                 />
                 <p className={styles.badgeText}>
-                  {aboutSchoolContent.chancellor.logoContent}
+                  {aboutSchoolContent.logo_content}
                 </p>
               </div>
             </div>

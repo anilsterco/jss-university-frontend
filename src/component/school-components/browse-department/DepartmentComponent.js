@@ -4,57 +4,10 @@ import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
 import Link from "next/link";
 import styles from "./department.module.css";
+import { GoArrowRight } from "react-icons/go";
 
-export default function DepartmentSection() {
-  const departmentSection = {
-    title: "Start Your JSS Journey",
-    desc: "Leading the revolution in integrated learning where students shape their own future.",
-    programsCount: "200",
-    programsText: "SED UT PERSPICIATIS UNDE",
-    imageContent: [
-      {
-        name: "UNDER GRADUTE",
-        img: "/images/school-page/department-dummy-banner.png",
-        url: "#a",
-      },
-      {
-        name: "POST GRADUTE",
-        img: "/images/school-page/department-dummy-banner.png",
-        url: "#b",
-      },
-      {
-        name: "PHD",
-        img: "/images/school-page/department-dummy-banner.png",
-        url: "#c",
-      },
-    ],
-    browseDepartmentSection: [
-      {
-        name: "ELECTRICAL ENGINEERING",
-        url: "#1",
-      },
-      {
-        name: "MECHANICAL ENGINEERING",
-        url: "#2",
-      },
-      {
-        name: "COMPUTER SCIENCE AND ENGINEERING",
-        url: "#3",
-      },
-      {
-        name: "ROBOTICS AND ARTIFICIAL INTELLIGENCE",
-        url: "#4",
-      },
-      {
-        name: "ELECTRICAL & ELECTRONICS ENGINEERING",
-        url: "#5",
-      },
-      {
-        name: "ELECTRONICS AND COMMUNICATION ENGINEERING",
-        url: "#6",
-      },
-    ],
-  };
+export default function DepartmentSection({ data }) {
+  const departmentSection = data;
 
   return (
     <div className={styles.departmentSection}>
@@ -64,24 +17,31 @@ export default function DepartmentSection() {
           <div className="col-md-3">
             <div className={styles.leftSide}>
               <div>
-                <h1 className={`highlighted-title-top-to-botom  ${styles.title}`}>
-                  {departmentSection.title}
-                </h1>
-                <p className={styles.description}>{departmentSection.desc}</p>
+                <h1
+                  className={`${styles.title}`}
+                  dangerouslySetInnerHTML={{ __html: departmentSection.title }}
+                ></h1>
+                <p className={styles.description}>
+                  {departmentSection.description}
+                </p>
               </div>
 
               <div>
                 <h3 className={styles.programsCount}>
-                  {departmentSection.programsCount}+
+                  {departmentSection.programs_count}
                 </h3>
                 <p className={styles.programsText}>
-                  {departmentSection.programsText}
+                  {departmentSection.programs_text}
                 </p>
-                <button className={styles.viewAllButton}>
-                  VIEW ALL PROGRAMMES →
-                </button>
+                <Link href={`/program`}>
+                  <button className={styles.viewAllButton}>
+                    VIEW ALL PROGRAMMES <GoArrowRight />
+                  </button>
+                </Link>
                 <br />
-                <button className={styles.applyButton}>APPLY NOW</button>
+                <Link href={`/apply-now`}>
+                  <button className={styles.applyButton}>APPLY NOW</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -90,14 +50,14 @@ export default function DepartmentSection() {
           <div className="col-md-9">
             {/* Program Cards */}
             <div className="row mb-5 w-100 m-auto">
-              {departmentSection.imageContent.map((prog, index) => (
+              {departmentSection.programs.map((prog, index) => (
                 <div className="col-md-4 mb-4" key={index}>
-                  <Link href={prog.url}>
+                  <Link href={`/program/${prog.slug}`}>
                     <div
                       className={`card text-white border-0 position-relative ${styles.programCard}`}
                     >
                       <Image
-                        src={prog.img}
+                        src={prog.image}
                         alt={prog.name}
                         width={350}
                         height={476}
@@ -124,9 +84,12 @@ export default function DepartmentSection() {
             <hr className={styles.divider} />
 
             <div className="row">
-              {departmentSection.browseDepartmentSection.map((dept, index) => (
+              {departmentSection.departments.map((dept, index) => (
                 <div className="col-md-4 mb-3" key={index}>
-                  <Link href={dept.url} className={styles.departmentItem}>
+                  <Link
+                    href={`/department/${dept.slug}`}
+                    className={styles.departmentItem}
+                  >
                     <span>{dept.name}</span>
                     <span className={styles.departmentArrow}>
                       <SlArrowRightCircle />
