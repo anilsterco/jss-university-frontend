@@ -82,6 +82,15 @@ a:active {
 .yellow-text {
   color: #b08f29;
 }
+.hall-of-fame-heading {
+  color: #FFC100;
+}
+.hall-of-fame .button:last-child {
+  background: unset;
+  border: 2px solid #16344e;
+  color: #16344e !important ;
+  font-weight: 500;
+}
 .second-section-cards-image {
   position: relative;
 }

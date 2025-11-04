@@ -856,6 +856,17 @@ a, a:hover, a:focus, a:active {
   color: #b08f29;
 }
 
+.hall-of-fame-heading {
+  color: #ffc100;
+}
+
+.hall-of-fame .button:last-child {
+  background: unset;
+  border: 2px solid #16344e;
+  font-weight: 500;
+  color: #16344e !important;
+}
+
 .second-section-cards-image {
   position: relative;
 }

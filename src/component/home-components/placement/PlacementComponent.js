@@ -11,60 +11,64 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./placement.module.css";
 
-const placementsData = {
-  // title: "FROM CAMPUS TO CORPORATE",
+const dummyPlacementsData = {
   title:
     '<span class="dark-blue-text ">FROM</span> <span class="blue-text">CAMPUS</span> <span class="dark-blue-text ">TO</span> <span class="blue-text">CORPORATE</span>',
-  stats: [
-    { number: "5000+", label: "STUDENTS HIRED" },
-    { number: "22.5", label: "LPA MAX" },
-    { number: "2000+", label: "RECRUITERS" },
+    subtitle: "Placement",
+  facts_and_figures: [
+    { figure: "5000+", title: "STUDENTS HIRED" },
+    { figure: "22.5", title: "LPA MAX" },
+    { figure: "2000+", title: "RECRUITERS" },
   ],
   testimonials: [
     {
-      img: "/images/home-page/testimonial-placeholder.png",
-      text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
+      image: "/images/home-page/testimonial-placeholder.png",
+      short_description: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
       name: "Jane Doe",
-      role: "Product Engineer, TCS",
+      designation: "Product Engineer",
+      company: "TCS",
     },
     {
-      img: "/images/home-page/testimonial-placeholder.png",
-      text: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
+      image: "/images/home-page/testimonial-placeholder.png",
+      short_description: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
       name: "John Smith",
-      role: "Software Engineer, Infosys",
+      designation: "Product Engineer",
+      company: "TCS",
     },
     {
-      img: "/images/home-page/testimonial-placeholder.png",
-      text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      image: "/images/home-page/testimonial-placeholder.png",
+      short_description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       name: "Anita Verma",
-      role: "Business Analyst, IBM",
+      designation: "Product Engineer",
+      company: "TCS",
     },
   ],
-  wallOfFame: {
-    img: "/images/home-page/placement-wall-banner.png",
-    text: "JSS <span class='text-warning'>PLACEMENTS 2023</span> WALL OF FAME",
-    link: "#",
+  hall_of_fame: {
+    image: "/images/home-page/placement-wall-banner.png",
+    heading: "JSS <span class='text-warning'>PLACEMENTS 2023</span> WALL OF FAME",
+    url: "#",
   },
   recruiters: [
-    { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
-    { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
-    { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
-    { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
-    { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
-    { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
-    { name: "Flipkart", logo: "/images/home-page/flipkart-logo.png" },
-    { name: "TCS", logo: "/images/home-page/tcs-logo.png" },
+    { title: "TCS", image: "/images/home-page/tcs-logo.png" },
+    { title: "Flipkart", image: "/images/home-page/flipkart-logo.png" },
+    { title: "TCS", image: "/images/home-page/tcs-logo.png" },
+    { title: "Flipkart", image: "/images/home-page/flipkart-logo.png" },
+    { title: "Flipkart", image: "/images/home-page/flipkart-logo.png" },
+    { title: "TCS", image: "/images/home-page/tcs-logo.png" },
+    { title: "Flipkart", image: "/images/home-page/flipkart-logo.png" },
+    { title: "TCS", image: "/images/home-page/tcs-logo.png" },
   ],
 };
 
-export default function PlacementsSection() {
+export default function PlacementsSection({ data }) {
+  const placementsData = data ? data : dummyPlacementsData;
   return (
     <>
       <section className={`container-fluid ${styles.thirdSection}`}>
         {/* Section Header */}
         <div className={` ${styles.sectionHeader}`}>
           <p className="fw-bold text-uppercase dark-blue-text mb-2">
-            Placements
+            {placementsData.subtitle.toUpperCase()}
           </p>
           <h2
             className={`fw-bold `}
@@ -78,12 +82,12 @@ export default function PlacementsSection() {
           <div className={`col-lg-7 ps-0 ${styles.leftContent}`}>
             {/* Stats Row */}
             <div className={`row mb-5 pb-4 w-100 m-auto ${styles.statsRow}`}>
-              {placementsData.stats.map((stat, i) => (
+              {placementsData.facts_and_figures.map((stat, i) => (
                 <div key={i} className="col-md-4 text-center border p-3">
                   <h3 className={`fw-bold ${styles.statsNumber}`}>
-                    {stat.number}
+                    {stat.figure}
                   </h3>
-                  <p className={`mb-0 ${styles.statsLabel}`}>{stat.label}</p>
+                  <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
                 </div>
               ))}
             </div>
@@ -116,8 +120,8 @@ export default function PlacementsSection() {
                         fontSize={30}
                       />
                       <Image
-                        src={t.img}
-                        alt={t.name}
+                        src={t.image}
+                        alt={`${t.name} image`}
                         width={140}
                         height={160}
                         style={{
@@ -136,9 +140,11 @@ export default function PlacementsSection() {
                         color="#b08f29"
                         fontSize={30}
                       />
-                      <p className="">{t.text}”</p>
+                      <p className="">{t.short_description}”</p>
                       <h6 className="small mb-0 fw-bold">{t.name}</h6>
-                      <small className="">{t.role}</small>
+                      <small className="">
+                        {t.designation}, {t.company}
+                      </small>
                       <div
                         className={`d-flex gap-2 mt-3 ${styles.testimonialIconContainer}`}
                       >
@@ -164,7 +170,7 @@ export default function PlacementsSection() {
               className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
             >
               <Image
-                src={placementsData.wallOfFame.img}
+                src={placementsData.hall_of_fame.image}
                 alt="Wall of Fame"
                 width={400}
                 height={700}
@@ -173,16 +179,18 @@ export default function PlacementsSection() {
               <div
                 className={`position-absolute text-white fw-bold ${styles.wallOfFameText}`}
                 dangerouslySetInnerHTML={{
-                  __html: placementsData.wallOfFame.text,
+                  __html: placementsData.hall_of_fame.heading,
                 }}
               />
-              <Link
-                href={placementsData.wallOfFame.link}
-                className={`position-absolute`}
-                style={{ bottom: "4%", left: "6%" }}
-              >
-                <LuCircleArrowRight size={20} color="#fff" />
-              </Link>
+              {placementsData.hall_of_fame.url && (
+                <Link
+                  href={placementsData.hall_of_fame.url}
+                  className={`position-absolute`}
+                  style={{ bottom: "4%", left: "6%" }}
+                >
+                  <LuCircleArrowRight size={20} color="#fff" />
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -204,18 +212,18 @@ export default function PlacementsSection() {
               slidesPerView={7}
               className="recruiters-slider"
               breakpoints={{
-              0: { slidesPerView: 1 },
-              576: { slidesPerView: 2 },
-              992: { slidesPerView: 3},
-              1040: { slidesPerView: 7 },
-            }}
+                0: { slidesPerView: 1 },
+                576: { slidesPerView: 2 },
+                992: { slidesPerView: 3 },
+                1040: { slidesPerView: 7 },
+              }}
             >
               {placementsData.recruiters.map((rec, i) => (
                 <SwiperSlide key={i}>
                   <Image
                     key={i}
-                    src={rec.logo}
-                    alt={rec.name}
+                    src={rec.image}
+                    alt={rec.title}
                     width={150}
                     height={80}
                     style={{

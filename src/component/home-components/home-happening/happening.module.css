@@ -138,7 +138,7 @@
 .orangeLine {
   background-color: #ffa600;
   width: 10%;
-  height: 3px;
+  height: 5px;
   margin-bottom: 20px;
 }
 .rightArrow {
@@ -172,9 +172,9 @@
   font-weight: 300;
 }
 
-.cardImage {
+/* .cardImage {
   object-fit: cover;
-}
+} */
 .mobileView {
   display: none;
 }

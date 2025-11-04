@@ -7,19 +7,20 @@ import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
 import styles from "./banner.module.css";
 
-export default function HeroSlider() {
-  const bannerData = [
-    {
-      id: 1,
-      title: "A TRADITION OF INNOVATION AND LEADERSHIP",
-      desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
-      display_order: 100,
-      linked_text: "Learn more about JSS",
-      url: "#",
-      desktopBanner: "/images/home-page/placeholder-banner.png",
-      mobileBanner: "/images/home-page/mobile-main-banner.png",
-    },
-  ];
+export default function HeroSlider({ data }) {
+  const bannerData = data?.length
+    ? data
+    : [
+        {
+          id: 1,
+          title: "No Data Found",
+          desc: "",
+          linked_text: "",
+          url: "",
+          desktop_banner: "/images/home-page/placeholder-banner.png",
+          mobile_banner: "/images/home-page/mobile-main-banner.png",
+        },
+      ];
 
   return (
     <div>
@@ -34,7 +35,7 @@ export default function HeroSlider() {
         {bannerData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <Image
-              src={slide.desktopBanner}
+              src={slide.desktop_banner}
               alt="slide image"
               width={1920}
               height={400}
@@ -43,7 +44,7 @@ export default function HeroSlider() {
               className={styles.desktopBanner}
             />
             <Image
-              src={slide.mobileBanner}
+              src={slide.mobile_banner}
               alt="slide image"
               width={500}
               height={300}
