@@ -780,6 +780,7 @@ html, body {
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-Roboto);
   margin: 0;
   padding: 0;
 }

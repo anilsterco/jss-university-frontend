@@ -3,6 +3,8 @@ import Footer from "../component/Footer";
 import Providers from "./providers";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../public/js/aos"
+import ScriptLoader from "@/component/ScriptLoader";
 
 
 export const metadata = {
@@ -13,11 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <Providers>
-          <Header />
-          <main className="main-container">{children}</main>
-          <Footer />
+          {/* <Header /> */}
+            <main className="main-container">{children}</main>
+            <ScriptLoader/>
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
