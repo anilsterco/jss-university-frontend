@@ -22,7 +22,7 @@ const dummyTestimonialsData = {
       location: "Germany",
       short_description:
         "Studying at JSS Noida has been a transformative journey...",
-      image: "/images/home-page/sixth-section-first-banner.png",
+      image: "/images/home-page/sixth-section-second-banner.png",
       alt_text: "",
       video_url:
         "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
