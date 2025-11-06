@@ -12,7 +12,7 @@ export default function Footer() {
 
   useEffect(() => {
     const res = {
-      logo: "/images/footer/footer-logo.png",
+      logo: "/images/footer/footer-logo.webp",
       address: "C-20/1, Sector - 62, Noida, Uttar Pradesh",
       phone: "+91 9311830458",
       email: "admission@jssaten.ac.in",
@@ -71,20 +71,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-dark text-white pt-5">
+    <footer className="footer_section">
       <div className="container border-bottom border-secondary pb-4">
-        <div className="row g-4">
+       <div className="col-lg-10 mx-auto">
+         <div className="row">
           <div className="col-md-9">
-            <div className="row d-flex justify-content-center">
-              <div className="col-sm-1 ">
+            <div className="footer_contact">
+              <div className="footer_left">
                 <img
                   src={data.logo}
                   alt="Logo"
-                  style={{ width: "80px" }}
+                  style={{ width: "9rem" }}
                 />
               </div>
-              <div className="col-md-10 mx-4">
-                <p className="fw-bold mb-1 text-info">Connect with us</p>
+              <div className="footer_right">
+                <p className="fw-bold text-info">Connect with us</p>
                 <p className="mb-1">{data.address}</p>
                 <div className="col-md-12 d-flex flex-column flex-md-row gap-3">
                   <p className="mb-1">{data.phone}</p>
@@ -118,6 +119,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+       </div>
       </div>
 
       <div className="container d-flex flex-wrap align-items-center pt-3">
@@ -150,7 +152,8 @@ export default function Footer() {
       </div>
 
       <style jsx>{`
-        .side-border {
+         .footer_section {background-color: rgba(0, 0, 0, 0.8);padding-block: 5rem 0;}
+         .side-border {
           border-right: 2px solid #6d757d;
           padding-right: 1rem;
         }
@@ -160,6 +163,7 @@ export default function Footer() {
         .social-icons a:hover {
           background-color: #f8f9fa59;
         }
+        
       `}</style>
     </footer>
   );
