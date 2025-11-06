@@ -239,7 +239,7 @@ function TestimonialCard({ data, onPlay }) {
       <div className={styles.cardImgContainer}>
         <Image
           src={data.image}
-          alt={data.name}
+          alt={data.alt_text}
           width={380}
           height={380}
           className={styles.cardImg}

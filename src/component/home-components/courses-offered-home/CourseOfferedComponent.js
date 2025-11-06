@@ -8,40 +8,39 @@ import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
 
 // ✅ All data stored separately for easy replacement (API later)
-const coursesData = {
+const dummyCoursesData = {
   // title: "Start Your JSS Journey",
   title:
     '<span class="blue-text">Start Your</span> <span class="dark-blue-text ">JSS Journey</span>',
   subtitle: "Courses Offered",
-  searchPlaceholder: "Search Course",
-  programsCount: "200",
-  programsText: "academic programs and pave the way to your ideal future.",
+  programs_count: "200",
+  programs_text: "academic programs and pave the way to your ideal future.",
 
-  levels: [
+  programs: [
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "UG",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "UG",
+      slug: "/",
     },
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "PG",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "PG",
+      slug: "/",
     },
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "PHD",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "PHD",
+      slug: "/",
     },
   ],
 
-  schools: [
-    { name: "Engineering", link: "#" },
-    { name: "Pharmacy", link: "#" },
-    { name: "Management", link: "#" },
-    { name: "Computer Applications", link: "#" },
-    { name: "Applied Sciences", link: "#" },
-    { name: "Humanities", link: "#" },
+  departments: [
+    { short_name: "Engineering", slug: "#" },
+    { short_name: "Pharmacy", slug: "#" },
+    { short_name: "Management", slug: "#" },
+    { short_name: "Computer Applications", slug: "#" },
+    { short_name: "Applied Sciences", slug: "#" },
+    { short_name: "Humanities", slug: "#" },
   ],
 
   admission: {
@@ -49,14 +48,25 @@ const coursesData = {
     desc: "Sed ut perspiciatis unde omnis",
     applyLink: "#",
   },
+  academic_year: {
+    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
+    description: "Sed ut perspiciatis unde omnis",
+  },
+  buttons: [
+    {
+      text: "Apply Now",
+      url: "https://project-demo.in/jss/api/homepage",
+    },
+  ],
 };
 
-export default function CoursesOffered() {
-  // Create ProgramsCount component
+export default function CoursesOffered({ data }) {
+  const coursesData = data ? data : dummyCoursesData;
+  console.log(data, "data");
   const ProgramsCount = () => (
     <div className={styles.programsCountWrapper}>
       <h1 className={`display-4 programs-count ${styles.programsCount}`}>
-        {coursesData.programsCount}
+        {coursesData.programs_count}
       </h1>
       <span className={styles.programsCountPlus}>+</span>
     </div>
@@ -77,7 +87,9 @@ export default function CoursesOffered() {
               className={`fw-bold  ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
             ></h1>
-            <p className={styles.showOnlyMobileSubHeading}>{coursesData.programsText}</p>
+            <p className={styles.showOnlyMobileSubHeading}>
+              {coursesData.programs_text}
+            </p>
             {/* Search box */}
             <div
               className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
@@ -85,7 +97,7 @@ export default function CoursesOffered() {
               <input
                 type="text"
                 className="form-control border-0"
-                placeholder={coursesData.searchPlaceholder}
+                placeholder="Search Course"
               />
               <span className="input-group-text bg-white border-0">
                 <CiSearch />
@@ -97,7 +109,7 @@ export default function CoursesOffered() {
               className={`d-flex align-items-center gap-5 ${styles.programsCountSection}`}
             >
               <ProgramsCount />
-              <p className={styles.programsText}>{coursesData.programsText}</p>
+              <p className={styles.programsText}>{coursesData.programs_text}</p>
             </div>
           </div>
 
@@ -105,14 +117,14 @@ export default function CoursesOffered() {
           <div
             className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
           >
-            {coursesData.levels.map((level, i) => (
+            {coursesData.programs.map((level, i) => (
               <Link
-                href={level.link}
+                href={level.slug}
                 key={i}
                 className="second-section-cards-image position-relative"
               >
                 <Image
-                  src={level.img}
+                  src={level.image}
                   alt="slide image"
                   width={200}
                   height={300}
@@ -123,7 +135,7 @@ export default function CoursesOffered() {
                   <span
                     className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
                   >
-                    {level.name}{" "}
+                    {level.name_short}{" "}
                     <FaChevronRight
                       fontSize={15}
                       color="#b08f29"
@@ -164,13 +176,14 @@ export default function CoursesOffered() {
             <div
               className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
             >
-              {coursesData.schools.map((school, i) => (
+              {coursesData.departments.map((school, i) => (
                 <Link
-                  href={school.link}
+                  href={`/schools/${school.slug}`}
                   key={i}
                   className="py-2 px-4 d-flex justify-content-between align-items-center"
                 >
-                  {school.name} <FaChevronRight fontSize={10} color="#000" />
+                  {school.short_name}{" "}
+                  <FaChevronRight fontSize={10} color="#000" />
                 </Link>
               ))}
             </div>
@@ -181,19 +194,19 @@ export default function CoursesOffered() {
             className={`col-lg-4 d-flex justify-content-between align-items-center ${styles.admissionSection}`}
           >
             <div>
-              <h4 className="fw-bold mb-1">
-                Admission{" "}
-                <span className={styles.admissionYearText}>
-                  {coursesData.admission.year}
-                </span>
-              </h4>
-              <p className="small mb-0">{coursesData.admission.desc}</p>
+              <h4
+                className="fw-bold mb-1"
+                dangerouslySetInnerHTML={{
+                  __html: coursesData.academic_year.year,
+                }}
+              ></h4>
+              <p className="small mb-0">{coursesData.academic_year.description}</p>
             </div>
             <Link
-              href={coursesData.admission.applyLink}
+              href={coursesData.buttons[0].url}
               className="btn btn-warning rounded-pill"
             >
-              Apply Now
+              {coursesData.buttons[0].text}
             </Link>
           </div>
         </div>

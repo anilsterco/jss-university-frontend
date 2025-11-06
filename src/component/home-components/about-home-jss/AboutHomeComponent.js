@@ -9,56 +9,57 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { GoArrowRight } from "react-icons/go";
 import styles from "./about-home-jss.module.css";
 import "swiper/css";
+import { useState } from "react";
 
-const legacyData = {
+const dummyLegacyData = {
   title:
     '<span class="dark-blue-text ">SRI SUTTUR MATH THE</span> <span class="blue-text">1000-YEAR LEGACY </span>',
   subtitle: "ABOUT JSS UNIVERSITY",
   description:
     "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.",
   url: "/",
-  chancellor: {
-    img: "/images/home-page/fifth-section-banner.png",
-    name: "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji",
-    message: "Message From Chancellor",
-  },
+  chancellor_img: "/images/home-page/fifth-section-banner.png",
+  chancellor_name: "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji",
+  chancellor_title: "Message From Chancellor",
+  video_url: "https://www.youtube.com/embed/D0UnqGm_miA?si=DACPYBmxQB1fz4nK",
   highlights: [
     {
-      number: "#37",
+      rank: "#37",
       text: "#201-300 IN ENGINEERING IN 2024",
       source: "Outlook 2020",
     },
     {
-      number: "#9",
+      rank: "#9",
       text: "AMONG TOP EMERGING PRIVATE INSTITUTIONS 2016 BY",
       source: "Times of India",
     },
   ],
   buttons: [
-    { text: "360 VIEW", link: "#" },
-    { text: "WHY JSS", link: "#" },
-    { text: "APPLY NOW", link: "#" },
+    { text: "360 VIEW", url: "#" },
+    { text: "WHY JSS", url: "#" },
+    { text: "APPLY NOW", url: "#" },
   ],
-  accreditations: [
+  logo_content: [
     {
-      name: "UGC",
-      img: "/images/home-page/fifth-slider-first-img.png",
-      text: "JSS Academy of Technical Education, Noida is recognized under UGC",
+      image: "/images/home-page/fifth-slider-first-img.png",
+      description:
+        "JSS Academy of Technical Education, Noida is recognized under UGC",
     },
     {
-      name: "AICTE",
-      img: "/images/home-page/fifth-slider-second-img.png",
-      text: "Approved by All India Council for Technical Education (AICTE)",
+      image: "/images/home-page/fifth-slider-second-img.png",
+      description:
+        "Approved by All India Council for Technical Education (AICTE)",
     },
     {
-      name: "NAAC",
-      img: "/images/home-page/fifth-slider-first-img.png",
-      text: "National Assessment and Accreditation Council (NAAC)",
+      image: "/images/home-page/fifth-slider-first-img.png",
+      description: "National Assessment and Accreditation Council (NAAC)",
     },
   ],
 };
 
-export default function LegacySection() {
+export default function LegacySection({ data }) {
+  const [videoPopup, setVideoPopup] = useState(false);
+  const legacyData = data ? data : dummyLegacyData;
   return (
     <section className={`container-fluid ${styles.fifthSection}`}>
       <div className={`container-fluid ${styles.fifthContainerSection}`}>
@@ -75,8 +76,8 @@ export default function LegacySection() {
           <div className={`col-lg-5 ${styles.leftColumn}`}>
             <div className="position-relative">
               <Image
-                src={legacyData.chancellor.img}
-                alt={legacyData.chancellor.name}
+                src={legacyData.chancellor_img}
+                alt={legacyData.chancellor_name}
                 width={500}
                 height={350}
                 style={{ height: "100%", width: "100%" }}
@@ -84,11 +85,21 @@ export default function LegacySection() {
               />
               {/* Play Button Overlay */}
               <div className={styles.contentPart}>
-                <IoPlayCircleOutline fontSize={30} className="text-warning" />
+                <div>
+                  {legacyData.video_url && (
+                    <IoPlayCircleOutline
+                      fontSize={30}
+                      className="text-warning"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setVideoPopup(true)}
+                    />
+                  )}
+                </div>
+
                 <div className="">
-                  <strong>{legacyData.chancellor.message}</strong>
+                  <strong>{legacyData.chancellor_title}</strong>
                   <br />
-                  {legacyData.chancellor.name}
+                  {legacyData.chancellor_name}
                 </div>
               </div>
             </div>
@@ -112,7 +123,7 @@ export default function LegacySection() {
               {legacyData.highlights.map((h, i) => (
                 <div key={i} className={`col-md-5 ${styles.highlightBox}`}>
                   <h1 className={`fw-bold ${styles.highlightNumber}`}>
-                    {h.number}
+                    {h.rank}
                   </h1>
                   <div className="left-content">
                     <p className={styles.cardTitle}>{h.text}</p>
@@ -132,7 +143,7 @@ export default function LegacySection() {
                   className={`col-md-5 ${styles.highlightBox}`}
                 >
                   <h1 className={`fw-bold ${styles.highlightNumber}`}>
-                    {h.number}
+                    {h.rank}
                   </h1>
                   <div className="left-content">
                     <p className={styles.cardTitle}>{h.text}</p>
@@ -147,7 +158,7 @@ export default function LegacySection() {
               className={`d-flex gap-3 about-home-buttons ${styles.aboutBtnDiv}`}
             >
               {legacyData.buttons.map((btn, i) => (
-                <Link key={i} href={btn.link} className={styles.navButtons}>
+                <Link key={i} href={btn.url} className={styles.navButtons}>
                   {btn.text}
                 </Link>
               ))}
@@ -175,17 +186,17 @@ export default function LegacySection() {
               1280: { slidesPerView: 3 },
             }}
           >
-            {legacyData.accreditations.map((acc, i) => (
+            {legacyData.logo_content.map((acc, i) => (
               <SwiperSlide key={i} className={styles.accreditationSlide}>
                 <div className="gap-3 px-3 d-flex align-items-center content">
                   <Image
-                    src={acc.img}
-                    alt={acc.name}
+                    src={acc.image}
+                    alt="Accreditation Logo"
                     width={80}
                     height={80}
                     className={styles.accreditationLogo}
                   />
-                  <p className="small w-50">{acc.text}</p>
+                  <p className="small w-50">{acc.description}</p>
                 </div>
               </SwiperSlide>
             ))}
@@ -193,6 +204,29 @@ export default function LegacySection() {
           </Swiper>
         </div>
       </div>
+
+      {/* ✅ Video Popup */}
+      {videoPopup && (
+        <div className={styles.videoModalOverlay}>
+          <div className={styles.videoModalContent}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={legacyData.video_url}
+              title="Testimonial Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className={styles.videoIframe}
+            ></iframe>
+            <button
+              className={styles.closeBtn}
+              onClick={() => setVideoPopup(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

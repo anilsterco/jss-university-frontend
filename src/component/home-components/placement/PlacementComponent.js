@@ -14,7 +14,7 @@ import styles from "./placement.module.css";
 const dummyPlacementsData = {
   title:
     '<span class="dark-blue-text ">FROM</span> <span class="blue-text">CAMPUS</span> <span class="dark-blue-text ">TO</span> <span class="blue-text">CORPORATE</span>',
-    subtitle: "Placement",
+  subtitle: "Placement",
   facts_and_figures: [
     { figure: "5000+", title: "STUDENTS HIRED" },
     { figure: "22.5", title: "LPA MAX" },
@@ -23,21 +23,24 @@ const dummyPlacementsData = {
   testimonials: [
     {
       image: "/images/home-page/testimonial-placeholder.png",
-      short_description: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
+      short_description:
+        "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.",
       name: "Jane Doe",
       designation: "Product Engineer",
       company: "TCS",
     },
     {
       image: "/images/home-page/testimonial-placeholder.png",
-      short_description: "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
+      short_description:
+        "Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.",
       name: "John Smith",
       designation: "Product Engineer",
       company: "TCS",
     },
     {
       image: "/images/home-page/testimonial-placeholder.png",
-      short_description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      short_description:
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       name: "Anita Verma",
       designation: "Product Engineer",
       company: "TCS",
@@ -45,7 +48,8 @@ const dummyPlacementsData = {
   ],
   hall_of_fame: {
     image: "/images/home-page/placement-wall-banner.png",
-    heading: "JSS <span class='text-warning'>PLACEMENTS 2023</span> WALL OF FAME",
+    heading:
+      "JSS <span class='text-warning'>PLACEMENTS 2023</span> WALL OF FAME",
     url: "#",
   },
   recruiters: [
@@ -82,14 +86,15 @@ export default function PlacementsSection({ data }) {
           <div className={`col-lg-7 ps-0 ${styles.leftContent}`}>
             {/* Stats Row */}
             <div className={`row mb-5 pb-4 w-100 m-auto ${styles.statsRow}`}>
-              {placementsData.facts_and_figures.map((stat, i) => (
-                <div key={i} className="col-md-4 text-center border p-3">
-                  <h3 className={`fw-bold ${styles.statsNumber}`}>
-                    {stat.figure}
-                  </h3>
-                  <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
-                </div>
-              ))}
+              {placementsData.facts_and_figures &&
+                placementsData.facts_and_figures.map((stat, i) => (
+                  <div key={i} className="col-md-4 text-center border p-3">
+                    <h3 className={`fw-bold ${styles.statsNumber}`}>
+                      {stat.figure}
+                    </h3>
+                    <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
+                  </div>
+                ))}
             </div>
 
             {/* Testimonial Slider */}
@@ -107,58 +112,59 @@ export default function PlacementsSection({ data }) {
               className={`${styles.testimonialSwiper} testimonial-slider`}
             >
               <div className={styles.blueBg}></div>
-              {placementsData.testimonials.map((t, i) => (
-                <SwiperSlide key={i}>
-                  <div
-                    className={`${styles.eachSlide} d-flex align-items-center`}
-                  >
-                    {/* Testimonial Image */}
-                    <div className={` ${styles.testimonialImageContainer}`}>
-                      <FaQuoteLeft
-                        className={`mb-3 ${styles.mobileQuoteIcon}`}
-                        color="#b08f29"
-                        fontSize={30}
-                      />
-                      <Image
-                        src={t.image}
-                        alt={`${t.name} image`}
-                        width={140}
-                        height={160}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          position: "relative",
-                        }}
-                        priority
-                        className={`top-0 start-0 rounded ${styles.testimonialImage}`}
-                      />
-                    </div>
-                    {/* Testimonial Text */}
-                    <div>
-                      <FaQuoteLeft
-                        className={`mb-3 ${styles.desktopQuoteIcon}`}
-                        color="#b08f29"
-                        fontSize={30}
-                      />
-                      <p className="">{t.short_description}”</p>
-                      <h6 className="small mb-0 fw-bold">{t.name}</h6>
-                      <small className="">
-                        {t.designation}, {t.company}
-                      </small>
-                      <div
-                        className={`d-flex gap-2 mt-3 ${styles.testimonialIconContainer}`}
-                      >
-                        <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronLeft size={8} />
-                        </button>
-                        <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronRight size={8} />
-                        </button>
+              {placementsData.testimonials &&
+                placementsData.testimonials.map((t, i) => (
+                  <SwiperSlide key={i}>
+                    <div
+                      className={`${styles.eachSlide} d-flex align-items-center`}
+                    >
+                      {/* Testimonial Image */}
+                      <div className={` ${styles.testimonialImageContainer}`}>
+                        <FaQuoteLeft
+                          className={`mb-3 ${styles.mobileQuoteIcon}`}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <Image
+                          src={t.image}
+                          alt={`${t.name} image`}
+                          width={140}
+                          height={160}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            position: "relative",
+                          }}
+                          priority
+                          className={`top-0 start-0 rounded ${styles.testimonialImage}`}
+                        />
+                      </div>
+                      {/* Testimonial Text */}
+                      <div>
+                        <FaQuoteLeft
+                          className={`mb-3 ${styles.desktopQuoteIcon}`}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <p className="">{t.short_description}”</p>
+                        <h6 className="small mb-0 fw-bold">{t.name}</h6>
+                        <small className="">
+                          {t.designation}, {t.company}
+                        </small>
+                        <div
+                          className={`d-flex gap-2 mt-3 ${styles.testimonialIconContainer}`}
+                        >
+                          <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronLeft size={8} />
+                          </button>
+                          <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronRight size={8} />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
 
@@ -218,23 +224,24 @@ export default function PlacementsSection({ data }) {
                 1040: { slidesPerView: 7 },
               }}
             >
-              {placementsData.recruiters.map((rec, i) => (
-                <SwiperSlide key={i}>
-                  <Image
-                    key={i}
-                    src={rec.image}
-                    alt={rec.title}
-                    width={150}
-                    height={80}
-                    style={{
-                      width: "100%",
-                      height: "75px",
-                      objectFit: "cover",
-                    }}
-                    className="img-fluid"
-                  />
-                </SwiperSlide>
-              ))}
+              {placementsData.recruiters &&
+                placementsData.recruiters.map((rec, i) => (
+                  <SwiperSlide key={i}>
+                    <Image
+                      key={i}
+                      src={rec.image}
+                      alt={rec.title}
+                      width={150}
+                      height={80}
+                      style={{
+                        width: "100%",
+                        height: "75px",
+                        objectFit: "cover",
+                      }}
+                      className="img-fluid"
+                    />
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
         </div>

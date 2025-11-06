@@ -87,7 +87,6 @@ export default function EventsGrid({ data }) {
   };
   // const eventsData = data ? dummyEventsData : data;
   const eventsData = data ? data : dummyEventsData;
-  console.log(eventsData, "data");
   return (
     <section className={styles.eventSection}>
       <div className={`${styles.container} ${styles.desktopView}`}>
