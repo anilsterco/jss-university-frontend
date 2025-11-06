@@ -11,7 +11,7 @@ async function getSchoolData(slug) {
   const res = await fetch(`${BASE_URL}/school/${slug}`, {
     next: { revalidate: 120 }, // cache for 2 mins
   });
-
+console.log(res)
   if (!res.ok) {
     console.error("❌ API Error:", res.status);
     throw new Error(`Failed to fetch school data for ${slug}`);
