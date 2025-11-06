@@ -1,3 +1,4 @@
+
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
@@ -108,7 +109,7 @@ body {
   --line-height-21: calc(2.1rem / 1.4rem);
   --line-height-19: calc(1.9rem / 1.2rem);
   --line-height-15: calc(1.5rem / 1.2rem);
-  
+
 }
 
 /* Medium Desktop */
@@ -180,11 +181,13 @@ body {
     --font-12: normal normal 0.8rem / 1.2 var(--font-Roboto);
   }
 }
+
 @media (min-width: 1400px) {
-    .container {
-        max-width: 1394px!important;
-    }
+  .container {
+    max-width: 1394px !important;
+  }
 }
+
 /* Mobile */
 @media (max-width: 380px) {
   :root {
@@ -281,17 +284,17 @@ a:active {
 }
 
 .nav-link.active-link:after {
-    content: "";
-    width: 80%;
-    height: 8px;
-    margin: 0 auto;
-    display: block;
-    color: #b08f29 !important;
-    border-bottom: 3px solid #b08f29 !important;
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding-top: 1.5rem;
+  content: "";
+  width: 80%;
+  height: 8px;
+  margin: 0 auto;
+  display: block;
+  color: #b08f29 !important;
+  border-bottom: 3px solid #b08f29 !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 1.5rem;
 }
 
 .nav-link.active-link {
@@ -303,7 +306,7 @@ a:active {
 }
 
 .blue-text {
-  color:var(--color-e8);
+  color: var(--color-e8);
 }
 
 .yellow-text {
@@ -328,7 +331,12 @@ a:active {
   top: -14px;
   left: 31%;
 }
-.ad-link img {padding-left: 0.8rem;max-width: 10%;}
+
+.ad-link img {
+  padding-left: 0.8rem;
+  max-width: 10%;
+}
+
 .school-below-banner-section ul li::marker {
   color: #b08f29;
 }
@@ -465,24 +473,132 @@ a:active {
   width: 20.9rem;
   height: auto;
 }
-.nav-container.header-scrolled{
-  padding-block: 1.5rem!important;
+
+.nav-container.header-scrolled {
+  padding-block: 1.5rem !important;
 }
-.top_row {display: flex;
-    gap: 2rem;
-    align-items: center;
-    padding-right: 0;
-    position: relative;}
 
-.footer_sec {background-color: rgba(0, 0, 0, 0.8);padding-block: 5rem 0;}
-@media (min-width: 1024px) and (max-width: 1420px) {
+.top_row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-right: 0;
+  position: relative;
+}
 
-  /* .site-logo {
-    width: 200px;
-    height: 70px;
-  } */
-  .second-section-cards-image image {
-    width: 200px;
-    height: 80px;
-  }
+.middle-item::marker {
+  content: none;
+}
+.menu-middle:before {
+    content: "";
+    background-color: #e3e3e3;
+    width: .2rem;
+    height: 100%;
+    position: absolute;
+    right: 58%;
+    bottom: 0rem;
+}
+.vid-thumb-grp {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 0 3rem 1.8rem;
+    display: flex;
+    gap: 0 2.4rem;
+    z-index: 99;
+}
+.vid-thumb-icon {
+    position: relative;
+    border: 2.5px solid #FFC100;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    min-width: 40px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.vid-thumb-icon:before {
+    content: "";
+    border: 10px solid transparent;
+    border-left-color: var(--color-100);
+    display: inline-block;
+    border-right-width: 0;
+    border-top-width: 8px;
+    border-bottom-width: 9px;
+    border-left-width: 13px;
+    position: absolute;
+    top: 29%;
+    left: 41%;
+}
+.vid-thumb-cont {
+    padding-right: 5rem;
+}
+.vid-thumb-cont h6 {
+    font: var(--font-16);
+    color: var(--color-white);
+    font-family: var(--font-Condensed);
+    padding-bottom: 0.3rem;
+}
+.vid-thumb-cont h4 {
+    font: var(--font-21);
+    color: var(--color-white);
+    font-family: var(--font-Condensed);
+    font-weight: bold;
+}
+.acresData {
+  display: flex;
+    align-items: flex-start;
+    margin: 4rem 0 0 4rem;
+    gap: 4rem;
+}
+.acresData h1 span{
+  font: var(--font-100);
+    font-family: var(--font-Condensed);
+    letter-spacing: -4.6px;
+    font-weight: bold;
+    color: var(--color-e8);
+    line-height: 0.7;
+    display: flex;
+   
+}
+.acresData h1{
+ font: var(--font-51);
+    display: block;
+    letter-spacing: -2.35px;
+    color: var(--color-4e);
+    font-family: var(--font-Condensed);
+     text-transform: uppercase;
+}
+.acresData p {
+  font: var(--font-15);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 30%;
+    border-bottom: 3px solid var(--color-100);
+    padding-bottom: 3rem;
+    color: var(--color-black);
+   
+}
+.vid-thumb-cont:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.20;
+    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 67%) no-repeat;
+    height: 207px;
+    z-index: 9;
+}
+.items-menu_grp {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 0 2rem 1.8rem;
+    display: flex;
+    gap: 0 2.4rem;
+    z-index: 99;
 }
