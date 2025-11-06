@@ -63,7 +63,7 @@ export default function AboutSchool({ data }) {
 
             {/* Ranking Cards */}
             <div className="row mt-4 w-100 m-auto">
-              {aboutSchoolContent.highlights.map((item, index) => (
+              {aboutSchoolContent.highlights && aboutSchoolContent.highlights.map((item, index) => (
                 <div className="col-md-6 mb-3" key={index}>
                   <div className={styles.rankingCard}>
                     <span className={styles.rankNumber}>{item.rank}</span>
@@ -78,7 +78,7 @@ export default function AboutSchool({ data }) {
 
             {/* Buttons */}
             <div className={styles.buttonsContainer}>
-              {aboutSchoolContent.buttons.map((btn, i) => (
+              {aboutSchoolContent.buttons && aboutSchoolContent.buttons.map((btn, i) => (
                 <Link key={i} href={btn.url} className={styles.navButtons}>
                   {btn.text}
                 </Link>

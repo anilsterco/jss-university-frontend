@@ -12,34 +12,32 @@ import { PiArrowCircleRightThin } from "react-icons/pi";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const App = () => {
+export default function FacilitiesComponent({ data }) {
   const home41Ref = useRef(null);
   const home5Ref = useRef(null);
   const home6Ref = useRef(null);
 
-  // Dynamic data
-  // const mainBanner = "/images/header/header-img.webp";
-  const facilitiesData = {
-    subTitle: "FACILITIES @ JSS UNIVERSITY",
-    title:
+  const dummyFacilitiesData = {
+    subheading: "FACILITIES @ JSS UNIVERSITY",
+    heading:
       '<span class="dark-blue-text ">INFRA THAT </span> <span class="blue-text">ELEVATES</span>',
     facilities: [
       {
         id: 1,
         title: "CLASSROOM",
-        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        img: "/images/home-page/fourth-section-first-banner.png",
-        url: [
+        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        image: "/images/home-page/fourth-section-first-banner.png",
+        links: [
           {
-            link: "/",
+            url: "/",
             text: "SMART CLASSROOM1",
           },
           {
-            link: "/",
+            url: "/",
             text: "VIRTUAL CLASSROOM1",
           },
           {
-            link: "/",
+            url: "/",
             text: "LECTURE HALL1",
           },
         ],
@@ -47,19 +45,19 @@ const App = () => {
       {
         id: 2,
         title: "ACADEMICS LABS",
-        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        img: "/images/home-page/fourth-section-second-banner.png",
-        url: [
+        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        image: "/images/home-page/fourth-section-second-banner.png",
+        links: [
           {
-            link: "/",
+            url: "/",
             text: "SMART CLASSROOM2",
           },
           {
-            link: "/",
+            url: "/",
             text: "VIRTUAL CLASSROOM2",
           },
           {
-            link: "/",
+            url: "/",
             text: "LECTURE HALL2",
           },
         ],
@@ -67,19 +65,19 @@ const App = () => {
       {
         id: 3,
         title: "CAMPUS",
-        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        img: "/images/home-page/fourth-section-third-banner.png",
-        url: [
+        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        image: "/images/home-page/fourth-section-third-banner.png",
+        links: [
           {
-            link: "/",
+            url: "/",
             text: "SMART CLASSROOM3",
           },
           {
-            link: "/",
+            url: "/",
             text: "VIRTUAL CLASSROOM3",
           },
           {
-            link: "/",
+            url: "/",
             text: "LECTURE HALL3",
           },
         ],
@@ -87,19 +85,19 @@ const App = () => {
       {
         id: 4,
         title: "SPORTS AND HEALTH",
-        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        img: "/images/home-page/fourth-section-fourth-banner.png",
-        url: [
+        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        image: "/images/home-page/fourth-section-fourth-banner.png",
+        links: [
           {
-            link: "/",
+            url: "/",
             text: "SMART CLASSROOM4",
           },
           {
-            link: "/",
+            url: "/",
             text: "VIRTUAL CLASSROOM4",
           },
           {
-            link: "/",
+            url: "/",
             text: "LECTURE HALL4",
           },
         ],
@@ -107,19 +105,19 @@ const App = () => {
       {
         id: 5,
         title: "HOSTEL & CANTEEN",
-        desc: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        img: "/images/home-page/fourth-section-second-banner.png",
-        url: [
+        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        image: "/images/home-page/fourth-section-second-banner.png",
+        links: [
           {
-            link: "/",
+            url: "/",
             text: "SMART CLASSROOM2",
           },
           {
-            link: "/",
+            url: "/",
             text: "VIRTUAL CLASSROOM2",
           },
           {
-            link: "/",
+            url: "/",
             text: "LECTURE HALL2",
           },
         ],
@@ -166,6 +164,7 @@ const App = () => {
     return () => window.removeEventListener("resize", updateStickyTop);
   }, []);
 
+  const facilitiesData = data ? data : dummyFacilitiesData;
   return (
     <>
       <div className={styles.mobileContainer}>
@@ -176,7 +175,7 @@ const App = () => {
             {facilitiesData.facilities.map((card, index) => (
               <div key={index} className={styles.cardImageContainer}>
                 <img
-                  src={card.img}
+                  src={card.image}
                   alt={card.title}
                   style={{ width: "100%", objectFit: "cover" }}
                 />
@@ -210,9 +209,9 @@ const App = () => {
           </div>
           <div>
             <h5
-              dangerouslySetInnerHTML={{ __html: facilitiesData.subTitle }}
+              dangerouslySetInnerHTML={{ __html: facilitiesData.subheading }}
             ></h5>
-            <h1 dangerouslySetInnerHTML={{ __html: facilitiesData.title }}></h1>
+            <h1 dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}></h1>
           </div>
         </div>
         <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>
@@ -229,7 +228,7 @@ const App = () => {
               <figure className={styles.slideContainer}>
                 <img
                   className="img-fluid image"
-                  src={panel.img}
+                  src={panel.image}
                   alt={`Panel ${index + 1}`}
                   style={{ width: "100%", objectFit: "cover" }}
                 />
@@ -241,15 +240,15 @@ const App = () => {
                     <h2>
                       {panel.title} <BsArrowRightCircle fontSize={23} />
                     </h2>
-                    <p>{panel.desc}</p>
+                    <p>{panel.description}</p>
                   </div>
                 </div>
                 <div className={styles.bannerLinks}>
-                  {panel.url &&
-                    panel.url.map((item, index) => (
+                  {panel.links &&
+                    panel.links.map((item, index) => (
                       <Link
                         key={index}
-                        href={item.link}
+                        href={item.url}
                         className={styles.bannerLink}
                       >
                         {item.text}
@@ -283,6 +282,4 @@ const App = () => {
       </div>
     </>
   );
-};
-
-export default App;
+}
