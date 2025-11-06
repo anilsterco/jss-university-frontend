@@ -180,7 +180,11 @@ body {
     --font-12: normal normal 0.8rem / 1.2 var(--font-Roboto);
   }
 }
-
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1394px!important;
+    }
+}
 /* Mobile */
 @media (max-width: 380px) {
   :root {
@@ -461,14 +465,16 @@ a:active {
   width: 20.9rem;
   height: auto;
 }
-
-.nav-container.header-scrolled {
-  padding-block: 1rem;
-}
 .nav-container.header-scrolled{
-  padding-block: 1rem;
+  padding-block: 1.5rem!important;
 }
+.top_row {display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-right: 0;
+    position: relative;}
 
+.footer_sec {background-color: rgba(0, 0, 0, 0.8);padding-block: 5rem 0;}
 @media (min-width: 1024px) and (max-width: 1420px) {
 
   /* .site-logo {

@@ -373,7 +373,7 @@ export default function Header() {
     if (!isMounted) return;
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 80);
     };
 
     handleScroll();
@@ -1013,6 +1013,7 @@ export default function Header() {
         .header-scrolled .nav-link {
           color: #16344e;
         }
+          
 
         .dropdown {
           display: none;
@@ -1470,7 +1471,7 @@ export default function Header() {
           font-weight: 600;
           text-transform: uppercase;
         }
-
+     
         @media (min-width: 1024px) and (max-width: 1420px) {
           .mega-right-banners {
             height: 68%;
