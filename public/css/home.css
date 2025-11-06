@@ -1,0 +1,72 @@
+.hero_banner {
+    position: relative;
+    overflow: hidden;
+}
+.hero_banner .hero_item picture{
+    position: relative;
+}
+.hero_banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 271px;
+    background: transparent linear-gradient(359deg, #00000000 0%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(360deg, #00000000 0%, #000000ba 200%) 0% 0% no-repeat padding-box;
+    z-index: 9;
+}
+.hero_banner .hero_item picture:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 736px;
+    height: 100%;
+    background: transparent linear-gradient(270deg, #00000000 0%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(270deg, #00000000 0%, #000000d1 100%) 0% 0% no-repeat padding-box;
+    z-index: 1;
+}
+.hero_caption{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    align-content: center;
+    z-index: 1;
+    max-width: 25%;
+}
+  .hero-link img {
+    width: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3.3rem;
+    filter: invert(1) brightness(2);
+}
+.hero_caption h1 {
+    font: var(--font-60);
+    color: var(--color-white);
+    font-weight: bold;
+    letter-spacing: -2.88px;
+    font-family: var(--font-Condensed);
+    padding-bottom: 4rem;
+    margin: 10rem 0 0 0;
+}
+.hero_caption p {
+    font: var(--font-16);   
+    color: var(--color-white);
+    font-family: var(--font-Roboto);
+    font-weight: 300;
+}
+.hero-link {
+    margin: 5rem 0 0 0;
+}
+.hero-link > a {
+    font: var(--font-18);
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    display: inline-block;
+    padding-bottom: 1.2rem;
+    font-weight: 500;
+}

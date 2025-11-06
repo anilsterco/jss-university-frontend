@@ -1,0 +1,1735 @@
+.programSearch {
+  position: relative;
+}
+
+.programSearch::before {
+  content: '';
+  background-color: var(--color-f5);
+  width: 100%;
+  left: 0;
+  height: 3rem;
+  top: 0;
+  position: absolute;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchBox input {
+  width: 100%;
+  box-shadow: 0px 16px 56px #00000017;
+  border: none;
+  padding: 1.6rem 2.5rem;
+  border-radius: 8px;
+  color: var(--color-black);
+  font-size: 1.4rem; /* Increased font size */
+  line-height: 1.2; /* Prevent line height from increasing height */
+  height: auto; /* Let padding determine height */
+  min-height: auto; /* Prevent minimum height issues */
+}
+
+/* Remove focus/active borders */
+.searchBox input:focus,
+.searchBox input:active,
+.searchBox input:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0px 16px 56px #00000017 !important;
+  font-size: 1.4rem; /* Consistent font size on focus */
+}
+
+.searchBox button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* Better vertical centering */
+  border: none;
+  background: var(--color-white);
+  cursor: pointer;
+  z-index: 9;
+  padding: 0.5rem; /* Add some padding for better click area */
+}
+
+.searchBox button i {
+  font-size: 1.2rem; /* Slightly larger icon to match text */
+}
+
+.searchBox input::placeholder {
+  color: var(--color-black);
+  font: var(--font-18);
+  font-style: italic;
+  letter-spacing: -0.36px;
+  font-size: 1.8rem; /* Larger placeholder text */
+}
+
+/* Remove button focus styles */
+.searchBox button:focus,
+.searchBox button:active {
+  outline: none;
+  border: none;
+}
+
+/* Ensure the container doesn't grow */
+.searchBox {
+  min-height: auto;
+  height: auto;
+}
+
+.programSec1 {
+  padding-block: 8rem;
+}
+
+.programList {
+  display: grid;
+  grid-template-columns: 24% auto;
+  gap: 4rem;
+}
+
+.programCategoryBox {
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 8px;
+  margin-block: 0 2rem;
+}
+
+.programCategoryBox p {
+  font: var(--font-18);
+  color: var(--color-27);
+  padding-bottom: 1rem;
+}
+
+.programCategoryBox .formCheck {
+  align-items: center;
+  display: flex;
+  padding: 1.5rem 0;
+  gap: 1rem;
+  font: var(--font-14);
+  color: var(--color-black);
+  font-weight: 400;
+  border-bottom: 1px dashed #122f7e2e;
+}
+
+.programCategoryBox .formCheck.active label {
+  font-weight: 600;
+  color: var(--color-4e);
+}
+
+.programListBoxs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.cusProgramBox {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.cusProgramBox figure {
+  height: 100%;
+}
+
+.cusProgramBox figure img {
+  border-radius: 1rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cusProgramText {
+  position: absolute;
+  bottom: -18rem;
+  left: 0;
+  z-index: 99;
+  transition: all 0.4s;
+  padding: 6rem 2rem 2rem 2rem;
+  width: 100%;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.cusProgramText::before {
+  content: '';
+  background-color: var(--color-100);
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 97px;
+}
+
+.cusProgramText p {
+  font: var(--font-14);
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.cusProgramText h6 {
+  font: var(--font-21);
+  color: var(--color-white);
+  font-weight: 500;
+  padding-block: 1rem;
+  letter-spacing: -0.63px;
+}
+
+.cusProgramText span {
+  font: var(--font-12);
+  color: var(--color-100);
+  font-weight: 600;
+}
+
+.cusProgramText span i {
+  color: var(--color-white);
+}
+
+.cusProgramBox:hover .cusProgramText {
+  bottom: 0;
+}
+
+.loadMoreContainer {
+  text-align: center;
+  padding: 10rem 0 0;
+  position: relative;
+}
+
+.loadMoreContainer::before {
+  content: '';
+  background-color: #D8D8D8;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 10.7rem;
+  z-index: 1;
+}
+
+.loadMoreContainer a {
+  cursor: pointer;
+  color: var(--color-4e) !important;
+  font: var(--font-14);
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  border: 0.1rem solid var(--color-4e);
+  padding: 1rem 1.5rem;
+  position: relative;
+  z-index: 9;
+}
+
+.loadMoreContainer a::before {
+  content: '';
+  background-color: var(--color-f6);
+  z-index: -1;
+  position: absolute;
+  width: 20rem;
+  height: 40px;
+  top: 0;
+  left: -4rem;
+}
+
+.loadMoreContainer a:hover {
+  background-color: var(--color-4e);
+  color: var(--color-white) !important;
+}
+
+.degreList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.degreBox {
+  display: flex;
+  gap: 2rem;
+}
+
+.degreText {
+  position: relative;
+}
+
+.degreText a {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  border: 0.1rem solid #16344e4f;
+  font: var(--font-14);
+  font-weight: 600;
+  color: var(--color-4e);
+  padding: 1rem;
+}
+
+.degreText a i {
+  color: var(--color-29);
+  font: var(--font-18);
+  margin-left: 0.5rem;
+}
+
+.clearText {
+  position: relative;
+}
+
+.clearText a {
+  color: var(--color-a0);
+  font: var(--font-14);
+  font-weight: 500;
+}
+
+.courseList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.courseBox {
+  background-color: #018ce817;
+  border-radius: 8px;
+  padding: 2rem 3rem;
+}
+
+.courseTextBox {
+  display: grid;
+  grid-template-columns: repeat(1, 80% auto);
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0rem 4rem;
+}
+
+.courseText span {
+  font: var(--font-14);
+  color: var(--color-4e);
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.courseText h4 {
+  font: var(--font-24);
+  letter-spacing: -0.31px;
+  font-weight: 600;
+  color: var(--color-4e);
+}
+
+.applyBtn {
+  position: relative;
+}
+
+.applyBtn a {
+  font: var(--font-14);
+  color: var(--color-4e);
+  font-weight: 600;
+}
+
+.applyBtn a i {
+  font: var(--font-12);
+  color: var(--color-29);
+}
+
+.duration {
+  border-top: 0.1rem solid #16344e24;
+  padding-block: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.durationText span {
+  font: var(--font-12);
+  color: var(--color-black);
+}
+
+.durationText p {
+  font: var(--font-16);
+  color: var(--color-black);
+}
+
+.durationBtn a {
+  font: var(--font-14);
+  color: var(--color-29);
+  font-weight: 400;
+}
+
+.durationBtn a i {
+  color: var(--color-4e);
+  font: var(--font-12);
+}
+
+.programDetail {
+  margin-top: 15rem;
+  position: relative;
+}
+
+.programDetailImg {
+  position: relative;
+}
+
+.programDetailImg::before {
+  content: '';
+  background-color: #00000087;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.programDetailText {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.programDetailText .innnrHead h2 {
+  font: var(--font-18);
+  padding-bottom: 1rem;
+  letter-spacing: 0.72px;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.programDetailText .innnrHead h3 {
+  font: var(--font-45);
+  letter-spacing: -1.35px;
+  color: var(--color-white);
+  margin-bottom: 3.8rem;
+}
+
+.admissionSec {
+  margin-top: -12.5rem;
+  position: relative;
+}
+
+.admissionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: left;
+}
+
+.admissionBoxText {
+  background-color: var(--color-100);
+  padding: 3rem;
+  border-radius: 5rem 0 0 0;
+  width: 22%;
+}
+
+.admissionBoxText p {
+  font: var(--font-14);
+  color: var(--color-4e);
+  font-weight: 400;
+}
+
+.admissionBoxText h2 {
+  font: var(--font-40);
+  color: var(--color-4e);
+  font-weight: 600;
+  letter-spacing: -1.6px;
+}
+
+.overViewBox {
+  display: grid;
+  grid-template-columns: repeat(1, 78% auto);
+}
+
+.overviewText {
+  padding: 0rem 7rem 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.overviewText h5 {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
+.overviewText h6 {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 300;
+  padding-block: 2rem;
+}
+
+.overviewText p {
+  font: var(--font-14);
+  color: var(--color-black);
+  font-weight: 400;
+  padding-inline: 0 5rem;
+  line-height: 2.4rem;
+}
+
+.overviewDuration {
+  background-color: var(--color-white);
+  padding: 3rem 2.5rem;
+}
+
+.overviewDurationText {
+  border-bottom: 1px solid #66666626;
+  padding-block: 0rem 1.5rem;
+}
+
+.overviewDurationText span,
+.fees span {
+  font: var(--font-14);
+  color: var(--color-4e);
+  font-weight: 400;
+}
+
+.overviewDurationText p,
+.fees p {
+  font: var(--font-18);
+  letter-spacing: -0.36px;
+  font-weight: 600;
+  color: var(--color-4e);
+  padding: 0.6rem 0 0;
+}
+
+.fees {
+  padding-top: 2rem;
+}
+
+.structureBtns {
+  padding-top: 3rem;
+}
+
+.structureBtn {
+  border: 0.1rem solid #0000005e;
+  padding: 0.8rem 1.5rem;
+  width: auto;
+  display: inline-flex;
+  margin-bottom: 1.4rem;
+  font: var(--font-14);
+  color: var(--color-4e);
+  font-weight: 600;
+}
+
+.structureBtn img {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+.structureBtn:hover {
+  background-color: var(--color-4e);
+  color: var(--color-white);
+}
+
+.structureBtn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.applyBtn1 {
+  background-color: var(--color-4e);
+  color: var(--color-white);
+  font: var(--font-16);
+  font-weight: 400;
+  padding: 0.8rem 1.5rem;
+}
+
+.applyBtn1:hover {
+  background-color: var(--color-100);
+  color: var(--color-black);
+}
+
+.eligibilitySec {
+  position: relative;
+}
+
+.eligibilitySec .container {
+  max-width: 1643px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.eligibilityImg {
+  position: relative;
+}
+
+.eligibilityBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: left;
+  position: absolute;
+  right: 123px;
+  top: 0;
+}
+
+.eligibilityText {
+  background-color: var(--color-e8);
+  padding: 3rem;
+  border-radius: 0px 0px 50px 8px;
+  width: 36%;
+}
+
+.eligibilityText span {
+  font: var(--font-18);
+  color: var(--color-white);
+  letter-spacing: -0.18px;
+  font-weight: 500;
+}
+
+.eligibilityText h3 {
+  font: var(--font-40);
+  color: var(--color-100);
+  font-family: var(--font-Condensed);
+  letter-spacing: -1.6px;
+}
+
+.eligibilityText p {
+  font: var(--font-16);
+  color: var(--color-white);
+  font-weight: 300;
+}
+
+.rankBox {
+  background-color: var(--color-white);
+  padding: 3rem 13rem 0;
+  margin-right: 6rem;
+}
+
+.rankBox h6 {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
+.rankText {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 3rem;
+}
+
+.leftRankText {
+  padding-right: 2rem;
+}
+
+.leftRankText h2 {
+  font: var(--font-80);
+  letter-spacing: -3.2px;
+  font-family: var(--font-Condensed);
+  color: var(--color-4e);
+}
+
+.rightRankText {
+  padding-right: 7rem;
+}
+
+.rightRankText p {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 300;
+}
+
+.seats {
+  position: relative;
+  border-top: 0.1rem solid var(--color-d6);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem;
+  align-items: center;
+}
+
+.seatsLeftText {
+  border-right: 0.1rem solid var(--color-d6);
+  padding: 3rem 0;
+}
+
+.seatsLeftText p,
+.seatsRightText p {
+  font: var(--font-16);
+  color: var(--color-black);
+}
+
+.seatsRightText {
+  padding-right: 5rem;
+}
+
+.seats::before {
+  content: '';
+  background-color: var(--color-d6);
+  position: absolute;
+  height: 1px;
+  width: 13rem;
+  left: -13rem;
+  top: -1px;
+}
+
+.seats::after {
+  content: '';
+  background-color: var(--color-d6);
+  position: absolute;
+  height: 1px;
+  width: 13rem;
+  right: -13rem;
+  top: -1px;
+}
+
+@media (min-width: 2500px) {
+  .eligibilitySec .container {
+    max-width: 2032px;
+  }
+  .eligibilityText {
+    width: 41.3%;
+  }
+}
+
+.educationalSec {
+  padding-block: 8rem;
+}
+
+.tabbedContent {
+  max-width: 100%;
+  padding: 0;
+  margin: 1rem auto;
+}
+
+.tabs ul {
+  margin: 0;
+  padding: 0 0 1rem 0;
+  font-weight: bold;
+  clear: left;
+  border-top: 1px solid var(--color-d6);
+  position: relative;
+}
+
+.tabs ul::before {
+  content: '';
+  background: var(--color-d6);
+  height: 1px;
+  position: absolute;
+  width: 12rem;
+  left: -12rem;
+  top: -1px;
+}
+
+.tabs ul::after {
+  content: '';
+  background: var(--color-d6);
+  height: 1px;
+  position: absolute;
+  width: 40rem;
+  right: -40rem;
+  top: -1px;
+}
+
+.tabs ul li {
+  display: inline-block;
+  float: left;
+  width: 43%;
+  text-align: left;
+  margin-right: 5rem;
+}
+
+.tabs ul li a {
+  padding: 1em 0em;
+  font: var(--font-24);
+  color: var(--color-be);
+}
+
+.tabs ul li a:hover {
+  color: var(--color-29);
+}
+
+.tabs ul li a.active {
+  color: var(--color-29);
+  border-top: 2px solid var(--color-100);
+}
+
+.item {
+  margin-bottom: 2px;
+}
+
+.item::before {
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+  padding: 0.5em;
+  display: block;
+}
+
+.item.active::before {
+  background: #444;
+  color: #eee;
+}
+
+.item.active .itemContent {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media all and (min-width: 800px) {
+  .item.active .itemContent {
+    padding-top: 0;
+  }
+  .tabsSide .tabs li {
+    margin-bottom: 2px;
+  }
+}
+
+.tabbedContent .tabs {
+  display: none;
+}
+
+.tabbedContent .item {
+  min-height: 2em;
+}
+
+.tabbedContent .item::before {
+  content: attr(data-title);
+}
+
+.tabbedContent .item .itemContent {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.tabbedContent .item.active .itemContent {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+@media all and (min-width: 800px) {
+  .tabbedContent .tabs {
+    display: block;
+    height: 8rem;
+  }
+  .tabbedContent .tabs li {
+    display: inline-block;
+  }
+  .tabbedContent .tabs li a {
+    display: block;
+  }
+  .tabbedContent .item {
+    min-height: 0;
+  }
+  .tabbedContent .item::before {
+    display: none;
+  }
+  .tabbedContent.tabsSide .tabs {
+    width: 150px;
+    float: left;
+  }
+  .tabbedContent.tabsSide .tabs li {
+    display: block;
+  }
+  .tabbedContent.tabsSide .item {
+    margin-left: 150px;
+  }
+}
+
+.educationalBox {
+  border-bottom: 1px solid var(--color-d6);
+  padding-block: 0 6rem;
+}
+
+.peoList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 4rem 0 6rem;
+}
+
+.peoBox {
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.peoBox h3 {
+  font: var(--font-28);
+  color: var(--color-4e);
+  font-weight: 700;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+}
+
+.peoBox p {
+  font: var(--font-16);
+  color: var(--color-21);
+  font-weight: 400;
+}
+
+.tabbedContent .applyBtn1 {
+  background-color: var(--color-100);
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  font: var(--font-18);
+  font-weight: 600;
+  color: var(--color-4e);
+  display: inline-block;
+}
+
+.tabbedContent .applyBtn1:hover {
+  background-color: var(--color-4e);
+  color: var(--color-white);
+}
+
+.coreSec {
+  padding-block: 0 10rem;
+}
+
+.coreBox {
+  display: grid;
+  grid-template-columns: repeat(1, 65% auto);
+  gap: 5rem;
+}
+
+.coreText {
+  position: relative;
+  padding-block: 3rem 0;
+}
+
+.coreText span {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
+.coreText h6 {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 300;
+  padding: 2.8rem 0;
+}
+
+.coreText blockquote {
+  font: var(--font-18);
+  color: var(--color-21);
+  font-weight: 700;
+}
+
+.coreText p {
+  color: var(--color-21);
+  padding-right: 3rem;
+}
+
+.corePdf {
+  position: relative;
+  margin-top: 7rem;
+  border-top: 1px solid var(--color-d6);
+  padding-block: 3rem 0;
+}
+
+.corePdf::after {
+  content: '';
+  background-color: var(--color-d6);
+  position: absolute;
+  top: -1px;
+  width: 7rem;
+  right: -5rem;
+  height: 0.1rem;
+}
+
+.corePdf a {
+  display: inline-flex;
+  align-items: center;
+  font: var(--font-18);
+  color: var(--color-21);
+  font-weight: 700;
+}
+
+.corePdf a img {
+  width: 2.5rem;
+  padding-right: 1rem;
+}
+
+.coreImg img {
+  box-shadow: 0px 3px 6px #0000007D;
+  border-radius: 1.6rem;
+}
+
+.programSecSix {
+  background-color: var(--color-100);
+  padding-block: 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.programSecSix::before {
+  content: '';
+  background-color: var(--color-f6);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 13rem;
+  z-index: -1;
+}
+
+.structure {
+  position: relative;
+}
+
+.structure span {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.structure p {
+  font: var(--font-22);
+  color: var(--color-black);
+  font-weight: 300;
+  padding: 2.8rem 0;
+}
+
+.structureBox {
+  display: grid;
+  grid-template-columns: repeat(1, 40% auto);
+  gap: 7rem;
+}
+
+.structureText {
+  position: relative;
+}
+
+.structureText p {
+  font: var(--font-18);
+  color: var(--color-black);
+  font-weight: 400;
+  padding-inline: 0 20rem;
+  padding-block: 0 2rem;
+}
+
+.structureText h2 {
+  font: var(--font-50);
+  letter-spacing: -2.5px;
+  font-family: var(--font-Condensed);
+}
+
+.structureText {
+  font: var(--font-18);
+  color: var(--color-black);
+  padding-top: 3rem;
+}
+
+.engineeringBtn {
+  position: relative;
+  margin-top: 6rem;
+  border-top: 1px solid #0000004a;
+  padding-block: 3rem 0;
+}
+
+.engineeringBtn::before {
+  content: '';
+  background-color: #0000004a;
+  height: 1px;
+  position: absolute;
+  width: 7rem;
+  left: -7rem;
+  top: -1px;
+}
+
+.engineeringBtn .applyBtn1 {
+  text-transform: uppercase;
+  font: var(--font-18);
+  font-weight: 700;
+  letter-spacing: 0.72px;
+  padding: 1rem 1.5rem;
+}
+
+.engineeringBtn .applyBtn1:hover {
+  background-color: var(--color-white);
+}
+
+.engineeringBtn .structureBtn {
+  padding: 1rem 1.5rem;
+  font: var(--font-18);
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.engineeringBtn .structureBtn img {
+  width: 1.5rem;
+  height: 17px;
+  object-fit: cover;
+}
+
+.engineeringBtn .structureBtn:hover img {
+  filter: inherit;
+}
+
+.programTestimonial {
+  padding-block: 3rem 10rem;
+}
+
+.programTestimonialBox {
+  display: grid;
+  grid-template-columns: repeat(1, 20% auto);
+  gap: 7rem;
+}
+
+.testimonialBox {
+  position: relative;
+}
+
+.testimonialText {
+  position: relative;
+}
+
+.testimonialText span {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
+.testimonialText p,
+.across p {
+  font: var(--font-22);
+  color: var(--color-black);
+  font-weight: 300;
+  padding: 2rem 0;
+}
+
+.across {
+  border-top: 1px solid var(--color-d6);
+  margin-top: 10rem;
+  padding-block: 4rem 0;
+}
+
+.across h2 {
+  font: var(--font-80);
+  color: var(--color-4e);
+  font-weight: 700;
+  letter-spacing: -4px;
+  font-family: var(--font-Condensed);
+}
+
+.across p {
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+.across .applyBtn1 {
+  font: var(--font-18);
+  color: var(--color-4e);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.72px;
+  background-color: var(--color-100);
+  padding: 1rem 1.6rem;
+}
+
+.across .applyBtn1:hover {
+  background-color: var(--color-4e);
+  color: var(--color-white);
+}
+
+.testimonialImg {
+  position: relative;
+}
+
+.testimonialImgBox {
+  position: relative;
+}
+
+.testimonialImgBox img {
+  border-radius: 54px 8px 8px 8px;
+}
+
+.testimonialImgText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  transition: all 0.4s;
+  padding: 6rem 2rem 3rem 3rem;
+  width: 100%;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+}
+
+.testimonialImgText h4 {
+  color: var(--color-white);
+  font: var(--font-36);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+}
+
+.testimonialImgText p {
+  color: var(--color-white);
+  font: var(--font-18);
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+}
+
+.testimonialImgText p span {
+  color: var(--color-100);
+  font-size: 2rem;
+}
+
+.testimonialImgText blockquote {
+  color: var(--color-white);
+  font: var(--font-16);
+  font-weight: 300;
+  margin: 1rem 0 0 0;
+}
+
+.testimonialImgText::before {
+  content: '';
+  background-color: var(--color-100);
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 11rem;
+}
+
+.opportunitieSec {
+  position: relative;
+}
+
+.opportunitieImg {
+  position: relative;
+}
+
+.opportunitieBox {
+  position: absolute;
+  bottom: 5rem;
+}
+
+.opportunitieText {
+  width: 65rem;
+}
+
+.opportunitieText blockquote {
+  font: var(--font-18);
+  color: var(--color-4e);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+}
+
+.opportunitieText h2 {
+  font: var(--font-42);
+  color: var(--color-4e);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+  letter-spacing: -1.26px;
+}
+
+.opportunitieText h2 span {
+  color: var(--color-e8);
+}
+
+.opportunitieTab {
+  background-color: #00000066;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 9rem;
+}
+
+.opportunitieTab ul {
+  margin: 0;
+  padding: 0;
+}
+
+.opportunitieTab ul li {
+  display: inline-block;
+  padding-right: 4.5rem;
+}
+
+.opportunitieTab ul li a {
+  color: var(--color-white);
+  font: var(--font-16);
+  position: relative;
+  padding-inline: 0.8rem 0;
+}
+
+.opportunitieTab ul li a:hover {
+  color: var(--color-100);
+}
+
+.opportunitieTab ul li a::before {
+  content: '';
+  background-color: var(--color-100);
+  width: 0.2rem;
+  height: 2.2rem;
+  position: absolute;
+  left: 0;
+}
+
+/* Existing desktop styles remain the same */
+.programSearch {
+  position: relative;
+}
+
+.programSearch::before {
+  content: '';
+  background-color: var(--color-f5);
+  width: 100%;
+  left: 0;
+  height: 3rem;
+  top: 0;
+  position: absolute;
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchBox input {
+  width: 100%;
+  box-shadow: 0px 16px 56px #00000017;
+  border: none;
+  padding: 1.6rem 2.5rem;
+  border-radius: 8px;
+  color: var(--color-black);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  height: auto;
+  min-height: auto;
+}
+
+.searchBox input:focus,
+.searchBox input:active,
+.searchBox input:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0px 16px 56px #00000017 !important;
+  font-size: 1.4rem;
+}
+
+.searchBox button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: var(--color-white);
+  cursor: pointer;
+  z-index: 9;
+  padding: 0.5rem;
+}
+
+.searchBox button i {
+  font-size: 1.2rem;
+}
+
+.searchBox input::placeholder {
+  color: var(--color-black);
+  font: var(--font-18);
+  font-style: italic;
+  letter-spacing: -0.36px;
+  font-size: 1.8rem;
+}
+
+.searchBox button:focus,
+.searchBox button:active {
+  outline: none;
+  border: none;
+}
+
+.searchBox {
+  min-height: auto;
+  height: auto;
+}
+
+.programSec1 {
+  padding-block: 8rem;
+}
+
+.programList {
+  display: grid;
+  grid-template-columns: 24% auto;
+  gap: 4rem;
+}
+
+.programCategoryBox {
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 8px;
+  margin-block: 0 2rem;
+}
+
+.programCategoryBox p {
+  font: var(--font-18);
+  color: var(--color-27);
+  padding-bottom: 1rem;
+}
+
+.programCategoryBox .formCheck {
+  align-items: center;
+  display: flex;
+  padding: 1.5rem 0;
+  gap: 1rem;
+  font: var(--font-14);
+  color: var(--color-black);
+  font-weight: 400;
+  border-bottom: 1px dashed #122f7e2e;
+}
+
+.programCategoryBox .formCheck.active label {
+  font-weight: 600;
+  color: var(--color-4e);
+}
+
+.programListBoxs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.cusProgramBox {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.cusProgramBox figure {
+  height: 100%;
+}
+
+.cusProgramBox figure img {
+  border-radius: 1rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cusProgramText {
+  position: absolute;
+  bottom: -18rem;
+  left: 0;
+  z-index: 99;
+  transition: all 0.4s;
+  padding: 6rem 2rem 2rem 2rem;
+  width: 100%;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.cusProgramText::before {
+  content: '';
+  background-color: var(--color-100);
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 97px;
+}
+
+.cusProgramText p {
+  font: var(--font-14);
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.cusProgramText h6 {
+  font: var(--font-21);
+  color: var(--color-white);
+  font-weight: 500;
+  padding-block: 1rem;
+  letter-spacing: -0.63px;
+}
+
+.cusProgramText span {
+  font: var(--font-12);
+  color: var(--color-100);
+  font-weight: 600;
+}
+
+.cusProgramText span i {
+  color: var(--color-white);
+}
+
+.cusProgramBox:hover .cusProgramText {
+  bottom: 0;
+}
+
+.loadMoreContainer {
+  text-align: center;
+  padding: 10rem 0 0;
+  position: relative;
+}
+
+.loadMoreContainer::before {
+  content: '';
+  background-color: #D8D8D8;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 10.7rem;
+  z-index: 1;
+}
+
+.loadMoreContainer a {
+  cursor: pointer;
+  color: var(--color-4e) !important;
+  font: var(--font-14);
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  border: 0.1rem solid var(--color-4e);
+  padding: 1rem 1.5rem;
+  position: relative;
+  z-index: 9;
+}
+
+.loadMoreContainer a::before {
+  content: '';
+  background-color: var(--color-f6);
+  z-index: -1;
+  position: absolute;
+  width: 20rem;
+  height: 40px;
+  top: 0;
+  left: -4rem;
+}
+
+.loadMoreContainer a:hover {
+  background-color: var(--color-4e);
+  color: var(--color-white) !important;
+}
+
+/* Mobile Responsive Styles - FILTER ABOVE */
+@media (max-width: 1199px) {
+  .programList {
+    grid-template-columns: 30% auto;
+    gap: 3rem;
+  }
+  
+  .programListBoxs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .programList {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  /* Filter above programs on mobile */
+  .programCategory {
+    order: 1; /* Filter comes first */
+  }
+  
+  .programMainList {
+    order: 2; /* Programs come after */
+  }
+  
+  .programListBoxs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .programCategoryBox {
+    padding: 2rem;
+  }
+  
+  .programSec1 {
+    padding-block: 5rem;
+  }
+  
+  .searchBox input {
+    padding: 1.4rem 2rem;
+    font-size: 1.6rem;
+  }
+  
+  .searchBox button {
+    right: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .programListBoxs {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .programCategoryBox {
+    padding: 1.5rem;
+    margin-block: 0 1.5rem;
+  }
+  
+  .programCategoryBox p {
+    font-size: 1.6rem;
+    padding-bottom: 0.8rem;
+  }
+  
+  .programCategoryBox .formCheck {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+  }
+  
+  .programSec1 {
+    padding-block: 4rem;
+  }
+  
+  .searchBox input {
+    padding: 1.2rem 1.5rem;
+    font-size: 1.6rem;
+  }
+  
+  .searchBox input::placeholder {
+    font-size: 1.6rem;
+  }
+  
+  .searchBox button {
+    right: 12px;
+    padding: 0.3rem;
+  }
+  
+  .searchBox button i {
+    font-size: 1.6rem;
+  }
+  
+  .cusProgramText {
+    padding: 4rem 1.5rem 1.5rem 1.5rem;
+    bottom: -15rem;
+  }
+  
+  .cusProgramText h6 {
+    font-size: 1.8rem;
+    padding-block: 0.8rem;
+  }
+  
+  .cusProgramText p {
+    font-size: 1.3rem;
+  }
+  
+  .cusProgramText span {
+    font-size: 1.1rem;
+  }
+  
+  .loadMoreContainer {
+    padding: 6rem 0 0;
+  }
+  
+  .loadMoreContainer::before {
+    top: 6.7rem;
+  }
+  
+  .loadMoreContainer a {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.3rem;
+  }
+  
+  .loadMoreContainer a::before {
+    width: 15rem;
+    height: 35px;
+    left: -3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .programList {
+    gap: 2rem;
+  }
+  
+  .programCategoryBox {
+    padding: 1rem;
+  }
+  
+  .programCategoryBox p {
+    font-size: 1.5rem;
+  }
+  
+  .programCategoryBox .formCheck {
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+    gap: 0.8rem;
+  }
+  
+  .searchBox input {
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
+  }
+  
+  .searchBox input::placeholder {
+    font-size: 1.4rem;
+  }
+  
+  .searchBox button {
+    right: 10px;
+    top: 50%;
+  }
+  
+  .searchBox button i {
+    font-size: 1.4rem;
+  }
+  
+  .programSec1 {
+    padding-block: 3rem;
+  }
+  
+  .cusProgramText {
+    padding: 3rem 1rem 1rem 1rem;
+    bottom: -12rem;
+  }
+  
+  .cusProgramText h6 {
+    font-size: 1.6rem;
+  }
+  
+  .cusProgramText p {
+    font-size: 1.2rem;
+  }
+  
+  .loadMoreContainer {
+    padding: 4rem 0 0;
+  }
+  
+  .loadMoreContainer::before {
+    top: 4.7rem;
+  }
+}
+
+/* Fix for mobile menu and touch devices */
+@media (max-width: 991px) {
+  .programSearch::before {
+    height: 2rem;
+  }
+}
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 767px) {
+  .programCategoryBox .formCheck {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .cusProgramBox {
+    min-height: 200px; /* Ensure cards have proper height on mobile */
+  }
+  
+  .loadMoreContainer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 375px) {
+  .programCategoryBox {
+    padding: 0.8rem;
+  }
+  
+  .searchBox input {
+    padding: 0.8rem 1rem;
+  }
+  
+  .cusProgramText {
+    padding: 2rem 0.8rem 0.8rem 0.8rem;
+  }
+}

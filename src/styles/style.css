@@ -1,0 +1,1041 @@
+@charset "UTF-8";
+/*  UIAM - 02031998 */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@import url('https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+
+/* Import local CSS files */
+@import url('../../public/css/custom.css');
+@import url('../../public/css/header.css');
+@import url('../../public/css/inner.css');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-Roboto);
+}
+
+main {
+    background-color: var(--color-f3);
+}
+
+.text-danger {
+    color: red;
+    font: var(--font-12);
+}
+
+
+:root {
+    --font-Roboto: "Roboto", sans-serif;
+    --font-Geist: "Geist", sans-serif;
+    --font-Condensed: "Roboto Condensed", sans-serif;
+    --color-f6: #F6F6F6;
+    --color-e8: #018CE8;
+    --color-f5: #ddebf5;
+    --color-d4: #D4D4D4;
+    --color-d6: #D6D6D6;
+    --color-be: #BEBEBE;
+    --color-4e: #16344E;
+    --color-29: #B08F29;
+    --color-21: #212121;
+    --color-27: #272727;
+    --color-100: #FFC100;
+    --color-ai: #0036A1;
+    --color-fff: #E6FFFF;
+    --color-73: #994073;
+    --color-ff: #0099FF;
+    --color-d9: #D9D9D9;
+    --color-a0: #A02B2D;
+    --color-00: #FFA600;
+    --color-1c: #AF251C;
+    --color-9a: #00489A;
+    --color-60: #FF6600;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-36: #EB5F36;
+    --font-110: normal 300 11rem/1.218 var(--font-Geist);
+    --font-100: normal 100 10rem/1.218 var(--font-Roboto);
+    --font-80: normal bold 8rem/1.2 var(--font-Roboto);
+    --font-60: normal bold 6rem/1 var(--font-Roboto);
+    --font-52: normal bold 5.2rem/1.2 var(--font-Roboto);
+    --font-51: normal bold 5.1rem/1.2 var(--font-Roboto);
+    --font-50: normal bold 5rem/1.2 var(--font-Roboto);
+    --font-48: normal 500 4.8rem/1.2 var(--font-Roboto);
+    --font-45: normal bold 4.5rem/1.2 var(--font-Roboto);
+    --font-42: normal bold 4.2rem/1.2 var(--font-Roboto);
+    --font-40: normal bold 4rem/1.2 var(--font-Roboto);
+    --font-38: normal 500 3.8/1.2 var(--font-Roboto);
+    --font-36: normal bold 3.6rem/1.2 var(--font-Roboto);
+    --font-34: normal bold 3.4rem/1.2 var(--font-Roboto);
+    --font-32: normal bold 3.2rem/1.2 var(--font-Roboto);
+    --font-30: normal bold 3rem/1.2 var(--font-Roboto);
+    --font-29: normal bold 2.9rem/1.2 var(--font-Roboto);
+    --font-28: normal bold 2.8rem/1.2 var(--font-Roboto);
+    --font-26: normal bold 6rem/1.4 var(--font-Roboto);
+    --font-24: normal 500 2.4rem/1.2 var(--font-Roboto);
+    --font-22: normal 500 2.2rem/1.2 var(--font-Roboto);
+    --font-21: normal normal 2.1rem/1.2 var(--font-Roboto);
+    --font-20: normal bold 2rem/1.2 var(--font-Roboto);
+    --font-18: normal normal 1.8rem/1.2 var(--font-Roboto);
+    --font-17: normal normal 1.7rem/1.1 var(--font-Roboto);
+    --font-16: normal normal 1.6rem/1.5 var(--font-Roboto);
+    --font-15: normal normal 1.5rem/1.2 var(--font-Roboto);
+    --font-14: normal normal 1.4rem/1.2 var(--font-Roboto);
+    --font-13: normal normal 1.4rem/1.2 var(--font-Roboto);
+    --font-12: normal normal 1.2rem/1.2 var(--font-Roboto);
+    --line-height-31: calc(3.1rem / 2.6rem);
+    --line-height-30: calc(3rem / 2.1rem);
+    --line-height-22: calc(2.2rem / 1.4rem);
+    --line-height-21: calc(2.1rem / 1.4rem);
+    --line-height-19: calc(1.9rem / 1.2rem);
+    --line-height-15: calc(1.5rem / 1.2rem);
+}
+
+
+/* ========== BASE: ≥1751px ========== */
+@media (min-width: 1751px) {
+    :root {
+        --font-110: normal 300 11rem/1.218 var(--font-Geist);
+        --font-100: normal 100 10rem/1.218 var(--font-Roboto);
+        --font-80: normal bold 8rem/1.2 var(--font-Roboto);
+        --font-60: normal bold 6rem/1 var(--font-Roboto);
+        --font-52: normal bold 5.2rem/1.2 var(--font-Roboto);
+        --font-51: normal bold 5.1rem/1.2 var(--font-Roboto);
+        --font-50: normal bold 5rem/1.2 var(--font-Roboto);
+        --font-48: normal 500 4.8rem/1.2 var(--font-Roboto);
+        --font-45: normal bold 4.5rem/1.2 var(--font-Roboto);
+        --font-42: normal bold 4.2rem/1.2 var(--font-Roboto);
+        --font-40: normal bold 4rem/1.2 var(--font-Roboto);
+        --font-38: normal 500 3.8rem/1.2 var(--font-Roboto);
+        --font-36: normal bold 3.6rem/1.2 var(--font-Roboto);
+        --font-34: normal bold 3.4rem/1.2 var(--font-Roboto);
+        --font-32: normal bold 3.2rem/1.2 var(--font-Roboto);
+        --font-30: normal bold 3rem/1.2 var(--font-Roboto);
+        --font-29: normal bold 2.9rem/1.2 var(--font-Roboto);
+        --font-28: normal bold 2.8rem/1.2 var(--font-Roboto);
+        --font-26: normal bold 6rem/1.4 var(--font-Roboto);
+        --font-24: normal 500 2.4rem/1.2 var(--font-Roboto);
+        --font-21: normal normal 2.1rem/1.2 var(--font-Roboto);
+        --font-20: normal bold 2rem/1.2 var(--font-Roboto);
+        --font-18: normal normal 1.8rem/1.2 var(--font-Roboto);
+        --font-17: normal normal 1.7rem/1.1 var(--font-Roboto);
+        --font-16: normal normal 1.6rem/1.5 var(--font-Roboto);
+        --font-15: normal normal 1.5rem/1.2 var(--font-Roboto);
+        --font-14: normal normal 1.4rem/1.2 var(--font-Roboto);
+        --font-13: normal normal 1.4rem/1.2 var(--font-Roboto);
+        --font-12: normal normal 1.2rem/1.2 var(--font-Roboto);
+    }
+}
+
+/* ========== 1441px–1750px ========== */
+@media (max-width: 1750px) and (min-width: 1441px) {
+    :root {
+        --font-110: normal 300 9rem/1.2 var(--font-Geist);
+        --font-100: normal 100 8.5rem/1.2 var(--font-Roboto);
+        --font-80: normal bold 7rem/1.2 var(--font-Roboto);
+        --font-60: normal bold 5.4rem/1.1 var(--font-Roboto);
+        --font-52: normal bold 4.8rem/1.2 var(--font-Roboto);
+        --font-51: normal bold 4.7rem/1.2 var(--font-Roboto);
+        --font-50: normal bold 4.6rem/1.2 var(--font-Roboto);
+        --font-48: normal 500 4.2rem/1.2 var(--font-Roboto);
+        --font-45: normal bold 4rem/1.2 var(--font-Roboto);
+        --font-42: normal bold 3.8rem/1.2 var(--font-Roboto);
+        --font-40: normal bold 3.6rem/1.2 var(--font-Roboto);
+        --font-38: normal 500 3.4rem/1.2 var(--font-Roboto);
+        --font-36: normal bold 3.2rem/1.2 var(--font-Roboto);
+        --font-34: normal bold 3rem/1.2 var(--font-Roboto);
+        --font-32: normal bold 2.9rem/1.2 var(--font-Roboto);
+        --font-30: normal bold 2.8rem/1.2 var(--font-Roboto);
+        --font-29: normal bold 2.7rem/1.2 var(--font-Roboto);
+        --font-28: normal bold 2.6rem/1.2 var(--font-Roboto);
+        --font-26: normal bold 2.6rem/1.3 var(--font-Roboto);
+        --font-24: normal 500 2.3rem/1.2 var(--font-Roboto);
+        --font-21: normal normal 2rem/1.2 var(--font-Roboto);
+        --font-20: normal bold 1.9rem/1.2 var(--font-Roboto);
+        --font-18: normal normal 1.7rem/1.2 var(--font-Roboto);
+        --font-17: normal normal 1.6rem/1.1 var(--font-Roboto);
+        --font-16: normal normal 1.5rem/1.4 var(--font-Roboto);
+        --font-15: normal normal 1.4rem/1.2 var(--font-Roboto);
+        --font-14: normal normal 1.3rem/1.2 var(--font-Roboto);
+        --font-13: normal normal 1.3rem/1.2 var(--font-Roboto);
+        --font-12: normal normal 1.1rem/1.2 var(--font-Roboto);
+    }
+}
+
+/* ========== 1366px–1440px ========== */
+@media (max-width: 1440px) and (min-width: 1366px) {
+    :root {
+        --font-110: normal 300 8.2rem/1.2 var(--font-Geist);
+        --font-100: normal 100 7.5rem/1.2 var(--font-Roboto);
+        --font-80: normal bold 6.5rem/1.2 var(--font-Roboto);
+        --font-60: normal bold 5rem/1.1 var(--font-Roboto);
+        --font-52: normal bold 4.4rem/1.2 var(--font-Roboto);
+        --font-51: normal bold 4.3rem/1.2 var(--font-Roboto);
+        --font-50: normal bold 4.2rem/1.2 var(--font-Roboto);
+        --font-48: normal 500 4rem/1.2 var(--font-Roboto);
+        --font-45: normal bold 3.8rem/1.2 var(--font-Roboto);
+        --font-42: normal bold 3.5rem/1.2 var(--font-Roboto);
+        --font-40: normal bold 3.4rem/1.2 var(--font-Roboto);
+        --font-38: normal 500 3.2rem/1.2 var(--font-Roboto);
+        --font-36: normal bold 3rem/1.2 var(--font-Roboto);
+        --font-34: normal bold 2.8rem/1.2 var(--font-Roboto);
+        --font-32: normal bold 2.7rem/1.2 var(--font-Roboto);
+        --font-30: normal bold 2.6rem/1.2 var(--font-Roboto);
+        --font-29: normal bold 2.5rem/1.2 var(--font-Roboto);
+        --font-28: normal bold 2.4rem/1.2 var(--font-Roboto);
+        --font-26: normal bold 2.4rem/1.3 var(--font-Roboto);
+        --font-24: normal 500 2.2rem/1.2 var(--font-Roboto);
+        --font-21: normal normal 1.9rem/1.2 var(--font-Roboto);
+        --font-20: normal bold 1.8rem/1.2 var(--font-Roboto);
+        --font-18: normal normal 1.6rem/1.2 var(--font-Roboto);
+        --font-17: normal normal 1.5rem/1.1 var(--font-Roboto);
+        --font-16: normal normal 1.4rem/1.4 var(--font-Roboto);
+        --font-15: normal normal 1.3rem/1.2 var(--font-Roboto);
+        --font-14: normal normal 1.3rem/1.2 var(--font-Roboto);
+        --font-13: normal normal 1.2rem/1.2 var(--font-Roboto);
+        --font-12: normal normal 1rem/1.2 var(--font-Roboto);
+    }
+}
+
+/* ========== 1200px–1365px ========== */
+@media (max-width: 1365px) and (min-width: 1200px) {
+    :root {
+        --font-110: normal 300 7.4rem/1.2 var(--font-Geist);
+        --font-100: normal 100 6.8rem/1.2 var(--font-Roboto);
+        --font-80: normal bold 6rem/1.2 var(--font-Roboto);
+        --font-60: normal bold 4.6rem/1.1 var(--font-Roboto);
+        --font-52: normal bold 4rem/1.2 var(--font-Roboto);
+        --font-51: normal bold 3.9rem/1.2 var(--font-Roboto);
+        --font-50: normal bold 3.8rem/1.2 var(--font-Roboto);
+        --font-48: normal 500 3.6rem/1.2 var(--font-Roboto);
+        --font-45: normal bold 3.4rem/1.2 var(--font-Roboto);
+        --font-42: normal bold 3.2rem/1.2 var(--font-Roboto);
+        --font-40: normal bold 3rem/1.2 var(--font-Roboto);
+        --font-38: normal 500 2.9rem/1.2 var(--font-Roboto);
+        --font-36: normal bold 2.8rem/1.2 var(--font-Roboto);
+        --font-34: normal bold 2.6rem/1.2 var(--font-Roboto);
+        --font-32: normal bold 2.5rem/1.2 var(--font-Roboto);
+        --font-30: normal bold 2.4rem/1.2 var(--font-Roboto);
+        --font-29: normal bold 2.3rem/1.2 var(--font-Roboto);
+        --font-28: normal bold 2.2rem/1.2 var(--font-Roboto);
+        --font-26: normal bold 2.2rem/1.3 var(--font-Roboto);
+        --font-24: normal 500 2rem/1.2 var(--font-Roboto);
+        --font-21: normal normal 1.8rem/1.2 var(--font-Roboto);
+        --font-20: normal bold 1.7rem/1.2 var(--font-Roboto);
+        --font-18: normal normal 1.6rem/1.2 var(--font-Roboto);
+        --font-17: normal normal 1.4rem/1.1 var(--font-Roboto);
+        --font-16: normal normal 1.4rem/1.4 var(--font-Roboto);
+        --font-15: normal normal 1.3rem/1.2 var(--font-Roboto);
+        --font-14: normal normal 1.2rem/1.2 var(--font-Roboto);
+        --font-13: normal normal 1.2rem/1.2 var(--font-Roboto);
+        --font-12: normal normal 1rem/1.2 var(--font-Roboto);
+    }
+}
+
+.container {
+    max-width: 1394px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media(max-width:1750px) {
+    .container {
+        max-width: 1274px;
+    }
+}
+
+@media(max-width:1400px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media(max-width:1366px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media(max-width:1200px) {
+    .container {
+        max-width: 844px;
+    }
+}
+
+@media(max-width:1024px) {
+    .container {
+        max-width: 758;
+    }
+}
+
+@media(min-width:2500px) {
+    .container {
+        max-width: 1780px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    html {
+        font-size: 69.5%;
+    }
+}
+
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--color-f6);
+    scroll-behavior: unset !important;
+}
+
+p {
+    font: var(--font-16);
+    font-weight: normal;
+    font-family: var(--font-Roboto);
+    color: var(--color-black);
+    margin-bottom: 3rem;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+@media(max-width:1549px) {
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+p:empty {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+.site_main {
+    position: relative;
+}
+
+
+h1 {
+    font: var(--font-60);
+    color: var(--color-black)
+}
+
+h2 {
+    font: var(--font-52);
+    color: var(--color-03);
+    font-weight: 550;
+    letter-spacing: -0.84px;
+}
+
+h3 {
+    font: var(--font-36);
+    color: var(--color-black);
+}
+
+h4 {
+    font: var(--font-24);
+    color: var(--color-black);
+}
+
+h5 {
+    font: var(--font-21);
+    color: var(--color-black);
+}
+
+h6 {
+    font: var(--font-18);
+    color: var(--color-black);
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-da);
+    border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-f6);
+    border-radius: 0.2rem;
+}
+
+.overlap_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+}
+
+.read_btn {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.read_btn>img {
+    width: 2.8rem;
+}
+
+.read_btn:hover {
+    background-color: var(--color-white);
+}
+
+.sec_title>h5 {
+    font: var(--font-21);
+    font-weight: 600;
+    color: var(--color-03);
+    letter-spacing: 2.1px;
+}
+
+.sec_title>h2 {
+    font-weight: 200;
+    color: var(--color-21);
+}
+
+.notify_btn {
+    position: absolute;
+    bottom: 3rem;
+    right: 4rem;
+    z-index: 1;
+}
+
+.notify_btn>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+    font: var(--font-21);
+    font-weight: normal;
+    letter-spacing: 2.1px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    padding: 1.2rem 2.4rem 1.2rem 1.9rem;
+    background: var(--color-f8);
+    background: rgba(248, 152, 35, 0.76);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.notify_btn>a>img {
+    width: 2.9rem;
+}
+
+.swiper_nav {
+    display: flex;
+    gap: 0.4rem;
+}
+
+:is(.swiper-button-prev, .swiper-button-next) {
+    position: relative;
+    margin-top: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: auto;
+    left: auto;
+    font-size: var(--font-12);
+    font-weight: bold;
+    color: var(--color-55);
+    background-color: transparent;
+    border: 0.1rem solid var(--color-55);
+    transition: all .5s ease;
+}
+
+:is(.swiper-button-prev, .swiper-button-next):hover {
+    color: var(--color-white);
+    background-color: var(--color-55);
+}
+
+.swiper-button-prev::after {
+    content: '\F284';
+    font-family: bootstrap-icons !important;
+    font-size: inherit;
+}
+
+.swiper-button-next::after {
+    content: '\F285';
+    font-family: bootstrap-icons !important;
+    font-size: inherit;
+}
+
+.scrollbar_wrap {
+    position: relative;
+    display: flex;
+    align-self: center;
+}
+
+.scrollbar_wrap::before {
+    width: 100%;
+    height: 0.1rem;
+    position: absolute;
+    content: "";
+    background: #BFC7C4;
+    top: 0.1rem;
+    z-index: 1;
+}
+
+.scrollbar_wrap .swiper-horizontal>.swiper-scrollbar,
+.facilty_section .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: static;
+}
+
+.scrollbar_wrap .swiper-scrollbar-drag {
+    background: var(--color-bb);
+    box-shadow: 0px 3px 6px #00000012;
+}
+
+.scrollbar_wrap .swiper-scrollbar.swiper-scrollbar-horizontal {
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+    background-color: transparent;
+    bottom: 0;
+    top: 0;
+}
+
+@media(max-width:767px) {
+    :is(.swiper-button-prev, .swiper-button-next) {
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+}
+
+@media(max-width:330px) {
+    :is(.swiper-button-prev, .swiper-button-next) {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.shine:hover::before,
+.shine:focus::before {
+    -webkit-animation: shine 0.85s;
+    animation: shine 0.85s;
+}
+
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+
+.full-width {
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+.full_touch {
+    max-width: 2700px;
+    margin-inline: auto;
+}
+
+
+
+a:focus-visible {
+    outline: none;
+}
+
+.links {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 0;
+}
+
+.custom-list {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.custom-list li {
+    position: relative;
+    font: var(--font-16);
+    padding-left: 2rem;
+    color: var(--color-21);
+}
+
+.custom-list li::before {
+    content: '';
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--color-73);
+    border-radius: 100%;
+    left: 0;
+    top: 0.8rem;
+}
+
+/* Accordion Area Start */
+.accordion-button {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    font: var(--font-30);
+    color: var(--color-2b);
+    padding: 0;
+    padding-block: 3rem;
+    border: 0;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.accordion-button::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    /* background: url(../images/chevron-down.svg) no-repeat transparent; */
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.accordion-button.active::after {
+    rotate: 180deg;
+}
+
+.accordion-button.active {
+    background-color: var(--color-f6);
+}
+
+.accordion-item:nth-child(1)>.accordion-button {
+    border-top: 0;
+}
+
+.accordion-collapse {
+    display: none;
+}
+
+.accordion-item:not(:first-child) {
+    border-top: 0.1rem solid rgb(112 112 112 / 30%);
+}
+
+.accordion-body {
+    background-color: var(--color-f6);
+    padding-bottom: 4.9rem;
+}
+
+/* .accordion-item:not(:last-child){margin-bottom: 3rem;} */
+
+/*  UIAM - 02031998 End*/
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Modal Css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1090;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+    backdrop-filter: blur(1px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: display 0.3 sease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.inner_main:has(.modal.show) {
+    z-index: 1090;
+}
+
+body:has(.modal.show) .innerpage_banner {
+    z-index: 0;
+}
+
+body:has(.modal.show) {
+    overflow: hidden;
+}
+
+.modal-content {
+    background: var(--color-ff);
+    max-width: 70rem;
+    width: 100%;
+    position: relative;
+    animation: ModalfadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 3rem* 2);
+}
+
+.closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    font-size: var(--font-21);
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-17);
+    color: var(--color-ff);
+    opacity: 0.8;
+}
+
+.closeModal:hover {
+    opacity: 1;
+}
+
+.modal-title {
+    padding: 2rem;
+    border-bottom: 0.1rem solid rgb(37 51 111 / 10%);
+    padding-right: 6rem;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+@keyframes ModalfadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* livewire pagination */
+@media(min-width:992px) {
+
+    /* Reveal Animations */
+    .image,
+    .image2 {
+        opacity: 0;
+    }
+
+    .reveal-image,
+    .reveal-image:after {
+        position: absolute;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-duration: 1600ms;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    .reveal-image2,
+    .reveal-image2:after {
+        position: absolute;
+        animation-delay: .1s;
+        animation-iteration-count: 1;
+        animation-duration: 1800ms;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    .reveal-image {
+        opacity: 1;
+        position: relative;
+        animation-name: reveal-image;
+    }
+
+    .reveal-image2 {
+        opacity: 1;
+        position: relative;
+        animation-name: reveal-image2;
+    }
+
+    .reveal-image3 {
+        opacity: 1;
+        position: relative;
+        animation-name: fadeInline1;
+        animation-delay: .1s;
+        animation-iteration-count: 1;
+        animation-duration: 1800ms;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        transform-origin: top;
+    }
+
+    @keyframes reveal-image {
+        from {
+            clip-path: inset(0 100% 0 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @keyframes reveal-image2 {
+        from {
+            clip-path: inset(0 0% 100% 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: calc(50% / (var(--ratio)));
+}
+
+.custom_bullets {
+    margin: 0;
+    padding: 0;
+}
+
+.custom_bullets>li {
+    position: relative;
+    list-style: none;
+    font-size: var(--font-16);
+    line-height: var(--line-height-24);
+    color: var(--color-black);
+    font-weight: normal;
+    padding-left: 3.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.custom_bullets>li:last-child {
+    margin-bottom: 0;
+}
+
+.custom_bullets>li::before {
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-a8);
+    left: 0;
+    top: 1rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@media(max-width:1549px) {
+    .custom_bullets>li {
+        padding-left: 2rem;
+    }
+
+    .custom_bullets>li::before {
+        width: 0.56rem;
+        height: 0.56rem;
+        top: 0.6rem;
+    }
+}
+
+@media(max-width:767px) {
+    .custom_bullets>li {
+        padding-left: 2rem;
+    }
+
+    .custom_bullets>li::before {
+        width: 0.46rem;
+        height: 0.46rem;
+        top: 0.6rem;
+    }
+}
+
+/* Search Area */
+.search-section {
+    padding-block: 6rem 10rem;
+    min-height: 60vh;
+}
+
+.search_bx {
+    position: relative;
+    background-color: var(--color-white);
+    padding: 2rem 5rem 2rem 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.search_bx:last-child {
+    margin-bottom: 0;
+}
+
+.search_bx>h5 {
+    font-size: var(--font-24);
+    font-weight: 600;
+    color: var(--color-black);
+    line-height: 1.16;
+    margin-bottom: 1.5rem;
+    transition: all .5s ease-out;
+}
+
+.search_bx>.link {
+    font-size: var(--font-18);
+    font-weight: 400;
+    color: var(--color-black);
+    line-height: 1.16;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-intervogue);
+}
+
+.search_bx>p {
+    font-size: var(--font-18);
+    font-weight: 400;
+    color: var(--color-black);
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-family: var(--font-intervogue);
+}
+
+.search_bx:has(a:hover)>h6 {
+    color: var(--color-96);
+}
+
+.search_bx:has(a:hover)::after {
+    background-position: left bottom;
+    color: var(--color-white);
+}
+
+.search_bx:has(a:hover)::before,
+.search_bx::before {
+    background-color: var(--color-f0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    height: 0.1rem;
+    width: 60%;
+    transition: all 0.5s ease;
+}
+
+.search_bx::after {
+    content: '\F285';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    font-family: bootstrap-icons !important;
+    flex-shrink: 0;
+    width: 2.6rem;
+    height: 2.6rem;
+    line-height: 1;
+    font-size: var(--font-11);
+    border: .1rem solid #D2D2D2;
+    color: var(--color-white);
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--color-84) 49%, var(--color-96) 49%);
+    background-size: 210% 110%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.streched_link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    font-size: 0;
+}
