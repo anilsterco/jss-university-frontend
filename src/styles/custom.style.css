@@ -1,7 +1,7 @@
 .program-search {
   position: relative;
 }
-.pin-spacer {
+/* .pin-spacer {
   order: 0;
   place-self: auto;
   grid-area: auto;
@@ -18,7 +18,7 @@
   width: 405px;
   height: 272px;
   padding: 0px;
-}
+} */
 .program-search::before {
   content: "";
   background-color: var(--color-f5);
@@ -1339,6 +1339,12 @@ hr {
 .facilities-sec1 {
   padding-block: 10rem 0rem;
 }
+.faclity-header-tabs a {
+  color: rgb(103 105 108);
+}
+.faclity-header-tabs .active a {
+  color: #ff6600;
+}
 .facilities-text {
   text-align: center;
   align-items: flex-start;
@@ -1540,9 +1546,14 @@ hr {
   z-index: 9;
 }
 .labs-bg {
-  position: absolute;
-  inset: 0;
   z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .labs-overlay {
   position: absolute;

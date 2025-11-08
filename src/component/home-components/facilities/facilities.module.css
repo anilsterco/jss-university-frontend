@@ -19,7 +19,7 @@
   display: flex;
   position: absolute;
   top: 8%;
-  left: -17px;
+  left: -1.7rem;
 }
 .bannerContent {
   z-index: 20;
@@ -98,8 +98,8 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-bottom: 2px dotted #ffc100;
+  gap:0.8rem;
+  border-bottom: 0.2rem dotted #ffc100;
  
 }
 .headingContainer {
@@ -122,22 +122,15 @@
 .blueText {
   color: #007bff;
 }
-.sectionHeader h5 {
-  font-size: 18px;
-  font-weight: 600;
-}
-.sectionHeader h1 {
-  font-size: 60px;
-  font-weight: 600;
-}
+
 .headerContent {
   background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
   gap: 3rem;
-  width: 85.5vw;
+  width: 164rem;
   margin: auto;
   padding: 2.3rem 6.3rem  2.3rem;
   display: flex;
-  height: 145px;
+  height: 14.5rem;
 }
 .facilitiesContainer {
   background: #f6f6f6;
@@ -174,6 +167,37 @@
 .facilitiesContainer {
   display: block;
 }
+
+@media (min-width: 2200px) and (max-width:2550) {
+.headerContent {
+  width: 190rem;
+}
+.verticalLine {
+  left: 12%;
+}
+
+}
+
+
+@media (max-width:1799px) {
+.verticalLine {
+  left: 6.7%;
+}
+}
+@media (max-width:1549px) {
+.headerContent {
+  width: 144rem;
+}
+}
+
+@media (max-width:1366px){
+.verticalLine {
+  left: 8.9%;
+}
+}
+
+
+
 @media (min-width: 1090px) and (max-width: 1199px) {
   .headerContent {
     width: 85.1vw;
@@ -226,24 +250,10 @@
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
-  .headerContent h1 {
-    font-size: 25px;
-  }
-  .headerContent h5 {
-    font-size: 12px;
-  }
+
   .headerContent {
     width: 86.7vw;
     height: 110px;
-  }
-  .bannerContent h2 {
-    font-size: 20px;
-  }
-  .bannerContent p {
-    font-size: 14px;
-  }
-  .bannerContent svg {
-    font-size: 18px;
   }
   .bannerContent {
     left: 16%;
@@ -270,7 +280,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 18px;
     font-weight: 600;
     text-align: center;
   }
@@ -298,7 +307,6 @@
     border-radius: 8px;
   }
   .mobileContainer p {
-    font-size: 14px;
     color: #16344e;
     font-weight: 600;
   }
@@ -320,15 +328,12 @@
     margin-bottom: 5px;
     font-weight: 400;
   }
-  .showOnlyMobileCard h1 {
-    font-size: 48px;
-  }
+
   .showOnlyMobileCard div {
     padding: 0.5rem 1rem 0;
   }
   .showOnlyMobileCard h5 {
     color: #16344e;
-    font-size: 14px;
     font-weight: 400;
   }
   .mobileCardsContainer {

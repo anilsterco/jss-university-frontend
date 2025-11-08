@@ -181,7 +181,7 @@ export default function Footer() {
 
         .footer_contact {
           display: grid;
-          grid-template-columns: 80% 17%;
+          grid-template-columns: 78% 17%;
           gap: 5rem;
           overflow: hidden;
         }
