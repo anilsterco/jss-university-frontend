@@ -308,7 +308,7 @@ export default function EventsGrid({ data }) {
           <SwiperSlide>
             <div
               className={`${styles.card} ${styles.mobileCard}`}
-              style={{ backgroundColor: "#C84B3A" }}
+              style={{ backgroundColor: "#AF251C" }}
             >
               <p className={styles.cardTag}>
                 {eventsData.happenings[1].event_type}

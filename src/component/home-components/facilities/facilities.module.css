@@ -5,7 +5,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 11.6%;
+  left: 11.2%;
 }
 .slideNumberBox {
   z-index: 20;
@@ -13,12 +13,13 @@
   border-radius: 40px;
   justify-content: center;
   align-items: center;
-  padding: 4px 12px;
-  font-size: 16px;
+  padding:0.4rem 1.2rem;
+  font: var(--font-16);
+  font-family: "Geist", sans-serif;
   display: flex;
   position: absolute;
   top: 8%;
-  left: -15px;
+  left: -17px;
 }
 .bannerContent {
   z-index: 20;
@@ -30,15 +31,25 @@
 }
 
 .bannerContent h2 {
+  font: var(--font-32);
+  letter-spacing: -1.54px;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
+}
+.bannerContent h2 svg {
+  width: 3.5rem;
+  height: auto;
+  padding-left: .8rem;
+  font-weight: 100;
 }
 
 .bannerContent p {
-  font-size: 18px;
+   font: var(--font-18);
+  letter-spacing: -0.27px;
+  font-family: "Geist", sans-serif;
   font-weight: 300;
-  margin-bottom: 2rem;
-  color: #fff;
-  max-width: 500px;
+  max-width: 45%;
 }
 
 .slideContainer {
@@ -54,7 +65,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 50%;
   pointer-events: none;
   z-index: 10;
 }
@@ -71,7 +82,9 @@
 
 .bannerLinks {
   gap: 2rem;
-  font-size: 14px;
+   font: var(--font-14);
+  font-family: var(--font-Condensed);
+  font-weight: bold;
   display: flex;
   position: absolute;
   bottom: 15%;
@@ -87,7 +100,7 @@
   align-items: center;
   gap: 8px;
   border-bottom: 2px dotted #ffc100;
-  font-size: 14px;
+ 
 }
 .headingContainer {
   position: relative;
@@ -97,7 +110,7 @@
 }
 .plusIcon {
   color: #cba632;
-  font-size: 32px;
+  font-size: 4rem;
   border: 1px solid #16344e;
   border-radius: 40px;
 }
@@ -119,12 +132,12 @@
 }
 .headerContent {
   background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
-  gap: 2rem;
-  width: 81.3vw;
+  gap: 3rem;
+  width: 85.5vw;
   margin: auto;
-  padding: 25px 25px 0 34px;
+  padding: 2.3rem 6.3rem  2.3rem;
   display: flex;
-  height: 170px;
+  height: 145px;
 }
 .facilitiesContainer {
   background: #f6f6f6;
@@ -133,16 +146,27 @@
   height: 100%;
   width: 1px;
   background-color: #16344e;
-  margin-left: 15px;
+  margin-left: 1.8rem;
   display: block;
 }
 .headerContent h1 {
-  font-size: 60px;
-  font-weight: 700;
+   font: var(--font-60);
+   font-family: var(--font-Condensed);
+   letter-spacing: -2.88px;
+   font-weight: bold;
+}
+.headerContent h1 span{
+  font: var(--font-60);
+   font-family: var(--font-Condensed);
+   letter-spacing: -2.88px;
+   font-weight: bold;
 }
 .headerContent h5 {
-  font-size: 18px;
-  font-weight: 700;
+ font: var(--font-18);
+  color: var(--color-4e);
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  font-weight: bold;
 }
 .mobileContainer {
   display: none;

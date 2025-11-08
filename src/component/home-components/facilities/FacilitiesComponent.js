@@ -238,7 +238,7 @@ export default function FacilitiesComponent({ data }) {
                 <div className={styles.bannerContent}>
                   <div>
                     <h2>
-                      {panel.title} <BsArrowRightCircle fontSize={23} />
+                      {panel.title} <BsArrowRightCircle fontSize={24} strokeWidth={0}/>
                     </h2>
                     <p>{panel.description}</p>
                   </div>

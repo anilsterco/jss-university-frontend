@@ -1,0 +1,21 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="22" height="22">
+	<style>
+		.s0 { fill: none } 
+		.s1 { fill: none;stroke: #ffffff } 
+	</style>
+	<filter id="f0">
+		<feFlood flood-color="#000000" flood-opacity="1" />
+		<feBlend mode="normal" in2="SourceGraphic"/>
+		<feComposite in2="SourceAlpha" operator="in" />
+	</filter>
+	<g id="Group_26254" filter="url(#f0)">
+		<g id="Ellipse_17">
+			<path fill-rule="evenodd" class="s0" d="m11 22c-6.08 0-11-4.92-11-11 0-6.08 4.92-11 11-11 6.08 0 11 4.92 11 11 0 6.08-4.92 11-11 11z"/>
+			<path fill-rule="evenodd" class="s1" d="m11 21.5c-5.81 0-10.5-4.69-10.5-10.5 0-5.81 4.69-10.5 10.5-10.5 5.81 0 10.5 4.69 10.5 10.5 0 5.81-4.69 10.5-10.5 10.5z"/>
+		</g>
+		<g id="Group_1341">
+			<path id="Path_679" class="s1" d="m11.06 6.14l4.87 4.87-4.87 4.88"/>
+			<path id="Line_19" fill-rule="evenodd" class="s1" d="m15.93 10.99h-10.52"/>
+		</g>
+	</g>
+</svg>

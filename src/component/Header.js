@@ -721,9 +721,8 @@ export default function Header() {
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
                           {link}
-                          <img
-                            src="/images/header/listicon.svg"
-                            class="img-fluid"
+                          <img src="/images/header/listicon.svg"
+                            className="img-fluid"
                             alt="mail"
                           />
                         </li>
@@ -782,7 +781,7 @@ export default function Header() {
           aria-label="Close menu"
           onClick={closeMenu}
         >
-          ×
+        <img src="images/header/close-icon.svg" />
         </button>
 
         <div className="hamburger-layout">
@@ -843,12 +842,12 @@ export default function Header() {
                   </Link>
                   <div className="hamburger-section-img virtural-img">
                     <Link href={activeData.firstContent.url}>
-                      <Image
+                      <Image className="hum-small"
                         src={activeData.firstContent.img}
                         alt={activeData.firstContent.alt}
                         fill
                         style={{ objectFit: "cover" }}
-                        sizes="100vw"
+                       
                       />
                     </Link>
                     <div className="items-menu_grp">
@@ -906,10 +905,10 @@ export default function Header() {
           flex-direction: column;
         }
          .logo-content img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
-}
+              width: 100%;
+              height: 100%;
+              object-fit: contain; 
+            }
         .header-scrolled .school-toggle {
           color: #16344e;
         }
@@ -985,6 +984,7 @@ export default function Header() {
         .virtural-img {margin-top:5.6rem;position:relative;}
         .right-inner .first-content {
           width: 30%;
+          padding-top:2rem;
         }
         .right-inner .second-content {
           width: 45%;
@@ -1543,7 +1543,7 @@ export default function Header() {
         }
         .mega-right-text {
           width: 23%;
-          padding-top: 3rem;
+          padding-top: 0rem;
         }
         .mega-subtitle {
          font: var(--font-13);
@@ -1605,7 +1605,7 @@ export default function Header() {
           color: var(--color-white);
           font-family: var(--font-Geist);
           letter-spacing: -0.18px;
-          font-weight: 900;
+          font-weight: 800;
       }
       .items-menu_grp .items-menu_grp_cont p {
           letter-spacing: -0.23px;
@@ -1615,7 +1615,14 @@ export default function Header() {
           font-weight: 200;
           max-width: 100%;
       }
-
+         .mega-right-banners {
+          display:flex;
+          margin-top:18rem;
+          padding-bottom:14rem;
+          gap:2.4rem;
+          width:100%
+         }
+         .close-btn {margin:3rem 8rem}
     
         @media (min-width: 1024px) and (max-width: 1420px) {
           .mega-right-banners {

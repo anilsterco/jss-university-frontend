@@ -68,10 +68,11 @@ export default function PlacementsSection({ data }) {
   const placementsData = data ? data : dummyPlacementsData;
   return (
     <>
-      <section className={`container-fluid ${styles.thirdSection}`}>
-        {/* Section Header */}
+      <section className={` ${styles.thirdSection}`}>
+       <div className="container max-content-lg pe-lg-0 me-lg-0">
+         {/* Section Header */}
         <div className={` ${styles.sectionHeader}`}>
-          <p className="fw-bold text-uppercase dark-blue-text mb-2">
+          <p className="fw-bold text-uppercase dark-blue-text">
             {placementsData.subtitle.toUpperCase()}
           </p>
           <h2
@@ -81,18 +82,20 @@ export default function PlacementsSection({ data }) {
           ></h2>
         </div>
 
-        <div className="row g-4 w-100 m-auto">
+        <div className="row w-100 m-auto">
           {/* Left Content */}
-          <div className={`col-lg-7 ps-0 ${styles.leftContent}`}>
+          <div className={`col-lg-6 ps-0 ${styles.leftContent}`}>
             {/* Stats Row */}
-            <div className={`row mb-5 pb-4 w-100 m-auto ${styles.statsRow}`}>
+            <div className={`row w-100 placement_row ${styles.statsRow}`}>
               {placementsData.facts_and_figures &&
                 placementsData.facts_and_figures.map((stat, i) => (
-                  <div key={i} className="col-md-4 text-center border p-3">
-                    <h3 className={`fw-bold ${styles.statsNumber}`}>
+                  <div key={i} className="col-md-4 text-center border ">
+                   <div className="fig-count">
+                      <h3 className={`fw-bold ${styles.statsNumber}`}>
                       {stat.figure}
                     </h3>
                     <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
+                   </div>
                   </div>
                 ))}
             </div>
@@ -108,7 +111,7 @@ export default function PlacementsSection({ data }) {
               }}
               spaceBetween={30}
               slidesPerView={1}
-              style={{ padding: "20px 20px" }}
+              style={{ padding: "30px 30px" }}
               className={`${styles.testimonialSwiper} testimonial-slider`}
             >
               <div className={styles.blueBg}></div>
@@ -116,7 +119,7 @@ export default function PlacementsSection({ data }) {
                 placementsData.testimonials.map((t, i) => (
                   <SwiperSlide key={i}>
                     <div
-                      className={`${styles.eachSlide} d-flex align-items-center`}
+                      className={`${styles.eachSlide} d-flex align-items-top`}
                     >
                       {/* Testimonial Image */}
                       <div className={` ${styles.testimonialImageContainer}`}>
@@ -147,12 +150,12 @@ export default function PlacementsSection({ data }) {
                           fontSize={30}
                         />
                         <p className="">{t.short_description}”</p>
-                        <h6 className="small mb-0 fw-bold">{t.name}</h6>
-                        <small className="">
+                        <h6 className="small fw-bold">{t.name}</h6>
+                        <small className="small-text">
                           {t.designation}, {t.company}
                         </small>
                         <div
-                          className={`d-flex gap-2 mt-3 ${styles.testimonialIconContainer}`}
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
                         >
                           <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
                             <FaChevronLeft size={8} />
@@ -170,7 +173,7 @@ export default function PlacementsSection({ data }) {
 
           {/* Right Wall of Fame */}
           <div
-            className={`col-lg-5 d-flex justify-content-end px-0 ${styles.rightContent}`}
+            className={`col-lg-6 d-flex justify-content-end px-0 ${styles.rightContent}`}
           >
             <div
               className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
@@ -194,7 +197,7 @@ export default function PlacementsSection({ data }) {
                   className={`position-absolute`}
                   style={{ bottom: "4%", left: "6%" }}
                 >
-                  <LuCircleArrowRight size={20} color="#fff" />
+                  <LuCircleArrowRight size={22} color="#fff" strokeWidth={1} />
                 </Link>
               )}
             </div>
@@ -203,10 +206,10 @@ export default function PlacementsSection({ data }) {
 
         {/* Recruiters Row */}
         <div className={`pt-5 ${styles.recruiterSection}`}>
-          <p
-            className="fw-bold small text-uppercase mb-3"
-            style={{ color: "#0036A1" }}
-          >
+          <div className="row recruiter-logo w-100">
+            <div className="col-lg-10 max-auto">
+            <p
+            className="small">
             Our Recruiters
           </p>
           <div className="d-flex flex-wrap gap-4 align-items-center">
@@ -244,7 +247,11 @@ export default function PlacementsSection({ data }) {
                 ))}
             </Swiper>
           </div>
+            </div>
+          </div>
         </div>
+
+       </div>
       </section>
     </>
   );

@@ -74,12 +74,9 @@ export default function CoursesOffered({ data }) {
 
   return (
     <>
-      <section
-        className={`container-fluid second-section ${styles.secondSection}`}
-      >
-        <div
-          className={`row align-items-center mb-5 top-section ${styles.topSection}`}
-        >
+      <section className={`second-section cource-sec ${styles.secondSection}`}>
+        <div className="container">
+          <div className={`row cource_top ${styles.topSection}`} >
           {/* Left side */}
           <div className="col-lg-4 mb-4 mb-lg-0">
             <h5 className={`${styles.topSectionH5}`}>{coursesData.subtitle}</h5>
@@ -100,13 +97,14 @@ export default function CoursesOffered({ data }) {
                 placeholder="Search Course"
               />
               <span className="input-group-text bg-white border-0">
-                <CiSearch />
+                {/* <CiSearch /> */}
+                 <img src="images/home-page/icon-search.svg" className="img-fluid"alt="search"/>
               </span>
             </div>
 
             {/* Programs count */}
             <div
-              className={`d-flex align-items-center gap-5 ${styles.programsCountSection}`}
+              className={`d-flex align-items-center ${styles.programsCountSection}`}
             >
               <ProgramsCount />
               <p className={styles.programsText}>{coursesData.programs_text}</p>
@@ -167,10 +165,10 @@ export default function CoursesOffered({ data }) {
 
         {/* Bottom section */}
         <div
-          className={`row border-top border-bottom align-items-center bottom-section w-100 m-auto ${styles.exploreProgramSectionWrapper}`}
+          className={`row  align-items-center program-row m-auto ${styles.exploreProgramSectionWrapper}`}
         >
-          <div className="col-lg-8 pb-4 pt-1 border-end">
-            <h6 className={`fw-bold mb-3 ${styles.bottomSectionH6}`}>
+          <div className="col-lg-8">
+            <h6 className={`fw-bold  ${styles.bottomSectionH6}`}>
               Explore Programs by School of
             </h6>
             <div
@@ -180,10 +178,10 @@ export default function CoursesOffered({ data }) {
                 <Link
                   href={`/schools/${school.slug}`}
                   key={i}
-                  className="py-2 px-4 d-flex justify-content-between align-items-center"
+                  className=" d-flex justify-content-between align-items-center"
                 >
                   {school.short_name}{" "}
-                  <FaChevronRight fontSize={10} color="#000" />
+                  <FaChevronRight fontSize={10} color="#16344ec4" />
                 </Link>
               ))}
             </div>
@@ -191,16 +189,16 @@ export default function CoursesOffered({ data }) {
 
           {/* Admission section */}
           <div
-            className={`col-lg-4 d-flex justify-content-between align-items-center ${styles.admissionSection}`}
+            className={`col-lg-4 d-flex gap-5 align-items-center ${styles.admissionSection}`}
           >
-            <div>
-              <h4
-                className="fw-bold mb-1"
+            <div className="addmission-col">
+             <h4
+                className="fw-bold add-item"
                 dangerouslySetInnerHTML={{
                   __html: coursesData.academic_year.year,
                 }}
               ></h4>
-              <p className="small mb-0">{coursesData.academic_year.description}</p>
+               <p className="small">{coursesData.academic_year.description}</p>
             </div>
             <Link
               href={coursesData.buttons[0].url}
@@ -209,6 +207,7 @@ export default function CoursesOffered({ data }) {
               {coursesData.buttons[0].text}
             </Link>
           </div>
+        </div>
         </div>
       </section>
     </>

@@ -373,7 +373,7 @@ if ($('[data-aos]').length > 0) {
         // containerWidth = $([...containerWidth][2]).width();
         let windowWidth = $("body").width();
         windowWidth = windowWidth > 1920 ? 1920 : windowWidth;
-        let maxContentWidth = (windowWidth - (windowWidth - containerWidth) / 2) + 13;
+        let maxContentWidth = (windowWidth - (windowWidth - containerWidth) / 2) + 16;
     if (windowWidth >= 1920) {
             $(".max-content-xxl").css("max-width", `${maxContentWidth}px`);
             $(".max-content-xl").css("max-width", `${maxContentWidth}px`);

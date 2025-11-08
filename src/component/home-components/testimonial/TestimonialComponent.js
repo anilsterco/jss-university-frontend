@@ -93,7 +93,8 @@ export default function TestimonialsSection({ data }) {
   const columnForMobile = [...column1, ...column2];
   return (
     <section className={styles.testimonialsSection}>
-      <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
+     <div className="container">
+       <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
         {/* LEFT COLUMN */}
         <div className={styles.columnLeft}>
           <div className={styles.headerContent}>
@@ -227,6 +228,7 @@ export default function TestimonialsSection({ data }) {
           </div>
         </div>
       )}
+     </div>
     </section>
   );
 }
