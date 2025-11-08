@@ -68,9 +68,20 @@
 }
 
 /* Responsive Design */
+@media (min-width: 2200px) and (max-width:2550) {
+.bannerContent {
+    width: 25%;
+    left: 27%;
+}
+.blueBg {
+  max-width: 25%;
+}
+
+}
+
+/* Responsive Design */
 @media (min-width: 1040px) and (max-width: 1380px) {
   .bannerContentH1 {
-    font-size: 34px;
     margin-bottom: 1rem;
   }
 
@@ -78,12 +89,9 @@
     width: 40%;
   }
   .bannerContentP {
-    font-size: 12px;
     margin-bottom: 1rem;
   }
-  .bannerContentA {
-    font-size: 12px;
-  }
+
 }
 
 @media (min-width: 1921px) and (max-width: 3840px) {
@@ -94,15 +102,11 @@
 
 @media (min-width: 768px) and (max-width: 1040px) {
   .bannerContentH1 {
-    font-size: 25px;
     margin-bottom: 1rem;
   }
-  .bannerContentA {
-    font-size: 12px;
-  }
+
   .bannerContentP {
     margin-bottom: 1rem;
-    font-size: 13px;
   }
 }
 
@@ -115,12 +119,10 @@
   }
 
   .bannerContentH1 {
-    font-size: 28px;
     margin-bottom: 1rem;
   }
 
   .bannerContentP {
-    font-size: 14px;
     margin-bottom: 1.5rem;
   }
 
@@ -146,3 +148,5 @@
     background: #fff;
   }
 }
+
+
