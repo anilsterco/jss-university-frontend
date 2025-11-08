@@ -515,19 +515,19 @@ window.addEventListener("resize", setResponsiveMargin);
     // Mobile Menu Tab End
 
 $(function () {
-    $('.site_nav > ul > li.drop-menu').hover(
+    $('.desktop-nav > ul > li.nav-item').hover(
         function () {
-            $(this).find('.mega-menu').addClass('active-hover');
+            $(this).find('.mega-dropdown').addClass('active-hover');
             $('body').addClass('active_head'); // add class to body
         },
         function () {
-            $(this).find('.mega-menu').removeClass('active-hover');
+            $(this).find('.mega-dropdown').removeClass('active-hover');
             $('body').removeClass('active_head'); // remove class from body
         }
     );
 });
 $(function () {
-    $('.mega-menu').hover(
+    $('.nav-container .nav-list').hover(
         function () {
             $(this).addClass('active-hover');
             $('body').addClass('active_head');
@@ -538,6 +538,8 @@ $(function () {
         }
     );
 });
+
+
 
 
 
