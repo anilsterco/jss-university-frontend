@@ -86,7 +86,7 @@
   letter-spacing: -0.48px;
   font-weight: 300;
   font-family: "Geist", sans-serif;
-  padding-left: 2rem;
+  padding-left: 4rem;
 }
 
 .admissionYearText {
@@ -190,8 +190,6 @@
 .showOnlyMobileSubHeading {
   display: none;
 }
-
-
 
 @media (min-width: 1040px) and (max-width: 1380px) {
   .secondSection {
