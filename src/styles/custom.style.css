@@ -1339,6 +1339,12 @@ hr {
 .facilities-sec1 {
   padding-block: 10rem 0rem;
 }
+.faclity-header-tabs a {
+  color: rgb(103 105 108);
+}
+.faclity-header-tabs .active a {
+  color: #ff6600;
+}
 .facilities-text {
   text-align: center;
   align-items: flex-start;
