@@ -140,8 +140,8 @@
 }
 
 .fifthSectionSlider :global(.about-pagination .swiper-pagination-bullet) {
-  width: 6px;
-  height: 6px;
+  width: 0.6rem;
+  height: 0.6rem;
   display: block;
 }
 
@@ -150,8 +150,6 @@
   background-color: #16344e;
   transform: scale(1.5);
 }
-
-
 
 .onlyMobile {
   display: none;
@@ -200,33 +198,12 @@
 }
 
 /* Responsive Design */
+/* Responsive Design */
 
 @media (min-width: 1381px) and (max-width: 1919px) {
   .accreditationLogo {
     width: 30%;
   }
-
-  .accreditationSlide p {
-    font-size: 14px;
-  }
-
-  .topSectionHeading {
-    font-size: 40px;
-  }
-
-  .about-home-jss-module__Uc86oW__topSection p {
-    font-size: 14px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-  }
-
-
   .navButtons {
     padding: 0.5rem 2rem;
   }
@@ -236,33 +213,6 @@
   .accreditationLogo {
     width: 25%;
   }
-
-  .fifthSection {
-    padding: 6rem 6rem;
-  }
-
-  .accreditationSlide p {
-    font-size: 14px;
-  }
-
-  .topSectionHeading {
-    font-size: 40px;
-  }
-
-  .about-home-jss-module__Uc86oW__topSection p {
-    font-size: 14px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-  }
-
-
-
   .navButtons {
     padding: 0.5rem 2rem;
   }
@@ -273,13 +223,7 @@
     padding: 4rem 4rem;
   }
 
-  .topSection p {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-
   .topSectionHeading {
-    font-size: 25px;
     width: 60%;
   }
 
@@ -294,22 +238,12 @@
     width: 100%;
   }
 
-  .description {
-    font-size: 14px;
-  }
-
-
-  .cardTitle {
-    font-size: 15px;
-  }
-
   .sourceText {
     font-size: 1.2rem;
   }
 
   .navButtons {
     padding: 0.4rem 1rem;
-    font-size: 13px;
   }
 
   .accreditationLogo {
@@ -319,7 +253,6 @@
   .accreditationSlide p {
     color: #212121;
     font-family: Geist, sans-serif;
-    font-size: 12px;
   }
 }
 
@@ -343,25 +276,18 @@
   }
 
   .topSection p {
-    font-size: 14px;
     text-align: center;
   }
 
   .description {
     width: 100%;
-    font-size: 14px;
     text-align: center;
   }
 
   .topSectionHeading {
     width: 100%;
     margin-bottom: 1.3rem;
-    font-size: 34px;
     text-align: center;
-  }
-
-  .rightArrowIcon {
-    font-size: 22px;
   }
 
   .leftColumn {
@@ -386,14 +312,6 @@
     margin-bottom: 0.8rem !important;
   }
 
-  .cardTitle {
-    font-size: 15px;
-  }
-
-  .sourceText {
-    font-size: 1rem;
-  }
-
   .aboutBtnDiv {
     padding-top: 1.3rem;
     flex-wrap: wrap;
@@ -403,7 +321,6 @@
 
   .navButtons {
     padding: 0.5rem 1rem;
-    font-size: 14px;
   }
 
   .onlyMobile :global(.swiper-wrapper) {

@@ -364,68 +364,58 @@ if ($('[data-aos]').length > 0) {
   });
 }
 
-  $(window).resize(function () {
-        adjustMaxContent();
-    });
-    function adjustMaxContent() {
-        let containerWidth = $(".container").width()
-        //console.log([...containerWidth]);
-        // containerWidth = $([...containerWidth][2]).width();
-        let windowWidth = $("body").width();
-        windowWidth = windowWidth > 1920 ? 1920 : windowWidth;
-        let maxContentWidth = (windowWidth - (windowWidth - containerWidth) / 2) + 16;
-    if (windowWidth >= 1920) {
-            $(".max-content-xxl").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-xl").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-lg").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-md").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        }
-        else if (windowWidth >= 1400) {
-            $(".max-content-xxl").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-xl").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-lg").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-md").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        } else if (windowWidth >= 1200) {
-            $(".max-content-xxl").css("max-width", "");
-            $(".max-content-xl").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-lg").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-md").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        } else if (windowWidth >= 992) {
-            $(".max-content-xxl").css("max-width", "");
-            $(".max-content-xl").css("max-width", "");
-            $(".max-content-lg").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-md").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        } else if (windowWidth >= 768) {
-            $(".max-content-xxl").css("max-width", "");
-            $(".max-content-xl").css("max-width", "");
-            $(".max-content-lg").css("max-width", "");
-            $(".max-content-md").css("max-width", `${maxContentWidth}px`);
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        } else if (windowWidth >= 575) {
-            $(".max-content-xxl").css("max-width", "");
-            $(".max-content-xl").css("max-width", "");
-            $(".max-content-lg").css("max-width", "");
-            $(".max-content-md").css("max-width", "");
-            $(".max-content-sm").css("max-width", `${maxContentWidth}px`);
-            $(".max-content").css("max-width", `${maxContentWidth}px`);
-        } else {
-            $(".max-content-xxl").css("width", "");
-            $(".max-content-xl").css("width", "");
-            $(".max-content-lg").css("width", "");
-            $(".max-content-md").css("width", "");
-            $(".max-content-sm").css("width", "");
-            $(".max-content").css("width", `${maxContentWidth}px`);
-        }
+ $(window).resize(function () {
+  adjustMaxContent();
+});
+
+function adjustMaxContent() {
+  let containerWidth = $(".container").width();
+  let windowWidth = $("body").width();
+
+  if (windowWidth > 4000) windowWidth = 4000;
+
+  let maxContentWidth = (windowWidth - (windowWidth - containerWidth) / 2) + 16;
+
+  if (windowWidth >= 1920) {
+    $(".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content")
+      .css("max-width", `${maxContentWidth}px`);
+
+    if (windowWidth >= 2200) {
+      $(".max-content-lg").css("max-width", "2018px");
     }
+ if (windowWidth >= 2540) {
+      $(".max-content-lg").css("max-width", "2180px");
+    }
+  } else if (windowWidth >= 1400) {
+    $(".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content")
+      .css("max-width", `${maxContentWidth}px`);
+
+  } else if (windowWidth >= 1200) {
+    $(".max-content-xxl").css("max-width", "");
+    $(".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content")
+      .css("max-width", `${maxContentWidth}px`);
+
+  } else if (windowWidth >= 992) {
+    $(".max-content-xxl, .max-content-xl").css("max-width", "");
+    $(".max-content-lg, .max-content-md, .max-content-sm, .max-content")
+      .css("max-width", `${maxContentWidth}px`);
+
+  } else if (windowWidth >= 768) {
+    $(".max-content-xxl, .max-content-xl, .max-content-lg").css("max-width", "");
+    $(".max-content-md, .max-content-sm, .max-content")
+      .css("max-width", `${maxContentWidth}px`);
+
+  } else if (windowWidth >= 575) {
+    $(".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md").css("max-width", "");
+    $(".max-content-sm, .max-content").css("max-width", `${maxContentWidth}px`);
+
+  } else {
+    $(".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm")
+      .css("width", "");
+    $(".max-content").css("width", `${maxContentWidth}px`);
+  }
+}
+
 
 
 function alignEdgeElements() {
