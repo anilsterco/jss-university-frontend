@@ -146,14 +146,14 @@ font: var(--font-16);
 .orangeLine {
   background-color: #ffa600;
   width: 9.2rem;
-  height: 5px;
+  height:0.5rem;
   margin-bottom: 1.8rem;
 }
 .rightArrow {
   color: #fff;
   border: 1px solid;
   border-radius: 50px;
-  padding: 5px;
+  padding:0.5rem;
   font-size: 30px;
   margin-top: 15px;
   cursor: pointer;
@@ -162,7 +162,7 @@ font: var(--font-16);
 .seamEduLogo {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap:0.5rem;
   margin: 20px 0;
 }
 
@@ -172,7 +172,7 @@ font: var(--font-16);
 }
 
 .seamEduTitle {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
 }
 
@@ -193,42 +193,19 @@ font: var(--font-16);
 
 /* Responsive Design */
 
-@media (min-width: 1381px) and (max-width: 1919px) {
-  .cardTag {
-    font-size: 14px;
-  }
-  .cardTitle {
-    font-size: 14px;
-  }
-  .cardDate {
-    font-size: 12px;
-  }
-  .cardTitleLarge {
-    font-size: 30px;
-  }
-  .rightArrow {
-    padding: 4px;
-    font-size: 23px;
-  }
+@media (min-width: 2200px) and (max-width:2550) {
+.cardTitleLarge {
+  padding-right: 28rem;
 }
-@media (min-width: 1040px) and (max-width: 1380px) {
-  .cardTag {
-    font-size: 14px;
-  }
-  .cardTitle {
-    font-size: 14px;
-  }
-  .cardDate {
-    font-size: 12px;
-  }
-  .cardTitleLarge {
-    font-size: 30px;
-  }
-  .rightArrow {
-    padding: 4px;
-    font-size: 23px;
-  }
+.cardSubtitleWhite {
+  margin-top: 2rem;
+  max-width: 60%;
 }
+.cardTitle {max-width: 60%;}
+
+}
+
+
 
 @media (max-width: 1200px) {
   .eventSection {
@@ -237,10 +214,6 @@ font: var(--font-16);
 
   .grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .headerTitle {
-    font-size: 36px;
   }
 }
 
@@ -253,37 +226,8 @@ font: var(--font-16);
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .headerTitle {
-    font-size: 30px;
-  }
 }
 
-/* @media (max-width: 768px) {
-  .eventSection {
-    padding: 2rem 1rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
-  }
-
-  .headerTitle {
-    font-size: 28px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .cardTitleLarge {
-    font-size: 24px;
-  }
-
-  .contentPart {
-    padding: 1.5rem;
-  }
-} */
 
 @media (max-width: 480px) {
   .grid {
@@ -291,9 +235,6 @@ font: var(--font-16);
     grid-auto-rows: 220px;
   }
 
-  .headerTitle {
-    font-size: 24px;
-  }
 
   .contentPart {
     padding: 1rem;
@@ -309,9 +250,7 @@ font: var(--font-16);
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
-  .headerSmall {
-    font-size: 12px;
-  }
+
   .header {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -322,16 +261,9 @@ font: var(--font-16);
   }
   .cardTag {
     margin-bottom: 5px;
-    font-size: 14px;
   }
   .orangeLine {
     margin-bottom: 10px;
-  }
-  .cardTitle {
-    font-size: 15px;
-  }
-  .cardDate {
-    font-size: 12px;
   }
 }
 @media (max-width: 768px) {
@@ -345,16 +277,12 @@ font: var(--font-16);
   .mobileCard {
     height: 300px;
   }
-  .headerSmall {
-    font-size: 14px;
-  }
+ 
   .cardTitleLarge {
-    font-size: 26px;
     font-weight: 400;
   }
   .rightArrow {
     padding: 2px;
-    font-size: 20px;
   }
   .eventSection {
     padding: 3rem 1rem;

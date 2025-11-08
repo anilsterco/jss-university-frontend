@@ -101,7 +101,7 @@ body {
   --font-15: normal normal 1.5rem / 1.2 var(--font-Roboto);
   --font-14: normal normal 1.4rem / 1.2 var(--font-Roboto);
   --font-13: normal normal 1.3rem / 1.2 var(--font-Roboto);
-  --font-12: normal normal 1.2rem / 1.2 var(--font-Roboto);
+  --font-12: normal normal 1.4rem / 1.4 var(--font-Roboto);
   --line-height-31: calc(3.1rem / 2.6rem);
   --line-height-30: calc(3rem / 2.1rem);
   --line-height-22: calc(2.2rem / 1.4rem);
@@ -110,124 +110,93 @@ body {
   --line-height-15: calc(1.5rem / 1.2rem);
 
 }
-
-/* Medium Desktop */
-@media (max-width: 1440px) {
-  :root {
-    --font-110: normal 300 9rem / 1.218 var(--font-Geist);
-    --font-100: normal 100 9rem / 1.218 var(--font-Roboto);
-    --font-80: normal bold 6.5rem / 1.2 var(--font-Roboto);
-    --font-60: normal bold 5rem / 1 var(--font-Roboto);
-    --font-52: normal bold 4.5rem / 1.2 var(--font-Roboto);
-    --font-50: normal bold 4.8rem / 1.2 var(--font-Roboto);
-    --font-48: normal 500 4.5rem / 1.2 var(--font-Roboto);
-    --font-45: normal bold 4rem / 1.2 var(--font-Roboto);
-    --font-42: normal bold 3.8rem / 1.2 var(--font-Roboto);
-    --font-40: normal bold 3.5rem / 1.2 var(--font-Roboto);
-    --font-38: normal 500 3.3rem / 1.2 var(--font-Roboto);
-    --font-36: normal bold 3.2rem / 1.2 var(--font-Roboto);
-    --font-34: normal bold 3rem / 1.2 var(--font-Roboto);
-    --font-32: normal bold 2.8rem / 1.2 var(--font-Roboto);
-    --font-30: normal bold 2.6rem / 1.2 var(--font-Roboto);
-    --font-28: normal bold 2.4rem / 1.2 var(--font-Roboto);
-    --font-26: normal bold 2.3rem / 1.4 var(--font-Roboto);
-    --font-24: normal 500 2.1rem / 1.2 var(--font-Roboto);
-    --font-22: normal 500 2rem / 1.2 var(--font-Roboto);
-    --font-21: normal normal 1.9rem / 1.2 var(--font-Roboto);
-    --font-20: normal bold 1.8rem / 1.2 var(--font-Roboto);
-    --font-19: normal normal 1.7rem / 1.2 var(--font-Roboto);
-    --font-18: normal normal 1.6rem / 1.2 var(--font-Roboto);
-    --font-17: normal normal 1.5rem / 1.1 var(--font-Roboto);
-    --font-16: normal normal 1.4rem / 1.5 var(--font-Roboto);
-    --font-15: normal normal 1.3rem / 1.2 var(--font-Roboto);
-    --font-14: normal normal 1.2rem / 1.2 var(--font-Roboto);
-    --font-13: normal normal 1.1rem / 1.2 var(--font-Roboto);
-    --font-12: normal normal 1rem / 1.2 var(--font-Roboto);
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  :root {
-    --font-110: normal 300 8rem / 1.218 var(--font-Geist);
-    --font-100: normal 100 7rem / 1.218 var(--font-Roboto);
-    --font-80: normal bold 5.5rem / 1.2 var(--font-Roboto);
-    --font-60: normal bold 4.5rem / 1 var(--font-Roboto);
-    --font-52: normal bold 4rem / 1.2 var(--font-Roboto);
-    --font-50: normal bold 4.2rem / 1.2 var(--font-Roboto);
-    --font-48: normal 500 4rem / 1.2 var(--font-Roboto);
-    --font-45: normal bold 3.5rem / 1.2 var(--font-Roboto);
-    --font-42: normal bold 3.2rem / 1.2 var(--font-Roboto);
-    --font-40: normal bold 3rem / 1.2 var(--font-Roboto);
-    --font-38: normal 500 2.8rem / 1.2 var(--font-Roboto);
-    --font-36: normal bold 2.6rem / 1.2 var(--font-Roboto);
-    --font-34: normal bold 2.4rem / 1.2 var(--font-Roboto);
-    --font-32: normal bold 2.2rem / 1.2 var(--font-Roboto);
-    --font-30: normal bold 2rem / 1.2 var(--font-Roboto);
-    --font-28: normal bold 1.9rem / 1.2 var(--font-Roboto);
-    --font-26: normal bold 1.8rem / 1.4 var(--font-Roboto);
-    --font-24: normal 500 1.7rem / 1.2 var(--font-Roboto);
-    --font-22: normal 500 1.6rem / 1.2 var(--font-Roboto);
-    --font-21: normal normal 1.5rem / 1.2 var(--font-Roboto);
-    --font-20: normal bold 1.4rem / 1.2 var(--font-Roboto);
-    --font-19: normal normal 1.3rem / 1.2 var(--font-Roboto);
-    --font-18: normal normal 1.2rem / 1.2 var(--font-Roboto);
-    --font-17: normal normal 1.1rem / 1.1 var(--font-Roboto);
-    --font-16: normal normal 1rem / 1.5 var(--font-Roboto);
-    --font-15: normal normal 0.95rem / 1.2 var(--font-Roboto);
-    --font-14: normal normal 0.9rem / 1.2 var(--font-Roboto);
-    --font-13: normal normal 0.85rem / 1.2 var(--font-Roboto);
-    --font-12: normal normal 0.8rem / 1.2 var(--font-Roboto);
-  }
-}
-
-.main-container .max-content-lg {
-  padding-left: 2rem
-}
-
-@media (min-width: 1400px) {
-  .main-container .container {
+.main-container .container {
     max-width: 1395px;
   }
   .footer_section .container {
     max-width: 1395px;
   }
 
+@media(max-width:1750px){
+    .main-container .container {
+        max-width: 1274px;
+    }   
+     .footer_section .container {
+    max-width: 1395px;
+  }
+    html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 1650px) {
+  html {
+    font-size: 58.5%; 
+  }
+}
+@media(max-width:1400px){   
+    .container {
+        max-width: 1024px;
+    }
+    html {
+    font-size: 57.5%;
+  }
+}
+@media(max-width:1366px){   
+    .main-container .container {
+        max-width: 1000px;
+    }
+    html {
+    font-size: 55%; 
+  }
+}
+@media(max-width:1280px){
+    .main-container .container {
+        max-width:844px;
+    }
+    html {
+    font-size: 52.5%;
+  }
+}
+@media(max-width:1024px){
+   .main-container .container {
+        max-width:758;
+    }
 }
 
-/* Mobile */
-@media (max-width: 380px) {
-  :root {
-    --font-110: normal 300 6rem / 1.218 var(--font-Geist);
-    --font-100: normal 100 5rem / 1.218 var(--font-Roboto);
-    --font-80: normal bold 4rem / 1.2 var(--font-Roboto);
-    --font-60: normal bold 3rem / 1 var(--font-Roboto);
-    --font-52: normal bold 2.5rem / 1.2 var(--font-Roboto);
-    --font-50: normal bold 2.4rem / 1.2 var(--font-Roboto);
-    --font-48: normal 500 2.2rem / 1.2 var(--font-Roboto);
-    --font-45: normal bold 2rem / 1.2 var(--font-Roboto);
-    --font-42: normal bold 1.8rem / 1.2 var(--font-Roboto);
-    --font-40: normal bold 1.6rem / 1.2 var(--font-Roboto);
-    --font-38: normal 500 1.5rem / 1.2 var(--font-Roboto);
-    --font-36: normal bold 1.4rem / 1.2 var(--font-Roboto);
-    --font-34: normal bold 1.3rem / 1.2 var(--font-Roboto);
-    --font-32: normal bold 1.2rem / 1.2 var(--font-Roboto);
-    --font-30: normal bold 1.1rem / 1.2 var(--font-Roboto);
-    --font-28: normal bold 1rem / 1.2 var(--font-Roboto);
-    --font-26: normal bold 0.95rem / 1.4 var(--font-Roboto);
-    --font-24: normal 500 0.9rem / 1.2 var(--font-Roboto);
-    --font-22: normal 500 0.85rem / 1.2 var(--font-Roboto);
-    --font-21: normal normal 0.8rem / 1.2 var(--font-Roboto);
-    --font-20: normal bold 0.75rem / 1.2 var(--font-Roboto);
-    --font-19: normal normal 0.7rem / 1.2 var(--font-Roboto);
-    --font-18: normal normal 0.7rem / 1.2 var(--font-Roboto);
-    --font-17: normal normal 0.65rem / 1.1 var(--font-Roboto);
-    --font-16: normal normal 0.6rem / 1.5 var(--font-Roboto);
-    --font-15: normal normal 0.55rem / 1.2 var(--font-Roboto);
-    --font-14: normal normal 0.5rem / 1.2 var(--font-Roboto);
-    --font-13: normal normal 0.45rem / 1.2 var(--font-Roboto);
-    --font-12: normal normal 0.4rem / 1.2 var(--font-Roboto);
-  }
+@media(min-width:1921px){  
+    html{font-size:65%;}
+    .main-container .container{max-width:1570px;padding-left:1.5rem;padding-right:1.5rem;}
+     .footer_section .container {
+    max-width:1570px;padding-left:1.5rem;padding-right:1.5rem;}
+    .hamb_grid_menus {
+        grid-template-columns: 20% 78%;
+        min-height: 66vh;
+    }
+    .hamb_grid_menus .hamb_menu_item{ grid-template-columns: 21% 79%;}
+    .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl{ padding-right:12rem;}
+    .dropdown{ max-width: 1820px;}
+    .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3{ max-width: 70%;}
+    .menu-counter p{max-width: 36.5%;}
+    .mega-menu.active-hover .hambmenu_panel {
+        padding: 19rem 0 0 0;
+    }
+}
+
+@media(min-width:2201px){
+    .main-container .container{max-width:1840px;padding-left:1.5rem;padding-right:1.5rem;}
+    .footer_section .container {
+    max-width:1840px;padding-left:1.5rem;padding-right:1.5rem;}
+    html{font-size:69.5%;}
+    .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
+        padding-right: 8rem;
+    }
+    .hamb_grid_menus .hamb_menu_item p {
+        max-width: 90%;
+    }
+    .hamb_grid_menus {
+        min-height: 60vh;
+    }
+    .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3{max-width: 68%;}
 }
 
 
@@ -746,3 +715,19 @@ a:active {
 .nav-buttons svg {font-size: 2.2rem;}
 .divider {margin-bottom: 3.6rem;}
 .highlight-col {display: grid; grid-template-columns: repeat(2,1fr);gap: 3.2rem;}
+
+
+
+
+
+
+/* responsive ccomponants */
+
+
+@media (max-width: 2199px)  {
+  /* Courses Offered */
+.topSectionH1 {max-width: 77%;}
+
+}
+
+
