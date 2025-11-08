@@ -285,11 +285,20 @@ a:active {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--color-white);
-  padding: 1.4rem 0 1.2rem;
+  padding: 1.4rem 2rem 1.2rem;
   font-family: var(--font-Condensed);
   position: relative;
+ 
 }
-
+.nav-link.nav-lists:after {
+    height: 9rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    content: "";
+    top: 5rem;
+    left: 0;
+}
 .nav-link.active-link:after {
   content: "";
   width: 80%;
@@ -645,7 +654,7 @@ a:active {
 }
 
 .cource-sec .program-row {
-  padding-block: 8rem 3.5rem;
+  padding-block: 6rem 3.5rem;
   border-bottom: solid 1px #e1e1e1;
 }
 
@@ -746,3 +755,56 @@ a:active {
 .nav-buttons svg {font-size: 2.2rem;}
 .divider {margin-bottom: 3.6rem;}
 .highlight-col {display: grid; grid-template-columns: repeat(2,1fr);gap: 3.2rem;}
+.site-header{
+    background: transparent linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0% no-repeat padding-box;
+}
+.active_head .nav-list {
+    background-color: transparent;
+}
+
+.active_head .nav-list>li>a {
+    color: var(--color-4e);
+}
+
+.active_head .site-header .header-scrolled .nav-list>li>a{ color: var(--color-white);}
+
+
+
+
+.active_head .nav-list>li.nav-item:hover>a{ position: relative;}
+/* .active_head .nav-list.jsx-1e795d0af0d02ea5>li.nav-item:hover>a::after {
+    height: 3px;
+    width: 7.5rem;
+    background-color: var(--color-29);
+    content: "";
+    bottom: -0.5rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 0;
+} */
+
+.active_head .nav-list>li:hover>a {
+    color: var(--color-29);
+}
+
+.active_head .nav-list{ background-color: transparent!important;}
+
+.banner img{
+  border-radius: 5rem 0 0 0;
+}
+
+
+.vid-thumb-grp:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+    background: transparent linear-gradient(0deg, var(--unnamed-color-000000) 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+    height: 207px;
+    z-index: -2;
+}
