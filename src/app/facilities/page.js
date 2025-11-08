@@ -76,7 +76,8 @@ export default function FacilitiesPage() {
           header: "AICTE IDEA Lab",
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
-          image: "/images/classroom.webp",
+          image:
+            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
           link: "/labs/aicte-idea",
         },
         {
@@ -85,7 +86,7 @@ export default function FacilitiesPage() {
           header: "Computer Science & IT Labs",
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
-          image: "/images/lab-img.webp",
+          image: "/images/custom-page/facility/acedemic-lab-banner.png",
           link: "/labs/cs-labs",
         },
         {
@@ -94,7 +95,8 @@ export default function FacilitiesPage() {
           header: "Computer Science & IT Labs",
           description:
             "Focused on operations, production, and industrial process simulations.",
-          image: "/images/classroom.webp",
+          image:
+            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
           link: "/labs/cs-labs",
         },
         {
@@ -103,7 +105,7 @@ export default function FacilitiesPage() {
           header: "Mechanical Engineering Labs",
           description:
             "Focused on operations, production, and industrial process simulations.",
-          image: "/images/lab-img.webp",
+          image: "/images/custom-page/facility/acedemic-lab-banner.png",
           link: "/labs/mechanical-labs",
         },
         {
@@ -112,7 +114,8 @@ export default function FacilitiesPage() {
           header: "Electrical & Electronics Engineering Labs",
           description:
             "Focused on operations, production, and industrial process simulations.",
-          image: "/images/classroom.webp",
+          image:
+            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
           link: "/labs/electrical-labs",
         },
         {
@@ -121,14 +124,14 @@ export default function FacilitiesPage() {
           header: "Industrial Engineering & Management (IEM) Labs",
           description:
             "Focused on operations, production, and industrial process simulations.",
-          image: "/images/lab-img.webp",
+          image: "/images/custom-page/facility/acedemic-lab-banner.png",
           link: "/labs/iem-labs",
         },
       ],
     },
     researchCenter: {
       title: "Research Center",
-      mainImage: "/images/research-img.webp",
+      mainImage: "/images/custom-page/facility/research-first-banner.png",
       quote:
         "JSS University Noida is actively involved in diverse areas of research and offers consultancy services to industry.",
       description:
@@ -137,7 +140,8 @@ export default function FacilitiesPage() {
         number: "185+",
         description: "Total Research Publications (2024)",
       },
-      secondaryImage: "/images/research-img1.webp",
+      secondaryImage:
+        "/images/custom-page/facility/research-secondry-banner.png",
       objectives: [
         "To establish collaborations and work closely with the industries.",
         "To initiate and coordinate the inter disciplinary research and consultancy activities.",
@@ -171,9 +175,9 @@ export default function FacilitiesPage() {
         ],
       },
       images: {
-        top: "/images/library2.webp",
-        bottom: "/images/library3.webp",
-        side: "/images/library1.webp",
+        libraryTop: "/images/custom-page/facility/library-top-banner.png",
+        libraryBottom: "/images/custom-page/facility/library-bottom-banner.png",
+        librarySide: "/images/custom-page/facility/library-side-banner.png",
       },
       stats: {
         number: "500K+",
@@ -187,7 +191,7 @@ export default function FacilitiesPage() {
         "JSS University Noida, is deeply committed to environmental sustainability.",
       description:
         "The university has implemented a comprehensive Green Policy to promote eco-friendly practices across the campus. This policy encompasses a wide range of initiatives aimed at reducing the university's carbon footprint and fostering a culture of environmental responsibility. Key components of the Green Policy include waste reduction programs, such as extensive recycling efforts and the minimization of single-use plastics.",
-      image: "/images/initiatives-img.webp",
+      image: "/images/custom-page/facility/green-initiatives-banner.png",
       vision: {
         title: "To realise its vision, the University will:",
         points: [
@@ -203,8 +207,8 @@ export default function FacilitiesPage() {
       subtitle: "100% SAFE & SANITISED BUSES",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed qui",
-      mainImage: "/images/transport-img.webp",
-      secondaryImage: "/images/transport-img1.webp",
+      mainImage: "/images/custom-page/facility/transport-img.webp",
+      secondaryBanner: "/images/custom-page/facility/transport-img1.webp",
       stats: {
         number: "40+",
         description: "Total Buses in Fleet",
@@ -544,7 +548,7 @@ export default function FacilitiesPage() {
                       <div className="bottom-library-img">
                         <figure>
                           <Image
-                            src={facilitiesData.library.images.side}
+                            src={facilitiesData.library.images.librarySide}
                             alt="Library"
                             width={300}
                             height={200}
@@ -558,7 +562,7 @@ export default function FacilitiesPage() {
                     <div className="right-library-top">
                       <figure>
                         <Image
-                          src={facilitiesData.library.images.top}
+                          src={facilitiesData.library.images.libraryTop}
                           alt="Library Interior"
                           width={400}
                           height={300}
@@ -569,7 +573,7 @@ export default function FacilitiesPage() {
                     <div className="right-library-bottom">
                       <figure>
                         <Image
-                          src={facilitiesData.library.images.bottom}
+                          src={facilitiesData.library.images.libraryBottom}
                           alt="Library Collection"
                           width={400}
                           height={200}
@@ -660,7 +664,7 @@ export default function FacilitiesPage() {
                   <div className="right-transport-img">
                     <figure>
                       <Image
-                        src={facilitiesData.transport.secondaryImage}
+                        src={facilitiesData.transport.secondaryBanner}
                         alt="Transport Fleet"
                         width={300}
                         height={200}

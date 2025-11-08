@@ -1,7 +1,7 @@
 .program-search {
   position: relative;
 }
-.pin-spacer {
+/* .pin-spacer {
   order: 0;
   place-self: auto;
   grid-area: auto;
@@ -18,7 +18,7 @@
   width: 405px;
   height: 272px;
   padding: 0px;
-}
+} */
 .program-search::before {
   content: "";
   background-color: var(--color-f5);
