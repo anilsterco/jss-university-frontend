@@ -67,7 +67,7 @@ export default function FacilitiesPage() {
           header: "R&D Lab",
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
-          image: "/images/lab-img.webp",
+          image: "/images/custom-page/facility/acedemic-lab-banner.png",
           link: "/labs/rd-lab",
         },
         {

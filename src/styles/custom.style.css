@@ -1540,9 +1540,14 @@ hr {
   z-index: 9;
 }
 .labs-bg {
-  position: absolute;
-  inset: 0;
   z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .labs-overlay {
   position: absolute;
