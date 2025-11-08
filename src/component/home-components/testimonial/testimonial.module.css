@@ -39,7 +39,7 @@
 }
 
 .headerContent {
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 
 .testimonialsLabel {
@@ -74,8 +74,8 @@
   background: none;
   border: 1px solid #994073;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   margin-top: 3rem;
   display: flex;
   align-items: center;
@@ -149,10 +149,10 @@
 
 .playBtn {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 35px;
-  height: 35px;
+  top: 1.8rem;
+  right: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: rgba(251, 191, 36, 0.87);
   border-radius: 50%;
   display: flex;
@@ -229,12 +229,12 @@
 
 .closeBtn {
   position: absolute;
-  top: -35px;
+  top: -3.5rem;
   right: 0;
   background: transparent;
   border: none;
   color: white;
-  font-size: 28px;
+  font-size: 2.8rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -253,7 +253,12 @@
 .mobileView {
   display: none;
 }
-
+@media (max-width: 1366px){
+ .columnLeft {
+  width: 30%;
+}
+}
+ 
 @media (min-width: 1381px) and (max-width: 1919px) {
 }
 
@@ -266,20 +271,13 @@
     gap: 2rem;
     padding-bottom: 4rem;
   }
-  .testimonialsLabel {
-    font-size: 12px;
-  }
-  .mainHeading {
-    font-size: 30px;
-  }
+  
   .columnLeft,
   .columnMiddle,
   .columnRight {
     width: 220px;
   }
-  .quoteTextOverlay {
-    font-size: 12px;
-  }
+  
   .testimonialsSection {
     padding-top: 8rem;
   }
@@ -304,7 +302,6 @@
     height: 200px;
   }
   .quoteTextOverlay {
-    font-size: 18px;
     font-weight: 300;
   }
   .personBatch {

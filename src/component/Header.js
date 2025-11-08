@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -721,7 +720,8 @@ export default function Header() {
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
                           {link}
-                          <img src="/images/header/listicon.svg"
+                          <img
+                            src="/images/header/listicon.svg"
                             className="img-fluid"
                             alt="mail"
                           />
@@ -781,7 +781,7 @@ export default function Header() {
           aria-label="Close menu"
           onClick={closeMenu}
         >
-        <img src="images/header/close-icon.svg" />
+          <img src="images/header/close-icon.svg" />
         </button>
 
         <div className="hamburger-layout">
@@ -842,18 +842,18 @@ export default function Header() {
                   </Link>
                   <div className="hamburger-section-img virtural-img">
                     <Link href={activeData.firstContent.url}>
-                      <Image className="hum-small"
+                      <Image
+                        className="hum-small"
                         src={activeData.firstContent.img}
                         alt={activeData.firstContent.alt}
                         fill
                         style={{ objectFit: "cover" }}
-                       
                       />
                     </Link>
                     <div className="items-menu_grp">
                       <div className="items-menu_grp_cont">
-                          <h4>Virtual campus</h4>
-                          <p>Sed ut perspiciatis</p>
+                        <h4>Virtual campus</h4>
+                        <p>Sed ut perspiciatis</p>
                       </div>
                     </div>
                   </div>
@@ -1346,7 +1346,7 @@ export default function Header() {
           position: absolute;
           top: 0;
           right: 0;
-          height: 80%;
+          height: 75.6rem;;
           width: 0;
           display: flex;
           overflow: hidden;
@@ -1623,7 +1623,12 @@ export default function Header() {
           width:100%
          }
          .close-btn {margin:3rem 8rem}
-    
+     
+
+         @media (max-width: 1599px){
+          .site-header>.nav-container{
+           padding-inline: 6.8rem;}
+         }
         @media (min-width: 1024px) and (max-width: 1420px) {
           .mega-right-banners {
             height: 68%;
@@ -1668,13 +1673,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
-
