@@ -40,7 +40,7 @@ export default function FacilitiesPage() {
           // end: "+=" + boxes.length * 800, // depends on number of slides
           scrub: true,
           pin: true,
-          markers: true, // remove later
+          // markers: true, // remove later
         },
       });
 
@@ -313,7 +313,7 @@ export default function FacilitiesPage() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="innnr_head">
+              <div className="innnr_head faclity-header-tabs">
                 <h2>{facilitiesData.pageTitle.main}</h2>
                 <h3>{facilitiesData.pageTitle.subtitle}</h3>
 
