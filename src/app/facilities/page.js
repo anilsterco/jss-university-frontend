@@ -1,16 +1,61 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 export default function FacilitiesPage() {
   const [activeTab, setActiveTab] = useState("academic");
   const [activeLab, setActiveLab] = useState(0);
   const [facilitiesData, setFacilitiesData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const container = useRef();
+  useGSAP(
+    () => {
+      if (!facilitiesData) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const boxes = gsap.utils.toArray(".facilities-list");
+
+      // Set all boxes to be stacked (absolute positioning)
+      gsap.set(boxes, {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+      });
+
+      // Create a timeline for overlap animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".facilities-list-box",
+          start: "top top",
+          // end: "+=" + boxes.length * 800, // depends on number of slides
+          scrub: true,
+          pin: true,
+          markers: true, // remove later
+        },
+      });
+
+      boxes.forEach((box, i) => {
+        if (i === 0) return; // first one stays visible
+        tl.fromTo(
+          box,
+          { opacity: 0 },
+          { opacity: 1, duration: 1 },
+          "+=0.2" // small gap before next overlaps
+        );
+      });
+    },
+    { dependencies: [facilitiesData], scope: container }
+  );
 
   // Static data structure - replace with API call
   const staticData = {
@@ -338,40 +383,42 @@ export default function FacilitiesPage() {
                         </div>
                       </div>
                       <div className="facilities-list">
-                        {facilitiesData.classrooms.features.map(
-                          (feature, index) => (
-                            <div key={index} className="facilities-list-box">
-                              <figure>
-                                <Image
-                                  src={feature.wallIcon}
-                                  alt={feature.title}
-                                  width={400}
-                                  height={300}
-                                  className="img-fluid"
-                                />
-                                <figcaption>
-                                  <div className="facilities-list-text">
-                                    <Image
-                                      src={feature.icon}
-                                      alt=""
-                                      width={40}
-                                      height={40}
-                                      className="img-fluid"
-                                    />
-                                    <h4
-                                      dangerouslySetInnerHTML={{
-                                        __html: feature.title
-                                          .replace(/<span>/g, "<span>")
-                                          .replace(/<\/span>/g, "</span>"),
-                                      }}
-                                    />
-                                    <p>{feature.description}</p>
-                                  </div>
-                                </figcaption>
-                              </figure>
-                            </div>
-                          )
-                        )}
+                        <div ref={container}>
+                          {facilitiesData.classrooms.features.map(
+                            (feature, index) => (
+                              <div key={index} className="facilities-list-box">
+                                <figure>
+                                  <Image
+                                    src={feature.wallIcon}
+                                    alt={feature.title}
+                                    width={400}
+                                    height={300}
+                                    className="img-fluid"
+                                  />
+                                  <figcaption>
+                                    <div className="facilities-list-text">
+                                      <Image
+                                        src={feature.icon}
+                                        alt=""
+                                        width={40}
+                                        height={40}
+                                        className="img-fluid"
+                                      />
+                                      <h4
+                                        dangerouslySetInnerHTML={{
+                                          __html: feature.title
+                                            .replace(/<span>/g, "<span>")
+                                            .replace(/<\/span>/g, "</span>"),
+                                        }}
+                                      />
+                                      <p>{feature.description}</p>
+                                    </div>
+                                  </figcaption>
+                                </figure>
+                              </div>
+                            )
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
