@@ -11,28 +11,35 @@
 
 .header {
   text-align: center;
-  width: 80%;
   margin: auto;
-  padding-bottom: 5rem;
+  padding-bottom: 7.2rem;
   border-top: 1px solid #d5d1d1;
   padding-top: 4rem;
 }
 
 .headerSmall {
-  font-size: 18px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #16344e;
+    color: var(--color-4e);
+    font: var(--font-18);
+    font-family: var(--font-Condensed);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
+
 
 .headerTitle {
-  color: #1a1a1a;
-  font-size: 60px;
-  font-weight: bold;
+    font: var(--font-60);
+    font-family: var(--font-Condensed);
+    color: var(--color-black);
+    letter-spacing: -2.88px;
+    font-weight: bold;
 }
-
+.headerTitle span {
+    font: var(--font-60);
+    font-family: var(--font-Condensed);
+    letter-spacing: -2.88px;
+    font-weight: bold;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -41,13 +48,14 @@
 }
 
 .card {
-  padding: 25px;
+  padding: 2.5rem;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .cardLarge {
   grid-column: span 2;
@@ -68,7 +76,7 @@
   left: 0;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
   line-height: 2.5;
-  padding: 2rem;
+  padding: 4.9rem 4.9rem 3rem;
   width: 100%;
   z-index: 2;
 }
@@ -83,12 +91,12 @@
 }
 
 .cardTag {
-  font-size: 16px;
-  letter-spacing: 1.5px;
-  font-weight: 300;
-  margin-bottom: 15px;
-  color: #fff;
+   font: var(--font-16);
+  color: var(--color-white);
   text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  letter-spacing: 4.82px;
+  font-weight: 300;
 }
 
 .cardTagDark {
@@ -96,10 +104,10 @@
 }
 
 .cardTitle {
-  font-size: 18px;
+ font: var(--font-16);
   font-weight: 400;
   line-height: 1.4;
-  margin: 0 0 auto 0;
+
 }
 
 .cardTitleWhite {
@@ -107,18 +115,18 @@
 }
 
 .cardTitleLarge {
-  color: #fff;
-  margin: auto 0;
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 1.3;
+   font: var(--font-36);
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  padding-right: 14rem;
 }
 
 .cardSubtitle {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-top: 10px;
-  color: #333;
+font: var(--font-16);
+  color: var(--color-white);
+  font-family: var(--font-Condensed);
+  letter-spacing: 0px;
 }
 
 .cardSubtitleWhite {
@@ -126,20 +134,20 @@
 }
 
 .cardDate {
-  font-size: 16px;
-  margin-top: 15px;
+ font: var(--font-16);
+  margin-top: 2.8rem;
   color: #333;
 }
 
 .cardDateWhite {
-  color: #fff;
+  color:var(--color-white);
 }
 
 .orangeLine {
   background-color: #ffa600;
-  width: 10%;
+  width: 9.2rem;
   height: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 1.8rem;
 }
 .rightArrow {
   color: #fff;
@@ -181,6 +189,7 @@
 .desktopView {
   display: block;
 }
+
 
 /* Responsive Design */
 

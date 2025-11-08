@@ -2,39 +2,39 @@
 
 .testimonialsSection {
   background: #f5f5f5;
-  padding-top: 10rem;
+  padding-top: 13.5rem;
 }
 
 .testimonialsContainer {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;;
   gap: 5rem;
   flex-wrap: wrap;
 }
 
 .columnLeft {
   flex: 0 0 auto;
-  width: 330px;
+  width: 32%;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 3.9rem;
 }
 
 .columnMiddle {
   flex: 0 0 auto;
-  width: 290px;
+  width:28%;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 3.9rem;
 }
 
 .columnRight {
   flex: 0 0 auto;
-  width: 330px;
+  width: 32%;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+   gap: 3.9rem;
   margin-top: 5rem;
 }
 
@@ -43,18 +43,25 @@
 }
 
 .testimonialsLabel {
-  font-size: 15px;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 16px;
+  color: var(--color-4e);
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
 }
 
 .mainHeading {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #000;
-  margin-bottom: 24px;
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  color: var(--color-black);
+  letter-spacing: -2.88px;
+  font-weight: bold;
+}
+.mainHeading span{
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
 }
 
 .blueText {
@@ -63,12 +70,13 @@
 
 .circleArrowBtn {
   cursor: pointer;
-  color: #666;
-  background: transparent;
-  border: 2px solid #ccc;
+  color: #994073;
+  background: none;
+  border: 1px solid #994073;
   border-radius: 50%;
   width: 24px;
   height: 24px;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,13 +105,13 @@
 .cardImgContainer {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
 .cardImg {
   width: 100%;
-  height: 100%;
+ height: auto;
   object-fit: cover;
 }
 
@@ -112,26 +120,30 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px 24px;
+  padding: 2.2rem 7.2rem 2.2rem 2.2rem;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.4) 60%,
-    transparent 100%
+    rgba(0, 0, 0, 0.8) 0%,     
+    rgba(0, 0, 0, 0.6) 25%,    
+    rgba(0, 0, 0, 0.3) 60%,    
+    rgba(0, 0, 0, 0.05) 85%,   
+    rgba(0, 0, 0, 0) 100%      
   );
 }
 
 .yellowLine {
-  width: 40px;
-  height: 3px;
+  width:9.1rem;
+  height: 0.5rem;
   background: #fbbf24;
   margin-bottom: 10px;
 }
 
 .quoteTextOverlay {
-  color: #fff;
-  font-size: 13px;
-  margin: 0;
+  font: var(--font-18);
+  color: var(--color-white);
+  font-family: var(--font-Condensed);
+  letter-spacing: 0px;
+  font-weight: 300;
   line-height: 1.4;
 }
 
@@ -158,7 +170,7 @@
 }
 
 .cardInfo {
-  padding: 18px 22px;
+  padding: 2.3rem 2.3rem;
   background: #fff;
   text-decoration: none;
   display: block;
@@ -169,23 +181,29 @@
 }
 
 .personName {
-  font-size: 15px;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 4px;
+   font: var(--font-20);
+   text-transform: uppercase;
+  font-weight: bold;
+ color:var(--color-black);
+  font-family: var(--font-Condensed);
+  letter-spacing: 0px;
+  margin-bottom: 1rem;
 }
 
 .personBatch {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 4px;
+ font: var(--font-12);
+  color:var(--color-black);
+  font-family: var(--font-Condensed);
+  font-weight: 600;
+  line-height: 1.7;
 }
 
 .personRole {
-  font-size: 12px;
-  color: #000;
-  margin: 0;
-  line-height: 1.4;
+  font: var(--font-12);
+  color:var(--color-black);
+  font-family: var(--font-Condensed);
+  font-weight: 300;
+ 
 }
 
 /* Video Modal */
