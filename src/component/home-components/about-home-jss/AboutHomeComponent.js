@@ -78,7 +78,7 @@ export default function LegacySection({ data }) {
               <div className="position-relative contentPart">
                 <Image
                   src={legacyData.chancellor_img}
-                  alt={legacyData.chancellor_name}
+                  alt="chancellor image"
                   width={500}
                   height={350}
                   style={{ height: "100%", width: "100%" }}
@@ -96,8 +96,8 @@ export default function LegacySection({ data }) {
                       />
                     )}
                     <div className="chance-msg-contant">
-                    <p>{legacyData.chancellor_title}</p>
-                     <strong>{legacyData.chancellor_name}</strong>
+                      <p>{legacyData.chancellor_title}</p>
+                      <strong>{legacyData.chancellor_name}</strong>
                     </div>
                   </div>
                 </div>
@@ -110,17 +110,17 @@ export default function LegacySection({ data }) {
                 {legacyData.description}
               </p>
               <div className={`divider ${styles.rightArrowIconDiv}`}>
-                <Link href={legacyData.url} className="nav-buttons">
-                  <BsArrowRightCircle
-                    className={`fw-light ${styles.rightArrowIcon}`}
-                    color="rgb(153 83 158)"
-                  />
-                </Link>
+                {legacyData.url && (
+                  <Link href={legacyData.url} className="nav-buttons">
+                    <BsArrowRightCircle
+                      className={`fw-light ${styles.rightArrowIcon}`}
+                      color="rgb(153 83 158)"
+                    />
+                  </Link>
+                )}
               </div>
               {/* Highlight Boxes */}
-              <div
-                className={`highlight-col ${styles.onlyDesktop}`}
-              >
+              <div className={`highlight-col ${styles.onlyDesktop}`}>
                 {legacyData.highlights.map((h, i) => (
                   <div key={i} className={`item ${styles.highlightBox}`}>
                     <h1 className={`fw-bold ${styles.highlightNumber}`}>
