@@ -129,7 +129,7 @@
 
 .fifthSectionSlider {
   margin-top: 8.3rem;
-  padding-inline: 5rem 10rem;
+  padding-inline: 5rem ;
 }
 
 .fifthSectionSlider :global(.about-pagination) {
@@ -216,6 +216,9 @@
   .navButtons {
     padding: 0.5rem 2rem;
   }
+  .topSectionHeading {width: 50%;}
+  .rightColumn {padding-left: 4rem;}
+  
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {

@@ -207,29 +207,26 @@
 .topSectionH1 {
   max-width: 75%;
 }
-.bottomSectionH6::after {
-  width: calc(105% - 0px);
-  left: 47%;
+.admissionSection a {
+  padding: 0.8rem 1.8rem 0.8rem;
 }
 }
 
 
 @media (min-width: 1040px) and (max-width: 1380px) {
-  .secondSection {
-    padding: 8rem 8rem;
+ .programsCountPlus {
+  font-size: 4.7rem;
+  top: 4px;
+  right: 0px;
   }
-
-  .programsCountPlus {
-    font-size: 2.7rem;
-    top: -20px;
-    right: -20px;
-  }
-
+.programsText {padding-left: 2rem}
+.bottomSectionH6::after {
+  width: 77rem;
+  left: 53%;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
-
-
   .programsCardsSection {
     justify-content: space-between;
   }
@@ -262,9 +259,6 @@
     right: -15px;
   }
 
-  .secondSection {
-    padding: 4rem 4rem;
-  }
 
   .topSectionH5 {
     margin-bottom: 0.6rem;
@@ -272,6 +266,12 @@
 
 }
 
+@media (max-width:991){
+  .bottomSectionH6::after {
+  width: 100%;
+  left: 0;
+}
+}
 @media (max-width: 768px) {
   .showOnlyMobileSubHeading {
     display: flex;

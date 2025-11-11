@@ -6,6 +6,7 @@ import AboutHomeComponent from "../component/home-components/about-home-jss/Abou
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 
+
 const BASE_URL = "https://project-demo.in/jss/api";
 async function getSchoolData() {
   const res = await fetch(`${BASE_URL}/homepage`, {

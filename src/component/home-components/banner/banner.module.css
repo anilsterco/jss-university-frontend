@@ -92,7 +92,7 @@
   .bannerContentP {
     margin-bottom: 1rem;
   }
-
+ .bannerContentH1 {margin-top: 15rem; padding-bottom: 2rem;}
 }
 
 @media (min-width: 1921px) and (max-width: 3840px) {
