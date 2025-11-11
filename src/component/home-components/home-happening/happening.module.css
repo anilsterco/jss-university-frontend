@@ -205,6 +205,11 @@ font: var(--font-16);
 
 }
 
+@media (max-width:1366) {
+  .cardTitleLarge{padding-right: 0rem;}
+  
+}
+
 
 
 @media (max-width: 1200px) {
