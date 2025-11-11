@@ -20,6 +20,12 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState(null);
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
+
+  const [activePanel, setActivePanel] = useState(null);
+  const togglePanel = (name) => {
+    setActivePanel(activePanel === name ? null : name);
+  };
+
   const navLinks = [
     {
       name: "ABOUT",
@@ -206,7 +212,7 @@ export default function Header() {
   const hamburgerMenudata = [
     {
       name: "About JSS University",
-      subMenu: ["Overview", "Scholarships", "International Students"],
+      Menu: ["Overview", "Scholarships", "International Students"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -225,7 +231,7 @@ export default function Header() {
     },
     {
       name: "Academics",
-      subMenu: ["Undergraduate", "Postgraduate", "Doctoral"],
+      Menu: ["Undergraduate", "Postgraduate", "Doctoral"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -244,7 +250,7 @@ export default function Header() {
     },
     {
       name: "Facilities",
-      subMenu: ["Hostels", "Clubs & Societies", "Events"],
+      Menu: ["Hostels", "Clubs & Societies", "Events"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -263,7 +269,7 @@ export default function Header() {
     },
     {
       name: "Students Support",
-      subMenu: ["Apply Now", "Eligibility", "FAQs"],
+      Menu: ["Apply Now", "Eligibility", "FAQs"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -403,6 +409,65 @@ export default function Header() {
     ],
   };
 
+  // mob menu data
+  const mobilePanelsData = [
+    {
+      name: "Courses",
+      icon: "/images/header/cource-mob.svg",
+      Menu: [
+        { name: "Undergraduate", url: "/courses/undergraduate" },
+        { name: "Postgraduate", url: "/courses/postgraduate" },
+        { name: "Research", url: "/courses/research" },
+        { name: "Diploma", url: "/courses/diploma" },
+      ],
+    },
+
+    {
+      name: "Admissions",
+      heading:"<span class='text-dark'>APPLY NOW </span>, <span class='blue-text'>FOR 2025</span>",
+      icon: "/images/header/admi-mob.svg",
+      Menu: [
+        { name: "Scholarship", url: "/admissions/calendar" },
+        { name: "Course, Eligibility & Fee Structure", url: "/fee-Structure" },
+        { name: "Admission Document & Undertaking", url: "/admissions/scholarship" },
+        { name: "Admissions Office Contacts", url: "/admissions/international" },
+         { name: "Hostel Details", url: "/admissions/international" },
+      ],
+    },
+
+    {
+      name: "Contact",
+      heading:"CAMPUS ADDRESS",
+      bgImg: "/images/header/cont-mobmenu.png",
+       icon: "/images/header/contact-mob.svg",
+      Menu: [
+        { name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301", url: "", contactIcon: "/images/header/address-icon.svg" },
+        { name: "principal@jssaten.ac.in", url: "mailto:principal@jssaten.ac.in", contactIcon: "/images/header/mail-icon.svg" },
+        { name: "8725033398", url: "https://wa.me/8725033398", contactIcon: "/images/header/phone-icon.svg" },
+      ],
+    },
+
+    {
+      name: "Menu",
+      icon: "/images/header/hamberger-mob.svg",
+      Menu: [
+        { name: "About JSS University", url: "/about" },
+        { name: "Academics", url: "/academics" },
+        { name: "Facilities", url: "/facilities" },
+        { name: "Examination", url: "/examination" },
+        { name: "Research & Innovation", url: "/research-and-innovation" },
+        { name: "Placements", url: "/placements" },
+      ],
+      Menubottom: [
+        { name: "Alumni", url: "/alumni" },
+        { name: "Testimonials", url: "/testimonials" },
+        { name: "Happenings", url: "/happenings" },
+        { name: "Careers", url: "/careers" },
+        { name: "Contact Us", url: "/contact-us" },
+      ],
+    },
+  ];
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -499,50 +564,52 @@ export default function Header() {
           </Link>
         </div>
 
-        {pathname === "/schools" && (
-          <>
-            <div
-              className="school-toggle"
-              onClick={() => setEngineeringDropdown((prev) => !prev)}
-            >
-              <p className="mb-0">School of</p>
-              <h5 className="fw-bold">
-                {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
-              </h5>
-            </div>
-
-            {engineeringDropdown && (
+        {pathname.includes("schools") ||
+          (pathname.includes("department") && (
+            <>
               <div
-                className="engineering-dropdown-container"
-                ref={engineeringRef}
+                className="school-toggle"
+                onClick={() => setEngineeringDropdown((prev) => !prev)}
               >
-                <div className="engineering-dropdown">
-                  {/* LEFT SIDE: Schools List */}
-                  <div className="schools-list">
-                    <h6>Schools</h6>
-                    {engineeringData.schools.map((school, idx) => (
-                      <div
-                        key={idx}
-                        className={`school-item ${
-                          selectedSchool === idx ? "active" : ""
-                        }`}
-                        onClick={() => {
-                          setSelectedSchool(idx);
-                          setSelectedSchoolName(school.name);
-                        }}
-                      >
-                        {school.name}
-                      </div>
-                    ))}
-                  </div>
+                <p className="mb-0">School of</p>
+                <h5 className="fw-bold">
+                  {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
+                </h5>
+              </div>
 
-                  {/* RIGHT SIDE: Departments */}
-                  <div className="departments-list">
-                    <span className="dropdown-arrow"></span>
-                    <h6 className="text-white">Department</h6>
-                    <div className="link-content">
-                      {engineeringData.schools[selectedSchool].departments.map(
-                        (dept, i) => (
+              {engineeringDropdown && (
+                <div
+                  className="engineering-dropdown-container"
+                  ref={engineeringRef}
+                >
+                  <div className="engineering-dropdown">
+                    {/* LEFT SIDE: Schools List */}
+                    <div className="schools-list">
+                      <h6>Schools</h6>
+                      {engineeringData.schools.map((school, idx) => (
+                        <div
+                          key={idx}
+                          className={`school-item ${
+                            selectedSchool === idx ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedSchool(idx);
+                            setSelectedSchoolName(school.name);
+                          }}
+                        >
+                          {school.name}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* RIGHT SIDE: Departments */}
+                    <div className="departments-list">
+                      <span className="dropdown-arrow"></span>
+                      <h6 className="text-white">Department</h6>
+                      <div className="link-content">
+                        {engineeringData.schools[
+                          selectedSchool
+                        ].departments.map((dept, i) => (
                           <Link
                             href={dept.url}
                             key={i}
@@ -550,16 +617,15 @@ export default function Header() {
                           >
                             {dept.text}
                           </Link>
-                        )
-                      )}
+                        ))}
+                      </div>
+                      <IoTriangleSharp className="triangle-icon" />
                     </div>
-                    <IoTriangleSharp className="triangle-icon" />
                   </div>
                 </div>
-              </div>
-            )}
-          </>
-        )}
+              )}
+            </>
+          ))}
 
         <div className="right-navbar">
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -819,7 +885,7 @@ export default function Header() {
               </ul>
             </div>
             <ul className="middle_ul">
-              {activeData.subMenu.map((s, i) => (
+              {activeData.Menu.map((s, i) => (
                 <li key={i} className="middle-item">
                   <a href="#"> {s}</a>
                 </li>
@@ -892,6 +958,113 @@ export default function Header() {
             </div>
           </section>
         </div>
+      </div>
+
+
+      {/* mobile menu bottom start*/}
+      <div className="panel-wrapper">
+        <div className="mob-menu-sec">
+          {mobilePanelsData.map((item) => (
+            <div
+              key={item.name}
+              className={`panel ${
+                activePanel === item.name ? "open" : ""
+              } ${item.name.toLowerCase()}-panel`}
+            >
+              {item.name === "Courses" && item.Menu && (
+                <ul className="courses-menu">
+                  {item.Menu.map((sub, idx) => (
+                    <li key={idx}>
+                      <a href={sub.url}>{sub.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {item.name === "Admissions" && item.Menu && (
+                
+                <ul className="admissions-menu">
+                  <div className="admissions-heading">
+                  <h4 dangerouslySetInnerHTML={{ __html: item.heading }}></h4>
+                  </div>
+                  {item.Menu.map((sub, idx) => (
+                    <li key={idx}>
+                      <a href={sub.url}>{sub.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {item.name === "Contact" && (
+                <div className="contact-panel">
+                 <div className="contact-heading">
+                   <h4>{item.heading}</h4>
+                 </div>
+                 
+                  <img
+                    src={item.bgImg}
+                    alt="contact"
+                    className="contact-banner"
+                  />
+                  <ul className="contact-info">
+                    {item.Menu.map((sub, idx) => (
+                      
+                      <li key={idx}>
+                        <div className="icon-img">
+                         <img src={sub.contactIcon} alt={sub.name} />
+                        </div>
+                        <a href={sub.url}>{sub.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {item.name === "Menu" && (
+                <>
+                  {item.Menu && (
+                    <ul className="menu-top">
+                      {item.Menu.map((sub, idx) => (
+                        <li key={idx}>
+                          <a href={sub.url}>{sub.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.Menubottom && (
+                    <ul className="menu-bottom">
+                      {item.Menubottom.map((sub, idx) => (
+                        <li key={idx}>
+                          <a href={sub.url}>{sub.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mobile-bottom-menu">
+        <ul className="menu-list">
+          {mobilePanelsData.map((item) => (
+            <li
+              key={item.name}
+              className={
+                activePanel === item.name ? "menu-item active" : "menu-item"
+              }
+            >
+              <button onClick={() => togglePanel(item.name)}>
+                <div className="icon">
+                  <img src={item.icon} alt={`${item.name} icon`} />
+                </div>
+                <p className="menu-name">{item.name}</p>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <style jsx>{`
@@ -1244,7 +1417,7 @@ export default function Header() {
         font-weight: 700;
         align-items: center;
         gap: 3rem;
-        white-space: nowrap;
+       var(--color-4e)-space: nowrap;
         -webkit-transition: all 0.5s ease;
         }
 
@@ -1259,7 +1432,7 @@ export default function Header() {
         font-weight: 700;
         align-items: center;
         gap: 3rem;
-        white-space: nowrap;
+       var(--color-4e)-space: nowrap;
         -webkit-transition: all 0.5s ease;
         color:#000;
         }
@@ -1676,32 +1849,15 @@ export default function Header() {
           .site-header>.nav-container{
            padding-inline: 6.8rem;}
          }
-        @media (min-width: 1024px) and (max-width: 1420px) {
-          .mega-right-banners {
-            height: 68%;
-            margin-top: 8rem;
-            margin-bottom: 3rem;
-          }
-          .nav-container {
-            padding: 1rem 2rem;
-          }
-          .nav-list {
-            gap: 20px;
-            font-size: 16px;
-          }
-          .mega-right {
-            gap: 1.5rem;
-          }
-          .banner {
-            width: 240px;
-            height: 200px;
-          }
-          .admission-dropdown {
-            top: 6rem;
-            right: 5rem;
-            width: 85%;
-          }
+
+         @media (max-width: 1599px){
+            .mega-right {
+          padding-right: 6.8rem;
         }
+         }
+
+
+   
 
         @media (max-width: 1100px) {
           .mega-dropdown {
@@ -1716,6 +1872,62 @@ export default function Header() {
             height: 130px;
           }
         }
+
+
+
+
+
+
+
+
+
+
+ {/* mob menu css start */}
+    .panel-wrapper {position: fixed;top: 0;left: 0;width: 100%;height: 100%; z-index: 900;pointer-events: none;}
+    .panel-wrapper .panel {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #f0f0f0;transform: translateY(100%);transition: transform 0.3s ease-in-out;overflow-y: auto; pointer-events: auto;display: flex;flex-direction: column;box-sizing: border-box;}
+    .panel-wrapper .panel.open {transform: translateY(0);}
+    .courses-panel ul,
+    .admissions-panel ul,
+    .menu-panel ul,
+    .contact-panel ul {list-style: none;padding: 0;margin: 0;padding: 6rem 4rem 12rem;}
+    .admissions-heading h4 {}
+    .menu-top {background:var(--color-e8)}
+    .panel ul li {letter-spacing: -0.18px;font: var(--font-18);list-style: none;border-bottom: 1px dashed rgba(195, 195, 195, 0.67);padding-block: 2rem;}
+    .panel ul li:last-child{border:none;}
+    .panel ul li a {letter-spacing: -0.18px;font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.5;}
+    .contact-panel {background:#E6FFFF;z-index:1}
+    .contact-panel .contact-info {padding-top:0;margin-top:-5rem}
+    .contact-panel .contact-info li {text-align:center;max-width:50%;margin:0 auto;}
+    .contact-panel .contact-info li {color: var(--color-black);text-align:center}
+    .contact-panel .contact-info li:nth-child(2) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
+    .contact-panel .contact-info li:nth-child(3) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
+    .panel .menu-bottom li>a{color:#000;}
+    .panel-wrapper .panel ul:nth-of-type(2) {background: #e6ffff;padding-top: 0;height:100%}
+    .panel-wrapper .panel ul:nth-of-type(2) li {color: #000;}
+    .contact-heading {padding-block:5rem 3rem;text-align: center;}
+    .contact-heading h4{font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.6; font-weight: bold;}
+    .panel-banner {margin-top: 1rem;}
+    .contact-info .icon-img img {max-width:50px;height:auto;margin-bottom:1.5rem}
+    .panel-banner img {width: 100%;border-radius: 0.5rem;margin-bottom: 0.5rem;}
+    .panel-banner h3 {margin: 0.2rem 0;}
+    .contact-panel {position: relative; }
+    .contact-panel img {display: block;width: 100%;border-radius: 0.5rem;width:335px;height:212px;margin:0 auto;}
+    .contact-panel::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 21%;background: var(--color-e8);z-index:-1;}
+    /* Mobile Bottom Menu */
+    .mobile-bottom-menu {position: fixed;bottom: 0;left: 0;width: 100%;background: var(--color-4e);z-index: 1000;}
+    .menu-list {display: grid;grid-template-columns: repeat(4, 1fr);margin: 0;padding: 0;list-style: none;color: var(--color-4e);}
+    .menu-list li {text-align: center;padding-block: 2rem 0;}
+    .menu-item.active {background: #e5ffff;}
+    .menu-item.active .menu-name {color: #16344E;}
+    .menu-item.active .icon img {filter: brightness(0) saturate(100%) invert(5%) sepia(99%) saturate(2385%) hue-rotate(175deg) brightness(91%) contrast(97%);}
+    .menu-name {font: var(--font-12);color: var(--color-white);font-family: var(--font-Roboto);letter-spacing: 0px;font-weight: 300;}
+    .menu-list button {background: none;border: none;color: var(--color-4e);flex-direction: column;align-items: center;cursor: pointer;}
+    .icon {margin-bottom: 1.2rem;}
+
+    /* Hide menu on desktop */
+    @media (min-width: 992px) {.mobile-bottom-menu {display: none;}
+    }
+
       `}</style>
     </header>
   );

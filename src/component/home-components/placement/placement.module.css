@@ -174,13 +174,9 @@
 }
 @media (min-width: 1040px) and (max-width: 1380px) {
   .testimonialImageContainer {
-    width: 30%;
+    width: 52%;
     padding: 0;
   }
-  .thirdSection {
-    padding: 0rem 0 12rem 8rem;
-  }
- 
   .testimonialSwiper .eachSlide {
     gap: 2rem;
   }
