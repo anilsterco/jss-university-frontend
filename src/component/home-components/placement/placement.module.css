@@ -2,7 +2,7 @@
 
 .thirdSection {
   background: #f6f6f6;
-  padding-block: 15rem;
+  padding-block:5rem 12rem;
 }
 
 .blueBg {
@@ -18,8 +18,8 @@
 .statsNumber {
   font: var(--font-48);
   letter-spacing: -2.4px;
-  font-family: var(--font-Condensed);
   color: var(--color-4e);
+  font-weight: 500;
 }
 
 .testimonialSwiper .eachSlide {
@@ -47,12 +47,13 @@
 }
 .testimonialSwiper p {
   font: var(--font-20);
-  font-family: var(--font-Condensed);
   font-weight: 300;
   color: var(--color-black);
   margin-bottom: 2.8rem;
   max-width: 90%;
+  font-family: var(--font-Roboto);
 }
+
 .wallOfFameText {
   width: 45%;
   bottom: 10%;
@@ -69,6 +70,7 @@
   font-family: var(--font-Condensed);
   letter-spacing: -2.4px;
   line-height: 1;
+  color: #FFC100;
 }
 
 
@@ -106,7 +108,7 @@
 }
 .leftContent {
   padding-bottom: 2rem;
-  border-bottom: 1px solid #f1d9d9;
+  border-bottom: 1px solid #DFDFDF;
 }
 .testimonialImageContainer {
   width: 20%;
@@ -174,9 +176,13 @@
 }
 @media (min-width: 1040px) and (max-width: 1380px) {
   .testimonialImageContainer {
-    width: 52%;
+    width: 30%;
     padding: 0;
   }
+  .thirdSection {
+    padding: 0rem 0 12rem 8rem;
+  }
+ 
   .testimonialSwiper .eachSlide {
     gap: 2rem;
   }

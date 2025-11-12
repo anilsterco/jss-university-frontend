@@ -31,7 +31,6 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
 }
 
@@ -869,5 +868,25 @@ a:active {
   .nav-link.nav-lists {
     padding: 1.4rem 1rem 1.2rem;
   }
-  
+}
+
+
+.departmentItem{
+   font-family: var(--font-Condensed);
+}
+.aboutSchoolSection .blue-text{ color: #000;}
+.grid_2 {grid-template-columns: 17% 80%;
+    display: grid;
+    justify-content: space-between;}
+
+    .about_rnk{ display: flex; flex-wrap: wrap;}
+    .about_school_left{ border-right: 1px solid rgba(206, 206, 206, 0.52); padding-right:6rem;}
+    .vision_mission{
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  padding-bottom: 12rem;
+}
+
+.container-fluid {
+  max-width: 1780px;
 }
