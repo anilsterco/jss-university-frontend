@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./hod-message.module.css";
 import Image from "next/image";
 
-const HODMessage = () => {
+const HODMessage = ({ data }) => {
   // Dynamic data structure
-  const hodData = {
+  const dummyHodData = {
     title: "HOD MESSAGE",
     img: "/images/home-page/second-section-banner.png",
     name: "Dr. Dhiraj Pandey",
@@ -14,6 +14,8 @@ const HODMessage = () => {
       "He has also been contributing as are view for several international journal so and associated with several technical societies of repute such as IEEE (Senior Member), ISTE (Life Member)etc. He has guided more than 40UG/PG level projects. He has also supervised two candidates for their doctoral research work (PhD) in the ield of natural language processing and deep learning.",
     ],
   };
+
+  const hodData = data ? data : dummyHodData;
 
   return (
     <div className={styles.container}>
