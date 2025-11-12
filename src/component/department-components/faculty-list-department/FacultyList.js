@@ -6,11 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 
-export default function FacultyList() {
+export default function FacultyList({ data }) {
   // Dynamic data structure
-  const facultyData = {
+  const dummyFacultyData = {
     subtitle: "FACULTY LIST",
-    title: "GUIDING MINDS OF COMPUTER SCIENCE & ENGINEERING",
+    title: `<span class="blue-text">GUIDING MINDS OF</span> <span class="dark-blue-text"> COMPUTER SCIENCE & ENGINEERING</span>`,
     members: [
       {
         id: 1,
@@ -56,16 +56,18 @@ export default function FacultyList() {
       },
     ],
   };
-
+  const facultyData = data ? data : dummyFacultyData;
+  console.log(facultyData, "facultyData");
   return (
     <div className={styles.container}>
       <div className="container-fluid">
         {/* Header Section */}
         <div className={styles.headerSection}>
           <p className={styles.subtitle}>{facultyData.subtitle}</p>
-          <h2 className={`${styles.title} highlighted-title`}>
-            {facultyData.title}
-          </h2>
+          <h2
+            className={`${styles.title}`}
+            dangerouslySetInnerHTML={{ __html: facultyData.title }}
+          ></h2>
         </div>
 
         {/* Slider Container */}
@@ -94,7 +96,11 @@ export default function FacultyList() {
           >
             {facultyData.members.map((slide) => (
               <SwiperSlide key={slide.id} className={styles.facultyCard}>
-                <Link href={slide.url} key={slide.id}>
+                <Link
+                  href={slide.url}
+                  key={slide.id}
+                  style={{ cursor: "pointer" }}
+                >
                   <Image
                     src={slide.img}
                     alt="slide image"

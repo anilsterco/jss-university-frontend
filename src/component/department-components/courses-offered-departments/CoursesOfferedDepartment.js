@@ -1,14 +1,12 @@
 import styles from "./courses-offered.module.css";
 import Image from "next/image";
 import Link from "next/link";
-const CoursesOffered = () => {
+const CoursesOffered = ({ data }) => {
   // Dynamic data structure
-  const coursesData = {
+  const dummyCoursesData = {
     subtitle: "COURSES OFFERED",
-    title: "AT JSS THE EMPHASIS IS ON YOU",
-    imagePlaceholder: true,
-    img: "/images/home-page/seven-dummy-img.png",
-    // img: "/images/home-page/third-section-banner.png",
+    title: `<span class="dark-blue-text">AT JSS THE</span><span class="blue-text">EMPHASIS IS ON YOU</span>`,
+    image: "/images/home-page/seven-dummy-img.png",
     courses: [
       {
         id: 1,
@@ -29,26 +27,28 @@ const CoursesOffered = () => {
         link: "Apply Now",
       },
     ],
-    admissionBar: {
-      title: "Admission 2025-26",
+    admission_bar: {
       links: [
         { title: "Scholarships Criteria & Success", url: "#1" },
         { title: "Student Cells Activities Coverage", url: "#2" },
         { title: "Recruitment Vacancies Internships", url: "#3" },
       ],
-      downloadButton: "DOWNLOAD BROCHURE",
-      applyButton: "APPLY NOW",
+      download_button: "#",
+      apply_button: "/apply",
     },
   };
+
+  const coursesData = data ? data : dummyCoursesData;
 
   return (
     <div className={styles.container}>
       {/* Header Section */}
       <div className={styles.headerSection}>
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
-        <h2 className={`${styles.title} highlighted-title`}>
-          {coursesData.title}
-        </h2>
+        <h2
+          className={`${styles.title}`}
+          dangerouslySetInnerHTML={{ __html: coursesData.title }}
+        ></h2>
       </div>
 
       {/* Main Content Grid */}
@@ -58,7 +58,7 @@ const CoursesOffered = () => {
           <div className={styles.imagePlaceholder}>
             <div className={styles.placeholderContent}>
               <Image
-                src={coursesData.img}
+                src={coursesData.image}
                 alt="Image Placeholder"
                 width={500}
                 height={500}
@@ -68,17 +68,17 @@ const CoursesOffered = () => {
             </div>
 
             {/* Admission Bar overlapping image */}
-            <div className={styles.admissionBar}>
+            <div className={styles.admission_bar}>
               <div className={styles.admissionContent}>
-                <span className={styles.admissionTitle}>
-                  {coursesData.admissionBar.title}
-                </span>
+                <span className={styles.admissionTitle}>Admission 2025-26</span>
                 <div className={styles.admissionLinks}>
-                  {coursesData.admissionBar.links.map((link, index) => (
+                  {coursesData.admission_bar.links.map((link, index) => (
                     <div key={index}>
                       <Link href={link.url} key={index}>
-                        <span className={styles.admissionLink}>{link.title}</span>
-                        {index < coursesData.admissionBar.links.length - 1 && (
+                        <span className={styles.admissionLink}>
+                          {link.text}
+                        </span>
+                        {index < coursesData.admission_bar.links.length - 1 && (
                           <span className={styles.separator}>•</span>
                         )}
                       </Link>
@@ -86,12 +86,19 @@ const CoursesOffered = () => {
                   ))}
                 </div>
                 <div className={styles.admissionButtons}>
-                  <button className={styles.downloadBtn}>
-                    {coursesData.admissionBar.downloadButton}
-                  </button>
-                  <button className={styles.applyBtn}>
-                    {coursesData.admissionBar.applyButton}
-                  </button>
+                  <Link
+                    // href={coursesData.admission_bar.download_button}
+                    href={"#"}
+                    className={styles.downloadBtn}
+                  >
+                    DOWNLOAD BROCHURE
+                  </Link>
+                  <Link
+                    href={coursesData.admission_bar.apply_button}
+                    className={styles.applyBtn}
+                  >
+                    APPLY NOW
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,29 +108,32 @@ const CoursesOffered = () => {
         {/* Courses Cards */}
         <div className="col-lg-7">
           <div className={styles.coursesGrid}>
-            {coursesData.courses.map((course) => (
-              <div key={course.id} className={styles.courseCard}>
-                <div className={styles.courseCardContent}>
-                  <span className={styles.courseCategory}>
-                    {course.category}
-                  </span>
-                  <h3 className={styles.courseTitle}>{course.title}</h3>
-                  <a href="#" className={styles.courseLink}>
-                    {course.link}
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </a>
+            {coursesData.courses &&
+              coursesData.courses.map((course) => (
+                <div key={course.id} className={styles.courseCard}>
+                  <div className={styles.courseCardContent}>
+                    <span className={styles.courseCategory}>
+                      {course.category}
+                    </span>
+                    <h3 className={styles.courseTitle}>{course.title}</h3>
+                    {course.link && (
+                      <Link href={course.link} className={styles.courseLink}>
+                        Apply Now
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
