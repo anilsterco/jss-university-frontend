@@ -14,30 +14,26 @@
 }
 
 .subtitle {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 1rem;
+  color: #fff;
   text-transform: uppercase;
+  margin-bottom: 1rem;
+  font: var(--font-18);
 }
 
 .title {
-  margin-bottom: 0.75rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  background: linear-gradient(to right, #ffffff 28%, #ffc100 100%);
   -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #fff 28%, #ffc100 100%);
   -webkit-background-clip: text;
   background-clip: text;
   width: 85%;
+  margin-bottom: 0.75rem;
+  font: var(--font-40);
 }
 
 .description {
-  font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  font: var(--font-12);
 }
 
 /* Scroll Indicator */
@@ -167,13 +163,13 @@
 }
 
 .labTitle {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin: 0;
-  line-height: 1.3;
-  max-width: 100%;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  max-width: 100%;
+  margin: 0;
+  font: var(--font-26);
+  width: 80%;
 }
 
 /* View Button */
@@ -217,8 +213,7 @@
   border: 1px solid #fff;
   border-radius: 0;
   padding: 0.55rem 1.5rem;
-  font-size: 14px;
-  font-weight: 600;
+  font: var(--font-14);
   transition: all 0.3s;
 }
 

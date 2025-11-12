@@ -8,40 +8,39 @@ import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
 
 // ✅ All data stored separately for easy replacement (API later)
-const coursesData = {
+const dummyCoursesData = {
   // title: "Start Your JSS Journey",
   title:
     '<span class="blue-text">Start Your</span> <span class="dark-blue-text ">JSS Journey</span>',
   subtitle: "Courses Offered",
-  searchPlaceholder: "Search Course",
-  programsCount: "200",
-  programsText: "academic programs and pave the way to your ideal future.",
+  programs_count: "200",
+  programs_text: "academic programs and pave the way to your ideal future.",
 
-  levels: [
+  programs: [
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "UG",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "UG",
+      slug: "/",
     },
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "PG",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "PG",
+      slug: "/",
     },
     {
-      img: "/images/home-page/second-section-banner.png",
-      name: "PHD",
-      link: "/",
+      image: "/images/home-page/second-section-banner.png",
+      name_short: "PHD",
+      slug: "/",
     },
   ],
 
-  schools: [
-    { name: "Engineering", link: "#" },
-    { name: "Pharmacy", link: "#" },
-    { name: "Management", link: "#" },
-    { name: "Computer Applications", link: "#" },
-    { name: "Applied Sciences", link: "#" },
-    { name: "Humanities", link: "#" },
+  departments: [
+    { short_name: "Engineering", slug: "#" },
+    { short_name: "Pharmacy", slug: "#" },
+    { short_name: "Management", slug: "#" },
+    { short_name: "Computer Applications", slug: "#" },
+    { short_name: "Applied Sciences", slug: "#" },
+    { short_name: "Humanities", slug: "#" },
   ],
 
   admission: {
@@ -49,14 +48,25 @@ const coursesData = {
     desc: "Sed ut perspiciatis unde omnis",
     applyLink: "#",
   },
+  academic_year: {
+    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
+    description: "Sed ut perspiciatis unde omnis",
+  },
+  buttons: [
+    {
+      text: "Apply Now",
+      url: "https://project-demo.in/jss/api/homepage",
+    },
+  ],
 };
 
-export default function CoursesOffered() {
-  // Create ProgramsCount component
+export default function CoursesOffered({ data }) {
+  const coursesData = data ? data : dummyCoursesData;
+  console.log(data, "data");
   const ProgramsCount = () => (
     <div className={styles.programsCountWrapper}>
       <h1 className={`display-4 programs-count ${styles.programsCount}`}>
-        {coursesData.programsCount}
+        {coursesData.programs_count}
       </h1>
       <span className={styles.programsCountPlus}>+</span>
     </div>
@@ -64,137 +74,149 @@ export default function CoursesOffered() {
 
   return (
     <>
-      <section
-        className={`container-fluid second-section ${styles.secondSection}`}
-      >
-        <div
-          className={`row align-items-center mb-5 top-section ${styles.topSection}`}
-        >
-          {/* Left side */}
-          <div className="col-lg-4 mb-4 mb-lg-0">
-            <h5 className={`${styles.topSectionH5}`}>{coursesData.subtitle}</h5>
-            <h1
-              className={`fw-bold  ${styles.topSectionH1}`}
-              dangerouslySetInnerHTML={{ __html: coursesData.title }}
-            ></h1>
-            <p className={styles.showOnlyMobileSubHeading}>{coursesData.programsText}</p>
-            {/* Search box */}
-            <div
-              className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
-            >
-              <input
-                type="text"
-                className="form-control border-0"
-                placeholder={coursesData.searchPlaceholder}
-              />
-              <span className="input-group-text bg-white border-0">
-                <CiSearch />
-              </span>
-            </div>
-
-            {/* Programs count */}
-            <div
-              className={`d-flex align-items-center gap-5 ${styles.programsCountSection}`}
-            >
-              <ProgramsCount />
-              <p className={styles.programsText}>{coursesData.programsText}</p>
-            </div>
-          </div>
-
-          {/* Right side cards */}
-          <div
-            className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
-          >
-            {coursesData.levels.map((level, i) => (
-              <Link
-                href={level.link}
-                key={i}
-                className="second-section-cards-image position-relative"
+      <section className={`second-section cource-sec ${styles.secondSection}`}>
+        <div className="container">
+          <div className={`row cource_top ${styles.topSection}`}>
+            {/* Left side */}
+            <div className="col-lg-4 mb-4 mb-lg-0">
+              <h5 className={`${styles.topSectionH5}`}>
+                {coursesData.subtitle}
+              </h5>
+              <h1
+                className={`fw-bold  ${styles.topSectionH1}`}
+                dangerouslySetInnerHTML={{ __html: coursesData.title }}
+              ></h1>
+              <p className={styles.showOnlyMobileSubHeading}>
+                {coursesData.programs_text}
+              </p>
+              {/* Search box */}
+              <div
+                className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
               >
-                <Image
-                  src={level.img}
-                  alt="slide image"
-                  width={200}
-                  height={300}
-                  className={styles.cardImage}
-                  priority
+                <input
+                  type="text"
+                  className="form-control border-0"
+                  placeholder="Search Course"
                 />
-                <div className={styles.cardOverlay}>
-                  <span
-                    className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
-                  >
-                    {level.name}{" "}
-                    <FaChevronRight
-                      fontSize={15}
-                      color="#b08f29"
-                      className={styles.rightDesktopArrow}
-                    />
-                    <PiArrowCircleRightThin
-                      fontSize={20}
-                      color="#fff"
-                      className={styles.rightMobileArrow}
-                    />
-                  </span>
-                </div>
-              </Link>
-            ))}
-            <div className={styles.showOnlyMobileCard}>
-              <Link href="#" className={styles.exploreAllLink}>
-                <div className={styles.lastCardContentSection}>
-                  <p>Explore All</p>
-                  <h1 className="blue-text">26+</h1>
-                  <h5>ACADEMIC PROGRAMS</h5>
-                </div>
-                <div className={styles.lastCardArrow}>
-                  <PiArrowCircleRightThin fontSize={20} color="#16344E" />
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
+                <span className="input-group-text bg-white border-0">
+                  {/* <CiSearch /> */}
+                  <img
+                    src="images/home-page/icon-search.svg"
+                    className="img-fluid"
+                    alt="search"
+                  />
+                </span>
+              </div>
 
-        {/* Bottom section */}
-        <div
-          className={`row border-top border-bottom align-items-center bottom-section w-100 m-auto ${styles.exploreProgramSectionWrapper}`}
-        >
-          <div className="col-lg-8 pb-4 pt-1 border-end">
-            <h6 className={`fw-bold mb-3 ${styles.bottomSectionH6}`}>
-              Explore Programs by School of
-            </h6>
+              {/* Programs count */}
+              <div
+                className={`d-flex align-items-center ${styles.programsCountSection}`}
+              >
+                <ProgramsCount />
+                <p className={styles.programsText}>
+                  {coursesData.programs_text}
+                </p>
+              </div>
+            </div>
+
+            {/* Right side cards */}
             <div
-              className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
+              className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
             >
-              {coursesData.schools.map((school, i) => (
+              {coursesData.programs.map((level, i) => (
                 <Link
-                  href={school.link}
+                  href={level.slug}
                   key={i}
-                  className="py-2 px-4 d-flex justify-content-between align-items-center"
+                  className="second-section-cards-image position-relative"
                 >
-                  {school.name} <FaChevronRight fontSize={10} color="#000" />
+                  <Image
+                    src={level.image}
+                    alt="slide image"
+                    width={200}
+                    height={300}
+                    className={styles.cardImage}
+                    priority
+                  />
+                  <div className={styles.cardOverlay}>
+                    <span
+                      className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
+                    >
+                      {level.name_short}{" "}
+                      <FaChevronRight
+                        fontSize={15}
+                        color="#b08f29"
+                        className={styles.rightDesktopArrow}
+                      />
+                      <PiArrowCircleRightThin
+                        fontSize={20}
+                        color="#fff"
+                        className={styles.rightMobileArrow}
+                      />
+                    </span>
+                  </div>
                 </Link>
               ))}
+              <div className={styles.showOnlyMobileCard}>
+                <Link href="#" className={styles.exploreAllLink}>
+                  <div className={styles.lastCardContentSection}>
+                    <p>Explore All</p>
+                    <h1 className="blue-text">26+</h1>
+                    <h5>ACADEMIC PROGRAMS</h5>
+                  </div>
+                  <div className={styles.lastCardArrow}>
+                    <PiArrowCircleRightThin fontSize={20} color="#16344E" />
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Admission section */}
+          {/* Bottom section */}
           <div
-            className={`col-lg-4 d-flex justify-content-between align-items-center ${styles.admissionSection}`}
+            className={`row  align-items-center program-row m-auto ${styles.exploreProgramSectionWrapper}`}
           >
-            <div>
-              <h4 className="fw-bold mb-1">
-                Admission{" "}
-                <span className={styles.admissionYearText}>
-                  {coursesData.admission.year}
-                </span>
-              </h4>
-              <p className="small mb-0">{coursesData.admission.desc}</p>
+            <div className="col-lg-8">
+              <h6 className={`fw-bold  ${styles.bottomSectionH6}`}>
+                Explore Programs by School of
+              </h6>
+              <div
+                className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
+              >
+                {coursesData.departments.map((school, i) => (
+                  <Link
+                    href={`/schools/${school.slug}`}
+                    key={i}
+                    className=" d-flex justify-content-between align-items-center"
+                  >
+                    {school.short_name}{" "}
+                    <FaChevronRight fontSize={10} color="#16344ec4" />
+                  </Link>
+                ))}
+              </div>
             </div>
-            <Link
-              href={coursesData.admission.applyLink}
-              className="btn btn-warning rounded-pill"
+
+            {/* Admission section */}
+            <div
+              className={`col-lg-4 d-flex gap-5 align-items-center ${styles.admissionSection}`}
             >
-              Apply Now
-            </Link>
+              <div className="addmission-col">
+                <h4
+                  className="fw-bold add-item"
+                  dangerouslySetInnerHTML={{
+                    __html: coursesData.academic_year.year,
+                  }}
+                ></h4>
+                <p className="small">{coursesData.academic_year.description}</p>
+              </div>
+              {coursesData.buttons[0].url && (
+                <Link
+                  href={coursesData.buttons[0].url}
+                  className="btn btn-warning rounded-pill"
+                >
+                  {coursesData.buttons[0].text}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>

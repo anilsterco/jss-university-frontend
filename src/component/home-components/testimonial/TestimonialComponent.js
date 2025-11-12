@@ -7,55 +7,82 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styles from "./testimonial.module.css";
 
-const testimonialsData = {
+const dummyTestimonialsData = {
   title:
     '<span class="dark-blue-text ">IN</span> <span class="blue-text">CONVERSATION</span> <span class="dark-blue-text ">WITH THE</span>  <span class="blue-text">JSS COMMUNITY</span>',
 
+  subtitle: "TESTIMONIALS",
   testimonials: [
     {
       name: "NAMAN SUKHIJA",
-      batch: "B. Tech (CE), 2012-16 Batch",
-      role: "Designer & Certifier, Passive House Institute, Germany",
-      quote: "Studying at JSS Noida has been a transformative journey...",
-      img: "/images/home-page/sixth-section-first-banner.png",
-      videoUrl: "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
+      course: "B. Tech (ME)",
+      batch: "2012-16 Batch",
+      designation: "Designer & Certifier",
+      company: "Passive House Institute",
+      location: "Germany",
+      short_description:
+        "Studying at JSS Noida has been a transformative journey...",
+      image: "/images/home-page/sixth-section-second-banner.png",
+      alt_text: "",
+      video_url:
+        "https://www.youtube.com/embed/8pARSE8wytw?si=Z1u43drelLPclwBc",
     },
     {
       name: "APOORV SHIKHAR",
-      batch: "B. Tech (ES), 2013-17 Batch",
-      role: "Junior Research Fellow, GB Pant National Institute of Himalayan Environment, Uttarakhand",
-      img: "/images/home-page/sixth-section-second-banner.png",
-      quote:
+      course: "B. Tech (ME)",
+      batch: "2012-16 Batch",
+      designation: "Junior Research Fellow",
+      company: "GB Pant National Institute of Himalayan Environment",
+      location: " Uttarakhand",
+      image: "/images/home-page/sixth-section-second-banner.png",
+      alt_text: "",
+      short_description:
         "I have gained both theoretical and practical knowledge and was exposed to real-world challenges.",
-      videoUrl: "",
+      video_url: "",
     },
     {
       name: "YASHIKA MATHUR",
-      batch: "B. Tech (CE), 2013-17 Batch",
-      role: "Counsellor – Engineering Design, Design2Occupancy Services LLP",
-      img: "/images/home-page/sixth-section-third-banner.png",
-      videoUrl: "",
+      course: "B. Tech (ME)",
+      batch: "2012-16 Batch",
+      designation: "Counsellor – Engineering Design",
+      company: "Design2Occupancy Services LLP",
+      location: "Uttarakhand",
+      image: "/images/home-page/sixth-section-third-banner.png",
+      alt_text: "",
+      short_description: "",
+      video_url: "",
     },
     {
       name: "NADEEM KHAN",
-      batch: "B. Tech (ME), 2015-19 Batch",
-      role: "Project Mechanical Engineer, JK Paper Ltd, Unit CPM, Gujarat",
-      img: "/images/home-page/sixth-section-fourth-banner.png",
-      videoUrl:
+      course: "B. Tech (ME)",
+      batch: "2012-16 Batch",
+      designation: "Project Mechanical Engineer",
+      company: "JK Paper Ltd, Unit CPM",
+      location: "Gujarat",
+      image: "/images/home-page/sixth-section-fourth-banner.png",
+      alt_text: "",
+      short_description: "",
+      video_url:
         "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       name: "RITIKA SHARMA",
-      batch: "B. Tech (CSE), Batch of 2024",
-      img: "/images/home-page/sixth-section-fifth-banner.png",
-      quote:
+      course: "B. Tech (ME)",
+      batch: "2012-16 Batch",
+      designation: "Counsellor – Engineering Design",
+      company: "Design2Occupancy Services LLP",
+      location: "Gujarat",
+      image: "/images/home-page/sixth-section-fifth-banner.png",
+      alt_text: "",
+      short_description:
         "JSS University has truly shaped my journey—both academically and personally.",
-      videoUrl: "",
+      video_url: "",
     },
   ],
 };
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ data }) {
+  const testimonialsData = data ? data : dummyTestimonialsData;
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   // distribute testimonials dynamically into columns
@@ -66,11 +93,14 @@ export default function TestimonialsSection() {
   const columnForMobile = [...column1, ...column2];
   return (
     <section className={styles.testimonialsSection}>
-      <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
+     <div className="container">
+       <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
         {/* LEFT COLUMN */}
         <div className={styles.columnLeft}>
           <div className={styles.headerContent}>
-            <p className={styles.testimonialsLabel}>TESTIMONIALS</p>
+            <p className={styles.testimonialsLabel}>
+              {testimonialsData.subtitle}
+            </p>
             <h2
               className={` ${styles.mainHeading}`}
               dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
@@ -95,7 +125,7 @@ export default function TestimonialsSection() {
             <TestimonialCard
               key={i}
               data={item}
-              onPlay={() => setSelectedVideo(item.videoUrl)}
+              onPlay={() => setSelectedVideo(item.video_url)}
             />
           ))}
         </div>
@@ -106,7 +136,7 @@ export default function TestimonialsSection() {
             <TestimonialCard
               key={i}
               data={item}
-              onPlay={() => setSelectedVideo(item.videoUrl)}
+              onPlay={() => setSelectedVideo(item.video_url)}
             />
           ))}
         </div>
@@ -117,7 +147,7 @@ export default function TestimonialsSection() {
             <TestimonialCard
               key={i}
               data={item}
-              onPlay={() => setSelectedVideo(item.videoUrl)}
+              onPlay={() => setSelectedVideo(item.video_url)}
             />
           ))}
         </div>
@@ -136,7 +166,7 @@ export default function TestimonialsSection() {
               <TestimonialCard
                 key={i}
                 data={item}
-                onPlay={() => setSelectedVideo(item.videoUrl)}
+                onPlay={() => setSelectedVideo(item.video_url)}
               />
             </SwiperSlide>
           ))}
@@ -147,7 +177,7 @@ export default function TestimonialsSection() {
               <TestimonialCard
                 key={i}
                 data={item}
-                onPlay={() => setSelectedVideo(item.videoUrl)}
+                onPlay={() => setSelectedVideo(item.video_url)}
               />
             </SwiperSlide>
           ))}
@@ -198,19 +228,20 @@ export default function TestimonialsSection() {
           </div>
         </div>
       )}
+     </div>
     </section>
   );
 }
 
 function TestimonialCard({ data, onPlay }) {
-  const hasVideo = data.videoUrl && data.videoUrl.length > 0;
+  const hasVideo = data.video_url && data.video_url.length > 0;
 
   return (
     <article className={styles.testimonialCard}>
       <div className={styles.cardImgContainer}>
         <Image
-          src={data.img}
-          alt={data.name}
+          src={data.image}
+          alt={data.alt_text}
           width={380}
           height={380}
           className={styles.cardImg}
@@ -225,17 +256,22 @@ function TestimonialCard({ data, onPlay }) {
         )}
 
         {/* Optional Quote */}
-        {data.quote && (
+        {data.short_description && (
           <div className={styles.quoteBar}>
             <div className={styles.yellowLine}></div>
-            <p className={styles.quoteTextOverlay}>{data.quote}</p>
+            <p className={styles.quoteTextOverlay}>{data.short_description}</p>
           </div>
         )}
       </div>
       <div className={styles.cardInfo}>
         <h3 className={styles.personName}>{data.name}</h3>
-        <p className={styles.personBatch}>{data.batch}</p>
-        {data.role && <p className={styles.personRole}>{data.role}</p>}
+        <p className={styles.personBatch}>
+          {data.course}, {data.batch}
+        </p>
+        <p className={styles.personRole}>
+          {data.designation && data.designation}, {data.company && data.company}
+          , {data.location && data.location}
+        </p>
       </div>
     </article>
   );

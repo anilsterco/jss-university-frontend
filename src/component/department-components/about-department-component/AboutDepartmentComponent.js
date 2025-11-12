@@ -1,9 +1,10 @@
 // components/department-components/AboutDepartment/index.js
 import styles from "./about-department.module.css";
+import Image from "next/image";
 
-export default function AboutDepartmentComponent() {
+export default function AboutDepartmentComponent({ data }) {
   // Dynamic data structure - can be fetched from API or props
-  const departmentData = {
+  const dummyCoursesData = {
     title: "COMPUTER SCIENCE & ENGINEERING",
     subtitle: "ABOUT DEPARTMENT OF",
     description:
@@ -13,17 +14,19 @@ export default function AboutDepartmentComponent() {
         id: 1,
         value: "63+",
         label: "International journal papers",
+        logo: "",
       },
       {
         id: 2,
         value: "3K+",
         label: "Alumni Network",
+        logo: "",
       },
       {
         id: 3,
-        value: "NBA",
+        value: "",
         label: "National Board of Accreditation (NBA)",
-        logo: true,
+        logo: "https://project-demo.in/jss/assets/img/facts/1762853705_6913034925b8c.png",
       },
     ],
     vision: {
@@ -39,8 +42,11 @@ export default function AboutDepartmentComponent() {
         "To foster independent and lifelong learning with ethical and social responsibilities.",
       ],
     },
-    imagePlaceholder: true,
+    image:
+      "https://project-demo.in/jss/assets/img/departments/1762856534_69130e56601ae.png",
   };
+
+  const departmentData = data ? data : dummyCoursesData;
 
   return (
     <div className={`container-fluid ${styles.aboutDepartment}`}>
@@ -55,40 +61,32 @@ export default function AboutDepartmentComponent() {
         </div>
 
         {/* Stats Section */}
-        <div className={`row g-4 ${styles.statsSection}`}>
+        <div className={` ${styles.statsSection}`}>
           {departmentData.stats.map((stat, index) => (
-            <div key={stat.id} className="col-md-4">
-              <div
-                className={`card h-100 border-0 ${styles.statCard} ${
-                  index === 0
-                    ? styles.onecard
-                    : index === 1
-                    ? styles.twocard
-                    : index === 2
-                    ? styles.threecard
-                    : ""
-                }`}
-              >
-                <div className={styles.statCardBody}>
-                  {stat.logo ? (
-                    <>
-                      <div className={styles.nbaBadge}>
-                        <div className={styles.nbaTitle}>NBA</div>
-                        <div className={styles.nbaSubtitle}>
-                          NATIONAL BOARD
-                          <br />
-                          OF ACCREDITATION
-                        </div>
-                      </div>
-                      <p className={styles.nbaLabel}>{stat.label}</p>
-                    </>
-                  ) : (
-                    <>
-                      <h2 className={styles.statValue}>{stat.value}</h2>
-                      <p className={styles.statLabel}>{stat.label}</p>
-                    </>
-                  )}
-                </div>
+            <div
+              key={stat.id}
+              className={`card h-100  ${styles.statCard} ${
+                index === 0
+                  ? styles.onecard
+                  : index === 1
+                  ? styles.twocard
+                  : index === 2
+                  ? styles.threecard
+                  : ""
+              }`}
+            >
+              <div className={styles.statCardBody}>
+                {stat.logo && (
+                  <Image
+                    src={stat.logo}
+                    alt="Image Placeholder"
+                    width={120}
+                    height={90}
+                    priority
+                  />
+                )}
+                <h2 className={styles.statValue}>{stat.value}</h2>
+                <p className={styles.nbaLabel}>{stat.label}</p>
               </div>
             </div>
           ))}
@@ -99,26 +97,19 @@ export default function AboutDepartmentComponent() {
           {/* Image Placeholder */}
           <div className="col-md-6 px-0">
             <div className={`card border-0 h-100 ${styles.imagePlaceholder}`}>
-              <div className={styles.placeholderIcon}>
-                <svg
-                  width="80"
-                  height="80"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-                <p className={styles.placeholderText}>IMAGE</p>
-              </div>
+              <Image
+                src={departmentData.image}
+                alt="Image Placeholder"
+                width={500}
+                height={500}
+                style={{ width: "100%", height: "100%" }}
+                priority
+              />
             </div>
           </div>
 
           {/* Vision and Mission */}
-          <div className={`col-md-6 ${styles.visionMission}`}>
+          <div className={`col-md-6 ps-0 pt-5 ${styles.visionMission}`}>
             <div className="h-100">
               {/* Vision */}
               <div className={styles.visionCard}>

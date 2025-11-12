@@ -3,9 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRightCircle } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
+import "@fontsource/roboto-condensed";
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,9 +18,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
+
+  const [activePanel, setActivePanel] = useState(null);
+  const togglePanel = (name) => {
+    setActivePanel(activePanel === name ? null : name);
+  };
 
   const navLinks = [
     {
@@ -32,24 +36,31 @@ export default function Header() {
       ],
       right: {
         subtitle: "ABOUT JSS",
-        title: "Know Our Heritage",
-        desc: "Learn more about JSS legacy, history and leadership.",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
+        desc: "Learn more about JSS legacy, history and leadership history and leadership.",
         ctas: [
           { text: "Read More", href: "#", type: "primary" },
-          { text: "Leadership", href: "#", type: "secondary" },
+          // { text: "Leadership", href: "#", type: "secondary" },
         ],
         banners: [
           {
             title: "UNDER GRADUTE",
             href: "#",
-            img: "/images/header/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
           {
             title: "POST GRADUTE",
             href: "#",
-            img: "/images/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
-          { title: "PHD", href: "#", img: "/images/nav-hover-banner.png" },
+          {
+            title: "PHD",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
         ],
       },
     },
@@ -62,25 +73,28 @@ export default function Header() {
         { name: "Programs", href: "/" },
       ],
       right: {
-        subtitle: "EXPLORE ACADEMICS",
-        title: "Learning at JSS",
-        desc: "Offering UG, PG and PhD programmes with global standards.",
+        subtitle: "PROGRAMS",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
+        desc: "Leading the revolution in integrated learning where students shape their own future.",
         ctas: [{ text: "VIEW ALL PROGRAMMES", href: "#", type: "primary" }],
         banners: [
           {
             title: "Under Graduate",
             href: "#",
-            img: "/images/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
           {
             title: "Post Graduate",
             href: "#",
-            img: "/images/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
           {
             title: "PhD Programmes",
             href: "#",
-            img: "/images/nav-hover-banner.png",
+            img: "/images/header/nav-hover-banner.webp",
           },
         ],
       },
@@ -95,16 +109,31 @@ export default function Header() {
       ],
       right: {
         subtitle: "JOIN JSS",
-        title: "Admissions Open 2025-26",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Apply now and step into your future at JSS Noida.",
         ctas: [
           { text: "Apply Now", href: "#", type: "primary" },
-          { text: "Download Syllabus", href: "#", type: "secondary" },
+          // { text: "Download Syllabus", href: "#", type: "secondary" },
         ],
         banners: [
-          { title: "Scholarships", href: "#", img: "/images/banner1.png" },
-          { title: "Eligibility", href: "#", img: "/images/banner2.png" },
-          { title: "FAQs", href: "#", img: "/images/banner3.png" },
+          {
+            title: "Scholarships",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "Eligibility",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "FAQs",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
         ],
       },
     },
@@ -118,13 +147,28 @@ export default function Header() {
       ],
       right: {
         subtitle: "CAMPUS FACILITIES",
-        title: "Modern & Student Friendly",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
         ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
         banners: [
-          { title: "Hostels", href: "#", img: "/images/banner1.png" },
-          { title: "Clubs", href: "#", img: "/images/banner2.png" },
-          { title: "Events", href: "#", img: "/images/banner3.png" },
+          {
+            title: "Hostels",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "Clubs",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "Events",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
         ],
       },
     },
@@ -138,13 +182,28 @@ export default function Header() {
       ],
       right: {
         subtitle: "SUPPORT & LIFE",
-        title: "Helping Students Thrive",
+        title: `
+        <span class="text-dark">START YOUR</span>
+        <span class="text-blue">JSS JOURNEY</span>
+      `,
         desc: "Guidance, mentoring and vibrant student support activities.",
         ctas: [{ text: "Get Support", href: "#", type: "primary" }],
         banners: [
-          { title: "Life @ JSS", href: "#", img: "/images/banner1.png" },
-          { title: "Mentoring", href: "#", img: "/images/banner2.png" },
-          { title: "Clubs", href: "#", img: "/images/banner3.png" },
+          {
+            title: "Life @ JSS",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "Mentoring",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
+          {
+            title: "Clubs",
+            href: "#",
+            img: "/images/header/nav-hover-banner.webp",
+          },
         ],
       },
     },
@@ -153,7 +212,7 @@ export default function Header() {
   const hamburgerMenudata = [
     {
       name: "About JSS University",
-      subMenu: ["Overview", "Scholarships", "International Students"],
+      Menu: ["Overview", "Scholarships", "International Students"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -172,7 +231,7 @@ export default function Header() {
     },
     {
       name: "Academics",
-      subMenu: ["Undergraduate", "Postgraduate", "Doctoral"],
+      Menu: ["Undergraduate", "Postgraduate", "Doctoral"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -191,7 +250,7 @@ export default function Header() {
     },
     {
       name: "Facilities",
-      subMenu: ["Hostels", "Clubs & Societies", "Events"],
+      Menu: ["Hostels", "Clubs & Societies", "Events"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -210,7 +269,7 @@ export default function Header() {
     },
     {
       name: "Students Support",
-      subMenu: ["Apply Now", "Eligibility", "FAQs"],
+      Menu: ["Apply Now", "Eligibility", "FAQs"],
       firstContent: {
         title:
           "SRI SUTTUR MATH THE <span class='blue-text'> 1000 YEAR LEGACY</span>",
@@ -234,6 +293,7 @@ export default function Header() {
       subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
       title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
       desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
+      querytext: "Any Query ? please mail us.",
       email: "principal@jssaten.ac.in",
       phone: "+91-9311830458",
       ctas: [
@@ -349,6 +409,65 @@ export default function Header() {
     ],
   };
 
+  // mob menu data
+  const mobilePanelsData = [
+    {
+      name: "Courses",
+      icon: "/images/header/cource-mob.svg",
+      Menu: [
+        { name: "Undergraduate", url: "/courses/undergraduate" },
+        { name: "Postgraduate", url: "/courses/postgraduate" },
+        { name: "Research", url: "/courses/research" },
+        { name: "Diploma", url: "/courses/diploma" },
+      ],
+    },
+
+    {
+      name: "Admissions",
+      heading:"<span class='text-dark'>APPLY NOW </span>, <span class='blue-text'>FOR 2025</span>",
+      icon: "/images/header/admi-mob.svg",
+      Menu: [
+        { name: "Scholarship", url: "/admissions/calendar" },
+        { name: "Course, Eligibility & Fee Structure", url: "/fee-Structure" },
+        { name: "Admission Document & Undertaking", url: "/admissions/scholarship" },
+        { name: "Admissions Office Contacts", url: "/admissions/international" },
+         { name: "Hostel Details", url: "/admissions/international" },
+      ],
+    },
+
+    {
+      name: "Contact",
+      heading:"CAMPUS ADDRESS",
+      bgImg: "/images/header/cont-mobmenu.png",
+       icon: "/images/header/contact-mob.svg",
+      Menu: [
+        { name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301", url: "", contactIcon: "/images/header/address-icon.svg" },
+        { name: "principal@jssaten.ac.in", url: "mailto:principal@jssaten.ac.in", contactIcon: "/images/header/mail-icon.svg" },
+        { name: "8725033398", url: "https://wa.me/8725033398", contactIcon: "/images/header/phone-icon.svg" },
+      ],
+    },
+
+    {
+      name: "Menu",
+      icon: "/images/header/hamberger-mob.svg",
+      Menu: [
+        { name: "About JSS University", url: "/about" },
+        { name: "Academics", url: "/academics" },
+        { name: "Facilities", url: "/facilities" },
+        { name: "Examination", url: "/examination" },
+        { name: "Research & Innovation", url: "/research-and-innovation" },
+        { name: "Placements", url: "/placements" },
+      ],
+      Menubottom: [
+        { name: "Alumni", url: "/alumni" },
+        { name: "Testimonials", url: "/testimonials" },
+        { name: "Happenings", url: "/happenings" },
+        { name: "Careers", url: "/careers" },
+        { name: "Contact Us", url: "/contact-us" },
+      ],
+    },
+  ];
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -357,7 +476,7 @@ export default function Header() {
     if (!isMounted) return;
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 300);
+      setScrolled(window.scrollY > 80);
     };
 
     handleScroll();
@@ -430,93 +549,67 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className={`nav-container ${scrolled ? "header-scrolled" : ""}`}>
-        <div className="brand-wrap logo-content">
-          <Link href="/" aria-label="Home" className="d-flex gap-4">
+        <div
+          className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
+        >
+          <Link href="/" aria-label="Home">
             <Image
-              src="/images/footer/footer-logo.png"
+              src="/images/header/header-logo.png"
               className="site-logo"
               alt="Site Logo"
-              width={100}
-              height={100}
+              width={299}
+              height={108}
               priority
             />
-            <div className="logo-text">
-              <div className="d-flex  align-items-center gap-2">
-                <div>
-                  <h1
-                    className={`${
-                      scrolled ? "dark-blue-text" : ""
-                    } mb-0 logo-primary-text`}
-                  >
-                    NAAC
-                  </h1>
-                  <h1
-                    className={`${
-                      scrolled ? "dark-blue-text" : ""
-                    } mb-0 logo-secondry-text`}
-                  >
-                    GRADE
-                  </h1>
-                </div>
-                <h1
-                  className={`${
-                    scrolled ? "yellow-text" : ""
-                  } mb-0 logo-tertiary-text`}
-                >
-                  A
-                </h1>
-              </div>
-              <p className={`${scrolled ? "text-dark" : ""} mb-0`}>
-                JSS is NAAC 'A' Grade Accredited
-              </p>
-            </div>
           </Link>
         </div>
 
-        {pathname === "/schools" && (
-          <>
-            <div
-              className="school-toggle"
-              onClick={() => setEngineeringDropdown((prev) => !prev)}
-            >
-              <p className="mb-0">School of</p>
-              <h5 className="fw-bold">
-                {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
-              </h5>
-            </div>
-
-            {engineeringDropdown && (
+        {pathname.includes("schools") ||
+          (pathname.includes("department") && (
+            <>
               <div
-                className="engineering-dropdown-container"
-                ref={engineeringRef}
+                className="school-toggle"
+                onClick={() => setEngineeringDropdown((prev) => !prev)}
               >
-                <div className="engineering-dropdown">
-                  {/* LEFT SIDE: Schools List */}
-                  <div className="schools-list">
-                    <h6>Schools</h6>
-                    {engineeringData.schools.map((school, idx) => (
-                      <div
-                        key={idx}
-                        className={`school-item ${
-                          selectedSchool === idx ? "active" : ""
-                        }`}
-                        onClick={() => {
-                          setSelectedSchool(idx);
-                          setSelectedSchoolName(school.name);
-                        }}
-                      >
-                        {school.name}
-                      </div>
-                    ))}
-                  </div>
+                <p className="mb-0">School of</p>
+                <h5 className="fw-bold">
+                  {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
+                </h5>
+              </div>
 
-                  {/* RIGHT SIDE: Departments */}
-                  <div className="departments-list">
-                    <span className="dropdown-arrow"></span>
-                    <h6 className="text-white">Department</h6>
-                    <div className="link-content">
-                      {engineeringData.schools[selectedSchool].departments.map(
-                        (dept, i) => (
+              {engineeringDropdown && (
+                <div
+                  className="engineering-dropdown-container"
+                  ref={engineeringRef}
+                >
+                  <div className="engineering-dropdown">
+                    {/* LEFT SIDE: Schools List */}
+                    <div className="schools-list">
+                      <h6>Schools</h6>
+                      {engineeringData.schools.map((school, idx) => (
+                        <div
+                          key={idx}
+                          className={`school-item ${
+                            selectedSchool === idx ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedSchool(idx);
+                            setSelectedSchoolName(school.name);
+                          }}
+                        >
+                          {school.name}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* RIGHT SIDE: Departments */}
+                    <div className="departments-list">
+                      <span className="dropdown-arrow"></span>
+                      <h6 className="text-white">Department</h6>
+                      <div className="link-content">
+                        {engineeringData.schools[
+                          selectedSchool
+                        ].departments.map((dept, i) => (
                           <Link
                             href={dept.url}
                             key={i}
@@ -524,16 +617,15 @@ export default function Header() {
                           >
                             {dept.text}
                           </Link>
-                        )
-                      )}
+                        ))}
+                      </div>
+                      <IoTriangleSharp className="triangle-icon" />
                     </div>
-                    <IoTriangleSharp className="triangle-icon" />
                   </div>
                 </div>
-              </div>
-            )}
-          </>
-        )}
+              )}
+            </>
+          ))}
 
         <div className="right-navbar">
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -546,7 +638,7 @@ export default function Header() {
                 >
                   <Link
                     href={l.href}
-                    className={`nav-link ${
+                    className={`nav-link nav-lists  ${
                       activeLink == i ? "active-link" : ""
                     }`}
                   >
@@ -573,16 +665,34 @@ export default function Header() {
                               <p className="mega-subtitle">
                                 {l.right.subtitle}
                               </p>
-                              <h2 className="mega-title">{l.right.title}</h2>
+                              <h2
+                                className="mega-title"
+                                dangerouslySetInnerHTML={{
+                                  __html: l.right.title,
+                                }}
+                              />
                               <p className="mega-desc">{l.right.desc}</p>
                               <div className="mega-ctas">
                                 {l.right.ctas?.map((cta, idx) => (
                                   <a
                                     key={idx}
                                     href={cta.href}
-                                    className={`cta ${cta.type}`}
+                                    className={`cta program_btn ${cta.type}`}
                                   >
                                     {cta.text}
+                                    <svg
+                                      className="cta-arrow"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      fill="currentColor"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                      />
+                                    </svg>
                                   </a>
                                 ))}
                               </div>
@@ -638,15 +748,32 @@ export default function Header() {
                     <h2 className="ad-title">{admissionsData.left.title}</h2>
                     <p className="ad-desc">{admissionsData.left.desc}</p>
                     <div className="ad-contact">
-                      <p>📧 {admissionsData.left.email}</p>
-                      <p>📞 {admissionsData.left.phone}</p>
+                      <span>{admissionsData.left.querytext}</span>
+                      <p>
+                        {" "}
+                        <img
+                          src="images/header/mailicon.svg"
+                          className="img-fluid"
+                          alt="mail"
+                        />{" "}
+                        {admissionsData.left.email}
+                      </p>
+                      <p>
+                        {" "}
+                        <img
+                          src="images/header/phoneicon.svg"
+                          className="img-fluid"
+                          alt="mail"
+                        />{" "}
+                        {admissionsData.left.phone}
+                      </p>
                     </div>
                     <div className="ad-ctas">
                       {admissionsData.left.ctas.map((cta, idx) => (
                         <a
                           key={idx}
                           href={cta.href}
-                          className={`cta ${cta.type}`}
+                          className={`cta applynow ${cta.type}`}
                         >
                           {cta.text}
                         </a>
@@ -658,7 +785,12 @@ export default function Header() {
                     <ul>
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
-                          {link} →
+                          {link}
+                          <img
+                            src="/images/header/listicon.svg"
+                            className="img-fluid"
+                            alt="mail"
+                          />
                         </li>
                       ))}
                     </ul>
@@ -666,7 +798,7 @@ export default function Header() {
                       <h3>{admissionsData.middle.stats.text}</h3>
                       <p>{admissionsData.middle.stats.subtext}</p>
                       <button className="stats-btn">
-                        {admissionsData.middle.stats.btnText} →
+                        {admissionsData.middle.stats.btnText}
                       </button>
                     </div>
                   </div>
@@ -691,7 +823,14 @@ export default function Header() {
               className="hamburger"
               onClick={openMenu}
             >
-              ☰
+              <Image
+                src="/images/header/hum-icon.svg"
+                className="site-logo"
+                alt="Site Logo"
+                width={17}
+                height={16}
+                priority
+              />
             </button>
           </div>
         </div>
@@ -708,7 +847,7 @@ export default function Header() {
           aria-label="Close menu"
           onClick={closeMenu}
         >
-          ×
+          <img src="images/header/close-icon.svg" />
         </button>
 
         <div className="hamburger-layout">
@@ -729,13 +868,26 @@ export default function Header() {
           </aside>
 
           <section className="menu-middle">
-            <h4 className="middle-title">
-              ABOUT JSSMVP HERITAGE ABOUT JSS LEADERSHIP
-            </h4>
-            <ul>
-              {activeData.subMenu.map((s, i) => (
+            <div className="middle-title">
+              <ul>
+                <li>
+                  <a href="#">ABOUT JSSMVP</a>
+                </li>
+                <li>
+                  <a href="#">HERITAGE</a>
+                </li>
+                <li>
+                  <a href="#">ABOUT JSS</a>
+                </li>
+                <li>
+                  <a href="#">LEADERSHIP</a>
+                </li>
+              </ul>
+            </div>
+            <ul className="middle_ul">
+              {activeData.Menu.map((s, i) => (
                 <li key={i} className="middle-item">
-                  {s}
+                  <a href="#"> {s}</a>
                 </li>
               ))}
             </ul>
@@ -752,18 +904,24 @@ export default function Header() {
                   />
                   <p>{activeData.firstContent.desc}</p>
                   <Link href={activeData.firstContent.url}>
-                    <FiArrowRightCircle className="mb-5" />
+                    <img src="images/header/banner-arrow.svg" />
                   </Link>
-                  <div className="hamburger-section-img">
+                  <div className="hamburger-section-img virtural-img">
                     <Link href={activeData.firstContent.url}>
                       <Image
+                        className="hum-small"
                         src={activeData.firstContent.img}
                         alt={activeData.firstContent.alt}
                         fill
                         style={{ objectFit: "cover" }}
-                        sizes="100vw"
                       />
                     </Link>
+                    <div className="items-menu_grp">
+                      <div className="items-menu_grp_cont">
+                        <h4>Virtual campus</h4>
+                        <p>Sed ut perspiciatis</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="second-content">
@@ -777,8 +935,17 @@ export default function Header() {
                         sizes="100vw"
                       />
                     </Link>
+                    <div className="vid-thumb-grp">
+                      <div className="vid-thumb-icon"></div>
+                      <div className="vid-thumb-cont">
+                        <h6>MESSAGE FROM CHANCELLOR</h6>
+                        <h4>
+                          JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
+                        </h4>
+                      </div>
+                    </div>
                   </div>
-                  <div className="d-flex align-items-start mt-5 flex-wrap">
+                  <div className="acresData">
                     <h1
                       dangerouslySetInnerHTML={{
                         __html: activeData.secondContent.title,
@@ -793,6 +960,113 @@ export default function Header() {
         </div>
       </div>
 
+
+      {/* mobile menu bottom start*/}
+      <div className="panel-wrapper">
+        <div className="mob-menu-sec">
+          {mobilePanelsData.map((item) => (
+            <div
+              key={item.name}
+              className={`panel ${
+                activePanel === item.name ? "open" : ""
+              } ${item.name.toLowerCase()}-panel`}
+            >
+              {item.name === "Courses" && item.Menu && (
+                <ul className="courses-menu">
+                  {item.Menu.map((sub, idx) => (
+                    <li key={idx}>
+                      <a href={sub.url}>{sub.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {item.name === "Admissions" && item.Menu && (
+                
+                <ul className="admissions-menu">
+                  <div className="admissions-heading">
+                  <h4 dangerouslySetInnerHTML={{ __html: item.heading }}></h4>
+                  </div>
+                  {item.Menu.map((sub, idx) => (
+                    <li key={idx}>
+                      <a href={sub.url}>{sub.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {item.name === "Contact" && (
+                <div className="contact-panel">
+                 <div className="contact-heading">
+                   <h4>{item.heading}</h4>
+                 </div>
+                 
+                  <img
+                    src={item.bgImg}
+                    alt="contact"
+                    className="contact-banner"
+                  />
+                  <ul className="contact-info">
+                    {item.Menu.map((sub, idx) => (
+                      
+                      <li key={idx}>
+                        <div className="icon-img">
+                         <img src={sub.contactIcon} alt={sub.name} />
+                        </div>
+                        <a href={sub.url}>{sub.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {item.name === "Menu" && (
+                <>
+                  {item.Menu && (
+                    <ul className="menu-top">
+                      {item.Menu.map((sub, idx) => (
+                        <li key={idx}>
+                          <a href={sub.url}>{sub.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.Menubottom && (
+                    <ul className="menu-bottom">
+                      {item.Menubottom.map((sub, idx) => (
+                        <li key={idx}>
+                          <a href={sub.url}>{sub.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mobile-bottom-menu">
+        <ul className="menu-list">
+          {mobilePanelsData.map((item) => (
+            <li
+              key={item.name}
+              className={
+                activePanel === item.name ? "menu-item active" : "menu-item"
+              }
+            >
+              <button onClick={() => togglePanel(item.name)}>
+                <div className="icon">
+                  <img src={item.icon} alt={`${item.name} icon`} />
+                </div>
+                <p className="menu-name">{item.name}</p>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <style jsx>{`
         /* --- Engineering Dropdown --- */
         .school-toggle {
@@ -803,6 +1077,11 @@ export default function Header() {
           display: flex;
           flex-direction: column;
         }
+         .logo-content img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain; 
+            }
         .header-scrolled .school-toggle {
           color: #16344e;
         }
@@ -873,12 +1152,15 @@ export default function Header() {
           width: 100%;
           overflow: hidden;
           border-radius: 12px;
+          
         }
+        .virtural-img {margin-top:5.6rem;position:relative;}
         .right-inner .first-content {
           width: 30%;
+          padding-top:2rem;
         }
         .right-inner .second-content {
-          width: 40%;
+          width: 45%;
         }
         .site-header {
           position: fixed;
@@ -887,36 +1169,25 @@ export default function Header() {
           right: 0;
           z-index: 1100;
         }
-        .mega-right-banners {
-          justify-content: end;
-          gap: 1rem;
-          width: 70%;
-          display: flex;
-          margin-top: 10rem;
-          margin-bottom: 5rem;
-          height: 70%;
-        }
-        .right-inner .second-content h1 {
-          font-size: 4rem;
-          width: 50%;
-          font-weight: 700;
-          line-height: 60px;
-        }
-        .right-inner .second-content p {
-          font-size: 0.9rem;
-          width: 50%;
-          margin-top: 1rem;
-          padding-bottom: 1rem;
-          border-bottom: 2px solid #ffcc00;
-        }
+     
         .right-inner .first-content h1 {
-          font-size: 2.2rem;
-          font-weight: 700;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
+         font: var(--font-36);
+          color: var(--color-4e);
+          letter-spacing: -0.58px;
+          text-transform: uppercase;
+          font-family: var(--font-Condensed);
+          padding-bottom: 2rem;
+          font-weight: bold;
+          line-height: 1;
+          max-width: 82%;
         }
         .right-inner .first-content p {
-          font-size: 0.9rem;
+         font: var(--font-15);
+          color: var(--color-black);
+          font-weight: 300;
+          line-height: 1.6;
+          padding-bottom: 1.2rem;
+          max-width: 75%;
         }
         .right-navbar-section,
         .right-navbar {
@@ -941,32 +1212,60 @@ export default function Header() {
           border-left: 1px solid #cfc7c7;
           padding-left: 1.5rem;
         }
-        .nav-container {
-          justify-content: space-between;
-          align-items: center;
-          max-width: 100%;
-          margin: 0 auto;
-          padding: 1.6rem 5rem;
-          transition: all 0.3s;
-          display: flex;
+       
+        .site-header>.nav-container{
+        padding-inline: 9.8rem;
+        padding-block: 2.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 618px;
+            z-index: 2;
+            background: linear-gradient(
+            to bottom,
+            #ffc100 0%,    
+            #ffb000 20%,   
+            #B08F29 20%,   
+            #B08F29 40%,   
+            #16344e 40%,   
+            #16344e 100%
+          );
+          
         }
         .nav-list {
-          gap: 30px;
+          gap:0rem;
           margin: 0;
-          padding: 0.4rem 2rem;
           list-style: none;
           display: flex;
-          font-size: 20px;
-          background-color: #16344e;
+          padding: 0 0 0 2.8rem;
+          background-color: rgb(22, 52, 78, 78%);
           color: #fff;
-          margin-right: 1rem;
         }
+
+        
+        
+
+          .nav-list>ul{
+          display: flex;
+          padding: 0;
+          margin: 0;
+          gap: 0 6rem;
+          }
+   
         .nav-item {
           position: relative;
         }
         .nav-container.header-scrolled {
-          background-color: #fff;
+          background-color:var(--color-4e);;
         }
+        
         .nav-link {
           text-decoration: none;
           color: inherit;
@@ -979,6 +1278,7 @@ export default function Header() {
         .header-scrolled .nav-link {
           color: #16344e;
         }
+          
 
         .dropdown {
           display: none;
@@ -1005,16 +1305,16 @@ export default function Header() {
         }
         .admission-wrap {
           position: relative;
-          margin-right: 12px;
+          margin: 0 0.5rem;
         }
         .admission-btn {
-          background: #ffc100;
-          font-weight: 700;
-          font-size: 15px;
+          color: var(--color-black);
+          padding: 1.4rem 2rem 1.2rem;
+          letter-spacing: 0.8px;
+          background-color: var(--color-100);
           border: none;
-          padding: 10px 18px;
-          cursor: pointer;
-          transition: background 0.3s ease;
+          font: var(--font-20);
+          font-family: var(--font-Condensed);
         }
         .admission-btn:hover {
           background: #e6b000;
@@ -1022,54 +1322,70 @@ export default function Header() {
         .admission-dropdown {
           z-index: 1200;
           background: #fff;
-          width: 70%;
-          margin-top: 6px;
+          width: 85%;
           display: flex;
           position: fixed;
-          top: 6rem;
+          top: 14rem;
           right: 10rem;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+          
         }
         .dropdown-arrow {
-          position: absolute;
-          top: -10px;
-          right: 40px;
-          width: 0;
-          height: 0;
+          border-bottom: 18px solid #fff;
           border-left: 10px solid transparent;
           border-right: 10px solid transparent;
-          border-bottom: 10px solid #fff;
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: -18px;
+          right: 7%;
         }
         .ad-left {
           width: 100%;
-          background: #2f7de8;
+          background: var(--color-e8);
           color: #fff;
-          padding: 24px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          padding: 9rem 9.2rem 8rem 8rem ;
         }
         .ad-right {
           width: 100%;
         }
         .ad-subtitle {
-          text-transform: uppercase;
-          font-size: 13px;
-          margin-bottom: 8px;
+         font: var(--font-16);
+          font-family: var(--font-Condensed);
+          color: var(--color-white);
+          margin-bottom: 1rem;
         }
         .ad-title {
-          font-size: 22px;
+          font: var(--font-48);
+          font-family: var(--font-Condensed);
+          color: var(--color-white);
+          letter-spacing: -2.3px;
           font-weight: 700;
-          margin-bottom: 12px;
+          line-height: 1;
         }
         .ad-desc {
-          font-size: 14px;
-          margin-bottom: 16px;
+         font: var(--font-16);
+          color: var(--color-white);
+          font-weight: 300;
+          margin-top: 1rem;
+          padding-right: 2rem;
+          padding-bottom:6rem;
+          position:relative;
+
         }
-        .ad-contact {
-          font-size: 14px;
-          margin-bottom: 16px;
-        }
+          .ad-desc::before{content: '';position: absolute; background-color: #fff;bottom: 0; left: 0;width: 50rem;height: 0.1rem;opacity: 0.3;}
+        .ad-contact {padding-top:6rem;}
+          .ad-contact span {
+          font: var(--font-16);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);margin-bottom:0.8rem;display: block;}
+          .ad-contact p{
+          font: var(--font-24);
+          color: var(--color-white);
+          letter-spacing: -0.24px
+          font-family: var(--font-Condensed);
+          margin-bottom:1.4rem
+          }
         .ad-ctas {
           display: flex;
           gap: 8px;
@@ -1087,17 +1403,44 @@ export default function Header() {
         .cta:hover {
           opacity: 0.9;
         }
-        .cta.primary {
-          background: #ffc100;
-          color: #000;
+          .cta.primary:hover {
+          background-color: var(--color-4e);
+          color: var(--color-white);}
+       .cta.primary {
+        background: transparent;
+         border: 1px solid var(--color-4e);
+        padding: 1rem 2rem;
+        display: inline-flex;
+        color: var(--color-4e);
+        font: var(--font-13);
+        font-family: var(--font-Condensed);
+        font-weight: 700;
+        align-items: center;
+        gap: 3rem;
+       var(--color-4e)-space: nowrap;
+        -webkit-transition: all 0.5s ease;
         }
-        .cta.secondary {
-          color: #fff;
-          border: 1px solid #fff;
+
+        .ad-left .ad-ctas .cta.applynow.primary{
+        background: #FFC100;
+         border: 1px solid #FFC100;
+        padding: 1rem 2rem;
+        display: inline-flex;
+        color: var(--color-4e);
+        font: var(--font-18);
+        font-family: var(--font-Condensed);
+        font-weight: 700;
+        align-items: center;
+        gap: 3rem;
+       var(--color-4e)-space: nowrap;
+        -webkit-transition: all 0.5s ease;
+        color:#000;
         }
+        .ad-left .ad-ctas .cta.applynow.secondary{ border:1px solid #fff; color:#fff;}
+
         .ad-middle {
           width: 100%;
-          padding: 24px;
+           padding: 9rem 9.2rem 8rem 8rem ;
           border-right: 1px solid #eee;
         }
         .ad-middle ul {
@@ -1106,40 +1449,50 @@ export default function Header() {
           margin: 0;
         }
         .ad-link {
-          padding: 6px 0;
-          font-size: 15px;
-          font-weight: 500;
+          font: var(--font-21);
+          color: var(--color-4e);
+          padding-block: 1rem;
+          border-bottom: 1px dashed #16344E33;
+          display: block;
+          position: relative;
           cursor: pointer;
-          color: #333;
-          transition: color 0.3s ease;
         }
         .ad-link:hover {
-          color: #2f7de8;
-          text-decoration: underline;
+          color: var(--color-e8);
+          text-decoration: none;
         }
         .ad-stats {
-          margin-top: 20px;
+          margin-top: 5.8rem;
         }
         .ad-stats h3 {
-          font-size: 18px;
-          font-weight: 700;
-          margin-bottom: 4px;
+          font: var(--font-36);
+          font-family: var(--font-Condensed);
+          color: var(--color-4e);
+          letter-spacing: -1.01px;
+          padding-right: 8rem;
         }
         .ad-stats p {
-          font-size: 13px;
-          color: #777;
-          margin-bottom: 10px;
+          font: var(--font-16);
+          font-family: var(--font-Condensed);
+          color: var(--color-4e);
+          text-transform: uppercase;
+          margin-block:1.4rem 1.8rem;
         }
         .stats-btn {
           background: #fff;
-          border: 1px solid #000;
-          padding: 6px 12px;
+          border: 1px solid rgba(22, 52, 78, 0.4);
+          font: var(--font-18);
+          font-family: var(--font-Condensed);
+          font-weight: 700;
+          letter-spacing: 0.72px;
+          padding: 1rem 1.5rem;
           cursor: pointer;
           font-weight: 600;
           transition: all 0.3s ease;
+          color:#16344E;  
         }
         .stats-btn:hover {
-          background: #000;
+          background: #16344E;
           color: #fff;
         }
 
@@ -1150,11 +1503,10 @@ export default function Header() {
         }
 
         .hamburger {
-          font-size: 22px;
           background: none;
           border: none;
           cursor: pointer;
-          padding: 4px 10px;
+          padding: 16px 15px 16px;
           background-color: #16344e;
           color: #fff;
           transition: background 0.3s ease;
@@ -1190,78 +1542,134 @@ export default function Header() {
           position: absolute;
           top: 0;
           right: 0;
-          height: 80%;
+          height: 75.6rem;;
           width: 0;
           display: flex;
           overflow: hidden;
-          background: #fff;
           transition: width 450ms cubic-bezier(0.2, 0.9, 0.2, 1);
         }
         .menu-overlay.open .hamburger-layout {
           width: 100%;
+        
         }
 
         .menu-left {
-          width: 20%;
-          background: #2f7de8;
+          width: 23%;
+          background: var(--color-e8);
           color: #fff;
-          padding-top: 5rem;
+          padding-top: 9rem;
         }
         .menu-left-item {
-          padding: 12px 14px;
+          padding: 1rem 7rem 1rem 14rem;
           cursor: pointer;
-          font-weight: 600;
-          padding-left: 5rem;
-          margin-bottom: 6px;
-          font-size: 21px;
+          position: relative;
+          display: block;
+          font: var(--font-21);
+          color: var(--color-white);
+          font-weight: normal;
           transition: all 0.3s ease;
         }
         .menu-left-item:hover {
-          background: #1e6fd8;
-        }
-        .menu-left-item.active {
           background: #ffc100;
-          color: #000;
+           color:var(--color-4e);;
+          font-weight: bold;
         }
+     
         .menu-left ul {
           list-style: none;
           padding: 0;
         }
 
         .menu-middle {
-          background: #fff;
-          border-right: 1px solid #eee;
+          background: rgba(255, 255, 255, 0.95);
           width: 20%;
-          padding: 1rem 3rem;
-          padding-top: 5rem;
+          padding: 9rem 9rem 9rem;
         }
-        .middle-title {
-          color: #000;
-          text-transform: uppercase;
-          margin-bottom: 10px;
-          font-size: 21px;
+          .menu-right{
+          background: rgba(255, 255, 255, 0.95);
+          }
+      .menu-middle::before {
+        content: "";
+        background-color: #e3e3e3;
+        width: 0.2rem;
+        position: absolute;
+        top: 11%;      
+        bottom: 10%;   
+        right: 58%;
+        transform: translateY(0);
+      }
+        .hamburger-layout:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(images/header/ham-overlay.png);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          background-size: cover;
+          background-repeat: no-repeat;
+          opacity:1;
+          z-index:-1;
+          }
+          .middle-title>ul {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          }
+            
+        .middle-title>ul>li a {
+           font: var(--font-21);
+            color: var(--color-black);
+            font-family: var(--font-Condensed);
+            font-weight: bold;
+            display: block;
+            padding-bottom: 1.6rem;
         }
-        .middle-item {
-          padding: 8px 0;
-          font-weight: 700;
-          border-bottom: 1px dashed #eee;
-          cursor: pointer;
+            .middle-title>ul>li a:hover{
+                color: var(--color-e8);
+}
+        .middle-title ul {margin-bottom:1rem}
+        .middle_ul{padding:0;}
+        .middle_ul .middle-item {margin-bottom:1rem}
+        .middle-item a {
+          font: var(--font-16);
+          font-weight: normal;
+          padding-bottom: 0;
+          position: relative;
+          padding-left: 1.5rem;
           transition: color 0.3s ease;
+          color: var(--color-black);
         }
+          .middle-item a:hover{
+            color: var(--color-e8);
+          }
+        
+        .middle-item a:before {
+          content: "";
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: var(--color-e8);
+      }
         .middle-item:hover {
-          color: #2f7de8;
+          color: var(--color-e8);
         }
 
         .menu-right {
           flex: 1;
-          background: #fafafa;
-          padding: 5rem 3rem;
-          width: 60%;
+          padding-top: 9rem;
+          padding-left:3rem;
           overflow-y: auto;
         }
         .image-box {
           display: flex;
-          justify-content: center;
           height: 100%;
           gap: 3rem;
         }
@@ -1295,10 +1703,9 @@ export default function Header() {
         .mega-dropdown {
           z-index: -1;
           background: #fff;
-          gap: 20px;
+          gap: 6rem;
           width: 100%;
           height: auto;
-          min-width: max-content;
           display: none;
           position: fixed;
           top: 0;
@@ -1312,9 +1719,9 @@ export default function Header() {
         }
 
         .mega-left {
-          background: #2f7de8;
+          background: var(--color-e8);
           color: #fff;
-          width: 20%;
+          width: 43rem;
           position: relative;
         }
         .mega-left ul {
@@ -1324,49 +1731,41 @@ export default function Header() {
           text-align: center;
           position: absolute;
           width: 100%;
-          top: 35%;
+          top: 26%;
         }
         .mega-left-item {
           cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease;
           font-weight: 700;
-          padding: 8px 0;
+          padding: 1px 0;
         }
-
-        .mega-left-item .dropdown-item {
-          color: #fff;
-          text-decoration: none;
-        }
-        .mega-left-item:hover {
-          background: #ffc100;
-          color: #000;
-        }
-
+        
         .mega-right {
           display: flex;
           align-items: center;
-          gap: 3rem;
-          width: 80%;
+          gap: 3.4rem;
+          width: 76%;
           display: flex;
+          padding-right: 9.8rem;
         }
         .mega-right-text {
-          width: 20%;
+          width: 23%;
+          padding-top: 0rem;
         }
         .mega-subtitle {
-          font-size: 13px;
-          color: #555;
-          text-transform: uppercase;
-          margin-bottom: 6px;
+         font: var(--font-13);
+          color: var(--color-e8);
+          font-weight: 800;
+          display: inline-block;
+          padding-bottom: 0rem;
         }
-        .mega-title {
-          font-size: 24px;
-          font-weight: 700;
-          margin-bottom: 8px;
-          color: #16344e;
-        }
+        
         .mega-desc {
-          font-size: 14px;
-          margin-bottom: 12px;
-          color: #444;
+          max-width: 100%;
+          font: var(--font-16);
+          font-weight: 200;
+          color: var(--color-4e);
+          margin-bottom:5.6rem;
         }
         .mega-ctas {
           display: flex;
@@ -1394,44 +1793,71 @@ export default function Header() {
           display: block;
         }
         .banner-label {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.5);
-          border-radius: 2px;
+          background: transparent;
           width: 100%;
-          padding: 15px 10px;
-          font-size: 14px;
+          padding-inline: 2.2rem;
+          padding-block:1.6rem;
           font-weight: 700;
           position: absolute;
           bottom: 0;
           left: 0;
+          font: var(--font-28);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);
+          font-weight: 600;
+          text-transform: uppercase;
+          z-index:9;
         }
+          .banner-label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.85;
+            background: transparent linear-gradient(0deg, var(--unnamed-color-000000) 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+            background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+            height: 207px;
+            z-index: -1;
+        }
+     .items-menu_grp_cont h4 {
+          font: var(--font-18);
+          color: var(--color-white);
+          font-family: var(--font-Geist);
+          letter-spacing: -0.18px;
+          font-weight: 800;
+      }
+      .items-menu_grp .items-menu_grp_cont p {
+          letter-spacing: -0.23px;
+          font: var(--font-15);
+          color: var(--color-white);
+          font-family: var(--font-Geist);
+          font-weight: 200;
+          max-width: 100%;
+      }
+         .mega-right-banners {
+          display:flex;
+          margin-top:18rem;
+          padding-bottom:14rem;
+          gap:2.4rem;
+          width:100%
+         }
+         .close-btn {margin:3rem 8rem}
+     
 
-        @media (min-width: 1024px) and (max-width: 1420px) {
-          .mega-right-banners {
-            height: 70%;
-            margin-top: 8rem;
-            margin-bottom: 3rem;
-          }
-          .nav-container {
-            padding: 1rem 2rem;
-          }
-          .nav-list {
-            gap: 20px;
-            font-size: 16px;
-          }
-          .mega-right {
-            gap: 1.5rem;
-          }
-          .banner {
-            width: 240px;
-            height: 200px;
-          }
-          .admission-dropdown {
-            top: 6rem;
-            right: 5rem;
-            width: 85%;
-          }
+         @media (max-width: 1599px){
+          .site-header>.nav-container{
+           padding-inline: 6.8rem;}
+         }
+
+         @media (max-width: 1599px){
+            .mega-right {
+          padding-right: 6.8rem;
         }
+         }
+
+
+   
 
         @media (max-width: 1100px) {
           .mega-dropdown {
@@ -1446,6 +1872,62 @@ export default function Header() {
             height: 130px;
           }
         }
+
+
+
+
+
+
+
+
+
+
+ {/* mob menu css start */}
+    .panel-wrapper {position: fixed;top: 0;left: 0;width: 100%;height: 100%; z-index: 900;pointer-events: none;}
+    .panel-wrapper .panel {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #f0f0f0;transform: translateY(100%);transition: transform 0.3s ease-in-out;overflow-y: auto; pointer-events: auto;display: flex;flex-direction: column;box-sizing: border-box;}
+    .panel-wrapper .panel.open {transform: translateY(0);}
+    .courses-panel ul,
+    .admissions-panel ul,
+    .menu-panel ul,
+    .contact-panel ul {list-style: none;padding: 0;margin: 0;padding: 6rem 4rem 12rem;}
+    .admissions-heading h4 {}
+    .menu-top {background:var(--color-e8)}
+    .panel ul li {letter-spacing: -0.18px;font: var(--font-18);list-style: none;border-bottom: 1px dashed rgba(195, 195, 195, 0.67);padding-block: 2rem;}
+    .panel ul li:last-child{border:none;}
+    .panel ul li a {letter-spacing: -0.18px;font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.5;}
+    .contact-panel {background:#E6FFFF;z-index:1}
+    .contact-panel .contact-info {padding-top:0;margin-top:-5rem}
+    .contact-panel .contact-info li {text-align:center;max-width:50%;margin:0 auto;}
+    .contact-panel .contact-info li {color: var(--color-black);text-align:center}
+    .contact-panel .contact-info li:nth-child(2) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
+    .contact-panel .contact-info li:nth-child(3) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
+    .panel .menu-bottom li>a{color:#000;}
+    .panel-wrapper .panel ul:nth-of-type(2) {background: #e6ffff;padding-top: 0;height:100%}
+    .panel-wrapper .panel ul:nth-of-type(2) li {color: #000;}
+    .contact-heading {padding-block:5rem 3rem;text-align: center;}
+    .contact-heading h4{font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.6; font-weight: bold;}
+    .panel-banner {margin-top: 1rem;}
+    .contact-info .icon-img img {max-width:50px;height:auto;margin-bottom:1.5rem}
+    .panel-banner img {width: 100%;border-radius: 0.5rem;margin-bottom: 0.5rem;}
+    .panel-banner h3 {margin: 0.2rem 0;}
+    .contact-panel {position: relative; }
+    .contact-panel img {display: block;width: 100%;border-radius: 0.5rem;width:335px;height:212px;margin:0 auto;}
+    .contact-panel::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 21%;background: var(--color-e8);z-index:-1;}
+    /* Mobile Bottom Menu */
+    .mobile-bottom-menu {position: fixed;bottom: 0;left: 0;width: 100%;background: var(--color-4e);z-index: 1000;}
+    .menu-list {display: grid;grid-template-columns: repeat(4, 1fr);margin: 0;padding: 0;list-style: none;color: var(--color-4e);}
+    .menu-list li {text-align: center;padding-block: 2rem 0;}
+    .menu-item.active {background: #e5ffff;}
+    .menu-item.active .menu-name {color: #16344E;}
+    .menu-item.active .icon img {filter: brightness(0) saturate(100%) invert(5%) sepia(99%) saturate(2385%) hue-rotate(175deg) brightness(91%) contrast(97%);}
+    .menu-name {font: var(--font-12);color: var(--color-white);font-family: var(--font-Roboto);letter-spacing: 0px;font-weight: 300;}
+    .menu-list button {background: none;border: none;color: var(--color-4e);flex-direction: column;align-items: center;cursor: pointer;}
+    .icon {margin-bottom: 1.2rem;}
+
+    /* Hide menu on desktop */
+    @media (min-width: 992px) {.mobile-bottom-menu {display: none;}
+    }
+
       `}</style>
     </header>
   );

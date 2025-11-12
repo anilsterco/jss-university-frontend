@@ -1,0 +1,26 @@
+.innerTitle { padding-top: 22rem; background-color: var(--color-f5);padding-bottom: 4.5rem; }
+.innerTitle { text-align: center; }
+.innerTitle h2 { font: var(--font-18); padding-bottom: 2rem; color: var(--color-4e); font-weight: 700; font-family: var(--font-Condensed); }
+.innerTitle h3 { font: var(--font-45); letter-spacing: -1.35px; color: var(--color-4e); margin-bottom: 2.4rem;font-family: var(--font-Condensed); }
+.innerTitle h3>span { color: var(--color-e8); }
+.innerTitle .happIcons li {background-color: #eb5b6c;padding: 1rem;box-shadow: 0 6px 10px rgba(0, 0, 0, .2);border-radius: 50%;display: block;align-items: center;height: 4.3rem;width: 4.3rem;}
+.happIcons li img {max-width: 4.3rem;height: auto;gap: 0.4rem;}
+.innerTitle ul { list-style: none; display: flex; justify-content: center; gap: 1.1rem; margin-bottom: 0;padding-left: 0; }
+.happiningSec{ position: relative; padding-block: 0 ;background-color: #F6F6F6;z-index: 1;}
+.happiningSec::before { content: ''; background-color: var(--color-f5); width: 100%; left: 0; height: 8rem;top: 0; position: absolute; z-index: -1;}
+.banner {display: flex;justify-content: center;align-items: center;margin: 0 auto;}
+.banner img {border-top-left-radius: 5rem;border-bottom-right-radius: 5rem;max-width: 100%;height: auto;}
+.Grid2{display: grid;grid-template-columns: repeat(1, 45% auto);gap: 6.4rem;padding-block:9rem 15rem;}
+.happContant p {font: var(--font-16); margin-bottom: 3rem; color: #212121; font-weight:normal; font-family: var(--font-Roboto);letter-spacing: 0px;max-width: 81%;}
+.relatedHappenings {background-color: #fff;padding-block:9rem 8.5rem ;}
+.relatedHappenings h3 {text-align: center;font: var(--font-24); color: var(--color-29);font-family: var(--font-Roboto);font-weight: 600;letter-spacing: 0px;margin-bottom: 5.1rem; }
+.relatedHappenings .releGrid{display: grid;grid-template-columns: repeat(2, 1fr);gap:2.6rem;}
+.relecol {position: relative;overflow: hidden;border-radius: 0.5rem;}
+.relecol img {width: 100%;display: block;}
+.relecol figcaption {position: absolute;bottom: 0;left: 0;width: 100%;padding: 1rem;color: #fff;z-index: 2;box-sizing: border-box;}
+.relecol figcaption::before {content: "";position: absolute;left: 0;width: 100%;height: 194px;background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;opacity: 0.83;bottom: 0;z-index: 1;bottom: 0;}
+.relecol figcaption h4,
+.relecol figcaption p {position: relative;z-index: 2;}
+.relecol figcaption {padding-inline:2.5rem ;}
+.relecol figcaption h4 {font: var(--font-22);;color: var(--color-white);margin-bottom: 1rem;font-family: var(--font-Roboto)}
+.relecol figcaption p{font: var(--font-14); letter-spacing: 0px;color: var(--color-white);font-family: var(--font-Roboto)}
