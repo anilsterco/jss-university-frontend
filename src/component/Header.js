@@ -414,36 +414,101 @@ export default function Header() {
     {
       name: "Courses",
       icon: "/images/header/cource-mob.svg",
+      visitIcon: "/images/header/courseIcon.svg",
       Menu: [
-        { name: "Undergraduate", url: "/courses/undergraduate" },
-        { name: "Postgraduate", url: "/courses/postgraduate" },
-        { name: "Research", url: "/courses/research" },
-        { name: "Diploma", url: "/courses/diploma" },
+        {
+          name: "UNDER GRADUATE",
+          url: "/courses/undergraduate",
+          image: "/images/header/course04.png",
+        },
+        {
+          name: "POST GRADUATE",
+          url: "/courses/postgraduate",
+          image: "/images/header/course02.png",
+        },
+        {
+          name: "PHD",
+          url: "/courses/research",
+          image: "/images/header/course03.png",
+        },
+        {
+          name: "ACADEMIC PROGRAMS",
+          url: "/courses/diploma",
+          image: "/images/header/course01.png",
+        },
       ],
     },
 
     {
       name: "Admissions",
-      heading:"<span class='text-dark'>APPLY NOW </span>, <span class='blue-text'>FOR 2025</span>",
+      heading:
+        "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
       icon: "/images/header/admi-mob.svg",
       Menu: [
         { name: "Scholarship", url: "/admissions/calendar" },
         { name: "Course, Eligibility & Fee Structure", url: "/fee-Structure" },
-        { name: "Admission Document & Undertaking", url: "/admissions/scholarship" },
-        { name: "Admissions Office Contacts", url: "/admissions/international" },
-         { name: "Hostel Details", url: "/admissions/international" },
+        {
+          name: "Admission Document & Undertaking",
+          url: "/admissions/scholarship",
+        },
+        {
+          name: "Admissions Office Contacts",
+          url: "/admissions/international",
+        },
+        { name: "Hostel Details", url: "/admissions/international" },
       ],
+
+      contact: {
+        title: "ANY QUERY ? PLEASE MAIL US.",
+        details: [
+          {
+            icon: "/images/header/mail-icon.svg",
+            text: "principal@jssaten.ac.in",
+            link: "mailto:principal@jssaten.ac.in",
+          },
+          {
+            icon: "/images/header/phone-icon.svg",
+            text: "+91-9311830458",
+            link: "tel:+91-9311830458",
+          },
+        ],
+        buttons: [
+          {
+            label: "APPLY NOW",
+            link: "/apply",
+            className: "apply",
+          },
+          {
+            label: "DOWNLOAD SYLLABUS",
+            link: "/downloads/syllabus",
+            className: "dwnload",
+            icon: "/images/header/dwnlodIcon.png",
+          },
+        ],
+      },
     },
 
     {
       name: "Contact",
-      heading:"CAMPUS ADDRESS",
+      heading: "CAMPUS ADDRESS",
       bgImg: "/images/header/cont-mobmenu.png",
-       icon: "/images/header/contact-mob.svg",
+      icon: "/images/header/contact-mob.svg",
       Menu: [
-        { name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301", url: "", contactIcon: "/images/header/address-icon.svg" },
-        { name: "principal@jssaten.ac.in", url: "mailto:principal@jssaten.ac.in", contactIcon: "/images/header/mail-icon.svg" },
-        { name: "8725033398", url: "https://wa.me/8725033398", contactIcon: "/images/header/phone-icon.svg" },
+        {
+          name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301",
+          url: "",
+          contactIcon: "/images/header/address-icon.svg",
+        },
+        {
+          name: "principal@jssaten.ac.in",
+          url: "mailto:principal@jssaten.ac.in",
+          contactIcon: "/images/header/mail-icon.svg",
+        },
+        {
+          name: "8725033398",
+          url: "https://wa.me/8725033398",
+          contactIcon: "/images/header/phone-icon.svg",
+        },
       ],
     },
 
@@ -960,7 +1025,6 @@ export default function Header() {
         </div>
       </div>
 
-
       {/* mobile menu bottom start*/}
       <div className="panel-wrapper">
         <div className="mob-menu-sec">
@@ -972,46 +1036,98 @@ export default function Header() {
               } ${item.name.toLowerCase()}-panel`}
             >
               {item.name === "Courses" && item.Menu && (
-                <ul className="courses-menu">
-                  {item.Menu.map((sub, idx) => (
-                    <li key={idx}>
-                      <a href={sub.url}>{sub.name}</a>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mobCourses">
+                  <div className="course-heading">
+                    <h4>START YOUR JSS JOURNEY</h4>
+                  </div>
+                  <ul className="courses-menu">
+                    {item.Menu.map((sub, idx) => (
+                      <li key={idx}>
+                        <figure>
+                          <div className="coursesImg">
+                            <img
+                              src={sub.image}
+                              alt={sub.name}
+                              className="course-img w-100"
+                            />
+                          </div>
+                          <figcaption>
+                            <h4>{sub.name}</h4>
+                            <img
+                              src={item.visitIcon}
+                              alt={`${sub.name} icon`}
+                              className="course-icon"
+                            />
+                          </figcaption>
+                        </figure>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               {item.name === "Admissions" && item.Menu && (
-                
-                <ul className="admissions-menu">
-                  <div className="admissions-heading">
-                  <h4 dangerouslySetInnerHTML={{ __html: item.heading }}></h4>
-                  </div>
-                  {item.Menu.map((sub, idx) => (
-                    <li key={idx}>
-                      <a href={sub.url}>{sub.name}</a>
-                    </li>
-                  ))}
-                </ul>
+                <div className="admissions-menu-wrapper">
+                  <ul className="admissions-menu">
+                    <div className="admissions-heading">
+                      <h4
+                        dangerouslySetInnerHTML={{ __html: item.heading }}
+                      ></h4>
+                    </div>
+                    {item.Menu.map((sub, idx) => (
+                      <li key={idx}>
+                        <a href={sub.url}>{sub.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {item.contact && (
+                    <div className="admissions-contact">
+                      <h4>{item.contact.title}</h4>
+                      <ul>
+                        {item.contact.details.map((detail, idx) => (
+                          <li key={idx}>
+                            <img src={detail.icon} alt="icon" />
+                            <a href={detail.link}>{detail.text}</a>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="contactBtn">
+                        {item.contact.buttons.map((btn, idx) => (
+                          <a
+                            key={idx}
+                            href={btn.link}
+                            className={btn.className}
+                          >
+                            {btn.icon && <img src={btn.icon} alt={btn.label} />}
+                            {btn.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               )}
 
               {item.name === "Contact" && (
                 <div className="contact-panel">
-                 <div className="contact-heading">
-                   <h4>{item.heading}</h4>
-                 </div>
-                 
-                  <img
-                    src={item.bgImg}
-                    alt="contact"
-                    className="contact-banner"
-                  />
+                  <div className="contact-heading">
+                    <h4>{item.heading}</h4>
+                  </div>
+
+                  <div className="contactBanner">
+                    <img
+                      src={item.bgImg}
+                      alt="contact"
+                      className="contact-banner"
+                    />
+                  </div>
                   <ul className="contact-info">
                     {item.Menu.map((sub, idx) => (
-                      
                       <li key={idx}>
                         <div className="icon-img">
-                         <img src={sub.contactIcon} alt={sub.name} />
+                          <img src={sub.contactIcon} alt={sub.name} />
                         </div>
                         <a href={sub.url}>{sub.name}</a>
                       </li>
@@ -1843,21 +1959,14 @@ export default function Header() {
           width:100%
          }
          .close-btn {margin:3rem 8rem}
-     
-
-         @media (max-width: 1599px){
-          .site-header>.nav-container{
-           padding-inline: 6.8rem;}
-         }
 
          @media (max-width: 1599px){
             .mega-right {
-          padding-right: 6.8rem;
+            padding-right: 6.8rem;
         }
+         .site-header>.nav-container{
+           padding-inline: 6.8rem;}
          }
-
-
-   
 
         @media (max-width: 1100px) {
           .mega-dropdown {
@@ -1874,34 +1983,49 @@ export default function Header() {
         }
 
 
-
-
-
-
-
-
-
-
  {/* mob menu css start */}
     .panel-wrapper {position: fixed;top: 0;left: 0;width: 100%;height: 100%; z-index: 900;pointer-events: none;}
     .panel-wrapper .panel {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #f0f0f0;transform: translateY(100%);transition: transform 0.3s ease-in-out;overflow-y: auto; pointer-events: auto;display: flex;flex-direction: column;box-sizing: border-box;}
     .panel-wrapper .panel.open {transform: translateY(0);}
+    .panel ul li {letter-spacing: -0.18px;font: var(--font-18);list-style: none;border-bottom: 1px dashed rgba(195, 195, 195, 0.67);padding-block: 2rem;}
+    .panel ul li:last-child{border:none;}
+    .panel ul li a {letter-spacing: -0.18px;font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.5;font-size:18px}
     .courses-panel ul,
     .admissions-panel ul,
     .menu-panel ul,
-    .contact-panel ul {list-style: none;padding: 0;margin: 0;padding: 6rem 4rem 12rem;}
-    .admissions-heading h4 {}
+    .contact-panel ul {list-style: none;padding: 0;margin: 0;padding: 5rem 4rem 12rem;}
+    .courses-panel {position:relative}
+    .courses-panel::before{content: "";background: var(--color-e8);z-index: -1;width: 100%;height: 32%;position: absolute;top: 0;left: 0;}
+    .course-heading {padding: 5rem 4rem 2rem;}
+    .mobCourses ul  { display: grid;grid-template-columns: repeat(2, 1fr);padding-block:0 12rem;gap:1.5rem}
+    .mobCourses ul li {display:block;border:none;}
+     .courses-menu figure {position:relative}
+    .coursesImg {position: relative;}
+     .coursesImg::before {content: "";position: absolute;left: 0;width: 100%; height: 100%;background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;opacity: 0.83;height:166px;bottom:0}
+     .courses-menu figcaption { position: absolute;bottom: 2rem;left: 0;          width: 100%;padding: 1.2rem;display: flex;align-items: center;justify-content: space-between; gap: 0.5rem;color: #fff; }
+     .courses-menu figcaption h4{font: var(--font-21);font-weight:700;font-family: var(--font-Condensed);letter-spacing: -0.6px;color:#fff;}
+    .course-heading h4{text-align:center;font: var(--font-45);letter-spacing: -1.92px;text-transform: uppercase;margin-bottom: 1.7rem;font-weight: 700;line-height: 1;font-family: var(--font-Condensed);max-width: 40%;color:var(--color-white);margin:0 auto}
+     .admissions-panel ul {padding-bottom:0;background:#E6FFFF}
+     .courses-menu li {display:flex;}
+     .admissions-contact {background:#E6FFFF;padding:2rem 4rem 16rem}
+    .admissions-heading h4 {font: var(--font-45);letter-spacing: -1.92px;text-transform: uppercase;margin-bottom: 1.7rem;font-weight: 700;line-height: 1;font-family: var(--font-Condensed);max-width: 24%;}
+    .admissions-contact ul {padding:0rem;background:#e6ffff;}
+    .admissions-contact ul li {display:flex;align-items:center;gap:0.7rem}
+    .admissions-contact ul li>a {color: #018ce8;letter-spacing: -.21px;font: var(--font-21);font-weight: 600;}
+    .admissions-contact h4 {font-size: 14px;letter-spacing: 0px;font-family: var(--font-Condensed);color:var(--color-ai);font-weight:700;line-height: 1.5;}
     .menu-top {background:var(--color-e8)}
-    .panel ul li {letter-spacing: -0.18px;font: var(--font-18);list-style: none;border-bottom: 1px dashed rgba(195, 195, 195, 0.67);padding-block: 2rem;}
-    .panel ul li:last-child{border:none;}
-    .panel ul li a {letter-spacing: -0.18px;font: var(--font-18);color: var(--color-white);font-family: var(--font-Roboto);line-height: 1.5;}
+    .menu-panel .menu-top {padding-bottom:0}
+    .contactBtn  {margin-top:2rem;display:flex;gap:1.2rem}
+    .contactBtn .apply {font-size:14px;font-weight: 600;color:#000; letter-spacing: 0.56px;background:#FFC100;padding:1.2rem 2.4rem 1.1rem;font-family: var(--font-Condensed)}
+    .contactBtn .dwnload {font-size:14px;font-weight: 600;color:#000; letter-spacing: 0.56px;padding:0.8rem 1rem 0.8rem;font-family: var(--font-Condensed);border:solid 1px #ddd;display:flex;align-items:center;gap:0.8rem}
     .contact-panel {background:#E6FFFF;z-index:1}
     .contact-panel .contact-info {padding-top:0;margin-top:-5rem}
     .contact-panel .contact-info li {text-align:center;max-width:50%;margin:0 auto;}
-    .contact-panel .contact-info li {color: var(--color-black);text-align:center}
+    .contact-panel .contact-info li a {color: var(--color-black);text-align:center}
     .contact-panel .contact-info li:nth-child(2) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
     .contact-panel .contact-info li:nth-child(3) a{color:#018CE8;letter-spacing: -0.21px;;font: var(--font-21);font-weight: 600;}
     .panel .menu-bottom li>a{color:#000;}
+    .admissions-menu li>a{color:#000!important}
     .panel-wrapper .panel ul:nth-of-type(2) {background: #e6ffff;padding-top: 0;height:100%}
     .panel-wrapper .panel ul:nth-of-type(2) li {color: #000;}
     .contact-heading {padding-block:5rem 3rem;text-align: center;}
@@ -1912,6 +2036,7 @@ export default function Header() {
     .panel-banner h3 {margin: 0.2rem 0;}
     .contact-panel {position: relative; }
     .contact-panel img {display: block;width: 100%;border-radius: 0.5rem;width:335px;height:212px;margin:0 auto;}
+    .contactBanner img {width:100%;height:auto;padding-inline:2rem}
     .contact-panel::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 21%;background: var(--color-e8);z-index:-1;}
     /* Mobile Bottom Menu */
     .mobile-bottom-menu {position: fixed;bottom: 0;left: 0;width: 100%;background: var(--color-4e);z-index: 1000;}
