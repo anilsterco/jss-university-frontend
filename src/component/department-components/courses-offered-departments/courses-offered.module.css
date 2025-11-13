@@ -1,7 +1,7 @@
 /* Container */
-.container {
-  background: linear-gradient(#e9ecef 50%, #f5f5f5 50%);
-  padding: 4rem 4rem 8rem 4rem;
+.course_dep {
+  background: linear-gradient(#e9ecef 55%, #f5f5f5 55%);
+  padding:11rem 0rem;
 }
 
 /* Header Section */
@@ -11,17 +11,20 @@
 }
 
 .subtitle {
-  color: #16344e;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font: var(--font-18);
-  font-weight: bold;
+ text-transform: uppercase;
+    font: var(--font-18);
+    color: #16344e;
+    font-family: var(--font-Condensed);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .title {
   margin-bottom: 0;
-  font: var(--font-40);
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  letter-spacing: -2.88px;
 }
 
 .titleNormal {
@@ -70,15 +73,16 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap:2.5rem;
 }
 
 .admissionTitle {
   color: #ffc100;
   font: var(--font-21);
-  padding-right: 1.5rem;
-  border-right: 1px solid #625c5c;
-  font-weight: 500;
+  padding-right: 2.5rem;
+  border-right: 1px solid #ffffff2a;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
 }
 
 .admissionLinks {
@@ -108,10 +112,10 @@
 }
 .admission_bar {
   position: absolute;
-  width: 88%;
+  width: 80%;
   left: 10%;
   background: #16344e;
-  padding: 1rem 4rem;
+  padding: 0.7rem 0.7rem 0.7rem 4rem;
   bottom: 10%;
 }
 
@@ -120,14 +124,13 @@
   padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font:var(--font-14);
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font: var(--font-14);
-  font-weight: 500;
+  font: var(--font-14);  
+  font-family: var(--font-Condensed);
+  font-weight: 700;
 }
 
 .downloadBtn {
@@ -158,6 +161,7 @@
   /* flex-direction: column; */
   gap: 2rem;
   flex-wrap: wrap;
+  padding-top: 1rem;
 }
 
 .courseCard {
@@ -175,16 +179,16 @@
 }
 
 .courseCardContent {
-  padding: 4rem 3rem;
+  padding:2rem 3rem;
 }
 
 .courseCategory {
   color: #b08f29;
-  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   display: inline-block;
   font: var(--font-18);
+  font-family: var(--font-Condensed);
   font-weight: 600;
 }
 
@@ -192,15 +196,19 @@
   color: #2c3e50;
   margin-bottom: 1.5rem;
   font: var(--font-21);
+  letter-spacing: -0.21px;  
+  max-width: 75%;
+  min-height: 5.5rem;  
 }
 
 .courseLink {
-  color: #2c3e50;
+  color: #272727;
   align-items: center;
   gap: 0.5rem;
   transition: color 0.3s;
   display: inline-flex;
   font: var(--font-13);
+  font-weight: 700;
 }
 
 .courseLink:hover {

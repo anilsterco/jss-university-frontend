@@ -2,7 +2,7 @@
 
 .aboutDepartment {
   background-color: #f8f9fa;
-  padding: 3rem 0;
+  padding: 3rem 0 6rem;
 }
 
 .header {
@@ -12,18 +12,20 @@
 }
 
 .subtitle {
-  font-size: 14px;
-  letter-spacing: 1px;
+  font: var(--font-18);
   color: #16344e;
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 600;
+  text-transform: uppercase;  
+  font-family: var(--font-Condensed);
+  font-weight: 700;
 }
 
 .title {
-  font-size: 48px;
-  font-weight: bold;
+  font: var(--font-48);
   margin-bottom: 1.5rem;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  letter-spacing: -2.3px;
 }
 
 .description {
@@ -32,6 +34,7 @@
   font-weight: normal;
   margin: 0 auto;
   line-height: 1.6;
+  padding-inline: 5rem;
 }
 
 .statsSection {
@@ -39,29 +42,37 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+  padding-inline: 10rem;
 }
 
 .statCard {
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 30%;
+  border-radius: 8px!important;
+  background-color: transparent!important;
 }
 
 .statCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-.statCard.onecard {
-  background-color: #16344e;
-  color: #fff;
+  background-color: #16344e!important;
 }
 
-.statCard.twocard {
+.statCard:hover h2, .statCard:hover p{
+  color: var(--color-white);
+}
+/* .statCard.onecard {
+  background-color: #16344e;
+  color: #fff;
+} */
+
+/* .statCard.twocard {
   background-color: unset;
   border: 1px solid #263868;
-}
+} */
+
 /* .statCard.twocard img,
 .statCard.onecard img {
   display: none;
@@ -74,7 +85,6 @@
 .statCardBody {
   text-align: center;
   padding: 3rem 1.5rem;
-  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,9 +92,12 @@
 }
 
 .statValue {
-  font-size: 78px;
-  font-weight: bold;
+  font-size: 78px;  
   margin-bottom: 1rem;
+  letter-spacing: -3.9px;
+  color: #16344E;
+  font-family: "Roboto", sans-serif;
+  font-weight:500;
 }
 
 .statLabel {
@@ -119,6 +132,7 @@
 .nbaLabel {
   font-size: 16px;
   margin: 0;
+  color: #16344E;
 }
 
 .contentSection {
@@ -156,23 +170,25 @@
 .visionCard {
   background: white;
   padding-left: 3rem;
-  padding: 2rem 2rem 2rem 5rem;
+  padding: 3rem 2rem 3rem 5rem;
   margin-bottom: 2rem;
   border-radius: 4px;
+  margin-top:2rem;
 }
 
 .visionTitle {
   color: #b08f29;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .visionDescription {
   color: #16344e;
-  width: 75%;
+  width: 82%;
   margin: 0;
   font: var(--font-21);
+  letter-spacing: -0.21px;
 }
 
 .missionSection {
@@ -194,7 +210,7 @@
 }
 
 .missionItem {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   align-items: flex-start;
 }
