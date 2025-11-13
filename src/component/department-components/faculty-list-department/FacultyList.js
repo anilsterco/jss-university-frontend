@@ -59,8 +59,11 @@ export default function FacultyList({ data }) {
   const facultyData = data ? data : dummyFacultyData;
   console.log(facultyData, "facultyData");
   return (
-    <div className={styles.container}>
-      <div className="container-fluid">
+
+  
+      
+    <div className={styles.dep_faculty}>
+      <div className="container">
         {/* Header Section */}
         <div className={styles.headerSection}>
           <p className={styles.subtitle}>{facultyData.subtitle}</p>
@@ -90,7 +93,7 @@ export default function FacultyList({ data }) {
             }}
             pagination={false}
             loop={true}
-            spaceBetween={25}
+            spaceBetween={15}
             slidesPerView={4}
             className={styles.slider}
           >
