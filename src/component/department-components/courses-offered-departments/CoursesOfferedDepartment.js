@@ -72,18 +72,20 @@ const CoursesOffered = ({ data }) => {
               <div className={styles.admissionContent}>
                 <span className={styles.admissionTitle}>Admission 2025-26</span>
                 <div className={styles.admissionLinks}>
-                  {coursesData.admission_bar.links.map((link, index) => (
-                    <div key={index}>
-                      <Link href={link.url} key={index}>
-                        <span className={styles.admissionLink}>
-                          {link.text}
-                        </span>
-                        {index < coursesData.admission_bar.links.length - 1 && (
-                          <span className={styles.separator}>•</span>
-                        )}
-                      </Link>
-                    </div>
-                  ))}
+                  {coursesData.admission_bar.links &&
+                    coursesData.admission_bar.links.map((link, index) => (
+                      <div key={index}>
+                        <Link href={link.url || "#"} key={index}>
+                          <span className={styles.admissionLink}>
+                            {link.text}
+                          </span>
+                          {index <
+                            coursesData.admission_bar.links.length - 1 && (
+                            <span className={styles.separator}>•</span>
+                          )}
+                        </Link>
+                      </div>
+                    ))}
                 </div>
                 <div className={styles.admissionButtons}>
                   <Link
@@ -94,7 +96,7 @@ const CoursesOffered = ({ data }) => {
                     DOWNLOAD BROCHURE
                   </Link>
                   <Link
-                    href={coursesData.admission_bar.apply_button}
+                    href={coursesData.admission_bar.apply_button || "#"}
                     className={styles.applyBtn}
                   >
                     APPLY NOW
