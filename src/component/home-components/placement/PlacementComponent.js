@@ -16,11 +16,11 @@ const dummyPlacementsData = {
     '<span class="dark-blue-text ">FROM</span> <span class="blue-text">CAMPUS</span> <span class="dark-blue-text ">TO</span> <span class="blue-text">CORPORATE</span>',
   subtitle: "Placement",
   facts_and_figures: [
-    { figure: "5000+", title: "STUDENTS HIRED" },
-    { figure: "22.5", title: "LPA MAX" },
-    { figure: "2000+", title: "RECRUITERS" },
+    // { figure: "5000+", title: "STUDENTS HIRED" },
+    // { figure: "22.5", title: "LPA MAX" },
+    // { figure: "2000+", title: "RECRUITERS" },
   ],
-  testimonials: [
+  testimonials:[
     {
       image: "/images/home-page/testimonial-placeholder.png",
       short_description:
@@ -69,191 +69,189 @@ export default function PlacementsSection({ data }) {
   return (
     <>
       <section className={` ${styles.thirdSection}`}>
-        <div className="container max-content-lg pe-lg-0 me-lg-0">
-          {/* Section Header */}
-          <div className={` ${styles.sectionHeader}`}>
-            <p className="fw-bold text-uppercase dark-blue-text">
-              {placementsData.subtitle && placementsData.subtitle.toUpperCase()}
-            </p>
-            <h2
-              className={`fw-bold `}
-              style={{ width: "fit-content" }}
-              dangerouslySetInnerHTML={{ __html: placementsData.title }}
-            ></h2>
-          </div>
+       <div className="container max-content-lg pe-lg-0 me-lg-0">
+         {/* Section Header */}
+        <div className={` ${styles.sectionHeader}`}>
+          <p className="fw-bold text-uppercase dark-blue-text">
+            {placementsData.subtitle.toUpperCase()}
+          </p>
+          <h2
+            className={`fw-bold `}
+            style={{ width: "fit-content" }}
+            dangerouslySetInnerHTML={{ __html: placementsData.title }}
+          ></h2>
+        </div>
 
-          <div className="row w-100 m-auto">
-            {/* Left Content */}
-            <div className={`col-lg-6 ps-0 ${styles.leftContent}`}>
-              {/* Stats Row */}
-              <div className={`row w-100 placement_row ${styles.statsRow}`}>
-                {placementsData.facts_and_figures &&
-                  placementsData.facts_and_figures.map((stat, i) => (
-                    <div key={i} className="col-md-4 text-center border ">
-                      <div className="fig-count">
-                        <h3 className={`fw-bold ${styles.statsNumber}`}>
-                          {stat.figure}
-                        </h3>
-                        <p className={`mb-0 ${styles.statsLabel}`}>
-                          {stat.title}
-                        </p>
+        <div className="row w-100 m-auto">
+          {/* Left Content */}
+          <div className={`col-lg-6 ps-0 ${styles.leftContent}`}>
+            {/* Stats Row */}
+            <div className={`row w-100 placement_row ${styles.statsRow}`}>
+              {placementsData.facts_and_figures &&
+                placementsData.facts_and_figures.map((stat, i) => (
+                  <div key={i} className="col-md-4 text-center border ">
+                   <div className="fig-count">
+                      <h3 className={`${styles.statsNumber}`}>
+                      {stat.figure}
+                    </h3>
+                    <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
+                   </div>
+                  </div>
+                ))}
+            </div>
+
+            {/* Testimonial Slider */}
+            <Swiper
+              modules={[Navigation, EffectFade]}
+              effect="fade"
+              fadeEffect={{ crossFade: true }}
+              navigation={{
+                nextEl: ".testimonial-next",
+                prevEl: ".testimonial-prev",
+              }}
+              spaceBetween={30}
+              slidesPerView={1}
+              style={{ padding: "30px 30px" }}
+              className={`${styles.testimonialSwiper} testimonial-slider`}
+            >
+              <div className={styles.blueBg}></div>
+              {placementsData.testimonials &&
+                placementsData.testimonials.map((t, i) => (
+                  <SwiperSlide key={i}>
+                    <div
+                      className={`${styles.eachSlide} d-flex align-items-top`}
+                    >
+                      {/* Testimonial Image */}
+                      <div className={` ${styles.testimonialImageContainer}`}>
+                        <FaQuoteLeft
+                          className={`mb-3 ${styles.mobileQuoteIcon}`}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <Image
+                          src={t.image}
+                          alt={`${t.name} image`}
+                          width={140}
+                          height={160}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            position: "relative",
+                          }}
+                          priority
+                          className={`top-0 start-0 rounded ${styles.testimonialImage}`}
+                        />
+                      </div>
+                      {/* Testimonial Text */}
+                      <div>
+                        <FaQuoteLeft
+                          className={`mb-3 ${styles.desktopQuoteIcon}`}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <p className="">{t.short_description}”</p>
+                        <h6 className="small fw-bold">{t.name}</h6>
+                        <small className="small-text">
+                          {t.designation}, {t.company}
+                        </small>
+                        <div
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
+                        >
+                          <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronLeft size={8} />
+                          </button>
+                          <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronRight size={8} />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  ))}
-              </div>
-
-              {/* Testimonial Slider */}
-              <Swiper
-                modules={[Navigation, EffectFade]}
-                effect="fade"
-                fadeEffect={{ crossFade: true }}
-                navigation={{
-                  nextEl: ".testimonial-next",
-                  prevEl: ".testimonial-prev",
-                }}
-                spaceBetween={30}
-                slidesPerView={1}
-                style={{ padding: "30px 30px" }}
-                className={`${styles.testimonialSwiper} testimonial-slider`}
-              >
-                <div className={styles.blueBg}></div>
-                {placementsData.testimonials &&
-                  placementsData.testimonials.map((t, i) => (
-                    <SwiperSlide key={i}>
-                      <div
-                        className={`${styles.eachSlide} d-flex align-items-top`}
-                      >
-                        {/* Testimonial Image */}
-                        <div className={` ${styles.testimonialImageContainer}`}>
-                          <FaQuoteLeft
-                            className={`mb-3 ${styles.mobileQuoteIcon}`}
-                            color="#b08f29"
-                            fontSize={30}
-                          />
-                          <Image
-                            src={t.image}
-                            alt={`${t.name} image`}
-                            width={140}
-                            height={160}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              position: "relative",
-                            }}
-                            priority
-                            className={`top-0 start-0 rounded ${styles.testimonialImage}`}
-                          />
-                        </div>
-                        {/* Testimonial Text */}
-                        <div>
-                          <FaQuoteLeft
-                            className={`mb-3 ${styles.desktopQuoteIcon}`}
-                            color="#b08f29"
-                            fontSize={30}
-                          />
-                          <p className="">{t.short_description}”</p>
-                          <h6 className="small fw-bold">{t.name}</h6>
-                          <small className="small-text">
-                            {t.designation}, {t.company}
-                          </small>
-                          <div
-                            className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
-                          >
-                            <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                              <FaChevronLeft size={8} />
-                            </button>
-                            <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                              <FaChevronRight size={8} />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-              </Swiper>
-            </div>
-
-            {/* Right Wall of Fame */}
-            <div
-              className={`col-lg-6 d-flex justify-content-end px-0 ${styles.rightContent}`}
-            >
-              <div
-                className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
-              >
-                <Image
-                  src={placementsData.hall_of_fame.image}
-                  alt="Wall of Fame"
-                  width={400}
-                  height={700}
-                  style={{ width: "100%", height: "100%" }}
-                />
-                <div
-                  className={`position-absolute text-white fw-bold ${styles.wallOfFameText}`}
-                  dangerouslySetInnerHTML={{
-                    __html: placementsData.hall_of_fame.heading,
-                  }}
-                />
-                {placementsData.hall_of_fame.url && (
-                  <Link
-                    href={placementsData.hall_of_fame.url}
-                    className={`position-absolute`}
-                    style={{ bottom: "4%", left: "6%" }}
-                  >
-                    <LuCircleArrowRight
-                      size={22}
-                      color="#fff"
-                      strokeWidth={1}
-                    />
-                  </Link>
-                )}
-              </div>
-            </div>
+                  </SwiperSlide>
+                ))}
+            </Swiper>
           </div>
 
-          {/* Recruiters Row */}
-          <div className={`pt-5 ${styles.recruiterSection}`}>
-            <div className="row recruiter-logo w-100">
-              <div className="col-lg-10 max-auto">
-                <p className="small">Our Recruiters</p>
-                <div className="d-flex flex-wrap gap-4 align-items-center">
-                  <Swiper
-                    modules={[Navigation, Autoplay]}
-                    navigation={false}
-                    loop={true}
-                    spaceBetween={60}
-                    slidesPerView={7}
-                    className="recruiters-slider"
-                    breakpoints={{
-                      0: { slidesPerView: 1 },
-                      576: { slidesPerView: 2 },
-                      992: { slidesPerView: 3 },
-                      1040: { slidesPerView: 7 },
-                    }}
-                  >
-                    {placementsData.recruiters &&
-                      placementsData.recruiters.map((rec, i) => (
-                        <SwiperSlide key={i}>
-                          <Image
-                            key={i}
-                            src={rec.image}
-                            alt={rec.title}
-                            width={150}
-                            height={80}
-                            style={{
-                              width: "100%",
-                              height: "75px",
-                              objectFit: "cover",
-                            }}
-                            className="img-fluid"
-                          />
-                        </SwiperSlide>
-                      ))}
-                  </Swiper>
-                </div>
-              </div>
+          {/* Right Wall of Fame */}
+          <div
+            className={`col-lg-6 d-flex justify-content-end px-0 ${styles.rightContent}`}
+          >
+            <div
+              className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
+            >
+              <Image
+                src={placementsData.hall_of_fame.image}
+                alt="Wall of Fame"
+                width={400}
+                height={700}
+                style={{ width: "100%", height: "100%" }}
+              />
+              <div
+                className={`position-absolute text-white fw-bold ${styles.wallOfFameText}`}
+                dangerouslySetInnerHTML={{
+                  __html: placementsData.hall_of_fame.heading,
+                }}
+              />
+              {placementsData.hall_of_fame.url && (
+                <Link
+                  href={placementsData.hall_of_fame.url}
+                  className={`position-absolute`}
+                  style={{ bottom: "4%", left: "6%" }}
+                >
+                  <LuCircleArrowRight size={22} color="#fff" strokeWidth={1} />
+                </Link>
+              )}
             </div>
           </div>
         </div>
+
+        {/* Recruiters Row */}
+        <div className={`pt-5 ${styles.recruiterSection}`}>
+          <div className="row recruiter-logo w-100">
+            <div className="col-lg-10 max-auto">
+            <p
+            className="small">
+            Our Recruiters
+          </p>
+          <div className="d-flex flex-wrap gap-4 align-items-center">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              navigation={false}
+              loop={true}
+              spaceBetween={60}
+              slidesPerView={7}
+              className="recruiters-slider"
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                576: { slidesPerView: 2 },
+                992: { slidesPerView: 3 },
+                1040: { slidesPerView: 7 },
+              }}
+            >
+              {placementsData.recruiters &&
+                placementsData.recruiters.map((rec, i) => (
+                  <SwiperSlide key={i}>
+                    <Image
+                      key={i}
+                      src={rec.image}
+                      alt={rec.title}
+                      width={150}
+                      height={80}
+                      style={{
+                        width: "100%",
+                        height: "75px",
+                        objectFit: "cover",
+                      }}
+                      className="img-fluid"
+                    />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          </div>
+            </div>
+          </div>
+        </div>
+
+       </div>
       </section>
     </>
   );
