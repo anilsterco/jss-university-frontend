@@ -62,7 +62,6 @@ const dummyCoursesData = {
 
 export default function CoursesOffered({ data }) {
   const coursesData = data ? data : dummyCoursesData;
-  console.log(data, "data");
   const ProgramsCount = () => (
     <div className={styles.programsCountWrapper}>
       <h1 className={`display-4 programs-count ${styles.programsCount}`}>
