@@ -48,9 +48,7 @@ export default function Header() {
     }
     fetchHeaderData();
   }, []);
-  if (admissionData) {
-    console.log(admissionData, "Header data loaded:");
-  }
+
   const [activePanel, setActivePanel] = useState(null);
   const togglePanel = (name) => {
     setActivePanel(activePanel === name ? null : name);
