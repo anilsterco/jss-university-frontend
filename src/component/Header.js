@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
 
-const BASE_URL = "https://project-demo.in/jss/api/header";
+const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
+const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
 
 export default function Header() {
   const pathname = usePathname();
@@ -23,34 +24,40 @@ export default function Header() {
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
+  const [admissionData, setAdmissionData] = useState(null);
 
   useEffect(() => {
     async function fetchHeaderData() {
       try {
-        const res = await fetch(`${BASE_URL}`);
+        const [res1, res2] = await Promise.all([
+          fetch(`${NAV_BASE_URL}`),
+          fetch(`${ADMISSION_BASE_URL}`),
+        ]);
 
-        if (!res.ok) {
-          throw new Error(`Failed to fetch: ${res.status}`);
+        if (!res1.ok || !res2.ok) {
+          throw new Error("One or more API calls failed");
         }
 
-        const data = await res.json();
-        setHeaderData(data.data);
+        const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
+
+        setHeaderData(data1.data);
+        setAdmissionData(data2.data);
       } catch (err) {
         console.error("❌ API Error:", err);
       }
     }
-
     fetchHeaderData();
   }, []);
-
-  console.log(headerData, "headerData");
-
+  if (admissionData) {
+    console.log(admissionData, "Header data loaded:");
+  }
   const [activePanel, setActivePanel] = useState(null);
   const togglePanel = (name) => {
     setActivePanel(activePanel === name ? null : name);
   };
 
   const navLinks = headerData || [];
+  const admissionsData = admissionData || [];
 
   // const navLinks = [
   //   {
@@ -253,6 +260,38 @@ export default function Header() {
   //   },
   // ];
 
+  // const admissionsData = {
+  //   left: {
+  //     subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
+  //     title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
+  //     desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
+  //     querytext: "Any Query ? please mail us.",
+  //     email: "principal@jssaten.ac.in",
+  //     phone: "+91-9311830458",
+  //     ctas: [
+  //       { text: "APPLY NOW", url: "/apply-now", type: "primary" },
+  //       { text: "DOWNLOAD SYLLABUS", url: "#", type: "secondary" },
+  //     ],
+  //   },
+  //   middle: {
+  //     links: [
+  //       { title: "Scholarship", url: "/" },
+  //       { title: "Course, Eligibility & Fee Structure", url: "/" },
+  //       { title: "Admission Document & Undertaking", url: "/" },
+  //       { title: "Admissions Office Contacts", url: "/" },
+  //       { title: "Hostel Details", url: "/" },
+  //     ],
+  //     stats: {
+  //       text: "1,200+ ACROSS UG & PG PROGRAMS",
+  //       subtext: "Total student intake (annual)",
+  //       btnText: { text: "VIEW PROGRAMMES", url: "/programs" },
+  //     },
+  //   },
+  //   right: {
+  //     img: "/images/header/admission-banner.png",
+  //     alt: "Admissions Image",
+  //   },
+  // };
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -331,39 +370,6 @@ export default function Header() {
       },
     },
   ];
-
-  const admissionsData = {
-    left: {
-      subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
-      title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
-      desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
-      querytext: "Any Query ? please mail us.",
-      email: "principal@jssaten.ac.in",
-      phone: "+91-9311830458",
-      ctas: [
-        { text: "APPLY NOW", href: "#", type: "primary" },
-        { text: "DOWNLOAD SYLLABUS", href: "#", type: "secondary" },
-      ],
-    },
-    middle: {
-      links: [
-        "Scholarship",
-        "Course, Eligibility & Fee Structure",
-        "Admission Document & Undertaking",
-        "Admissions Office Contacts",
-        "Hostel Details",
-      ],
-      stats: {
-        text: "1,200+ ACROSS UG & PG PROGRAMS",
-        subtext: "Total student intake (annual)",
-        btnText: "VIEW PROGRAMMES",
-      },
-    },
-    right: {
-      img: "/images/header/admission-banner.png",
-      alt: "Admissions Image",
-    },
-  };
   const engineeringData = {
     schools: [
       {
@@ -881,7 +887,8 @@ export default function Header() {
                       {admissionsData.left.ctas.map((cta, idx) => (
                         <a
                           key={idx}
-                          href={cta.href}
+                          target="_blank"
+                          href={cta.url}
                           className={`cta applynow ${cta.type}`}
                         >
                           {cta.text}
@@ -894,21 +901,28 @@ export default function Header() {
                     <ul>
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
-                          {link}
-                          <img
-                            src="/images/header/listicon.svg"
-                            className="img-fluid"
-                            alt="mail"
-                          />
+                          <Link href={link.url} style={{ color: "inherit" }}>
+                            {link.title}
+                            <img
+                              src="/images/header/listicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                          </Link>
                         </li>
                       ))}
                     </ul>
                     <div className="ad-stats">
                       <h3>{admissionsData.middle.stats.text}</h3>
                       <p>{admissionsData.middle.stats.subtext}</p>
-                      <button className="stats-btn">
-                        {admissionsData.middle.stats.btnText}
-                      </button>
+                      <Link
+                        href={admissionsData.middle.stats.btnText.url}
+                        style={{ color: "inherit" }}
+                      >
+                        <button className="stats-btn">
+                          {admissionsData.middle.stats.btnText.text}
+                        </button>
+                      </Link>
                     </div>
                   </div>
 
