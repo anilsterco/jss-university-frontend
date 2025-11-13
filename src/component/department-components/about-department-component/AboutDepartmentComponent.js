@@ -86,6 +86,7 @@ export default function AboutDepartmentComponent({ data }) {
                   />
                 )}
                 <h2 className={styles.statValue}>{stat.value}</h2>
+
                 <p className={styles.nbaLabel}>{stat.label}</p>
               </div>
             </div>
