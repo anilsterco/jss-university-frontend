@@ -174,6 +174,7 @@
   margin-bottom: 2rem;
   border-radius: 4px;
   margin-top:2rem;
+  width: 87%;
 }
 
 .visionTitle {
@@ -185,7 +186,7 @@
 
 .visionDescription {
   color: #16344e;
-  width: 82%;
+  width: 100%;
   margin: 0;
   font: var(--font-21);
   letter-spacing: -0.21px;
