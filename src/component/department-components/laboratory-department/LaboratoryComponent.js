@@ -53,8 +53,8 @@ export default function Laboratories() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className="container-fluid">
+    <div className={styles.dep_cutting_edge}>
+      <div className="container max-content-lg pe-lg-0 me-lg-0">
         {/* Header Section */}
         <div className={styles.headerSection}>
           <p className={styles.subtitle}>{laboratoriesData.subtitle}</p>

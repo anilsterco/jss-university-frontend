@@ -41,7 +41,8 @@ const CoursesOffered = ({ data }) => {
   const coursesData = data ? data : dummyCoursesData;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.course_dep}>
+    <div className="container-fluid">
       {/* Header Section */}
       <div className={styles.headerSection}>
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
@@ -108,7 +109,7 @@ const CoursesOffered = ({ data }) => {
         </div>
 
         {/* Courses Cards */}
-        <div className="col-lg-7">
+        <div className="col-lg-6">
           <div className={styles.coursesGrid}>
             {coursesData.courses &&
               coursesData.courses.map((course) => (
@@ -139,6 +140,7 @@ const CoursesOffered = ({ data }) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
