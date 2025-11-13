@@ -32,7 +32,6 @@ export default function EventsSection() {
     queryFn: () => schoolListAPI.getSchoolList(),
     staleTime: 10 * 60 * 1000, // Cache longer since schools don't change often
   });
-  console.log(schoolsList, "schoolsList");
   // Use React Query with dynamic query key based on filters including page
   const { data, isLoading, error } = useQuery({
     queryKey: ["news-events", filters.month, filters.school, filters.page],
@@ -176,15 +175,17 @@ export default function EventsSection() {
             {upCommingEvents.map((event) => (
               <SwiperSlide key={event.id}>
                 <Link href={"#"}>
-                  <Image
-                    src={event.banner_image}
-                    alt={event.title}
-                    layout="responsive"
-                    width={1200}
-                    height={400}
-                    style={{ width: "100%", height: "auto" }}
-                    className={styles.bannerImage}
-                  />
+                  {event.banner_image && (
+                    <Image
+                      src={event.banner_image}
+                      alt={event.title}
+                      layout="responsive"
+                      width={1200}
+                      height={400}
+                      style={{ width: "100%", height: "auto" }}
+                      className={styles.bannerImage}
+                    />
+                  )}
                 </Link>
                 <div className={styles.bannerTextBox}>
                   <p className={styles.upcomingTag}>
