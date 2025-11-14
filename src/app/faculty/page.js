@@ -8,6 +8,7 @@ import "@/styles/custom.style.css";
 import Link from "next/link";
 
 const BASE_URL = "http://sd7:8080/jss/api";
+const SCHOOLS_API_URL = "https://project-demo.in/jss/api/schools/all";
 
 export default function FacultyPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,18 +16,45 @@ export default function FacultyPage() {
   const [selectedType, setSelectedType] = useState("");
   const [visibleCount, setVisibleCount] = useState(6);
   const [facultyListData, setFacultyListData] = useState([]);
+  const [schoolsList, setSchoolsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [apiLoading, setApiLoading] = useState(false);
+  const [schoolsLoading, setSchoolsLoading] = useState(true);
 
-  // Fetch data with filters
-  const fetchFacultyData = async (search = "", school = "", type = "") => {
+  // Fetch schools data
+  const fetchSchoolsData = async () => {
+    try {
+      setSchoolsLoading(true);
+      const res = await fetch(SCHOOLS_API_URL);
+
+      if (!res.ok) {
+        console.error("Schools API Error:", res.status);
+        throw new Error(`Failed to fetch schools data: ${res.status}`);
+      }
+
+      const data = await res.json();
+      console.log("Schools API Response:", data);
+
+      // Extract schools array from response
+      const schoolsData = data.data || data;
+      setSchoolsList(schoolsData || []);
+    } catch (err) {
+      console.error("Error fetching schools:", err);
+      setSchoolsList([]);
+    } finally {
+      setSchoolsLoading(false);
+    }
+  };
+
+  // Fetch faculty data with filters
+  const fetchFacultyData = async (search = "", schoolId = "", type = "") => {
     try {
       setApiLoading(true);
 
       // Build query parameters
       const params = new URLSearchParams();
       if (search) params.append("search", search);
-      if (school) params.append("school", school);
+      if (schoolId) params.append("school", schoolId); // Use school_id instead of school name
       if (type) params.append("type", type);
 
       const queryString = params.toString();
@@ -37,12 +65,12 @@ export default function FacultyPage() {
       const res = await fetch(url);
 
       if (!res.ok) {
-        console.error("API Error:", res.status);
+        console.error("Faculty API Error:", res.status);
         throw new Error(`Failed to fetch faculty data: ${res.status}`);
       }
 
       const data = await res.json();
-      console.log("API Response:", data);
+      console.log("Faculty API Response:", data);
 
       // Check the actual structure of your API response
       const facultyData =
@@ -59,6 +87,7 @@ export default function FacultyPage() {
 
   // Initial data load
   useEffect(() => {
+    fetchSchoolsData();
     fetchFacultyData();
   }, []);
 
@@ -72,12 +101,7 @@ export default function FacultyPage() {
     return () => clearTimeout(timeoutId);
   }, [searchTerm, selectedSchool, selectedType]);
 
-  // Extract unique schools and types for dropdowns from current data
-  const schools = [
-    ...new Set(
-      facultyListData.map((faculty) => faculty.school).filter(Boolean)
-    ),
-  ];
+  // Extract unique types for dropdown from current faculty data
   const types = [
     ...new Set(facultyListData.map((faculty) => faculty.type).filter(Boolean)),
   ];
@@ -121,14 +145,20 @@ export default function FacultyPage() {
                     className="form-select"
                     value={selectedSchool}
                     onChange={(e) => setSelectedSchool(e.target.value)}
+                    disabled={schoolsLoading}
                   >
                     <option value="">Select School</option>
-                    {schools.map((school, index) => (
-                      <option key={index} value={school}>
-                        {school}
+                    {schoolsList.map((school) => (
+                      <option key={school.id} value={school.id}>
+                        {school.name}
                       </option>
                     ))}
                   </select>
+                  {schoolsLoading && (
+                    <div className="position-absolute top-50 end-0 translate-middle-y me-3">
+                      <small>Loading...</small>
+                    </div>
+                  )}
                 </div>
 
                 <div className="faulty-drop-down">
@@ -146,11 +176,11 @@ export default function FacultyPage() {
                   </select>
                 </div>
               </div>
-              {apiLoading && (
+              {/* {apiLoading && (
                 <div className="text-center mt-2">
-                  <small>Loading...</small>
+                  <small>Loading faculty data...</small>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>
