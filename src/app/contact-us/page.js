@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
+
+const BASE_URL = "http://sd7:8080/jss/api/contact-info";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,21 @@ export default function ContactSection() {
     course: "",
     agree: false,
   });
+  const [contactUsData, setContactUsData] = useState([]);
+
+  useEffect(() => {
+    const fetchSchoolsData = async () => {
+      try {
+        const res = await fetch(BASE_URL);
+        const data = await res.json();
+        setContactUsData(data.data[0] || []);
+      } catch (err) {
+        console.error(err);
+        setContactUsData([]);
+      }
+    };
+    fetchSchoolsData();
+  }, []);
 
   const contactData = {
     subtitle: "CONTACT US",
@@ -35,7 +52,7 @@ export default function ContactSection() {
     console.log("Form submitted:", formData);
     // TODO: connect API endpoint here
   };
-
+  console.log(contactUsData, "contactUsData");
   return (
     <section className={styles.contactSection}>
       <div className="container">
@@ -161,10 +178,7 @@ export default function ContactSection() {
         <div className={`row ${styles.infoRow} `}>
           <div className="col-md-4">
             <span className={styles.yellowLine}></span>
-            <p className={styles.address}>
-              JSS ACADEMY OF TECHNICAL EDUCATION, NOIDA C-20/1, SECTOR-62,
-              NOIDA, DISTT. U.P, INDIA-201301
-            </p>
+            <p className={styles.address}>{contactUsData.address}</p>
           </div>
 
           <div
@@ -176,7 +190,7 @@ export default function ContactSection() {
                 <span className={styles.mailIcon}>
                   <MdMailOutline color="#018ce8" fontSize={18} />
                 </span>{" "}
-                principal@jssaten.ac.in
+                {contactUsData.email}
               </span>
             </div>
           </div>
@@ -186,7 +200,7 @@ export default function ContactSection() {
               <span className={styles.mailIcon}>
                 <BiPhoneCall color="#018ce8" fontSize={16} />
               </span>
-              <span>0120-2401442</span>
+              <span>{contactUsData.phone}</span>
             </div>
           </div>
         </div>
@@ -202,7 +216,8 @@ export default function ContactSection() {
             }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.510377947031!2d77.36215517474078!3d28.62089717568222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef77a2c1b1ff%3A0x2d8a5f937c7a1efb!2sJSS%20Academy%20of%20Technical%20Education!5e0!3m2!1sen!2sin!4v1697033045605!5m2!1sen!2sin"
+              src={contactUsData.direction_url}
+              // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.510377947031!2d77.36215517474078!3d28.62089717568222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef77a2c1b1ff%3A0x2d8a5f937c7a1efb!2sJSS%20Academy%20of%20Technical%20Education!5e0!3m2!1sen!2sin!4v1697033045605!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
