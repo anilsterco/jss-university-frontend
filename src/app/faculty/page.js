@@ -7,7 +7,8 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
 
-const BASE_URL = "http://sd7:8080/jss/api";
+const BASE_URL = "https://project-demo.in/jss/api";
+// const BASE_URL = "http://sd7:8080/jss/api";
 const SCHOOLS_API_URL = "https://project-demo.in/jss/api/schools/all";
 
 export default function FacultyPage() {
@@ -240,7 +241,7 @@ export default function FacultyPage() {
                         </div>
 
                         <Link
-                          href={`/faculty/${faculty.slug || faculty.id}`}
+                          href={`/faculty/${faculty.slug}`}
                           className="streched_link"
                         ></Link>
                       </div>
