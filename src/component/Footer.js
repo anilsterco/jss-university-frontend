@@ -1,4 +1,3 @@
-
 "use client";
 import { useEffect, useState } from "react";
 import {
@@ -75,91 +74,171 @@ export default function Footer() {
 
   return (
     <footer className="footer_section">
-      <div className="container">
-        <div className="col-lg-10 mx-auto">
-          <div className="footer_contact">
-            <div className="footer_left">
-              <div className="footer_logo">
-                <img src={data.logo} alt="Logo" style={{ width: "9rem" }} />
+      <div className="deshFooter">
+        <div className="container">
+          <div className="col-lg-10 mx-auto">
+            <div className="footer_contact">
+              <div className="footer_left">
+                <div className="footer_logo">
+                  <img src={data.logo} alt="Logo" style={{ width: "9rem" }} />
+                </div>
+                <div className="connect_contant">
+                  <p className="fw-bold text-info">Connect with us</p>
+                  <p>{data.address}</p>
+                  <div className="col-md-12">
+                    <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
+                      <li>
+                        <a href="">{data.phone}</a>
+                      </li>
+                      <li>
+                        <a href="">{data.email}</a>
+                      </li>
+                      {data.landlines.map((line, i) => (
+                        <li key={i}>
+                          <a href="">{line}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className="connect_contant">
-                <p className="fw-bold text-info">Connect with us</p>
-                <p>{data.address}</p>
-                <div className="col-md-12">
-                  <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
-                    <li>
-                      <a href="">{data.phone}</a>
-                    </li>
-                    <li>
-                      <a href="">{data.email}</a>
-                    </li>
-                    {data.landlines.map((line, i) => (
+              <div className="footer_right">
+                <button className="get_direc">GET DIRECTIONS</button>
+                <div className="social-icons">
+                  <ul className="list-unstyled">
+                    <p>Follow us on</p>
+                    {data.socials.map((s, i) => (
                       <li key={i}>
-                        <a href="">{line}</a>
+                        <a
+                          href={s.url}
+                          className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                          style={{ width: "20px", height: "20px" }}
+                        >
+                          {renderIcon(s.icon)}
+                        </a>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="footer_right">
-              <button className="get_direc">GET DIRECTIONS</button>
-              <div className="social-icons">
-                <ul className="list-unstyled">
-                  <p>Follow us on</p>
-                  {data.socials.map((s, i) => (
-                    <li key={i}>
-                      <a
-                        href={s.url}
-                        className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                        style={{ width: "20px", height: "20px" }}
-                      >
-                        {renderIcon(s.icon)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+          </div>
+
+          <div className="col-lg-12">
+            <div className="row">
+              <div className="col-lg-10 mx-auto">
+                <div className="footer_border">
+                  <div className="footer_link">
+                    <ul className="list-unstyled">
+                      {data.sections.map((section, i) => (
+                        <li key={i}>
+                          <a href="#">{section.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="quick_link">
+                    <span className="side-border">Quick Links</span>
+                    <ul className="quick-item">
+                      {data.quickLinks.map((link, i) => (
+                        <li key={i}>
+                          <a href={link.url}>{link.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="col-lg-12">
-          <div className="row">
-            <div className="col-lg-10 mx-auto">
-              <div className="footer_border">
-                <div className="footer_link">
-                  <ul className="list-unstyled">
-                    {data.sections.map((section, i) => (
-                      <li key={i}>
-                        <a href="#">{section.title}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="quick_link">
-                  <span className="side-border">Quick Links</span>
-                  <ul className="quick-item">
-                    {data.quickLinks.map((link, i) => (
-                      <li key={i}>
-                        <a href={link.url}>{link.label}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+        <div className="container">
+          <div className="col-lg-10 mx-auto">
+            <div className="bottom_footer">
+              <p className="mb-1 mb-md-0">
+                © Copyright {new Date().getFullYear()} - JSS. All Rights
+                Reserved.
+              </p>
+              <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a> </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container">
-        <div className="col-lg-10 mx-auto">
-          <div className="bottom_footer">
-            <p className="mb-1 mb-md-0">
-              © Copyright {new Date().getFullYear()} - JSS. All Rights Reserved.
-            </p>
-            <p className="mb-0">Website Design and Development by Sterco</p>
+      {/* mobFooter start */}
+
+      <div className="container mobFooter">
+        <div className="col-md-10 mx-auto">
+          <div className="connect_contant space-y-4">
+            <div className="col-md-12 text-center">
+              <h4 className="fw-bold text-info text-lg">Connect with us</h4>
+              <p className="text-sm">{data.address}</p>
+              <ul className="list-unstyled d-block text-center">
+                {data.phone && (
+                  <li>
+                    <a href={`tel:${data.phone}`}>{data.phone}</a>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+
+          <div className="footer_link">
+            <ul className="list-unstyled Grid2">
+              {data.sections?.map((section, i) => (
+                <li key={i}>
+                  <a href="#" className="hover:text-info transition-colors">
+                    {section.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="quick_link">
+            <h4>Quick Links</h4>
+            <ul className="quick-item">
+              {data.quickLinks?.map((link, i) => (
+                <li key={i}>
+                  <a href={link.url}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="follow-col">
+            <div className="social-icons">
+              <h4 className="font-medium ">Follow us on</h4>
+              <ul className="list-unstyled mb-1 mx-auto justify-content-center flex gap-3">
+                <li>
+                  <img src="/images/footer/facebook.svg" alt="icons" />
+                </li>
+                <li>
+                  <img src="/images/footer/twiter.svg" alt="icons" />
+                </li>
+                <li>
+                  <img src="/images/footer/insta.svg" alt="icons" />
+                </li>
+                <li>
+                  <img src="/images/footer/youtube.svg" alt="icons" />
+                </li>
+                <li>
+                  <img src="/images/footer/linkdin.svg" alt="icons" />
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ===== BOTTOM FOOTER ===== */}
+          <div className="container">
+            <div className="col-lg-8 d-flex justify-content-center mx-auto">
+              <div className="copy-rights">
+                <p>
+                  © Copyright {new Date().getFullYear()} - JSS. All Rights
+                  Reserved.
+                </p>
+                <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -169,7 +248,6 @@ export default function Footer() {
           background-color: rgba(0, 0, 0, 0.8);
           padding-block: 5rem 0;
         }
-
         .social-icons a:hover {
           background-color: var(--color-100);
         }
@@ -323,6 +401,10 @@ export default function Footer() {
           font-weight: 300;
           color: rgba(255, 255, 255, 0.5);
         }
+         .bottom_footer p a {
+          color: rgba(255, 255, 255, 0.5);
+         }
+         .bottom_footer p a:hover{color:var(--color-white)}
         .connect_contant ul li a {
           position: relative;
           font: var(--font-12);
@@ -345,7 +427,104 @@ export default function Footer() {
           top: 0.5rem;
           left: -0.8rem;
         }
+        @media (max-width: 991px) {
+          .deshFooter {
+            display: none;
+          }
+          .footer_section {
+            background: #000;
+          }
+        }
+
+         {
+          /* mob footer css start */
+        }
+        .mobFooter {
+          padding-bottom: 12rem;
+        }
+        .mobFooter .connect_contant {
+          padding-bottom: 2.2rem;
+          border-bottom: solid 1px #3a3a3a;
+        }
+        .mobFooter .connect_contant p {
+          color: var(--color-white);
+          padding-bottom: 0.6rem;
+          font-family: var(--font-Roboto);
+        }
+        .mobFooter .list-unstyled li a {
+          color: var(--color-white);
+        }
+        .mobFooter .text-info {
+          color: #0099ff;
+        }
+        .mobFooter .footer_link {
+          padding-block: 2.5rem 3.4rem;
+          padding-inline: 2.3rem;
+          border-bottom: solid 1px #3a3a3a;
+        }
+        .mobFooter .footer_link .Grid2 {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.6rem 1.5rem;
+        }
+        .mobFooter .footer_link .Grid2 li a {
+          font: var(--font-13);
+          letter-spacing: -0.38px;
+          font-weight: 700;
+          font-family: var(--font-Roboto);
+          line-height: 1.4;
+        }
+        .mobFooter .quick_link {
+          display: block;
+          padding-block: 2.5rem 2.6rem;
+          padding-inline: 2.3rem;
+          border-bottom: solid 1px #3a3a3a;
+        }
+        .mobFooter .quick-item {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem 0;
+        }
+        .mobFooter .quick_link h4 {
+          font: var(--font-13);
+          color: var(--color-white);
+          opacity: 1;
+          font-weight: 700;
+          letter-spacing: -0.33px;
+          margin-bottom: 1.6rem;
+        }
+        .mobFooter .quick-item li {
+          list-style: none;
+        }
+        .mobFooter .quick-item li a {
+          font: var(--font-13);
+          color: var(--color-white);
+          opacity: 1;
+          font-weight: 300;
+          font-family: var(--font-Roboto);
+        }
+        .follow-col {
+          padding-block: 3.5rem 2.5rem;
+        }
+        .follow-col h4 {
+          letter-spacing: 1.2px;
+          color: var(--color-white);
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: center;
+          font: normal normal bold 12px/16px Geist;
+          margin-bottom: 1.5rem;
+        }
+        .copy-rights p{letter-spacing: 0px;font: var(--font-13);
+          color: var(--color-white);font-family: var(--font-Roboto);}
+          .copy-rights p a{color: var(--color-white)}
+        @media (min-width: 992px) {
+          .mobFooter {
+            display: none;
+          }
+        }
       `}</style>
     </footer>
   );
 }
+

@@ -21,9 +21,9 @@ const HODMessage = ({ data }) => {
     <div className={styles.container}>
       <div className="container">
         <div className={styles.card}>
-          <div className="row g-0">
+          <div className="row g-0 justify-content-center">
             {/* Image Section - Positioned outside card */}
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className={styles.imageContainer}>
                 <div className={styles.imagePlaceholder}>
                   <Image
@@ -40,7 +40,7 @@ const HODMessage = ({ data }) => {
             </div>
 
             {/* Content Section */}
-            <div className="col-md-8">
+            <div className="col-md-7">
               <div className={styles.content}>
                 <h3 className={styles.title}>{hodData.title}</h3>
 

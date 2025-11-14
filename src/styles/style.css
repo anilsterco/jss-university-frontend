@@ -407,7 +407,22 @@ h6 {
     right: 0;
     font-size: 0;
 }
-
+.load-more-container button{
+    cursor: pointer;
+    color: var(--color-4e) !important;
+    font: var(--font-14);
+    font-weight: 600;
+    font-family: var(--font-Condensed);
+    text-transform: uppercase;
+    border: .1rem solid var(--color-4e);
+    padding: 1rem 1.5rem;
+    position: relative;
+    z-index: 9;
+}
+.load-more-container button:hover {
+    background-color: var(--color-4e);
+    color: var(--color-white) !important;
+}
 .read_btn {
     display: inline-block;
     border-radius: 50%;

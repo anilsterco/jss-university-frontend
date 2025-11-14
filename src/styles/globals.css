@@ -174,6 +174,14 @@ body {
   }
 }
 
+@media (max-width:767px) {
+  .main-container .container {
+    max-width: 540px;
+  }
+}
+ 
+
+
 @media(min-width:1921px) {
   html {
     font-size: 65%;
@@ -255,6 +263,14 @@ body {
   }
 }
 
+
+@media (max-width:991) {
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
+}
 
 a,
 a:hover,
@@ -871,17 +887,31 @@ a:active {
 }
 
 
-.departmentItem{
-   font-family: var(--font-Condensed);
+.departmentItem {
+  font-family: var(--font-Condensed);
 }
-.aboutSchoolSection .blue-text{ color: #000;}
-.grid_2 {grid-template-columns: 17% 80%;
-    display: grid;
-    justify-content: space-between;}
 
-    .about_rnk{ display: flex; flex-wrap: wrap;}
-    .about_school_left{ border-right: 1px solid rgba(206, 206, 206, 0.52); padding-right:6rem;}
-    .vision_mission{
+.aboutSchoolSection .blue-text {
+  color: #000;
+}
+
+.grid_2 {
+  grid-template-columns: 17% 80%;
+  display: grid;
+  justify-content: space-between;
+}
+
+.about_rnk {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about_school_left {
+  border-right: 1px solid rgba(206, 206, 206, 0.52);
+  padding-right: 6rem;
+}
+
+.vision_mission {
   border-bottom: 1px solid #ddd;
   margin-bottom: 2rem;
   padding-bottom: 12rem;
