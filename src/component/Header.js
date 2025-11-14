@@ -20,7 +20,7 @@ export default function Header() {
   const [selectedSchoolName, setSelectedSchoolName] = useState("ENGINEERING");
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [activeLink, setActiveLink] = useState(null);
+  // const [activeLink, setActiveLink] = useState(null);
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
@@ -747,14 +747,9 @@ export default function Header() {
                 <li
                   key={i}
                   className="nav-item"
-                  onClick={() => setActiveLink(i)}
+                  // onClick={() => setActiveLink(i)}
                 >
-                  <Link
-                    href={l.url}
-                    className={`nav-link nav-lists  ${
-                      activeLink == i ? "active-link" : ""
-                    }`}
-                  >
+                  <Link href={l.url} className={`nav-link nav-lists`}>
                     {l.title}
                   </Link>
                   {l.children && l.children.length > 0 && (
@@ -787,7 +782,7 @@ export default function Header() {
                               <p className="mega-desc">{l.right.desc}</p>
                               <div className="mega-ctas">
                                 {l.right.ctas?.map((cta, idx) => (
-                                  <a
+                                  <Link
                                     key={idx}
                                     href={cta.url}
                                     className={`cta program_btn ${cta.type}`}
@@ -806,24 +801,26 @@ export default function Header() {
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                                       />
                                     </svg>
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             </div>
 
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <a key={idx} href={b.url} className="banner">
-                                  <Image
-                                    src={b.img}
-                                    alt={b.title}
-                                    width={260}
-                                    height={160}
-                                  />
-                                  <span className="banner-label">
-                                    {b.title}
-                                  </span>
-                                </a>
+                                <Link key={idx} href={b.url}>
+                                  <div className="banner">
+                                    <Image
+                                      src={b.img}
+                                      alt={b.title}
+                                      width={260}
+                                      height={160}
+                                    />
+                                    <span className="banner-label">
+                                      {b.title}
+                                    </span>
+                                  </div>
+                                </Link>
                               ))}
                             </div>
                           </>
@@ -1327,6 +1324,31 @@ export default function Header() {
           
         }
         .virtural-img {margin-top:5.6rem;position:relative;}
+         .right-inner .hamburger-section-img.virtural-img {
+          position: relative;
+          overflow: hidden;
+          height:40%;
+          object-fit:cover;
+        }
+        .hamburger-section-img.virtural-img .hum-small{
+          height:100%;
+          width:100%;
+        }
+        .hamburger-section-img.virtural-img::before {
+          content: "";
+          position: absolute;
+          background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+          border-radius: 8px;
+          opacity: 0.93;
+          height:207px;
+          z-index: 1; 
+          bottom:0;
+          left:0;
+          right:0;
+        }
+
+        
+  
         .right-inner .first-content {
           width: 30%;
           padding-top:2rem;

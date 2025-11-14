@@ -20,6 +20,8 @@ async function getSchoolData() {
   return res.json();
 }
 
+
+
 export default async function HomePage() {
   const homepageData = await getSchoolData();
   console.log(homepageData, "homepageData");
