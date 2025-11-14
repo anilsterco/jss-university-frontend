@@ -12,6 +12,7 @@
   letter-spacing: 0.72px;
   color: var(--color-4e);
   font-weight: 600;
+  font-family: var(--font-Condensed)
 }
 .inner-title .innnr_head h3 {
   font: var(--font-45);
