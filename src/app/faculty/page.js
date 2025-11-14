@@ -159,9 +159,15 @@ export default function FacultyPage() {
                 <div className="search-box">
                   <input
                     type="text"
+                    className="input-fild"
                     placeholder="Search by keywords"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <img
+                    src="/images/custom-page/facility/serch-icon.svg"
+                    alt=""
+                    className="search-icon "
                   />
                 </div>
 
