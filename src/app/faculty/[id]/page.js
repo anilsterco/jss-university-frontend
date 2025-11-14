@@ -6,7 +6,8 @@ import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-const BASE_URL = "http://sd7:8080/jss/api";
+// const BASE_URL = "http://sd7:8080/jss/api";
+const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function FacultyDetailPage({ params }) {
   // React.use() se params ko unwrap karo
@@ -22,9 +23,6 @@ export default function FacultyDetailPage({ params }) {
       setLoading(true);
       setNotFound(false);
       setError(null);
-
-      console.log("Fetching faculty with ID:", id);
-      console.log("API URL:", `${BASE_URL}/faculties/${id}`);
 
       const res = await fetch(`${BASE_URL}/faculties/${id}`);
 
@@ -116,7 +114,7 @@ export default function FacultyDetailPage({ params }) {
   const facultyLinkedin = safeFaculty.linkedin || "";
   const facultyProfile = safeFaculty.profile || "";
   const facultyEducation = safeFaculty.education || [];
-  const facultyResearch = safeFaculty.research || {};
+  const facultyResearch = safeFaculty.research || [];
   const facultyTeaching = safeFaculty.teaching || [];
   const facultyAwards = safeFaculty.awards || [];
   const facultySocialEngagement = safeFaculty.socialEngagement || [];
@@ -242,33 +240,35 @@ export default function FacultyDetailPage({ params }) {
                   )}
 
                   {/* Research */}
-                  {facultyResearch &&
-                    Object.keys(facultyResearch).length > 0 && (
-                      <div className="profile-education profile-research">
-                        <h5>Research</h5>
-                        <div className="research-list">
-                          {Object.entries(facultyResearch).map(
-                            ([key, url], index) =>
-                              url && (
-                                <div className="research-box" key={index}>
-                                  <div className="research-icon">
-                                    <p>{key.toUpperCase()}</p>
-                                  </div>
-                                  <div className="research-link">
-                                    <a
-                                      href={url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
-                                  </div>
-                                </div>
-                              )
-                          )}
-                        </div>
+                  {facultyResearch && facultyResearch.length > 0 && (
+                    <div className="profile-education profile-research">
+                      <h5>Research</h5>
+                      <div className="research-list">
+                        {facultyResearch.map((key, index) => (
+                          <div className="research-box" key={index}>
+                            <div className="research-icon">
+                              <p>
+                                <img
+                                  src={key.image ? key.image : null}
+                                  alt="research-icon"
+                                />
+                                {key.title}
+                              </p>
+                            </div>
+                            <div className="research-link">
+                              <Link
+                                href={key.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <i className="bi bi-box-arrow-up-right"></i>
+                              </Link>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    )}
+                    </div>
+                  )}
 
                   {/* Teaching */}
                   {facultyTeaching.length > 0 && (
