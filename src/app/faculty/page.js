@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { RxCaretRight } from "react-icons/rx";
 import "@/styles/style.css";
@@ -14,12 +14,21 @@ export default function FacultyPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const [visibleCount, setVisibleCount] = useState(6);
+
   const [facultyListData, setFacultyListData] = useState([]);
+
+  // Pagination States
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
+  const [nextPageUrl, setNextPageUrl] = useState(null);
+
   const [schoolsList, setSchoolsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [apiLoading, setApiLoading] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [schoolsLoading, setSchoolsLoading] = useState(true);
+
+  const firstLoad = useRef(true);
 
   // Fetch schools data
   const fetchSchoolsData = async () => {
@@ -27,84 +36,99 @@ export default function FacultyPage() {
       setSchoolsLoading(true);
       const res = await fetch(SCHOOLS_API_URL);
 
-      if (!res.ok) {
-        console.error("Schools API Error:", res.status);
-        throw new Error(`Failed to fetch schools data: ${res.status}`);
-      }
-
       const data = await res.json();
-      console.log("Schools API Response:", data);
-
-      // Extract schools array from response
-      const schoolsData = data.data || data;
-      setSchoolsList(schoolsData || []);
+      setSchoolsList(data.data || []);
     } catch (err) {
-      console.error("Error fetching schools:", err);
+      console.error(err);
       setSchoolsList([]);
     } finally {
       setSchoolsLoading(false);
     }
   };
 
-  // Fetch faculty data with filters
-  const fetchFacultyData = async (search = "", schoolId = "", type = "") => {
+  // Fetch faculty for page 1 (with filters)
+  const fetchFacultyData = async (
+    page = 1,
+    search = "",
+    schoolId = "",
+    type = ""
+  ) => {
     try {
       setApiLoading(true);
+      setLoading(true);
 
-      // Build query parameters
       const params = new URLSearchParams();
       if (search) params.append("search", search);
-      if (schoolId) params.append("school", schoolId); // Use school_id instead of school name
+      if (schoolId) params.append("school", schoolId);
       if (type) params.append("type", type);
 
-      const queryString = params.toString();
-      const url = queryString
-        ? `${BASE_URL}/faculties?${queryString}`
-        : `${BASE_URL}/faculties`;
+      params.append("page", page);
+
+      const url = `${BASE_URL}/faculties?${params.toString()}`;
 
       const res = await fetch(url);
-
-      if (!res.ok) {
-        console.error("Faculty API Error:", res.status);
-        throw new Error(`Failed to fetch faculty data: ${res.status}`);
-      }
-
       const data = await res.json();
-      console.log("Faculty API Response:", data);
 
-      // Check the actual structure of your API response
-      const facultyData =
-        data.faculty || data.data?.faculty || data.data || data;
-      setFacultyListData(facultyData || []);
+      const faculty = data.data?.faculty || [];
+      const pagination = data.data?.pagination;
+
+      setFacultyListData(faculty);
+      setCurrentPage(pagination.current_page);
+      setLastPage(pagination.last_page);
+      setNextPageUrl(pagination.next_page_url);
     } catch (err) {
-      console.error("Error fetching faculties:", err);
+      console.error("Faculty fetch error:", err);
       setFacultyListData([]);
     } finally {
-      setLoading(false);
       setApiLoading(false);
+      setLoading(false);
     }
   };
 
-  // Initial data load
+  // Load More Faculty
+  const loadMore = async () => {
+    if (!nextPageUrl) return;
+
+    try {
+      setIsLoadingMore(true);
+
+      const res = await fetch(nextPageUrl);
+      const data = await res.json();
+
+      const newFaculty = data.data?.faculty || [];
+      const pagination = data.data?.pagination;
+
+      // Append new faculty
+      setFacultyListData((prev) => [...prev, ...newFaculty]);
+
+      setCurrentPage(pagination.current_page);
+      setNextPageUrl(pagination.next_page_url);
+    } catch (err) {
+      console.error("Load More error:", err);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
+
+  // Initial Data Load (schools & faculty page 1)
   useEffect(() => {
     fetchSchoolsData();
-    fetchFacultyData();
+    fetchFacultyData(1);
   }, []);
 
-  // Handle search and filter changes - debounced API call
+  // Filter changes (search → school → type)
   useEffect(() => {
+    if (firstLoad.current) {
+      firstLoad.current = false;
+      return;
+    }
+
     const timeoutId = setTimeout(() => {
-      fetchFacultyData(searchTerm, selectedSchool, selectedType);
-      setVisibleCount(6); // Reset visible count when filters change
-    }, 500); // 500ms debounce
+      fetchFacultyData(1, searchTerm, selectedSchool, selectedType);
+    }, 500);
 
     return () => clearTimeout(timeoutId);
   }, [searchTerm, selectedSchool, selectedType]);
-
-  // Extract unique types for dropdown from current faculty data
-  const types = [
-    ...new Set(facultyListData.map((faculty) => faculty.type).filter(Boolean)),
-  ];
 
   return (
     <main className="site_main">
@@ -124,12 +148,13 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      {/* Search Bar */}
+      {/* Filters */}
       <section className="program-search faulty-sec">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="faulty-box">
+                {/* Search */}
                 <div className="search-box">
                   <input
                     type="text"
@@ -137,30 +162,25 @@ export default function FacultyPage() {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  <button type="submit"></button>
                 </div>
 
+                {/* School Dropdown */}
                 <div className="faulty-drop-down">
                   <select
                     className="form-select"
                     value={selectedSchool}
                     onChange={(e) => setSelectedSchool(e.target.value)}
-                    disabled={schoolsLoading}
                   >
                     <option value="">Select School</option>
-                    {schoolsList.map((school) => (
-                      <option key={school.id} value={school.id}>
-                        {school.name}
+                    {schoolsList.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name}
                       </option>
                     ))}
                   </select>
-                  {schoolsLoading && (
-                    <div className="position-absolute top-50 end-0 translate-middle-y me-3">
-                      <small>Loading...</small>
-                    </div>
-                  )}
                 </div>
 
+                {/* Type Dropdown */}
                 <div className="faulty-drop-down">
                   <select
                     className="form-select"
@@ -168,19 +188,14 @@ export default function FacultyPage() {
                     onChange={(e) => setSelectedType(e.target.value)}
                   >
                     <option value="">Select Faculty Type</option>
-                    {types.map((type, index) => (
-                      <option key={index} value={type}>
-                        {type}
+                    {facultyListData.map((f, i) => (
+                      <option key={i} value={f.type}>
+                        {f.type}
                       </option>
                     ))}
                   </select>
                 </div>
               </div>
-              {/* {apiLoading && (
-                <div className="text-center mt-2">
-                  <small>Loading faculty data...</small>
-                </div>
-              )} */}
             </div>
           </div>
         </div>
@@ -193,12 +208,13 @@ export default function FacultyPage() {
             <div className="col-lg-10">
               {loading ? (
                 <div className="text-center py-5">
-                  <p>Loading faculty data...</p>
+                  <p>Loading faculty...</p>
                 </div>
               ) : (
                 <>
+                  {/* Faculty Cards */}
                   <div className="program-list-boxs faulty-list">
-                    {facultyListData.slice(0, visibleCount).map((faculty) => (
+                    {facultyListData.map((faculty) => (
                       <div className="faulty-list-box" key={faculty.id}>
                         <div className="faulty-img">
                           <figure>
@@ -211,21 +227,18 @@ export default function FacultyPage() {
                                 height: "300px",
                                 objectFit: "cover",
                               }}
-                              onError={(e) => {
-                                e.target.src = "/default-avatar.png";
-                              }}
                             />
                           </figure>
                         </div>
+
                         <div className="faulty-text">
                           <h4>{faculty.name}</h4>
-                          <p>
-                            {faculty.designation || faculty.type || "Faculty"}
-                          </p>
+                          <p>{faculty.designation || faculty.type}</p>
                           <span>
                             <RxCaretRight className="right-arrow" />
                           </span>
                         </div>
+
                         <Link
                           href={`/faculty/${faculty.slug || faculty.id}`}
                           className="streched_link"
@@ -235,23 +248,23 @@ export default function FacultyPage() {
                   </div>
 
                   {/* No Results */}
-                  {!loading && facultyListData.length === 0 && (
+                  {facultyListData.length === 0 && (
                     <div className="text-center py-5">
-                      <p>No faculty members found.</p>
+                      <p>No faculty found.</p>
                     </div>
                   )}
 
                   {/* Load More */}
-                  {visibleCount < facultyListData.length && (
-                    <div className="load-more-container">
-                      <a
-                        id="loadMore"
-                        onClick={() => setVisibleCount((prev) => prev + 6)}
+                  {nextPageUrl && (
+                    <div className="load-more-container text-center mt-4">
+                      <button
+                        onClick={loadMore}
                         style={{ cursor: "pointer" }}
+                        disabled={isLoadingMore}
                       >
-                        Load More
-                        <i className="bi bi-arrow-down ps-2"></i>
-                      </a>
+                        {isLoadingMore ? "Loading..." : "Load More"}{" "}
+                        <i className="bi bi-arrow-down ps-2"></i> 
+                      </button>
                     </div>
                   )}
                 </>
