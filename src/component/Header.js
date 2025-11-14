@@ -20,7 +20,7 @@ export default function Header() {
   const [selectedSchoolName, setSelectedSchoolName] = useState("ENGINEERING");
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [activeLink, setActiveLink] = useState(null);
+  // const [activeLink, setActiveLink] = useState(null);
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
@@ -748,13 +748,8 @@ export default function Header() {
                   key={i}
                   className="nav-item"
                   // onClick={() => setActiveLink(i)}
-                  >
-                  <Link
-                    href={l.url}
-                    className={`nav-link nav-lists  ${
-                      activeLink == i ? "active-link" : ""
-                    }`}
-                  >
+                >
+                  <Link href={l.url} className={`nav-link nav-lists`}>
                     {l.title}
                   </Link>
                   {l.children && l.children.length > 0 && (
@@ -1329,6 +1324,31 @@ export default function Header() {
           
         }
         .virtural-img {margin-top:5.6rem;position:relative;}
+         .right-inner .hamburger-section-img.virtural-img {
+          position: relative;
+          overflow: hidden;
+          height:40%;
+          object-fit:cover;
+        }
+        .hamburger-section-img.virtural-img .hum-small{
+          height:100%;
+          width:100%;
+        }
+        .hamburger-section-img.virtural-img::before {
+          content: "";
+          position: absolute;
+          background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+          border-radius: 8px;
+          opacity: 0.93;
+          height:207px;
+          z-index: 1; 
+          bottom:0;
+          left:0;
+          right:0;
+        }
+
+        
+  
         .right-inner .first-content {
           width: 30%;
           padding-top:2rem;
