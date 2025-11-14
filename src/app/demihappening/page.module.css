@@ -24,3 +24,23 @@
 .relecol figcaption {padding-inline:2.5rem ;}
 .relecol figcaption h4 {font: var(--font-22);;color: var(--color-white);margin-bottom: 1rem;font-family: var(--font-Roboto)}
 .relecol figcaption p{font: var(--font-14); letter-spacing: 0px;color: var(--color-white);font-family: var(--font-Roboto)}
+
+
+/* responsive page css start */
+
+
+@media (max-width:1599) {
+.banner img {max-width: 90%;display: flex; margin: 0 auto;}}
+@media (max-width:1366){
+.happContant p {max-width: 100%;}}
+@media (max-width:991){
+.Grid2{gap: 4.4rem;padding-block:6rem;}
+.relatedHappenings {padding-block:6rem 6rem;}
+.innerTitle { padding-top: 18rem;padding-bottom: 4.5rem; }}
+@media (max-width:576){
+ .banner img {max-width: 94%;}
+ .Grid2{grid-template-columns: repeat(1,1fr);padding-block:4rem 2rem;gap: 2rem;}
+ .happContant p {margin-bottom: 2rem;}
+ .relatedHappenings {padding-block:4rem;}
+ .relatedHappenings h3 {margin-bottom: 2rem;}
+ .relatedHappenings .releGrid{grid-template-columns: repeat(1, 1fr);}}
