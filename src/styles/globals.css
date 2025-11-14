@@ -178,6 +178,7 @@ body {
 @media (max-width:767px) {
   .main-container .container {
     max-width: 540px;
+    padding-inline: 2rem;
   }
 }
  

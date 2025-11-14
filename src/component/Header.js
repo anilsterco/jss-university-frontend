@@ -37,9 +37,7 @@ export default function Header() {
         if (!res1.ok || !res2.ok) {
           throw new Error("One or more API calls failed");
         }
-
         const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
-
         setHeaderData(data1.data);
         setAdmissionData(data2.data);
       } catch (err) {

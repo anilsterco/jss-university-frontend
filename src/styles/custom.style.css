@@ -1,6 +1,7 @@
 .program-search {
   position: relative;
 }
+
 .program-search::before {
   content: "";
   background-color: var(--color-f5);
@@ -10,29 +11,36 @@
   top: 0;
   position: absolute;
 }
+
 .early-slide figure,
 .early-slide .early_rgt {
   width: 50%;
 }
+
 .early-slide {
   display: flex;
   gap: 8rem;
 }
+
 .early-slide .early_rgt {
   padding-top: 3.2rem;
 }
+
 .about_two .early-slide .early_rgt h4 {
   font: var(--font-24);
   color: var(--color-29);
   margin-bottom: 2.1rem;
 }
+
 .about_two .early-slide .early_rgt h5 {
   font: var(--font-24);
   font-weight: 300;
 }
+
 .about_two .early-slide .early_rgt .inst-reg {
   padding-top: 4rem;
 }
+
 .about_two .early-slide .early_rgt .inst-reg h5 {
   font: var(--font-18);
   color: var(--color-21);
@@ -40,39 +48,47 @@
   padding-bottom: 1.6rem;
   margin-bottom: 2.1rem;
 }
+
 .about_two .early-slide .early-arrows {
   padding-top: 2.4rem;
   display: flex;
   gap: 0.6rem;
 }
+
 .about_two .early-slide .early-arrows svg.swiper-button-disabled {
   opacity: 0.35;
   cursor: auto;
   pointer-events: none;
 }
+
 .leadership_two .leadership_grid figure {
   position: relative;
   overflow: hidden;
 }
+
 .leadership_grid_Bx {
   position: relative;
 }
+
 .leadership_grid_Bx figure span img {
   width: 100%;
   height: auto;
   transition: transform 0.6s ease;
 }
+
 .leadership_grid_Bx figure span {
   overflow: hidden;
   border-radius: 8px;
   display: block;
 }
+
 .leadership-arrow-icon {
   cursor: pointer;
   color: rgba(203, 34, 203, 0.74);
   width: fit-content;
   font-size: 22px;
 }
+
 .links {
   content: "";
   position: absolute;
@@ -83,6 +99,7 @@
   z-index: 9;
   font-size: 0;
 }
+
 .innnr_head ul li {
   font: var(--font-14);
   color: #0000008c;
@@ -90,6 +107,7 @@
   padding-top: 2.6rem;
   border-top: 1px solid transparent;
 }
+
 .about_two .early-slide .early-arrows svg {
   display: flex;
   width: auto;
@@ -97,9 +115,11 @@
   font-size: 22px;
   color: #cb22cbbd;
 }
+
 .search-box {
   position: relative;
 }
+
 .search-box input {
   width: 100%;
   box-shadow: 0px 16px 56px #00000017;
@@ -108,9 +128,11 @@
   border-radius: 8px;
   color: var(--color-black);
 }
+
 .search-box input:focus-visible {
   outline: none;
 }
+
 .search-box button {
   position: absolute;
   right: 20px;
@@ -120,34 +142,41 @@
   cursor: pointer;
   z-index: 9;
 }
+
 .search-box button i {
   font-size: 1.8rem;
 }
+
 .search-box input::placeholder {
   color: var(--color-black);
   font: var(--font-18);
   font-style: italic;
   letter-spacing: -0.36px;
 }
+
 .program-sec1 {
   padding-block: 8rem;
 }
+
 .program-list {
   display: grid;
   grid-template-columns: 24% auto;
   gap: 4rem;
 }
+
 .program-categoery-box {
   background-color: var(--color-white);
   padding: 3rem;
   border-radius: 8px;
   margin-block: 0 2rem;
 }
+
 .program-categoery-box p {
   font: var(--font-18);
   color: var(--color-27);
   padding-bottom: 1rem;
 }
+
 .program-categoery-box .form-check {
   align-items: center;
   display: flex;
@@ -158,30 +187,36 @@
   font-weight: 400;
   border-bottom: 1px dashed #122f7e2e;
 }
+
 .program-categoery-box .form-check.active label {
   font-weight: 600;
   color: var(--color-4e);
 }
+
 .program-list-boxs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   position: relative;
 }
+
 .cus-program-box {
   position: relative;
   overflow: hidden;
   transition: all 0.4s;
   display: none;
 }
+
 .cus-program-box figure {
   height: 100%;
 }
+
 .cus-program-box figure img {
   border-radius: 1rem;
   height: 100%;
   object-fit: cover;
 }
+
 .cus-program-text {
   position: absolute;
   bottom: -18rem;
@@ -190,10 +225,10 @@
   transition: all 0.4s;
   padding: 6rem 2rem 2rem 2rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
-    0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   border-radius: 0 0 1rem 1rem;
 }
+
 .cus-program-text::before {
   content: "";
   background-color: var(--color-100);
@@ -202,11 +237,13 @@
   width: 3px;
   height: 97px;
 }
+
 .cus-program-text p {
   font: var(--font-14);
   color: var(--color-white);
   font-weight: 400;
 }
+
 .cus-program-text h6 {
   font: var(--font-21);
   color: var(--color-white);
@@ -214,22 +251,27 @@
   padding-block: 1rem;
   letter-spacing: -0.63px;
 }
+
 .cus-program-text span {
   font: var(--font-12);
   color: var(--color-100);
   font-weight: 600;
 }
+
 .cus-program-text span i {
   color: var(--color-white);
 }
+
 .cus-program-box:hover .cus-program-text {
   bottom: 0;
 }
+
 .load-more-container {
   text-align: center;
   padding: 9rem 0 0;
   position: relative;
 }
+
 .load-more-container::before {
   content: "";
   background-color: #d8d8d8;
@@ -240,6 +282,7 @@
   top: 10.7rem;
   z-index: 1;
 }
+
 .load-more-container a {
   cursor: pointer;
   color: var(--color-4e) !important;
@@ -252,6 +295,7 @@
   position: relative;
   z-index: 9;
 }
+
 .load-more-container a::before {
   content: "";
   background-color: var(--color-f6);
@@ -262,23 +306,28 @@
   top: 0;
   left: -4rem;
 }
+
 .load-more-container a:hover {
   background-color: var(--color-4e);
   color: var(--color-white) !important;
 }
+
 .degre-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
 }
+
 .degre-box {
   display: flex;
   gap: 2rem;
 }
+
 .degre-text {
   position: relative;
 }
+
 .degre-text a {
   background-color: var(--color-white);
   border-radius: 0.5rem;
@@ -290,29 +339,35 @@
   color: var(--color-4e);
   padding: 1rem;
 }
+
 .degre-text a i {
   color: var(--color-29);
   font: var(--font-18);
   margin-left: 0.5rem;
 }
+
 .clear-text {
   position: relative;
 }
+
 .clear-text a {
   color: var(--color-a0);
   font: var(--font-14);
   font-weight: 500;
 }
+
 .course-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
 }
+
 .course-box {
   background-color: #018ce817;
   border-radius: 8px;
   padding: 2rem 3rem;
 }
+
 .course-text-box {
   display: grid;
   grid-template-columns: repeat(1, 80% auto);
@@ -320,6 +375,7 @@
   justify-content: space-between;
   padding-block: 0rem 4rem;
 }
+
 .course-text span {
   font: var(--font-14);
   color: var(--color-4e);
@@ -327,24 +383,29 @@
   margin-bottom: 0.4rem;
   display: block;
 }
+
 .course-text h4 {
   font: var(--font-24);
   letter-spacing: -0.31px;
   font-weight: 600;
   color: var(--color-4e);
 }
+
 .apply-btn {
   position: relative;
 }
+
 .apply-btn a {
   font: var(--font-14);
   color: var(--color-4e);
   font-weight: 600;
 }
+
 .apply-btn a i {
   font: var(--font-12);
   color: var(--color-29);
 }
+
 .duration {
   border-top: 0.1rem solid #16344e24;
   padding-block: 1.5rem 0;
@@ -352,30 +413,37 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .duration-text span {
   font: var(--font-12);
   color: var(--color-black);
 }
+
 .duration-text p {
   font: var(--font-16);
   color: var(--color-black);
 }
+
 .duration-btn a {
   font: var(--font-14);
   color: var(--color-29);
   font-weight: 400;
 }
+
 .duration-btn a i {
   color: var(--color-4e);
   font: var(--font-12);
 }
+
 .program-detail {
   margin-top: 15rem;
   position: relative;
 }
+
 .program-detail-img {
   position: relative;
 }
+
 .program-detail-img::before {
   content: "";
   background-color: #00000087;
@@ -385,12 +453,15 @@
   top: 0;
   left: 0;
 }
+
 .program-detail-img figure {
   display: grid;
 }
-.program-detail-img figure > * {
+
+.program-detail-img figure>* {
   grid-area: 1 / 1;
 }
+
 .program-detail-text {
   text-align: center;
   width: 100%;
@@ -400,6 +471,7 @@
   align-items: center;
   position: relative;
 }
+
 .program-detail-text .innnr_head h2 {
   font: var(--font-18);
   padding-bottom: 1rem;
@@ -407,43 +479,51 @@
   color: var(--color-white);
   font-weight: 600;
 }
+
 .program-detail-text .innnr_head h3 {
   font: var(--font-45);
   letter-spacing: -1.35px;
   color: var(--color-white);
   margin-bottom: 3.8rem;
 }
+
 .admission-sec {
   margin-top: -12.5rem;
   position: relative;
 }
+
 .admission-box {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: left;
 }
+
 .admission-box-text {
   background-color: var(--color-100);
   padding: 3rem;
   border-radius: 5rem 0 0 0;
   width: 22%;
 }
+
 .admission-box-text p {
   font: var(--font-14);
   color: var(--color-4e);
   font-weight: 400;
 }
+
 .admission-box-text h2 {
   font: var(--font-40);
   color: var(--color-4e);
   font-weight: 600;
   letter-spacing: -1.6px;
 }
+
 .over-view-box {
   display: grid;
   grid-template-columns: repeat(1, 78% auto);
 }
+
 .overview-text {
   padding: 0rem 7rem 0 0;
   display: flex;
@@ -451,17 +531,20 @@
   height: 100%;
   justify-content: center;
 }
+
 .overview-text h5 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .overview-text h6 {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   padding-block: 2rem;
 }
+
 .overview-text p {
   font: var(--font-14);
   color: var(--color-black);
@@ -469,20 +552,24 @@
   padding-inline: 0 5rem;
   line-height: 2.4rem;
 }
+
 .overview-duration {
   background-color: var(--color-white);
   padding: 3rem 2.5rem;
 }
+
 .overview-duration-text {
   border-bottom: 1px solid #66666626;
   padding-block: 0rem 1.5rem;
 }
+
 .overview-duration-text span,
 .fees span {
   font: var(--font-14);
   color: var(--color-4e);
   font-weight: 400;
 }
+
 .overview-duration-text p,
 .fees p {
   font: var(--font-18);
@@ -491,12 +578,15 @@
   color: var(--color-4e);
   padding: 0.6rem 0 0;
 }
+
 .fees {
   padding-top: 2rem;
 }
+
 .structure-btns {
   padding-top: 3rem;
 }
+
 .structure-btn {
   border: 0.1rem solid #0000005e;
   padding: 0.8rem 1.5rem;
@@ -507,17 +597,21 @@
   color: var(--color-4e);
   font-weight: 600;
 }
+
 .structure-btn img {
   width: 2rem;
   margin-right: 0.5rem;
 }
+
 .structure-btn:hover {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+
 .structure-btn:hover img {
   filter: brightness(0) invert(1);
 }
+
 .apply-btn1 {
   background-color: var(--color-4e);
   color: var(--color-white);
@@ -525,33 +619,41 @@
   font-weight: 400;
   padding: 0.8rem 1.5rem;
 }
+
 .apply-btn1:hover {
   background-color: var(--color-100);
   color: var(--color-black);
 }
+
 .eligibility-sec {
   position: relative;
 }
+
 .eligibility-sec .container {
   max-width: 1643px !important;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
 .eligibility-img {
   position: relative;
 }
+
 .eligibility-box {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: left;
 }
+
 .eligibility-img figure {
   display: grid;
 }
-.eligibility-img figure > * {
+
+.eligibility-img figure>* {
   grid-area: 1 / 1;
 }
+
 .eligibility-text {
   background-color: var(--color-e8);
   padding: 3rem;
@@ -559,55 +661,66 @@
   width: 18.7%;
   margin-right: 12.3rem;
 }
+
 .eligibility-text span {
   font: var(--font-18);
   color: var(--color-white);
   letter-spacing: -0.18px;
   font-weight: 500;
 }
+
 .eligibility-text h3 {
   font: var(--font-40);
   color: var(--color-100);
   font-family: var(--font-Condensed);
   letter-spacing: -1.6px;
 }
+
 .eligibility-text p {
   font: var(--font-16);
   color: var(--color-white);
   font-weight: 300;
 }
+
 .rank-box {
   background-color: var(--color-white);
   padding: 3rem 13rem 0;
   margin-right: 6rem;
 }
+
 .rank-box h6 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .rank-text {
   display: flex;
   align-items: center;
   margin: 1rem 0 3rem;
 }
+
 .left-rank-text {
   padding-right: 2rem;
 }
+
 .left-rank-text h2 {
   font: var(--font-80);
   letter-spacing: -3.2px;
   font-family: var(--font-Condensed);
   color: var(--color-4e);
 }
+
 .right-rank-text {
   padding-right: 7rem;
 }
+
 .right-rank-text p {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
 }
+
 .seats {
   position: relative;
   border-top: 0.1rem solid var(--color-d6);
@@ -616,18 +729,22 @@
   gap: 8rem;
   align-items: center;
 }
+
 .seats-left-text {
   border-right: 0.1rem solid var(--color-d6);
   padding: 3rem 0;
 }
+
 .seats-left-text p,
 .seats-right-text p {
   font: var(--font-16);
   color: var(--color-black);
 }
+
 .seats-right-text {
   padding-right: 5rem;
 }
+
 .seats::before {
   content: "";
   background-color: var(--color-d6);
@@ -637,6 +754,7 @@
   left: -13rem;
   top: -1px;
 }
+
 .seats::after {
   content: "";
   background-color: var(--color-d6);
@@ -646,23 +764,28 @@
   right: -13rem;
   top: -1px;
 }
+
 @media (min-width: 2200px) {
   .eligibility-sec .container {
     max-width: 2032px;
   }
+
   .eligibility-text {
     width: 19.3%;
     margin-right: 11.3rem;
   }
 }
+
 .educational-sec {
   padding-block: 8rem;
 }
+
 .tabbed-content {
   max-width: 100%;
   padding: 0;
   margin: 1rem auto;
 }
+
 .tabs ul {
   margin: 0;
   padding: 0 0 1rem 0;
@@ -671,6 +794,7 @@
   border-top: 1px solid var(--color-d6);
   position: relative;
 }
+
 .tabs ul::before {
   content: "";
   background: var(--color-d6);
@@ -680,6 +804,7 @@
   left: -12rem;
   top: -1px;
 }
+
 .tabs ul::after {
   content: "";
   background: var(--color-d6);
@@ -689,6 +814,7 @@
   right: -40rem;
   top: -1px;
 }
+
 .tabs ul li {
   display: inline-block;
   float: left;
@@ -696,21 +822,26 @@
   text-align: left;
   margin-right: 5rem;
 }
+
 .tabs ul li a {
   padding: 1em 0em;
   font: var(--font-24);
   color: var(--color-be);
 }
+
 .tabs ul li a:hover {
   color: var(--color-29);
 }
+
 .tabs ul li a.active {
   color: var(--color-29);
   border-top: 2px solid var(--color-100);
 }
+
 .item {
   margin-bottom: 2px;
 }
+
 .item::before {
   cursor: pointer;
   font-weight: bold;
@@ -718,10 +849,12 @@
   padding: 0.5em;
   display: block;
 }
+
 .item.active::before {
   background: #444;
   color: #eee;
 }
+
 .item.active .item-content {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -729,14 +862,17 @@
   -ms-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
   }
+
   .tabs-side .tabs li {
     margin-bottom: 2px;
   }
 }
+
 /* 
 The project specific CSS starts here
 This is the minimum CSS that you will need in order for this to work
@@ -744,18 +880,22 @@ This is the minimum CSS that you will need in order for this to work
 .tabbed-content .tabs {
   display: none;
 }
+
 .tabbed-content .item {
   min-height: 2em;
 }
+
 .tabbed-content .item::before {
   content: attr(data-title);
 }
+
 .tabbed-content .item .item-content {
   opacity: 0;
   visibility: hidden;
   height: 0;
   overflow: hidden;
 }
+
 .tabbed-content .item.active .item-content {
   opacity: 1;
   visibility: visible;
@@ -767,40 +907,50 @@ This is the minimum CSS that you will need in order for this to work
     display: block;
     height: 8rem;
   }
+
   .tabbed-content .tabs li {
     display: inline-block;
   }
+
   .tabbed-content .tabs li a {
     display: block;
   }
+
   .tabbed-content .item {
     min-height: 0;
   }
+
   .tabbed-content .item::before {
     display: none;
   }
+
   .tabbed-content.tabs-side .tabs {
     float: left;
   }
+
   .tabbed-content.tabs-side .tabs li {
     display: block;
   }
 }
+
 .educational-box {
   border-bottom: 1px solid var(--color-d6);
   padding-block: 0 6rem;
 }
+
 .peo-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 4rem 0 6rem;
 }
+
 .peo-box {
   background-color: var(--color-white);
   padding: 3rem;
   border-radius: 8px;
 }
+
 .peo-box h3 {
   font: var(--font-28);
   color: var(--color-4e);
@@ -808,11 +958,13 @@ This is the minimum CSS that you will need in order for this to work
   font-family: var(--font-Condensed);
   text-transform: uppercase;
 }
+
 .peo-box p {
   font: var(--font-16);
   color: var(--color-21);
   font-weight: 400;
 }
+
 .tabbed-content .apply-btn1 {
   background-color: var(--color-100);
   text-transform: uppercase;
@@ -822,48 +974,58 @@ This is the minimum CSS that you will need in order for this to work
   color: var(--color-4e);
   display: inline-block;
 }
+
 .tabbed-content .apply-btn1:hover {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+
 .core-sec {
   padding-block: 0 10rem;
 }
+
 .core-box {
   display: grid;
   grid-template-columns: repeat(1, 65% auto);
   gap: 5rem;
 }
+
 .core-text {
   position: relative;
   padding-block: 3rem 0;
 }
+
 .core-text span {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .core-text h6 {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   padding: 2.8rem 0;
 }
+
 .core-text blockquote {
   font: var(--font-18);
   color: var(--color-21);
   font-weight: 700;
 }
+
 .core-text p {
   color: var(--color-21);
   padding-right: 3rem;
 }
+
 .core-pdf {
   position: relative;
   margin-top: 7rem;
   border-top: 1px solid var(--color-d6);
   padding-block: 3rem 0;
 }
+
 .core-pdf::after {
   content: "";
   background-color: var(--color-d6);
@@ -873,6 +1035,7 @@ This is the minimum CSS that you will need in order for this to work
   right: -5rem;
   height: 0.1rem;
 }
+
 .core-pdf a {
   display: inline-flex;
   align-items: center;
@@ -880,20 +1043,24 @@ This is the minimum CSS that you will need in order for this to work
   color: var(--color-21);
   font-weight: 700;
 }
+
 .core-pdf a img {
   width: 2.5rem;
   padding-right: 1rem;
 }
+
 .core-img img {
   box-shadow: 0px 3px 6px #0000007d;
   border-radius: 1.6rem;
 }
+
 .program-sec-six {
   background-color: var(--color-100);
   padding-block: 8rem;
   position: relative;
   z-index: 1;
 }
+
 .program-sec-six::before {
   content: "";
   background-color: var(--color-f6);
@@ -903,28 +1070,34 @@ This is the minimum CSS that you will need in order for this to work
   height: 13rem;
   z-index: -1;
 }
+
 .structure {
   position: relative;
 }
+
 .structure span {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 600;
 }
+
 .structure p {
   font: var(--font-22);
   color: var(--color-black);
   font-weight: 300;
   padding: 2.8rem 0;
 }
+
 .structure-box {
   display: grid;
   grid-template-columns: repeat(1, 40% auto);
   gap: 7rem;
 }
+
 .structure-text {
   position: relative;
 }
+
 .structure-text p {
   font: var(--font-18);
   color: var(--color-black);
@@ -932,22 +1105,26 @@ This is the minimum CSS that you will need in order for this to work
   padding-inline: 0 20rem;
   padding-block: 0 2rem;
 }
+
 .structure-text h2 {
   font: var(--font-50);
   letter-spacing: -2.5px;
   font-family: var(--font-Condensed);
 }
+
 .structure-text {
   font: var(--font-18);
   color: var(--color-black);
   padding-top: 3rem;
 }
+
 .engineering-btn {
   position: relative;
   margin-top: 6rem;
   border-top: 1px solid #0000004a;
   padding-block: 3rem 0;
 }
+
 .engineering-btn::before {
   content: "";
   background-color: #0000004a;
@@ -957,6 +1134,7 @@ This is the minimum CSS that you will need in order for this to work
   left: -7rem;
   top: -1px;
 }
+
 .engineering-btn .apply-btn1 {
   text-transform: uppercase;
   font: var(--font-18);
@@ -964,9 +1142,11 @@ This is the minimum CSS that you will need in order for this to work
   letter-spacing: 0.72px;
   padding: 1rem 1.5rem;
 }
+
 .engineering-btn .apply-btn1:hover {
   background-color: var(--color-white);
 }
+
 .engineering-btn .structure-btn {
   padding: 1rem 1.5rem;
   font: var(--font-18);
@@ -975,33 +1155,41 @@ This is the minimum CSS that you will need in order for this to work
   font-weight: 700;
   margin-left: 1rem;
 }
+
 .engineering-btn .structure-btn img {
   width: 1.5rem;
   height: 17px;
   object-fit: cover;
 }
+
 .engineering-btn .structure-btn:hover img {
   filter: inherit;
 }
+
 .program-testimonial {
   padding-block: 3rem 10rem;
 }
+
 .program-testimonial-box {
   display: grid;
   grid-template-columns: repeat(1, 20% auto);
   gap: 7rem;
 }
+
 .testimonial-box {
   position: relative;
 }
+
 .testimonial-text {
   position: relative;
 }
+
 .testimonial-text span {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .testimonial-text p,
 .across p {
   font: var(--font-22);
@@ -1009,11 +1197,13 @@ This is the minimum CSS that you will need in order for this to work
   font-weight: 300;
   padding: 2rem 0;
 }
+
 .across {
   border-top: 1px solid var(--color-d6);
   margin-top: 10rem;
   padding-block: 4rem 0;
 }
+
 .across h2 {
   font: var(--font-80);
   color: var(--color-4e);
@@ -1021,14 +1211,17 @@ This is the minimum CSS that you will need in order for this to work
   letter-spacing: -4px;
   font-family: var(--font-Condensed);
 }
+
 .across p {
   padding: 0;
   margin-bottom: 3rem;
 }
+
 .program-testimonial .across p {
   padding: 0;
   margin-bottom: 3rem;
 }
+
 .across .apply-btn1 {
   font: var(--font-18);
   color: var(--color-4e);
@@ -1038,36 +1231,43 @@ This is the minimum CSS that you will need in order for this to work
   background-color: var(--color-100);
   padding: 1rem 1.6rem;
 }
+
 .across .apply-btn1:hover {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+
 .testimonial-img {
   position: relative;
 }
+
 .testimonial-img-box {
   position: relative;
 }
+
 .testimonial-img-box img {
   border-radius: 54px 8px 8px 8px;
 }
+
 .testimonial-img-box figure {
   display: grid;
 }
-.testimonial-img-box figure > * {
+
+.testimonial-img-box figure>* {
   grid-area: 1 / 1;
 }
+
 .testimonial-img-text {
   transition: all 0.4s;
   padding: 6rem 2rem 3rem 3rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
-    0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: end;
 }
+
 .testimonial-img-text h4 {
   color: var(--color-white);
   font: var(--font-36);
@@ -1075,22 +1275,26 @@ This is the minimum CSS that you will need in order for this to work
   font-weight: 600;
   font-family: var(--font-Condensed);
 }
+
 .testimonial-img-text p {
   color: var(--color-white);
   font: var(--font-18);
   font-weight: 600;
   font-family: var(--font-Condensed);
 }
+
 .testimonial-img-text p span {
   color: var(--color-100);
   font-size: 2rem;
 }
+
 .testimonial-img-text blockquote {
   color: var(--color-white);
   font: var(--font-16);
   font-weight: 300;
   margin: 1rem 0 0 0;
 }
+
 .testimonial-img-text::before {
   content: "";
   background-color: var(--color-100);
@@ -1099,19 +1303,24 @@ This is the minimum CSS that you will need in order for this to work
   width: 4px;
   height: 11rem;
 }
+
 .opportunitie-sec {
   position: relative;
 }
+
 .opportunitie-img {
   position: relative;
 }
+
 .opportunitie-box {
   position: absolute;
   bottom: 5rem;
 }
+
 .opportunitie-text {
   width: 65rem;
 }
+
 .opportunitie-text blockquote {
   font: var(--font-18);
   color: var(--color-4e);
@@ -1119,6 +1328,7 @@ This is the minimum CSS that you will need in order for this to work
   font-weight: 600;
   font-family: var(--font-Condensed);
 }
+
 .opportunitie-text h2 {
   font: var(--font-42);
   color: var(--color-4e);
@@ -1127,32 +1337,39 @@ This is the minimum CSS that you will need in order for this to work
   font-family: var(--font-Condensed);
   letter-spacing: -1.26px;
 }
+
 .opportunitie-text h2 span {
   color: var(--color-e8);
 }
+
 .opportunitie-tab {
   background-color: #00000066;
   border-radius: 8px;
   padding: 1rem;
   margin-top: 9rem;
 }
+
 .opportunitie-tab ul {
   margin: 0;
   padding: 0;
 }
+
 .opportunitie-tab ul li {
   display: inline-block;
   padding-right: 4.5rem;
 }
+
 .opportunitie-tab ul li a {
   color: var(--color-white);
   font: var(--font-16);
   position: relative;
   padding-inline: 0.8rem 0;
 }
+
 .opportunitie-tab ul li a:hover {
   color: var(--color-100);
 }
+
 .opportunitie-tab ul li a::before {
   content: "";
   background-color: var(--color-100);
@@ -1161,6 +1378,7 @@ This is the minimum CSS that you will need in order for this to work
   position: absolute;
   left: 0;
 }
+
 /* faulty */
 .faulty-box {
   display: grid;
@@ -1168,10 +1386,12 @@ This is the minimum CSS that you will need in order for this to work
   gap: 2rem;
   position: relative;
 }
+
 .faulty-drop-down {
   position: relative;
   width: 100%;
 }
+
 .faulty-drop-down .form-select {
   width: 100%;
   box-shadow: 0px 16px 56px #00000017;
@@ -1184,24 +1404,30 @@ This is the minimum CSS that you will need in order for this to work
   letter-spacing: -0.36px;
   font-weight: 400;
 }
+
 .faulty-drop-down .form-select:focus-visible {
   outline: none;
 }
+
 .faulty-sec1 {
   padding-block: 10rem;
 }
+
 .faulty-list {
   gap: 4rem;
 }
+
 .faulty-list-box {
   position: relative;
   overflow: hidden;
   transition: all 0.4s;
 }
+
 .faulty-text {
   padding: 2rem 0 1rem 4rem;
   position: relative;
 }
+
 .faulty-text::before {
   content: "";
   background-color: var(--color-100);
@@ -1211,6 +1437,7 @@ This is the minimum CSS that you will need in order for this to work
   left: 1.5rem;
   top: -3rem;
 }
+
 .faulty-text h4 {
   font: var(--font-29);
   color: var(--color-4e);
@@ -1219,6 +1446,7 @@ This is the minimum CSS that you will need in order for this to work
   letter-spacing: -0.87px;
   text-transform: uppercase;
 }
+
 .faulty-text p {
   font: var(--font-17);
   color: var(--color-e8);
@@ -1226,6 +1454,7 @@ This is the minimum CSS that you will need in order for this to work
   font-family: var(--font-Condensed);
   margin: 1rem 0;
 }
+
 .faulty-text span {
   width: 2.4rem;
   height: 2.4rem;
@@ -1236,21 +1465,26 @@ This is the minimum CSS that you will need in order for this to work
   border-radius: 10rem;
   transition: all 0.5s ease;
 }
+
 .faulty-text span svg {
   color: var(--color-73);
   font-size: 22px;
 }
+
 .faulty-list-box:hover .faulty-text span {
   background: var(--color-73);
 }
+
 .faulty-list-box:hover .faulty-text span svg {
   color: var(--color-white);
 }
+
 /* faulty  detail*/
 .faulty-detail-sec {
   position: relative;
   z-index: 0;
 }
+
 .faulty-detail-sec::before {
   content: "";
   background-color: var(--color-f5);
@@ -1261,6 +1495,7 @@ This is the minimum CSS that you will need in order for this to work
   position: absolute;
   z-index: -1;
 }
+
 .faulty-profile {
   background-color: var(--color-100);
   border-radius: 5rem 0.8rem 2rem 0.8rem;
@@ -1270,9 +1505,11 @@ This is the minimum CSS that you will need in order for this to work
   gap: 4rem;
   align-items: center;
 }
+
 .faulty-profile-text {
   position: relative;
 }
+
 .faulty-profile-text h4 {
   position: relative;
   font: var(--font-40);
@@ -1281,39 +1518,47 @@ This is the minimum CSS that you will need in order for this to work
   letter-spacing: -1.2px;
   font-family: var(--font-Condensed);
 }
+
 .faulty-profile-text span {
   font: var(--font-18);
   color: var(--color-4e);
   letter-spacing: -0.28px;
 }
+
 .cus-profile-text {
   margin-block: 4rem 0;
   border-top: 0.1rem solid #0000003d;
   padding-block: 3rem 0;
 }
+
 .cus-profile-text h6 {
   font: var(--font-24);
   font-weight: 600;
   color: var(--color-4e);
   margin-bottom: 2rem;
 }
+
 .cus-profile-text p {
   color: var(--color-21);
 }
+
 .faulty-detail-sec1 {
   padding-block: 0 10rem;
 }
+
 .profile-info {
   display: grid;
   grid-template-columns: repeat(1, 38% auto);
   gap: 8rem;
   margin-left: 4rem;
 }
+
 .profile-info-box {
   padding: 2rem 3rem;
   position: relative;
   z-index: 0;
 }
+
 .profile-info-box::before {
   content: "";
   background-color: var(--color-e8);
@@ -1324,51 +1569,63 @@ This is the minimum CSS that you will need in order for this to work
   left: 0;
   z-index: -1;
 }
+
 .info-box {
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
 }
+
 hr {
   border-top: 0.1rem solid var(--color-white);
 }
+
 .profile-icon i {
   color: var(--color-white);
   font: var(--font-15);
 }
+
 .profile-email p {
   font: var(--font-16);
   color: var(--color-white);
 }
+
 .profile-email a {
   font: var(--font-18);
   color: var(--color-white);
 }
+
 .profile-info-text {
   position: relative;
   padding-inline: 0.8rem 0;
 }
+
 .profile-education {
   border-bottom: 0.1rem solid var(--color-d6);
   padding-block: 4rem 3rem;
 }
+
 .profile-education h5 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
+
 .profile-education ul li {
   font: var(--font-16);
   color: var(--color-21);
   margin-bottom: 1rem;
 }
+
 .profile-education ul li::marker {
   color: var(--color-36);
 }
+
 .profile-social {
   border-bottom: 0rem solid;
 }
+
 .profile-social h6 {
   font: var(--font-18);
   color: var(--color-36);
@@ -1376,11 +1633,13 @@ hr {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
+
 .research-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1.5rem;
 }
+
 .research-box {
   background-color: var(--color-white);
   padding: 1.2rem;
@@ -1388,54 +1647,146 @@ hr {
   justify-content: space-between;
   align-items: center;
 }
-.research-icon {
-}
+
 .research-icon p {
   display: flex;
   font: var(--font-13);
   align-items: center;
 }
+
 .research-icon p img {
   width: 4rem;
   margin-right: 0.5rem;
 }
+
 .research-link a {
   color: var(--color-73);
   font: var(--font-14);
 }
 
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.inner-title .innnr_head h3 {
+  font: var(--font-45);
+  letter-spacing: -1.35px;
+  color: var(--color-4e);
+  margin-bottom: 3.8rem;
+  font-family: var(--font-Condensed);
+}
+
+/* faculty page responsive css start */
+
+
+@media (max-width:1366px) {
+  .faulty-text h4 {
+    font-size: 24px;
+  }
+
+  .faulty-sec1 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (max-width:1280px) {
+  .program-list-boxs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faulty-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:540px) {
+
+  .program-list-boxs,
+  .faulty-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .faulty-sec1 {
+    padding-block: 4rem;
+  }
+
+  .faulty-text h4 {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .program-list-boxs,
+  .faulty-box {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+
 /* Facilities */
 .facilities-sec1 {
   padding-block: 10rem 0rem;
 }
+
 .faclity-header-tabs a {
   color: rgb(103 105 108);
 }
+
 .faclity-header-tabs .active a {
   color: #ff6600;
 }
+
 .facilities-text {
   text-align: center;
   align-items: flex-start;
   position: relative;
 }
+
 .facilities-text h6 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .facilities-text p {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   padding: 2rem 6rem 3rem;
 }
+
 .facilities-img img {
   border-radius: 5rem 0.8rem;
 }
+
 .facilities-img-box {
   position: relative;
 }
+
 /* .facilities-img {
   position: sticky;
   top: 1%;
@@ -1443,7 +1794,8 @@ hr {
 } */
 
 .facilities-img {
-  position: relative; /* remove sticky here */
+  position: relative;
+  /* remove sticky here */
   transition: all 0.8s ease;
 }
 
@@ -1460,7 +1812,8 @@ hr {
 .facilities-img {
   flex: 0 0 40%;
   position: sticky;
-  top: 100px; /* distance from top */
+  top: 100px;
+  /* distance from top */
   height: fit-content;
 }
 
@@ -1468,16 +1821,19 @@ hr {
   flex: 1;
   overflow: visible;
 }
+
 .sticky-active figure {
   top: 0;
   position: sticky;
 }
+
 .facilities-box {
   display: grid;
   grid-template-columns: repeat(1, 60% auto);
   gap: 5rem;
   align-items: flex-start;
 }
+
 .facilities-box-text {
   display: flex;
   padding-block: 6rem;
@@ -1486,6 +1842,7 @@ hr {
   align-self: start;
   z-index: 5;
 }
+
 .facilities-box-text::before {
   content: "";
   background-color: var(--color-100);
@@ -1495,9 +1852,11 @@ hr {
   left: 0;
   top: 24rem;
 }
+
 .facilities-heading {
   margin-right: 3rem;
 }
+
 .facilities-heading h2 {
   font: var(--font-100);
   color: var(--color-4e);
@@ -1505,9 +1864,11 @@ hr {
   font-family: var(--font-Condensed);
   letter-spacing: -9.5px;
 }
+
 .facilities-titel {
   padding: 1rem 5rem 0 0;
 }
+
 .facilities-titel h5 {
   font: var(--font-28);
   color: var(--color-black);
@@ -1516,9 +1877,11 @@ hr {
   letter-spacing: -0.84px;
   font-family: var(--font-Condensed);
 }
+
 .facilities-titel h5 span {
   color: var(--color-e8);
 }
+
 .facilities-list {
   margin-top: -6rem;
   position: relative;
@@ -1527,22 +1890,26 @@ hr {
   z-index: 5;
   overflow: hidden;
 }
+
 .facilities-list-box {
   position: relative;
   margin-top: 2rem;
 }
+
 .facilities-list-box figure {
   display: grid;
 }
+
 .facilities-list-box figure img {
   border-radius: 0.8rem;
 }
-.facilities-list-box figure > * {
+
+.facilities-list-box figure>* {
   grid-area: 1 / 1;
 }
+
 .facilities-list-text {
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
-    0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   padding: 2.5rem 5rem 2.5rem 3rem;
   display: flex;
   flex-direction: column;
@@ -1551,11 +1918,13 @@ hr {
   border-radius: 0 0 0.8rem 0.8rem;
   overflow: hidden;
 }
+
 .facilities-list-text img {
   width: 5rem;
   margin-bottom: 1rem;
   border-radius: 0 !important;
 }
+
 .facilities-list-text h4 {
   font: var(--font-28);
   letter-spacing: -0.84px;
@@ -1564,40 +1933,49 @@ hr {
   font-family: var(--font-Condensed);
   margin-bottom: 1rem;
 }
+
 .facilities-list-text p {
   font: var(--font-12);
   color: var(--color-white);
   line-height: 1.8rem;
 }
+
 .facilities-list-text h4 span {
   display: block;
 }
+
 .facilities-sec2 {
   padding-block: 8rem 2rem;
   background-color: var(--color-f6);
   position: relative;
   z-index: 9;
 }
+
 .academics-labs-text {
   position: relative;
 }
+
 .academics-labs-text h6 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .academics-labs-text p {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   margin-top: 1rem;
 }
+
 .facilitie-tab-list {
   margin-top: -30rem;
 }
+
 .facilitie-tab-list .tabs ul {
   border-top: 0px solid var(--color-d6);
 }
+
 .facilitie-tab-list .tabs ul::before,
 .facilitie-tab-list .tabs ul::after {
   display: none;
@@ -1614,6 +1992,7 @@ hr {
   padding-block: 0 6rem;
   z-index: 9;
 }
+
 .labs-bg {
   z-index: 0;
   position: absolute;
@@ -1624,12 +2003,14 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .labs-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
   z-index: 1;
 }
+
 /* MAIN CONTAINER */
 .labs-container {
   position: relative;
@@ -1640,6 +2021,7 @@ hr {
   max-width: 1360px;
   align-items: center;
 }
+
 /* LEFT MENU */
 .labs-menu {
   width: 45%;
@@ -1647,6 +2029,7 @@ hr {
   flex-direction: column;
   gap: 10px;
 }
+
 .menu-item {
   border-left: 3px solid transparent;
   cursor: pointer;
@@ -1657,6 +2040,7 @@ hr {
   font: var(--font-14);
   position: relative;
 }
+
 .menu-item::before {
   content: "";
   background-color: var(--color-100);
@@ -1667,26 +2051,32 @@ hr {
   left: -2rem;
   opacity: 0;
 }
+
 .menu-item.active,
 .menu-item:hover {
   color: var(--color-white);
   font-weight: 600;
 }
+
 .menu-item.active::before {
   opacity: 1;
 }
+
 .menu-content {
   display: none;
 }
+
 .menu-item.active .menu-content {
   display: none;
 }
+
 /* RIGHT SIDE TEXT */
 .labs-info {
   width: 30%;
   text-align: left;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .labs-title {
   font: var(--font-28);
   color: var(--color-white);
@@ -1695,6 +2085,7 @@ hr {
   font-family: var(--font-Condensed);
   margin-bottom: 12px;
 }
+
 .labs-desc {
   color: var(--color-white);
   font: var(--font-12);
@@ -1702,6 +2093,7 @@ hr {
   line-height: 1.6rem;
   margin-bottom: 1.5rem;
 }
+
 .labs-info a {
   font: var(--font-16);
   color: var(--color-white);
@@ -1713,26 +2105,31 @@ hr {
   text-align: center;
   margin-top: 1rem;
 }
+
 .labs-info a:hover {
   background-color: var(--color-100);
   color: var(--color-black);
   border: 0.1rem solid var(--color-100);
 }
-.labs-link {
-}
+
+.labs-link {}
+
 /* -------- MOBILE VIEW -------- */
 @media (max-width: 768px) {
   .labs-wrapper {
     height: auto;
     padding: 40px 0;
   }
+
   .labs-container {
     flex-direction: column;
     width: 90%;
   }
+
   .labs-menu {
     width: 100%;
   }
+
   .menu-item {
     background: rgba(255, 255, 255, 0.05);
     padding: 15px;
@@ -1740,12 +2137,14 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
   }
+
   .menu-header {
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   .menu-content {
     display: none;
     padding-top: 10px;
@@ -1754,17 +2153,22 @@ hr {
     line-height: 1.6;
     animation: fadeIn 0.4s ease forwards;
   }
+
   .menu-item.active .menu-content {
     display: block;
   }
+
   .labs-info {
-    display: none; /* hide desktop text on mobile */
+    display: none;
+    /* hide desktop text on mobile */
   }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -1775,6 +2179,7 @@ hr {
 .facilities-sec4 {
   padding-block: 10rem;
 }
+
 .res-center {
   display: grid;
   grid-template-columns: repeat(1, 40% auto);
@@ -1785,6 +2190,7 @@ hr {
   align-items: end;
   z-index: 0;
 }
+
 .res-center::after {
   content: "";
   background-color: var(--color-f6);
@@ -1794,6 +2200,7 @@ hr {
   left: 0;
   z-index: -1;
 }
+
 .res-center::before {
   content: "";
   background-color: var(--color-100);
@@ -1804,38 +2211,46 @@ hr {
   width: 0.4rem;
   top: 4rem;
 }
+
 .res-center-img {
   margin-left: -8rem;
 }
+
 .res-center-text {
   position: relative;
   padding-inline: 0 6rem;
 }
+
 .top-res-text {
   padding-block: 0 5rem;
 }
+
 .top-res-text h6 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .top-res-text blockquote {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   margin: 1.5rem 0;
 }
+
 .top-res-text p {
   font: var(--font-16);
   color: var(--color-black);
   margin: 1rem 0;
   padding-inline: 0 11rem;
 }
+
 .bottom-res-box {
   display: flex;
   align-items: end;
   gap: 5rem;
 }
+
 .bottom-res-text h3 {
   font: var(--font-80);
   color: var(--color-black);
@@ -1843,31 +2258,37 @@ hr {
   font-family: var(--font-Condensed);
   font-weight: 400;
 }
+
 .bottom-res-text p {
   font: var(--font-18);
   font-weight: 300;
   padding-inline: 0 7rem;
   letter-spacing: -0.18px;
 }
+
 .objectives-titel {
   text-align: center;
   padding-block: 0 3rem;
 }
+
 .objectives-titel span {
   font: var(--font-14);
   color: var(--color-black);
   font-weight: 600;
 }
+
 .objectives {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
 .objectives-box {
   border-bottom: 0.1rem dotted #d6c2c2;
   padding: 0 0 2rem 1.4rem;
   position: relative;
 }
+
 .objectives-box::before {
   content: "";
   background-color: var(--color-100);
@@ -1877,17 +2298,21 @@ hr {
   height: 5rem;
   top: 0;
 }
+
 .objectives-box p {
   color: var(--color-21);
 }
+
 .facilities-sec5 {
   padding-block: 4rem 10rem;
 }
+
 .library {
   border-radius: 5rem 0.8rem;
   padding: 6rem 0rem 0rem 8rem;
   position: relative;
 }
+
 .library::before {
   content: "";
   background-color: var(--color-9a);
@@ -1898,25 +2323,30 @@ hr {
   height: 73rem;
   border-radius: 5rem 0.8rem;
 }
+
 .library-box {
   display: grid;
   grid-template-columns: repeat(1, 66% auto);
   gap: 3rem;
 }
+
 .top-library-text {
   position: relative;
 }
+
 .top-library-text h5 {
   font: var(--font-24);
   color: var(--color-white);
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
 .top-library-text p {
   color: var(--color-white);
   font-weight: 300;
   padding-inline: 0 10rem;
 }
+
 .library-link {
   width: 2.2rem;
   height: 2.2rem;
@@ -1928,47 +2358,57 @@ hr {
   text-align: center;
   line-height: 2.2rem;
 }
+
 .library-link:hover {
   border: 0.1rem solid var(--color-100);
   background-color: var(--color-100);
 }
+
 .learn-text {
   margin: 3rem 0 1.8rem;
 }
+
 .learn-text h6 {
   font: var(--font-24);
   color: var(--color-white);
   font-weight: 300;
   margin-bottom: 0.8rem;
 }
+
 .learn-text span {
   font: var(--font-16);
   color: var(--color-white);
   font-weight: 300;
 }
+
 .bottom-library-text {
   display: grid;
   grid-template-columns: repeat(1, 60% auto);
   margin-block: 4rem 0;
   position: relative;
 }
+
 .library-timing {
   border-top: 0.1rem solid #ffffff52;
   padding-block: 4rem 0;
 }
+
 .library-timing {
   position: relative;
 }
+
 .library-timing h6 {
   font: var(--font-21);
   color: var(--color-100);
   font-weight: 600;
   padding-bottom: 2rem;
 }
+
 .library-timing ul {
   list-style-type: none;
   padding: 0 2rem 0 0;
 }
+
 .library-timing ul li {
   font: var(--font-16);
   color: var(--color-white);
@@ -1976,28 +2416,36 @@ hr {
   padding: 1rem 0;
   font-weight: 300;
 }
+
 .library-timing ul li span {
   font-weight: 500;
 }
+
 .library-timing ul li:last-child {
   border-bottom: 0rem;
 }
+
 .bottom-library-img {
   margin-top: -10rem;
 }
+
 .right-library {
   position: relative;
 }
+
 .right-library-top {
   margin-right: -20rem;
 }
+
 .right-library-bottom {
   padding: 4em 6rem 0 0;
 }
+
 .right-library-text {
   position: relative;
   padding: 2rem 2rem 0 4rem;
 }
+
 .right-library-text::before {
   content: "";
   background-color: var(--color-100);
@@ -2007,6 +2455,7 @@ hr {
   left: 1.4rem;
   top: -7rem;
 }
+
 .right-library-text h2 {
   font: var(--font-80);
   color: var(--color-black);
@@ -2014,27 +2463,33 @@ hr {
   font-family: var(--font-Condensed);
   font-weight: 400;
 }
+
 .right-library-text p {
   font: var(--font-18);
   color: var(--color-black);
   font-weight: 300;
   padding-inline: 0 3rem;
 }
+
 .initiatives {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .initiatives-img {
   margin-left: -8rem;
 }
+
 .initiatives-text {
   position: relative;
 }
+
 .initiatives-top-text {
   background-color: var(--color-white);
   padding: 5rem 7rem;
   position: relative;
 }
+
 .initiatives-top-text::before {
   content: "";
   background-color: var(--color-white);
@@ -2044,30 +2499,36 @@ hr {
   right: -13rem;
   top: 0;
 }
+
 @media (min-width: 2200px) {
   .initiatives-top-text::before {
     height: 34.7rem;
   }
 }
+
 .initiatives-top-text h5 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
 }
+
 .initiatives-top-text h6 {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
   padding: 2rem 0;
 }
+
 .initiatives-bottom-text {
   padding: 4rem 6rem 0 7rem;
 }
+
 .initiatives-bottom-text span {
   font: var(--font-14);
   color: var(--color-black);
   font-weight: 600;
 }
+
 .initiatives-bottom-text ul {
   list-style-type: none;
   display: grid;
@@ -2075,6 +2536,7 @@ hr {
   gap: 3rem;
   margin-top: 3rem;
 }
+
 .initiatives-bottom-text ul li {
   font: var(--font-16);
   color: var(--color-black);
@@ -2084,6 +2546,7 @@ hr {
   padding-block: 0 1.6rem;
   position: relative;
 }
+
 .initiatives-bottom-text ul li::before {
   content: "";
   background-color: var(--color-73);
@@ -2094,26 +2557,32 @@ hr {
   top: 4px;
   border-radius: 15px;
 }
+
 .facilities-sec7 {
   padding-block: 5rem 10rem;
 }
+
 .transport {
   display: grid;
   grid-template-columns: repeat(1, 48% auto);
   gap: 5rem;
 }
+
 .transport-box {
   padding-inline: 4rem 0;
 }
+
 .transport-box-text {
   background-color: var(--color-29);
   padding: 8rem 9rem;
 }
+
 .transport-box-text span {
   font: var(--font-24);
   color: var(--color-white);
   font-weight: 400;
 }
+
 .transport-box-text h3 {
   font: var(--font-52);
   color: var(--color-white);
@@ -2122,6 +2591,7 @@ hr {
   line-height: 4.6rem;
   padding-block: 1.5rem;
 }
+
 .transport-box-text p {
   font: var(--font-14);
   color: var(--color-white);
@@ -2129,20 +2599,25 @@ hr {
   line-height: 2.1rem;
   margin-bottom: 2rem;
 }
+
 .transport-box-img {
   padding-block: 5rem 0;
   display: flex;
   justify-content: end;
 }
+
 .transport-box-img img {
   width: auto;
 }
+
 .right-transport {
   position: relative;
 }
+
 .right-transport-img {
   margin-right: -13rem;
 }
+
 .right-transport-text {
   margin-top: 3rem;
   display: grid;
@@ -2150,13 +2625,16 @@ hr {
   gap: 2rem;
   align-items: center;
 }
+
 .right-transport-titel {
   padding-inline: 3rem;
 }
+
 .right-transport-heading {
   position: relative;
   padding-inline: 5rem 0;
 }
+
 .right-transport-heading::before {
   content: "";
   background-color: var(--color-ec);
@@ -2166,6 +2644,7 @@ hr {
   left: 0;
   top: -9rem;
 }
+
 .right-transport-heading h3 {
   font: var(--font-80);
   color: var(--color-black);
@@ -2173,44 +2652,58 @@ hr {
   font-family: var(--font-Condensed);
   font-weight: 400;
 }
+
 .right-transport-heading p {
   font: var(--font-18);
   color: var(--color-black);
   font-weight: 300;
   letter-spacing: -0.18px;
 }
+
 @media screen and (max-width: 1650px) {
   .innnr_head br {
     display: none;
   }
+
   .course-text-box {
     grid-template-columns: repeat(1, 75% auto);
   }
 }
+
 @media screen and (max-width: 1366px) {
   .program-list {
     gap: 3rem;
   }
+
   .course-text-box {
     grid-template-columns: repeat(1, 70% auto);
   }
 }
+
 @media screen and (max-width: 1280px) {
   .program-list {
     grid-template-columns: 28% auto;
   }
+
   .course-text-box {
     grid-template-columns: repeat(1, 100%);
   }
+
   .course-text {
     margin-bottom: 1rem;
   }
+
   .duration {
     align-items: start;
     justify-content: start;
     flex-direction: column;
   }
+
   .duration-text p {
     margin-bottom: 1rem;
   }
 }
+
+
+
+/* faculty landing page css start */
