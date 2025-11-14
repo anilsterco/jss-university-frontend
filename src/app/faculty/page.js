@@ -190,7 +190,7 @@ export default function FacultyPage() {
                   >
                     <option value="">Select Faculty Type</option>
                     {facultyListData.map((f, i) => (
-                      <option key={i} value={f.type}>
+                      <option key={i} value={f.type_id}>
                         {f.type}
                       </option>
                     ))}
@@ -264,7 +264,7 @@ export default function FacultyPage() {
                         disabled={isLoadingMore}
                       >
                         {isLoadingMore ? "Loading..." : "Load More"}{" "}
-                        <i className="bi bi-arrow-down ps-2"></i> 
+                        <i className="bi bi-arrow-down ps-2"></i>
                       </button>
                     </div>
                   )}
