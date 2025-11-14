@@ -219,7 +219,7 @@
 
 .loadMoreContainer a::before {
   content: '';
-  background-color: var(--color-f6);
+  background-color: var(--color-white);
   z-index: -1;
   position: absolute;
   width: 20rem;
@@ -1483,16 +1483,7 @@
   z-index: 9;
 }
 
-.loadMoreContainer a::before {
-  content: '';
-  background-color: var(--color-f6);
-  z-index: -1;
-  position: absolute;
-  width: 20rem;
-  height: 40px;
-  top: 0;
-  left: -4rem;
-}
+
 
 .loadMoreContainer a:hover {
   background-color: var(--color-4e);
