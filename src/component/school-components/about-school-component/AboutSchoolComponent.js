@@ -8,7 +8,7 @@ import styles from "./about-school.module.css";
 export default function AboutSchool({ data }) {
   const dummyAboutSchoolContent = {
     title:
-      '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text ">ENGINEERING EXCELLENCE.</span>',
+      '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text">ENGINEERING EXCELLENCE.</span>',
     subtitle: "ABOUT SCHOOL OF ENGINEERING",
     description:
       "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
@@ -40,49 +40,63 @@ export default function AboutSchool({ data }) {
   const aboutSchoolContent = data ? data : dummyAboutSchoolContent;
   return (
     <div className={styles.aboutSchoolSection}>
-      <div className="container-fluid">
+      <div className="container">
         <div className="row align-items-center">
           {/* LEFT COLUMN */}
           <div className="col-md-6 mb-4">
-            <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
+            <div className="about_school_left">
+              <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
 
-            <h1
-              className={`${styles.title} `}
-              dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
-            ></h1>
+              <h1
+                className={`${styles.title} `}
+                dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
+              ></h1>
 
-            <p className={styles.description}>
-              {aboutSchoolContent.description}
-            </p>
+              <p className={styles.description}>
+                {aboutSchoolContent.description}
+              </p>
 
-            <div>
-              <button className={styles.arrowButton}>
-                <SlArrowRightCircle />
-              </button>
-            </div>
+              <div>
+                <button className={styles.arrowButton}>
+                  <SlArrowRightCircle />
+                </button>
+              </div>
 
-            {/* Ranking Cards */}
-            <div className="row mt-4 w-100 m-auto">
-              {aboutSchoolContent.highlights && aboutSchoolContent.highlights.map((item, index) => (
-                <div className="col-md-6 mb-3" key={index}>
-                  <div className={styles.rankingCard}>
-                    <span className={styles.rankNumber}>{item.rank}</span>
-                    <div>
-                      <p className={styles.rankText}>{item.text}</p>
-                      <p className={styles.rankSource}>{item.source}</p>
+              {/* Ranking Cards */}
+              <div className="row mt-4">
+                {aboutSchoolContent.highlights &&
+                  aboutSchoolContent.highlights.map((item, index) => (
+                    <div className="col-md-6 about_rnk" key={index}>
+                      <div className={styles.rankingCard}>
+                        <div className="counter_dfe">
+                          <span className={styles.rankNumber}>{item.rank}</span>
+                          <p className={styles.rankText}>{item.text}</p>
+                        </div>
+                        <div>
+                          <p className={styles.rankSource}>{item.source}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  ))}
+              </div>
 
-            {/* Buttons */}
-            <div className={styles.buttonsContainer}>
-              {aboutSchoolContent.buttons && aboutSchoolContent.buttons.map((btn, i) => (
-                <Link key={i} href={btn.url} className={styles.navButtons}>
-                  {btn.text}
-                </Link>
-              ))}
+              {/* Buttons */}
+              <div className={styles.buttonsContainer}>
+                {aboutSchoolContent.buttons &&
+                  aboutSchoolContent.buttons.map((btn, i) => (
+                    <div key={i}>
+                      {btn.url && (
+                        <Link
+                          key={i}
+                          href={btn.url}
+                          className={styles.navButtons}
+                        >
+                          {btn.text}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
 

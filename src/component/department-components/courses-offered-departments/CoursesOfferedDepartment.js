@@ -41,7 +41,8 @@ const CoursesOffered = ({ data }) => {
   const coursesData = data ? data : dummyCoursesData;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.course_dep}>
+    <div className="container-fluid">
       {/* Header Section */}
       <div className={styles.headerSection}>
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
@@ -72,18 +73,20 @@ const CoursesOffered = ({ data }) => {
               <div className={styles.admissionContent}>
                 <span className={styles.admissionTitle}>Admission 2025-26</span>
                 <div className={styles.admissionLinks}>
-                  {coursesData.admission_bar.links.map((link, index) => (
-                    <div key={index}>
-                      <Link href={link.url} key={index}>
-                        <span className={styles.admissionLink}>
-                          {link.text}
-                        </span>
-                        {index < coursesData.admission_bar.links.length - 1 && (
-                          <span className={styles.separator}>•</span>
-                        )}
-                      </Link>
-                    </div>
-                  ))}
+                  {coursesData.admission_bar.links &&
+                    coursesData.admission_bar.links.map((link, index) => (
+                      <div key={index}>
+                        <Link href={link.url || "#"} key={index}>
+                          <span className={styles.admissionLink}>
+                            {link.text}
+                          </span>
+                          {index <
+                            coursesData.admission_bar.links.length - 1 && (
+                            <span className={styles.separator}>•</span>
+                          )}
+                        </Link>
+                      </div>
+                    ))}
                 </div>
                 <div className={styles.admissionButtons}>
                   <Link
@@ -94,7 +97,7 @@ const CoursesOffered = ({ data }) => {
                     DOWNLOAD BROCHURE
                   </Link>
                   <Link
-                    href={coursesData.admission_bar.apply_button}
+                    href={coursesData.admission_bar.apply_button || "#"}
                     className={styles.applyBtn}
                   >
                     APPLY NOW
@@ -106,7 +109,7 @@ const CoursesOffered = ({ data }) => {
         </div>
 
         {/* Courses Cards */}
-        <div className="col-lg-7">
+        <div className="col-lg-6">
           <div className={styles.coursesGrid}>
             {coursesData.courses &&
               coursesData.courses.map((course) => (
@@ -137,6 +140,7 @@ const CoursesOffered = ({ data }) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

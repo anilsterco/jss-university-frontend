@@ -1,18 +1,20 @@
 .faqSection {
-  background: #f8f9fa;
-  padding: 60px 0;
+  background: #f5f5f5;
+  padding: 0px 0 10rem;
 }
 
 .heading {
   text-align: center;
-  color: #0b2545;
+  color: #16344E;
   font-size: 18px;
   letter-spacing: 0.5px;
   margin-bottom: 30px;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
 }
 
 .faqList {
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -24,7 +26,6 @@
   overflow: hidden;
   background: #fff;
   transition: all 0.3s ease;
-  box-shadow: 0 0 0 1px #e5e5e5;
 }
 
 .faqItem[open] {
@@ -39,12 +40,13 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 16px 22px;
-  font-weight: 600;
-  color: #0b2545;
-  font-size: 18px;
+  padding: 10px 10px;  
+  color: #16344E;
+  font-size: 21px;
   transition: all 0.3s ease;
   position: relative;
+  font-weight: 400;
+
 }
 
 .faqItem[open] .faqQuestion {
@@ -56,7 +58,7 @@
 }
 
 .icon {
-  font-size: 18px;
+  font-size: 24px;
   color: #0b2545;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -67,10 +69,11 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  align-items: center;
   font-size: 18px;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
+  font-weight: 100;
+  line-height: 0.9;
 }
 
 .faqItem[open] .icon:after {
@@ -81,10 +84,11 @@
 
 /* Answer Section */
 .faqAnswer {
-  padding: 16px 22px;
+  padding: 0 4rem 1rem;
   background: #fff;
   border-top: 1px solid #ddd;
   animation: fadeIn 0.3s ease;
+  width: 94%;
 }
 
 .faqItem[open] .faqAnswer {
@@ -94,10 +98,9 @@
 }
 
 .faqAnswer p {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: inherit;
+  font: var(--font-16);
+  line-height: 1.5;
+  letter-spacing: -0.32px;
 }
 
 /* Animation */

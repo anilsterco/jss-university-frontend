@@ -49,7 +49,7 @@ export default function AboutDepartmentComponent({ data }) {
   const departmentData = data ? data : dummyCoursesData;
 
   return (
-    <div className={`container-fluid ${styles.aboutDepartment}`}>
+    <div className={`${styles.aboutDepartment}`}>
       <div className="container">
         {/* Header Section */}
         <div className={styles.header}>
@@ -86,6 +86,7 @@ export default function AboutDepartmentComponent({ data }) {
                   />
                 )}
                 <h2 className={styles.statValue}>{stat.value}</h2>
+
                 <p className={styles.nbaLabel}>{stat.label}</p>
               </div>
             </div>
@@ -93,7 +94,7 @@ export default function AboutDepartmentComponent({ data }) {
         </div>
 
         {/* Vision and Mission Section */}
-        <div className={`row g-4 ${styles.contentSection}`}>
+        <div className={`row g-4 justify-content-center ${styles.contentSection}`}>
           {/* Image Placeholder */}
           <div className="col-md-6 px-0">
             <div className={`card border-0 h-100 ${styles.imagePlaceholder}`}>
@@ -109,7 +110,7 @@ export default function AboutDepartmentComponent({ data }) {
           </div>
 
           {/* Vision and Mission */}
-          <div className={`col-md-6 ps-0 pt-5 ${styles.visionMission}`}>
+          <div className={`col-md-5 ps-0 pt-5 ${styles.visionMission}`}>
             <div className="h-100">
               {/* Vision */}
               <div className={styles.visionCard}>
