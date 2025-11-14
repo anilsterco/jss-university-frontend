@@ -19,6 +19,39 @@
   font-weight: bold;
 }
 
+.borderBelow .yellowText {
+  font: var(--font-24);
+  letter-spacing: -0.24px;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+}
+
+.borderBelow .link {
+  font: var(--font-16);
+  font-weight: 600;
+  color: #16344e;
+  position: relative;
+}
+
+.borderBelow .link::before {
+  content: "";
+  background-color: #b08f29;
+  border-radius: 1rem;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: .5rem;
+  left: -1.7rem;
+}
+
+.borderBelow .linksList:first-child .link:before{
+  content:none;
+}
+
+.borderBelow .button {
+  font-family: var(--font-Condensed);
+}
+
 .linksList {
   font-weight: 600;
   list-style: none;
@@ -40,7 +73,7 @@
 }
 
 .button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   background: none;
   border: 1px solid #b08f29;
   color: #b08f29;

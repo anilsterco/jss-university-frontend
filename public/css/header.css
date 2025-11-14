@@ -740,18 +740,6 @@
     border: 0px;
 }
 
-.active_head::before {
-    background-color: #00000095;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 13;
-    content: "";
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-}
-
-
 
 /* Navigation styling */
 ul.admission {

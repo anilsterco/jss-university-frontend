@@ -89,7 +89,7 @@ export default function EventsGrid({ data }) {
   const eventsData = data ? data : dummyEventsData;
   return (
     <section className={styles.eventSection}>
-      <div className={`${styles.container} ${styles.desktopView}`}>
+      <div className={` container-fluid ${styles.desktopView}`}>
         <div className={styles.header}>
           <p className={styles.headerSmall}>{eventsData.subtitle}</p>
           <h1

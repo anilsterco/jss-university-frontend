@@ -71,14 +71,14 @@ export default function Happenings() {
               <img
                 src={happeningsData.mainBanner.img}
                 alt={happeningsData.mainBanner.alt}
-                className="img-fluid"
+                className="img-fluid w-100"
               />
             </figure>
           </div>
 
           {happeningsData.sections.map((section, idx) => (
-           <div className="container">
-             <div className="col-lg-10 mx-auto" key={idx}>
+           <div className="container"  key={idx}>
+             <div className="col-lg-10 mx-auto">
               <div className={styles.Grid2}>
                 <figure>
                   <img

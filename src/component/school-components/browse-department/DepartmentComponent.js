@@ -11,10 +11,10 @@ export default function DepartmentSection({ data }) {
 
   return (
     <div className={styles.departmentSection}>
-      <div className={`container-fluid ${styles.container}`}>
-        <div className="row justify-content-center">
+      <div className={`container ${styles.container}`}>
+        <div className="grid_2">
           {/* LEFT SIDE */}
-          <div className="col-md-3">
+          <div className="deparCol">
             <div className={styles.leftSide}>
               <div>
                 <h1
@@ -47,9 +47,9 @@ export default function DepartmentSection({ data }) {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="col-md-9">
+          <div className="deparCol">
             {/* Program Cards */}
-            <div className="row mb-5 w-100 m-auto">
+            <div className="row mb-5">
               {departmentSection.programs.map((prog, index) => (
                 <div className="col-md-4 mb-4" key={index}>
                   <Link href={`/program/${prog.slug}`}>
@@ -83,9 +83,9 @@ export default function DepartmentSection({ data }) {
 
             <hr className={styles.divider} />
 
-            <div className="row">
+            <div className="row g-2">
               {departmentSection.departments.map((dept, index) => (
-                <div className="col-md-4 mb-3" key={index}>
+                <div className="col-md-4" key={index}>
                   <Link
                     href={`/department/${dept.slug}`}
                     className={styles.departmentItem}

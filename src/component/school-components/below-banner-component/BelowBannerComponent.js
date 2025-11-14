@@ -11,9 +11,9 @@ export default function BelowBannerSection() {
 
   return (
     <div className={`${styles.belowBannerSection} school-below-banner-section`}>
+      <div className='container'>
       <div className={styles.borderBelow}>
-        <h4 className={styles.yellowText}>Admission 2025-26</h4>
-        
+        <h4 className={styles.yellowText}>Admission 2025-26</h4>        
         <ul className={styles.linksContainer}>
           {listOfLinks.map((link, i) => (
             <li key={i} className={styles.linksList}>
@@ -30,6 +30,7 @@ export default function BelowBannerSection() {
             APPLY NOW
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

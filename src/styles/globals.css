@@ -21,17 +21,17 @@ html {
 
 body {
   font-family: var(--font-Condensed);
-  background-color: #fff;
+  background-color: var(--color-f6);
   color: #000;
   margin: 0;
   padding: 0;
+  
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
 }
 
@@ -175,6 +175,14 @@ body {
   }
 }
 
+@media (max-width:767px) {
+  .main-container .container {
+    max-width: 540px;
+  }
+}
+ 
+
+
 @media(min-width:1921px) {
   html {
     font-size: 65%;
@@ -257,6 +265,14 @@ body {
 }
 
 
+@media (max-width:991) {
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
+}
+
 a,
 a:hover,
 a:focus,
@@ -317,7 +333,7 @@ a:active {
 
 }
 
-.nav-link.nav-lists:after {
+.nav-link.nav-lists:hover:after {
   height: 9rem;
   width: 100%;
   position: absolute;
@@ -327,7 +343,7 @@ a:active {
   left: 0;
 }
 
-.nav-link.active-link:after {
+.active-hover .nav-item:has(.mega-dropdown):hover > a::before {
   content: "";
   width: 80%;
   height: 8px;
@@ -339,7 +355,15 @@ a:active {
   left: 0;
   right: 0;
   padding-top: 1.5rem;
+  top: 100%;
+  z-index: 0;
+} 
+
+.nav-item:hover ~ .nav-item:has(.mega-dropdown) > a::before,
+.nav-item:has(.mega-dropdown) ~ .nav-item:hover > a::before {
+  display: none !important;
 }
+
 
 .nav-link.active-link {
   color: #b08f29 !important;
@@ -505,10 +529,7 @@ a:active {
   text-transform: uppercase;
 }
 
-.hum-small {
-  height: 80% !important;
-  object-fit: cover !important;
-}
+
 
 .mega-title span {
   font-family: var(--font-Condensed);
@@ -670,11 +691,9 @@ a:active {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 15%;
+  bottom: 0;
   padding: 0 0 2rem 1.8rem;
-  display: flex;
-  gap: 0 2.4rem;
-  z-index: 99;
+ z-index: 99;
 }
 
 .cource-sec .cource_top {
@@ -819,26 +838,9 @@ a:active {
   color: var(--color-white);
 }
 
-
-
-
 .active_head .nav-list>li.nav-item:hover>a {
   position: relative;
 }
-
-/* .active_head .nav-list.jsx-1e795d0af0d02ea5>li.nav-item:hover>a::after {
-    height: 3px;
-    width: 7.5rem;
-    background-color: var(--color-29);
-    content: "";
-    bottom: -0.5rem;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    z-index: 0;
-} */
-
 .active_head .nav-list>li:hover>a {
   color: var(--color-29);
 }
@@ -869,5 +871,56 @@ a:active {
   .nav-link.nav-lists {
     padding: 1.4rem 1rem 1.2rem;
   }
-  
 }
+
+
+.departmentItem {
+  font-family: var(--font-Condensed);
+}
+
+.aboutSchoolSection .blue-text {
+  color: #000;
+}
+
+.grid_2 {
+  grid-template-columns: 17% 80%;
+  display: grid;
+  justify-content: space-between;
+}
+
+.about_rnk {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about_school_left {
+  border-right: 1px solid rgba(206, 206, 206, 0.52);
+  padding-right: 6rem;
+}
+
+.vision_mission {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  padding-bottom: 12rem;
+}
+
+.container-fluid {
+  max-width: 1780px;
+}
+
+.about_one .top_log_grid figure img {
+    width: auto;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+}
+.about_one .btm_log_grid figure img {
+     width: auto;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+}
+
+
+/* inner page css  */
+

@@ -7,6 +7,9 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
 
+const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
+const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
+
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,198 +20,276 @@ export default function Header() {
   const [selectedSchoolName, setSelectedSchoolName] = useState("ENGINEERING");
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [activeLink, setActiveLink] = useState(null);
+  // const [activeLink, setActiveLink] = useState(null);
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
+  const [headerData, setHeaderData] = useState(null);
+  const [admissionData, setAdmissionData] = useState(null);
+
+  useEffect(() => {
+    async function fetchHeaderData() {
+      try {
+        const [res1, res2] = await Promise.all([
+          fetch(`${NAV_BASE_URL}`),
+          fetch(`${ADMISSION_BASE_URL}`),
+        ]);
+
+        if (!res1.ok || !res2.ok) {
+          throw new Error("One or more API calls failed");
+        }
+
+        const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
+
+        setHeaderData(data1.data);
+        setAdmissionData(data2.data);
+      } catch (err) {
+        console.error("❌ API Error:", err);
+      }
+    }
+    fetchHeaderData();
+  }, []);
 
   const [activePanel, setActivePanel] = useState(null);
   const togglePanel = (name) => {
     setActivePanel(activePanel === name ? null : name);
   };
 
-  const navLinks = [
-    {
-      name: "ABOUT",
-      href: "/",
-      dropdown: [
-        { name: "About JSS", href: "/" },
-        { name: "Heritage", href: "/" },
-      ],
-      right: {
-        subtitle: "ABOUT JSS",
-        title: `
-        <span class="text-dark">START YOUR</span>
-        <span class="text-blue">JSS JOURNEY</span>
-      `,
-        desc: "Learn more about JSS legacy, history and leadership history and leadership.",
-        ctas: [
-          { text: "Read More", href: "#", type: "primary" },
-          // { text: "Leadership", href: "#", type: "secondary" },
-        ],
-        banners: [
-          {
-            title: "UNDER GRADUTE",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "POST GRADUTE",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "PHD",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-        ],
-      },
-    },
-    {
-      name: "ACADEMICS",
-      href: "/",
-      dropdown: [
-        { name: "Schools", href: "/" },
-        { name: "Departments", href: "/" },
-        { name: "Programs", href: "/" },
-      ],
-      right: {
-        subtitle: "PROGRAMS",
-        title: `
-        <span class="text-dark">START YOUR</span>
-        <span class="text-blue">JSS JOURNEY</span>
-      `,
-        desc: "Leading the revolution in integrated learning where students shape their own future.",
-        ctas: [{ text: "VIEW ALL PROGRAMMES", href: "#", type: "primary" }],
-        banners: [
-          {
-            title: "Under Graduate",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Post Graduate",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "PhD Programmes",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-        ],
-      },
-    },
-    {
-      name: "ADMISSIONS",
-      href: "/",
-      dropdown: [
-        { name: "Overview", href: "/" },
-        { name: "Admission", href: "/" },
-        { name: "UG Program", href: "/" },
-      ],
-      right: {
-        subtitle: "JOIN JSS",
-        title: `
-        <span class="text-dark">START YOUR</span>
-        <span class="text-blue">JSS JOURNEY</span>
-      `,
-        desc: "Apply now and step into your future at JSS Noida.",
-        ctas: [
-          { text: "Apply Now", href: "#", type: "primary" },
-          // { text: "Download Syllabus", href: "#", type: "secondary" },
-        ],
-        banners: [
-          {
-            title: "Scholarships",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Eligibility",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "FAQs",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-        ],
-      },
-    },
-    {
-      name: "FACILITIES",
-      href: "/",
-      dropdown: [
-        { name: "Girls Hostel", href: "/" },
-        { name: "Boys Hostel", href: "/" },
-        { name: "Amenities Centre", href: "/" },
-      ],
-      right: {
-        subtitle: "CAMPUS FACILITIES",
-        title: `
-        <span class="text-dark">START YOUR</span>
-        <span class="text-blue">JSS JOURNEY</span>
-      `,
-        desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
-        ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
-        banners: [
-          {
-            title: "Hostels",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Clubs",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Events",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-        ],
-      },
-    },
-    {
-      name: "STUDENTS SUPPORT",
-      href: "/",
-      dropdown: [
-        { name: "Student Life", href: "/" },
-        { name: "Mentoring Scheme", href: "/" },
-        { name: "Internal Complaint Committee", href: "/" },
-      ],
-      right: {
-        subtitle: "SUPPORT & LIFE",
-        title: `
-        <span class="text-dark">START YOUR</span>
-        <span class="text-blue">JSS JOURNEY</span>
-      `,
-        desc: "Guidance, mentoring and vibrant student support activities.",
-        ctas: [{ text: "Get Support", href: "#", type: "primary" }],
-        banners: [
-          {
-            title: "Life @ JSS",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Mentoring",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-          {
-            title: "Clubs",
-            href: "#",
-            img: "/images/header/nav-hover-banner.webp",
-          },
-        ],
-      },
-    },
-  ];
+  const navLinks = headerData || [];
+  const admissionsData = admissionData || [];
 
+  // const navLinks = [
+  //   {
+  //     name: "ABOUT",
+  //     url: "/",
+  //     children: [],
+  //     right: {
+  //       subtitle: "ABOUT JSS",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Learn more about JSS legacy, history and leadership history and leadership.",
+  //       ctas: [
+  //         { text: "Read More", href: "#", type: "primary" },
+  //         // { text: "Leadership", href: "#", type: "secondary" },
+  //       ],
+  //       banners: [
+  //         {
+  //           title: "UNDER GRADUTE",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "POST GRADUTE",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "PHD",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  //   {
+  //     name: "ACADEMICS",
+  //     url: "/",
+  //     children: [
+  //       { title: "Schools", url: "/schools/school-of-engineering" },
+  //       { title: "Departments", url: "/department/mechanical-engineering" },
+  //       { title: "Programs", url: "/programs" },
+  //     ],
+  //     right: {
+  //       subtitle: "PROGRAMS",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Leading the revolution in integrated learning where students shape their own future.",
+  //       ctas: [
+  //         { text: "VIEW ALL PROGRAMMES", url: "/programs", type: "primary" },
+  //       ],
+  //       banners: [
+  //         {
+  //           title: "Under Graduate",
+  //           url: "/programs",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Post Graduate",
+  //           url: "/programs",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "PhD Programmes",
+  //           url: "/programs",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  //   {
+  //     name: "LIFE@JSS",
+  //     url: "/",
+  //     children: [],
+  //     right: {
+  //       subtitle: "JOIN JSS",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Apply now and step into your future at JSS Noida.",
+  //       ctas: [
+  //         { text: "Apply Now", href: "#", type: "primary" },
+  //         // { text: "Download Syllabus", href: "#", type: "secondary" },
+  //       ],
+  //       banners: [
+  //         {
+  //           title: "Scholarships",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Eligibility",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "FAQs",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  //   {
+  //     name: "PLACEMENTS",
+  //     url: "/",
+  //     children: [],
+  //     right: {
+  //       subtitle: "CAMPUS FACILITIES",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
+  //       ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
+  //       banners: [
+  //         {
+  //           title: "Hostels",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Clubs",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Events",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  //   {
+  //     name: "RESEARCH",
+  //     url: "/",
+  //     children: [],
+  //     right: {
+  //       subtitle: "SUPPORT & LIFE",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Guidance, mentoring and vibrant student support activities.",
+  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
+  //       banners: [
+  //         {
+  //           title: "Life @ JSS",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Mentoring",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Clubs",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  //   {
+  //     name: "FACILITIES",
+  //     url: "/",
+  //     children: [],
+  //     right: {
+  //       subtitle: "SUPPORT & LIFE",
+  //       title: `
+  //       <span class="text-dark">START YOUR</span>
+  //       <span class="text-blue">JSS JOURNEY</span>
+  //     `,
+  //       desc: "Guidance, mentoring and vibrant student support activities.",
+  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
+  //       banners: [
+  //         {
+  //           title: "Life @ JSS",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Mentoring",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //         {
+  //           title: "Clubs",
+  //           href: "#",
+  //           img: "/images/header/nav-hover-banner.webp",
+  //         },
+  //       ],
+  //     },
+  //   },
+  // ];
+
+  // const admissionsData = {
+  //   left: {
+  //     subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
+  //     title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
+  //     desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
+  //     querytext: "Any Query ? please mail us.",
+  //     email: "principal@jssaten.ac.in",
+  //     phone: "+91-9311830458",
+  //     ctas: [
+  //       { text: "APPLY NOW", url: "/apply-now", type: "primary" },
+  //       { text: "DOWNLOAD SYLLABUS", url: "#", type: "secondary" },
+  //     ],
+  //   },
+  //   middle: {
+  //     links: [
+  //       { title: "Scholarship", url: "/" },
+  //       { title: "Course, Eligibility & Fee Structure", url: "/" },
+  //       { title: "Admission Document & Undertaking", url: "/" },
+  //       { title: "Admissions Office Contacts", url: "/" },
+  //       { title: "Hostel Details", url: "/" },
+  //     ],
+  //     stats: {
+  //       text: "1,200+ ACROSS UG & PG PROGRAMS",
+  //       subtext: "Total student intake (annual)",
+  //       btnText: { text: "VIEW PROGRAMMES", url: "/programs" },
+  //     },
+  //   },
+  //   right: {
+  //     img: "/images/header/admission-banner.png",
+  //     alt: "Admissions Image",
+  //   },
+  // };
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -287,39 +368,6 @@ export default function Header() {
       },
     },
   ];
-
-  const admissionsData = {
-    left: {
-      subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
-      title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
-      desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
-      querytext: "Any Query ? please mail us.",
-      email: "principal@jssaten.ac.in",
-      phone: "+91-9311830458",
-      ctas: [
-        { text: "APPLY NOW", href: "#", type: "primary" },
-        { text: "DOWNLOAD SYLLABUS", href: "#", type: "secondary" },
-      ],
-    },
-    middle: {
-      links: [
-        "Scholarship",
-        "Course, Eligibility & Fee Structure",
-        "Admission Document & Undertaking",
-        "Admissions Office Contacts",
-        "Hostel Details",
-      ],
-      stats: {
-        text: "1,200+ ACROSS UG & PG PROGRAMS",
-        subtext: "Total student intake (annual)",
-        btnText: "VIEW PROGRAMMES",
-      },
-    },
-    right: {
-      img: "/images/header/admission-banner.png",
-      alt: "Admissions Image",
-    },
-  };
   const engineeringData = {
     schools: [
       {
@@ -699,24 +747,19 @@ export default function Header() {
                 <li
                   key={i}
                   className="nav-item"
-                  onClick={() => setActiveLink(i)}
+                  // onClick={() => setActiveLink(i)}
                 >
-                  <Link
-                    href={l.href}
-                    className={`nav-link nav-lists  ${
-                      activeLink == i ? "active-link" : ""
-                    }`}
-                  >
-                    {l.name}
+                  <Link href={l.url} className={`nav-link nav-lists`}>
+                    {l.title}
                   </Link>
-                  {l.dropdown && (
+                  {l.children && l.children.length > 0 && (
                     <div className="mega-dropdown" role="menu">
                       <div className="mega-left">
                         <ul>
-                          {l.dropdown.map((d, j) => (
+                          {l.children.map((d, j) => (
                             <li key={j} className="mega-left-item">
-                              <Link href={d.href} className="dropdown-item">
-                                {d.name}
+                              <Link href={d.url} className="dropdown-item">
+                                {d.title}
                               </Link>
                             </li>
                           ))}
@@ -739,9 +782,9 @@ export default function Header() {
                               <p className="mega-desc">{l.right.desc}</p>
                               <div className="mega-ctas">
                                 {l.right.ctas?.map((cta, idx) => (
-                                  <a
+                                  <Link
                                     key={idx}
-                                    href={cta.href}
+                                    href={cta.url}
                                     className={`cta program_btn ${cta.type}`}
                                   >
                                     {cta.text}
@@ -758,24 +801,26 @@ export default function Header() {
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                                       />
                                     </svg>
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             </div>
 
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <a key={idx} href={b.href} className="banner">
-                                  <Image
-                                    src={b.img}
-                                    alt={b.title}
-                                    width={260}
-                                    height={160}
-                                  />
-                                  <span className="banner-label">
-                                    {b.title}
-                                  </span>
-                                </a>
+                                <Link key={idx} href={b.url}>
+                                  <div className="banner">
+                                    <Image
+                                      src={b.img}
+                                      alt={b.title}
+                                      width={260}
+                                      height={160}
+                                    />
+                                    <span className="banner-label">
+                                      {b.title}
+                                    </span>
+                                  </div>
+                                </Link>
                               ))}
                             </div>
                           </>
@@ -837,7 +882,8 @@ export default function Header() {
                       {admissionsData.left.ctas.map((cta, idx) => (
                         <a
                           key={idx}
-                          href={cta.href}
+                          target="_blank"
+                          href={cta.url}
                           className={`cta applynow ${cta.type}`}
                         >
                           {cta.text}
@@ -850,21 +896,28 @@ export default function Header() {
                     <ul>
                       {admissionsData.middle.links.map((link, idx) => (
                         <li key={idx} className="ad-link">
-                          {link}
-                          <img
-                            src="/images/header/listicon.svg"
-                            className="img-fluid"
-                            alt="mail"
-                          />
+                          <Link href={link.url} style={{ color: "inherit" }}>
+                            {link.title}
+                            <img
+                              src="/images/header/listicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                          </Link>
                         </li>
                       ))}
                     </ul>
                     <div className="ad-stats">
                       <h3>{admissionsData.middle.stats.text}</h3>
                       <p>{admissionsData.middle.stats.subtext}</p>
-                      <button className="stats-btn">
-                        {admissionsData.middle.stats.btnText}
-                      </button>
+                      <Link
+                        href={admissionsData.middle.stats.btnText.url}
+                        style={{ color: "inherit" }}
+                      >
+                        <button className="stats-btn">
+                          {admissionsData.middle.stats.btnText.text}
+                        </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -1271,6 +1324,31 @@ export default function Header() {
           
         }
         .virtural-img {margin-top:5.6rem;position:relative;}
+         .right-inner .hamburger-section-img.virtural-img {
+          position: relative;
+          overflow: hidden;
+          height:40%;
+          object-fit:cover;
+        }
+        .hamburger-section-img.virtural-img .hum-small{
+          height:100%;
+          width:100%;
+        }
+        .hamburger-section-img.virtural-img::before {
+          content: "";
+          position: absolute;
+          background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+          border-radius: 8px;
+          opacity: 0.93;
+          height:207px;
+          z-index: 1; 
+          bottom:0;
+          left:0;
+          right:0;
+        }
+
+        
+  
         .right-inner .first-content {
           width: 30%;
           padding-top:2rem;
