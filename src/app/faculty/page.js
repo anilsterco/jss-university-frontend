@@ -240,7 +240,7 @@ export default function FacultyPage() {
                         </div>
 
                         <Link
-                          href={`/faculty/${faculty.slug || faculty.id}`}
+                          href={`/faculty/${faculty.slug}`}
                           className="streched_link"
                         ></Link>
                       </div>
