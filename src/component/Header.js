@@ -747,8 +747,8 @@ export default function Header() {
                 <li
                   key={i}
                   className="nav-item"
-                  onClick={() => setActiveLink(i)}
-                >
+                  // onClick={() => setActiveLink(i)}
+                  >
                   <Link
                     href={l.url}
                     className={`nav-link nav-lists  ${
@@ -787,7 +787,7 @@ export default function Header() {
                               <p className="mega-desc">{l.right.desc}</p>
                               <div className="mega-ctas">
                                 {l.right.ctas?.map((cta, idx) => (
-                                  <a
+                                  <Link
                                     key={idx}
                                     href={cta.url}
                                     className={`cta program_btn ${cta.type}`}
@@ -806,24 +806,26 @@ export default function Header() {
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                                       />
                                     </svg>
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             </div>
 
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <a key={idx} href={b.url} className="banner">
-                                  <Image
-                                    src={b.img}
-                                    alt={b.title}
-                                    width={260}
-                                    height={160}
-                                  />
-                                  <span className="banner-label">
-                                    {b.title}
-                                  </span>
-                                </a>
+                                <Link key={idx} href={b.url}>
+                                  <div className="banner">
+                                    <Image
+                                      src={b.img}
+                                      alt={b.title}
+                                      width={260}
+                                      height={160}
+                                    />
+                                    <span className="banner-label">
+                                      {b.title}
+                                    </span>
+                                  </div>
+                                </Link>
                               ))}
                             </div>
                           </>

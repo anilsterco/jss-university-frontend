@@ -287,7 +287,7 @@ html {
     }
 }
 
-::after,
+/* ::after,
 ::before {
     box-sizing: border-box;
 }
@@ -323,7 +323,7 @@ p {
 
 p:last-of-type {
     margin-bottom: 0;
-}
+} */
 
 @media(max-width:1549px) {
     p {
