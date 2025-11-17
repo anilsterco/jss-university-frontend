@@ -248,7 +248,7 @@ export default function FacilitiesComponent({ data }) {
                     panel.links.map((item, index) => (
                       <Link
                         key={index}
-                        href={item.url}
+                        href={item.url ?? "#"}
                         className={styles.bannerLink}
                       >
                         {item.text}
