@@ -4,8 +4,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
+import { State } from "country-state-city";
 
-const BASE_URL = "http://sd7:8080/jss/api/contact-info";
+const BASE_URL = "https://project-demo.in/jss/api/contact-info";
+const Courses_List_URL = "https://project-demo.in/jss/api/course-list";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,10 +18,14 @@ export default function ContactSection() {
     course: "",
     agree: false,
   });
+
   const [contactUsData, setContactUsData] = useState([]);
+  const [courseList, setCourseList] = useState([]);
+  const [stateList, setStateList] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const fetchSchoolsData = async () => {
+    const fetchContactData = async () => {
       try {
         const res = await fetch(BASE_URL);
         const data = await res.json();
@@ -29,7 +35,22 @@ export default function ContactSection() {
         setContactUsData([]);
       }
     };
-    fetchSchoolsData();
+    fetchContactData();
+
+    const fetchCourseList = async () => {
+      try {
+        const res = await fetch(Courses_List_URL);
+        const data = await res.json();
+        setCourseList(data.data);
+      } catch (err) {
+        console.error(err);
+        setCourseList([]);
+      }
+    };
+    fetchCourseList();
+
+    const states = State.getStatesOfCountry("IN");
+    setStateList(states);
   }, []);
 
   const contactData = {
@@ -46,13 +67,55 @@ export default function ContactSection() {
     }));
   };
 
-  // This is placeholder — you’ll connect your API later
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // TODO: connect API endpoint here
+
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    const submitForm = new FormData();
+
+    submitForm.append("name", formData.name);
+    submitForm.append("email", formData.email);
+    submitForm.append("phone", formData.phone);
+    submitForm.append("state", formData.state);
+    submitForm.append("course", formData.course);
+    submitForm.append("consent", formData.agree ? "1" : "0");
+
+    try {
+      const res = await fetch("https://project-demo.in/jss/api/contact-form", {
+        method: "POST",
+        body: submitForm,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      alert("Form submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        state: "",
+        course: "",
+        agree: false,
+      });
+    } catch (err) {
+      console.error("Error:", err);
+      alert("An error occurred while submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-  console.log(contactUsData, "contactUsData");
+
   return (
     <section className={styles.contactSection}>
       <div className="container">
@@ -64,9 +127,8 @@ export default function ContactSection() {
         </div>
 
         <div className={`row ${styles.contentRow}`}>
-          {/* Left Image */}
-          <div className="col-md-12  d-flex">
-            <div className={`${styles.imageWrapper}`}>
+          <div className="col-md-12 d-flex">
+            <div className={styles.imageWrapper}>
               <Image
                 src={contactData.img}
                 alt="JSS Campus"
@@ -76,6 +138,7 @@ export default function ContactSection() {
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
+
             <div className={styles.formBox}>
               <h5 className={styles.formHeading}>Let's Connect</h5>
               <p className={styles.formSubText}>
@@ -88,7 +151,6 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="name"
-                    className=""
                     placeholder="Name"
                     value={formData.name}
                     autoComplete="off"
@@ -96,12 +158,10 @@ export default function ContactSection() {
                     required
                   />
                 </div>
-
                 <div className="mb-3">
                   <input
                     type="email"
                     name="email"
-                    className=""
                     placeholder="Email"
                     value={formData.email}
                     autoComplete="off"
@@ -109,73 +169,77 @@ export default function ContactSection() {
                     required
                   />
                 </div>
-
-                <div className="mb-3">
+                <div className="mb-3 contact-form-no-input">
                   <input
                     type="tel"
                     name="phone"
-                    className=""
                     placeholder="Phone no."
                     value={formData.phone}
                     autoComplete="off"
                     onChange={handleChange}
+                    pattern="[0-9]{10}"
+                    maxLength="10"
                     required
                   />
                 </div>
-
-                <div className="mb-3">
-                  <input
-                    type="text"
+                <div className="mb-3 state-list">
+                  <select
                     name="state"
-                    className=""
-                    placeholder="State"
                     value={formData.state}
-                    autoComplete="off"
                     onChange={handleChange}
-                  />
+                    required
+                    className="state-dropdown"
+                  >
+                    <option value="">Select State</option>
+                    {stateList.map((s) => (
+                      <option key={s.isoCode} value={s.name}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-
                 <div className="mb-3">
-                  <input
-                    type="text"
+                  <select
                     name="course"
-                    className=""
-                    placeholder="Course"
-                    autoComplete="off"
                     value={formData.course}
                     onChange={handleChange}
-                  />
+                    required
+                    className="state-dropdown"
+                  >
+                    <option value="">Select Course</option>
+                    {courseList.map((course) => (
+                      <option key={course.id} value={course.name}>
+                        {course.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-
                 <div className="form-check mb-3 p-0 d-flex gap-3">
                   <input
                     type="checkbox"
                     name="agree"
-                    className="form-check-inputs"
                     id="agreeCheck"
                     checked={formData.agree}
-                    style={{ borderBottom: "#1px solid #ffff", width: "auto" }}
+                    style={{ width: "20px", height: "20px" }}
                     onChange={handleChange}
                   />
-                  <label
-                    className="form-check-label"
-                    htmlFor="agreeCheck"
-                    style={{ fontSize: "13px" }}
-                  >
+                  <label htmlFor="agreeCheck" style={{ fontSize: "13px" }}>
                     I agree to receive information regarding my enquiry.
                   </label>
                 </div>
-
-                <button type="submit" className={styles.submitBtn}>
-                  Submit
+                <button
+                  type="submit"
+                  className={styles.submitBtn}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </form>
             </div>
           </div>
         </div>
 
-        {/* Bottom Info */}
-        <div className={`row ${styles.infoRow} `}>
+        <div className={`row ${styles.infoRow}`}>
           <div className="col-md-4">
             <span className={styles.yellowLine}></span>
             <p className={styles.address}>{contactUsData.address}</p>
@@ -185,21 +249,14 @@ export default function ContactSection() {
             className={`${styles.borderBox} col-md-4 d-flex justify-content-center`}
           >
             <div className={styles.infoBox}>
-              <i className="bi bi-envelope-fill"></i>
-              <span className="d-flex gap-3">
-                <span className={styles.mailIcon}>
-                  <MdMailOutline color="#018ce8" fontSize={18} />
-                </span>{" "}
-                {contactUsData.email}
-              </span>
+              <MdMailOutline color="#018ce8" fontSize={18} />
+              <span>{contactUsData.email}</span>
             </div>
           </div>
 
           <div className="col-md-4 d-flex justify-content-center">
             <div className={styles.infoBox}>
-              <span className={styles.mailIcon}>
-                <BiPhoneCall color="#018ce8" fontSize={16} />
-              </span>
+              <BiPhoneCall color="#018ce8" fontSize={16} />
               <span>{contactUsData.phone}</span>
             </div>
           </div>
@@ -217,13 +274,9 @@ export default function ContactSection() {
           >
             <iframe
               src={contactUsData.direction_url}
-              // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.510377947031!2d77.36215517474078!3d28.62089717568222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef77a2c1b1ff%3A0x2d8a5f937c7a1efb!2sJSS%20Academy%20of%20Technical%20Education!5e0!3m2!1sen!2sin!4v1697033045605!5m2!1sen!2sin"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
