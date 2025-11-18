@@ -2,7 +2,7 @@
 import styles from "./fnq.module.css";
 import { CiCirclePlus } from "react-icons/ci";
 
-export default function FAQSection({ faqs = [] }) {
+export default function FAQSection({ data }) {
   // Fallback default FAQs if none passed from props (SSR friendly)
   const defaultFaqs = [
     {
@@ -27,7 +27,8 @@ export default function FAQSection({ faqs = [] }) {
     },
   ];
 
-  const faqData = faqs.length > 0 ? faqs : defaultFaqs;
+  
+  const faqData = data || [];
 
   return (
     <section className={styles.faqSection}>
