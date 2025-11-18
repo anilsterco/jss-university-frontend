@@ -14,7 +14,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 import { CiImageOn } from "react-icons/ci";
 import { PiVideoCameraLight } from "react-icons/pi";
 
-const BASE_URL = "http://sd7:8080/jss/api/happenings/gallery";
+const BASE_URL = "https://project-demo.in/jss/api/happenings/gallery";
 
 export default function Gallery() {
   const [isModalOpen, setIsModalOpen] = useState(false);

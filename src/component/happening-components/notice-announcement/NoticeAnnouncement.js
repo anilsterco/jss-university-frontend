@@ -3,7 +3,8 @@ import styles from "./notice-announcement.module.css";
 import React, { useState, useEffect } from "react";
 import { SiAdobeacrobatreader } from "react-icons/si";
 
-const BASE_URL = "http://sd7:8080/jss/api/happenings/press-release" || [];
+const BASE_URL =
+  "https://project-demo.in/jss/api/happenings/press-release" || [];
 
 export default function NoticeAnnouncement() {
   const [documents, setDocuments] = useState([]);
