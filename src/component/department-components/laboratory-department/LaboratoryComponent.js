@@ -6,51 +6,52 @@ import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
 
-export default function Laboratories() {
+export default function Laboratories({ data }) {
   // Dynamic data structure
-  const laboratoriesData = {
-    subtitle: "LABORATORIES",
-    title: "CUTTING-EDGE & SPECIALIZED THE CSE DEPARTMENT",
-    description:
-      "futurns several specialized labs, each focused on critical technical domains.",
-    url: "#",
-    labs: [
-      {
-        id: 1,
-        title: "CORE LABS",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#1",
-      },
-      {
-        id: 2,
-        title: "OPERATING SYSTEM & MULTIMEDIA LAB",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#2",
-      },
-      {
-        id: 3,
-        title: "SOFTWARE ENGINEERING & WEB DEVELOPMENT LAB",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#3",
-      },
-      {
-        id: 4,
-        title: "COMPUTATIONAL & PROGRAMMING LAB",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#4",
-      },
-      {
-        id: 5,
-        title: "ARTIFICIAL INTELLIGENCE LAB",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#5",
-      },
-    ],
-    applyButton: {
-      text: "APPLY NOW",
-      url: "#",
-    },
-  };
+  // const laboratoriesData = {
+  //   subtitle: "LABORATORIES",
+  //   title: "CUTTING-EDGE & SPECIALIZED THE CSE DEPARTMENT",
+  //   description:
+  //     "futurns several specialized labs, each focused on critical technical domains.",
+  //   url: "#",
+  //   labs: [
+  //     {
+  //       id: 1,
+  //       title: "CORE LABS",
+  //       img: "/images/home-page/seven-dummy-img.png",
+  //       url: "#1",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "OPERATING SYSTEM & MULTIMEDIA LAB",
+  //       img: "/images/home-page/seven-dummy-img.png",
+  //       url: "#2",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "SOFTWARE ENGINEERING & WEB DEVELOPMENT LAB",
+  //       img: "/images/home-page/seven-dummy-img.png",
+  //       url: "#3",
+  //     },
+  //     {
+  //       id: 4,
+  //       title: "COMPUTATIONAL & PROGRAMMING LAB",
+  //       img: "/images/home-page/seven-dummy-img.png",
+  //       url: "#4",
+  //     },
+  //     {
+  //       id: 5,
+  //       title: "ARTIFICIAL INTELLIGENCE LAB",
+  //       img: "/images/home-page/seven-dummy-img.png",
+  //       url: "#5",
+  //     },
+  //   ],
+  //   applyButton: {
+  //     text: "APPLY NOW",
+  //     url: "#",
+  //   },
+  // };
+  const laboratoriesData = data || {};
 
   return (
     <div className={styles.dep_cutting_edge}>
@@ -105,10 +106,16 @@ export default function Laboratories() {
         <div className={styles.buttonWrapper}>
           <button className={styles.applyButton}>
             <Link
-              href={laboratoriesData.applyButton.url}
+              href={
+                laboratoriesData.applyButton
+                  ? laboratoriesData.applyButton.url
+                  : "#"
+              }
               style={{ color: "inherit" }}
             >
-              {laboratoriesData.applyButton.text}
+              {laboratoriesData.applyButton
+                ? laboratoriesData.applyButton.text
+                : ""}
             </Link>
           </button>
         </div>

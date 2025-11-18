@@ -13,7 +13,7 @@ async function getDepartmentData(slug) {
   const res = await fetch(`${BASE_URL}/department/${slug}`, {
     next: { revalidate: 120 }, // cache for 2 mins
   });
-  console.log(res);
+  // console.log(res);
   if (!res.ok) {
     console.error("❌ API Error:", res.status);
     throw new Error(`Failed to fetch school data for ${slug}`);
@@ -32,9 +32,9 @@ export default async function DepartmentPage({ params }) {
       <HodMessageComponent data={departmentData.sections.dean_message} />
       <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
       <FacultyList data={departmentData.sections.faculty_data} />
-      <LaboratoryComponent />
-      <HappingsHomeComponent />
-      <FnqComponent />
+      <LaboratoryComponent data={departmentData.sections.laboratories_data}/>
+      <HappingsHomeComponent data={departmentData.sections.happenings}/>
+      <FnqComponent data={departmentData.sections.faqs}/>
     </>
   );
 }
