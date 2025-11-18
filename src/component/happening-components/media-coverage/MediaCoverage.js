@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./media-coverage.module.css";
 import Image from "next/image";
 
-const BASE_URL = "http://sd7:8080/jss/api/happenings/media-coverage";
+const BASE_URL = "https://project-demo.in/jss/api/happenings/media-coverage";
 
 export default function MediaCoverage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

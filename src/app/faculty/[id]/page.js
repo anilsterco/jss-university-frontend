@@ -6,7 +6,6 @@ import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-// const BASE_URL = "http://sd7:8080/jss/api";
 const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function FacultyDetailPage({ params }) {

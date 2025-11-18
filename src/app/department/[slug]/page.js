@@ -8,7 +8,6 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import FnqComponent from "@/component/department-components/fnq-department/FnqComponent";
 
 const BASE_URL = "https://project-demo.in/jss/api";
-// https://project-demo.in/jss/api/department/mechanical-engineering
 async function getDepartmentData(slug) {
   const res = await fetch(`${BASE_URL}/department/${slug}`, {
     next: { revalidate: 120 }, // cache for 2 mins
