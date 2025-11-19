@@ -335,7 +335,7 @@ a:active {
   left: 0;
 }
 
-.active-hover .nav-item:has(.mega-dropdown):hover > a::before {
+.active-hover .nav-item:has(.mega-dropdown):hover>a::before {
   content: "";
   width: 80%;
   height: 8px;
@@ -375,8 +375,8 @@ a:active {
   appearance: textfield;
 }
 
-.nav-item:hover ~ .nav-item:has(.mega-dropdown) > a::before,
-.nav-item:has(.mega-dropdown) ~ .nav-item:hover > a::before {
+.nav-item:hover~.nav-item:has(.mega-dropdown)>a::before,
+.nav-item:has(.mega-dropdown)~.nav-item:hover>a::before {
   display: none !important;
 }
 
@@ -400,10 +400,7 @@ a:active {
   position: relative;
 }
 
-.third-section
-  .testimonial-slider
-  :is(.swiper-button-prev, .swiper-button-next)
-  svg {
+.third-section .testimonial-slider :is(.swiper-button-prev, .swiper-button-next) svg {
   pointer-events: none;
   width: 50%;
   height: 50%;
@@ -414,8 +411,11 @@ a:active {
 
 .engineering-dropdown .triangle-icon {
   position: absolute;
-  top: -14px;
-  left: 31%;
+  top: -10px;
+  left: 22%;
+  color: #16344E;
+  width: 1.8rem;
+  height: 1.3rem;
 }
 
 .ad-link img {
@@ -724,7 +724,7 @@ a:active {
   font-family: var(--font-Condensed);
 }
 
-.input-group > .form-control::placeholder {
+.input-group>.form-control::placeholder {
   letter-spacing: -0.36px;
   font: var(--font-18);
   padding-top: 1.5rem;
@@ -834,27 +834,26 @@ a:active {
 }
 
 .site-header {
-  background: transparent
-    linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0%
-    no-repeat padding-box;
+  background: transparent linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0% no-repeat padding-box;
 }
 
 .active_head .nav-list {
   background-color: transparent;
 }
 
-.active_head .nav-list > li > a {
+.active_head .nav-list>li>a {
   color: var(--color-4e);
 }
 
-.active_head .site-header .header-scrolled .nav-list > li > a {
+.active_head .site-header .header-scrolled .nav-list>li>a {
   color: var(--color-white);
 }
 
-.active_head .nav-list > li.nav-item:hover > a {
+.active_head .nav-list>li.nav-item:hover>a {
   position: relative;
 }
-.active_head .nav-list > li:hover > a {
+
+.active_head .nav-list>li:hover>a {
   color: var(--color-29);
 }
 
@@ -873,11 +872,8 @@ a:active {
   right: 0;
   bottom: 0;
   opacity: 0.85;
-  background: transparent
-    linear-gradient(0deg, var(--unnamed-color-000000) 0%, #00000000 100%) 0% 0%
-    no-repeat padding-box;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
-    0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, var(--unnamed-color-000000) 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   height: 207px;
   z-index: -2;
 }
@@ -928,6 +924,7 @@ a:active {
   display: flex;
   justify-content: center;
 }
+
 .about_one .btm_log_grid figure img {
   width: auto;
   margin: 0 auto;
