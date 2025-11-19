@@ -230,6 +230,7 @@
   padding: 1rem;
   display: flex;
   gap: 14px;
+  z-index: 0;
 }
 
 .modalTitle {

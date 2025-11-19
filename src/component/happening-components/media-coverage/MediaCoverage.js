@@ -1,147 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./media-coverage.module.css";
 import Image from "next/image";
-export default function MediaCoverage() {
-  const galleryData = [
-    {
-      id: 1,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 1",
-        },
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 2",
-        },
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 3",
-        },
-      ],
-    },
-    {
-      id: 2,
-      thumbnail: "/images/home-page/fifth-section-banner.png",
-      media: [
-        {
-          type: "image",
-          url: "/images/home-page/fifth-section-banner.png",
-          alt: "Gallery Image 4",
-        },
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 5",
-        },
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 43",
-        },
-      ],
-    },
-    {
-      id: 3,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 6",
-        },
-      ],
-    },
-    {
-      id: 4,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "/images/home-page/gallary-popup-dummy-banner.png",
-          alt: "Gallery Image 7",
-        },
-        {
-          type: "image",
-          url: "/images/home-page/gallary-popup-dummy-banner.png",
-          alt: "Gallery Image 8",
-        },
-      ],
-    },
-    {
-      id: 5,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 9",
-        },
-      ],
-    },
-    {
-      id: 6,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 9",
-        },
-      ],
-    },
-    {
-      id: 7,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 10",
-        },
-      ],
-    },
-    {
-      id: 8,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 11",
-        },
-      ],
-    },
-    {
-      id: 9,
-      thumbnail:
-        "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-      media: [
-        {
-          type: "image",
-          url: "https://project-demo.in/jss/assets/img/happenings/banners/1760523633_68ef75715a3a1.png",
-          alt: "Gallery Image 12",
-        },
-      ],
-    },
-  ];
 
+const BASE_URL = "https://project-demo.in/jss/api/happenings/media-coverage";
+
+export default function MediaCoverage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [mediaData, setMediaData] = useState([]);
+
+  useEffect(() => {
+    const fetchMediaData = async () => {
+      try {
+        const res = await fetch(BASE_URL);
+        const data = await res.json();
+        setMediaData(data);
+      } catch (err) {
+        console.error(err);
+        setMediaData([]);
+      }
+    };
+
+    fetchMediaData();
+  }, []);
+  const galleryData = mediaData || [];
 
   const openModal = (gallery) => {
     setSelectedGallery(gallery);

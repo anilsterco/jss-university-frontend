@@ -147,7 +147,6 @@ export default function EventsSection() {
     );
   if (error || schoolsError) return <div>Error loading data</div>;
 
-  console.log("setFilters", filters);
   const resetFilters = () => {
     setFilters({
       page: 1,
@@ -263,14 +262,16 @@ export default function EventsSection() {
         <div className={`row mt-5 w-100 m-auto ${styles.secondarySection}`}>
           <div className="col-md-7">
             <div className={styles.secondaryImageWrapper}>
-              <Image
-                src={secondryItem.banner_image}
-                alt="Secondary Event"
-                layout="responsive"
-                width={700}
-                height={400}
-                className={styles.secondaryImage}
-              />
+              {secondryItem.banner_image && (
+                <Image
+                  src={secondryItem.banner_image}
+                  alt="Secondary Event"
+                  layout="responsive"
+                  width={700}
+                  height={400}
+                  className={styles.secondaryImage}
+                />
+              )}
             </div>
           </div>
           <div className="col-md-5">

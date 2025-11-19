@@ -57,7 +57,6 @@ export default function FacultyList({ data }) {
     ],
   };
   const facultyData = data ? data : dummyFacultyData;
-  console.log(facultyData, "facultyData");
   return (
 
   

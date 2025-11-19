@@ -103,61 +103,77 @@ export default function EventsGrid({ data }) {
             <div
               className={`${styles.card} ${styles.cardLarge} ${styles.cardLargeTopLeft}`}
             >
-              <Image
-                src={eventsData.happenings[0].image}
-                alt="Event img"
-                fill
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[0] && (
+                <Image
+                  src={eventsData.happenings[0].image}
+                  alt="Event img"
+                  fill
+                  className={styles.cardImage}
+                />
+              )}
+
               <div className={styles.contentPart}>
                 <div className={styles.orangeLine}></div>
                 <p className={styles.cardTag}>
-                  {eventsData.happenings[0].event_type}
+                  {eventsData.happenings[0] &&
+                    eventsData.happenings[0].event_type}
                 </p>
                 <h2 className={styles.cardTitleLarge}>
-                  {eventsData.happenings[0].title}
+                  {eventsData.happenings[0] && eventsData.happenings[0].title}
                 </h2>
-                <Link href={`/happening/${eventsData.happenings[0].slug}`}>
-                  <GoArrowRight className={styles.rightArrow} />
-                </Link>
+                {eventsData.happenings[0] && (
+                  <Link href={`/happening/${eventsData.happenings[0].slug}`}>
+                    <GoArrowRight className={styles.rightArrow} />
+                  </Link>
+                )}
               </div>
             </div>
 
             {/* Event 2 */}
             <div className={styles.card} style={{ backgroundColor: "#C84B3A" }}>
               <p className={styles.cardTag}>
-                {eventsData.happenings[1].event_type}
+                {eventsData.happenings[1] &&
+                  eventsData.happenings[1].event_type}
               </p>
               <div>
                 <h3 className={`${styles.cardTitle} ${styles.cardTitleWhite}`}>
-                  {eventsData.happenings[1].title}
+                  {eventsData.happenings[1] && eventsData.happenings[1].title}
                 </h3>
                 <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
-                  {eventsData.happenings[1].event_date_from}
+                  {eventsData.happenings[1] &&
+                    eventsData.happenings[1].event_date_from}
                 </p>
               </div>
             </div>
 
             {/* News 3 */}
             <div className={styles.card}>
-              <Image
-                src={eventsData.happenings[2].image}
-                alt={eventsData.happenings[2].alt_text}
-                fill
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[2] && (
+                <Image
+                  src={eventsData.happenings[2].image}
+                  alt={
+                    eventsData.happenings[2] &&
+                    eventsData.happenings[2].alt_text
+                  }
+                  fill
+                  className={styles.cardImage}
+                />
+              )}
+
               <div className={styles.miniContentPart}>
                 <p className={styles.cardTag}>
-                  {eventsData.happenings[2].event_type}
+                  {eventsData.happenings[2] &&
+                    eventsData.happenings[2].event_type}
                 </p>
                 <div>
                   <h3
                     className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
                   >
-                    {eventsData.happenings[2].title}
+                    {eventsData.happenings[2] && eventsData.happenings[2].title}
                   </h3>
                   <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
-                    {eventsData.happenings[2].event_date_from}
+                    {eventsData.happenings[2] &&
+                      eventsData.happenings[2].event_date_from}
                   </p>
                 </div>
               </div>
@@ -166,89 +182,125 @@ export default function EventsGrid({ data }) {
             {/* Event 4 */}
             <div className={styles.card} style={{ backgroundColor: "#fff" }}>
               <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
-                {eventsData.happenings[3].event_type}
+                {eventsData.happenings[3] &&
+                  eventsData.happenings[3].event_type}
               </p>
-              <Image
-                src={eventsData.happenings[3].image}
-                alt={eventsData.happenings[3].alt_text}
-                width={100}
-                height={90}
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[3] && (
+                <Image
+                  src={eventsData.happenings[3].image}
+                  alt={
+                    eventsData.happenings[3] &&
+                    eventsData.happenings[3].alt_text
+                  }
+                  width={100}
+                  height={90}
+                  className={styles.cardImage}
+                />
+              )}
+
               <h3 className={styles.cardTitle}>
-                {eventsData.happenings[3].title}
+                {eventsData.happenings[3] && eventsData.happenings[3].title}
               </h3>
               <p className={styles.cardDate}>
-                {eventsData.happenings[3].event_date_from}
+                {eventsData.happenings[3] &&
+                  eventsData.happenings[3].event_date_from}
               </p>
             </div>
 
             {/* Event 5 */}
             <div className={styles.card}>
-              <Image
-                src={eventsData.happenings[4].image}
-                alt={eventsData.happenings[4].alt_text}
-                fill
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[4] && (
+                <Image
+                  src={eventsData.happenings[4].image}
+                  alt={
+                    eventsData.happenings[4] &&
+                    eventsData.happenings[4].alt_text
+                  }
+                  fill
+                  className={styles.cardImage}
+                />
+              )}
             </div>
 
             {/* Large Event 6 */}
             <div
               className={`${styles.card} ${styles.cardLarge} ${styles.cardLargeBottomRight}`}
             >
-              <Image
-                src={eventsData.happenings[5].image}
-                alt={eventsData.happenings[5].alt_text}
-                fill
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[5] && (
+                <Image
+                  src={eventsData.happenings[5].image}
+                  alt={
+                    eventsData.happenings[5] &&
+                    eventsData.happenings[5].alt_text
+                  }
+                  fill
+                  className={styles.cardImage}
+                />
+              )}
+
               <div className={styles.contentPart}>
                 <div className={styles.orangeLine}></div>
                 <h2 className={styles.cardTitleLarge}>
-                  {eventsData.happenings[5].title}
+                  {eventsData.happenings[5] && eventsData.happenings[5].title}
                 </h2>
                 <p
                   className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
                 >
-                  {eventsData.happenings[5].short_description}
+                  {eventsData.happenings[5] &&
+                    eventsData.happenings[5].short_description}
                 </p>
-                <Link href={`/happening/${eventsData.happenings[5].slug}`}>
-                  <GoArrowRight className={styles.rightArrow} />
-                </Link>
+                {eventsData.happenings[5] && (
+                  <Link href={`/happening/${eventsData.happenings[5].slug}`}>
+                    <GoArrowRight className={styles.rightArrow} />
+                  </Link>
+                )}
               </div>
             </div>
 
             {/* Event 7 */}
             <div className={styles.card}>
-              <Image
-                src={eventsData.happenings[6].image}
-                alt={eventsData.happenings[6].alt_text}
-                fill
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[6] && (
+                <Image
+                  src={eventsData.happenings[6].image}
+                  alt={
+                    eventsData.happenings[6] &&
+                    eventsData.happenings[6].alt_text
+                  }
+                  fill
+                  className={styles.cardImage}
+                />
+              )}
             </div>
 
             {/* Event 8 */}
             <div className={styles.card} style={{ backgroundColor: "#2B5DAA" }}>
               <p className={styles.cardTag}>
-                {eventsData.happenings[7].event_type}
+                {eventsData.happenings[7] &&
+                  eventsData.happenings[7].event_type}
               </p>
               <div>
-                <Image
-                  src={eventsData.happenings[7].image}
-                  alt={eventsData.happenings[7].alt_text}
-                  height={50}
-                  width={200}
-                  className={styles.cardImage}
-                />
+                {eventsData.happenings[7] && (
+                  <Image
+                    src={eventsData.happenings[7].image}
+                    alt={
+                      eventsData.happenings[7] &&
+                      eventsData.happenings[7].alt_text
+                    }
+                    height={50}
+                    width={200}
+                    className={styles.cardImage}
+                  />
+                )}
+
                 <p
                   className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
                 >
-                  {eventsData.happenings[7].short_description}
+                  {eventsData.happenings[7] &&
+                    eventsData.happenings[7].short_description}
                 </p>
                 <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
-                  {eventsData.happenings[7].event_date_from}
+                  {eventsData.happenings[7] &&
+                    eventsData.happenings[7].event_date_from}
                 </p>
               </div>
             </div>
@@ -256,20 +308,28 @@ export default function EventsGrid({ data }) {
             {/* Event 9 */}
             <div className={styles.card} style={{ backgroundColor: "#fff" }}>
               <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
-                {eventsData.happenings[8].event_type}
+                {eventsData.happenings[8] &&
+                  eventsData.happenings[8].event_type}
               </p>
-              <Image
-                src={eventsData.happenings[8].image}
-                alt={eventsData.happenings[8].alt_text}
-                width={100}
-                height={90}
-                className={styles.cardImage}
-              />
+              {eventsData.happenings[8] && (
+                <Image
+                  src={eventsData.happenings[8].image}
+                  alt={
+                    eventsData.happenings[8] &&
+                    eventsData.happenings[8].alt_text
+                  }
+                  width={100}
+                  height={90}
+                  className={styles.cardImage}
+                />
+              )}
+
               <h3 className={styles.cardTitle}>
-                {eventsData.happenings[8].title}
+                {eventsData.happenings[8] && eventsData.happenings[8].title}
               </h3>
               <p className={styles.cardDate}>
-                {eventsData.happenings[8].event_date_from}
+                {eventsData.happenings[8] &&
+                  eventsData.happenings[8].event_date_from}
               </p>
             </div>
           </div>
@@ -291,23 +351,35 @@ export default function EventsGrid({ data }) {
                 <div
                   className={`${styles.card} ${styles.cardLarge} ${styles.cardLargeTopLeft} ${styles.mobileCard}`}
                 >
-                  <Image
-                    src={eventsData.happenings[0].image}
-                    alt={eventsData.happenings[0].alt_text}
-                    fill
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[0] && (
+                    <Image
+                      src={eventsData.happenings[0].image}
+                      alt={
+                        eventsData.happenings[0] &&
+                        eventsData.happenings[0].alt_text
+                      }
+                      fill
+                      className={styles.cardImage}
+                    />
+                  )}
+
                   <div className={styles.contentPart}>
                     <div className={styles.orangeLine}></div>
                     <p className={styles.cardTag}>
-                      {eventsData.happenings[0].event_type}
+                      {eventsData.happenings[0] &&
+                        eventsData.happenings[0].event_type}
                     </p>
                     <h2 className={styles.cardTitleLarge}>
-                      {eventsData.happenings[0].title}
+                      {eventsData.happenings[0] &&
+                        eventsData.happenings[0].title}
                     </h2>
-                    <Link href={`/happening/${eventsData.happenings[0].slug}`}>
-                      <GoArrowRight className={styles.rightArrow} />
-                    </Link>
+                    {eventsData.happenings[0] && (
+                      <Link
+                        href={`/happening/${eventsData.happenings[0].slug}`}
+                      >
+                        <GoArrowRight className={styles.rightArrow} />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </SwiperSlide>
@@ -317,42 +389,54 @@ export default function EventsGrid({ data }) {
                   style={{ backgroundColor: "#AF251C" }}
                 >
                   <p className={styles.cardTag}>
-                    {eventsData.happenings[1].event_type}
+                    {eventsData.happenings[1] &&
+                      eventsData.happenings[1].event_type}
                   </p>
                   <div>
                     <h3
                       className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
                     >
-                      {eventsData.happenings[1].title}
+                      {eventsData.happenings[1] &&
+                        eventsData.happenings[1].title}
                     </h3>
                     <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
-                      {eventsData.happenings[1].event_date_from}
+                      {eventsData.happenings[1] &&
+                        eventsData.happenings[1].event_date_from}
                     </p>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className={`${styles.card} ${styles.mobileCard}`}>
-                  <Image
-                    src={eventsData.happenings[2].image}
-                    alt={eventsData.happenings[2].alt_text}
-                    fill
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[2] && (
+                    <Image
+                      src={eventsData.happenings[2].image}
+                      alt={
+                        eventsData.happenings[2] &&
+                        eventsData.happenings[2].alt_text
+                      }
+                      fill
+                      className={styles.cardImage}
+                    />
+                  )}
+
                   <div className={styles.miniContentPart}>
                     <p className={styles.cardTag}>
-                      {eventsData.happenings[2].event_type}
+                      {eventsData.happenings[2] &&
+                        eventsData.happenings[2].event_type}
                     </p>
                     <div>
                       <h3
                         className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
                       >
-                        {eventsData.happenings[2].title}
+                        {eventsData.happenings[2] &&
+                          eventsData.happenings[2].title}
                       </h3>
                       <p
                         className={`${styles.cardDate} ${styles.cardDateWhite}`}
                       >
-                        {eventsData.happenings[2].event_date_from}
+                        {eventsData.happenings[2] &&
+                          eventsData.happenings[2].event_date_from}
                       </p>
                     </div>
                   </div>
@@ -364,31 +448,44 @@ export default function EventsGrid({ data }) {
                   style={{ backgroundColor: "#fff" }}
                 >
                   <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
-                    {eventsData.happenings[3].event_type}
+                    {eventsData.happenings[3] &&
+                      eventsData.happenings[3].event_type}
                   </p>
-                  <Image
-                    src={eventsData.happenings[3].image}
-                    alt={eventsData.happenings[3].alt_text}
-                    width={100}
-                    height={90}
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[3] && (
+                    <Image
+                      src={eventsData.happenings[3].image}
+                      alt={
+                        eventsData.happenings[3] &&
+                        eventsData.happenings[3].alt_text
+                      }
+                      width={100}
+                      height={90}
+                      className={styles.cardImage}
+                    />
+                  )}
+
                   <h3 className={styles.cardTitle}>
-                    {eventsData.happenings[3].title}
+                    {eventsData.happenings[3] && eventsData.happenings[3].title}
                   </h3>
                   <p className={styles.cardDate}>
-                    {eventsData.happenings[3].event_date_from}
+                    {eventsData.happenings[3] &&
+                      eventsData.happenings[3].event_date_from}
                   </p>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className={`${styles.card} ${styles.mobileCard}`}>
-                  <Image
-                    src={eventsData.happenings[4].image}
-                    alt={eventsData.happenings[4].alt_text}
-                    fill
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[4] && (
+                    <Image
+                      src={eventsData.happenings[4].image}
+                      alt={
+                        eventsData.happenings[4] &&
+                        eventsData.happenings[4].alt_text
+                      }
+                      fill
+                      className={styles.cardImage}
+                    />
+                  )}
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -401,36 +498,53 @@ export default function EventsGrid({ data }) {
                 <div
                   className={`${styles.card} ${styles.cardLarge} ${styles.cardLargeBottomRight} ${styles.mobileCard}`}
                 >
-                  <Image
-                    src={eventsData.happenings[5].image}
-                    alt={eventsData.happenings[5].alt_text}
-                    fill
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[5] && (
+                    <Image
+                      src={eventsData.happenings[5].image}
+                      alt={
+                        eventsData.happenings[5] &&
+                        eventsData.happenings[5].alt_text
+                      }
+                      fill
+                      className={styles.cardImage}
+                    />
+                  )}
+
                   <div className={styles.contentPart}>
                     <div className={styles.orangeLine}></div>
                     <h2 className={styles.cardTitleLarge}>
-                      {eventsData.happenings[5].title}
+                      {eventsData.happenings[5] &&
+                        eventsData.happenings[5].title}
                     </h2>
                     <p
                       className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
                     >
-                      {eventsData.happenings[5].short_description}
+                      {eventsData.happenings[5] &&
+                        eventsData.happenings[5].short_description}
                     </p>
-                    <Link href={`/happening/${eventsData.happenings[5].slug}`}>
-                      <GoArrowRight className={styles.rightArrow} />
-                    </Link>
+                    {eventsData.happenings[5] && (
+                      <Link
+                        href={`/happening/${eventsData.happenings[5].slug}`}
+                      >
+                        <GoArrowRight className={styles.rightArrow} />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className={`${styles.card} ${styles.mobileCard}`}>
-                  <Image
-                    src={eventsData.happenings[6].image}
-                    alt={eventsData.happenings[6].alt_text}
-                    fill
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[6] && (
+                    <Image
+                      src={eventsData.happenings[6].image}
+                      alt={
+                        eventsData.happenings[6] &&
+                        eventsData.happenings[6].alt_text
+                      }
+                      fill
+                      className={styles.cardImage}
+                    />
+                  )}
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -439,23 +553,32 @@ export default function EventsGrid({ data }) {
                   style={{ backgroundColor: "#2B5DAA" }}
                 >
                   <p className={styles.cardTag}>
-                    {eventsData.happenings[7].event_type}
+                    {eventsData.happenings[7] &&
+                      eventsData.happenings[7].event_type}
                   </p>
                   <div>
-                    <Image
-                      src={eventsData.happenings[7].image}
-                      alt={eventsData.happenings[7].alt_text}
-                      height={50}
-                      width={200}
-                      className={styles.cardImage}
-                    />
+                    {eventsData.happenings[7] && (
+                      <Image
+                        src={eventsData.happenings[7].image}
+                        alt={
+                          eventsData.happenings[7] &&
+                          eventsData.happenings[7].alt_text
+                        }
+                        height={50}
+                        width={200}
+                        className={styles.cardImage}
+                      />
+                    )}
+
                     <p
                       className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
                     >
-                      {eventsData.happenings[7].short_description}
+                      {eventsData.happenings[7] &&
+                        eventsData.happenings[7].short_description}
                     </p>
                     <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
-                      {eventsData.happenings[7].event_date_from}
+                      {eventsData.happenings[7] &&
+                        eventsData.happenings[7].event_date_from}
                     </p>
                   </div>
                 </div>
@@ -466,20 +589,28 @@ export default function EventsGrid({ data }) {
                   style={{ backgroundColor: "#fff" }}
                 >
                   <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
-                    {eventsData.happenings[8].event_type}
+                    {eventsData.happenings[8] &&
+                      eventsData.happenings[8].event_type}
                   </p>
-                  <Image
-                    src={eventsData.happenings[8].image}
-                    alt={eventsData.happenings[8].alt_text}
-                    width={100}
-                    height={90}
-                    className={styles.cardImage}
-                  />
+                  {eventsData.happenings[8] && (
+                    <Image
+                      src={eventsData.happenings[8].image}
+                      alt={
+                        eventsData.happenings[8] &&
+                        eventsData.happenings[8].alt_text
+                      }
+                      width={100}
+                      height={90}
+                      className={styles.cardImage}
+                    />
+                  )}
+
                   <h3 className={styles.cardTitle}>
-                    {eventsData.happenings[8].title}
+                    {eventsData.happenings[8] && eventsData.happenings[8].title}
                   </h3>
                   <p className={styles.cardDate}>
-                    {eventsData.happenings[8].event_date_from}
+                    {eventsData.happenings[8] &&
+                      eventsData.happenings[8].event_date_from}
                   </p>
                 </div>
               </SwiperSlide>
