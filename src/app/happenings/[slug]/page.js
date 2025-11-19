@@ -1,0 +1,171 @@
+"use client";
+import { useState, use, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { useRouter } from "next/navigation";
+import styles from "./page.module.css";
+
+const BASE_URL = "https://project-demo.in/jss/api";
+
+const icons = [
+  { src: "/images/custom-page/printIcon.svg" },
+  { src: "/images/custom-page/shareIcon.svg" },
+];
+const dummyHappeningsData = {
+  innerTitle: {
+    date: "OCTOBER 16, 2025",
+    heading: "TECHTONIC SUMMIT: IDEAS THAT SHAKE THE FUTURE",
+  },
+  mainBanner: {
+    img: "/images/custom-page/happni-banner.webp",
+    alt: "Main Banner",
+  },
+  sections: [
+    {
+      smallImg: "/images/custom-page/happsmall.webp",
+      content: [
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...",
+        "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium...",
+        "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet...",
+      ],
+    },
+  ],
+  related: [
+    {
+      title: "Alumni Meet and Greet 2024",
+      img: "/images/custom-page/reletedImg.webp",
+      alt: "Related 1",
+      slug: "summer-beats-festival-2025",
+      date: "Dec 31, 2024",
+    },
+    {
+      title: "Alumni Meet and Greet 2025",
+      img: "/images/custom-page/reletedImg.webp",
+      alt: "Related 2",
+      slug: "summer-beats-festival-2025",
+      date: "Feb 21, 2025",
+    },
+  ],
+};
+
+export default function Happenings({ params }) {
+  const router = useRouter();
+  const unwrappedParams = use(params);
+  const { slug } = unwrappedParams;
+  const [eventDetails, setEventDetails] = useState({});
+  useEffect(() => {
+    fetch(`${BASE_URL}/happenings/${slug}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setEventDetails(data.data);
+      })
+      .catch((error) => console.error("Error:", error));
+  }, [slug]);
+
+  const contentRef = useRef(null);
+
+  const handlePrint = useReactToPrint({
+    contentRef,
+  });
+
+  const happeningsData = eventDetails;
+
+  return (
+    <div ref={contentRef}>
+      <section className={styles.innerTitle}>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="innnr_head">
+                <h2>
+                  {happeningsData.innerTitle && happeningsData.innerTitle.date}
+                </h2>
+                <h3>
+                  {happeningsData.innerTitle &&
+                    happeningsData.innerTitle.heading}
+                </h3>
+              </div>
+              <ul className={styles.happIcons}>
+                <li onClick={handlePrint}>
+                  <img
+                    src={icons[0].src}
+                    alt={icons[0].alt}
+                    className="img-fluid w-100"
+                  />
+                </li>
+                <li onClick={() => router.back()}>
+                  <img
+                    src={icons[1].src}
+                    alt={icons[1].alt}
+                    className="img-fluid w-100"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.happiningSec}>
+        <div className="col-lg-12 mx-auto">
+          <div className={styles.banner}>
+            <figure>
+              <img
+                src={happeningsData.mainBanner && happeningsData.mainBanner.img}
+                alt={happeningsData.mainBanner && happeningsData.mainBanner.alt}
+                className="img-fluid w-100"
+              />
+            </figure>
+          </div>
+
+          {happeningsData.sections &&
+            happeningsData.sections.map((section, idx) => (
+              <div className="container" key={idx}>
+                <div className="col-lg-10 mx-auto">
+                  <div className={styles.Grid2}>
+                    <figure>
+                      <img
+                        src={section.smallImg}
+                        alt="Section Image"
+                        className="img-fluid w-100"
+                      />
+                    </figure>
+                    <div className={styles.happContant}>
+                      {section.content.map((paragraph, pIdx) => (
+                        <p key={pIdx}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      <section className={styles.relatedHappenings}>
+        <div className="container">
+          <div className="col-lg-10 mx-auto">
+            <h3>Related News</h3>
+            <div className={styles.releGrid}>
+              {happeningsData.related &&
+                happeningsData.related.map((item, idx) => (
+                  <div className={styles.relecol} key={idx}>
+                    <figure>
+                      <img
+                        src={item.img}
+                        alt={item.alt}
+                        className="img-fluid w-100"
+                      />
+                      <figcaption>
+                        <h4>{item.title}</h4>
+                        <p>{item.date}</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

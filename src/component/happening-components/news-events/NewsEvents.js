@@ -30,9 +30,9 @@ export default function EventsSection() {
   } = useQuery({
     queryKey: ["schools"],
     queryFn: () => schoolListAPI.getSchoolList(),
-    staleTime: 10 * 60 * 1000, // Cache longer since schools don't change often
+    staleTime: 10 * 60 * 1000,
   });
-  // Use React Query with dynamic query key based on filters including page
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["news-events", filters.month, filters.school, filters.page],
     queryFn: () => {
@@ -41,9 +41,9 @@ export default function EventsSection() {
       const endpoint = `/happenings?${queryParams}`;
       return happeningAPI.getEvents(endpoint);
     },
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
-    cacheTime: 10 * 60 * 1000, // Keep in cache for 10 minutes
-    keepPreviousData: true, // Keep previous data while fetching new page
+    staleTime: 5 * 60 * 1000,
+    cacheTime: 10 * 60 * 1000,
+    keepPreviousData: true,
   });
 
   const formatDate = (dateString) => {
@@ -55,7 +55,6 @@ export default function EventsSection() {
     });
   };
 
-  // Format month name to number (January -> 1, February -> 2, etc.)
   const formatMonthToNumber = (monthName) => {
     const months = {
       January: 1,
@@ -78,12 +77,9 @@ export default function EventsSection() {
   const upCommingEvents = data?.data?.upcoming_events || [];
   const secondryItem = data?.data?.first_event || null;
   const allEvents = data?.data?.other_events || [];
-
-  // Get pagination data from API response
   const currentPage = data?.data?.pagination?.current_page || filters.page;
   const totalPages = data?.data?.pagination?.last_page || 1;
 
-  // Build query parameters based on filters
   const buildQueryParams = () => {
     const params = new URLSearchParams();
 
@@ -103,7 +99,6 @@ export default function EventsSection() {
     return params.toString();
   };
 
-  // Map school names to IDs
   const getSchoolId = (schoolName) => {
     const school = schools.find((s) => s.name === schoolName);
     return school?.id || null;
@@ -128,14 +123,12 @@ export default function EventsSection() {
     setFilters((prev) => ({
       ...prev,
       [key]: value,
-      // Reset to page 1 when changing filters
       ...(key !== "page" && { page: 1 }),
     }));
   };
 
   const handlePageChange = (page) => {
     setFilters((prev) => ({ ...prev, page }));
-    // Scroll to top when page changes
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -157,7 +150,6 @@ export default function EventsSection() {
 
   return (
     <section className={styles.eventsSection}>
-      {/* Main Banner */}
       <div className={styles.bannerWrapper}>
         {upCommingEvents.length > 0 ? (
           <Swiper
