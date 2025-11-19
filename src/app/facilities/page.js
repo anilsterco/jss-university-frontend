@@ -14,16 +14,12 @@ export default function FacilitiesPage() {
   const [activeLab, setActiveLab] = useState(0);
   const [facilitiesData, setFacilitiesData] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const container = useRef();
   useGSAP(
     () => {
       if (!facilitiesData) return;
-
       gsap.registerPlugin(ScrollTrigger);
-
       const boxes = gsap.utils.toArray(".facilities-list");
-
       // Set all boxes to be stacked (absolute positioning)
       gsap.set(boxes, {
         position: "absolute",
