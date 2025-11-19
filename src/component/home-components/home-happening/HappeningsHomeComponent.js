@@ -122,7 +122,7 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[0] && eventsData.happenings[0].title}
                 </h2>
                 {eventsData.happenings[0] && (
-                  <Link href={`/happening/${eventsData.happenings[0].slug}`}>
+                  <Link href={`/happenings/${eventsData.happenings[0].slug}`}>
                     <GoArrowRight className={styles.rightArrow} />
                   </Link>
                 )}
@@ -250,7 +250,7 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[5].short_description}
                 </p>
                 {eventsData.happenings[5] && (
-                  <Link href={`/happening/${eventsData.happenings[5].slug}`}>
+                  <Link href={`/happenings/${eventsData.happenings[5].slug}`}>
                     <GoArrowRight className={styles.rightArrow} />
                   </Link>
                 )}
@@ -375,7 +375,7 @@ export default function EventsGrid({ data }) {
                     </h2>
                     {eventsData.happenings[0] && (
                       <Link
-                        href={`/happening/${eventsData.happenings[0].slug}`}
+                        href={`/happenings/${eventsData.happenings[0].slug}`}
                       >
                         <GoArrowRight className={styles.rightArrow} />
                       </Link>
@@ -524,7 +524,7 @@ export default function EventsGrid({ data }) {
                     </p>
                     {eventsData.happenings[5] && (
                       <Link
-                        href={`/happening/${eventsData.happenings[5].slug}`}
+                        href={`/happenings/${eventsData.happenings[5].slug}`}
                       >
                         <GoArrowRight className={styles.rightArrow} />
                       </Link>
