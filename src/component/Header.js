@@ -715,7 +715,7 @@ export default function Header() {
 
                     {/* RIGHT SIDE: Departments */}
                     <div className="departments-list">
-                      <span className="dropdown-arrow"></span>
+                      {/* <span className="dropdown-arrow"></span> */}
                       <h6 className="text-white">Department</h6>
                       <div className="link-content">
                         {engineeringData.schools[
@@ -1244,6 +1244,20 @@ export default function Header() {
           display: flex;
           flex-direction: column;
         }
+        .school-toggle p {
+          font: var(--font-16);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);
+          letter-spacing: 0px;
+        }
+        .school-toggle h5 {
+          font: var(--font-24);
+          color: var(--color-white);
+          font-family: var(--font-Condensed);
+          letter-spacing: -1.1px;
+         font-weight: bold;
+         text-transform: uppercase;
+        }
          .logo-content img {
               width: 100%;
               height: 100%;
@@ -1257,12 +1271,13 @@ export default function Header() {
           width: 100%;
           display: flex;
           position: absolute;
-          top: 130px;
+          top: 140px;
+          left: 10%;
         }
 
         .engineering-dropdown {
           background: #fff;
-          width: 35%;
+          width: 36%;
           min-height: 320px;
           display: flex;
           overflow: hidden;
@@ -1279,31 +1294,52 @@ export default function Header() {
         }
 
         .school-item {
-          padding: 10px 20px;
+          padding: 1.1rem 3.2rem 1.1rem;
           cursor: pointer;
           transition: background 0.3s ease;
         }
         .school-item:hover {
           background: #1e4b6b;
         }
+        .school-item {
+          font: var(--font-14);
+           font-weight: normal;
+           letter-spacing: 0px;
+        }
         .school-item.active {
           background: #ffc100;
           color: #000;
+          font: var(--font-14);
+           font-weight: normal;
+           letter-spacing: 0px;
         }
 
         .departments-list {
           background: #224666;
           display: block;
           width: 50%;
+          
         }
         .departments-list .link-content {
-          padding-left: 1.2rem;
+          padding-left: 3.2rem;
+          font: var(--font-14);
+          font-weight: normal;
+          letter-spacing: 0px;
         }
+       
         .engineering-dropdown h6 {
-          font-size: 18px;
-          padding-left: 1.2rem;
-          padding-top: 1.2rem;
+           font: var(--font-18);
+          color: var(--color-white);
+          text-transform: uppercase;
+          font-family: var(--font-Condensed);
+          letter-spacing: 0px;
+          font-weight: bold;
+          padding-inline:3.2rem;
+          padding-top: 1.5rem;
+          margin-bottom:1rem;
+         
         }
+     
         .department-item {
           cursor: pointer;
           border-radius: 8px;
