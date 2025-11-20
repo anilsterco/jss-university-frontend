@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import "@/styles/style.css";
@@ -8,11 +8,14 @@ import "@/styles/style.css";
 const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function Programs() {
-  const [activeTab, setActiveTab] = useState("UnderGraduate");
   const [selectedSchool, setSelectedSchool] = useState(null);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [schoolData, setSchoolData] = useState([]);
+  const [programData, setProgramData] = useState([]);
+  const [activeProgram, setActiveProgram] = useState("under-graduate");
   const [loading, setLoading] = useState(true);
+  const [searchProgram, setSearchProgram] = useState("");
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +23,6 @@ export default function Programs() {
       .then((response) => response.json())
       .then((data) => {
         setSchoolData(data.data);
-        // Set first school as default selected
         if (data.data && data.data.length > 0) {
           setSelectedSchool(data.data[0].id);
         }
@@ -30,9 +32,19 @@ export default function Programs() {
         console.error("Error:", error);
         setLoading(false);
       });
+    fetch(`${BASE_URL}/program-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProgramData(data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
   }, []);
 
-  console.log(selectedSchool, selectedDepartment)
+  console.log(selectedSchool, selectedDepartment, activeProgram, searchProgram);
 
   const programs = [
     {
@@ -100,7 +112,7 @@ export default function Programs() {
     },
   ];
 
-  const tabs = ["UnderGraduate", "PostGraduate", "PhD"];
+  const tabs = programData;
 
   const handleSchoolToggle = (schoolId) => {
     // Radio button behavior - only one school at a time
@@ -114,11 +126,17 @@ export default function Programs() {
     setSelectedDepartment(departmentId);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Search functionality to be implemented");
-  };
+  const handleSearch = (value) => {
+    setSearchProgram(value);
 
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      console.log("Searching for:", value);
+    }, 300);
+  };
   const handleLoadMore = () => {
     console.log("Load more functionality to be implemented");
   };
@@ -151,12 +169,15 @@ export default function Programs() {
 
                 <ul>
                   {tabs.map((tab) => (
-                    <li key={tab} className={activeTab === tab ? "active" : ""}>
+                    <li
+                      key={tab.id}
+                      className={activeProgram === tab.slug ? "active" : ""}
+                    >
                       <a
-                        onClick={() => setActiveTab(tab)}
+                        onClick={() => setActiveProgram(tab.slug)}
                         style={{ cursor: "pointer" }}
                       >
-                        {tab}
+                        {tab.name}
                       </a>
                     </li>
                   ))}
@@ -173,16 +194,18 @@ export default function Programs() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className={styles.searchBox}>
-                <form onSubmit={handleSearch}>
+                <>
                   <input
                     type="text"
                     placeholder="Search Course"
                     name="search"
+                    value={searchProgram}
+                    onChange={(e) => handleSearch(e.target.value)}
                   />
                   <button type="submit">
                     <i className="bi bi-search"></i>
                   </button>
-                </form>
+                </>
               </div>
             </div>
           </div>
