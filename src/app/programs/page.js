@@ -1,23 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import "@/styles/style.css";
 
+const BASE_URL = "https://project-demo.in/jss/api";
+
 export default function Programs() {
   const [activeTab, setActiveTab] = useState("UnderGraduate");
-  const [selectedSchools, setSelectedSchools] = useState([
-    "School Of Engineering",
-  ]);
-  const [selectedDepartments, setSelectedDepartments] = useState([]);
+  const [selectedSchool, setSelectedSchool] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [schoolData, setSchoolData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // const programs = Array(15).fill({
-  //   image: "/images/programs/program-img.webp",
-  //   degree: "B.Tech in",
-  //   title: "Computer Science and Engineering",
-  //   link: "#",
-  // });
+  useEffect(() => {
+    setLoading(true);
+    fetch(`${BASE_URL}/school-department-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSchoolData(data.data);
+        // Set first school as default selected
+        if (data.data && data.data.length > 0) {
+          setSelectedSchool(data.data[0].id);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log(selectedSchool, selectedDepartment)
+
   const programs = [
     {
       id: 1,
@@ -84,39 +100,18 @@ export default function Programs() {
     },
   ];
 
-  const schools = [
-    "School Of Engineering",
-    "School Of Pharmacy",
-    "School Of Management",
-    "School Of Computer Applications",
-    "School Of Applied Sciences",
-    "School Of Humanities",
-  ];
-
-  const departments = [
-    "Electrical Engineering",
-    "Mechanical Engineering",
-    "Computer Science and Engineering",
-    "Robotics and Artificial Intelligence",
-    "Electrical & Electronics Engineering",
-  ];
-
   const tabs = ["UnderGraduate", "PostGraduate", "PhD"];
 
-  const handleSchoolToggle = (school) => {
-    setSelectedSchools((prev) =>
-      prev.includes(school)
-        ? prev.filter((s) => s !== school)
-        : [...prev, school]
-    );
+  const handleSchoolToggle = (schoolId) => {
+    // Radio button behavior - only one school at a time
+    setSelectedSchool(schoolId);
+    // Clear selected department when school changes
+    setSelectedDepartment(null);
   };
 
-  const handleDepartmentToggle = (department) => {
-    setSelectedDepartments((prev) =>
-      prev.includes(department)
-        ? prev.filter((d) => d !== department)
-        : [...prev, department]
-    );
+  const handleDepartmentToggle = (departmentId) => {
+    // Radio button behavior - only one department at a time
+    setSelectedDepartment(departmentId);
   };
 
   const handleSearch = (e) => {
@@ -127,6 +122,18 @@ export default function Programs() {
   const handleLoadMore = () => {
     console.log("Load more functionality to be implemented");
   };
+
+  // Get departments from selected school only
+  const getFilteredDepartments = () => {
+    if (!selectedSchool) {
+      return [];
+    }
+    // Show departments only from selected school
+    const school = schoolData.find((s) => s.id === selectedSchool);
+    return school?.departments || [];
+  };
+
+  const filteredDepartments = getFilteredDepartments();
 
   return (
     <>
@@ -193,51 +200,65 @@ export default function Programs() {
                   {/* Schools Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Browse by School</p>
-                    {schools.map((school, index) => (
-                      <div
-                        key={school}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedSchools.includes(school)}
-                          onChange={() => handleSchoolToggle(school)}
-                          id={`school-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`school-${index}`}
+                    {loading ? (
+                      <div>Loading schools...</div>
+                    ) : (
+                      schoolData.map((school) => (
+                        <div
+                          key={school.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {school}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="school"
+                            checked={selectedSchool === school.id}
+                            onChange={() => handleSchoolToggle(school.id)}
+                            id={`school-${school.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`school-${school.id}`}
+                          >
+                            {school.name}
+                          </label>
+                        </div>
+                      ))
+                    )}
                   </div>
 
                   {/* Departments Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Filter by Departments</p>
-                    {departments.map((department, index) => (
-                      <div
-                        key={department}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedDepartments.includes(department)}
-                          onChange={() => handleDepartmentToggle(department)}
-                          id={`department-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`department-${index}`}
+                    {loading ? (
+                      <div>Loading departments...</div>
+                    ) : filteredDepartments.length > 0 ? (
+                      filteredDepartments.map((department) => (
+                        <div
+                          key={department.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {department}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="department"
+                            checked={selectedDepartment === department.id}
+                            onChange={() =>
+                              handleDepartmentToggle(department.id)
+                            }
+                            id={`department-${department.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`department-${department.id}`}
+                          >
+                            {department.name}
+                          </label>
+                        </div>
+                      ))
+                    ) : (
+                      <div>No departments available</div>
+                    )}
                   </div>
                 </div>
 

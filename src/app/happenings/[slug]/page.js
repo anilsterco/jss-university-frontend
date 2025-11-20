@@ -10,42 +10,6 @@ const icons = [
   { src: "/images/custom-page/printIcon.svg" },
   { src: "/images/custom-page/shareIcon.svg" },
 ];
-const dummyHappeningsData = {
-  innerTitle: {
-    date: "OCTOBER 16, 2025",
-    heading: "TECHTONIC SUMMIT: IDEAS THAT SHAKE THE FUTURE",
-  },
-  mainBanner: {
-    img: "/images/custom-page/happni-banner.webp",
-    alt: "Main Banner",
-  },
-  sections: [
-    {
-      smallImg: "/images/custom-page/happsmall.webp",
-      content: [
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor...",
-        "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium...",
-        "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet...",
-      ],
-    },
-  ],
-  related: [
-    {
-      title: "Alumni Meet and Greet 2024",
-      img: "/images/custom-page/reletedImg.webp",
-      alt: "Related 1",
-      slug: "summer-beats-festival-2025",
-      date: "Dec 31, 2024",
-    },
-    {
-      title: "Alumni Meet and Greet 2025",
-      img: "/images/custom-page/reletedImg.webp",
-      alt: "Related 2",
-      slug: "summer-beats-festival-2025",
-      date: "Feb 21, 2025",
-    },
-  ],
-};
 
 export default function Happenings({ params }) {
   const router = useRouter();
