@@ -9,6 +9,7 @@ import "@fontsource/roboto-condensed";
 
 const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
 const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
+const SCHOOL_DEPARTMENT_URL ="https://project-demo.in/jss/api/school-department-list";
 
 export default function Header() {
   const pathname = usePathname();
@@ -461,7 +462,7 @@ export default function Header() {
     const fetchSchools = async () => {
       try {
         const res = await fetch(
-          "https://project-demo.in/jss/api/school-department-list"
+       (`${SCHOOL_DEPARTMENT_URL}`)
         );
         const json = await res.json();
         if (json.status) {
@@ -481,7 +482,7 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-
+  
   // mob menu data
   const mobilePanelsData = [
     {
