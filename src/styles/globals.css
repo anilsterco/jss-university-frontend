@@ -412,7 +412,7 @@ a:active {
 .engineering-dropdown .triangle-icon {
   position: absolute;
   top: -10px;
-  left: 22%;
+  left: 20%;
   color: #16344E;
   width: 1.8rem;
   height: 1.3rem;
@@ -540,7 +540,7 @@ a:active {
   letter-spacing: -2.16px;
   font-family: var(--font-Condensed);
   line-height: 0.9;
-  max-width: 87%;
+  max-width: 86%;
   font-weight: 700;
   margin-bottom: 1.7rem;
   text-transform: uppercase;
