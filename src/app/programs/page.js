@@ -1,23 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import "@/styles/style.css";
 
-export default function Programs() {
-  const [activeTab, setActiveTab] = useState("UnderGraduate");
-  const [selectedSchools, setSelectedSchools] = useState([
-    "School Of Engineering",
-  ]);
-  const [selectedDepartments, setSelectedDepartments] = useState([]);
+const BASE_URL = "https://project-demo.in/jss/api";
 
-  // const programs = Array(15).fill({
-  //   image: "/images/programs/program-img.webp",
-  //   degree: "B.Tech in",
-  //   title: "Computer Science and Engineering",
-  //   link: "#",
-  // });
+export default function Programs() {
+  const [selectedSchool, setSelectedSchool] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [schoolData, setSchoolData] = useState([]);
+  const [programData, setProgramData] = useState([]);
+  const [activeProgram, setActiveProgram] = useState("under-graduate");
+  const [loading, setLoading] = useState(true);
+  const [searchProgram, setSearchProgram] = useState("");
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`${BASE_URL}/school-department-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSchoolData(data.data);
+        if (data.data && data.data.length > 0) {
+          setSelectedSchool(data.data[0].id);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+    fetch(`${BASE_URL}/program-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProgramData(data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log(selectedSchool, selectedDepartment, activeProgram, searchProgram);
+
   const programs = [
     {
       id: 1,
@@ -84,49 +112,46 @@ export default function Programs() {
     },
   ];
 
-  const schools = [
-    "School Of Engineering",
-    "School Of Pharmacy",
-    "School Of Management",
-    "School Of Computer Applications",
-    "School Of Applied Sciences",
-    "School Of Humanities",
-  ];
+  const tabs = programData;
 
-  const departments = [
-    "Electrical Engineering",
-    "Mechanical Engineering",
-    "Computer Science and Engineering",
-    "Robotics and Artificial Intelligence",
-    "Electrical & Electronics Engineering",
-  ];
-
-  const tabs = ["UnderGraduate", "PostGraduate", "PhD"];
-
-  const handleSchoolToggle = (school) => {
-    setSelectedSchools((prev) =>
-      prev.includes(school)
-        ? prev.filter((s) => s !== school)
-        : [...prev, school]
-    );
+  const handleSchoolToggle = (schoolId) => {
+    // Radio button behavior - only one school at a time
+    setSelectedSchool(schoolId);
+    // Clear selected department when school changes
+    setSelectedDepartment(null);
   };
 
-  const handleDepartmentToggle = (department) => {
-    setSelectedDepartments((prev) =>
-      prev.includes(department)
-        ? prev.filter((d) => d !== department)
-        : [...prev, department]
-    );
+  const handleDepartmentToggle = (departmentId) => {
+    // Radio button behavior - only one department at a time
+    setSelectedDepartment(departmentId);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Search functionality to be implemented");
-  };
+  const handleSearch = (value) => {
+    setSearchProgram(value);
 
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      console.log("Searching for:", value);
+    }, 300);
+  };
   const handleLoadMore = () => {
     console.log("Load more functionality to be implemented");
   };
+
+  // Get departments from selected school only
+  const getFilteredDepartments = () => {
+    if (!selectedSchool) {
+      return [];
+    }
+    // Show departments only from selected school
+    const school = schoolData.find((s) => s.id === selectedSchool);
+    return school?.departments || [];
+  };
+
+  const filteredDepartments = getFilteredDepartments();
 
   return (
     <>
@@ -144,12 +169,15 @@ export default function Programs() {
 
                 <ul>
                   {tabs.map((tab) => (
-                    <li key={tab} className={activeTab === tab ? "active" : ""}>
+                    <li
+                      key={tab.id}
+                      className={activeProgram === tab.slug ? "active" : ""}
+                    >
                       <a
-                        onClick={() => setActiveTab(tab)}
+                        onClick={() => setActiveProgram(tab.slug)}
                         style={{ cursor: "pointer" }}
                       >
-                        {tab}
+                        {tab.name}
                       </a>
                     </li>
                   ))}
@@ -166,16 +194,18 @@ export default function Programs() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className={styles.searchBox}>
-                <form onSubmit={handleSearch}>
+                <>
                   <input
                     type="text"
                     placeholder="Search Course"
                     name="search"
+                    value={searchProgram}
+                    onChange={(e) => handleSearch(e.target.value)}
                   />
                   <button type="submit">
                     <i className="bi bi-search"></i>
                   </button>
-                </form>
+                </>
               </div>
             </div>
           </div>
@@ -193,51 +223,65 @@ export default function Programs() {
                   {/* Schools Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Browse by School</p>
-                    {schools.map((school, index) => (
-                      <div
-                        key={school}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedSchools.includes(school)}
-                          onChange={() => handleSchoolToggle(school)}
-                          id={`school-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`school-${index}`}
+                    {loading ? (
+                      <div>Loading schools...</div>
+                    ) : (
+                      schoolData.map((school) => (
+                        <div
+                          key={school.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {school}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="school"
+                            checked={selectedSchool === school.id}
+                            onChange={() => handleSchoolToggle(school.id)}
+                            id={`school-${school.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`school-${school.id}`}
+                          >
+                            {school.name}
+                          </label>
+                        </div>
+                      ))
+                    )}
                   </div>
 
                   {/* Departments Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Filter by Departments</p>
-                    {departments.map((department, index) => (
-                      <div
-                        key={department}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedDepartments.includes(department)}
-                          onChange={() => handleDepartmentToggle(department)}
-                          id={`department-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`department-${index}`}
+                    {loading ? (
+                      <div>Loading departments...</div>
+                    ) : filteredDepartments.length > 0 ? (
+                      filteredDepartments.map((department) => (
+                        <div
+                          key={department.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {department}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="department"
+                            checked={selectedDepartment === department.id}
+                            onChange={() =>
+                              handleDepartmentToggle(department.id)
+                            }
+                            id={`department-${department.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`department-${department.id}`}
+                          >
+                            {department.name}
+                          </label>
+                        </div>
+                      ))
+                    ) : (
+                      <div>No departments available</div>
+                    )}
                   </div>
                 </div>
 
