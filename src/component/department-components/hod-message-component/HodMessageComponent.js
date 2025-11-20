@@ -45,11 +45,13 @@ const HODMessage = ({ data }) => {
                 <h3 className={styles.title}>{hodData.title}</h3>
 
                 <div className={styles.messageText}>
-                  {hodData.message.map((paragraph, index) => (
-                    <p key={index} className={styles.paragraph}>
-                      {paragraph}
-                    </p>
-                  ))}
+                  {hodData.message &&
+                    hodData.message.length > 0 &&
+                    hodData.message.map((paragraph, index) => (
+                      <p key={index} className={styles.paragraph}>
+                        {paragraph}
+                      </p>
+                    ))}
                 </div>
 
                 <div className={styles.hodInfo}>
