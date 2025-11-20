@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 import "@/styles/style.css";
 
@@ -15,6 +16,7 @@ export default function Programs() {
   const [activeProgram, setActiveProgram] = useState("under-graduate");
   const [loading, setLoading] = useState(true);
   const [searchProgram, setSearchProgram] = useState("");
+  const [programListingData, setProgramListingData] = useState([]);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -43,86 +45,109 @@ export default function Programs() {
         setLoading(false);
       });
   }, []);
+  useEffect(() => {
+    fetchPrograms();
+  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram]);
 
-  console.log(selectedSchool, selectedDepartment, activeProgram, searchProgram);
+  const fetchPrograms = async () => {
 
-  const programs = [
-    {
-      id: 1,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Computer Science and Engineering",
-      link: "/programs/computer-science-engineering",
-    },
-    {
-      id: 2,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Electrical Engineering",
-      link: "/programs/electrical-engineering",
-    },
-    {
-      id: 3,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Mechanical Engineering",
-      link: "/programs/mechanical-engineering",
-    },
-    {
-      id: 4,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "B.Tech Electronics & Communication Engineering",
-      link: "/programs/electronics-communication",
-    },
-    {
-      id: 5,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Civil Engineering",
-      link: "/programs/civil-engineering",
-    },
-    {
-      id: 6,
-      image: "/images/programs/program-img.webp",
-      degree: "MBA in",
-      title: "Business Administration",
-      link: "/programs/business-administration",
-    },
-    {
-      id: 7,
-      image: "/images/programs/program-img.webp",
-      degree: "MCA in",
-      title: "Computer Applications",
-      link: "/programs/computer-applications",
-    },
-    {
-      id: 8,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Pharma in",
-      title: "Pharmaceutical Sciences",
-      link: "/programs/pharmaceutical-sciences",
-    },
-    {
-      id: 9,
-      image: "/images/programs/program-img.webp",
-      degree: "MCA in",
-      title: "Computer Applications",
-      link: "/programs/computer-applications",
-    },
-  ];
+    let url = `${BASE_URL}/programs/${activeProgram}`;
+    const params = [];
+
+    if (selectedSchool) {
+      params.push(`school_id=${encodeURIComponent(selectedSchool)}`);
+    }
+    if (selectedDepartment) {
+      params.push(`department_id=${encodeURIComponent(selectedDepartment)}`);
+    }
+    if (searchProgram) {
+      params.push(`search=${encodeURIComponent(searchProgram)}`);
+    }
+
+    if (params.length > 0) {
+      url += `?${params.join("&")}`;
+    }
+
+    const response = await fetch(url);
+    const data = await response.json();
+    setProgramListingData(data.data.data);
+  };
+  const programs = programListingData;
+
+  // const programs = [
+  //   {
+  //     id: 1,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Tech in",
+  //     title: "Computer Science and Engineering",
+  //     link: "/programs/computer-science-engineering",
+  //   },
+  //   {
+  //     id: 2,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Tech in",
+  //     title: "Electrical Engineering",
+  //     link: "/programs/electrical-engineering",
+  //   },
+  //   {
+  //     id: 3,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Tech in",
+  //     title: "Mechanical Engineering",
+  //     link: "/programs/mechanical-engineering",
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Tech in",
+  //     title: "B.Tech Electronics & Communication Engineering",
+  //     link: "/programs/electronics-communication",
+  //   },
+  //   {
+  //     id: 5,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Tech in",
+  //     title: "Civil Engineering",
+  //     link: "/programs/civil-engineering",
+  //   },
+  //   {
+  //     id: 6,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "MBA in",
+  //     title: "Business Administration",
+  //     link: "/programs/business-administration",
+  //   },
+  //   {
+  //     id: 7,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "MCA in",
+  //     title: "Computer Applications",
+  //     link: "/programs/computer-applications",
+  //   },
+  //   {
+  //     id: 8,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "B.Pharma in",
+  //     title: "Pharmaceutical Sciences",
+  //     link: "/programs/pharmaceutical-sciences",
+  //   },
+  //   {
+  //     id: 9,
+  //     image: "/images/programs/program-img.webp",
+  //     degree: "MCA in",
+  //     title: "Computer Applications",
+  //     link: "/programs/computer-applications",
+  //   },
+  // ];
 
   const tabs = programData;
 
   const handleSchoolToggle = (schoolId) => {
-    // Radio button behavior - only one school at a time
     setSelectedSchool(schoolId);
-    // Clear selected department when school changes
     setSelectedDepartment(null);
   };
 
   const handleDepartmentToggle = (departmentId) => {
-    // Radio button behavior - only one department at a time
     setSelectedDepartment(departmentId);
   };
 
@@ -141,12 +166,10 @@ export default function Programs() {
     console.log("Load more functionality to be implemented");
   };
 
-  // Get departments from selected school only
   const getFilteredDepartments = () => {
     if (!selectedSchool) {
       return [];
     }
-    // Show departments only from selected school
     const school = schoolData.find((s) => s.id === selectedSchool);
     return school?.departments || [];
   };
@@ -155,7 +178,6 @@ export default function Programs() {
 
   return (
     <>
-      {/* Title Section */}
       <section className="inner-title">
         <div className="container">
           <div className="row justify-content-center">
@@ -287,37 +309,48 @@ export default function Programs() {
 
                 {/* Programs Grid */}
                 <div className={styles.programMainList}>
-                  <div className={styles.programListBoxs}>
-                    {programs.map((program, index) => (
-                      <div key={index} className={styles.cusProgramBox}>
-                        <a href={program.link} className={styles.strechedLink}>
-                          <figure>
-                            <Image
-                              src={program.image}
-                              alt="program"
-                              width={400}
-                              height={250}
-                              className="img-fluid w-100"
-                            />
-                          </figure>
-                          <div className={styles.cusProgramText}>
-                            <p>{program.degree}</p>
-                            <h6>{program.title}</h6>
-                            <span>
-                              Know More <i className="bi bi-chevron-right"></i>
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                    ))}
-                  </div>
+                  {programs && programs.length > 0 ? (
+                    <div className={styles.programListBoxs}>
+                      {programs.map((program, index) => (
+                        <div key={index} className={styles.cusProgramBox}>
+                          <Link
+                            href={program.slug ?? ""}
+                            className={styles.strechedLink}
+                          >
+                            <figure>
+                              {program.banner && (
+                                <Image
+                                  src={program.banner}
+                                  alt="program-image"
+                                  width={400}
+                                  height={250}
+                                  className="img-fluid w-100"
+                                />
+                              )}
+                            </figure>
+                            <div className={styles.cusProgramText}>
+                              <p>{program.degree_name}</p>
+                              <h6>{program.name}</h6>
+                              <span>
+                                Know More{" "}
+                                <i className="bi bi-chevron-right"></i>
+                              </span>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <h6 className="text-center">No programs available</h6>
+                  )}
 
-                  {/* Load More Button */}
-                  <div className={styles.loadMoreContainer}>
-                    <a id="loadMore" onClick={handleLoadMore}>
-                      Load More <i className="bi bi-arrow-down"></i>
-                    </a>
-                  </div>
+                  {programs && programs.length > 0 && (
+                    <div className={styles.loadMoreContainer}>
+                      <a id="loadMore" onClick={handleLoadMore}>
+                        Load More <i className="bi bi-arrow-down"></i>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
