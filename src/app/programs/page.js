@@ -47,6 +47,9 @@ export default function Programs() {
       });
   }, []);
   useEffect(() => {
+    setPage(1);
+  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram]);
+  useEffect(() => {
     fetchPrograms();
   }, [selectedSchool, selectedDepartment, activeProgram, searchProgram, page]);
 
@@ -73,75 +76,16 @@ export default function Programs() {
 
     const response = await fetch(url);
     const data = await response.json();
-    setProgramListingData(data.data);
+    if (page === 1) {
+      setProgramListingData(data.data);
+    } else {
+      setProgramListingData((prevData) => ({
+        ...data.data,
+        data: [...(prevData.data || []), ...(data.data.data || [])],
+      }));
+    }
   };
   const programs = programListingData.data;
-
-  // const programs = [
-  //   {
-  //     id: 1,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Tech in",
-  //     title: "Computer Science and Engineering",
-  //     link: "/programs/computer-science-engineering",
-  //   },
-  //   {
-  //     id: 2,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Tech in",
-  //     title: "Electrical Engineering",
-  //     link: "/programs/electrical-engineering",
-  //   },
-  //   {
-  //     id: 3,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Tech in",
-  //     title: "Mechanical Engineering",
-  //     link: "/programs/mechanical-engineering",
-  //   },
-  //   {
-  //     id: 4,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Tech in",
-  //     title: "B.Tech Electronics & Communication Engineering",
-  //     link: "/programs/electronics-communication",
-  //   },
-  //   {
-  //     id: 5,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Tech in",
-  //     title: "Civil Engineering",
-  //     link: "/programs/civil-engineering",
-  //   },
-  //   {
-  //     id: 6,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "MBA in",
-  //     title: "Business Administration",
-  //     link: "/programs/business-administration",
-  //   },
-  //   {
-  //     id: 7,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "MCA in",
-  //     title: "Computer Applications",
-  //     link: "/programs/computer-applications",
-  //   },
-  //   {
-  //     id: 8,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "B.Pharma in",
-  //     title: "Pharmaceutical Sciences",
-  //     link: "/programs/pharmaceutical-sciences",
-  //   },
-  //   {
-  //     id: 9,
-  //     image: "/images/programs/program-img.webp",
-  //     degree: "MCA in",
-  //     title: "Computer Applications",
-  //     link: "/programs/computer-applications",
-  //   },
-  // ];
 
   const tabs = programData;
 
@@ -174,12 +118,9 @@ export default function Programs() {
       programListingData.total / programListingData.per_page
     );
 
-    setPage((prevPage) => {
-      if (prevPage < totalPages) {
-        return prevPage + 1;
-      }
-      return prevPage;
-    });
+    if (page < totalPages) {
+      setPage((prevPage) => prevPage + 1);
+    }
   };
 
   const getFilteredDepartments = () => {
@@ -192,6 +133,10 @@ export default function Programs() {
 
   const filteredDepartments = getFilteredDepartments();
 
+  const hasMorePages =
+    programListingData?.total && programListingData?.per_page
+      ? page < Math.ceil(programListingData.total / programListingData.per_page)
+      : false;
   return (
     <>
       <section className="inner-title">
@@ -330,7 +275,7 @@ export default function Programs() {
                       {programs.map((program, index) => (
                         <div key={index} className={styles.cusProgramBox}>
                           <Link
-                            href={program.slug ?? ""}
+                            href={`/programs/${program.slug ?? ""}`}
                             className={styles.strechedLink}
                           >
                             <figure>
@@ -360,7 +305,7 @@ export default function Programs() {
                     <h6 className="text-center">No programs available</h6>
                   )}
 
-                  {programs && programs.length > 0 && (
+                  {programs && programs.length > 0 && hasMorePages && (
                     <div className={styles.loadMoreContainer}>
                       <a id="loadMore" onClick={handleLoadMore}>
                         Load More <i className="bi bi-arrow-down"></i>
