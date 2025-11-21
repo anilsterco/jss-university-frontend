@@ -18,6 +18,7 @@ export default function Programs() {
   const [searchProgram, setSearchProgram] = useState("");
   const [programListingData, setProgramListingData] = useState([]);
   const timeoutRef = useRef(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     setLoading(true);
@@ -47,10 +48,9 @@ export default function Programs() {
   }, []);
   useEffect(() => {
     fetchPrograms();
-  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram]);
+  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram, page]);
 
   const fetchPrograms = async () => {
-
     let url = `${BASE_URL}/programs/${activeProgram}`;
     const params = [];
 
@@ -63,6 +63,9 @@ export default function Programs() {
     if (searchProgram) {
       params.push(`search=${encodeURIComponent(searchProgram)}`);
     }
+    if (page) {
+      params.push(`page=${encodeURIComponent(page)}`);
+    }
 
     if (params.length > 0) {
       url += `?${params.join("&")}`;
@@ -70,9 +73,9 @@ export default function Programs() {
 
     const response = await fetch(url);
     const data = await response.json();
-    setProgramListingData(data.data.data);
+    setProgramListingData(data.data);
   };
-  const programs = programListingData;
+  const programs = programListingData.data;
 
   // const programs = [
   //   {
@@ -163,7 +166,20 @@ export default function Programs() {
     }, 300);
   };
   const handleLoadMore = () => {
-    console.log("Load more functionality to be implemented");
+    if (!programListingData?.total || !programListingData?.per_page) {
+      return;
+    }
+
+    const totalPages = Math.ceil(
+      programListingData.total / programListingData.per_page
+    );
+
+    setPage((prevPage) => {
+      if (prevPage < totalPages) {
+        return prevPage + 1;
+      }
+      return prevPage;
+    });
   };
 
   const getFilteredDepartments = () => {
