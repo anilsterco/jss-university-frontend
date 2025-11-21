@@ -9,7 +9,134 @@ import "@fontsource/roboto-condensed";
 
 const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
 const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
-const SCHOOL_DEPARTMENT_URL ="https://project-demo.in/jss/api/school-department-list";
+const SCHOOL_DEPARTMENT_URL =
+  "https://project-demo.in/jss/api/school-department-list";
+
+const ContactApi = "https://project-demo.in/jss/api/contact-info";
+const Addmision_Api = "https://project-demo.in/jss/api/admission";
+
+const mobilePanelsData = [
+  {
+    name: "Courses",
+    icon: "/images/header/cource-mob.svg",
+    visitIcon: "/images/header/courseIcon.svg",
+    Menu: [
+      {
+        name: "UNDER GRADUATE",
+        url: "/courses/undergraduate",
+        image: "/images/header/course04.png",
+      },
+      {
+        name: "POST GRADUATE",
+        url: "/courses/postgraduate",
+        image: "/images/header/course02.png",
+      },
+      {
+        name: "PHD",
+        url: "/courses/research",
+        image: "/images/header/course03.png",
+      },
+      {
+        name: "ACADEMIC PROGRAMS",
+        url: "/courses/diploma",
+        image: "/images/header/course01.png",
+      },
+    ],
+  },
+
+  {
+    name: "Admissions",
+    heading:
+      "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
+    icon: "/images/header/admi-mob.svg",
+    Menu: [
+      { name: "Scholarship", url: "/admissions/calendar" },
+      { name: "Course, Eligibility & Fee Structure", url: "/fee-Structure" },
+      {
+        name: "Admission Document & Undertaking",
+        url: "/admissions/scholarship",
+      },
+      {
+        name: "Admissions Office Contacts",
+        url: "/admissions/international",
+      },
+      { name: "Hostel Details", url: "/admissions/international" },
+    ],
+
+    contact: {
+      title: "ANY QUERY ? PLEASE MAIL US.",
+      details: [
+        {
+          icon: "/images/header/mail-icon.svg",
+          text: "principal@jssaten.ac.in",
+          link: "mailto:principal@jssaten.ac.in",
+        },
+        {
+          icon: "/images/header/phone-icon.svg",
+          text: "+91-9311830458",
+          link: "tel:+91-9311830458",
+        },
+      ],
+      buttons: [
+        {
+          label: "APPLY NOW",
+          link: "/apply",
+          className: "apply",
+        },
+        {
+          label: "DOWNLOAD SYLLABUS",
+          link: "/downloads/syllabus",
+          className: "dwnload",
+          icon: "/images/header/dwnlodIcon.png",
+        },
+      ],
+    },
+  },
+
+  {
+    name: "Contact",
+    heading: "CAMPUS ADDRESS",
+    bgImg: "/images/header/cont-mobmenu.png",
+    icon: "/images/header/contact-mob.svg",
+    // Menu: [
+    //   {
+    //     name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301",
+    //     url: "",
+    //     contactIcon: "/images/header/address-icon.svg",
+    //   },
+    //   {
+    //     name: "principal@jssaten.ac.in",
+    //     url: "mailto:principal@jssaten.ac.in",
+    //     contactIcon: "/images/header/mail-icon.svg",
+    //   },
+    //   {
+    //     name: "8725033398",
+    //     url: "https://wa.me/8725033398",
+    //     contactIcon: "/images/header/phone-icon.svg",
+    //   },
+    // ],
+  },
+
+  {
+    name: "Menu",
+    icon: "/images/header/hamberger-mob.svg",
+    Menu: [
+      { name: "About JSS University", url: "/about" },
+      { name: "Academics", url: "/academics" },
+      { name: "Facilities", url: "/facilities" },
+      { name: "Examination", url: "/examination" },
+      { name: "Research & Innovation", url: "/research-and-innovation" },
+      { name: "Placements", url: "/placements" },
+    ],
+    Menubottom: [
+      { name: "Alumni", url: "/alumni" },
+      { name: "Testimonials", url: "/testimonials" },
+      { name: "Happenings", url: "/happenings" },
+      { name: "Careers", url: "/careers" },
+      { name: "Contact Us", url: "/contact-us" },
+    ],
+  },
+];
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,15 +145,16 @@ export default function Header() {
   const [admissionOpen, setAdmissionOpen] = useState(false);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
-  const [selectedSchoolName, setSelectedSchoolName] = useState("ENGINEERING");
+  const [selectedSchoolName, setSelectedSchoolName] = useState([]);
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  // const [activeLink, setActiveLink] = useState(null);
   const admissionRef = useRef(null);
   const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
+  const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
+  const [mobAdmission, setMobadmission] = useState(null);
 
   useEffect(() => {
     async function fetchHeaderData() {
@@ -461,9 +589,7 @@ export default function Header() {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const res = await fetch(
-       (`${SCHOOL_DEPARTMENT_URL}`)
-        );
+        const res = await fetch(`${SCHOOL_DEPARTMENT_URL}`);
         const json = await res.json();
         if (json.status) {
           setEngineeringData(json.data);
@@ -482,130 +608,78 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-  
+
   // mob menu data
-  const mobilePanelsData = [
-    {
-      name: "Courses",
-      icon: "/images/header/cource-mob.svg",
-      visitIcon: "/images/header/courseIcon.svg",
-      Menu: [
-        {
-          name: "UNDER GRADUATE",
-          url: "/courses/undergraduate",
-          image: "/images/header/course04.png",
-        },
-        {
-          name: "POST GRADUATE",
-          url: "/courses/postgraduate",
-          image: "/images/header/course02.png",
-        },
-        {
-          name: "PHD",
-          url: "/courses/research",
-          image: "/images/header/course03.png",
-        },
-        {
-          name: "ACADEMIC PROGRAMS",
-          url: "/courses/diploma",
-          image: "/images/header/course01.png",
-        },
-      ],
-    },
 
-    {
-      name: "Admissions",
-      heading:
-        "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
-      icon: "/images/header/admi-mob.svg",
-      Menu: [
-        { name: "Scholarship", url: "/admissions/calendar" },
-        { name: "Course, Eligibility & Fee Structure", url: "/fee-Structure" },
-        {
-          name: "Admission Document & Undertaking",
-          url: "/admissions/scholarship",
-        },
-        {
-          name: "Admissions Office Contacts",
-          url: "/admissions/international",
-        },
-        { name: "Hostel Details", url: "/admissions/international" },
-      ],
+  // MOB MENU API START
 
-      contact: {
-        title: "ANY QUERY ? PLEASE MAIL US.",
-        details: [
-          {
-            icon: "/images/header/mail-icon.svg",
-            text: "principal@jssaten.ac.in",
-            link: "mailto:principal@jssaten.ac.in",
-          },
-          {
-            icon: "/images/header/phone-icon.svg",
-            text: "+91-9311830458",
-            link: "tel:+91-9311830458",
-          },
-        ],
-        buttons: [
-          {
-            label: "APPLY NOW",
-            link: "/apply",
-            className: "apply",
-          },
-          {
-            label: "DOWNLOAD SYLLABUS",
-            link: "/downloads/syllabus",
-            className: "dwnload",
-            icon: "/images/header/dwnlodIcon.png",
-          },
-        ],
-      },
-    },
+  // contact start
+  useEffect(() => {
+    const fetchContactData = async () => {
+      try {
+        const res = await fetch(ContactApi);
+        const json = await res.json();
 
-    {
-      name: "Contact",
-      heading: "CAMPUS ADDRESS",
-      bgImg: "/images/header/cont-mobmenu.png",
-      icon: "/images/header/contact-mob.svg",
-      Menu: [
-        {
-          name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301",
-          url: "",
-          contactIcon: "/images/header/address-icon.svg",
-        },
-        {
-          name: "principal@jssaten.ac.in",
-          url: "mailto:principal@jssaten.ac.in",
-          contactIcon: "/images/header/mail-icon.svg",
-        },
-        {
-          name: "8725033398",
-          url: "https://wa.me/8725033398",
-          contactIcon: "/images/header/phone-icon.svg",
-        },
-      ],
-    },
+        if (json.status && Array.isArray(json.data) && json.data.length > 0) {
+          const apiData = json.data[0];
 
-    {
-      name: "Menu",
-      icon: "/images/header/hamberger-mob.svg",
-      Menu: [
-        { name: "About JSS University", url: "/about" },
-        { name: "Academics", url: "/academics" },
-        { name: "Facilities", url: "/facilities" },
-        { name: "Examination", url: "/examination" },
-        { name: "Research & Innovation", url: "/research-and-innovation" },
-        { name: "Placements", url: "/placements" },
-      ],
-      Menubottom: [
-        { name: "Alumni", url: "/alumni" },
-        { name: "Testimonials", url: "/testimonials" },
-        { name: "Happenings", url: "/happenings" },
-        { name: "Careers", url: "/careers" },
-        { name: "Contact Us", url: "/contact-us" },
-      ],
-    },
-  ];
+          setMobilePanels((prev) =>
+            prev.map((item) =>
+              item.name === "Contact"
+                ? {
+                    ...item,
+                    heading: apiData.title,
+                    Menu: [
+                      {
+                        name: apiData.address,
+                        url: apiData.direction_url,
+                        contactIcon: "/images/header/address-icon.svg",
+                      },
+                      {
+                        name: apiData.email,
+                        url: `mailto:${apiData.email}`,
+                        contactIcon: "/images/header/mail-icon.svg",
+                      },
+                      {
+                        name: apiData.phone,
+                        url: `tel:${apiData.phone}`,
+                        contactIcon: "/images/header/phone-icon.svg",
+                      },
+                    ],
+                  }
+                : item
+            )
+          );
+        }
+      } catch (err) {
+        console.error("FETCH ERROR:", err);
+      }
+    };
+
+    fetchContactData();
+  }, []);
+
+  // admission API
+
+  useEffect(() => {
+    const admiApifetch = async () => {
+      try {
+        const res = await fetch(Addmision_Api);
+        const json = await res.json();
+        console.log("admissionApi", json);
+
+        if (json.success) {
+          setMobadmission(json.data);
+        }
+      } catch (err) {
+        console.error("Error fetching API:", err);
+      }
+    };
+
+    admiApifetch();
+  }, []);
+
+  // MOB MENU API END
 
   useEffect(() => {
     setIsMounted(true);
@@ -723,7 +797,7 @@ export default function Header() {
                     <div className="schools-list">
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => {
-                        const schoolUrl = `/schools/${school.slug}`; 
+                        const schoolUrl = `/schools/${school.slug}`;
 
                         return (
                           <div
@@ -1117,115 +1191,143 @@ export default function Header() {
       {/* mobile menu bottom start*/}
       <div className="panel-wrapper">
         <div className="mob-menu-sec">
-          {mobilePanelsData.map((item) => (
+          {mobilePanels.map((item) => (
             <div
               key={item.name}
               className={`panel ${
                 activePanel === item.name ? "open" : ""
               } ${item.name.toLowerCase()}-panel`}
             >
-              {item.name === "Courses" && item.Menu && (
-                <div className="mobCourses">
-                  <div className="course-heading">
-                    <h4>START YOUR JSS JOURNEY</h4>
-                  </div>
-                  <ul className="courses-menu">
-                    {item.Menu.map((sub, idx) => (
-                      <li key={idx}>
-                        <figure>
-                          <div className="coursesImg">
-                            <img
-                              src={sub.image}
-                              alt={sub.name}
-                              className="course-img w-100"
-                            />
-                          </div>
-                          <figcaption>
-                            <h4>{sub.name}</h4>
-                            <img
-                              src={item.visitIcon}
-                              alt={`${sub.name} icon`}
-                              className="course-icon"
-                            />
-                          </figcaption>
-                        </figure>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {item.name === "Admissions" && item.Menu && (
-                <div className="admissions-menu-wrapper">
-                  <ul className="admissions-menu">
-                    <div className="admissions-heading">
-                      <h4
-                        dangerouslySetInnerHTML={{ __html: item.heading }}
-                      ></h4>
+              {/* Courses tab */}
+              {item.name === "Courses" &&
+                activePanel === "Courses" &&
+                item.Menu && (
+                  <div className="mobCourses">
+                    <div className="course-heading">
+                      <h4>START YOUR JSS JOURNEY</h4>
                     </div>
-                    {item.Menu.map((sub, idx) => (
-                      <li key={idx}>
-                        <a href={sub.url}>{sub.name}</a>
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="courses-menu">
+                      {item.Menu.map((sub, idx) => (
+                        <li key={idx}>
+                          <figure>
+                            <div className="coursesImg">
+                              <img
+                                src={sub.image}
+                                alt={sub.name}
+                                className="course-img w-100"
+                              />
+                            </div>
+                            <figcaption>
+                              <h4>{sub.name}</h4>
+                              <img
+                                src={item.visitIcon}
+                                alt={`${sub.name} icon`}
+                                className="course-icon"
+                              />
+                            </figcaption>
+                          </figure>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                  {item.contact && (
+              {/* Admissions tab */}
+              {item.name === "Admissions" &&
+                activePanel === "Admissions" &&
+                mobAdmission && (
+                  <div className="admissions-menu-wrapper">
+                    <ul className="admissions-menu">
+                      <div className="admissions-heading">
+                        <h4
+                          dangerouslySetInnerHTML={{ __html: item.heading }}
+                        ></h4>
+                      </div>
+
+                      {mobAdmission.middle.links.map((link, idx) => (
+                        <li key={idx}>
+                          <a href={link.url}>{link.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                    {/* LEFT SECTION */}
                     <div className="admissions-contact">
-                      <h4>{item.contact.title}</h4>
+                      <h4>{mobAdmission.left.querytext}</h4>
+
                       <ul>
-                        {item.contact.details.map((detail, idx) => (
-                          <li key={idx}>
-                            <img src={detail.icon} alt="icon" />
-                            <a href={detail.link}>{detail.text}</a>
-                          </li>
-                        ))}
+                        <li>
+                          <img src="/images/header/mail-icon.svg" alt="email" />
+                          <a href={`mailto:${mobAdmission.left.email}`}>
+                            {mobAdmission.left.email}
+                          </a>
+                        </li>
+
+                        <li>
+                          <img
+                            src="/images/header/phone-icon.svg"
+                            alt="phone"
+                          />
+                          <a href={`tel:${mobAdmission.left.phone}`}>
+                            {mobAdmission.left.phone}
+                          </a>
+                        </li>
                       </ul>
 
                       <div className="contactBtn">
-                        {item.contact.buttons.map((btn, idx) => (
+                        {mobAdmission.left.ctas.map((btn, idx) => (
                           <a
                             key={idx}
-                            href={btn.link}
-                            className={btn.className}
+                            href={btn.url}
+                            className={
+                              btn.type === "primary" ? "apply" : "dwnload"
+                            }
                           >
-                            {btn.icon && <img src={btn.icon} alt={btn.label} />}
-                            {btn.label}
+                            {btn.type === "secondary" && (
+                              <img
+                                src="/images/header/dwnlodIcon.png"
+                                alt="download"
+                              />
+                            )}
+                            {btn.text}
                           </a>
                         ))}
                       </div>
                     </div>
-                  )}
-                </div>
-              )}
-
-              {item.name === "Contact" && (
-                <div className="contact-panel">
-                  <div className="contact-heading">
-                    <h4>{item.heading}</h4>
                   </div>
+                )}
 
-                  <div className="contactBanner">
-                    <img
-                      src={item.bgImg}
-                      alt="contact"
-                      className="contact-banner"
-                    />
+              {/* Contact tab */}
+              {item.name === "Contact" &&
+                activePanel === "Contact" &&
+                item.Menu && (
+                  <div className="contact-panel">
+                    <div className="contact-heading">
+                      <h4>{item.heading}</h4>
+                    </div>
+
+                    <div className="contactBanner">
+                      <img
+                        src={item.bgImg}
+                        alt="contact"
+                        className="contact-banner"
+                      />
+                    </div>
+
+                    <ul className="contact-info">
+                      {item.Menu.map((sub, idx) => (
+                        <li key={idx}>
+                          <div className="icon-img">
+                            <img src={sub.contactIcon} alt={sub.name} />
+                          </div>
+                          <a href={sub.url}>{sub.name}</a>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="contact-info">
-                    {item.Menu.map((sub, idx) => (
-                      <li key={idx}>
-                        <div className="icon-img">
-                          <img src={sub.contactIcon} alt={sub.name} />
-                        </div>
-                        <a href={sub.url}>{sub.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                )}
 
-              {item.name === "Menu" && (
+              {/* Menu tab */}
+              {item.name === "Menu" && activePanel === "Menu" && (
                 <>
                   {item.Menu && (
                     <ul className="menu-top">
@@ -1254,7 +1356,7 @@ export default function Header() {
 
       <div className="mobile-bottom-menu">
         <ul className="menu-list">
-          {mobilePanelsData.map((item) => (
+          {mobilePanels.map((item) => (
             <li
               key={item.name}
               className={
