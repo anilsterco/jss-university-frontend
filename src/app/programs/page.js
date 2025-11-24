@@ -343,7 +343,6 @@ export default function Programs() {
                   ) : (
                     <h6 className="text-center">No programs available</h6>
                   )}
-
                   {programs && programs.length > 0 && (
                     <div className={styles.loadMoreContainer}>
                       <a id="loadMore" onClick={handleLoadMore}>
