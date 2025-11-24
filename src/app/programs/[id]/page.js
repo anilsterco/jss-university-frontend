@@ -992,6 +992,7 @@ const programsData = {
     },
   },
 };
+const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function ProgramDetail({ params }) {
   const unwrappedParams = use(params);
@@ -1001,28 +1002,41 @@ export default function ProgramDetail({ params }) {
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchProgramData = async () => {
+  //     try {
+  //       setLoading(true);
+
+  //       // Use the programsData object to get data based on ID
+  //       const data = programsData[id] || null;
+
+  //       // Simulate API delay
+  //       setTimeout(() => {
+  //         setProgramData(data);
+  //         setLoading(false);
+  //       }, 300);
+  //     } catch (error) {
+  //       console.error("Error fetching program data:", error);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   if (id) {
+  //     fetchProgramData();
+  //   }
+  // }, [id]);
+
   useEffect(() => {
-    const fetchProgramData = async () => {
-      try {
-        setLoading(true);
-
-        // Use the programsData object to get data based on ID
-        const data = programsData[id] || null;
-
-        // Simulate API delay
-        setTimeout(() => {
-          setProgramData(data);
-          setLoading(false);
-        }, 300);
-      } catch (error) {
-        console.error("Error fetching program data:", error);
+    fetch(`${BASE_URL}/course/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProgramData(data.data);
         setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchProgramData();
-    }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
   }, [id]);
 
   const handleTabClick = (tabId) => {
