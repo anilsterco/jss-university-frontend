@@ -616,6 +616,8 @@ export default function Header() {
 
   // contact start
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
     const fetchContactData = async () => {
       try {
         const res = await fetch(ContactApi);
@@ -663,6 +665,8 @@ export default function Header() {
   // admission API
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
     const admiApifetch = async () => {
       try {
         const res = await fetch(Addmision_Api);
@@ -679,6 +683,8 @@ export default function Header() {
     admiApifetch();
   }, []);
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
     const ProgApifetch = async () => {
       try {
         const res = await fetch(Program_Api);
