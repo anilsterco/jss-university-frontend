@@ -1,136 +1,144 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 import "@/styles/style.css";
 
+const BASE_URL = "https://project-demo.in/jss/api";
+
 export default function Programs() {
-  const [activeTab, setActiveTab] = useState("UnderGraduate");
-  const [selectedSchools, setSelectedSchools] = useState([
-    "School Of Engineering",
-  ]);
-  const [selectedDepartments, setSelectedDepartments] = useState([]);
+  const [selectedSchool, setSelectedSchool] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [schoolData, setSchoolData] = useState([]);
+  const [programData, setProgramData] = useState([]);
+  const [activeProgram, setActiveProgram] = useState("under-graduate");
+  const [loading, setLoading] = useState(true);
+  const [searchProgram, setSearchProgram] = useState("");
+  const [programListingData, setProgramListingData] = useState([]);
+  const timeoutRef = useRef(null);
+  const [page, setPage] = useState(1);
 
-  // const programs = Array(15).fill({
-  //   image: "/images/programs/program-img.webp",
-  //   degree: "B.Tech in",
-  //   title: "Computer Science and Engineering",
-  //   link: "#",
-  // });
-  const programs = [
-    {
-      id: 1,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Computer Science and Engineering",
-      link: "/programs/computer-science-engineering",
-    },
-    {
-      id: 2,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Electrical Engineering",
-      link: "/programs/electrical-engineering",
-    },
-    {
-      id: 3,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Mechanical Engineering",
-      link: "/programs/mechanical-engineering",
-    },
-    {
-      id: 4,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "B.Tech Electronics & Communication Engineering",
-      link: "/programs/electronics-communication",
-    },
-    {
-      id: 5,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Tech in",
-      title: "Civil Engineering",
-      link: "/programs/civil-engineering",
-    },
-    {
-      id: 6,
-      image: "/images/programs/program-img.webp",
-      degree: "MBA in",
-      title: "Business Administration",
-      link: "/programs/business-administration",
-    },
-    {
-      id: 7,
-      image: "/images/programs/program-img.webp",
-      degree: "MCA in",
-      title: "Computer Applications",
-      link: "/programs/computer-applications",
-    },
-    {
-      id: 8,
-      image: "/images/programs/program-img.webp",
-      degree: "B.Pharma in",
-      title: "Pharmaceutical Sciences",
-      link: "/programs/pharmaceutical-sciences",
-    },
-    {
-      id: 9,
-      image: "/images/programs/program-img.webp",
-      degree: "MCA in",
-      title: "Computer Applications",
-      link: "/programs/computer-applications",
-    },
-  ];
+  useEffect(() => {
+    setLoading(true);
+    fetch(`${BASE_URL}/school-department-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSchoolData(data.data);
+        if (data.data && data.data.length > 0) {
+          setSelectedSchool(data.data[0].id);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+    fetch(`${BASE_URL}/program-list`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProgramData(data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+  }, []);
+  useEffect(() => {
+    setPage(1);
+  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram]);
+  useEffect(() => {
+    fetchPrograms();
+  }, [selectedSchool, selectedDepartment, activeProgram, searchProgram, page]);
 
-  const schools = [
-    "School Of Engineering",
-    "School Of Pharmacy",
-    "School Of Management",
-    "School Of Computer Applications",
-    "School Of Applied Sciences",
-    "School Of Humanities",
-  ];
+  const fetchPrograms = async () => {
+    let url = `${BASE_URL}/programs/${activeProgram}`;
+    const params = [];
 
-  const departments = [
-    "Electrical Engineering",
-    "Mechanical Engineering",
-    "Computer Science and Engineering",
-    "Robotics and Artificial Intelligence",
-    "Electrical & Electronics Engineering",
-  ];
+    if (selectedSchool) {
+      params.push(`school_id=${encodeURIComponent(selectedSchool)}`);
+    }
+    if (selectedDepartment) {
+      params.push(`department_id=${encodeURIComponent(selectedDepartment)}`);
+    }
+    if (searchProgram) {
+      params.push(`search=${encodeURIComponent(searchProgram)}`);
+    }
+    if (page) {
+      params.push(`page=${encodeURIComponent(page)}`);
+    }
 
-  const tabs = ["UnderGraduate", "PostGraduate", "PhD"];
+    if (params.length > 0) {
+      url += `?${params.join("&")}`;
+    }
 
-  const handleSchoolToggle = (school) => {
-    setSelectedSchools((prev) =>
-      prev.includes(school)
-        ? prev.filter((s) => s !== school)
-        : [...prev, school]
-    );
+    const response = await fetch(url);
+    const data = await response.json();
+    if (page === 1) {
+      setProgramListingData(data.data);
+    } else {
+      setProgramListingData((prevData) => ({
+        ...data.data,
+        data: [...(prevData.data || []), ...(data.data.data || [])],
+      }));
+    }
+  };
+  const programs = programListingData.data;
+
+  const tabs = programData;
+
+  const handleSchoolToggle = (schoolId) => {
+    setSelectedSchool(schoolId);
+    setSelectedDepartment(null);
   };
 
-  const handleDepartmentToggle = (department) => {
-    setSelectedDepartments((prev) =>
-      prev.includes(department)
-        ? prev.filter((d) => d !== department)
-        : [...prev, department]
-    );
+  const handleDepartmentToggle = (departmentId) => {
+    setSelectedDepartment(departmentId);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Search functionality to be implemented");
-  };
+  const handleSearch = (value) => {
+    setSearchProgram(value);
 
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      console.log("Searching for:", value);
+    }, 300);
+  };
   const handleLoadMore = () => {
-    console.log("Load more functionality to be implemented");
+    if (!programListingData?.total || !programListingData?.per_page) {
+      return;
+    }
+
+    const totalPages = Math.ceil(
+      programListingData.total / programListingData.per_page
+    );
+
+    if (page < totalPages) {
+      setPage((prevPage) => prevPage + 1);
+    }
   };
 
+  const getFilteredDepartments = () => {
+    if (!selectedSchool) {
+      return [];
+    }
+    const school = schoolData.find((s) => s.id === selectedSchool);
+    return school?.departments || [];
+  };
+
+  const filteredDepartments = getFilteredDepartments();
+
+  const hasMorePages =
+    programListingData?.total && programListingData?.per_page
+      ? page < Math.ceil(programListingData.total / programListingData.per_page)
+      : false;
   return (
     <>
-      {/* Title Section */}
       <section className="inner-title">
         <div className="container">
           <div className="row justify-content-center">
@@ -144,12 +152,15 @@ export default function Programs() {
 
                 <ul>
                   {tabs.map((tab) => (
-                    <li key={tab} className={activeTab === tab ? "active" : ""}>
+                    <li
+                      key={tab.id}
+                      className={activeProgram === tab.slug ? "active" : ""}
+                    >
                       <a
-                        onClick={() => setActiveTab(tab)}
+                        onClick={() => setActiveProgram(tab.slug)}
                         style={{ cursor: "pointer" }}
                       >
-                        {tab}
+                        {tab.name}
                       </a>
                     </li>
                   ))}
@@ -166,16 +177,18 @@ export default function Programs() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className={styles.searchBox}>
-                <form onSubmit={handleSearch}>
+                <>
                   <input
                     type="text"
                     placeholder="Search Course"
                     name="search"
+                    value={searchProgram}
+                    onChange={(e) => handleSearch(e.target.value)}
                   />
                   <button type="submit">
                     <i className="bi bi-search"></i>
                   </button>
-                </form>
+                </>
               </div>
             </div>
           </div>
@@ -193,87 +206,112 @@ export default function Programs() {
                   {/* Schools Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Browse by School</p>
-                    {schools.map((school, index) => (
-                      <div
-                        key={school}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedSchools.includes(school)}
-                          onChange={() => handleSchoolToggle(school)}
-                          id={`school-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`school-${index}`}
+                    {loading ? (
+                      <div>Loading schools...</div>
+                    ) : (
+                      schoolData.map((school) => (
+                        <div
+                          key={school.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {school}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="school"
+                            checked={selectedSchool === school.id}
+                            onChange={() => handleSchoolToggle(school.id)}
+                            id={`school-${school.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`school-${school.id}`}
+                          >
+                            {school.name}
+                          </label>
+                        </div>
+                      ))
+                    )}
                   </div>
 
                   {/* Departments Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Filter by Departments</p>
-                    {departments.map((department, index) => (
-                      <div
-                        key={department}
-                        className={`form-check ${styles.formCheck}`}
-                      >
-                        <input
-                          className="check-box"
-                          type="checkbox"
-                          checked={selectedDepartments.includes(department)}
-                          onChange={() => handleDepartmentToggle(department)}
-                          id={`department-${index}`}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`department-${index}`}
+                    {loading ? (
+                      <div>Loading departments...</div>
+                    ) : filteredDepartments.length > 0 ? (
+                      filteredDepartments.map((department) => (
+                        <div
+                          key={department.id}
+                          className={`form-check ${styles.formCheck}`}
                         >
-                          {department}
-                        </label>
-                      </div>
-                    ))}
+                          <input
+                            className="check-box"
+                            type="radio"
+                            name="department"
+                            checked={selectedDepartment === department.id}
+                            onChange={() =>
+                              handleDepartmentToggle(department.id)
+                            }
+                            id={`department-${department.id}`}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`department-${department.id}`}
+                          >
+                            {department.name}
+                          </label>
+                        </div>
+                      ))
+                    ) : (
+                      <div>No departments available</div>
+                    )}
                   </div>
                 </div>
 
                 {/* Programs Grid */}
                 <div className={styles.programMainList}>
-                  <div className={styles.programListBoxs}>
-                    {programs.map((program, index) => (
-                      <div key={index} className={styles.cusProgramBox}>
-                        <a href={program.link} className={styles.strechedLink}>
-                          <figure>
-                            <Image
-                              src={program.image}
-                              alt="program"
-                              width={400}
-                              height={250}
-                              className="img-fluid w-100"
-                            />
-                          </figure>
-                          <div className={styles.cusProgramText}>
-                            <p>{program.degree}</p>
-                            <h6>{program.title}</h6>
-                            <span>
-                              Know More <i className="bi bi-chevron-right"></i>
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                    ))}
-                  </div>
+                  {programs && programs.length > 0 ? (
+                    <div className={styles.programListBoxs}>
+                      {programs.map((program, index) => (
+                        <div key={index} className={styles.cusProgramBox}>
+                          <Link
+                            href={`/programs/${program.slug ?? ""}`}
+                            className={styles.strechedLink}
+                          >
+                            <figure>
+                              {program.banner && (
+                                <Image
+                                  src={program.banner}
+                                  alt="program-image"
+                                  width={400}
+                                  height={250}
+                                  className="img-fluid w-100"
+                                />
+                              )}
+                            </figure>
+                            <div className={styles.cusProgramText}>
+                              <p>{program.degree_name}</p>
+                              <h6>{program.name}</h6>
+                              <span>
+                                Know More{" "}
+                                <i className="bi bi-chevron-right"></i>
+                              </span>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <h6 className="text-center">No programs available</h6>
+                  )}
 
-                  {/* Load More Button */}
-                  <div className={styles.loadMoreContainer}>
-                    <a id="loadMore" onClick={handleLoadMore}>
-                      Load More <i className="bi bi-arrow-down"></i>
-                    </a>
-                  </div>
+                  {programs && programs.length > 0 && hasMorePages && (
+                    <div className={styles.loadMoreContainer}>
+                      <a id="loadMore" onClick={handleLoadMore}>
+                        Load More <i className="bi bi-arrow-down"></i>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

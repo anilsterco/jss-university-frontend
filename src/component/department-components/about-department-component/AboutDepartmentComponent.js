@@ -94,7 +94,9 @@ export default function AboutDepartmentComponent({ data }) {
         </div>
 
         {/* Vision and Mission Section */}
-        <div className={`row g-4 justify-content-center ${styles.contentSection}`}>
+        <div
+          className={`row g-4 justify-content-center ${styles.contentSection}`}
+        >
           {/* Image Placeholder */}
           <div className="col-md-6 px-0">
             <div className={`card border-0 h-100 ${styles.imagePlaceholder}`}>
@@ -128,7 +130,7 @@ export default function AboutDepartmentComponent({ data }) {
                   {departmentData.mission.title}
                 </h3>
                 <ul className={styles.missionList}>
-                  {departmentData.mission.points.map((point, index) => (
+                  {departmentData.mission?.points?.map((point, index) => (
                     <li key={index} className={styles.missionItem}>
                       <span className={styles.missionBullet}>•</span>
                       <span className={styles.missionText}>{point}</span>

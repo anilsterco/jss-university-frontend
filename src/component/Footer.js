@@ -1,58 +1,83 @@
 "use client";
+import { color } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaTwitter,
   FaYoutube,
   FaLinkedinIn,
+  FaInstagram,
 } from "react-icons/fa";
 
 export default function Footer() {
   const [data, setData] = useState(null);
+  const [footerData, setFooterData] = useState(null); 
+  const [loading, setLoading] = useState(true);       
+  const [error, setError] = useState(null); 
 
-  useEffect(() => {
-    const res = {
-      logo: "/images/footer/footer-logo.webp",
-      address: "C-20/1, Sector - 62, Noida, Uttar Pradesh",
-      phone: "+91 9311830458",
-      email: "admission@jssaten.ac.in",
-      landlines: [
-        "0120-2401448 (Direct)",
-        "0120-2400115, 2401442, 2401449 (EPBX)",
-      ],
-      sections: [
-        { title: "ABOUT JSS UNIVERSITY" },
-        { title: "ACADEMICS" },
-        { title: "ADMISSIONS" },
-        { title: "FACILITIES" },
-        { title: "STUDENT SUPPORT" },
-        { title: "RESEARCH & INNOVATION" },
-        { title: "PLACEMENTS" },
-      ],
-      quickLinks: [
-        { label: "Examination", url: "#" },
-        { label: "Alumni", url: "#" },
-        { label: "Annual Reports", url: "#" },
-        { label: "ERP Login", url: "#" },
-        { label: "Testimonials", url: "#" },
-        { label: "Happenings", url: "#" },
-        { label: "IQAC", url: "#" },
-        { label: "Downloads", url: "#" },
-        { label: "Careers", url: "#" },
-        { label: "OBC Cell", url: "#" },
-        { label: "National Digital Library", url: "#" },
-        { label: "Online Grievance System", url: "#" },
-      ],
-      socials: [
-        { icon: "facebook", url: "#" },
-        { icon: "twitter", url: "#" },
-        { icon: "youtube", url: "#" },
-        { icon: "linkedin", url: "#" },
-      ],
-    };
-    setData(res);
+  // useEffect(() => {
+  //   const res = {
+  //     logo: "/images/footer/footer-logo.webp",
+  //     address: "C-20/1, Sector - 62, Noida, Uttar Pradesh",
+  //     phone: "+91 9311830458",
+  //     email: "admission@jssaten.ac.in",
+  //     landlines: [
+  //       "0120-2401448 (Direct)",
+  //       "0120-2400115, 2401442, 2401449 (EPBX)",
+  //     ],
+  //     sections: [
+  //       { title: "ABOUT JSS UNIVERSITY" },
+  //       { title: "ACADEMICS" },
+  //       { title: "ADMISSIONS" },
+  //       { title: "FACILITIES" },
+  //       { title: "STUDENT SUPPORT" },
+  //       { title: "RESEARCH & INNOVATION" },
+  //       { title: "PLACEMENTS" },
+  //     ],
+  //     quickLinks: [
+  //       { label: "Examination", url: "#" },
+  //       { label: "Alumni", url: "#" },
+  //       { label: "Annual Reports", url: "#" },
+  //       { label: "ERP Login", url: "#" },
+  //       { label: "Testimonials", url: "#" },
+  //       { label: "Happenings", url: "#" },
+  //       { label: "IQAC", url: "#" },
+  //       { label: "Downloads", url: "#" },
+  //       { label: "Careers", url: "#" },
+  //       { label: "OBC Cell", url: "#" },
+  //       { label: "National Digital Library", url: "#" },
+  //       { label: "Online Grievance System", url: "#" },
+  //     ],
+  //     socials: [
+  //       { icon: "facebook", url: "#" },
+  //       { icon: "twitter", url: "#" },
+  //       { icon: "youtube", url: "#" },
+  //       { icon: "linkedin", url: "#" },
+  //     ],
+  //   };
+  //   setData(res);
+  // }, []);
+
+
+
+ useEffect(() => {
+    async function fetchFooter() {
+      try {
+        const res = await fetch("https://project-demo.in/jss/api/footer");
+        if (!res.ok) throw new Error("Failed to fetch footer data");
+        const data = await res.json();
+        setData(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchFooter();
   }, []);
 
+ 
+ 
   if (!data) return null;
 
   const renderIcon = (icon) => {
@@ -66,11 +91,14 @@ export default function Footer() {
       case "youtube":
         return <FaYoutube style={{ ...style, color: "#FFf" }} />;
       case "linkedin":
-        return <FaLinkedinIn style={{ ...style, color: "#FFf" }} />;
+        return <FaLinkedinIn style={{ ...style, color: "#FFf" }}/>;
+      case "instagram":
+        return <FaInstagram style={{...style, color: "#fff"}}/>;
       default:
         return null;
     }
   };
+  
 
   return (
     <footer className="footer_section">
@@ -80,7 +108,7 @@ export default function Footer() {
             <div className="footer_contact">
               <div className="footer_left">
                 <div className="footer_logo">
-                  <img src={data.logo} alt="Logo" style={{ width: "9rem" }} />
+                  <img src="/images/footer/footer-logo.webp" alt="Logo" style={{ width: "9rem" }} />
                 </div>
                 <div className="connect_contant">
                   <p className="fw-bold text-info">Connect with us</p>

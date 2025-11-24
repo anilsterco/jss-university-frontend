@@ -28,12 +28,10 @@ const HODMessage = ({ data }) => {
                 <div className={styles.imagePlaceholder}>
                   <Image
                     src={hodData.img}
-                    alt={hodData.name}
+                    alt={hodData?.name || "Head of Department"}
                     width={350}
-                    height={320}
-                    style={{ width: "100%", height: "auto" }}
-                    className={styles.cardImage}
-                    priority
+                    height={350}
+                    className={styles.hodImage}
                   />
                 </div>
               </div>
@@ -45,11 +43,13 @@ const HODMessage = ({ data }) => {
                 <h3 className={styles.title}>{hodData.title}</h3>
 
                 <div className={styles.messageText}>
-                  {hodData.message.map((paragraph, index) => (
-                    <p key={index} className={styles.paragraph}>
-                      {paragraph}
-                    </p>
-                  ))}
+                  {hodData.message &&
+                    hodData.message.length > 0 &&
+                    hodData.message.map((paragraph, index) => (
+                      <p key={index} className={styles.paragraph}>
+                        {paragraph}
+                      </p>
+                    ))}
                 </div>
 
                 <div className={styles.hodInfo}>

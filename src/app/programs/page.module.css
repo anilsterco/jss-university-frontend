@@ -98,7 +98,9 @@
   color: var(--color-27);
   padding-bottom: 1rem;
 }
-
+.programCategoryBox .formCheck input, .programCategoryBox .formCheck label{
+  cursor: pointer;
+}
 .programCategoryBox .formCheck {
   align-items: center;
   display: flex;

@@ -992,6 +992,7 @@ const programsData = {
     },
   },
 };
+const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function ProgramDetail({ params }) {
   const unwrappedParams = use(params);
@@ -1001,28 +1002,41 @@ export default function ProgramDetail({ params }) {
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchProgramData = async () => {
+  //     try {
+  //       setLoading(true);
+
+  //       // Use the programsData object to get data based on ID
+  //       const data = programsData[id] || null;
+
+  //       // Simulate API delay
+  //       setTimeout(() => {
+  //         setProgramData(data);
+  //         setLoading(false);
+  //       }, 300);
+  //     } catch (error) {
+  //       console.error("Error fetching program data:", error);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   if (id) {
+  //     fetchProgramData();
+  //   }
+  // }, [id]);
+
   useEffect(() => {
-    const fetchProgramData = async () => {
-      try {
-        setLoading(true);
-
-        // Use the programsData object to get data based on ID
-        const data = programsData[id] || null;
-
-        // Simulate API delay
-        setTimeout(() => {
-          setProgramData(data);
-          setLoading(false);
-        }, 300);
-      } catch (error) {
-        console.error("Error fetching program data:", error);
+    fetch(`${BASE_URL}/course/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProgramData(data.data);
         setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchProgramData();
-    }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
   }, [id]);
 
   const handleTabClick = (tabId) => {
@@ -1079,7 +1093,7 @@ export default function ProgramDetail({ params }) {
         <div className="program-detail-img">
           <figure>
             <Image
-              src={programData.image}
+              src={programData.banner}
               alt="program"
               width={1200}
               height={600}
@@ -1089,7 +1103,7 @@ export default function ProgramDetail({ params }) {
               <div className="program-detail-text">
                 <div className="innnr_head">
                   <h2>PROGRAMS</h2>
-                  <h3>{programData.title}</h3>
+                  <h3>{programData.name}</h3>
                 </div>
               </div>
             </figcaption>
@@ -1121,20 +1135,23 @@ export default function ProgramDetail({ params }) {
               <div className="over-view-box">
                 <div className="overview-text">
                   <h5>Overview</h5>
-                  <h6>{programData.overview.description}</h6>
-                  <p>{programData.overview.details}</p>
+                  <h6>{programData.overview_title}</h6>
+                  <p>{programData.overview_desc}</p>
                 </div>
                 <div className="overview-duration">
                   <div className="overview-duration-text">
                     <span>Course duration</span>
-                    <p>{programData.overview.duration}</p>
+                    <p>{programData.course_duration}</p>
                   </div>
                   <div className="fees">
                     <span>Annual Fees</span>
-                    <p>{programData.overview.fees}</p>
+                    <p>{programData.annual_fees}</p>
                   </div>
                   <div className="structure-btns">
-                    <a href="#" className="structure-btn">
+                    <a
+                      href={programData.program_structure}
+                      className="structure-btn"
+                    >
                       <Image
                         src="/images/custom-page/blue-pdf.png"
                         alt="PDF"
@@ -1144,7 +1161,7 @@ export default function ProgramDetail({ params }) {
                       />
                       Programme Structure
                     </a>
-                    <a href="#" className="structure-btn">
+                    <a href={programData.scholarship} className="structure-btn">
                       <Image
                         src="/images/custom-page/scholer-icon.png"
                         alt="PDF"
@@ -1155,7 +1172,11 @@ export default function ProgramDetail({ params }) {
                       Scholarship
                     </a>
                   </div>
-                  <a href="#" className="apply-btn1">
+                  <a
+                    href={programData.apply_now_link}
+                    target="_blank"
+                    className="apply-btn1"
+                  >
                     Apply Now
                   </a>
                 </div>
@@ -1172,19 +1193,22 @@ export default function ProgramDetail({ params }) {
             <div className="col-lg-12">
               <div className="eligibility-img">
                 <figure>
-                  <Image
-                    src={programData.eligibility.image}
-                    alt="program"
-                    width={1200}
-                    height={400}
-                    className="img-fluid w-100"
-                  />
+                  {programData.overview_image && (
+                    <Image
+                      src={programData.overview_image}
+                      alt="program"
+                      width={1200}
+                      height={400}
+                      className="img-fluid w-100"
+                    />
+                  )}
+
                   <figcaption>
                     <div className="eligibility-box">
                       <div className="eligibility-text">
                         <span>Eligibility Criteria</span>
-                        <h3>{programData.eligibility.marks}</h3>
-                        <p>{programData.eligibility.description}</p>
+                        <h3>{programData.eligibility_marks}</h3>
+                        <p>{programData.eligibility_desc}</p>
                       </div>
                     </div>
                   </figcaption>
@@ -1196,19 +1220,23 @@ export default function ProgramDetail({ params }) {
                 <h6>Eligibility Criteria</h6>
                 <div className="rank-text">
                   <div className="left-rank-text">
-                    <h2>{programData.eligibility.jeeSeats}</h2>
+                    <h2>{programData.eligibility_criteria}</h2>
                   </div>
                   <div className="right-rank-text">
-                    <p>{programData.eligibility.jeeDescription}</p>
+                    <p>{programData.eligibility_criteria_desc}</p>
                   </div>
                 </div>
                 <div className="seats">
-                  <div className="seats-left-text">
-                    <p>{programData.eligibility.remainingSeats}</p>
-                  </div>
-                  <div className="seats-right-text">
-                    <p>{programData.eligibility.vacantSeats}</p>
-                  </div>
+                  {programData.eligibility_criteria_notices && (
+                    <>
+                      <div className="seats-left-text">
+                        <p>{programData.eligibility_criteria_notices[0]}</p>
+                      </div>
+                      <div className="seats-right-text">
+                        <p>{programData.eligibility_criteria_notices[1]}</p>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -1258,16 +1286,18 @@ export default function ProgramDetail({ params }) {
                   >
                     <div className="item-content">
                       <div className="peo-list">
-                        {programData.educationalObjectives.peos.map(
-                          (peo, index) => (
+                        {programData.peos &&
+                          programData.peos.map((peo, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{peo.title}</h3>
-                              <p>{peo.description}</p>
+                              <h3>PEO - {index + 1}</h3>
+                              <p>{peo}</p>
                             </div>
-                          )
-                        )}
+                          ))}
                       </div>
-                      <a href="#" className="apply-btn1">
+                      <a
+                        href={programData.apply_now_link}
+                        className="apply-btn1"
+                      >
                         Apply Now
                       </a>
                     </div>
@@ -1279,16 +1309,18 @@ export default function ProgramDetail({ params }) {
                   >
                     <div className="item-content">
                       <div className="peo-list">
-                        {programData.educationalObjectives.pos.map(
-                          (po, index) => (
+                        {programData.pos &&
+                          programData.pos.map((po, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{po.title}</h3>
-                              <p>{po.description}</p>
+                              <h3>PO - {index + 1}</h3>
+                              <p>{po}</p>
                             </div>
-                          )
-                        )}
+                          ))}
                       </div>
-                      <a href="#" className="apply-btn1">
+                      <a
+                        href={programData.apply_now_link}
+                        className="apply-btn1"
+                      >
                         Apply Now
                       </a>
                     </div>
@@ -1308,11 +1340,14 @@ export default function ProgramDetail({ params }) {
               <div className="core-box">
                 <div className="core-text">
                   <span>Curriculum</span>
-                  <h6>{programData.curriculum.title}</h6>
+                  <h6>{programData.curriculum_title}</h6>
                   <blockquote>Core Subjects:</blockquote>
-                  <p>{programData.curriculum.coreSubjects}</p>
+                  <p>
+                    {programData.curriculum_desc &&
+                      programData.curriculum_desc[0]}
+                  </p>
                   <div className="core-pdf">
-                    <a href="#" target="_blank">
+                    <a href={programData.curriculum_pdf} target="_blank">
                       <Image
                         src="/images/custom-page/red-pdf-icon.png"
                         alt="PDF"
@@ -1326,13 +1361,15 @@ export default function ProgramDetail({ params }) {
                 </div>
                 <div className="core-img">
                   <figure>
-                    <Image
-                      src={programData.curriculum.image}
-                      alt="program"
-                      width={500}
-                      height={300}
-                      className="img-fluid w-100"
-                    />
+                    {programData.curriculum_image && (
+                      <Image
+                        src={programData.curriculum_image}
+                        alt="program"
+                        width={500}
+                        height={300}
+                        className="img-fluid w-100"
+                      />
+                    )}
                   </figure>
                 </div>
               </div>
@@ -1348,29 +1385,35 @@ export default function ProgramDetail({ params }) {
             <div className="col-lg-9">
               <div className="structure">
                 <span>Fee Structure</span>
-                <p>{programData.feeStructure.description}</p>
+                <p>{programData.fee_structure_title}</p>
               </div>
               <div className="structure-box">
                 <div className="structure-img">
                   <figure>
-                    <Image
-                      src={programData.feeStructure.image}
-                      alt="program"
-                      width={500}
-                      height={300}
-                      className="img-fluid w-100"
-                    />
+                    {programData.fee_structure_image && (
+                      <Image
+                        src={programData.fee_structure_image}
+                        alt="program"
+                        width={500}
+                        height={300}
+                        className="img-fluid w-100"
+                      />
+                    )}
                   </figure>
                 </div>
                 <div className="structure-text">
-                  <p>The Total Fees for {programData.title} at JSS Noida is</p>
-                  <h2>{programData.feeStructure.totalFees}</h2>
-                  <span>{programData.feeStructure.year}</span>
+                  <p>The Total Fees for {programData.name} at JSS Noida is</p>
+                  <h2>{programData.course_total_fees}</h2>
+                  <span>{programData.academic_year}</span>
                   <div className="engineering-btn">
-                    <a href="#" className="apply-btn1">
+                    <a href={programData.apply_now_link} className="apply-btn1">
                       Apply Now
                     </a>
-                    <a href="#" className="structure-btn">
+                    <a
+                      href={programData.fee_structure_pdf}
+                      target="_blank"
+                      className="structure-btn"
+                    >
                       <Image
                         src={"/images/custom-page/red-pdf-icon.png"}
                         alt="PDF"
@@ -1389,7 +1432,7 @@ export default function ProgramDetail({ params }) {
       </section>
 
       {/* Placement Testimonial Section */}
-      <section className="program-testimonial">
+      {/* <section className="program-testimonial">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -1438,19 +1481,20 @@ export default function ProgramDetail({ params }) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Career Opportunities Section */}
       <section className="opportunitie-sec">
         <div className="opportunitie-img">
           <figure>
-            <Image
-              src={programData.careerOpportunities.image}
+            {programData.career_image && <Image
+              src={programData.career_image}
               alt="program"
               width={1200}
               height={600}
               className="img-fluid w-100"
-            />
+            />}
+            
           </figure>
         </div>
         <div className="container">
@@ -1459,18 +1503,19 @@ export default function ProgramDetail({ params }) {
               <div className="opportunitie-box">
                 <div className="opportunitie-text">
                   <blockquote>CAREER OPPORTUNITIES</blockquote>
-                  <h2>{programData.careerOpportunities.title}</h2>
-                  <p>{programData.careerOpportunities.description}</p>
+                  <h2>{programData.curriculum_title}</h2>
+                  <p>{programData.career_desc}</p>
                 </div>
                 <div className="opportunitie-tab">
                   <ul>
-                    {programData.careerOpportunities.opportunities.map(
-                      (opportunity, index) => (
-                        <li key={index}>
-                          <a href="#">{opportunity}</a>
-                        </li>
-                      )
-                    )}
+                    {programData.useful_links &&
+                      JSON.parse(programData.useful_links).map(
+                        (opportunity, index) => (
+                          <li key={index}>
+                            <a href={opportunity.url}>{opportunity.text}</a>
+                          </li>
+                        )
+                      )}
                   </ul>
                 </div>
               </div>
