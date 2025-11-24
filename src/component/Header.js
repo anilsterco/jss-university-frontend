@@ -666,7 +666,6 @@ export default function Header() {
       try {
         const res = await fetch(Addmision_Api);
         const json = await res.json();
-        console.log("admissionApi", json);
 
         if (json.success) {
           setMobadmission(json.data);
