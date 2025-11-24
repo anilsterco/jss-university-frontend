@@ -933,3 +933,27 @@ a:active {
 }
 
 /* inner page css  */
+
+
+
+.features-list {
+  position: relative;
+}
+.feature-box {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.facilities-img .sticky-box {
+  position: sticky;
+  top: 20px; 
+  z-index: 10;
+}
+
+
+.right-transport-titel p {
+      font: var(--font-16);
+    font-weight: normal;
+    font-family: var(--font-Roboto);
+    color: var(--color-black);
+}

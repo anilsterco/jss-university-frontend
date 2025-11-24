@@ -69,3 +69,4 @@ lightboxImage.addEventListener('click', (e) => {
 e.stopPropagation();
 
 })
+
