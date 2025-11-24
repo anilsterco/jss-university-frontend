@@ -155,7 +155,7 @@ export default function Header() {
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
-
+  
   useEffect(() => {
     async function fetchHeaderData() {
       try {
@@ -807,6 +807,7 @@ export default function Header() {
                             onClick={() => {
                               setSelectedSchool(idx);
                               setSelectedSchoolName(school.name);
+                              setEngineeringDropdown(false);
                             }}
                           >
                             <Link href={schoolUrl} className="text-white">
@@ -833,6 +834,9 @@ export default function Header() {
                                 key={i}
                                 href={deptUrl}
                                 className="department-links text-white"
+                                onClick={() => {
+                                  setEngineeringDropdown(false);
+                                }}
                               >
                                 {dept.name}
                               </Link>
