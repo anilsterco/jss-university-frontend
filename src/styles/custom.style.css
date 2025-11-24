@@ -225,7 +225,8 @@
   transition: all 0.4s;
   padding: 6rem 2rem 2rem 2rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   border-radius: 0 0 1rem 1rem;
 }
 
@@ -458,7 +459,7 @@
   display: grid;
 }
 
-.program-detail-img figure>* {
+.program-detail-img figure > * {
   grid-area: 1 / 1;
 }
 
@@ -556,6 +557,7 @@
 .overview-duration {
   background-color: var(--color-white);
   padding: 3rem 2.5rem;
+  z-index: 0;
 }
 
 .overview-duration-text {
@@ -650,7 +652,7 @@
   display: grid;
 }
 
-.eligibility-img figure>* {
+.eligibility-img figure > * {
   grid-area: 1 / 1;
 }
 
@@ -1253,7 +1255,7 @@ This is the minimum CSS that you will need in order for this to work
   display: grid;
 }
 
-.testimonial-img-box figure>* {
+.testimonial-img-box figure > * {
   grid-area: 1 / 1;
 }
 
@@ -1261,7 +1263,8 @@ This is the minimum CSS that you will need in order for this to work
   transition: all 0.4s;
   padding: 6rem 2rem 3rem 3rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -1697,8 +1700,7 @@ hr {
 
 /* faculty page responsive css start */
 
-
-@media (max-width:1366px) {
+@media (max-width: 1366px) {
   .faulty-text h4 {
     font-size: 24px;
   }
@@ -1709,7 +1711,7 @@ hr {
   }
 }
 
-@media (max-width:1280px) {
+@media (max-width: 1280px) {
   .program-list-boxs {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1719,8 +1721,7 @@ hr {
   }
 }
 
-@media (max-width:540px) {
-
+@media (max-width: 540px) {
   .program-list-boxs,
   .faulty-box {
     grid-template-columns: repeat(2, 1fr);
@@ -1734,18 +1735,15 @@ hr {
   .faulty-text h4 {
     font-size: 18px;
   }
-
 }
 
-@media (max-width:480px) {
-
+@media (max-width: 480px) {
   .program-list-boxs,
   .faulty-box {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }
 }
-
 
 /* Facilities */
 .facilities-sec1 {
@@ -1906,12 +1904,13 @@ hr {
   border-radius: 0.8rem;
 }
 
-.facilities-list-box figure>* {
+.facilities-list-box figure > * {
   grid-area: 1 / 1;
 }
 
 .facilities-list-text {
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   padding: 2.5rem 5rem 2.5rem 3rem;
   display: flex;
   flex-direction: column;
@@ -2114,7 +2113,8 @@ hr {
   border: 0.1rem solid var(--color-100);
 }
 
-.labs-link {}
+.labs-link {
+}
 
 /* -------- MOBILE VIEW -------- */
 @media (max-width: 768px) {
@@ -2731,7 +2731,5 @@ max-width: 40%;
     margin-bottom: 1rem;
   }
 }
-
-
 
 /* faculty landing page css start */

@@ -14,6 +14,7 @@ const SCHOOL_DEPARTMENT_URL =
 
 const ContactApi = "https://project-demo.in/jss/api/contact-info";
 const Addmision_Api = "https://project-demo.in/jss/api/admission";
+const Program_Api = "https://project-demo.in/jss/api/program-list";
 
 const mobilePanelsData = [
   {
@@ -155,7 +156,7 @@ export default function Header() {
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
-
+  const [mobProgramList, setMobProgramList] = useState([]);
   useEffect(() => {
     async function fetchHeaderData() {
       try {
@@ -666,7 +667,6 @@ export default function Header() {
       try {
         const res = await fetch(Addmision_Api);
         const json = await res.json();
-        console.log("admissionApi", json);
 
         if (json.success) {
           setMobadmission(json.data);
@@ -677,6 +677,19 @@ export default function Header() {
     };
 
     admiApifetch();
+  }, []);
+  useEffect(() => {
+    const ProgApifetch = async () => {
+      try {
+        const res = await fetch(Program_Api);
+        const json = await res.json();
+        setMobProgramList(json.data);
+      } catch (err) {
+        console.error("Error fetching API:", err);
+      }
+    };
+
+    ProgApifetch();
   }, []);
 
   // MOB MENU API END
@@ -808,6 +821,7 @@ export default function Header() {
                             onClick={() => {
                               setSelectedSchool(idx);
                               setSelectedSchoolName(school.name);
+                              setEngineeringDropdown(false);
                             }}
                           >
                             <Link href={schoolUrl} className="text-white">
@@ -834,6 +848,9 @@ export default function Header() {
                                 key={i}
                                 href={deptUrl}
                                 className="department-links text-white"
+                                onClick={() => {
+                                  setEngineeringDropdown(false);
+                                }}
                               >
                                 {dept.name}
                               </Link>
@@ -1207,7 +1224,7 @@ export default function Header() {
                       <h4>START YOUR JSS JOURNEY</h4>
                     </div>
                     <ul className="courses-menu">
-                      {item.Menu.map((sub, idx) => (
+                      {mobProgramList.map((sub, idx) => (
                         <li key={idx}>
                           <figure>
                             <div className="coursesImg">
@@ -1219,11 +1236,13 @@ export default function Header() {
                             </div>
                             <figcaption>
                               <h4>{sub.name}</h4>
-                              <img
-                                src={item.visitIcon}
-                                alt={`${sub.name} icon`}
-                                className="course-icon"
-                              />
+                              <Link href={sub.slug}>
+                                <img
+                                  src={"/images/header/courseIcon.svg"}
+                                  alt={`${sub.name} icon`}
+                                  className="course-icon"
+                                />
+                              </Link>
                             </figcaption>
                           </figure>
                         </li>
