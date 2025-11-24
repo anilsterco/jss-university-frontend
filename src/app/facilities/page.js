@@ -15,38 +15,43 @@ export default function FacilitiesPage() {
   const [facilitiesData, setFacilitiesData] = useState(null);
   const [loading, setLoading] = useState(true);
   const container = useRef();
+  const [isSticky, setIsSticky] = useState(false);
   useGSAP(
     () => {
       if (!facilitiesData) return;
       gsap.registerPlugin(ScrollTrigger);
-      const boxes = gsap.utils.toArray(".facilities-list");
-      // Set all boxes to be stacked (absolute positioning)
-      gsap.set(boxes, {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-      });
 
-      // Create a timeline for overlap animation
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".facilities-list-box",
-          start: "top top",
-          // end: "+=" + boxes.length * 800, // depends on number of slides
-          scrub: true,
-          pin: true,
-          // markers: true, // remove later
-        },
+      const boxes = gsap.utils.toArray(".facilities-list-box");
+      if (boxes.length === 0) return;
+
+      // Pin the first box
+      ScrollTrigger.create({
+        trigger: boxes[0],
+        start: "bottom bottom",
+        end: () => "+=" + (boxes.length - 1) * 500,
+        pin: true,
+        pinSpacing: false,
       });
 
       boxes.forEach((box, i) => {
-        if (i === 0) return; // first one stays visible
-        tl.fromTo(
+        if (i === 0) return;
+        gsap.set(box, { zIndex: i + 1 });
+        gsap.fromTo(
           box,
-          { opacity: 0 },
-          { opacity: 1, duration: 1 },
-          "+=0.2" // small gap before next overlaps
+          { opacity: 1, y: 0 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: box,
+              start: "top bottom",
+              end: "bottom bottom",
+              scrub: true,
+              pin: false,
+              pinSpacing: false,
+            },
+          }
         );
       });
     },
@@ -71,7 +76,7 @@ export default function FacilitiesPage() {
       stats: {
         percentage: "85%",
         description:
-          "CLASSROOMS FEATURE MODERN TEACHING TOOLS SUCH AS SMARTBOARDS AND PROJECTORS.",
+          "CLASSROOMS FEATURE MODERN TEACHING TOOLS SUCH AS <span>SMARTBOARDS</span> AND <span>PROJECTORS</span>.",
       },
       features: [
         {
@@ -259,6 +264,14 @@ export default function FacilitiesPage() {
     },
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Simulate API call
   useEffect(() => {
     const fetchFacilitiesData = async () => {
@@ -350,18 +363,20 @@ export default function FacilitiesPage() {
 
             <div className="col-lg-12">
               <div className="facilities-img">
-                <figure>
-                  <Image
-                    src={facilitiesData.classrooms.image}
-                    alt="Classroom"
-                    width={1200}
-                    height={600}
-                    className="img-fluid"
-                  />
-                </figure>
+                <div className={` ${isSticky ? "sticky-box" : ""}`}>
+                  <figure>
+                    <Image
+                      src={facilitiesData.classrooms.image}
+                      alt="Classroom"
+                      width={1200}
+                      height={600}
+                      className="img-fluid w-100 w-100"
+                    />
+                  </figure>
+                </div>
 
                 <div className="col-lg-10 mx-auto">
-                  <div className="facilities-img-box">
+                  <div className="facilities-img-box sticky-box">
                     <div className="facilities-box">
                       <div className="facilities-box-text">
                         <div className="facilities-heading">
@@ -371,9 +386,7 @@ export default function FacilitiesPage() {
                           <h5
                             dangerouslySetInnerHTML={{
                               __html:
-                                facilitiesData.classrooms.stats.description
-                                  .replace(/<span>/g, "<span>")
-                                  .replace(/<\/span>/g, "</span>"),
+                                facilitiesData.classrooms.stats.description,
                             }}
                           />
                         </div>
@@ -382,14 +395,14 @@ export default function FacilitiesPage() {
                         <div ref={container}>
                           {facilitiesData.classrooms.features.map(
                             (feature, index) => (
-                              <div key={index} className="facilities-list-box">
+                              <div key={index} className="facilities-list-box ">
                                 <figure>
                                   <Image
                                     src={feature.wallIcon}
                                     alt={feature.title}
                                     width={400}
                                     height={300}
-                                    className="img-fluid"
+                                    className="img-fluid w-100"
                                   />
                                   <figcaption>
                                     <div className="facilities-list-text">
@@ -504,7 +517,7 @@ export default function FacilitiesPage() {
                       alt="Research Center"
                       width={600}
                       height={400}
-                      className="img-fluid"
+                      className="img-fluid w-100"
                     />
                   </figure>
                 </div>
@@ -524,7 +537,7 @@ export default function FacilitiesPage() {
                           alt="Research Stats"
                           width={200}
                           height={150}
-                          className="img-fluid"
+                          className="img-fluid w-100"
                         />
                       </figure>
                     </div>
@@ -595,7 +608,7 @@ export default function FacilitiesPage() {
                             alt="Library"
                             width={300}
                             height={200}
-                            className="img-fluid"
+                            className="img-fluid w-100"
                           />
                         </figure>
                       </div>
@@ -609,7 +622,7 @@ export default function FacilitiesPage() {
                           alt="Library Interior"
                           width={400}
                           height={300}
-                          className="img-fluid"
+                          className="img-fluid w-100 w-100"
                         />
                       </figure>
                     </div>
@@ -620,7 +633,7 @@ export default function FacilitiesPage() {
                           alt="Library Collection"
                           width={400}
                           height={200}
-                          className="img-fluid"
+                          className="img-fluid w-100"
                         />
                       </figure>
                       <div className="right-library-text">
@@ -649,7 +662,7 @@ export default function FacilitiesPage() {
                       alt="Green Initiatives"
                       width={600}
                       height={400}
-                      className="img-fluid"
+                      className="img-fluid w-100"
                     />
                   </figure>
                 </div>
@@ -698,7 +711,7 @@ export default function FacilitiesPage() {
                         alt="Transport"
                         width={500}
                         height={300}
-                        className="img-fluid"
+                        className="img-fluid w-100"
                       />
                     </figure>
                   </div>
@@ -711,7 +724,7 @@ export default function FacilitiesPage() {
                         alt="Transport Fleet"
                         width={300}
                         height={200}
-                        className="img-fluid"
+                        className="img-fluid w-100"
                       />
                     </figure>
                   </div>
