@@ -1215,7 +1215,7 @@ export default function ProgramDetail({ params }) {
                 </figure>
               </div>
             </div>
-            <div className="col-lg-9">
+            <div className="col-xl-9 col-lg-12">
               <div className="rank-box">
                 <h6>Eligibility Criteria</h6>
                 <div className="rank-text">
@@ -1248,7 +1248,7 @@ export default function ProgramDetail({ params }) {
       <section className="educational-sec">
         <div className="container">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-xl-9 col-lg-12">
               <div className="educational-box">
                 <article className="tabbed-content">
                   <nav className="tabs">
@@ -1336,7 +1336,7 @@ export default function ProgramDetail({ params }) {
       <section className="core-sec">
         <div className="container">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-xl-9 col-lg-12">
               <div className="core-box">
                 <div className="core-text">
                   <span>Curriculum</span>
@@ -1382,7 +1382,7 @@ export default function ProgramDetail({ params }) {
       <section className="program-sec-six">
         <div className="container">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-xl-9 col-lg-12">
               <div className="structure">
                 <span>Fee Structure</span>
                 <p>{programData.fee_structure_title}</p>

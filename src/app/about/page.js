@@ -124,16 +124,21 @@ export default function AboutPage() {
       {
         image: "/images/custom-page/about/early-img.png",
         title: "Early Growth and Achievements 1",
-        subtitle: "In just its formative year (2024–2025), the University has made impressive strides:",
+        subtitle:
+          "In just its formative year (2024–2025), the University has made impressive strides:",
         bottomTitle: "TITANIUM BAND FOR",
-        bottomSubtitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
+        bottomSubtitle:
+          "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
       },
       {
         image: "/images/custom-page/about/early-img.png",
         title: "Early Growth and Achievements 1",
-        subtitle: "In just its formative year (2024–2025), the University has made impressive strides:",
-        bottomTitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
-        bottomSubtitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
+        subtitle:
+          "In just its formative year (2024–2025), the University has made impressive strides:",
+        bottomTitle:
+          "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
+        bottomSubtitle:
+          "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
       },
     ],
     visionMission: {
@@ -236,52 +241,63 @@ export default function AboutPage() {
           {/* ========== ABOUT ONE ========== */}
           <section className="about_one">
             <div className="container">
-              <div className="abt_cntnt">
-                <p>{aboutData.description1}</p>
-                <figure>
-                  <Image
-                    src={aboutData.aboutImage}
-                    alt="about"
-                    width={800}
-                    height={500}
-                    className="img-fluid w-100"
-                  />
-                </figure>
-              </div>
+              <div className="row justify-content-center">
+                <div className="col-lg-12">
+                  <div className="abt_cntnt">
+                    <p>{aboutData.description1}</p>
+                    <figure>
+                      <Image
+                        src={aboutData.aboutImage}
+                        alt="about"
+                        width={800}
+                        height={500}
+                        className="img-fluid w-100"
+                      />
+                    </figure>
+                  </div>
+                </div>
 
-              <div className="estblish">
-                <p>{aboutData.establishText}</p>
-              </div>
+                <div className="col-lg-10">
+                  <div className="estblish">
+                    <p>{aboutData.establishText}</p>
+                  </div>
 
-              <div className="top_log_grid">
-                {aboutData.associatedLogosTop.map((item, i) => (
-                  <figure key={i}>
-                    <Image src={item.img} alt="logo" width={100} height={100} />
-                    <figcaption>
-                      <p>{item.caption}</p>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
+                  <div className="top_log_grid">
+                    {aboutData.associatedLogosTop.map((item, i) => (
+                      <figure key={i}>
+                        <Image
+                          src={item.img}
+                          alt="logo"
+                          width={100}
+                          height={100}
+                        />
+                        <figcaption>
+                          <p>{item.caption}</p>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
 
-              <div className="btm_log_grid">
-                {aboutData.associatedLogosBottom.map((item, i) => (
-                  <figure key={i}>
-                    <figcaption>
-                      <h4>
-                        <sup>#</sup>
-                        {item.rank}
-                      </h4>
-                      <p>{item.text}</p>
-                    </figcaption>
-                    <Image
-                      src={item.img}
-                      alt="rank-logo"
-                      width={120}
-                      height={25}
-                    />
-                  </figure>
-                ))}
+                  <div className="btm_log_grid">
+                    {aboutData.associatedLogosBottom.map((item, i) => (
+                      <figure key={i}>
+                        <figcaption>
+                          <h4>
+                            <sup>#</sup>
+                            {item.rank}
+                          </h4>
+                          <p>{item.text}</p>
+                        </figcaption>
+                        <Image
+                          src={item.img}
+                          alt="rank-logo"
+                          width={120}
+                          height={25}
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -296,7 +312,6 @@ export default function AboutPage() {
                   fadeEffect={{ crossFade: true }}
                   spaceBetween={30}
                   slidesPerView={1}
-                  style={{ padding: "30px 30px" }}
                   navigation={{
                     nextEl: ".earlygrowth-next",
                     prevEl: ".earlygrowth-prev",

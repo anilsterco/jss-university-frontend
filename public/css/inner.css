@@ -22,7 +22,9 @@
 }
 .inner-title .innnr_head h3 > span {
   color: var(--color-e8);
+  font-family: var(--font-Condensed)
 }
+
 .inner-title .innnr_head ul {
   list-style: none;
   border-top: 1px solid #ccc;
@@ -378,11 +380,14 @@
 }
 .about_five .quality_grid {
   display: grid;
-  grid-template-columns: 48.7% 48%;
+  grid-template-columns: 48.7% 40%;
   gap: 4.9rem;
   margin-left: 8rem;
   justify-items: center;
   align-items: center;
+}
+.about_five .quality_grid figure img {
+    width: 100%;
 }
 .about_five .quality_grid figure img {
   border-radius: 0.8rem;
@@ -806,5 +811,10 @@
 .message_footer p:last-of-type {
   margin-bottom: 3rem;
 }
-
+@media screen and (max-width:480px) {
+  .inner-title .innnr_head h3 {
+    font: var(--font-30);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1px;
+  }}
 /* leadership details page end */
