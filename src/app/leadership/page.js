@@ -16,9 +16,8 @@ export default function Leadership() {
     title: "SRI SUTTUR MATH THE <span>1000-YEAR LEGACY</span>",
     subTitle: "ABOUT",
     tabs: [
-      { text: "About JSS", url: "/about" },
+      { text: "About JSS", url: "/about-us" },
       { text: "About JSSMVP", url: "/about-jssmvp" },
-      { text: "Heritage", url: "/heritage" },
       { text: "Leadership", url: "/leadership" },
     ],
   };
@@ -80,7 +79,7 @@ export default function Leadership() {
                   onClick={() => handleTabClick(tab.url)}
                   style={{ cursor: "pointer" }}
                 >
-                  {tab.text}
+                  <Link href={tab.url}>{tab.text}</Link>
                 </li>
               ))}
             </ul>

@@ -120,22 +120,20 @@ export default function AboutPage() {
         img: "/images/custom-page/about/education-world.png",
       },
     ],
-    earlyGrowth: [
+    slider: [
       {
         image: "/images/custom-page/about/early-img.png",
         title: "Early Growth and Achievements 1",
-        subtitle:
-          "In just its formative year (2024–2025), the University has made impressive strides:",
-        rankContent:
-          "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
+        subtitle: "In just its formative year (2024–2025), the University has made impressive strides:",
+        bottomTitle: "TITANIUM BAND FOR",
+        bottomSubtitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
       },
       {
         image: "/images/custom-page/about/early-img.png",
-        title: "Early Growth and Achievements 2",
-        subtitle:
-          "In just its formative year (2024–2025), the University has made impressive strides:",
-        rankContent:
-          "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2026.",
+        title: "Early Growth and Achievements 1",
+        subtitle: "In just its formative year (2024–2025), the University has made impressive strides:",
+        bottomTitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
+        bottomSubtitle: "TITANIUM BAND FOR “INSTITUTION OF ACADEMIC EXCELLENCE” IN THE OBE RANKING 2025.",
       },
     ],
     visionMission: {
@@ -304,7 +302,7 @@ export default function AboutPage() {
                     prevEl: ".earlygrowth-prev",
                   }}
                 >
-                  {aboutData.earlyGrowth.map((item, i) => (
+                  {aboutData.slider.map((item, i) => (
                     <SwiperSlide key={i} className="early-slide">
                       <figure>
                         <Image
@@ -320,9 +318,9 @@ export default function AboutPage() {
                         <h5>{item.subtitle}</h5>
 
                         <div className="inst-reg">
-                          <h5>Institutional Recognition</h5>
+                          <h5>{item.bottomTitle}</h5>
 
-                          <h3>{item.rankContent}</h3>
+                          <h3>{item.bottomSubtitle}</h3>
                         </div>
                         <div className="early-arrows">
                           <BsArrowLeftCircle className="earlygrowth-prev" />
