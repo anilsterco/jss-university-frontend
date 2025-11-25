@@ -407,6 +407,7 @@
 .admissionSec {
   margin-top: -12.5rem;
   position: relative;
+  background-color: var(--color-f6);
 }
 
 .admissionBox {
