@@ -22,7 +22,6 @@ export default function AboutTwo({ data }) {
               fadeEffect={{ crossFade: true }}
               spaceBetween={30}
               slidesPerView={1}
-              style={{ padding: "30px 30px" }}
               navigation={{
                 nextEl: `.earlygrowth-next-${sectionIndex}`,
                 prevEl: `.earlygrowth-prev-${sectionIndex}`,
@@ -44,7 +43,6 @@ export default function AboutTwo({ data }) {
                     <div className="early_rgt">
                       <h4>{item.title}</h4>
                       <h5>{item.subtitle}</h5>
-
                       <div className="inst-reg">
                         <h5>{item.bottomTitle}</h5>
                         <h3>{item.bottomSubTitle}</h3>

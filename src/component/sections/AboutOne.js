@@ -4,15 +4,15 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutOne({ data }) {
-  // Render sections in the exact order they come from the API
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
       case "aboutOne":
         return (
           <div
             className="row justify-content-center"
-            key={`about-section-${sectionIndex}`}
+            key={`about-section-${sectionIndex}`} 
           >
+            
             {section.items
               .sort((a, b) => a.position - b.position)
               .map((item, index) => (
@@ -20,11 +20,10 @@ export default function AboutOne({ data }) {
                   className="col-lg-12"
                   key={item.id || item.item_uuid || index}
                 >
-                  {/* Main About Content */}
                   <div className="abt_cntnt">
                     {item.title && <p>{item.title}</p>}
                     {item.file && (
-                      <figure key={item.id}>
+                      <figure>
                         <Image
                           src={item.file}
                           alt={item.title || "About JSS Academy"}
@@ -36,7 +35,6 @@ export default function AboutOne({ data }) {
                     )}
                   </div>
 
-                  {/* Description as Establishment Text */}
                   {item.description && (
                     <div className="estblish">
                       <p>{item.description}</p>
@@ -49,12 +47,12 @@ export default function AboutOne({ data }) {
 
       case "logoDesc":
         return (
-          <div className="row justify-content-center">
+          <div
+            className="row justify-content-center"
+            key={`logo-section-${sectionIndex}`}  
+          >
             <div className="col-lg-10">
-              <div
-                key={`logo-section-${sectionIndex}`}
-                className="top_log_grid"
-              >
+              <div className="top_log_grid">
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, i) => (
@@ -77,12 +75,12 @@ export default function AboutOne({ data }) {
 
       case "figureDesc":
         return (
-          <div className="row justify-content-center">
+          <div
+            className="row justify-content-center"
+            key={`figure-section-${sectionIndex}`} 
+          >
             <div className="col-lg-10">
-              <div
-                key={`figure-section-${sectionIndex}`}
-                className="btm_log_grid"
-              >
+              <div className="btm_log_grid">
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, i) => (
@@ -115,10 +113,8 @@ export default function AboutOne({ data }) {
   return (
     <section className="about_one">
       <div className="container">
-        {/* Render all sections in the exact order from API */}
         {data.map((section, index) => renderSection(section, index))}
 
-        {/* Fallback if no sections at all */}
         {data.length === 0 && (
           <div className="abt_cntnt">
             <p>Welcome to JSS Academy of Technical Education</p>
