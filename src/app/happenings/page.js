@@ -1,47 +1,23 @@
-"use client";
-import { useState } from "react";
-import styles from "./page.module.css";
-import NewsEvents from "@/component/happening-components/news-events/NewsEvents";
-import Gallery from "@/component/happening-components/gallery/Gallery";
-import MediaCoverage from "@/component/happening-components/media-coverage/MediaCoverage";
-import NoticeAnnouncement from "@/component/happening-components/notice-announcement/NoticeAnnouncement";
+import { getPageSEO } from "@/lib/seo";
+import HappeningsClient from "./HappeningsClient";
+import Script from "next/script";
 
-export default function Happenings() {
-  const [activeTab, setActiveTab] = useState("news");
+export async function generateMetadata() {
+  return await getPageSEO("happenings");
+}
 
-  const tabs = [
-    { id: "news", label: "News & Events", component: NewsEvents },
-    { id: "gallery", label: "Gallery", component: Gallery },
-    { id: "media", label: "Media Coverage", component: MediaCoverage },
-    { id: "press", label: "Press Release", component: NoticeAnnouncement },
-  ];
-
-  const ActiveComponent = tabs.find((tab) => tab.id === activeTab)?.component;
-
+export default async function Happenings() {
+  const seoData = await getPageSEO("about");
   return (
-    <div className={styles.happeningsContainer}>
-      <p className={`${styles.happeningsSubTitle} text-center`}>HAPPENINGS</p>
-      <h1 className={`${styles.happeningsTitle} `}>
-        STAY UP-TO-DATE ON CAMPUS NEWS AND EVENTS
-      </h1>
-
-      <div className={styles.tabHeaders}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`${styles.tabButton} ${
-              activeTab === tab.id ? styles.activeTab : ""
-            }`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      <div className={styles.tabContent}>
-        {ActiveComponent && <ActiveComponent />}
-      </div>
-    </div>
+    <>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoData.schema),
+        }}
+        strategy="beforeInteractive"
+      />
+      <HappeningsClient />
+    </>
   );
 }
