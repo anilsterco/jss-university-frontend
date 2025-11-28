@@ -6,6 +6,7 @@ import AboutHomeComponent from "../component/home-components/about-home-jss/Abou
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
+import Script from "next/script";
 
 export async function generateMetadata() {
   return await getPageSEO("home"); // or 'homepage'
@@ -25,10 +26,18 @@ async function getSchoolData() {
 }
 
 export default async function HomePage() {
+  const seoData = await getPageSEO("home");
   const homepageData = await getSchoolData();
   console.log(homepageData, "homepageData");
   return (
     <div>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoData.schema),
+        }}
+        strategy="beforeInteractive"
+      />
       <BannerComponent data={homepageData.sections.banners} />
       <CourseOfferedComponent
         data={homepageData.sections.departments_section}

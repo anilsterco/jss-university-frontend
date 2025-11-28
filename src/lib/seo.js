@@ -23,6 +23,18 @@ export async function getPageSEO(slug) {
         description: data.data.openGraph.description,
         images: data.data.openGraph.images,
       },
+      schema: data.data.schema || {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "Article Title",
+        description: "Article Description",
+        image: "https://yoursite.com/image.jpg",
+        datePublished: "2024-01-01",
+        author: {
+          "@type": "Person",
+          name: "John Doe",
+        },
+      },
     };
   } catch (error) {
     return {
