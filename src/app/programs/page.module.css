@@ -1636,6 +1636,10 @@
   
   .programCategoryBox p {
     font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+   .programCategoryBox {
+    padding: 0rem;
   }
   
   .programCategoryBox .formCheck {
@@ -1663,7 +1667,7 @@
   }
   
   .programSec1 {
-    padding-block: 3rem;
+    padding-block: 2rem;
   }
   
   .cusProgramText {

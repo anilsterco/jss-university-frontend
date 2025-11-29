@@ -160,6 +160,10 @@ body {
     max-width: 1000px;
   }
 
+  .footer_section .container {
+    max-width: 1000px;
+  }
+
   html {
     font-size: 52.5%;
   }
@@ -177,10 +181,11 @@ body {
     max-width: 640px;
     padding-inline: 2rem;
   }
+
   .footer_section .container {
-        max-width: 640px;
-        padding-inline: 2rem;
-    }
+    max-width: 640px;
+    padding-inline: 2rem;
+  }
 }
 
 @media (min-width: 1921px) {
@@ -286,12 +291,13 @@ a:active {
 .testimonials-container img {
   height: 100%;
 }
+
 p {
-    font: var(--font-16);
-    font-weight: normal;
-    font-family: var(--font-Roboto);
-    color: var(--color-black);
-    margin-bottom: 3rem;
+  font: var(--font-16);
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  color: var(--color-black);
+  margin-bottom: 3rem;
 }
 
 .fifth-middle-section .button {
@@ -951,21 +957,24 @@ p {
 .features-list {
   position: relative;
 }
+
 .feature-box {
   top: 0;
   left: 0;
   width: 100%;
 }
+
 .facilities-img .sticky-box {
   position: sticky;
-  top: 20px; 
+  top: 20px;
   z-index: 10;
 }
 
 
 .right-transport-titel p {
-      font: var(--font-16);
-    font-weight: normal;
-    font-family: var(--font-Roboto);
-    color: var(--color-black);
+  font: var(--font-16);
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  color: var(--color-black);
 }
+

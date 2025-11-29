@@ -11,9 +11,9 @@ import {
 
 export default function Footer() {
   const [data, setData] = useState(null);
-  const [footerData, setFooterData] = useState(null); 
-  const [loading, setLoading] = useState(true);       
-  const [error, setError] = useState(null); 
+  const [footerData, setFooterData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // useEffect(() => {
   //   const res = {
@@ -58,9 +58,7 @@ export default function Footer() {
   //   setData(res);
   // }, []);
 
-
-
- useEffect(() => {
+  useEffect(() => {
     async function fetchFooter() {
       try {
         const res = await fetch("https://project-demo.in/jss/api/footer");
@@ -76,8 +74,6 @@ export default function Footer() {
     fetchFooter();
   }, []);
 
- 
- 
   if (!data) return null;
 
   const renderIcon = (icon) => {
@@ -91,14 +87,13 @@ export default function Footer() {
       case "youtube":
         return <FaYoutube style={{ ...style, color: "#FFf" }} />;
       case "linkedin":
-        return <FaLinkedinIn style={{ ...style, color: "#FFf" }}/>;
+        return <FaLinkedinIn style={{ ...style, color: "#FFf" }} />;
       case "instagram":
-        return <FaInstagram style={{...style, color: "#fff"}}/>;
+        return <FaInstagram style={{ ...style, color: "#fff" }} />;
       default:
         return null;
     }
   };
-  
 
   return (
     <footer className="footer_section">
@@ -108,7 +103,11 @@ export default function Footer() {
             <div className="footer_contact">
               <div className="footer_left">
                 <div className="footer_logo">
-                  <img src="/images/footer/footer-logo.webp" alt="Logo" style={{ width: "9rem" }} />
+                  <img
+                    src="/images/footer/footer-logo.webp"
+                    alt="Logo"
+                    style={{ width: "9rem" }}
+                  />
                 </div>
                 <div className="connect_contant">
                   <p className="fw-bold text-info">Connect with us</p>
@@ -187,7 +186,12 @@ export default function Footer() {
                 © Copyright {new Date().getFullYear()} - JSS. All Rights
                 Reserved.
               </p>
-              <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a> </p>
+              <p className="mb-0">
+                Website Design and Development by{" "}
+                <a href="https://www.stercodigitex.com/" target="_blank">
+                  Sterco
+                </a>{" "}
+              </p>
             </div>
           </div>
         </div>
@@ -264,7 +268,12 @@ export default function Footer() {
                   © Copyright {new Date().getFullYear()} - JSS. All Rights
                   Reserved.
                 </p>
-                <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a></p>
+                <p className="mb-0">
+                  Website Design and Development by{" "}
+                  <a href="https://www.stercodigitex.com/" target="_blank">
+                    Sterco
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -346,6 +355,7 @@ export default function Footer() {
           text-align: center;
           margin-bottom: 1.5rem;
           line-height: 1;
+          width: 100%;
         }
         .footer_right .get_direc:hover {
           background-color: var(--color-100);
@@ -429,10 +439,12 @@ export default function Footer() {
           font-weight: 300;
           color: rgba(255, 255, 255, 0.5);
         }
-         .bottom_footer p a {
+        .bottom_footer p a {
           color: rgba(255, 255, 255, 0.5);
-         }
-         .bottom_footer p a:hover{color:var(--color-white)}
+        }
+        .bottom_footer p a:hover {
+          color: var(--color-white);
+        }
         .connect_contant ul li a {
           position: relative;
           font: var(--font-12);
@@ -455,10 +467,21 @@ export default function Footer() {
           top: 0.5rem;
           left: -0.8rem;
         }
+        @media (max-width: 1280px) {
+          .footer_contact {
+            grid-template-columns: 75% 25%;
+            gap: 0rem;
+          }
+          .connect_contant:after{
+            right:4rem
+          }
+        }
+      
         @media (max-width: 991px) {
           .deshFooter {
             display: none;
           }
+          .connect_contant:after {content: none;}
           .footer_section {
             background: #000;
           }
@@ -543,9 +566,15 @@ export default function Footer() {
           font: normal normal bold 12px/16px Geist;
           margin-bottom: 1.5rem;
         }
-        .copy-rights p{letter-spacing: 0px;font: var(--font-13);
-          color: var(--color-white);font-family: var(--font-Roboto);}
-          .copy-rights p a{color: var(--color-white)}
+        .copy-rights p {
+          letter-spacing: 0px;
+          font: var(--font-13);
+          color: var(--color-white);
+          font-family: var(--font-Roboto);
+        }
+        .copy-rights p a {
+          color: var(--color-white);
+        }
         @media (min-width: 992px) {
           .mobFooter {
             display: none;
@@ -555,4 +584,3 @@ export default function Footer() {
     </footer>
   );
 }
-
