@@ -215,10 +215,6 @@ font: var(--font-16);
 
 
 @media (max-width: 1200px) {
-  .eventSection {
-    padding: 4rem 3rem;
-  }
-
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -229,12 +225,12 @@ font: var(--font-16);
     padding: 3rem 2rem;
   }
 
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
 }
-
+@media (max-width:991) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
 @media (max-width: 480px) {
   .grid {
@@ -256,23 +252,7 @@ font: var(--font-16);
   }
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
 
-  .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
-  }
-  .cardTag {
-    margin-bottom: 5px;
-  }
-  .orangeLine {
-    margin-bottom: 10px;
-  }
-}
 @media (max-width: 768px) {
   .mobileView {
     display: block;
@@ -291,9 +271,7 @@ font: var(--font-16);
   .rightArrow {
     padding: 2px;
   }
-  .eventSection {
-    padding: 3rem 1rem;
-  }
+
   .orangeLine {
     background-color: #ffa600;
     width: 20%;

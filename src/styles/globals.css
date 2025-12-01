@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@200;300;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200;300;400;700&display=swap");
 
 html,
 body {
@@ -272,7 +273,7 @@ body {
 
 @media (max-width: 991) {
   html {
-    font-size: 62.5%;
+    font-size: 50.5%;
     scroll-behavior: smooth;
   }
 }
@@ -287,6 +288,7 @@ a:active {
 
 .main-container {
   position: relative;
+  background-color: var(--color-f6);
 }
 
 .testimonials-container img {
@@ -984,9 +986,42 @@ p {
   color: var(--color-black);
 }
 
+
+
 @media (max-width: 1024px) {
   .logo-content img {
     max-width: 30rem;
   }
 
 }
+@media (max-width:991px) {
+  .cource-sec .cource_top {
+    padding-top: 6rem;
+  }
+ .form-control::placeholder {
+ font: var(--font-10);
+}
+.program-row .col-lg-8:after {
+ content: none;
+}
+.add-item {
+  padding-top: 3rem;
+}
+.max-content-lg .placement_row {
+  margin-bottom: 6rem;
+  margin-left: 0;
+}
+
+}
+
+@media (max-width:767px){
+.course-items{
+    padding-block: 2rem;
+    padding-inline: 1.5rem;
+  }
+.max-content-lg .placement_row {
+  margin-bottom: 0rem;
+  margin-left: 0;
+}
+}
+ 

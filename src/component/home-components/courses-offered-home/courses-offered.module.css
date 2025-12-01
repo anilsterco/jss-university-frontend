@@ -275,20 +275,6 @@
     margin-bottom: 0.6rem;
   }
 
-  .topSectionH1 {
-    max-width: 90%;
-  }
-
-  .bottomSectionH6::after {
-    content: "";
-    background-color: #e1e1e1;
-    width: calc(100% - 0px);
-    height: .1rem;
-    position: absolute;
-    top: 1rem;
-    bottom: 0;
-    left: 53%;
-  }
 }
 
 @media (max-width:991) {
@@ -296,16 +282,79 @@
     width: 100%;
     left: 0;
   }
+
+  .cource-sec .cource_top {
+    padding-top: 6rem;
+  }
+
+  .topSectionH1 {
+    max-width: 100%;
+  }
+
+  .searchBox {
+    width: 60%;
+    height: auto;
+    margin: 2rem 0;
+  }
+
+  .programsCardsSection {
+    justify-content: flex-start;
+  }
+
+  .bottomSectionH6::after {
+    content: none;
+  }
+
+  .admissionSection {
+    border-right: none;
+    padding-bottom: 0;
+  }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .showOnlyMobileSubHeading {
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-    margin: 0;
+    margin-bottom: 3rem;
   }
+
+  .topSectionH1 {
+    font: var(--font-34);
+    color: var(--color-4e);
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+    text-transform: uppercase;
+    letter-spacing: -1.63px;
+    max-width: 100%;
+  }
+
+  .topSectionH1 span:first-child {
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.63px;
+  }
+
+  .showOnlyMobileCard h1 {
+    font: var(--font-48);
+    letter-spacing: -2.4px;
+    color: #018CE8;
+    font-weight: 600;
+  }
+   .showOnlyMobileCard h5 {
+    font: var(--font-20);
+    letter-spacing: -0.6px;
+    color: #018CE8;
+    font-weight: 600;
+  }
+ 
+.lastCardArrow {
+    position: absolute;
+    margin-bottom: 1.5rem;
+  }
+  .cource-sec {padding-bottom: 0;}
 
   .topSectionH5 {
     display: none;
@@ -313,8 +362,7 @@
 
   .secondSection {
     padding: 0;
-    background: #16344e;
-    padding-bottom: 5rem;
+    background: transparent;
   }
 
   .topSection {
@@ -404,9 +452,6 @@
     margin-bottom: 5px;
   }
 
-  .showOnlyMobileCard div {
-    padding: 1rem;
-  }
 
   .showOnlyMobileCard h5 {
     color: #16344e;
@@ -416,4 +461,5 @@
   .exploreAllLink {
     width: 100% !important;
   }
+.programsCardsSection {justify-content: flex-start;}
 }

@@ -76,9 +76,7 @@ export default function PlacementsSection({ data }) {
               {placementsData.subtitle && placementsData.subtitle.toUpperCase()}
             </p>
             <h2
-              className={`fw-bold `}
-              style={{ width: "fit-content" }}
-              dangerouslySetInnerHTML={{ __html: placementsData.title }}
+              className={`fw-bold `} dangerouslySetInnerHTML={{ __html: placementsData.title }}
             ></h2>
           </div>
 
@@ -89,7 +87,7 @@ export default function PlacementsSection({ data }) {
               <div className={`row w-100 placement_row ${styles.statsRow}`}>
                 {placementsData.facts_and_figures &&
                   placementsData.facts_and_figures.map((stat, i) => (
-                    <div key={i} className="col-md-4 text-center border ">
+                    <div key={i} className="col-xl-4 col-sm-6 text-center border ">
                       <div className="fig-count">
                         <h3 className={`${styles.statsNumber}`}>
                           {stat.figure}
@@ -141,11 +139,11 @@ export default function PlacementsSection({ data }) {
                               position: "relative",
                             }}
                             priority
-                            className={`top-0 start-0 rounded ${styles.testimonialImage}`}
+                            className={`top-0 start-0 testiimg rounded ${styles.testimonialImage}`}
                           />
                         </div>
                         {/* Testimonial Text */}
-                        <div>
+                        <div className={`${styles.testimonialContent}`}>
                           <FaQuoteLeft
                             className={`mb-3 ${styles.desktopQuoteIcon}`}
                             color="#b08f29"
@@ -175,7 +173,7 @@ export default function PlacementsSection({ data }) {
 
             {/* Right Wall of Fame */}
             <div
-              className={`col-lg-6 d-flex justify-content-end px-0 ${styles.rightContent}`}
+              className={`col-lg-6 d-flex justify-content-lg-end px-0 ${styles.rightContent}`}
             >
               <div
                 className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer}`}
@@ -238,7 +236,7 @@ export default function PlacementsSection({ data }) {
                             src={rec.image}
                             alt={rec.title}
                             width={150}
-                            height={80}
+                            height={0}
                             style={{
                               width: "100%",
                               height: "auto",
