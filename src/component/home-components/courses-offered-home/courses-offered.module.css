@@ -192,38 +192,51 @@
 }
 
 @media (min-width: 2200px) and (max-width:2550) {
-  .programsText{max-width: 50%;}
+  .programsText {
+    max-width: 50%;
+  }
+
   .topSectionH1 {
-  max-width: 70%;
+    max-width: 70%;
+  }
 }
+
+@media (max-width: 1749px) {
+  .topSectionH1 {
+    max-width: 78%;
+  }
+
+  .programsText {
+    max-width: 55%;
+  }
 }
-@media (max-width: 1749px){
-.topSectionH1 {
-  max-width: 78%;
-}
-.programsText{max-width: 55%;}
-}
-@media (max-width: 1366px){
-.topSectionH1 {
-  max-width: 75%;
-}
-.admissionSection a {
-  padding: 0.8rem 1.8rem 0.8rem;
-}
+
+@media (max-width: 1366px) {
+  .topSectionH1 {
+    max-width: 75%;
+  }
+
+  .admissionSection a {
+    padding: 0.8rem 1.8rem 0.8rem;
+  }
 }
 
 
 @media (min-width: 1040px) and (max-width: 1380px) {
- .programsCountPlus {
-  font-size: 4.7rem;
-  top: 4px;
-  right: 0px;
+  .programsCountPlus {
+    font-size: 4.7rem;
+    top: 4px;
+    right: 0px;
   }
-.programsText {padding-left: 2rem}
-.bottomSectionH6::after {
-  width: 77rem;
-  left: 53%;
-}
+
+  .programsText {
+    padding-left: 2rem
+  }
+
+  .bottomSectionH6::after {
+    width: 77rem;
+    left: 53%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
@@ -234,8 +247,6 @@
   .programsCountSection {
     margin: 0;
   }
-
-
 
   .admissionSection {
     padding-bottom: 16px;
@@ -264,14 +275,29 @@
     margin-bottom: 0.6rem;
   }
 
+  .topSectionH1 {
+    max-width: 90%;
+  }
+
+  .bottomSectionH6::after {
+    content: "";
+    background-color: #e1e1e1;
+    width: calc(100% - 0px);
+    height: .1rem;
+    position: absolute;
+    top: 1rem;
+    bottom: 0;
+    left: 53%;
+  }
 }
 
-@media (max-width:991){
+@media (max-width:991) {
   .bottomSectionH6::after {
-  width: 100%;
-  left: 0;
+    width: 100%;
+    left: 0;
+  }
 }
-}
+
 @media (max-width: 768px) {
   .showOnlyMobileSubHeading {
     display: flex;

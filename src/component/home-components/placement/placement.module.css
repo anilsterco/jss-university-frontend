@@ -162,7 +162,7 @@
 
 @media (min-width: 1381px) and (max-width: 1919px) {
   .testimonialImageContainer {
-    width: 30%;
+    width: 60%;
     padding: 0;
   }
   
@@ -174,15 +174,13 @@
   }
 
 }
+
+
 @media (min-width: 1040px) and (max-width: 1380px) {
   .testimonialImageContainer {
-    width: 30%;
+    width: 50%;
     padding: 0;
   }
-  .thirdSection {
-    padding: 0rem 0 12rem 8rem;
-  }
- 
   .testimonialSwiper .eachSlide {
     gap: 2rem;
   }
@@ -197,12 +195,10 @@
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
-  .testimonialImageContainer {
-    width: 30%;
-  }
   .thirdSection {
-    padding: 2rem 0 4rem 4rem;
+    padding: 4rem 0 4rem 4rem;
   }
+  .sectionHeader h2{margin-bottom: 3rem;}
   
   .statsNumber {
     font-size: 1.5rem;
@@ -216,7 +212,15 @@
   .testimonialSwiper .eachSlide {
     gap: 1rem;
   }
- 
+ .testimonialImageContainer {
+    width: 90%;
+  }
+  .leftContent {
+padding-right: 4rem
+}
+  .testimonialSwiper .eachSlide {
+    gap: 2rem;
+  }
 }
 @media (max-width: 768px) {
   .thirdSection {
@@ -294,4 +298,9 @@
     padding-top: 0 !important;
   }
  
+}
+@media (max-width: 1549px){
+  .fig-count {
+    padding: 3.8rem 4.4rem;
+}
 }

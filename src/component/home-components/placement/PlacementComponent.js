@@ -241,8 +241,7 @@ export default function PlacementsSection({ data }) {
                             height={80}
                             style={{
                               width: "100%",
-                              height: "75px",
-                              objectFit: "cover",
+                              height: "auto",
                             }}
                             className="img-fluid"
                           />

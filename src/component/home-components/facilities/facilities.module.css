@@ -50,6 +50,7 @@
   font-family: "Geist", sans-serif;
   font-weight: 300;
   max-width: 45%;
+  color: var(--color-white);
 }
 
 .slideContainer {
@@ -126,7 +127,7 @@
 .headerContent {
   background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
   gap: 3rem;
-  width: 165rem;
+  width: 164rem;
   margin: auto;
   padding: 2.3rem 6.3rem  2.3rem;
   display: flex;
@@ -195,16 +196,16 @@
 }
 
 @media (max-width:1366px){
-
+.verticalLine {
+  left: 4.7%;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1040px) {
   .headerContent {
     height: 110px;
   }
-  .bannerContent {
-    left: 16%;
-  }
+
 }
 @media (max-width: 768px) {
   .mobileContainer {
