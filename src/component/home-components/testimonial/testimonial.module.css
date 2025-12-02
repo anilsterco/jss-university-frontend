@@ -170,7 +170,7 @@
 }
 
 .cardInfo {
-  padding: 2.3rem 2.3rem;
+  padding: 1.3rem 2.3rem;
   background: #fff;
   text-decoration: none;
   display: block;
@@ -303,11 +303,11 @@
   .mobileView {
     display: block;
     background: #e6ffff;
-    padding: 3rem 1.3rem 1.5rem;
+    padding: 0rem;
   }
 
   .testimonialsSection {
-    padding: 0 0 5rem 0;
+    padding: 0 0 0rem 0;
     background: #E6FFFF;
   }
 
@@ -316,7 +316,7 @@
   }
 
   .cardImgContainer {
-    height: 200px;
+    height: 250px;
   }
 
   .quoteTextOverlay {
@@ -336,7 +336,7 @@
   }
 
   .mobileView :global(.swiper-wrapper) {
-    height: 315px;
+    height:100%;
   }
 
   .mobileViewArrow {
@@ -344,4 +344,7 @@
     justify-content: center;
     padding-top: 1rem;
   }
+  .circleArrowBtn {
+  margin-top: 1rem;
+}
 }

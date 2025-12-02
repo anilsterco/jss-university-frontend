@@ -135,7 +135,7 @@
 .fifthSectionSlider :global(.about-pagination) {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   height: 10px;
 }
 
@@ -236,11 +236,14 @@
   .accreditationHeading {
     text-align: center;
     color: rgb(0, 54, 161);
-     font: var(--font-14);
+    font: var(--font-14);
     font-family: var(--font-Condensed);
     font-weight: 600;
     margin-block: 2.1rem;
+    line-height: 17px;
   }
+
+
 
   .fifthSection {
     padding-block: 4.4rem;
@@ -262,20 +265,23 @@
   }
 
   .topSectionHeading {
-    width: 46%;
+    width: 55%;
     font: var(--font-34);
     font-family: var(--font-Condensed);
     color: var(--color-black);
     letter-spacing: -1.63px;
+    line-height: 30px;
     font-weight: bold;
     margin: 0 auto;
   }
-  .topSectionHeading  span{
+
+  .topSectionHeading span {
     width: 40%;
     font: var(--font-34);
     font-family: var(--font-Condensed);
     letter-spacing: -1.63px;
     font-weight: bold;
+    line-height: 30px;
   }
 
 
@@ -301,7 +307,8 @@
     padding-left: 0;
     padding-block: 0;
   }
-  .fifthMiddleSection{
+
+  .fifthMiddleSection {
     margin-top: 2rem;
   }
 
@@ -321,10 +328,10 @@
 
   .aboutBtnDiv {
     flex-wrap: wrap;
-        justify-content: center;
-        padding-block: 1.5rem 3rem;
-        gap: 10px !important;
-        border-bottom: solid 0.5px #dee2e6;
+    justify-content: center;
+    padding-block: 1.5rem 3rem;
+    gap: 10px !important;
+    border-bottom: solid 0.5px #dee2e6;
   }
 
   .navButtons {
@@ -335,9 +342,6 @@
     height: 130px;
   }
 
-  .accreditationLogo {
-    width: 20%;
-  }
 
   .accreditationSlide p {
     font-size: 15px;
@@ -354,41 +358,62 @@
     background: #fff;
     border-radius: 8px;
   }
+
   .highlightBox {
-  border: 1px solid #dee2e6;
-  padding: 3rem 4.1rem 3rem;
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 2.6rem;
+    border: 1px solid #dee2e6;
+    padding: 3rem 4.1rem 3rem;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.6rem;
 
-}
-.cardTitle {
-  font: var(--font-16);
-  font-family: var(--font-Condensed);
-  letter-spacing: 0px;
-}
-.highlightNumber {
-  color: var(--color-73);
-  letter-spacing: -2.15px;
-  font: var(--font-42);
-  font-family: var(--font-Condensed);
-  font-weight: 400;
-  line-height: 0.8;
-}
-.sourceText {
-  color: #FF0000;
-  font: var(--font-28);
-  letter-spacing: -1.19px;
-  font-family: var(--font-Condensed);
-  margin-bottom: 1rem;
-}
-.highlightBox {
-  gap: 1.5rem;
+  }
 
+  .cardTitle {
+    font: var(--font-16);
+    font-family: var(--font-Condensed);
+    letter-spacing: 0px;
+  }
+
+  .highlightNumber {
+    color: var(--color-73);
+    letter-spacing: -2.15px;
+    font: var(--font-42);
+    font-family: var(--font-Condensed);
+    font-weight: 400;
+    line-height: 0.8;
+  }
+
+  .sourceText {
+    color: #FF0000;
+    font: var(--font-28);
+    letter-spacing: -1.19px;
+    font-family: var(--font-Condensed);
+    margin-bottom: 1rem;
+  }
+
+  .highlightBox {
+    gap: 1.5rem;
+
+  }
+
+  .accreditationSlide p {
+    font: var(--font-16);
+    color: var(--color-black);
+    font-family: var(--font-Condensed);
+  }
+    .accreditationLogo {
+    width: 100%;
+    height: auto;
+    max-width: 75px;
+  }
 }
-.accreditationSlide p {
-  font: var(--font-16);
-  color: var(--color-black);
-   font-family: var(--font-Condensed);
-}
+
+@media (max-width: 767px) {
+  .topSectionHeading {
+    width: 100%;
+  }
+
+  .topSectionHeading span {
+    max-width: 100%;
+  }
 }

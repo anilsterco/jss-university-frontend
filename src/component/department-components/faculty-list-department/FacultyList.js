@@ -58,9 +58,6 @@ export default function FacultyList({ data }) {
   };
   const facultyData = data ? data : dummyFacultyData;
   return (
-
-  
-      
     <div className={styles.dep_faculty}>
       <div className="container">
         {/* Header Section */}
@@ -99,7 +96,7 @@ export default function FacultyList({ data }) {
             {facultyData.members.map((slide) => (
               <SwiperSlide key={slide.id} className={styles.facultyCard}>
                 <Link
-                  href={slide.url}
+                  href={`/faculty/${slide.url}`}
                   key={slide.id}
                   style={{ cursor: "pointer" }}
                 >
@@ -112,6 +109,7 @@ export default function FacultyList({ data }) {
                     priority
                     className={styles.slideImage}
                   />
+
                   <div className={styles.facultyInfo}>
                     <h3 className={styles.facultyName}>{slide.name}</h3>
                     <p className={styles.facultyDesignation}>

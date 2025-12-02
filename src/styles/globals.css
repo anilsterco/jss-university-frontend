@@ -188,6 +188,7 @@ body {
     max-width: 640px;
     padding-inline: 2rem;
   }
+
 }
 
 @media (min-width: 1921px) {
@@ -271,9 +272,16 @@ body {
   }
 }
 
-@media (max-width: 991) {
+@media (max-width: 991px) {
   html {
     font-size: 50.5%;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 62.5%;
     scroll-behavior: smooth;
   }
 }
@@ -741,6 +749,14 @@ p {
   margin-block: 5rem 0rem;
 }
 
+.programs-count {
+  color: #b08f29;
+  letter-spacing: -8.8px;
+  font: var(--font-110);
+  font-family: "Oswald", sans-serif;
+  font-weight: normal;
+}
+
 .first-content h1 span {
   font-family: var(--font-Condensed);
 }
@@ -988,40 +1004,71 @@ p {
 
 
 
+
 @media (max-width: 1024px) {
   .logo-content img {
     max-width: 30rem;
   }
 
 }
+
 @media (max-width:991px) {
   .cource-sec .cource_top {
     padding-top: 6rem;
   }
- .form-control::placeholder {
- font: var(--font-10);
-}
-.program-row .col-lg-8:after {
- content: none;
-}
-.add-item {
-  padding-top: 3rem;
-}
-.max-content-lg .placement_row {
-  margin-bottom: 6rem;
-  margin-left: 0;
-}
+
+  .form-control::placeholder {
+    font: var(--font-10);
+  }
+
+  .program-row .col-lg-8:after {
+    content: none;
+  }
+
+  .add-item {
+    padding-top: 3rem;
+  }
+
+  .max-content-lg .placement_row {
+    margin-bottom: 6rem;
+    margin-left: 0;
+  }
 
 }
 
-@media (max-width:767px){
-.course-items{
+@media (max-width:767px) {
+  .course-items {
     padding-block: 2rem;
     padding-inline: 1.5rem;
   }
-.max-content-lg .placement_row {
-  margin-bottom: 0rem;
-  margin-left: 0;
+
+  .max-content-lg .placement_row {
+    margin-bottom: 0rem;
+    margin-left: 0;
+  }
 }
+
+.panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
- 
+
+@media screen and (max-width:375px) {
+  .logo-content img {
+    max-width: 20rem;
+  }
+
+  .cource-sec .cource_top {
+    padding-top: 4rem;
+    padding-inline: 0;
+  }
+
+  .secondSection {
+    padding-inline: 0;
+  }
+
+}
+
