@@ -213,34 +213,34 @@ export default function PlacementsSection({ data }) {
               <div className="col-lg-10 max-auto">
                 <p className="small">Our Recruiters</p>
                 <div className="d-flex flex-wrap gap-4 align-items-center">
-                  <Swiper
+                    <Swiper
                     modules={[Navigation, Autoplay]}
                     navigation={false}
                     loop={true}
-                    spaceBetween={60}
-                    slidesPerView={7}
+                    spaceBetween={20}
+                    slidesPerView={6}
                     className="recruiters-slider"
                     breakpoints={{
-                      0: { slidesPerView: 1 },
-                      576: { slidesPerView: 1 },
-                      992: { slidesPerView: 3 },
-                      1040: { slidesPerView: 7 },
+                      0: { slidesPerView: 1},
+                      375: { slidesPerView: 1 },
+                      576: { slidesPerView: 3 },
+                      768: { slidesPerView: 4 },
+                      992: { slidesPerView: 5 },
+                      1200: { slidesPerView: 6 },
                     }}
                   >
-                    {placementsData.recruiters &&
+                     {placementsData.recruiters &&
                       placementsData.recruiters.map((rec, i) => (
-                        <SwiperSlide key={i}>
-                          <Image
-                            key={i}
-                            src={rec.image}
-                            alt={rec.title}
-                            width={150}
-                            height={0}
-                         
-                            className="img-fluid"
-                          />
-                        </SwiperSlide>
-                      ))}
+                      <SwiperSlide key={rec.image} className="recruiter-slide">
+                        <Image
+                          src={rec.image}
+                          alt={rec.title}
+                          width={150}
+                          height={100}
+                          className="img-fluid"
+                        />
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
                 </div>
               </div>

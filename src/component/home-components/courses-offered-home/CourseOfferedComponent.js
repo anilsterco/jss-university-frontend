@@ -124,7 +124,8 @@ export default function CoursesOffered({ data }) {
             >
               {coursesData.programs.map((level, i) => (
                 <Link
-                  href={level.slug}
+                  href={`/programs`}
+                  // ${level.slug}
                   key={i}
                   className="second-section-cards-image position-relative"
                 >

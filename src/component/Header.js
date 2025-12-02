@@ -617,15 +617,15 @@ export default function Header() {
 
     let isMounted = true;
     const controller = new AbortController();
-    
+
     const fetchContactData = async () => {
       try {
         const res = await fetch(ContactApi, {
           signal: controller.signal,
           headers: {
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
-          }
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+          },
         });
 
         if (!res.ok) {
@@ -633,14 +633,14 @@ export default function Header() {
         }
 
         const json = await res.json();
-        
+
         if (!isMounted) return;
 
         if (json.status && Array.isArray(json.data) && json.data.length > 0) {
           const apiData = json.data[0];
-          
+
           // Validate data before setting state
-          if (apiData && typeof apiData === 'object') {
+          if (apiData && typeof apiData === "object") {
             setMobilePanels((prev) =>
               prev.map((item) =>
                 item.name === "Contact"
@@ -673,8 +673,8 @@ export default function Header() {
           console.warn("API returned unexpected data format:", json);
         }
       } catch (err) {
-        if (err.name === 'AbortError') {
-          console.log('Fetch aborted');
+        if (err.name === "AbortError") {
+          console.log("Fetch aborted");
         } else {
           console.error("FETCH ERROR:", err);
           // You can set error state here if needed
@@ -711,7 +711,6 @@ export default function Header() {
 
     admiApifetch();
   }, []);
-
 
   useEffect(() => {
     const isMobile = window.innerWidth <= 991;
@@ -2330,7 +2329,23 @@ export default function Header() {
             .site-header > .nav-container {
               padding-inline: 6.8rem;
             }
+            .menu-middle {
+              padding: 7rem;
+            }
+            .menu-left-item {
+              padding: 1rem 5rem 1rem 10rem;
+            }
+            .menu-left {
+              padding-top: 6rem;
+            }
+            .right-inner .first-content {
+              padding-top: 0rem;
+            }
+            .acresData p {
+              max-width: 46%;
+            }
           }
+
           @media (max-width: 1100px) {
             .mega-dropdown {
               min-width: 700px;
@@ -2342,6 +2357,30 @@ export default function Header() {
             .banner {
               width: 200px;
               height: 130px;
+            }
+            .vid-thumb-cont {
+              padding-right: 2rem;
+            }
+          }
+          @media (max-width: 1024px) {
+            .menu-middle {
+              padding: 7rem 5rem 0;
+            }
+            .menu-left-item {
+              padding: 1rem 2rem 1rem 6rem;
+            }
+            .menu-right {
+              padding-top: 7rem;
+            }
+            .right-inner .first-content {
+              width: 40%;
+            }
+            .menu-overlay.open .close-btn {
+              width: 25px;
+              height: 25px;
+              font-size: 15px;
+              top: -3px;
+              right: -33px;
             }
           }
           @media (max-width: 991px) {
@@ -2383,6 +2422,7 @@ export default function Header() {
             flex-direction: column;
             box-sizing: border-box;
           }
+          
           .panel-wrapper .panel.open {
             transform: translateY(0);
           }
@@ -2398,7 +2438,9 @@ export default function Header() {
           .contact-info li {
             padding-block: 2rem;
           }
-          .admissions-menu-wrapper{width:100%}
+          .admissions-menu-wrapper {
+            width: 100%;
+          }
           .admissions-menu-wrapper ul li {
             padding-block: 2rem;
           }
@@ -2421,7 +2463,7 @@ export default function Header() {
             padding: 0;
             margin: 0;
             padding: 5rem 4rem 12rem;
-            width:100%
+            width: 100%;
           }
           .courses-panel {
             position: relative;
@@ -2579,7 +2621,7 @@ export default function Header() {
           .contact-panel {
             background: #e6ffff;
             z-index: 1;
-            width:100%
+            width: 100%;
           }
           .contact-panel .contact-info {
             padding-top: 0;
@@ -2728,7 +2770,9 @@ export default function Header() {
             .mobile-bottom-menu {
               display: none;
             }
-            .mob-logo{display:none}
+            .mob-logo {
+              display: none;
+            }
           }
           @media (max-width: 767px) {
             .admissions-heading h4 {

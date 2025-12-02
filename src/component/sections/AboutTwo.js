@@ -37,7 +37,8 @@ export default function AboutTwo({ data }) {
                         alt={item.title || "Early Growth"}
                         width={700}
                         height={400}
-                        style={{ width: "100%", height: "auto" }}
+                        style={{ objectFit:"cover"}}
+                        className="w-100 h-100"
                       />
                     </figure>
                     <div className="early_rgt">

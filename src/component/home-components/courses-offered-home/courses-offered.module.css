@@ -265,7 +265,7 @@
     margin: 1rem 0;
   }
 
-  .courses-offered-module__x5Lqha__programsCountPlus {
+  .topSection {
     top: -5px;
     right: -15px;
   }
@@ -389,7 +389,7 @@
   }
 
   .exploreProgramSectionWrapper {
-    display: none;
+    display: none!important;
   }
 
   .programsCardsSection {

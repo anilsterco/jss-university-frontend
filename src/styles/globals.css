@@ -132,7 +132,7 @@ body {
 
 @media (max-width: 1650px) {
   html {
-    font-size: 58.5%;
+    font-size: 50.5%;
   }
 }
 
@@ -142,7 +142,7 @@ body {
   }
 
   html {
-    font-size: 55.5%;
+    font-size: 48.5%;
   }
 }
 
@@ -152,7 +152,7 @@ body {
   }
 
   html {
-    font-size: 50%;
+    font-size: 48.5%;
   }
 }
 
@@ -1046,21 +1046,12 @@ p {
     margin-bottom: 0rem;
     margin-left: 0;
   }
-}
-
-.panel {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  .logo-content img {
+    max-width: 23rem;
+  }
 }
 
 @media screen and (max-width:375px) {
-  .logo-content img {
-    max-width: 20rem;
-  }
-
   .cource-sec .cource_top {
     padding-top: 4rem;
     padding-inline: 0;
@@ -1072,6 +1063,8 @@ p {
 
 }
 
+
+ 
 .panel{
   position: sticky;
   top: 0;
@@ -1079,4 +1072,3 @@ p {
   display: flex;
   align-items: center;
 }
- 
