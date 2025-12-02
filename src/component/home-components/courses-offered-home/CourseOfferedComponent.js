@@ -109,7 +109,7 @@ export default function CoursesOffered({ data }) {
 
               {/* Programs count */}
               <div
-                className={`d-flex align-items-center ${styles.programsCountSection}`}
+                className={`d-flex align-items-center  ${styles.programsCountSection}`}
               >
                 <ProgramsCount />
                 <p className={styles.programsText}>

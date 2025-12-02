@@ -7,13 +7,14 @@
   bottom: 0;
   left: 11.2%;
 }
+
 .slideNumberBox {
   z-index: 20;
   background-color: #f8c326;
   border-radius: 40px;
   justify-content: center;
   align-items: center;
-  padding:0.4rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   font: var(--font-16);
   font-family: "Geist", sans-serif;
   display: flex;
@@ -21,6 +22,7 @@
   top: 8%;
   left: -1.7rem;
 }
+
 .bannerContent {
   z-index: 20;
   color: #fff;
@@ -37,6 +39,7 @@
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
+
 .bannerContent h2 svg {
   width: 3.5rem;
   height: auto;
@@ -45,7 +48,7 @@
 }
 
 .bannerContent p {
-   font: var(--font-18);
+  font: var(--font-18);
   letter-spacing: -0.27px;
   font-family: "Geist", sans-serif;
   font-weight: 300;
@@ -83,7 +86,7 @@
 
 .bannerLinks {
   gap: 2rem;
-   font: var(--font-14);
+  font: var(--font-14);
   font-family: var(--font-Condensed);
   font-weight: bold;
   display: flex;
@@ -94,32 +97,37 @@
   font-weight: 600;
   z-index: 20;
 }
+
 .bannerLink {
   color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap:0.8rem;
+  gap: 0.8rem;
   border-bottom: 0.2rem dotted #ffc100;
- 
+
 }
+
 .headingContainer {
   position: relative;
   background: #f6f6f6;
   width: 100%;
   padding: 4rem 10rem 0;
 }
+
 .plusIcon {
   color: #cba632;
   font-size: 4rem;
   border: 1px solid #16344e;
   border-radius: 40px;
 }
+
 .headingContent {
   background: #fff;
   padding: 1rem 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 .blueText {
   color: #007bff;
 }
@@ -129,13 +137,15 @@
   gap: 3rem;
   width: 164rem;
   margin: auto;
-  padding: 2.3rem 6.3rem  2.3rem;
+  padding: 2.3rem 6.3rem 2.3rem;
   display: flex;
   height: 14.5rem;
 }
+
 .facilitiesContainer {
   background: #f6f6f6;
 }
+
 .straightLine {
   height: 100%;
   width: 1px;
@@ -143,91 +153,113 @@
   margin-left: 1.8rem;
   display: block;
 }
+
 .headerContent h1 {
-   font: var(--font-60);
-   font-family: var(--font-Condensed);
-   letter-spacing: -2.88px;
-   font-weight: bold;
-}
-.headerContent h1 span{
   font: var(--font-60);
-   font-family: var(--font-Condensed);
-   letter-spacing: -2.88px;
-   font-weight: bold;
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  font-weight: bold;
 }
+
+.headerContent h1 span {
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  font-weight: bold;
+}
+
 .headerContent h5 {
- font: var(--font-18);
+  font: var(--font-18);
   color: var(--color-4e);
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   font-weight: bold;
 }
+
 .mobileContainer {
   display: none;
 }
+
 .facilitiesContainer {
   display: block;
 }
 
 @media (min-width: 2200px) and (max-width:2550) {
-.headerContent {
-  width: 190rem;
-}
-.verticalLine {
-  left: 12%;
-}
+  .headerContent {
+    width: 190rem;
+  }
+
+  .verticalLine {
+    left: 12%;
+  }
 
 }
 
 @media (max-width:1799px) {
-.verticalLine {
-  left: 6.7%;
-}
-}
-@media (max-width:1549px) {
-.headerContent {
-  width:100%;
-}
-.verticalLine {
-  left: 5.2%;
-}
-.bannerContent {left: 8.9%;}
-.blueBg{height: 70%;}
+  .verticalLine {
+    left: 6.7%;
+  }
 }
 
-@media (max-width:1366px){
-.verticalLine {
-  left: 4.7%;
+@media (max-width:1549px) {
+  .headerContent {
+    width: 100%;
+  }
+
+  .verticalLine {
+    left: 5.2%;
+  }
+
+  .bannerContent {
+    left: 8.9%;
+  }
+
+  .blueBg {
+    height: 70%;
+  }
 }
+
+@media (max-width:1366px) {
+  .verticalLine {
+    left: 4.7%;
+  }
 }
-@media (max-width:991px){
-.verticalLine {
-  left: 6.7%;
-}
-.bannerContent {left: 11%;}
-.bannerContent p {
-  max-width: 80%;
-}
-.bannerLinks {
-  bottom: 10%;
-  left: 10%;
-}
+
+@media (max-width:991px) {
+  .verticalLine {
+    left: 6.7%;
+  }
+
+  .bannerContent {
+    left: 11%;
+  }
+
+  .bannerContent p {
+    max-width: 80%;
+  }
+
+  .bannerLinks {
+    bottom: 10%;
+    left: 10%;
+  }
 }
 
 @media (max-width: 768px) {
   .mobileContainer {
     display: block;
-    padding-top:0;
+    padding-top: 0;
     margin-bottom: 4rem;
   }
- 
+
   .facilitiesContainer {
     display: none;
   }
+
   .cardImageContainer {
     position: relative;
     width: 47%;
   }
+
   .cardContent {
     color: #fff;
     position: absolute;
@@ -236,42 +268,49 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    font-weight: 600;
     text-align: center;
+    font: var(--font-18);
+    text-transform: uppercase;
+    font-family: var(--font-Condensed);
+    letter-spacing: -0.86px;
+    font-weight: 600;
   }
+
   .cardOverlay {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.4) 15%,
-      rgba(0, 0, 0, 0) 80%
-    );
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.4) 15%,
+        rgba(0, 0, 0, 0) 80%);
     height: 100%;
     top: 0;
     position: absolute;
     width: 100%;
     border-radius: 8px;
   }
+
   .cardSection {
     flex-wrap: wrap;
     display: flex;
     padding: 0;
     justify-content: flex-start;
-    gap: 1.5rem;
+    gap: 1.1rem;
     margin: 0;
   }
+
   .cardImageContainer img {
     height: 191px;
     border-radius: 8px;
   }
+
   .mobileContainer p {
     color: #16344e;
-      font: var(--font-14);
+    font: var(--font-14);
     font-family: var(--font-Condensed);
     font-weight: 600;
     margin-bottom: 3rem;
     letter-spacing: 0px;
   }
+
   .showOnlyMobileCard {
     background: #fff;
     border-radius: 8px;
@@ -281,9 +320,11 @@
     display: flex;
     position: relative;
   }
+
   .showOnlyMobileCard a {
     height: 191px;
   }
+
   .showOnlyMobileCard p {
     color: #16344e;
     font: var(--font-14);
@@ -292,21 +333,33 @@
     font-weight: 400;
     letter-spacing: -0.21px;
   }
-.showOnlyMobileCard h1{
-  font: var(--font-48);
-  letter-spacing: -2.4px;
-  font-weight: 600;
-}
+
+  .showOnlyMobileCard h1 {
+    font: var(--font-48);
+    letter-spacing: -2.4px;
+    font-weight: 600;
+  }
+
   .showOnlyMobileCard div {
     padding: 2.5rem 2rem 0;
   }
+
   .showOnlyMobileCard h5 {
     color: #16344e;
     font-weight: 400;
   }
+
   .mobileCardsContainer {
     background: #f6f6f6;
     padding-top: 4.5rem;
   }
-  .sectionHeader{margin-top: 7rem;}
+
+  .sectionHeader {
+    margin-top: 7rem;
+  }
+}
+@media (max-width: 375px){
+  .sectionHeader {
+    margin-top: 1rem;
+  }
 }

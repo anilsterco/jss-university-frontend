@@ -339,7 +339,7 @@ export default function EventsGrid({ data }) {
         {eventsData.happenings && eventsData.happenings.length > 0 && (
           <>
             <p className={`${styles.headerSmall} text-center`}>
-              {eventsData.short_description}
+              HAPPENINGS
             </p>
 
             <Swiper

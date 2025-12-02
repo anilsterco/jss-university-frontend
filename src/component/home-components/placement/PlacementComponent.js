@@ -111,7 +111,6 @@ export default function PlacementsSection({ data }) {
                 }}
                 spaceBetween={30}
                 slidesPerView={1}
-                style={{ padding: "30px 30px" }}
                 className={`${styles.testimonialSwiper} testimonial-slider`}
               >
                 <div className={styles.blueBg}></div>
@@ -223,7 +222,7 @@ export default function PlacementsSection({ data }) {
                     className="recruiters-slider"
                     breakpoints={{
                       0: { slidesPerView: 1 },
-                      576: { slidesPerView: 2 },
+                      576: { slidesPerView: 1 },
                       992: { slidesPerView: 3 },
                       1040: { slidesPerView: 7 },
                     }}
@@ -237,10 +236,7 @@ export default function PlacementsSection({ data }) {
                             alt={rec.title}
                             width={150}
                             height={0}
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                            }}
+                         
                             className="img-fluid"
                           />
                         </SwiperSlide>

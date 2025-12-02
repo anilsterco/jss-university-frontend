@@ -2420,6 +2420,7 @@ export default function Header() {
             padding: 0;
             margin: 0;
             padding: 5rem 4rem 12rem;
+            width:100%
           }
           .courses-panel {
             position: relative;
