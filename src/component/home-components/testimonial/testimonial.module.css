@@ -8,7 +8,8 @@
 .testimonialsContainer {
   display: flex;
   justify-content: center;
-  justify-content: space-between;;
+  justify-content: space-between;
+  ;
   gap: 5rem;
   flex-wrap: wrap;
 }
@@ -23,7 +24,7 @@
 
 .columnMiddle {
   flex: 0 0 auto;
-  width:28%;
+  width: 28%;
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
@@ -34,7 +35,7 @@
   width: 32%;
   display: flex;
   flex-direction: column;
-   gap: 3.9rem;
+  gap: 3.9rem;
   margin-top: 5rem;
 }
 
@@ -58,7 +59,8 @@
   letter-spacing: -2.88px;
   font-weight: bold;
 }
-.mainHeading span{
+
+.mainHeading span {
   font: var(--font-60);
   font-family: var(--font-Condensed);
   letter-spacing: -2.88px;
@@ -111,7 +113,7 @@
 
 .cardImg {
   width: 100%;
- height: auto;
+  height: auto;
   object-fit: cover;
 }
 
@@ -121,18 +123,16 @@
   left: 0;
   right: 0;
   padding: 2.2rem 7.2rem 2.2rem 2.2rem;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0%,     
-    rgba(0, 0, 0, 0.6) 25%,    
-    rgba(0, 0, 0, 0.3) 60%,    
-    rgba(0, 0, 0, 0.05) 85%,   
-    rgba(0, 0, 0, 0) 100%      
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.6) 25%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.05) 85%,
+      rgba(0, 0, 0, 0) 100%);
 }
 
 .yellowLine {
-  width:9.1rem;
+  width: 9.1rem;
   height: 0.5rem;
   background: #fbbf24;
   margin-bottom: 10px;
@@ -181,18 +181,18 @@
 }
 
 .personName {
-   font: var(--font-20);
-   text-transform: uppercase;
+  font: var(--font-20);
+  text-transform: uppercase;
   font-weight: bold;
- color:var(--color-black);
+  color: var(--color-black);
   font-family: var(--font-Condensed);
   letter-spacing: 0px;
   margin-bottom: 1rem;
 }
 
 .personBatch {
- font: var(--font-12);
-  color:var(--color-black);
+  font: var(--font-12);
+  color: var(--color-black);
   font-family: var(--font-Condensed);
   font-weight: 600;
   line-height: 1.7;
@@ -200,10 +200,10 @@
 
 .personRole {
   font: var(--font-12);
-  color:var(--color-black);
+  color: var(--color-black);
   font-family: var(--font-Condensed);
   font-weight: 300;
- 
+
 }
 
 /* Video Modal */
@@ -247,75 +247,98 @@
   border: none;
   border-radius: 10px;
 }
+
 .desktopView {
   display: flex;
 }
+
 .mobileView {
   display: none;
 }
-@media (max-width: 1366px){
- .columnLeft {
-  width: 40%;
-}
-.columnMiddle {width: 26%;}
-.columnRight{width: 26%;}
-.desktopView {gap: 2rem;}
 
-}
- 
-
-@media (min-width: 768px) and (max-width: 1040px) {
-  .testimonialsContainer {
-    padding: 0 6rem;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    padding-bottom: 4rem;
+@media (max-width: 1366px) {
+  .columnLeft {
+    width: 40%;
   }
-  
-  .columnLeft,
-  .columnMiddle,
+
+  .columnMiddle {
+    width: 26%;
+  }
+
   .columnRight {
-    width: 220px;
+    width: 26%;
   }
-  
+
+  .desktopView {
+    gap: 2rem;
+  }
+
+}
+
+
+
+@media (max-width: 991px) {
   .testimonialsSection {
-    padding-top: 8rem;
+    padding-top: 6rem;
+  }
+
+  .columnLeft {
+    width: 44%;
+  }
+
+  .columnMiddle {
+    width: 24%;
+  }
+
+  .quoteBar {
+    padding: 2.2rem 2.2rem 2.2rem 2.2rem;
   }
 }
+
 @media (max-width: 768px) {
   .desktopView {
     display: none;
   }
+
   .mobileView {
     display: block;
     background: #e6ffff;
     padding: 3rem 1.3rem 1.5rem;
   }
+
   .testimonialsSection {
     padding: 0 0 5rem 0;
-    background: #16344e;
+    background: #E6FFFF;
   }
+
   .cardImg {
     height: auto;
   }
+
   .cardImgContainer {
     height: 200px;
   }
+
   .quoteTextOverlay {
     font-weight: 300;
   }
+
   .personBatch {
     color: #000;
   }
+
   .personRole {
     font-weight: 300;
   }
+
   .testimonialCard {
     height: 100%;
   }
+
   .mobileView :global(.swiper-wrapper) {
     height: 315px;
   }
+
   .mobileViewArrow {
     display: flex;
     justify-content: center;

@@ -23,7 +23,7 @@ export default function HeroSlider({ data }) {
       ];
 
   return (
-    <div>
+    <>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
@@ -70,6 +70,6 @@ export default function HeroSlider({ data }) {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 }

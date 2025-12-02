@@ -155,7 +155,7 @@ export default function CoursesOffered({ data }) {
                   </div>
                 </Link>
               ))}
-              <div className={styles.showOnlyMobileCard}>
+              <div className={`course-items ${styles.showOnlyMobileCard}`}>
                 <Link href="#" className={styles.exploreAllLink}>
                   <div className={styles.lastCardContentSection}>
                     <p>Explore All</p>

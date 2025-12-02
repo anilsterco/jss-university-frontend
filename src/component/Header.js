@@ -783,16 +783,30 @@ export default function Header() {
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
         >
-          <Link href="/" aria-label="Home">
-            <Image
-              src="/images/header/header-logo.png"
-              className="site-logo"
-              alt="Site Logo"
-              width={299}
-              height={108}
-              priority
-            />
-          </Link>
+          <div className="dashbord-logo">
+            <Link href="/" aria-label="Home">
+              <Image
+                src="/images/header/header-logo.png"
+                className="site-logo"
+                alt="Site Logo"
+                width={299}
+                height={108}
+                priority
+              />
+            </Link>
+          </div>
+          <div className="mob-logo">
+            <Link href="/" aria-label="Home">
+              <Image
+                src="/images/header/header-logo.png"
+                className="site-logo"
+                alt="Site Logo"
+                width={299}
+                height={108}
+                priority
+              />
+            </Link>
+          </div>
 
           {(pathname.includes("schools") ||
             pathname.includes("department")) && (
@@ -2286,7 +2300,6 @@ export default function Header() {
               padding-inline: 6.8rem;
             }
           }
-
           @media (max-width: 1100px) {
             .mega-dropdown {
               min-width: 700px;
@@ -2300,10 +2313,21 @@ export default function Header() {
               height: 130px;
             }
           }
-
-           {
-            /* mob menu css start */
+          @media (max-width: 991px) {
+            .site-header {
+              position: relative;
+            }
+            .right-navbar {
+              display: none;
+            }
+            .brand-wrap {
+              margin: 0 auto;
+            }
+            .dashbord-logo {
+              display: none;
+            }
           }
+
           .panel-wrapper {
             position: fixed;
             top: 0;
@@ -2670,6 +2694,7 @@ export default function Header() {
             .mobile-bottom-menu {
               display: none;
             }
+            .mob-logo{display:none}
           }
           @media (max-width: 767px) {
             .admissions-heading h4 {

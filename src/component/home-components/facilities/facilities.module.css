@@ -50,6 +50,7 @@
   font-family: "Geist", sans-serif;
   font-weight: 300;
   max-width: 45%;
+  color: var(--color-white);
 }
 
 .slideContainer {
@@ -126,7 +127,7 @@
 .headerContent {
   background: linear-gradient(135deg, #fff 100%, #fff3f3 100%);
   gap: 3rem;
-  width: 165rem;
+  width: 164rem;
   margin: auto;
   padding: 2.3rem 6.3rem  2.3rem;
   display: flex;
@@ -195,23 +196,31 @@
 }
 
 @media (max-width:1366px){
-
+.verticalLine {
+  left: 4.7%;
+}
+}
+@media (max-width:991px){
+.verticalLine {
+  left: 6.7%;
+}
+.bannerContent {left: 11%;}
+.bannerContent p {
+  max-width: 80%;
+}
+.bannerLinks {
+  bottom: 10%;
+  left: 10%;
+}
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
-  .headerContent {
-    height: 110px;
-  }
-  .bannerContent {
-    left: 16%;
-  }
-}
 @media (max-width: 768px) {
   .mobileContainer {
     display: block;
-    background: #16344e;
-    padding: 5rem 0;
+    padding-top:0;
+    margin-bottom: 4rem;
   }
+ 
   .facilitiesContainer {
     display: none;
   }
@@ -246,8 +255,10 @@
   .cardSection {
     flex-wrap: wrap;
     display: flex;
-    padding: 1rem 0.8rem;
-    gap: 13px;
+    padding: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin: 0;
   }
   .cardImageContainer img {
     height: 191px;
@@ -255,7 +266,11 @@
   }
   .mobileContainer p {
     color: #16344e;
+      font: var(--font-14);
+    font-family: var(--font-Condensed);
     font-weight: 600;
+    margin-bottom: 3rem;
+    letter-spacing: 0px;
   }
   .showOnlyMobileCard {
     background: #fff;
@@ -271,13 +286,19 @@
   }
   .showOnlyMobileCard p {
     color: #16344e;
-    font-size: 14px;
+    font: var(--font-14);
+    font-family: var(--font-Condensed);
     margin-bottom: 5px;
     font-weight: 400;
+    letter-spacing: -0.21px;
   }
-
+.showOnlyMobileCard h1{
+  font: var(--font-48);
+  letter-spacing: -2.4px;
+  font-weight: 600;
+}
   .showOnlyMobileCard div {
-    padding: 0.5rem 1rem 0;
+    padding: 2.5rem 2rem 0;
   }
   .showOnlyMobileCard h5 {
     color: #16344e;
@@ -285,6 +306,7 @@
   }
   .mobileCardsContainer {
     background: #f6f6f6;
-    padding-top: 2.5rem;
+    padding-top: 4.5rem;
   }
+  .sectionHeader{margin-top: 7rem;}
 }

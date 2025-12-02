@@ -25,7 +25,8 @@ export default function FacilitiesComponent({ data }) {
       {
         id: 1,
         title: "CLASSROOM",
-        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        description:
+          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
         image: "/images/home-page/fourth-section-first-banner.png",
         links: [
           {
@@ -45,7 +46,8 @@ export default function FacilitiesComponent({ data }) {
       {
         id: 2,
         title: "ACADEMICS LABS",
-        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        description:
+          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
         image: "/images/home-page/fourth-section-second-banner.png",
         links: [
           {
@@ -65,7 +67,8 @@ export default function FacilitiesComponent({ data }) {
       {
         id: 3,
         title: "CAMPUS",
-        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        description:
+          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
         image: "/images/home-page/fourth-section-third-banner.png",
         links: [
           {
@@ -85,7 +88,8 @@ export default function FacilitiesComponent({ data }) {
       {
         id: 4,
         title: "SPORTS AND HEALTH",
-        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        description:
+          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
         image: "/images/home-page/fourth-section-fourth-banner.png",
         links: [
           {
@@ -105,7 +109,8 @@ export default function FacilitiesComponent({ data }) {
       {
         id: 5,
         title: "HOSTEL & CANTEEN",
-        description: "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
+        description:
+          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
         image: "/images/home-page/fourth-section-second-banner.png",
         links: [
           {
@@ -167,33 +172,35 @@ export default function FacilitiesComponent({ data }) {
   const facilitiesData = data ? data : dummyFacilitiesData;
   return (
     <>
-      <div className={styles.mobileContainer}>
-        <div className={styles.mobileCardsContainer}>
-          <p className="text-center">{facilitiesData.subTitle}</p>
-          {/* <div className="cards"> */}
-          <div className={styles.cardSection}>
-            {facilitiesData.facilities.map((card, index) => (
-              <div key={index} className={styles.cardImageContainer}>
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  style={{ width: "100%", objectFit: "cover" }}
-                />
-                <div className={styles.cardOverlay}></div>
-                <h3 className={styles.cardContent}>{card.title}</h3>
+      <div className="container">
+        <div className={styles.mobileContainer}>
+          <div className={styles.mobileCardsContainer}>
+            <p className="text-center">LIFE @ JSS UNIVERSITY</p>
+            {/* <div className="cards"> */}
+            <div className={styles.cardSection}>
+              {facilitiesData.facilities.map((card, index) => (
+                <div key={index} className={styles.cardImageContainer}>
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    style={{ width: "100%", objectFit: "cover" }}
+                  />
+                  <div className={styles.cardOverlay}></div>
+                  <h3 className={styles.cardContent}>{card.title}</h3>
+                </div>
+              ))}
+              <div className={styles.showOnlyMobileCard}>
+                <Link href="#" className={styles.exploreAllLink}>
+                  <div className={styles.lastCardContentSection}>
+                    <p>Explore All</p>
+                    <h1 className="blue-text">28+</h1>
+                    <h5>acres of innovation, comfort, and opportunity</h5>
+                  </div>
+                  <div className={`py-0 ${styles.sectionHeader}`}>
+                    <PiArrowCircleRightThin fontSize={20} color="#16344E" />
+                  </div>
+                </Link>
               </div>
-            ))}
-            <div className={styles.showOnlyMobileCard}>
-              <Link href="#" className={styles.exploreAllLink}>
-                <div className={styles.lastCardContentSection}>
-                  <p>Explore All</p>
-                  <h1 className="blue-text">28+</h1>
-                  <h5>acres of innovation, comfort, and opportunity</h5>
-                </div>
-                <div className={`py-0 ${styles.sectionHeader}`}>
-                  <PiArrowCircleRightThin fontSize={20} color="#16344E" />
-                </div>
-              </Link>
             </div>
           </div>
         </div>
@@ -211,7 +218,9 @@ export default function FacilitiesComponent({ data }) {
             <h5
               dangerouslySetInnerHTML={{ __html: facilitiesData.subheading }}
             ></h5>
-            <h1 dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}></h1>
+            <h1
+              dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}
+            ></h1>
           </div>
         </div>
         <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>
@@ -238,7 +247,8 @@ export default function FacilitiesComponent({ data }) {
                 <div className={styles.bannerContent}>
                   <div>
                     <h2>
-                      {panel.title} <BsArrowRightCircle fontSize={24} strokeWidth={0}/>
+                      {panel.title}{" "}
+                      <BsArrowRightCircle fontSize={24} strokeWidth={0} />
                     </h2>
                     <p>{panel.description}</p>
                   </div>
@@ -262,9 +272,9 @@ export default function FacilitiesComponent({ data }) {
         </section>
 
         {/* Placeholder Section */}
-        <section className="home6" ref={home6Ref}>
+        {/* <section className="home6" ref={home6Ref}>
           <figure></figure>
-        </section>
+        </section> */}
         <style>{`
         * { margin: 0; padding: 0; box-sizing: border-box; }
         section.home2, section.home3, section.home-41, .home7 { margin-top: -.5rem; }
