@@ -5,13 +5,21 @@ import PlacementComponent from "@/component/home-components/placement/PlacementC
 import AboutSchoolComponent from "@/component/school-components/about-school-component/AboutSchoolComponent";
 import TestimonialComponent from "@/component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
+import { getPageSEO } from "@/lib/seo";
+import Script from "next/script";
 
 const BASE_URL = "https://project-demo.in/jss/api";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  return await getPageSEO(slug);
+}
+
 async function getSchoolData(slug) {
   const res = await fetch(`${BASE_URL}/school/${slug}`, {
     next: { revalidate: 120 }, // cache for 2 mins
   });
-console.log(res)
+  console.log(res);
   if (!res.ok) {
     console.error("❌ API Error:", res.status);
     throw new Error(`Failed to fetch school data for ${slug}`);
@@ -22,8 +30,16 @@ export default async function SchoolPage({ params }) {
   const { slug } = params;
   const schoolData = await getSchoolData(slug);
   console.log(schoolData.sections, "schoolData.sections");
+  const seoData = await getPageSEO(slug);
   return (
     <>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoData.schema),
+        }}
+        strategy="beforeInteractive"
+      />
       <BannerComponent data={schoolData.sections.banners} />
       <BelowBannerComponent />
       {schoolData.sections.course_data.title && (

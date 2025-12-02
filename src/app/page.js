@@ -5,7 +5,12 @@ import FacilitiesComponent from "../component/home-components/facilities/Facilit
 import AboutHomeComponent from "../component/home-components/about-home-jss/AboutHomeComponent";
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
+import { getPageSEO } from "@/lib/seo";
+import Script from "next/script";
 
+export async function generateMetadata() {
+  return await getPageSEO("home"); // or 'homepage'
+}
 
 const BASE_URL = "https://project-demo.in/jss/api";
 async function getSchoolData() {
@@ -20,15 +25,23 @@ async function getSchoolData() {
   return res.json();
 }
 
-
-
 export default async function HomePage() {
+  const seoData = await getPageSEO("home");
   const homepageData = await getSchoolData();
   console.log(homepageData, "homepageData");
   return (
     <div>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoData.schema),
+        }}
+        strategy="beforeInteractive"
+      />
       <BannerComponent data={homepageData.sections.banners} />
-      <CourseOfferedComponent data={homepageData.sections.departments_section}/>
+      <CourseOfferedComponent
+        data={homepageData.sections.departments_section}
+      />
       <PlacementComponent data={homepageData.sections.placement_section} />
       <FacilitiesComponent data={homepageData.sections.facilities_section} />
       <AboutHomeComponent data={homepageData.sections.about_section} />

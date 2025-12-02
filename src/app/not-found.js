@@ -2,56 +2,51 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="page_404">
+    <span className="not-found">
       <style>
         {`
-        .page_404 {
-          padding: 40px 0;
-          background: #fff;
-          font-family: 'Arvo', serif;
-          text-align: center;
-        }
-
-        .four_zero_four_bg {
-          background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
-          height: 600px;
-          background-position: center;
-          background-size: cover;
-        }
-
-        .four_zero_four_bg h1 {
-          font-size: 80px;
-        }
-
-        .contant_box_404 {
-          margin-top: -50px;
-        }
-
-        .link_404 {
-          color: #fff !important;
-          padding: 10px 20px;
-          background: #39ac31;
-          margin: 20px 0;
-          display: inline-block;
-          border-radius: 5px;
-          text-decoration: none;
-          font-weight: bold;
-        }
+          .not-found {
+            font-family: 'Arvo', serif;
+            background: #1c1f22ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            transition: 1s;
+          }
+          .error {
+            color: #eeeeeeff;
+            box-shadow: 0 5px 0px -2px #20293F;
+            text-align: center;
+            animation: fadein 1.2s ease-in;
+          }
+          .error > .code {
+            font-size: 10.5em;
+            text-shadow:  0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+            margin: 0;
+          }
+          .error > .desc {
+            text-shadow: 0px 3px 5px rgba(0,0,0,0.5), 0px 6px 20px rgba(0,0,0,0.3);
+            font-weight: 400;
+          }
+          @keyframes fadein {
+            0% {
+              margin-top: -50px;
+              opacity: 0;
+            }
+            50% {
+              opacity: 0.5;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
       `}
       </style>
-
-      <div className="container">
-        <div className="four_zero_four_bg">
-          <h1>404 Page Not Found</h1>
-        </div>
-
-        <div className="contant_box_404">
-          <h3>Looks like you're lost</h3>
-          <p>The page you are looking for is not available!</p>
-
-          <Link href="/" className="link_404">Go to Home</Link>
-        </div>
+      <div className='error'>
+        <h1 className='code'>404</h1>
+        <h2 className='desc'>Ops... There's something wrong.</h2>
       </div>
-    </section>
+    </span>
   );
 }
