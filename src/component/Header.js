@@ -612,7 +612,7 @@ export default function Header() {
   }, [engineeringData]);
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 991;
     if (!isMobile) return;
 
     let isMounted = true;
@@ -689,12 +689,12 @@ export default function Header() {
       isMounted = false;
       controller.abort();
     };
-  }, [ContactApi]);
+  }, []);
 
   // admission API
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 991;
     if (!isMobile) return;
     const admiApifetch = async () => {
       try {
@@ -714,7 +714,7 @@ export default function Header() {
 
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 991;
     if (!isMobile) return;
     const ProgApifetch = async () => {
       try {
@@ -2398,6 +2398,7 @@ export default function Header() {
           .contact-info li {
             padding-block: 2rem;
           }
+          .admissions-menu-wrapper{width:100%}
           .admissions-menu-wrapper ul li {
             padding-block: 2rem;
           }
@@ -2578,6 +2579,7 @@ export default function Header() {
           .contact-panel {
             background: #e6ffff;
             z-index: 1;
+            width:100%
           }
           .contact-panel .contact-info {
             padding-top: 0;
