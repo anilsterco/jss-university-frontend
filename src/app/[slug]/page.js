@@ -3,7 +3,9 @@ import AboutFour from "@/component/sections/AboutFour";
 import AboutOne from "@/component/sections/AboutOne";
 import AboutThree from "@/component/sections/AboutThree";
 import AboutTwo from "@/component/sections/AboutTwo";
+import FacilityFive from "@/component/sections/FacilityFive";
 import FacilityOne from "@/component/sections/FacilityOne";
+import FacilitySix from "@/component/sections/FacilitySix";
 import FacilityThree from "@/component/sections/FacilityThree";
 import FacilityTwo from "@/component/sections/FacilityTwo";
 import TabSection from "@/component/sections/TabSection";
@@ -48,6 +50,8 @@ export default async function DynamicPage({ params }) {
     dataSlider: FacilityTwo,
     researchSection: FacilityThree,
     objectives: FacilityThree,
+    sideSection: FacilityFive,
+    featuresSection: FacilitySix,
   };
 
   return (

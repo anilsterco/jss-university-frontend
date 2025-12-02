@@ -44,11 +44,11 @@
 }
 
 .programsCount {
-  color: #b08f29;
-  letter-spacing: -8.8px;
-  font: var(--font-110);
-  font-family: "Oswald", sans-serif;
-  font-weight: normal;
+  color: #b08f29 !important;
+  letter-spacing: -8.8px !important;
+  font: var(--font-110) !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: normal !important;
 }
 
 .programsCountWrapper {
