@@ -180,6 +180,10 @@
     line-height: 30px;
   }
 
+  .bannerContentH1 span {
+    color: var(--color-e8);
+  }
+
 
   .bannerContentP {
     color: var(--color-black);
@@ -193,20 +197,28 @@
     border-bottom: 1px solid;
     font: var(--font-16);
     color: #16344E;
-   letter-spacing: 0px;
-   margin: 0 auto;
-   font-weight: 600;
+    letter-spacing: 0px;
+    margin: 0 auto;
+    font-weight: 600;
   }
 
 }
 
-@media screen and (max-width:375px){
-    .logo-content img {
-        max-width: 20rem;
-    }
-    .bannerContent{margin: 0 auto;padding-inline: 2rem;}
-    .bannerContentP{max-width: 100%;}
-    .cource-sec .cource_top {
+@media screen and (max-width:375px) {
+  .logo-content img {
+    max-width: 20rem;
+  }
+
+  .bannerContent {
+    margin: 0 auto;
+    padding-inline: 2rem;
+  }
+
+  .bannerContentP {
+    max-width: 100%;
+  }
+
+  .cource-sec .cource_top {
     padding-top: 4rem;
   }
 }

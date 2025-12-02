@@ -1706,6 +1706,7 @@ hr {
   color: var(--color-4e);
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
+  line-height: 46px;
 }
 
 /* faculty page responsive css start */
@@ -3923,10 +3924,12 @@ hr {
 @media screen and (max-width: 1366px) {
   .about_three .vsn_msn_grid {
     margin-right: -18.8rem;
+    grid-template-columns: repeat(1, 40% auto);
+    gap: 4rem;
   }
 
   .about_one {
-    padding-block: 8rem;
+    padding-block: 0rem;
   }
 
   .about_one .top_log_grid figure {
@@ -3934,7 +3937,12 @@ hr {
   }
 
   .early-slide .early_rgt {
-    max-width: 40%;
+    max-width: 60%;
+    gap: 4rem;
+  }
+
+  .about_three {
+    padding-bottom: 0rem;
   }
 
   .about_one .btm_log_grid figure {
@@ -3969,6 +3977,7 @@ hr {
   .about_five {
     padding-bottom: 8;
   }
+
 }
 
 @media screen and (max-width: 1300px) {
@@ -4048,12 +4057,36 @@ hr {
 
 @media screen and (max-width: 991px) {
   .about_one {
-    padding-block: 4rem;
+    padding-block: 4rem 0;
+  }
+
+  .inner-title {
+    padding-top: 6rem;
+  }
+
+  .about_one .estblish {
+    padding-block: 4rem 0;
   }
 
   .early-slide figure,
   .early-slide .early_rgt {
     width: 100%;
+  }
+
+  .about_one {
+    padding-top: 0;
+  }
+
+  .about_top {
+    padding-top: 0rem;
+  }
+
+  .about_bottom {
+    padding-bottom: 5rem;
+  }
+
+  .about_four {
+    padding-bottom: 5rem;
   }
 
   .early-slide .early_rgt {
@@ -4083,15 +4116,28 @@ hr {
   .about_three .vsn_msn_grid .miss-rgt .msn {
     margin-top: 3.5rem;
   }
+
+  .about_one .abt_cntnt p {
+    padding-bottom: 3rem;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
   .about_one .abt_cntnt p {
-    padding-bottom: 2rem;
+    padding-block: 4rem 2rem;
     font: var(--font-20);
     font-weight: normal;
     font-family: var(--font-Roboto);
     line-height: 1.3;
+  }
+
+  .vsn-lft {
+    height: 100%;
+  }
+
+  .about_five .quality_grid {
+    padding-block: 0;
   }
 
   .about_one .estblish {
@@ -4207,16 +4253,37 @@ hr {
   }
 
   .about_one .abt_cntnt p {
+    padding-block: 2rem;
     text-align: left;
     padding-bottom: 0;
   }
 
   .about_one {
-    padding-block: 2rem;
+    padding-block: 2rem 0;
+  }
+
+  .about_one .estblish {
+    padding-bottom: 0;
+  }
+
+  .about_bottom {
+    padding-bottom: 2rem;
+  }
+
+  .qty-rgt {
+    padding-top: 2rem;
+  }
+
+  .about_three {
+    padding-bottom: 2rem;
   }
 
   .about_one .estblish p {
     text-align: left;
+  }
+
+  .about_three .vsn_msn_grid .miss-rgt {
+    padding-right: 0;
   }
 
   .about_one .top_log_grid {
@@ -4244,3 +4311,4 @@ hr {
     padding-block: 2rem;
   }
 }
+
