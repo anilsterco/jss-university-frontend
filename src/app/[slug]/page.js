@@ -3,13 +3,16 @@ import AboutFour from "@/component/sections/AboutFour";
 import AboutOne from "@/component/sections/AboutOne";
 import AboutThree from "@/component/sections/AboutThree";
 import AboutTwo from "@/component/sections/AboutTwo";
-import TitleSection from "@/component/sections/TitleSection";
+import FacilityOne from "@/component/sections/FacilityOne";
+import FacilityThree from "@/component/sections/FacilityThree";
+import FacilityTwo from "@/component/sections/FacilityTwo";
+import TabSection from "@/component/sections/TabSection";
 import { notFound } from "next/navigation";
 
 // API fetcher
 async function fetchPageData(slug) {
   try {
-    const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
+    const res = await fetch(`http://sd7:8080/jss/api/pages/${slug}`, {
       next: { revalidate: 60 },
     });
 
@@ -28,25 +31,29 @@ export default async function DynamicPage({ params }) {
 
   if (!data) return notFound();
 
-  const hasTabs =
-    data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
+  const hasTabs = data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
 
-  // map API section types → components
   const sectionComponents = {
-    aboutOne: AboutOne,
+    topBanner: AboutOne,
     logoDesc: AboutOne,
     figureDesc: AboutOne,
     slider: AboutTwo,
     visionMission: AboutThree,
     values: AboutFour,
     qualityPolicy: AboutFive,
+    titleBanner: FacilityOne,
+    boxes: FacilityOne,
+    percentSub: FacilityOne,
+    heading: FacilityTwo,
+    dataSlider: FacilityTwo,
+    researchSection: FacilityThree,
+    objectives: FacilityThree,
   };
 
   return (
     <>
-      {/* Tabs / Title section */}
       {hasTabs && (
-        <TitleSection
+        <TabSection
           title={data.tabs.title}
           subtitle={data.tabs.subTitle}
           tabs={data.tabs.tabs}
@@ -54,7 +61,6 @@ export default async function DynamicPage({ params }) {
         />
       )}
 
-      {/* 🔥 Render sections EXACTLY in API order */}
       {data.sections?.map((section, index) => {
         const Component = sectionComponents[section.type];
         return Component ? <Component key={index} data={[section]} /> : null;
@@ -63,8 +69,6 @@ export default async function DynamicPage({ params }) {
   );
 }
 
-
-// Optional: Generate metadata for better SEO
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const actualSlug = slug ?? "home";

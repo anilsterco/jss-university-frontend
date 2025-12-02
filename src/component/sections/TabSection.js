@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function TitleSection({ title, subtitle, tabs, slug }) {
-  console.log(slug);
+export default function TabSection({ title, subtitle, tabs, slug }) {
   
   const [activeTab, setActiveTab] = useState(`/${slug}`);
 

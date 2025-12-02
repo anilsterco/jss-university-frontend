@@ -57,8 +57,14 @@
 }
 
 .about_one {
-    padding-block: 10rem;
   background-color: var(--color-f6)
+}
+
+.about_top {
+  padding-top: 10rem;
+}
+.about_bottom {
+  padding-bottom: 10rem;
 }
 
 .about_one .abt_cntnt {
