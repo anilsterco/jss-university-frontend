@@ -157,6 +157,7 @@ export default function Header() {
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
+
   useEffect(() => {
     async function fetchHeaderData() {
       try {
@@ -610,57 +611,85 @@ export default function Header() {
     }
   }, [engineeringData]);
 
-  // mob menu data
-
-  // MOB MENU API START
-
-  // contact start
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
     if (!isMobile) return;
+
+    let isMounted = true;
+    const controller = new AbortController();
+    
     const fetchContactData = async () => {
       try {
-        const res = await fetch(ContactApi);
+        const res = await fetch(ContactApi, {
+          signal: controller.signal,
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+          }
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
         const json = await res.json();
+        
+        if (!isMounted) return;
 
         if (json.status && Array.isArray(json.data) && json.data.length > 0) {
           const apiData = json.data[0];
-
-          setMobilePanels((prev) =>
-            prev.map((item) =>
-              item.name === "Contact"
-                ? {
-                    ...item,
-                    heading: apiData.title,
-                    Menu: [
-                      {
-                        name: apiData.address,
-                        url: apiData.direction_url,
-                        contactIcon: "/images/header/address-icon.svg",
-                      },
-                      {
-                        name: apiData.email,
-                        url: `mailto:${apiData.email}`,
-                        contactIcon: "/images/header/mail-icon.svg",
-                      },
-                      {
-                        name: apiData.phone,
-                        url: `tel:${apiData.phone}`,
-                        contactIcon: "/images/header/phone-icon.svg",
-                      },
-                    ],
-                  }
-                : item
-            )
-          );
+          
+          // Validate data before setting state
+          if (apiData && typeof apiData === 'object') {
+            setMobilePanels((prev) =>
+              prev.map((item) =>
+                item.name === "Contact"
+                  ? {
+                      ...item,
+                      heading: apiData.title || "Contact Us",
+                      Menu: [
+                        {
+                          name: apiData.address || "Address not available",
+                          url: apiData.direction_url || "#",
+                          contactIcon: "/images/header/address-icon.svg",
+                        },
+                        {
+                          name: apiData.email || "Email not available",
+                          url: apiData.email ? `mailto:${apiData.email}` : "#",
+                          contactIcon: "/images/header/mail-icon.svg",
+                        },
+                        {
+                          name: apiData.phone || "Phone not available",
+                          url: apiData.phone ? `tel:${apiData.phone}` : "#",
+                          contactIcon: "/images/header/phone-icon.svg",
+                        },
+                      ],
+                    }
+                  : item
+              )
+            );
+          }
+        } else {
+          console.warn("API returned unexpected data format:", json);
         }
       } catch (err) {
-        console.error("FETCH ERROR:", err);
+        if (err.name === 'AbortError') {
+          console.log('Fetch aborted');
+        } else {
+          console.error("FETCH ERROR:", err);
+          // You can set error state here if needed
+        }
       }
     };
 
     fetchContactData();
-  }, []);
+
+    // Cleanup function
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, [ContactApi]);
 
   // admission API
 
@@ -682,6 +711,8 @@ export default function Header() {
 
     admiApifetch();
   }, []);
+
+
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
     if (!isMobile) return;
