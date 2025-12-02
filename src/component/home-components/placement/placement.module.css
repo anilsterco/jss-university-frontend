@@ -49,12 +49,12 @@
 }
 
 .testimonialSwiper p {
-  font: var(--font-20);
-  font-weight: 300;
+  font: var(--font-18);
   color: var(--color-black);
   margin-bottom: 2.8rem;
   max-width: 90%;
-  font-family: var(--font-Roboto);
+   font-family: var(--font-Condensed);
+    font-weight: 300;
 }
 
 .wallOfFameText {
@@ -135,6 +135,9 @@
 .testimonialImageContainer {
   width: 45%;
   padding: 0;
+}
+.testimonialSwiper {
+  padding: 3rem;
 }
 
 @media (min-width: 2200px) and (max-width:2550) {
@@ -223,23 +226,36 @@
 @media (max-width: 767px) {
   .sectionHeader p {
     text-align: center;
+     font: var(--font-14);
+     font-family: var(--font-Condensed);
+     font-weight: bold;
   }
 
   .thirdSection {
-    padding-block: 6rem 0;
+    padding-block: 4.4rem 0;
   }
+ .testimonialSwiper{
+  padding-inline: 0;
+  padding-block: 1.2rem;
+
+}
+.testimonialSwiper p {
+  margin-bottom: 1.6rem;
+}
 
   .sectionHeader h2 {
     font: var(--font-34);
     font-family: var(--font-Condensed);
     letter-spacing: -1.63px;
     text-align: center;
+    line-height: 30px;
   }
 
   .sectionHeader h2 span {
     font: var(--font-34);
     font-family: var(--font-Condensed);
     letter-spacing: -1.63px;
+    line-height: 30px;
   }
 
   .statsNumber {

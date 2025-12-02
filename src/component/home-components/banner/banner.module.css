@@ -199,3 +199,14 @@
   }
 
 }
+
+@media screen and (max-width:375px){
+    .logo-content img {
+        max-width: 20rem;
+    }
+    .bannerContent{margin: 0 auto;padding-inline: 2rem;}
+    .bannerContentP{max-width: 100%;}
+    .cource-sec .cource_top {
+    padding-top: 4rem;
+  }
+}
