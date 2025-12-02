@@ -22,20 +22,16 @@ export default function LeadershipClient() {
     ],
   };
 
-  
-
   // ================= API CALL =================
   useEffect(() => {
     setLoading(true);
     fetch("https://project-demo.in/jss/api/leadership")
       .then((res) => res.json())
       .then((resJson) => {
-        console.log("API Response:", resJson);
         if (Array.isArray(resJson) && resJson.length > 0) {
           setTopLeader(resJson[0]);
           setLeaders(resJson.slice(1));
-        }
-        else if (resJson.data && Array.isArray(resJson.data)) {
+        } else if (resJson.data && Array.isArray(resJson.data)) {
           setTopLeader(resJson.data[0]);
           setLeaders(resJson.data.slice(1));
         }
@@ -44,28 +40,13 @@ export default function LeadershipClient() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
-    return (
-      <div className="text-center p-10">
-        <p>Loading Leadership Data...</p>
-      </div>
-    );
-  }
-
-  if (!topLeader) {
-    return (
-      <div className="text-center p-10">
-        <p>No Leadership Data Found</p>
-      </div>
-    );
-  }
-   const handleTabClick = (index) => {
-    setActiveTab(index);
+  const handleTabClick = (url) => {
+    setActiveTab(url);
   };
 
   return (
     <>
-      {/* INNER TITLE SECTION */}
+      {/* ALWAYS STATIC – does NOT depend on loading */}
       <section className="inner-title">
         <div className="container">
           <div className="innnr_head text-center">
@@ -87,58 +68,76 @@ export default function LeadershipClient() {
         </div>
       </section>
 
-      {/* TOP LEADER SECTION */}
-      <section className="leadership_one">
-        <div className="container">
-          <div className="top_img">
-            <figure>
-              <Image
-                src={topLeader.image}
-                alt={topLeader.name}
-                width={1200}
-                height={600}
-                className="img-fluid w-100"
-              />
-              <figcaption>
-                <h3>
-                  {topLeader.name}
-                  <span>{topLeader.subtitle || ""}</span>
-                </h3>
-                <p>{topLeader.designation}</p>
-              </figcaption>
-              <Link href={`/leadership/${topLeader.slug}`} className="links"></Link>
-            </figure>
-          </div>
+      {/* SHOW LOADING ONLY FOR LEADERSHIP CONTENT */}
+      {loading && (
+        <div className="text-center p-10">
+          <p>Loading Leadership Data...</p>
         </div>
-      </section>
+      )}
 
-      {/* GRID SECTION */}
-      <section className="leadership_two">
-        <div className="container">
-          <div className="leadership_grid">
-            {leaders.map((leader) => (
-              <div key={leader.id} className="leadership_grid_Bx">
-                <figure>
-                  <span>
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      width={400}
-                      height={400}
-                      style={{ width: "100%", height: "auto" }}
-                    />
-                  </span>
-                  <figcaption>
-                    <h3>{leader.name}</h3>
-                    <p>{leader.designation}</p>
-                  </figcaption>
-                </figure>
-                <Link href={`/leadership/${leader.slug}`} className="links"></Link>
-              </div>
-            ))}
-          </div>
+      {!loading && !topLeader && (
+        <div className="text-center p-10">
+          <p>No Leadership Data Found</p>
         </div>
-      </section>
+      )}
+
+      {/* WHEN DATA IS READY, SHOW CONTENT */}
+      {!loading && topLeader && (
+        <>
+          {/* TOP LEADER SECTION */}
+          <section className="leadership_one">
+            <div className="container">
+              <div className="top_img">
+                <figure>
+                  <Image
+                    src={topLeader.image}
+                    alt={topLeader.name}
+                    width={1200}
+                    height={600}
+                    className="img-fluid w-100"
+                  />
+                  <figcaption>
+                    <h3>
+                      {topLeader.name}
+                      <span>{topLeader.subtitle || ""}</span>
+                    </h3>
+                    <p>{topLeader.designation}</p>
+                  </figcaption>
+                  <Link href={`/leadership/${topLeader.slug}`} className="links"></Link>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          {/* GRID SECTION */}
+          <section className="leadership_two">
+            <div className="container">
+              <div className="leadership_grid">
+                {leaders.map((leader) => (
+                  <div key={leader.id} className="leadership_grid_Bx">
+                    <figure>
+                      <span>
+                        <Image
+                          src={leader.image}
+                          alt={leader.name}
+                          width={400}
+                          height={400}
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      </span>
+                      <figcaption>
+                        <h3>{leader.name}</h3>
+                        <p>{leader.designation}</p>
+                      </figcaption>
+                    </figure>
+                    <Link href={`/leadership/${leader.slug}`} className="links"></Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </>
   );
 }

@@ -6,13 +6,12 @@ import "@/styles/custom.style.css";
 export default function AboutOne({ data }) {
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
-      case "aboutOne":
+      case "topBanner":
         return (
           <div
-            className="row justify-content-center"
+            className="row justify-content-center about_top"
             key={`about-section-${sectionIndex}`} 
           >
-            
             {section.items
               .sort((a, b) => a.position - b.position)
               .map((item, index) => (
@@ -76,7 +75,7 @@ export default function AboutOne({ data }) {
       case "figureDesc":
         return (
           <div
-            className="row justify-content-center"
+            className="row justify-content-center about_bottom"
             key={`figure-section-${sectionIndex}`} 
           >
             <div className="col-lg-10">
