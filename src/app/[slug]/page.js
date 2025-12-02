@@ -4,6 +4,7 @@ import AboutOne from "@/component/sections/AboutOne";
 import AboutThree from "@/component/sections/AboutThree";
 import AboutTwo from "@/component/sections/AboutTwo";
 import FacilityFive from "@/component/sections/FacilityFive";
+import FacilityFour from "@/component/sections/FacilityFour";
 import FacilityOne from "@/component/sections/FacilityOne";
 import FacilitySix from "@/component/sections/FacilitySix";
 import FacilityThree from "@/component/sections/FacilityThree";
@@ -14,7 +15,7 @@ import { notFound } from "next/navigation";
 // API fetcher
 async function fetchPageData(slug) {
   try {
-    const res = await fetch(`http://sd7:8080/jss/api/pages/${slug}`, {
+    const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
       next: { revalidate: 60 },
     });
 
@@ -50,6 +51,7 @@ export default async function DynamicPage({ params }) {
     dataSlider: FacilityTwo,
     researchSection: FacilityThree,
     objectives: FacilityThree,
+    librarySection: FacilityFour,
     sideSection: FacilityFive,
     featuresSection: FacilitySix,
   };
