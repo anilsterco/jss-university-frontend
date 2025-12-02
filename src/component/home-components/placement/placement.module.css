@@ -2,7 +2,7 @@
 
 .thirdSection {
   background: #f6f6f6;
-  padding-block:5rem 12rem;
+  padding-block: 5rem 12rem;
 }
 
 .blueBg {
@@ -25,6 +25,7 @@
 .testimonialSwiper .eachSlide {
   gap: 6rem;
 }
+
 .testimonialSwiper small {
   font: var(--font-12);
   color: var(--color-black);
@@ -32,6 +33,7 @@
   margin-bottom: 2.4rem;
   display: block;
 }
+
 .testimonialSwiper h6 {
   color: #0036a1;
   font: var(--font-12);
@@ -45,6 +47,7 @@
   font-family: var(--font-Condensed);
   font-weight: 700;
 }
+
 .testimonialSwiper p {
   font: var(--font-20);
   font-weight: 300;
@@ -66,7 +69,7 @@
 
 
 
-.wallOfFameText span{
+.wallOfFameText span {
   font-family: var(--font-Condensed);
   letter-spacing: -2.4px;
   line-height: 1;
@@ -85,6 +88,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .sectionHeader p {
   text-transform: uppercase;
   color: var(--color-4e);
@@ -95,203 +99,202 @@
 }
 
 .sectionHeader h2 {
- font: var(--font-60);
- font-family: var(--font-Condensed);
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
 }
-.sectionHeader h2 span{
-   font: var(--font-60);
- font-family: var(--font-Condensed);
- letter-spacing: -2.88px;
+
+.sectionHeader h2 span {
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
 }
+
 .sectionHeader {
   margin-bottom: 4rem;
 }
+
 .leftContent {
   padding-bottom: 2rem;
   border-bottom: 1px solid #DFDFDF;
 }
+
 .testimonialImageContainer {
   width: 20%;
   height: 100%;
   padding: 1rem;
 }
+
 .mobileQuoteIcon {
   display: none;
 }
+
 .desktopQuoteIcon {
   display: block;
 }
- .testimonialImageContainer {
-    width: 45%;
-    padding: 0;
-  }
+
+.testimonialImageContainer {
+  width: 45%;
+  padding: 0;
+}
 
 @media (min-width: 2200px) and (max-width:2550) {
-.blueBg {
-  max-width: 25%;
-}
-.testimonialSwiper p {max-width: 74%;}
+  .blueBg {
+    max-width: 25%;
+  }
+
+  .testimonialSwiper p {
+    max-width: 74%;
+  }
 
 }
-@media (max-width: 1599px){
-.thirdSection {
-  padding-block: 10rem;
+
+@media (max-width: 1599px) {
+  .thirdSection {
+    padding-block: 10rem;
+  }
+
+  .fig-count {
+    padding: 3.8rem 4.4rem;
+  }
 }
-}
-@media (max-width: 1366px){
-.thirdSection {
-  padding-block: 8rem;
-}
-.max-content-lg .placement_row {
-  margin-bottom: 6rem;
-}
-.testimonialSwiper p {
-  max-width: 100%;
-}
- .testimonialImageContainer {
+
+@media (max-width: 1366px) {
+  .thirdSection {
+    padding-block: 8rem;
+  }
+
+  .max-content-lg .placement_row {
+    margin-bottom: 6rem;
+  }
+
+  .testimonialSwiper p {
+    max-width: 100%;
+  }
+
+  .testimonialImageContainer {
     width: 55%;
-    
+
   }
+
   .blueBg {
-  max-width: 25%;
-  height: 92%;
+    max-width: 25%;
+    height: 92%;
   }
 
 }
 
-
-@media (min-width: 1381px) and (max-width: 1919px) {
+@media (max-width: 1024px) {
   .testimonialImageContainer {
-    width: 30%;
-    padding: 0;
-  }
-  
-  .testimonialSwiper .eachSlide {
-    gap: 3rem;
-  }
-  .blueBg {
-    max-width: 15%;
-  }
+    width: 100%;
 
-}
-@media (min-width: 1040px) and (max-width: 1380px) {
-  .testimonialImageContainer {
-    width: 30%;
-    padding: 0;
   }
-  .thirdSection {
-    padding: 0rem 0 12rem 8rem;
-  }
- 
-  .testimonialSwiper .eachSlide {
-    gap: 2rem;
-  }
-
 
   .wallOfFameContainer {
-    width: 100%;
-  }
-  .blueBg {
-    max-width: 20%;
+    object-fit: cover;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
+@media (max-width: 991px) {
+  .thirdSection {
+    padding-block: 6rem;
+  }
+
+  .max-content-lg .placement_row {
+    margin-bottom: 6rem;
+    margin-left: 0;
+  }
+
   .testimonialImageContainer {
-    width: 30%;
+    width: 50%;
+
+
   }
-  .thirdSection {
-    padding: 2rem 0 4rem 4rem;
-  }
-  
-  .statsNumber {
-    font-size: 1.5rem;
-  }
-  .sectionHeader {
-    margin-bottom: 0;
-  }
-  .wallOfFameContainer {
-    width: 100%;
-  }
+
   .testimonialSwiper .eachSlide {
-    gap: 1rem;
+    gap: 4rem;
   }
- 
+
+  .blueBg {
+    max-width: 25%;
+    height: 100%;
+  }
 }
-@media (max-width: 768px) {
-  .thirdSection {
-    padding: 3rem 1.3rem 2rem;
-  }
+
+@media (max-width: 767px) {
   .sectionHeader p {
     text-align: center;
   }
+
+  .thirdSection {
+    padding-block: 6rem 0;
+  }
+
   .sectionHeader h2 {
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.63px;
     text-align: center;
   }
- 
-  .statsRow {
-    display: flex;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+
+  .sectionHeader h2 span {
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.63px;
   }
-  .statsRow > div {
-    width: 50%;
+
+  .statsNumber {
+    letter-spacing: -2px;
+    font: var(--font-40);
+    font-family: var(--font-Condensed);
+    font-weight: 600;
   }
-  .statsRow > div:last-child {
-    display: none;
-  }
-  .rightContent {
-    display: none !important;
-  }
-  .testimonialImageContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .testimonialSwiper .eachSlide {
-    gap: 0rem;
-    flex-wrap: wrap;
-  }
+
   .blueBg {
     display: none;
   }
- 
-  .testimonialSwiper p {
-    text-align: center;
-  }
-  .testimonialSwiper h6 {
-    text-align: center;
-  }
-  .testimonialSwiper small {
-    display: block;
-    text-align: center;
-  }
-  .testimonialIconContainer {
-    justify-content: center;
-  }
-  .testimonialImage {
-    height: 90px !important;
-    width: 90px !important;
-    border-radius: 50px !important;
-    object-fit: cover;
-  }
+
   .mobileQuoteIcon {
     display: block;
+    margin: 0 auto;
   }
+
   .desktopQuoteIcon {
     display: none;
   }
-  .sectionHeader {
-    margin-bottom: 0;
+
+  .testimonialSwiper .eachSlide {
+    display: block !important;
   }
-  .leftContent {
-    padding-bottom: 0;
-    margin-top: 5px;
-    padding-right: 0;
+
+  .testimonialImageContainer {
+    width: 8.8rem;
+    height: 8.8rem;
+    border-radius: 50% !important;
+    margin: 0 auto !important;
   }
-  .testimonialSwiper {
-    padding-top: 0 !important;
+
+  .testimonialImageContainer .testimonialImage {
+    border-radius: 50% !important;
   }
- 
+
+  .testimonialContent {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+
+  .testimonialIconContainer {
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .wallOfFameContainer {
+    display: none !important;
+  }
+
+  .recruiterSection {
+    text-align: center;
+  }
+
 }
