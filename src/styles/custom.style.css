@@ -1423,7 +1423,7 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .faulty-sec1 {
-  padding-block: 10rem;
+  padding-block: 8rem 10rem;
 }
 
 .faulty-list {
@@ -1471,7 +1471,7 @@ This is the minimum CSS that you will need in order for this to work
 .faulty-text span {
   width: 2.4rem;
   height: 2.4rem;
-  display: block;
+  display: flex;
   border: 1px solid var(--color-73);
   text-align: center;
   line-height: 2.4rem;
@@ -1523,6 +1523,15 @@ This is the minimum CSS that you will need in order for this to work
   position: relative;
 }
 
+.faulty-profile-text::before {
+  content: "";
+  position: absolute;
+  width: 4.8rem;
+  height: 0.5rem;
+  background-color: #018CE8;
+  top: -2rem;
+}
+
 .faulty-profile-text h4 {
   position: relative;
   font: var(--font-40);
@@ -1539,9 +1548,9 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .cus-profile-text {
-  margin-block: 4rem 0;
+  margin-block: 2.5rem 0;
   border-top: 0.1rem solid #0000003d;
-  padding-block: 3rem 0;
+  padding-block: 2.4rem 0;
 }
 
 .cus-profile-text h6 {
@@ -1576,7 +1585,7 @@ This is the minimum CSS that you will need in order for this to work
   content: "";
   background-color: var(--color-e8);
   position: absolute;
-  height: 20rem;
+  height: 24rem;
   width: 100%;
   top: 0;
   left: 0;
@@ -1587,6 +1596,7 @@ This is the minimum CSS that you will need in order for this to work
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
+  align-items: baseline;
 }
 
 hr {
@@ -1615,7 +1625,7 @@ hr {
 
 .profile-education {
   border-bottom: 0.1rem solid var(--color-d6);
-  padding-block: 4rem 3rem;
+  padding-block: 2.4rem 3rem;
 }
 
 .profile-education h5 {
@@ -1655,7 +1665,7 @@ hr {
 
 .research-box {
   background-color: var(--color-white);
-  padding: 1.2rem;
+  padding: 0.1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1665,6 +1675,7 @@ hr {
   display: flex;
   font: var(--font-13);
   align-items: center;
+  margin-bottom: 0;
 }
 
 .research-icon p img {
@@ -1709,6 +1720,22 @@ hr {
   line-height: 46px;
 }
 
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #018ce8;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 5px;
+  font: var(--font-16);
+  font-family: var(--font-Condensed);
+  transition: all .5s ease-out;
+}
+
+.inner-title .innnr_head.faculty-heading h3 {
+  margin-bottom: 0;
+}
+
 /* faculty page responsive css start */
 
 @media (max-width: 1366px) {
@@ -1720,6 +1747,15 @@ hr {
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
+
+  .faulty-profile {
+    padding-block: 6rem;
+    padding-inline: 5rem;
+  }
+
+  .research-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -1730,6 +1766,25 @@ hr {
   .faulty-box {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 1024px) {
+  .faulty-profile {
+    grid-template-columns: repeat(1, 1fr);
+    padding-block: 4rem;
+  }
+
+  .profile-info {
+    grid-template-columns: repeat(1, 1fr);
+    margin-inline: 0;
+    margin-top: 3rem;
+    gap: 3rem;
+  }
+
+  .faulty-detail-sec1 {
+    padding-bottom: 8rem;
+  }
+
 }
 
 @media (max-width: 540px) {
@@ -1747,6 +1802,15 @@ hr {
   .faulty-text h4 {
     font-size: 18px;
   }
+
+  .faulty-profile-text h4 {
+    font: var(--font-26);
+    color: var(--color-4e);
+    letter-spacing: -1.2px;
+    font-weight: 700;
+    font-family: var(--font-Condensed);
+    position: relative;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1756,6 +1820,20 @@ hr {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }
+
+  .faulty-profile {
+    padding-block: 3rem;
+    padding-inline: 3rem;
+  }
+
+  .profile-info {
+    gap: 0;
+  }
+
+  .faulty-detail-sec1 {
+    padding-bottom: 4rem;
+  }
+
 }
 
 /* Facilities */
@@ -4311,4 +4389,3 @@ hr {
     padding-block: 2rem;
   }
 }
-

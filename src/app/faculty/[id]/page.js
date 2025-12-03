@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/style.css";
@@ -9,12 +9,13 @@ import "@/styles/custom.style.css";
 const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function FacultyDetailPage({ params }) {
-  // React.use() se params ko unwrap karo
-  const { id } = use(params);
+  const { id } = params;
   const [faculty, setFaculty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [error, setError] = useState(null);
+  const [showFull, setShowFull] = useState(false);
+  const maxLength = 600;
 
   // Fetch faculty by ID
   const fetchFacultyDetail = async () => {
@@ -33,8 +34,6 @@ export default function FacultyDetailPage({ params }) {
       }
 
       const data = await res.json();
-      console.log("API Response data:", data);
-
       const facultyData = data.data || data.faculty || data;
 
       if (!facultyData || Object.keys(facultyData).length === 0) {
@@ -89,7 +88,7 @@ export default function FacultyDetailPage({ params }) {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-10">
-                <div className="innnr_head">
+                <div className="innnr_head ">
                   <h2>Faculty Not Found</h2>
                   {error && <p className="text-danger">Error: {error}</p>}
                   <Link href="/faculty" className="btn btn-primary mt-3">
@@ -118,6 +117,13 @@ export default function FacultyDetailPage({ params }) {
   const facultyAwards = safeFaculty.awards || [];
   const facultySocialEngagement = safeFaculty.socialEngagement || [];
 
+  const isLong = facultyProfile.length > maxLength;
+  const displayedText = !isLong
+    ? facultyProfile
+    : showFull
+    ? facultyProfile
+    : facultyProfile.slice(0, maxLength) + "...";
+
   return (
     <main className="site_main">
       {/* Title Section */}
@@ -125,7 +131,7 @@ export default function FacultyDetailPage({ params }) {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="innnr_head">
+              <div className="innnr_head faculty-heading">
                 <h2>FACULTY</h2>
                 <h3>
                   MEET OUR <span>FACULTY</span>
@@ -164,7 +170,16 @@ export default function FacultyDetailPage({ params }) {
                   {facultyProfile && (
                     <div className="cus-profile-text">
                       <h6>Profile</h6>
-                      <p>{facultyProfile}</p>
+                      <p>{displayedText}</p>
+
+                      {isLong && (
+                        <button
+                          onClick={() => setShowFull(!showFull)}
+                          className="read-more-btn"
+                        >
+                          {showFull ? "Read Less" : "Read More"}
+                        </button>
+                      )}
                     </div>
                   )}
                 </div>
@@ -178,7 +193,7 @@ export default function FacultyDetailPage({ params }) {
       <section className="faulty-detail-sec1">
         <div className="container">
           <div className="row justify-content-end">
-            <div className="col-lg-11">
+            <div className="col-xl-11 col-lg-12">
               <div className="profile-info">
                 {/* Contact Box */}
                 <div className="profile-info-box">
@@ -209,7 +224,7 @@ export default function FacultyDetailPage({ params }) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <u>{facultyLinkedin.replace(/^https?:\/\//, "")}</u>
+                          {facultyLinkedin.replace(/^https?:\/\//, "")}
                         </a>
                       </div>
                     </div>
@@ -239,32 +254,41 @@ export default function FacultyDetailPage({ params }) {
                   )}
 
                   {/* Research */}
-                  {facultyResearch && facultyResearch.length > 0 && (
+                  {facultyResearch.length > 0 && (
                     <div className="profile-education profile-research">
                       <h5>Research</h5>
                       <div className="research-list">
-                        {facultyResearch.map((key, index) => (
-                          <div className="research-box" key={index}>
-                            <div className="research-icon">
-                              <p>
-                                <img
-                                  src={key.image ? key.image : null}
-                                  alt="research-icon"
-                                />
-                                {key.title}
-                              </p>
+                        {facultyResearch
+                          .filter((item) => item.title || item.image || item.link)
+                          .map((key, index) => (
+                            <div className="research-box" key={index}>
+                              <div className="research-icon">
+                                <p>
+                                  {key.image && (
+                                    <img
+                                      src={key.image}
+                                      alt="research-icon"
+                                      width={50}
+                                      height={50}
+                                    />
+                                  )}
+                                  {key.title}
+                                </p>
+                              </div>
+
+                              {key.link && (
+                                <div className="research-link">
+                                  <Link
+                                    href={key.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <i className="bi bi-box-arrow-up-right"></i>
+                                  </Link>
+                                </div>
+                              )}
                             </div>
-                            <div className="research-link">
-                              <Link
-                                href={key.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <i className="bi bi-box-arrow-up-right"></i>
-                              </Link>
-                            </div>
-                          </div>
-                        ))}
+                          ))}
                       </div>
                     </div>
                   )}
@@ -307,7 +331,7 @@ export default function FacultyDetailPage({ params }) {
 
                   {/* Show message if no additional info */}
                   {facultyEducation.length === 0 &&
-                    Object.keys(facultyResearch).length === 0 &&
+                    facultyResearch.length === 0 &&
                     facultyTeaching.length === 0 &&
                     facultyAwards.length === 0 &&
                     facultySocialEngagement.length === 0 && (

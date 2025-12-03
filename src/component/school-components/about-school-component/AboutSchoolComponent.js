@@ -43,7 +43,7 @@ export default function AboutSchool({ data }) {
       <div className="container">
         <div className="row align-items-center">
           {/* LEFT COLUMN */}
-          <div className="col-md-6 mb-4">
+          <div className="col-xl-6 col-lg-12 mb-4">
             <div className="about_school_left">
               <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
 
@@ -66,7 +66,7 @@ export default function AboutSchool({ data }) {
               <div className="row mt-4">
                 {aboutSchoolContent.highlights &&
                   aboutSchoolContent.highlights.map((item, index) => (
-                    <div className="col-md-6 about_rnk" key={index}>
+                    <div className="col-xl-6 col-lg-6 col-sm-6 about_rnk" key={index}>
                       <div className={styles.rankingCard}>
                         <div className="counter_dfe">
                           <span className={styles.rankNumber}>{item.rank}</span>
@@ -101,7 +101,7 @@ export default function AboutSchool({ data }) {
           </div>
 
           {/* RIGHT COLUMN (IMAGE CARD) */}
-          <div className="col-md-6 px-5 py-5">
+          <div className="col-xl-6 col-lg-12">
             <div className={styles.imageCard}>
               <Image
                 src={aboutSchoolContent.chancellor_img}
