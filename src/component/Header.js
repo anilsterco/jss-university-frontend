@@ -165,7 +165,6 @@ export default function Header() {
           fetch(`${NAV_BASE_URL}`),
           fetch(`${ADMISSION_BASE_URL}`),
         ]);
-
         if (!res1.ok || !res2.ok) {
           throw new Error("One or more API calls failed");
         }
@@ -2361,6 +2360,9 @@ export default function Header() {
             .vid-thumb-cont {
               padding-right: 2rem;
             }
+            .engineering-dropdown {
+              width: 50%;
+            }
           }
           @media (max-width: 1024px) {
             .menu-middle {
@@ -2382,6 +2384,9 @@ export default function Header() {
               top: -3px;
               right: -33px;
             }
+            .engineering-dropdown {
+              width: 60%;
+            }
           }
           @media (max-width: 991px) {
             .site-header {
@@ -2395,6 +2400,9 @@ export default function Header() {
             }
             .dashbord-logo {
               display: none;
+            }
+            .engineering-dropdown {
+              width: 80%;
             }
           }
 
@@ -2422,7 +2430,7 @@ export default function Header() {
             flex-direction: column;
             box-sizing: border-box;
           }
-          
+
           .panel-wrapper .panel.open {
             transform: translateY(0);
           }
@@ -2784,6 +2792,16 @@ export default function Header() {
             .courses-menu li {
               padding: 0;
             }
+            .brand-wrap.logo-content {
+              display: block;
+            }
+            .school-toggle {
+              margin-block: 2rem;
+            }
+            .engineering-dropdown-container {
+              top: 85%;
+              left: 13%;
+            }
           }
           @media (max-width: 667px) {
             .contact-panel .contact-info li {
@@ -2805,6 +2823,17 @@ export default function Header() {
             }
             .course-heading h4 {
               max-width: 99%;
+            }
+            .site-header > .nav-container {
+              padding-inline: 0;
+            }
+            .engineering-dropdown {
+              width: 100%;
+              margin-inline: 2rem;
+            }
+            .engineering-dropdown-container {
+              top: 85%;
+              left: 0;
             }
           }
           @media (max-width: 420px) {

@@ -226,6 +226,14 @@ font: var(--font-16);
   }
 
 }
+
+@media (max-width:1024){
+.header {
+  padding-top: 4rem;
+}
+}
+
+
 @media (max-width:991) {
   .grid {
     grid-template-columns: repeat(5, 1fr);

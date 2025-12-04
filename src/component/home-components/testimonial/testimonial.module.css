@@ -3,6 +3,7 @@
 .testimonialsSection {
   background: #f5f5f5;
   padding-top: 13.5rem;
+  margin-bottom: 4rem;
 }
 
 .testimonialsContainer {
@@ -272,10 +273,18 @@
   .desktopView {
     gap: 2rem;
   }
-
+ .testimonialsSection {
+  padding-top: 8rem;
+} 
 }
 
+@media (max-width: 1024px) {
 
+ .testimonialsSection {
+  padding-top: 8rem;
+} 
+
+}
 
 @media (max-width: 991px) {
   .testimonialsSection {
@@ -289,17 +298,21 @@
   .columnMiddle {
     width: 24%;
   }
+  
 
   .quoteBar {
     padding: 2.2rem 2.2rem 2.2rem 2.2rem;
   }
+  .testimonialsLabel{margin-bottom: 2rem;}
 }
 
 @media (max-width: 768px) {
   .desktopView {
     display: none;
   }
-
+.testimonialsSection {
+  margin-bottom: 0;
+}
   .mobileView {
     display: block;
     background: #e6ffff;

@@ -3,7 +3,7 @@
 .departmentSection {
   background-color: #f6f6f6;
   min-height: 100vh;
-  padding: 6rem 10rem 5rem 10rem;
+  padding: 6rem 0rem 10rem;
 }
 
 .departmentSection .container {
@@ -17,21 +17,25 @@
   justify-content: space-between;
   margin-top: 4rem;
   height: 95%;
-  max-width:100%;
+  max-width: 100%;
 }
 
-.title {  
+.title {
   font-weight: bold;
   margin-bottom: 1rem;
-  font: var(--font-60);  
-   line-height:0.9;  
+  font: var(--font-60);
+  line-height: 0.9;
 }
-.viewAllButton svg{ margin-left: 2rem;}
-.title span{
- font-family: 'Roboto Condensed';
- letter-spacing: -2.88px;
- text-transform: uppercase;
- 
+
+.viewAllButton svg {
+  margin-left: 2rem;
+}
+
+.title span {
+  font-family: 'Roboto Condensed';
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+
 }
 
 
@@ -40,7 +44,7 @@
   color: #333;
   line-height: 1.5;
   font: var(--font-16);
-  
+
 
 }
 
@@ -149,8 +153,9 @@
   font-family: var(--font-Condensed);
   font-weight: 700;
   color: #B08F29;
-  
+
 }
+
 .browseHeader {
   color: #b59c50;
   font-weight: bold;
@@ -180,9 +185,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.6);  
+  background: rgba(255, 255, 255, 0.6);
   color: #16344E;
-  border-radius: 0px; 
+  border-radius: 0px;
   cursor: pointer;
   font: var(--font-21);
   text-decoration: none;
@@ -212,25 +217,37 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1750px) {
   .departmentSection {
-    padding: 5rem 6rem 4rem 6rem;
+    padding: 6rem 0rem 5rem;
   }
 
-  .title {
-    font-size: 48px;
+  .about_school_left {
+    border-right: 1px solid rgba(206, 206, 206, .52);
+    padding-right: 2rem;
   }
 
-  .programsCount {
-    font-size: 50px;
+}
+
+@media (max-width: 1024px) {
+  .leftSide {
+    margin-bottom: 4rem;
+  }
+
+  .departmentSection {
+    padding: 0rem 0rem;
+  }
+
+  .cardTitle {
+    max-width: 60%;
+  }
+
+  .departmentSection .container {
+    padding-bottom: 4rem;
   }
 }
 
 @media (max-width: 992px) {
-  .departmentSection {
-    padding: 4rem 4rem 3rem 4rem;
-  }
-
   .leftSide {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -255,7 +272,7 @@
   }
 
   .title {
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .programsCount {
@@ -300,20 +317,23 @@
     margin-bottom: 0.75rem;
   }
 
+  .cardTitle {
+    font: var(--font-24);
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+  }
+
   .departmentItem {
     font-size: 15px;
     padding: 0.75rem;
-  }
-
-  .cardTitle {
-    font-size: 18px;
-    bottom: 15px;
-    left: 15px;
   }
 
   .cardArrow {
     bottom: 15px;
     right: 15px;
   }
-}
 
+  .cardTitle {
+    max-width: 100%;
+  }
+}

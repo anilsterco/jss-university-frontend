@@ -33,15 +33,17 @@ export default function DepartmentSection({ data }) {
                 <p className={styles.programsText}>
                   {departmentSection.programs_text}
                 </p>
+                <div className="depar-button">
                 <Link href={`/program`}>
                   <button className={styles.viewAllButton}>
                     VIEW ALL PROGRAMMES <GoArrowRight />
                   </button>
                 </Link>
-                <br />
+               
                 <Link href={`/apply-now`}>
                   <button className={styles.applyButton}>APPLY NOW</button>
                 </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -85,7 +87,7 @@ export default function DepartmentSection({ data }) {
 
             <div className="row g-2">
               {departmentSection.departments.map((dept, index) => (
-                <div className="col-md-4" key={index}>
+                <div className="col-xl-4 col-lg-6 col-sm-12" key={index}>
                   <Link
                     href={`/department/${dept.slug}`}
                     className={styles.departmentItem}

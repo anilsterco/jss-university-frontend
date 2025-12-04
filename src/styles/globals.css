@@ -1002,12 +1002,36 @@ p {
   color: var(--color-black);
 }
 
-
-
-
 @media (max-width: 1024px) {
   .logo-content img {
     max-width: 30rem;
+  }
+
+  .grid_2 {
+    display: block;
+  }
+
+  .depar-button {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .blueBg {
+    max-width: 25%;
+    height: 100%;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .about_school_left {
+    padding-right: 0rem;
+    margin-bottom: 4rem;
+  }
+
+  .about_school_left {
+    border-right: none;
   }
 
 }
@@ -1046,9 +1070,11 @@ p {
     margin-bottom: 0rem;
     margin-left: 0;
   }
+
   .logo-content img {
     max-width: 23rem;
   }
+
 }
 
 @media screen and (max-width:375px) {
@@ -1061,11 +1087,15 @@ p {
     padding-inline: 0;
   }
 
+  .depar-button {
+    gap: 0.5rem;
+  }
+
 }
 
 
- 
-.panel{
+
+.panel {
   position: sticky;
   top: 0;
   height: 100vh;

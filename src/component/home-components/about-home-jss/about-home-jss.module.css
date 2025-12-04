@@ -417,3 +417,9 @@
     max-width: 100%;
   }
 }
+@media (max-width: 420px) {
+ .highlightBox {
+  padding: 2.4rem 2.9rem 1.9rem;
+}
+
+}
