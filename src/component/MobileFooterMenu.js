@@ -6,7 +6,8 @@ const mobilePanelsData = [
     name: "About JSS University",
     subMenu: ["Overview", "Scholarships", "International Students"],
     firstContent: {
-      title: "SRI SUTTUR MATH THE <span class='blue-text'>1000 YEAR LEGACY</span>",
+      title:
+        "SRI SUTTUR MATH THE <span class='blue-text'>1000 YEAR LEGACY</span>",
       desc: "The Genesis of the social-educational-spiritual philosophy.",
       img: "/images/header/humburger-first-banner.png",
       alt: "hamburger banner",
@@ -33,7 +34,12 @@ const mobilePanelsData = [
   },
   {
     name: "Admissions",
-    subMenu: ["Admissions Calendar", "Admission Process", "Scholarship", "International Admissions"],
+    subMenu: [
+      "Admissions Calendar",
+      "Admission Process",
+      "Scholarship",
+      "International Admissions",
+    ],
     firstContent: {
       title: "Join JSS University",
       desc: "Apply now and step into your future.",
@@ -63,14 +69,12 @@ export default function MobileFooterMenu() {
 
   return (
     <div>
-     
       <div className="panel-wrapper">
         {mobilePanelsData.map((item) => (
           <div
             key={item.name}
             className={`panel ${activePanel === item.name ? "open" : ""}`}
           >
-         
             {item.subMenu && (
               <ul>
                 {item.subMenu.map((sub, idx) => (
@@ -79,11 +83,12 @@ export default function MobileFooterMenu() {
               </ul>
             )}
 
-           
             {item.firstContent && (
               <div className="panel-banner">
                 <img src={item.firstContent.img} alt={item.firstContent.alt} />
-                <h3 dangerouslySetInnerHTML={{ __html: item.firstContent.title }} />
+                <h3
+                  dangerouslySetInnerHTML={{ __html: item.firstContent.title }}
+                />
                 <p>{item.firstContent.desc}</p>
               </div>
             )}
@@ -91,8 +96,13 @@ export default function MobileFooterMenu() {
             {/* Second Content */}
             {item.secondContent && (
               <div className="panel-banner">
-                <img src={item.secondContent.img} alt={item.secondContent.alt} />
-                <h3 dangerouslySetInnerHTML={{ __html: item.secondContent.title }} />
+                <img
+                  src={item.secondContent.img}
+                  alt={item.secondContent.alt}
+                />
+                <h3
+                  dangerouslySetInnerHTML={{ __html: item.secondContent.title }}
+                />
                 <p>{item.secondContent.desc}</p>
               </div>
             )}
@@ -100,7 +110,6 @@ export default function MobileFooterMenu() {
         ))}
       </div>
 
-    
       <div className="mobile-bottom-menu">
         <ul className="menu-list">
           {mobilePanelsData.map((item) => (
