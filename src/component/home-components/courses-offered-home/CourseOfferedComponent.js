@@ -52,15 +52,22 @@ export default function CoursesOffered({ data }) {
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false); // New state to track if search has been performed
 
   useEffect(() => {
+    if (query.trim() === "") {
+      setResults([]);
+      setLoading(false);
+      setHasSearched(false);
+      return;
+    }
+
     const delayDebounce = setTimeout(() => {
-      if (query.trim() === "") {
-        setResults([]);
-      } else {
-        searchCourses(query);
-      }
-    }, 400);
+      setHasSearched(true);
+      setLoading(true);
+      searchCourses(query);
+    }, 300);
 
     return () => clearTimeout(delayDebounce);
   }, [query]);
@@ -71,10 +78,13 @@ export default function CoursesOffered({ data }) {
         `https://project-demo.in/jss/api/courses/search?search=${keyword}`
       );
       const data = await response.json();
+
       setResults(data?.data || []);
     } catch (error) {
       console.error("Error fetching search results:", error);
       setResults([]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -91,7 +101,6 @@ export default function CoursesOffered({ data }) {
     <section className={`second-section cource-sec ${styles.secondSection}`}>
       <div className="container">
         <div className={`row cource_top ${styles.topSection}`}>
-          {/* Left side */}
           <div className="col-lg-4 mb-4 mb-lg-0">
             <h5 className={`${styles.topSectionH5}`}>{coursesData.subtitle}</h5>
             <h1
@@ -102,8 +111,7 @@ export default function CoursesOffered({ data }) {
               {coursesData.programs_text}
             </p>
 
-            {/* Search box */}
-            <div className="search-wrapper">
+            <div className="search-wrapper position-relative">
               <div
                 className={`input-group shadow-sm rounded-pill overflow-hidden`}
               >
@@ -123,23 +131,33 @@ export default function CoursesOffered({ data }) {
                 </span>
               </div>
 
-              {/* Search Results Dropdown */}
               {query.trim() !== "" && (
                 <div className="search-results">
-                  {results.length > 0 ? (
-                    results.map((item) => (
-                      <div className="search-item">
-                        <Link
-                          key={item.id}
-                          href={`/programs/${item.slug}`}
-                          className="search-link"
-                        >
-                          {item.name}
-                        </Link>
+                  {loading ? (
+                    <div className="loading">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="spinner-border spinner-border-sm me-2" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <span>Searching...</span>
                       </div>
-                    ))
+                    </div>
                   ) : (
-                    <div className="no-results">No courses found</div>
+                    <>
+                      {results.length > 0 ? (
+                        results.map((item) => (
+                          <div className="search-item" key={item.id}>
+                            <Link href={`/programs/${item.slug}`} className="search-link">
+                              {item.name}
+                            </Link>
+                          </div>
+                        ))
+                      ) : (
+                        hasSearched && (
+                          <div className="no-results">No courses found</div>
+                        )
+                      )}
+                    </>
                   )}
                 </div>
               )}
