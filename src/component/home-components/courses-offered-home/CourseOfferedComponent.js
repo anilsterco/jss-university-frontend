@@ -168,7 +168,7 @@ export default function CoursesOffered({ data }) {
               className={`d-flex align-items-center ${styles.programsCountSection}`}
             >
               <ProgramsCount />
-              <p className={styles.programsText}>{coursesData.programs_text}</p>
+              <p className={`program-hide ${styles.programsText}`}>{coursesData.programs_text}</p>
             </div>
           </div>
 
