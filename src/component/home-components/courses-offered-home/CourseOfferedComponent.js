@@ -118,7 +118,7 @@ export default function CoursesOffered({ data }) {
                 <input
                   type="text"
                   className="form-control border-0"
-                  placeholder="Search Programe"
+                  placeholder="Search Course"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
