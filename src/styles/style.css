@@ -29,6 +29,261 @@ html {
   font-size: 62.5%;
 }
 
+/* Base root variables (Desktop default, 1920px+) */
+:root {
+  --font-Roboto: "Roboto", sans-serif;
+  --font-main: "Roboto Condensed", sans-serif;
+  --font-Geist: "Geist", sans-serif;
+  --font-Condensed: "Roboto Condensed", sans-serif;
+
+  /* Colors */
+  --color-f6: #f6f6f6;
+  --color-e8: #018ce8;
+  --color-f5: #ddebf5;
+  --color-d4: #d4d4d4;
+  --color-d6: #d6d6d6;
+  --color-be: #bebebe;
+  --color-4e: #16344e;
+  --color-29: #b08f29;
+  --color-21: #212121;
+  --color-27: #272727;
+  --color-100: #ffc100;
+  --color-ai: #0036a1;
+  --color-fff: #e6ffff;
+  --color-73: #994073;
+  --color-36: #eb5f36;
+  --color-ff: #0099ff;
+  --color-d9: #d9d9d9;
+  --color-a0: #a02b2d;
+  --color-00: #ffa600;
+  --color-1c: #af251c;
+  --color-9a: #00489a;
+  --color-60: #ff6600;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-ec: #ecc820;
+
+  /* Font Sizes */
+  --font-110: normal 300 11rem / 1.218 var(--font-Geist);
+  --font-100: normal 100 10rem / 1.218 var(--font-Roboto);
+  --font-80: normal bold 8rem / 1.2 var(--font-Roboto);
+  --font-60: normal bold 6rem / 1 var(--font-Roboto);
+  --font-52: normal bold 5.2rem / 1.2 var(--font-Roboto);
+  --font-51: normal bold 5.1rem / 1.2 var(--font-Roboto);
+  --font-50: normal bold 5rem / 1.2 var(--font-Roboto);
+  --font-48: normal 500 4.8rem / 1.2 var(--font-Roboto);
+  --font-45: normal bold 4.5rem / 1.2 var(--font-Roboto);
+  --font-42: normal bold 4.2rem / 1.2 var(--font-Roboto);
+  --font-40: normal bold 4rem / 1.2 var(--font-Roboto);
+  --font-38: normal 500 3.8rem / 1.2 var(--font-Roboto);
+  --font-36: normal bold 3.6rem / 1.2 var(--font-Roboto);
+  --font-34: normal bold 3.4rem / 1.2 var(--font-Roboto);
+  --font-32: normal bold 3.2rem / 1.2 var(--font-Roboto);
+  --font-30: normal bold 3rem / 1.2 var(--font-Roboto);
+  --font-29: normal bold 2.9rem / 1.2 var(--font-Roboto);
+  --font-28: normal bold 2.8rem / 1.2 var(--font-Roboto);
+  --font-26: normal bold 2.6rem / 1.4 var(--font-Roboto);
+  --font-24: normal 500 2.4rem / 1.2 var(--font-Roboto);
+  --font-22: normal 500 2.2rem / 1.2 var(--font-Roboto);
+  --font-21: normal normal 2.1rem / 1.2 var(--font-Roboto);
+  --font-20: normal bold 2rem / 1.2 var(--font-Roboto);
+  --font-19: normal normal 1.8rem / 1.2 var(--font-Roboto);
+  --font-18: normal normal 1.8rem / 1.2 var(--font-Roboto);
+  --font-17: normal normal 1.7rem / 1.1 var(--font-Roboto);
+  --font-16: normal normal 1.6rem / 1.5 var(--font-Roboto);
+  --font-15: normal normal 1.5rem / 1.2 var(--font-Roboto);
+  --font-14: normal normal 1.4rem / 1.2 var(--font-Roboto);
+  --font-13: normal normal 1.3rem / 1.2 var(--font-Roboto);
+  --font-12: normal normal 1.4rem / 1.4 var(--font-Roboto);
+  --line-height-31: calc(3.1rem / 2.6rem);
+  --line-height-30: calc(3rem / 2.1rem);
+  --line-height-22: calc(2.2rem / 1.4rem);
+  --line-height-21: calc(2.1rem / 1.4rem);
+  --line-height-19: calc(1.9rem / 1.2rem);
+  --line-height-15: calc(1.5rem / 1.2rem);
+}
+
+.main-container .container {
+  max-width: 1395px;
+}
+
+.footer_section .container {
+  max-width: 1395px;
+}
+
+@media (max-width: 1750px) {
+  .main-container .container {
+    max-width: 1274px;
+  }
+
+  .footer_section .container {
+    max-width: 1395px;
+  }
+
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 1650px) {
+  html {
+    font-size: 50.5%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  html {
+    font-size: 48.5%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .main-container .container {
+    max-width: 1000px;
+  }
+
+  html {
+    font-size: 40.5%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .main-container .container {
+    max-width: 1000px;
+  }
+
+  .footer_section .container {
+    max-width: 1000px;
+  }
+
+  html {
+    font-size: 45.5%;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .main-container .container {
+    max-width: 758;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .main-container .container {
+    max-width: 640px;
+    padding-inline: 2rem;
+  }
+
+  .footer_section .container {
+    max-width: 640px;
+    padding-inline: 2rem;
+  }
+
+}
+
+@media (min-width: 1921px) {
+  html {
+    font-size: 65%;
+  }
+
+  .main-container .container {
+    max-width: 1570px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .footer_section .container {
+    max-width: 1570px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hamb_grid_menus {
+    grid-template-columns: 20% 78%;
+    min-height: 66vh;
+  }
+
+  .hamb_grid_menus .hamb_menu_item {
+    grid-template-columns: 21% 79%;
+  }
+
+  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
+    padding-right: 12rem;
+  }
+
+  .dropdown {
+    max-width: 1820px;
+  }
+
+  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
+    max-width: 70%;
+  }
+
+  .menu-counter p {
+    max-width: 36.5%;
+  }
+
+  .mega-menu.active-hover .hambmenu_panel {
+    padding: 19rem 0 0 0;
+  }
+
+}
+
+@media (min-width: 2201px) {
+  .main-container .container {
+    max-width: 1840px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .footer_section .container {
+    max-width: 1840px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  html {
+    font-size: 69.5%;
+  }
+
+  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
+    padding-right: 8rem;
+  }
+
+  .hamb_grid_menus .hamb_menu_item p {
+    max-width: 90%;
+  }
+
+  .hamb_grid_menus {
+    min-height: 60vh;
+  }
+
+  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
+    max-width: 68%;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 50.5%;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+}
+
+
+
 @media (max-width: 1750px) {
   .container {
     max-width: 1274px;

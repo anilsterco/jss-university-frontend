@@ -102,7 +102,7 @@ export default function TestimonialsSection({ data }) {
               {testimonialsData.subtitle}
             </p>
             <h2
-              className={` ${styles.mainHeading}`}
+              className={`${styles.mainHeading}`}
               dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
             ></h2>
             <Link href="#testimonials">
@@ -269,8 +269,8 @@ function TestimonialCard({ data, onPlay }) {
           {data.course}, {data.batch}
         </p>
         <p className={styles.personRole}>
-          {data.designation && data.designation}, {data.company && data.company}
-          , {data.location && data.location}
+          {data.designation && data.designation} {data.company && data.company}
+           {data.location && data.location}
         </p>
       </div>
     </article>

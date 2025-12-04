@@ -189,7 +189,7 @@ export default function Footer() {
               <p className="mb-0">
                 Website Design and Development by{" "}
                 <a href="https://www.stercodigitex.com/" target="_blank">
-                  Sterco
+                  Sterco Digitex
                 </a>{" "}
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function Footer() {
                 <p className="mb-0">
                   Website Design and Development by{" "}
                   <a href="https://www.stercodigitex.com/" target="_blank">
-                    Sterco
+                    Sterco Digitex
                   </a>
                 </p>
               </div>
