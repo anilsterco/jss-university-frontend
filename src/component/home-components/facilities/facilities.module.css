@@ -26,7 +26,7 @@
 .bannerContent {
   z-index: 20;
   color: #fff;
-  width: 45%;
+  width: 60%;
   position: absolute;
   top: 8%;
   left: 14%;
@@ -192,7 +192,9 @@
   .verticalLine {
     left: 12%;
   }
-
+.bannerContent {
+  width: 50%;
+}
 }
 
 @media (max-width:1799px) {

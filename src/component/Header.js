@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
+import { color } from "framer-motion";
 
 const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
 const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
@@ -827,7 +828,7 @@ export default function Header() {
           <div className="mob-logo">
             <Link href="/" aria-label="Home">
               <Image
-                src="/images/header/header-logo.png"
+                src="/images/header/jss-moblogo.png"
                 className="site-logo"
                 alt="Site Logo"
                 width={299}
@@ -962,10 +963,12 @@ export default function Header() {
                                     key={idx}
                                     href={cta.url}
                                     className={`cta program_btn ${cta.type}`}
+                                    style={{ color: "inherit" }}
                                   >
                                     {cta.text}
                                     <svg
                                       className="cta-arrow"
+                                      style={{ marginLeft: "2rem" }}
                                       xmlns="http://www.w3.org/2000/svg"
                                       width="16"
                                       height="16"
@@ -1885,19 +1888,49 @@ export default function Header() {
             border: 1px solid #ffc100;
             padding: 1rem 2rem;
             display: inline-flex;
-            color: var(--color-4e);
             font: var(--font-18);
             font-family: var(--font-Condensed);
-            font-weight: 700;
             align-items: center;
             gap: 3rem;
             var(--color-4e)-space: nowrap;
             -webkit-transition: all 0.5s ease;
             color: #000;
+            font-weight: 600;
+            letter-spacing: 0.72px;
+          }
+          .mega-ctas {
+            font: var(--font-13);
+            font-family: var(--font-Condensed);
+            letter-spacing: 0.72px;
+            cursor: pointer;
+            color: #16344e !important;
+            background: #fff;
+            border: 1px solid rgba(22, 52, 78, 0.4);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            max-width: 22rem;
+          }
+          .cta.program_btn {
+            display: flex;
+            justify-content: space-around;
+            color: inherit;
           }
           .ad-left .ad-ctas .cta.applynow.secondary {
             border: 1px solid #fff;
             color: #fff;
+            font: var(--font-18);
+            font-family: var(--font-Condensed);
+            font-weight: 600;
+            letter-spacing: 0.72px;
+          }
+          .applynow.primary {
+            background: #ffc100;
+            font: var(--font-18);
+            font-family: var(--font-Condensed);
+          }
+          .applynow.primary:hover {
+            color: #fff !important;
           }
 
           .ad-middle {
@@ -2343,6 +2376,16 @@ export default function Header() {
             .acresData p {
               max-width: 46%;
             }
+            .mega-left {
+              width: 50rem;
+            }
+            .mega-right {
+              width: 72%;
+            }
+
+            .mega-right-text {
+              width: 26%;
+            }
           }
 
           @media (max-width: 1100px) {
@@ -2353,16 +2396,20 @@ export default function Header() {
             .mega-right-text {
               max-width: 100%;
             }
-            .banner {
-              width: 200px;
-              height: 130px;
-            }
+
             .vid-thumb-cont {
               padding-right: 2rem;
             }
             .engineering-dropdown {
               width: 50%;
             }
+            .ad-left {
+              padding: 4rem;
+            }
+            .ad-middle{
+               padding: 4rem;
+            }
+            .admission-dropdown{top:16rem}
           }
           @media (max-width: 1024px) {
             .menu-middle {
@@ -2386,6 +2433,16 @@ export default function Header() {
             }
             .engineering-dropdown {
               width: 60%;
+            }
+            .mega-right-banners {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .mega-right-text {
+              width: 65%;
+            }
+            .mega-left {
+              width: 40rem;
             }
           }
           @media (max-width: 991px) {
