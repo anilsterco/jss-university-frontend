@@ -188,6 +188,9 @@ body {
     max-width: 640px;
     padding-inline: 2rem;
   }
+  .program-hide{
+    display: none !important;
+  }
 
 }
 

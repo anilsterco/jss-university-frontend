@@ -89,7 +89,7 @@ export default function CoursesOffered({ data }) {
   };
 
   const ProgramsCount = () => (
-    <div className={styles.programsCountWrapper}>
+    <div className={`program-hide ${styles.programsCountWrapper}`} >
       <h1 className={`display-4 programs-count ${styles.programsCount}`}>
         {coursesData.programs_count}
       </h1>
