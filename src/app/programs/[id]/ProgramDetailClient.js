@@ -92,7 +92,7 @@ export default function ProgramDetailClient({ params }) {
     apply_now_link
   } = programData;
 
-  const text = testimonials[0].short_description || "";
+  const text = testimonials[0]?.short_description || "";
   const [firstWord, ...restWords] = text.split(" ");
 
   return (

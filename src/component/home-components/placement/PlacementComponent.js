@@ -148,10 +148,10 @@ export default function PlacementsSection({ data }) {
                             color="#b08f29"
                             fontSize={30}
                           />
-                          <p className="">{t.short_description}”</p>
+                          <p>{t.short_description}</p>
                           <h6 className="small fw-bold">{t.name}</h6>
                           <small className="small-text">
-                            {t.designation}, {t.company}
+                            {t.designation} {t.company}
                           </small>
                           <div
                             className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
@@ -216,6 +216,7 @@ export default function PlacementsSection({ data }) {
                     <Swiper
                     modules={[Navigation, Autoplay]}
                     navigation={false}
+                    autoplay={true}
                     loop={true}
                     spaceBetween={20}
                     slidesPerView={6}
