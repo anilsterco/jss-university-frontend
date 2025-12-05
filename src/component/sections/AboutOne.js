@@ -12,7 +12,7 @@ export default function AboutOne({ data }) {
             className="row justify-content-center about_top"
             key={`about-section-${sectionIndex}`} 
           >
-            {section.items
+              {section.items
               .sort((a, b) => a.position - b.position)
               .map((item, index) => (
                 <div

@@ -13,7 +13,7 @@ export default function ProgramClient() {
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [schoolData, setSchoolData] = useState([]);
   const [programData, setProgramData] = useState([]);
-  const [activeProgram, setActiveProgram] = useState("under-graduate");
+  const [activeProgram, setActiveProgram] = useState("");
   const [loading, setLoading] = useState(true);
   const [searchProgram, setSearchProgram] = useState("");
   const [programListingData, setProgramListingData] = useState([]);
@@ -56,7 +56,7 @@ export default function ProgramClient() {
   const fetchPrograms = async () => {
     let url = `${BASE_URL}/programs/${activeProgram}`;
     const params = [];
-
+  
     if (selectedSchool) {
       params.push(`school_id=${encodeURIComponent(selectedSchool)}`);
     }

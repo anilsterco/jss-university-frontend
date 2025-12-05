@@ -93,10 +93,11 @@
 }
 
 .sourceText {
-  color: var(--color-4e);
+  color: var(--color-black);
   font: var(--font-21);
   font-family: var(--font-Condensed);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .topSection p {
@@ -147,8 +148,9 @@
 
 
 .fifthSectionSlider :global(.about-pagination .swiper-pagination-bullet-active) {
-  background-color: #16344e;
+  background-color: #ffffff;
   transform: scale(1.5);
+  border: solid 1px #f7bf3e;
 }
 
 .onlyMobile {
@@ -401,7 +403,8 @@
     color: var(--color-black);
     font-family: var(--font-Condensed);
   }
-    .accreditationLogo {
+
+  .accreditationLogo {
     width: 100%;
     height: auto;
     max-width: 75px;
@@ -417,9 +420,10 @@
     max-width: 100%;
   }
 }
+
 @media (max-width: 420px) {
- .highlightBox {
-  padding: 2.4rem 2.9rem 1.9rem;
-}
+  .highlightBox {
+    padding: 2.4rem 2.9rem 1.9rem;
+  }
 
 }

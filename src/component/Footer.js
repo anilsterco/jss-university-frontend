@@ -159,7 +159,7 @@ export default function Footer() {
                     <ul className="list-unstyled">
                       {data.sections.map((section, i) => (
                         <li key={i}>
-                          <a href="#">{section.title}</a>
+                          <a href="#" className="links-itams">{section.title}</a>
                         </li>
                       ))}
                     </ul>
@@ -386,6 +386,7 @@ export default function Footer() {
           color: var(--color-white);
           font-weight: 700;
           letter-spacing: -0.38px;
+        
         }
         .quick-item {
           gap: 1.3rem;
@@ -464,7 +465,7 @@ export default function Footer() {
           width: 0.3rem;
           height: 0.3rem;
           position: absolute;
-          top: 0.5rem;
+          top: 0.7rem;
           left: -0.8rem;
         }
         @media (max-width: 1280px) {
@@ -502,8 +503,9 @@ export default function Footer() {
           padding-bottom: 0.6rem;
           font-family: var(--font-Roboto);
         }
-        .mobFooter .list-unstyled li a {
+        .mobFooter .list-unstyled li .links-itams {
           color: var(--color-white);
+          text-transform: uppercase!important;
         }
         .mobFooter .text-info {
           color: #0099ff;

@@ -89,7 +89,7 @@ export default function EventsGrid({ data }) {
   const eventsData = data ? data : dummyEventsData;
   return (
     <section className={styles.eventSection}>
-      <div className={` container-fluid ${styles.desktopView}`}>
+      <div className={` happining-sec container-fluid ${styles.desktopView}`}>
         <div className={styles.header}>
           <p className={styles.headerSmall}>{eventsData.subtitle}</p>
           <h1
@@ -130,7 +130,7 @@ export default function EventsGrid({ data }) {
             </div>
 
             {/* Event 2 */}
-            <div className={styles.card} style={{ backgroundColor: "#C84B3A" }}>
+            <div className={styles.card} style={{ backgroundColor: "#AF251C" }}>
               <p className={styles.cardTag}>
                 {eventsData.happenings[1] &&
                   eventsData.happenings[1].event_type}
@@ -319,7 +319,7 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[8].alt_text
                   }
                   width={100}
-                  height={90}
+                  height={40}
                   className={styles.cardImage}
                 />
               )}
