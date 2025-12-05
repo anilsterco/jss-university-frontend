@@ -2,7 +2,7 @@
 
 .thirdSection {
   background: #f6f6f6;
-  padding-block: 5rem 12rem;
+  padding-block: 10rem 12rem;
 }
 
 .blueBg {
@@ -38,9 +38,10 @@
   color: #0036a1;
   font: var(--font-12);
   letter-spacing: 0px;
-  font-family: var(--font-Condensed);
+  font-family: var(--font-Roboto);
   margin-bottom: 0.5rem;
 }
+
 
 .statsLabel {
   font: var(--font-14);

@@ -53,7 +53,7 @@ export default function CoursesOffered({ data }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false); // New state to track if search has been performed
+  const [hasSearched, setHasSearched] = useState(false); 
 
   useEffect(() => {
     if (query.trim() === "") {

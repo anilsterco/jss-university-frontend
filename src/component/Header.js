@@ -14,7 +14,7 @@ const SCHOOL_DEPARTMENT_URL =
   "https://project-demo.in/jss/api/school-department-list";
 
 const ContactApi = "https://project-demo.in/jss/api/contact-info";
-const Addmision_Api = "https://project-demo.in/jss/api/admission";
+// const Addmision_Api = "https://project-demo.in/jss/api/admission";
 const Program_Api = "https://project-demo.in/jss/api/program-list";
 
 const mobilePanelsData = [
@@ -97,7 +97,7 @@ const mobilePanelsData = [
 
   {
     name: "Contact",
-    heading: "CAMPUS ADDRESS",
+    heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
     icon: "/images/header/contact-mob.svg",
     // Menu: [
@@ -156,7 +156,7 @@ export default function Header() {
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
-  const [mobAdmission, setMobadmission] = useState(null);
+  // const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
 
   useEffect(() => {
@@ -631,11 +631,8 @@ export default function Header() {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-
         const json = await res.json();
-
         if (!isMounted) return;
-
         if (json.status && Array.isArray(json.data) && json.data.length > 0) {
           const apiData = json.data[0];
 
@@ -677,13 +674,11 @@ export default function Header() {
           console.log("Fetch aborted");
         } else {
           console.error("FETCH ERROR:", err);
-          // You can set error state here if needed
         }
       }
     };
 
     fetchContactData();
-
     // Cleanup function
     return () => {
       isMounted = false;
@@ -693,24 +688,24 @@ export default function Header() {
 
   // admission API
 
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-    const admiApifetch = async () => {
-      try {
-        const res = await fetch(Addmision_Api);
-        const json = await res.json();
+  // useEffect(() => {
+  //   const isMobile = window.innerWidth <= 991;
+  //   if (!isMobile) return;
+  //   const admiApifetch = async () => {
+  //     try {
+  //       const res = await fetch(Addmision_Api);
+  //       const json = await res.json();
 
-        if (json.success) {
-          setMobadmission(json.data);
-        }
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
+  //       if (json.success) {
+  //         setMobadmission(json.data);
+  //       }
+  //     } catch (err) {
+  //       console.error("Error fetching API:", err);
+  //     }
+  //   };
 
-    admiApifetch();
-  }, []);
+  //   admiApifetch();
+  // }, []);
 
   useEffect(() => {
     const isMobile = window.innerWidth <= 991;
@@ -726,7 +721,7 @@ export default function Header() {
     };
 
     ProgApifetch();
-  }, []);
+  }, [mobProgramList]);
 
   // MOB MENU API END
 
@@ -1306,7 +1301,7 @@ export default function Header() {
               {/* Admissions tab */}
               {item.name === "Admissions" &&
                 activePanel === "Admissions" &&
-                mobAdmission && (
+                admissionData && (
                   <div className="admissions-menu-wrapper">
                     <ul className="admissions-menu">
                       <div className="admissions-heading">
@@ -1315,7 +1310,7 @@ export default function Header() {
                         ></h4>
                       </div>
 
-                      {mobAdmission.middle.links.map((link, idx) => (
+                      {admissionData.middle.links.map((link, idx) => (
                         <li key={idx}>
                           <a href={link.url}>{link.title}</a>
                         </li>
@@ -1323,13 +1318,13 @@ export default function Header() {
                     </ul>
                     {/* LEFT SECTION */}
                     <div className="admissions-contact">
-                      <h4>{mobAdmission.left.querytext}</h4>
+                      <h4>{admissionData.left.querytext}</h4>
 
                       <ul>
                         <li>
                           <img src="/images/header/mail-icon.svg" alt="email" />
-                          <a href={`mailto:${mobAdmission.left.email}`}>
-                            {mobAdmission.left.email}
+                          <a href={`mailto:${admissionData.left.email}`}>
+                            {admissionData.left.email}
                           </a>
                         </li>
 
@@ -1338,14 +1333,14 @@ export default function Header() {
                             src="/images/header/phone-icon.svg"
                             alt="phone"
                           />
-                          <a href={`tel:${mobAdmission.left.phone}`}>
-                            {mobAdmission.left.phone}
+                          <a href={`tel:${admissionData.left.phone}`}>
+                            {admissionData.left.phone}
                           </a>
                         </li>
                       </ul>
 
                       <div className="contactBtn">
-                        {mobAdmission.left.ctas.map((btn, idx) => (
+                        {admissionData.left.ctas.map((btn, idx) => (
                           <a
                             key={idx}
                             href={btn.url}
@@ -2406,10 +2401,12 @@ export default function Header() {
             .ad-left {
               padding: 4rem;
             }
-            .ad-middle{
-               padding: 4rem;
+            .ad-middle {
+              padding: 4rem;
             }
-            .admission-dropdown{top:16rem}
+            .admission-dropdown {
+              top: 16rem;
+            }
           }
           @media (max-width: 1024px) {
             .menu-middle {
@@ -2527,7 +2524,7 @@ export default function Header() {
             list-style: none;
             padding: 0;
             margin: 0;
-            padding: 5rem 4rem 12rem;
+            padding: 5rem 2rem 12rem;
             width: 100%;
           }
           .courses-panel {
@@ -2577,7 +2574,7 @@ export default function Header() {
           }
           .courses-menu figcaption {
             position: absolute;
-            bottom: 2rem;
+            bottom: 0rem;
             left: 0;
             width: 100%;
             padding: 1.2rem;
@@ -2593,6 +2590,7 @@ export default function Header() {
             font-family: var(--font-Condensed);
             letter-spacing: -0.6px;
             color: #fff;
+            text-transform: uppercase;
           }
           .course-heading h4 {
             text-align: center;
@@ -2616,7 +2614,7 @@ export default function Header() {
           }
           .admissions-contact {
             background: #e6ffff;
-            padding: 2rem 4rem 16rem;
+            padding: 2rem 2rem 16rem;
           }
           .admissions-heading h4 {
             font: var(--font-45);
@@ -2899,7 +2897,7 @@ export default function Header() {
             }
             .admissions-contact {
               background: #e6ffff;
-              padding: 2rem 4rem 12rem;
+              padding: 2rem 2rem 12rem;
             }
             .contact-panel .contact-info li {
               max-width: 100%;

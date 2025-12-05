@@ -19,12 +19,11 @@ export default function TabSection({ title, subtitle, tabs, slug }) {
           <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
           <ul>
             {tabs.map((tab, i) => (
-              <Link href={tab.url}>
+              <Link href={tab.url} >
               <li
                 key={i}
                 className={tab.url === activeTab ? "active" : ""}
-                onClick={() => onTabClick(tab.url)}
-              >
+                onClick={() => onTabClick(tab.url)}>
                 {tab.text}
               </li>
               </Link>

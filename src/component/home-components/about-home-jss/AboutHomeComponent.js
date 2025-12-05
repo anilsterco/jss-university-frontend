@@ -105,7 +105,7 @@ export default function LegacySection({ data }) {
             </div>
 
             {/* Right Content */}
-            <div className={`col-lg-7 ${styles.rightColumn}`}>
+            <div className={`col-lg-7 about-imgcol ${styles.rightColumn}`}>
               <p className={`fw-light ${styles.description}`}>
                 {legacyData.description}
               </p>

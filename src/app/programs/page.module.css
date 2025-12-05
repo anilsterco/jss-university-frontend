@@ -1631,7 +1631,7 @@
   }
   
   .programCategoryBox {
-    padding: 1rem;
+    padding: 2rem;
   }
   
   .programCategoryBox p {
@@ -1639,7 +1639,7 @@
     margin-bottom: 0;
   }
    .programCategoryBox {
-    padding: 0rem;
+    padding: 2rem;
   }
   
   .programCategoryBox .formCheck {
@@ -1702,13 +1702,11 @@
 /* Ensure proper touch targets on mobile */
 @media (max-width: 767px) {
   .programCategoryBox .formCheck {
-    min-height: 44px; /* Minimum touch target size */
+    min-height: 44px;
   }
-  
   .cusProgramBox {
-    min-height: 200px; /* Ensure cards have proper height on mobile */
+    min-height: 200px; 
   }
-  
   .loadMoreContainer a {
     min-height: 44px;
     display: inline-flex;
@@ -1720,7 +1718,7 @@
 /* Fix for very small screens */
 @media (max-width: 375px) {
   .programCategoryBox {
-    padding: 0.8rem;
+    padding: 2rem;
   }
   
   .searchBox input {

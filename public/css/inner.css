@@ -411,7 +411,14 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 991px) {
+  .inner-title {
+    padding-top: 10rem;
+}
+.inner-title .innnr_head h3 {
+    font: var(--font-30);
+    letter-spacing: -1.30px;
+}
   .about_four .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -434,6 +441,10 @@
   .about_four .values-grid {
     grid-template-columns: 1fr;
   }
+  .inner-title {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+}
 }
 
 .about_five {
