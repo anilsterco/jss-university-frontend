@@ -96,7 +96,6 @@ export default function ContactClient() {
       }
 
       const data = await res.json();
-      console.log("API Response:", data);
 
       alert("Form submitted successfully!");
 

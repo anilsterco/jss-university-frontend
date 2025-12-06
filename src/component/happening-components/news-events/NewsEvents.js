@@ -37,7 +37,6 @@ export default function EventsSection() {
     queryKey: ["news-events", filters.month, filters.school, filters.page],
     queryFn: () => {
       const queryParams = buildQueryParams();
-      console.log(queryParams);
       const endpoint = `/happenings?${queryParams}`;
       return happeningAPI.getEvents(endpoint);
     },
