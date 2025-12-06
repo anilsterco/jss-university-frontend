@@ -5,20 +5,39 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import "@/styles/style.css";
+import { 
+  useSearchParams, 
+  useRouter, 
+  usePathname 
+} from "next/navigation";
 
 const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function ProgramClient() {
+ const params = useSearchParams();
+const router = useRouter();
+const pathname = usePathname();
+
+const [activeProgram, setActiveProgram] = useState("under-graduate");
   const [selectedSchool, setSelectedSchool] = useState(null);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [schoolData, setSchoolData] = useState([]);
   const [programData, setProgramData] = useState([]);
-  const [activeProgram, setActiveProgram] = useState("");
   const [loading, setLoading] = useState(true);
   const [searchProgram, setSearchProgram] = useState("");
   const [programListingData, setProgramListingData] = useState([]);
   const timeoutRef = useRef(null);
   const [page, setPage] = useState(1);
+
+
+useEffect(() => {
+  const type = params.get("type");
+
+  if (type) {
+    setActiveProgram(type);   // activate selected tab
+    router.replace(pathname); // remove ?type from URL
+  }
+}, [params]);
 
   useEffect(() => {
     setLoading(true);

@@ -159,6 +159,8 @@ export default function Header() {
   // const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
 
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
   useEffect(() => {
     async function fetchHeaderData() {
       try {
@@ -180,246 +182,10 @@ export default function Header() {
   }, []);
 
   const [activePanel, setActivePanel] = useState(null);
-  const togglePanel = (name) => {
-    setActivePanel(activePanel === name ? null : name);
-  };
 
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
 
-  // const navLinks = [
-  //   {
-  //     name: "ABOUT",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "ABOUT JSS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Learn more about JSS legacy, history and leadership history and leadership.",
-  //       ctas: [
-  //         { text: "Read More", href: "#", type: "primary" },
-  //         // { text: "Leadership", href: "#", type: "secondary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "UNDER GRADUTE",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "POST GRADUTE",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "PHD",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "ACADEMICS",
-  //     url: "/",
-  //     children: [
-  //       { title: "Schools", url: "/schools/school-of-engineering" },
-  //       { title: "Departments", url: "/department/mechanical-engineering" },
-  //       { title: "Programs", url: "/programs" },
-  //     ],
-  //     right: {
-  //       subtitle: "PROGRAMS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Leading the revolution in integrated learning where students shape their own future.",
-  //       ctas: [
-  //         { text: "VIEW ALL PROGRAMMES", url: "/programs", type: "primary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "Under Graduate",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Post Graduate",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "PhD Programmes",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "LIFE@JSS",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "JOIN JSS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Apply now and step into your future at JSS Noida.",
-  //       ctas: [
-  //         { text: "Apply Now", href: "#", type: "primary" },
-  //         // { text: "Download Syllabus", href: "#", type: "secondary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "Scholarships",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Eligibility",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "FAQs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "PLACEMENTS",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "CAMPUS FACILITIES",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
-  //       ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Hostels",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Events",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "RESEARCH",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "SUPPORT & LIFE",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Guidance, mentoring and vibrant student support activities.",
-  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Life @ JSS",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Mentoring",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "FACILITIES",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "SUPPORT & LIFE",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Guidance, mentoring and vibrant student support activities.",
-  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Life @ JSS",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Mentoring",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  // ];
-
-  // const admissionsData = {
-  //   left: {
-  //     subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
-  //     title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
-  //     desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
-  //     querytext: "Any Query ? please mail us.",
-  //     email: "principal@jssaten.ac.in",
-  //     phone: "+91-9311830458",
-  //     ctas: [
-  //       { text: "APPLY NOW", url: "/apply-now", type: "primary" },
-  //       { text: "DOWNLOAD SYLLABUS", url: "#", type: "secondary" },
-  //     ],
-  //   },
-  //   middle: {
-  //     links: [
-  //       { title: "Scholarship", url: "/" },
-  //       { title: "Course, Eligibility & Fee Structure", url: "/" },
-  //       { title: "Admission Document & Undertaking", url: "/" },
-  //       { title: "Admissions Office Contacts", url: "/" },
-  //       { title: "Hostel Details", url: "/" },
-  //     ],
-  //     stats: {
-  //       text: "1,200+ ACROSS UG & PG PROGRAMS",
-  //       subtext: "Total student intake (annual)",
-  //       btnText: { text: "VIEW PROGRAMMES", url: "/programs" },
-  //     },
-  //   },
-  //   right: {
-  //     img: "/images/header/admission-banner.png",
-  //     alt: "Admissions Image",
-  //   },
-  // };
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -499,95 +265,6 @@ export default function Header() {
     },
   ];
 
-  // const engineeringData = {
-  //   schools: [
-  //     {
-  //       name: "Computer Science & Engineering",
-  //       departments: [
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Electronics & Communication",
-  //       departments: [
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Mechanical Engineering",
-  //       departments: [
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Electronics & Communication",
-  //       departments: [
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // };
-
   useEffect(() => {
     const fetchSchools = async () => {
       try {
@@ -610,125 +287,7 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-
-    let isMounted = true;
-    const controller = new AbortController();
-
-    const fetchContactData = async () => {
-      try {
-        const res = await fetch(ContactApi, {
-          signal: controller.signal,
-          headers: {
-            "Cache-Control": "no-cache",
-            Pragma: "no-cache",
-          },
-        });
-
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const json = await res.json();
-        if (!isMounted) return;
-        if (json.status && Array.isArray(json.data) && json.data.length > 0) {
-          const apiData = json.data[0];
-
-          // Validate data before setting state
-          if (apiData && typeof apiData === "object") {
-            setMobilePanels((prev) =>
-              prev.map((item) =>
-                item.name === "Contact"
-                  ? {
-                      ...item,
-                      heading: apiData.title || "Contact Us",
-                      Menu: [
-                        {
-                          name: apiData.address || "Address not available",
-                          url: apiData.direction_url || "#",
-                          contactIcon: "/images/header/address-icon.svg",
-                        },
-                        {
-                          name: apiData.email || "Email not available",
-                          url: apiData.email ? `mailto:${apiData.email}` : "#",
-                          contactIcon: "/images/header/mail-icon.svg",
-                        },
-                        {
-                          name: apiData.phone || "Phone not available",
-                          url: apiData.phone ? `tel:${apiData.phone}` : "#",
-                          contactIcon: "/images/header/phone-icon.svg",
-                        },
-                      ],
-                    }
-                  : item
-              )
-            );
-          }
-        } else {
-          console.warn("API returned unexpected data format:", json);
-        }
-      } catch (err) {
-        if (err.name === "AbortError") {
-          console.log("Fetch aborted");
-        } else {
-          console.error("FETCH ERROR:", err);
-        }
-      }
-    };
-
-    fetchContactData();
-    // Cleanup function
-    return () => {
-      isMounted = false;
-      controller.abort();
-    };
-  }, []);
-
-  // admission API
-
-  // useEffect(() => {
-  //   const isMobile = window.innerWidth <= 991;
-  //   if (!isMobile) return;
-  //   const admiApifetch = async () => {
-  //     try {
-  //       const res = await fetch(Addmision_Api);
-  //       const json = await res.json();
-
-  //       if (json.success) {
-  //         setMobadmission(json.data);
-  //       }
-  //     } catch (err) {
-  //       console.error("Error fetching API:", err);
-  //     }
-  //   };
-
-  //   admiApifetch();
-  // }, []);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-    const ProgApifetch = async () => {
-      try {
-        const res = await fetch(Program_Api);
-        const json = await res.json();
-        setMobProgramList(json.data);
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
-
-    ProgApifetch();
-  }, [mobProgramList]);
-
-  // MOB MENU API END
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
+  
   useEffect(() => {
     if (!isMounted) return;
 
@@ -801,6 +360,72 @@ export default function Header() {
       ></header>
     );
   }
+
+  const loadPrograms = async () => {
+  if (mobProgramList.length > 0) return;
+  const res = await fetch(Program_Api);
+  const json = await res.json();
+  setMobProgramList(json.data || []);
+};
+
+const loadAdmissions = async () => {
+  if (mobAdmission) return; 
+  const res = await fetch(Addmision_Api);
+  const json = await res.json();
+  setMobadmission(json.data || null);
+};
+
+const loadContacts = async () => {
+  const contactPanel = mobilePanels.find((x) => x.name === "Contact");
+  if (contactPanel?.Menu?.length > 0) return; 
+  const res = await fetch(ContactApi);
+  const json = await res.json();
+
+  if (json.status && json.data.length > 0) {
+    const data = json.data[0];
+
+    setMobilePanels((prev) =>
+      prev.map((item) =>
+        item.name === "Contact"
+          ? {
+              ...item,
+              heading: data.title,
+              Menu: [
+                {
+                  name: data.address,
+                  url: data.direction_url,
+                  contactIcon: "/images/header/address-icon.svg",
+                },
+                {
+                  name: data.email,
+                  url: `mailto:${data.email}`,
+                  contactIcon: "/images/header/mail-icon.svg",
+                },
+                {
+                  name: data.phone,
+                  url: `tel:${data.phone}`,
+                  contactIcon: "/images/header/phone-icon.svg",
+                },
+              ],
+            }
+          : item
+      )
+    );
+  }
+};
+
+  const togglePanel = async (name) => {
+  if (activePanel === name) {
+    setActivePanel(null);
+    return;
+  }
+
+  if (name === "Courses") await loadPrograms();
+  if (name === "Admissions") await loadAdmissions();
+  if (name === "Contact") await loadContacts();
+
+  setActivePanel(name);
+};
 
   return (
     <header className="site-header">
@@ -919,12 +544,13 @@ export default function Header() {
                 <li
                   key={i}
                   className="nav-item"
-                  // onClick={() => setActiveLink(i)}
+                  onMouseEnter={() => setActiveDropdown(i)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <Link href={l.url} className={`nav-link nav-lists`}>
                     {l.title}
                   </Link>
-                  {l.children && l.children.length > 0 && (
+                  {activeDropdown === i && l.children?.length > 0 && (
                     <div className="mega-dropdown" role="menu">
                       <div className="mega-left">
                         <ul>
@@ -979,11 +605,23 @@ export default function Header() {
                                 ))}
                               </div>
                             </div>
-
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <Link key={idx} href={b.url}>
-                                  <div className="banner">
+                                <Link
+                                  key={idx}
+                                  href={{
+                                    pathname: "/programs",
+                                    query: {
+                                      type: b.title
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-"),
+                                    },
+                                  }}
+                                >
+                                  <div
+                                    className="banner"
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
                                     <Image
                                       src={b.img}
                                       alt={b.title}

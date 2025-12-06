@@ -8,6 +8,7 @@ export async function generateMetadata() {
 
 export default async function Program() {
   const seoData = await getPageSEO("program");
+
   return (
     <>
       <Script
