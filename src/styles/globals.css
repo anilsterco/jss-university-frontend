@@ -1117,7 +1117,6 @@ p {
   .programsCountSection {
     display: none !important;
   }
-
 }
 
 @media screen and (max-width:375px) {
@@ -1133,19 +1132,15 @@ p {
   .depar-button {
     gap: 0.5rem;
   }
-
 }
-
-
 
 .panel {
   position: sticky;
-  top: 0;
+  top: 10%;
   height: 100vh;
   display: flex;
   align-items: center;
 }
-
 
 /* Wrapper around input for relative positioning */
 .search-wrapper {
@@ -1227,3 +1222,4 @@ p {
 .search-item:hover .search-link {
   color: #fff;
 }
+.links-itams{text-transform: uppercase;}

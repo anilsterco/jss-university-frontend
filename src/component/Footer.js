@@ -1,13 +1,13 @@
 "use client";
 import { color } from "framer-motion";
 import { useEffect, useState } from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaYoutube,
+//   FaLinkedinIn,
+//   FaInstagram,
+// } from "react-icons/fa";
 
 export default function Footer() {
   const [data, setData] = useState(null);
@@ -81,19 +81,25 @@ export default function Footer() {
     const style = { width: size, height: size };
     switch (icon) {
       case "facebook":
-        return <FaFacebookF style={{ ...style, color: "#FFf" }} />;
+        return <img src="/images/footer/dash_facebook.svg"/>;
       case "twitter":
-        return <FaTwitter style={{ ...style, color: "#FFf" }} />;
+        return <img src="/images/footer/dash_insta.svg"/>;
       case "youtube":
-        return <FaYoutube style={{ ...style, color: "#FFf" }} />;
+        return <img src="/images/footer/dash_youtube.svg"/>;
       case "linkedin":
-        return <FaLinkedinIn style={{ ...style, color: "#FFf" }} />;
-      case "instagram":
-        return <FaInstagram style={{ ...style, color: "#fff" }} />;
+        return <img src="/images/footer/dash_linkdin.svg"/>;
       default:
         return null;
     }
   };
+
+  const socialIcons = [
+    { id: "facebook", src: "/images/footer/facebook.svg" },
+    { id: "twitter", src: "/images/footer/twiter.svg" },
+    { id: "instagram", src: "/images/footer/insta.svg" },
+    { id: "youtube", src: "/images/footer/youtube.svg" },
+    { id: "linkedin", src: "/images/footer/linkdin.svg" },
+  ];
 
   return (
     <footer className="footer_section">
@@ -159,7 +165,9 @@ export default function Footer() {
                     <ul className="list-unstyled">
                       {data.sections.map((section, i) => (
                         <li key={i}>
-                          <a href="#" className="links-itams">{section.title}</a>
+                          <a href="#" className="links-itams">
+                            {section.title}
+                          </a>
                         </li>
                       ))}
                     </ul>
@@ -241,21 +249,11 @@ export default function Footer() {
             <div className="social-icons">
               <h4 className="font-medium ">Follow us on</h4>
               <ul className="list-unstyled mb-1 mx-auto justify-content-center flex gap-3">
-                <li>
-                  <img src="/images/footer/facebook.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/twiter.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/insta.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/youtube.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/linkdin.svg" alt="icons" />
-                </li>
+                {socialIcons.map((icon) => (
+                  <li key={icon.id}>
+                    <img src={icon.src} alt={`${icon.id} icon`} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -386,7 +384,6 @@ export default function Footer() {
           color: var(--color-white);
           font-weight: 700;
           letter-spacing: -0.38px;
-        
         }
         .quick-item {
           gap: 1.3rem;
@@ -473,16 +470,18 @@ export default function Footer() {
             grid-template-columns: 75% 25%;
             gap: 0rem;
           }
-          .connect_contant:after{
-            right:4rem
+          .connect_contant:after {
+            right: 4rem;
           }
         }
-      
+
         @media (max-width: 991px) {
           .deshFooter {
             display: none;
           }
-          .connect_contant:after {content: none;}
+          .connect_contant:after {
+            content: none;
+          }
           .footer_section {
             background: #000;
           }
@@ -505,7 +504,7 @@ export default function Footer() {
         }
         .mobFooter .list-unstyled li .links-itams {
           color: var(--color-white);
-          text-transform: uppercase!important;
+          text-transform: uppercase !important;
         }
         .mobFooter .text-info {
           color: #0099ff;
