@@ -55,7 +55,7 @@ export default function ContactClient() {
 
   const contactData = {
     subtitle: "CONTACT US",
-    title: "GET IN TOUCH WITH US",
+    title: "GET IN TOUCH <span> WITH US</span>",
     img: "/images/home-page/contact-us-banner.png",
   };
 
@@ -117,170 +117,194 @@ export default function ContactClient() {
   };
 
   return (
-    <section className={styles.contactSection}>
-      <div className="container">
-        <div className="text-center mb-4">
-          <p className={styles.topText}>{contactData.subtitle}</p>
-          <h2 className={`${styles.mainHeading} highlighted-title`}>
-            {contactData.title}
-          </h2>
-        </div>
-
-        <div className={`row ${styles.contentRow}`}>
-          <div className="col-md-12 d-flex">
-            <div className={styles.imageWrapper}>
-              <Image
-                src={contactData.img}
-                alt="JSS Campus"
-                width={700}
-                height={500}
-                priority
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-
-            <div className={styles.formBox}>
-              <h5 className={styles.formHeading}>Let's Connect</h5>
-              <p className={styles.formSubText}>
-                Fill in the details below and our counselor will get in touch
-                with you at the earliest.
-              </p>
-
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    autoComplete="off"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    autoComplete="off"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 contact-form-no-input">
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone no."
-                    value={formData.phone}
-                    autoComplete="off"
-                    onChange={handleChange}
-                    pattern="[0-9]{10}"
-                    maxLength="10"
-                    required
-                  />
-                </div>
-                <div className="mb-3 state-list">
-                  <select
-                    name="state"
-                    value={formData.state}
-                    onChange={handleChange}
-                    required
-                    className="state-dropdown"
-                  >
-                    <option value="">Select State</option>
-                    {stateList.map((s) => (
-                      <option key={s.isoCode} value={s.name}>
-                        {s.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="mb-3">
-                  <select
-                    name="course"
-                    value={formData.course}
-                    onChange={handleChange}
-                    required
-                    className="state-dropdown"
-                  >
-                    <option value="">Select Course</option>
-                    {courseList.map((course) => (
-                      <option key={course.id} value={course.name}>
-                        {course.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-check mb-3 p-0 d-flex gap-3">
-                  <input
-                    type="checkbox"
-                    name="agree"
-                    id="agreeCheck"
-                    checked={formData.agree}
-                    style={{ width: "20px", height: "20px" }}
-                    onChange={handleChange}
-                  />
-                  <label htmlFor="agreeCheck" style={{ fontSize: "13px" }}>
-                    I agree to receive information regarding my enquiry.
-                  </label>
-                </div>
-                <button
-                  type="submit"
-                  className={styles.submitBtn}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </button>
-              </form>
-            </div>
+    <>
+      <section className={styles.contactSection}>
+        <div className="container">
+          <div className="text-center mb-4">
+            <h2 className={styles.topText}>{contactData.subtitle}</h2>
+            <h3
+              className={styles.topText}
+              dangerouslySetInnerHTML={{ __html: contactData.title }}
+            ></h3>
           </div>
         </div>
+      </section>
+      <section className={styles.contactSecond}>
+        <div className="container">
+          <div className={`row ${styles.contentRow}`}>
+            <div className="col-md-12">
+              <div className={styles.contactDetails}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={contactData.img}
+                    className={styles.ContactBanner}
+                    alt="JSS Campus"
+                    width={700}
+                    height={500}
+                    priority
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
 
-        <div className={`row ${styles.infoRow}`}>
-          <div className="col-md-4">
-            <span className={styles.yellowLine}></span>
-            <p className={styles.address}>{contactUsData.address}</p>
-          </div>
+                <div className={styles.formBox}>
+                  <h5 className={styles.formHeading}>Let's Connect</h5>
+                  <p className={styles.formSubText}>
+                    Fill in the details below and our counselor will get in
+                    touch with you at the earliest.
+                  </p>
 
-          <div
-            className={`${styles.borderBox} col-md-4 d-flex justify-content-center`}
-          >
-            <div className={styles.infoBox}>
-              <MdMailOutline color="#018ce8" fontSize={18} />
-              <span>{contactUsData.email}</span>
-            </div>
-          </div>
+                  <div className={styles.ContactForm}>
+                    <form onSubmit={handleSubmit}>
+                      <div className={styles.Form_fild}>
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Name"
+                          value={formData.name}
+                          autoComplete="off"
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.Form_fild}>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          autoComplete="off"
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.Form_fild}>
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Phone no."
+                          value={formData.phone}
+                          autoComplete="off"
+                          onChange={handleChange}
+                          pattern="[0-9]{10}"
+                          maxLength="10"
+                          required
+                        />
+                      </div>
+                      <div className={styles.Form_fild}>
+                        <select
+                          name="state"
+                          value={formData.state}
+                          onChange={handleChange}
+                          required
+                          className={styles.stateDropdown}
+                        >
+                          <option value="">Select State</option>
+                          {stateList.map((s) => (
+                            <option key={s.isoCode} value={s.name}>
+                              {s.name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className={styles.Form_fild}>
+                        <select
+                          name="course"
+                          value={formData.course}
+                          onChange={handleChange}
+                          required
+                          className={styles.stateDropdown}
+                        >
+                          <option value="">Select Course</option>
+                          {courseList.map((course) => (
+                            <option key={course.id} value={course.name}>
+                              {course.name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className={styles.CheckCol}>
+                        <input
+                          type="checkbox"
+                          name="agree"
+                          id="agreeCheck"
+                          className={styles.CheckBox}
+                          checked={formData.agree}
+                          onChange={handleChange}
+                        />
+                        <label
+                          htmlFor="agreeCheck"
+                          className={styles.lableFild}
+                        >
+                          I agree to receive information regarding my enquiry.
+                        </label>
+                      </div>
 
-          <div className="col-md-4 d-flex justify-content-center">
-            <div className={styles.infoBox}>
-              <BiPhoneCall color="#018ce8" fontSize={16} />
-              <span>{contactUsData.phone}</span>
+                      <button
+                        type="submit"
+                        className={styles.submitBtn}
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Submitting..." : "Submit"}
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.ContactInfo}>
+                <ul className={`${styles.infoRow}`}>
+                  <li>
+                    <p className={styles.address}>{contactUsData.address}</p>
+                  </li>
+                  <li>
+                    <a href="" className={styles.ContactAdd}>
+                      <MdMailOutline
+                        color="#018ce8"
+                        fontSize={16}
+                        className={styles.ContactIcons}
+                      />
+                      <span>{contactUsData.email}</span>
+                    </a>
+                    <a href="" className={styles.ContactAdd}>
+                      <BiPhoneCall
+                        color="#018ce8"
+                        fontSize={16}
+                        className={styles.ContactIcons}
+                      />
+                      <span>{contactUsData.phone}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className={styles.mapContainer}>
-          <p className={styles.topText}>FIND JSS UNIVERSITY ON THE MAP</p>
-          <div
-            style={{
-              borderRadius: "12px",
-              overflow: "hidden",
-              width: "100%",
-              height: "500px",
-            }}
-          >
-            <iframe
-              src={contactUsData.direction_url}
-              width="100%"
-              height="100%"
-              loading="lazy"
-            ></iframe>
+      </section>
+      <section className={styles.mapSection}>
+        <div className="container">
+          <div className={styles.mapContainer}>
+            <h3 className={styles.topText}>FIND JSS UNIVERSITY ON THE MAP</h3>
+            <div
+              className={styles.ContactMap}
+              style={{
+                width: "100%",
+                height: "500px",
+              }}
+            >
+              <iframe
+                src={contactUsData.direction_url}
+                className={styles.mapIframs}
+                width="100%"
+                height={580}
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
