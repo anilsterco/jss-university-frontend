@@ -13,7 +13,9 @@ export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
+
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
       .then((response) => response.json())
@@ -31,6 +33,42 @@ export default function ProgramDetailClient({ params }) {
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
+  };
+
+  const handlePreviousTestimonial = () => {
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + testimonials.length) % testimonials.length
+      );
+    }
+  };
+
+  const handleNextTestimonial = () => {
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex(
+        (prevIndex) => (prevIndex + 1) % testimonials.length
+      );
+    }
+  };
+
+  const handlePreviousCurriculum = () => {
+    if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
+      setCurrentCurriculumIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + curriculum.curriculum_desc.length) %
+          curriculum.curriculum_desc.length
+      );
+    }
+  };
+
+  const handleNextCurriculum = () => {
+    if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
+      setCurrentCurriculumIndex(
+        (prevIndex) =>
+          (prevIndex + 1) % curriculum.curriculum_desc.length
+      );
+    }
   };
 
   if (loading) {
@@ -90,10 +128,11 @@ export default function ProgramDetailClient({ params }) {
     fee_structure,
     testimonials,
     career_opportunities,
-    apply_now_link
+    apply_now_link,
   } = programData;
 
-  const text = testimonials[0]?.short_description || "";
+  const currentTestimonial = testimonials?.[currentTestimonialIndex];
+  const text = currentTestimonial?.short_description || "";
   const [firstWord, ...restWords] = text.split(" ");
 
   return (
@@ -380,8 +419,48 @@ export default function ProgramDetailClient({ params }) {
                   <h6>{curriculum?.curriculum_title}</h6>
                   <blockquote>Core Subjects:</blockquote>
                   <p>
-                    {curriculum?.curriculum_desc && curriculum.curriculum_desc[0]}
+                    {curriculum?.curriculum_desc &&
+                      curriculum.curriculum_desc[currentCurriculumIndex]}
                   </p>
+                   <div className="arrows">
+                      {/* Left Arrow */}
+                      <button
+                        className="arrow-btn left"
+                        onClick={handlePreviousCurriculum}
+                        title="Previous curriculum"
+                        disabled={currentCurriculumIndex === 0}
+                        style={{
+                          opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
+                          cursor: currentCurriculumIndex === 0 ? 'not-allowed' : 'pointer'
+                        }}
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={18}
+                          height={18}
+                          alt="Left Arrow"
+                        />
+                      </button>
+
+                      {/* Right Arrow */}
+                      <button
+                        className="arrow-btn right"
+                        onClick={handleNextCurriculum}
+                        title="Next curriculum"
+                        disabled={currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1}
+                        style={{
+                          opacity: currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1 ? 0.5 : 1,
+                          cursor: currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1 ? 'not-allowed' : 'pointer'
+                        }}
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={18}
+                          height={18}
+                          alt="Right Arrow"
+                        />
+                      </button>
+                    </div>
                   {curriculum?.curriculum_pdf && (
                     <div className="core-pdf">
                       <a
@@ -493,14 +572,46 @@ export default function ProgramDetailClient({ params }) {
                   <div className="testimonial-box">
                     <div className="testimonial-text">
                       <span>Placement Testimonial</span>
-                      <p>{testimonials[0].title}</p>
+                      <p>{currentTestimonial?.title}</p>
+                    </div>
+                    <div className="arrows">
+                      {/* Left Arrow */}
+                      <button
+                        className="arrow-btn left"
+                        onClick={handlePreviousTestimonial}
+                        title="Previous testimonial"
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={18}
+                          height={18}
+                          alt="Left Arrow"
+                        />
+                      </button>
+
+                      {/* Right Arrow */}
+                      <button
+                        className="arrow-btn right"
+                        onClick={handleNextTestimonial}
+                        title="Next testimonial"
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={18}
+                          height={18}
+                          alt="Right Arrow"
+                        />
+                      </button>
                     </div>
                     <div className="across">
                       <h2>{firstWord}</h2>
                       <p>{restWords.join(" ")}</p>
-                      {(testimonials[0]?.apply_now_link || apply_now_link) && (
+                      {(currentTestimonial?.apply_now_link ||
+                        apply_now_link) && (
                         <a
-                          href={testimonials[0]?.apply_now_link || apply_now_link}
+                          href={
+                            currentTestimonial?.apply_now_link || apply_now_link
+                          }
                           className="apply-btn1"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -514,21 +625,24 @@ export default function ProgramDetailClient({ params }) {
                     <div className="testimonial-img-box">
                       <figure>
                         <Image
-                          src={testimonials[0].image}
-                          alt={testimonials[0].name}
+                          src={currentTestimonial?.image}
+                          alt={currentTestimonial?.name}
                           width={400}
                           height={500}
                           className="img-fluid w-100"
                         />
                         <figcaption>
                           <div className="testimonial-img-text">
-                            <h4>{testimonials[0].name}</h4>
+                            <h4>{currentTestimonial?.name}</h4>
                             <p>
-                              {testimonials[0].course}
+                              {currentTestimonial?.course}
                               <span>.</span>
-                              {testimonials[0].batch}
+                              {currentTestimonial?.batch}
                             </p>
-                            <blockquote>{testimonials[0].designation} at {testimonials[0].company}</blockquote>
+                            <blockquote>
+                              {currentTestimonial?.designation} at{" "}
+                              {currentTestimonial?.company}
+                            </blockquote>
                           </div>
                           <a href="#" className="streched_link"></a>
                         </figcaption>
@@ -562,18 +676,21 @@ export default function ProgramDetailClient({ params }) {
             <div className="col-lg-12">
               <div className="opportunitie-box">
                 <div className="opportunitie-text">
-                  <blockquote>{career_opportunities?.career_subtitle || "CAREER OPPORTUNITIES"}</blockquote>
+                  <blockquote>
+                    {career_opportunities?.career_subtitle ||
+                      "CAREER OPPORTUNITIES"}
+                  </blockquote>
                   <h2>{career_opportunities?.career_title}</h2>
                   <p>{career_opportunities?.career_desc}</p>
                 </div>
                 <div className="opportunitie-tab">
                   <ul>
-                    {career_opportunities?.useful_links && (
+                    {career_opportunities?.useful_links &&
                       JSON.parse(career_opportunities.useful_links).map(
                         (opportunity, index) => (
                           <li key={index}>
-                            <a 
-                              href={opportunity.url} 
+                            <a
+                              href={opportunity.url}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -581,8 +698,7 @@ export default function ProgramDetailClient({ params }) {
                             </a>
                           </li>
                         )
-                      )
-                    )}
+                      )}
                   </ul>
                 </div>
               </div>

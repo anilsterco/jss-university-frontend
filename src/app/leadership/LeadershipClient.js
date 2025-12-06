@@ -95,13 +95,23 @@ export default function LeadershipClient() {
                     width={1200}
                     height={600}
                     className="img-fluid w-100"
+                    style={{ marginTop: "-98px" }}
                   />
-                  <figcaption>
-                    <h3>
+                  <figcaption style={{width:700}} >
+                    <h3 style={{ wordBreak: "break-word", lineHeight: "1.3" }}> 
                       {topLeader.name}
                       <span>{topLeader.subtitle || ""}</span>
                     </h3>
-                    <p>{topLeader.designation}</p>
+                    <div className="d-flex gap-3">
+                      <p>{topLeader.designation}</p> 
+                    <Image
+                    src={"/images/icons/circularArrow.svg"}
+                    alt={"circularArrow"}
+                    width={20}
+                    height={20}
+                  /> </div>
+                    
+                
                   </figcaption>
                   <Link href={`/leadership/${topLeader.slug}`} className="links"></Link>
                 </figure>

@@ -129,8 +129,9 @@ export default function LeadershipDetailsPage({ params }) {
                     alt={sections.banners.name}
                     width={1200}
                     height={600}
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ width: "100%", height: "auto", marginTop: "-98px" }}
                     className="img-fluid w-100"
+                    
                   />
                   <figcaption>
                     <div className="desgtn">
