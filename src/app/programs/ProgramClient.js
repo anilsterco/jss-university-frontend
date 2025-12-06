@@ -75,7 +75,7 @@ useEffect(() => {
   const fetchPrograms = async () => {
     let url = `${BASE_URL}/programs/${activeProgram}`;
     const params = [];
-
+  
     if (selectedSchool) {
       params.push(`school_id=${encodeURIComponent(selectedSchool)}`);
     }

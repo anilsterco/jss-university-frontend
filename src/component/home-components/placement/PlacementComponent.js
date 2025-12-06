@@ -75,9 +75,7 @@ export default function PlacementsSection({ data }) {
             <p className="fw-bold text-uppercase dark-blue-text">
               {placementsData.subtitle && placementsData.subtitle.toUpperCase()}
             </p>
-            <h2
-              className={`fw-bold `} dangerouslySetInnerHTML={{ __html: placementsData.title }}
-            ></h2>
+            <h2 className={`fw-bold `} dangerouslySetInnerHTML={{ __html: placementsData.title }}></h2>
           </div>
 
           <div className="row w-100 m-auto">

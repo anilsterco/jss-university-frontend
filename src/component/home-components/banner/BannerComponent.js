@@ -16,7 +16,7 @@ export default function HeroSlider({ data }) {
           title: "No Data Found",
           desc: "",
           linked_text: "",
-          url: "",
+          url: "about-us",
           desktop_banner: "/images/home-page/placeholder-banner.png",
           mobile_banner: "/images/home-page/mobile-main-banner.png",
         },

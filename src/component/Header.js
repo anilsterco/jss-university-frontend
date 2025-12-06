@@ -14,7 +14,7 @@ const SCHOOL_DEPARTMENT_URL =
   "https://project-demo.in/jss/api/school-department-list";
 
 const ContactApi = "https://project-demo.in/jss/api/contact-info";
-const Addmision_Api = "https://project-demo.in/jss/api/admission";
+// const Addmision_Api = "https://project-demo.in/jss/api/admission";
 const Program_Api = "https://project-demo.in/jss/api/program-list";
 
 const mobilePanelsData = [
@@ -97,7 +97,7 @@ const mobilePanelsData = [
 
   {
     name: "Contact",
-    heading: "CAMPUS ADDRESS",
+    heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
     icon: "/images/header/contact-mob.svg",
     // Menu: [
@@ -156,7 +156,7 @@ export default function Header() {
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
-  const [mobAdmission, setMobadmission] = useState(null);
+  // const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
 
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -287,11 +287,7 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
+  
   useEffect(() => {
     if (!isMounted) return;
 
@@ -943,7 +939,7 @@ const loadContacts = async () => {
               {/* Admissions tab */}
               {item.name === "Admissions" &&
                 activePanel === "Admissions" &&
-                mobAdmission && (
+                admissionData && (
                   <div className="admissions-menu-wrapper">
                     <ul className="admissions-menu">
                       <div className="admissions-heading">
@@ -952,7 +948,7 @@ const loadContacts = async () => {
                         ></h4>
                       </div>
 
-                      {mobAdmission.middle.links.map((link, idx) => (
+                      {admissionData.middle.links.map((link, idx) => (
                         <li key={idx}>
                           <a href={link.url}>{link.title}</a>
                         </li>
@@ -960,13 +956,13 @@ const loadContacts = async () => {
                     </ul>
                     {/* LEFT SECTION */}
                     <div className="admissions-contact">
-                      <h4>{mobAdmission.left.querytext}</h4>
+                      <h4>{admissionData.left.querytext}</h4>
 
                       <ul>
                         <li>
                           <img src="/images/header/mail-icon.svg" alt="email" />
-                          <a href={`mailto:${mobAdmission.left.email}`}>
-                            {mobAdmission.left.email}
+                          <a href={`mailto:${admissionData.left.email}`}>
+                            {admissionData.left.email}
                           </a>
                         </li>
 
@@ -975,14 +971,14 @@ const loadContacts = async () => {
                             src="/images/header/phone-icon.svg"
                             alt="phone"
                           />
-                          <a href={`tel:${mobAdmission.left.phone}`}>
-                            {mobAdmission.left.phone}
+                          <a href={`tel:${admissionData.left.phone}`}>
+                            {admissionData.left.phone}
                           </a>
                         </li>
                       </ul>
 
                       <div className="contactBtn">
-                        {mobAdmission.left.ctas.map((btn, idx) => (
+                        {admissionData.left.ctas.map((btn, idx) => (
                           <a
                             key={idx}
                             href={btn.url}
@@ -2166,7 +2162,7 @@ const loadContacts = async () => {
             list-style: none;
             padding: 0;
             margin: 0;
-            padding: 5rem 4rem 12rem;
+            padding: 5rem 2rem 12rem;
             width: 100%;
           }
           .courses-panel {
@@ -2216,7 +2212,7 @@ const loadContacts = async () => {
           }
           .courses-menu figcaption {
             position: absolute;
-            bottom: 2rem;
+            bottom: 0rem;
             left: 0;
             width: 100%;
             padding: 1.2rem;
@@ -2232,6 +2228,7 @@ const loadContacts = async () => {
             font-family: var(--font-Condensed);
             letter-spacing: -0.6px;
             color: #fff;
+            text-transform: uppercase;
           }
           .course-heading h4 {
             text-align: center;
@@ -2255,7 +2252,7 @@ const loadContacts = async () => {
           }
           .admissions-contact {
             background: #e6ffff;
-            padding: 2rem 4rem 16rem;
+            padding: 2rem 2rem 16rem;
           }
           .admissions-heading h4 {
             font: var(--font-45);
@@ -2538,7 +2535,7 @@ const loadContacts = async () => {
             }
             .admissions-contact {
               background: #e6ffff;
-              padding: 2rem 4rem 12rem;
+              padding: 2rem 2rem 12rem;
             }
             .contact-panel .contact-info li {
               max-width: 100%;

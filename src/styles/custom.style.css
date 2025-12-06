@@ -639,7 +639,7 @@
   padding-right: 1.5rem;
 } */
 .eligibility-sec .container {
-  max-width: 1643px;
+  max-width: 1643px !important;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
@@ -1785,6 +1785,21 @@ hr {
     padding-bottom: 8rem;
   }
 
+}
+
+@media (max-width:991px) {
+  .program-testimonial-box {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+
+  .across {
+    margin-top: 4rem;
+  }
+
+  .program-testimonial {
+    padding-bottom: 6rem;
+  }
 }
 
 @media (max-width: 540px) {
@@ -3820,6 +3835,19 @@ hr {
     height: 14.8rem;
     object-fit: cover;
   }
+
+  .eligibility-img figure {
+    display: block;
+  }
+
+  .eligibility-text {
+    width: 100%;
+    margin: 0;
+  }
+
+  .rank-box {
+    margin-top: 4rem;
+  }
 }
 
 @media (max-width:575px) {
@@ -3975,6 +4003,46 @@ hr {
   .opportunitie-tab {
     margin-top: 2rem;
   }
+  .across{
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .across h2 {
+    font: var(--font-60);
+    color: var(--color-4e);
+    letter-spacing: -4px;
+    font-weight: 700;
+    font-family: var(--font-Condensed);
+}
+.testimonial-img-text h4 {
+    color: var(--color-white);
+    font: var(--font-24);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-Condensed);
+}
+.engineering-btn{display: flex;}
+.structure-btn{
+  margin-bottom: 0;
+  width: 100%;
+}
+.apply-btn1 {width: 100%;margin-left: 0;}
+.engineering-btn .structure-btn {
+    font: var(--font-16);
+    text-transform: uppercase;
+    letter-spacing: .72px;
+    margin-left: 1rem;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+}
+.apply-btn1{
+   font: var(--font-16);
+    text-transform: uppercase;
+    letter-spacing: .72px;
+    margin-left: 1rem;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+}
 }
 
 
@@ -4203,11 +4271,12 @@ hr {
 
 @media screen and (max-width: 767px) {
   .about_one .abt_cntnt p {
-    padding-block: 4rem 2rem;
+    padding-block: 0rem 2rem;
     font: var(--font-20);
     font-weight: normal;
     font-family: var(--font-Roboto);
     line-height: 1.3;
+    font-weight: 300;
   }
 
   .vsn-lft {
@@ -4330,8 +4399,11 @@ hr {
     margin-bottom: 3rem;
   }
 
+  .abt_cntnt {
+    padding-top: 2rem;
+  }
+
   .about_one .abt_cntnt p {
-    padding-block: 2rem;
     text-align: left;
     padding-bottom: 0;
   }
