@@ -28,7 +28,6 @@ async function getSchoolData() {
 export default async function HomePage() {
   const seoData = await getPageSEO("home");
   const homepageData = await getSchoolData();
-  console.log(homepageData, "homepageData");
   return (
     <div>
       <Script

@@ -1,6 +1,5 @@
 export async function getPageSEO(slug) {
   try {
-    console.log(slug);
     const res = await fetch(`https://project-demo.in/jss/api/seo/${slug}`, {
       cache: "force-cache",
       next: { revalidate: 3600 },
@@ -9,7 +8,6 @@ export async function getPageSEO(slug) {
     if (!res.ok) throw new Error("SEO data not found");
 
     const data = await res.json();
-    console.log(data, "seoData");
 
     return {
       title: data.data.title,
