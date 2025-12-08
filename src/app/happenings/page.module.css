@@ -1,27 +1,37 @@
 .happeningsContainer {
-  padding: 10rem 9rem;
-  background: linear-gradient(rgba(1, 140, 232, 0.16) 32rem, #f6fbfb 32rem);
+  background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 18%, var(--color-f6) 0%, var(--color-f6) 100%);
+  padding-top: 20rem;
+  padding-bottom: 4.5rem;
 }
+
 .happeningsTitle {
-  width: fit-content;
-  margin: auto;
-  margin-bottom: 2rem;
-  background: linear-gradient(to right, #018ce8 30%, #263868 40%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-weight: 700;
+  font: var(--font-45);
+  letter-spacing: -1.35px;
+  color: var(--color-4e);
+  font-family: var(--font-Condensed);
+  margin-bottom: 3.8rem;
+  line-height: 46px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 3rem;
 }
+
 .happeningsSubTitle {
   font-weight: 600;
 }
+
 .tabButton {
   background: unset;
   border: unset;
-  font-size: 14px;
-  font-weight: 600;
-  padding-top: 1rem;
+  font: var(--font-14);
+  line-height: 17px;
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  padding-top: 2rem;
+  opacity: 0.6;
+  color: #000000;
 }
+
 .tabHeaders {
   border-top: 2px solid #d1cbcb75;
   justify-content: center;
@@ -30,7 +40,45 @@
   width: 70%;
   margin: auto;
 }
+
 .activeTab {
   color: #ff6600;
   border-top: 2px solid orange;
+  font-weight: bold;
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .happeningsContainer {
+    padding-top: 10rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .happeningsContainer {
+    padding-top: 6rem;
+    background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 13%, var(--color-f6) 0%, var(--color-f6) 100%);
+
+  }
+
+  .happeningsTitle {
+    font: var(--font-34);
+    letter-spacing: -1.35px;
+    color: var(--color-4e);
+    font-family: var(--font-Condensed);
+
+  }
+
+  .tabHeaders {
+    width: 100%;
+    margin: auto;
+  }
+
+  .tabHeaders {
+    flex-wrap: wrap;
+  }
+   .happeningsTitle {
+   padding-inline: 2rem!important;
+  }
 }

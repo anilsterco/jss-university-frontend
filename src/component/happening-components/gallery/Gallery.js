@@ -94,109 +94,111 @@ export default function Gallery() {
 
   return (
     <section className={styles.mediaSection}>
-      <div className={styles.bannerWrapper}>
-        {upCommingEvents && upCommingEvents.length > 0 ? (
-          <Swiper
-            modules={[Navigation, SwiperPagination, Autoplay]}
-            navigation={{
-              nextEl: ".upcoming-next",
-              prevEl: ".upcoming-prev",
-            }}
-            loop={true}
-            spaceBetween={20}
-            slidesPerView={1}
-          >
-            {upCommingEvents.map((event) => (
-              <SwiperSlide key={event.id}>
-                <Link href={"#"}>
-                  <Image
-                    src={event.banner_image}
-                    alt={event.title}
-                    layout="responsive"
-                    width={1200}
-                    height={400}
-                    style={{ width: "100%", height: "auto" }}
-                    className={styles.bannerImage}
-                  />
-                </Link>
-                <div className={styles.bannerTextBox}>
-                  <p className={styles.upcomingTag}>
-                    {event.event_type?.toUpperCase() || "EVENT"}
-                  </p>
-                  <h3 className={styles.bannerTitle}>
-                    {event.title?.toUpperCase()}
-                  </h3>
-                  <p className={styles.bannerDate}>
-                    {formatDate(event.event_date_from)}
-                  </p>
-                  <div className="d-flex gap-2">
-                    <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                      <FaChevronLeft size={8} color={"white"} />
-                    </button>
-                    <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                      <FaChevronRight size={8} color={"white"} />
-                    </button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : (
-          <div style={{ textAlign: "center", padding: "4rem" }}>
-            No Upcoming Events
-          </div>
-        )}
-        <div className={styles.filterBox}>
-          <button
-            className={styles.imageFilterButton}
-            onClick={() => setFilterType("image")}
-          >
-            <CiImageOn fontSize={20} /> Images
-          </button>
-
-          <button
-            className={styles.videoFilterButton}
-            onClick={() => setFilterType("video")}
-          >
-            <PiVideoCameraLight fontSize={20} />
-            Videos
-          </button>
-        </div>
-      </div>
-
-      <div className={styles.galleryGrid}>
-        {galleryData &&
-          galleryData.map((item) => (
-            <div
-              key={item.id}
-              className={styles.galleryCard}
-              onClick={() => openModal(item)}
+      <div className="container">
+        <div className={styles.bannerWrapper}>
+          {upCommingEvents && upCommingEvents.length > 0 ? (
+            <Swiper
+              modules={[Navigation, SwiperPagination, Autoplay]}
+              navigation={{
+                nextEl: ".upcoming-next",
+                prevEl: ".upcoming-prev",
+              }}
+              loop={true}
+              spaceBetween={20}
+              slidesPerView={1}
             >
-              <div className={styles.cardImage}>
-                <div className={styles.imagePlaceholder}>
-                  {item.thumbnail && (
+              {upCommingEvents.map((event) => (
+                <SwiperSlide key={event.id}>
+                  <Link href={"#"}>
                     <Image
-                      src={item.thumbnail}
-                      alt="Gallery Thumbnail"
+                      src={event.banner_image}
+                      alt={event.title}
                       layout="responsive"
                       width={1200}
                       height={400}
                       style={{ width: "100%", height: "auto" }}
+                      className={styles.bannerImage}
                     />
+                  </Link>
+                  <div className={styles.bannerTextBox}>
+                    <p className={styles.upcomingTag}>
+                      {event.event_type?.toUpperCase() || "EVENT"}
+                    </p>
+                    <h3 className={styles.bannerTitle}>
+                      {event.title?.toUpperCase()}
+                    </h3>
+                    <p className={styles.bannerDate}>
+                      {formatDate(event.event_date_from)}
+                    </p>
+                    <div className="d-flex gap-2">
+                      <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                        <FaChevronLeft size={8} color={"white"} />
+                      </button>
+                      <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                        <FaChevronRight size={8} color={"white"} />
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div style={{ textAlign: "center", padding: "4rem" }}>
+              No Upcoming Events
+            </div>
+          )}
+          <div className={styles.filterBox}>
+            <button
+              className={styles.imageFilterButton}
+              onClick={() => setFilterType("image")}
+            >
+              <CiImageOn fontSize={20} /> Images
+            </button>
+
+            <button
+              className={styles.videoFilterButton}
+              onClick={() => setFilterType("video")}
+            >
+              <PiVideoCameraLight fontSize={20} />
+              Videos
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.galleryGrid}>
+          {galleryData &&
+            galleryData.map((item) => (
+              <div
+                key={item.id}
+                className={styles.galleryCard}
+                onClick={() => openModal(item)}
+              >
+                <div className={styles.cardImage}>
+                  <div className={styles.imagePlaceholder}>
+                    {item.thumbnail && (
+                      <Image
+                        src={item.thumbnail}
+                        alt="Gallery Thumbnail"
+                        layout="responsive"
+                        width={1200}
+                        height={400}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    )}
+                  </div>
+                  {item.stats && (
+                    <div className={styles.cardBadge}>
+                      {item.stats.photos} PHOTOS {item.stats.videos} VIDEOS
+                    </div>
                   )}
                 </div>
-                {item.stats && (
-                  <div className={styles.cardBadge}>
-                    {item.stats.photos} PHOTOS {item.stats.videos} VIDEOS
-                  </div>
-                )}
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                  <p className={styles.cardDate}>{formatDate(item.date)}</p>
+                </div>
               </div>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDate}>{formatDate(item.date)}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
 
       {/* Modal */}
@@ -208,7 +210,7 @@ export default function Gallery() {
           >
             {/* Close Button */}
             <button className={styles.closeButton} onClick={closeModal}>
-              ✕
+            <img src="images/custom-page/gallery_close.svg" alt="close btn"/>
             </button>
 
             <div className={styles.slider}>
@@ -234,7 +236,8 @@ export default function Gallery() {
 
             <div className={styles.modalHeader}>
               <div className={styles.slideCounter}>
-                {currentSlideIndex + 1} / {selectedGallery.media.length}
+                <p>{currentSlideIndex + 1}</p>
+                <span>{selectedGallery.media.length}</span>
               </div>
               <div>
                 <p className={styles.modalDate}>
@@ -248,13 +251,33 @@ export default function Gallery() {
                   className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`}
                   onClick={previousSlide}
                 >
-                  ←
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 320 512"
+                    height="8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path>
+                  </svg>
                 </button>
                 <button
                   className={`${styles.sliderArrow} ${styles.sliderArrowRight}`}
                   onClick={nextSlide}
                 >
-                  →
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 320 512"
+                    height="8"
+                    width="8"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -264,4 +287,3 @@ export default function Gallery() {
     </section>
   );
 }
- 

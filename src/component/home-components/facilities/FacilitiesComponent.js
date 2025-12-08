@@ -143,10 +143,10 @@ export default function FacilitiesComponent({ data }) {
       trigger: root,
       pin: true,
       pinSpacing: false,
-      start: "top -20px",
+      start: "top -10px",
       endTrigger: lastPanel,
       end: () => {
-        const offset = window.innerHeight * 0.01; // ~70px dynamic
+        const offset = window.innerHeight * 0.01; 
         return `bottom-=${offset} bottom`;
       },
       scrub: false,
