@@ -77,7 +77,8 @@ export default function MediaCoverage() {
   };
   return (
     <section className={styles.mediaSection}>
-      <div className={styles.galleryGrid}>
+     <div className="container">
+       <div className={styles.galleryGrid}>
         {galleryData.map((item) => (
           <div
             key={item.id}
@@ -99,6 +100,7 @@ export default function MediaCoverage() {
           </div>
         ))}
       </div>
+     </div>
 
       {/* Modal */}
       {isModalOpen && selectedGallery && (

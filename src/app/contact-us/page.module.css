@@ -1,154 +1,336 @@
 .contactSection {
-  padding: 12rem 0;
-  padding-bottom: 8rem;
-  background: linear-gradient(rgba(1, 140, 232, 0.16) 30%, #f6fbfb 30%);
+  padding-top: 22rem;
+  background-color: var(--color-f5);
+  padding-bottom: 4.5rem;
 }
 
-.topText {
-  font-size: 15px;
-  color: #16344e;
-  margin-bottom: 8px;
+.contactSection h2 {
+  font: var(--font-18);
+  padding-bottom: 2rem;
+  color: var(--color-4e);
   font-weight: 700;
-}
-.mapContainer {
-  padding-top: 8rem;
-}
-.mapContainer .topText {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-.mainHeading {
-  font-size: 38px;
-  font-weight: 700;
-  width: fit-content;
-  margin: auto;
-  margin-bottom: 5rem;
+  font-family: var(--font-Condensed);
 }
 
-.mainHeading span {
-  color: #2b66e3;
+.contactSection h3 {
+  font: var(--font-45);
+  letter-spacing: -1.35px;
+  color: var(--color-4e);
+  margin-bottom: 3.8rem;
+}
+
+.contactSection h3 span {
+  color: #018CE8;
+}
+
+.contactSecond {
+  position: relative;
+  padding-block: 0 5rem;
+  z-index: 1;
+}
+
+.contactSecond::before {
+  content: '';
+  background-color: var(--color-f5);
+  width: 100%;
+  left: 0;
+  height: 15rem;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.contactDetails {
+  background-color: var(--color-4e);
+  border-radius: 6rem 0rem 5rem .8rem;
+  display: grid;
+  grid-template-columns: 72% 28%;
+  align-items: center;
 }
 
 .imageWrapper {
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 10px;
-  overflow: hidden;
-  width: 70%;
-}
-.formBox input::placeholder {
-  color: #fff;
-}
-.formBox input {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-bottom: 1px solid #ffffff47;
-  border-radius: 0;
-  padding-left: 0;
-  padding-bottom: 10px;
-  font-size: 14px;
   width: 100%;
-  color: #fff;
+  border-radius: 6rem 0rem 5rem .8rem;
+  height: 100%;
+}
+
+.ContactBanner {
+  width: 100%;
+  border-radius: 6rem 0rem 0rem .8rem;
+  height: 100%;
 }
 
 .formBox {
-  background: #0b2545;
-  color: #fff;
-  border-bottom-right-radius: 40px;
-  padding: 2rem 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 30%;
-}
-.mailIcon {
-  background: #018ce83d;
-  padding: 10px 10px;
-  border-radius: 40px;
-  width: fit-content;
-  display: flex;
-}
-.formHeading {
-  color: #ecc820;
-  margin-bottom: 10px;
-}
-.yellowLine {
-  background-color: #f5c518;
-  width: 4px;
-  height: 160px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.formSubText {
-  font-size: 15px;
-  margin-bottom: 24px;
+  padding: 3rem;
 }
 
-.form-control {
-  border-radius: 6px !important;
-  border: 1px solid #dcdcdc;
-  font-size: 14px;
-  padding: 10px 12px;
+.formBox .formHeading {
+  font: var(--font-21);
+  font-weight: 600;
+  font-family: var(--font-Geist);
+  color: #ECC820;
+  margin-bottom: 2rem;
+}
+
+.formBox .formSubText {
+  font: var(--font-16);
+  font-family: var(--font-Geist);
+  color: var(--color-white);
+  padding-right: 5rem;
+  font-weight: normal;
+}
+
+.ContactForm {
+  margin-top: 2rem;
+}
+
+.Form_fild input::placeholder {
+  color: #fff;
+}
+
+.Form_fild input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Form_fild select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Form_fild input {
+  border: none;
+  font: var(--font-14);
+  line-height: 25px;
+  background: transparent;
+  border-bottom: solid 1px #fff;
+  border-radius: 0;
+  border-bottom: 1px solid #E3E3E322;
+  color: var(--color-white);
+  padding: 1rem 0;
+  position: relative;
+  margin-bottom: 0.85rem;
+  width: 100%;
+
+}
+
+.Form_fild select {
+  border: none;
+  font: var(--font-14);
+  line-height: 25px;
+  background: transparent;
+  border-bottom: solid 1px #fff;
+  border-radius: 0;
+  border-bottom: 1px solid #E3E3E322;
+  color: var(--color-white);
+  padding: 1rem 0;
+  position: relative;
+  margin-bottom: 0.85rem;
+  width: 100%;
+}
+
+.Check {
+  margin-top: 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  margin-bottom: 2.4rem;
+}
+
+.CheckCol input {
+  appearance: none;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px 3px 3px 3px;
+
+}
+
+.CheckCol input[type="checkbox"].CheckBox:checked::before {
+  transform: scale(1);
+}
+
+.CheckCol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.CheckBox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+
+.CheckBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/custom-page/check.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 0.2s ease;
+}
+
+.CheckCol .lableFild {
+  font-size: 12px;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-family: var(--font-Roboto);
+  color: var(--color-white);
 }
 
 .submitBtn {
-  color: #fff;
-  background: none;
-  border: 1px solid #fff;
-  padding: 8px 28px;
-  transition: all 0.3s;
-  margin-top: 1rem;
-  font-size: 13px;
+  background: transparent;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  border-radius: 0px;
+  padding: 8px 20px;
+  font: var(--font-16);
+  transition: 0.5s all;
+  font-weight: normal;
 }
 
 .submitBtn:hover {
-  background: #b59730;
-  border-color: #b59730;
-  color: #fff;
+  background-color: var(--color-100);
+  color: var(--color-black);
+  border: 1px solid var(--color-100);
+}
+
+.stateDropdown option {
+  color: #000;
+  background: #fff;
+}
+
+.ContactInfo {
+  padding-top: 3rem;
 }
 
 .infoRow {
-  align-items: center;
-  position: relative;
-  margin-left: 6rem;
-  padding-top: 2%;
-}
-.borderBox {
-  height: 70px;
-  border-right: 1px solid #80808059;
-  border-left: 1px solid #80808059;
-}
-.address {
-  color: #111;
-  margin-bottom: 10px;
-  padding-left: 1rem;
-  font-size: 18px;
-  font-weight: 700;
-  width: 90%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  list-style: none;
+  padding-left: 13rem;
 }
 
-.infoBox {
+.ContactInfo ul li p {
+  font: var(--font-28);
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.84px;
+  font-family: var(--font-Condensed);
+  padding-inline: 5rem 0;
+}
+
+.ContactInfo ul li:first-child {
+  position: relative;
+}
+
+.ContactInfo ul li:first-child::before {
+  background-color: #ECC820;
+  left: 0;
+  top: -7rem;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  width: 7px;
+}
+
+.ContactInfo ul li:last-child {
+  display: flex;
+  gap: 4rem;
+  padding-inline: 0 4rem;
+  justify-content: flex-end;
+}
+
+.ContactAdd {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #0b2545;
-  font-size: 20px;
+  gap: 2rem;
+  font: var(--font-24);
+  font-weight: 300;
+  color: var(--color-black);
+  text-transform: inherit;
+  border-left: 1px solid #DEDEDE;
+  padding-left: 5rem;
 }
 
-.infoBox i {
-  font-size: 18px;
-  color: #2b66e3;
+.ContactIcons {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(1, 140, 232, 0.2);
+  padding: 1.5rem;
+  border-radius: 5rem;
 }
 
-@media (max-width: 768px) {
-  .contactSection {
-    padding: 50px 0;
-  }
+.mapSection {
+  padding-block: 5rem 13rem;
+  border-top: 1px solid #00000020;
+}
 
-  .mainHeading {
-    font-size: 22px;
-  }
+.topText {
+  font: var(--font-18);
+  color: var(--color-4e);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  font-family: var(--font-Condensed);
+}
 
-  .formBox {
-    margin-top: 20px;
-  }
+.ContactMap {
+  position: relative;
+  border-radius: 50px 8px;
+  overflow: hidden;
+  margin-top: 5rem;
+  background-color: var(--color-black);
+}
+
+.mapIframs {
+  opacity: 0.87;
+  border-radius: 50px 8px;
+  height: 100%;
+}
+@media (max-width:1024px){
+ .contactDetails {grid-template-columns: 52% 48%;}
+ .infoRow {grid-template-columns: 50% 50%;padding-left: 5rem;}
+ .ContactInfo ul li:last-child{display: block;}
+ .ContactAdd {margin-bottom: 2rem;}}
+
+@media (max-width:991px){
+.contactSection {padding-block: 8rem 2rem;}
+.contactSection h3 {margin-bottom: 2rem;}
+}
+@media (max-width:767px){
+  .contactSection h3 {font: var(--font-40);margin-bottom: 2rem;}
+  .contactDetails {grid-template-columns: repeat(1,1fr);}
+  .infoRow {grid-template-columns: repeat(1,1fr);}
+  .ContactInfo ul li:first-child::before{width: 5px;top: -4rem;left: -2rem;}
+  .ContactInfo ul li:last-child{padding-inline: 0!important;padding-top: 2rem;}
+  .ContactInfo ul li p {font: var(--font-22); font-weight: 700;letter-spacing: -0.70px;font-family: var(--font-Condensed);padding-inline: 2rem 0;}
+  .ContactAdd{border: none; padding-inline: 2rem 0;}
+  .infoRow li {padding-right: 0;}
+  .ContactIcons{width: 4rem;height: 4rem;padding: 0.9rem;}
+  .ContactAdd {font: var(--font-20);font-weight: 300;}
+  .contactSecond {padding-block: 0 2rem;}
+  .mapSection {padding-block: 4rem 8rem;}
+  .ContactMap {margin-top: 3rem;}
+}
+@media (max-width:480px){
+.formBox {padding: 2rem;}
+.CheckCol {margin-bottom: 2rem;}
+.ContactInfo ul li p {font: var(--font-18);letter-spacing: -.7px;font-weight: 700;font-family: var(--font-Condensed);}
+.mapSection {padding-block: 2rem 6rem;}
+.infoRow {padding-left: 4rem;}
+.contactSection h3 {font: var(--font-32)}
+.formBox .formSubText {padding-right: 2rem;}
+.ContactMap {margin-top: 2rem;}
 }

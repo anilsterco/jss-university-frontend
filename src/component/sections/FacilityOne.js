@@ -110,7 +110,7 @@ export default function FacilitiesOne({ data }) {
       case "boxes":
         return (
           <div className="col-lg-10 mx-auto" key={`boxes-${sectionIndex}`}>
-            {/* <div className="facilities-img-box sticky-box">
+            <div className="facilities-img-box sticky-box">
               <div className="facilities-box">
                 <div className="facilities-list">
                   <div ref={container}>
@@ -145,7 +145,7 @@ export default function FacilitiesOne({ data }) {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         );
 

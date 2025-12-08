@@ -29,7 +29,6 @@ async function getSchoolData(slug) {
 export default async function SchoolPage({ params }) {
   const { slug } = params;
   const schoolData = await getSchoolData(slug);
-  console.log(schoolData.sections, "schoolData.sections");
   const seoData = await getPageSEO(slug);
   return (
     <>

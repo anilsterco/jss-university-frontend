@@ -13,8 +13,7 @@ export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
- const userId =useParams()
- console.log(userId ,"id")
+  
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
       .then((response) => response.json())
