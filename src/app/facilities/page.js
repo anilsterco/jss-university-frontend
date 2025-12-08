@@ -391,8 +391,8 @@ export default function FacilitiesPage() {
                           />
                         </div>
                       </div>
-                      <div className="facilities-list">
-                        <div ref={container}>
+                      <div className="facilities-list"  ref={container}>
+                        
                           {facilitiesData.classrooms.features.map(
                             (feature, index) => (
                               <div key={index} className="facilities-list-box ">
@@ -427,7 +427,7 @@ export default function FacilitiesPage() {
                               </div>
                             )
                           )}
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
