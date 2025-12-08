@@ -18,6 +18,7 @@ export default function LeadershipClient() {
     tabs: [
       { text: "About JSS", url: "/about-us" },
       { text: "About JSSMVP", url: "/about-jssmvp" },
+      { text: "Heritage", url: "/heritage" },
       { text: "Leadership", url: "/leadership" },
     ],
   };
