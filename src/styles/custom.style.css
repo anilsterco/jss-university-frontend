@@ -3228,7 +3228,7 @@ hr {
 
 @media screen and (max-width:480px) {
   .inner-title .innnr_head h3 {
-    font: var(--font-30);
+    font: var(--font-20);
     font-family: var(--font-Condensed);
     letter-spacing: -1px;
   }
@@ -4222,7 +4222,7 @@ hr {
   }
 
   .inner-title {
-    padding-top: 6rem;
+    padding-top: 1rem;
   }
 
   .about_one .estblish {
@@ -4415,7 +4415,7 @@ hr {
   }
 
   .abt_cntnt {
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
 
   .about_one .abt_cntnt p {
