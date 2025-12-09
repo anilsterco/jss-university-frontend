@@ -1094,3 +1094,18 @@ body:has(.modal.show) {
   z-index: 99;
   font-size: 0;
 }
+
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-btn.left img {
+  transform: rotate(180deg); /* Make arrow point LEFT */
+}

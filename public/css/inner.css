@@ -3,7 +3,7 @@
 .inner-title {
   padding-top: 20rem;
   background-color: var(--color-f5);
-  padding-bottom: 4.5rem;
+  padding-bottom: 16rem;
 }
 
 .inner-title .innnr_head {
@@ -903,6 +903,13 @@
   z-index: 9;
 }
 
+.message_img-thumb-grp p {
+  font: var(--font-13);
+  color: var(--color-white);
+  line-height: 1.5;
+  max-width: 300px;
+}
+
 .message_img-thumb-icon {
   position: relative;
   border: 2.5px solid #b08f29;
@@ -953,6 +960,12 @@
   margin-bottom: 3rem;
 }
 
+.message_footer_section {
+  border-top: 1px solid rgba(255, 255, 255, 0.33);
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
+
 .message_footer h5 {
   font: var(--font-24);
   color: var(--color-white);
@@ -977,4 +990,54 @@
 }
 
 /* leadership details page end */
+
+/* Responsive tweaks for leadership top section */
+@media (max-width: 768px) {
+  /* Ensure the top image and caption stack vertically and occupy full width */
+  .leadership_one .top_img > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .leadership_one .top_img > div > figure {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .leadership_one .top_img > div > figure img,
+  .leadership_one .top_img > div > figure .img-fluid {
+    margin-top: 0 !important; /* override inline negative margin */
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  .leadership_one .top_img > div > figcaption {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 1.25rem !important;
+    text-align: left;
+    background: transparent;
+  }
+
+  .leadership_one .top_img > div > figcaption h3 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .leadership_one .top_img > div > figcaption p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership_one .top_img > div > figcaption h3 {
+    font-size: 1.35rem;
+  }
+}
 
