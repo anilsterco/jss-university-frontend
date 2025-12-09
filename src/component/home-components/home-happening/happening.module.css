@@ -328,3 +328,10 @@
     letter-spacing: 0px;
   }
 }
+
+@media (max-width: 575px) {
+  .eventSection {
+    padding: 2rem 2rem;
+  }
+
+}
