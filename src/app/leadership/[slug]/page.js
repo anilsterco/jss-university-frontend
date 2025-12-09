@@ -129,8 +129,9 @@ export default function LeadershipDetailsPage({ params }) {
                     alt={sections.banners.name}
                     width={1200}
                     height={600}
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ width: "100%", height: "auto", marginTop: "-98px" }}
                     className="img-fluid w-100"
+                    
                   />
                   <figcaption>
                     <div className="desgtn">
@@ -154,9 +155,11 @@ export default function LeadershipDetailsPage({ params }) {
               <div className="row">
                 <div className="col-lg-6">
                   <div className="leadership_two_cnt">
-                    {sections.about.description.map((desc, index) => (
-                      <p key={index}>{desc}</p>
-                    ))}
+                    {/* {sections.about.description.map((desc, index) => (
+                      <p key={index}>{desc[0]}</p>
+                    ))} */}
+                    <h5>{sections.about.description[0]}</h5>
+                    <p>{sections.about.description[1]}</p>
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -165,8 +168,8 @@ export default function LeadershipDetailsPage({ params }) {
                       src={sections.about.image}
                       alt={sections.banners.name}
                       width={600}
-                      height={400}
-                      style={{ width: "100%", height: "auto" }}
+                      height={600}
+                      style={{ width: "100%", height: "300px" }}
                       className="img-fluid"
                     />
                   </div>
@@ -185,6 +188,13 @@ export default function LeadershipDetailsPage({ params }) {
       <section className="message_section">
         <div className="container">
           <div className="message_warpper">
+            <Image
+              src={"/images/custom-page/about/quote.png"}
+              alt="Quote Icon"
+              width={600}
+              height={400}
+              style={{ width: 170, height: "auto" , position: "absolute", top: "-50px", zIndex: 0 }}
+            />
             <div className="row">
               <div className="col-lg-6">
                 <div className="message_text">
@@ -204,12 +214,12 @@ export default function LeadershipDetailsPage({ params }) {
                     height={400}
                     style={{ width: "100%", height: "auto" }}
                   />
-                  <div className="message_img-thumb-grp">
-                    <h6>WATCH MESSAGE FROM</h6>
-                    <h4>{sections.message_from_chancellor.name}</h4>
-                  </div>
                 </div>
               </div>
+            </div>
+            
+            <div className="message_footer_section">
+              <p>{sections.message_from_chancellor.name}</p>
             </div>
           </div>
         </div>

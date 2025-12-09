@@ -1923,8 +1923,7 @@ hr {
 }
 
 .facilities-list {
-  flex: 1;
-  overflow: visible;
+  position: relative;
 }
 
 .sticky-active figure {
@@ -1999,15 +1998,27 @@ hr {
 
 .facilities-list-box {
   position: relative;
-  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
+
+.facilities-list-box img {
+  display: block;
+}
+
+/* .sticky-box {
+  position: sticky;
+  top: 120px;
+} */
+
 
 .facilities-list-box figure {
-  display: grid;
+  position: relative;
+  overflow: visible;
 }
 
-.facilities-list-box figure img {
-  border-radius: 0.8rem;
+
+.facilities-list-box img {
+  display: block;
 }
 
 .facilities-list-box figure>* {
@@ -3019,6 +3030,10 @@ hr {
   .facilities-img .sticky-box {
     position: relative;
   }
+  .sticky-box {
+  position: sticky;
+  top: 120px;
+}
 
   .facilities-box-text {
     top: 0;

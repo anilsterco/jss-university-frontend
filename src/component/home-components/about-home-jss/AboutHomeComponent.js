@@ -9,7 +9,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { GoArrowRight } from "react-icons/go";
 import styles from "./about-home-jss.module.css";
 import "swiper/css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const dummyLegacyData = {
   title:
@@ -60,6 +60,9 @@ const dummyLegacyData = {
 export default function LegacySection({ data }) {
   const [videoPopup, setVideoPopup] = useState(false);
   const legacyData = data ? data : dummyLegacyData;
+
+  // when i revigit the page , the page automatic update 
+
   return (
     <section className={`${styles.fifthSection}`}>
       <div className="container">
@@ -116,6 +119,7 @@ export default function LegacySection({ data }) {
                       className={`fw-light ${styles.rightArrowIcon}`}
                       color="rgb(153 83 158)"
                     />
+                  
                   </Link>
                 )}
               </div>
