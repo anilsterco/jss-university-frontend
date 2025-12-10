@@ -4,55 +4,12 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+
 
 export default function FacilityOne({ data }) {
   const container = useRef();
-  const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(true);
 
-  useGSAP(
-    () => {
-      if (!data || data.length === 0) return;
-      gsap.registerPlugin(ScrollTrigger);
-
-      const boxes = gsap.utils.toArray(".facilities-list-box");
-      if (boxes.length === 0) return;
-
-      // Pin the first box
-      ScrollTrigger.create({
-        trigger: boxes[0],
-        start: "bottom bottom",
-        end: () => "+=" + (boxes.length - 1) * 500,
-        pin: true,
-        pinSpacing: false,
-      });
-
-      boxes.forEach((box, i) => {
-        if (i === 0) return;
-        gsap.set(box, { zIndex: i + 1 });
-        gsap.fromTo(
-          box,
-          { opacity: 1, y: 0 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            scrollTrigger: {
-              trigger: box,
-              start: "top bottom",
-              end: "bottom bottom",
-              scrub: true,
-              pin: false,
-              pinSpacing: false,
-            },
-          }
-        );
-      });
-    },
-    { dependencies: [data], scope: container }
-  );
 
   // Find titleBanner section
   const titleBanner = data.find(section => section.type === "titleBanner");
@@ -70,7 +27,7 @@ export default function FacilityOne({ data }) {
                 <div className="facilities-img">
                   <div className={` ${isSticky ? "sticky-box" : ""}`}>
                     <div className="col-lg-10 mx-auto">
-                      <div className="facilities-img-box sticky-box">
+                      <div className="facilities-img-box">
                         <div className="facilities-box">
                           {/* PercentSub Section */}
                           {percentSub && (
@@ -170,7 +127,7 @@ export default function FacilityOne({ data }) {
                       {/* Combined PercentSub and Boxes Section */}
                       {(percentSub || boxes) && (
                         <div className="col-lg-10 mx-auto">
-                          <div className="facilities-img-box sticky-box">
+                          <div className="facilities-img-box ">
                             <div className="facilities-box">
                               {/* PercentSub Section */}
                               {percentSub && (
@@ -178,7 +135,7 @@ export default function FacilityOne({ data }) {
                                   {percentSub.items
                                     .sort((a, b) => a.position - b.position)
                                     .map((percentItem, idx) => (
-                                      <div key={percentItem.item_uuid || idx}>
+                                      <div className="d-flex" key={percentItem.item_uuid || idx}>
                                         <div className="facilities-heading">
                                           <h2>{percentItem.percent}</h2>
                                         </div>
