@@ -14,7 +14,7 @@ export default function ComingSoon({ data }) {
             <div className="container">
               <div className="coming-container">
                 <h1 className="title">Coming Soon</h1>
-                <p className="subtitle">{item.message}</p>
+                <p className="subtitle">{item.message ?? 'We’re working hard to bring something amazing!'}</p>
 
                 <div className="btn-div">
                   <Link href="/" className="admission-btn comming-soon-btn">
