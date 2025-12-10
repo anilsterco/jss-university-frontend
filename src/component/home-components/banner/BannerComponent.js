@@ -28,7 +28,7 @@ export default function HeroSlider({ data }) {
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
         loop={true}
-        spaceBetween={20}
+        spaceBetween={0}
         slidesPerView={1}
         className={styles.swiperContainer}
       >

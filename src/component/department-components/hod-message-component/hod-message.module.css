@@ -5,34 +5,31 @@
   align-items: center;
   justify-content: center;
 }
-.card { 
+
+.card {
   position: relative;
-  border-top: 1px solid #D6D6D6;;
+  border-top: 1px solid #D6D6D6;
+  ;
   padding-top: 10rem;
 }
-.card::before{
- content: "";
-    background-color: #fff;
-    border-radius: .5rem;
-    position: absolute;
-    top: 10rem;
-    bottom: 0;
-    left: 10rem;
-    right: 10rem;
+
+.card::before {
+  content: "";
+  background-color: #fff;
+  border-radius: .5rem;
+  position: absolute;
+  top: 10rem;
+  bottom: 0;
+  left: 10rem;
+  right: 10rem;
 }
 
 .imageContainer {
   position: relative;
   height: 100%;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  padding-left: 2rem;
 }
 
 .imagePlaceholder {
-  width: 100%;
-  aspect-ratio: 3/4;
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
@@ -54,8 +51,13 @@
 }
 
 /* Content Section */
+.row_padding {
+  padding-block: 8rem !important;
+}
+
 .content {
-  padding:10rem 10rem 8rem 0;
+  padding-inline: 0rem 12rem;
+  padding-block: 10rem 12rem;
   display: flex;
   flex-direction: column;
   padding-left: 0;
@@ -63,6 +65,7 @@
   z-index: 1;
 
 }
+
 
 .title {
   text-transform: uppercase;
@@ -110,55 +113,57 @@
   margin-bottom: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .card {
-    margin-left: 0;
-  }
-
-  .imageContainer {
-    min-height: 300px;
-    padding-left: 1rem;
-    justify-content: center;
-  }
-
+@media (max-width: 1024px) {
   .imagePlaceholder {
-    max-width: 250px;
-    left: 0;
+    left: 0rem;
   }
 
   .content {
-    padding: 2rem 1.5rem;
-    min-height: auto;
+    padding-inline: 0rem !important;
+    padding-block: 4rem;
+    display: block;
   }
 
-  .title {
-    font-size: 0.9rem;
+  .card::before {
+    display: none;
   }
 
-  .paragraph {
-    font-size: 0.875rem;
+  .container {
+    padding: 4rem 0;
   }
 
-  .hodName {
-    font-size: 1.1rem;
+  .card {
+    padding-top: 6rem;
   }
 }
 
-@media (max-width: 576px) {
+/* Responsive Design */
+@media (max-width: 767px) {
   .container {
-    padding: 2rem 1rem;
+    padding: 0rem 0;
+  }
+
+  .card {
+    padding-top: 4rem;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .card {
+    padding-top: 2rem;
   }
 
   .content {
-    padding: 1.5rem;
+    padding-block: 2rem;
   }
 
-  .imageContainer {
-    padding: 1rem;
+  .hodInfo {
+    padding-top: 2rem;
   }
-
-  .imagePlaceholder {
-    max-width: 220px;
-  }
+ .hod_img {height: 100%!important;}
+}
+@media (max-width: 375px) {
+ 
+ .hod_img {height: 100%!important;}
 }
