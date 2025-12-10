@@ -93,12 +93,13 @@
 
 .faqItem[open] .faqAnswer {
   background: #b59730;
-  color: #fff;
+  color: #fff!important;
   border-top: none;
 }
 
 .faqAnswer p {
   font: var(--font-16);
+  color: #fff!important;
   line-height: 1.5;
   letter-spacing: -0.32px;
 }
@@ -118,12 +119,14 @@
 /* Responsive */
 @media (max-width: 768px) {
   .faqSection {
-    padding: 40px 0;
+    padding: 0rem 0;
+    padding-bottom: 4rem;
   }
   .faqQuestion {
-    font-size: 14px;
+    font: var(--font-14);
   }
   .faqAnswer p {
-    font-size: 13px;
+   font: var(--font-14);
+   line-height: normal;
   }
 }

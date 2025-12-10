@@ -82,7 +82,6 @@ export default function FacultyList({ data }) {
 
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            // navigation={true}
             navigation={{
               nextEl: ".faculty-next",
               prevEl: ".faculty-prev",
@@ -92,14 +91,29 @@ export default function FacultyList({ data }) {
             spaceBetween={15}
             slidesPerView={4}
             className={styles.slider}
+            breakpoints={{
+              0: {
+                // Mobile
+                slidesPerView: 1,
+              },
+              768: {
+                // Tablet
+                slidesPerView: 2,
+              },
+              1024: {
+                // Desktop
+                slidesPerView: 3,
+              },
+               1200: {
+                // Desktop
+                slidesPerView: 4,
+              },
+             
+            }}
           >
             {facultyData.members.map((slide) => (
               <SwiperSlide key={slide.id} className={styles.facultyCard}>
-                <Link
-                  href={`/faculty/${slide.url}`}
-                  key={slide.id}
-                  style={{ cursor: "pointer" }}
-                >
+                <Link href={`/faculty/${slide.url}`} key={slide.id}>
                   <Image
                     src={slide.img}
                     alt="slide image"
@@ -121,6 +135,7 @@ export default function FacultyList({ data }) {
               </SwiperSlide>
             ))}
           </Swiper>
+
           <CiCircleChevRight
             className="faculty-next"
             fontSize={30}

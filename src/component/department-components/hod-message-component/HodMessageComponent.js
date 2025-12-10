@@ -21,24 +21,24 @@ const HODMessage = ({ data }) => {
     <div className={styles.container}>
       <div className="container">
         <div className={styles.card}>
-          <div className="row g-0 justify-content-center">
+          <div className="row g-0 justify-content-center align-items-center row_padding">
             {/* Image Section - Positioned outside card */}
-            <div className="col-md-4">
+            <div className="col-xl-4">
               <div className={styles.imageContainer}>
                 <div className={styles.imagePlaceholder}>
                   <Image
                     src={hodData.img}
                     alt={hodData?.name || "Head of Department"}
-                    width={350}
-                    height={350}
-                    className={styles.hodImage}
+                    width={476}
+                    height={473}
+                    className={`w-100 hod_img ${styles.hodImage}`}
                   />
                 </div>
               </div>
             </div>
 
             {/* Content Section */}
-            <div className="col-md-7">
+            <div className="col-xl-7">
               <div className={styles.content}>
                 <h3 className={styles.title}>{hodData.title}</h3>
 
