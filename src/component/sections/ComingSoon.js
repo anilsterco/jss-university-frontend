@@ -1,0 +1,35 @@
+"use client";
+
+import "@/styles/globals.css";
+import Link from "next/link";
+
+export default function ComingSoon({ data }) {
+  const renderSection = (section, index) => {
+    switch (section.type) {
+      case "comingSoon":
+        const item = section.items[0]; // only 1 item in array
+
+        return (
+          <section key={`coming-soon-${index}`} className="coming-soon">
+            <div className="container">
+              <div className="coming-container">
+                <h1 className="title">Coming Soon</h1>
+                <p className="subtitle">{item.message}</p>
+
+                <div className="btn-div">
+                  <Link href="/" className="admission-btn comming-soon-btn">
+                    Go to Home
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return <>{data.map((section, index) => renderSection(section, index))}</>;
+}
