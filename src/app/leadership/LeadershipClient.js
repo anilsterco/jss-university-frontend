@@ -96,10 +96,9 @@ export default function LeadershipClient() {
                     width={1200}
                     height={600}
                     className="img-fluid w-100"
-                    style={{ marginTop: "-98px" }}
                   />
-                  <figcaption style={{width:700}} >
-                    <h3 style={{ wordBreak: "break-word", lineHeight: "1.3" }}> 
+                  <figcaption>
+                    <h3> 
                       {topLeader.name}
                       <span>{topLeader.subtitle || ""}</span>
                     </h3>
@@ -110,9 +109,8 @@ export default function LeadershipClient() {
                     alt={"circularArrow"}
                     width={20}
                     height={20}
+                    className="arrow-icon"
                   /> </div>
-                    
-                
                   </figcaption>
                   <Link href={`/leadership/${topLeader.slug}`} className="links"></Link>
                 </figure>
@@ -133,7 +131,7 @@ export default function LeadershipClient() {
                           alt={leader.name}
                           width={400}
                           height={400}
-                          style={{ width: "100%", height: "auto" }}
+                          // style={{ width: "100%", height: "auto" }}
                         />
                       </span>
                       <figcaption>

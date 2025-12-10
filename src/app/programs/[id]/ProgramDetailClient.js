@@ -13,7 +13,9 @@ export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
+
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
       .then((response) => response.json())
@@ -434,8 +436,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Left Arrow"
                         />
                       </button>
@@ -453,8 +455,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Right Arrow"
                         />
                       </button>
@@ -581,8 +583,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Left Arrow"
                         />
                       </button>
@@ -595,8 +597,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Right Arrow"
                         />
                       </button>
