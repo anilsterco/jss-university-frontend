@@ -3,6 +3,7 @@ import AboutFour from "@/component/sections/AboutFour";
 import AboutOne from "@/component/sections/AboutOne";
 import AboutThree from "@/component/sections/AboutThree";
 import AboutTwo from "@/component/sections/AboutTwo";
+import ComingSoon from "@/component/sections/ComingSoon";
 import FacilityFive from "@/component/sections/FacilityFive";
 import FacilityFour from "@/component/sections/FacilityFour";
 import FacilityOne from "@/component/sections/FacilityOne";
@@ -36,6 +37,32 @@ export default async function DynamicPage({ params }) {
 
   const hasTabs = data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
 
+  // Group sections that should be rendered together by FacilityOne
+  const groupedSections = [];
+  let facilityGroup = [];
+
+  data.sections?.forEach((section) => {
+    if (["titleBanner", "boxes", "percentSub"].includes(section.type)) {
+      facilityGroup.push(section);
+    } else {
+      if (facilityGroup.length > 0) {
+        groupedSections.push({
+          type: "facilityGroup",
+          sections: [...facilityGroup]
+        });
+        facilityGroup = [];
+      }
+      groupedSections.push(section);
+    }
+  });
+
+  if (facilityGroup.length > 0) {
+    groupedSections.push({
+      type: "facilityGroup",
+      sections: facilityGroup
+    });
+  }
+
   const sectionComponents = {
     topBanner: AboutOne,
     logoDesc: AboutOne,
@@ -44,9 +71,7 @@ export default async function DynamicPage({ params }) {
     visionMission: AboutThree,
     values: AboutFour,
     qualityPolicy: AboutFive,
-    titleBanner: FacilityOne,
-    boxes: FacilityOne,
-    percentSub: FacilityOne,
+    facilityGroup: FacilityOne,
     heading: FacilityTwo,
     dataSlider: FacilityTwo,
     researchSection: FacilityThree,
@@ -54,6 +79,7 @@ export default async function DynamicPage({ params }) {
     librarySection: FacilityFour,
     sideSection: FacilityFive,
     featuresSection: FacilitySix,
+    comingSoon: ComingSoon,
   };
 
   return (
@@ -67,9 +93,14 @@ export default async function DynamicPage({ params }) {
         />
       )}
 
-      {data.sections?.map((section, index) => {
-        const Component = sectionComponents[section.type];
-        return Component ? <Component key={index} data={[section]} /> : null;
+      {groupedSections?.map((section, index) => {
+        const Component = sectionComponents[section.type === "facilityGroup" ? "facilityGroup" : section.type];
+        if (Component === FacilityOne) {
+          return <Component key={index} data={section.sections} />;
+        } else if (Component) {
+          return <Component key={index} data={[section]} />;
+        }
+        return null;
       })}
     </>
   );
@@ -92,7 +123,6 @@ export async function generateMetadata({ params }) {
     return {
       title: data.meta_title || data.title || 'JSS Academy',
       description: data.meta_description || `Page: ${data.title}`,
-      // Add more metadata as needed
     };
   } catch (error) {
     return {

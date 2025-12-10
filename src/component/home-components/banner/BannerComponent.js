@@ -28,7 +28,7 @@ export default function HeroSlider({ data }) {
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
         loop={true}
-        spaceBetween={20}
+        spaceBetween={0}
         slidesPerView={1}
         className={styles.swiperContainer}
       >
@@ -60,7 +60,7 @@ export default function HeroSlider({ data }) {
                 ></h1>
                 <p className={styles.bannerContentP}>{slide.desc}</p>
                 {slide.url && (
-                  <Link href={slide.url} className={styles.bannerContentA}>
+                  <Link href={"about-jss"} className={styles.bannerContentA}>
                     {slide.linked_text}
                     <FiArrowRightCircle className={styles.iconSpacing} />
                   </Link>

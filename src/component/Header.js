@@ -14,7 +14,7 @@ const SCHOOL_DEPARTMENT_URL =
   "https://project-demo.in/jss/api/school-department-list";
 
 const ContactApi = "https://project-demo.in/jss/api/contact-info";
-// const Addmision_Api = "https://project-demo.in/jss/api/admission";
+const Addmision_Api = "https://project-demo.in/jss/api/admission";
 const Program_Api = "https://project-demo.in/jss/api/program-list";
 
 const mobilePanelsData = [
@@ -156,9 +156,8 @@ export default function Header() {
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
-  // const [mobAdmission, setMobadmission] = useState(null);
+  const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
-
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
@@ -182,10 +181,12 @@ export default function Header() {
   }, []);
 
   const [activePanel, setActivePanel] = useState(null);
+  // const togglePanel = (name) => {
+  //   setActivePanel(activePanel === name ? null : name);
+  // };
 
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
-
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -287,7 +288,125 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-  
+
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 991;
+    if (!isMobile) return;
+
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const fetchContactData = async () => {
+      try {
+        const res = await fetch(ContactApi, {
+          signal: controller.signal,
+          headers: {
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const json = await res.json();
+        if (!isMounted) return;
+        if (json.status && Array.isArray(json.data) && json.data.length > 0) {
+          const apiData = json.data[0];
+
+          // Validate data before setting state
+          if (apiData && typeof apiData === "object") {
+            setMobilePanels((prev) =>
+              prev.map((item) =>
+                item.name === "Contact"
+                  ? {
+                      ...item,
+                      heading: apiData.title || "Contact Us",
+                      Menu: [
+                        {
+                          name: apiData.address || "Address not available",
+                          url: apiData.direction_url || "#",
+                          contactIcon: "/images/header/address-icon.svg",
+                        },
+                        {
+                          name: apiData.email || "Email not available",
+                          url: apiData.email ? `mailto:${apiData.email}` : "#",
+                          contactIcon: "/images/header/mail-icon.svg",
+                        },
+                        {
+                          name: apiData.phone || "Phone not available",
+                          url: apiData.phone ? `tel:${apiData.phone}` : "#",
+                          contactIcon: "/images/header/phone-icon.svg",
+                        },
+                      ],
+                    }
+                  : item
+              )
+            );
+          }
+        } else {
+          console.warn("API returned unexpected data format:", json);
+        }
+      } catch (err) {
+        if (err.name === "AbortError") {
+          console.log("Fetch aborted");
+        } else {
+          console.error("FETCH ERROR:", err);
+        }
+      }
+    };
+
+    fetchContactData();
+    // Cleanup function
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, []);
+
+  // admission API
+
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 991;
+    if (!isMobile) return;
+    const admiApifetch = async () => {
+      try {
+        const res = await fetch(Addmision_Api);
+        const json = await res.json();
+
+        if (json.success) {
+          setMobadmission(json.data);
+        }
+      } catch (err) {
+        console.error("Error fetching API:", err);
+      }
+    };
+
+    admiApifetch();
+  }, []);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 991;
+    if (!isMobile) return;
+    const ProgApifetch = async () => {
+      try {
+        const res = await fetch(Program_Api);
+        const json = await res.json();
+        setMobProgramList(json.data);
+      } catch (err) {
+        console.error("Error fetching API:", err);
+      }
+    };
+
+    ProgApifetch();
+  }, [mobProgramList]);
+
+  // MOB MENU API END
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useEffect(() => {
     if (!isMounted) return;
 
@@ -361,7 +480,7 @@ export default function Header() {
     );
   }
 
-  const loadPrograms = async () => {
+    const loadPrograms = async () => {
   if (mobProgramList.length > 0) return;
   const res = await fetch(Program_Api);
   const json = await res.json();
@@ -605,23 +724,18 @@ const loadContacts = async () => {
                                 ))}
                               </div>
                             </div>
+
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <Link
-                                  key={idx}
-                                  href={{
+                                <Link key={idx} href={{
                                     pathname: "/programs",
                                     query: {
                                       type: b.title
                                         .toLowerCase()
                                         .replace(/\s+/g, "-"),
                                     },
-                                  }}
-                                >
-                                  <div
-                                    className="banner"
-                                    onClick={() => setActiveDropdown(null)}
-                                  >
+                                  }}>
+                                  <div className="banner" onClick={() => setActiveDropdown(null)} >
                                     <Image
                                       src={b.img}
                                       alt={b.title}
@@ -2545,4 +2659,4 @@ const loadContacts = async () => {
       </style>
     </header>
   );
-}
+};

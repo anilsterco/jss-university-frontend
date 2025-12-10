@@ -42,7 +42,7 @@ const CoursesOffered = ({ data }) => {
 
   return (
     <div className={styles.course_dep}>
-    <div className="container-fluid">
+    <div className="container-fluid mob-container">
       {/* Header Section */}
       <div className={styles.headerSection}>
         <p className={styles.subtitle}>{coursesData.subtitle}</p>

@@ -1,0 +1,11 @@
+<svg id="Arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_8079" data-name="Group 8079">
+    <g id="Group_1500" data-name="Group 1500" transform="translate(15.854 -14.502)">
+      <path id="Path_756" data-name="Path 756" d="M-9228.238-15314.041l4.422,4.422-4.422,4.422" transform="translate(9222.971 15336.043)" fill="none" stroke="#16344e" stroke-width="1"/>
+    </g>
+    <g id="Ellipse_17" data-name="Ellipse 17" fill="none" stroke="#16344e" stroke-width="1">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11.5" fill="none"/>
+    </g>
+  </g>
+</svg>
