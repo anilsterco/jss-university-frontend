@@ -22,7 +22,7 @@ export default function FacilityFive({ data }) {
                           <figure>
                             <Image
                               src={item.file}
-                              alt={item.Title}
+                              alt={item.title}
                               width={600}
                               height={400}
                               className="img-fluid w-100"
@@ -31,18 +31,18 @@ export default function FacilityFive({ data }) {
                         </div>
                         <div className="initiatives-text">
                           <div className="initiatives-top-text">
-                            <h5>{item.Title}</h5>
-                            <h6>{item.Subtitle}</h6>
-                            <p>{item.Desc}</p>
+                            <h5>{item.title}</h5>
+                            <h6>{item.subtitle}</h6>
+                            <p>{item.desc}</p>
                           </div>
                           <div className="initiatives-bottom-text">
                             <span>{item.point_title}</span>
                             <ul>
                               {[
-                                item.Point1,
-                                item.Point2,
-                                item.Point3,
-                                item.Point4
+                                item.point1,
+                                item.point2,
+                                item.point3,
+                                item.point4
                               ]
                                 .filter(point => point && point.trim() !== "")
                                 .map((point, index) => (

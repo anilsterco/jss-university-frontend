@@ -23,9 +23,9 @@ export default function FacilitySix({ data }) {
                       <div className="transport" key={item.item_uuid || i}>
                         <div className="transport-box">
                           <div className="transport-box-text">
-                            <span>{item.Title}</span>
-                            <h3>{item.Subtitle}</h3>
-                            <p>{item.Desc}</p>
+                            <span>{item.title}</span>
+                            <h3>{item.subtitle}</h3>
+                            <p>{item.desc}</p>
                             {item.link && (
                               <Link href={item.link} className="library-link">
                                 <i className="bi bi-arrow-right-short"></i>
@@ -36,7 +36,7 @@ export default function FacilitySix({ data }) {
                             <figure>
                               <Image
                                 src={item.file}
-                                alt={item.Title}
+                                alt={item.title}
                                 width={500}
                                 height={300}
                                 className="img-fluid w-100"
@@ -49,7 +49,7 @@ export default function FacilitySix({ data }) {
                             <figure>
                               <Image
                                 src={item.photo}
-                                alt={`${item.Title} Fleet`}
+                                alt={`${item.title} Fleet`}
                                 width={300}
                                 height={200}
                                 className="img-fluid w-100"
