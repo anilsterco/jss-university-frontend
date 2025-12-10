@@ -3,6 +3,7 @@ import AboutFour from "@/component/sections/AboutFour";
 import AboutOne from "@/component/sections/AboutOne";
 import AboutThree from "@/component/sections/AboutThree";
 import AboutTwo from "@/component/sections/AboutTwo";
+import ComingSoon from "@/component/sections/ComingSoon";
 import FacilityFive from "@/component/sections/FacilityFive";
 import FacilityFour from "@/component/sections/FacilityFour";
 import FacilityOne from "@/component/sections/FacilityOne";
@@ -54,6 +55,7 @@ export default async function DynamicPage({ params }) {
     librarySection: FacilityFour,
     sideSection: FacilityFive,
     featuresSection: FacilitySix,
+    comingSoon: ComingSoon,
   };
 
   return (
