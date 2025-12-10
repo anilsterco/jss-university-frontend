@@ -514,6 +514,9 @@ window.addEventListener("resize", setResponsiveMargin);
     });
     // Mobile Menu Tab End
 
+
+
+    
 $(function () {
     $('.desktop-nav > ul > li.nav-item').hover(
         function () {
@@ -544,3 +547,82 @@ $(function () {
 
 
 
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.matchMedia({
+    "(min-width: 991px)": function () {
+      const panels = gsap.utils.toArray(".facilities-list-box");
+      const lastIndex = panels.length - 1;
+      const imgBox = document.querySelector(".facilities-img");
+      const topImageWrapper = document.querySelector(
+        ".facilities-image-wrapper"
+      );
+
+      panels.forEach((panel, index) => {
+        if (index !== lastIndex) {
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: panel,
+              start: "top 55%",
+              end: "+=120%",
+              scrub: 1.2,
+              pin: true,
+              pinSpacing: false,
+              anticipatePin: 1,
+              pinType: "fixed",
+              onEnter: () => {
+                gsap.to(panel, {
+                  duration: 0.3,
+                  top: "55%",
+                  ease: "power2.out",
+                });
+
+                if (index > 0 && index + 1 !== panels.length) {
+                  gsap.to(panels[index - 1], {
+                    opacity: 0,
+                    visibility: "hidden",
+                    pointerEvents: "none",
+                    duration: 0.3,
+                    ease: "power1.out",
+                  });
+                }
+              },
+              onLeaveBack: () => {
+                if (index > 0 && index + 1 !== panels.length) {
+                  gsap.to(panels[index - 1], {
+                    opacity: 1,
+                    visibility: "visible",
+                    pointerEvents: "auto",
+                    duration: 0.3,
+                    ease: "power1.out",
+                  });
+                }
+              },
+            },
+          });
+        }
+      });
+
+      // 🖼 Pin the top image while the box scrolls
+      ScrollTrigger.create({
+        trigger: ".facilities-box",
+        start: "top top",
+        end: "bottom bottom",
+        pin: topImageWrapper,
+        pinSpacing: false,
+        anticipatePin: 1,
+      });
+
+      // Optional: class toggle for visual effects
+      ScrollTrigger.create({
+        start: 0,
+        end: 1350,
+        onEnter: () => imgBox.classList.add("sticky-active"),
+        onLeave: () => imgBox.classList.remove("sticky-active"),
+        onEnterBack: () => imgBox.classList.add("sticky-active"),
+        onLeaveBack: () => imgBox.classList.remove("sticky-active"),
+      });
+    },
+  });
