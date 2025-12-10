@@ -138,8 +138,7 @@ export default function FacilityOne({ data }) {
 
   // Render with titleBanner (your desired structure)
   return (
-    <main className="site_main">
-      <section className="facilities-sec1">
+    <section className="facilities-sec1">
         <div className="container">
           <div className="row">
             {/* Title Banner Section */}
@@ -235,6 +234,5 @@ export default function FacilityOne({ data }) {
           </div>
         </div>
       </section>
-    </main>
   );
 }
