@@ -1,7 +1,7 @@
 /* Container */
 .dep_faculty {
   background-color: #f5f5f5;
-  padding:0rem 0 10rem;
+  padding: 0rem 0 10rem;
 }
 
 /* Header Section */
@@ -11,13 +11,16 @@
   border-top: 1px solid #CBCBCB;
   padding-top: 10rem;
 }
+
 .sliderContainer {
   max-width: 100%;
   margin: 0 auto;
 }
+
 .slideImage {
   border-radius: 10px;
 }
+
 .subtitle {
   color: #16344E;
   text-transform: uppercase;
@@ -37,7 +40,7 @@
 }
 
 .dark-blue-text {
-    color: #16344e;
+  color: #16344e;
 }
 
 .titleHighlighted {
@@ -156,12 +159,14 @@
   color: #16344E;
   margin-bottom: 0.5rem;
   font: var(--font-24);
+  letter-spacing: -0.24px;
 }
 
 .facultyDesignation {
   color: #3498db;
   margin-bottom: 2rem;
   font: var(--font-16);
+  letter-spacing: -0.32px;
 }
 
 .underline {
@@ -172,68 +177,68 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .title {
-    font-size: 1.75rem;
+    width: 90%;
+    margin: 0 auto;
+    font: var(--font-50);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    letter-spacing: -2px;
   }
 
-  .sliderWrapper {
-    padding: 0 0.5rem;
+  .dep_faculty {
+    background-color: #f5f5f5;
+    padding: 0rem 0 6rem;
   }
 
-  .navButton {
-    width: 40px;
-    height: 40px;
-  }
-
-  .navButton svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .facultyCard {
-    flex: 0 0 250px;
-  }
-
-  .imageContainer {
-    height: 250px;
+  .headerSection {
+    border: none;
   }
 }
 
-@media (max-width: 576px) {
-  .container {
-    padding: 3rem 0;
+@media (max-width: 767px) {
+  .headerSection {
+    padding-top: 12rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    width: 80%;
+    font: var(--font-36);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    letter-spacing: -2px;
   }
 
-  .sliderWrapper {
-    padding: 0;
+  .dep_faculty {
+    background-color: #f5f5f5;
+    padding: 0rem 0 4rem;
   }
 
-  .navButton {
-    display: none;
+
+}
+
+@media (max-width: 600px) {
+  .headerSection {
+    padding-top: 15rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .headerSection {
+    padding-top: 16rem;
   }
 
-  .facultyCard {
-    flex: 0 0 220px;
+  .dep_faculty {
+    padding: 0rem 0 2rem;
   }
-
-  .imageContainer {
-    height: 220px;
-  }
-
-  .facultyInfo {
-    padding: 1rem;
-  }
-
-  .facultyName {
-    font-size: 1rem;
-  }
-
-  .facultyDesignation {
-    font-size: 0.85rem;
+}
+@media (max-width: 480px){
+.title {
+    width: 100%;
+    font: var(--font-36);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    letter-spacing: -2px;
   }
 }

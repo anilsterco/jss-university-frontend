@@ -7,7 +7,7 @@ import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
 
 export default function Laboratories({ data }) {
- // Dynamic data structure
+  // Dynamic data structure
   // const laboratoriesData = {
   //   subtitle: "LABORATORIES",
   //   title: "CUTTING-EDGE & SPECIALIZED THE CSE DEPARTMENT",
@@ -86,8 +86,15 @@ export default function Laboratories({ data }) {
               pagination={false}
               loop={true}
               spaceBetween={25}
-              slidesPerView={3.5}
+              slidesPerView={3.5} // Default (Desktop large)
               className={styles.slider}
+              breakpoints={{
+                1200: { slidesPerView: 3.5 }, 
+                991: { slidesPerView: 2 }, 
+                667: { slidesPerView: 2}, 
+                575: { slidesPerView: 1.3 }, 
+                0: { slidesPerView: 1 }, 
+              }}
             >
               {labs.map((lab) => (
                 <SwiperSlide key={lab.id} className={styles.facultyCard}>
