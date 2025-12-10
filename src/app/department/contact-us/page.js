@@ -1,16 +1,13 @@
 import { getPageSEO } from "@/lib/seo";
-import { Suspense } from "react";
-import ProgramClient from "./ProgramClient";
+import ContactClient from "./ContactClient";
 import Script from "next/script";
-import { Suspense } from "react";
 
 export async function generateMetadata() {
-  return await getPageSEO("program");
+  return await getPageSEO("contact");
 }
 
-export default async function Program() {
-  const seoData = await getPageSEO("program");
-
+export default async function Contact() {
+  const seoData = await getPageSEO("contact");
   return (
     <>
       <Script
@@ -20,9 +17,7 @@ export default async function Program() {
         }}
         strategy="beforeInteractive"
       />
-    <Suspense fallback={<div>Loading...</div>}>
-      <ProgramClient />
-    </Suspense>
+      <ContactClient />
     </>
   );
 }

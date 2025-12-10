@@ -65,7 +65,7 @@ export default function AboutDepartmentComponent({ data }) {
           {departmentData.stats.map((stat, index) => (
             <div
               key={stat.id}
-              className={`card h-100  ${styles.statCard} ${
+              className={` ${styles.statCard} ${
                 index === 0
                   ? styles.onecard
                   : index === 1
@@ -95,24 +95,24 @@ export default function AboutDepartmentComponent({ data }) {
 
         {/* Vision and Mission Section */}
         <div
-          className={`row g-4 justify-content-center ${styles.contentSection}`}
+          className={`${styles.contentSection}`}
         >
           {/* Image Placeholder */}
-          <div className="col-md-6 px-0">
+          <div className="vission px-0">
             <div className={`card border-0 h-100 ${styles.imagePlaceholder}`}>
               <Image
                 src={departmentData.image}
                 alt="Image Placeholder"
                 width={500}
                 height={500}
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", objectFit:"cover" }}
                 priority
               />
             </div>
           </div>
 
           {/* Vision and Mission */}
-          <div className={`col-md-5 ps-0 pt-5 ${styles.visionMission}`}>
+          <div className={`mission ps-0  ${styles.visionMission}`}>
             <div className="h-100">
               {/* Vision */}
               <div className={styles.visionCard}>

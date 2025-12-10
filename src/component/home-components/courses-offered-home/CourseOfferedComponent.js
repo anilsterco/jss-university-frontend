@@ -178,7 +178,11 @@ export default function CoursesOffered({ data }) {
           >
             {coursesData.programs.map((level, i) => (
               <Link
-                href={`/programs`}
+               href={{pathname: "/programs",
+                query: {
+                type: level.slug.toLowerCase().replace(/\s+/g, "-"),
+        },
+          }}
                 key={i}
                 className="second-section-cards-image position-relative"
               >
