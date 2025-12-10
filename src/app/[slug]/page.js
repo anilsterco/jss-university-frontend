@@ -16,7 +16,7 @@ import { notFound } from "next/navigation";
 // API fetcher
 async function fetchPageData(slug) {
   try {
-    const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
+    const res = await fetch(`http://sd7:8080/jss/api/pages/${slug}`, {
       next: { revalidate: 60 },
     });
 
