@@ -8,6 +8,7 @@ export async function getPageSEO(slug) {
     if (!res.ok) throw new Error("SEO data not found");
 
     const data = await res.json();
+
     return {
       title: data.data.title,
       description: data.data.description,

@@ -20,7 +20,7 @@ export default function NotFound() {
           }
           .error > .code {
             font-size: 10.5em;
-            text-shadow:  0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+            text-shadow:  0 6px 1px rgba(255, 255, 255, 0.1) , 0 0 5px rgba(119, 119, 119, 0.1) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(255, 255, 255, 0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
             margin: 0;
           }
           .error > .desc {

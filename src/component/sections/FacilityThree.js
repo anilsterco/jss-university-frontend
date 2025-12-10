@@ -35,10 +35,7 @@ export default function FacilityThree({ data }) {
                         <div className="res-center-text">
                           <div className="top-res-text">
                             {item.title && <h6>{item.title}</h6>}
-                            {item.subtitle && <p>{item.subtitle}</p>}
-                            {item.quote && (
-                              <blockquote>{item.quote}</blockquote>
-                            )}
+                            {item.subtitle && <blockquote>{item.subtitle}</blockquote>}
                             {item.description && <p>{item.description}</p>}
                           </div>
                           <div className="bottom-res-box">
