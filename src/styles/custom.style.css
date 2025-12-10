@@ -946,7 +946,7 @@ This is the minimum CSS that you will need in order for this to work
 .peo-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.4rem;
   padding: 4rem 0 6rem;
 }
 
@@ -979,6 +979,7 @@ This is the minimum CSS that you will need in order for this to work
   color: var(--color-4e);
   display: inline-block;
   line-height: 1.5;
+  font-family: var(--font-Condensed);
 }
 
 .tabbed-content .apply-btn1:hover {
@@ -987,7 +988,7 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .core-sec {
-  padding-block: 0 10rem;
+  padding-block: 0 16rem;
   background-color: var(--color-f6);
 }
 
@@ -1028,7 +1029,7 @@ This is the minimum CSS that you will need in order for this to work
 
 .core-pdf {
   position: relative;
-  margin-top: 7rem;
+  margin-top: 4.7rem;
   border-top: 1px solid var(--color-d6);
   padding-block: 3rem 0;
 }
@@ -3222,7 +3223,7 @@ hr {
 
 @media screen and (max-width:480px) {
   .inner-title .innnr_head h3 {
-    font: var(--font-30);
+    font: var(--font-20);
     font-family: var(--font-Condensed);
     letter-spacing: -1px;
   }
@@ -4257,7 +4258,7 @@ hr {
   }
 
   .inner-title {
-    padding-top: 6rem;
+    padding-top: 1rem;
   }
 
   .about_one .estblish {
@@ -4450,7 +4451,7 @@ hr {
   }
 
   .abt_cntnt {
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
 
   .about_one .abt_cntnt p {
