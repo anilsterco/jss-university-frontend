@@ -436,8 +436,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Left Arrow"
                         />
                       </button>
@@ -455,8 +455,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Right Arrow"
                         />
                       </button>
@@ -583,8 +583,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Left Arrow"
                         />
                       </button>
@@ -597,8 +597,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={18}
-                          height={18}
+                          width={24}
+                          height={24}
                           alt="Right Arrow"
                         />
                       </button>
