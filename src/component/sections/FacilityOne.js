@@ -93,7 +93,10 @@ export default function FacilitiesOne({ data }) {
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, index) => (
-                    <div className="facilities-box-text" key={item.item_uuid || index}>
+                    <div
+                      className="facilities-box-text"
+                      key={item.item_uuid || index}
+                    >
                       <div className="facilities-heading">
                         <h2>{item.percent}</h2>
                       </div>
@@ -117,7 +120,10 @@ export default function FacilitiesOne({ data }) {
                     {section.items
                       .sort((a, b) => a.position - b.position)
                       .map((item, index) => (
-                        <div key={item.item_uuid || index} className="facilities-list-box">
+                        <div
+                          key={item.item_uuid || index}
+                          className="facilities-list-box"
+                        >
                           <figure>
                             <Image
                               src={item.photo}
@@ -155,8 +161,7 @@ export default function FacilitiesOne({ data }) {
   };
 
   return (
-    <main className="site_main">
-      <section className="facilities-sec1">
+    <section className="facilities-sec1">
         <div className="container">
           {data.map((section, index) => renderSection(section, index))}
 
@@ -168,6 +173,5 @@ export default function FacilitiesOne({ data }) {
           )}
         </div>
       </section>
-    </main>
   );
 }
