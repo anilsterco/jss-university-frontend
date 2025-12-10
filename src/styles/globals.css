@@ -253,6 +253,8 @@ body {
     padding-right: 1.5rem;
   }
 
+
+
   .footer_section .container {
     max-width: 1840px;
     padding-left: 1.5rem;
@@ -1318,31 +1320,37 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
   .cardsRow {
     padding-block: 12rem 4rem;
   }
 }
-@media (max-width: 820px){
+
+@media (max-width: 820px) {
   .latest-event:after {
-   content: none;
+    content: none;
   }
+
   .latest-event:before {
-   content: none;
+    content: none;
   }
- 
+
 }
-@media (max-width: 575px){
-.container.p-sm-0{
-  padding-inline: 0!important;
-}
-.bannerTextBox {
+
+@media (max-width: 575px) {
+  .container.p-sm-0 {
+    padding-inline: 0 !important;
+  }
+
+  .bannerTextBox {
     margin-top: 2rem;
   }
- .events_row {
+
+  .events_row {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }
- 
+
 }
 
 .coming-container {
@@ -1385,3 +1393,4 @@ p {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+
