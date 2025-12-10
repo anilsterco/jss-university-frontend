@@ -499,7 +499,7 @@
 
 .admission-box-text {
   background-color: var(--color-100);
-  padding: 3rem;
+  padding: 3rem 3rem 1.2rem;
   border-radius: 5rem 0 0 0;
   width: 22%;
 }
@@ -775,16 +775,7 @@
   top: -1px;
 }
 
-@media (min-width: 2200px) {
-  .eligibility-sec .container {
-    max-width: 2032px;
-  }
 
-  .eligibility-text {
-    width: 19.9%;
-    margin-right: 8.6rem;
-  }
-}
 
 .educational-sec {
   padding-block: 8rem;
@@ -873,6 +864,8 @@
   -ms-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
+
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
@@ -985,6 +978,7 @@ This is the minimum CSS that you will need in order for this to work
   font-weight: 600;
   color: var(--color-4e);
   display: inline-block;
+  line-height: 1.5;
 }
 
 .tabbed-content .apply-btn1:hover {
@@ -1063,7 +1057,6 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .core-img img {
-  box-shadow: 0px 3px 6px #0000007d;
   border-radius: 1.6rem;
 }
 
@@ -3030,10 +3023,11 @@ hr {
   .facilities-img .sticky-box {
     position: relative;
   }
+
   .sticky-box {
-  position: sticky;
-  top: 120px;
-}
+    position: sticky;
+    top: 120px;
+  }
 
   .facilities-box-text {
     top: 0;
@@ -4018,46 +4012,59 @@ hr {
   .opportunitie-tab {
     margin-top: 2rem;
   }
-  .across{
+
+  .across {
     margin-top: 2rem;
     padding-top: 2rem;
   }
+
   .across h2 {
     font: var(--font-60);
     color: var(--color-4e);
     letter-spacing: -4px;
     font-weight: 700;
     font-family: var(--font-Condensed);
-}
-.testimonial-img-text h4 {
+  }
+
+  .testimonial-img-text h4 {
     color: var(--color-white);
     font: var(--font-24);
     text-transform: uppercase;
     font-weight: 600;
     font-family: var(--font-Condensed);
-}
-.engineering-btn{display: flex;}
-.structure-btn{
-  margin-bottom: 0;
-  width: 100%;
-}
-.apply-btn1 {width: 100%;margin-left: 0;}
-.engineering-btn .structure-btn {
+  }
+
+  .engineering-btn {
+    display: flex;
+  }
+
+  .structure-btn {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .apply-btn1 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .engineering-btn .structure-btn {
     font: var(--font-16);
     text-transform: uppercase;
     letter-spacing: .72px;
     margin-left: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 700;
-}
-.apply-btn1{
-   font: var(--font-16);
+  }
+
+  .apply-btn1 {
+    font: var(--font-16);
     text-transform: uppercase;
     letter-spacing: .72px;
     margin-left: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 700;
-}
+  }
 }
 
 
@@ -4074,6 +4081,34 @@ hr {
   font-family: var(--font-Condensed);
 }
 
+
+
+
+@media (min-width: 2200px) {
+  .eligibility-sec .container {
+    max-width: 2032px !important;
+  }
+  .overview-text {
+    padding: 0 27rem 0 0;
+  }
+
+  .eligibility-text p {
+    padding-right: 6rem;
+  }
+
+  .eligibility-text {
+    width: 19.9%;
+    margin-right: 8.6rem;
+  }
+
+  .core-text h6 {
+    padding-right: 7rem;
+  }
+
+  .core-text p {
+    padding-right: 13rem;
+  }
+}
 
 /* about-us page responsive */
 @media screen and (max-width:1549px) {
