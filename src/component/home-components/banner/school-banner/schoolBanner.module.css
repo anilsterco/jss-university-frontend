@@ -1,0 +1,287 @@
+.swiperContainer {
+  width: 100%;
+  position: relative;
+  height: 600px;
+}
+
+.slideWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  bottom: 2rem;
+}
+
+.leftSection {
+  width: 40%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
+  left: 8.9%;
+}
+
+.rightSection {
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.desktopBanner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.mobileBanner {
+  display: none;
+}
+
+.bannerContent {
+  width: 100%;
+  max-width: 550px;
+}
+
+.bannerLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: #DAA520;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  font-family: var(--font-Roboto);
+  margin-top: 10rem;
+}
+
+.bannerContentH1 {
+  font-size: 60px;
+  line-height: 1.1;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -2px;
+  font-family: var(--font-Condensed);
+  margin: 0 0 2rem 0;
+}
+
+.bannerContentH1 span {
+  color: #4A90E2;
+}
+
+.bannerContentP {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  font-family: var(--font-Roboto);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.bannerContentA {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-Roboto);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.bannerContentA::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #1a1a1a;
+}
+
+.bannerContentA:hover {
+  color: #4A90E2;
+}
+
+.bannerContentA:hover::after {
+  background: #4A90E2;
+}
+
+.iconSpacing {
+  margin-left: 12px;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.bannerContentA:hover .iconSpacing {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1366px) {
+  .swiperContainer {
+    height: 550px;
+  }
+
+  .bannerContentH1 {
+    font-size: 52px;
+  }
+
+  .leftSection {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .swiperContainer {
+    height: 500px;
+  }
+
+  .bannerContentH1 {
+    font-size: 46px;
+    margin-bottom: 1.5rem;
+  }
+
+  .bannerContentP {
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .leftSection {
+    width: 42%;
+  }
+
+  .rightSection {
+    width: 58%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .swiperContainer {
+    height: 450px;
+  }
+
+  .bannerContentH1 {
+    font-size: 40px;
+  }
+
+  .leftSection {
+    width: 45%;
+    padding: 0 3%;
+  }
+
+  .rightSection {
+    width: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  .swiperContainer {
+    height: 420px;
+  }
+
+  .bannerContentH1 {
+    font-size: 36px;
+    margin-bottom: 1.2rem;
+  }
+
+  .bannerLabel {
+    font-size: 11px;
+    margin-bottom: 1.5rem;
+  }
+
+  .bannerContentP {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .swiperContainer {
+    height: auto;
+  }
+
+  .slideWrapper {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    width: 100%;
+    padding: 3rem 2rem;
+    order: 2;
+    background: #fff;
+  }
+
+  .rightSection {
+    width: 100%;
+    height: 300px;
+    order: 1;
+  }
+
+  .desktopBanner {
+    display: none;
+  }
+
+  .mobileBanner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .bannerContent {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .bannerLabel {
+    font-size: 11px;
+    margin-bottom: 1rem;
+  }
+
+  .bannerContentH1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .bannerContentP {
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+  }
+
+  .bannerContentA {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftSection {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .rightSection {
+    height: 250px;
+  }
+
+  .bannerContentH1 {
+    font-size: 28px;
+  }
+
+  .bannerContentP {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .leftSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .bannerContentH1 {
+    font-size: 26px;
+  }
+}
