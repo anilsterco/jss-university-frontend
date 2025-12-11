@@ -436,8 +436,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={24}
-                          height={24}
+                          width={22}
+                          height={22}
                           alt="Left Arrow"
                         />
                       </button>
@@ -455,8 +455,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={24}
-                          height={24}
+                          width={22}
+                          height={22}
                           alt="Right Arrow"
                         />
                       </button>
@@ -516,7 +516,7 @@ export default function ProgramDetailClient({ params }) {
                         src={fee_structure.fee_structure_image}
                         alt="Fee Structure"
                         width={500}
-                        height={300}
+                        height={400}
                         className="img-fluid w-100"
                       />
                     )}
@@ -583,8 +583,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={24}
-                          height={24}
+                          width={22}
+                          height={22}
                           alt="Left Arrow"
                         />
                       </button>
@@ -597,8 +597,8 @@ export default function ProgramDetailClient({ params }) {
                       >
                         <Image
                           src="/images/icons/Arrow.svg"
-                          width={24}
-                          height={24}
+                          width={22}
+                          height={22}
                           alt="Right Arrow"
                         />
                       </button>
