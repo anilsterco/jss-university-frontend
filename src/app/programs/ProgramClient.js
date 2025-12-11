@@ -298,15 +298,13 @@ useEffect(() => {
                             className={styles.strechedLink}
                           >
                             <figure>
-                              {program.banner && (
                                 <Image
-                                  src={program.banner}
+                                  src={program.banner ?? "/images/programs/program-img.webp"}
                                   alt="program-image"
                                   width={400}
                                   height={250}
                                   className="img-fluid w-100"
                                 />
-                              )}
                             </figure>
                             <div className={styles.cusProgramText}>
                               <p>{program.degree_name}</p>

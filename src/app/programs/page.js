@@ -2,7 +2,6 @@ import { getPageSEO } from "@/lib/seo";
 import { Suspense } from "react";
 import ProgramClient from "./ProgramClient";
 import Script from "next/script";
-import { Suspense } from "react";
 
 export async function generateMetadata() {
   return await getPageSEO("program");
