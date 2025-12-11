@@ -34,15 +34,15 @@ export default function DepartmentSection({ data }) {
                   {departmentSection.programs_text}
                 </p>
                 <div className="depar-button">
-                <Link href={`/program`}>
-                  <button className={styles.viewAllButton}>
-                    VIEW ALL PROGRAMMES <GoArrowRight />
-                  </button>
-                </Link>
-               
-                <Link href={`/apply-now`}>
-                  <button className={styles.applyButton}>APPLY NOW</button>
-                </Link>
+                  <Link href={`/program`}>
+                    <button className={styles.viewAllButton}>
+                      VIEW ALL PROGRAMMES <GoArrowRight />
+                    </button>
+                  </Link>
+
+                  <Link href={`/apply-now`}>
+                    <button className={styles.applyButton}>APPLY NOW</button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -54,7 +54,14 @@ export default function DepartmentSection({ data }) {
             <div className="row mb-5">
               {departmentSection.programs.map((prog, index) => (
                 <div className="col-md-4 mb-4" key={index}>
-                  <Link href={`/program/${prog.slug}`}>
+                  <Link
+                    href={{
+                      pathname: "/programs",
+                      query: {
+                        type: prog.slug.toLowerCase().replace(/\s+/g, "-"),
+                      },
+                    }}
+                  >
                     <div
                       className={`card text-white border-0 position-relative ${styles.programCard}`}
                     >

@@ -1,4 +1,4 @@
-import BannerComponent from "@/component/home-components/banner/BannerComponent";
+import SchoolBannerComponent from "@/component/home-components/banner/school-banner/SchoolBannerComponent";
 import BelowBannerComponent from "@/component/school-components/below-banner-component/BelowBannerComponent";
 import DepartmentComponent from "@/component/school-components/browse-department/DepartmentComponent";
 import PlacementComponent from "@/component/home-components/placement/PlacementComponent";
@@ -38,7 +38,7 @@ export default async function SchoolPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-      <BannerComponent data={schoolData.sections.banners} />
+      <SchoolBannerComponent data={schoolData.sections.banners} />
       <BelowBannerComponent />
       {schoolData.sections.course_data.title && (
         <DepartmentComponent data={schoolData.sections.course_data} />

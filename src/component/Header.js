@@ -6,16 +6,16 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
-import { color } from "framer-motion";
 
-const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
-const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
-const SCHOOL_DEPARTMENT_URL =
-  "https://project-demo.in/jss/api/school-department-list";
-
-const ContactApi = "https://project-demo.in/jss/api/contact-info";
-const Addmision_Api = "https://project-demo.in/jss/api/admission";
-const Program_Api = "https://project-demo.in/jss/api/program-list";
+const BASE_URL = "https://project-demo.in/jss/api/";
+const NAV_BASE_URL = `${BASE_URL}header`;
+const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
+const ADMISSION_BASE_URL = `${BASE_URL}admission`;
+const SCHOOL_DEPARTMENT_URL = `${BASE_URL}school-department-list`;
+const ContactApi = `${BASE_URL}contact-info`;
+const Addmision_Api = `${BASE_URL}admission`;
+const Program_Api = `${BASE_URL}program-list`;
+const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
 
 const mobilePanelsData = [
   {
@@ -100,43 +100,11 @@ const mobilePanelsData = [
     heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
     icon: "/images/header/contact-mob.svg",
-    // Menu: [
-    //   {
-    //     name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301",
-    //     url: "",
-    //     contactIcon: "/images/header/address-icon.svg",
-    //   },
-    //   {
-    //     name: "principal@jssaten.ac.in",
-    //     url: "mailto:principal@jssaten.ac.in",
-    //     contactIcon: "/images/header/mail-icon.svg",
-    //   },
-    //   {
-    //     name: "8725033398",
-    //     url: "https://wa.me/8725033398",
-    //     contactIcon: "/images/header/phone-icon.svg",
-    //   },
-    // ],
   },
 
   {
     name: "Menu",
     icon: "/images/header/hamberger-mob.svg",
-    Menu: [
-      { name: "About JSS University", url: "/about" },
-      { name: "Academics", url: "/academics" },
-      { name: "Facilities", url: "/facilities" },
-      { name: "Examination", url: "/examination" },
-      { name: "Research & Innovation", url: "/research-and-innovation" },
-      { name: "Placements", url: "/placements" },
-    ],
-    Menubottom: [
-      { name: "Alumni", url: "/alumni" },
-      { name: "Testimonials", url: "/testimonials" },
-      { name: "Happenings", url: "/happenings" },
-      { name: "Careers", url: "/careers" },
-      { name: "Contact Us", url: "/contact-us" },
-    ],
   },
 ];
 
@@ -164,7 +132,13 @@ export default function Header() {
     async function fetchHeaderData() {
       try {
         const [res1, res2] = await Promise.all([
-          fetch(`${NAV_BASE_URL}`),
+          fetch(
+            `${
+              pathname.includes("schools") || pathname.includes("department")
+                ? SCHOOL_HEADER_URL
+                : NAV_BASE_URL
+            }`
+          ),
           fetch(`${ADMISSION_BASE_URL}`),
         ]);
         if (!res1.ok || !res2.ok) {
@@ -178,12 +152,9 @@ export default function Header() {
       }
     }
     fetchHeaderData();
-  }, []);
+  }, [pathname]);
 
   const [activePanel, setActivePanel] = useState(null);
-  // const togglePanel = (name) => {
-  //   setActivePanel(activePanel === name ? null : name);
-  // };
 
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
@@ -267,6 +238,18 @@ export default function Header() {
   ];
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        setMenuOpen(false);
+        setActivePanel(null);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const fetchSchools = async () => {
       try {
         const res = await fetch(`${SCHOOL_DEPARTMENT_URL}`);
@@ -288,120 +271,6 @@ export default function Header() {
       setSelectedSchoolName(engineeringData[0].name);
     }
   }, [engineeringData]);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-
-    let isMounted = true;
-    const controller = new AbortController();
-
-    const fetchContactData = async () => {
-      try {
-        const res = await fetch(ContactApi, {
-          signal: controller.signal,
-          headers: {
-            "Cache-Control": "no-cache",
-            Pragma: "no-cache",
-          },
-        });
-
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const json = await res.json();
-        if (!isMounted) return;
-        if (json.status && Array.isArray(json.data) && json.data.length > 0) {
-          const apiData = json.data[0];
-
-          // Validate data before setting state
-          if (apiData && typeof apiData === "object") {
-            setMobilePanels((prev) =>
-              prev.map((item) =>
-                item.name === "Contact"
-                  ? {
-                      ...item,
-                      heading: apiData.title || "Contact Us",
-                      Menu: [
-                        {
-                          name: apiData.address || "Address not available",
-                          url: apiData.direction_url || "#",
-                          contactIcon: "/images/header/address-icon.svg",
-                        },
-                        {
-                          name: apiData.email || "Email not available",
-                          url: apiData.email ? `mailto:${apiData.email}` : "#",
-                          contactIcon: "/images/header/mail-icon.svg",
-                        },
-                        {
-                          name: apiData.phone || "Phone not available",
-                          url: apiData.phone ? `tel:${apiData.phone}` : "#",
-                          contactIcon: "/images/header/phone-icon.svg",
-                        },
-                      ],
-                    }
-                  : item
-              )
-            );
-          }
-        } else {
-          console.warn("API returned unexpected data format:", json);
-        }
-      } catch (err) {
-        if (err.name === "AbortError") {
-          console.log("Fetch aborted");
-        } else {
-          console.error("FETCH ERROR:", err);
-        }
-      }
-    };
-
-    fetchContactData();
-    // Cleanup function
-    return () => {
-      isMounted = false;
-      controller.abort();
-    };
-  }, []);
-
-  // admission API
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-    const admiApifetch = async () => {
-      try {
-        const res = await fetch(Addmision_Api);
-        const json = await res.json();
-
-        if (json.success) {
-          setMobadmission(json.data);
-        }
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
-
-    admiApifetch();
-  }, []);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 991;
-    if (!isMobile) return;
-    const ProgApifetch = async () => {
-      try {
-        const res = await fetch(Program_Api);
-        const json = await res.json();
-        setMobProgramList(json.data);
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
-
-    ProgApifetch();
-  }, [mobProgramList]);
-
-  // MOB MENU API END
 
   useEffect(() => {
     setIsMounted(true);
@@ -480,71 +349,101 @@ export default function Header() {
     );
   }
 
-    const loadPrograms = async () => {
-  if (mobProgramList.length > 0) return;
-  const res = await fetch(Program_Api);
-  const json = await res.json();
-  setMobProgramList(json.data || []);
-};
+  const loadPrograms = async () => {
+    if (mobProgramList.length > 0) return;
+    const res = await fetch(Program_Api);
+    const json = await res.json();
+    setMobProgramList(json.data || []);
+  };
 
-const loadAdmissions = async () => {
-  if (mobAdmission) return; 
-  const res = await fetch(Addmision_Api);
-  const json = await res.json();
-  setMobadmission(json.data || null);
-};
+  const loadAdmissions = async () => {
+    if (mobAdmission) return;
+    const res = await fetch(Addmision_Api);
+    const json = await res.json();
+    setMobadmission(json.data || null);
+  };
 
-const loadContacts = async () => {
-  const contactPanel = mobilePanels.find((x) => x.name === "Contact");
-  if (contactPanel?.Menu?.length > 0) return; 
-  const res = await fetch(ContactApi);
-  const json = await res.json();
+  const loadContacts = async () => {
+    const contactPanel = mobilePanels.find((x) => x.name === "Contact");
+    if (contactPanel?.Menu?.length > 0) return;
+    const res = await fetch(ContactApi);
+    const json = await res.json();
 
-  if (json.status && json.data.length > 0) {
-    const data = json.data[0];
+    if (json.status && json.data.length > 0) {
+      const data = json.data[0];
 
-    setMobilePanels((prev) =>
-      prev.map((item) =>
-        item.name === "Contact"
-          ? {
-              ...item,
-              heading: data.title,
-              Menu: [
-                {
-                  name: data.address,
-                  url: data.direction_url,
-                  contactIcon: "/images/header/address-icon.svg",
-                },
-                {
-                  name: data.email,
-                  url: `mailto:${data.email}`,
-                  contactIcon: "/images/header/mail-icon.svg",
-                },
-                {
-                  name: data.phone,
-                  url: `tel:${data.phone}`,
-                  contactIcon: "/images/header/phone-icon.svg",
-                },
-              ],
-            }
-          : item
-      )
-    );
-  }
-};
+      setMobilePanels((prev) =>
+        prev.map((item) =>
+          item.name === "Contact"
+            ? {
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.address,
+                    url: data.direction_url,
+                    contactIcon: "/images/header/address-icon.svg",
+                  },
+                  {
+                    name: data.email,
+                    url: `mailto:${data.email}`,
+                    contactIcon: "/images/header/mail-icon.svg",
+                  },
+                  {
+                    name: data.phone,
+                    url: `tel:${data.phone}`,
+                    contactIcon: "/images/header/phone-icon.svg",
+                  },
+                ],
+              }
+            : item
+        )
+      );
+    }
+  };
+
+  const loadMenu = async () => {
+    const contactPanel = mobilePanels.find((x) => x.name === "Menu");
+    if (contactPanel?.Menu?.length > 0) return;
+    const res = await fetch(MOBILE_HEADER_URL);
+    const json = await res.json();
+    console.log("Mobile Menu API Response:", json.data[0]);
+
+    if (json.success && json.data.length > 0) {
+      const data = json.data[0];
+
+      setMobilePanels((prev) =>
+        prev.map((item) =>
+          item.name === "Menu"
+            ? {
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.title,
+                    url: data.url,
+                  },
+                ],
+              }
+            : item
+        )
+      );
+    }
+  };
 
   const togglePanel = async (name) => {
-  if (activePanel === name) {
-    setActivePanel(null);
-    return;
-  }
+    if (activePanel === name) {
+      setActivePanel(null);
+      return;
+    }
 
-  if (name === "Courses") await loadPrograms();
-  if (name === "Admissions") await loadAdmissions();
-  if (name === "Contact") await loadContacts();
+    if (name === "Courses") await loadPrograms();
+    if (name === "Admissions") await loadAdmissions();
+    if (name === "Contact") await loadContacts();
+    if (name === "Menu") await loadMenu();
 
-  setActivePanel(name);
-};
+    setActivePanel(name);
+  };
 
   return (
     <header className="site-header">
@@ -552,18 +451,33 @@ const loadContacts = async () => {
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
         >
-          <div className="dashbord-logo">
-            <Link href="/" aria-label="Home">
-              <Image
-                src="/images/header/header-logo.png"
-                className="site-logo"
-                alt="Site Logo"
-                width={299}
-                height={108}
-                priority
-              />
-            </Link>
-          </div>
+          {pathname.includes("schools") || pathname.includes("department") ? (
+            <div className="dashbord-logo">
+              <Link href="/" aria-label="Home">
+                <Image
+                  src="/images/header/jss-moblogo.png"
+                  className="site-logo"
+                  alt="Site Logo"
+                  width={299}
+                  height={108}
+                  priority
+                />
+              </Link>
+            </div>
+          ) : (
+            <div className="dashbord-logo">
+              <Link href="/" aria-label="Home">
+                <Image
+                  src="/images/header/header-logo.png"
+                  className="site-logo"
+                  alt="Site Logo"
+                  width={299}
+                  height={108}
+                  priority
+                />
+              </Link>
+            </div>
+          )}
           <div className="mob-logo">
             <Link href="/" aria-label="Home">
               <Image
@@ -584,10 +498,41 @@ const loadContacts = async () => {
                 className="school-toggle"
                 onClick={() => setEngineeringDropdown((prev) => !prev)}
               >
-                <p className="mb-0">School of</p>
-                <h5 className="fw-bold">
-                  {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
-                </h5>
+                <div
+                  style={{
+                    borderLeft: "1px solid #7c7c7cff",
+                
+                    justifyItems: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    padding: "12px 12px 12px 12px",
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: "16px",
+                      color: "#16344E",
+                      fontWeight: "400",
+                      marginBottom: "-4px",
+                    }}
+                  >
+                    School Of
+                  </span>
+                  <span
+                    style={{
+                      display: "block",
+                      textTransform: "uppercase",
+                      color: "#16344E",
+                      fontWeight: "700",
+                      fontSize: "23px",
+                    }}
+                  >
+                    Engineering <IoChevronDownOutline fontSize={15} />
+                  </span>
+                </div>
               </div>
               {engineeringDropdown && engineeringData.length > 0 && (
                 <div
@@ -727,15 +672,21 @@ const loadContacts = async () => {
 
                             <div className="mega-right-banners">
                               {l.right.banners?.map((b, idx) => (
-                                <Link key={idx} href={{
+                                <Link
+                                  key={idx}
+                                  href={{
                                     pathname: "/programs",
                                     query: {
                                       type: b.title
                                         .toLowerCase()
                                         .replace(/\s+/g, "-"),
                                     },
-                                  }}>
-                                  <div className="banner" onClick={() => setActiveDropdown(null)} >
+                                  }}
+                                >
+                                  <div
+                                    className="banner"
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
                                     <Image
                                       src={b.img}
                                       alt={b.title}
@@ -1148,22 +1099,27 @@ const loadContacts = async () => {
               {item.name === "Menu" && activePanel === "Menu" && (
                 <>
                   {item.Menu && (
-                    <ul className="menu-top">
-                      {item.Menu.map((sub, idx) => (
-                        <li key={idx}>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {item.Menubottom && (
-                    <ul className="menu-bottom">
-                      {item.Menubottom.map((sub, idx) => (
-                        <li key={idx}>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
+                    <>
+                      {/* TOP MENU (1–6) */}
+                      <ul className="menu-top">
+                        {item.Menu.slice(0, 6).map((sub, idx) => (
+                          <li key={idx}>
+                            <a href={sub.url}>{sub.name}</a>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* BOTTOM MENU (Only if more than 6 items) */}
+                      {item.Menu.length > 6 && (
+                        <ul className="menu-bottom">
+                          {item.Menu.slice(1).map((sub, idx) => (
+                            <li key={idx}>
+                              <a href={sub.url}>{sub.name}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
                   )}
                 </>
               )}
@@ -2659,4 +2615,4 @@ const loadContacts = async () => {
       </style>
     </header>
   );
-};
+}
