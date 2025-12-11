@@ -81,13 +81,13 @@ export default function Footer() {
     const style = { width: size, height: size };
     switch (icon) {
       case "facebook":
-        return <img src="/images/footer/dash_facebook.svg"/>;
-      case "twitter":
-        return <img src="/images/footer/dash_insta.svg"/>;
+        return <img src="/images/footer/dash_facebook.svg" />;
+      case "instagram":
+        return <img src="/images/footer/dash_linkdin.svg" />;
       case "youtube":
-        return <img src="/images/footer/dash_youtube.svg"/>;
-      case "linkedin":
-        return <img src="/images/footer/dash_linkdin.svg"/>;
+        return <img src="/images/footer/dash_youtube.svg" />;
+      case "twitter":
+        return <img src="/images/footer/dash_insta.svg" />;
       default:
         return null;
     }
@@ -95,10 +95,9 @@ export default function Footer() {
 
   const socialIcons = [
     { id: "facebook", src: "/images/footer/facebook.svg" },
-    { id: "twitter", src: "/images/footer/twiter.svg" },
     { id: "instagram", src: "/images/footer/insta.svg" },
     { id: "youtube", src: "/images/footer/youtube.svg" },
-    { id: "linkedin", src: "/images/footer/linkdin.svg" },
+    { id: "twitter", src: "/images/footer/twiter.svg" },
   ];
 
   return (
