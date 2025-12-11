@@ -1,20 +1,21 @@
 "use client";
-
+import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function FacultyDetailPage({ params }) {
-  const { id } = params;
+  const { id } = React.use(params);
   const [faculty, setFaculty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [error, setError] = useState(null);
   const [showFull, setShowFull] = useState(false);
+  const [addSectiondata, setAddSectiondata] = useState({ sections: [] });
   const maxLength = 600;
 
   // Fetch faculty by ID
@@ -60,6 +61,11 @@ export default function FacultyDetailPage({ params }) {
     }
   }, [id]);
 
+  useEffect(() => {
+    if (faculty && faculty.sections) {
+      setAddSectiondata({ sections: faculty.sections });
+    }
+  }, [faculty]);
   // Loading UI
   if (loading) {
     return (
@@ -153,9 +159,9 @@ export default function FacultyDetailPage({ params }) {
                     <Image
                       src={facultyImage}
                       alt={facultyName}
-                      width={500}
+                      width={550}
                       height={500}
-                      className="img-fluid w-100"
+                      className="img-fluid faculty-banner w-100"
                       onError={(e) => {
                         e.target.src = "/default-avatar.png";
                       }}
@@ -170,16 +176,9 @@ export default function FacultyDetailPage({ params }) {
                   {facultyProfile && (
                     <div className="cus-profile-text">
                       <h6>Profile</h6>
-                      <p>{displayedText}</p>
-
-                      {isLong && (
-                        <button
-                          onClick={() => setShowFull(!showFull)}
-                          className="read-more-btn"
-                        >
-                          {showFull ? "Read Less" : "Read More"}
-                        </button>
-                      )}
+                      <div className="para-scroll">
+                        <p>{facultyProfile}</p>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -201,7 +200,7 @@ export default function FacultyDetailPage({ params }) {
                     <>
                       <div className="info-box">
                         <div className="profile-icon">
-                          <i className="bi bi-envelope"></i>
+                          <img src="/images/custom-page/mail-faculty.svg" />
                         </div>
                         <div className="profile-email">
                           <p>Email Id</p>
@@ -215,7 +214,7 @@ export default function FacultyDetailPage({ params }) {
                   {facultyLinkedin && (
                     <div className="info-box">
                       <div className="profile-icon">
-                        <i className="bi bi-linkedin"></i>
+                        <img src="/images/custom-page/insta-faculty.svg" />
                       </div>
                       <div className="profile-email">
                         <p>LinkedIn Profile</p>
@@ -259,7 +258,9 @@ export default function FacultyDetailPage({ params }) {
                       <h5>Research</h5>
                       <div className="research-list">
                         {facultyResearch
-                          .filter((item) => item.title || item.image || item.link)
+                          .filter(
+                            (item) => item.title || item.image || item.link
+                          )
                           .map((key, index) => (
                             <div className="research-box" key={index}>
                               <div className="research-icon">
@@ -328,6 +329,28 @@ export default function FacultyDetailPage({ params }) {
                       </ul>
                     </div>
                   )}
+
+                  {/* other section */}
+                  {addSectiondata?.sections?.length > 0 &&
+                    addSectiondata.sections.some(
+                      (section) => section.points.length > 0
+                    ) && (
+                      <div className="profile-education profile-social">
+                        {addSectiondata.sections.map(
+                          (section, idx) =>
+                            section.points.length > 0 && ( 
+                              <div key={idx}>
+                                <h5>{section.title}</h5>
+                                <ul>
+                                  {section.points.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )
+                        )}
+                      </div>
+                    )}
 
                   {/* Show message if no additional info */}
                   {facultyEducation.length === 0 &&

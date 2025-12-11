@@ -566,7 +566,7 @@ gsap.registerPlugin(ScrollTrigger);
             scrollTrigger: {
               trigger: panel,
               start: "top 55%",
-              end: "+=120%",
+              end: "+=40%",
               scrub: 1.2,
               pin: true,
               pinSpacing: false,
@@ -605,7 +605,6 @@ gsap.registerPlugin(ScrollTrigger);
         }
       });
 
-      // 🖼 Pin the top image while the box scrolls
       ScrollTrigger.create({
         trigger: ".facilities-box",
         start: "top top",
@@ -615,7 +614,6 @@ gsap.registerPlugin(ScrollTrigger);
         anticipatePin: 1,
       });
 
-      // Optional: class toggle for visual effects
       ScrollTrigger.create({
         start: 0,
         end: 1350,

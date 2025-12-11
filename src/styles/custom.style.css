@@ -122,7 +122,7 @@
   width: 100%;
   box-shadow: 0px 16px 56px #00000017;
   border: none;
-  padding: 1.6rem 2.5rem;
+  padding: 1.2rem 1.5rem;
   border-radius: 8px;
   color: var(--color-black);
 }
@@ -717,7 +717,7 @@
 }
 
 .right-rank-text {
-  padding-right: 7rem;
+  padding-right: 6rem;
 }
 
 .right-rank-text p {
@@ -942,12 +942,12 @@ This is the minimum CSS that you will need in order for this to work
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
-  padding: 4rem 0 6rem;
+  padding: 4rem 0 5.1rem;
 }
 
 .peo-box {
   background-color: var(--color-white);
-  padding: 3rem;
+  padding: 2.8rem 5.6rem 4.1rem 3.9rem;
   border-radius: 8px;
 }
 
@@ -969,12 +969,12 @@ This is the minimum CSS that you will need in order for this to work
   background-color: var(--color-100);
   text-transform: uppercase;
   letter-spacing: 0.72px;
-  font: var(--font-18);
-  font-weight: 600;
+  font: var(--font-16);
+  font-weight: bold;
   color: var(--color-4e);
   display: inline-block;
   line-height: 1.5;
-  font-family: var(--font-Condensed);
+  font-family: var(--font-Roboto);
 }
 
 .tabbed-content .apply-btn1:hover {
@@ -1008,19 +1008,21 @@ This is the minimum CSS that you will need in order for this to work
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
-  padding: 2.8rem 0;
+  padding-block: 3rem 3.3rem;
 }
 
 .core-text blockquote {
   font: var(--font-18);
   color: var(--color-21);
   font-weight: 700;
+  line-height: 1.1;
 }
 
 .core-text p {
-  font: var(--font-14);
+  font: var(--font-16);
   color: var(--color-21);
   padding-right: 3rem;
+  margin-bottom: 3rem;
 }
 
 .core-pdf {
@@ -1059,7 +1061,7 @@ This is the minimum CSS that you will need in order for this to work
 
 .program-sec-six {
   background-color: var(--color-100);
-  padding-block: 8rem;
+  padding-block: 8rem 6rem;
   position: relative;
   z-index: 1;
 }
@@ -1089,12 +1091,13 @@ This is the minimum CSS that you will need in order for this to work
   color: var(--color-black);
   font-weight: 300;
   padding: 2.8rem 0;
+  line-height: 1.3;
 }
 
 .structure-box {
   display: grid;
-  grid-template-columns: repeat(1, 40% auto);
-  gap: 7rem;
+  grid-template-columns: repeat(1, 46% auto);
+  gap: 8.1rem;
 }
 
 .structure-text {
@@ -1105,14 +1108,15 @@ This is the minimum CSS that you will need in order for this to work
   font: var(--font-18);
   color: var(--color-black);
   font-weight: 400;
-  padding-inline: 0 20rem;
-  padding-block: 0 2rem;
+  padding-inline: 0 14rem;
+
 }
 
 .structure-text h2 {
   font: var(--font-50);
   letter-spacing: -2.5px;
   font-family: var(--font-Condensed);
+  margin-bottom: 1.2rem;
 }
 
 .structure-text {
@@ -1131,11 +1135,11 @@ This is the minimum CSS that you will need in order for this to work
 .engineering-btn::before {
   content: "";
   background-color: #0000004a;
+  width: 11rem;
   height: 1px;
   position: absolute;
-  width: 7rem;
-  left: -7rem;
   top: -1px;
+  left: -8rem;
 }
 
 .engineering-btn .apply-btn1 {
@@ -1170,13 +1174,13 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .program-testimonial {
-  padding-block: 3rem 10rem;
+  padding-block: 12rem 10rem;
 }
 
 .program-testimonial-box {
   display: grid;
-  grid-template-columns: repeat(1, 20% auto);
-  gap: 7rem;
+  grid-template-columns: repeat(1, 26% auto);
+  gap: 5.7rem;
 }
 
 .testimonial-box {
@@ -1195,16 +1199,17 @@ This is the minimum CSS that you will need in order for this to work
 
 .testimonial-text p,
 .across p {
-  font: var(--font-22);
+  font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
-  padding: 2rem 0;
+  line-height: 1.4;
+  padding-block: 2rem 3rem;
 }
 
 .across {
   border-top: 1px solid var(--color-d6);
-  margin-top: 10rem;
-  padding-block: 4rem 0;
+  margin-top: 8rem;
+  padding-block: 3.4rem 0;
 }
 
 .across h2 {
@@ -1277,6 +1282,7 @@ This is the minimum CSS that you will need in order for this to work
   text-transform: uppercase;
   font-weight: 600;
   font-family: var(--font-Condensed);
+  line-height: 30px
 }
 
 .testimonial-img-text p {
@@ -1284,6 +1290,7 @@ This is the minimum CSS that you will need in order for this to work
   font: var(--font-18);
   font-weight: 600;
   font-family: var(--font-Condensed);
+  line-height: 30px;
 }
 
 .testimonial-img-text p span {
@@ -1295,7 +1302,7 @@ This is the minimum CSS that you will need in order for this to work
   color: var(--color-white);
   font: var(--font-16);
   font-weight: 300;
-  margin: 1rem 0 0 0;
+  line-height: 30px;
 }
 
 .testimonial-img-text::before {
@@ -1322,6 +1329,14 @@ This is the minimum CSS that you will need in order for this to work
 
 .opportunitie-text {
   width: 65rem;
+}
+
+.opportunitie-text p {
+  font: var(--font-16);
+  font-weight: 400;
+  font-family: var(--font-Roboto);
+  color: var(--color-black);
+  padding-right: 10rem;
 }
 
 .opportunitie-text blockquote {
@@ -1502,10 +1517,10 @@ This is the minimum CSS that you will need in order for this to work
 .faulty-profile {
   background-color: var(--color-100);
   border-radius: 5rem 0.8rem 2rem 0.8rem;
-  padding: 0 9rem;
+  padding: 0 10.4rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  grid-template-columns: repeat(1, 47% auto);
+  gap: 3.3rem;
   align-items: center;
 }
 
@@ -1545,13 +1560,14 @@ This is the minimum CSS that you will need in order for this to work
 
 .cus-profile-text h6 {
   font: var(--font-24);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-4e);
   margin-bottom: 2rem;
 }
 
 .cus-profile-text p {
   color: var(--color-21);
+  padding-bottom: 3rem;
 }
 
 .faulty-detail-sec1 {
@@ -1559,10 +1575,10 @@ This is the minimum CSS that you will need in order for this to work
 }
 
 .profile-info {
-  display: grid;
-  grid-template-columns: repeat(1, 38% auto);
+  grid-template-columns: repeat(1, 36% auto);
   gap: 8rem;
   margin-left: 4rem;
+  display: grid;
 }
 
 .profile-info-box {
@@ -1575,7 +1591,7 @@ This is the minimum CSS that you will need in order for this to work
   content: "";
   background-color: var(--color-e8);
   position: absolute;
-  height: 24rem;
+  height: 23rem;
   width: 100%;
   top: 0;
   left: 0;
@@ -1586,7 +1602,7 @@ This is the minimum CSS that you will need in order for this to work
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
-  align-items: baseline;
+
 }
 
 hr {
@@ -1601,6 +1617,7 @@ hr {
 .profile-email p {
   font: var(--font-16);
   color: var(--color-white);
+  margin-bottom: 0.7rem;
 }
 
 .profile-email a {
@@ -1613,16 +1630,21 @@ hr {
   padding-inline: 0.8rem 0;
 }
 
+.profile-education:first-child {
+  padding-block: 4.4rem 3.9rem;
+}
+
 .profile-education {
   border-bottom: 0.1rem solid var(--color-d6);
-  padding-block: 2.4rem 3rem;
+  padding-block: 2.4rem;
+
 }
 
 .profile-education h5 {
   font: var(--font-24);
   color: var(--color-29);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
 }
 
 .profile-education ul li {
@@ -1650,7 +1672,7 @@ hr {
 .research-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 1.5rem;
+  gap: 1.2rem;
 }
 
 .research-box {
@@ -1669,7 +1691,8 @@ hr {
 }
 
 .research-icon p img {
-  width: 4rem;
+  width: 4.3rem;
+  height: 4.3rem;
   margin-right: 0.5rem;
 }
 
@@ -1726,6 +1749,49 @@ hr {
   margin-bottom: 0;
 }
 
+.cus-profile-text {
+  position: relative;
+}
+
+.read-toggle-btn {
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+
+.cus-profile-text {
+  position: relative;
+  height: 270px;
+  /* profile section ki fixed height */
+  overflow: hidden;
+}
+
+/* Paragraph only scrolls */
+.para-scroll {
+  height: calc(100% - 25px);
+  /* heading ke neeche full space */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Optional scrollbar */
+.para-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.para-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
 /* faculty page responsive css start */
 
 @media (max-width: 1366px) {
@@ -1761,7 +1827,11 @@ hr {
 @media (max-width: 1024px) {
   .faulty-profile {
     grid-template-columns: repeat(1, 1fr);
-    padding-block: 4rem;
+    padding-block: 4rem 0rem;
+  }
+
+  .faulty-profile {
+    gap: 6.3rem;
   }
 
   .profile-info {
@@ -1790,6 +1860,45 @@ hr {
   .program-testimonial {
     padding-bottom: 6rem;
   }
+}
+
+@media (max-width:767px) {
+  .faulty-profile {
+    gap: 4.3rem;
+    padding-top: 3rem;
+    padding-inline: 3rem;
+  }
+
+  .cus-profile-text {
+    height: 390px;
+  }
+
+  .para-scroll {
+    height: calc(100% - 80px);
+
+  }
+
+  .profile-info-box:before {
+    height: 23rem;
+    width: 100%;
+  }
+
+  .profile-education:first-child {
+    padding-block: 2rem;
+  }
+
+  .profile-info {
+    gap: 0;
+  }
+
+  .faulty-detail-sec1 {
+    padding-bottom: 2rem;
+  }
+
+  .info-box {
+    flex-wrap: wrap;
+  }
+
 }
 
 @media (max-width: 540px) {
@@ -1881,10 +1990,18 @@ hr {
 .facilities-img-box {
   position: relative;
 }
-.facilities-img img{border-radius: 5rem .8rem;}
-.facilities-img-box{position: relative;z-index: 999;}
+
+.facilities-img img {
+  border-radius: 5rem .8rem;
+}
+
+.facilities-img-box {
+  position: relative;
+  z-index: 999;
+}
+
 .facilities-img {
-  position: relative; 
+  position: relative;
   transition: all 0.8s ease;
 }
 
@@ -1892,38 +2009,170 @@ hr {
   flex: 1;
   overflow: visible;
 }
+
 .facilities-img.sticky-active {
-    position: sticky!important;
-    top: 90%;
+  position: sticky !important;
+  top: 10rem;
 }
 
-.sticky-active figure{ top: 0; position: sticky;}
-.facilities-box {display: grid;grid-template-columns: repeat(1, 60% auto); gap: 5rem;  align-items: flex-start;}
-.facilities-box-text { display: flex; padding-block: 6rem;  position: sticky!important;top: 55%;align-self: start;z-index: 5; }
-.facilities-box-text::before{    content: '';background-color: var(--color-100);height: .4rem; position: absolute;width: 93%;left: 0; top: 24rem;}
-.facilities-heading{margin-right: 3rem;}
-.facilities-heading h2{font: var(--font-100); color: var(--color-4e); font-weight: 400; font-family: var(--font-Condensed);letter-spacing: -9.5px;}
-.facilities-titel {padding: 1rem 6rem 0 0;}
-.facilities-titel h5{font: var(--font-28); color: var(--color-black);font-weight: 700; text-transform: uppercase; letter-spacing: -0.84px; font-family: var(--font-Condensed);}
-.facilities-titel h5 span{color: var(--color-e8);}
-.facilities-list { margin-top: -6rem; position: relative; top:0%;align-self: start;z-index: 5; overflow: hidden;  }
-.facilities-list-box{position: relative; margin-top: 2rem;}
-.facilities-list-box figure { display: grid;}
-.facilities-list-box figure img{border-radius: .8rem;}
-.facilities-list-box figure>* {grid-area: 1 / 1;}
-.facilities-list-text {background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box; padding: 2.5rem 5rem 2.5rem 3rem;  display: flex;
-flex-direction: column;justify-content: end; height: 100%;border-radius: 0 0 .8rem .8rem; overflow: hidden;}
-.facilities-list-text img{width: 5rem; margin-bottom: 1rem;border-radius: 0 !important;}
-.facilities-list-text h4{font: var(--font-28); letter-spacing: -0.84px; color: var(--color-white); text-transform: uppercase; font-family: var(--font-Condensed); margin-bottom: 1rem;}
-.facilities-list-text p{font: var(--font-12); color: var(--color-white); line-height: 1.8rem;}
-.facilities-list-text h4 span{display: block;}
-.facilities-sec2{padding-block: 8rem 2rem; background-color: var(--color-f6);position: relative; z-index: 9;}
-.academics-labs-text{position: relative;}
-.academics-labs-text h6{    font: var(--font-24);color: var(--color-29);font-weight: 500;}
-.academics-labs-text p{    font: var(--font-24); color: var(--color-black);font-weight: 300; margin-top: 1rem;}
-.facilitie-tab-list {margin-top: -30rem;}
-.facilitie-tab-list .tabs ul{    border-top: 0px solid var(--color-d6);}
-.facilitie-tab-list .tabs ul::before, .facilitie-tab-list .tabs ul::after{display: none;}
+.sticky-active figure {
+  top: 0;
+  position: sticky;
+}
+
+.facilities-box {
+  display: grid;
+  grid-template-columns: repeat(1, 60% auto);
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.facilities-box-text {
+  display: flex;
+  padding-block: 6rem;
+  position: sticky !important;
+  top: 55%;
+  align-self: start;
+  z-index: 5;
+}
+
+.facilities-box-text::before {
+  content: '';
+  background-color: var(--color-100);
+  height: .4rem;
+  position: absolute;
+  width: 93%;
+  left: 0;
+  top: 24rem;
+}
+
+.facilities-heading {
+  margin-right: 3rem;
+}
+
+.facilities-heading h2 {
+  font: var(--font-100);
+  color: var(--color-4e);
+  font-weight: 400;
+  font-family: var(--font-Condensed);
+  letter-spacing: -9.5px;
+}
+
+.facilities-titel {
+  padding: 1rem 6rem 0 0;
+}
+
+.facilities-titel h5 {
+  font: var(--font-28);
+  color: var(--color-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.84px;
+  font-family: var(--font-Condensed);
+}
+
+.facilities-titel h5 span {
+  color: var(--color-e8);
+}
+
+.facilities-list {
+  margin-top: -6rem;
+  position: relative;
+  top: 0%;
+  align-self: start;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.facilities-list-box {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.facilities-list-box figure {
+  display: grid;
+}
+
+.facilities-list-box figure img {
+  border-radius: .8rem;
+}
+
+.facilities-list-box figure>* {
+  grid-area: 1 / 1;
+}
+
+.facilities-list-text {
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  padding: 2.5rem 5rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  border-radius: 0 0 .8rem .8rem;
+  overflow: hidden;
+}
+
+.facilities-list-text img {
+  width: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 0 !important;
+}
+
+.facilities-list-text h4 {
+  font: var(--font-28);
+  letter-spacing: -0.84px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  margin-bottom: 1rem;
+}
+
+.facilities-list-text p {
+  font: var(--font-12);
+  color: var(--color-white);
+  line-height: 1.8rem;
+}
+
+.facilities-list-text h4 span {
+  display: block;
+}
+
+.facilities-sec2 {
+  padding-block: 8rem 2rem;
+  background-color: var(--color-f6);
+  position: relative;
+  z-index: 9;
+}
+
+.academics-labs-text {
+  position: relative;
+}
+
+.academics-labs-text h6 {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
+.academics-labs-text p {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.facilitie-tab-list {
+  margin-top: -30rem;
+}
+
+.facilitie-tab-list .tabs ul {
+  border-top: 0px solid var(--color-d6);
+}
+
+.facilitie-tab-list .tabs ul::before,
+.facilitie-tab-list .tabs ul::after {
+  display: none;
+}
 
 /* SECTION BASE */
 .labs-wrapper {
@@ -3922,6 +4171,7 @@ flex-direction: column;justify-content: end; height: 100%;border-radius: 0 0 .8r
   .eligibility-sec .container {
     max-width: 2032px !important;
   }
+
   .overview-text {
     padding: 0 27rem 0 0;
   }
@@ -3943,6 +4193,39 @@ flex-direction: column;justify-content: end; height: 100%;border-radius: 0 0 .8r
     padding-right: 13rem;
     margin-bottom: 3rem;
   }
+
+  .right-rank-text {
+    padding-right: 15rem;
+  }
+
+  .seats-left-text p,
+  .seats-right-text p {
+    padding-right: 5rem;
+  }
+  .peo-box {
+    padding: 2.8rem 14.6rem 4.1rem 3.9rem;
+}
+.structure p {
+  padding-right: 6rem;
+}
+.structure-text p {
+  padding-inline: 0 23rem;
+
+}
+.testimonial-text p, .across p {
+    padding-right: 6rem;
+}
+.testimonial-img-text p span {
+    color: var(--color-100);
+    font-size: 3rem;
+    padding-inline: 0.8rem;
+}
+.opportunitie-text h2 {
+    padding-right: 5rem;
+}
+.structure p {
+  font: var(--font-24);
+}
 }
 
 /* about-us page responsive */
@@ -4092,7 +4375,7 @@ flex-direction: column;justify-content: end; height: 100%;border-radius: 0 0 .8r
   }
 
   .inner-title {
-    padding-top: 1rem;
+    padding-top: 3rem;
   }
 
   .about_one .estblish {
@@ -4151,7 +4434,16 @@ flex-direction: column;justify-content: end; height: 100%;border-radius: 0 0 .8r
   .about_one .abt_cntnt p {
     padding-bottom: 3rem;
   }
-
+.program-detail {
+    margin-top: 0rem;
+}
+.program-testimonial {
+    padding-top: 4rem;
+}
+.testimonial-text p, .across p {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 }
 
 @media screen and (max-width: 767px) {
