@@ -17,35 +17,39 @@ export default function FacilitiesOne({ data }) {
   const boxes = data.find((section) => section.type === "boxes");
 
   return (
-    <main className="site_main">
-      <section className="facilities-sec1">
-        <div className="container">
-          <div className="row">
-            {titleBanner && titleBanner.items
-              .sort((a, b) => a.position - b.position)
-              .map((item, index) => (
-                <div key={item.item_uuid || index}>
-                  <div className="col-lg-12">
-                    <div className="facilities-text">
-                      <h6>{item.title}</h6>
-                      <p>{item.subtitle}</p>
-                    </div>
+    <section className="facilities-sec1">
+      <div className="container">
+        <div className="row">
+          {/* Title Banner Section */}
+          {titleBanner.items
+            .sort((a, b) => a.position - b.position)
+            .map((item, index) => (
+              <div key={item.item_uuid || index}>
+                <div className="col-lg-12">
+                  <div className="facilities-text">
+                    <h6>{item.title}</h6>
+                    <p>{item.subtitle}</p>
                   </div>
-                  <div className="col-lg-12">
-                    <div className="facilities-img">
-                      <div className={`${isSticky ? "sticky-box" : ""}`}>
-                        <figure>
-                          <Image
-                            src={item.file}
-                            alt={item.title || "Facility"}
-                            width={1200}
-                            height={600}
-                            className="img-fluid w-100"
-                          />
-                        </figure>
-                      </div>
+                </div>
+
+                <div className="col-lg-12">
+                  <div className="facilities-img">
+                    <div className={` ${isSticky ? "sticky-box" : ""}`}>
+                      <figure>
+                        <Image
+                          src={item.file}
+                          alt={item.title || "Facility"}
+                          width={1200}
+                          height={600}
+                          className="img-fluid w-100"
+                        />
+                      </figure>
+                    </div>
+
+                    {/* Combined PercentSub and Boxes Section */}
+                    {(percentSub || boxes) && (
                       <div className="col-lg-10 mx-auto">
-                        <div className="facilities-img-box sticky-box">
+                        <div className="facilities-img-box ">
                           <div className="facilities-box">
                             {/* PercentSub Section */}
                             {percentSub && (
@@ -53,7 +57,7 @@ export default function FacilitiesOne({ data }) {
                                 {percentSub.items
                                   .sort((a, b) => a.position - b.position)
                                   .map((percentItem, idx) => (
-                                    <div key={percentItem.item_uuid || idx}>
+                                    <div className="d-flex" key={percentItem.item_uuid || idx}>
                                       <div className="facilities-heading">
                                         <h2>{percentItem.percent}</h2>
                                       </div>
@@ -64,17 +68,14 @@ export default function FacilitiesOne({ data }) {
                                   ))}
                               </div>
                             )}
-
+                            
                             {/* Boxes Section */}
                             {boxes && (
                               <div className="facilities-list" ref={container}>
                                 {boxes.items
                                   .sort((a, b) => a.position - b.position)
                                   .map((boxItem, idx) => (
-                                    <div
-                                      key={boxItem.item_uuid || idx}
-                                      className="facilities-list-box"
-                                    >
+                                    <div key={boxItem.item_uuid || idx} className="facilities-list-box">
                                       <figure>
                                         <Image
                                           src={boxItem.photo}
@@ -104,179 +105,13 @@ export default function FacilitiesOne({ data }) {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-            {/* If no titleBanner, render percentSub and boxes directly */}
-            {!titleBanner && (
-              <div className="col-lg-12">
-                <div className="facilities-img">
-                  <div className={`${isSticky ? "sticky-box" : ""}`}>
-                    <div className="col-lg-10 mx-auto">
-                      <div className="facilities-img-box">
-                        <div className="facilities-box">
-                          {/* PercentSub Section */}
-                          {percentSub && (
-                            <div className="facilities-box-text">
-                              {percentSub.items
-                                .sort((a, b) => a.position - b.position)
-                                .map((item, index) => (
-                                  <div key={item.item_uuid || index}>
-                                    <div className="facilities-heading">
-                                      <h2>{item.percent}</h2>
-                                    </div>
-                                    <div className="facilities-titel">
-                                      <h5>{item.subtitle}</h5>
-                                    </div>
-                                  </div>
-                                ))}
-                            </div>
-                          )}
-
-                          {/* Boxes Section */}
-                          {boxes && (
-                            <div className="facilities-list" ref={container}>
-                              {boxes.items
-                                .sort((a, b) => a.position - b.position)
-                                .map((item, index) => (
-                                  <div
-                                    key={item.item_uuid || index}
-                                    className="facilities-list-box"
-                                  >
-                                    <figure>
-                                      <Image
-                                        src={item.photo}
-                                        alt={item.title}
-                                        width={400}
-                                        height={300}
-                                        className="img-fluid w-100"
-                                      />
-                                      <figcaption>
-                                        <div className="facilities-list-text">
-                                          <Image
-                                            src={item.icon}
-                                            alt=""
-                                            width={40}
-                                            height={40}
-                                            className="img-fluid"
-                                          />
-                                          <h4>{item.title}</h4>
-                                          <p>{item.subtitle}</p>
-                                        </div>
-                                      </figcaption>
-                                    </figure>
-                                  </div>
-                                ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
-            )}
-
-  // Render with titleBanner (your desired structure)
-  return (
-    <section className="facilities-sec1">
-        <div className="container">
-          <div className="row">
-            {/* Title Banner Section */}
-            {titleBanner.items
-              .sort((a, b) => a.position - b.position)
-              .map((item, index) => (
-                <div key={item.item_uuid || index}>
-                  <div className="col-lg-12">
-                    <div className="facilities-text">
-                      <h6>{item.title}</h6>
-                      <p>{item.subtitle}</p>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-12">
-                    <div className="facilities-img">
-                      <div className={` ${isSticky ? "sticky-box" : ""}`}>
-                        <figure>
-                          <Image
-                            src={item.file}
-                            alt={item.title || "Facility"}
-                            width={1200}
-                            height={600}
-                            className="img-fluid w-100"
-                          />
-                        </figure>
-                      </div>
-
-                      {/* Combined PercentSub and Boxes Section */}
-                      {(percentSub || boxes) && (
-                        <div className="col-lg-10 mx-auto">
-                          <div className="facilities-img-box ">
-                            <div className="facilities-box">
-                              {/* PercentSub Section */}
-                              {percentSub && (
-                                <div className="facilities-box-text">
-                                  {percentSub.items
-                                    .sort((a, b) => a.position - b.position)
-                                    .map((percentItem, idx) => (
-                                      <div className="d-flex" key={percentItem.item_uuid || idx}>
-                                        <div className="facilities-heading">
-                                          <h2>{percentItem.percent}</h2>
-                                        </div>
-                                        <div className="facilities-titel">
-                                          <h5>{percentItem.subtitle}</h5>
-                                        </div>
-                                      </div>
-                                    ))}
-                                </div>
-                              )}
-                              
-                              {/* Boxes Section */}
-                              {boxes && (
-                                <div className="facilities-list" ref={container}>
-                                  {boxes.items
-                                    .sort((a, b) => a.position - b.position)
-                                    .map((boxItem, idx) => (
-                                      <div key={boxItem.item_uuid || idx} className="facilities-list-box">
-                                        <figure>
-                                          <Image
-                                            src={boxItem.photo}
-                                            alt={boxItem.title}
-                                            width={400}
-                                            height={300}
-                                            className="img-fluid w-100"
-                                          />
-                                          <figcaption>
-                                            <div className="facilities-list-text">
-                                              <Image
-                                                src={boxItem.icon}
-                                                alt=""
-                                                width={40}
-                                                height={40}
-                                                className="img-fluid"
-                                              />
-                                              <h4>{boxItem.title}</h4>
-                                              <p>{boxItem.subtitle}</p>
-                                            </div>
-                                          </figcaption>
-                                        </figure>
-                                      </div>
-                                    ))}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
+            ))}
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
