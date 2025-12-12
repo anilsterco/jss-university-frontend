@@ -446,8 +446,14 @@ export default function Header() {
   };
 
   return (
-    <header className="site-header">
-      <div className={`nav-container ${scrolled ? "header-scrolled" : ""}`}>
+    <header className={`site-header ${ pathname.includes("schools") || pathname.includes("department") ? "no-shadow" : "" }`}>
+    <div className={`nav-container ${scrolled ? "header-scrolled" : ""} 
+    ${
+      pathname.includes("schools") || pathname.includes("department")
+        ? "scroll_bg"
+        : ""
+    }`}
+      >
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
         >
@@ -501,7 +507,7 @@ export default function Header() {
                 <div
                   style={{
                     borderLeft: "1px solid #7c7c7cff",
-                
+
                     justifyItems: "center",
                     display: "flex",
                     flexDirection: "column",
@@ -1162,7 +1168,7 @@ export default function Header() {
           .brand-wrap.logo-content {
             display: flex;
             align-items: center;
-            gap: 5rem;
+            gap: 4rem;
             justify-content: center;
           }
           .school-toggle p {
@@ -2535,7 +2541,10 @@ export default function Header() {
           .icon {
             margin-bottom: 1.2rem;
           }
-
+          .site-header.no-shadow {
+            background: none !important;
+          }
+       
           /* Hide menu on desktop */
           @media (min-width: 992px) {
             .mobile-bottom-menu {

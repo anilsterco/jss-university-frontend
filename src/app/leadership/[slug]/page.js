@@ -6,11 +6,10 @@ import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-
-const BASE_URL = "https://project-demo.in/jss/api"
+const BASE_URL = "https://project-demo.in/jss/api";
 
 export default function LeadershipDetailsPage({ params }) {
-   const unwrappedParams = React.use(params);
+  const unwrappedParams = React.use(params);
   const { slug } = unwrappedParams;
   const [leader, setLeader] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +20,7 @@ export default function LeadershipDetailsPage({ params }) {
       .then((res) => res.json())
       .then((resJson) => {
         if (resJson.status) {
-          setLeader(resJson); 
+          setLeader(resJson);
         } else {
           setLeader(null);
         }
@@ -60,16 +59,24 @@ export default function LeadershipDetailsPage({ params }) {
             <div className="col-lg-12">
               <div className="innnr_head">
                 <h2>ABOUT</h2>
-                <h3
+                {/* <h3
                   dangerouslySetInnerHTML={{
                     __html: leader.leadership_name || "Leadership",
                   }}
-                />
+                /> */}
                 <ul>
-                  <li><Link href="/about">About JSS</Link></li>
-                  <li><Link href="/about-jssmvp">About JSSMVP</Link></li>
-                  <li><Link href="/heritage">Heritage</Link></li>
-                  <li className="active"><Link href="/leadership">Leadership</Link></li>
+                  <li>
+                    <Link href="/about">About JSS</Link>
+                  </li>
+                  <li>
+                    <Link href="/about-jssmvp">About JSSMVP</Link>
+                  </li>
+                  <li>
+                    <Link href="/heritage">Heritage</Link>
+                  </li>
+                  <li className="active">
+                    <Link href="/leadership">Leadership</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -91,7 +98,6 @@ export default function LeadershipDetailsPage({ params }) {
                     height={600}
                     // style={{ width: "100%", height: "auto", marginTop: "-98px" }}
                     className="img-fluid w-100"
-                    
                   />
                   <figcaption>
                     <div className="desgtn">
@@ -102,15 +108,15 @@ export default function LeadershipDetailsPage({ params }) {
                   </figcaption>
                 </figure>
               </div>
-                       <div className="leadership_two_cnt2">
-                    {/* {sections.about.description.map((desc, index) => (
+              <div className="leadership_two_cnt2">
+                {/* {sections.about.description.map((desc, index) => (
                       <p key={index}>{desc[0]}</p>
                     ))} */}
-                   <h3>{sections.banners.name}</h3>
-                      <h5>{sections.banners.designation}</h5>
-                      <p>{sections.banners.short_description}</p>
-                  </div>
-            </div> 
+                <h3>{sections.banners.name}</h3>
+                <h5>{sections.banners.designation}</h5>
+                <p>{sections.banners.short_description}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -120,8 +126,8 @@ export default function LeadershipDetailsPage({ params }) {
         <div className="container">
           <div className="row">
             <div className="col-lg-11">
-              <div className="row">
-                <div className="col-lg-6">
+              <div className="leader_row">
+                <div className="leader_col">
                   <div className="leadership_two_cnt">
                     {/* {sections.about.description.map((desc, index) => (
                       <p key={index}>{desc[0]}</p>
@@ -130,17 +136,16 @@ export default function LeadershipDetailsPage({ params }) {
                     <p>{sections.about.description[1]}</p>
                   </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="leader_col">
                   <div className="leadership_two_img">
                     <figure>
-                    <Image
-                      src={sections.about.image}
-                      alt={sections.banners.name}
-                      width={600}
-                      height={600}
-                     
-                      className="img-fluid"
-                    />
+                      <Image
+                        src={sections.about.image}
+                        alt={sections.banners.name}
+                        width={600}
+                        height={600}
+                        className="img-fluid"
+                      />
                     </figure>
                   </div>
                 </div>
@@ -159,41 +164,48 @@ export default function LeadershipDetailsPage({ params }) {
         <div className="container">
           <div className="message_warpper">
             <figure>
-            <Image
-              src={"/images/custom-page/about/quote.png"}
-              alt="Quote Icon"
-              width={148}
-              height={100}
-              // style={{ width: 170, height: "auto" , position: "absolute", top: "-50px", zIndex: 0 }}
-            />
+              <Image
+                src={"/images/custom-page/about/quote.png"}
+                alt="Quote Icon"
+                width={148}
+                height={100}
+                style={{ height: "100%"}}
+                className="tesIcon"
+              />
+
             </figure>
             <div className="row">
               <div className="col-lg-6">
                 <div className="message_text">
                   <h3>Message from Chancellor</h3>
                   <h5>{sections.message_from_chancellor.designation}</h5>
-                  {sections.message_from_chancellor.message.map((msg, index) => (
-                    <p key={index}>{msg}</p>
-                  ))}
+                  {sections.message_from_chancellor.message.map(
+                    (msg, index) => (
+                      <p key={index}>{msg}</p>
+                    )
+                  )}
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="message_img">
                   <figure>
-                  <Image
-                    src={sections.message_from_chancellor.video || "/images/custom-page/about/chancellor-message.png"}
-                    alt={sections.message_from_chancellor.name}
-                    width={500}
-                    height={500}
-                    // style={{ width: "100%", height: "auto" }}
-                  />
+                    <Image
+                      src={
+                        sections.message_from_chancellor.video ||
+                        "/images/custom-page/about/chancellor-message.png"
+                      }
+                      alt={sections.message_from_chancellor.name}
+                      width={500}
+                      height={500}
+                      // style={{ width: "100%", height: "auto" }}
+                    />
                   </figure>
                 </div>
               </div>
             </div>
-            
+
             <div className="message_footer_section">
-              <p>{sections.message_from_chancellor.name}</p>
+             <h4>{sections.message_from_chancellor.name}</h4>
             </div>
           </div>
         </div>
@@ -201,4 +213,3 @@ export default function LeadershipDetailsPage({ params }) {
     </main>
   );
 }
-
