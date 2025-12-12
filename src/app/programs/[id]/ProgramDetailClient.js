@@ -693,7 +693,6 @@ export default function ProgramDetailClient({ params }) {
                     {career_opportunities?.career_subtitle ||
                       "CAREER OPPORTUNITIES"}
                   </blockquote>
-
                   <h2
                     dangerouslySetInnerHTML={{
                       __html: career_opportunities?.career_title,
