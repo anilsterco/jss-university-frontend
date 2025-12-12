@@ -54,7 +54,8 @@ export default function SchoolSlider({ data }) {
                 {slide.url && (
                   <Link href={"about-jss"} className={styles.bannerContentA}>
                     {slide.linked_text ?? "Learn more about JSS"}
-                    <FiArrowRightCircle className={styles.iconSpacing} />
+                    <img className={styles.iconSpacing} src="/images/header/banner-arrow.svg">
+                    </img>
                   </Link>
                 )}
               </div>
@@ -65,7 +66,7 @@ export default function SchoolSlider({ data }) {
               <Image
                 src={!slide.desktop_banner ? slide.desktop_banner : "/images/header/school-banner.png"}
                 alt={slide.title.replace(/<[^>]*>/g, '')}
-                width={1200}
+                width={1100}
                 height={600}
                 priority
                 className={styles.desktopBanner}
