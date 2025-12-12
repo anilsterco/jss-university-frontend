@@ -98,21 +98,25 @@ export default function LeadershipClient() {
                     className="img-fluid w-100"
                   />
                   <figcaption>
-                    <h3> 
+                    <h3>
                       {topLeader.name}
                       <span>{topLeader.subtitle || ""}</span>
                     </h3>
                     <div className="d-flex gap-3">
-                      <p>{topLeader.designation}</p> 
-                    <Image
-                    src={"/images/icons/circularArrow.svg"}
-                    alt={"circularArrow"}
-                    width={20}
-                    height={20}
-                    className="arrow-icon"
-                  /> </div>
+                      <p>{topLeader.designation}</p>
+                      <Image
+                        src={"/images/icons/circularArrow.svg"}
+                        alt={"circularArrow"}
+                        width={20}
+                        height={20}
+                        className="arrow-icon"
+                      />{" "}
+                    </div>
                   </figcaption>
-                  <Link href={`/leadership/${topLeader.slug}`} className="links"></Link>
+                  <Link
+                    href={`/leadership/${topLeader.slug}`}
+                    className="links"
+                  ></Link>
                 </figure>
               </div>
             </div>
@@ -137,9 +141,19 @@ export default function LeadershipClient() {
                       <figcaption>
                         <h3>{leader.name}</h3>
                         <p>{leader.designation}</p>
+                        <Image
+                          src={"/images/icons/leder-arrow.svg"}
+                          alt={"circularArrow"}
+                          width={20}
+                          height={20}
+                          className="arrow-icon"
+                        />
                       </figcaption>
                     </figure>
-                    <Link href={`/leadership/${leader.slug}`} className="links"></Link>
+                    <Link
+                      href={`/leadership/${leader.slug}`}
+                      className="links"
+                    ></Link>
                   </div>
                 ))}
               </div>

@@ -65,8 +65,7 @@ export default function ProgramDetailClient({ params }) {
   const handleNextCurriculum = () => {
     if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
       setCurrentCurriculumIndex(
-        (prevIndex) =>
-          (prevIndex + 1) % curriculum.curriculum_desc.length
+        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length
       );
     }
   };
@@ -351,8 +350,8 @@ export default function ProgramDetailClient({ params }) {
                         {peos && peos.length > 0 ? (
                           peos.map((peo, index) => (
                             <div key={index} className="peo-box">
-                              <h3>PEO - {index + 1}</h3>
-                              <p>{peo}</p>
+                              <h3>{peo.title}</h3>
+                              <p>{peo.description}</p>
                             </div>
                           ))
                         ) : (
@@ -381,8 +380,8 @@ export default function ProgramDetailClient({ params }) {
                         {pos && pos.length > 0 ? (
                           pos.map((po, index) => (
                             <div key={index} className="peo-box">
-                              <h3>PO - {index + 1}</h3>
-                              <p>{po}</p>
+                              <h3>{po.title}</h3>
+                              <p>{po.description}</p>
                             </div>
                           ))
                         ) : (
@@ -422,45 +421,59 @@ export default function ProgramDetailClient({ params }) {
                     {curriculum?.curriculum_desc &&
                       curriculum.curriculum_desc[currentCurriculumIndex]}
                   </p>
-                   <div className="arrows">
-                      {/* Left Arrow */}
-                      <button
-                        className="arrow-btn left"
-                        onClick={handlePreviousCurriculum}
-                        title="Previous curriculum"
-                        disabled={currentCurriculumIndex === 0}
-                        style={{
-                          opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
-                          cursor: currentCurriculumIndex === 0 ? 'not-allowed' : 'pointer'
-                        }}
-                      >
-                        <Image
-                          src="/images/icons/Arrow.svg"
-                          width={22}
-                          height={22}
-                          alt="Left Arrow"
-                        />
-                      </button>
+                  <div className="arrows">
+                    {/* Left Arrow */}
+                    <button
+                      className="arrow-btn left"
+                      onClick={handlePreviousCurriculum}
+                      title="Previous curriculum"
+                      disabled={currentCurriculumIndex === 0}
+                      style={{
+                        opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
+                        cursor:
+                          currentCurriculumIndex === 0
+                            ? "not-allowed"
+                            : "pointer",
+                      }}
+                    >
+                      <Image
+                        src="/images/icons/Arrow.svg"
+                        width={22}
+                        height={22}
+                        alt="Left Arrow"
+                      />
+                    </button>
 
-                      {/* Right Arrow */}
-                      <button
-                        className="arrow-btn right"
-                        onClick={handleNextCurriculum}
-                        title="Next curriculum"
-                        disabled={currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1}
-                        style={{
-                          opacity: currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1 ? 0.5 : 1,
-                          cursor: currentCurriculumIndex === (curriculum?.curriculum_desc?.length || 1) - 1 ? 'not-allowed' : 'pointer'
-                        }}
-                      >
-                        <Image
-                          src="/images/icons/Arrow.svg"
-                          width={22}
-                          height={22}
-                          alt="Right Arrow"
-                        />
-                      </button>
-                    </div>
+                    {/* Right Arrow */}
+                    <button
+                      className="arrow-btn right"
+                      onClick={handleNextCurriculum}
+                      title="Next curriculum"
+                      disabled={
+                        currentCurriculumIndex ===
+                        (curriculum?.curriculum_desc?.length || 1) - 1
+                      }
+                      style={{
+                        opacity:
+                          currentCurriculumIndex ===
+                          (curriculum?.curriculum_desc?.length || 1) - 1
+                            ? 0.5
+                            : 1,
+                        cursor:
+                          currentCurriculumIndex ===
+                          (curriculum?.curriculum_desc?.length || 1) - 1
+                            ? "not-allowed"
+                            : "pointer",
+                      }}
+                    >
+                      <Image
+                        src="/images/icons/Arrow.svg"
+                        width={22}
+                        height={22}
+                        alt="Right Arrow"
+                      />
+                    </button>
+                  </div>
                   {curriculum?.curriculum_pdf && (
                     <div className="core-pdf">
                       <a
@@ -680,13 +693,18 @@ export default function ProgramDetailClient({ params }) {
                     {career_opportunities?.career_subtitle ||
                       "CAREER OPPORTUNITIES"}
                   </blockquote>
-                  <h2>{career_opportunities?.career_title}</h2>
+
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: career_opportunities?.career_title,
+                    }}
+                  ></h2>
                   <p>{career_opportunities?.career_desc}</p>
                 </div>
                 <div className="opportunitie-tab">
                   <ul>
                     {career_opportunities?.useful_links &&
-                      JSON.parse(career_opportunities.useful_links).map(
+                      career_opportunities.useful_links.map(
                         (opportunity, index) => (
                           <li key={index}>
                             <a

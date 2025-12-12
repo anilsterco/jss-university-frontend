@@ -469,7 +469,9 @@
   align-items: center;
   position: relative;
 }
-
+.program-detail-text .innnr_head{
+  max-width: 45%;
+}
 .program-detail-text .innnr_head h2 {
   font: var(--font-18);
   padding-bottom: 1rem;
@@ -1127,7 +1129,7 @@ This is the minimum CSS that you will need in order for this to work
 
 .engineering-btn {
   position: relative;
-  margin-top: 6rem;
+  margin-top: 3.7rem;
   border-top: 1px solid #0000004a;
   padding-block: 3rem 0;
 }
@@ -1980,7 +1982,7 @@ hr {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
-  padding: 2rem 6rem 3rem;
+  padding: 3rem 7rem 4rem;
 }
 
 .facilities-img img {
@@ -2138,7 +2140,7 @@ hr {
 }
 
 .facilities-sec2 {
-  padding-block: 8rem 2rem;
+  padding-block: 8rem 0;
   background-color: var(--color-f6);
   position: relative;
   z-index: 9;
@@ -2158,7 +2160,7 @@ hr {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
-  margin-top: 1rem;
+  margin-block: 1.9rem 4rem;
 }
 
 .facilitie-tab-list {
@@ -2177,12 +2179,12 @@ hr {
 /* SECTION BASE */
 .labs-wrapper {
   position: relative;
-  height: 70rem;
+  height: 80rem;
   overflow: hidden;
   display: flex;
   align-items: end;
   justify-content: center;
-  padding-block: 0 6rem;
+  padding-block: 0 8rem;
   z-index: 9;
 }
 
@@ -2370,7 +2372,7 @@ hr {
 }
 
 .facilities-sec4 {
-  padding-block: 10rem;
+  padding-block: 12rem 0;
   background-color: var(--color-f6);
 }
 
@@ -2378,7 +2380,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(1, 40% auto);
   background-color: var(--color-white);
-  padding: 8rem 8rem 6rem 0;
+  padding: 8rem 8rem 0rem 0;
   position: relative;
   gap: 5rem;
   align-items: end;
@@ -2475,6 +2477,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-bottom: 10rem;
 }
 
 .objectives-box {
@@ -2502,7 +2505,7 @@ hr {
 }
 
 .objectives-titel {
-  padding-top: 5rem;
+  padding-top: 6.7rem;
 }
 
 .objectives-box::before {
@@ -3124,8 +3127,25 @@ hr {
   .facilities-box-text {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    position: relative!important;
+  }
+.facilities-img .sticky-box {
+    position: relative;
+    top: 0px;
+    z-index: 10;
   }
 
+  .facilities-box {
+    gap: 0;
+  }
+
+  .facilities-list {
+    z-index: 5;
+    align-self: start;
+    margin-top: 0rem;
+    position: relative;
+    top: 0%;
+  }
   .academics-labs-text {
     padding-inline: 6rem;
     padding-block: 2rem;
@@ -4454,6 +4474,7 @@ hr {
     font-family: var(--font-Roboto);
     line-height: 1.3;
     font-weight: 300;
+    max-width: 100%;
   }
 
   .vsn-lft {
