@@ -62,7 +62,7 @@ export default function FacilitiesOne({ data }) {
                                         <h2>{percentItem.percent}</h2>
                                       </div>
                                       <div className="facilities-titel">
-                                        <h5>{percentItem.subtitle}</h5>
+                                        <h5 dangerouslySetInnerHTML={{__html:percentItem.subtitle}}></h5>
                                       </div>
                                     </div>
                                   ))}
