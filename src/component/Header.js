@@ -1168,7 +1168,7 @@ export default function Header() {
           .brand-wrap.logo-content {
             display: flex;
             align-items: center;
-            gap: 4rem;
+            gap: 2.5rem;
             justify-content: center;
           }
           .school-toggle p {
