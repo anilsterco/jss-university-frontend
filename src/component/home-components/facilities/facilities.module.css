@@ -184,16 +184,16 @@
   display: block;
 }
 
-@media (min-width: 2200px) and (max-width:2550) {
+@media (min-width: 1921px) and (max-width:2550) {
   .headerContent {
-    width: 190rem;
+    width: 90%;
   }
 
-  .verticalLine {
-    left: 12%;
-  }
+.verticalLine {
+  left: 9.5%;
+}
 .bannerContent {
-  width: 50%;
+  left: 12.5%;
 }
 }
 

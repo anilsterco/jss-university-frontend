@@ -799,7 +799,7 @@ a:active {
 }
 
 .fig-count {
-  padding: 3.8rem 6.4rem 3.8rem;
+  padding: 3.8rem 4.4rem 3.8rem;
 }
 
 .max-content-lg .placement_row {
@@ -1235,7 +1235,7 @@ a:active {
   width: 13rem;
   height: 100%;
   background: #fff;
-  z-index: 5;
+  z-index: 1;
 }
 
 .latest-event::before {
@@ -1247,7 +1247,7 @@ a:active {
   width: 13rem;
   height: 100%;
   background: #fff;
-  z-index: 5;
+  z-index: 1;
 }
 
 .events_row {
@@ -1386,4 +1386,22 @@ a:active {
 }
 .facilities-sec4:last-child{
   padding-top: 0;
+}
+
+/* school page responsive  */
+@media (max-width: 2550px){
+.grid_2 {
+    grid-template-columns: 20% 75%;
+}
+
+}
+@media (max-width: 1199px){
+.about_school_left {
+  padding-right: 0rem!important;
+  margin-bottom: 4rem;
+  border: none!important;
+}
+.description {
+  max-width: 100%;
+}
 }
