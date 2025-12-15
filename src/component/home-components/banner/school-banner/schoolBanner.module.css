@@ -63,13 +63,13 @@
 
 .bannerContentH1 {
   font: var(--font-60);
-  line-height: 54px;
   color: #1a1a1a;
   font-weight: 700;
   letter-spacing: -2.88px;
   font-family: var(--font-Condensed);
   text-transform: uppercase;
   margin-bottom: 4.7rem;
+  line-height: 0.9;
 }
 
 .bannerContentH1 span {
@@ -127,6 +127,9 @@
 }
 
 /* Responsive Design */
+
+
+
 @media (max-width: 1366px) {
   .swiperContainer {
     height: 550px;
@@ -151,67 +154,33 @@
     margin-bottom: 1.5rem;
   }
 
-  .bannerContentP {
-    font-size: 15px;
-    margin-bottom: 2rem;
-  }
-
-  .leftSection {
-    width: 42%;
-  }
-
-  .rightSection {
-    width: 58%;
-  }
 }
 
 @media (max-width: 1024px) {
-  .swiperContainer {
-    height: 450px;
-  }
 
-  .bannerContentH1 {
-    font-size: 40px;
-  }
 
   .leftSection {
-    width: 45%;
+    width: 50%;
     padding: 0 3%;
   }
 
   .rightSection {
-    width: 55%;
+    width: 100%;
   }
 }
 
-@media (max-width: 991px) {
-  .swiperContainer {
-    height: 420px;
-  }
 
-  .bannerContentH1 {
-    font-size: 36px;
-    margin-bottom: 1.2rem;
-  }
-
-  .bannerLabel {
-    font-size: 11px;
-    margin-bottom: 1.5rem;
-  }
-
-  .bannerContentP {
-    font-size: 14px;
-    margin-bottom: 1.5rem;
-  }
-}
 
 @media (max-width: 767px) {
+
   .swiperContainer {
     height: auto;
   }
+  .bannerContentP {max-width: 100%;margin-bottom:2.4rem;}
 
   .slideWrapper {
     flex-direction: column;
+    display: flex;
   }
 
   .leftSection {
@@ -220,10 +189,19 @@
     order: 2;
     background: #fff;
   }
-
+.bannerContent {
+  width: 100%;
+  margin-top: 0rem;
+}
+.leftSection{
+  width: 100%;
+  max-width: 100%;
+  position: static;
+    
+}
   .rightSection {
     width: 100%;
-    height: 300px;
+    height: auto;
     order: 1;
   }
 
@@ -243,51 +221,9 @@
     text-align: center;
   }
 
-  .bannerLabel {
-    font-size: 11px;
-    margin-bottom: 1rem;
-  }
-
-  .bannerContentH1 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  .bannerContentP {
-    font-size: 15px;
-    margin-bottom: 1.5rem;
-  }
-
   .bannerContentA {
     justify-content: center;
   }
 }
 
-@media (max-width: 480px) {
-  .leftSection {
-    padding: 2.5rem 1.5rem;
-  }
 
-  .rightSection {
-    height: 250px;
-  }
-
-  .bannerContentH1 {
-    font-size: 28px;
-  }
-
-  .bannerContentP {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 375px) {
-  .leftSection {
-    padding: 2rem 1.5rem;
-  }
-
-  .bannerContentH1 {
-    font-size: 26px;
-  }
-}

@@ -75,9 +75,11 @@
 }
 
 .rankSource {
-  font-size: 16px;
-  font-weight: 400;
+  font: var(--font-16);
+  font-weight: 600;
   margin: 0;
+  color: #FF0000;
+  text-transform: capitalize;
 }
 
 .navButtons {
@@ -135,19 +137,21 @@
 }
 
 .statsNumber {
-  font-size: 80px;
+  font: var(--font-80);
+  letter-spacing: -5.2px;
   line-height: 1;
   font-family: var(--font-Condensed);
   font-weight: 400;
 }
 
 .statsText {
-  font-size: 20px;
+  font: var(--font-20);
   width: 80%;
   font-weight: 400;
   margin-top: 0.5rem;
   line-height: 1.3;
   font-family: var(--font-Condensed);
+  letter-spacing: -0.4px;
 }
 
 .yellowLine {
@@ -175,7 +179,7 @@
 }
 
 .badgeLogo {
-  width: 20%;
+  width: 40%;
   height: auto;
   border-radius: 20px;
 }
@@ -208,6 +212,8 @@
 
 
 /* Responsive Design */
+
+
 @media (max-width: 1024px) {
   .description {
     max-width: 100%;
@@ -225,18 +231,18 @@
     padding-inline: 0;
   }
 
-  .title {
-    font-size: 30px;
-    letter-spacing:-1.40
-  }
+
 
   .yellowLine {
     left: -1rem;
   }
 
-  .statsNumber {
-    font-size: 60px;
+  .title {
+    font-weight: 700;
+    font: var(--font-40);
+    line-height: 1;
   }
+
 
   .statsContainer {
     bottom: 30px;
@@ -251,5 +257,18 @@
 
   .yellowLine {
     height: 180px;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .description {
+    max-width: 100%;
+  }
+
+  .rankingCard {
+    max-width: 100%;
+    width: 100%;
+    padding: 4rem;
   }
 }
