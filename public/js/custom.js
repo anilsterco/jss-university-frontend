@@ -361,100 +361,142 @@
     adjustMaxContent();
   });
 
-  function adjustMaxContent() {
-    let containerWidth = $(".container").width();
-    let windowWidth = $("body").width();
+ function adjustMaxContent() {
+  const container = document.querySelector(".container");
+  if (!container) return;
 
-    if (windowWidth > 4000) windowWidth = 4000;
+  let containerWidth = container.clientWidth;
+  let windowWidth = document.body.clientWidth;
 
-    let maxContentWidth = windowWidth - (windowWidth - containerWidth) / 2 + 16;
+  if (windowWidth > 4000) windowWidth = 4000;
 
-    if (windowWidth >= 1920) {
-      $(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content"
-      ).css("max-width", `${maxContentWidth}px`);
+  let maxContentWidth =
+    windowWidth - (windowWidth - containerWidth) / 2 + 16;
 
-      if (windowWidth >= 2200) {
-        $(".max-content-lg").css("max-width", "2018px");
-      }
-      if (windowWidth >= 2540) {
-        $(".max-content-lg").css("max-width", "2180px");
-      }
-    } else if (windowWidth >= 1400) {
-      $(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content"
-      ).css("max-width", `${maxContentWidth}px`);
-    } else if (windowWidth >= 1200) {
-      $(".max-content-xxl").css("max-width", "");
-      $(
-        ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content"
-      ).css("max-width", `${maxContentWidth}px`);
-    } else if (windowWidth >= 992) {
-      $(".max-content-xxl, .max-content-xl").css("max-width", "");
-      $(".max-content-lg, .max-content-md, .max-content-sm, .max-content").css(
-        "max-width",
-        `${maxContentWidth}px`
-      );
-    } else if (windowWidth >= 768) {
-      $(".max-content-xxl, .max-content-xl, .max-content-lg").css(
-        "max-width",
-        ""
-      );
-      $(".max-content-md, .max-content-sm, .max-content").css(
-        "max-width",
-        `${maxContentWidth}px`
-      );
-    } else if (windowWidth >= 575) {
-      $(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md"
-      ).css("max-width", "");
-      $(".max-content-sm, .max-content").css(
-        "max-width",
-        `${maxContentWidth}px`
-      );
-    } else {
-      $(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm"
-      ).css("width", "");
-      $(".max-content").css("width", `${maxContentWidth}px`);
-    }
+  const setMax = (selector, value) => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.style.maxWidth = value;
+    });
+  };
+
+  const resetMax = selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.style.maxWidth = "";
+    });
+  };
+
+  if (windowWidth >= 1920) {
+    setMax(
+      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+      maxContentWidth + "px"
+    );
+
+    if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
+    if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
+
+  } else if (windowWidth >= 1400) {
+    setMax(
+      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+      maxContentWidth + "px"
+    );
+
+  } else if (windowWidth >= 1200) {
+    resetMax(".max-content-xxl");
+    setMax(
+      ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+      maxContentWidth + "px"
+    );
+
+  } else if (windowWidth >= 992) {
+    resetMax(".max-content-xxl, .max-content-xl");
+    setMax(
+      ".max-content-lg, .max-content-md, .max-content-sm, .max-content",
+      maxContentWidth + "px"
+    );
+
+  } else if (windowWidth >= 768) {
+    resetMax(".max-content-xxl, .max-content-xl, .max-content-lg");
+    setMax(
+      ".max-content-md, .max-content-sm, .max-content",
+      maxContentWidth + "px"
+    );
+
+  } else if (windowWidth >= 575) {
+    resetMax(
+      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md"
+    );
+    setMax(".max-content-sm, .max-content", maxContentWidth + "px");
+
+  } else {
+    document.querySelectorAll(
+      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm"
+    ).forEach(el => el.style.width = "");
+
+    document.querySelectorAll(".max-content").forEach(el => {
+      el.style.width = maxContentWidth + "px";
+    });
+  }
+}
+
+/* =====================================
+   EDGE ALIGN ELEMENTS
+===================================== */
+function alignEdgeElements() {
+  const windowWidth = window.innerWidth;
+  if (windowWidth < 768 || windowWidth > 4000) return;
+
+  const fullSection = document.querySelector(".full_touch");
+  const leftElement = document.querySelector(".left_touch");
+  const rightElement = document.querySelector(".right_touch");
+
+  if (!fullSection) return;
+
+  const sectionRect = fullSection.getBoundingClientRect();
+
+  if (sectionRect.width >= windowWidth) {
+    if (leftElement) leftElement.style.marginLeft = "0px";
+    if (rightElement) rightElement.style.marginRight = "0px";
+    return;
   }
 
-  function alignEdgeElements() {
-    const windowWidth = window.innerWidth;
-
-    // Only run if width is between 768px and 2700px
-    if (windowWidth < 768 || windowWidth > 4000) return;
-
-    const fullSection = document.querySelector(".full_touch");
-    const leftElement = document.querySelector(".left_touch");
-    const rightElement = document.querySelector(".right_touch");
-
-    if (!fullSection) return;
-
-    const sectionRect = fullSection.getBoundingClientRect();
-
-    // Stop if section is already full-width
-    if (sectionRect.width >= windowWidth) {
-      if (leftElement) leftElement.style.marginLeft = "0px";
-      if (rightElement) rightElement.style.marginRight = "0px";
-      return;
-    }
-
-    // LEFT align
-    if (leftElement) {
-      const leftRect = leftElement.getBoundingClientRect();
-      const leftGap = leftRect.left;
-      leftElement.style.marginLeft = `${-leftGap}px`;
-    }
-
-    // RIGHT align
-    if (rightElement) {
-      const rightRect = rightElement.getBoundingClientRect();
-      const rightGap = windowWidth - rightRect.right;
-      rightElement.style.marginRight = `${-rightGap}px`;
-    }
+  if (leftElement) {
+    const leftRect = leftElement.getBoundingClientRect();
+    leftElement.style.marginLeft = -leftRect.left + "px";
   }
+
+  if (rightElement) {
+    const rightRect = rightElement.getBoundingClientRect();
+    const rightGap = windowWidth - rightRect.right;
+    rightElement.style.marginRight = -rightGap + "px";
+  }
+}
+
+/* =====================================
+   AUTO RUN – NO REFRESH NEEDED
+===================================== */
+function runAll() {
+  adjustMaxContent();
+  alignEdgeElements();
+}
+
+document.addEventListener("DOMContentLoaded", runAll);
+window.addEventListener("load", runAll);
+
+let resizeRAF;
+window.addEventListener("resize", () => {
+  cancelAnimationFrame(resizeRAF);
+  resizeRAF = requestAnimationFrame(runAll);
+});
+
+/* =====================================
+   DOM CHANGE OBSERVER (AJAX / CMS SAFE)
+===================================== */
+const observer = new MutationObserver(runAll);
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+
 
   // Run on load and resize
   window.addEventListener("load", alignEdgeElements);

@@ -3,7 +3,7 @@
 .departmentSection {
   background-color: #f6f6f6;
   min-height: 100vh;
-  padding: 6rem 0rem 10rem;
+  padding: 6rem 0rem 5rem;
 }
 
 .departmentSection .container {
@@ -117,6 +117,7 @@
 .cardImage {
   width: 100%;
   object-fit: cover;
+
 }
 
 .gradientOverlay {
@@ -180,7 +181,7 @@
 
 .divider {
   border-color: #eee;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 4rem 0;
 }
 
 .departmentItem {
@@ -210,9 +211,10 @@
 }
 
 .departmentArrow {
-  font-size: 18px;
-  color: #868585;
+  font-size: 22px;
+  color: #969696;
   transition: color 0.3s ease;
+
 }
 
 .departmentItem:hover .departmentArrow {
@@ -220,6 +222,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 2550px){
+.cardImage {
+  height: 100%;
+}
+}
+
 @media (max-width: 1750px) {
   .departmentSection {
     padding: 6rem 0rem 5rem;
@@ -256,13 +264,7 @@
     margin-bottom: 3rem;
   }
 
-  .title {
-    font-size: 42px;
-  }
 
-  .programsCount {
-    font-size: 45px;
-  }
 
   .browseLine {
     width: 70%;
@@ -274,13 +276,7 @@
     padding: 3rem 2rem 2rem 2rem;
   }
 
-  .title {
-    font-size: 30px;
-  }
 
-  .programsCount {
-    font-size: 40px;
-  }
 
   .browseHeader {
     flex-direction: column;

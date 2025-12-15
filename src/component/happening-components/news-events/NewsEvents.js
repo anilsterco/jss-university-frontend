@@ -294,11 +294,11 @@ export default function EventsSection() {
       </div>
 
       {/* Event Cards */}
-      <div className="container latest-event">
+      <div className="container ">
         
           {allEvents.length > 0 ? (
         <>
-          <div className={`events_row m-auto ${styles.cardsRow}`}>
+          <div className={`events_row latest-event m-auto ${styles.cardsRow}`}>
             {allEvents.map((event, index) => {
               const darkColors = ["#00489A", "#AF251C", "#AF251C"];
               const shuffledColors = [...darkColors].sort(
