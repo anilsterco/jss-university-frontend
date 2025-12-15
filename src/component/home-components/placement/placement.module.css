@@ -8,7 +8,7 @@
 .blueBg {
   background: #16344e;
   width: 100%;
-  max-width: 20%;
+  max-width: 25%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -50,12 +50,12 @@
 }
 
 .testimonialSwiper p {
-  font: var(--font-18);
+  font: var(--font-20);
   color: var(--color-black);
   margin-bottom: 2.8rem;
   max-width: 90%;
-  font-family: var(--font-Condensed);
   font-weight: 300;
+  font-family: var(--font-Roboto);
 }
 
 .wallOfFameText {

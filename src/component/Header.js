@@ -506,36 +506,20 @@ export default function Header() {
               >
                 <div
                   style={{
-                    borderLeft: "1px solid #7c7c7cff",
+                    borderLeft: "1px solid #e0e0e0ff",
 
                     justifyItems: "center",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     cursor: "pointer",
-                    padding: "12px 12px 12px 12px",
+                    padding: "25px",
                   }}
                 >
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "16px",
-                      color: "#16344E",
-                      fontWeight: "400",
-                      marginBottom: "-4px",
-                    }}
-                  >
+                  <span className="schoolDrp" >
                     School Of
                   </span>
-                  <span
-                    style={{
-                      display: "block",
-                      textTransform: "uppercase",
-                      color: "#16344E",
-                      fontWeight: "700",
-                      fontSize: "23px",
-                    }}
-                  >
+                  <span className="schoolDrpheading">
                     Engineering <IoChevronDownOutline fontSize={15} />
                   </span>
                 </div>
@@ -2508,6 +2492,21 @@ export default function Header() {
             padding: 0;
             list-style: none;
             color: var(--color-4e);
+          }
+          .schoolDrp{
+            font: var(--font-16);
+            color: #16344E;
+            font-family: var(--font-Condensed);
+            font-weight: 500;
+          }
+          .schoolDrpheading{
+            font: var(--font-24);
+            color: #16344E;
+            font-family: var(--font-Condensed);
+            font-weight: 600;
+            letter-spacing: -1.1px;
+            line-height: 20px;
+            text-transform: uppercase;
           }
           .menu-list li {
             text-align: center;
