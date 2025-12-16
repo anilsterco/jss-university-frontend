@@ -22,9 +22,9 @@
   display: flex;
   align-items: center;
   padding: 0 5% 0;
-  position: relative;
   z-index: 2;
-  left: 7.7%;
+  margin-left: 7.7%;
+  padding-right: 14rem;
 }
 
 .rightSection {
@@ -73,7 +73,7 @@
 }
 
 .bannerContentH1 span {
-  color: #4A90E2;
+  color: #018CE8;
 }
 
 .bannerContentP {
@@ -126,6 +126,61 @@
   transform: translateX(5px);
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.departmentOverlay {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgb(0 0 0 / 100%), rgba(0, 0, 0, 0));
+  color: #fff;
+  padding: 10px 0;
+}
+
+
+.departmentOverlay {
+  position: absolute;
+  bottom: 0;
+  padding: 30px 30px 15px;
+}
+.departmentOverlay span{
+  font: var(--font-16);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  letter-spacing: 0px;
+  font-weight: 500;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block; 
+}
+.departmentOverlay h2 {
+  font: var(--font-29);
+  font-family: var(--font-Condensed);
+  color: #FFC100;
+  font-weight: bold;
+  letter-spacing: -0.81px;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.departmentOverlay span::after {
+  content: '';
+  position: absolute;
+  left: 100%; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 26rem;
+  height: 2px; 
+  background-color: #FFC100; 
+  margin-left: 2rem;
+}
+
 /* Responsive Design */
 
 
@@ -150,7 +205,6 @@
   }
 
   .bannerContentH1 {
-    font-size: 46px;
     margin-bottom: 1.5rem;
   }
 
@@ -158,15 +212,17 @@
 
 @media (max-width: 1024px) {
 
-
   .leftSection {
-    width: 50%;
+    width: 58%;
     padding: 0 3%;
   }
 
   .rightSection {
     width: 100%;
   }
+  .departmentOverlay h2 {
+ line-height: normal;
+}
 }
 
 
@@ -176,7 +232,11 @@
   .swiperContainer {
     height: auto;
   }
-  .bannerContentP {max-width: 100%;margin-bottom:2.4rem;}
+
+  .bannerContentP {
+    max-width: 100%;
+    margin-bottom: 2.4rem;
+  }
 
   .slideWrapper {
     flex-direction: column;
@@ -189,16 +249,19 @@
     order: 2;
     background: #fff;
   }
-.bannerContent {
-  width: 100%;
-  margin-top: 0rem;
-}
-.leftSection{
-  width: 100%;
-  max-width: 100%;
-  position: static;
-    
-}
+
+  .bannerContent {
+    width: 100%;
+    margin-top: 0rem;
+  }
+
+  .leftSection {
+    width: 100%;
+    max-width: 100%;
+  margin-left: 0;
+
+  }
+
   .rightSection {
     width: 100%;
     height: auto;
@@ -225,5 +288,3 @@
     justify-content: center;
   }
 }
-
-

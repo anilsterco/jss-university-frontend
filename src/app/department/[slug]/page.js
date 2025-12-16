@@ -1,4 +1,4 @@
-import BannerComponent from "@/component/home-components/banner/BannerComponent";
+import DepartmentSlider from "@/component/home-components/banner/school-banner/SchoolBannerComponent";
 import AboutDepartmentComponent from "@/component/department-components/about-department-component/AboutDepartmentComponent";
 import HodMessageComponent from "@/component/department-components/hod-message-component/HodMessageComponent";
 import CoursesOfferedDepartment from "@/component/department-components/courses-offered-departments/CoursesOfferedDepartment";
@@ -41,7 +41,7 @@ export default async function DepartmentPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-      <BannerComponent data={departmentData.sections.banners} />
+      <DepartmentSlider  data={departmentData.sections.banners} name={departmentData.departments_name} isDepartment={true} />
       <AboutDepartmentComponent data={departmentData.sections.about_school} />
       <HodMessageComponent data={departmentData.sections.dean_message} />
       <CoursesOfferedDepartment data={departmentData.sections.courses_data} />

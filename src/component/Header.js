@@ -1177,6 +1177,9 @@ export default function Header() {
           .header-scrolled .school-toggle {
             color: #16344e;
           }
+          .nav-container.header-scrolled.scroll_bg {
+            background: #ecececff!important;
+          }
           .engineering-dropdown-container {
             z-index: 1000;
             width: 100%;
