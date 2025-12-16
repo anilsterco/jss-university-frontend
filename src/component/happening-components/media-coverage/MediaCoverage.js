@@ -83,8 +83,7 @@ export default function MediaCoverage() {
           <div
             key={item.id}
             className={styles.galleryCard}
-            onClick={() => openModal(item)}
-          >
+            onClick={() => openModal(item)}>
             <div className={styles.cardImage}>
               <div className={styles.imagePlaceholder}>
                 <Image
