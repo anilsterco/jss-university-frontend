@@ -298,18 +298,6 @@
     padding: 2rem 1rem 1rem 1rem;
   }
 
-  .title {
-    font-size: 32px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .programsCount {
-    font-size: 35px;
-  }
-
   .viewAllButton,
   .applyButton {
     width: 100%;
@@ -323,7 +311,6 @@
   }
 
   .departmentItem {
-    font-size: 15px;
     padding: 0.75rem;
   }
 

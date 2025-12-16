@@ -38,7 +38,7 @@ export default async function SchoolPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-      <SchoolBannerComponent data={schoolData.sections.banners} />
+      <SchoolBannerComponent data={schoolData.sections.banners} name={schoolData.school_name} />
       <BelowBannerComponent />
       {schoolData.sections.course_data.title && (
         <DepartmentComponent data={schoolData.sections.course_data} />
