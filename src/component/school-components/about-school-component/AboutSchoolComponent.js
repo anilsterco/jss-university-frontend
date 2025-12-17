@@ -41,9 +41,9 @@ export default function AboutSchool({ data }) {
   return (
     <div className={styles.aboutSchoolSection}>
       <div className="container">
-        <div className="row align-items-center">
+        <div className="school_row align-items-center">
           {/* LEFT COLUMN */}
-          <div className="col-xl-6 col-lg-12 mb-4">
+          <div className="school_about">
             <div className="about_school_left">
               <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
 
@@ -68,7 +68,7 @@ export default function AboutSchool({ data }) {
                   aboutSchoolContent.highlights.map((item, index) => (
                     <div className="col-xl-6 col-lg-6 col-sm-6 about_rnk" key={index}>
                       <div className={styles.rankingCard}>
-                        <div className="counter_dfe">
+                        <div className="counter_dfe d-flex">
                           <span className={styles.rankNumber}>{item.rank}</span>
                           <p className={styles.rankText}>{item.text}</p>
                         </div>
@@ -101,7 +101,7 @@ export default function AboutSchool({ data }) {
           </div>
 
           {/* RIGHT COLUMN (IMAGE CARD) */}
-          <div className="col-xl-6 col-lg-12">
+          <div className="school_about">
             <div className={styles.imageCard}>
               <Image
                 src={aboutSchoolContent.chancellor_img}

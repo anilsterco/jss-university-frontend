@@ -1,3 +1,4 @@
+
 /* components/school-components/AboutSchool/AboutSchool.module.css */
 
 .aboutSchoolSection {
@@ -32,8 +33,8 @@
 }
 
 .arrowButton {
-  font-size: 18px;
-  color: #7a7a7a;
+  font-size: 24px;
+  color: #994073;
   padding: 0;
   border: none;
   background: none;
@@ -49,22 +50,27 @@
 
 .rankingCard {
   border: 1px solid #dee2e6;
-  padding: 1rem 3rem;
+  padding: 2rem 2rem;
   border-radius: 3px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 2rem;
+  align-items: center;
 }
 
 .rankNumber {
   color: #994073;
   font-weight: 600;
-  font: var(--font-38);
+  font: var(--font-34);
   margin-right: 1rem;
   letter-spacing: -1.9px;
   font-weight: 500;
+}
+
+.counter_dfe {
+  align-items: center;
 }
 
 .rankText {
@@ -104,7 +110,7 @@
 .imageCard {
   border: none;
   position: relative;
-  margin-left: 2rem;
+  margin-left: 4rem;
 }
 
 .cardImage {
@@ -155,12 +161,12 @@
 }
 
 .yellowLine {
+  background-color: #f5c518;
+  width: 4px;
+  height:21rem;
   position: absolute;
   top: -1rem;
   left: -3rem;
-  height: 203px;
-  width: 3px;
-  background-color: #f5c518;
 }
 
 .badgeContainer {
@@ -194,7 +200,7 @@
 .buttonsContainer {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
@@ -212,8 +218,21 @@
 
 
 /* Responsive Design */
-
-
+@media (max-width: 1366px){
+.description {
+  max-width: 100%;
+}
+}
+@media (max-width: 1199px) {
+  .description {
+    max-width: 100%;
+  }
+  .rankingCard {
+    max-width: 100%;
+    width: 100%;
+    padding: 4rem;
+  }
+}
 @media (max-width: 1024px) {
   .description {
     max-width: 100%;
@@ -230,8 +249,6 @@
     padding-block: 4rem;
     padding-inline: 0;
   }
-
-
 
   .yellowLine {
     left: -1rem;
@@ -256,19 +273,10 @@
   }
 
   .yellowLine {
-    height: 180px;
+    height: 19rem;
   }
-}
-
-@media (max-width: 1199px) {
-
-  .description {
-    max-width: 100%;
-  }
-
   .rankingCard {
-    max-width: 100%;
-    width: 100%;
-    padding: 4rem;
+    padding: 2rem;
   }
 }
+

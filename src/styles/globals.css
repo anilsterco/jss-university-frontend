@@ -1,3 +1,4 @@
+
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
@@ -951,11 +952,16 @@ a:active {
   display: grid;
   justify-content: space-between;
 }
-
+.school_row {
+  display: grid;
+  grid-template-columns: repeat(1, 56% auto);
+  align-items: center;
+}
 .about_rnk {
   display: flex;
   flex-wrap: wrap;
 }
+.counter_dfe {align-items: center;margin-bottom: 0.5rem;}
 
 .about_school_left {
   border-right: 1px solid rgba(206, 206, 206, 0.52);
@@ -1038,6 +1044,7 @@ a:active {
   .depar-button {
     display: flex;
     gap: 1.5rem;
+    justify-content: center;
   }
 
   .blueBg {
@@ -1404,5 +1411,14 @@ a:active {
 .description {
   max-width: 100%;
 }
+}
+
+@media (max-width: 1366px){
+.school_row {
+    grid-template-columns: repeat(1, 50% auto);
+}
+}
+@media (max-width: 1024px){
+.school_row{display: block;}
 }
 
