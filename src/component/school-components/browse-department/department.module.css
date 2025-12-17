@@ -117,7 +117,7 @@
 .cardImage {
   width: 100%;
   object-fit: cover;
-
+  height: 100%;
 }
 
 .gradientOverlay {
@@ -243,6 +243,7 @@
 @media (max-width: 1024px) {
   .leftSide {
     margin-bottom: 4rem;
+    text-align: center;
   }
 
   .departmentSection {
