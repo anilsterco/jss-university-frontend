@@ -6,7 +6,7 @@ import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-const BASE_URL = "https://project-demo.in/jss/api";
+const BASE_URL = "/api/";
 
 export default function FacultyDetailPage({ params }) {
   const { id } = React.use(params);
@@ -266,7 +266,7 @@ export default function FacultyDetailPage({ params }) {
                               <div className="research-icon">
                                 <p>
                                   {key.image && (
-                                    <img
+                                    <Image
                                       src={key.image}
                                       alt="research-icon"
                                       width={50}

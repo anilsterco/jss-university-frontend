@@ -1,7 +1,7 @@
 /* components/home-components/EventsGrid/EventsGrid.module.css */
 
 .eventSection {
-  padding-block: 5rem 11rem;
+  padding-block: 3rem 11rem;
 }
 
 .container-fluid {
@@ -17,7 +17,7 @@
   text-align: center;
   margin: auto;
   padding-bottom: 7.2rem;
-  padding-top: 8rem;
+  padding-top: 6rem;
 }
 
 .headerSmall {

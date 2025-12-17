@@ -221,7 +221,7 @@
 
 .loadMoreContainer a::before {
   content: '';
-  background-color: var(--color-white);
+  background-color: #f6f6f6;
   z-index: -1;
   position: absolute;
   width: 20rem;

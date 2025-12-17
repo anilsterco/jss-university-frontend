@@ -146,7 +146,7 @@ export default function FacilitiesComponent({ data }) {
       start: "top -10px",
       endTrigger: lastPanel,
       end: () => {
-        const offset = window.innerHeight * 0.01; 
+        const offset = window.innerHeight * 0.01;
         return `bottom-=${offset} bottom`;
       },
       scrub: false,

@@ -43,7 +43,7 @@ const dummyCoursesData = {
     description: "Sed ut perspiciatis unde omnis",
   },
   buttons: [
-    { text: "Apply Now", url: "https://project-demo.in/jss/api/homepage" },
+    { text: "Apply Now", url: "/api/homepage" },
   ],
 };
 
@@ -75,7 +75,7 @@ export default function CoursesOffered({ data }) {
   const searchCourses = async (keyword) => {
     try {
       const response = await fetch(
-        `https://project-demo.in/jss/api/courses/search?search=${keyword}`
+        `/api/courses/search?search=${keyword}`
       );
       const data = await response.json();
 

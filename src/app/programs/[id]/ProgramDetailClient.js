@@ -7,7 +7,7 @@ import "@/styles/custom.style.css";
 import "@/styles/style.css";
 import { useParams } from "next/navigation";
 
-const BASE_URL = "https://project-demo.in/jss/api";
+const BASE_URL = "/api/";
 
 export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");

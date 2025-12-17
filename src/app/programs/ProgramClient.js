@@ -11,7 +11,7 @@ import {
   usePathname 
 } from "next/navigation";
 
-const BASE_URL = "https://project-demo.in/jss/api";
+const BASE_URL = "/api/";
 
 export default function ProgramClient() {
  const params = useSearchParams();
