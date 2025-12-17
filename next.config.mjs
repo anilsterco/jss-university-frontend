@@ -8,16 +8,22 @@ const nextConfig = {
         port: "8080",
         pathname: "/jss/assets/img/banners/**",
       },
-      // Add other domains if needed
       {
         protocol: "https",
         hostname: "project-demo.in",
-        port: "",
         pathname: "/**",
       },
     ],
-    // Or use the simpler domains array for development
-    domains: ["sd7", "localhost", "your-production-domain.com"],
+    domains: ["sd7", "localhost", "project-demo.in"],
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://project-demo.in/jss/api/:path*",
+      },
+    ];
   },
 };
 

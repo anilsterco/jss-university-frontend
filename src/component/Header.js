@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
 
-const BASE_URL = "https://project-demo.in/jss/api/";
+const BASE_URL = "/api/";
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
 const ADMISSION_BASE_URL = `${BASE_URL}admission`;
@@ -446,26 +446,39 @@ export default function Header() {
   };
 
   return (
-    <header className={`site-header ${ pathname.includes("schools") || pathname.includes("department") ? "no-shadow" : "" }`}>
-    <div className={`nav-container ${scrolled ? "header-scrolled" : ""} 
+    <header
+      className={`site-header ${
+        pathname.includes("schools") ||
+        pathname.includes("department") ||
+        pathname.includes("programs")
+          ? "no-shadow"
+          : ""
+      } ${pathname.includes("programs") ? "programs-header" : ""}`}
+    >
+      <div
+        className={`nav-container ${scrolled ? "header-scrolled" : ""} 
     ${
-      pathname.includes("schools") || pathname.includes("department")
+      pathname.includes("schools") ||
+      pathname.includes("department") ||
+      pathname.includes("programs")
         ? "scroll_bg"
         : ""
-    }`}
+    } ${pathname.includes("programs") ? "programs-nav" : ""}`}
       >
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
         >
-          {pathname.includes("schools") || pathname.includes("department") ? (
+          {pathname.includes("schools") ||
+          pathname.includes("department") ||
+          pathname.includes("programs") ? (
             <div className="dashbord-logo">
               <Link href="/" aria-label="Home">
                 <Image
                   src="/images/header/jss-moblogo.png"
                   className="site-logo"
                   alt="Site Logo"
-                  width={299}
-                  height={108}
+                  width={325}
+                  height={116}
                   priority
                 />
               </Link>
@@ -477,8 +490,8 @@ export default function Header() {
                   src="/images/header/header-logo.png"
                   className="site-logo"
                   alt="Site Logo"
-                  width={299}
-                  height={108}
+                  width={325}
+                  height={116}
                   priority
                 />
               </Link>
@@ -516,9 +529,7 @@ export default function Header() {
                     padding: "25px",
                   }}
                 >
-                  <span className="schoolDrp" >
-                    School Of
-                  </span>
+                  <span className="schoolDrp">School Of</span>
                   <span className="schoolDrpheading">
                     Engineering <IoChevronDownOutline fontSize={15} />
                   </span>
@@ -1178,8 +1189,12 @@ export default function Header() {
             color: #16344e;
           }
           .nav-container.header-scrolled.scroll_bg {
-            background: #ecececff!important;
+            background: #ecececff !important;
           }
+          .programs-nav .nav-list {
+            background: transparent;
+          }
+
           .engineering-dropdown-container {
             z-index: 1000;
             width: 100%;
@@ -1460,6 +1475,7 @@ export default function Header() {
             border: none;
             font: var(--font-20);
             font-family: var(--font-Condensed);
+            line-height: 1;
           }
           .admission-btn:hover {
             background: #e6b000;
@@ -1697,7 +1713,7 @@ export default function Header() {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 16px 15px 16px;
+            padding: 15px 15px 15px;
             background-color: #16344e;
             color: #fff;
             transition: background 0.3s ease;
@@ -2049,7 +2065,11 @@ export default function Header() {
           .close-btn {
             margin: 3rem 8rem;
           }
-
+          @media (max-width: 1649px) {
+            .hamburger {
+              padding: 11px 13px;
+            }
+          }
           @media (max-width: 1599px) {
             .mega-right {
               padding-right: 6.8rem;
@@ -2107,6 +2127,9 @@ export default function Header() {
             }
             .admission-dropdown {
               top: 16rem;
+            }
+            .hamburger {
+              padding: 9px 12px;
             }
           }
           @media (max-width: 1024px) {
@@ -2496,15 +2519,15 @@ export default function Header() {
             list-style: none;
             color: var(--color-4e);
           }
-          .schoolDrp{
+          .schoolDrp {
             font: var(--font-16);
-            color: #16344E;
+            color: #16344e;
             font-family: var(--font-Condensed);
             font-weight: 500;
           }
-          .schoolDrpheading{
+          .schoolDrpheading {
             font: var(--font-24);
-            color: #16344E;
+            color: #16344e;
             font-family: var(--font-Condensed);
             font-weight: 600;
             letter-spacing: -1.1px;
@@ -2546,7 +2569,7 @@ export default function Header() {
           .site-header.no-shadow {
             background: none !important;
           }
-       
+
           /* Hide menu on desktop */
           @media (min-width: 992px) {
             .mobile-bottom-menu {
