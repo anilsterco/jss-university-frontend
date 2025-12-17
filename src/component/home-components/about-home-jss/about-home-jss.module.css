@@ -202,6 +202,12 @@
 /* Responsive Design */
 /* Responsive Design */
 
+@media (min-width: 1921px) {
+.topSectionHeading {
+  width: 50%;
+  
+}
+}
 @media (min-width: 1381px) and (max-width: 1919px) {
   .navButtons {
     padding: 0.5rem 2rem;

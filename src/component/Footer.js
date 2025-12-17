@@ -61,7 +61,7 @@ export default function Footer() {
   useEffect(() => {
     async function fetchFooter() {
       try {
-        const res = await fetch("https://project-demo.in/jss/api/footer");
+        const res = await fetch("/api/footer");
         if (!res.ok) throw new Error("Failed to fetch footer data");
         const data = await res.json();
         setData(data);

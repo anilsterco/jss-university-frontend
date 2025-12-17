@@ -1,4 +1,3 @@
-
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
@@ -354,9 +353,13 @@ a:active {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--color-white);
-  padding: 1.4rem 2rem 1.2rem;
+  padding: 1.2rem 2rem 1rem;
   font-family: var(--font-Condensed);
   position: relative;
+}
+
+.programs-nav .nav-link.nav-lists {
+  color: #16344E;
 }
 
 .nav-link.nav-lists:hover:after {
@@ -791,7 +794,7 @@ a:active {
   content: "";
   background-color: #e1e1e1;
   width: 0.1rem;
-  height: 13.5rem;
+  height: 16.4rem;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -892,7 +895,9 @@ a:active {
 .active_head .site-header .header-scrolled .nav-list>li>a {
   color: var(--color-white);
 }
-
+.active_head .site-header .header-scrolled.programs-nav .nav-list>li>a {
+  color:rgb(22, 52, 78);
+}
 .active_head .nav-list>li.nav-item:hover>a {
   position: relative;
 }
@@ -952,16 +957,22 @@ a:active {
   display: grid;
   justify-content: space-between;
 }
+
 .school_row {
   display: grid;
   grid-template-columns: repeat(1, 56% auto);
   align-items: center;
 }
+
 .about_rnk {
   display: flex;
   flex-wrap: wrap;
 }
-.counter_dfe {align-items: center;margin-bottom: 0.5rem;}
+
+.counter_dfe {
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
 
 .about_school_left {
   border-right: 1px solid rgba(206, 206, 206, 0.52);
@@ -976,7 +987,7 @@ a:active {
 
 .container-fluid {
   max-width: 100%;
-  padding-inline: 9.8rem!important;
+  padding-inline: 9.8rem !important;
 }
 
 .about_one .top_log_grid figure img {
@@ -1392,34 +1403,39 @@ a:active {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
-.facilities-sec4:last-child{
+
+.facilities-sec4:last-child {
   padding-top: 0;
 }
 
 /* school page responsive  */
-@media (max-width: 2550px){
-.grid_2 {
+@media (max-width: 2550px) {
+  .grid_2 {
     grid-template-columns: 20% 75%;
-}
+  }
 
 }
-@media (max-width: 1199px){
-.about_school_left {
-  padding-right: 0rem!important;
-  margin-bottom: 4rem;
-  border: none!important;
-}
-.description {
-  max-width: 100%;
-}
+
+@media (max-width: 1199px) {
+  .about_school_left {
+    padding-right: 0rem !important;
+    margin-bottom: 4rem;
+    border: none !important;
+  }
+
+  .description {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 1366px){
-.school_row {
+@media (max-width: 1366px) {
+  .school_row {
     grid-template-columns: repeat(1, 50% auto);
-}
-}
-@media (max-width: 1024px){
-.school_row{display: block;}
+  }
 }
 
+@media (max-width: 1024px) {
+  .school_row {
+    display: block;
+  }
+}

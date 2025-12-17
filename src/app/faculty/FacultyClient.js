@@ -7,8 +7,8 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
 
-const BASE_URL = "https://project-demo.in/jss/api";
-const SCHOOLS_API_URL = "https://project-demo.in/jss/api/schools/all";
+const BASE_URL = "/api";
+const SCHOOLS_API_URL = "/api/schools/all";
 
 export default function FacultyClient() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,7 +17,7 @@ export default function FacultyClient() {
 
   const [facultyListData, setFacultyListData] = useState([]);
 
-  // Pagination States
+  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
   const [nextPageUrl, setNextPageUrl] = useState(null);
@@ -30,23 +30,27 @@ export default function FacultyClient() {
 
   const firstLoad = useRef(true);
 
-  // Fetch schools data
+  // --------------------------
+  // Fetch Schools
+  // --------------------------
   const fetchSchoolsData = async () => {
     try {
       setSchoolsLoading(true);
       const res = await fetch(SCHOOLS_API_URL);
-
+      if (!res.ok) throw new Error(`Schools API error: ${res.status}`);
       const data = await res.json();
       setSchoolsList(data.data || []);
     } catch (err) {
-      console.error(err);
+      console.error("Schools fetch error:", err);
       setSchoolsList([]);
     } finally {
       setSchoolsLoading(false);
     }
   };
 
-  // Fetch faculty for page 1 (with filters)
+  // --------------------------
+  // Fetch Faculty (page 1 or filters)
+  // --------------------------
   const fetchFacultyData = async (
     page = 1,
     search = "",
@@ -61,21 +65,20 @@ export default function FacultyClient() {
       if (search) params.append("search", search);
       if (schoolId) params.append("school", schoolId);
       if (type) params.append("type", type);
-
       params.append("page", page);
 
       const url = `${BASE_URL}/faculties?${params.toString()}`;
-
       const res = await fetch(url);
+      if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
       const data = await res.json();
 
       const faculty = data.data?.faculty || [];
       const pagination = data.data?.pagination;
 
       setFacultyListData(faculty);
-      setCurrentPage(pagination.current_page);
-      setLastPage(pagination.last_page);
-      setNextPageUrl(pagination.next_page_url);
+      setCurrentPage(pagination?.current_page || 1);
+      setLastPage(pagination?.last_page || 1);
+      setNextPageUrl(pagination?.next_page_url || null);
     } catch (err) {
       console.error("Faculty fetch error:", err);
       setFacultyListData([]);
@@ -85,24 +88,26 @@ export default function FacultyClient() {
     }
   };
 
-  // Load More Faculty
+  // --------------------------
+  // Load More Faculty (pagination)
+  // --------------------------
   const loadMore = async () => {
     if (!nextPageUrl) return;
 
     try {
       setIsLoadingMore(true);
-
-      const res = await fetch(nextPageUrl);
+      const res = await fetch(
+        nextPageUrl.replace("https://project-demo.in/jss/api", "/api")
+      );
+      if (!res.ok) throw new Error(`Load More API error: ${res.status}`);
       const data = await res.json();
 
       const newFaculty = data.data?.faculty || [];
       const pagination = data.data?.pagination;
 
-      // Append new faculty
       setFacultyListData((prev) => [...prev, ...newFaculty]);
-
-      setCurrentPage(pagination.current_page);
-      setNextPageUrl(pagination.next_page_url);
+      setCurrentPage(pagination?.current_page || currentPage);
+      setNextPageUrl(pagination?.next_page_url || null);
     } catch (err) {
       console.error("Load More error:", err);
     } finally {
@@ -110,19 +115,22 @@ export default function FacultyClient() {
     }
   };
 
-  // Initial Data Load (schools & faculty page 1)
+  // --------------------------
+  // Initial Load
+  // --------------------------
   useEffect(() => {
     fetchSchoolsData();
     fetchFacultyData(1);
   }, []);
 
-  // Filter changes (search → school → type)
+  // --------------------------
+  // Filter change effect
+  // --------------------------
   useEffect(() => {
     if (firstLoad.current) {
       firstLoad.current = false;
       return;
     }
-
     const timeoutId = setTimeout(() => {
       fetchFacultyData(1, searchTerm, selectedSchool, selectedType);
     }, 500);
@@ -130,6 +138,9 @@ export default function FacultyClient() {
     return () => clearTimeout(timeoutId);
   }, [searchTerm, selectedSchool, selectedType]);
 
+  // --------------------------
+  // JSX Render
+  // --------------------------
   return (
     <main className="site_main">
       {/* Title Section */}
@@ -224,7 +235,7 @@ export default function FacultyClient() {
                       <div className="faulty-list-box" key={faculty.id}>
                         <div className="faulty-img">
                           <figure>
-                            <img
+                            <Image
                               src={faculty.image}
                               alt={faculty.name}
                               className="img-fluid w-100"
@@ -233,6 +244,8 @@ export default function FacultyClient() {
                                 height: "300px",
                                 objectFit: "cover",
                               }}
+                              width={300}
+                              height={300}
                             />
                           </figure>
                         </div>
