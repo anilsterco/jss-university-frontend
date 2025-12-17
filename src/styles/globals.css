@@ -975,7 +975,8 @@ a:active {
 }
 
 .container-fluid {
-  max-width: 1780px;
+  max-width: 100%;
+  padding-inline: 9.8rem!important;
 }
 
 .about_one .top_log_grid figure img {
