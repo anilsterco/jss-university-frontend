@@ -1,4 +1,3 @@
-// components/home-components/LegacySection/index.js
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,10 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { GoArrowRight } from "react-icons/go";
 import styles from "./about-home-jss.module.css";
 import "swiper/css";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const dummyLegacyData = {
   title:
@@ -61,13 +61,19 @@ export default function LegacySection({ data }) {
   const [videoPopup, setVideoPopup] = useState(false);
   const legacyData = data ? data : dummyLegacyData;
 
-  // when i revigit the page , the page automatic update 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   return (
     <section className={`${styles.fifthSection}`}>
       <div className="container">
         <div className={`${styles.fifthContainerSection}`}>
-          <div className={`mb-3 ${styles.topSection}`}>
+          <div className={`mb-3 ${styles.topSection}`} data-aos="fade-bottom">
             <p className="fw-bold text-uppercase">{legacyData.subtitle}</p>
             <h2
               className={` ${styles.topSectionHeading}`}
@@ -77,8 +83,12 @@ export default function LegacySection({ data }) {
 
           <div className={`row message-row ${styles.fifthMiddleSection}`}>
             {/* Chancellor Image */}
-            <div className={`col-lg-5 msg-row ${styles.leftColumn}`}>
-              <div className="position-relative contentPart">
+            <div
+              className={`col-lg-5 msg-row ${styles.leftColumn}`}
+            >
+              <div
+                className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
+              >
                 <Image
                   src={legacyData.chancellor_img}
                   alt="chancellor image"
@@ -88,8 +98,8 @@ export default function LegacySection({ data }) {
                   className={`rounded ${styles.chancellorImage}`}
                 />
                 {/* Play Button Overlay */}
-                <div className={` contant-row ${styles.contentPart}`}>
-                  <div className="chance-msg">
+                <div className={`contant-row ${styles.contentPart}`}>
+                  <div className="chance-msg" data-aos="fade-up" data-aos-delay="300">
                     {legacyData.video_url && (
                       <IoPlayCircleOutline
                         fontSize={40}
@@ -108,7 +118,11 @@ export default function LegacySection({ data }) {
             </div>
 
             {/* Right Content */}
-            <div className={`col-lg-7 about-imgcol ${styles.rightColumn}`}>
+            <div
+              className={`col-lg-7 about-imgcol ${styles.rightColumn}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <p className={`fw-light ${styles.description}`}>
                 {legacyData.description}
               </p>
@@ -119,14 +133,19 @@ export default function LegacySection({ data }) {
                       className={`fw-light ${styles.rightArrowIcon}`}
                       color="rgb(153 83 158)"
                     />
-                  
                   </Link>
                 )}
               </div>
+
               {/* Highlight Boxes */}
               <div className={`highlight-col ${styles.onlyDesktop}`}>
                 {legacyData.highlights.map((h, i) => (
-                  <div key={i} className={`item ${styles.highlightBox}`}>
+                  <div
+                    key={i}
+                    className={`item ${styles.highlightBox}`}
+                    data-aos="fade-up"
+                    data-aos-delay={i * 200}
+                  >
                     <h1 className={`fw-bold ${styles.highlightNumber}`}>
                       {h.rank}
                     </h1>
@@ -137,6 +156,7 @@ export default function LegacySection({ data }) {
                   </div>
                 ))}
               </div>
+
               <Swiper
                 spaceBetween={100}
                 slidesPerView={1}
@@ -161,6 +181,8 @@ export default function LegacySection({ data }) {
               {/* Buttons */}
               <div
                 className={`d-flex gap-3 about-home-buttons ${styles.aboutBtnDiv}`}
+                data-aos="fade-up"
+                data-aos-delay="600"
               >
                 {legacyData.buttons.map((btn, i) => (
                   <Link key={i} href={btn.url} className={styles.navButtons}>
@@ -172,10 +194,8 @@ export default function LegacySection({ data }) {
           </div>
 
           {/* Accreditation Logos Slider */}
-          <div className={styles.fifthSectionSlider}>
-            <p
-              className={`${styles.accreditationHeading} ${styles.onlyMobile}`}
-            >
+          <div className={styles.fifthSectionSlider} data-aos="fade-up" data-aos-delay="700">
+            <p className={`${styles.accreditationHeading} ${styles.onlyMobile}`}>
               GLOBAL PARTNERSHIPS AND ACADEMIC COLLABORATIONS
             </p>
             <Swiper
@@ -212,7 +232,7 @@ export default function LegacySection({ data }) {
           </div>
         </div>
 
-        {/* ✅ Video Popup */}
+        {/* Video Popup */}
         {videoPopup && (
           <div className={styles.videoModalOverlay}>
             <div className={styles.videoModalContent}>

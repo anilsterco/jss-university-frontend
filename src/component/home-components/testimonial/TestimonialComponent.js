@@ -1,16 +1,16 @@
-// components/home-components/TestimonialsSection/index.js
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import styles from "./testimonial.module.css";
 
 const dummyTestimonialsData = {
   title:
     '<span class="dark-blue-text ">IN</span> <span class="blue-text">CONVERSATION</span> <span class="dark-blue-text ">WITH THE</span>  <span class="blue-text">JSS COMMUNITY</span>',
-
   subtitle: "TESTIMONIALS",
   testimonials: [
     {
@@ -85,168 +85,168 @@ export default function TestimonialsSection({ data }) {
   const testimonialsData = data ? data : dummyTestimonialsData;
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   // distribute testimonials dynamically into columns
   const column1 = testimonialsData.testimonials.slice(0, 1);
   const column2 = testimonialsData.testimonials.slice(1, 3);
   const column3 = testimonialsData.testimonials.slice(3);
-
   const columnForMobile = [...column1, ...column2];
+
   return (
-    <section className={styles.testimonialsSection}>
-     <div className="container">
-       <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
-        {/* LEFT COLUMN */}
-        <div className={styles.columnLeft}>
-          <div className={styles.headerContent}>
-            <p className={styles.testimonialsLabel}>
-              {testimonialsData.subtitle}
-            </p>
-            <h2
-              className={`${styles.mainHeading}`}
-              dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
-            ></h2>
-            <Link href="#testimonials">
-              <button className={styles.circleArrowBtn}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </Link>
+    <section className={`${styles.testimonialsSection}`}>
+      <div className="container">
+        <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
+          {/* LEFT COLUMN */}
+          <div className={styles.columnLeft}>
+            <div className={styles.headerContent} data-aos="fade-up">
+              <p className={styles.testimonialsLabel}>
+                {testimonialsData.subtitle}
+              </p>
+              <h2
+                className={`${styles.mainHeading}`}
+                dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
+              ></h2>
+              <Link href="#testimonials">
+                <button className={styles.circleArrowBtn}>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </Link>
+            </div>
+
+            {column1.map((item, i) => (
+              <TestimonialCard
+                key={i}
+                data={item}
+                onPlay={() => setSelectedVideo(item.video_url)}
+                delay={i * 150}
+              />
+            ))}
           </div>
 
-          {column1.map((item, i) => (
-            <TestimonialCard
-              key={i}
-              data={item}
-              onPlay={() => setSelectedVideo(item.video_url)}
-            />
-          ))}
-        </div>
-
-        {/* MIDDLE COLUMN */}
-        <div className={styles.columnMiddle}>
-          {column2.map((item, i) => (
-            <TestimonialCard
-              key={i}
-              data={item}
-              onPlay={() => setSelectedVideo(item.video_url)}
-            />
-          ))}
-        </div>
-
-        {/* RIGHT COLUMN */}
-        <div className={styles.columnRight}>
-          {column3.map((item, i) => (
-            <TestimonialCard
-              key={i}
-              data={item}
-              onPlay={() => setSelectedVideo(item.video_url)}
-            />
-          ))}
-        </div>
-      </div>
-      <div className={styles.mobileView}>
-        <p className={`${styles.testimonialsLabel} text-center`}>
-          TESTIMONIALS
-        </p>
-        <Swiper
-          spaceBetween={100}
-          slidesPerView={1}
-          style={{ paddingBottom: "1.1rem" }}
-        >
-          {columnForMobile.map((item, i) => (
-            <SwiperSlide key={i}>
+          {/* MIDDLE COLUMN */}
+          <div className={styles.columnMiddle}>
+            {column2.map((item, i) => (
               <TestimonialCard
                 key={i}
                 data={item}
                 onPlay={() => setSelectedVideo(item.video_url)}
+                delay={i * 150 + 200}
               />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <Swiper spaceBetween={100} slidesPerView={1}>
-          {column3.map((item, i) => (
-            <SwiperSlide key={i}>
+            ))}
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className={styles.columnRight}>
+            {column3.map((item, i) => (
               <TestimonialCard
                 key={i}
                 data={item}
                 onPlay={() => setSelectedVideo(item.video_url)}
+                delay={i * 150 + 400}
               />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className={`${styles.mobileViewArrow}`}>
-          <Link href="#testimonials">
-            <button className={styles.circleArrowBtn}>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-          </Link>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* ✅ Video Popup */}
-      {selectedVideo && (
-        <div
-          className={styles.videoModalOverlay}
-          onClick={() => setSelectedVideo(null)}
-        >
+        {/* MOBILE VIEW */}
+        <div className={styles.mobileView}>
+          <p className={`${styles.testimonialsLabel} text-center`}>
+            TESTIMONIALS
+          </p>
+          <Swiper spaceBetween={100} slidesPerView={1} style={{ paddingBottom: "1.1rem" }}>
+            {columnForMobile.map((item, i) => (
+              <SwiperSlide key={i}>
+                <TestimonialCard
+                  key={i}
+                  data={item}
+                  onPlay={() => setSelectedVideo(item.video_url)}
+                  delay={i * 150}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper spaceBetween={100} slidesPerView={1}>
+            {column3.map((item, i) => (
+              <SwiperSlide key={i}>
+                <TestimonialCard
+                  key={i}
+                  data={item}
+                  onPlay={() => setSelectedVideo(item.video_url)}
+                  delay={i * 150 + 200}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Video Popup */}
+        {selectedVideo && (
           <div
-            className={styles.videoModalContent}
-            onClick={(e) => e.stopPropagation()}
+            className={styles.videoModalOverlay}
+            onClick={() => setSelectedVideo(null)}
           >
-            <iframe
-              width="100%"
-              height="100%"
-              src={selectedVideo}
-              title="Testimonial Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className={styles.videoIframe}
-            ></iframe>
-            <button
-              className={styles.closeBtn}
-              onClick={() => setSelectedVideo(null)}
+            <div
+              className={styles.videoModalContent}
+              onClick={(e) => e.stopPropagation()}
             >
-              ✕
-            </button>
+              <iframe
+                width="100%"
+                height="100%"
+                src={selectedVideo}
+                title="Testimonial Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className={styles.videoIframe}
+              ></iframe>
+              <button
+                className={styles.closeBtn}
+                onClick={() => setSelectedVideo(null)}
+              >
+                ✕
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-     </div>
+        )}
+      </div>
     </section>
   );
 }
 
-function TestimonialCard({ data, onPlay }) {
+function TestimonialCard({ data, onPlay, delay = 0 }) {
   const hasVideo = data.video_url && data.video_url.length > 0;
 
   return (
-    <article className={styles.testimonialCard}>
+    <article
+      className={`${styles.testimonialCard} animated-slide-up shine-effect`}
+      data-aos="fade-up"
+      data-aos-delay={delay}
+    >
       <div className={styles.cardImgContainer}>
         <Image
           src={data.image}
-          alt={data.alt_text}
+          alt={data.alt_text || data.name}
           width={380}
           height={380}
           className={styles.cardImg}
         />
-        {/* Play Button if video exists */}
+        {/* Play Button */}
         {hasVideo && (
           <div className={styles.playBtn} onClick={onPlay}>
             <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
@@ -269,8 +269,8 @@ function TestimonialCard({ data, onPlay }) {
           {data.course}, {data.batch}
         </p>
         <p className={styles.personRole}>
-          {data.designation && data.designation} {data.company && data.company}
-           {data.location && data.location}
+          {data.designation && data.designation} {data.company && data.company}{" "}
+          {data.location && data.location}
         </p>
       </div>
     </article>
