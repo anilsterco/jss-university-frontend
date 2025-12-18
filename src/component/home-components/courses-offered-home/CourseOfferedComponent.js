@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const dummyCoursesData = {
   title:
@@ -37,14 +39,11 @@ const dummyCoursesData = {
     { short_name: "Applied Sciences", slug: "#" },
     { short_name: "Humanities", slug: "#" },
   ],
-  admission: { year: "2025-26", desc: "Sed ut perspiciatis unde omnis" },
   academic_year: {
     year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
     description: "Sed ut perspiciatis unde omnis",
   },
-  buttons: [
-    { text: "Apply Now", url: "/api/homepage" },
-  ],
+  buttons: [{ text: "Apply Now", url: "/api/homepage" }],
 };
 
 export default function CoursesOffered({ data }) {
@@ -53,68 +52,74 @@ export default function CoursesOffered({ data }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false); 
+  const [hasSearched, setHasSearched] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      easing: "ease-in-out",
+      duration: 800,
+    });
+  }, []);
 
   useEffect(() => {
     if (query.trim() === "") {
       setResults([]);
-      setLoading(false);
       setHasSearched(false);
       return;
     }
 
-    const delayDebounce = setTimeout(() => {
+    const delay = setTimeout(() => {
       setHasSearched(true);
       setLoading(true);
-      searchCourses(query);
+      fetch(`/api/courses/search?search=${query}`)
+        .then((res) => res.json())
+        .then((data) => setResults(data?.data || []))
+        .catch(() => setResults([]))
+        .finally(() => setLoading(false));
     }, 300);
 
-    return () => clearTimeout(delayDebounce);
+    return () => clearTimeout(delay);
   }, [query]);
-
-  const searchCourses = async (keyword) => {
-    try {
-      const response = await fetch(
-        `/api/courses/search?search=${keyword}`
-      );
-      const data = await response.json();
-
-      setResults(data?.data || []);
-    } catch (error) {
-      console.error("Error fetching search results:", error);
-      setResults([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const ProgramsCount = () => (
-    <div className={`program-hide ${styles.programsCountWrapper}`} >
-      <h1 className={`display-4 programs-count ${styles.programsCount}`}>
-        {coursesData.programs_count}
-      </h1>
-      <span className={styles.programsCountPlus}>+</span>
-    </div>
-  );
 
   return (
     <section className={`second-section cource-sec ${styles.secondSection}`}>
       <div className="container">
+
+        {/* ================= TOP SECTION ================= */}
         <div className={`row cource_top ${styles.topSection}`}>
+
+          {/* LEFT CONTENT */}
           <div className="col-lg-4 mb-4 mb-lg-0">
-            <h5 className={`${styles.topSectionH5}`}>{coursesData.subtitle}</h5>
+
+            <h5
+              className={styles.topSectionH5}
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              {coursesData.subtitle}
+            </h5>
+
             <h1
               className={`fw-bold ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
-            ></h1>
-            <p className={styles.showOnlyMobileSubHeading}>
+              data-aos="fade-up"
+              data-aos-delay="100"
+            />
+
+            <p
+              className={styles.showOnlyMobileSubHeading}
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               {coursesData.programs_text}
             </p>
 
-            <div className="search-wrapper position-relative">
-              <div
-                className={`input-group shadow-sm rounded-pill overflow-hidden`}
-              >
+            {/* SEARCH */}
+            <div
+              className="search-wrapper position-relative"
+            >
+              <div className="input-group shadow-sm rounded-pill overflow-hidden">
                 <input
                   type="text"
                   className="form-control border-0"
@@ -125,66 +130,68 @@ export default function CoursesOffered({ data }) {
                 <span className="input-group-text bg-white border-0">
                   <img
                     src="images/home-page/icon-search.svg"
-                    className="img-fluid"
                     alt="search"
                   />
                 </span>
               </div>
 
-              {query.trim() !== "" && (
+              {query && (
                 <div className="search-results">
                   {loading ? (
-                    <div className="loading">
-                      <div className="d-flex align-items-center justify-content-center">
-                        <div className="spinner-border spinner-border-sm me-2" role="status">
-                          <span className="visually-hidden">Loading...</span>
-                        </div>
-                        <span>Searching...</span>
+                    <div className="loading">Searching...</div>
+                  ) : results.length ? (
+                    results.map((item) => (
+                      <div className="search-item" key={item.id}>
+                        <Link
+                          href={`/programs/${item.slug}`}
+                          className="search-link"
+                        >
+                          {item.name}
+                        </Link>
                       </div>
-                    </div>
+                    ))
                   ) : (
-                    <>
-                      {results.length > 0 ? (
-                        results.map((item) => (
-                          <div className="search-item" key={item.id}>
-                            <Link href={`/programs/${item.slug}`} className="search-link">
-                              {item.name}
-                            </Link>
-                          </div>
-                        ))
-                      ) : (
-                        hasSearched && (
-                          <div className="no-results">No courses found</div>
-                        )
-                      )}
-                    </>
+                    hasSearched && (
+                      <div className="no-results">No courses found</div>
+                    )
                   )}
                 </div>
               )}
             </div>
 
-            {/* Programs count */}
+            {/* COUNT */}
             <div
               className={`d-flex align-items-center ${styles.programsCountSection}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
             >
-              <ProgramsCount />
-              <p className={`program-hide ${styles.programsText}`}>{coursesData.programs_text}</p>
+              <div className={`program-hide ${styles.programsCountWrapper}`}>
+                <h1 className={`display-4 programs-count ${styles.programsCount}`}>
+                  {coursesData.programs_count}
+                </h1>
+                <span className={styles.programsCountPlus}>+</span>
+              </div>
+
+              <p className={`program-hide ${styles.programsText}`}>
+                {coursesData.programs_text}
+              </p>
             </div>
           </div>
 
-          {/* Right side cards */}
-          <div
-            className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
-          >
+          {/* RIGHT CARDS */}
+          <div className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}>
             {coursesData.programs.map((level, i) => (
               <Link
-               href={{pathname: "/programs",
-                query: {
-                type: level.slug.toLowerCase().replace(/\s+/g, "-"),
-        },
-          }}
                 key={i}
+                href={{
+                  pathname: "/programs",
+                  query: {
+                    type: level.slug.toLowerCase().replace(/\s+/g, "-"),
+                  },
+                }}
                 className="second-section-cards-image position-relative"
+                data-aos="fade-up"
+                data-aos-delay={i * 150}
               >
                 <Image
                   src={level.image}
@@ -200,13 +207,9 @@ export default function CoursesOffered({ data }) {
                   >
                     {level.name_short}
                     <FaChevronRight
-                      fontSize={15}
-                      color="#b08f29"
                       className={styles.rightDesktopArrow}
                     />
                     <PiArrowCircleRightThin
-                      fontSize={20}
-                      color="#fff"
                       className={styles.rightMobileArrow}
                     />
                   </span>
@@ -216,33 +219,37 @@ export default function CoursesOffered({ data }) {
           </div>
         </div>
 
-        {/* Bottom section */}
+        {/* ================= BOTTOM SECTION ================= */}
         <div
           className={`row align-items-center program-row m-auto ${styles.exploreProgramSectionWrapper}`}
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <div className="col-lg-8">
             <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
               Explore Programs by School of
             </h6>
+
             <div
               className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
             >
               {coursesData.departments.map((school, i) => (
                 <Link
-                  href={`/schools/${school.slug}`}
                   key={i}
-                  className=" d-flex justify-content-between align-items-center"
+                  href={`/schools/${school.slug}`}
+                  className="d-flex justify-content-between align-items-center"
                 >
-                  {school.short_name}{" "}
+                  {school.short_name}
                   <FaChevronRight fontSize={10} color="#16344ec4" />
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Admission section */}
           <div
             className={`col-lg-4 d-flex gap-5 align-items-center ${styles.admissionSection}`}
+            data-aos="fade-up"
+            data-aos-delay="350"
           >
             <div className="addmission-col">
               <h4
@@ -250,19 +257,21 @@ export default function CoursesOffered({ data }) {
                 dangerouslySetInnerHTML={{
                   __html: coursesData.academic_year.year,
                 }}
-              ></h4>
-              <p className="small">{coursesData.academic_year.description}</p>
+              />
+              <p className="small">
+                {coursesData.academic_year.description}
+              </p>
             </div>
-            {coursesData.buttons[0].url && (
-              <Link
-                href={coursesData.buttons[0].url}
-                className="btn btn-warning rounded-pill"
-              >
-                {coursesData.buttons[0].text}
-              </Link>
-            )}
+
+            <Link
+              href={coursesData.buttons[0].url}
+              className="btn btn-warning rounded-pill"
+            >
+              {coursesData.buttons[0].text}
+            </Link>
           </div>
         </div>
+
       </div>
     </section>
   );
