@@ -118,6 +118,8 @@ export default function CoursesOffered({ data }) {
             {/* SEARCH */}
             <div
               className="search-wrapper position-relative"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
               <div className="input-group shadow-sm rounded-pill overflow-hidden">
                 <input
@@ -196,8 +198,8 @@ export default function CoursesOffered({ data }) {
                 <Image
                   src={level.image}
                   alt="slide image"
-                  width={200}
-                  height={300}
+                  width={252}
+                  height={387}
                   className={styles.cardImage}
                   priority
                 />

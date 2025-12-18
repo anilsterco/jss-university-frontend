@@ -78,16 +78,18 @@ export default function LegacySection({ data }) {
             <h2
               className={` ${styles.topSectionHeading}`}
               dangerouslySetInnerHTML={{ __html: legacyData.title }}
+              data-aos="fade-up"
+              data-aos-delay="100"
             ></h2>
           </div>
 
           <div className={`row message-row ${styles.fifthMiddleSection}`}>
             {/* Chancellor Image */}
-            <div
-              className={`col-lg-5 msg-row ${styles.leftColumn}`}
-            >
+            <div className={`col-lg-5 msg-row ${styles.leftColumn}`}>
               <div
                 className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
+                 data-aos="fade-up"
+                  data-aos-delay="300"
               >
                 <Image
                   src={legacyData.chancellor_img}
@@ -96,10 +98,15 @@ export default function LegacySection({ data }) {
                   height={350}
                   style={{ height: "100%", width: "100%" }}
                   className={`rounded ${styles.chancellorImage}`}
+                 
                 />
                 {/* Play Button Overlay */}
                 <div className={`contant-row ${styles.contentPart}`}>
-                  <div className="chance-msg" data-aos="fade-up" data-aos-delay="300">
+                  <div
+                    className="chance-msg"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
                     {legacyData.video_url && (
                       <IoPlayCircleOutline
                         fontSize={40}
@@ -194,8 +201,14 @@ export default function LegacySection({ data }) {
           </div>
 
           {/* Accreditation Logos Slider */}
-          <div className={styles.fifthSectionSlider} data-aos="fade-up" data-aos-delay="700">
-            <p className={`${styles.accreditationHeading} ${styles.onlyMobile}`}>
+          <div
+            className={styles.fifthSectionSlider}
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <p
+              className={`${styles.accreditationHeading} ${styles.onlyMobile}`}
+            >
               GLOBAL PARTNERSHIPS AND ACADEMIC COLLABORATIONS
             </p>
             <Swiper

@@ -1,11 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "aos/dist/aos.css";
-import AOS from "aos";
 import styles from "./testimonial.module.css";
 
 const dummyTestimonialsData = {
@@ -85,28 +83,17 @@ export default function TestimonialsSection({ data }) {
   const testimonialsData = data ? data : dummyTestimonialsData;
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  // distribute testimonials dynamically into columns
   const column1 = testimonialsData.testimonials.slice(0, 1);
   const column2 = testimonialsData.testimonials.slice(1, 3);
   const column3 = testimonialsData.testimonials.slice(3);
-  const columnForMobile = [...column1, ...column2];
 
+  const columnForMobile = [...column1, ...column2];
   return (
-    <section className={`${styles.testimonialsSection}`}>
+    <section className={styles.testimonialsSection}>
       <div className="container">
         <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
-          {/* LEFT COLUMN */}
           <div className={styles.columnLeft}>
-            <div className={styles.headerContent} data-aos="fade-up">
+            <div className={styles.headerContent}>
               <p className={styles.testimonialsLabel}>
                 {testimonialsData.subtitle}
               </p>
@@ -135,41 +122,33 @@ export default function TestimonialsSection({ data }) {
                 key={i}
                 data={item}
                 onPlay={() => setSelectedVideo(item.video_url)}
-                delay={i * 150}
               />
             ))}
           </div>
 
-          {/* MIDDLE COLUMN */}
           <div className={styles.columnMiddle}>
             {column2.map((item, i) => (
               <TestimonialCard
                 key={i}
                 data={item}
                 onPlay={() => setSelectedVideo(item.video_url)}
-                delay={i * 150 + 200}
               />
             ))}
           </div>
 
-          {/* RIGHT COLUMN */}
           <div className={styles.columnRight}>
             {column3.map((item, i) => (
               <TestimonialCard
                 key={i}
                 data={item}
                 onPlay={() => setSelectedVideo(item.video_url)}
-                delay={i * 150 + 400}
               />
             ))}
           </div>
         </div>
 
-        {/* MOBILE VIEW */}
         <div className={styles.mobileView}>
-          <p className={`${styles.testimonialsLabel} text-center`}>
-            TESTIMONIALS
-          </p>
+          <p className={`${styles.testimonialsLabel} text-center`}>TESTIMONIALS</p>
           <Swiper spaceBetween={100} slidesPerView={1} style={{ paddingBottom: "1.1rem" }}>
             {columnForMobile.map((item, i) => (
               <SwiperSlide key={i}>
@@ -177,7 +156,6 @@ export default function TestimonialsSection({ data }) {
                   key={i}
                   data={item}
                   onPlay={() => setSelectedVideo(item.video_url)}
-                  delay={i * 150}
                 />
               </SwiperSlide>
             ))}
@@ -189,14 +167,28 @@ export default function TestimonialsSection({ data }) {
                   key={i}
                   data={item}
                   onPlay={() => setSelectedVideo(item.video_url)}
-                  delay={i * 150 + 200}
                 />
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className={`${styles.mobileViewArrow}`}>
+            <Link href="#testimonials">
+              <button className={styles.circleArrowBtn}>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
+          </div>
         </div>
 
-        {/* Video Popup */}
         {selectedVideo && (
           <div
             className={styles.videoModalOverlay}
@@ -229,24 +221,19 @@ export default function TestimonialsSection({ data }) {
   );
 }
 
-function TestimonialCard({ data, onPlay, delay = 0 }) {
+function TestimonialCard({ data, onPlay }) {
   const hasVideo = data.video_url && data.video_url.length > 0;
 
   return (
-    <article
-      className={`${styles.testimonialCard} animated-slide-up shine-effect`}
-      data-aos="fade-up"
-      data-aos-delay={delay}
-    >
+    <article className={`shine-effect ${styles.testimonialCard}`}>
       <div className={styles.cardImgContainer}>
         <Image
           src={data.image}
-          alt={data.alt_text || data.name}
+          alt={data.alt_text}
           width={380}
           height={380}
           className={styles.cardImg}
         />
-        {/* Play Button */}
         {hasVideo && (
           <div className={styles.playBtn} onClick={onPlay}>
             <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
@@ -254,8 +241,6 @@ function TestimonialCard({ data, onPlay, delay = 0 }) {
             </svg>
           </div>
         )}
-
-        {/* Optional Quote */}
         {data.short_description && (
           <div className={styles.quoteBar}>
             <div className={styles.yellowLine}></div>
