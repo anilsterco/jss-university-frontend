@@ -16,6 +16,7 @@
   color: var(--color-black);
   letter-spacing: -2.88px;
   font-weight: bold;
+  line-height: 0.9;
 }
 
 .topSectionHeading span {
@@ -50,7 +51,7 @@
 
 
 .rightColumn {
-  padding-left: 14rem;
+  padding-left: 14rem!important;
 }
 
 .contentPart {

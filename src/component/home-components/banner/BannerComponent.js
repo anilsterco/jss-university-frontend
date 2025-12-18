@@ -2,12 +2,21 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
 import styles from "./banner.module.css";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function HeroSlider({ data }) {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      easing: "ease-in-out",
+      duration: 800,
+    });
+  }, []);
   const bannerData = data?.length
     ? data
     : [
@@ -57,10 +66,14 @@ export default function HeroSlider({ data }) {
                 <h1
                   className={styles.bannerContentH1}
                   dangerouslySetInnerHTML={{ __html: slide.title }}
+                  data-aos="fade-right"
+                  data-aos-delay="0"
                 ></h1>
-                <p className={styles.bannerContentP}>{slide.desc}</p>
+                <p className={styles.bannerContentP}  data-aos="fade-right"
+                  data-aos-delay="200">{slide.desc}</p>
                 {slide.url && (
-                  <Link href={"about-jss"} className={styles.bannerContentA}>
+                  <Link href={"about-jss"} className={styles.bannerContentA} data-aos="fade-right"
+                  data-aos-delay="300">
                     {slide.linked_text}
                     <FiArrowRightCircle className={styles.iconSpacing} />
                   </Link>

@@ -895,9 +895,11 @@ a:active {
 .active_head .site-header .header-scrolled .nav-list>li>a {
   color: var(--color-white);
 }
+
 .active_head .site-header .header-scrolled.programs-nav .nav-list>li>a {
-  color:rgb(22, 52, 78);
+  color: rgb(22, 52, 78);
 }
+
 .active_head .nav-list>li.nav-item:hover>a {
   position: relative;
 }
@@ -1437,5 +1439,132 @@ a:active {
 @media (max-width: 1024px) {
   .school_row {
     display: block;
+  }
+}
+
+
+
+/* ==========================
+   GLOBAL ANIMATION WRAPPER
+========================== */
+
+.animated-hover .second-section-cards-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.animated-hover .second-section-cards-image:hover {
+  transform: scale(1.03);
+}
+
+/* Smooth zoom for image */
+.animated-hover .cardImage {
+  transition: transform 0.8s ease;
+}
+
+.animated-hover .second-section-cards-image:hover .cardImage {
+  transform: scale(1.08);
+}
+
+/* Shine effect */
+.animated-hover .second-section-cards-image::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+
+.animated-hover .second-section-cards-image:hover::after {
+  left: 120%;
+  transition: all 0.8s ease;
+}
+
+/* Overlay smooth dark effect */
+.animated-hover .cardOverlay {
+  transition: background 0.5s ease;
+}
+
+.animated-hover .second-section-cards-image:hover .cardOverlay {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Banner Label slide + color change */
+.animated-hover .bannerLabel {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-hover .second-section-cards-image:hover .bannerLabel {
+  transform: translateX(6px);
+  color: #ffc107;
+}
+
+/* Explore programs hover */
+.animated-hover .explore-program-section a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-hover .explore-program-section a:hover {
+  transform: translateX(6px);
+  color: var(--color-4e);
+}
+
+/* Buttons hover */
+.animated-hover .btn-warning {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-hover .btn-warning:hover {
+  transform: translateY(-1px);
+}
+
+.animated-slide-up {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+[data-aos='fade-up'].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.shine-effect::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+
+.shine-effect:hover::before {
+  animation: shine 1s forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+
+  100% {
+    left: 125%;
   }
 }
