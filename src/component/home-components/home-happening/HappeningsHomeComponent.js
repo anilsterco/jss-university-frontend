@@ -7,7 +7,9 @@ import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 import styles from "./happening.module.css";
 import "swiper/css";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 export default function EventsGrid({ data }) {
   const dummyEventsData = {
     title:
@@ -85,16 +87,29 @@ export default function EventsGrid({ data }) {
       },
     ],
   };
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   // const eventsData = data ? dummyEventsData : data;
   const eventsData = data ? data : dummyEventsData;
   return (
     <section className={styles.eventSection}>
-      <div className={` happining-sec container-fluid ${styles.desktopView}`}>
+      <div
+        className={` happining-sec container-fluid ${styles.desktopView}`}
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <div className={styles.header}>
           <p className={styles.headerSmall}>{eventsData.subtitle}</p>
           <h1
             className={`${styles.headerTitle}`}
             dangerouslySetInnerHTML={{ __html: eventsData.title }}
+            data-aos="fade-up"
+            data-aos-delay="200"
           ></h1>
         </div>
         {eventsData.happenings && eventsData.happenings.length > 0 && (
@@ -114,16 +129,28 @@ export default function EventsGrid({ data }) {
 
               <div className={styles.contentPart}>
                 <div className={styles.orangeLine}></div>
-                <p className={styles.cardTag}>
+                <p
+                  className={styles.cardTag}
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
                   {eventsData.happenings[0] &&
                     eventsData.happenings[0].event_type}
                 </p>
-                <h2 className={styles.cardTitleLarge}>
+                <h2
+                  className={styles.cardTitleLarge}
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   {eventsData.happenings[0] && eventsData.happenings[0].title}
                 </h2>
                 {eventsData.happenings[0] && (
                   <Link href={`/happenings/${eventsData.happenings[0].slug}`}>
-                    <GoArrowRight className={styles.rightArrow} />
+                    <GoArrowRight
+                      className={styles.rightArrow}
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    />
                   </Link>
                 )}
               </div>
@@ -131,15 +158,27 @@ export default function EventsGrid({ data }) {
 
             {/* Event 2 */}
             <div className={styles.card} style={{ backgroundColor: "#AF251C" }}>
-              <p className={styles.cardTag}>
+              <p
+                className={styles.cardTag}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 {eventsData.happenings[1] &&
                   eventsData.happenings[1].event_type}
               </p>
               <div>
-                <h3 className={`${styles.cardTitle} ${styles.cardTitleWhite}`}>
+                <h3
+                  className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   {eventsData.happenings[1] && eventsData.happenings[1].title}
                 </h3>
-                <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
+                <p
+                  className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   {eventsData.happenings[1] &&
                     eventsData.happenings[1].event_date_from}
                 </p>
@@ -161,17 +200,27 @@ export default function EventsGrid({ data }) {
               )}
 
               <div className={styles.miniContentPart}>
-                <p className={styles.cardTag}>
+                <p
+                  className={styles.cardTag}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   {eventsData.happenings[2] &&
                     eventsData.happenings[2].event_type}
                 </p>
                 <div>
                   <h3
                     className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                    data-aos="fade-up"
+                    data-aos-delay="500"
                   >
                     {eventsData.happenings[2] && eventsData.happenings[2].title}
                   </h3>
-                  <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
+                  <p
+                    className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
                     {eventsData.happenings[2] &&
                       eventsData.happenings[2].event_date_from}
                   </p>
@@ -181,7 +230,11 @@ export default function EventsGrid({ data }) {
 
             {/* Event 4 */}
             <div className={styles.card} style={{ backgroundColor: "#fff" }}>
-              <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
+              <p
+                className={`${styles.cardTag} ${styles.cardTagDark}`}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 {eventsData.happenings[3] &&
                   eventsData.happenings[3].event_type}
               </p>
@@ -198,7 +251,11 @@ export default function EventsGrid({ data }) {
                 />
               )}
 
-              <h3 className={styles.cardTitle}>
+              <h3
+                className={styles.cardTitle}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 {eventsData.happenings[3] && eventsData.happenings[3].title}
               </h3>
               <p className={styles.cardDate}>
@@ -240,11 +297,17 @@ export default function EventsGrid({ data }) {
 
               <div className={styles.contentPart}>
                 <div className={styles.orangeLine}></div>
-                <h2 className={styles.cardTitleLarge}>
+                <h2
+                  className={styles.cardTitleLarge}
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
                   {eventsData.happenings[5] && eventsData.happenings[5].title}
                 </h2>
                 <p
                   className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
+                  data-aos="fade-up"
+                  data-aos-delay="200"
                 >
                   {eventsData.happenings[5] &&
                     eventsData.happenings[5].short_description}
@@ -274,7 +337,11 @@ export default function EventsGrid({ data }) {
 
             {/* Event 8 */}
             <div className={styles.card} style={{ backgroundColor: "#2B5DAA" }}>
-              <p className={styles.cardTag}>
+              <p
+                className={styles.cardTag}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 {eventsData.happenings[7] &&
                   eventsData.happenings[7].event_type}
               </p>
@@ -294,11 +361,17 @@ export default function EventsGrid({ data }) {
 
                 <p
                   className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
+                  data-aos="fade-up"
+                  data-aos-delay="200"
                 >
                   {eventsData.happenings[7] &&
                     eventsData.happenings[7].short_description}
                 </p>
-                <p className={`${styles.cardDate} ${styles.cardDateWhite}`}>
+                <p
+                  className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   {eventsData.happenings[7] &&
                     eventsData.happenings[7].event_date_from}
                 </p>
@@ -307,7 +380,11 @@ export default function EventsGrid({ data }) {
 
             {/* Event 9 */}
             <div className={styles.card} style={{ backgroundColor: "#fff" }}>
-              <p className={`${styles.cardTag} ${styles.cardTagDark}`}>
+              <p
+                className={`${styles.cardTag} ${styles.cardTagDark}`}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 {eventsData.happenings[8] &&
                   eventsData.happenings[8].event_type}
               </p>
@@ -324,10 +401,18 @@ export default function EventsGrid({ data }) {
                 />
               )}
 
-              <h3 className={styles.cardTitle}>
+              <h3
+                className={styles.cardTitle}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 {eventsData.happenings[8] && eventsData.happenings[8].title}
               </h3>
-              <p className={styles.cardDate}>
+              <p
+                className={styles.cardDate}
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 {eventsData.happenings[8] &&
                   eventsData.happenings[8].event_date_from}
               </p>
@@ -338,9 +423,7 @@ export default function EventsGrid({ data }) {
       <div className={styles.mobileView}>
         {eventsData.happenings && eventsData.happenings.length > 0 && (
           <>
-            <p className={`${styles.headerSmall} text-center`}>
-              HAPPENINGS
-            </p>
+            <p className={`${styles.headerSmall} text-center`}>HAPPENINGS</p>
 
             <Swiper
               spaceBetween={100}

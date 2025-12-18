@@ -79,15 +79,13 @@
   margin-bottom: 5px;
   line-height: 1.3;
 }
-
 .rankSource {
   font: var(--font-16);
   font-weight: 600;
   margin: 0;
-  color: #FF0000;
+  color: #ff0000e8;
   text-transform: capitalize;
 }
-
 .navButtons {
   background: #16344e;
   padding: 0.5rem 1.5rem;
