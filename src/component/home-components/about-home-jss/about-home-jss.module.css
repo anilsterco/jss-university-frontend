@@ -233,12 +233,17 @@
     width: 100%;
 
   }
-
+.rightColumn {
+  padding-left: 0rem!important;
+}
   .rightColumn {
     padding-left: 0;
     padding-block: 6rem 0;
   }
-
+.fifthSectionSlider {
+  margin-top: 4rem;
+  padding-inline: 0rem;
+}
 }
 
 @media (max-width: 768px) {

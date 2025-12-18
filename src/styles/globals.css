@@ -895,7 +895,10 @@ a:active {
 .active_head .site-header .header-scrolled .nav-list>li>a {
   color: var(--color-white);
 }
-
+.active_head .site-header .header-scrolled.scroll_bg .nav-list>li>a {
+ color: var(--color-29);
+}
+  
 .active_head .site-header .header-scrolled.programs-nav .nav-list>li>a {
   color: rgb(22, 52, 78);
 }
@@ -1159,6 +1162,7 @@ a:active {
   position: relative;
   width: 100%;
   margin-block: 3rem;
+  z-index: 999;
 }
 
 .search-results {

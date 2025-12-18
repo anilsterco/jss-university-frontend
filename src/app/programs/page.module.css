@@ -23,10 +23,10 @@
   padding: 1.6rem 2.5rem;
   border-radius: 8px;
   color: var(--color-black);
-  font-size: 1.4rem; /* Increased font size */
-  line-height: 1.2; /* Prevent line height from increasing height */
-  height: auto; /* Let padding determine height */
-  min-height: auto; /* Prevent minimum height issues */
+  font-size: 1.4rem; 
+  line-height: 1.2; 
+  height: auto; 
+  min-height: auto; 
 }
 
 /* Remove focus/active borders */
@@ -36,23 +36,23 @@
   border: none !important;
   outline: none !important;
   box-shadow: 0px 16px 56px #00000017 !important;
-  font-size: 1.4rem; /* Consistent font size on focus */
+  font-size: 1.4rem; 
 }
 
 .searchBox button {
   position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(-50%); /* Better vertical centering */
+  transform: translateY(-50%); 
   border: none;
   background: var(--color-white);
   cursor: pointer;
   z-index: 9;
-  padding: 0.5rem; /* Add some padding for better click area */
+  padding: 0.5rem; 
 }
 
 .searchBox button i {
-  font-size: 1.2rem; /* Slightly larger icon to match text */
+  font-size: 1.2rem; 
 }
 
 .searchBox input::placeholder {
@@ -1323,7 +1323,8 @@
 }
 
 .searchBox button i {
-  font-size: 1.2rem;
+  font-size: 2rem;
+  color: #4d4c4c;
 }
 
 .searchBox input::placeholder {

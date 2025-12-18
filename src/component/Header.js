@@ -823,8 +823,8 @@ export default function Header() {
                 src="/images/header/hum-icon.svg"
                 className="site-logo"
                 alt="Site Logo"
-                width={17}
-                height={16}
+                width={16}
+                height={15}
                 priority
               />
             </button>
@@ -1189,7 +1189,7 @@ export default function Header() {
             color: #16344e;
           }
           .nav-container.header-scrolled.scroll_bg {
-            background: #ecececff !important;
+            background: #f8f9fa !important;
           }
           .programs-nav .nav-list {
             background: transparent;
@@ -1408,7 +1408,7 @@ export default function Header() {
             margin: 0;
             list-style: none;
             display: flex;
-            padding: 0 0 0 2.8rem;
+            padding: 0 0 0 0.8rem;
             background-color: rgb(22, 52, 78, 78%);
             color: #fff;
           }
@@ -1713,7 +1713,7 @@ export default function Header() {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 15px 15px 15px;
+            padding: 1.5rem 1.5rem 1.5rem;
             background-color: #16344e;
             color: #fff;
             transition: background 0.3s ease;
@@ -2067,7 +2067,7 @@ export default function Header() {
           }
           @media (max-width: 1649px) {
             .hamburger {
-              padding: 11px 13px;
+              padding: 1.5rem 1.5rem 1.5rem;
             }
           }
           @media (max-width: 1599px) {
@@ -2129,7 +2129,7 @@ export default function Header() {
               top: 16rem;
             }
             .hamburger {
-              padding: 9px 12px;
+             padding: 1.5rem 1.5rem 1.5rem;
             }
           }
           @media (max-width: 1024px) {

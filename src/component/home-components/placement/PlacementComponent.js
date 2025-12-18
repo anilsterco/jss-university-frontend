@@ -84,7 +84,7 @@ export default function PlacementsSection({ data }) {
         {/* Section Header */}
         <div
           className={` ${styles.sectionHeader}`}
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-delay="100"
         >
           <p className="fw-bold text-uppercase dark-blue-text">
@@ -202,7 +202,7 @@ export default function PlacementsSection({ data }) {
                 alt="Wall of Fame"
                 width={400}
                 height={700}
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px" }}
               />
               <div
                 className={`position-absolute text-white fw-bold ${styles.wallOfFameText}`}
