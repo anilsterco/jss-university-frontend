@@ -424,10 +424,10 @@
     margin-top: 0rem;
   }
   .missionSection {
-    padding: 0 2rem 0;
+    padding: 0 0rem 0;
   }
   .visionDescription {
   font: var(--font-16);
 }
-.imagePlaceholder {height: 100%;}
+
 }

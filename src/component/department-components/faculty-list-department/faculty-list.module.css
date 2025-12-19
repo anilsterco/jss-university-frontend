@@ -195,6 +195,9 @@
   .headerSection {
     border: none;
   }
+  .headerSection {
+  padding-top: 15rem;
+}
 }
 
 @media (max-width: 767px) {

@@ -1,9 +1,11 @@
-// components/FAQSection.jsx
+"use client";
 import styles from "./fnq.module.css";
-import { CiCirclePlus } from "react-icons/ci";
+import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function FAQSection({ data }) {
-  // Fallback default FAQs if none passed from props (SSR friendly)
   const defaultFaqs = [
     {
       question: "How safe is the campus?",
@@ -27,18 +29,52 @@ export default function FAQSection({ data }) {
     },
   ];
 
-  
-  const faqData = data || [];
+  const faqData = data && data.length ? data : defaultFaqs;
+  const [openIndexes, setOpenIndexes] = useState([]);
+
+  const toggleOpen = (index, e) => {
+    e.preventDefault(); // Prevent default details toggle
+    if (openIndexes.includes(index)) {
+      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    } else {
+      setOpenIndexes([...openIndexes, index]);
+    }
+  };
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+  }, []);
 
   return (
     <section className={styles.faqSection}>
       <div className="container">
-        <h5 className={styles.heading}>FREQUENTLY ASKED QUESTIONS</h5>
+        <h5
+          className={styles.heading}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          FREQUENTLY ASKED QUESTIONS
+        </h5>
+
         <div className={styles.faqList}>
           {faqData.map((item, index) => (
-            <details key={index} className={`${styles.faqItem}`}>
-              <summary className={styles.faqQuestion}>
-                <span className={styles.icon}></span>
+            <details
+              key={index}
+              className={styles.faqItem}
+              open={openIndexes.includes(index)}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={index * 150}
+            >
+              <summary
+                className={styles.faqQuestion}
+                onClick={(e) => toggleOpen(index, e)}
+              >
+                {openIndexes.includes(index) ? (
+                  <CiCircleMinus className={styles.icon} />
+                ) : (
+                  <CiCirclePlus className={styles.icon} />
+                )}
                 <span>{item.question}</span>
               </summary>
               <div className={styles.faqAnswer}>

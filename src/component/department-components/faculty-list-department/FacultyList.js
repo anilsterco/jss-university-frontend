@@ -4,10 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function FacultyList({ data }) {
-  // Dynamic data structure
+  
   const dummyFacultyData = {
     subtitle: "FACULTY LIST",
     title: `<span class="blue-text">GUIDING MINDS OF</span> <span class="dark-blue-text"> COMPUTER SCIENCE & ENGINEERING</span>`,
@@ -56,20 +58,20 @@ export default function FacultyList({ data }) {
       },
     ],
   };
+    useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+  }, []);
   const facultyData = data ? data : dummyFacultyData;
   return (
-    <div className={styles.dep_faculty}>
+    <div className={styles.dep_faculty} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
       <div className="container">
-        {/* Header Section */}
         <div className={styles.headerSection}>
           <p className={styles.subtitle}>{facultyData.subtitle}</p>
           <h2
             className={`${styles.title}`}
-            dangerouslySetInnerHTML={{ __html: facultyData.title }}
+            dangerouslySetInnerHTML={{ __html: facultyData.title }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
           ></h2>
         </div>
-
-        {/* Slider Container */}
         <div
           className={`${styles.sliderContainer} d-flex align-items-center gap-5`}
         >
@@ -93,19 +95,15 @@ export default function FacultyList({ data }) {
             className={styles.slider}
             breakpoints={{
               0: {
-                // Mobile
                 slidesPerView: 1,
               },
               768: {
-                // Tablet
                 slidesPerView: 2,
               },
               1024: {
-                // Desktop
                 slidesPerView: 3,
               },
                1200: {
-                // Desktop
                 slidesPerView: 4,
               },
              

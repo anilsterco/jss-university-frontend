@@ -1,9 +1,13 @@
 "use client";
 
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import styles from "./schoolBanner.module.css";
 
 // Swiper styles
@@ -12,6 +16,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function SchoolSlider({ data, name, isDepartment = false }) {
+
+  // 🔹 AOS INIT
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+  // 🔹 Refresh AOS on data update
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
+
   // 🔹 Default Banner Fallback
   const defaultBanner = [
     {
@@ -27,7 +46,6 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
     },
   ];
 
-  // 🔹 Decide banner array
   const bannerData = data?.length ? data : defaultBanner;
 
   return (
@@ -38,20 +56,50 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
       slidesPerView={1}
       className={styles.swiperContainer}
     >
-      {bannerData.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <div className={styles.slideWrapper}>
-            {/* LEFT CONTENT */}
-            <div className={styles.leftSection}>
+      {bannerData.map((slide, index) => (
+        <SwiperSlide key={slide.id || index}>
+          <div
+            className={styles.slideWrapper}
+            data-aos="fade-up"
+            data-aos-duration="1200"
+          >
+            {/* 🔹 LEFT CONTENT */}
+            <div
+              className={styles.leftSection}
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <div className={styles.bannerContent}>
-                <div className={styles.bannerLabel}>{name || slide.label}</div>
+                <div
+                  className={styles.bannerLabel}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  {name || slide.label}
+                </div>
+
                 <h1
                   className={styles.bannerContentH1}
                   dangerouslySetInnerHTML={{ __html: slide.title }}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
                 />
-                <p className={styles.bannerContentP}>{slide.desc}</p>
+
+                <p
+                  className={styles.bannerContentP}
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  {slide.desc}
+                </p>
+
                 {slide.url && (
-                  <Link href={slide.url} className={styles.bannerContentA}>
+                  <Link
+                    href={slide.url}
+                    className={styles.bannerContentA}
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
                     {slide.linked_text || "Learn more"}
                     <img
                       src="/images/header/banner-arrow.svg"
@@ -63,12 +111,17 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
               </div>
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div className={styles.rightSection}>
-              <div className={styles.imageWrapper}>
+            {/* 🔹 RIGHT IMAGE */}
+            <div
+              className={styles.rightSection}
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <div className={`${styles.imageWrapper} shine-effect`}>
                 <Image
                   src={
-                    slide.desktop_banner || "/images/header/school-banner.png"
+                    slide.desktop_banner ||
+                    "/images/header/school-banner.png"
                   }
                   alt={name || slide.label}
                   width={1100}
@@ -76,6 +129,7 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                   priority
                   className={`w-100 ${styles.desktopBanner}`}
                 />
+
                 <Image
                   src={
                     slide.mobile_banner ||
@@ -89,13 +143,18 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                 />
 
                 {isDepartment && (
-                  <div className={styles.departmentOverlay}>
+                  <div
+                    className={styles.departmentOverlay}
+                    data-aos="zoom-in"
+                    data-aos-delay="600"
+                  >
                     <span>DEPARTMENT OF</span>
                     <h2>{name}</h2>
                   </div>
                 )}
               </div>
             </div>
+
           </div>
         </SwiperSlide>
       ))}

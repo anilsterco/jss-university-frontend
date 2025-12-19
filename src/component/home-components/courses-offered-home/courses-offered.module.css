@@ -323,6 +323,9 @@
     text-align: center;
     padding: 0 1rem;
     margin-bottom: 3rem;
+    font: var(--font-14);
+    font-weight: 300;
+    line-height: 1.8rem;
   }
 
   .topSectionH1 {

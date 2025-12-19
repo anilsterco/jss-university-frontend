@@ -120,6 +120,7 @@
   object-fit: cover; 
 }
 
+
 .quoteBar {
   position: absolute;
   bottom: 0;
@@ -257,6 +258,12 @@
 
 .mobileView {
   display: none;
+}
+@media (min-width: 1549px) and (max-width: 2550px) {
+.testimonialCard  {
+  width: 39.8rem;
+  margin-left: auto;
+}
 }
 
 @media (max-width: 1366px) {

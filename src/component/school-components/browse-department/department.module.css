@@ -57,7 +57,7 @@
 }
 
 .programsText {
- font: var(--font-14);
+  font: var(--font-14);
   font-weight: 700;
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
@@ -65,7 +65,7 @@
 
 .viewAllButton {
   border-radius: 0;
- font: var(--font-14);
+  font: var(--font-14);
   font-weight: 600;
   border: 1px solid #16344E;
   padding: 1.1rem 1.5rem 1rem;
@@ -222,10 +222,10 @@
 }
 
 /* Responsive Design */
-@media (max-width: 2550px){
-.cardImage {
-  height: 100%;
-}
+@media (max-width: 2550px) {
+  .cardImage {
+    height: 100%;
+  }
 }
 
 @media (max-width: 1750px) {
@@ -265,20 +265,38 @@
     margin-bottom: 3rem;
   }
 
+  .title {
+    font-weight: bold;
+    margin-bottom: 2.2rem;
+    font: var(--font-40);
+    line-height: 1;
 
+  }
+
+  .title span {
+    letter-spacing: -1.88px;
+  }
 
   .browseLine {
     width: 70%;
   }
+  .programsCount {
+  color: #16344e;
+  font: var(--font-40);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
+}
+.cardTitle {
+  font: var(--font-24);
+  font-family: var(--font-Condensed);
+}
 }
 
 @media (max-width: 768px) {
   .departmentSection {
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 0rem 2rem 2rem 2rem;
   }
-
-
-
   .browseHeader {
     flex-direction: column;
     align-items: flex-start;
@@ -323,4 +341,15 @@
   .cardTitle {
     max-width: 100%;
   }
+  .departmentItem {
+  font: var(--font-16);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  letter-spacing: -0.21px;
+  font-weight: bold;
+  font-family: var(--font-Condensed);
+  height: 100%;
+  padding-inline: 2rem;
+}
 }

@@ -411,8 +411,10 @@
   }
 
   .accreditationSlide p {
-    font: var(--font-16);
+    font: var(--font-14);
     color: var(--color-black);
+    line-height: 2.1rem;
+    gap: 1rem!important;
     font-family: var(--font-Condensed);
   }
 
@@ -436,6 +438,7 @@
 @media (max-width: 420px) {
   .highlightBox {
     padding: 2.4rem 2.9rem 1.9rem;
+    width: 100%!important;
   }
   
 

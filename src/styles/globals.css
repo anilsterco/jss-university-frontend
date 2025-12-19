@@ -1112,6 +1112,10 @@ a:active {
   .about-imgcol::after {
     display: none;
   }
+    .container-fluid {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
 }
 
 @media (max-width: 767px) {
@@ -1132,6 +1136,8 @@ a:active {
   .programsCountSection {
     display: none !important;
   }
+
+
 }
 
 @media screen and (max-width: 375px) {
@@ -1146,6 +1152,7 @@ a:active {
 
   .depar-button {
     gap: 0.5rem;
+    display: block;
   }
 }
 

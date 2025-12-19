@@ -1,21 +1,46 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutTwo({ data }) {
-  // Render sections in the exact order they come from the API
+
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+ 
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
+
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
+
       case "slider":
         return (
-          <div key={`slider-section-${sectionIndex}`} className="early-grid">
+          <div
+            key={`slider-section-${sectionIndex}`}
+            className="early-grid"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+          >
             <Swiper
               modules={[Navigation, EffectFade]}
               effect="fade"
@@ -30,27 +55,62 @@ export default function AboutTwo({ data }) {
               {section.items
                 .sort((a, b) => a.position - b.position)
                 .map((item, index) => (
-                  <SwiperSlide key={item.item_uuid || index} className="early-slide">
-                    <figure>
+                  <SwiperSlide
+                    key={item.item_uuid || index}
+                    className="early-slide"
+                  >
+                    {/* IMAGE */}
+                    <figure
+                      className="shine-effect"
+                      data-aos="zoom-in"
+                      data-aos-duration="1000"
+                    >
                       <Image
                         src={item.file || "/default-image.jpg"}
                         alt={item.title || "Early Growth"}
                         width={700}
                         height={400}
-                        style={{ objectFit:"cover"}}
                         className="w-100 h-100"
+                        style={{ objectFit: "cover" }}
                       />
                     </figure>
-                    <div className="early_rgt">
-                      <h4>{item.title}</h4>
-                      <h5>{item.subtitle}</h5>
-                      <div className="inst-reg">
+
+                    {/* CONTENT */}
+                    <div
+                      className="early_rgt"
+                      data-aos="fade-left"
+                      data-aos-delay="200"
+                      data-aos-duration="900"
+                    >
+                      <h4 data-aos="fade-up" data-aos-delay="300">
+                        {item.title}
+                      </h4>
+
+                      <h5 data-aos="fade-up" data-aos-delay="400">
+                        {item.subtitle}
+                      </h5>
+
+                      <div
+                        className="inst-reg"
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                      >
                         <h5>{item.bottomTitle}</h5>
                         <h3>{item.bottomSubTitle}</h3>
                       </div>
-                      <div className="early-arrows">
-                        <BsArrowLeftCircle className={`earlygrowth-prev-${sectionIndex}`} />
-                        <BsArrowRightCircle className={`earlygrowth-next-${sectionIndex}`} />
+
+                      {/* ARROWS */}
+                      <div
+                        className="early-arrows"
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                      >
+                        <BsArrowLeftCircle
+                          className={`earlygrowth-prev-${sectionIndex}`}
+                        />
+                        <BsArrowRightCircle
+                          className={`earlygrowth-next-${sectionIndex}`}
+                        />
                       </div>
                     </div>
                   </SwiperSlide>
@@ -67,12 +127,10 @@ export default function AboutTwo({ data }) {
   return (
     <section className="about_two">
       <div className="container">
-        {/* Render all sections in the exact order from API */}
-        {data.map((section, index) => renderSection(section, index))}
-        
-        {/* Fallback if no sections at all */}
-        {data.length === 0 && (
-          <div className="early-grid">
+        {data && data.length > 0 ? (
+          data.map((section, index) => renderSection(section, index))
+        ) : (
+          <div className="early-grid" data-aos="fade-up">
             <p>No slider content available</p>
           </div>
         )}

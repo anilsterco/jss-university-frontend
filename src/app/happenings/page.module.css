@@ -17,7 +17,11 @@
 }
 
 .happeningsSubTitle {
-  font-weight: 600;
+  color: #16344E;
+  font: var(--font-18);
+  letter-spacing: 0;
+  font-family: var(--font-Condensed);
+   font-weight: 600;
 }
 
 .tabButton {

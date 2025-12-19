@@ -231,6 +231,29 @@
     max-width: 25%;
     height: 100%;
   }
+
+  .sectionHeader h2 {
+    font: var(--font-40);
+    font-family: var(--font-Condensed);
+  }
+
+  .sectionHeader h2 span {
+    font: var(--font-40);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.88px;
+  }
+
+  .statsNumber {
+    font: var(--font-40);
+    letter-spacing: -1.4px;
+    color: var(--color-4e);
+    font-weight: 500;
+  }
+
+  .fig-count {
+    padding: 2.8rem 3rem;
+  }
+  
 }
 
 @media (max-width: 767px) {

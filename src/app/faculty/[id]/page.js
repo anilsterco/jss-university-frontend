@@ -24,19 +24,15 @@ export default function FacultyDetailPage({ params }) {
       setLoading(true);
       setNotFound(false);
       setError(null);
-
       const res = await fetch(`${BASE_URL}/faculties/${id}`);
-
       if (!res.ok) {
         if (res.status === 404) {
           throw new Error("Faculty not found");
         }
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-
       const data = await res.json();
       const facultyData = data.data || data.faculty || data;
-
       if (!facultyData || Object.keys(facultyData).length === 0) {
         setNotFound(true);
         return;
@@ -123,12 +119,6 @@ export default function FacultyDetailPage({ params }) {
   const facultyAwards = safeFaculty.awards || [];
   const facultySocialEngagement = safeFaculty.socialEngagement || [];
 
-  const isLong = facultyProfile.length > maxLength;
-  const displayedText = !isLong
-    ? facultyProfile
-    : showFull
-    ? facultyProfile
-    : facultyProfile.slice(0, maxLength) + "...";
 
   return (
     <main className="site_main">
@@ -276,7 +266,6 @@ export default function FacultyDetailPage({ params }) {
                                   {key.title}
                                 </p>
                               </div>
-
                               {key.link && (
                                 <div className="research-link">
                                   <Link

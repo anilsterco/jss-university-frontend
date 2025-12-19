@@ -1,28 +1,61 @@
 "use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutOne({ data }) {
+
+ 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,  
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+ 
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
+
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
+
+     
       case "topBanner":
         return (
           <div
             className="row justify-content-center about_top"
-            key={`about-section-${sectionIndex}`} 
+            key={`about-section-${sectionIndex}`}
+            data-aos="fade-up"
+            data-aos-duration="1200"
           >
-              {section.items
+            {section.items
               .sort((a, b) => a.position - b.position)
               .map((item, index) => (
                 <div
                   className="col-lg-12"
                   key={item.id || item.item_uuid || index}
                 >
-                  <div className="abt_cntnt">
+                  <div
+                    className="abt_cntnt"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     {item.title && <p>{item.title}</p>}
+
                     {item.file && (
-                      <figure>
+                      <figure
+                        className="shine-effect"
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                      >
                         <Image
                           src={item.file}
                           alt={item.title || "About JSS Academy"}
@@ -35,7 +68,12 @@ export default function AboutOne({ data }) {
                   </div>
 
                   {item.description && (
-                    <div className="estblish">
+                    <div
+                      className="estblish"
+                      data-aos="fade-in"
+                      data-aos-delay="300"
+                      data-aos-duration="900"
+                    >
                       <p>{item.description}</p>
                     </div>
                   )}
@@ -44,18 +82,24 @@ export default function AboutOne({ data }) {
           </div>
         );
 
+    
       case "logoDesc":
         return (
           <div
             className="row justify-content-center"
-            key={`logo-section-${sectionIndex}`}  
+            key={`logo-section-${sectionIndex}`}
           >
             <div className="col-lg-10">
               <div className="top_log_grid">
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, i) => (
-                    <figure key={item.id || i}>
+                    <figure
+                      key={item.id || i}
+                      data-aos="fade-up"
+                      data-aos-delay={i * 150}
+                      data-aos-duration="800"
+                    >
                       <Image
                         src={item.file}
                         alt={item.description}
@@ -72,18 +116,24 @@ export default function AboutOne({ data }) {
           </div>
         );
 
+     
       case "figureDesc":
         return (
           <div
             className="row justify-content-center about_bottom"
-            key={`figure-section-${sectionIndex}`} 
+            key={`figure-section-${sectionIndex}`}
           >
             <div className="col-lg-10">
               <div className="btm_log_grid">
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, i) => (
-                    <figure key={item.item_uuid || i}>
+                    <figure
+                      key={item.item_uuid || i}
+                      data-aos="fade-right"
+                      data-aos-delay={i * 200}
+                      data-aos-duration="900"
+                    >
                       <figcaption>
                         <h4>
                           <sup>#</sup>
@@ -91,6 +141,7 @@ export default function AboutOne({ data }) {
                         </h4>
                         <p>{item.facts}</p>
                       </figcaption>
+
                       <Image
                         src={item.file}
                         alt={item.facts}
@@ -112,10 +163,10 @@ export default function AboutOne({ data }) {
   return (
     <section className="about_one">
       <div className="container">
-        {data.map((section, index) => renderSection(section, index))}
-
-        {data.length === 0 && (
-          <div className="abt_cntnt">
+        {data && data.length > 0 ? (
+          data.map((section, index) => renderSection(section, index))
+        ) : (
+          <div className="abt_cntnt" data-aos="fade-up">
             <p>Welcome to JSS Academy of Technical Education</p>
           </div>
         )}

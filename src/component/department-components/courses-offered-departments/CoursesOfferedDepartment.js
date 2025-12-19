@@ -1,6 +1,10 @@
+"use client";
 import styles from "./courses-offered.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const CoursesOffered = ({ data }) => {
   // Dynamic data structure
   const dummyCoursesData = {
@@ -39,12 +43,14 @@ const CoursesOffered = ({ data }) => {
   };
 
   const coursesData = data ? data : dummyCoursesData;
-
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+  }, []);
   return (
-    <div className={styles.course_dep}>
+    <div className={styles.course_dep} data-aos="fade-up" data-aos-duration="1200">
     <div className="container-fluid mob-container">
       {/* Header Section */}
-      <div className={styles.headerSection}>
+      <div className={styles.headerSection} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
         <h2
           className={`${styles.title}`}
@@ -55,7 +61,7 @@ const CoursesOffered = ({ data }) => {
       {/* Main Content Grid */}
       <div className="row g-4 position-relative w-100 m-100">
         {/* Image Placeholder */}
-        <div className="col-lg-5">
+        <div className="col-lg-5" >
           <div className={styles.imagePlaceholder}>
             <div className={styles.placeholderContent}>
               <Image

@@ -130,3 +130,10 @@
    line-height: normal;
   }
 }
+
+.faqItem[open] summary .icon {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+
