@@ -447,7 +447,7 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header 
+      className={`site-header
     ${
       pathname.includes("schools") ||
       pathname.includes("department") ||
@@ -455,22 +455,22 @@ export default function Header() {
         ? "no-shadow"
         : ""
     }
-    ${pathname.includes("programs") ? "programs-header" : ""}
+    ${pathname !== "/" ? "programs-header" : ""}
     ${pathname !== "/" ? "not-home" : ""}
   `}
     >
       <div
-        className={`nav-container ${scrolled ? "header-scrolled" : ""} 
-      ${
-        pathname.includes("schools") ||
-        pathname.includes("department") ||
-        pathname.includes("programs")
-          ? "scroll_bg"
-          : ""
-      }
-      ${pathname.includes("programs") ? "programs-nav" : ""}
-      ${pathname !== "/" ? "not-home" : ""}
-    `}
+        className={`nav-container ${scrolled ? "header-scrolled" : ""}
+    ${
+      pathname.includes("schools") ||
+      pathname.includes("department") ||
+      pathname.includes("programs")
+        ? "scroll_bg"
+        : ""
+    }
+    ${pathname !== "/" ? "programs-nav" : ""}
+    ${pathname !== "/" ? "not-home" : ""}
+  `}
       >
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -1196,6 +1196,11 @@ export default function Header() {
           .nav-container.header-scrolled.scroll_bg {
             background: #f8f9fa !important;
           }
+           .nav-container.header-scrolled.not-home {
+            background: #f8f9fa !important;
+          }
+      
+    
           .programs-nav .nav-list {
             background: transparent;
           }
