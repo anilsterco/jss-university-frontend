@@ -447,30 +447,35 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header ${
-        pathname.includes("schools") ||
-        pathname.includes("department") ||
-        pathname.includes("programs")
-          ? "no-shadow"
-          : ""
-      } ${pathname.includes("programs") ? "programs-header" : ""}`}
-    >
-      <div
-        className={`nav-container ${scrolled ? "header-scrolled" : ""} 
+      className={`site-header 
     ${
       pathname.includes("schools") ||
       pathname.includes("department") ||
       pathname.includes("programs")
-        ? "scroll_bg"
+        ? "no-shadow"
         : ""
-    } ${pathname.includes("programs") ? "programs-nav" : ""}`}
+    }
+    ${pathname.includes("programs") ? "programs-header" : ""}
+    ${pathname !== "/" ? "not-home" : ""}
+  `}
+    >
+      <div
+        className={`nav-container ${scrolled ? "header-scrolled" : ""} 
+      ${
+        pathname.includes("schools") ||
+        pathname.includes("department") ||
+        pathname.includes("programs")
+          ? "scroll_bg"
+          : ""
+      }
+      ${pathname.includes("programs") ? "programs-nav" : ""}
+      ${pathname !== "/" ? "not-home" : ""}
+    `}
       >
         <div
           className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
         >
-          {pathname.includes("schools") ||
-          pathname.includes("department") ||
-          pathname.includes("programs") ? (
+          {pathname !== "/" ? (
             <div className="dashbord-logo">
               <Link href="/" aria-label="Home">
                 <Image
@@ -2129,7 +2134,7 @@ export default function Header() {
               top: 16rem;
             }
             .hamburger {
-             padding: 1.5rem 1.5rem 1.5rem;
+              padding: 1.5rem 1.5rem 1.5rem;
             }
           }
           @media (max-width: 1024px) {
@@ -2644,6 +2649,9 @@ export default function Header() {
             .contact-panel .contact-info li {
               max-width: 100%;
             }
+          }
+          .site-header.not-home {
+            background: none;
           }
         `}
       </style>
