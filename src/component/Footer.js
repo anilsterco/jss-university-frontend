@@ -575,6 +575,7 @@ export default function Footer() {
         .copy-rights p a {
           color: var(--color-white);
         }
+      
         @media (min-width: 992px) {
           .mobFooter {
             display: none;

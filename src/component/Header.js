@@ -1199,8 +1199,6 @@ export default function Header() {
            .nav-container.header-scrolled.not-home {
             background: #f8f9fa !important;
           }
-      
-    
           .programs-nav .nav-list {
             background: transparent;
           }

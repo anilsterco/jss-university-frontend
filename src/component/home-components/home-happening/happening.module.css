@@ -225,6 +225,13 @@
     max-width: 60%;
   }
 
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardDate {
+    margin-top: 1.8rem;
+  }
 }
 
 @media (max-width:1366) {
