@@ -186,9 +186,7 @@
   font-weight: 300;
 }
 
-/* .cardImage {
-  object-fit: cover;
-} */
+
 .mobileView {
   display: none;
 }
@@ -213,7 +211,7 @@
 
 @media (min-width: 2200px) and (max-width:2550) {
   .cardTitleLarge {
-    padding-right: 28rem;
+    padding-right: 13rem;
   }
 
   .cardSubtitleWhite {
@@ -222,7 +220,11 @@
   }
 
   .cardTitle {
-    max-width: 60%;
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-auto-rows: 350px;
   }
 
   .card {

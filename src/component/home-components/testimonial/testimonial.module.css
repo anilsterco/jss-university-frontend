@@ -264,6 +264,7 @@
   width: 39.8rem;
   margin-left: auto;
 }
+
 }
 
 @media (max-width: 1366px) {
@@ -369,4 +370,6 @@
   .circleArrowBtn {
   margin-top: 1rem;
 }
+
 }
+
