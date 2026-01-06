@@ -69,13 +69,28 @@ export default function HeroSlider({ data }) {
                   data-aos="fade-right"
                   data-aos-delay="0"
                 ></h1>
-                <p className={styles.bannerContentP}  data-aos="fade-right"
-                  data-aos-delay="200">{slide.desc}</p>
+                <p
+                  className={styles.bannerContentP}
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                >
+                  {slide.desc}
+                </p>
                 {slide.url && (
-                  <Link href={"about-jss"} className={styles.bannerContentA} data-aos="fade-right"
-                  data-aos-delay="300">
+                  <Link
+                    href={"about-jss"}
+                    className={styles.bannerContentA}
+                    data-aos="fade-right"
+                    data-aos-delay="300"
+                  >
                     {slide.linked_text}
-                    <FiArrowRightCircle className={styles.iconSpacing} />
+                    <Image
+                      src="/images/home-page/jss_bannerIcon.svg"
+                      alt="visit icons"
+                      width={22}
+                      height={22}
+                      className={styles.iconSpacing}
+                    />
                   </Link>
                 )}
               </div>

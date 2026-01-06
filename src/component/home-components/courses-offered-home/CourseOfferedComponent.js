@@ -85,13 +85,9 @@ export default function CoursesOffered({ data }) {
   return (
     <section className={`second-section cource-sec ${styles.secondSection}`}>
       <div className="container">
-
-        {/* ================= TOP SECTION ================= */}
-        <div className={`row cource_top ${styles.topSection}`}>
-
+        <div className={`cource_top ${styles.topSection}`}>
           {/* LEFT CONTENT */}
-          <div className="col-lg-4 mb-4 mb-lg-0">
-
+          <div className="cource_col">
             <h5
               className={styles.topSectionH5}
               data-aos="fade-up"
@@ -121,7 +117,7 @@ export default function CoursesOffered({ data }) {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div className="input-group shadow-sm rounded-pill overflow-hidden">
+              <div className="input-group programs_search overflow-hidden">
                 <input
                   type="text"
                   className="form-control border-0"
@@ -130,10 +126,7 @@ export default function CoursesOffered({ data }) {
                   onChange={(e) => setQuery(e.target.value)}
                 />
                 <span className="input-group-text bg-white border-0">
-                  <img
-                    src="images/home-page/icon-search.svg"
-                    alt="search"
-                  />
+                  <img src="images/home-page/icon-search.svg" alt="search" />
                 </span>
               </div>
 
@@ -168,7 +161,9 @@ export default function CoursesOffered({ data }) {
               data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
-                <h1 className={`display-4 programs-count ${styles.programsCount}`}>
+                <h1
+                  className={`display-4 programs-count ${styles.programsCount}`}
+                >
                   {coursesData.programs_count}
                 </h1>
                 <span className={styles.programsCountPlus}>+</span>
@@ -181,7 +176,7 @@ export default function CoursesOffered({ data }) {
           </div>
 
           {/* RIGHT CARDS */}
-          <div className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}>
+          <div className={`cource_col ${styles.programsCardsSection}`}>
             {coursesData.programs.map((level, i) => (
               <Link
                 key={i}
@@ -201,15 +196,16 @@ export default function CoursesOffered({ data }) {
                   width={252}
                   height={387}
                   className={styles.cardImage}
-                  priority
                 />
                 <div className={styles.cardOverlay}>
                   <span
                     className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
                   >
                     {level.name_short}
-                    <FaChevronRight
-                      className={styles.rightDesktopArrow}
+                    <img
+                      src="images/home-page/course_list_icon.svg"
+                      alt="slide image"
+                      className={styles.cardIcons}
                     />
                     <PiArrowCircleRightThin
                       className={styles.rightMobileArrow}
@@ -222,19 +218,18 @@ export default function CoursesOffered({ data }) {
         </div>
 
         {/* ================= BOTTOM SECTION ================= */}
+        <div className="program_heading">
+           <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
+          Explore Programs by School of
+        </h6>
+        </div>
         <div
-          className={`row align-items-center program-row m-auto ${styles.exploreProgramSectionWrapper}`}
+          className={`programsList_row align-items-center program-row ${styles.exploreProgramSectionWrapper}`}
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <div className="col-lg-8">
-            <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
-              Explore Programs by School of
-            </h6>
-
-            <div
-              className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
-            >
+          <div className="programs_col">
+            <div className={` explore-program-section ${styles.schoolsList}`}>
               {coursesData.departments.map((school, i) => (
                 <Link
                   key={i}
@@ -247,9 +242,8 @@ export default function CoursesOffered({ data }) {
               ))}
             </div>
           </div>
-
           <div
-            className={`col-lg-4 d-flex gap-5 align-items-center ${styles.admissionSection}`}
+            className={`programs_col admission_btn ${styles.admissionSection}`}
             data-aos="fade-up"
             data-aos-delay="350"
           >
@@ -260,20 +254,19 @@ export default function CoursesOffered({ data }) {
                   __html: coursesData.academic_year.year,
                 }}
               />
-              <p className="small">
-                {coursesData.academic_year.description}
-              </p>
+              <p className="small">{coursesData.academic_year.description}</p>
             </div>
 
-            <Link
-              href={coursesData.buttons[0].url}
-              className="btn btn-warning rounded-pill"
-            >
-              {coursesData.buttons[0].text}
-            </Link>
+            <div className="add_btn">
+              <Link
+                href={coursesData.buttons[0].url}
+                className="btn btn-warning rounded-pill"
+              >
+                {coursesData.buttons[0].text}
+              </Link>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

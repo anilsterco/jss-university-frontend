@@ -155,7 +155,6 @@ export default function Header() {
   }, [pathname]);
 
   const [activePanel, setActivePanel] = useState(null);
-
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
   const hamburgerMenudata = [
@@ -525,7 +524,6 @@ export default function Header() {
                 <div
                   style={{
                     borderLeft: "1px solid #e0e0e0ff",
-
                     justifyItems: "center",
                     display: "flex",
                     flexDirection: "column",
@@ -743,21 +741,21 @@ export default function Header() {
                     <div className="ad-contact">
                       <span>{admissionsData.left.querytext}</span>
                       <p>
-                        {" "}
+                       
                         <img
                           src="images/header/mailicon.svg"
                           className="img-fluid"
                           alt="mail"
-                        />{" "}
+                        />
                         {admissionsData.left.email}
                       </p>
                       <p>
-                        {" "}
+                       
                         <img
                           src="images/header/phoneicon.svg"
                           className="img-fluid"
                           alt="mail"
-                        />{" "}
+                        />
                         {admissionsData.left.phone}
                       </p>
                     </div>
@@ -1028,7 +1026,6 @@ export default function Header() {
                     {/* LEFT SECTION */}
                     <div className="admissions-contact">
                       <h4>{admissionData.left.querytext}</h4>
-
                       <ul>
                         <li>
                           <img src="/images/header/mail-icon.svg" alt="email" />
@@ -1036,7 +1033,6 @@ export default function Header() {
                             {admissionData.left.email}
                           </a>
                         </li>
-
                         <li>
                           <img
                             src="/images/header/phone-icon.svg"
@@ -1047,7 +1043,6 @@ export default function Header() {
                           </a>
                         </li>
                       </ul>
-
                       <div className="contactBtn">
                         {admissionData.left.ctas.map((btn, idx) => (
                           <a
@@ -1070,7 +1065,6 @@ export default function Header() {
                     </div>
                   </div>
                 )}
-
               {/* Contact tab */}
               {item.name === "Contact" &&
                 activePanel === "Contact" &&
@@ -1087,7 +1081,6 @@ export default function Header() {
                         className="contact-banner"
                       />
                     </div>
-
                     <ul className="contact-info">
                       {item.Menu.map((sub, idx) => (
                         <li key={idx}>
@@ -1100,7 +1093,6 @@ export default function Header() {
                     </ul>
                   </div>
                 )}
-
               {/* Menu tab */}
               {item.name === "Menu" && activePanel === "Menu" && (
                 <>
@@ -1133,7 +1125,6 @@ export default function Header() {
           ))}
         </div>
       </div>
-
       <div className="mobile-bottom-menu">
         <ul className="menu-list">
           {mobilePanels.map((item) => (
@@ -1153,7 +1144,6 @@ export default function Header() {
           ))}
         </ul>
       </div>
-
       <style jsx>
         {`
           /* --- Engineering Dropdown --- */
@@ -1412,25 +1402,27 @@ export default function Header() {
             );
           }
           .nav-list {
-            gap: 0rem;
+            gap: 5.9rem;
             margin: 0;
             list-style: none;
             display: flex;
-            padding: 0 0 0 0.8rem;
+            padding: 1.2rem 2.8rem 1.2rem 2.8rem;
             background-color: rgb(22, 52, 78, 78%);
             color: #fff;
+            
           }
 
           .nav-list > ul {
             display: flex;
             padding: 0;
             margin: 0;
-            gap: 0 6rem;
+            padding:1.4rem 2.8rem 1.2rem;
           }
 
           .nav-item {
             position: relative;
           }
+          .nav-item:last-child{padding-right:0;}
           .nav-container.header-scrolled {
             background-color: var(--color-4e);
           }
@@ -1477,13 +1469,12 @@ export default function Header() {
           }
           .admission-btn {
             color: var(--color-black);
-            padding: 1.4rem 2rem 1.2rem;
+            padding: 1.2rem 2rem 1.2rem;
             letter-spacing: 0.8px;
             background-color: var(--color-100);
             border: none;
             font: var(--font-20);
             font-family: var(--font-Condensed);
-            line-height: 1;
           }
           .admission-btn:hover {
             background: #e6b000;
@@ -1721,7 +1712,7 @@ export default function Header() {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 1.5rem 1.5rem 1.5rem;
+            padding: 1.6rem 1.5rem 1.6rem;
             background-color: #16344e;
             color: #fff;
             transition: background 0.3s ease;

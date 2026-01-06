@@ -3,14 +3,21 @@
   padding: 0;
 }
 
+.topSection {
+  display: grid;
+  grid-template-columns: repeat(1, 34% auto);
+  gap: 10.3rem;
+
+}
+
 
 .topSectionH5 {
   text-transform: uppercase;
   color: var(--color-4e);
-  font: var(--font-21);
+  font: var(--font-18);
   font-family: var(--font-Condensed);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .topSectionH1 {
@@ -21,6 +28,7 @@
   font-family: var(--font-Condensed);
   text-transform: uppercase;
   max-width: 80%;
+  line-height: 0.9;
 }
 
 .topSectionH1 span:nth-child(2) {
@@ -47,7 +55,7 @@
   color: #b08f29 !important;
   letter-spacing: -8.8px !important;
   font: var(--font-110) !important;
-  font-family: "Oswald", sans-serif !important;
+  font-family: var(--font-Roboto) !important;
   font-weight: normal !important;
 }
 
@@ -58,14 +66,14 @@
 
 .programsCountPlus {
   color: #ac9031;
-  font: var(--font-60);
+  font: var(--font-52);
   font-weight: 400;
   position: absolute;
   top: 0.4rem;
-  letter-spacing: -6.08px;
+  letter-spacing: -4.16px;
   right: 0px;
-  left: 15rem;
-  font-family: "Oswald", sans-serif;
+  left: 17rem;
+  font-family: var(--font-Roboto) !important;
 }
 
 .cardOverlay {
@@ -86,7 +94,8 @@
   letter-spacing: -0.48px;
   font-weight: 300;
   font-family: "Geist", sans-serif;
-  padding-left: 4rem;
+  padding-left: 5rem;
+  line-height: 1.4;
 }
 
 .admissionYearText {
@@ -128,32 +137,39 @@
   position: relative;
 }
 
-.bottomSectionH6::after {
+.bottomSectionH6 {
+  position: relative;
+}
+
+.bottomSectionH6::before {
   content: "";
-  background-color: #e1e1e1;
-  width: 108%;
-  width: calc(114% - 26px);
+  background-color:  #E1E1E1;;
+  width: 76%;
   height: .1rem;
-  left: 40%;
   position: absolute;
-  top: 1rem;
   bottom: 0;
+  left: 24%;
+  right: 0;
+  top: 1rem;
 }
 
 .bannerLabel {
   color: #fff;
   border-left: 4px solid #ffc100;
-  border-radius: 2px;
   width: 100%;
   font-family: Geist, sans-serif;
   font: var(--font-28);
   position: absolute;
   bottom: 1.4rem;
-  padding-left: 10px;
+  padding-left: 1.2rem;
   gap: 1.2rem;
   left: 0;
   letter-spacing: -0.84px;
   text-transform: uppercase;
+}
+
+.cardIcons {
+  padding-left: 1.2rem;
 }
 
 .searchBox input::placeholder {
@@ -165,7 +181,7 @@
 .cardImage {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .programsCountSection {
@@ -174,6 +190,8 @@
 
 .programsCardsSection {
   justify-content: end;
+  display: flex;
+  gap: 1.6rem;
 }
 
 .rightDesktopArrow {
@@ -192,6 +210,7 @@
   display: none;
 }
 
+
 @media (min-width: 2200px) and (max-width:2550) {
   .programsText {
     max-width: 100%;
@@ -200,9 +219,10 @@
   .topSectionH1 {
     max-width: 90%;
   }
+
   .programsText {
-  padding-left: 2rem;
-}
+    padding-left: 2rem;
+  }
 }
 
 @media (max-width: 1749px) {
@@ -352,18 +372,22 @@
     color: #018CE8;
     font-weight: 600;
   }
-   .showOnlyMobileCard h5 {
+
+  .showOnlyMobileCard h5 {
     font: var(--font-20);
     letter-spacing: -0.6px;
     color: #018CE8;
     font-weight: 600;
   }
- 
-.lastCardArrow {
+
+  .lastCardArrow {
     position: absolute;
     margin-bottom: 1.5rem;
   }
-  .cource-sec {padding-bottom: 0;}
+
+  .cource-sec {
+    padding-bottom: 0;
+  }
 
   .topSectionH5 {
     display: none;
@@ -396,7 +420,7 @@
   }
 
   .exploreProgramSectionWrapper {
-    display: none!important;
+    display: none !important;
   }
 
   .programsCardsSection {
@@ -466,16 +490,19 @@
   .showOnlyMobileCard h5 {
     color: #16344e;
     font-weight: 600;
-     font-family: var(--font-Condensed);
+    font-family: var(--font-Condensed);
   }
 
   .exploreAllLink {
     width: 100% !important;
   }
-.programsCardsSection {justify-content: flex-start;}
-.bannerLabel {
-  font: var(--font-20);
- letter-spacing: -0.6px;
-}
-}
 
+  .programsCardsSection {
+    justify-content: flex-start;
+  }
+
+  .bannerLabel {
+    font: var(--font-20);
+    letter-spacing: -0.6px;
+  }
+}
