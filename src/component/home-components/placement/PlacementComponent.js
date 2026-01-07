@@ -96,19 +96,19 @@ export default function PlacementsSection({ data }) {
           ></h2>
         </div>
 
-        <div className="row w-100 m-auto">
+        <div className={`${styles.placement_row}`}>
           {/* Left Content */}
-          <div className={`col-lg-6 ps-0 ${styles.leftContent}`}>
+          <div className={`placement_col ${styles.leftContent}`}>
             {/* Stats Row */}
-            <div className={`row w-100 placement_row ${styles.statsRow}`}>
+            <div className={`${styles.statsRow}`}>
               {placementsData.facts_and_figures?.map((stat, i) => (
                 <div
                   key={i}
-                  className="col-xl-4 col-sm-6 text-center border"
+                  className={`${styles.figurContCol}`}
                   data-aos="fade-up"
                   data-aos-delay={i * 150}
                 >
-                  <div className="fig-count ">
+                  <div className={`${styles.figcount}`}>
                     <h3 className={`${styles.statsNumber}`}>{stat.figure}</h3>
                     <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
                   </div>
@@ -147,8 +147,8 @@ export default function PlacementsSection({ data }) {
                       <Image
                         src={t.image}
                         alt={`${t.name} image`}
-                        width={140}
-                        height={160}
+                        width={216}
+                        height={240}
                         style={{
                           width: "100%",
                           height: "100%",
@@ -162,9 +162,9 @@ export default function PlacementsSection({ data }) {
                     {/* Testimonial Text */}
                     <div className={`${styles.testimonialContent} `}>
                       <FaQuoteLeft
-                        className={`mb-3 ${styles.desktopQuoteIcon}`}
+                        className={`${styles.desktopQuoteIcon}`}
                         color="#b08f29"
-                        fontSize={30}
+                        fontSize={36}
                       />
                       <p>{t.short_description}</p>
                       <h6 className="small fw-bold">{t.name}</h6>
@@ -190,39 +190,38 @@ export default function PlacementsSection({ data }) {
 
           {/* Right Wall of Fame */}
           <div
-            className={`col-lg-6 d-flex justify-content-lg-end px-0 ${styles.rightContent}`}
+            className={`placement_col d-flex justify-content-lg-end px-0 ${styles.rightContent}`}
             data-aos="fade-bottom"
             data-aos-delay="200"
           >
             <div
-              className={`position-relative bg-light d-flex align-items-center justify-content-center rounded ${styles.wallOfFameContainer} `}
+              className={`position-relative ${styles.wallOfFameContainer} `}
             >
               <Image
                 src={placementsData.hall_of_fame.image}
                 alt="Wall of Fame"
-                width={400}
-                height={700}
-                style={{ width: "100%", height: "100%", borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px" }}
+                width={700}
+                height={600}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderTopLeftRadius: "10px",
+                  borderBottomLeftRadius: "10px",
+                }}
               />
               <div
-                className={`position-absolute text-white fw-bold ${styles.wallOfFameText}`}
+                className={` ${styles.wallOfFameText}`}
                 dangerouslySetInnerHTML={{
                   __html: placementsData.hall_of_fame.heading,
                 }}
               />
-              {placementsData.hall_of_fame.url && (
-                <Link
-                  href={placementsData.hall_of_fame.url}
-                  className={`position-absolute `}
-                  style={{ bottom: "4%", left: "6%" }}
-                >
-                  <LuCircleArrowRight
-                    size={22}
-                    color="#fff"
-                    strokeWidth={1}
-                  />
-                </Link>
-              )}
+              <Image
+                src="/images/home-page/jss_bannerIcon.svg"
+                width={22}
+                height={22}
+                alt="Hall of Fame"
+                className={`${styles.placementvisit}`}
+              />
             </div>
           </div>
         </div>
@@ -238,7 +237,7 @@ export default function PlacementsSection({ data }) {
                   navigation={false}
                   autoplay={{ delay: 3000 }}
                   loop={true}
-                  spaceBetween={20}
+                  spaceBetween={50}
                   slidesPerView={6}
                   className="recruiters-slider "
                   breakpoints={{
@@ -247,7 +246,7 @@ export default function PlacementsSection({ data }) {
                     576: { slidesPerView: 3 },
                     768: { slidesPerView: 4 },
                     992: { slidesPerView: 5 },
-                    1200: { slidesPerView: 6 },
+                    1200: { slidesPerView: 7 },
                   }}
                 >
                   {placementsData.recruiters?.map((rec, i) => (
@@ -257,7 +256,7 @@ export default function PlacementsSection({ data }) {
                         alt={rec.title}
                         width={150}
                         height={100}
-                        className="img-fluid"
+                        className={`img-fluid ${styles.recruiterLogo}`}
                       />
                     </SwiperSlide>
                   ))}

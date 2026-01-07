@@ -38,6 +38,9 @@
   font-family: var(--font-Condensed);
   text-transform: uppercase;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .bannerContent h2 svg {
@@ -96,7 +99,6 @@
   color: #fff;
   font-weight: 600;
   z-index: 20;
-  
 }
 
 .bannerLink {
@@ -181,16 +183,11 @@
 .mobileContainer {
   display: none;
 }
-
 .facilitiesContainer {
   display: block;
 }
 
 @media (min-width: 1921px) and (max-width:2550) {
-  .headerContent {
-    width: 90%;
-  }
-
 .verticalLine {
   left: 9.5%;
 }
@@ -209,15 +206,12 @@
   .headerContent {
     width: 100%;
   }
-
   .verticalLine {
     left: 5.2%;
   }
-
   .bannerContent {
     left: 8.9%;
   }
-
   .blueBg {
     height: 70%;
   }

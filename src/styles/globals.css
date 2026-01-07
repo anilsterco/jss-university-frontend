@@ -526,7 +526,8 @@ a:active {
   width: 100%;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 1.2rem 0.8rem 0.9rem 1.1rem;
+  padding: 1.2rem 1.2rem 0.9rem 1.1rem;
+  line-height: 2.2rem;
 }
 
 
@@ -745,9 +746,13 @@ a:active {
 .cource-sec .cource_top {
   padding-top: 12rem;
   margin-bottom: 5.9rem;
+  margin-right: 2.4rem;
 }
 
 
+.add_btn .btn-warning{
+  border-radius: 2.9rem;
+}
 .programsList_row{
   display: grid;
   grid-template-columns: repeat(1, 59% auto);
@@ -772,12 +777,13 @@ a:active {
     position: absolute;
     top: -3.3rem;
     bottom: 0;
-    right: -6rem;
+    right: -5.5rem;
 }
 .admission_btn{
   display: flex;
   align-items: center;
-  gap: 2.7rem;
+  gap: 3.7rem;
+  margin-top: 1.5rem;
 }
 .programs-count {
   color: #b08f29;
@@ -824,9 +830,7 @@ a:active {
   top: 1rem;
 }
 
-.fig-count {
-  padding: 3.8rem 4.4rem 3.8rem;
-}
+
 
 .max-content-lg .placement_row {
   margin-bottom: 8rem;
@@ -835,10 +839,12 @@ a:active {
 
 .recruiter-logo .small {
   font: var(--font-14);
-  color: var(--color-ai);
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   font-weight: bold;
+  color: #15354E;
+  line-height: 1.7rem;
+  margin-bottom: 1.3rem;
 }
 
 .chance-msg {
@@ -958,10 +964,6 @@ a:active {
 @media (max-width: 1366px) {
   .nav-link.nav-lists {
     padding: 1.4rem 1rem 1.2rem;
-  }
-
-  .fig-count {
-    padding: 3.8rem 4rem;
   }
 
   .logo-content img {
@@ -1256,7 +1258,9 @@ a:active {
   padding-block: 0.9rem;
   letter-spacing: -0.36px;
 }
-
+.max-content-lg{
+  padding-left: 3rem!important;
+}
 /* Placeholder font size */
 .search-wrapper input.form-control::placeholder {
   font: var(--font-14);

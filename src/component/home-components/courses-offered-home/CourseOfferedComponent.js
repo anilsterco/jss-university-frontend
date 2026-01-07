@@ -197,6 +197,7 @@ export default function CoursesOffered({ data }) {
                   height={387}
                   className={styles.cardImage}
                 />
+
                 <div className={styles.cardOverlay}>
                   <span
                     className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
@@ -219,9 +220,9 @@ export default function CoursesOffered({ data }) {
 
         {/* ================= BOTTOM SECTION ================= */}
         <div className="program_heading">
-           <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
-          Explore Programs by School of
-        </h6>
+          <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
+            Explore Programs by School of
+          </h6>
         </div>
         <div
           className={`programsList_row align-items-center program-row ${styles.exploreProgramSectionWrapper}`}
@@ -237,7 +238,7 @@ export default function CoursesOffered({ data }) {
                   className="d-flex justify-content-between align-items-center"
                 >
                   {school.short_name}
-                  <FaChevronRight fontSize={10} color="#16344ec4" />
+                  <FaChevronRight fontSize={8} color="#16344ec4" />
                 </Link>
               ))}
             </div>
@@ -260,7 +261,7 @@ export default function CoursesOffered({ data }) {
             <div className="add_btn">
               <Link
                 href={coursesData.buttons[0].url}
-                className="btn btn-warning rounded-pill"
+                className="btn btn-warning"
               >
                 {coursesData.buttons[0].text}
               </Link>

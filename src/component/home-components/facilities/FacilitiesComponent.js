@@ -7,7 +7,8 @@ import styles from "./facilities.module.css";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { FiPlus } from "react-icons/fi";
+// import { FiPlus } from "react-icons/fi";
+import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -211,7 +212,14 @@ export default function FacilitiesComponent({ data }) {
         {/* Main Banner */}
         <div className={styles.headerContent}>
           <div>
-            <FiPlus className={styles.plusIcon} />
+            {/* <FiPlus className={styles.plusIcon} /> */}
+            <Image
+              src="/images/home-page/facili_plusIcon.svg"
+              alt="image"
+              width={42}
+              height={42}
+            />
+
             <span className={styles.straightLine}></span>
           </div>
           <div>
@@ -240,7 +248,6 @@ export default function FacilitiesComponent({ data }) {
                   src={panel.image}
                   alt={`Panel ${index + 1}`}
                   style={{ width: "100%", objectFit: "cover" }}
-                  
                 />
                 <div className={styles.verticalLine}>
                   <div className={styles.slideNumberBox}>{index + 1}</div>
@@ -249,7 +256,12 @@ export default function FacilitiesComponent({ data }) {
                   <div>
                     <h2>
                       {panel.title}{" "}
-                      <BsArrowRightCircle fontSize={24} strokeWidth={0} />
+                      <Image
+                        src="/images/home-page/facilivisit.svg"
+                        alt="image"
+                        width={22}
+                        height={22}
+                      />
                     </h2>
                     <p>{panel.description}</p>
                   </div>

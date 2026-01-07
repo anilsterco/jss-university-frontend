@@ -390,7 +390,7 @@
       ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
       maxContentWidth + "px"
     );
-
+    
     if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
     if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
 
