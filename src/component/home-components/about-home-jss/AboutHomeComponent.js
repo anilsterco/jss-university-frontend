@@ -73,7 +73,7 @@ export default function LegacySection({ data }) {
     <section className={`${styles.fifthSection}`}>
       <div className="container">
         <div className={`${styles.fifthContainerSection}`}>
-          <div className={`mb-3 ${styles.topSection}`} data-aos="fade-bottom">
+          <div className={` ${styles.topSection}`} data-aos="fade-bottom">
             <p className="fw-bold text-uppercase">{legacyData.subtitle}</p>
             <h2
               className={` ${styles.topSectionHeading}`}
@@ -83,9 +83,8 @@ export default function LegacySection({ data }) {
             ></h2>
           </div>
 
-          <div className={`row message-row ${styles.fifthMiddleSection}`}>
-            {/* Chancellor Image */}
-            <div className={`col-lg-5 msg-row ${styles.leftColumn}`}>
+          <div className={`${styles.fifthMiddleSection}`}>
+            <div className={`${styles.leftColumn}`}>
               <div
                 className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
                  data-aos="fade-up"
@@ -94,14 +93,14 @@ export default function LegacySection({ data }) {
                 <Image
                   src={legacyData.chancellor_img}
                   alt="chancellor image"
-                  width={500}
-                  height={350}
+                  width={600}
+                  height={370}
                   style={{ height: "100%", width: "100%" }}
                   className={`rounded ${styles.chancellorImage}`}
                  
                 />
                 {/* Play Button Overlay */}
-                <div className={`contant-row ${styles.contentPart}`}>
+                <div className={`${styles.contentPart}`}>
                   <div
                     className="chance-msg"
                     data-aos="fade-up"
@@ -109,7 +108,7 @@ export default function LegacySection({ data }) {
                   >
                     {legacyData.video_url && (
                       <IoPlayCircleOutline
-                        fontSize={40}
+                        fontSize={36}
                         className="text-warning"
                         style={{ cursor: "pointer" }}
                         onClick={() => setVideoPopup(true)}
@@ -117,30 +116,25 @@ export default function LegacySection({ data }) {
                     )}
                     <div className="chance-msg-contant">
                       <p>{legacyData.chancellor_title}</p>
-                      <strong>{legacyData.chancellor_name}</strong>
+                      <h5>{legacyData.chancellor_name}</h5>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Content */}
-            <div
-              className={`col-lg-7 about-imgcol ${styles.rightColumn}`}
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
+            <div className={`about-imgcol ${styles.rightColumn}`} data-aos="fade-up" data-aos-delay="400">
               <p className={`fw-light ${styles.description}`}>
                 {legacyData.description}
               </p>
               <div className={`divider ${styles.rightArrowIconDiv}`}>
                 {legacyData.url && (
-                  <Link href={legacyData.url} className="nav-buttons">
-                    <BsArrowRightCircle
-                      className={`fw-light ${styles.rightArrowIcon}`}
-                      color="rgb(153 83 158)"
-                    />
-                  </Link>
+                 <Image
+                  src="images/home-page/about_arrow.svg"
+                  alt="chancellor image"
+                  width={22}
+                  height={22}
+                />
                 )}
               </div>
 
@@ -153,8 +147,8 @@ export default function LegacySection({ data }) {
                     data-aos="fade-up"
                     data-aos-delay={i * 200}
                   >
-                    <h1 className={`fw-bold ${styles.highlightNumber}`}>
-                      {h.rank}
+                    <h1 className={`${styles.highlightNumber}`}>
+                     <span>#</span> {h.rank}
                     </h1>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
@@ -200,15 +194,8 @@ export default function LegacySection({ data }) {
             </div>
           </div>
 
-          {/* Accreditation Logos Slider */}
-          <div
-            className={styles.fifthSectionSlider}
-            data-aos="fade-up"
-            data-aos-delay="700"
-          >
-            <p
-              className={`${styles.accreditationHeading} ${styles.onlyMobile}`}
-            >
+          <div className={styles.fifthSectionSlider} data-aos="fade-up" data-aos-delay="700" >
+            <p className={`${styles.accreditationHeading} ${styles.onlyMobile}`}>
               GLOBAL PARTNERSHIPS AND ACADEMIC COLLABORATIONS
             </p>
             <Swiper

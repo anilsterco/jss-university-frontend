@@ -275,7 +275,12 @@ export default function FacilitiesComponent({ data }) {
                         className={styles.bannerLink}
                       >
                         {item.text}
-                        <FaChevronRight />
+                         <Image
+                        src="/images/home-page/facili_arrow.svg"
+                        alt="image"
+                        width={5}
+                        height={10}
+                      />
                       </Link>
                     ))}
                 </div>
