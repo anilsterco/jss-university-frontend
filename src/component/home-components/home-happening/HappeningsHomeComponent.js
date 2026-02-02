@@ -576,8 +576,7 @@ export default function EventsGrid({ data }) {
             <Swiper
               spaceBetween={100}
               slidesPerView={1}
-              style={{ paddingBottom: "1.1rem" }}
-            >
+              style={{ paddingBottom: "1.1rem" }}>
               <SwiperSlide>
                 <div
                   className={`${styles.card} ${styles.cardLarge} ${styles.cardLargeBottomRight} ${styles.mobileCard}`}
@@ -593,7 +592,6 @@ export default function EventsGrid({ data }) {
                       className={styles.cardImage}
                     />
                   )}
-
                   <div className={styles.contentPart}>
                     <div className={styles.orangeLine}></div>
                     <h2 className={styles.cardTitleLarge}>
@@ -601,8 +599,7 @@ export default function EventsGrid({ data }) {
                         eventsData.happenings[5].title}
                     </h2>
                     <p
-                      className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
-                    >
+                      className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}>
                       {eventsData.happenings[5] &&
                         eventsData.happenings[5].short_description}
                     </p>

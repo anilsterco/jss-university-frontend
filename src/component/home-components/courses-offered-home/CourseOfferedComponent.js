@@ -8,6 +8,29 @@ import styles from "./courses-offered.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
+  const [count, setCount] = useState(start);
+
+  useEffect(() => {
+    let startTime = null;
+
+    const animate = (time) => {
+      if (!startTime) startTime = time;
+      const progress = Math.min((time - startTime) / duration, 1);
+
+      const value = Math.floor(start + (end - start) * progress);
+      setCount(value);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [start, end, duration]);
+
+  return <>{count.toLocaleString("en-IN")}</>;
+};
 const dummyCoursesData = {
   title:
     '<span class="blue-text">Start Your</span> <span class="dark-blue-text ">JSS Journey</span>',
@@ -165,7 +188,7 @@ export default function CoursesOffered({ data }) {
                 <h1
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
-                  {coursesData.programs_count}
+                  <Counter start={1} end={200} duration={2500} />
                 </h1>
                 <span className={styles.programsCountPlus}>+</span>
               </div>

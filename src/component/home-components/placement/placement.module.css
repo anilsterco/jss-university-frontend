@@ -2,7 +2,7 @@
 
 .thirdSection {
   background: #f6f6f6;
-  padding-block: 15rem 15.1rem;
+  padding-block: 15rem 14.1rem;
 }
 
 .blueBg {
@@ -65,7 +65,7 @@
 }
 
 .wallOfFameText {
-  width: 68%;
+  width: 60%;
   bottom: 8.7rem;
   left:5.8rem;
   font: var(--font-50);

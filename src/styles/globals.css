@@ -1651,3 +1651,60 @@ a:active {
     left: 125%;
   }
 }
+
+.btn-warning {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-warning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background-color:var(--color-4e);
+  transition: bottom 0.35s ease-in-out;
+  z-index: -1;
+ 
+}
+
+.btn-warning:hover::before {
+  bottom: 0;
+}
+.add_btn:hover a{
+  color: var(--color-white);
+  transition: bottom 0.35s ease-in-out;
+}
+.btn-warning:hover {
+  color: #fff;
+   color: var(--color-white);
+}
+.btn-warning,
+.about-home-buttons a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-home-buttons a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background-color:var(--color-100);
+  transition: bottom 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.about-home-buttons a:hover::before {
+  bottom: 0;
+}
+
+.about-home-buttons a:hover {
+  color: #fff;
+}
