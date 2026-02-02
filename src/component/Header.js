@@ -137,7 +137,7 @@ export default function Header() {
               pathname.includes("schools") || pathname.includes("department")
                 ? SCHOOL_HEADER_URL
                 : NAV_BASE_URL
-            }`
+            }`,
           ),
           fetch(`${ADMISSION_BASE_URL}`),
         ]);
@@ -395,8 +395,8 @@ export default function Header() {
                   },
                 ],
               }
-            : item
-        )
+            : item,
+        ),
       );
     }
   };
@@ -424,8 +424,8 @@ export default function Header() {
                   },
                 ],
               }
-            : item
-        )
+            : item,
+        ),
       );
     }
   };
@@ -446,7 +446,7 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header
+      className={` site-header
     ${
       pathname.includes("schools") ||
       pathname.includes("department") ||
@@ -458,8 +458,10 @@ export default function Header() {
     ${pathname !== "/" ? "not-home" : ""}
   `}
     >
-      <div
-        className={`nav-container ${scrolled ? "header-scrolled" : ""}
+      <div className={`header-inner ${scrolled ? "header-scrolled" : ""}`}>
+        <div className="containerXl">
+          <div
+            className={`nav-container }
     ${
       pathname.includes("schools") ||
       pathname.includes("department") ||
@@ -470,679 +472,690 @@ export default function Header() {
     ${pathname !== "/" ? "programs-nav" : ""}
     ${pathname !== "/" ? "not-home" : ""}
   `}
-      >
-        <div
-          className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
-        >
-          {pathname !== "/" ? (
-            <div className="dashbord-logo">
-              <Link href="/" aria-label="Home">
-                <Image
-                  src="/images/header/jss-moblogo.png"
-                  className="site-logo"
-                  alt="Site Logo"
-                  width={325}
-                  height={116}
-                  priority
-                />
-              </Link>
-            </div>
-          ) : (
-            <div className="dashbord-logo">
-              <Link href="/" aria-label="Home">
-                <Image
-                  src="/images/header/header-logo.png"
-                  className="site-logo"
-                  alt="Site Logo"
-                  width={325}
-                  height={116}
-                  priority
-                />
-              </Link>
-            </div>
-          )}
-          <div className="mob-logo">
-            <Link href="/" aria-label="Home">
-              <Image
-                src="/images/header/jss-moblogo.png"
-                className="site-logo"
-                alt="Site Logo"
-                width={299}
-                height={108}
-                priority
-              />
-            </Link>
-          </div>
-
-          {(pathname.includes("schools") ||
-            pathname.includes("department")) && (
-            <>
-              <div
-                className="school-toggle"
-                onClick={() => setEngineeringDropdown((prev) => !prev)}
-              >
-                <div
-                  style={{
-                    borderLeft: "1px solid #e0e0e0ff",
-                    justifyItems: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    padding: "25px",
-                  }}
-                >
-                  <span className="schoolDrp">School Of</span>
-                  <span className="schoolDrpheading">
-                    Engineering <IoChevronDownOutline fontSize={15} />
-                  </span>
+          >
+            <div
+              className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
+            >
+              {pathname !== "/" ? (
+                <div className="dashbord-logo">
+                  <Link href="/" aria-label="Home">
+                    <Image
+                      src="/images/header/jss-moblogo.png"
+                      className="site-logo"
+                      alt="Site Logo"
+                      width={325}
+                      height={116}
+                      priority
+                    />
+                  </Link>
                 </div>
+              ) : (
+                <div className="dashbord-logo">
+                  <Link href="/" aria-label="Home">
+                    <Image
+                      src="/images/header/header-logo.png"
+                      className="site-logo"
+                      alt="Site Logo"
+                      width={325}
+                      height={116}
+                      priority
+                    />
+                  </Link>
+                </div>
+              )}
+              <div className="mob-logo">
+                <Link href="/" aria-label="Home">
+                  <Image
+                    src="/images/header/jss-moblogo.png"
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={299}
+                    height={108}
+                    priority
+                  />
+                </Link>
               </div>
-              {engineeringDropdown && engineeringData.length > 0 && (
-                <div
-                  className="engineering-dropdown-container"
-                  ref={engineeringRef}
-                >
-                  <div className="engineering-dropdown">
-                    {/* LEFT SIDE: Schools List */}
-                    <div className="schools-list">
-                      <h6>Schools</h6>
-                      {engineeringData.map((school, idx) => {
-                        const schoolUrl = `/schools/${school.slug}`;
 
-                        return (
-                          <div
-                            key={idx}
-                            className={`school-item ${
-                              selectedSchool === idx ? "active" : ""
-                            }`}
-                            onClick={() => {
-                              setSelectedSchool(idx);
-                              setSelectedSchoolName(school.name);
-                              setEngineeringDropdown(false);
-                            }}
-                          >
-                            <Link href={schoolUrl} className="text-white">
-                              {school.name}
-                            </Link>
-                          </div>
-                        );
-                      })}
+              {(pathname.includes("schools") ||
+                pathname.includes("department")) && (
+                <>
+                  <div
+                    className="school-toggle"
+                    onClick={() => setEngineeringDropdown((prev) => !prev)}
+                  >
+                    <div
+                      style={{
+                        borderLeft: "1px solid #e0e0e0ff",
+                        justifyItems: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        cursor: "pointer",
+                        padding: "25px",
+                      }}
+                    >
+                      <span className="schoolDrp">School Of</span>
+                      <span className="schoolDrpheading">
+                        Engineering <IoChevronDownOutline fontSize={15} />
+                      </span>
                     </div>
-
-                    {/* RIGHT SIDE: Departments */}
-                    <div className="departments-list">
-                      <h6 className="text-white">Departments</h6>
-                      <div className="link-content">
-                        {engineeringData[selectedSchool]?.departments?.map(
-                          (dept, i) => {
-                            const schoolSlug =
-                              engineeringData[selectedSchool]?.slug;
-                            const deptSlug = dept.slug;
-                            const deptUrl = `/department/${deptSlug}`;
+                  </div>
+                  {engineeringDropdown && engineeringData.length > 0 && (
+                    <div
+                      className="engineering-dropdown-container"
+                      ref={engineeringRef}
+                    >
+                      <div className="engineering-dropdown">
+                        {/* LEFT SIDE: Schools List */}
+                        <div className="schools-list">
+                          <h6>Schools</h6>
+                          {engineeringData.map((school, idx) => {
+                            const schoolUrl = `/schools/${school.slug}`;
 
                             return (
-                              <Link
-                                key={i}
-                                href={deptUrl}
-                                className="department-links text-white"
+                              <div
+                                key={idx}
+                                className={`school-item ${
+                                  selectedSchool === idx ? "active" : ""
+                                }`}
                                 onClick={() => {
+                                  setSelectedSchool(idx);
+                                  setSelectedSchoolName(school.name);
                                   setEngineeringDropdown(false);
                                 }}
                               >
-                                {dept.name}
-                              </Link>
-                            );
-                          }
-                        )}
-                      </div>
-                      <IoTriangleSharp className="triangle-icon" />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </>
-          )}
-        </div>
-
-        <div className="right-navbar">
-          <nav className="desktop-nav" aria-label="Main navigation">
-            <ul className="nav-list">
-              {navLinks.map((l, i) => (
-                <li
-                  key={i}
-                  className="nav-item"
-                  onMouseEnter={() => setActiveDropdown(i)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <Link href={l.url} className={`nav-link nav-lists`}>
-                    {l.title}
-                  </Link>
-                  {activeDropdown === i && l.children?.length > 0 && (
-                    <div className="mega-dropdown" role="menu">
-                      <div className="mega-left">
-                        <ul>
-                          {l.children.map((d, j) => (
-                            <li key={j} className="mega-left-item">
-                              <Link href={d.url} className="dropdown-item">
-                                {d.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mega-right">
-                        {l.right ? (
-                          <>
-                            <div className="mega-right-text">
-                              <p className="mega-subtitle">
-                                {l.right.subtitle}
-                              </p>
-                              <h2
-                                className="mega-title"
-                                dangerouslySetInnerHTML={{
-                                  __html: l.right.title,
-                                }}
-                              />
-                              <p className="mega-desc">{l.right.desc}</p>
-                              <div className="mega-ctas">
-                                {l.right.ctas?.map((cta, idx) => (
-                                  <Link
-                                    key={idx}
-                                    href={cta.url}
-                                    className={`cta program_btn ${cta.type}`}
-                                    style={{ color: "inherit" }}
-                                  >
-                                    {cta.text}
-                                    <svg
-                                      className="cta-arrow"
-                                      style={{ marginLeft: "2rem" }}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      fill="currentColor"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                      />
-                                    </svg>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="mega-right-banners">
-                              {l.right.banners?.map((b, idx) => (
-                                <Link
-                                  key={idx}
-                                  href={{
-                                    pathname: "/programs",
-                                    query: {
-                                      type: b.title
-                                        .toLowerCase()
-                                        .replace(/\s+/g, "-"),
-                                    },
-                                  }}
-                                >
-                                  <div
-                                    className="banner"
-                                    onClick={() => setActiveDropdown(null)}
-                                  >
-                                    <Image
-                                      src={b.img}
-                                      alt={b.title}
-                                      width={260}
-                                      height={160}
-                                    />
-                                    <span className="banner-label">
-                                      {b.title}
-                                    </span>
-                                  </div>
+                                <Link href={schoolUrl} className="text-white">
+                                  {school.name}
                                 </Link>
-                              ))}
-                            </div>
-                          </>
-                        ) : (
-                          <div className="mega-right-text">
-                            <h3 className="mega-title">
-                              {l.dropdown && l.dropdown[0]?.name}
-                            </h3>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
+                              </div>
+                            );
+                          })}
+                        </div>
 
-          <div className="right-navbar-section">
-            <div className="admission-wrap" ref={admissionRef}>
-              <button
-                className="admission-btn"
-                onClick={() => setAdmissionOpen((prev) => !prev)}
-              >
-                ADMISSIONS
-              </button>
+                        {/* RIGHT SIDE: Departments */}
+                        <div className="departments-list">
+                          <h6 className="text-white">Departments</h6>
+                          <div className="link-content">
+                            {engineeringData[selectedSchool]?.departments?.map(
+                              (dept, i) => {
+                                const schoolSlug =
+                                  engineeringData[selectedSchool]?.slug;
+                                const deptSlug = dept.slug;
+                                const deptUrl = `/department/${deptSlug}`;
 
-              {admissionOpen && (
-                <div className="admission-dropdown">
-                  <span className="dropdown-arrow"></span>
-                  <div className="ad-left">
-                    <p className="ad-subtitle">
-                      {admissionsData.left.subtitle}
-                    </p>
-                    <h2 className="ad-title">{admissionsData.left.title}</h2>
-                    <p className="ad-desc">{admissionsData.left.desc}</p>
-                    <div className="ad-contact">
-                      <span>{admissionsData.left.querytext}</span>
-                      <p>
-                       
-                        <img
-                          src="images/header/mailicon.svg"
-                          className="img-fluid"
-                          alt="mail"
-                        />
-                        {admissionsData.left.email}
-                      </p>
-                      <p>
-                       
-                        <img
-                          src="images/header/phoneicon.svg"
-                          className="img-fluid"
-                          alt="mail"
-                        />
-                        {admissionsData.left.phone}
-                      </p>
-                    </div>
-                    <div className="ad-ctas">
-                      {admissionsData.left.ctas.map((cta, idx) => (
-                        <a
-                          key={idx}
-                          target="_blank"
-                          href={cta.url}
-                          className={`cta applynow ${cta.type}`}
-                        >
-                          {cta.text}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="ad-middle">
-                    <ul>
-                      {admissionsData.middle.links.map((link, idx) => (
-                        <li key={idx} className="ad-link">
-                          <Link href={link.url} style={{ color: "inherit" }}>
-                            {link.title}
-                            <img
-                              src="/images/header/listicon.svg"
-                              className="img-fluid"
-                              alt="mail"
-                            />
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="ad-stats">
-                      <h3>{admissionsData.middle.stats.text}</h3>
-                      <p>{admissionsData.middle.stats.subtext}</p>
-                      <Link
-                        href={admissionsData.middle.stats.btnText.url}
-                        style={{ color: "inherit" }}
-                      >
-                        <button className="stats-btn">
-                          {admissionsData.middle.stats.btnText.text}
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-
-                  {admissionsData.right && (
-                    <div className="ad-right">
-                      <Image
-                        src={admissionsData.right.img}
-                        alt={admissionsData.right.alt}
-                        width={400}
-                        height={400}
-                        className="addmision-section-img"
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-
-            <button
-              aria-label="Open menu"
-              className="hamburger"
-              onClick={openMenu}
-            >
-              <Image
-                src="/images/header/hum-icon.svg"
-                className="site-logo"
-                alt="Site Logo"
-                width={16}
-                height={15}
-                priority
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`backdrop ${menuOpen ? "show" : ""}`}
-        onClick={closeMenu}
-      />
-
-      <div className={`menu-overlay ${menuOpen ? "open" : ""}`} role="dialog">
-        <button
-          className="close-btn"
-          aria-label="Close menu"
-          onClick={closeMenu}
-        >
-          <img src="images/header/close-icon.svg" />
-        </button>
-
-        <div className="hamburger-layout">
-          <aside className="menu-left">
-            <ul>
-              {hamburgerMenudata.map((item, idx) => (
-                <li
-                  key={idx}
-                  className={`menu-left-item ${
-                    activeIndex === idx ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex(idx)}
-                >
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-          </aside>
-
-          <section className="menu-middle">
-            <div className="middle-title">
-              <ul>
-                <li>
-                  <a href="#">ABOUT JSSMVP</a>
-                </li>
-                <li>
-                  <a href="#">HERITAGE</a>
-                </li>
-                <li>
-                  <a href="#">ABOUT JSS</a>
-                </li>
-                <li>
-                  <a href="#">LEADERSHIP</a>
-                </li>
-              </ul>
-            </div>
-            <ul className="middle_ul">
-              {activeData.Menu.map((s, i) => (
-                <li key={i} className="middle-item">
-                  <a href="#"> {s}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="menu-right">
-            <div className="right-inner h-100">
-              <div className="image-box">
-                <div className="first-content">
-                  <h1
-                    dangerouslySetInnerHTML={{
-                      __html: activeData.firstContent.title,
-                    }}
-                  />
-                  <p>{activeData.firstContent.desc}</p>
-                  <Link href={activeData.firstContent.url}>
-                    <img src="images/header/banner-arrow.svg" />
-                  </Link>
-                  <div className="hamburger-section-img virtural-img">
-                    <Link href={activeData.firstContent.url}>
-                      <Image
-                        className="hum-small"
-                        src={activeData.firstContent.img}
-                        alt={activeData.firstContent.alt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </Link>
-                    <div className="items-menu_grp">
-                      <div className="items-menu_grp_cont">
-                        <h4>Virtual campus</h4>
-                        <p>Sed ut perspiciatis</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="second-content">
-                  <div className="hamburger-section-img">
-                    <Link href={activeData.secondContent.url}>
-                      <Image
-                        src={activeData.secondContent.img}
-                        alt={activeData.secondContent.alt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="100vw"
-                      />
-                    </Link>
-                    <div className="vid-thumb-grp">
-                      <div className="vid-thumb-icon"></div>
-                      <div className="vid-thumb-cont">
-                        <h6>MESSAGE FROM CHANCELLOR</h6>
-                        <h4>
-                          JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="acresData">
-                    <h1
-                      dangerouslySetInnerHTML={{
-                        __html: activeData.secondContent.title,
-                      }}
-                    />
-                    <p>{activeData.secondContent.desc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      {/* mobile menu bottom start*/}
-      <div className="panel-wrapper">
-        <div className="mob-menu-sec">
-          {mobilePanels.map((item) => (
-            <div
-              key={item.name}
-              className={`panel ${
-                activePanel === item.name ? "open" : ""
-              } ${item.name.toLowerCase()}-panel`}
-            >
-              {/* Courses tab */}
-              {item.name === "Courses" &&
-                activePanel === "Courses" &&
-                item.Menu && (
-                  <div className="mobCourses">
-                    <div className="course-heading">
-                      <h4>START YOUR JSS JOURNEY</h4>
-                    </div>
-                    <ul className="courses-menu">
-                      {mobProgramList.map((sub, idx) => (
-                        <li key={idx}>
-                          <figure>
-                            <div className="coursesImg">
-                              <img
-                                src={sub.image}
-                                alt={sub.name}
-                                className="course-img w-100"
-                              />
-                            </div>
-                            <figcaption>
-                              <h4>{sub.name}</h4>
-                              <Link href={sub.slug}>
-                                <img
-                                  src={"/images/header/courseIcon.svg"}
-                                  alt={`${sub.name} icon`}
-                                  className="course-icon"
-                                />
-                              </Link>
-                            </figcaption>
-                          </figure>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-              {/* Admissions tab */}
-              {item.name === "Admissions" &&
-                activePanel === "Admissions" &&
-                admissionData && (
-                  <div className="admissions-menu-wrapper">
-                    <ul className="admissions-menu">
-                      <div className="admissions-heading">
-                        <h4
-                          dangerouslySetInnerHTML={{ __html: item.heading }}
-                        ></h4>
-                      </div>
-
-                      {admissionData.middle.links.map((link, idx) => (
-                        <li key={idx}>
-                          <a href={link.url}>{link.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                    {/* LEFT SECTION */}
-                    <div className="admissions-contact">
-                      <h4>{admissionData.left.querytext}</h4>
-                      <ul>
-                        <li>
-                          <img src="/images/header/mail-icon.svg" alt="email" />
-                          <a href={`mailto:${admissionData.left.email}`}>
-                            {admissionData.left.email}
-                          </a>
-                        </li>
-                        <li>
-                          <img
-                            src="/images/header/phone-icon.svg"
-                            alt="phone"
-                          />
-                          <a href={`tel:${admissionData.left.phone}`}>
-                            {admissionData.left.phone}
-                          </a>
-                        </li>
-                      </ul>
-                      <div className="contactBtn">
-                        {admissionData.left.ctas.map((btn, idx) => (
-                          <a
-                            key={idx}
-                            href={btn.url}
-                            className={
-                              btn.type === "primary" ? "apply" : "dwnload"
-                            }
-                          >
-                            {btn.type === "secondary" && (
-                              <img
-                                src="/images/header/dwnlodIcon.png"
-                                alt="download"
-                              />
+                                return (
+                                  <Link
+                                    key={i}
+                                    href={deptUrl}
+                                    className="department-links text-white"
+                                    onClick={() => {
+                                      setEngineeringDropdown(false);
+                                    }}
+                                  >
+                                    {dept.name}
+                                  </Link>
+                                );
+                              },
                             )}
-                            {btn.text}
-                          </a>
-                        ))}
+                          </div>
+                          <IoTriangleSharp className="triangle-icon" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              {/* Contact tab */}
-              {item.name === "Contact" &&
-                activePanel === "Contact" &&
-                item.Menu && (
-                  <div className="contact-panel">
-                    <div className="contact-heading">
-                      <h4>{item.heading}</h4>
-                    </div>
-
-                    <div className="contactBanner">
-                      <img
-                        src={item.bgImg}
-                        alt="contact"
-                        className="contact-banner"
-                      />
-                    </div>
-                    <ul className="contact-info">
-                      {item.Menu.map((sub, idx) => (
-                        <li key={idx}>
-                          <div className="icon-img">
-                            <img src={sub.contactIcon} alt={sub.name} />
-                          </div>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              {/* Menu tab */}
-              {item.name === "Menu" && activePanel === "Menu" && (
-                <>
-                  {item.Menu && (
-                    <>
-                      {/* TOP MENU (1–6) */}
-                      <ul className="menu-top">
-                        {item.Menu.slice(0, 6).map((sub, idx) => (
-                          <li key={idx}>
-                            <a href={sub.url}>{sub.name}</a>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* BOTTOM MENU (Only if more than 6 items) */}
-                      {item.Menu.length > 6 && (
-                        <ul className="menu-bottom">
-                          {item.Menu.slice(1).map((sub, idx) => (
-                            <li key={idx}>
-                              <a href={sub.url}>{sub.name}</a>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
                   )}
                 </>
               )}
             </div>
-          ))}
-        </div>
-      </div>
-      <div className="mobile-bottom-menu">
-        <ul className="menu-list">
-          {mobilePanels.map((item) => (
-            <li
-              key={item.name}
-              className={
-                activePanel === item.name ? "menu-item active" : "menu-item"
-              }
-            >
-              <button onClick={() => togglePanel(item.name)}>
-                <div className="icon">
-                  <img src={item.icon} alt={`${item.name} icon`} />
+
+            <div className="right-navbar">
+              <nav className="desktop-nav" aria-label="Main navigation">
+                <ul className="nav-list">
+                  {navLinks.map((l, i) => (
+                    <li
+                      key={i}
+                      className="nav-item"
+                      onMouseEnter={() => setActiveDropdown(i)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <Link href={l.url} className={`nav-link nav-lists`}>
+                        {l.title}
+                      </Link>
+                      {activeDropdown === i && l.children?.length > 0 && (
+                        <div className="mega-dropdown" role="menu">
+                          <div className="mega-left">
+                            <ul>
+                              {l.children.map((d, j) => (
+                                <li key={j} className="mega-left-item">
+                                  <Link href={d.url} className="dropdown-item">
+                                    {d.title}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="mega-right">
+                            {l.right ? (
+                              <>
+                                <div className="mega-right-text">
+                                  <p className="mega-subtitle">
+                                    {l.right.subtitle}
+                                  </p>
+                                  <h2
+                                    className="mega-title"
+                                    dangerouslySetInnerHTML={{
+                                      __html: l.right.title,
+                                    }}
+                                  />
+                                  <p className="mega-desc">{l.right.desc}</p>
+                                  <div className="mega-ctas">
+                                    {l.right.ctas?.map((cta, idx) => (
+                                      <Link
+                                        key={idx}
+                                        href={cta.url}
+                                        className={`cta program_btn ${cta.type}`}
+                                        style={{ color: "inherit" }}
+                                      >
+                                        {cta.text}
+                                        <svg
+                                          className="cta-arrow"
+                                          style={{ marginLeft: "2rem" }}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="16"
+                                          height="16"
+                                          fill="currentColor"
+                                          viewBox="0 0 16 16"
+                                        >
+                                          <path
+                                            fillRule="evenodd"
+                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div className="mega-right-banners">
+                                  {l.right.banners?.map((b, idx) => (
+                                    <Link
+                                      key={idx}
+                                      href={{
+                                        pathname: "/programs",
+                                        query: {
+                                          type: b.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, "-"),
+                                        },
+                                      }}
+                                    >
+                                      <div
+                                        className="banner"
+                                        onClick={() => setActiveDropdown(null)}
+                                      >
+                                        <Image
+                                          src={b.img}
+                                          alt={b.title}
+                                          width={260}
+                                          height={160}
+                                        />
+                                        <span className="banner-label">
+                                          {b.title}
+                                        </span>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </>
+                            ) : (
+                              <div className="mega-right-text">
+                                <h3 className="mega-title">
+                                  {l.dropdown && l.dropdown[0]?.name}
+                                </h3>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="right-navbar-section">
+                <div className="admission-wrap" ref={admissionRef}>
+                  <button
+                    className="admission-btn"
+                    onClick={() => setAdmissionOpen((prev) => !prev)}
+                  >
+                    ADMISSIONS
+                  </button>
+
+                  {admissionOpen && (
+                    <div className="admission-dropdown">
+                      <span className="dropdown-arrow"></span>
+                      <div className="ad-left">
+                        <p className="ad-subtitle">
+                          {admissionsData.left.subtitle}
+                        </p>
+                        <h2 className="ad-title">
+                          {admissionsData.left.title}
+                        </h2>
+                        <p className="ad-desc">{admissionsData.left.desc}</p>
+                        <div className="ad-contact">
+                          <span>{admissionsData.left.querytext}</span>
+                          <p>
+                            <img
+                              src="images/header/mailicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                            {admissionsData.left.email}
+                          </p>
+                          <p>
+                            <img
+                              src="images/header/phoneicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                            {admissionsData.left.phone}
+                          </p>
+                        </div>
+                        <div className="ad-ctas">
+                          {admissionsData.left.ctas.map((cta, idx) => (
+                            <a
+                              key={idx}
+                              target="_blank"
+                              href={cta.url}
+                              className={`cta applynow ${cta.type}`}
+                            >
+                              {cta.text}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="ad-middle">
+                        <ul>
+                          {admissionsData.middle.links.map((link, idx) => (
+                            <li key={idx} className="ad-link">
+                              <Link
+                                href={link.url}
+                                style={{ color: "inherit" }}
+                              >
+                                {link.title}
+                                <img
+                                  src="/images/header/listicon.svg"
+                                  className="img-fluid"
+                                  alt="mail"
+                                />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="ad-stats">
+                          <h3>{admissionsData.middle.stats.text}</h3>
+                          <p>{admissionsData.middle.stats.subtext}</p>
+                          <Link
+                            href={admissionsData.middle.stats.btnText.url}
+                            style={{ color: "inherit" }}
+                          >
+                            <button className="stats-btn">
+                              {admissionsData.middle.stats.btnText.text}
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+
+                      {admissionsData.right && (
+                        <div className="ad-right">
+                          <Image
+                            src={admissionsData.right.img}
+                            alt={admissionsData.right.alt}
+                            width={400}
+                            height={400}
+                            className="addmision-section-img"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <p className="menu-name">{item.name}</p>
-              </button>
-            </li>
-          ))}
-        </ul>
+
+                <button
+                  aria-label="Open menu"
+                  className="hamburger"
+                  onClick={openMenu}
+                >
+                  <Image
+                    src="/images/header/hum-icon.svg"
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={16}
+                    height={15}
+                    priority
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`backdrop ${menuOpen ? "show" : ""}`}
+            onClick={closeMenu}
+          />
+
+          <div
+            className={`menu-overlay ${menuOpen ? "open" : ""}`}
+            role="dialog"
+          >
+            <button
+              className="close-btn"
+              aria-label="Close menu"
+              onClick={closeMenu}
+            >
+              <img src="images/header/close-icon.svg" />
+            </button>
+
+            <div className="hamburger-layout">
+              <aside className="menu-left">
+                <ul>
+                  {hamburgerMenudata.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`menu-left-item ${
+                        activeIndex === idx ? "active" : ""
+                      }`}
+                      onClick={() => setActiveIndex(idx)}
+                    >
+                      {item.name}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+
+              <section className="menu-middle">
+                <div className="middle-title">
+                  <ul>
+                    <li>
+                      <a href="#">ABOUT JSSMVP</a>
+                    </li>
+                    <li>
+                      <a href="#">HERITAGE</a>
+                    </li>
+                    <li>
+                      <a href="#">ABOUT JSS</a>
+                    </li>
+                    <li>
+                      <a href="#">LEADERSHIP</a>
+                    </li>
+                  </ul>
+                </div>
+                <ul className="middle_ul">
+                  {activeData.Menu.map((s, i) => (
+                    <li key={i} className="middle-item">
+                      <a href="#"> {s}</a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="menu-right">
+                <div className="right-inner h-100">
+                  <div className="image-box">
+                    <div className="first-content">
+                      <h1
+                        dangerouslySetInnerHTML={{
+                          __html: activeData.firstContent.title,
+                        }}
+                      />
+                      <p>{activeData.firstContent.desc}</p>
+                      <Link href={activeData.firstContent.url}>
+                        <img src="images/header/banner-arrow.svg" />
+                      </Link>
+                      <div className="hamburger-section-img virtural-img">
+                        <Link href={activeData.firstContent.url}>
+                          <Image
+                            className="hum-small"
+                            src={activeData.firstContent.img}
+                            alt={activeData.firstContent.alt}
+                            fill
+                            style={{ objectFit: "cover" }}
+                          />
+                        </Link>
+                        <div className="items-menu_grp">
+                          <div className="items-menu_grp_cont">
+                            <h4>Virtual campus</h4>
+                            <p>Sed ut perspiciatis</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="second-content">
+                      <div className="hamburger-section-img">
+                        <Link href={activeData.secondContent.url}>
+                          <Image
+                            src={activeData.secondContent.img}
+                            alt={activeData.secondContent.alt}
+                            fill
+                            style={{ objectFit: "cover" }}
+                            sizes="100vw"
+                          />
+                        </Link>
+                        <div className="vid-thumb-grp">
+                          <div className="vid-thumb-icon"></div>
+                          <div className="vid-thumb-cont">
+                            <h6>MESSAGE FROM CHANCELLOR</h6>
+                            <h4>
+                              JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="acresData">
+                        <h1
+                          dangerouslySetInnerHTML={{
+                            __html: activeData.secondContent.title,
+                          }}
+                        />
+                        <p>{activeData.secondContent.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          {/* mobile menu bottom start*/}
+          <div className="panel-wrapper">
+            <div className="mob-menu-sec">
+              {mobilePanels.map((item) => (
+                <div
+                  key={item.name}
+                  className={`panel ${
+                    activePanel === item.name ? "open" : ""
+                  } ${item.name.toLowerCase()}-panel`}
+                >
+                  {/* Courses tab */}
+                  {item.name === "Courses" &&
+                    activePanel === "Courses" &&
+                    item.Menu && (
+                      <div className="mobCourses">
+                        <div className="course-heading">
+                          <h4>START YOUR JSS JOURNEY</h4>
+                        </div>
+                        <ul className="courses-menu">
+                          {mobProgramList.map((sub, idx) => (
+                            <li key={idx}>
+                              <figure>
+                                <div className="coursesImg">
+                                  <img
+                                    src={sub.image}
+                                    alt={sub.name}
+                                    className="course-img w-100"
+                                  />
+                                </div>
+                                <figcaption>
+                                  <h4>{sub.name}</h4>
+                                  <Link href={sub.slug}>
+                                    <img
+                                      src={"/images/header/courseIcon.svg"}
+                                      alt={`${sub.name} icon`}
+                                      className="course-icon"
+                                    />
+                                  </Link>
+                                </figcaption>
+                              </figure>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                  {/* Admissions tab */}
+                  {item.name === "Admissions" &&
+                    activePanel === "Admissions" &&
+                    admissionData && (
+                      <div className="admissions-menu-wrapper">
+                        <ul className="admissions-menu">
+                          <div className="admissions-heading">
+                            <h4
+                              dangerouslySetInnerHTML={{ __html: item.heading }}
+                            ></h4>
+                          </div>
+
+                          {admissionData.middle.links.map((link, idx) => (
+                            <li key={idx}>
+                              <a href={link.url}>{link.title}</a>
+                            </li>
+                          ))}
+                        </ul>
+                        {/* LEFT SECTION */}
+                        <div className="admissions-contact">
+                          <h4>{admissionData.left.querytext}</h4>
+                          <ul>
+                            <li>
+                              <img
+                                src="/images/header/mail-icon.svg"
+                                alt="email"
+                              />
+                              <a href={`mailto:${admissionData.left.email}`}>
+                                {admissionData.left.email}
+                              </a>
+                            </li>
+                            <li>
+                              <img
+                                src="/images/header/phone-icon.svg"
+                                alt="phone"
+                              />
+                              <a href={`tel:${admissionData.left.phone}`}>
+                                {admissionData.left.phone}
+                              </a>
+                            </li>
+                          </ul>
+                          <div className="contactBtn">
+                            {admissionData.left.ctas.map((btn, idx) => (
+                              <a
+                                key={idx}
+                                href={btn.url}
+                                className={
+                                  btn.type === "primary" ? "apply" : "dwnload"
+                                }
+                              >
+                                {btn.type === "secondary" && (
+                                  <img
+                                    src="/images/header/dwnlodIcon.png"
+                                    alt="download"
+                                  />
+                                )}
+                                {btn.text}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  {/* Contact tab */}
+                  {item.name === "Contact" &&
+                    activePanel === "Contact" &&
+                    item.Menu && (
+                      <div className="contact-panel">
+                        <div className="contact-heading">
+                          <h4>{item.heading}</h4>
+                        </div>
+
+                        <div className="contactBanner">
+                          <img
+                            src={item.bgImg}
+                            alt="contact"
+                            className="contact-banner"
+                          />
+                        </div>
+                        <ul className="contact-info">
+                          {item.Menu.map((sub, idx) => (
+                            <li key={idx}>
+                              <div className="icon-img">
+                                <img src={sub.contactIcon} alt={sub.name} />
+                              </div>
+                              <a href={sub.url}>{sub.name}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  {/* Menu tab */}
+                  {item.name === "Menu" && activePanel === "Menu" && (
+                    <>
+                      {item.Menu && (
+                        <>
+                          {/* TOP MENU (1–6) */}
+                          <ul className="menu-top">
+                            {item.Menu.slice(0, 6).map((sub, idx) => (
+                              <li key={idx}>
+                                <a href={sub.url}>{sub.name}</a>
+                              </li>
+                            ))}
+                          </ul>
+
+                          {/* BOTTOM MENU (Only if more than 6 items) */}
+                          {item.Menu.length > 6 && (
+                            <ul className="menu-bottom">
+                              {item.Menu.slice(1).map((sub, idx) => (
+                                <li key={idx}>
+                                  <a href={sub.url}>{sub.name}</a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mobile-bottom-menu">
+            <ul className="menu-list">
+              {mobilePanels.map((item) => (
+                <li
+                  key={item.name}
+                  className={
+                    activePanel === item.name ? "menu-item active" : "menu-item"
+                  }
+                >
+                  <button onClick={() => togglePanel(item.name)}>
+                    <div className="icon">
+                      <img src={item.icon} alt={`${item.name} icon`} />
+                    </div>
+                    <p className="menu-name">{item.name}</p>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
       <style jsx>
         {`
@@ -1186,7 +1199,7 @@ export default function Header() {
           .nav-container.header-scrolled.scroll_bg {
             background: #f8f9fa !important;
           }
-           .nav-container.header-scrolled.not-home {
+          .nav-container.header-scrolled.not-home {
             background: #f8f9fa !important;
           }
           .programs-nav .nav-list {
@@ -1383,6 +1396,7 @@ export default function Header() {
             align-items: center;
             justify-content: space-between;
           }
+
           .site-header::before {
             content: "";
             position: absolute;
@@ -1409,21 +1423,22 @@ export default function Header() {
             padding: 1.2rem 2.8rem 1.2rem 2.8rem;
             background-color: rgb(22, 52, 78, 78%);
             color: #fff;
-            
           }
 
           .nav-list > ul {
             display: flex;
             padding: 0;
             margin: 0;
-            padding:1.4rem 2.8rem 1.2rem;
+            padding: 1.4rem 2.8rem 1.2rem;
           }
 
           .nav-item {
             position: relative;
           }
-          .nav-item:last-child{padding-right:0;}
-          .nav-container.header-scrolled {
+          .nav-item:last-child {
+            padding-right: 0;
+          }
+          .header-inner.header-scrolled {
             background-color: var(--color-4e);
           }
 
@@ -1946,7 +1961,9 @@ export default function Header() {
           }
           .mega-left-item {
             cursor: pointer;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition:
+              background 0.3s ease,
+              color 0.3s ease;
             font-weight: 700;
             padding: 1px 0;
           }
@@ -2064,6 +2081,13 @@ export default function Header() {
           .close-btn {
             margin: 3rem 8rem;
           }
+
+          @media (max-width: 2550px) {
+            .mega-left {
+              width: 85rem;
+            }
+          }
+
           @media (max-width: 1649px) {
             .hamburger {
               padding: 1.5rem 1.5rem 1.5rem;
@@ -2428,6 +2452,16 @@ export default function Header() {
             font: var(--font-21);
             font-weight: 600;
           }
+          .containerXl {
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+          }
+
+          .nav-container {
+            width: 100%;
+          }
           .contact-panel .contact-info li:nth-child(3) a {
             color: #018ce8;
             letter-spacing: -0.21px;
@@ -2646,6 +2680,36 @@ export default function Header() {
           }
           .site-header.not-home {
             background: none;
+          }
+          .site-header {
+            position: fixed; /* keep this */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            width: 100%;
+          }
+
+          /* NEW wrapper */
+          .header-inner {
+            width: 100%;
+            padding-block: 2.4rem;
+          }
+
+          /* ACTUAL container */
+          .containerXl {
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding-inline: 9.8rem;
+          }
+
+          /* INNER NAV MUST NOT USE vw */
+          .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
           }
         `}
       </style>

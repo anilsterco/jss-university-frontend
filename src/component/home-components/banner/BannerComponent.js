@@ -47,7 +47,7 @@ export default function HeroSlider({ data }) {
               src={slide.desktop_banner}
               alt="slide image"
               width={1920}
-              height={400}
+              height={810}
               priority
               style={{ width: "100%", height: "100%" }}
               className={styles.desktopBanner}
@@ -55,14 +55,15 @@ export default function HeroSlider({ data }) {
             <Image
               src={slide.mobile_banner}
               alt="slide image"
-              width={500}
-              height={300}
+              width={1920}
+              height={810}
               priority
               style={{ width: "100%", height: "100%" }}
               className={styles.mobileBanner}
             />
             <div className={styles.bannerOverlay}>
-              <div className={styles.bannerContent}>
+             <div className="container">
+               <div className={styles.bannerContent}>
                 <h1
                   className={styles.bannerContentH1}
                   dangerouslySetInnerHTML={{ __html: slide.title }}
@@ -94,6 +95,8 @@ export default function HeroSlider({ data }) {
                   </Link>
                 )}
               </div>
+
+             </div>
             </div>
           </SwiperSlide>
         ))}

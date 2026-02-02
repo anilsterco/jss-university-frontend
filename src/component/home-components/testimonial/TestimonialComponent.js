@@ -91,32 +91,33 @@ export default function TestimonialsSection({ data }) {
   return (
     <section className={styles.testimonialsSection}>
       <div className="container">
-        <div className={`${styles.testimonialsContainer} ${styles.desktopView}`}>
+        <div className={styles.headerContent}>
+          <p className={styles.testimonialsLabel}>
+            {testimonialsData.subtitle}
+          </p>
+          <h2
+            className={`${styles.mainHeading}`}
+            dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
+          ></h2>
+          <Link href="#testimonials">
+            <button className={styles.circleArrowBtn}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </Link>
+        </div>
+        <div
+          className={`${styles.testimonialsContainer} ${styles.desktopView}`}
+        >
           <div className={styles.columnLeft}>
-            <div className={styles.headerContent}>
-              <p className={styles.testimonialsLabel}>
-                {testimonialsData.subtitle}
-              </p>
-              <h2
-                className={`${styles.mainHeading}`}
-                dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
-              ></h2>
-              <Link href="#testimonials">
-                <button className={styles.circleArrowBtn}>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </Link>
-            </div>
-
             {column1.map((item, i) => (
               <TestimonialCard
                 key={i}
@@ -148,8 +149,14 @@ export default function TestimonialsSection({ data }) {
         </div>
 
         <div className={styles.mobileView}>
-          <p className={`${styles.testimonialsLabel} text-center`}>TESTIMONIALS</p>
-          <Swiper spaceBetween={100} slidesPerView={1} style={{ paddingBottom: "1.1rem" }}>
+          <p className={`${styles.testimonialsLabel} text-center`}>
+            TESTIMONIALS
+          </p>
+          <Swiper
+            spaceBetween={100}
+            slidesPerView={1}
+            style={{ paddingBottom: "1.1rem" }}
+          >
             {columnForMobile.map((item, i) => (
               <SwiperSlide key={i}>
                 <TestimonialCard

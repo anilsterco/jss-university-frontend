@@ -98,8 +98,9 @@ export default function EventsGrid({ data }) {
   const eventsData = data ? data : dummyEventsData;
   return (
     <section className={styles.eventSection}>
-      <div
-        className={` happining-sec container-fluid ${styles.desktopView}`}
+      <div className="containerXl">
+<div
+        className={` happining-sec ${styles.desktopView}`}
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -107,7 +108,7 @@ export default function EventsGrid({ data }) {
           <p className={styles.headerSmall}>{eventsData.subtitle}</p>
           <h1
             className={`${styles.headerTitle}`}
-            dangerouslySetInnerHTML={{ __html: eventsData.title }}
+            dangerouslySetInnerHTML={{ __html: eventsData.title}}
             data-aos="fade-up"
             data-aos-delay="200"
           ></h1>
@@ -124,6 +125,7 @@ export default function EventsGrid({ data }) {
                   alt="Event img"
                   fill
                   className={styles.cardImage}
+                  
                 />
               )}
 
@@ -245,8 +247,8 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[3] &&
                     eventsData.happenings[3].alt_text
                   }
-                  width={100}
-                  height={90}
+                  width={145}
+                  height={160}
                   className={styles.cardImage}
                 />
               )}
@@ -336,7 +338,7 @@ export default function EventsGrid({ data }) {
             </div>
 
             {/* Event 8 */}
-            <div className={styles.card} style={{ backgroundColor: "#2B5DAA" }}>
+            <div className={styles.card} style={{ backgroundColor: "#00489A" }}>
               <p
                 className={styles.cardTag}
                 data-aos="fade-up"
@@ -353,12 +355,11 @@ export default function EventsGrid({ data }) {
                       eventsData.happenings[7] &&
                       eventsData.happenings[7].alt_text
                     }
-                    height={50}
-                    width={200}
+                    height={57}
+                    width={253}
                     className={styles.cardImage}
                   />
                 )}
-
                 <p
                   className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
                   data-aos="fade-up"
@@ -395,8 +396,8 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[8] &&
                     eventsData.happenings[8].alt_text
                   }
-                  width={100}
-                  height={40}
+                  width={196}
+                  height={55}
                   className={styles.cardImage}
                 />
               )}
@@ -701,6 +702,8 @@ export default function EventsGrid({ data }) {
           </>
         )}
       </div>
+      </div>
+      
     </section>
   );
 }

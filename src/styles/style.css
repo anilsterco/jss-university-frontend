@@ -104,13 +104,21 @@ html {
 }
 
 .main-container .container {
-  max-width: 1395px;
+  max-width: 1412px;
+  padding-inline: 1.5rem;
 }
 
 .footer_section .container {
-  max-width: 1395px;
+  max-width: 1412px;
+  padding-inline: 1.5rem;
 }
-
+.containerXl {
+  width: 100%;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 9.8rem;
+}
 @media (max-width: 1750px) {
   .main-container .container {
     max-width: 1274px;
@@ -186,87 +194,6 @@ html {
 
 }
 
-@media (min-width: 1921px) {
-  html {
-    font-size: 65%;
-  }
-
-  .main-container .container {
-    max-width: 1570px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .footer_section .container {
-    max-width: 1570px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .hamb_grid_menus {
-    grid-template-columns: 20% 78%;
-    min-height: 66vh;
-  }
-
-  .hamb_grid_menus .hamb_menu_item {
-    grid-template-columns: 21% 79%;
-  }
-
-  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
-    padding-right: 12rem;
-  }
-
-  .dropdown {
-    max-width: 1820px;
-  }
-
-  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
-    max-width: 70%;
-  }
-
-  .menu-counter p {
-    max-width: 36.5%;
-  }
-
-  .mega-menu.active-hover .hambmenu_panel {
-    padding: 19rem 0 0 0;
-  }
-
-}
-
-@media (min-width: 2201px) {
-  .main-container .container {
-    max-width: 1840px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .footer_section .container {
-    max-width: 1840px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  html {
-    font-size: 69.5%;
-  }
-
-  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
-    padding-right: 8rem;
-  }
-
-  .hamb_grid_menus .hamb_menu_item p {
-    max-width: 90%;
-  }
-
-  .hamb_grid_menus {
-    min-height: 60vh;
-  }
-
-  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
-    max-width: 68%;
-  }
-}
 
 @media (max-width: 991px) {
   html {

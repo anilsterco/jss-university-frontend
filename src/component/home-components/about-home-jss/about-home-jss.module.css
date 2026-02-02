@@ -156,9 +156,6 @@
   font-family: Geist, sans-serif;
 }
 
-/* .accreditationSlide {
-  border-right: 1px solid #d8dddd;
-} */
 .accreditationSlide:last-child {
   border: none;
 }
@@ -248,6 +245,9 @@
   .navButtons {
     padding: 0.5rem 2rem;
   }
+  .rightColumn {
+  padding-left: 12.2rem;
+}
 }
 
 

@@ -216,19 +216,7 @@
 }
 
 
-@media (min-width: 2200px) and (max-width:2550) {
-  .programsText {
-    max-width: 100%;
-  }
 
-  .topSectionH1 {
-    max-width: 90%;
-  }
-
-  .programsText {
-    padding-left: 2rem;
-  }
-}
 
 @media (max-width: 1749px) {
   .topSectionH1 {
@@ -237,6 +225,14 @@
 
   .programsText {
     max-width: 55%;
+  }
+  .topSection {
+  grid-template-columns: repeat(1, 35% auto);
+  gap: 8.3rem;
+
+}
+ .bannerContent {
+    left: 11.8%;
   }
 }
 

@@ -125,6 +125,8 @@
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   padding-right: 14rem;
+  line-height: 0.92;
+  letter-spacing: -0.65px;
 }
 
 .cardSubtitle {
