@@ -152,7 +152,15 @@ export default function LegacySection({ data }) {
                     </h1>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
-                      <p className={styles.sourceText}>{h.source}</p>
+                     <div className="d-flex align-items-center gap-2">
+                       <Image
+                        src={h.source}
+                        alt="Source Logo"
+                        width={78}
+                        height={29}
+                        className={styles.sourceText}
+                      />
+                     </div>
                     </div>
                   </div>
                 ))}

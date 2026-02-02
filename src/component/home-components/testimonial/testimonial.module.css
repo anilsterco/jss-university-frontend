@@ -2,46 +2,60 @@
 
 .testimonialsSection {
   background: #f5f5f5;
-  padding-top: 13.5rem;
+  padding-top: 16.5rem;
   margin-bottom: 4rem;
 }
 
 .testimonialsContainer {
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
-  ;
-  gap: 5rem;
-  flex-wrap: wrap;
+  gap: 3.8rem;
 }
-
+.testimonialCard  {
+  width: 39.8rem;
+  margin-left: auto;
+}
 .columnLeft {
   flex: 0 0 auto;
   width: 34%;
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
+  
 }
 
 .columnMiddle {
   flex: 0 0 auto;
-  width: 28%;
+  width: 23%;
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
+  margin-top: -31rem;
 }
-
+.columnMiddle article:first-child{
+  max-width: 100%;
+}
+.columnMiddle article:last-child{
+  max-width: 88%;
+  margin-right: auto;
+  padding: 0;
+  margin: 0;
+}
+.columnRight article:first-child{
+  margin-bottom: 3.9rem;
+}
+.columnRight article:last-child{
+  width: 76%;
+  margin-left: -4rem;
+ 
+}
 .columnRight {
-  flex: 0 0 auto;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
   gap: 3.9rem;
-  margin-top: 5rem;
+  margin-top: -25rem;
 }
 
 .headerContent {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+  max-width: 35%;
 }
 
 .testimonialsLabel {
@@ -59,12 +73,14 @@
   color: var(--color-black);
   letter-spacing: -2.88px;
   font-weight: bold;
+  line-height: 0.9
 }
 
 .mainHeading span {
   font: var(--font-60);
   font-family: var(--font-Condensed);
   letter-spacing: -2.88px;
+  line-height: 0.9
 }
 
 .blueText {
@@ -77,9 +93,9 @@
   background: none;
   border: 1px solid #994073;
   border-radius: 50%;
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-top: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,18 +270,14 @@
 
 .desktopView {
   display: flex;
+  justify-content: end;
 }
 
 .mobileView {
   display: none;
 }
-@media (min-width: 1549px) and (max-width: 2550px) {
-.testimonialCard  {
-  width: 39.8rem;
-  margin-left: auto;
-}
 
-}
+
 
 @media (max-width: 1366px) {
   .columnLeft {

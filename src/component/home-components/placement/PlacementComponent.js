@@ -80,7 +80,7 @@ export default function PlacementsSection({ data }) {
 
   return (
     <section className={` ${styles.thirdSection}`}>
-      <div className="container max-content-lg pe-lg-0 me-lg-0">
+      <div className="container">
         {/* Section Header */}
         <div
           className={` ${styles.sectionHeader}`}
@@ -200,11 +200,10 @@ export default function PlacementsSection({ data }) {
               <Image
                 src={placementsData.hall_of_fame.image}
                 alt="Wall of Fame"
-                width={700}
+                width={488}
                 height={600}
                 style={{
                   width: "100%",
-                  height: "100%",
                   borderTopLeftRadius: "10px",
                   borderBottomLeftRadius: "10px",
                 }}
@@ -229,7 +228,7 @@ export default function PlacementsSection({ data }) {
         {/* Recruiters Row */}
         <div className={`pt-5 ${styles.recruiterSection}`} data-aos="fade-up">
           <div className="row recruiter-logo w-100">
-            <div className="col-lg-10 max-auto">
+            <div className="col-lg-12 max-auto">
               <p className="small">Our Recruiters</p>
               <div className="d-flex flex-wrap gap-4 align-items-center">
                 <Swiper
