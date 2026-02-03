@@ -9,7 +9,6 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutThree({ data }) {
-
   // 🔹 AOS INIT
   useEffect(() => {
     AOS.init({
@@ -38,29 +37,12 @@ export default function AboutThree({ data }) {
           >
             <div className="container">
               <div className="vsn_msn_grid">
-
                 {/* 🔹 LEFT IMAGE */}
-                <div
-                  className="vsn-lft shine-effect"
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                >
-                  <Image
-                    src={item.file}
-                    alt="Vision & Mission"
-                    width={700}
-                    height={500}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </div>
-
-                {/* 🔹 RIGHT CONTENT */}
                 <div
                   className="miss-rgt"
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
-
                   {/* 🔹 VISION */}
                   <div className="vsn">
                     <h4 data-aos="fade-up" data-aos-delay="300">
@@ -92,7 +74,7 @@ export default function AboutThree({ data }) {
                   </div>
 
                   {/* 🔹 MISSION */}
-                  <div className="msn">
+                  {/* <div className="msn">
                     <h4 data-aos="fade-up" data-aos-delay="300">
                       {item.missionTitle}
                     </h4>
@@ -123,8 +105,22 @@ export default function AboutThree({ data }) {
                           </li>
                         ))}
                     </ul>
-                  </div>
+                  </div> */}
+                </div>
 
+                {/* 🔹 RIGHT CONTENT */}
+                <div
+                  className="vsn-lft shine-effect"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                >
+                  <Image
+                    src={item.file}
+                    alt="Vision & Mission"
+                    width={700}
+                    height={500}
+                    style={{ width: "100%", height: "auto" }}
+                  />
                 </div>
               </div>
             </div>
