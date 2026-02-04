@@ -177,7 +177,6 @@ p {
   .container {
     max-width: 1024px;
   }
-
   html {
     font-size: 48.5%;
   }
@@ -194,14 +193,6 @@ p {
 }
 
 @media (max-width: 1280px) {
-  .main-container .container {
-    max-width: 1000px;
-  }
-
-  .footer_section .container {
-    max-width: 1000px;
-  }
-
   html {
     font-size: 42.5%;
   }
@@ -1006,10 +997,7 @@ a:active {
 }
 
 @media (max-width: 1366px) {
-  .nav-link.nav-lists {
-    padding: 1.4rem 1rem 1.2rem;
-  }
-
+  
   .logo-content img {
     width: 35rem;
     height: auto;

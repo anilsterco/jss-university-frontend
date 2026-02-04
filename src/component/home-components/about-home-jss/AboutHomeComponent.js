@@ -156,8 +156,8 @@ export default function LegacySection({ data }) {
                        <Image
                         src={h.source}
                         alt="Source Logo"
-                        width={78}
-                        height={29}
+                        width={118}
+                        height={24}
                         className={styles.sourceText}
                       />
                      </div>

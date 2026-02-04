@@ -206,6 +206,7 @@ export default function PlacementsSection({ data }) {
                   width: "100%",
                   borderTopLeftRadius: "10px",
                   borderBottomLeftRadius: "10px",
+                  objectFit:"cover",
                 }}
               />
               <div
