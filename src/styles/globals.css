@@ -160,8 +160,7 @@ p {
     max-width: 1270px;
     padding-inline: 1.5rem;
   }
-
-  html {
+   html {
     font-size: 50%;
   }
 }
@@ -182,8 +181,15 @@ p {
   html {
     font-size: 50%;
   }
-}
 
+  .footer_section .container {
+    max-width: 1064px;
+    padding-inline: 1.5rem;
+  }
+   html {
+    font-size: 50%;
+  }
+}
 @media (max-width: 1400px) {
   .container {
     max-width: 1024px;
@@ -979,6 +985,16 @@ a:active {
 
 .active_head .nav-list:has(> li:nth-child(2):hover) {
   background-color: transparent !important;
+}
+.active_head .nav-list:has(> li:nth-child(2):hover) > li:not(:nth-child(2)) > a {
+  color: rgb(22, 52, 78);
+}
+.active_head .nav-list > li:nth-child(2):hover > a {
+  color: var(--color-29);
+}
+
+.nav-item:hover{
+  color: var(--color-29);
 }
 
 .active_head .nav-list:has(> li:nth-child(2):hover)>li:not(:nth-child(2))>a {
