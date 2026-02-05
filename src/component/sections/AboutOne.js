@@ -121,6 +121,7 @@ export default function AboutOne({ data }) {
                   modules={[Navigation, Autoplay]}
                   spaceBetween={30}
                   slidesPerView={4}
+                  loop={true}
                   autoplay={{ delay: 2500, disableOnInteraction: false }}
                   breakpoints={{
                     320: { slidesPerView: 1 },

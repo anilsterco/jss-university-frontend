@@ -188,65 +188,64 @@ export default function AboutTwo({ data }) {
               </li>
             </ul>
           </nav>
-        
-        <div className="grow_tb_contsec">
 
-        </div>
-          <div
-            id="growthTab1"
-            className={`growth-item ${activeGrowthTab === "growthTab1" ? "active" : ""}`}
-          >
-            <div className="growth-content">
-              <div className="growth-list">
-                {data && data.length > 0 ? (
-                  data.map((section, index) => renderSection(section, index))
-                ) : (
-                  <div className="early-grid" data-aos="fade-up">
-                    <p>No slider content available</p>
-                  </div>
-                )}
+          <div className="grow_tb_contsec">
+            <div
+              id="growthTab1"
+              className={`growth-item ${activeGrowthTab === "growthTab1" ? "active" : ""}`}
+            >
+              <div className="growth-content">
+                <div className="growth-list">
+                  {data && data.length > 0 ? (
+                    data.map((section, index) => renderSection(section, index))
+                  ) : (
+                    <div className="early-grid" data-aos="fade-up">
+                      <p>No slider content available</p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            id="growthTab2"
-            className={`growth-item ${activeGrowthTab === "growthTab2" ? "active" : ""}`}
-          >
-            <div className="growth-content">
-              <div className="growth-list">
-                {" "}
-                {data && data.length > 0 ? (
-                  data.map((section, index) => renderSection(section, index))
-                ) : (
-                  <div className="early-grid" data-aos="fade-up">
-                    <p>No slider content available</p>
-                  </div>
-                )}
+            <div
+              id="growthTab2"
+              className={`growth-item ${activeGrowthTab === "growthTab2" ? "active" : ""}`}
+            >
+              <div className="growth-content">
+                <div className="growth-list">
+                  {" "}
+                  {data && data.length > 0 ? (
+                    data.map((section, index) => renderSection(section, index))
+                  ) : (
+                    <div className="early-grid" data-aos="fade-up">
+                      <p>No slider content available</p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            id="growthTab3"
-            className={`growth-item ${activeGrowthTab === "growthTab3" ? "active" : ""}`}
-          >
-            <div className="growth-content">
-              <div className="growth-list">No slider content available 3</div>
+            <div
+              id="growthTab3"
+              className={`growth-item ${activeGrowthTab === "growthTab3" ? "active" : ""}`}
+            >
+              <div className="growth-content">
+                <div className="growth-list">No slider content available 3</div>
+              </div>
             </div>
-          </div>
-          <div
-            id="growthTab4"
-            className={`growth-item ${activeGrowthTab === "growthTab4" ? "active" : ""}`}
-          >
-            <div className="growth-content">
-              <div className="growth-list">No slider content available 4</div>
+            <div
+              id="growthTab4"
+              className={`growth-item ${activeGrowthTab === "growthTab4" ? "active" : ""}`}
+            >
+              <div className="growth-content">
+                <div className="growth-list">No slider content available 4</div>
+              </div>
             </div>
-          </div>
-          <div
-            id="growthTab5"
-            className={`growth-item ${activeGrowthTab === "growthTab5" ? "active" : ""}`}
-          >
-            <div className="growth-content">
-              <div className="growth-list">No slider content available 5</div>
+            <div
+              id="growthTab5"
+              className={`growth-item ${activeGrowthTab === "growthTab5" ? "active" : ""}`}
+            >
+              <div className="growth-content">
+                <div className="growth-list">No slider content available 5</div>
+              </div>
             </div>
           </div>
         </div>
