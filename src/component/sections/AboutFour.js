@@ -9,7 +9,6 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutFour({ data }) {
-
   // 🔹 AOS INIT
   useEffect(() => {
     AOS.init({
@@ -26,12 +25,11 @@ export default function AboutFour({ data }) {
 
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
-
       case "values":
         return (
           <div
             key={`values-section-${sectionIndex}`}
-            className="values-section"
+            className="values-section d-none"
             data-aos="fade-up"
             data-aos-duration="1200"
           >
@@ -53,14 +51,15 @@ export default function AboutFour({ data }) {
                       data-aos="fade-up"
                       data-aos-delay={300 + i * 150}
                     >
-                      <figure >
+                      <figure>
                         <Image
                           src={item.file}
                           alt={item.title}
                           width={70}
                           height={70}
-                       data-aos="fade-right"
-                data-aos-delay="200" />
+                          data-aos="fade-right"
+                          data-aos-delay="200"
+                        />
                       </figure>
                       <h3>{item.title}</h3>
                       <p>{item.description}</p>
@@ -83,14 +82,10 @@ export default function AboutFour({ data }) {
           {data && data.length > 0 ? (
             data.map((section, index) => renderSection(section, index))
           ) : (
-            <div
-              className="col-lg-10 mx-auto"
-              data-aos="fade-up"
-            >
+            <div className="col-lg-10 mx-auto" data-aos="fade-up">
               <p className="text-center">No values available</p>
             </div>
           )}
-
         </div>
       </div>
     </section>

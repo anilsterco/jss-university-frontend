@@ -7,19 +7,21 @@ import "aos/dist/aos.css";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from "swiper/modules";
 
 export default function AboutOne({ data }) {
 
- 
+
   useEffect(() => {
     AOS.init({
-      duration: 1000,  
+      duration: 1000,
       easing: "ease-in-out",
       once: true,
     });
   }, []);
 
- 
+
   useEffect(() => {
     AOS.refresh();
   }, [data]);
@@ -27,7 +29,7 @@ export default function AboutOne({ data }) {
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
 
-     
+
       case "topBanner":
         return (
           <div
@@ -48,6 +50,7 @@ export default function AboutOne({ data }) {
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
+                    <h5 className="about_subtitle">A New Chapter in a Legacy of Excellence </h5>
                     {item.title && <p>{item.title}</p>}
 
                     {item.file && (
@@ -82,15 +85,15 @@ export default function AboutOne({ data }) {
           </div>
         );
 
-    
+
       case "logoDesc":
         return (
           <div
             className="row justify-content-center"
             key={`logo-section-${sectionIndex}`}
           >
-            <div className="col-lg-10">
-              <div className="top_log_grid">
+            <div className="col-lg-12">
+              {/* <div className="top_log_grid">
                 {section.items
                   .sort((a, b) => a.position - b.position)
                   .map((item, i) => (
@@ -111,12 +114,59 @@ export default function AboutOne({ data }) {
                       </figcaption>
                     </figure>
                   ))}
+              </div> */}
+              <div className="ab_estab_slider" >
+                <Swiper
+                  pagination={true}
+                  modules={[Navigation, Autoplay]}
+                  spaceBetween={30}
+                  slidesPerView={4}
+                  loop={true}
+                  autoplay={{ delay: 2500, disableOnInteraction: false }}
+                  breakpoints={{
+                    320: { slidesPerView: 1 },
+                    576: { slidesPerView: 2 },
+                    768: { slidesPerView: 3 },
+                    992: { slidesPerView: 4 }
+                  }}
+                >
+                  {section.items
+                    .sort((a, b) => a.position - b.position)
+                    .map((item, i) => (
+                      <SwiperSlide key={item.id || i}>
+                        <div
+                          className="estab_slide_item"
+                          style={{
+                          
+                          }}
+                        >
+                          <figure
+                            data-aos="fade-up"
+                            data-aos-delay={i * 150}
+                            data-aos-duration="800"
+                          >
+                            <Image
+                              src={item.file}
+                              alt={item.description || "logo"}
+                              width={72}
+                              height={72}
+                            />
+
+                            <figcaption>
+                              <p>{item.description}</p>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                </Swiper>
               </div>
+
             </div>
           </div>
         );
 
-     
+
       case "figureDesc":
         return (
           <div

@@ -135,6 +135,13 @@ p {
   padding-inline: 9.8rem;
 }
 
+.containerMD {
+  width: 100%;
+  max-width: 1657px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+}
 @media (min-width: 1921px){
 .containerXl {
     padding-inline: 9.8rem;
