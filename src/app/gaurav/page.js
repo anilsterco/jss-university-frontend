@@ -116,6 +116,18 @@ const Page = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const [scuActiveTab, setScuActiveTab] = useState("scu_tab1");
+
+  const handleScuTabChange = (tabId) => {
+    setScuActiveTab(tabId);
+  };
+
+  const [grandActiveTab, setGrandActiveTab] = useState("grand_tab1");
+
+  const handleGrandTabClick = (tabId) => {
+    setGrandActiveTab(tabId);
+  };
+
   // ✅ Example data — replace with your CMS data
   const sections = [
     { type: "aboutjss_banner" },
@@ -149,6 +161,16 @@ const Page = () => {
     { type: "Equal_Opportunity" },
     { type: "Socio-Economically" },
     { type: "Student-clubs-student-supp" },
+    { type: "research-facilities" },
+    { type: "research-facilities-banner" },
+    { type: "extented-institue" },
+    { type: "research-credenital" },
+    { type: "Publication_Patents" },
+    { type: "grands-section" },
+    { type: "grands-tabs-section" },
+    { type: "Consultancy" },
+
+    
   ];
 
   const renderSection = (section, sectionIndex) => {
@@ -2006,9 +2028,8 @@ const Page = () => {
                         {items.map((item, index) => (
                           <div className="faci_acc_item" key={index}>
                             <button
-                              className={`faci_acc_header ${
-                                activeIndex === index ? "active" : ""
-                              }`}
+                              className={`faci_acc_header ${activeIndex === index ? "active" : ""
+                                }`}
                               onClick={() => toggleAccordion(index)}
                             >
                               <span className="faci_acc_icon">
@@ -2044,9 +2065,8 @@ const Page = () => {
                             </button>
 
                             <div
-                              className={`faci_acc_body ${
-                                activeIndex === index ? "open" : ""
-                              }`}
+                              className={`faci_acc_body ${activeIndex === index ? "open" : ""
+                                }`}
                             >
                               <p>{item.content}</p>
                             </div>
@@ -2679,9 +2699,8 @@ const Page = () => {
                 <div className="admission_faq_item" key={index}>
                   {/* HEADER */}
                   <button
-                    className={`admission_faq_header ${
-                      openIndex === index ? "active" : ""
-                    }`}
+                    className={`admission_faq_header ${openIndex === index ? "active" : ""
+                      }`}
                     onClick={() => toggleAdmissionFaq(index)}
                   >
                     <span>{item.title}</span>
@@ -3063,25 +3082,870 @@ const Page = () => {
       case "Student-clubs-student-supp":
         return (
           <section className="student_clubsmain" key={sectionIndex}>
-            {/* <div className="container">
-              <div className="stu_clubs_title">
-                <h5>Student Clubs</h5>
-                <p>
-                  At JSS University, Noida, we are committed to fostering an
-                  inclusive and accessible environment for all our students,
-                  including those with disabilities. Our campus is designed to
-                  ensure that differently-abled individuals can navigate and
-                  participate in academic and extracurricular activities with
-                  ease and dignity. Below are the key facilities and provisions
-                  available:
-                </p>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-11">
+                  <div className="stu_clubs_title">
+                    <h5 className="heading_title">Student Clubs</h5>
+                    <p>
+                      At JSS University, Noida, we are committed to fostering an
+                      inclusive and accessible environment for all our students,
+                      including those with disabilities. Our campus is designed
+                      to ensure that differently-abled individuals can navigate
+                      and participate in academic and extracurricular activities
+                      with ease and dignity. Below are the key facilities and
+                      provisions available:
+                    </p>
+                  </div>
+                  <div className="scu_tabs_main">
+                    <nav className="scu_tabs_nav">
+                      <ul className="scu_tabs_ul">
+                        <li className="scu_tabs_li">
+                          <button
+                            type="button"
+                            className={
+                              scuActiveTab === "scu_tab1" ? "active" : ""
+                            }
+                            onClick={() => handleScuTabChange("scu_tab1")}
+                          >
+                            CSI
+                          </button>
+                        </li>
+
+                        <li className="scu_tabs_li">
+                          <button
+                            type="button"
+                            className={
+                              scuActiveTab === "scu_tab2" ? "active" : ""
+                            }
+                            onClick={() => handleScuTabChange("scu_tab2")}
+                          >
+                            SAE
+                          </button>
+                        </li>
+
+                        <li className="scu_tabs_li">
+                          <button
+                            type="button"
+                            className={
+                              scuActiveTab === "scu_tab3" ? "active" : ""
+                            }
+                            onClick={() => handleScuTabChange("scu_tab3")}
+                          >
+                            IETE
+                          </button>
+                        </li>
+
+                        <li className="scu_tabs_li">
+                          <button
+                            type="button"
+                            className={
+                              scuActiveTab === "scu_tab5" ? "active" : ""
+                            }
+                            onClick={() => handleScuTabChange("scu_tab5")}
+                          >
+                            ISTE
+                          </button>
+                        </li>
+                        <li className="scu_tabs_li">
+                          <button
+                            type="button"
+                            className={
+                              scuActiveTab === "scu_tab6" ? "active" : ""
+                            }
+                            onClick={() => handleScuTabChange("scu_tab6")}
+                          >
+                            IEEE
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    {/* -------- CONTENT -------- */}
+                    <div className="scu_tabs_content">
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab1" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">
+                          <div className="scu_gridmain">
+                            <div className="scu_imgsec">
+                              <figure className="shine-effect">
+                                <Image
+                                  src="/images/about-page/studnet_clubs_01.webp"
+                                  alt="About JSS Academy"
+                                  width={800}
+                                  height={520}
+                                  className="img-fluid"
+                                  data-aos="fade-up"
+                                  data-aos-delay="200"
+                                />
+                              </figure>
+                            </div>
+                            <div className="scu_content">
+                              <h4>JCSI (Computer Society of India)</h4>
+                              <p>
+                                JCSI (Computer Society of India) Student Branch
+                                is the official branch under CSI Ghaziabad
+                                Chapter. The mission of CSI is to facilitate
+                                research, knowledge sharing, learning and career
+                                enhancement for all categories of IT
+                                Professionals, while simultaneously inspiring
+                                and nurturing new entrants into the industry and
+                                helping them to integrate into the IT community.
+                              </p>
+                              <h6>Objective</h6>
+                              <ul>
+                                <li>
+                                  To enrich and empower the minds of students by
+                                  conducting technical Quizzes Competitions
+                                  regularly.
+                                </li>
+                                <li>
+                                  {" "}
+                                  To organize the Technical, Non-Technical{" "}
+                                </li>
+                                <li>
+                                  events To improve the leadership quality among
+                                  the students
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab2" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">SAE</div>
+                      </div>
+
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab3" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">IETE</div>
+                      </div>
+
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab4" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">ISTE</div>
+                      </div>
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab5" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">IEEE</div>
+                      </div>
+                      <div
+                        className={`scu_tab_panel ${scuActiveTab === "scu_tab6" ? "active" : ""}`}
+                      >
+                        <div className="scu_tab_inner">IEEE</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="scu_benfits">
+                    <h5> Benefits </h5>
+                    <div className="scu_benift_grid">
+                      <div className="scu_benifit_col">
+                        <p>
+                          Industry recognized CSI certification opportunities.
+                        </p>
+                      </div>
+                      <div className="scu_benifit_col">
+                        <p>
+                          CSI Minor Research project funding up to Rs. 50000/-
+                        </p>
+                      </div>
+                      <div className="scu_benifit_col">
+                        <p>
+                          Appreciation letter / certificate for performance
+                          excellence.
+                        </p>
+                      </div>
+                      <div className="scu_benifit_col">
+                        <p>
+                          A forum for activities like Paper Presentations, Quiz,
+                          Competitions and Exhibitions.
+                        </p>
+                      </div>
+                      <div className="scu_benifit_col">
+                        <p>
+                          Technology updates through Conferences, Seminars,
+                          Tutorials & workshop at discounted rates.
+                        </p>
+                      </div>{" "}
+                      <div className="scu_benifit_col">
+                        <p>
+                          To be a part of the distinguished fraternity of famous
+                          IT industry leaders, brilliant scientists and
+                          dedicated academicians through Networking.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="stud_club_tabs">
-                  
-              </div>
-            </div> */}
+            </div>
           </section>
         );
+
+      case "research-facilities-banner":
+        return (
+          <section className="resea_facili_main" key={sectionIndex}>
+            <div className="container">
+              <div className="res_bannesec">
+                <div className="rese_title_sec">
+                  <h5 className="heading_title">Research Facilities</h5>
+                  <h4>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi arch
+                  </h4>
+                </div>
+                <figure className="shine-effect">
+                  <Image
+                    src="/images/about-page/reasec_facility_01.webp"
+                    alt="About JSS Academy"
+                    width={1390}
+                    height={550}
+                    className="img-fluid"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+        );
+
+      case "extented-institue":
+        return (
+          <section className="resea_facili_main" key={sectionIndex}>
+            <div className="container">
+              <div className="exte_mainsec">
+                <h6>
+                  The following facilities are extended by the institution:
+                </h6>
+                <div className="exten_grid">
+                  <div className="exte_imgsec">
+                    <figure className="shine-effect">
+                      <Image
+                        src="/images/about-page/exten_intitue_01.webp"
+                        alt="About JSS Academy"
+                        width={1390}
+                        height={550}
+                        className="img-fluid"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                      />
+                    </figure>
+                  </div>
+                  <div className="exten_listyle">
+                    <ul>
+                      <li>
+                        Faculty members are encouraged to involve UG/PG
+                        student’s research projects
+                      </li>
+                      <li>
+                        Departments have established facilities with necessary
+                        software’s like Cadence, MATLAB, Optimizer, (to be
+                        mentioned other major software PAN Institute) etc. and
+                        has established Centre of Excellence with modern
+                        facilities for faculty members and students to do
+                        research in various domains.
+                      </li>
+                      <li>
+                        There shall be provision for the following categories of
+                        candidates for admission to Ph.D. Programs
+                      </li>
+                      <li>
+                        Full-Time: Candidates who shall pursue P.hD. program on
+                        full time basis
+                      </li>
+                      <li>
+                        Part-Time: In-service candidates having a minimum
+                        professional experience of one year after his / her PG
+                        Degree are eligible to pursue Ph.D. program on a part
+                        time basis. (Refer AKTU guidelines for more details).
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+      case "research-credenital":
+        return (
+          <section className="research_cre_main" key={sectionIndex}>
+            <div className="containerMD">
+              <div className="res_cre_bor"></div>
+            </div>
+            <div className="container">
+              <div className="index_res_grid">
+                <div className="resea_cre_items">
+                  <h3>
+                    Following are the brief of Research credentials of the
+                    Institute for the past five years
+                  </h3>
+                  <div className="ab_jss_coutsec">
+                    <div className="ab_jss_c_col">
+                      <h4>41</h4>
+                      <p>PATENTS GRANTED</p>
+                    </div>
+                    <div className="ab_jss_c_col">
+                      <h4>130</h4>
+                      <p>PATENTS PUBLISHED</p>
+                    </div>
+                    <div className="ab_jss_c_col">
+                      <h4>55</h4>
+                      <p>FACULTY PURSUING PH.D.</p>
+                    </div>
+                    <div className="ab_jss_c_col">
+                      <h4>78</h4>
+                      <p>FACULTY WITH PH.D. QUALIFICATIONS</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="resea_cre_items2">
+                  <h3>
+                    Indexed Research Publications for <br></br> the last five
+                    years
+                  </h3>
+                  <div className="fee_strcu_table">
+                    <div className="fee_table_wrapper">
+                      <table className="fee_table">
+                        <thead>
+                          <tr>
+                            <th>Year</th>
+                            <th>SCOPUS</th>
+                            <th>WOS</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2024</td>
+                            <td>69</td>
+                            <td>39</td>
+                            <td>108</td>
+                          </tr>
+                          <tr>
+                            <td>2023</td>
+                            <td>149</td>
+                            <td>90</td>
+                            <td>239</td>
+                          </tr>
+                          <tr>
+                            <td>2022</td>
+                            <td>165</td>
+                            <td>91</td>
+                            <td>256</td>
+                          </tr>
+                          <tr>
+                            <td>2021</td>
+                            <td>78</td>
+                            <td>23</td>
+                            <td>101</td>
+                          </tr>
+                          <tr>
+                            <td>2020</td>
+                            <td>76</td>
+                            <td>43</td>
+                            <td>119</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="containerMD">
+              <div className="res_cre_bor"></div>
+            </div>
+          </section>
+        );
+
+      case "Publication_Patents":
+        return (
+          <section className="pulication_patent" key={sectionIndex}>
+            <div className="container">
+              <div className="publi_title">
+                <h5 className="heading_title">Publication Patents</h5>
+                <h4>
+                  The IPR Cell of JSSATEN established to take care of the
+                  activities related to patent filing and evaluation,
+                  copyrights, design and other Intellectual Property Rights
+                  (IPR).
+                </h4>
+              </div>
+              <div className="publi_gridmain">
+                <div className="publi_content">
+                  <h6>Objectives</h6>
+                  <p>
+                    The main objective of an IPR Cell under academics is to
+                    integrate IPR with the education process and identify
+                    innovations arising out of the research outcomes. The Cell
+                    also aims to offer support to innovators to realize the
+                    commercial benefits of their innovations.
+                  </p>
+                </div>
+                <div className="public_table">
+                  <p>SUMMARY OF PATENT PUBLISHED AND GRANT DETAILS</p>
+                  <div className="fee_strcu_table">
+                    <div className="fee_table_wrapper">
+                      <table className="fee_table">
+                        <thead>
+                          <tr>
+                            <th>Year</th>
+                            <th>SCOPUS</th>
+                            <th>WOS</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2024</td>
+                            <td>69</td>
+                            <td>39</td>
+                            <td>108</td>
+                          </tr>
+                          <tr>
+                            <td>2023</td>
+                            <td>149</td>
+                            <td>90</td>
+                            <td>239</td>
+                          </tr>
+                          <tr>
+                            <td>2022</td>
+                            <td>165</td>
+                            <td>91</td>
+                            <td>256</td>
+                          </tr>
+                          <tr>
+                            <td>2021</td>
+                            <td>78</td>
+                            <td>23</td>
+                            <td>101</td>
+                          </tr>
+                          <tr>
+                            <td>2020</td>
+                            <td>76</td>
+                            <td>43</td>
+                            <td>119</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+      case "grands-section":
+        return (
+          <section className="grands_mainsec" key={sectionIndex}>
+            <div className="container">
+              <div className="publi_title">
+                <h5 className="heading_title">Grants</h5>
+                <h4>
+                  A culture of research is of paramount importance to the future
+                  strategic development of JSS Academy of Technical Education
+                  Noida which lays the foundations for strengthening the bridge
+                  between teaching and research.
+                </h4>
+                <p>
+                  JSS Academy of Technical Education Noida is committed to
+                  develop a thriving community of researchers that impacts upon
+                  both higher education and the wider society. All faculty
+                  members and students are engaged in both fundamental and
+                  applied research in a variety of areas.
+                </p>
+              </div>
+              <div className="grands_maingrid">
+                <div className="grands_imgsec">
+                  <figure className="shine-effect">
+                    <Image
+                      src="/images/about-page/grands_01.webp"
+                      alt="About JSS Academy"
+                      width={600}
+                      height={400}
+                      className="img-fluid"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    />
+                  </figure>
+                </div>
+                <div className="grands_content">
+                  <p>
+                    JSSATEN faculty have implemented R&D projects and
+                    consultancy services to Government agencies, public and
+                    private sector industries. Grants received by various
+                    government and research organizations have helped the
+                    Institute in procuring state of the art instruments and
+                    equipment necessary for carrying out high quality research
+                    and to conduct various research promotion activities.
+                  </p>
+                  <p>
+                    Institute has received a prestigious AICTE-IDEA Lab from All
+                    India Council of Technical Education (AICTE), New Delhi in
+                    the AY 2021-22. The grant is for the set-up, implementation
+                    and sustenance of AICTE-IDEA Lab which shall be a game
+                    changer for providing the much-needed Industry 4.0 skills to
+                    different stakeholders; students of engineering. diploma,
+                    ITI, and schools, to be more precise. The total project is
+                    of Rs. 1.0942 Cr.
+                  </p>
+
+                  <div className="downlo_guides">
+                    <a href="javascript:void()">
+                      {" "}
+                      <figure className="shine-effect">
+                        <Image
+                          src="/images/about-page/pdf_icon.webp"
+                          alt="About JSS Academy"
+                          width={15}
+                          height={20}
+                          className="img-fluid"
+                          data-aos="fade-up"
+                          data-aos-delay="200"
+                        />
+                      </figure>{" "}
+                      Ph.D. Scholars & Guides
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+      case "grands-tabs-section":
+        return (
+          <section className="grans_tab_mainsec" key={sectionIndex}>
+            <div className="container">
+              <div className="grand_tabs_main faci_diff_tabs">
+                <nav className="growth-tabs">
+                  <ul>
+                    <li>
+                      <button
+                        className={
+                          grandActiveTab === "grand_tab1" ? "active" : ""
+                        }
+                        onClick={() => handleGrandTabClick("grand_tab1")}
+                      >
+                        Grants Received - Ongoing
+                      </button>
+                    </li>
+
+                    <li>
+                      <button
+                        className={
+                          grandActiveTab === "grand_tab2" ? "active" : ""
+                        }
+                        onClick={() => handleGrandTabClick("grand_tab2")}
+                      >
+                        Grants Received - Completed (2019-2023)
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+
+                <div className="grand_tabs_content">
+                  <div
+                    className={`grand_tab_panel ${grandActiveTab === "grand_tab1" ? "active" : ""}`}
+                  >
+                    <div className="grand_proj_table_wrap">
+                      <table className="grand_proj_table">
+                        <thead>
+                          <tr>
+                            <th>Sl. No</th>
+                            <th>Branch</th>
+                            <th>Year 1</th>
+                            <th>Year 2</th>
+                            <th>Year 3</th>
+                            <th>Year 4</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>ECE</td>
+                            <td>
+                              Next Generation Organic Farming using AI,
+                              Robotics, and IoT for Women Entrepreneurship in
+                              KOT Village, Dadri, Gautam Buddha Nagar, Uttar
+                              Pradesh
+                            </td>
+                            <td>38,00,000</td>
+                            <td>DST</td>
+                            <td>
+                              Dr Gayatri Sakya-PI, Dr. Chhaya Grover Co-PI, Ms.
+                              Monika Malik, Co-PI
+                            </td>
+                            <td>2023</td>
+                          </tr>
+
+                          <tr>
+                            <td>CSE</td>
+                            <td>
+                              Peer to Peer Energy Training System Using Block
+                              Chain Technology
+                            </td>
+                            <td>5,00,000</td>
+                            <td>CST UP</td>
+                            <td>
+                              Dr. Nitima Malsa - PI, Dr. Rachna Jain, Dr. Sun
+                              Singh Rawat & D. Vimal Gupta-Co-PI
+                            </td>
+                            <td>2023</td>
+                          </tr>
+
+                          <tr>
+                            <td>Chemistry</td>
+                            <td>
+                              Development of Women Entrepreneurship for low-cost
+                              Sanitary Napkins production
+                            </td>
+                            <td>14,97,000</td>
+                            <td>DSIR-TDUPW programme of A2K+ Scheme</td>
+                            <td>Dr Ashima Srivastava</td>
+                            <td>2022</td>
+                          </tr>
+
+                          <tr>
+                            <td>Institute</td>
+                            <td>AICTE IDEA Lab</td>
+                            <td>1,09,42,000</td>
+                            <td>AICTE</td>
+                            <td>Mr. Sampath Kumar, Dr. Sanjiba Kumar Bisoyi</td>
+                            <td>2021</td>
+                          </tr>
+
+                          <tr>
+                            <td>EE</td>
+                            <td>
+                              Maximum power Extraction from Solar PV Array on
+                              distributed system using soft computing techniques
+                            </td>
+                            <td>5,00,000</td>
+                            <td>VRPS</td>
+                            <td>Dr. APJAKTU</td>
+                            <td>2019</td>
+                          </tr>
+
+                          <tr>
+                            <td>CSE</td>
+                            <td>
+                              Alcohol detection system to prevent road accidents
+                            </td>
+                            <td>4,50,000</td>
+                            <td>VRPS, Dr. APJAKTU</td>
+                            <td>Mr. Ajay Kumar Verma</td>
+                            <td>2019</td>
+                          </tr>
+
+                          <tr>
+                            <td>ECE</td>
+                            <td>
+                              PCB Prototype Machine with e-CAD Interfacing and
+                              3D Printer
+                            </td>
+                            <td>3,25,000</td>
+                            <td>Dr. APJAKTU</td>
+                            <td>Mr. Sampath Kumar V</td>
+                            <td>2017</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`grand_tab_panel ${grandActiveTab === "grand_tab2" ? "active" : ""}`}
+                  >
+                    <div className="grand_proj_table_wrap">
+                      <table className="grand_proj_table">
+                        <thead>
+                          <tr>
+                            <th>Sl. No</th>
+                            <th>Branch 2</th>
+                            <th>Year 1</th>
+                            <th>Year 2</th>
+                            <th>Year 3</th>
+                            <th>Year 4</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>ECE</td>
+                            <td>
+                              Next Generation Organic Farming using AI,
+                              Robotics, and IoT for Women Entrepreneurship in
+                              KOT Village, Dadri, Gautam Buddha Nagar, Uttar
+                              Pradesh
+                            </td>
+                            <td>38,00,000</td>
+                            <td>DST</td>
+                            <td>
+                              Dr Gayatri Sakya-PI, Dr. Chhaya Grover Co-PI, Ms.
+                              Monika Malik, Co-PI
+                            </td>
+                            <td>2023</td>
+                          </tr>
+
+                          <tr>
+                            <td>CSE</td>
+                            <td>
+                              Peer to Peer Energy Training System Using Block
+                              Chain Technology
+                            </td>
+                            <td>5,00,000</td>
+                            <td>CST UP</td>
+                            <td>
+                              Dr. Nitima Malsa - PI, Dr. Rachna Jain, Dr. Sun
+                              Singh Rawat & D. Vimal Gupta-Co-PI
+                            </td>
+                            <td>2023</td>
+                          </tr>
+
+                          <tr>
+                            <td>Chemistry</td>
+                            <td>
+                              Development of Women Entrepreneurship for low-cost
+                              Sanitary Napkins production
+                            </td>
+                            <td>14,97,000</td>
+                            <td>DSIR-TDUPW programme of A2K+ Scheme</td>
+                            <td>Dr Ashima Srivastava</td>
+                            <td>2022</td>
+                          </tr>
+
+                          <tr>
+                            <td>Institute</td>
+                            <td>AICTE IDEA Lab</td>
+                            <td>1,09,42,000</td>
+                            <td>AICTE</td>
+                            <td>Mr. Sampath Kumar, Dr. Sanjiba Kumar Bisoyi</td>
+                            <td>2021</td>
+                          </tr>
+
+                          <tr>
+                            <td>EE</td>
+                            <td>
+                              Maximum power Extraction from Solar PV Array on
+                              distributed system using soft computing techniques
+                            </td>
+                            <td>5,00,000</td>
+                            <td>VRPS</td>
+                            <td>Dr. APJAKTU</td>
+                            <td>2019</td>
+                          </tr>
+
+                          <tr>
+                            <td>CSE</td>
+                            <td>
+                              Alcohol detection system to prevent road accidents
+                            </td>
+                            <td>4,50,000</td>
+                            <td>VRPS, Dr. APJAKTU</td>
+                            <td>Mr. Ajay Kumar Verma</td>
+                            <td>2019</td>
+                          </tr>
+
+                          <tr>
+                            <td>ECE</td>
+                            <td>
+                              PCB Prototype Machine with e-CAD Interfacing and
+                              3D Printer
+                            </td>
+                            <td>3,25,000</td>
+                            <td>Dr. APJAKTU</td>
+                            <td>Mr. Sampath Kumar V</td>
+                            <td>2017</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+
+      case "Consultancy":
+        return (
+          <section className="atm_mainsec consultancy_main" key={sectionIndex}>
+            <div className="container">
+              <div className="atm_fac_grid">
+                <div className="atm_g_cont">
+                  <h5>Consultancy</h5>
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                    aut fugit, sed quia consequuntur magni dolores eos qui
+                    ratione
+                  </p>
+                  <p>
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                    dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut
+                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem
+                  </p>
+                  <div className="downlo_guides">
+                    <a href="javascript:void()">
+                      {" "}
+                      <figure className="shine-effect">
+                        <Image
+                          src="/images/about-page/pdf_icon.webp"
+                          alt="About JSS Academy"
+                          width={15}
+                          height={20}
+                          className="img-fluid"
+                          data-aos="fade-up"
+                          data-aos-delay="200"
+                        />
+                      </figure>{" "}
+                      Reasearch Advisory Cell
+                    </a>
+                  </div>
+                </div>
+                <div className="atm_g_imgsec">
+                  <figure className="shine-effect img-full">
+                    <Image
+                      src="/images/about-page/consultancy_01.webp"
+                      alt="About JSS Academy"
+                      className="w-100"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      width={683}
+                      height={750}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+
+
+
+
+
 
       default:
         return null;
