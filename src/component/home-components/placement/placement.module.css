@@ -228,6 +228,8 @@
   .thirdSection {
     padding-block: 8rem;
   }
+.wallOfFameText {
+  width: 50%;}
 
   .max-content-lg .placement_row {
     margin-bottom: 6rem;
@@ -407,3 +409,4 @@
   }
 
 }
+
