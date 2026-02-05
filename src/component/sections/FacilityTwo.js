@@ -1,132 +1,92 @@
 "use client";
+
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function FacilityTwo({ data }) {
-  const [activeLab, setActiveLab] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  const handleLabClick = (index) => {
-    setActiveLab(index);
-  };
+  if (!data || data.length === 0) return null;
 
-  const renderSection = (section, sectionIndex) => {
-    switch (section.type) {
-      case "heading":
+  return (
+    <>
+      {data.map((section, sectionIndex) => {
+        if (section.type !== "amenitiescentre") return null;
+
+        const headerItem = section.items?.[0];
+        const boxes = headerItem?.boxex || [];
+
+        const visibleBoxes = boxes.slice(0, visibleCount);
+        const hasMore = visibleCount < boxes.length;
+
         return (
           <section
-            className="facilities-sec2"
-            key={`heading-section-${sectionIndex}`}
+            className="ameminites_listmain"
+            key={`amenities-${sectionIndex}`}
           >
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <div className="academics-labs-text">
-                    {section.items
-                      .sort((a, b) => a.position - b.position)
-                      .map((item, index) => (
-                        <div key={item.item_uuid || index}>
-                          {item.title && <h6>{item.title}</h6>}
-                          {item.subtitle && <p>{item.subtitle}</p>}
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        );
+                  {/* TITLE & SUBTITLE */}
+                  {(headerItem?.title || headerItem?.subtitle) && (
+                    <div className="amenities_title">
+                      {headerItem.title && <h5>{headerItem.title}</h5>}
+                      {headerItem.subtitle && <p>{headerItem.subtitle}</p>}
+                    </div>
+                  )}
 
-      case "dataSlider":
-        // Get the items for the dataSlider
-        const labItems = section.items.sort((a, b) => a.position - b.position);
-        
-        return (
-          <section
-            className="facilities-sec3"
-            key={`dataslider-section-${sectionIndex}`}
-          >
-            <div className="labs-wrapper">
-              {/* Background image from active lab */}
-              {labItems.length > 0 && labItems[activeLab]?.file && (
-                <div
-                  className="labs-bg"
-                  id="labs-bg"
-                  style={{
-                    backgroundImage: `url(${labItems[activeLab].file})`,
-                  }}
-                ></div>
-              )}
-              <div className="labs-overlay"></div>
+                  {/* GRID */}
+                  <div className="amenities_gridmain">
+                    {visibleBoxes.map((box, idx) => (
+                      <div className="ameniti_item_col" key={idx}>
+                        {box.image && (
+                          <figure className="shine-effect">
+                            <Image
+                              src={box.image}
+                              alt={box.heading || "Amenity"}
+                              width={800}
+                              height={520}
+                              className="img-fluid w-100"
+                            />
+                          </figure>
+                        )}
 
-              <div className="labs-container">
-                {/* Left Side - Labs Menu */}
-                <div className="labs-menu">
-                  {labItems.map((lab, index) => (
-                    <div
-                      key={lab.item_uuid || index}
-                      className={`menu-item ${activeLab === index ? "active" : ""}`}
-                      onClick={() => handleLabClick(index)}
-                    >
-                      <div className="menu-header">{lab.header || lab.title}</div>
-                      <div className="menu-content">
-                        <h4>{lab.title}</h4>
-                        <p>{lab.description}</p>
-                        {lab.link && (
-                          <Link href={lab.link}>
-                            <i className="bi bi-arrow-right-short"></i>
-                          </Link>
+                        {box.heading && (
+                          <figcaption>
+                            <p>{box.heading}</p>
+                          </figcaption>
                         )}
                       </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Right Side - Lab Info */}
-                {labItems.length > 0 && (
-                  <div className="labs-info">
-                    <h2 className="labs-title">{labItems[activeLab].title}</h2>
-                    <p className="labs-desc">{labItems[activeLab].description}</p>
-                    {labItems[activeLab].link && (
-                      <Link
-                        href={labItems[activeLab].link}
-                        className="labs-link"
-                      >
-                        <i className="bi bi-arrow-right-short"></i>
-                      </Link>
-                    )}
+                    ))}
                   </div>
-                )}
+
+                  {/* LOAD MORE */}
+                  {(hasMore || headerItem?.desc) && (
+                    <div className="amenities_loadmore">
+                      {hasMore && (
+                        <div className="load_m_btnsec">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setVisibleCount((prev) => prev + 3)
+                            }
+                          >
+                            <a>LOAD MORE <i className="bi bi-arrow-down"></i></a> 
+                          </button>
+                        </div>
+                      )}
+
+                      {headerItem?.desc && <p>{headerItem.desc}</p>}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </section>
         );
-
-      default:
-        console.warn(`Unknown section type in FacilityTwo: ${section.type}`);
-        return null;
-    }
-  };
-
-  return (
-    <>
-      {data.map((section, index) => renderSection(section, index))}
-
-      {data.length === 0 && (
-        <section className="facilities-sec2">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="academics-labs-text">
-                  <h6>Academic Labs</h6>
-                  <p>No lab data available.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      })}
     </>
   );
 }

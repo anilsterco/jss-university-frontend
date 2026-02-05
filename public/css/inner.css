@@ -374,7 +374,7 @@
 .ab_jss_c_col:last-child { border-left: none; }
 .ab_jss_c_col h4{font: var(--font-48);color: var(--color-4e);font-family: var(--font-main);font-weight: 600;letter-spacing: -0.12rem;}
 .ab_jss_c_col p{font: var(--font-14);font-weight: bold;margin-bottom: 0;color: var(--color-4e);}
-.about_jsstwo{padding-block: 0 15rem;}
+.about_jsstwo{padding-block: 15rem;}
 .about_fost_sec{background-color: var(--color-9a);}
 .ab_fost_grid{display: grid;grid-template-columns: 39% 48%;gap: 17.8rem;align-items: center;}
 .ab_fost_lft_col h5{font: var(--font-26); color: var(--color-white); margin-bottom: 4.5rem;}

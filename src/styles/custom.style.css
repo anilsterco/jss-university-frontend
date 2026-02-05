@@ -816,17 +816,18 @@
   top: -1px;
 }
 
-.tabs ul li {
+.tabs ul {
   display: inline-block;
   float: left;
-  width: 43%;
   text-align: left;
-  margin-right: 5rem;
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3,auto);
 }
 
 .tabs ul li a {
   padding: 1em 0em;
-  font: var(--font-24);
+  font: var(--font-20);
   color: var(--color-be);
 }
 

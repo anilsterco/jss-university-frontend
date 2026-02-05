@@ -20,6 +20,8 @@ import PlacementRequest from "@/component/sections/PlacementRequest";
 
 
 import { notFound } from "next/navigation";
+import EmpowringPeople from "@/component/sections/EmpowringPeople";
+import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
 
 // API fetcher
 async function fetchPageData(slug) {
@@ -81,8 +83,8 @@ export default async function DynamicPage({ params }) {
     qualityPolicy: AboutFive,
     facilityGroup: FacilityOne,
     heading: FacilityTwo,
-    dataSlider: FacilityTwo,
-    researchSection: FacilityThree,
+    amenitiescentre: FacilityTwo,
+    sportsfacilities: FacilityThree,
     objectives: FacilityThree,
     librarySection: FacilityFour,
     sideSection: FacilityFive,
@@ -93,6 +95,8 @@ export default async function DynamicPage({ params }) {
     placementProcedure:PlacementProcedure,
     pacementTabSection:pacementTabSection,
     placementOfficer:PlacementRequest,
+    empowringPeople:EmpowringPeople,
+    fosteringcreativity:Fosteringcreativity,
   };
 
   return (

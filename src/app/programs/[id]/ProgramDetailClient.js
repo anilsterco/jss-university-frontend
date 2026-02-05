@@ -346,6 +346,18 @@ export default function ProgramDetailClient({ params }) {
                           Program Outcomes (POs)
                         </a>
                       </li>
+                       <li>
+                        <a
+                          href="#tab3"
+                          className={activeTab === "tab3" ? "active" : ""}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleTabClick("tab3");
+                          }}
+                        >
+                          Program Specific Outcomes (PSOs)
+                        </a>
+                      </li>
                     </ul>
                   </nav>
                   <div
@@ -394,6 +406,36 @@ export default function ProgramDetailClient({ params }) {
                           ))
                         ) : (
                           <p>No POs available</p>
+                        )}
+                      </div>
+                      {apply_now_link && (
+                        <a
+                          href={apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                   <div
+                    id="tab3"
+                    className={`item ${activeTab === "tab3" ? "active" : ""}`}
+                    data-title="Program Specific Outcomes (PSOs)"
+                  >
+                    <div className="item-content">
+                      <div className="peo-list">
+                        {pso && pso.length > 0 ? (
+                          pso.map((pso, index) => (
+                            <div key={index} className="peo-box">
+                              <h3>{pso.title}</h3>
+                              <p>{pso.description}</p>
+                            </div>
+                          ))
+                        ) : (
+                          <p>No PSOs available</p>
                         )}
                       </div>
                       {apply_now_link && (
