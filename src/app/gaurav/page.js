@@ -2979,9 +2979,9 @@ const Page = () => {
         return (
           <section className="socio_econo_sec" key={sectionIndex}>
             <div className="containerMD">
-              <section class="sedg_section_wrap">
-                <div class="sedg_row_block">
-                  <div class="sedg_img_col">
+              <section className="sedg_section_wrap">
+                <div className="sedg_row_block">
+                  <div className="sedg_img_col">
                     <figure className="shine-effect">
                       <Image
                         src="/images/about-page/socio_eco_01.webp"
@@ -2995,8 +2995,8 @@ const Page = () => {
                     </figure>
                   </div>
 
-                  <div class="sedg_content_col">
-                    <h3 class="sedg_title">
+                  <div className="sedg_content_col">
+                    <h3 className="sedg_title">
                       Socio-Economically Disadvantaged Groups Cell (SEDG)
                     </h3>
                     <p>
@@ -3020,8 +3020,8 @@ const Page = () => {
 
                 <hr></hr>
 
-                <div class="sedg_row_block">
-                  <div class="sedg_img_col">
+                <div className="sedg_row_block">
+                  <div className="sedg_img_col">
                     <figure className="shine-effect">
                       <Image
                         src="/images/about-page/socio_eco_01.webp"
@@ -3035,8 +3035,8 @@ const Page = () => {
                     </figure>
                   </div>
 
-                  <div class="sedg_content_col">
-                    <h3 class="sedg_title">Co curricular support</h3>
+                  <div className="sedg_content_col">
+                    <h3 className="sedg_title">Co curricular support</h3>
                     <p>
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusantium doloremque laudantium, totam rem
