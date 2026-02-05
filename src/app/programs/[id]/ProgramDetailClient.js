@@ -104,7 +104,8 @@ export default function ProgramDetailClient({ params }) {
         <div
           style={{ fontSize: "24px", marginBottom: "20px", color: "#d32f2f" }}
         >
-          Program not found
+          No Sections Found For This Program. Please Add Sections To Display
+          Program Details.
         </div>
         <Link href="/programs" className="apply-btn1">
           Back to Programs
@@ -141,7 +142,7 @@ export default function ProgramDetailClient({ params }) {
         <div className="program-detail-img">
           <figure>
             <Image
-              src={banner?.image || "/images/default-banner.jpg"}
+              src={banner?.image || "/images/default-banner.webp"}
               alt={banner?.name || name}
               width={1200}
               height={600}
@@ -159,151 +160,158 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
+
       {/* Admission Open Section */}
-      <section className="admission-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="admission-box">
-                <div className="admission-box-text">
-                  <p>Admission Open for</p>
-                  <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+      {admissionSection && (
+        <section className="admission-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="admission-box">
+                  <div className="admission-box-text">
+                    <p>Admission Open for</p>
+                    <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Overview Section */}
-      <section className="overview-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="over-view-box">
-                <div className="overview-text">
-                  <h5>Overview</h5>
-                  <h6>{overview?.overview_title || name}</h6>
-                  <p>{overview?.overview_desc}</p>
-                </div>
-                <div className="overview-duration">
-                  <div className="overview-duration-text">
-                    <span>Course duration</span>
-                    <p>{admissionSection?.course_duration}</p>
+      {overview && (
+        <section className="overview-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="over-view-box">
+                  <div className="overview-text">
+                    <h5>Overview</h5>
+                    <h6>{overview?.overview_title || name}</h6>
+                    <p>{overview?.overview_desc}</p>
                   </div>
-                  <div className="fees">
-                    <span>Annual Fees</span>
-                    <p>{admissionSection?.annual_fees}</p>
-                  </div>
-                  <div className="structure-btns">
-                    {admissionSection?.program_structure && (
+                  <div className="overview-duration">
+                    <div className="overview-duration-text">
+                      <span>Course duration</span>
+                      <p>{admissionSection?.course_duration}</p>
+                    </div>
+                    <div className="fees">
+                      <span>Annual Fees</span>
+                      <p>{admissionSection?.annual_fees}</p>
+                    </div>
+                    <div className="structure-btns">
+                      {admissionSection?.program_structure && (
+                        <a
+                          href={admissionSection.program_structure}
+                          className="structure-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src="/images/custom-page/blue-pdf.png"
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          Programme Structure
+                        </a>
+                      )}
+                      {admissionSection?.scholarship && (
+                        <a
+                          href={admissionSection.scholarship}
+                          className="structure-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src="/images/custom-page/scholer-icon.png"
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          Scholarship
+                        </a>
+                      )}
+                    </div>
+                    {(admissionSection?.apply_now_link || apply_now_link) && (
                       <a
-                        href={admissionSection.program_structure}
-                        className="structure-btn"
+                        href={admissionSection?.apply_now_link || apply_now_link}
                         target="_blank"
+                        className="apply-btn1"
                         rel="noopener noreferrer"
                       >
-                        <Image
-                          src="/images/custom-page/blue-pdf.png"
-                          alt="PDF"
-                          width={20}
-                          height={20}
-                          className="img-fluid"
-                        />
-                        Programme Structure
-                      </a>
-                    )}
-                    {admissionSection?.scholarship && (
-                      <a
-                        href={admissionSection.scholarship}
-                        className="structure-btn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src="/images/custom-page/scholer-icon.png"
-                          alt="PDF"
-                          width={20}
-                          height={20}
-                          className="img-fluid"
-                        />
-                        Scholarship
+                        Apply Now
                       </a>
                     )}
                   </div>
-                  {(admissionSection?.apply_now_link || apply_now_link) && (
-                    <a
-                      href={admissionSection?.apply_now_link || apply_now_link}
-                      target="_blank"
-                      className="apply-btn1"
-                      rel="noopener noreferrer"
-                    >
-                      Apply Now
-                    </a>
-                  )}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Eligibility Section */}
-      <section className="eligibility-sec" id="eligibilitySec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="eligibility-img">
-                <figure>
-                  {overview?.overview_image && (
-                    <Image
-                      src={overview.overview_image}
-                      alt="Overview"
-                      width={1200}
-                      height={400}
-                      className="img-fluid w-100"
-                    />
-                  )}
-                  <figcaption>
-                    <div className="eligibility-box">
-                      <div className="eligibility-text">
-                        <span>Eligibility Criteria</span>
-                        <h3>{admissionSection?.eligibility_marks}</h3>
-                        <p>{admissionSection?.eligibility_desc}</p>
+      {eligibility && (
+        <section className="eligibility-sec" id="eligibilitySec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="eligibility-img">
+                  <figure>
+                    {overview?.overview_image && (
+                      <Image
+                        src={overview.overview_image}
+                        alt="Overview"
+                        width={1200}
+                        height={400}
+                        className="img-fluid w-100"
+                      />
+                    )}
+                    <figcaption>
+                      <div className="eligibility-box">
+                        <div className="eligibility-text">
+                          <span>Eligibility Criteria</span>
+                          <h3>{admissionSection?.eligibility_marks}</h3>
+                          <p>{admissionSection?.eligibility_desc}</p>
+                        </div>
                       </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div className="col-lg-9">
-              <div className="rank-box">
-                <h6>Eligibility Criteria</h6>
-                <div className="rank-text">
-                  <div className="left-rank-text">
-                    <h2>{eligibility?.eligibility_criteria}</h2>
-                  </div>
-                  <div className="right-rank-text">
-                    <p>{eligibility?.eligibility_criteria_desc}</p>
-                  </div>
+                    </figcaption>
+                  </figure>
                 </div>
-                <div className="seats">
-                  {eligibility?.eligibility_criteria_notices && (
-                    <>
-                      <div className="seats-left-text">
-                        <p>{eligibility.eligibility_criteria_notices[0]}</p>
-                      </div>
-                      <div className="seats-right-text">
-                        <p>{eligibility.eligibility_criteria_notices[1]}</p>
-                      </div>
-                    </>
-                  )}
+              </div>
+              <div className="col-lg-9">
+                <div className="rank-box">
+                  <h6>Eligibility Criteria</h6>
+                  <div className="rank-text">
+                    <div className="left-rank-text">
+                      <h2>{eligibility?.eligibility_criteria}</h2>
+                    </div>
+                    <div className="right-rank-text">
+                      <p>{eligibility?.eligibility_criteria_desc}</p>
+                    </div>
+                  </div>
+                  <div className="seats">
+                    {eligibility?.eligibility_criteria_notices && (
+                      <>
+                        <div className="seats-left-text">
+                          <p>{eligibility.eligibility_criteria_notices[0]}</p>
+                        </div>
+                        <div className="seats-right-text">
+                          <p>{eligibility.eligibility_criteria_notices[1]}</p>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Educational Objectives Section */}
       <section className="educational-sec">
@@ -407,173 +415,178 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
-      {/* Curriculum Section */}
-      <section className="core-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="core-box">
-                <div className="core-text">
-                  <span>Curriculum</span>
-                  <h6>{curriculum?.curriculum_title}</h6>
-                  <blockquote>Core Subjects:</blockquote>
-                  <p>
-                    {curriculum?.curriculum_desc &&
-                      curriculum.curriculum_desc[currentCurriculumIndex]}
-                  </p>
-                  <div className="arrows">
-                    {/* Left Arrow */}
-                    <button
-                      className="arrow-btn left"
-                      onClick={handlePreviousCurriculum}
-                      title="Previous curriculum"
-                      disabled={currentCurriculumIndex === 0}
-                      style={{
-                        opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
-                        cursor:
-                          currentCurriculumIndex === 0
-                            ? "not-allowed"
-                            : "pointer",
-                      }}
-                    >
-                      <Image
-                        src="/images/icons/Arrow.svg"
-                        width={22}
-                        height={22}
-                        alt="Left Arrow"
-                      />
-                    </button>
 
-                    {/* Right Arrow */}
-                    <button
-                      className="arrow-btn right"
-                      onClick={handleNextCurriculum}
-                      title="Next curriculum"
-                      disabled={
-                        currentCurriculumIndex ===
-                        (curriculum?.curriculum_desc?.length || 1) - 1
-                      }
-                      style={{
-                        opacity:
-                          currentCurriculumIndex ===
-                          (curriculum?.curriculum_desc?.length || 1) - 1
-                            ? 0.5
-                            : 1,
-                        cursor:
-                          currentCurriculumIndex ===
-                          (curriculum?.curriculum_desc?.length || 1) - 1
-                            ? "not-allowed"
-                            : "pointer",
-                      }}
-                    >
-                      <Image
-                        src="/images/icons/Arrow.svg"
-                        width={22}
-                        height={22}
-                        alt="Right Arrow"
-                      />
-                    </button>
-                  </div>
-                  {curriculum?.curriculum_pdf && (
-                    <div className="core-pdf">
-                      <a
-                        href={curriculum.curriculum_pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
+      {/* Curriculum Section */}
+      {curriculum && (
+        <section className="core-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="core-box">
+                  <div className="core-text">
+                    <span>Curriculum</span>
+                    <h6>{curriculum?.curriculum_title}</h6>
+                    <blockquote>Core Subjects:</blockquote>
+                    <p>
+                      {curriculum?.curriculum_desc &&
+                        curriculum.curriculum_desc[currentCurriculumIndex]}
+                    </p>
+                    <div className="arrows">
+                      {/* Left Arrow */}
+                      <button
+                        className="arrow-btn left"
+                        onClick={handlePreviousCurriculum}
+                        title="Previous curriculum"
+                        disabled={currentCurriculumIndex === 0}
+                        style={{
+                          opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
+                          cursor:
+                            currentCurriculumIndex === 0
+                              ? "not-allowed"
+                              : "pointer",
+                        }}
                       >
                         <Image
-                          src="/images/custom-page/red-pdf-icon.png"
-                          alt="PDF"
-                          width={20}
-                          height={20}
-                          className="img-fluid"
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Left Arrow"
                         />
-                        Download PDF
-                      </a>
+                      </button>
+
+                      {/* Right Arrow */}
+                      <button
+                        className="arrow-btn right"
+                        onClick={handleNextCurriculum}
+                        title="Next curriculum"
+                        disabled={
+                          currentCurriculumIndex ===
+                          (curriculum?.curriculum_desc?.length || 1) - 1
+                        }
+                        style={{
+                          opacity:
+                            currentCurriculumIndex ===
+                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              ? 0.5
+                              : 1,
+                          cursor:
+                            currentCurriculumIndex ===
+                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              ? "not-allowed"
+                              : "pointer",
+                        }}
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Right Arrow"
+                        />
+                      </button>
                     </div>
-                  )}
-                </div>
-                <div className="core-img">
-                  <figure>
-                    {curriculum?.curriculum_image && (
-                      <Image
-                        src={curriculum.curriculum_image}
-                        alt="Curriculum"
-                        width={500}
-                        height={300}
-                        className="img-fluid w-100"
-                      />
+                    {curriculum?.curriculum_pdf && (
+                      <div className="core-pdf">
+                        <a
+                          href={curriculum.curriculum_pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src="/images/custom-page/red-pdf-icon.png"
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          Download PDF
+                        </a>
+                      </div>
                     )}
-                  </figure>
+                  </div>
+                  <div className="core-img">
+                    <figure>
+                      {curriculum?.curriculum_image && (
+                        <Image
+                          src={curriculum.curriculum_image}
+                          alt="Curriculum"
+                          width={500}
+                          height={300}
+                          className="img-fluid w-100"
+                        />
+                      )}
+                    </figure>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Fee Structure Section */}
-      <section className="program-sec-six">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="structure">
-                <span>Fee Structure</span>
-                <p>{fee_structure?.fee_structure_title}</p>
-              </div>
-              <div className="structure-box">
-                <div className="structure-img">
-                  <figure>
-                    {fee_structure?.fee_structure_image && (
-                      <Image
-                        src={fee_structure.fee_structure_image}
-                        alt="Fee Structure"
-                        width={500}
-                        height={400}
-                        className="img-fluid w-100"
-                      />
-                    )}
-                  </figure>
+      {fee_structure && (
+        <section className="program-sec-six">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="structure">
+                  <span>Fee Structure</span>
+                  <p>{fee_structure?.fee_structure_title}</p>
                 </div>
-                <div className="structure-text">
-                  <p>{fee_structure?.fee_structure_short_description}</p>
-                  <h2>{fee_structure?.course_total_fees}</h2>
-                  <span>{fee_structure?.academic_year}</span>
-                  <div className="engineering-btn">
-                    {(fee_structure?.apply_now_link || apply_now_link) && (
-                      <a
-                        href={fee_structure?.apply_now_link || apply_now_link}
-                        className="apply-btn1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Apply Now
-                      </a>
-                    )}
-                    {fee_structure?.fee_structure_pdf && (
-                      <a
-                        href={fee_structure.fee_structure_pdf}
-                        target="_blank"
-                        className="structure-btn"
-                        rel="noopener noreferrer"
-                      >
+                <div className="structure-box">
+                  <div className="structure-img">
+                    <figure>
+                      {fee_structure?.fee_structure_image && (
                         <Image
-                          src={"/images/custom-page/red-pdf-icon.png"}
-                          alt="PDF"
-                          width={20}
-                          height={20}
-                          className="img-fluid"
+                          src={fee_structure.fee_structure_image}
+                          alt="Fee Structure"
+                          width={500}
+                          height={400}
+                          className="img-fluid w-100"
                         />
-                        DOWNLOAD
-                      </a>
-                    )}
+                      )}
+                    </figure>
+                  </div>
+                  <div className="structure-text">
+                    <p>{fee_structure?.fee_structure_short_description}</p>
+                    <h2>{fee_structure?.course_total_fees}</h2>
+                    <span>{fee_structure?.academic_year}</span>
+                    <div className="engineering-btn">
+                      {(fee_structure?.apply_now_link || apply_now_link) && (
+                        <a
+                          href={fee_structure?.apply_now_link || apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                      {fee_structure?.fee_structure_pdf && (
+                        <a
+                          href={fee_structure.fee_structure_pdf}
+                          target="_blank"
+                          className="structure-btn"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src={"/images/custom-page/red-pdf-icon.png"}
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          DOWNLOAD
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Testimonials Section */}
       {testimonials && testimonials.length > 0 && (
@@ -670,59 +683,61 @@ export default function ProgramDetailClient({ params }) {
       )}
 
       {/* Career Opportunities Section */}
-      <section className="opportunitie-sec">
-        <div className="opportunitie-img">
-          <figure>
-            {career_opportunities?.career_image && (
-              <Image
-                src={career_opportunities.career_image}
-                alt="Career Opportunities"
-                width={1200}
-                height={600}
-                className="img-fluid w-100"
-              />
-            )}
-          </figure>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="opportunitie-box">
-                <div className="opportunitie-text">
-                  <blockquote>
-                    {career_opportunities?.career_subtitle ||
-                      "CAREER OPPORTUNITIES"}
-                  </blockquote>
-                  <h2
-                    dangerouslySetInnerHTML={{
-                      __html: career_opportunities?.career_title,
-                    }}
-                  ></h2>
-                  <p>{career_opportunities?.career_desc}</p>
-                </div>
-                <div className="opportunitie-tab">
-                  <ul>
-                    {career_opportunities?.useful_links &&
-                      career_opportunities.useful_links.map(
-                        (opportunity, index) => (
-                          <li key={index}>
-                            <a
-                              href={opportunity.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {opportunity.text}
-                            </a>
-                          </li>
-                        )
-                      )}
-                  </ul>
+      {career_opportunities && (
+        <section className="opportunitie-sec">
+          <div className="opportunitie-img">
+            <figure>
+              {career_opportunities?.career_image && (
+                <Image
+                  src={career_opportunities.career_image}
+                  alt="Career Opportunities"
+                  width={1200}
+                  height={600}
+                  className="img-fluid w-100"
+                />
+              )}
+            </figure>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="opportunitie-box">
+                  <div className="opportunitie-text">
+                    <blockquote>
+                      {career_opportunities?.career_subtitle ||
+                        "CAREER OPPORTUNITIES"}
+                    </blockquote>
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: career_opportunities?.career_title,
+                      }}
+                    ></h2>
+                    <p>{career_opportunities?.career_desc}</p>
+                  </div>
+                  <div className="opportunitie-tab">
+                    <ul>
+                      {career_opportunities?.useful_links &&
+                        career_opportunities.useful_links.map(
+                          (opportunity, index) => (
+                            <li key={index}>
+                              <a
+                                href={opportunity.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {opportunity.text}
+                              </a>
+                            </li>
+                          )
+                        )}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </main>
   );
 }

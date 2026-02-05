@@ -63,16 +63,18 @@ const CoursesOffered = ({ data }) => {
         {/* Image Placeholder */}
         <div className="col-lg-5" >
           <div className={styles.imagePlaceholder}>
-            <div className={styles.placeholderContent}>
-              <Image
-                src={coursesData.image}
-                alt="Image Placeholder"
-                width={500}
-                height={500}
-                style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-                priority
-              />
-            </div>
+            {coursesData.image && (
+              <div className={styles.placeholderContent}>
+                <Image
+                  src={coursesData.image}
+                  alt="Image Placeholder"
+                  width={500}
+                  height={500}
+                  style={{ width: "100%", height: "100%", borderRadius: "15px" }}
+                  priority
+                />
+              </div>
+            )}
 
             {/* Admission Bar overlapping image */}
             <div className={styles.admission_bar}>

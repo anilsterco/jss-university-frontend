@@ -1,0 +1,119 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+export default function pacementTabSection({ data }) {
+  const [activeGrowthTab, setActiveGrowthTab] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ once: true, duration: 1000 });
+  }, []);
+
+  // first tab active by default
+  useEffect(() => {
+    const section = data?.find(
+      (sec) => sec.type === "pacementTabSection"
+    );
+    if (section?.items?.length) {
+      setActiveGrowthTab(`growthTab${section.items[0].position}`);
+    }
+  }, [data]);
+
+  const handleGrowthTabClick = (tabId) => {
+    setActiveGrowthTab(tabId);
+  };
+
+  const renderSection = (section, index) => {
+    if (section.type !== "pacementTabSection") return null;
+
+    const items =
+      section.items?.sort(
+        (a, b) => Number(a.position) - Number(b.position)
+      ) || [];
+
+    return (
+      <section className="about_two" key={index}>
+        <div className="container">
+          <div className="abou_t_sec">
+            {/* Static Heading (as per your layout) */}
+            <h5 className="about_subtitle">Industry Institute Collaborations (MOUs & COEs)</h5>
+            {/* Tabs */}
+            <nav className="growth-tabs">
+              <ul>
+                {items.map((item) => (
+                  <li key={item.item_uuid}>
+                    <button
+                      type="button"
+                      className={
+                        activeGrowthTab === `growthTab${item.position}`
+                          ? "active"
+                          : ""
+                      }
+                      onClick={() =>
+                        handleGrowthTabClick(
+                          `growthTab${item.position}`
+                        )
+                      }
+                    >
+                      {item.tab_name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Tabs Content */}
+            <div className="grow_tb_contsec">
+              {items.map((item) => (
+                <div
+                  key={item.item_uuid}
+                  id={`growthTab${item.position}`}
+                  className={`growth-item ${
+                    activeGrowthTab === `growthTab${item.position}`
+                      ? "active"
+                      : ""
+                  }`}
+                >
+                  <div className="growth-content">
+                    <div className="growth-list place_logos">
+                      {item.images && item.images.length > 0 ? (
+                        <div className="early-grid" data-aos="fade-up">
+                          {item.images.map((img, i) => (
+                            <figure key={i}>
+                              <Image
+                                src={img.image || "/images/about-page/adobe_logo.png"}
+                                alt={item.tab_name}
+                                width={180}
+                                height={100}
+                                className="img-fluid"
+                              />
+                            </figure>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="early-grid" data-aos="fade-up">
+                          <p>No slider content available</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  return (
+    <>
+      {data?.map((section, index) =>
+        renderSection(section, index)
+      )}
+    </>
+  );
+}

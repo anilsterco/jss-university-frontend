@@ -47,7 +47,7 @@ export default function DepartmentSection({ data }) {
                   {departmentSection.programs_text}
                 </p>
                 <div className="depar-button">
-                  <Link href={`/program`}>
+                  <Link href={`/programs`}>
                     <button className={styles.viewAllButton}>
                       VIEW ALL PROGRAMMES <GoArrowRight />
                     </button>

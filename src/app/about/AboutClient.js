@@ -242,6 +242,7 @@ export default function AboutClient() {
           <section className="about_one">
             <div className="container">
               <div className="abt_cntnt">
+                
                 <p>{aboutData.description1}</p>
                 <figure>
                   <Image

@@ -11,6 +11,14 @@ import FacilitySix from "@/component/sections/FacilitySix";
 import FacilityThree from "@/component/sections/FacilityThree";
 import FacilityTwo from "@/component/sections/FacilityTwo";
 import TabSection from "@/component/sections/TabSection";
+import Placements from "@/component/sections/Placements";
+import PlacementHighlights from "@/component/sections/PlacementHighlights";
+import PlacementProcedure from "@/component/sections/PlacementProcedure";
+import pacementTabSection from "@/component/sections/pacementTabSection";
+import PlacementRequest from "@/component/sections/PlacementRequest";
+
+
+
 import { notFound } from "next/navigation";
 
 // API fetcher
@@ -80,6 +88,11 @@ export default async function DynamicPage({ params }) {
     sideSection: FacilityFive,
     featuresSection: FacilitySix,
     comingSoon: ComingSoon,
+    whiteboxes: Placements,
+    placementHighlights:PlacementHighlights,
+    placementProcedure:PlacementProcedure,
+    pacementTabSection:pacementTabSection,
+    placementOfficer:PlacementRequest,
   };
 
   return (

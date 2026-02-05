@@ -11,27 +11,32 @@ import Script from "next/script";
 
 const BASE_URL = "https://project-demo.in/jss/api";
 
+// ✅ params MUST be awaited
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  return await getPageSEO(slug);
+  return getPageSEO(slug);
 }
 
+// ✅ Safe fetch (NO console.error in server component)
 async function getDepartmentData(slug) {
   const res = await fetch(`${BASE_URL}/department/${slug}`, {
-    next: { revalidate: 120 }, // cache for 2 mins
+    next: { revalidate: 120 },
   });
-  // console.log(res);
+
   if (!res.ok) {
-    console.error("❌ API Error:", res.status);
-    throw new Error(`Failed to fetch school data for ${slug}`);
+    throw new Error(`Failed to fetch department data for ${slug} (status ${res.status})`);
   }
+
   return res.json();
 }
 
+// ✅ params MUST be awaited here too
 export default async function DepartmentPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
+
   const departmentData = await getDepartmentData(slug);
   const seoData = await getPageSEO(slug);
+
   return (
     <>
       <Script
@@ -41,14 +46,40 @@ export default async function DepartmentPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-      <DepartmentSlider  data={departmentData.sections.banners} name={departmentData.departments_name} isDepartment={true} />
-      <AboutDepartmentComponent data={departmentData.sections.about_school} />
-      <HodMessageComponent data={departmentData.sections.dean_message} />
-      <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
-      <FacultyList data={departmentData.sections.faculty_data} />
-      <LaboratoryComponent data={departmentData.sections.laboratories_data} />
-      <HappingsHomeComponent data={departmentData.sections.happenings} />
-      <FnqComponent data={departmentData.sections.faqs} />
+
+      <DepartmentSlider
+        data={departmentData?.sections?.banners}
+        name={departmentData?.departments_name}
+        isDepartment={true}
+      />
+
+      {departmentData?.sections?.about_school && (
+        <AboutDepartmentComponent data={departmentData.sections.about_school} />
+      )}
+
+      {departmentData?.sections?.dean_message && (
+        <HodMessageComponent data={departmentData.sections.dean_message} />
+      )}
+
+      {departmentData?.sections?.courses_data && (
+        <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
+      )}
+
+      {departmentData?.sections?.faculty_data && (
+        <FacultyList data={departmentData.sections.faculty_data} />
+      )}
+
+      {departmentData?.sections?.laboratories_data && (
+        <LaboratoryComponent data={departmentData.sections.laboratories_data} />
+      )}
+
+      {departmentData?.sections?.happenings && (
+        <HappingsHomeComponent data={departmentData.sections.happenings} />
+      )}
+
+      {departmentData?.sections?.faqs && (
+        <FnqComponent data={departmentData.sections.faqs} />
+      )}
     </>
   );
 }

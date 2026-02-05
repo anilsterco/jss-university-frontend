@@ -127,12 +127,14 @@ export default function AboutDepartmentComponent({ data }) {
             <div className={styles.missionSection} data-aos="fade-up" data-aos-delay="900">
               <h3 className={styles.missionTitle}>{departmentData.mission.title}</h3>
               <ul className={styles.missionList}>
-                {departmentData.mission.points.map((point, idx) => (
-                  <li key={idx} className={styles.missionItem}>
-                    <span className={styles.missionBullet}>•</span>
-                    <span className={styles.missionText}>{point}</span>
-                  </li>
-                ))}
+                {departmentData.mission.points && (
+                  departmentData.mission.points.map((point, idx) => (
+                    <li key={idx} className={styles.missionItem}>
+                      <span className={styles.missionBullet}>•</span>
+                      <span className={styles.missionText}>{point}</span>
+                    </li>
+                  ))
+                )}
               </ul>
             </div>
 
