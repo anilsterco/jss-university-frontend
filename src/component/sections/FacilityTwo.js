@@ -29,15 +29,12 @@ export default function FacilityTwo({ data }) {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  {/* TITLE & SUBTITLE */}
                   {(headerItem?.title || headerItem?.subtitle) && (
                     <div className="amenities_title">
                       {headerItem.title && <h5>{headerItem.title}</h5>}
                       {headerItem.subtitle && <p>{headerItem.subtitle}</p>}
                     </div>
                   )}
-
-                  {/* GRID */}
                   <div className="amenities_gridmain">
                     {visibleBoxes.map((box, idx) => (
                       <div className="ameniti_item_col" key={idx}>

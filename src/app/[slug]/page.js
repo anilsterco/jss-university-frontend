@@ -16,12 +16,17 @@ import PlacementHighlights from "@/component/sections/PlacementHighlights";
 import PlacementProcedure from "@/component/sections/PlacementProcedure";
 import pacementTabSection from "@/component/sections/pacementTabSection";
 import PlacementRequest from "@/component/sections/PlacementRequest";
+import FacilitySeven from "@/component/sections/FacilitySeven";
+
+
 
 
 
 import { notFound } from "next/navigation";
 import EmpowringPeople from "@/component/sections/EmpowringPeople";
 import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
+import AcademicLabs from "@/component/sections/AcademicLabs";
+import ResearchLabs from "@/component/sections/ResearchLabs";
 
 // API fetcher
 async function fetchPageData(slug) {
@@ -71,7 +76,8 @@ export default async function DynamicPage({ params }) {
       type: "facilityGroup",
       sections: facilityGroup
     });
-  }
+  } 
+
 
   const sectionComponents = {
     topBanner: AboutOne,
@@ -86,9 +92,9 @@ export default async function DynamicPage({ params }) {
     amenitiescentre: FacilityTwo,
     sportsfacilities: FacilityThree,
     objectives: FacilityThree,
-    librarySection: FacilityFour,
-    sideSection: FacilityFive,
-    featuresSection: FacilitySix,
+    universityboasts: FacilityFour,
+    bankAtm: FacilityFive,
+    cafeteriaGuest: FacilitySix,
     comingSoon: ComingSoon,
     whiteboxes: Placements,
     placementHighlights:PlacementHighlights,
@@ -97,6 +103,11 @@ export default async function DynamicPage({ params }) {
     placementOfficer:PlacementRequest,
     empowringPeople:EmpowringPeople,
     fosteringcreativity:Fosteringcreativity,
+    guestHouse:FacilitySeven,
+    academicLabs:AcademicLabs,
+    researchLabs:ResearchLabs,
+    researchSectionSecond:ResearchLabs,
+    objectiveSection:ResearchLabs,
   };
 
   return (

@@ -2717,8 +2717,6 @@ const Page = () => {
                       />
                     </span>
                   </button>
-
-                  {/* BODY — smooth height animation */}
                   <div
                     ref={(el) => (bodyRefs.current[index] = el)}
                     className="admission_faq_body"

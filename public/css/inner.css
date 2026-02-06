@@ -450,7 +450,7 @@ font-family: var(--font-notosans);font-weight: 400;}
 .spo_fa_counsec h4{font: var(--font-48);font-family: var(--font-Condensed);color: var(--color-white);font-weight: 600;}
 .spo_fa_counsec p{font: var(--font-14);font-family: var(--font-Condensed);font-weight: bold;color: var(--color-white);}
 .sports_fac_slider>*{grid-area: 1/1;}
-.sport_fac_swiper .swiper-pagination-bullet {position: relative; z-index: 9; top: -10rem; width: 10px; height: 10px; opacity: 0.3; background: var(--color-white); }
+.sport_fac_swiper .swiper-pagination-bullet {position: relative; z-index: 9; top: -10rem; width: 0.6rem; height: 0.6rem; opacity: 0.3; background: var(--color-white); }
 .sport_fac_swiper .swiper-pagination-bullet-active { background: var(--color-white); opacity: 1; }
 .uni_boasts_rag_sec{padding-block: 12rem 15rem;}
 .uni_bo_title{text-align: center;margin-bottom: 6rem;}

@@ -458,20 +458,24 @@ export default function Header() {
     ${pathname !== "/" ? "not-home" : ""}
   `}
     >
-      <div className={`header-inner ${scrolled ? "header-scrolled" : ""}`}>
+      <div
+        className={`header-inner ${
+          pathname !== "/" ? "innerPage" : ""
+        } ${scrolled ? "header-scrolled" : ""}`}
+      >
         <div className="containerXl">
           <div
             className={`nav-container }
-    ${
-      pathname.includes("schools") ||
-      pathname.includes("department") ||
-      pathname.includes("programs")
-        ? "scroll_bg"
-        : ""
-    }
-    ${pathname !== "/" ? "programs-nav" : ""}
-    ${pathname !== "/" ? "not-home" : ""}
-  `}
+            ${
+              pathname.includes("schools") ||
+              pathname.includes("department") ||
+              pathname.includes("programs")
+                ? "scroll_bg"
+                : ""
+            }
+            ${pathname !== "/" ? "programs-nav" : ""}
+            ${pathname !== "/" ? "not-home" : ""}
+          `}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -531,7 +535,7 @@ export default function Header() {
                         flexDirection: "column",
                         justifyContent: "center",
                         cursor: "pointer",
-                        padding: "25px",
+                        padding: "20px",
                       }}
                     >
                       <span className="schoolDrp">School Of</span>
@@ -613,7 +617,9 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className="nav-item"
+                      className={`nav-item ${
+                        activeDropdown === i ? "active-items" : ""
+                      }`}
                       onMouseEnter={() => setActiveDropdown(i)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
@@ -2458,7 +2464,6 @@ export default function Header() {
             margin: 0 auto;
             box-sizing: border-box;
           }
-
           .nav-container {
             width: 100%;
           }
@@ -2481,6 +2486,9 @@ export default function Header() {
           }
           .panel-wrapper .panel ul:nth-of-type(2) li {
             color: #000;
+          }
+          .header-inner.header-scrolled {
+            padding-block: 1.5rem;
           }
           .contact-heading {
             padding-block: 5rem 3rem;
@@ -2710,6 +2718,9 @@ export default function Header() {
             width: 100%;
             display: flex;
             justify-content: space-between;
+          }
+          .innerPage.header-scrolled {
+            background: #deebf4;
           }
         `}
       </style>
