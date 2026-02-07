@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay,Pagination } from "swiper/modules";
 
 export default function AboutOne({ data }) {
   useEffect(() => {
@@ -97,11 +97,13 @@ export default function AboutOne({ data }) {
             <div className="col-lg-12">
               <div className="ab_estab_slider">
                 <Swiper
-                  pagination={true}
-                  modules={[Navigation, Autoplay]}
+                  modules={[Navigation, Autoplay,Pagination]}
                   spaceBetween={30}
                   slidesPerView={4}
                   loop={true}
+                  pagination={{
+      clickable: true,
+    }}
                   autoplay={{ delay: 2500, disableOnInteraction: false }}
                   breakpoints={{
                     320: { slidesPerView: 1 },
