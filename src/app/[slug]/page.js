@@ -17,16 +17,13 @@ import PlacementProcedure from "@/component/sections/PlacementProcedure";
 import pacementTabSection from "@/component/sections/pacementTabSection";
 import PlacementRequest from "@/component/sections/PlacementRequest";
 import FacilitySeven from "@/component/sections/FacilitySeven";
-
-
-
-
-
+import HeritageSection from "@/component/sections/HeritageSection";
 import { notFound } from "next/navigation";
 import EmpowringPeople from "@/component/sections/EmpowringPeople";
 import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
 import AcademicLabs from "@/component/sections/AcademicLabs";
 import ResearchLabs from "@/component/sections/ResearchLabs";
+import selectionProcess from "@/component/sections/SelectionProcess";
 
 // API fetcher
 async function fetchPageData(slug) {
@@ -50,9 +47,9 @@ export default async function DynamicPage({ params }) {
 
   if (!data) return notFound();
 
-  const hasTabs = data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
+  const hasTabs =
+    data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
 
-  // Group sections that should be rendered together by FacilityOne
   const groupedSections = [];
   let facilityGroup = [];
 
@@ -63,7 +60,7 @@ export default async function DynamicPage({ params }) {
       if (facilityGroup.length > 0) {
         groupedSections.push({
           type: "facilityGroup",
-          sections: [...facilityGroup]
+          sections: [...facilityGroup],
         });
         facilityGroup = [];
       }
@@ -74,10 +71,9 @@ export default async function DynamicPage({ params }) {
   if (facilityGroup.length > 0) {
     groupedSections.push({
       type: "facilityGroup",
-      sections: facilityGroup
+      sections: facilityGroup,
     });
-  } 
-
+  }
 
   const sectionComponents = {
     topBanner: AboutOne,
@@ -97,17 +93,19 @@ export default async function DynamicPage({ params }) {
     cafeteriaGuest: FacilitySix,
     comingSoon: ComingSoon,
     whiteboxes: Placements,
-    placementHighlights:PlacementHighlights,
-    placementProcedure:PlacementProcedure,
-    pacementTabSection:pacementTabSection,
-    placementOfficer:PlacementRequest,
-    empowringPeople:EmpowringPeople,
-    fosteringcreativity:Fosteringcreativity,
-    guestHouse:FacilitySeven,
-    academicLabs:AcademicLabs,
-    researchLabs:ResearchLabs,
-    researchSectionSecond:ResearchLabs,
-    objectiveSection:ResearchLabs,
+    placementHighlights: PlacementHighlights,
+    placementProcedure: PlacementProcedure,
+    pacementTabSection: pacementTabSection,
+    placementOfficer: PlacementRequest,
+    empowringPeople: EmpowringPeople,
+    fosteringcreativity: Fosteringcreativity,
+    guestHouse: FacilitySeven,
+    academicLabs: AcademicLabs,
+    researchLabs: ResearchLabs,
+    researchSectionSecond: ResearchLabs,
+    objectiveSection: ResearchLabs,
+    heritageSection: HeritageSection,
+    selectionProcess:selectionProcess
   };
 
   return (
@@ -122,7 +120,10 @@ export default async function DynamicPage({ params }) {
       )}
 
       {groupedSections?.map((section, index) => {
-        const Component = sectionComponents[section.type === "facilityGroup" ? "facilityGroup" : section.type];
+        const Component =
+          sectionComponents[
+            section.type === "facilityGroup" ? "facilityGroup" : section.type
+          ];
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;
         } else if (Component) {
@@ -137,25 +138,25 @@ export default async function DynamicPage({ params }) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const actualSlug = slug ?? "home";
-  
+
   try {
     const data = await fetchPageData(actualSlug);
-    
+
     if (!data) {
       return {
-        title: 'Page Not Found',
-        description: 'The requested page could not be found.',
+        title: "Page Not Found",
+        description: "The requested page could not be found.",
       };
     }
 
     return {
-      title: data.meta_title || data.title || 'JSS Academy',
+      title: data.meta_title || data.title || "JSS Academy",
       description: data.meta_description || `Page: ${data.title}`,
     };
   } catch (error) {
     return {
-      title: 'JSS Academy',
-      description: 'JSS Academy of Technical Education',
+      title: "JSS Academy",
+      description: "JSS Academy of Technical Education",
     };
   }
 }

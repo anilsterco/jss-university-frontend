@@ -266,7 +266,7 @@
   padding-bottom: 14rem;
 }
 
-.about_four::after {
+/* .about_four::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -275,7 +275,7 @@
   left: 0;
   bottom: 0;
   z-index: -1;
-}
+} */
 
 .about_four .section-title {
   font: var(--font-24);
