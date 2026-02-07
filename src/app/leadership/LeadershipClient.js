@@ -16,7 +16,7 @@ export default function LeadershipClient() {
     title: "SRI SUTTUR MATH THE <span>1000-YEAR LEGACY</span>",
     subTitle: "ABOUT",
     tabs: [
-      { text: "About JSS", url: "/about-us" },
+      { text: "About JSS", url: "/about-jss" },
       { text: "About JSSMVP", url: "/about-jssmvp" },
       { text: "Heritage", url: "/heritage" },
       { text: "Leadership", url: "/leadership" },

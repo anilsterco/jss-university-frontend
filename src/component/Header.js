@@ -639,7 +639,6 @@ export default function Header() {
                               ))}
                             </ul>
                           </div>
-
                           <div className="mega-right">
                             {l.right ? (
                               <>

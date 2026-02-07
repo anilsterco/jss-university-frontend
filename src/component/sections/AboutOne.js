@@ -88,81 +88,90 @@ export default function AboutOne({ data }) {
           </div>
         );
 
-      case "logoDesc":
-        return (
-          <div
-            className="row justify-content-center"
-            key={`logo-section-${sectionIndex}`}
+     case "logoDesc":
+  return (
+    <div
+      className="row justify-content-center about_bottom"
+      key={`logo-section-${sectionIndex}`}
+    >
+      <div className="col-lg-12">
+        <div className="ab_estab_slider">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={4}
+            loop={true}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              576: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              992: { slidesPerView: 4 },
+            }}
           >
-            <div className="col-lg-12">
-              {/* <div className="top_log_grid">
-                {section.items
-                  .sort((a, b) => a.position - b.position)
-                  .map((item, i) => (
+            {section.items
+              ?.sort(
+                (a, b) =>
+                  Number(a.position || 0) - Number(b.position || 0)
+              )
+              .map((item, i) => (
+                <SwiperSlide key={item.id || item.item_uuid || i}>
+                  <div className="estab_slide_item">
                     <figure
-                      key={item.id || i}
                       data-aos="fade-up"
                       data-aos-delay={i * 150}
                       data-aos-duration="800"
                     >
-                      <Image
-                        src={item.file}
-                        alt={item.description}
-                        width={100}
-                        height={100}
-                      />
-                      <figcaption>
-                        <p>{item.description}</p>
-                      </figcaption>
-                    </figure>
-                  ))}
-              </div> */}
-              <div className="ab_estab_slider">
-                <Swiper
-                  pagination={true}
-                  modules={[Navigation, Autoplay]}
-                  spaceBetween={30}
-                  slidesPerView={4}
-                  loop={true}
-                  autoplay={{ delay: 2500, disableOnInteraction: false }}
-                  breakpoints={{
-                    320: { slidesPerView: 1 },
-                    576: { slidesPerView: 2 },
-                    768: { slidesPerView: 3 },
-                    992: { slidesPerView: 4 },
-                  }}
-                >
-                  {section.items
-                    .sort((a, b) => a.position - b.position)
-                    .map((item, i) => (
-                      <SwiperSlide key={item.id || i}>
-                        <div className="estab_slide_item" style={{}}>
-                          <figure
-                            data-aos="fade-up"
-                            data-aos-delay={i * 150}
-                            data-aos-duration="800"
-                          >
+                      {/* ===== FIGURE DESC DESIGN ===== */}
+                      {item.figure ? (
+                        <>
+                          <figcaption>
+                            <h4 className="estab_figure">
+                              {item.figure}
+                            </h4>
+                            {item.description && (
+                              <p>{item.description}</p>
+                            )}
+                          </figcaption>
+
+                          {item.file && (
+                            <Image
+                              src={item.file}
+                              alt={item.description || "logo"}
+                              width={120}
+                              height={25}
+                            />
+                          )}
+                        </>
+                      ) : (
+                        /* ===== LOGO DESC DESIGN ===== */
+                        <>
+                          {item.file && (
                             <Image
                               src={item.file}
                               alt={item.description || "logo"}
                               width={72}
                               height={72}
                             />
+                          )}
 
-                            <figcaption>
+                          <figcaption>
+                            {item.description && (
                               <p>{item.description}</p>
-                            </figcaption>
-                          </figure>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                </Swiper>
-              </div>
-            </div>
-          </div>
-        );
+                            )}
+                          </figcaption>
+                        </>
+                      )}
+                    </figure>
+                  </div>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
+  );
 
-      case "figureDesc":
         return (
           <div
             className="row justify-content-center about_bottom"
