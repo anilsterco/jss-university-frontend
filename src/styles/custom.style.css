@@ -490,28 +490,35 @@
 }
 
 .admission-sec {
-  margin-top: -12.5rem;
+  /* margin-top: -12.5rem; */
+  position: relative;
+}
+
+.ov_mainsec {
   position: relative;
 }
 
 .admission-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: left;
+  position: absolute;
+  right: 0;
+  max-width: 32rem;
+  width: 100%;
+  top: -12.2rem;
+  z-index: 999;
+  right: 5rem;
 }
 
 .admission-box-text {
   background-color: var(--color-100);
-  padding: 3rem 3rem 1.2rem;
+  padding: 3.5rem 3rem 1.8rem;
   border-radius: 5rem 0 0 0;
-  width: 22%;
 }
 
 .admission-box-text p {
   font: var(--font-14);
   color: var(--color-4e);
   font-weight: 400;
+  margin-bottom: 0;
 }
 
 .admission-box-text h2 {
@@ -531,24 +538,23 @@
 }
 
 .overview-text {
-  padding: 4rem 7rem 4rem 0;
-  display: flex;
-  flex-direction: column;
+  padding: 6.3rem 7rem 5.9rem 0;
   height: 100%;
-  justify-content: center;
 }
 
 .overview-text h5 {
   font: var(--font-24);
   color: var(--color-29);
   font-weight: 500;
+  margin: 0;
 }
 
 .overview-text h6 {
   font: var(--font-24);
   color: var(--color-black);
   font-weight: 300;
-  padding-block: 2rem;
+  padding-block: 3.1rem 2.4rem;
+  margin-bottom: 0;
 }
 
 .overview-text p {
@@ -557,24 +563,80 @@
   font-weight: 400;
   padding-inline: 0 5rem;
   line-height: 2.4rem;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* show 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+    transition: max-height 350ms ease;
+    
 }
+
+.overview-text p.expanded_text {
+  -webkit-line-clamp: unset;
+  /* show all lines */
+    transition: max-height 350ms ease;
+  overflow: visible;
+}
+.expanded_icon {
+  background-image: url("/images/programs/expent_text.svg");
+  height: 1.2rem;
+  width: 1.2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;filter: brightness(0);
+  transform: rotate(-90deg);
+}
+.expanded_icon_bottom {
+    filter: brightness(0);
+    background-image: url(/images/programs/expent_text.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    transform: rotate(90deg);
+    background-position: center center;
+}
+.overview-text .read_more {
+  cursor: pointer;
+  font: var(--font-14);
+  font-weight: 600;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  border: none;
+  color: var(--color-4e);
+  z-index: 9;
+  transition: all .5s;
+  position: relative;
+  border-radius: 0;    
+  margin-top: 1rem;
+  padding: 1rem 0 0 0;    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+
 
 .overview-duration {
   background-color: var(--color-white);
-  padding: 3rem 2.5rem;
-  z-index: 0;
+  padding: 2.2rem 2.5rem 2.9rem;    min-height: 34.7rem;
+}
+
+.overview-duration .apply-btn1 {
+  display: inline-block;
 }
 
 .overview-duration-text {
   border-bottom: 1px solid #66666626;
-  padding-block: 0rem 1.5rem;
 }
 
 .overview-duration-text span,
 .fees span {
   font: var(--font-14);
   color: var(--color-4e);
-  font-weight: 400;
+
 }
 
 .overview-duration-text p,
@@ -584,14 +646,15 @@
   font-weight: 600;
   color: var(--color-4e);
   padding: 0.6rem 0 0;
+  margin-bottom: 0.18rem;
 }
 
 .fees {
-  padding-top: 2rem;
+  padding-top: 1.2rem;
 }
 
 .structure-btns {
-  padding-top: 3rem;
+  padding-top: 1.6rem;
 }
 
 .structure-btn {
@@ -599,7 +662,7 @@
   padding: 0.8rem 1.5rem;
   width: auto;
   display: inline-flex;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.3rem;
   font: var(--font-14);
   color: var(--color-4e);
   font-weight: 600;
@@ -666,8 +729,6 @@
   background-color: var(--color-e8);
   padding: 3rem;
   border-radius: 0px 0px 50px 8px;
-  width: 18.9%;
-  margin-right: 11.5rem;
 }
 
 .eligibility-text span {
@@ -706,7 +767,7 @@
 .rank-text {
   display: flex;
   align-items: center;
-  margin: 1rem 0 3rem;
+  margin: 1rem 0 2rem;
 }
 
 .left-rank-text {
@@ -820,15 +881,16 @@
   display: inline-block;
   float: left;
   text-align: left;
-  gap: 3rem;
+  gap: 5rem;
   display: grid;
-  grid-template-columns: repeat(3,auto);
+  grid-template-columns: repeat(3, auto);
 }
 
 .tabs ul li a {
   padding: 1em 0em;
-  font: var(--font-20);
+  font: var(--font-24);
   color: var(--color-be);
+  border-top: 2px solid transparent;
 }
 
 .tabs ul li a:hover {
@@ -900,6 +962,12 @@ This is the minimum CSS that you will need in order for this to work
   overflow: hidden;
 }
 
+.tabbed-content .item .item-content h6 {
+  font: var(--font-24);
+  color: var(--color-29);
+  font-weight: 500;
+}
+
 .tabbed-content .item.active .item-content {
   opacity: 1;
   visibility: visible;
@@ -947,7 +1015,7 @@ This is the minimum CSS that you will need in order for this to work
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
-  padding: 4rem 0 5.1rem;
+  padding: 1rem 0 5.1rem;
 }
 
 .peo-box {
@@ -1864,6 +1932,20 @@ hr {
 
   .program-testimonial {
     padding-bottom: 6rem;
+  }
+
+  .admission-box {
+    width: 74%;
+    margin: auto;
+    position: relative;
+    top: auto;
+    left: 0;
+    right: 0;
+    max-width: 74%;
+  }
+
+  .overview-duration {
+    min-height: 100%;
   }
 }
 
@@ -3563,10 +3645,7 @@ hr {
 
 
 @media screen and (max-width:1750px) {
-  .eligibility-text {
-    width: 17.3%;
-    margin-right: 17.5rem;
-  }
+
 
   .program-sec-six {
     padding-bottom: 11rem;
@@ -3574,10 +3653,7 @@ hr {
 }
 
 @media screen and (max-width:1549px) {
-  .eligibility-text {
-    width: 18.5%;
-    margin-right: 12.5rem;
-  }
+
 
   .engineering-btn {
     margin-top: 4rem;
@@ -3589,10 +3665,7 @@ hr {
     right: -36rem;
   }
 
-  .eligibility-text {
-    width: 20.3%;
-    margin-right: 4%;
-  }
+
 
   .opportunitie-box {
     bottom: 5rem;
@@ -3621,22 +3694,13 @@ hr {
 }
 
 @media screen and (max-width:1366px) {
-  .admission-box-text {
-    width: 26%;
-  }
+
 
   .over-view-box {
     grid-template-columns: repeat(1, 74% auto);
   }
 
-  .overview-text {
-    padding: 0 4rem 0 0;
-  }
 
-  .eligibility-text {
-    width: 19.3%;
-    margin-right: 13%;
-  }
 
   .rank-box {
     margin-right: 2rem;
@@ -3688,10 +3752,7 @@ hr {
 }
 
 @media screen and (max-width:1280px) {
-  .eligibility-text {
-    width: 20.6%;
-    margin-right: 10.5%;
-  }
+
 
   .tabs ul:after {
     right: 0rem;
@@ -3763,9 +3824,6 @@ hr {
     padding-block: 6rem 0;
   }
 
-  .admission-box-text {
-    width: 100%;
-  }
 
   .overview-text {
     padding-block: 6rem;
@@ -3789,10 +3847,7 @@ hr {
     gap: 1rem;
   }
 
-  .eligibility-text {
-    width: 30.6%;
-    margin-right: 13%;
-  }
+
 
   .rank-box {
     margin-right: 2rem;
@@ -3856,11 +3911,6 @@ hr {
 
   .overview-text {
     padding-inline: 0;
-  }
-
-  .eligibility-text {
-    width: 35.6%;
-    margin-right: 6%;
   }
 
   .seats {
@@ -4222,22 +4272,13 @@ hr {
     max-width: 2032px !important;
   }
 
-  .overview-text {
-    padding: 6rem 27rem 4rem 0;
-  }
+
 
   .core-box {
     grid-template-columns: repeat(1, 61% auto);
   }
 
-  .eligibility-text p {
-    padding-right: 6rem;
-  }
 
-  .eligibility-text {
-    width: 19.9%;
-    margin-right: 8.6rem;
-  }
 
   .core-text h6 {
     padding-right: 7rem;
