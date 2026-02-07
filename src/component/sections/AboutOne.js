@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay,Pagination } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
 export default function AboutOne({ data }) {
   useEffect(() => {
@@ -97,13 +97,11 @@ export default function AboutOne({ data }) {
             <div className="col-lg-12">
               <div className="ab_estab_slider">
                 <Swiper
-                  modules={[Navigation, Autoplay,Pagination]}
+                  modules={[Navigation, Autoplay, Pagination]}
                   spaceBetween={30}
                   slidesPerView={4}
                   loop={true}
-                  pagination={{
-      clickable: true,
-    }}
+                  pagination={{ clickable: true }}
                   autoplay={{ delay: 2500, disableOnInteraction: false }}
                   breakpoints={{
                     320: { slidesPerView: 1 },
@@ -113,73 +111,70 @@ export default function AboutOne({ data }) {
                   }}
                 >
                   {section.items
-                    .sort((a, b) => a.position - b.position)
-                    .map((item, i) => (
-                      <SwiperSlide key={item.id || i}>
-                        <div className="estab_slide_item" style={{}}>
-                          <figure
-                            data-aos="fade-up"
-                            data-aos-delay={i * 150}
-                            data-aos-duration="800"
-                          >
-                            <Image
-                              src={item.file}
-                              alt={item.description || "logo"}
-                              width={72}
-                              height={72}
-                            />
+                    ?.sort(
+                      (a, b) =>
+                        Number(a.position || 0) - Number(b.position || 0),
+                    )
+                    .map((item, i) => {
+                      const hasFigure =
+                        item.figure !== null &&
+                        item.figure !== undefined &&
+                        item.figure !== "";
 
-                            <figcaption>
-                              <p>{item.description}</p>
-                            </figcaption>
-                          </figure>
-                        </div>
-                      </SwiperSlide>
-                    ))}
+                      return (
+                        <SwiperSlide key={item.id || item.item_uuid || i}>
+                          <div className="estab_slide_item">
+                            <figure
+                              data-aos="fade-up"
+                              data-aos-delay={i * 150}
+                              data-aos-duration="800"
+                            >
+                              {hasFigure ? (
+                                <>
+                                  <figcaption>
+                                    <h4 className="estab_figure">
+                                     <span> #</span>{String(item.figure)}
+                                    </h4>
+                                    {item.description && (
+                                      <p>{item.description}</p>
+                                    )}
+                                  </figcaption>
+                                  {item.file && (
+                                    <Image
+                                      src={item.file}
+                                      alt={item.description || "figure"}
+                                      width={120}
+                                      height={30}
+                                    />
+                                  )}
+                                </>
+                              ) : (
+                                <>
+                                  {item.file && (
+                                    <Image
+                                      src={item.file}
+                                      alt={item.description || "logo"}
+                                      width={72}
+                                      height={72}
+                                    />
+                                  )}
+                                  {item.description && (
+                                    <figcaption>
+                                      <p>{item.description}</p>
+                                    </figcaption>
+                                  )}
+                                </>
+                              )}
+                            </figure>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    })}
                 </Swiper>
               </div>
             </div>
           </div>
         );
-
-      case "figureDesc":
-        return (
-          <div
-            className="row justify-content-center about_bottom"
-            key={`figure-section-${sectionIndex}`}
-          >
-            <div className="col-lg-10">
-              <div className="btm_log_grid">
-                {section.items
-                  .sort((a, b) => a.position - b.position)
-                  .map((item, i) => (
-                    <figure
-                      key={item.item_uuid || i}
-                      data-aos="fade-right"
-                      data-aos-delay={i * 200}
-                      data-aos-duration="900"
-                    >
-                      <figcaption>
-                        <h4>
-                          <sup>#</sup>
-                          {item.figure.replace("#", "")}
-                        </h4>
-                        <p>{item.facts}</p>
-                      </figcaption>
-
-                      <Image
-                        src={item.file}
-                        alt={item.facts}
-                        width={120}
-                        height={25}
-                      />
-                    </figure>
-                  ))}
-              </div>
-            </div>
-          </div>
-        );
-
       default:
         return null;
     }
