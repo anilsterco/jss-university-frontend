@@ -14,7 +14,7 @@
 
 .early-slide figure,
 .early-slide .early_rgt {
-  width: 50%;
+  /* width: 50%; */
 }
 
 .early-slide {
@@ -24,14 +24,14 @@
 
 .early-slide .early_rgt {
   padding-top: 3.2rem;
-  max-width: 33%;
+  /* max-width: 33%; */
 }
 
-.about_two .early-slide .early_rgt h4 {
+/* .about_two .early-slide .early_rgt h4 {
   font: var(--font-24);
   color: var(--color-29);
   margin-bottom: 2.1rem;
-}
+} */
 
 
 
@@ -4254,6 +4254,7 @@ hr {
 .about_two .early-slide .early_rgt h5 {
   font: var(--font-24);
   font-weight: 300;
+  margin-bottom: 1.8rem;
 }
 
 .about_two .early-slide .early_rgt .inst-reg h3 {
@@ -4264,7 +4265,11 @@ hr {
   font-family: var(--font-Condensed);
 }
 
-
+/* .about_two .early-slide .early_rgt h4 {
+  font: var(--font-24);
+  color: var(--color-29);
+  margin-bottom: 2.1rem;
+} */
 
 
 @media (min-width: 2200px) {
@@ -4354,7 +4359,7 @@ hr {
   }
 
   .early-slide .early_rgt {
-    max-width: 60%;
+    /* max-width: 60%; */
     gap: 4rem;
   }
 

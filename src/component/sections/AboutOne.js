@@ -102,7 +102,11 @@ export default function AboutOne({ data }) {
                   slidesPerView={4}
                   loop={true}
                   pagination={{ clickable: true }}
-                  autoplay={{ delay: 2500, disableOnInteraction: false }}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                  }}
                   breakpoints={{
                     320: { slidesPerView: 1 },
                     576: { slidesPerView: 2 },
@@ -133,7 +137,7 @@ export default function AboutOne({ data }) {
                                 <>
                                   <figcaption>
                                     <h4 className="estab_figure">
-                                     <span> #</span>{String(item.figure)}
+                                      <span> #</span>{String(item.figure)}
                                     </h4>
                                     {item.description && (
                                       <p>{item.description}</p>
