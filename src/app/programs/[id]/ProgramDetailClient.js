@@ -15,6 +15,7 @@ export default function ProgramDetailClient({ params }) {
   const [loading, setLoading] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
@@ -39,7 +40,7 @@ export default function ProgramDetailClient({ params }) {
     if (testimonials && testimonials.length > 0) {
       setCurrentTestimonialIndex(
         (prevIndex) =>
-          (prevIndex - 1 + testimonials.length) % testimonials.length
+          (prevIndex - 1 + testimonials.length) % testimonials.length,
       );
     }
   };
@@ -47,7 +48,7 @@ export default function ProgramDetailClient({ params }) {
   const handleNextTestimonial = () => {
     if (testimonials && testimonials.length > 0) {
       setCurrentTestimonialIndex(
-        (prevIndex) => (prevIndex + 1) % testimonials.length
+        (prevIndex) => (prevIndex + 1) % testimonials.length,
       );
     }
   };
@@ -57,7 +58,7 @@ export default function ProgramDetailClient({ params }) {
       setCurrentCurriculumIndex(
         (prevIndex) =>
           (prevIndex - 1 + curriculum.curriculum_desc.length) %
-          curriculum.curriculum_desc.length
+          curriculum.curriculum_desc.length,
       );
     }
   };
@@ -65,7 +66,7 @@ export default function ProgramDetailClient({ params }) {
   const handleNextCurriculum = () => {
     if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
       setCurrentCurriculumIndex(
-        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length
+        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length,
       );
     }
   };
@@ -160,17 +161,81 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
-
       {/* Admission Open Section */}
       {admissionSection && (
         <section className="admission-sec">
-          <div className="container">
+          <div className="containerMD">
             <div className="row">
               <div className="col-lg-12">
-                <div className="admission-box">
-                  <div className="admission-box-text">
-                    <p>Admission Open for</p>
-                    <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+                <div className="ov_mainsec">
+                  <div className="admission-box">
+                    <div className="admission-box-text">
+                      <p>Admission Open for</p>
+                      <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+                    </div>
+                    <div className="overview-duration">
+                      <div className="overview-duration-text">
+                        <span>Course duration</span>
+                        <p>{admissionSection?.course_duration}</p>
+                      </div>
+                      <div className="fees">
+                        <span>Annual Fees</span>
+                        <p>{admissionSection?.annual_fees}</p>
+                      </div>
+                      <div className="structure-btns">
+                        {admissionSection?.program_structure && (
+                          <a
+                            href={admissionSection.program_structure}
+                            className="structure-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src="/images/custom-page/blue-pdf.png"
+                              alt="PDF"
+                              width={20}
+                              height={20}
+                              className="img-fluid"
+                            />
+                            Programme Structure
+                          </a>
+                        )}
+                        {admissionSection?.scholarship && (
+                          <a
+                            href={admissionSection.scholarship}
+                            className="structure-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src="/images/custom-page/scholer-icon.png"
+                              alt="PDF"
+                              width={20}
+                              height={20}
+                              className="img-fluid"
+                            />
+                            Scholarship
+                          </a>
+                        )}
+                      </div>
+                      {(admissionSection?.apply_now_link || apply_now_link) && (
+                        <a
+                          href={
+                            admissionSection?.apply_now_link || apply_now_link
+                          }
+                          target="_blank"
+                          className="apply-btn1"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                    </div>
+                    <div className="eligibility-text">
+                      <span>Eligibility Criteria</span>
+                      <h3>{admissionSection?.eligibility_marks}</h3>
+                      <p>{admissionSection?.eligibility_desc}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -189,63 +254,9 @@ export default function ProgramDetailClient({ params }) {
                   <div className="overview-text">
                     <h5>Overview</h5>
                     <h6>{overview?.overview_title || name}</h6>
-                    <p>{overview?.overview_desc}</p>
-                  </div>
-                  <div className="overview-duration">
-                    <div className="overview-duration-text">
-                      <span>Course duration</span>
-                      <p>{admissionSection?.course_duration}</p>
-                    </div>
-                    <div className="fees">
-                      <span>Annual Fees</span>
-                      <p>{admissionSection?.annual_fees}</p>
-                    </div>
-                    <div className="structure-btns">
-                      {admissionSection?.program_structure && (
-                        <a
-                          href={admissionSection.program_structure}
-                          className="structure-btn"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Image
-                            src="/images/custom-page/blue-pdf.png"
-                            alt="PDF"
-                            width={20}
-                            height={20}
-                            className="img-fluid"
-                          />
-                          Programme Structure
-                        </a>
-                      )}
-                      {admissionSection?.scholarship && (
-                        <a
-                          href={admissionSection.scholarship}
-                          className="structure-btn"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Image
-                            src="/images/custom-page/scholer-icon.png"
-                            alt="PDF"
-                            width={20}
-                            height={20}
-                            className="img-fluid"
-                          />
-                          Scholarship
-                        </a>
-                      )}
-                    </div>
-                    {(admissionSection?.apply_now_link || apply_now_link) && (
-                      <a
-                        href={admissionSection?.apply_now_link || apply_now_link}
-                        target="_blank"
-                        className="apply-btn1"
-                        rel="noopener noreferrer"
-                      >
-                        Apply Now
-                      </a>
-                    )}
+                    <p className={expanded ? "expanded_text" : ""}>{overview?.overview_desc}</p>
+                    <button className="btn read_more" onClick={() => setExpanded(!expanded)}>{expanded ? "Show Less" : "Show More"}
+                      <i className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}></i></button>
                   </div>
                 </div>
               </div>
@@ -257,7 +268,7 @@ export default function ProgramDetailClient({ params }) {
       {/* Eligibility Section */}
       {eligibility && (
         <section className="eligibility-sec" id="eligibilitySec">
-          <div className="container">
+          <div className="containerMD">
             <div className="row">
               <div className="col-lg-12">
                 <div className="eligibility-img">
@@ -272,13 +283,7 @@ export default function ProgramDetailClient({ params }) {
                       />
                     )}
                     <figcaption>
-                      <div className="eligibility-box">
-                        <div className="eligibility-text">
-                          <span>Eligibility Criteria</span>
-                          <h3>{admissionSection?.eligibility_marks}</h3>
-                          <p>{admissionSection?.eligibility_desc}</p>
-                        </div>
-                      </div>
+                      <div className="eligibility-box"></div>
                     </figcaption>
                   </figure>
                 </div>
@@ -331,7 +336,7 @@ export default function ProgramDetailClient({ params }) {
                             handleTabClick("tab1");
                           }}
                         >
-                          Program Educational Objectives (PEOs)
+                          (PEOs)
                         </a>
                       </li>
                       <li>
@@ -343,10 +348,10 @@ export default function ProgramDetailClient({ params }) {
                             handleTabClick("tab2");
                           }}
                         >
-                          Program Outcomes (POs)
+                          (POs)
                         </a>
                       </li>
-                       <li>
+                      <li>
                         <a
                           href="#tab3"
                           className={activeTab === "tab3" ? "active" : ""}
@@ -355,7 +360,7 @@ export default function ProgramDetailClient({ params }) {
                             handleTabClick("tab3");
                           }}
                         >
-                          Program Specific Outcomes (PSOs)
+                          (PSOs)
                         </a>
                       </li>
                     </ul>
@@ -366,6 +371,7 @@ export default function ProgramDetailClient({ params }) {
                     data-title="Program Educational Objectives (PEOs)"
                   >
                     <div className="item-content">
+                      <h6>Program Educational Objectives </h6>
                       <div className="peo-list">
                         {peos && peos.length > 0 ? (
                           peos.map((peo, index) => (
@@ -396,6 +402,7 @@ export default function ProgramDetailClient({ params }) {
                     data-title="Program Outcomes (POs)"
                   >
                     <div className="item-content">
+                      <h6>Program Outcomes </h6>
                       <div className="peo-list">
                         {pos && pos.length > 0 ? (
                           pos.map((po, index) => (
@@ -420,12 +427,13 @@ export default function ProgramDetailClient({ params }) {
                       )}
                     </div>
                   </div>
-                   <div
+                  <div
                     id="tab3"
                     className={`item ${activeTab === "tab3" ? "active" : ""}`}
                     data-title="Program Specific Outcomes (PSOs)"
                   >
                     <div className="item-content">
+                      <h6>Program Specific Outcomes</h6>
                       <div className="peo-list">
                         {pso && pso.length > 0 ? (
                           pso.map((pso, index) => (
@@ -456,7 +464,6 @@ export default function ProgramDetailClient({ params }) {
           </div>
         </div>
       </section>
-
 
       {/* Curriculum Section */}
       {curriculum && (
@@ -508,12 +515,12 @@ export default function ProgramDetailClient({ params }) {
                         style={{
                           opacity:
                             currentCurriculumIndex ===
-                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              (curriculum?.curriculum_desc?.length || 1) - 1
                               ? 0.5
                               : 1,
                           cursor:
                             currentCurriculumIndex ===
-                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              (curriculum?.curriculum_desc?.length || 1) - 1
                               ? "not-allowed"
                               : "pointer",
                         }}
@@ -540,7 +547,7 @@ export default function ProgramDetailClient({ params }) {
                             height={20}
                             className="img-fluid"
                           />
-                          Download PDF
+                          Download
                         </a>
                       </div>
                     )}
@@ -676,17 +683,17 @@ export default function ProgramDetailClient({ params }) {
                       <p>{restWords.join(" ")}</p>
                       {(currentTestimonial?.apply_now_link ||
                         apply_now_link) && (
-                        <a
-                          href={
-                            currentTestimonial?.apply_now_link || apply_now_link
-                          }
-                          className="apply-btn1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
+                          <a
+                            href={
+                              currentTestimonial?.apply_now_link || apply_now_link
+                            }
+                            className="apply-btn1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
+                        )}
                     </div>
                   </div>
                   <div className="testimonial-img">
@@ -770,7 +777,7 @@ export default function ProgramDetailClient({ params }) {
                                 {opportunity.text}
                               </a>
                             </li>
-                          )
+                          ),
                         )}
                     </ul>
                   </div>

@@ -24,6 +24,7 @@ import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
 import AcademicLabs from "@/component/sections/AcademicLabs";
 import ResearchLabs from "@/component/sections/ResearchLabs";
 import selectionProcess from "@/component/sections/SelectionProcess";
+import RightCounterSection from "@/component/sections/RightCounterSection";
 
 // API fetcher
 async function fetchPageData(slug) {
@@ -105,7 +106,8 @@ export default async function DynamicPage({ params }) {
     researchSectionSecond: ResearchLabs,
     objectiveSection: ResearchLabs,
     heritageSection: HeritageSection,
-    selectionProcess:selectionProcess
+    selectionProcess:selectionProcess,
+    rightCounterSection:RightCounterSection
   };
 
   return (

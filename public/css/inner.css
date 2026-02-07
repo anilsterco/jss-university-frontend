@@ -307,6 +307,20 @@
   border-top: none;
   text-align: center;
 }
+.about_f_value{
+    grid-template-columns: 43.5% 56.5%;
+    align-items: center;
+    padding-top: 14rem;
+    display: grid;
+
+}
+
+.about_f_value .ab_f_content {padding-left: 10.8rem;padding-right: 5rem;}
+.about_f_value .ab_f_content h3{font: var(--font-24);padding-bottom:2.4rem;margin: 0 auto; font-weight: 300; line-height: 1.4;}
+
+.ab_f_content p{color: var(--color-44);}
+
+
 
 .about_four .values-grid .value-box:nth-child(-n + 3) {
   padding-top: 0;
@@ -344,6 +358,7 @@
 .estab_slide_item{ text-align: center; background-color: var(--color-white); padding: 2.2rem 4.5rem 3.2rem 4.5rem;border-radius: 0.8rem;height: 100%;    min-height: 20.8rem; }
 .estab_slide_item p{color: var(--color-27);margin-bottom: 0rem;}
 .estab_slide_item figcaption{margin-top: 1rem;}
+.abou_t_sec{padding-top: 10rem;}
 .abou_t_sec .about_subtitle{margin-bottom: 2.4rem;}
 .abou_t_sec .about_subtitle,  .abou_t_sec h2{text-align: center;}
 .ab_estab_slider .swiper-pagination { position: relative; text-align: center; display: flex; align-items: center; justify-content: center; margin-top: 5rem; }
@@ -818,10 +833,10 @@ font-family: var(--font-notosans);font-weight: 400;}
   color: var(--color-100);
 }
 
-.about_three .vsn_msn_grid .miss-rgt h5 {
+.about_three .vsn_msn_grid .miss-rgt p {
   font: var(--font-24);
   font-weight: 300;
-  margin-bottom: 3.8rem;
+  margin-bottom: 3.2rem;
   color: var(--color-white);
 }
 

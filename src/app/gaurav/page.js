@@ -506,7 +506,6 @@ const Page = () => {
                       <h2>
                         THE ALLOTMENT OF HOSTEL <br></br> WILL BE DONE ON
                         <span>
-                          {" "}
                           FIRST COME <br></br> FIRST SERVE BASIS.
                         </span>
                       </h2>
