@@ -149,6 +149,7 @@ export default function AboutOne({ data }) {
                                       alt={item.description || "figure"}
                                       width={120}
                                       height={30}
+                                      style={{ objectFit: "contain" }}
                                     />
                                   )}
                                 </>

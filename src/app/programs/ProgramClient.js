@@ -290,7 +290,7 @@ export default function ProgramClient() {
                             <figure>
                               <Image
                                 src={
-                                  program.banner ??
+                                  program.image ??
                                   "/images/programs/program-img.webp"
                                 }
                                 alt="program-image"
