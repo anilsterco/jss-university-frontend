@@ -14,7 +14,7 @@ import TabSection from "@/component/sections/TabSection";
 import Placements from "@/component/sections/Placements";
 import PlacementHighlights from "@/component/sections/PlacementHighlights";
 import PlacementProcedure from "@/component/sections/PlacementProcedure";
-import pacementTabSection from "@/component/sections/pacementTabSection";
+import PacementTabSection from "@/component/sections/PacementTabSection";
 import PlacementRequest from "@/component/sections/PlacementRequest";
 import FacilitySeven from "@/component/sections/FacilitySeven";
 import HeritageSection from "@/component/sections/HeritageSection";
@@ -23,10 +23,16 @@ import EmpowringPeople from "@/component/sections/EmpowringPeople";
 import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
 import AcademicLabs from "@/component/sections/AcademicLabs";
 import ResearchLabs from "@/component/sections/ResearchLabs";
-import selectionProcess from "@/component/sections/SelectionProcess";
+import SelectionProcess from "@/component/sections/SelectionProcess";
 import RightCounterSection from "@/component/sections/RightCounterSection";
+import EligibilityData from "@/component/sections/EligibilityData";
+import AdmissionTableSection from "@/component/sections/AdmissionTableSection";
+import AdmissionOffice from "@/component/sections/AdmissionOffice";
+import HostelDetail from "@/component/sections/HostelDetail";
+import SocioEconomically from "@/component/sections/SocioEconomically";
+import CocurricularSupport from "@/component/sections/CocurricularSupport";
 
-// API fetcher
+
 async function fetchPageData(slug) {
   try {
     const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
@@ -43,9 +49,7 @@ async function fetchPageData(slug) {
 export default async function DynamicPage({ params }) {
   const { slug } = await params;
   const actualSlug = slug ?? "home";
-
   const data = await fetchPageData(actualSlug);
-
   if (!data) return notFound();
 
   const hasTabs =
@@ -96,7 +100,7 @@ export default async function DynamicPage({ params }) {
     whiteboxes: Placements,
     placementHighlights: PlacementHighlights,
     placementProcedure: PlacementProcedure,
-    pacementTabSection: pacementTabSection,
+    pacementTabSection: PacementTabSection,
     placementOfficer: PlacementRequest,
     empowringPeople: EmpowringPeople,
     fosteringcreativity: Fosteringcreativity,
@@ -106,8 +110,14 @@ export default async function DynamicPage({ params }) {
     researchSectionSecond: ResearchLabs,
     objectiveSection: ResearchLabs,
     heritageSection: HeritageSection,
-    selectionProcess:selectionProcess,
-    rightCounterSection:RightCounterSection
+    selectionProcess:SelectionProcess,
+    rightCounterSection:RightCounterSection,
+    eligibilityData: EligibilityData,
+    tableSection: AdmissionTableSection,
+    admissionOffice:AdmissionOffice,
+    hostelDetail:HostelDetail,
+    socioEconomically:SocioEconomically,
+    cocurricularSupport:CocurricularSupport,
   };
 
   return (

@@ -5,14 +5,13 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function pacementTabSection({ data }) {
+export default function PacementTabSection({ data }) {
   const [activeGrowthTab, setActiveGrowthTab] = useState(null);
 
   useEffect(() => {
     AOS.init({ once: true, duration: 1000 });
   }, []);
 
-  // first tab active by default
   useEffect(() => {
     const section = data?.find(
       (sec) => sec.type === "pacementTabSection"
@@ -28,19 +27,15 @@ export default function pacementTabSection({ data }) {
 
   const renderSection = (section, index) => {
     if (section.type !== "pacementTabSection") return null;
-
     const items =
       section.items?.sort(
         (a, b) => Number(a.position) - Number(b.position)
       ) || [];
-
     return (
       <section className="about_two" key={index}>
         <div className="container">
           <div className="abou_t_sec">
-            {/* Static Heading (as per your layout) */}
             <h5 className="about_subtitle">Industry Institute Collaborations (MOUs & COEs)</h5>
-            {/* Tabs */}
             <nav className="growth-tabs">
               <ul>
                 {items.map((item) => (
@@ -65,7 +60,6 @@ export default function pacementTabSection({ data }) {
               </ul>
             </nav>
 
-            {/* Tabs Content */}
             <div className="grow_tb_contsec">
               {items.map((item) => (
                 <div
