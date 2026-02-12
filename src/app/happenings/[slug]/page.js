@@ -93,11 +93,17 @@ export default function Happenings({ params }) {
                         className="img-fluid w-100"
                       />
                     </figure>
-                    <div className={styles.happContant}>
+                    <p className={styles.happContant}>
                       {section.content.map((paragraph, pIdx) => (
-                        <p key={pIdx}>{paragraph}</p>
+                        <div
+                          key={pIdx}
+                          dangerouslySetInnerHTML={{
+                            __html: paragraph.replace(/\r?\n/g, "<br />")
+                          }}
+                        />
                       ))}
-                    </div>
+                    </p>
+
                   </div>
                 </div>
               </div>
