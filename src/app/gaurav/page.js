@@ -2995,7 +2995,7 @@ const Page = () => {
         return (
           <section className="socio_econo_sec" key={sectionIndex}>
             <div className="containerMD">
-              <section className="sedg_section_wrap">
+              <div className="sedg_section_wrap">
                 <div className="sedg_row_block">
                   <div className="sedg_img_col">
                     <figure className="shine-effect">
@@ -3071,7 +3071,7 @@ const Page = () => {
                     </p>
                   </div>
                 </div>
-              </section>
+              </div>
             </div>
           </section>
         );

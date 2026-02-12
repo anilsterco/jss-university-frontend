@@ -695,14 +695,14 @@ font-family: var(--font-notosans);font-weight: 400;}
 .mento_complist li a{display: flex;align-items: center;gap: 1rem;font: var(--font-18);color: var(--color-33);font-weight: bold;}
 .mento_complist li a:hover{color: var(--color-e8);}
 .mentor_com_main{display: grid;  grid-template-columns: 1fr 1fr;gap: 2.7rem;}
-.socio_econo_sec{padding: 14rem 0;}
 .socio_econo_sec .sedg_row_block {grid-template-columns: 44.1% 55.9%; align-items: center; display: grid; width: 83.4%; margin: auto; }
 .sedg_content_col{padding-left: 10.1rem;}
 .socio_econo_sec .sedg_title { font: var(--font-26); font-weight: bold; margin-bottom: 2.4rem; color: var(--color-4e); }
 .socio_econo_sec p { font: var(--font-16); line-height: 1.7; margin-bottom: 2.7rem; color: var(--color-44); }
 .sedg_text:last-child { margin-bottom: 0; }
-.sedg_row_block:first-child{padding-bottom: 8rem;}
-.sedg_row_block:last-child{padding-top: 8rem;}
+.sedg_row_block:first-child{padding-block: 14rem 8rem;}
+.sedg_row_block:last-child{padding-bottom: 8rem;}
+.border_bottom{border-bottom: solid 1px #D9D9D9;padding-top: 8rem;}
 .sedg_content_col p{padding-right:4rem;}
 .socio_econo_sec hr{border-top: .1rem solid var(--color-d9);}
 .scu_tabs_ul { clear: left; border-bottom: .1rem solid var(--color-d6); margin-inline: 1.5rem;  margin: 0;padding: 0; position: relative; }
@@ -712,8 +712,8 @@ font-family: var(--font-notosans);font-weight: 400;}
 .scu_tabs_li:last-child button { border-right: none; }
 .scu_tabs_li button.active { color: var(--color-e8); }
 .scu_tabs_content {padding-block: 5rem 4rem;}
-.scu_tab_panel { display: none; }
-.scu_tab_panel.active { display: block; }
+.scu_tab_panel {display: none;}
+.scu_tab_panel.active {display: block;}
 .student_clubsmain{padding-block: 6.5rem 9rem;background-color: var(--color-white);}
 .heading_title {font: var(--font-26); color: var(--color-4e); margin-bottom: 2.4rem; font-weight: bold;}
 .stu_clubs_title p{color: var(--color-44);margin-bottom: 5.2rem;}
@@ -805,23 +805,6 @@ font-family: var(--font-notosans);font-weight: 400;}
 .about_two  .early-slide{ grid-template-columns: 43.5% 55%; display: grid !important; }
 
 
-
-
-
-
-
-
-/* 
-.about_three .vsn_msn_grid::after {
-  content: "";
-  position: absolute;
-  background-color: #f6f6f6;
-  width: 100%;
-  height: 50%;
-  z-index: -1;
-  bottom: 0;
-  left: 0;
-} */
 
 .about_three .vsn_msn_grid .miss-rgt {
   padding-top: 3.8rem;

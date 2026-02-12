@@ -2105,3 +2105,28 @@ a:active {
   line-height: 2.8rem;
   align-items: center;
 }
+
+.studends_pdf {
+  padding-block: 3.2rem;
+}
+
+.studends_pdf ul {
+  padding-left: 0;
+}
+
+.studends_pdf ul li {
+  list-style: none;
+ font: var(--font-18);
+  letter-spacing: 0px;
+  color: #333333;
+  line-height: 2.9rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.studends_pdf ul li img {
+  list-style: none;
+  max-width: 1.4rem;
+  height: 2rem;
+  margin-right: 1.2rem;
+}

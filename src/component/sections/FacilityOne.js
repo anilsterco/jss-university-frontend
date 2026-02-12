@@ -34,7 +34,6 @@ export default function FacilityOne({ data }) {
                 {boxes?.items?.[0]?.subtitle && (
                   <p>{boxes.items[0].subtitle}</p>
                 )}
-
                 {percentSub?.items?.[0]?.subtitle && (
                   <h2
                     dangerouslySetInnerHTML={{
