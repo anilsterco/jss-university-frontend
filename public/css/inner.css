@@ -598,7 +598,7 @@ font-family: var(--font-notosans);font-weight: 400;}
 .ad_sel_col li::before{ content: ''; position: absolute; left: 0; top: 0.4rem; width: 0.7rem; height: 0.7rem; border-radius: 5rem; background-color: var(--color-36); }
 .ad_se_content{max-width: 30.6rem;}
 .eligibilty_main{background-color: var(--color-9a);}
-.eligib_grid_ad{grid-template-columns: 50.5% 49.45%;    align-items: center;display: grid;}
+.eligib_grid_ad{grid-template-columns: 50.5% 49.45%;align-items: center;display: grid;}
 .eligib_cont h5{font: var(--font-26);color: var(--color-white);margin-bottom: 1.5rem;}
 .eligib_cont h2{font: var(--font-60);color: var(--color-white);margin-bottom: 5.1rem;letter-spacing: -2.88px;font-family: var(--font-Condensed);}
 .eligib_cont h2 span{color: var(--color-100);}
