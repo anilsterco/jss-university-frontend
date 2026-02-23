@@ -110,14 +110,14 @@ export default async function DynamicPage({ params }) {
     researchSectionSecond: ResearchLabs,
     objectiveSection: ResearchLabs,
     heritageSection: HeritageSection,
-    selectionProcess:SelectionProcess,
-    rightCounterSection:RightCounterSection,
+    selectionProcess: SelectionProcess,
+    rightCounterSection: RightCounterSection,
     eligibilityData: EligibilityData,
     tableSection: AdmissionTableSection,
-    admissionOffice:AdmissionOffice,
-    hostelDetail:HostelDetail,
-    socioEconomically:SocioEconomically,
-    cocurricularSupport:CocurricularSupport,
+    admissionOffice: AdmissionOffice,
+    hostelDetail: HostelDetail,
+    socioEconomically: SocioEconomically,
+    cocurricularSupport: CocurricularSupport,
   };
 
   return (
@@ -134,7 +134,7 @@ export default async function DynamicPage({ params }) {
       {groupedSections?.map((section, index) => {
         const Component =
           sectionComponents[
-            section.type === "facilityGroup" ? "facilityGroup" : section.type
+          section.type === "facilityGroup" ? "facilityGroup" : section.type
           ];
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;

@@ -65,11 +65,10 @@ export default function PacementTabSection({ data }) {
                 <div
                   key={item.item_uuid}
                   id={`growthTab${item.position}`}
-                  className={`growth-item ${
-                    activeGrowthTab === `growthTab${item.position}`
+                  className={`growth-item ${activeGrowthTab === `growthTab${item.position}`
                       ? "active"
                       : ""
-                  }`}
+                    }`}
                 >
                   <div className="growth-content">
                     <div className="growth-list place_logos">

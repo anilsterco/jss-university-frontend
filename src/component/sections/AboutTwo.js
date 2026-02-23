@@ -25,65 +25,79 @@ export default function AboutTwo({ data }) {
     AOS.refresh();
   }, [data]);
 
-  
+
   const renderSlider = (items, sectionIndex) => {
     if (!items || items.length === 0) return <p>No slider content available</p>;
 
     return (
-      <Swiper
-        modules={[Navigation, EffectFade, Autoplay]}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={items.length > 1}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        navigation={{
-          nextEl: `.earlygrowth-next-${sectionIndex}`,
-          prevEl: `.earlygrowth-prev-${sectionIndex}`,
-        }}
-      >
-        {items.map((item, idx) => (
-          <SwiperSlide key={idx}>
-            <div
-              className="early-slide"
-              style={{ display: "flex", alignItems: "center", gap: "2rem" }}
-            >
-              {item.image && (
-                <div style={{ flex: 1 }}>
-                  <Image
-                    src={item.image}
-                    alt={
-                      item.title
-                        ? item.title.replace(/<[^>]+>/g, "")
-                        : "Early Growth"
-                    }
-                    width={600}
-                    height={400}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-              )}
+      <div className="earlygrowth-slider-wrapper" style={{ position: "relative" }}>
+        <Swiper
+          modules={[Navigation, EffectFade, Autoplay]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={items.length > 1}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          navigation={{
+            nextEl: `.earlygrowth-next-${sectionIndex}`,
+            prevEl: `.earlygrowth-prev-${sectionIndex}`,
+          }}
+        >
+          {items.map((item, idx) => (
+            <SwiperSlide key={idx}>
               <div
-                className="early_rgt"
-                style={{ flex: 1 }}
-                data-aos="fade-left"
-                data-aos-delay="200"
-                data-aos-duration="900"
+                className="early-slide"
+                style={{ display: "flex", alignItems: "center", gap: "2rem" }}
               >
-                {item.subtitle && <h5>{item.subtitle}</h5>}
-                {item.title && (
-                  <h4 dangerouslySetInnerHTML={{ __html: item.title }} />
+                {item.image && (
+                  <div style={{ flex: 1 }}>
+                    <Image
+                      src={item.image}
+                      alt={
+                        item.title
+                          ? item.title.replace(/<[^>]+>/g, "")
+                          : "Early Growth"
+                      }
+                      width={600}
+                      height={400}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
                 )}
+                <div
+                  className="early_rgt"
+                  style={{ flex: 1 }}
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-duration="900"
+                >
+                  {item.subtitle && <h5>{item.subtitle}</h5>}
+                  {item.title && (
+                    <h4 dangerouslySetInnerHTML={{ __html: item.title }} />
+                  )}
+
+                  {/* Navigation Buttons */}
+                  <div className="nav_buttons">
+                    <div className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}>
+                      <Image src="/images/icons/circle-arrow-left.svg" alt="Arrow" width={22} height={22} />
+                    </div>
+                    <div className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}>
+                      <Image src="/images/icons/circle-arrow-right.svg" alt="Arrow" width={22} height={22} />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+
+      </div>
     );
   };
 
@@ -92,7 +106,7 @@ export default function AboutTwo({ data }) {
       <div className="container">
         <div className="abou_t_sec">
           <h5 className="about_subtitle">Early Growth and Achievements</h5>
-          <h2>
+          <h2 className="pb_max_4rem">
             In just its formative year (2024–2025), the University has made
             impressive strides:
           </h2>

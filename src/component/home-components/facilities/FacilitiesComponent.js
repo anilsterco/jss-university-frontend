@@ -250,7 +250,7 @@ export default function FacilitiesComponent({ data }) {
                   style={{ width: "100%", objectFit: "cover" }}
                 />
                 <div className={styles.verticalLine}>
-                  <div className={styles.slideNumberBox}>{index + 1}</div>
+                  <div className={styles.slideNumberBox}>{index + 1 < 10 ? "0" + (index + 1) : index + 1}</div>
                 </div>
                 <div className={styles.bannerContent}>
                   <div>
@@ -263,7 +263,7 @@ export default function FacilitiesComponent({ data }) {
                         height={22}
                       />
                     </h2>
-                    <p>{panel.description}</p>
+                    <p className={styles.facilityDescription}>{panel.description}</p>
                   </div>
                 </div>
                 <div className={styles.bannerLinks}>
@@ -275,12 +275,12 @@ export default function FacilitiesComponent({ data }) {
                         className={styles.bannerLink}
                       >
                         {item.text}
-                         <Image
-                        src="/images/home-page/facili_arrow.svg"
-                        alt="image"
-                        width={5}
-                        height={10}
-                      />
+                        <Image
+                          src="/images/home-page/facili_arrow.svg"
+                          alt="image"
+                          width={5}
+                          height={10}
+                        />
                       </Link>
                     ))}
                 </div>

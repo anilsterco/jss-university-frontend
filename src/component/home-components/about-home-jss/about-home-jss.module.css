@@ -52,6 +52,11 @@
   color: #fff;
 }
 
+.arrowIcon {
+  margin-left: 1.3rem;
+  font-size: 1.2rem;
+}
+
 
 .rightColumn {
   padding-left: 14.2rem;
@@ -104,7 +109,7 @@
   padding: 2.4rem 1.9rem 1.9rem 2.9rem;
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 2.6rem;
+  margin-bottom: 3.6rem;
 
 }
 
@@ -161,7 +166,7 @@
 }
 
 .fifthSectionSlider {
-  margin-top: 8.3rem;
+  margin-top: 6.7rem;
   padding-inline: 5rem;
 }
 
@@ -245,9 +250,10 @@
   .navButtons {
     padding: 0.5rem 2rem;
   }
+
   .rightColumn {
-  padding-left: 12.2rem;
-}
+    padding-left: 12.2rem;
+  }
 }
 
 
