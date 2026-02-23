@@ -42,7 +42,6 @@ export default function AboutDepartmentComponent({ data }) {
 
   const departmentData = data || dummyCoursesData;
 
-  // 🔹 Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -55,14 +54,12 @@ export default function AboutDepartmentComponent({ data }) {
     <div className={`${styles.aboutDepartment}`}>
       <div className="container">
 
-        {/* Header Section */}
         <div className={styles.header} data-aos="fade-up" data-aos-delay="100">
           <p className={styles.subtitle}>{departmentData.subtitle}</p>
           <h1 className={`blue-text ${styles.title}`}>{departmentData.title}</h1>
           <p className={styles.description}>{departmentData.description}</p>
         </div>
 
-        {/* Stats Section */}
         <div className={styles.statsSection}>
           {departmentData.stats.map((stat, index) => (
             <div
@@ -96,10 +93,8 @@ export default function AboutDepartmentComponent({ data }) {
           ))}
         </div>
 
-        {/* Vision & Mission Section */}
-        <div className={styles.contentSection}>
 
-          {/* Department Image */}
+        <div className={styles.contentSection}>
           <div className="vission px-0" data-aos="fade-right" data-aos-delay="600">
             <div className={`shine-effect card border-0 h-100 ${styles.imagePlaceholder}`}>
               <Image
@@ -108,22 +103,18 @@ export default function AboutDepartmentComponent({ data }) {
                 width={500}
                 height={500}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                className={styles.shineImage} // 🔹 Optional shine CSS class
+                className={styles.shineImage} 
                 priority
               />
             </div>
           </div>
 
-          {/* Vision & Mission */}
           <div className={`mission ps-0 ${styles.visionMission}`}>
-
-            {/* Vision */}
             <div className={styles.visionCard} data-aos="fade-up" data-aos-delay="700">
               <h3 className={styles.visionTitle}>{departmentData.vision.title}</h3>
               <p className={styles.visionDescription}>{departmentData.vision.description}</p>
             </div>
 
-            {/* Mission */}
             <div className={styles.missionSection} data-aos="fade-up" data-aos-delay="900">
               <h3 className={styles.missionTitle}>{departmentData.mission.title}</h3>
               <ul className={styles.missionList}>
@@ -137,10 +128,8 @@ export default function AboutDepartmentComponent({ data }) {
                 )}
               </ul>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   );

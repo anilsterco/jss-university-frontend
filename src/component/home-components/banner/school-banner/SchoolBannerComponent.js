@@ -17,7 +17,6 @@ import "swiper/css/pagination";
 
 export default function SchoolSlider({ data, name, isDepartment = false }) {
 
-  // 🔹 AOS INIT
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -26,18 +25,15 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
     });
   }, []);
 
-  // 🔹 Refresh AOS on data update
   useEffect(() => {
     AOS.refresh();
   }, [data]);
 
-  // 🔹 Default Banner Fallback
   const defaultBanner = [
     {
       id: 1,
       label: "SCHOOL OF ENGINEERING",
-      title:
-        "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
+      title: "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
       desc: "A long-standing history of fostering new ideas and guiding students.",
       linked_text: "Learn more about JSS",
       url: "/about-us",
@@ -58,24 +54,12 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
     >
       {bannerData.map((slide, index) => (
         <SwiperSlide key={slide.id || index}>
-          <div
-            className={styles.slideWrapper}
-            data-aos="fade-up"
-            data-aos-duration="1200"
-          >
-            {/* 🔹 LEFT CONTENT */}
-            <div
-              className={styles.leftSection}
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
+          <div className={styles.slideWrapper} data-aos="fade-up" data-aos-duration="1200">
+            <div className={styles.leftSection} data-aos="fade-right" data-aos-delay="200">
               <div className={styles.bannerContent}>
-                <div
-                  className={styles.bannerLabel}
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  {name || slide.label}
+                {/* ✅ Department Name or Slide Label */}
+                <div className={styles.bannerLabel} data-aos="fade-up" data-aos-delay="300">
+                  {isDepartment ? name : slide.label}
                 </div>
 
                 <h1
@@ -85,11 +69,7 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                   data-aos-delay="400"
                 />
 
-                <p
-                  className={styles.bannerContentP}
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
+                <p className={styles.bannerContentP} data-aos="fade-up" data-aos-delay="500">
                   {slide.desc}
                 </p>
 
@@ -111,50 +91,26 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
               </div>
             </div>
 
-            {/* 🔹 RIGHT IMAGE */}
-            <div
-              className={styles.rightSection}
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
+            <div className={styles.rightSection} data-aos="fade-left" data-aos-delay="300">
               <div className={`${styles.imageWrapper} shine-effect`}>
                 <Image
-                  src={
-                    slide.desktop_banner ||
-                    "/images/header/school-banner.png"
-                  }
-                  alt={name || slide.label}
+                  src={slide.desktop_banner || "/images/header/school-banner.png"}
+                  alt={isDepartment ? name : slide.label}
                   width={1100}
                   height={600}
                   priority
                   className={`w-100 ${styles.desktopBanner}`}
                 />
-
                 <Image
-                  src={
-                    slide.mobile_banner ||
-                    "/images/home-page/mobile-main-banner.png"
-                  }
-                  alt={name || slide.label}
+                  src={slide.mobile_banner || "/images/home-page/mobile-main-banner.png"}
+                  alt={isDepartment ? name : slide.label}
                   width={600}
                   height={600}
                   priority
                   className={styles.mobileBanner}
                 />
-
-                {isDepartment && (
-                  <div
-                    className={styles.departmentOverlay}
-                    data-aos="zoom-in"
-                    data-aos-delay="600"
-                  >
-                    <span>DEPARTMENT OF</span>
-                    <h2>{name}</h2>
-                  </div>
-                )}
               </div>
             </div>
-
           </div>
         </SwiperSlide>
       ))}
