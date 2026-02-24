@@ -39,6 +39,9 @@ import Grants from "@/component/sections/Grants";
 import AuditoriumSeminar from "@/component/sections/AuditoriumSeminar";
 import UniversityGreen from "@/component/sections/UniversityGreen";
 import Transportation from "@/component/sections/Transportation";
+import CountAlumni from "@/component/sections/CountAlumni";
+import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
+import ImageContentRepeat from "@/component/sections/ImageContentRepeat";
 
 
 
@@ -63,8 +66,8 @@ export default async function DynamicPage({ params }) {
 
   const hasTabs =
     data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
-    const groupedSections = [];
-    let facilityGroup = [];
+  const groupedSections = [];
+  let facilityGroup = [];
 
   data.sections?.forEach((section) => {
     if (["titleBanner", "boxes", "percentSub"].includes(section.type)) {
@@ -122,18 +125,20 @@ export default async function DynamicPage({ params }) {
     rightCounterSection: RightCounterSection,
     eligibilityData: EligibilityData,
     tableSection: AdmissionTableSection,
-    admissionOffice:AdmissionOffice,
-    hostelDetail:HostelDetail,
-    socioEconomically:SocioEconomically,
-    cocurricularSupport:CocurricularSupport,
-    thefollowingfacilities:Thefollowingfacilities,
-    indexedResearch:IndexedResearch,
-    publicationPatents:PublicationPatents,
-    grantsreceived:GrantsReceived,
-    grants:Grants,
-    auditoriumSeminar:AuditoriumSeminar,
-    universityGreen:UniversityGreen,
-    transportation:Transportation,
+    admissionOffice: AdmissionOffice,
+    hostelDetail: HostelDetail,
+    socioEconomically: SocioEconomically,
+    cocurricularSupport: CocurricularSupport,
+    thefollowingfacilities: Thefollowingfacilities,
+    indexedResearch: IndexedResearch,
+    publicationPatents: PublicationPatents,
+    grantsreceived: GrantsReceived,
+    grants: Grants,
+    auditoriumSeminar: AuditoriumSeminar,
+    universityGreen: UniversityGreen,
+    transportation: Transportation,
+    countAlumni: CountAlumni,
+    imageContentRepeat: ImageContentRepeat
   };
 
   return (
@@ -147,7 +152,10 @@ export default async function DynamicPage({ params }) {
         />
       )}
 
+
+
       {groupedSections?.map((section, index) => {
+
         const Component =
           sectionComponents[
           section.type === "facilityGroup" ? "facilityGroup" : section.type

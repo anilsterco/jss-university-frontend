@@ -973,6 +973,19 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+/* count_alumni_section */
+
+.count_alumni_section {
+  display: flex;
+  padding-top: 10rem;
+}
+
+/* image content repeateer section */
+
+.image_content_repeat_section {
+  padding-top: 10rem;
+}
+
 
 
 @media all and (min-width: 800px) {

@@ -19,7 +19,7 @@ const STATIC_SECTIONS = [
   { id: "happenings", label: "Happenings" },
 ];
 
-export default function DepartmentHeader() {
+export default function DepartmentHeader({ className }) {
   const [activeSection, setActiveSection] = useState(STATIC_SECTIONS[0].id);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
@@ -108,7 +108,7 @@ export default function DepartmentHeader() {
       <div className={styles.stickyHeader}>
         <nav className="containerXl">
           <div className={styles.departmentMenu}>
-            
+
             {/* ===== Dropdown ===== */}
             <div className={styles.schoolDeptWrapper}>
               <div
@@ -128,16 +128,15 @@ export default function DepartmentHeader() {
                   ref={engineeringRef}
                 >
                   <div className={styles.engineeringDropdown}>
-                    
+
                     {/* ===== Schools ===== */}
                     <div className={styles.schoolsList}>
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => (
                         <div
                           key={idx}
-                          className={`${styles.schoolItem} ${
-                            selectedSchool === idx ? styles.active : ""
-                          }`}
+                          className={`${styles.schoolItem} ${selectedSchool === idx ? styles.active : ""
+                            }`}
                           onClick={() => {
                             setSelectedSchool(idx);
                             setSelectedSchoolName(school.name);
@@ -184,9 +183,8 @@ export default function DepartmentHeader() {
             {STATIC_SECTIONS.map((section) => (
               <button
                 key={section.id}
-                className={`${styles.navItem} ${
-                  activeSection === section.id ? styles.activeNav : ""
-                }`}
+                className={`${styles.navItem} ${activeSection === section.id ? styles.activeNav : ""
+                  }`}
                 onClick={() => scrollToSection(section.id)}
               >
                 {section.label}

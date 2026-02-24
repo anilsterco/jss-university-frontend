@@ -1,5 +1,9 @@
 /* ===== Sticky Header ===== */
 
+.departmentHeaderWrapper {
+  padding-top: 153px;
+}
+
 .stickyHeader {
   position: sticky;
   top: 12%;
@@ -134,14 +138,16 @@
   letter-spacing: 0;
   font-weight: 400;
 }
-.departmentLink button{
+
+.departmentLink button {
   font: var(--font-18);
   color: #fff;
   letter-spacing: 0;
   font-weight: 400;
 }
+
 .departmentLink:hover {
-  background:#ffc100;
+  background: #ffc100;
   color: #ffffff;
 }
 
@@ -153,7 +159,7 @@
   white-space: nowrap;
   transition: 0.3s;
   font: var(--font-18);
-  color:#333333;
+  color: #333333;
   letter-spacing: 0;
   font-weight: 400;
 }
