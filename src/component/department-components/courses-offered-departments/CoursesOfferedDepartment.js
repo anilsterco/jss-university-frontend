@@ -6,7 +6,6 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const CoursesOffered = ({ data }) => {
-  // Dynamic data structure
   const dummyCoursesData = {
     subtitle: "COURSES OFFERED",
     title: `<span class="dark-blue-text">AT JSS THE</span><span class="blue-text">EMPHASIS IS ON YOU</span>`,
@@ -49,7 +48,6 @@ const CoursesOffered = ({ data }) => {
   return (
     <div className={styles.course_dep} data-aos="fade-up" data-aos-duration="1200">
     <div className="container-fluid mob-container">
-      {/* Header Section */}
       <div className={styles.headerSection} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
         <p className={styles.subtitle}>{coursesData.subtitle}</p>
         <h2
@@ -57,10 +55,7 @@ const CoursesOffered = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: coursesData.title }}
         ></h2>
       </div>
-
-      {/* Main Content Grid */}
       <div className="row g-4 position-relative w-100 m-100">
-        {/* Image Placeholder */}
         <div className="col-lg-5" >
           <div className={styles.imagePlaceholder}>
             {coursesData.image && (
@@ -75,8 +70,6 @@ const CoursesOffered = ({ data }) => {
                 />
               </div>
             )}
-
-            {/* Admission Bar overlapping image */}
             <div className={styles.admission_bar}>
               <div className={styles.admissionContent}>
                 <span className={styles.admissionTitle}>Admission 2025-26</span>
@@ -98,7 +91,6 @@ const CoursesOffered = ({ data }) => {
                 </div>
                 <div className={styles.admissionButtons}>
                   <Link
-                    // href={coursesData.admission_bar.download_button}
                     href={"#"}
                     className={styles.downloadBtn}
                   >
@@ -116,7 +108,6 @@ const CoursesOffered = ({ data }) => {
           </div>
         </div>
 
-        {/* Courses Cards */}
         <div className="col-lg-6">
           <div className={styles.coursesGrid}>
             {coursesData.courses &&

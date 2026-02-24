@@ -60,21 +60,23 @@ export default async function DepartmentPage({ params }) {
         isDepartment={true}
       />
       <DepartmentHeader />
-
       {departmentData?.sections?.about_school && (
         <AboutDepartmentComponent data={departmentData.sections.about_school} />
       )}
+        {/* {departmentData?.sections?.courses_data && (
+        <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
+      )} */}
       {departmentData?.sections?.dean_message && (
         <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
-      {departmentData?.sections?.courses_data && (
-        <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
-      )}
-      {departmentData?.sections?.faculty_data && (
-        <FacultyList data={departmentData.sections.faculty_data} />
-      )}
+    
+     
       {departmentData?.sections?.laboratories_data && (
         <LaboratoryComponent data={departmentData.sections.laboratories_data} />
+      )}
+       
+      {departmentData?.sections?.faculty_data && (
+        <FacultyList data={departmentData.sections.faculty_data} />
       )}
       {departmentData?.sections?.happenings && (
         <HappingsHomeComponent data={departmentData.sections.happenings} />

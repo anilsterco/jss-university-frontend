@@ -196,7 +196,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[2] && (
                   <Image
                     src={eventsData.happenings[2].image}
-                    
+                    alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -250,10 +250,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[3] && (
                   <Image
                     src={eventsData.happenings[3].image}
-                    alt={
-                      eventsData.happenings[3] &&
-                      eventsData.happenings[3].alt_text
-                    }
+                     alt="img"
                     width={145}
                     height={160}
                     className={styles.cardImage}
@@ -281,10 +278,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[4] && (
                   <Image
                     src={eventsData.happenings[4].image}
-                    alt={
-                      eventsData.happenings[4] &&
-                      eventsData.happenings[4].alt_text
-                    }
+                     alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -297,10 +291,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[5] && (
                   <Image
                     src={eventsData.happenings[5].image}
-                    alt={
-                      eventsData.happenings[5] &&
-                      eventsData.happenings[5].alt_text
-                    }
+                    alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -336,10 +327,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[6] && (
                   <Image
                     src={eventsData.happenings[6].image}
-                    alt={
-                      eventsData.happenings[6] &&
-                      eventsData.happenings[6].alt_text
-                    }
+                     alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -363,10 +351,7 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[7] && (
                     <Image
                       src={eventsData.happenings[7].image}
-                      alt={
-                        eventsData.happenings[7] &&
-                        eventsData.happenings[7].alt_text
-                      }
+                      alt="img"
                       height={57}
                       width={253}
                       className={styles.cardImage}
@@ -408,10 +393,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[8] && (
                   <Image
                     src={eventsData.happenings[8].image}
-                    alt={
-                      eventsData.happenings[8] &&
-                      eventsData.happenings[8].alt_text
-                    }
+                    alt="img"
                     width={196}
                     height={55}
                     className={styles.cardImage}
@@ -458,10 +440,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[0] && (
                       <Image
                         src={eventsData.happenings[0].image}
-                        alt={
-                          eventsData.happenings[0] &&
-                          eventsData.happenings[0].alt_text
-                        }
+                        alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -517,10 +496,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[2] && (
                       <Image
                         src={eventsData.happenings[2].image}
-                        alt={
-                          eventsData.happenings[2] &&
-                          eventsData.happenings[2].alt_text
-                        }
+                        alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -560,10 +536,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[3] && (
                       <Image
                         src={eventsData.happenings[3].image}
-                        alt={
-                          eventsData.happenings[3] &&
-                          eventsData.happenings[3].alt_text
-                        }
+                        alt="img"
                         width={100}
                         height={90}
                         className={styles.cardImage}
@@ -585,10 +558,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[4] && (
                       <Image
                         src={eventsData.happenings[4].image}
-                        alt={
-                          eventsData.happenings[4] &&
-                          eventsData.happenings[4].alt_text
-                        }
+                         alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -608,10 +578,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[5] && (
                       <Image
                         src={eventsData.happenings[5].image}
-                        alt={
-                          eventsData.happenings[5] &&
-                          eventsData.happenings[5].alt_text
-                        }
+                         alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -643,10 +610,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[6] && (
                       <Image
                         src={eventsData.happenings[6].image}
-                        alt={
-                          eventsData.happenings[6] &&
-                          eventsData.happenings[6].alt_text
-                        }
+                         alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -666,10 +630,7 @@ export default function EventsGrid({ data }) {
                       {eventsData.happenings[7] && (
                         <Image
                           src={eventsData.happenings[7].image}
-                          alt={
-                            eventsData.happenings[7] &&
-                            eventsData.happenings[7].alt_text
-                          }
+                          alt="img"
                           height={50}
                           width={200}
                           className={styles.cardImage}
@@ -702,10 +663,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[8] && (
                       <Image
                         src={eventsData.happenings[8].image}
-                        alt={
-                          eventsData.happenings[8] &&
-                          eventsData.happenings[8].alt_text
-                        }
+                        alt="img"
                         width={100}
                         height={90}
                         className={styles.cardImage}

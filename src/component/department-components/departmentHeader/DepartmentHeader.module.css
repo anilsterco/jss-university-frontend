@@ -5,7 +5,9 @@
   top: 12%;
   background: #ffffff;
   z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  opacity: 1;
   width: 100%;
 }
 
@@ -134,14 +136,16 @@
   letter-spacing: 0;
   font-weight: 400;
 }
-.departmentLink button{
+
+.departmentLink button {
   font: var(--font-18);
   color: #fff;
   letter-spacing: 0;
   font-weight: 400;
 }
+
 .departmentLink:hover {
-  background:#ffc100;
+  background: #ffc100;
   color: #ffffff;
 }
 
@@ -153,7 +157,7 @@
   white-space: nowrap;
   transition: 0.3s;
   font: var(--font-18);
-  color:#333333;
+  color: #333333;
   letter-spacing: 0;
   font-weight: 400;
 }

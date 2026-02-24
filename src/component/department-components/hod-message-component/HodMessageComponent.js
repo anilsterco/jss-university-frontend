@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import styles from "./hod-message.module.css";
 import Image from "next/image";
 import AOS from "aos";
+import Link from "next/link";
 import "aos/dist/aos.css";
 
 const HODMessage = ({ data }) => {
@@ -34,31 +35,35 @@ const HODMessage = ({ data }) => {
     <div className={styles.container}>
       <div className="container">
         <div className={styles.card} data-aos="fade-up">
-
-          <div className="row g-0 justify-content-center align-items-center row_padding">
-
-            {/* Image Section */}
-            <div className="col-xl-4" data-aos="fade-right" data-aos-delay="200">
-              <div className={styles.imageContainer}>
-                <div className={styles.imagePlaceholder}>
-                  <Image
-                    src={hodData.img}
-                    alt={hodData?.name || "Head of Department"}
-                    width={476}
-                    height={473}
-                    className={` w-100 hod_img ${styles.hodImage} ${styles.shineImage}`}
-                    style={{ objectFit: "cover" }}
-                    priority
-                  />
-                </div>
-              </div>
+          <div className={styles.hodRow}>
+            <div
+              className={styles.hodCol}
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <Image
+                src={hodData.img}
+                alt={hodData?.name || "Head of Department"}
+                width={476}
+                height={473}
+                className={` w-100 hod_img ${styles.hodImage} ${styles.shineImage}`}
+                priority
+              />
             </div>
-
-            {/* Content Section */}
-            <div className="col-xl-7" data-aos="fade-left" data-aos-delay="400">
+            <div
+              className={styles.hodCol}
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
               <div className={styles.content}>
+                <Image
+                  src="/images/about-page/quote-left.svg"
+                  alt="icon"
+                  width={36}
+                  height={31}
+                  className={styles.icons}
+                />
                 <h3 className={styles.title}>{hodData.title}</h3>
-
                 <div className={styles.messageText}>
                   {hodData.message &&
                     hodData.message.map((paragraph, index) => (
@@ -66,15 +71,29 @@ const HODMessage = ({ data }) => {
                         {paragraph}
                       </p>
                     ))}
+                  <Link href="#" className={styles.arrowLink}>
+                    <Image
+                      src="/images/about-page/about-arrow.svg"
+                      alt="arrow"
+                      width={22}
+                      height={22}
+                    />
+                  </Link>
                 </div>
-
                 <div className={styles.hodInfo}>
                   <h4 className={styles.hodName}>{hodData.name}</h4>
                   <p className={styles.hodDesignation}>{hodData.designation}</p>
                 </div>
+                <div className={styles.lineHod}>
+                  <Image
+                    src="/images/about-page/hod_line_image.svg"
+                    alt="arrow"
+                    width={5}
+                    height={430}
+                  />
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
