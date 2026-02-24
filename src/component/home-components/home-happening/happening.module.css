@@ -346,3 +346,20 @@
   }
 
 }
+
+.card {
+  position: relative;
+}
+.full_link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.rightArrow {
+  position: relative;
+  z-index: 3;
+}
+
+
+

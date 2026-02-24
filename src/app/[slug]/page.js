@@ -31,6 +31,16 @@ import AdmissionOffice from "@/component/sections/AdmissionOffice";
 import HostelDetail from "@/component/sections/HostelDetail";
 import SocioEconomically from "@/component/sections/SocioEconomically";
 import CocurricularSupport from "@/component/sections/CocurricularSupport";
+import Thefollowingfacilities from "@/component/sections/Thefollowingfacilities";
+import IndexedResearch from "@/component/sections/IndexedResearch";
+import PublicationPatents from "@/component/sections/PublicationPatents";
+import GrantsReceived from "@/component/sections/GrantsReceived";
+import Grants from "@/component/sections/Grants";
+import AuditoriumSeminar from "@/component/sections/AuditoriumSeminar";
+import UniversityGreen from "@/component/sections/UniversityGreen";
+import Transportation from "@/component/sections/Transportation";
+
+
 
 
 async function fetchPageData(slug) {
@@ -38,7 +48,6 @@ async function fetchPageData(slug) {
     const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
       next: { revalidate: 60 },
     });
-
     if (!res.ok) return null;
     return await res.json();
   } catch (error) {
@@ -54,9 +63,8 @@ export default async function DynamicPage({ params }) {
 
   const hasTabs =
     data.tabs && Array.isArray(data.tabs.tabs) && data.tabs.tabs.length > 0;
-
-  const groupedSections = [];
-  let facilityGroup = [];
+    const groupedSections = [];
+    let facilityGroup = [];
 
   data.sections?.forEach((section) => {
     if (["titleBanner", "boxes", "percentSub"].includes(section.type)) {
@@ -114,10 +122,18 @@ export default async function DynamicPage({ params }) {
     rightCounterSection: RightCounterSection,
     eligibilityData: EligibilityData,
     tableSection: AdmissionTableSection,
-    admissionOffice: AdmissionOffice,
-    hostelDetail: HostelDetail,
-    socioEconomically: SocioEconomically,
-    cocurricularSupport: CocurricularSupport,
+    admissionOffice:AdmissionOffice,
+    hostelDetail:HostelDetail,
+    socioEconomically:SocioEconomically,
+    cocurricularSupport:CocurricularSupport,
+    thefollowingfacilities:Thefollowingfacilities,
+    indexedResearch:IndexedResearch,
+    publicationPatents:PublicationPatents,
+    grantsreceived:GrantsReceived,
+    grants:Grants,
+    auditoriumSeminar:AuditoriumSeminar,
+    universityGreen:UniversityGreen,
+    transportation:Transportation,
   };
 
   return (
@@ -150,17 +166,14 @@ export default async function DynamicPage({ params }) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const actualSlug = slug ?? "home";
-
   try {
     const data = await fetchPageData(actualSlug);
-
     if (!data) {
       return {
         title: "Page Not Found",
         description: "The requested page could not be found.",
       };
     }
-
     return {
       title: data.meta_title || data.title || "JSS Academy",
       description: data.meta_description || `Page: ${data.title}`,

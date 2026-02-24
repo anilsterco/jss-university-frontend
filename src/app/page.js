@@ -38,6 +38,7 @@ export default async function HomePage() {
         strategy="beforeInteractive"
       />
       <BannerComponent data={homepageData.sections.banners} />
+      
       <div className="animated-hover">
         <CourseOfferedComponent
           data={homepageData.sections.departments_section}
