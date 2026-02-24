@@ -196,10 +196,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[2] && (
                   <Image
                     src={eventsData.happenings[2].image}
-                    alt={
-                      eventsData.happenings[2] &&
-                      eventsData.happenings[2].alt_text
-                    }
+                    
                     fill
                     className={styles.cardImage}
                   />
