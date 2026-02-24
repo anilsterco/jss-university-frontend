@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="22" height="22">
+	<defs>
+		<image  width="12" height="11" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAMAAAB8rpxtAAAAAXNSR0IB2cksfwAAADlQTFRFAAAAmD9ymUBzmUBzmTxvmEBymD9wl0BxmEBxkkBtmD9zmT9zmD5xiTtimD9ykjdtmT9zmD9ziy5dDg6a2gAAABN0Uk5TAJIoyDfZfFg0HPGnYw3xDvLnC0i9NRoAAABDSURBVHicRcdBCoAwDETR+agLF6Xg/c/YSteiNoUkWWT+Q3bwrrG38cjhbYieOMCbM3pChRGS6jcSqtwJlb0ndLU1P7TvCiANQy64AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: none } 
+		.s1 { fill: none;stroke: #994073 } 
+	</style>
+	<g id="Ellipse_17">
+		<path fill-rule="evenodd" class="s0" d="m11 22c-6.08 0-11-4.92-11-11 0-6.08 4.92-11 11-11 6.08 0 11 4.92 11 11 0 6.08-4.92 11-11 11z"/>
+		<path fill-rule="evenodd" class="s1" d="m11 21.5c-5.81 0-10.5-4.69-10.5-10.5 0-5.81 4.69-10.5 10.5-10.5 5.81 0 10.5 4.69 10.5 10.5 0 5.81-4.69 10.5-10.5 10.5z"/>
+	</g>
+	<use id="Group_1341 copy" href="#img1" x="5" y="5"/>
+</svg>

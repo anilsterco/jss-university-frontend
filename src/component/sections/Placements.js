@@ -35,7 +35,7 @@ export default function Placements({ data }) {
             </div>
           ))}
         </div>
-       
+
 
         {hasMore && (
           <div className="placements_loader">
@@ -47,7 +47,7 @@ export default function Placements({ data }) {
             </button>
           </div>
         )}
-         <div className="placeBottom">
+        <div className="placeBottom">
           <p>{item.description}</p>
         </div>
       </div>

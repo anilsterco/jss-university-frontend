@@ -26,23 +26,23 @@
 }
 
 .bannerContent {
- z-index: 111;
-    color: var(--color-white);
-    width: 48%;
-    position: absolute;
-    top: 7.6rem;
-    left: 26.6rem;
+  z-index: 111;
+  color: var(--color-white);
+  width: 48%;
+  position: absolute;
+  top: 7.6rem;
+  left: 26.6rem;
 }
 
 .bannerContent h2 {
- font: var(--font-30);
-    letter-spacing: -1.2px;
-    font-family: var(--font-Condensed);
-    text-transform: uppercase;
-    align-items: center;
-    gap: .8rem;
-    line-height: 1.5;
-    display: flex;
+  font: var(--font-30);
+  letter-spacing: -1.2px;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  align-items: center;
+  gap: .8rem;
+  line-height: 1.5;
+  display: flex;
 }
 
 .bannerContent h2 svg {
@@ -57,7 +57,7 @@
   letter-spacing: -0.36px;
   font-family: "Geist", sans-serif;
   font-weight: 300;
-  max-width: 45%;
+  max-width: 38.6rem;
   color: var(--color-white);
   line-height: 1.7;
 }
@@ -203,18 +203,20 @@
   .verticalLine {
     left: 21%;
   }
+
   .bannerContent {
-   left: 23.2%;
+    left: 23.2%;
   }
-   .bannerLinks{
-  left:23.5%
- }
+
+  .bannerLinks {
+    left: 23.5%
+  }
 }
 
 
 
 @media (max-width:1549px) {
- 
+
   .verticalLine {
     left: 12.8%;
   }
@@ -227,27 +229,31 @@
     height: 70%;
   }
 
-.bannerLinks {
-  left: 16.5%;
-}
-.headerContent {
-  width: 160rem;
-}
+  .bannerLinks {
+    left: 16.5%;
+  }
+
+  .headerContent {
+    width: 160rem;
+  }
 }
 
 @media (max-width:1366px) {
- .verticalLine {
+  .verticalLine {
     left: 10.7%;
   }
+
   .headerContent {
-  width: 164rem;
-}
- .bannerContent {
+    width: 164rem;
+  }
+
+  .bannerContent {
     left: 14.5%;
   }
+
   .bannerLinks {
-  left: 14.5%;
-}
+    left: 14.5%;
+  }
 }
 
 @media (max-width:991px) {
