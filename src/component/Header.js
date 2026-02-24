@@ -972,7 +972,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* mobile menu bottom start*/}
+        
           <div className="panel-wrapper">
             <div className="mob-menu-sec">
               {mobilePanels.map((item) => (
@@ -982,7 +982,7 @@ export default function Header() {
                     activePanel === item.name ? "open" : ""
                   } ${item.name.toLowerCase()}-panel`}
                 >
-                  {/* Courses tab */}
+                 
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
                     item.Menu && (
@@ -1018,7 +1018,7 @@ export default function Header() {
                       </div>
                     )}
 
-                  {/* Admissions tab */}
+                
                   {item.name === "Admissions" &&
                     activePanel === "Admissions" &&
                     admissionData && (
@@ -1036,7 +1036,7 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                        {/* LEFT SECTION */}
+                     
                         <div className="admissions-contact">
                           <h4>{admissionData.left.querytext}</h4>
                           <ul>
@@ -1081,7 +1081,7 @@ export default function Header() {
                         </div>
                       </div>
                     )}
-                  {/* Contact tab */}
+                
                   {item.name === "Contact" &&
                     activePanel === "Contact" &&
                     item.Menu && (
@@ -1109,12 +1109,11 @@ export default function Header() {
                         </ul>
                       </div>
                     )}
-                  {/* Menu tab */}
                   {item.name === "Menu" && activePanel === "Menu" && (
                     <>
                       {item.Menu && (
                         <>
-                          {/* TOP MENU (1–6) */}
+                        
                           <ul className="menu-top">
                             {item.Menu.slice(0, 6).map((sub, idx) => (
                               <li key={idx}>
@@ -1123,7 +1122,7 @@ export default function Header() {
                             ))}
                           </ul>
 
-                          {/* BOTTOM MENU (Only if more than 6 items) */}
+                         
                           {item.Menu.length > 6 && (
                             <ul className="menu-bottom">
                               {item.Menu.slice(1).map((sub, idx) => (
@@ -1164,7 +1163,6 @@ export default function Header() {
       </div>
       <style jsx>
         {`
-          /* --- Engineering Dropdown --- */
           .school-toggle {
             cursor: pointer;
             color: #fff;
@@ -2542,7 +2540,6 @@ export default function Header() {
             background: var(--color-e8);
             z-index: -1;
           }
-          /* Mobile Bottom Menu */
           .mobile-bottom-menu {
             position: fixed;
             bottom: 0;
@@ -2610,7 +2607,6 @@ export default function Header() {
             background: none !important;
           }
 
-          /* Hide menu on desktop */
           @media (min-width: 992px) {
             .mobile-bottom-menu {
               display: none;
@@ -2689,7 +2685,7 @@ export default function Header() {
             background: none;
           }
           .site-header {
-            position: fixed; /* keep this */
+            position: fixed; 
             top: 0;
             left: 0;
             right: 0;
@@ -2697,13 +2693,11 @@ export default function Header() {
             width: 100%;
           }
 
-          /* NEW wrapper */
           .header-inner {
             width: 100%;
             padding-block: 2.4rem;
           }
 
-          /* ACTUAL container */
           .containerXl {
             max-width: 1920px;
             width: 100%;
@@ -2712,7 +2706,6 @@ export default function Header() {
             padding-inline: 9.8rem;
           }
 
-          /* INNER NAV MUST NOT USE vw */
           .nav-container {
             width: 100%;
             display: flex;
@@ -2726,3 +2719,4 @@ export default function Header() {
     </header>
   );
 }
+

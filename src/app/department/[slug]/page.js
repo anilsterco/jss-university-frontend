@@ -1,4 +1,6 @@
 import DepartmentSlider from "@/component/home-components/banner/school-banner/SchoolBannerComponent";
+import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
+import BannerComponent from "@/component/home-components/banner/BannerComponent";
 import AboutDepartmentComponent from "@/component/department-components/about-department-component/AboutDepartmentComponent";
 import HodMessageComponent from "@/component/department-components/hod-message-component/HodMessageComponent";
 import CoursesOfferedDepartment from "@/component/department-components/courses-offered-departments/CoursesOfferedDepartment";
@@ -24,13 +26,14 @@ async function getDepartmentData(slug) {
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch department data for ${slug} (status ${res.status})`);
+    throw new Error(
+      `Failed to fetch department data for ${slug} (status ${res.status})`,
+    );
   }
 
   return res.json();
 }
 
-// ✅ params MUST be awaited here too
 export default async function DepartmentPage({ params }) {
   const { slug } = await params;
 
@@ -46,37 +49,36 @@ export default async function DepartmentPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-
-      <DepartmentSlider
+      {/* <DepartmentSlider
         data={departmentData?.sections?.banners}
         name={departmentData?.departments_name}
         isDepartment={true}
+      /> */}
+      <BannerComponent
+        data={departmentData?.sections?.banners}
+        name={departmentData?.department_name}
+        isDepartment={true}
       />
+      <DepartmentHeader />
 
       {departmentData?.sections?.about_school && (
         <AboutDepartmentComponent data={departmentData.sections.about_school} />
       )}
-
       {departmentData?.sections?.dean_message && (
         <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
-
       {departmentData?.sections?.courses_data && (
         <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
       )}
-
       {departmentData?.sections?.faculty_data && (
         <FacultyList data={departmentData.sections.faculty_data} />
       )}
-
       {departmentData?.sections?.laboratories_data && (
         <LaboratoryComponent data={departmentData.sections.laboratories_data} />
       )}
-
       {departmentData?.sections?.happenings && (
         <HappingsHomeComponent data={departmentData.sections.happenings} />
       )}
-
       {departmentData?.sections?.faqs && (
         <FnqComponent data={departmentData.sections.faqs} />
       )}

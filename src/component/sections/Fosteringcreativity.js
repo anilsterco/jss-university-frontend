@@ -60,7 +60,6 @@ export default function Fosteringcreativity({ data }) {
                           </a>
                         )}
                       </div>
-
                       <div className="grid_em_rigt">
                         <div className="empo_rgt_imgsec">
                           <figure className="shine-effect">
@@ -76,7 +75,6 @@ export default function Fosteringcreativity({ data }) {
                           </figure>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>

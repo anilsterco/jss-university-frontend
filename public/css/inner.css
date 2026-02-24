@@ -565,8 +565,9 @@ font-family: var(--font-notosans);font-weight: 400;}
 .uni_green_con{max-width: 56.5rem;}
 .uni_conte_img img{border-radius:  0.8rem 6rem 0.8rem 0.8rem;}
 .uni_green_ini_sec hr{    border-top: .1rem solid var(--color-d9);}
-.uni_green_ini_sec .uni_green_grid:first-child{ padding-block: 0 12rem; }
-.uni_green_ini_sec .uni_green_grid:last-child{ padding-block: 12rem 14rem; }
+.uni_green_ini_sec {padding-block: 12rem 0;}
+.university_sec .containerMD {border-bottom: solid 1px #ddd; padding-bottom: 12rem;}
+.tansportation_seec {padding-bottom: 12rem;}
 .faci_diff_tabs .fac_tab_con{display: grid;grid-template-columns: 60% 40%;align-items: center;}
 .faci_diff_tabs .faci_accordion{padding-left: 14.4rem;}
 .faci_diff_tabs .faci_acc_item{ padding-bottom: 2.4rem; border-bottom: 0.1rem dashed #B5B5B5; margin-bottom: 2.4rem; }
@@ -597,8 +598,7 @@ font-family: var(--font-notosans);font-weight: 400;}
 .ad_sel_col li::before{ content: ''; position: absolute; left: 0; top: 0.4rem; width: 0.7rem; height: 0.7rem; border-radius: 5rem; background-color: var(--color-36); }
 .ad_se_content{max-width: 30.6rem;}
 .eligibilty_main{background-color: var(--color-9a);}
-.eligib_grid_ad{    grid-template-columns: 50.5% 49.45%;    align-items: center;
-    display: grid;}
+.eligib_grid_ad{grid-template-columns: 50.5% 49.45%;align-items: center;display: grid;}
 .eligib_cont h5{font: var(--font-26);color: var(--color-white);margin-bottom: 1.5rem;}
 .eligib_cont h2{font: var(--font-60);color: var(--color-white);margin-bottom: 5.1rem;letter-spacing: -2.88px;font-family: var(--font-Condensed);}
 .eligib_cont h2 span{color: var(--color-100);}
@@ -874,11 +874,6 @@ font-family: var(--font-notosans);font-weight: 400;}
     padding-top: 10rem;
   }
 
-  /* .inner-title .innnr_head h3  {
-    font: var(--font-20);
-    letter-spacing: -1.30px;
-} */
-
   .about_four .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -914,16 +909,6 @@ font-family: var(--font-notosans);font-weight: 400;}
   background-color: var(--color-f6);
 }
 
-/* .about_five::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 33%;
-  background: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-} */
 
 .about_five .quality_grid {
        grid-template-columns: 44% 48%;
