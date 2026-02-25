@@ -443,14 +443,17 @@ export default function Header() {
 
     setActivePanel(name);
   };
+  const isHomeOrDepartment =
+    pathname === "/" || pathname.startsWith("/department");
 
+
+
+    
   return (
     <header
-      className={` site-header
+      className={`site-header
     ${
-      pathname.includes("schools") ||
-      pathname.includes("department") ||
-      pathname.includes("programs")
+      pathname.includes("schools") || pathname.includes("programs")
         ? "no-shadow"
         : ""
     }
@@ -465,48 +468,36 @@ export default function Header() {
       >
         <div className="containerXl">
           <div
-            className={`nav-container }
-            ${
-              pathname.includes("schools") ||
-              pathname.includes("department") ||
-              pathname.includes("programs")
-                ? "scroll_bg"
-                : ""
-            }
-            ${pathname !== "/" ? "programs-nav" : ""}
-            ${pathname !== "/" ? "not-home" : ""}
-          `}
+            className={`nav-container
+    ${
+      pathname.includes("schools") || pathname.includes("programs")
+        ? "scroll_bg"
+        : ""
+    }
+    ${pathname !== "/" ? "programs-nav" : ""}
+    ${pathname !== "/" ? "not-home" : ""}
+  `}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
             >
-              {pathname !== "/" ? (
-                <div className="dashbord-logo">
-                  <Link href="/" aria-label="Home">
-                    <Image
-                      src="/images/header/jss-moblogo.png"
-                      className="site-logo"
-                      alt="Site Logo"
-                      width={325}
-                      height={116}
-                      priority
-                    />
-                  </Link>
-                </div>
-              ) : (
-                <div className="dashbord-logo">
-                  <Link href="/" aria-label="Home">
-                    <Image
-                      src="/images/header/header-logo.png"
-                      className="site-logo"
-                      alt="Site Logo"
-                      width={325}
-                      height={116}
-                      priority
-                    />
-                  </Link>
-                </div>
-              )}
+              <div className="dashbord-logo">
+                <Link href="/" aria-label="Home">
+                  <Image
+                    src={
+                      isHomeOrDepartment
+                        ? "/images/header/header-logo.png"
+                        : "/images/header/jss-moblogo.png"
+                    }
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={325}
+                    height={116}
+                    priority
+                  />
+                </Link>
+              </div>
+
               <div className="mob-logo">
                 <Link href="/" aria-label="Home">
                   <Image
@@ -520,8 +511,8 @@ export default function Header() {
                 </Link>
               </div>
 
-              {(pathname.includes("schools") ||
-                pathname.includes("department")) && (
+              {/* ================= SCHOOL / DEPARTMENT DROPDOWN ================= */}
+              {pathname.includes("schools") && (
                 <>
                   <div
                     className="school-toggle"
@@ -530,7 +521,6 @@ export default function Header() {
                     <div
                       style={{
                         borderLeft: "1px solid #e0e0e0ff",
-                        justifyItems: "center",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
@@ -544,62 +534,53 @@ export default function Header() {
                       </span>
                     </div>
                   </div>
+
                   {engineeringDropdown && engineeringData.length > 0 && (
                     <div
                       className="engineering-dropdown-container"
                       ref={engineeringRef}
                     >
                       <div className="engineering-dropdown">
-                        {/* LEFT SIDE: Schools List */}
+                        {/* LEFT: Schools */}
                         <div className="schools-list">
                           <h6>Schools</h6>
-                          {engineeringData.map((school, idx) => {
-                            const schoolUrl = `/schools/${school.slug}`;
-
-                            return (
-                              <div
-                                key={idx}
-                                className={`school-item ${
-                                  selectedSchool === idx ? "active" : ""
-                                }`}
-                                onClick={() => {
-                                  setSelectedSchool(idx);
-                                  setSelectedSchoolName(school.name);
-                                  setEngineeringDropdown(false);
-                                }}
+                          {engineeringData.map((school, idx) => (
+                            <div
+                              key={idx}
+                              className={`school-item ${
+                                selectedSchool === idx ? "active" : ""
+                              }`}
+                              onClick={() => {
+                                setSelectedSchool(idx);
+                                setSelectedSchoolName(school.name);
+                                setEngineeringDropdown(false);
+                              }}
+                            >
+                              <Link
+                                href={`/schools/${school.slug}`}
+                                className="text-white"
                               >
-                                <Link href={schoolUrl} className="text-white">
-                                  {school.name}
-                                </Link>
-                              </div>
-                            );
-                          })}
+                                {school.name}
+                              </Link>
+                            </div>
+                          ))}
                         </div>
 
-                        {/* RIGHT SIDE: Departments */}
+                        {/* RIGHT: Departments */}
                         <div className="departments-list">
                           <h6 className="text-white">Departments</h6>
                           <div className="link-content">
                             {engineeringData[selectedSchool]?.departments?.map(
-                              (dept, i) => {
-                                const schoolSlug =
-                                  engineeringData[selectedSchool]?.slug;
-                                const deptSlug = dept.slug;
-                                const deptUrl = `/department/${deptSlug}`;
-
-                                return (
-                                  <Link
-                                    key={i}
-                                    href={deptUrl}
-                                    className="department-links text-white"
-                                    onClick={() => {
-                                      setEngineeringDropdown(false);
-                                    }}
-                                  >
-                                    {dept.name}
-                                  </Link>
-                                );
-                              },
+                              (dept, i) => (
+                                <Link
+                                  key={i}
+                                  href={`/department/${dept.slug}`}
+                                  className="department-links text-white"
+                                  onClick={() => setEngineeringDropdown(false)}
+                                >
+                                  {dept.name}
+                                </Link>
+                              ),
                             )}
                           </div>
                           <IoTriangleSharp className="triangle-icon" />
@@ -972,7 +953,6 @@ export default function Header() {
             </div>
           </div>
 
-        
           <div className="panel-wrapper">
             <div className="mob-menu-sec">
               {mobilePanels.map((item) => (
@@ -982,7 +962,6 @@ export default function Header() {
                     activePanel === item.name ? "open" : ""
                   } ${item.name.toLowerCase()}-panel`}
                 >
-                 
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
                     item.Menu && (
@@ -1018,7 +997,6 @@ export default function Header() {
                       </div>
                     )}
 
-                
                   {item.name === "Admissions" &&
                     activePanel === "Admissions" &&
                     admissionData && (
@@ -1036,7 +1014,7 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                     
+
                         <div className="admissions-contact">
                           <h4>{admissionData.left.querytext}</h4>
                           <ul>
@@ -1081,7 +1059,7 @@ export default function Header() {
                         </div>
                       </div>
                     )}
-                
+
                   {item.name === "Contact" &&
                     activePanel === "Contact" &&
                     item.Menu && (
@@ -1113,7 +1091,6 @@ export default function Header() {
                     <>
                       {item.Menu && (
                         <>
-                        
                           <ul className="menu-top">
                             {item.Menu.slice(0, 6).map((sub, idx) => (
                               <li key={idx}>
@@ -1121,8 +1098,6 @@ export default function Header() {
                               </li>
                             ))}
                           </ul>
-
-                         
                           {item.Menu.length > 6 && (
                             <ul className="menu-bottom">
                               {item.Menu.slice(1).map((sub, idx) => (
@@ -2685,7 +2660,7 @@ export default function Header() {
             background: none;
           }
           .site-header {
-            position: fixed; 
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -2719,4 +2694,3 @@ export default function Header() {
     </header>
   );
 }
-

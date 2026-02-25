@@ -7,7 +7,7 @@ import CoursesOfferedDepartment from "@/component/department-components/courses-
 import FacultyList from "@/component/department-components/faculty-list-department/FacultyList";
 import LaboratoryComponent from "@/component/department-components/laboratory-department/LaboratoryComponent";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
-import FnqComponent from "@/component/department-components/fnq-department/FnqComponent";
+import PlacementDepartment from "@/component/department-components/Placement-department/PlacementDepartment";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 
@@ -60,28 +60,35 @@ export default async function DepartmentPage({ params }) {
         isDepartment={true}
       />
       <DepartmentHeader />
-
       {departmentData?.sections?.about_school && (
         <AboutDepartmentComponent data={departmentData.sections.about_school} />
-      )}
-      {departmentData?.sections?.dean_message && (
-        <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
       {departmentData?.sections?.courses_data && (
         <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
       )}
-      {departmentData?.sections?.faculty_data && (
-        <FacultyList data={departmentData.sections.faculty_data} />
+      {departmentData?.sections?.dean_message && (
+        <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
+    
+
       {departmentData?.sections?.laboratories_data && (
         <LaboratoryComponent data={departmentData.sections.laboratories_data} />
       )}
+       
+      {departmentData?.sections?.faculty_data && (
+        <FacultyList data={departmentData.sections.faculty_data} />
+      )}
+
+      {departmentData?.sections?.happenings && (
+        <PlacementDepartment data={departmentData.sections.happenings} />
+      )}
+
       {departmentData?.sections?.happenings && (
         <HappingsHomeComponent data={departmentData.sections.happenings} />
       )}
-      {departmentData?.sections?.faqs && (
+      {/* {departmentData?.sections?.faqs && (
         <FnqComponent data={departmentData.sections.faqs} />
-      )}
+      )} */}
     </>
   );
 }

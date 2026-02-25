@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import styles from "./about-department.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -53,14 +54,29 @@ export default function AboutDepartmentComponent({ data }) {
   return (
     <div className={`${styles.aboutDepartment}`}>
       <div className="container">
-
         <div className={styles.header} data-aos="fade-up" data-aos-delay="100">
-          <p className={styles.subtitle}>{departmentData.subtitle}</p>
-          <h1 className={`blue-text ${styles.title}`}>{departmentData.title}</h1>
-          <p className={styles.description}>{departmentData.description}</p>
+          {departmentData?.subtitle && (
+            <p className={styles.subtitle}>{departmentData.subtitle}</p>
+          )}
+          {departmentData?.title && (
+            <h1 className={`blue-text ${styles.title}`}>
+              {departmentData.title}
+            </h1>
+          )}
+          {departmentData?.description && (
+            <p className={styles.description}>{departmentData.description}</p>
+          )}
+          <Link href="#" className={styles.arrowLink}>
+            <Image
+              src="/images/about-page/about-arrow.svg"
+              alt="arrow"
+              width={30}
+              height={30}
+            />
+          </Link>
         </div>
 
-        <div className={styles.statsSection}>
+        {/* <div className={styles.statsSection}>
           {departmentData.stats.map((stat, index) => (
             <div
               key={stat.id}
@@ -91,10 +107,9 @@ export default function AboutDepartmentComponent({ data }) {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
-
-        <div className={styles.contentSection}>
+        {/* <div className={styles.contentSection}>
           <div className="vission px-0" data-aos="fade-right" data-aos-delay="600">
             <div className={`shine-effect card border-0 h-100 ${styles.imagePlaceholder}`}>
               <Image
@@ -129,7 +144,7 @@ export default function AboutDepartmentComponent({ data }) {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

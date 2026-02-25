@@ -141,8 +141,6 @@ export default function DepartmentHeader() {
                           onClick={() => {
                             setSelectedSchool(idx);
                             setSelectedSchoolName(school.name);
-
-                            // Reset department to first of selected school
                             if (school.departments?.length > 0) {
                               setSelectedDepartmentName(
                                 school.departments[0].name
@@ -155,7 +153,6 @@ export default function DepartmentHeader() {
                       ))}
                     </div>
 
-                    {/* ===== Departments ===== */}
                     <div className={styles.departmentsList}>
                       <h6>Departments</h6>
                       {engineeringData[selectedSchool]?.departments?.map(
