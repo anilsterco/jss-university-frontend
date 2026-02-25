@@ -42,6 +42,9 @@ import Transportation from "@/component/sections/Transportation";
 import CountAlumni from "@/component/sections/CountAlumni";
 import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
 import ImageContentRepeat from "@/component/sections/ImageContentRepeat";
+import GridCardDesign1 from "@/component/sections/GridCardDesign1";
+import VisionMission from "@/component/sections/VisionMission";
+import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 
 
 
@@ -138,7 +141,9 @@ export default async function DynamicPage({ params }) {
     universityGreen: UniversityGreen,
     transportation: Transportation,
     countAlumni: CountAlumni,
-    imageContentRepeat: ImageContentRepeat
+    imageContentRepeat: ImageContentRepeat,
+    gridCardDesign1: GridCardDesign1,
+    vision_mission: VisionMission,
   };
 
   return (
@@ -152,8 +157,6 @@ export default async function DynamicPage({ params }) {
         />
       )}
 
-
-
       {groupedSections?.map((section, index) => {
 
         const Component =
@@ -163,7 +166,12 @@ export default async function DynamicPage({ params }) {
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;
         } else if (Component) {
-          return <Component key={index} data={[section]} />;
+          return (
+            <>
+              <Component key={index} data={[section]} />
+              <HODMessage />
+            </>
+          );
         }
         return null;
       })}

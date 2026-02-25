@@ -22,3 +22,10 @@
     margin: auto;
     margin-bottom: 0.5rem
 }
+
+.counter_card .desc {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    text-transform: uppercase;
+    font-family: var(--font-Condensed);
+}

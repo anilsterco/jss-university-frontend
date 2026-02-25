@@ -12,7 +12,7 @@ export default function CountAlumni({ data }) {
                                 <div className="col-md-10">
                                     <div className="row">
                                         {section?.items && section.items.length >= -1 && section.items.map((item, idx) => (
-                                            <div key={idx} className="col-3">
+                                            <div key={idx} className="col-3 px-3xl-1">
                                                 <CounterCard key={idx} data={item} />
                                             </div>
                                         ))}

@@ -10,9 +10,10 @@ export default function CounterCard({ data }) {
                     src={data.image}
                     height={66}
                     width={83}
+                    alt=''
                 />
             )}
-            <p>{data.desc}</p>
+            <p className={styles.desc}>{data.desc}</p>
         </div>
     )
 }
