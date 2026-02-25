@@ -118,60 +118,63 @@ export default function PlacementsSection() {
               }}
               loop
             >
-             
-              {placementsData.testimonials.map((t, i) => (
-                <SwiperSlide key={i}>
-                  <div
-                    className={`${styles.eachSlide} d-flex align-items-start`}
-                    data-aos="fade-up"
-                    data-aos-delay={i * 150}
-                  >
-                    <div className={styles.testimonialImageContainer}>
-                      <FaQuoteLeft
-                        className={styles.mobileQuoteIcon}
-                        color="#b08f29"
-                        fontSize={30}
-                      />
-                      <Image
-                        src={t.image}
-                        alt={`${t.name} image`}
-                        width={216}
-                        height={240}
-                        style={{
-                          width: "216px",
-                          height: "240px",
-                          objectFit: "cover",
-                          flexShrink: 0,
-                        }}
-                        className={`testiimg rounded ${styles.testimonialImage}`}
-                        priority
-                      />
-                    </div>
+              <div className={styles.bgBlue}>
+                {placementsData.testimonials.map((t, i) => (
+                  <SwiperSlide key={i}>
+                    <div
+                      className={`${styles.eachSlide} d-flex align-items-start`}
+                      data-aos="fade-up"
+                      data-aos-delay={i * 150}
+                    >
+                      <div className={styles.testimonialImageContainer}>
+                        <FaQuoteLeft
+                          className={styles.mobileQuoteIcon}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <Image
+                          src={t.image}
+                          alt={`${t.name} image`}
+                          width={216}
+                          height={240}
+                          style={{
+                            width: "216px",
+                            height: "240px",
+                            objectFit: "cover",
+                            flexShrink: 0,
+                          }}
+                          className={`testiimg rounded ${styles.testimonialImage}`}
+                          priority
+                        />
+                      </div>
 
-                    <div className={styles.testimonialContent}>
-                      <FaQuoteLeft
-                        className={styles.desktopQuoteIcon}
-                        color="#b08f29"
-                        fontSize={36}
-                      />
-                      <p>{t.short_description}</p>
-                      <h6 className="small fw-bold">{t.name}</h6>
-                      <small className="small-text">
-                        {t.designation}, {t.company}
-                      </small>
+                      <div className={styles.testimonialContent}>
+                        <FaQuoteLeft
+                          className={styles.desktopQuoteIcon}
+                          color="#b08f29"
+                          fontSize={36}
+                        />
+                        <p>{t.short_description}</p>
+                        <h6 className="small fw-bold">{t.name}</h6>
+                        <small className="small-text">
+                          {t.designation}, {t.company}
+                        </small>
 
-                      <div className={`d-flex gap-2 ${styles.testimonialIconContainer}`}>
-                        <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronLeft size={8} />
-                        </button>
-                        <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronRight size={8} />
-                        </button>
+                        <div
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
+                        >
+                          <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronLeft size={8} />
+                          </button>
+                          <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronRight size={8} />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>
+                ))}
+              </div>
             </Swiper>
           </div>
           <div className={styles.rightContent} data-aos="fade-up">
