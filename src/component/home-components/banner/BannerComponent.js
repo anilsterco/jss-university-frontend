@@ -62,31 +62,31 @@ export default function HeroSlider({ data }) {
               className={styles.mobileBanner}
             />
             <div className={styles.bannerOverlay}>
-             <div className="container">
-               <div className={styles.bannerContent}>
-              
-                <h1
-                  className={styles.bannerContentH1}
-                  dangerouslySetInnerHTML={{ __html: slide.title }}
-                  data-aos="fade-right"
-                  data-aos-delay="0"
-                ></h1>
-                <p
-                  className={styles.bannerContentP}
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                >
-                  {slide.desc}
-                </p>
-                {slide.url && (
-                  <Link
-                    href={"about-jss"}
-                    className={styles.bannerContentA}
+              <div className="container">
+                <div className={styles.bannerContent}>
+
+                  <h1
+                    className={styles.bannerContentH1}
+                    dangerouslySetInnerHTML={{ __html: slide.title }}
+                    data-aos="fade-right"
+                    data-aos-delay="0"
+                  ></h1>
+                  <p
+                    className={styles.bannerContentP}
                     data-aos="fade-right"
                     data-aos-delay="200"
                   >
                     {slide.desc}
                   </p>
+                  {slide.url && (
+                    <Link
+                      href={"about-jss"}
+                      className={styles.bannerContentA}
+                      data-aos="fade-right"
+                      data-aos-delay="200"
+                    >
+                      {slide.desc}
+                    </Link>)}
                   {slide.url && (
                     <Link
                       href={"about-jss"}

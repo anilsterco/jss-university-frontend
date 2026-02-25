@@ -973,6 +973,95 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+/* count_alumni_section */
+
+.count_alumni_section {
+  display: flex;
+  padding-top: 10rem;
+}
+
+/* image content repeateer section */
+
+.image_content_repeat_section {
+  padding-top: 10rem;
+}
+
+
+/* vision_mission_section */
+
+.vision_mission_section {
+  background-color: #00489A;
+  padding: 13rem 0;
+}
+
+.vision_mission_section .left_col {
+  display: flex;
+  align-items: center;
+}
+
+.vision_mission_section .title {
+  font: var(--font-26);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 3rem;
+}
+
+.vision_mission_section .vision {
+  padding-right: 100px;
+}
+
+.vision_mission_section .vision .title {
+  color: #fff;
+}
+
+.vision_mission_section .vision p {
+  font: var(--font-30);
+  font-weight: 300;
+  line-height: 4.2rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.vision_mission_section .mission-card {
+  background: #ffffff;
+  border-radius: 0.6rem;
+  padding: 7.2rem 9.4rem;
+  box-shadow: 0 0.8rem 4rem rgba(0, 0, 0, 0.18);
+}
+
+.vision_mission_section .mission-card h2 {
+  color: #1a1a1a;
+}
+
+.vision_mission_section .mission-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  gap: 2.5rem;
+}
+
+.vision_mission_section .mission-card ul li {
+  display: flex;
+  align-items: flex-start;
+  color: #333333;
+  font: var(--font-16);
+  color: #444444;
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.vision_mission_section .mission-card ul li::before {
+  position: absolute;
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  left: 0;
+  border-radius: 50%;
+  background-color: #FFC100;
+  margin-top: 1rem;
+}
+
 
 
 @media all and (min-width: 800px) {
@@ -2451,6 +2540,44 @@ hr {
 }
 
 .labs-link {}
+
+
+/* grid_card_design1_section */
+
+.grid_card_design1_section {
+  padding-top: 10rem;
+}
+
+.grid_card_design1_section .heading {
+  font: var(--font-21);
+  color: #16344E;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+/* start responsive */
+
+@media (min-width: 1920px) {
+  .mx_3xl_-3_5 {
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
+  }
+
+  .px-3xl-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .px_3xl_1_2 {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .px_3xl_3_5 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
 
 /* -------- MOBILE VIEW -------- */
 @media (max-width: 768px) {
