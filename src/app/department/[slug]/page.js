@@ -13,13 +13,11 @@ import Script from "next/script";
 
 const BASE_URL = "https://project-demo.in/jss/api";
 
-// ✅ params MUST be awaited
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   return getPageSEO(slug);
 }
 
-// ✅ Safe fetch (NO console.error in server component)
 async function getDepartmentData(slug) {
   const res = await fetch(`${BASE_URL}/department/${slug}`, {
     next: { revalidate: 120 },

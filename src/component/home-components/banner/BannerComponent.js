@@ -5,7 +5,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRightCircle } from "react-icons/fi";
 import styles from "./banner.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -76,7 +75,7 @@ export default function HeroSlider({ data }) {
                     data-aos="fade-right"
                     data-aos-delay="200"
                   >
-                    {slide.desc}
+                  {slide.desc}
                   </p>
                   {slide.url && (
                     <Link
@@ -85,7 +84,6 @@ export default function HeroSlider({ data }) {
                       data-aos="fade-right"
                       data-aos-delay="200"
                     >
-                      {slide.desc}
                     </Link>)}
                   {slide.url && (
                     <Link
