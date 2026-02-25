@@ -119,7 +119,6 @@ export default function FacultyDetailPage({ params }) {
   const facultyAwards = safeFaculty.awards || [];
   const facultySocialEngagement = safeFaculty.socialEngagement || [];
 
-
   return (
     <main className="site_main">
       {/* Title Section */}
@@ -249,7 +248,7 @@ export default function FacultyDetailPage({ params }) {
                       <div className="research-list">
                         {facultyResearch
                           .filter(
-                            (item) => item.title || item.image || item.link
+                            (item) => item.title || item.image || item.link,
                           )
                           .map((key, index) => (
                             <div className="research-box" key={index}>
@@ -322,13 +321,16 @@ export default function FacultyDetailPage({ params }) {
                   {/* other section */}
                   {addSectiondata?.sections?.length > 0 &&
                     addSectiondata.sections.some(
-                      (section) => section.points.length > 0
+                      (section) => section.points.length > 0,
                     ) && (
-                      <div className="profile-education profile-social">
+                      <>
                         {addSectiondata.sections.map(
                           (section, idx) =>
-                            section.points.length > 0 && ( 
-                              <div key={idx}>
+                            section.points.length > 0 && (
+                              <div
+                                key={idx}
+                                className="comman_profile"
+                              >
                                 <h5>{section.title}</h5>
                                 <ul>
                                   {section.points.map((point, i) => (
@@ -336,9 +338,9 @@ export default function FacultyDetailPage({ params }) {
                                   ))}
                                 </ul>
                               </div>
-                            )
+                            ),
                         )}
-                      </div>
+                      </>
                     )}
 
                   {/* Show message if no additional info */}

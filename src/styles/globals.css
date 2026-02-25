@@ -2130,3 +2130,24 @@ a:active {
   height: 2rem;
   margin-right: 1.2rem;
 }
+.comman_profile {
+    border-top: 0.1rem solid var(--color-d6);
+    padding-block: 2.4rem;
+}
+
+.comman_profile h5{
+      font: var(--font-18);
+    color: var(--color-36);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.comman_profile ul li{
+  font: var(--font-16);
+    color: var(--color-21);
+    margin-bottom: 1rem;
+}
+.comman_profile ul li::marker {
+    color: var(--color-36);
+}
