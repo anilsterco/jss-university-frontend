@@ -45,6 +45,7 @@ import ImageContentRepeat from "@/component/sections/ImageContentRepeat";
 import GridCardDesign1 from "@/component/sections/GridCardDesign1";
 import VisionMission from "@/component/sections/VisionMission";
 import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
+import HodMessage from "@/component/sections/HodMessage";
 
 
 
@@ -144,6 +145,7 @@ export default async function DynamicPage({ params }) {
     imageContentRepeat: ImageContentRepeat,
     gridCardDesign1: GridCardDesign1,
     vision_mission: VisionMission,
+    hod_section: HodMessage
   };
 
   return (
@@ -166,12 +168,7 @@ export default async function DynamicPage({ params }) {
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;
         } else if (Component) {
-          return (
-            <>
-              <Component key={index} data={[section]} />
-              <HODMessage />
-            </>
-          );
+          return <Component key={index} data={[section]} />;
         }
         return null;
       })}

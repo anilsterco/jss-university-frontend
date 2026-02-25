@@ -12,7 +12,7 @@ export default function GridCardDesign1({ data }) {
                             <React.Fragment key={idx}>
                                 <h4 className="heading">{item.sectionTitle}</h4>
 
-                                <div class="row mx_3xl_-3_5">
+                                <div className="row mx_3xl_-3_5">
                                     {item?.content && item.content.map((data, dataIdx) => (
                                         <div key={dataIdx} className='col-md-4 px_3xl_3_5'>
                                             <GridCard1 key={dataIdx} data={data} id={dataIdx} />

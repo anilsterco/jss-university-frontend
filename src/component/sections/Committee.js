@@ -1,7 +1,7 @@
 import React from 'react'
 import HODMessage from '../department-components/hod-message-component/HodMessageComponent'
 
-export default function HodMessage({ data }) {
+export default function Committee({ data }) {
 
     const renderSection = (section, sectionIndex) => {
         switch (section.type) {

@@ -6,12 +6,12 @@ export default function VisionMission({ data }) {
         switch (section.type) {
             case "vision_mission":
                 return (
-                    <>
+                    <React.Fragment key={sectionIndex}>
                         <section className="vision_mission_section">
                             <div className="container">
                                 <div className="row">
                                     <div className='col-md-6 left_col'>
-                                        <div class="vision">
+                                        <div className="vision">
                                             <h2 className='title'>Vision</h2>
                                             <p>
                                                 To be a globally recognized centre of excellence in Electronics and
@@ -24,7 +24,7 @@ export default function VisionMission({ data }) {
                                     </div>
 
                                     <div className='col-md-6'>
-                                        <div class="mission-card">
+                                        <div className="mission-card">
                                             <h2 className='title'>Mission</h2>
                                             <ul>
                                                 <li>
@@ -49,7 +49,7 @@ export default function VisionMission({ data }) {
                                 </div>
                             </div>
                         </section>
-                    </>
+                    </React.Fragment>
                 )
         }
     }

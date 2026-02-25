@@ -8,6 +8,8 @@ import Link from "next/link";
 import "aos/dist/aos.css";
 
 const HODMessage = ({ data }) => {
+  console.log('hod message', data);
+
   // 🔹 Dummy data fallback
   const dummyHodData = {
     title: "HOD MESSAGE",
@@ -19,6 +21,17 @@ const HODMessage = ({ data }) => {
       "He has also been contributing as a reviewer for several international journals and associated with several technical societies of repute such as IEEE (Senior Member), ISTE (Life Member), etc. He has guided more than 40 UG/PG level projects. He has also supervised two candidates for their doctoral research work (PhD) in the field of natural language processing and deep learning.",
     ],
   };
+
+  if (data && data.type == 'department') {
+    data = {
+      title: data?.title,
+      img: data?.image,
+      name: data?.name,
+      designation: data?.designation,
+      message: data?.messages?.map((m) => m.message) || [],
+      type: data?.type
+    }
+  }
 
   const hodData = data || dummyHodData;
 
@@ -32,65 +45,70 @@ const HODMessage = ({ data }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className="container">
-        <div className={styles.card} data-aos="fade-up">
-          <div className={styles.hodRow}>
-            <div
-              className={styles.hodCol}
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <Image
-                src={hodData.img}
-                alt={hodData?.name || "Head of Department"}
-                width={476}
-                height={473}
-                className={` w-100 hod_img ${styles.hodImage} ${styles.shineImage}`}
-                priority
-              />
-            </div>
-            <div
-              className={styles.hodCol}
-              data-aos="fade-left"
-              data-aos-delay="400"
-            >
-              <div className={styles.content}>
+    <div className={`${styles.hod_message_section} 111 ${styles[data?.type]}`}>
+      <div className={`${styles.container} ${styles[data?.type]}`}>
+        <div className="container">
+          <div className={styles.card} data-aos="fade-up">
+            <div className={styles.hodRow}>
+              <div
+                className={styles.hodCol}
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <Image
-                  src="/images/about-page/quote-left.svg"
-                  alt="icon"
-                  width={36}
-                  height={31}
-                  className={styles.icons}
+                  src={hodData.img}
+                  alt={hodData?.name || "Head of Department"}
+                  width={476}
+                  height={473}
+                  className={` w-100 hod_img ${styles.hodImage} ${styles.shineImage}`}
+                  priority
                 />
-                <h3 className={styles.title}>{hodData.title}</h3>
-                <div className={styles.messageText}>
-                  {hodData.message &&
-                    hodData.message.map((paragraph, index) => (
-                      <p key={index} className={styles.paragraph}>
-                        {paragraph}
-                      </p>
-                    ))}
-                  <Link href="#" className={styles.arrowLink}>
+              </div>
+              <div
+                className={styles.hodCol}
+                data-aos="fade-left"
+                data-aos-delay="400"
+              >
+                <div className={styles.content}>
+                  {data?.type !== 'department' && (
                     <Image
-                      src="/images/about-page/about-arrow.svg"
-                      alt="arrow"
-                      width={22}
-                      height={22}
+                      src="/images/about-page/quote-left.svg"
+                      alt="icon"
+                      width={36}
+                      height={31}
+                      className={styles.icons}
                     />
-                  </Link>
-                </div>
-                <div className={styles.hodInfo}>
-                  <h4 className={styles.hodName}>{hodData.name}</h4>
-                  <p className={styles.hodDesignation}>{hodData.designation}</p>
-                </div>
-                <div className={styles.lineHod}>
-                  <Image
-                    src="/images/about-page/hod_line_image.svg"
-                    alt="arrow"
-                    width={5}
-                    height={430}
-                  />
+                  )}
+
+                  <h3 className={styles.title}>{hodData.title}</h3>
+                  <div className={styles.messageText}>
+                    {hodData.message &&
+                      hodData.message.map((paragraph, index) => (
+                        <p key={index} className={styles.paragraph}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    <Link href="#" className={styles.arrowLink}>
+                      <Image
+                        src="/images/about-page/about-arrow.svg"
+                        alt="arrow"
+                        width={22}
+                        height={22}
+                      />
+                    </Link>
+                  </div>
+                  <div className={styles.hodInfo}>
+                    <h4 className={styles.hodName}>{hodData.name}</h4>
+                    <p className={styles.hodDesignation}>{hodData.designation}</p>
+                  </div>
+                  <div className={styles.lineHod}>
+                    <Image
+                      src="/images/about-page/hod_line_image.svg"
+                      alt="arrow"
+                      width={5}
+                      height={430}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,3 +1,7 @@
+.hod_message_section.department {
+  background: #fff;
+}
+
 .container {
   padding: 4rem 0 10rem;
   display: flex;
@@ -5,11 +9,19 @@
   justify-content: center;
 }
 
+.container.department {
+  padding: 0;
+}
+
 .card {
   position: relative;
   border-top: 1px solid #D6D6D6;
-  ;
   padding-top: 10rem;
+}
+
+.department .card {
+  border: none;
+  padding: 15rem 0;
 }
 
 .card::before {
@@ -34,16 +46,55 @@
   align-items: center;
   justify-content: center;
 }
-.lineHod img {position: absolute;right:6rem; bottom: 0; top: 0; height: 100%;}
-.content .icons{margin-bottom: 3rem;}
-.placeholderContent {color: rgba(255, 255, 255, 0.5);}
 
-.image {width: 100%;height: 100%;object-fit: cover;display: block;}
+.lineHod img {
+  position: absolute;
+  right: 6rem;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+}
+
+.department .lineHod img {
+  bottom: unset;
+  height: auto;
+}
+
+.content .icons {
+  margin-bottom: 3rem;
+}
+
+.placeholderContent {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* Content Section */
-.row_padding {padding-block: 8rem !important;}
+.row_padding {
+  padding-block: 8rem !important;
+}
 
-.content {padding-inline: 0rem 18rem;padding-block: 6.8rem 10rem;display: flex;flex-direction: column;padding-left: 0;position: relative;z-index: 1;}
+.content {
+  padding-inline: 0rem 18rem;
+  padding-block: 6.8rem 10rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.department .content {
+  padding: 0;
+  padding-right: 18rem;
+}
+
 .title {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -67,10 +118,12 @@
 .paragraph:last-child {
   margin-bottom: 0;
 }
+
 .hodImage {
   border-top-left-radius: 8rem;
   position: relative;
 }
+
 /* HOD Info */
 .hodInfo {
   margin-top: auto;
@@ -92,6 +145,7 @@
   color: #000;
   margin-bottom: 0;
 }
+
 .hodRow {
   display: grid;
   grid-template-columns: repeat(1, 34.5% auto);
@@ -147,9 +201,15 @@
   .hodInfo {
     padding-top: 2rem;
   }
- .hod_img {height: 100%!important;}
+
+  .hod_img {
+    height: 100% !important;
+  }
 }
+
 @media (max-width: 375px) {
- 
- .hod_img {height: 100%!important;}
+
+  .hod_img {
+    height: 100% !important;
+  }
 }
