@@ -1786,10 +1786,10 @@ a:active {
 }
 
 .curriculum_box h3 {
-  font: var(--font-26);
+  font: var(--font-21);
   font-family: var(--font-Roboto);
   letter-spacing: 0px;
-  font-weight: normal;
+  font-weight: 500;
   color: #16344E;
   line-height: 1.1;
   margin-bottom: 1.6rem;
@@ -1938,6 +1938,10 @@ a:active {
   grid-template-columns: repeat(2, 1fr);
   gap: 7.4rem;
 
+}
+
+.high_lightRow .highLight_col {
+  text-align: center;
 }
 
 .placement_highLight {
@@ -2116,7 +2120,7 @@ a:active {
 
 .studends_pdf ul li {
   list-style: none;
- font: var(--font-18);
+  font: var(--font-18);
   letter-spacing: 0px;
   color: #333333;
   line-height: 2.9rem;

@@ -104,102 +104,94 @@ export default function Footer() {
     <footer className="footer_section">
       <div className="deshFooter">
         <div className="container">
-          <div className="col-lg-10 mx-auto">
-            <div className="footer_contact">
-              <div className="footer_left">
-                <div className="footer_logo">
-                  <img
-                    src="/images/footer/footer-logo.webp"
-                    alt="Logo"
-                    style={{ width: "9rem" }}
-                  />
-                </div>
-                <div className="connect_contant">
-                  <p className="fw-bold text-info">Connect with us</p>
-                  <p>{data.address}</p>
-                  <div className="col-md-12">
-                    <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
-                      <li>
-                        <a href="">{data.phone}</a>
-                      </li>
-                      <li>
-                        <a href="">{data.email}</a>
-                      </li>
-                      {data.landlines.map((line, i) => (
-                        <li key={i}>
-                          <a href="">{line}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <div className="footer_contact">
+            <div className="footer_left">
+              <div className="footer_logo">
+                <img
+                  src="/images/footer/footer-logo.webp"
+                  alt="Logo"
+                  style={{ width: "9rem" }}
+                />
               </div>
-              <div className="footer_right">
-                <button className="get_direc">GET DIRECTIONS</button>
-                <div className="social-icons">
-                  <ul className="list-unstyled">
-                    <p>Follow us on</p>
-                    {data.socials.map((s, i) => (
+              <div className="connect_contant">
+                <p className="fw-bold text-info">Connect with us</p>
+                <p>{data.address}</p>
+                <div className="col-md-12">
+                  <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
+                    <li>
+                      <a href="">{data.phone}</a>
+                    </li>
+                    <li>
+                      <a href="">{data.email}</a>
+                    </li>
+                    {data.landlines.map((line, i) => (
                       <li key={i}>
-                        <a
-                          href={s.url}
-                          className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                          style={{ width: "20px", height: "20px" }}
-                        >
-                          {renderIcon(s.icon)}
-                        </a>
+                        <a href="">{line}</a>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
+            <div className="footer_right">
+              <button className="get_direc">GET DIRECTIONS</button>
+              <div className="social-icons">
+                <ul className="list-unstyled">
+                  <p>Follow us on</p>
+                  {data.socials.map((s, i) => (
+                    <li key={i}>
+                      <a
+                        href={s.url}
+                        className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                        style={{ width: "20px", height: "20px" }}
+                      >
+                        {renderIcon(s.icon)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div className="col-lg-12">
-            <div className="row">
-              <div className="col-lg-10 mx-auto">
-                <div className="footer_border">
-                  <div className="footer_link">
-                    <ul className="list-unstyled">
-                      {data.sections.map((section, i) => (
-                        <li key={i}>
-                          <a href="#" className="links-itams">
-                            {section.title}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="quick_link">
-                    <span className="side-border">Quick Links</span>
-                    <ul className="quick-item">
-                      {data.quickLinks.map((link, i) => (
-                        <li key={i}>
-                          <a href={link.url}>{link.label}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <div className="col-lg-12 mx-auto">
+            <div className="footer_border">
+              <div className="footer_link">
+                <ul className="list-unstyled">
+                  {data.sections.map((section, i) => (
+                    <li key={i}>
+                      <a href="#" className="links-itams">
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="quick_link">
+                <span className="side-border">Quick Links</span>
+                <ul className="quick-item">
+                  {data.quickLinks.map((link, i) => (
+                    <li key={i}>
+                      <a href={link.url}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="col-lg-10 mx-auto">
-            <div className="bottom_footer">
-              <p className="mb-1 mb-md-0">
-                © Copyright {new Date().getFullYear()} - JSS. All Rights
-                Reserved.
-              </p>
-              <p className="mb-0">
-                Website Design and Development by{" "}
-                <a href="https://www.stercodigitex.com/" target="_blank">
-                  Sterco Digitex
-                </a>{" "}
-              </p>
-            </div>
+          <div className="bottom_footer">
+            <p className="mb-1 mb-md-0">
+              © Copyright {new Date().getFullYear()} - JSS. All Rights
+              Reserved.
+            </p>
+            <p className="mb-0">
+              Website Design and Development by{" "}
+              <a href="https://www.stercodigitex.com/" target="_blank">
+                Sterco Digitex
+              </a>{" "}
+            </p>
           </div>
         </div>
       </div>

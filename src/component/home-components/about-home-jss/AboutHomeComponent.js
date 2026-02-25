@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa6";
 import styles from "./about-home-jss.module.css";
 import "swiper/css";
 import { useState, useEffect } from "react";
@@ -36,7 +37,7 @@ const dummyLegacyData = {
   ],
   buttons: [
     { text: "360 VIEW", url: "#" },
-    { text: "WHY JSS", url: "#" },
+    { text: "WHY JSS", url: "#", },
     { text: "APPLY NOW", url: "#" },
   ],
   logo_content: [
@@ -87,8 +88,8 @@ export default function LegacySection({ data }) {
             <div className={`${styles.leftColumn}`}>
               <div
                 className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
-                 data-aos="fade-up"
-                  data-aos-delay="300"
+                data-aos="fade-up"
+                data-aos-delay="300"
               >
                 <Image
                   src={legacyData.chancellor_img}
@@ -97,7 +98,7 @@ export default function LegacySection({ data }) {
                   height={370}
                   style={{ height: "100%", width: "100%" }}
                   className={`rounded ${styles.chancellorImage}`}
-                 
+
                 />
                 {/* Play Button Overlay */}
                 <div className={`${styles.contentPart}`}>
@@ -129,12 +130,12 @@ export default function LegacySection({ data }) {
               </p>
               <div className={`divider ${styles.rightArrowIconDiv}`}>
                 {legacyData.url && (
-                 <Image
-                  src="images/home-page/about_arrow.svg"
-                  alt="chancellor image"
-                  width={22}
-                  height={22}
-                />
+                  <Image
+                    src="images/home-page/about_arrow.svg"
+                    alt="chancellor image"
+                    width={22}
+                    height={22}
+                  />
                 )}
               </div>
 
@@ -148,19 +149,19 @@ export default function LegacySection({ data }) {
                     data-aos-delay={i * 200}
                   >
                     <h1 className={`${styles.highlightNumber}`}>
-                     <span>#</span> {h.rank}
+                      <span>#</span> {h.rank}
                     </h1>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
-                     <div className="d-flex align-items-center gap-2">
-                       <Image
-                        src={h.source}
-                        alt="Source Logo"
-                        width={118}
-                        height={24}
-                        className={styles.sourceText}
-                      />
-                     </div>
+                      <div className="d-flex align-items-center gap-2">
+                        <Image
+                          src={h.source}
+                          alt="Source Logo"
+                          width={118}
+                          height={24}
+                          className={styles.sourceText}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -196,6 +197,7 @@ export default function LegacySection({ data }) {
                 {legacyData.buttons.map((btn, i) => (
                   <Link key={i} href={btn.url} className={styles.navButtons}>
                     {btn.text}
+                    {i == 1 && (<FaArrowRight className={styles.arrowIcon} />)}
                   </Link>
                 ))}
               </div>

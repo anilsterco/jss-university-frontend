@@ -20,16 +20,16 @@ export default function HeroSlider({ data }) {
   const bannerData = data?.length
     ? data
     : [
-        {
-          id: 1,
-          title: "No Data Found",
-          desc: "",
-          linked_text: "",
-          url: "about-us",
-          desktop_banner: "/images/home-page/placeholder-banner.png",
-          mobile_banner: "/images/home-page/mobile-main-banner.png",
-        },
-      ];
+      {
+        id: 1,
+        title: "No Data Found",
+        desc: "",
+        linked_text: "",
+        url: "about-us",
+        desktop_banner: "/images/home-page/placeholder-banner.png",
+        mobile_banner: "/images/home-page/mobile-main-banner.png",
+      },
+    ];
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function HeroSlider({ data }) {
               width={1920}
               height={810}
               priority
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", objectFit: "cover" }}
               className={styles.desktopBanner}
             />
             <Image
@@ -62,42 +62,51 @@ export default function HeroSlider({ data }) {
               className={styles.mobileBanner}
             />
             <div className={styles.bannerOverlay}>
-             <div className="container">
-               <div className={styles.bannerContent}>
-              
-                <h1
-                  className={styles.bannerContentH1}
-                  dangerouslySetInnerHTML={{ __html: slide.title }}
-                  data-aos="fade-right"
-                  data-aos-delay="0"
-                ></h1>
-                <p
-                  className={styles.bannerContentP}
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                >
-                  {slide.desc}
-                </p>
-                {slide.url && (
-                  <Link
-                    href={"about-jss"}
-                    className={styles.bannerContentA}
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                  >
-                    {slide.linked_text}
-                    <Image
-                      src="/images/home-page/jss_bannerIcon.svg"
-                      alt="visit icons"
-                      width={22}
-                      height={22}
-                      className={styles.iconSpacing}
-                    />
-                  </Link>
-                )}
-              </div>
+              <div className="container">
+                <div className={styles.bannerContent}>
 
-             </div>
+                  <h1
+                    className={styles.bannerContentH1}
+                    dangerouslySetInnerHTML={{ __html: slide.title }}
+                    data-aos="fade-right"
+                    data-aos-delay="0"
+                  ></h1>
+                  <p
+                    className={styles.bannerContentP}
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                  >
+                    {slide.desc}
+                  </p>
+                  {slide.url && (
+                    <Link
+                      href={"about-jss"}
+                      className={styles.bannerContentA}
+                      data-aos="fade-right"
+                      data-aos-delay="200"
+                    >
+                      {slide.desc}
+                    </Link>)}
+                  {slide.url && (
+                    <Link
+                      href={"about-jss"}
+                      className={styles.bannerContentA}
+                      data-aos="fade-right"
+                      data-aos-delay="300"
+                    >
+                      {slide.linked_text}
+                      <Image
+                        src="/images/home-page/jss_bannerIcon.svg"
+                        alt="visit icons"
+                        width={22}
+                        height={22}
+                        className={styles.iconSpacing}
+                      />
+                    </Link>
+                  )}
+                </div>
+
+              </div>
             </div>
           </SwiperSlide>
         ))}

@@ -1,5 +1,9 @@
 /* ===== Sticky Header ===== */
 
+.departmentHeaderWrapper {
+  padding-top: 153px;
+}
+
 .stickyHeader {
   position: sticky;
   top: 12%;

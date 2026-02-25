@@ -81,16 +81,14 @@ export default function AboutThree({ data }) {
                     data-aos="zoom-in"
                     data-aos-delay="300"
                   >
-                    <Image
+                    <img
                       src={item.image}
                       alt={
                         item.title
                           ? item.title.replace(/<[^>]+>/g, "")
                           : "Vision"
                       }
-                      width={700}
-                      height={500}
-                      style={{ width: "100%", height: "auto" }}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
                 )}
