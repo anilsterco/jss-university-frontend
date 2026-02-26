@@ -2626,9 +2626,152 @@ hr {
 }
 
 
+
+/* grid_card_design2_section */
+
+.grid_card_design2_section {
+  margin-top: 200px;
+  padding: 10rem 0;
+}
+
+.grid_card_design2_section .heading {
+  color: #16344E;
+  font-weight: 700;
+  font: var(--font-26);
+}
+
+.grid_card_design2_section .sub_heading {
+  color: #333333;
+  font: var(--font-24);
+  font-weight: 300;
+  max-width: 950px;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.grid_card_design2_section .thumbnail {
+  width: auto;
+}
+
+.grid_card_design2_section .content {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2.6rem;
+}
+
+.grid_card_design2_section .content .name {
+  color: #16344E;
+  font: var(--font-21);
+  font-weight: 500;
+}
+
+.grid_card_design2_section .content .bar {
+  width: 5.3rem;
+  height: 0.5rem;
+  display: block;
+  background: #ECC820;
+  margin-top: 2rem;
+}
+
+.grid_card_design2_section .single_card {
+  margin-bottom: 5rem;
+}
+
+.grid_card_design2_section p {
+  margin: 0;
+}
+
+.grid_card_design2_section .bottom_sub_heading strong {
+  color: #444444;
+  font: var(--font-18);
+  font-weight: 700;
+}
+
+.grid_card_design2_section .bottom_desc {
+  color: #444444;
+  margin-top: 2.4rem;
+}
+
+/* table_section */
+
+.table_section {
+  background: #fff;
+  padding: 10rem 0;
+}
+
+.table_section .heading {
+  font: var(--font-26);
+  font-weight: bold;
+  color: #16344E;
+  margin-bottom: 4rem;
+}
+
+.table_section .table-lab {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table_section thead tr {
+  background-color: #B08F29;
+  color: #fff;
+}
+
+.table_section thead th {
+  font: var(--font-18);
+  font-weight: 600;
+  padding: 1.2rem 3.6rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  min-width: 35rem;
+}
+
+.table_section thead th:first-child {
+  min-width: 13rem;
+}
+
+.table_section .table-lab tbody tr {
+  background-color: #fff;
+  border: none
+}
+
+.table_section .table-lab tbody tr:nth-child(even) {
+  background-color: #ececec;
+}
+
+.table_section .table-lab tbody td {
+  font: var(--font-16);
+  color: #444444;
+  border: none;
+  text-align: left;
+  padding: 1.2rem 3.6rem;
+  background: transparent
+}
+
+.table_section .table-lab tbody td:first-child {
+  width: 80px;
+}
+
+.table_section .table-lab tbody td:nth-child(2) {
+  width: 220px;
+}
+
+
+/* top_section */
+
+.top_section {
+  margin-top: 12rem;
+}
+
 /* start responsive */
 
 @media (min-width: 1920px) {
+  .mx_3xl_-1_3 {
+    margin-left: -1.3rem;
+    margin-right: -1.3rem;
+  }
+
   .mx_3xl_-3_5 {
     margin-left: -3.5rem;
     margin-right: -3.5rem;
@@ -2644,6 +2787,11 @@ hr {
     padding-right: 1.2rem;
   }
 
+  .px_3xl_1_3 {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
   .px_3xl_3_5 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
@@ -2651,6 +2799,10 @@ hr {
 
   .mt_3xl_10 {
     margin-top: 10rem;
+  }
+
+  .mt_3xl_7 {
+    margin-top: 7rem;
   }
 }
 
