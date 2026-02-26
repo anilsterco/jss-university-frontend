@@ -38,11 +38,8 @@ export default function DepartmentHeader({ className }) {
 
         if (json.status && json.data.length > 0) {
           setEngineeringData(json.data);
-
-          // Default first school
           setSelectedSchoolName(json.data[0].name);
 
-          // Default first department
           if (json.data[0].departments?.length > 0) {
             setSelectedDepartmentName(json.data[0].departments[0].name);
           }
@@ -55,7 +52,6 @@ export default function DepartmentHeader({ className }) {
     fetchSchools();
   }, []);
 
-  /* ================= Close Dropdown Outside Click ================= */
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -72,7 +68,6 @@ export default function DepartmentHeader({ className }) {
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* ================= Scroll Active Section ================= */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,7 +96,6 @@ export default function DepartmentHeader({ className }) {
     }
   };
 
-  /* ================= JSX ================= */
 
   return (
     <div className={styles.departmentHeaderWrapper}>
@@ -109,7 +103,6 @@ export default function DepartmentHeader({ className }) {
         <nav className="containerXl">
           <div className={styles.departmentMenu}>
 
-            {/* ===== Dropdown ===== */}
             <div className={styles.schoolDeptWrapper}>
               <div
                 className={styles.schoolToggle}

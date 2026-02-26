@@ -14,7 +14,7 @@ import TabSection from "@/component/sections/TabSection";
 import Placements from "@/component/sections/Placements";
 import PlacementHighlights from "@/component/sections/PlacementHighlights";
 import PlacementProcedure from "@/component/sections/PlacementProcedure";
-import PacementTabSection from "@/component/sections/PacementTabSection";
+
 import PlacementRequest from "@/component/sections/PlacementRequest";
 import FacilitySeven from "@/component/sections/FacilitySeven";
 import HeritageSection from "@/component/sections/HeritageSection";
@@ -46,6 +46,7 @@ import GridCardDesign1 from "@/component/sections/GridCardDesign1";
 import VisionMission from "@/component/sections/VisionMission";
 import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 import HodMessage from "@/component/sections/HodMessage";
+import PacementTabSection from "@/component/sections/PacementTabSection";
 
 
 

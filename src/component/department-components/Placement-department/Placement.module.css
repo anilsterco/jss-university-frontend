@@ -1,8 +1,7 @@
-/* components/home-components/PlacementsSection/PlacementsSection.module.css */
 
 .thirdSection {
   background: #f6f6f6;
-  padding-block: 12rem 10rem;
+  padding-block: 12rem 6rem;
 }
 
 .blueBg {
@@ -412,7 +411,3 @@
   flex: 1;
 }
 
-.testimonialSwiper {
-  position: relative;
-  padding: 2rem 0;
-}

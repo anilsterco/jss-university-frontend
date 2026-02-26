@@ -7,10 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import styles from "./schoolBanner.module.css";
-
-// Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -95,7 +92,7 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
               <div className={`${styles.imageWrapper} shine-effect`}>
                 <Image
                   src={slide.desktop_banner || "/images/header/school-banner.png"}
-                  alt={isDepartment ? name : slide.label}
+                  alt="image"
                   width={1100}
                   height={600}
                   priority
