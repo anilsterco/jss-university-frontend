@@ -47,6 +47,7 @@ import VisionMission from "@/component/sections/VisionMission";
 import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 import HodMessage from "@/component/sections/HodMessage";
 import PacementTabSection from "@/component/sections/pacementTabSection";
+import PdfLists from "@/component/sections/PdfLists";
 
 
 
@@ -146,7 +147,8 @@ export default async function DynamicPage({ params }) {
     imageContentRepeat: ImageContentRepeat,
     gridCardDesign1: GridCardDesign1,
     vision_mission: VisionMission,
-    hod_section: HodMessage
+    hod_section: HodMessage,
+    pdf_lists: PdfLists,
   };
 
   return (

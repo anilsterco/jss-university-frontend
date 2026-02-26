@@ -2555,6 +2555,77 @@ hr {
   margin-bottom: 4rem;
 }
 
+/* placement_page */
+
+.placement_page .section_title {
+  font: var(--font-26);
+  color: #16344E;
+  margin-bottom: 4rem;
+}
+
+.placement_page .placement_stats .icon {
+  height: 8.5rem;
+  width: 8.5rem;
+  border: 1px solid #DFDFDF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+.placement_page .curriculum_box {
+  display: flex;
+}
+
+.placement_page .curriculum_box .content {
+  flex: 1;
+}
+
+/* pdf_list_section */
+
+.pdf_list_section {
+  padding: 10rem 0;
+}
+
+.pdf_list_section ul {
+  display: flex;
+  list-style-type: none;
+  gap: 6rem;
+  margin: 0;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.pdf_list_section li {
+  display: flex;
+  position: relative;
+}
+
+.pdf_list_section li:not(:last-child):before {
+  position: absolute;
+  content: '';
+  height: 2.5rem;
+  width: 1px;
+  background: #707070;
+  right: -3rem;
+  top: 0;
+}
+
+.pdf_list_section li a {
+  display: flex;
+}
+
+.pdf_list_section li img {
+  margin-right: 1.2rem;
+}
+
+.pdf_list_section li p {
+  font: var(--font-18);
+  color: #333333;
+  font-weight: 700;
+}
+
+
 /* start responsive */
 
 @media (min-width: 1920px) {
@@ -2576,6 +2647,10 @@ hr {
   .px_3xl_3_5 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
+  }
+
+  .mt_3xl_10 {
+    margin-top: 10rem;
   }
 }
 
