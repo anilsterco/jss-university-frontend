@@ -46,7 +46,7 @@ import GridCardDesign1 from "@/component/sections/GridCardDesign1";
 import VisionMission from "@/component/sections/VisionMission";
 import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 import HodMessage from "@/component/sections/HodMessage";
-import PacementTabSection from "@/component/sections/PacementTabSection";
+import PacementTabSection from "@/component/sections/pacementTabSection";
 
 
 

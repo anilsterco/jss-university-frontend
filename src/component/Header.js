@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
 
 const BASE_URL = "/api/";
@@ -113,13 +112,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [admissionOpen, setAdmissionOpen] = useState(false);
-  const [engineeringDropdown, setEngineeringDropdown] = useState(false);
-  const [selectedSchool, setSelectedSchool] = useState(0);
-  const [selectedSchoolName, setSelectedSchoolName] = useState([]);
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const admissionRef = useRef(null);
-  const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
@@ -266,12 +261,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (engineeringData?.length > 0) {
-      setSelectedSchoolName(engineeringData[0].name);
-    }
-  }, [engineeringData]);
-
-  useEffect(() => {
     setIsMounted(true);
   }, []);
 
@@ -312,25 +301,6 @@ export default function Header() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [isMounted]);
 
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const handleClickOutside = (e) => {
-      if (admissionRef.current && !admissionRef.current.contains(e.target)) {
-        setAdmissionOpen(false);
-      }
-      if (
-        engineeringRef.current &&
-        !engineeringRef.current.contains(e.target) &&
-        !e.target.closest(".school-toggle")
-      ) {
-        setEngineeringDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMounted]);
-
   const activeData = hamburgerMenudata[activeIndex] || hamburgerMenudata[0];
 
   if (!isMounted) {
@@ -348,6 +318,11 @@ export default function Header() {
     );
   }
 
+  const isHome = pathname === "/";
+  const isDepartment = pathname.includes("/department");
+  const isSchool = pathname.includes("/schools");
+
+  const isHomeDepartmentOrSchool = isHome || isDepartment || isSchool;
   const loadPrograms = async () => {
     if (mobProgramList.length > 0) return;
     const res = await fetch(Program_Api);
@@ -443,20 +418,14 @@ export default function Header() {
 
     setActivePanel(name);
   };
+
   const isHomeOrDepartment =
     pathname === "/" || pathname.startsWith("/department");
 
-
-
-    
   return (
     <header
       className={`site-header
-    ${
-      pathname.includes("schools") || pathname.includes("programs")
-        ? "no-shadow"
-        : ""
-    }
+    ${pathname.includes("programs") ? "no-shadow" : ""}
     ${pathname !== "/" ? "programs-header" : ""}
     ${pathname !== "/" ? "not-home" : ""}
   `}
@@ -470,12 +439,12 @@ export default function Header() {
           <div
             className={`nav-container
     ${
-      pathname.includes("schools") || pathname.includes("programs")
-        ? "scroll_bg"
+      pathname !== "/" &&
+      !pathname.includes("/schools") &&
+      !pathname.includes("/department")
+        ? "scroll_bg programs-nav not-home"
         : ""
     }
-    ${pathname !== "/" ? "programs-nav" : ""}
-    ${pathname !== "/" ? "not-home" : ""}
   `}
           >
             <div
@@ -485,7 +454,7 @@ export default function Header() {
                 <Link href="/" aria-label="Home">
                   <Image
                     src={
-                      isHomeOrDepartment
+                      isHomeDepartmentOrSchool
                         ? "/images/header/header-logo.png"
                         : "/images/header/jss-moblogo.png"
                     }
@@ -510,86 +479,6 @@ export default function Header() {
                   />
                 </Link>
               </div>
-
-              {/* ================= SCHOOL / DEPARTMENT DROPDOWN ================= */}
-              {pathname.includes("schools") && (
-                <>
-                  <div
-                    className="school-toggle"
-                    onClick={() => setEngineeringDropdown((prev) => !prev)}
-                  >
-                    <div
-                      style={{
-                        borderLeft: "1px solid #e0e0e0ff",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        cursor: "pointer",
-                        padding: "20px",
-                      }}
-                    >
-                      <span className="schoolDrp">School Of</span>
-                      <span className="schoolDrpheading">
-                        Engineering <IoChevronDownOutline fontSize={15} />
-                      </span>
-                    </div>
-                  </div>
-
-                  {engineeringDropdown && engineeringData.length > 0 && (
-                    <div
-                      className="engineering-dropdown-container"
-                      ref={engineeringRef}
-                    >
-                      <div className="engineering-dropdown">
-                        {/* LEFT: Schools */}
-                        <div className="schools-list">
-                          <h6>Schools</h6>
-                          {engineeringData.map((school, idx) => (
-                            <div
-                              key={idx}
-                              className={`school-item ${
-                                selectedSchool === idx ? "active" : ""
-                              }`}
-                              onClick={() => {
-                                setSelectedSchool(idx);
-                                setSelectedSchoolName(school.name);
-                                setEngineeringDropdown(false);
-                              }}
-                            >
-                              <Link
-                                href={`/schools/${school.slug}`}
-                                className="text-white"
-                              >
-                                {school.name}
-                              </Link>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* RIGHT: Departments */}
-                        <div className="departments-list">
-                          <h6 className="text-white">Departments</h6>
-                          <div className="link-content">
-                            {engineeringData[selectedSchool]?.departments?.map(
-                              (dept, i) => (
-                                <Link
-                                  key={i}
-                                  href={`/department/${dept.slug}`}
-                                  className="department-links text-white"
-                                  onClick={() => setEngineeringDropdown(false)}
-                                >
-                                  {dept.name}
-                                </Link>
-                              ),
-                            )}
-                          </div>
-                          <IoTriangleSharp className="triangle-icon" />
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </>
-              )}
             </div>
 
             <div className="right-navbar">
@@ -1138,48 +1027,18 @@ export default function Header() {
       </div>
       <style jsx>
         {`
-          .school-toggle {
-            cursor: pointer;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s;
-            display: flex;
-            flex-direction: column;
-          }
-          .brand-wrap.logo-content {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            justify-content: center;
-          }
-          .school-toggle p {
-            font: var(--font-16);
-            color: var(--color-white);
-            font-family: var(--font-Condensed);
-            letter-spacing: 0px;
-          }
-          .school-toggle h5 {
-            font: var(--font-24);
-            color: var(--color-white);
-            font-family: var(--font-Condensed);
-            letter-spacing: -1.1px;
-            font-weight: bold;
-            text-transform: uppercase;
-          }
           .logo-content img {
             width: 100%;
             height: 100%;
             object-fit: contain;
           }
-          .header-scrolled .school-toggle {
-            color: #16344e;
-          }
-          .nav-container.header-scrolled.scroll_bg {
+
+          {/* .nav-container.header-scrolled.scroll_bg {
             background: #f8f9fa !important;
           }
           .nav-container.header-scrolled.not-home {
             background: #f8f9fa !important;
-          }
+          } */}
           .programs-nav .nav-list {
             background: transparent;
           }
@@ -2603,9 +2462,7 @@ export default function Header() {
             .brand-wrap.logo-content {
               display: block;
             }
-            .school-toggle {
-              margin-block: 2rem;
-            }
+
             .engineering-dropdown-container {
               top: 85%;
               left: 13%;
