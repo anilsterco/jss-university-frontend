@@ -100,7 +100,7 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                 />
                 <Image
                   src={slide.mobile_banner || "/images/home-page/mobile-main-banner.png"}
-                  alt={isDepartment ? name : slide.label}
+                  alt={isDepartment ? name : "image"}
                   width={600}
                   height={600}
                   priority

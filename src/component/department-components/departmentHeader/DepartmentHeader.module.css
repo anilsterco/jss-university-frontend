@@ -30,6 +30,14 @@
   display: flex;
   flex-direction: column;
   color: #16344e;
+  width: 23rem;
+}
+
+.schoolToggle .selectedName {
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .schoolToggle span:first-child {
@@ -89,11 +97,12 @@
 
 .schoolItem:hover {
   background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .schoolItem.active {
   color: #16344e;
-  font: var(--font-14);
+  /* font: var(--font-14); */
   letter-spacing: 0;
   background: #ffc100;
   font-weight: 400;
@@ -169,6 +178,12 @@
 .activeNav {
   color: #018CE8;
   font-weight: 600;
+}
+
+.noDept {
+  color: #fff;
+  padding: 8px 12px;
+  font: var(--font-14);
 }
 
 
