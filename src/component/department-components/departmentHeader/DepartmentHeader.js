@@ -5,22 +5,8 @@ import Link from "next/link";
 import { IoChevronDownOutline } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 
-const STATIC_SECTIONS = [
-  { id: "about", label: "About The Department" },
-  { id: "programs", label: "Programs" },
-  { id: "research", label: "Research" },
-  { id: "labs", label: "Labs" },
-  { id: "facilities", label: "Facilities" },
-  { id: "placements", label: "Placements" },
-  { id: "faculties", label: "Faculties" },
-  { id: "alumni", label: "Alumni" },
-  { id: "innovations", label: "Innovations" },
-  { id: "faqs", label: "FAQ's" },
-  { id: "happenings", label: "Happenings" },
-];
-
-export default function DepartmentHeader({ className }) {
-  const [activeSection, setActiveSection] = useState(STATIC_SECTIONS[0].id);
+export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
+  const [activeSection, setActiveSection] = useState(STATIC_SECTIONS[0].slug);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
   const [selectedSchoolName, setSelectedSchoolName] = useState("");
@@ -73,32 +59,32 @@ export default function DepartmentHeader({ className }) {
   }, []);
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      STATIC_SECTIONS.forEach((section) => {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section.id);
-          }
-        }
-      });
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     STATIC_SECTIONS.forEach((section) => {
+  //       const el = document.getElementById(section.id);
+  //       if (el) {
+  //         const rect = el.getBoundingClientRect();
+  //         if (rect.top <= 100 && rect.bottom >= 100) {
+  //           setActiveSection(section.id);
+  //         }
+  //       }
+  //     });
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      window.scrollTo({
-        top: el.offsetTop - 80,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scrollToSection = (id) => {
+  //   const el = document.getElementById(id);
+  //   if (el) {
+  //     window.scrollTo({
+  //       top: el.offsetTop - 80,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
 
   return (
@@ -182,14 +168,15 @@ export default function DepartmentHeader({ className }) {
 
             {/* ===== Static Menu ===== */}
             {STATIC_SECTIONS.map((section) => (
-              <button
-                key={section.id}
-                className={`${styles.navItem} ${activeSection === section.id ? styles.activeNav : ""
-                  }`}
-                onClick={() => scrollToSection(section.id)}
+              <Link
+                key={section.title}
+                href={section.slug}
+                className={`${styles.navItem} `}
+              // ${activeSection === section.slug ? styles.activeNav : ""}
+              // onClick={() => scrollToSection(section.id)}
               >
-                {section.label}
-              </button>
+                {section.title}
+              </Link>
             ))}
 
           </div>
