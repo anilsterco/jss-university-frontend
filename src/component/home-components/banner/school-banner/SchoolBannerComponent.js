@@ -13,7 +13,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function SchoolSlider({ data, name, isDepartment = false }) {
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,15 +21,12 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
     });
   }, []);
 
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
-
   const defaultBanner = [
     {
       id: 1,
       label: "SCHOOL OF ENGINEERING",
-      title: "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
+      title:
+        "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
       desc: "A long-standing history of fostering new ideas and guiding students.",
       linked_text: "Learn more about JSS",
       url: "/about-us",
@@ -51,12 +47,43 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
     >
       {bannerData.map((slide, index) => (
         <SwiperSlide key={slide.id || index}>
-          <div className={styles.slideWrapper} data-aos="fade-up" data-aos-duration="1200">
-            <div className={styles.leftSection} data-aos="fade-right" data-aos-delay="200">
-              <div className={styles.bannerContent}>
-                {/* ✅ Department Name or Slide Label */}
-                <div className={styles.bannerLabel} data-aos="fade-up" data-aos-delay="300">
-                  {isDepartment ? name : slide.label}
+          <div className={styles.slideWrapper}>
+            <Image
+              src={slide.desktop_banner}
+              alt="banner image"
+              fill
+              priority
+              className={styles.desktopBanner}
+            />
+            <Image
+              src={slide.mobile_banner}
+              alt="mobile banner"
+              fill
+              priority
+              className={styles.mobileBanner}
+            />
+            <div className={styles.overlay}>
+              <div className="container">
+                <div className={styles.bannerContent}>
+                  <div className={styles.bannerLabel}>
+                    {isDepartment ? name : slide.label}
+                  </div>
+                  <span className={styles.bannerSmall}>COLLEGE OF</span>
+                  <h1
+                    className={styles.bannerContentH1}
+                    dangerouslySetInnerHTML={{ __html: slide.title }}
+                  />
+                  <p className={styles.bannerContentP}>{slide.desc}</p>
+                  {slide.url && (
+                    <Link href={slide.url} className={styles.bannerContentA}>
+                      {slide.linked_text || "Learn more"}
+                      <img
+                        src="/images/header/banner-arrow.svg"
+                        alt="arrow"
+                        className={styles.iconSpacing}
+                      />
+                    </Link>
+                  )}
                 </div>
 
                 <h1

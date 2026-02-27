@@ -60,14 +60,12 @@ export default function BelowBannerSection() {
             <button className={styles.button}>
               DOWNLOAD BROCHURE
             </button>
-
             <button
               className={`${styles.button} ${styles.buttonPrimary}`}
             >
               APPLY NOW
             </button>
           </div>
-
         </div>
       </div>
     </div>

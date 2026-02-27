@@ -22,6 +22,7 @@
   letter-spacing: -1.35px;
   color: var(--color-4e);
   margin-bottom: 3.8rem;
+   font-family: var(--font-Condensed)
 }
 
 .inner-title .innnr_head h3>span {

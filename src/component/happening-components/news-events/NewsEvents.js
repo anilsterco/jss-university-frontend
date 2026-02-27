@@ -34,7 +34,7 @@ export default function EventsSection() {
   });
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["news-events", filters.month, filters.school, filters.page],
+    queryKey: ["happenings", filters.month, filters.school, filters.page],
     queryFn: () => {
       const queryParams = buildQueryParams();
       const endpoint = `/happenings?${queryParams}`;
@@ -82,7 +82,6 @@ export default function EventsSection() {
   const buildQueryParams = () => {
     const params = new URLSearchParams();
 
-    // Always add page parameter
     params.append("page", filters.page);
 
     if (filters.month !== "") {
@@ -164,7 +163,7 @@ export default function EventsSection() {
           >
             {upCommingEvents.map((event) => (
               <SwiperSlide key={event.id}>
-                <Link href={"#"}>
+                <Link href={`/happenings/${event.slug || event.id}`}>
                   {event.banner_image && (
                     <Image
                       src={event.banner_image}
@@ -280,7 +279,10 @@ export default function EventsSection() {
                 ></h3>
 
                 <p className={styles.eventDesc}>{secondryItem.desc}</p>
-                <Link href={"#"} style={{ color: "inherit" }}>
+                <Link
+                  href={`/happenings/${secondryItem.slug || secondryItem.id}`}
+                  style={{ color: "inherit" }}
+                >
                   <BsArrowRightCircle fontSize={20} />
                 </Link>
               </div>
@@ -293,72 +295,71 @@ export default function EventsSection() {
         )}
       </div>
 
-      {/* Event Cards */}
       <div className="container ">
-        
-          {allEvents.length > 0 ? (
-        <>
-          <div className={`events_row latest-event m-auto ${styles.cardsRow}`}>
-            {allEvents.map((event, index) => {
-              const darkColors = ["#00489A", "#AF251C", "#AF251C"];
-              const shuffledColors = [...darkColors].sort(
-                () => Math.random() - 0.5
-              );
-              const bgColor = shuffledColors[index % 4];
+        {allEvents.length > 0 ? (
+          <>
+            <div className={`events_row latest-event m-auto ${styles.cardsRow}`}>
+              {allEvents.map((event, index) => {
+                const darkColors = ["#00489A", "#AF251C", "#AF251C"];
+                const shuffledColors = [...darkColors].sort(
+                  () => Math.random() - 0.5
+                );
+                const bgColor = shuffledColors[index % 4];
 
-              return (
-                <div key={event.id} className="events_col">
-                  <Link href={`#`} style={{ color: "inherit" }}>
-                    <div
-                      className={`${styles.eventCard} ${
-                        !event.banner_image ? styles.textOnlyCard : ""
-                      }`}
-                      style={
-                        !event.banner_image
-                          ? { backgroundColor: event.bgColor || bgColor }
-                          : {}
-                      }
+                return (
+                  <div key={event.id} className="events_col">
+                    <Link
+                      href={`/happenings/${event.slug || event.id}`}
+                      style={{ color: "inherit" }}
                     >
-                      <p className={styles.eventType}>
-                        {!event.banner_image ? "Event" : ""}
-                      </p>
-                      {event.banner_image ? (
-                        <Image
-                          src={event.banner_image}
-                          alt={event.title}
-                          width={400}
-                          height={250}
-                          layout="responsive"
-                          className={styles.eventImage}
-                        />
-                      ) : null}
-                      <div className={styles.cardBody}>
-                        <h5 className={styles.cardTitle}>{event.title}</h5>
-                        <p className={styles.cardDate}>
-                          {formatDate(event.event_date_from)}
+                      <div
+                        className={`${styles.eventCard} ${
+                          !event.banner_image ? styles.textOnlyCard : ""
+                        }`}
+                        style={
+                          !event.banner_image
+                            ? { backgroundColor: event.bgColor || bgColor }
+                            : {}
+                        }
+                      >
+                        <p className={styles.eventType}>
+                          {!event.banner_image ? "Event" : ""}
                         </p>
+                        {event.banner_image ? (
+                          <Image
+                            src={event.banner_image}
+                            alt={event.title}
+                            width={400}
+                            height={250}
+                            layout="responsive"
+                            className={styles.eventImage}
+                          />
+                        ) : null}
+                        <div className={styles.cardBody}>
+                          <h5 className={styles.cardTitle}>{event.title}</h5>
+                          <p className={styles.cardDate}>
+                            {formatDate(event.event_date_from)}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+              maxVisiblePages={5}
+            />
+          </>
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            No Result Found
           </div>
-
-          {/* Pagination Component */}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-            maxVisiblePages={5}
-          />
-        </>
-      ) : (
-        <div style={{ textAlign: "center", marginTop: "5rem" }}>
-          No Result Found
-        </div>
-      )}
-
+        )}
       </div>
     </section>
   );

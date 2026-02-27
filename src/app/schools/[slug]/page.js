@@ -1,7 +1,7 @@
 import SchoolBannerComponent from "@/component/home-components/banner/school-banner/SchoolBannerComponent";
-import BelowBannerComponent from "@/component/school-components/below-banner-component/BelowBannerComponent";
+import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
 import DepartmentComponent from "@/component/school-components/browse-department/DepartmentComponent";
-import PlacementComponent from "@/component/home-components/placement/PlacementComponent";
+import FacilitiesComponent from "@/component/school-components/facilities-component/FacilitiesComponent";
 import AboutSchoolComponent from "@/component/school-components/about-school-component/AboutSchoolComponent";
 import TestimonialComponent from "@/component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
@@ -48,16 +48,20 @@ export default async function SchoolPage({ params }) {
         name={schoolData?.school_name}
       />
 
-      <BelowBannerComponent />
-
+      {/* <BelowBannerComponent /> */}
+       <DepartmentHeader />
       {schoolData?.sections?.course_data?.title && (
         <DepartmentComponent data={schoolData.sections.course_data} />
       )}
 
-      {schoolData?.sections?.placements?.title && (
+      {/* {schoolData?.sections?.placements?.title && (
         <PlacementComponent data={schoolData.sections.placements} />
-      )}
+      )} */}
+    
 
+    {schoolData?.sections?.about_school?.title && (
+        <FacilitiesComponent data={schoolData.sections.about_school} />
+      )}
       {schoolData?.sections?.about_school?.title && (
         <AboutSchoolComponent data={schoolData.sections.about_school} />
       )}

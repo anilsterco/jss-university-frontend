@@ -3,13 +3,10 @@
 .departmentSection {
   background-color: #f6f6f6;
   min-height: 100vh;
-  padding: 6rem 0rem 5rem;
+  padding: 6rem 0rem 0;
 }
 
-.departmentSection .container {
-  border-bottom: 1px solid #d1cbcb;
-  padding-bottom: 7rem;
-}
+
 
 .leftSide {
   display: flex;
@@ -25,6 +22,7 @@
   margin-bottom: 2.2rem;
   font: var(--font-60);
   line-height: 0.9;
+  max-width: 80%;
 }
 
 .viewAllButton svg {
@@ -38,6 +36,28 @@
 
 }
 
+.courseRow {
+  display: grid;
+  grid-template-columns: 30.7% 58%;
+  gap: 16rem;
+}
+
+.courseItemsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.smallHeadline {
+  text-transform: uppercase;
+  color: var(--color-4e);
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+  display: block;
+
+}
 
 .description {
   font: var(--font-16);
@@ -49,18 +69,21 @@
 }
 
 .programsCount {
-  color: #16344e;
-  font: var(--font-48);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-  letter-spacing: -2.4px;
+  color: #b08f29;
+  letter-spacing: -8.8px;
+  font: var(--font-110);
+  font-family: var(--font-Roboto);
+  font-weight: normal;
 }
 
 .programsText {
-  font: var(--font-14);
-  font-weight: 700;
-  margin-bottom: 3.8rem;
-  font-family: var(--font-Condensed);
+  font: var(--font-24);
+  color: var(--color-27);
+  letter-spacing: -.48px;
+  padding-left: 3.6rem;
+  font-family: Geist, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .viewAllButton {
@@ -81,25 +104,17 @@
   color: #fff;
 }
 
-.applyButton {
-  border-radius: 0;
-  font: var(--font-14);
-  line-height: 17px;
-  font-weight: 600;
-  background-color: #b08f29;
-  color: #fff;
-  border: none;
-  padding: 1.1rem 2.5rem 1rem;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  font-family: var(--font-Roboto);
-  letter-spacing: 0;
+.admistion_heading a {
+  font: var(--font-16);
+  padding: .8rem 2.4rem;
+  font-family: Noto Sans, sans-serif;
+  line-height: 1.5;
 }
 
-.applyButton:hover {
-  background-color: #9a7b24;
-  color: #fff;
+.departSec {
+  padding-block: 15.7rem 15rem;
 }
+
 
 .programCard {
   border-radius: 50px 0px 0px 0px;
@@ -156,18 +171,7 @@
   font: var(--font-18);
   font-family: var(--font-Condensed);
   font-weight: 700;
-  color: #B08F29;
-
-}
-
-.browseHeader {
-  color: #b59c50;
-  font-weight: bold;
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  color: #16344E;
 }
 
 .browseLine {
@@ -184,24 +188,43 @@
   margin: 1rem 0 4rem 0;
 }
 
-.departmentItem {
+.browseHeader h2 {
+  font: var(--font-60);
+  color: var(--color-4e);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 4rem;
+
+}
+
+.browseHeader h2>span {
+  font: var(--font-60);
+  color: #018CE8;
+  margin-bottom: 3.8rem;
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+  line-height: 0.9;
+
+}
+
+.departData{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.6);
-  color: #16344E;
+  margin-block: 2rem;
+}
+
+
+.departData h4{
+  color: #B08F29;
   border-radius: 0px;
-  cursor: pointer;
-  font: var(--font-21);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  letter-spacing: -0.21px;
+  font: var(--font-18);
   font-weight: bold;
   font-family: var(--font-Condensed);
-  height: 100%;
-  padding-inline: 2rem;
+  text-transform: uppercase;
 }
 
 .departmentItem:hover {
@@ -211,16 +234,61 @@
 }
 
 .departmentArrow {
-  font-size: 22px;
-  color: #969696;
+  font-size:2.2rem;
+  color: #002241bd;
   transition: color 0.3s ease;
+  flex-shrink: 0;
 
 }
+.departmentRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
 
+.departmentCol {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.departmentImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Text + icon overlay */
+
+
+.departData h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Arrow icon hover ONLY */
+.departmentArrow {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.departmentCol:hover .departmentArrow {
+  color: #ffcc00;
+}
+
+.fullLink {
+  inset: 0;
+  z-index: 3;
+}
 .departmentItem:hover .departmentArrow {
-  color: #b08f29;
+  color:var(--color-100);
 }
 
+.departmentRow {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2.3rem;
+}
 /* Responsive Design */
 @media (max-width: 2550px) {
   .cardImage {
@@ -280,23 +348,26 @@
   .browseLine {
     width: 70%;
   }
+
   .programsCount {
-  color: #16344e;
-  font: var(--font-40);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-  letter-spacing: -1.4px;
-}
-.cardTitle {
-  font: var(--font-24);
-  font-family: var(--font-Condensed);
-}
+    color: #16344e;
+    font: var(--font-40);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+  }
+
+  .cardTitle {
+    font: var(--font-24);
+    font-family: var(--font-Condensed);
+  }
 }
 
 @media (max-width: 768px) {
   .departmentSection {
     padding: 0rem 2rem 2rem 2rem;
   }
+
   .browseHeader {
     flex-direction: column;
     align-items: flex-start;
@@ -341,15 +412,85 @@
   .cardTitle {
     max-width: 100%;
   }
+
   .departmentItem {
-  font: var(--font-16);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  letter-spacing: -0.21px;
-  font-weight: bold;
-  font-family: var(--font-Condensed);
-  height: 100%;
-  padding-inline: 2rem;
+    font: var(--font-16);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    letter-spacing: -0.21px;
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+    height: 100%;
+    padding-inline: 2rem;
+  }
 }
+
+.cardOverlay {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 10px;
+}
+
+.bannerLabel {
+  color: #fff;
+  border-left: 4px solid #ffc100;
+  width: 100%;
+  font-family: Geist, sans-serif;
+  font: var(--font-28);
+  position: absolute;
+  bottom: 2.2rem;
+  padding-left: 1.2rem;
+  gap: 1.2rem;
+  left: 0;
+  letter-spacing: -0.84px;
+  text-transform: uppercase;
+}
+
+.cardIcons {
+  padding-left: 1.2rem;
+}
+
+.Plusicon {
+  font: var(--font-52);
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  letter-spacing: -4.16px;
+  position: relative;
+  top: -5rem;
+  right: -1rem;
+}
+
+.admistion_heading {
+  display: flex;
+  gap: 2.7rem;
+  margin-top: 3.8rem;
+  align-items: center;
+}
+
+.admiCol h2 {
+  font: var(--font-24);
+  color: #16344e;
+  font-family: var(--font-Roboto);
+  letter-spacing: -.48px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.admiCol h2>span {
+  color: #018CE8;
+}
+
+.admiCol>p {
+  font: var(--font-18);
+  color: var(--color-black);
+  letter-spacing: -.36px;
+  margin-bottom: 0;
+  font-weight: 300;
 }
