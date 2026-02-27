@@ -3,7 +3,7 @@ import DepartmentHeader from "@/component/department-components/departmentHeader
 import DepartmentComponent from "@/component/school-components/browse-department/DepartmentComponent";
 import FacilitiesComponent from "@/component/school-components/facilities-component/FacilitiesComponent";
 import AboutSchoolComponent from "@/component/school-components/about-school-component/AboutSchoolComponent";
-import TestimonialComponent from "@/component/home-components/testimonial/TestimonialComponent";
+import FacultySchool from "@/component/school-components/faculty-list-school/FacultySchool";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
@@ -67,7 +67,7 @@ export default async function SchoolPage({ params }) {
       )}
 
       {schoolData?.sections?.testimonials?.title && (
-        <TestimonialComponent data={schoolData.sections.testimonials} />
+        <FacultySchool data={schoolData.sections.testimonials} />
       )}
 
       {schoolData?.sections?.happenings?.title && (

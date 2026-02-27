@@ -225,6 +225,7 @@
   font-weight: bold;
   font-family: var(--font-Condensed);
   text-transform: uppercase;
+  padding-right: 2rem;
 }
 
 .departmentItem:hover {
@@ -259,13 +260,7 @@
   border-radius: 8px;
 }
 
-/* Text + icon overlay */
 
-
-.departData h4 {
-  margin: 0;
-  font-size: 18px;
-}
 
 /* Arrow icon hover ONLY */
 .departmentArrow {

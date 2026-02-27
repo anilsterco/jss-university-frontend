@@ -1,4 +1,3 @@
-// components/school-components/AboutSchool/index.js
 "use client";
 
 import { useEffect } from "react";
@@ -9,8 +8,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import styles from "./about-school.module.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function AboutSchool({ data }) {
-  // 🔹 AOS INIT
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -41,7 +44,7 @@ export default function AboutSchool({ data }) {
       {
         rank: "#201-250",
         text: "NATIONALLY ENGINEERING RANK (2024)",
-        source: "Nirf ",
+        source: "NIRF",
       },
     ],
     buttons: [
@@ -51,7 +54,15 @@ export default function AboutSchool({ data }) {
     ],
   };
 
-  const aboutSchoolContent = data ? data : dummyAboutSchoolContent;
+  // ✅ Merge + sanitize API data
+  const aboutSchoolContent = {
+    ...dummyAboutSchoolContent,
+    ...data,
+    buttons:
+      data?.buttons?.filter(
+        (btn) => btn?.url && typeof btn.url === "string"
+      ) || dummyAboutSchoolContent.buttons,
+  };
 
   return (
     <div
@@ -60,9 +71,7 @@ export default function AboutSchool({ data }) {
       data-aos-duration="1200"
     >
       <div className="container">
-        <div className="school_row align-items-center">
-
-          {/* LEFT COLUMN */}
+        <div className={styles.school_row}>
           <div className="school_about">
             <div className="about_school_left">
               <h6
@@ -75,10 +84,12 @@ export default function AboutSchool({ data }) {
 
               <h1
                 className={styles.title}
-                dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
+                dangerouslySetInnerHTML={{
+                  __html: aboutSchoolContent.title,
+                }}
                 data-aos="fade-up"
                 data-aos-delay="200"
-              ></h1>
+              />
 
               <p
                 className={styles.description}
@@ -94,54 +105,48 @@ export default function AboutSchool({ data }) {
                 </button>
               </div>
 
-              {/* Ranking Cards */}
+              {/* Highlights */}
               <div className="row mt-4">
-                {aboutSchoolContent.highlights &&
-                  aboutSchoolContent.highlights.map((item, index) => (
-                    <div
-                      className="col-xl-6 col-lg-6 col-sm-6 about_rnk"
-                      key={index}
-                      data-aos="fade-up"
-                      data-aos-delay={500 + index * 100}
-                    >
-                      <div className={styles.rankingCard}>
-                        <div className="counter_dfe d-flex">
-                          <span className={styles.rankNumber}>{item.rank}</span>
-                          <p className={styles.rankText}>{item.text}</p>
-                        </div>
-                        <div>
-                          <p className={styles.rankSource}>{item.source}</p>
-                        </div>
+                {aboutSchoolContent.highlights?.map((item, index) => (
+                  <div
+                    className="col-xl-5 col-lg-6 col-sm-6"
+                    key={index}
+                    data-aos="fade-up"
+                  >
+                    <div className={styles.rankingCard}>
+                      <div className="counter_dfe d-flex">
+                        <span className={styles.rankNumber}>
+                          {item.rank}
+                        </span>
                       </div>
+                      <p className={styles.rankSource}>
+                        {item.source}
+                      </p>
                     </div>
-                  ))}
+                  </div>
+                ))}
               </div>
 
-              {/* Buttons */}
+              {/* ✅ Safe Buttons Rendering */}
               <div
                 className={styles.buttonsContainer}
                 data-aos="fade-up"
                 data-aos-delay="800"
               >
-                {aboutSchoolContent.buttons &&
-                  aboutSchoolContent.buttons.map((btn, i) => (
-                    <div key={i}>
-                      {btn.url && (
-                        <Link
-                          key={i}
-                          href={btn.url}
-                          className={styles.navButtons}
-                        >
-                          {btn.text}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
+                {aboutSchoolContent.buttons?.map((btn, i) => (
+                  <Link
+                    key={i}
+                    href={btn.url}
+                    className={styles.navButtons}
+                  >
+                    {btn.text}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN (IMAGE CARD) */}
+          {/* Right Image */}
           <div className="school_about">
             <div
               className={styles.imageCard}
@@ -156,38 +161,95 @@ export default function AboutSchool({ data }) {
                 className={styles.cardImage}
                 priority
               />
-
-              {/* Gradient Overlay */}
-              <div className={styles.gradientOverlay}></div>
-
-              {/* Bottom Left Text */}
-              <div className={styles.statsContainer}>
-                <span className={styles.statsNumber}>
-                  {aboutSchoolContent.stats_number}
-                </span>
-                <span className={styles.statsText}>
-                  {aboutSchoolContent.stats_content}
-                </span>
-                <div className={styles.yellowLine}></div>
-              </div>
-
-              {/* Bottom Right Badge */}
-              <div className={styles.badgeContainer}>
-                <Image
-                  src={aboutSchoolContent.chancellor_logo}
-                  alt="AICTE Logo"
-                  width={350}
-                  height={476}
-                  className={styles.badgeLogo}
-                  priority
-                />
-                <p className={styles.badgeText}>
-                  {aboutSchoolContent.logo_content}
-                </p>
-              </div>
             </div>
           </div>
+        </div>
 
+        <div
+          className={styles.fifthSectionSlider}
+          data-aos="fade-up"
+          data-aos-delay="700"
+        >
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            spaceBetween={100}
+            pagination={{ clickable: true, el: ".about-pagination" }}
+            slidesPerView={3}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              576: { slidesPerView: 1 },
+              800: { slidesPerView: 2 },
+              992: { slidesPerView: 2 },
+              1280: { slidesPerView: 3 },
+            }}
+          >
+            <SwiperSlide className={styles.accreditationSlide}>
+              <div className="gap-5 d-flex align-items-center content">
+                <Image
+                  src="/images/about-page/about-logo01.png"
+                  alt="NAAC"
+                  width={80}
+                  height={80}
+                  className={styles.accreditationLogo}
+                />
+                <p className={styles.small}>
+                 Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className={styles.accreditationSlide}>
+              <div className="gap-5 d-flex align-items-center content">
+                <Image
+                  src="/images/about-page/aboutlogo02.png"
+                  alt="UGC"
+                  width={80}
+                  height={80}
+                  className={styles.accreditationLogo}
+                />
+                <p className={styles.small}>
+                 Accredited by Board of Technical Education U.P
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className={styles.accreditationSlide}>
+              <div className="gap-5 d-flex align-items-center content">
+                <Image
+                  src="/images/about-page/about-logo03.png"
+                  alt="AICTE"
+                  width={80}
+                  height={80}
+                  className={styles.accreditationLogo}
+                />
+                <p className={styles.small}>
+                Approved by the Pharmacy Council of India (PCI)
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className={styles.accreditationSlide}>
+              <div className="gap-5 d-flex align-items-center content">
+                <Image
+                  src="/images/about-page/about-logo01.png"
+                  alt="NIRF"
+                  width={80}
+                  height={80}
+                  className={styles.accreditationLogo}
+                />
+                <p className={styles.small}>
+                 Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                </p>
+              </div>
+            </SwiperSlide>
+            
+
+            <div className="about-pagination"></div>
+          </Swiper>
         </div>
       </div>
     </div>

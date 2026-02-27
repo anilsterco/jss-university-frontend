@@ -2,7 +2,7 @@
 
 .aboutSchoolSection {
   background-color: #e6ffff;
-  padding: 5rem 9rem;
+ padding-block: 13rem 9rem
 }
 
 .subtitle {
@@ -49,22 +49,22 @@
 
 .rankingCard {
   border: 1px solid #dee2e6;
-  padding: 2rem 2rem;
   border-radius: 3px;
   height: auto;
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 2rem;
   align-items: center;
+  padding-block: 2.8rem 2.7rem;
+  padding-inline: 4rem 2rem;
 }
 
 .rankNumber {
-  color: #994073;
+  color: #16344E;
   font-weight: 600;
-  font: var(--font-34);
+  font: var(--font-48);
   margin-right: 1rem;
-  letter-spacing: -1.9px;
+  letter-spacing: -1.92px;
   font-weight: 500;
 }
 
@@ -80,11 +80,11 @@
 }
 
 .rankSource {
-  font: var(--font-16);
-  font-weight: 600;
+  font: var(--font-14);
+  font-weight: normal;
   margin: 0;
-  color: #ff0000e8;
-  text-transform: capitalize;
+  color: #000000;
+  text-transform: uppercase;
 }
 
 .navButtons {
@@ -109,7 +109,6 @@
 .imageCard {
   border: none;
   position: relative;
-  margin-left: 4rem;
 }
 
 .cardImage {
@@ -117,7 +116,12 @@
   height: auto;
   border-radius: 20px;
 }
-
+.school_row{
+    display: grid;
+  grid-template-columns: repeat(1, 46.4% auto);
+  align-items: center;
+  gap: 5.6rem;
+}
 .gradientOverlay {
   position: absolute;
   bottom: 0;
@@ -282,4 +286,47 @@
   .rankingCard {
     padding: 2rem;
   }
+}
+
+.fifthSectionSlider {
+  margin-top: 6.7rem;
+  padding-inline: 5rem;
+}
+
+.fifthSectionSlider :global(.about-pagination) {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  height: 10px;
+}
+
+.fifthSectionSlider :global(.about-pagination .swiper-pagination-bullet) {
+  width: 0.6rem;
+  height: 0.6rem;
+  display: block;
+}
+
+
+.fifthSectionSlider :global(.about-pagination .swiper-pagination-bullet-active) {
+  background-color: #ffffff;
+  transform: scale(1.5);
+  border: solid 1px #f7bf3e;
+}
+ .accreditationSlide .small {
+     font: var(--font-16);
+    color: var(--color-black);
+   font-family: var(--font-Roboto);
+   font-weight: normal;
+}
+.accreditationSlide .small {
+ position: relative;
+}
+.accreditationSlide .small::after {
+ content: '';
+ position: absolute;
+ width: 0.1rem;
+ height: 5rem;
+ background-color: #ddd;
+ right: -4.5rem;
+ top: 0;
 }

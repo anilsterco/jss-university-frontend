@@ -1056,11 +1056,7 @@ a:active {
   justify-content: space-between;
 }
 
-.school_row {
-  display: grid;
-  grid-template-columns: repeat(1, 56% auto);
-  align-items: center;
-}
+
 
 .about_rnk {
   display: flex;
@@ -1072,10 +1068,7 @@ a:active {
   margin-bottom: 0.5rem;
 }
 
-.about_school_left {
-  border-right: 1px solid rgba(206, 206, 206, 0.52);
-  padding-right: 6rem;
-}
+
 
 .vision_mission {
   border-bottom: 1px solid #ddd;
