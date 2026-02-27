@@ -1071,6 +1071,32 @@
   background: transparent
 }
 
+.faculty_grids .singleCard .content {
+  padding-top: 2rem;
+}
+
+.faculty_grids .singleCard .name {
+  color: #16344E;
+  font: var(--font-21);
+  font-weight: 500;
+  margin: 0;
+}
+
+.faculty_grids .singleCard .designation {
+  color: #018CE8;
+  font: var(--font-16);
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.faculty_grids .singleCard .bar {
+  height: 5px;
+  width: 70px;
+  background: #ECC820;
+  display: block;
+  margin-top: 2rem;
+}
+
 
 
 @media all and (min-width: 800px) {
