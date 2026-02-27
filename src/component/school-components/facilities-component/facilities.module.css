@@ -70,7 +70,6 @@
     right: 0;
     padding: 1.5rem;
     z-index: 2;
-
 }
 
 .labInfo {
@@ -108,7 +107,6 @@
 
 .title>span {
     color: #018CE8;
-    ;
 }
 
 .labTitle {
@@ -142,32 +140,11 @@
 }
 
 @media (max-width: 991px) {
-    .dep_cutting_edge {
-        padding: 6rem 0 6rem 6rem;
-    }
-}
-
+.dep_cutting_edge {padding: 6rem 0 6rem 6rem;}}
 @media (max-width: 768px) {
-    .dep_cutting_edge {
-        padding: 4rem 0 4rem 4rem;
-    }
-
-    .title {
-        font: var(--font-50);
-    }
-
-    .labTitle {
-        font: var(--font-22);
-        max-width: 100%;
-    }
-}
-
+.dep_cutting_edge {padding: 4rem 0 4rem 4rem;}
+.title {font: var(--font-50);}
+.labTitle {font: var(--font-22);max-width: 100%;}}
 @media (max-width: 575px) {
-    .dep_cutting_edge {
-        padding: 4rem 0 2rem 2rem;
-    }
-
-    .title {
-        font: var(--font-40);
-    }
-}
+.dep_cutting_edge {padding: 4rem 0 2rem 2rem;}
+.title {font: var(--font-40);}}

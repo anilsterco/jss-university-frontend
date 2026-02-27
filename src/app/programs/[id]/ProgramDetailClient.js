@@ -178,10 +178,12 @@ export default function ProgramDetailClient({ params }) {
                         <span>Course duration</span>
                         <p>{admissionSection?.course_duration}</p>
                       </div>
-                      <div className="fees">
-                        <span>Annual Fees</span>
-                        <p>{admissionSection?.annual_fees}</p>
-                      </div>
+                      {admissionSection?.annual_fees && (
+                        <div className="fees">
+                          <span>Annual Fees</span>
+                          <p>{admissionSection.annual_fees}</p>
+                        </div>
+                      )}
                       <div className="structure-btns">
                         {admissionSection?.program_structure && (
                           <a
@@ -254,9 +256,18 @@ export default function ProgramDetailClient({ params }) {
                   <div className="overview-text">
                     <h5>Overview</h5>
                     <h6>{overview?.overview_title || name}</h6>
-                    <p className={expanded ? "expanded_text" : ""}>{overview?.overview_desc}</p>
-                    <button className="btn read_more" onClick={() => setExpanded(!expanded)}>{expanded ? "Show Less" : "Show More"}
-                      <i className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}></i></button>
+                    <p className={expanded ? "expanded_text" : ""}>
+                      {overview?.overview_desc}
+                    </p>
+                    <button
+                      className="btn read_more"
+                      onClick={() => setExpanded(!expanded)}
+                    >
+                      {expanded ? "Show Less" : "Show More"}
+                      <i
+                        className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}
+                      ></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -288,31 +299,38 @@ export default function ProgramDetailClient({ params }) {
                   </figure>
                 </div>
               </div>
-              <div className="col-lg-9">
-                <div className="rank-box">
-                  <h6>Eligibility Criteria</h6>
-                  <div className="rank-text">
-                    <div className="left-rank-text">
-                      <h2>{eligibility?.eligibility_criteria}</h2>
+              {eligibility?.eligibility_criteria && (
+                <div className="col-lg-9">
+                  <div className="rank-box">
+                    <h6>Eligibility Criteria</h6>
+
+                    <div className="rank-text">
+                      <div className="left-rank-text">
+                        <h2>{eligibility.eligibility_criteria}</h2>
+                      </div>
+
+                      <div className="right-rank-text">
+                        <p>{eligibility.eligibility_criteria_desc}</p>
+                      </div>
                     </div>
-                    <div className="right-rank-text">
-                      <p>{eligibility?.eligibility_criteria_desc}</p>
-                    </div>
-                  </div>
-                  <div className="seats">
-                    {eligibility?.eligibility_criteria_notices && (
-                      <>
-                        <div className="seats-left-text">
-                          <p>{eligibility.eligibility_criteria_notices[0]}</p>
-                        </div>
-                        <div className="seats-right-text">
-                          <p>{eligibility.eligibility_criteria_notices[1]}</p>
-                        </div>
-                      </>
+
+                    {eligibility?.eligibility_criteria_notices?.length > 0 && (
+                      <div className="seats">
+                        {eligibility.eligibility_criteria_notices[0] && (
+                          <div className="seats-left-text">
+                            <p>{eligibility.eligibility_criteria_notices[0]}</p>
+                          </div>
+                        )}
+                        {eligibility.eligibility_criteria_notices[1] && (
+                          <div className="seats-right-text">
+                            <p>{eligibility.eligibility_criteria_notices[1]}</p>
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
@@ -515,12 +533,12 @@ export default function ProgramDetailClient({ params }) {
                         style={{
                           opacity:
                             currentCurriculumIndex ===
-                              (curriculum?.curriculum_desc?.length || 1) - 1
+                            (curriculum?.curriculum_desc?.length || 1) - 1
                               ? 0.5
                               : 1,
                           cursor:
                             currentCurriculumIndex ===
-                              (curriculum?.curriculum_desc?.length || 1) - 1
+                            (curriculum?.curriculum_desc?.length || 1) - 1
                               ? "not-allowed"
                               : "pointer",
                         }}
@@ -573,7 +591,7 @@ export default function ProgramDetailClient({ params }) {
       )}
 
       {/* Fee Structure Section */}
-      {fee_structure && (
+     {fee_structure?.fee_structure_title && (
         <section className="program-sec-six">
           <div className="container">
             <div className="row">
@@ -683,17 +701,17 @@ export default function ProgramDetailClient({ params }) {
                       <p>{restWords.join(" ")}</p>
                       {(currentTestimonial?.apply_now_link ||
                         apply_now_link) && (
-                          <a
-                            href={
-                              currentTestimonial?.apply_now_link || apply_now_link
-                            }
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
-                        )}
+                        <a
+                          href={
+                            currentTestimonial?.apply_now_link || apply_now_link
+                          }
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="testimonial-img">

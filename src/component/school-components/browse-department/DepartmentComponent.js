@@ -150,8 +150,9 @@ export default function DepartmentSection({ data }) {
               DEPARTMENT OF <span>PHARMACY</span>
             </h2>
           </div>
+
           <div className={styles.departmentRow}>
-            {departmentSection.departments.map((dept, index) => (
+            {departmentSection.departments.slice(0, 4).map((dept, index) => (
               <div
                 className={styles.departmentCol}
                 key={index}
@@ -164,7 +165,6 @@ export default function DepartmentSection({ data }) {
                   height={330}
                   className={styles.departmentImage}
                 />
-
                 <div className={styles.departData}>
                   <h4>{dept.name}</h4>
                   <SlArrowRightCircle className={styles.departmentArrow} />
