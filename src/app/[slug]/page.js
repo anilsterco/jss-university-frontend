@@ -51,6 +51,8 @@ import PdfLists from "@/component/sections/PdfLists";
 import GridCardDesign2 from "@/component/sections/GridCardDesign2";
 import TableSection from "@/component/sections/TableSection";
 import TopSection from "@/component/sections/TopSection";
+import LogoSlider from "@/component/sections/LogoSlider";
+import TabsGrid from "@/component/sections/TabsGrid";
 
 
 
@@ -154,7 +156,9 @@ export default async function DynamicPage({ params }) {
     pdf_lists: PdfLists,
     gridCardDesign2: GridCardDesign2,
     table_section: TableSection,
-    top_section: TopSection
+    top_section: TopSection,
+    logo_slider: LogoSlider,
+    tabsGrid: TabsGrid
   };
 
   return (

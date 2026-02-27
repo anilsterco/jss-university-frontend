@@ -100,8 +100,6 @@ export default function DepartmentHeader({ className }) {
     }
   };
 
-  console.log('engineering data', engineeringData);
-
 
   return (
     <div className={styles.departmentHeaderWrapper}>

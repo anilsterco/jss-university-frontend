@@ -883,7 +883,6 @@ a:active {
 
 .recruiter-logo .small {
   font: var(--font-14);
-  text-transform: uppercase;
   font-family: var(--font-Condensed);
   font-weight: bold;
   color: #15354E;
@@ -1056,11 +1055,7 @@ a:active {
   justify-content: space-between;
 }
 
-.school_row {
-  display: grid;
-  grid-template-columns: repeat(1, 56% auto);
-  align-items: center;
-}
+
 
 .about_rnk {
   display: flex;
@@ -1072,10 +1067,7 @@ a:active {
   margin-bottom: 0.5rem;
 }
 
-.about_school_left {
-  border-right: 1px solid rgba(206, 206, 206, 0.52);
-  padding-right: 6rem;
-}
+
 
 .vision_mission {
   border-bottom: 1px solid #ddd;
@@ -1780,6 +1772,13 @@ a:active {
   padding: 0;
   max-width: 100%;
 
+}
+
+.placement_page .section_subTitle {
+  font: var(--font-18);
+  font-weight: bold;
+  color: #444444;
+  margin-bottom: 4rem;
 }
 
 .placement_stats {

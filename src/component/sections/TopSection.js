@@ -7,16 +7,15 @@ export default function TopSection({ data }) {
 
     const renderSection = (section, sectionIndex) => {
 
-        console.log('department facilityes', section);
         switch (section.type) {
             case "top_section":
                 return (
                     <div key={sectionIndex} className="">
                         {section?.items && section.items.length >= -1 && section.items.map((item, idx) => (
-                            <>
+                            <React.Fragment key={idx}>
                                 <h5 className='about_subtitle'>{item.heading}</h5>
                                 <p className='about_subHeading'>{item.sub_heading}</p>
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                 )
