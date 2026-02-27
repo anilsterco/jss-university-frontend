@@ -8,7 +8,6 @@ import Image from "next/image";
 export default function Placements({ data }) {
   const [visibleCount, setVisibleCount] = useState(4);
 
-  console.log('placement data', data);
 
   useEffect(() => {
     AOS.init({ once: true, duration: 1000 });

@@ -7,7 +7,6 @@ export default function PdfLists({ data }) {
 
     const renderSection = (section, sectionIndex) => {
 
-        console.log('pdf sections', section);
         switch (section.type) {
             case "pdf_lists":
                 return (

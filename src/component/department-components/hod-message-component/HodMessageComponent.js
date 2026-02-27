@@ -8,7 +8,6 @@ import Link from "next/link";
 import "aos/dist/aos.css";
 
 const HODMessage = ({ data }) => {
-  console.log('hod message', data);
 
   // 🔹 Dummy data fallback
   const dummyHodData = {
