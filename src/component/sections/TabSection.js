@@ -9,7 +9,7 @@ export default function TabSection({ title, subtitle, uniqueCategories, pageType
           {subtitle && <h2>{subtitle}</h2>}
           {title && <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>}
 
-          {uniqueCategories.length > 1 && (
+          {uniqueCategories?.length > 1 && (
             <ul>
               {uniqueCategories.map((category, i) => (
                 <li
