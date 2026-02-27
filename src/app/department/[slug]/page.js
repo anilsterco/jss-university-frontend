@@ -1,3 +1,5 @@
+import DepartmentSlider from "@/component/home-components/banner/school-banner/SchoolBannerComponent";
+import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
 import BannerComponent from "@/component/home-components/banner/BannerComponent";
 import AboutDepartmentComponent from "@/component/department-components/about-department-component/AboutDepartmentComponent";
 import HodMessageComponent from "@/component/department-components/hod-message-component/HodMessageComponent";
@@ -5,7 +7,7 @@ import CoursesOfferedDepartment from "@/component/department-components/courses-
 import FacultyList from "@/component/department-components/faculty-list-department/FacultyList";
 import LaboratoryComponent from "@/component/department-components/laboratory-department/LaboratoryComponent";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
-import FnqComponent from "@/component/department-components/fnq-department/FnqComponent";
+import PlacementDepartment from "@/component/department-components/Placement-department/PlacementDepartment";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 
@@ -13,25 +15,29 @@ const BASE_URL = "https://project-demo.in/jss/api";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  return await getPageSEO(slug);
+  return getPageSEO(slug);
 }
 
 async function getDepartmentData(slug) {
   const res = await fetch(`${BASE_URL}/department/${slug}`, {
-    next: { revalidate: 120 }, // cache for 2 mins
+    next: { revalidate: 120 },
   });
-  // console.log(res);
+
   if (!res.ok) {
-    console.error("❌ API Error:", res.status);
-    throw new Error(`Failed to fetch school data for ${slug}`);
+    throw new Error(
+      `Failed to fetch department data for ${slug} (status ${res.status})`,
+    );
   }
+
   return res.json();
 }
 
 export default async function DepartmentPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
+
   const departmentData = await getDepartmentData(slug);
   const seoData = await getPageSEO(slug);
+
   return (
     <>
       <Script
@@ -41,14 +47,46 @@ export default async function DepartmentPage({ params }) {
         }}
         strategy="beforeInteractive"
       />
-      <BannerComponent data={departmentData.sections.banners} />
-      <AboutDepartmentComponent data={departmentData.sections.about_school} />
-      <HodMessageComponent data={departmentData.sections.dean_message} />
-      <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
-      <FacultyList data={departmentData.sections.faculty_data} />
-      <LaboratoryComponent data={departmentData.sections.laboratories_data} />
-      <HappingsHomeComponent data={departmentData.sections.happenings} />
-      <FnqComponent data={departmentData.sections.faqs} />
+      {/* <DepartmentSlider
+        data={departmentData?.sections?.banners}
+        name={departmentData?.departments_name}
+        isDepartment={true}
+      /> */}
+      <BannerComponent
+        data={departmentData?.sections?.banners}
+        name={departmentData?.department_name}
+        isDepartment={true}
+      />
+      <DepartmentHeader />
+      {departmentData?.sections?.about_school && (
+        <AboutDepartmentComponent data={departmentData.sections.about_school} />
+      )}
+      {departmentData?.sections?.courses_data && (
+        <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
+      )}
+      {departmentData?.sections?.dean_message && (
+        <HodMessageComponent data={departmentData.sections.dean_message} />
+      )}
+    
+
+      {departmentData?.sections?.laboratories_data && (
+        <LaboratoryComponent data={departmentData.sections.laboratories_data} />
+      )}
+       
+      {departmentData?.sections?.faculty_data && (
+        <FacultyList data={departmentData.sections.faculty_data} />
+      )}
+
+      {departmentData?.sections?.happenings && (
+        <PlacementDepartment data={departmentData.sections.happenings} />
+      )}
+
+      {departmentData?.sections?.happenings && (
+        <HappingsHomeComponent data={departmentData.sections.happenings} />
+      )}
+      {/* {departmentData?.sections?.faqs && (
+        <FnqComponent data={departmentData.sections.faqs} />
+      )} */}
     </>
   );
 }

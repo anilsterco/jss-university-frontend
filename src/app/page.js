@@ -28,7 +28,6 @@ async function getSchoolData() {
 export default async function HomePage() {
   const seoData = await getPageSEO("home");
   const homepageData = await getSchoolData();
-  console.log(homepageData, "homepageData");
   return (
     <div>
       <Script
@@ -39,9 +38,12 @@ export default async function HomePage() {
         strategy="beforeInteractive"
       />
       <BannerComponent data={homepageData.sections.banners} />
-      <CourseOfferedComponent
-        data={homepageData.sections.departments_section}
-      />
+      
+      <div className="animated-hover">
+        <CourseOfferedComponent
+          data={homepageData.sections.departments_section}
+        />
+      </div>
       <PlacementComponent data={homepageData.sections.placement_section} />
       <FacilitiesComponent data={homepageData.sections.facilities_section} />
       <AboutHomeComponent data={homepageData.sections.about_section} />

@@ -32,8 +32,8 @@
 }
 
 .arrowButton {
-  font-size: 18px;
-  color: #7a7a7a;
+  font-size: 24px;
+  color: #994073;
   padding: 0;
   border: none;
   background: none;
@@ -42,25 +42,34 @@
 .arrowButton:hover {
   color: #2d9cfd;
 }
-.blue-text{ color: #000;}
+
+.blue-text {
+  color: #000;
+}
+
 .rankingCard {
   border: 1px solid #dee2e6;
-  padding: 1rem 3rem;
+  padding: 2rem 2rem;
   border-radius: 3px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;  
+  align-items: flex-start;
   margin-top: 2rem;
+  align-items: center;
 }
 
 .rankNumber {
   color: #994073;
   font-weight: 600;
-  font: var(--font-38);
+  font: var(--font-34);
   margin-right: 1rem;
   letter-spacing: -1.9px;
   font-weight: 500;
+}
+
+.counter_dfe {
+  align-items: center;
 }
 
 .rankText {
@@ -71,9 +80,11 @@
 }
 
 .rankSource {
-  font-size: 16px;
-  font-weight: 400;
+  font: var(--font-16);
+  font-weight: 600;
   margin: 0;
+  color: #ff0000e8;
+  text-transform: capitalize;
 }
 
 .navButtons {
@@ -98,7 +109,7 @@
 .imageCard {
   border: none;
   position: relative;
-  margin-left:2rem;
+  margin-left: 4rem;
 }
 
 .cardImage {
@@ -131,28 +142,30 @@
 }
 
 .statsNumber {
-  font-size: 80px;  
+  font: var(--font-80);
+  letter-spacing: -5.2px;
   line-height: 1;
   font-family: var(--font-Condensed);
   font-weight: 400;
 }
 
 .statsText {
-  font-size: 20px;
+  font: var(--font-20);
   width: 80%;
   font-weight: 400;
   margin-top: 0.5rem;
   line-height: 1.3;
   font-family: var(--font-Condensed);
+  letter-spacing: -0.4px;
 }
 
 .yellowLine {
+  background-color: #f5c518;
+  width: 4px;
+  height: 21rem;
   position: absolute;
   top: -1rem;
   left: -3rem;
-  height: 203px;
-  width: 3px;
-  background-color: #f5c518;
 }
 
 .badgeContainer {
@@ -171,7 +184,7 @@
 }
 
 .badgeLogo {
-  width: 20%;
+  width: 40%;
   height: auto;
   border-radius: 20px;
 }
@@ -186,144 +199,87 @@
 .buttonsContainer {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
-.buttonsContainer .navButtons:last-child{ background-color: transparent; color: #16344e; border: 1px solid #16344e;}
-.buttonsContainer .navButtons:last-child:hover{background-color: var(--color-100); color:#16344e;border: 1px solid var(--color-100)} 
+.buttonsContainer .navButtons:last-child {
+  background-color: transparent;
+  color: #16344e;
+  border: 1px solid #16344e;
+}
+
+.buttonsContainer .navButtons:last-child:hover {
+  background-color: var(--color-100);
+  color: #16344e;
+  border: 1px solid var(--color-100)
+}
 
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .aboutSchoolSection {
-    padding: 4rem 6rem;
+@media (max-width: 1366px) {
+  .description {
+    max-width: 100%;
   }
-  
-  .title {
-    font-size: 42px;
+}
+
+@media (max-width: 1199px) {
+  .description {
+    max-width: 100%;
   }
-  
-  .statsNumber {
-    font-size: 50px;
+
+  .rankingCard {
+    max-width: 100%;
+    width: 100%;
+    padding: 4rem;
   }
-  
-  .badgeContainer {
-    width: 45%;
+}
+
+@media (max-width: 1024px) {
+  .description {
+    max-width: 100%;
+  }
+
+  .imageCard {
+    margin-left: 0;
   }
 }
 
 @media (max-width: 992px) {
+
   .aboutSchoolSection {
-    padding: 3rem 4rem;
+    padding-block: 4rem;
+    padding-inline: 0;
   }
-  
+
+  .yellowLine {
+    left: -1rem;
+  }
   .title {
-    font-size: 36px;
+    font-weight: 700;
+    font: var(--font-40);
+    line-height: 1;
+    margin-top: 10px;
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.88;
+
   }
-  
   .statsContainer {
     bottom: 30px;
     left: 30px;
   }
-  
+
   .badgeContainer {
     bottom: 30px;
     right: 25px;
     width: 50%;
   }
-  
-  .yellowLine {
-    height: 180px;
-  }
-}
 
-@media (max-width: 768px) {
-  .aboutSchoolSection {
-    padding: 2rem 2rem;
-  }
-  
-  .title {
-    font-size: 32px;
-  }
-  
-  .statsContainer {
-    bottom: 20px;
-    left: 20px;
-  }
-  
-  .statsNumber {
-    font-size: 40px;
-  }
-  
-  .statsText {
-    font-size: 14px;
-  }
-  
-  .badgeContainer {
-    bottom: 20px;
-    right: 15px;
-    width: 55%;
-    padding: 10px;
-  }
-  
-  .badgeText {
-    font-size: 11px;
-  }
-  
   .yellowLine {
-    height: 150px;
-    left: -15px;
+    height: 19rem;
   }
-  
+
   .rankingCard {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .aboutSchoolSection {
-    padding: 1.5rem 1rem;
-  }
-  
-  .title {
-    font-size: 28px;
-  }
-  
-  .subtitle {
-    font-size: 16px;
-  }
-  
-  .description {
-    font-size: 14px;
-  }
-  
-  .statsContainer {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 1rem;
-    padding-left: 20px;
-  }
-  
-  .badgeContainer {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  .gradientOverlay {
-    display: none;
-  }
-  
-  .buttonsContainer {
-    justify-content: center;
-  }
-  
-  .navButtons {
-    padding: 0.75rem 1.5rem;
-    font-size: 13px;
+    padding: 2rem;
   }
 }

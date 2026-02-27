@@ -1,0 +1,150 @@
+.dep_cutting_edge {
+    background: #00489a;
+    padding-block: 12rem 14rem;
+    position: relative;
+}
+
+.headerSection {
+    max-width: 100%;
+}
+
+.subtitle {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font: var(--font-18);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+}
+
+.title {
+    margin-bottom: 0.75rem;
+    font: var(--font-60);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    letter-spacing: -2.8px;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.9);
+    font: var(--font-16);
+    letter-spacing: 0px;
+    margin-bottom: 3rem;
+}
+
+.sliderWrapper {
+    margin-block: 4rem 0rem;
+}
+
+/* ===== Swiper Card ===== */
+.facultyCard {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.slideImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.8rem;
+}
+
+.gradientOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent 100%);
+    z-index: 1;
+}
+
+.labInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    z-index: 2;
+}
+
+.labInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 191px;
+    padding: 2rem 3rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: transparent linear-gradient(180deg,
+            #00000000 0%,
+            #000000d6 100%) 0% 0% no-repeat padding-box;
+    border-radius: 0 0 8px 8px;
+    opacity: 0.9;
+}
+
+.labIcon {
+    color: #fff;
+    opacity: 0.7;
+    stroke-width: 1.2;
+    transition: all 0.3s ease;
+    font-size: 2.2rem;
+}
+
+.facultyCard:hover .labIcon {
+    opacity: 1;
+    stroke-width: 1.8;
+    transform: translateX(4px);
+}
+
+.title>span {
+    color: #018CE8;
+}
+
+.labTitle {
+    color: #fff;
+    text-transform: uppercase;
+    font: var(--font-26);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    max-width: 75%;
+    line-height: 1.2;
+    margin-bottom: 2.6rem;
+}
+
+.buttonWrapper {
+    padding: 0 2rem;
+}
+
+.applyButton {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.55rem 1.5rem;
+    font: var(--font-14);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.applyButton:hover {
+    background: #fff;
+    color: #00489a;
+}
+
+@media (max-width: 991px) {
+.dep_cutting_edge {padding: 6rem 0 6rem 6rem;}}
+@media (max-width: 768px) {
+.dep_cutting_edge {padding: 4rem 0 4rem 4rem;}
+.title {font: var(--font-50);}
+.labTitle {font: var(--font-22);max-width: 100%;}}
+@media (max-width: 575px) {
+.dep_cutting_edge {padding: 4rem 0 2rem 2rem;}
+.title {font: var(--font-40);}}

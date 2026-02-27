@@ -2,11 +2,11 @@
 
 .fifthSection {
   background: var(--color-fff);
-  padding-block: 7.6rem;
+  padding-block: 7.6rem 7.1rem;
 }
 
 .topSection {
-  margin-bottom: 1rem;
+  margin-bottom: 3.4rem;
 }
 
 .topSectionHeading {
@@ -16,11 +16,13 @@
   color: var(--color-black);
   letter-spacing: -2.88px;
   font-weight: bold;
+  line-height: 0.9;
 }
 
 .topSectionHeading span {
   font: var(--font-60);
   font-family: var(--font-Condensed);
+  line-height: 0.9;
 }
 
 .violetText {
@@ -28,14 +30,16 @@
 }
 
 .fifthMiddleSection {
+  display: grid;
+  grid-template-columns: repeat(1, 45.1% auto);
   align-items: center;
-  margin-top: 3.4rem;
+  margin-right: 1.3rem;
 }
 
 .navButtons {
   background: #16344e;
   padding: 0.8rem 2rem;
- font: var(--font-14);
+  font: var(--font-14);
   font-family: var(--font-Condensed);
   color: var(--color-fff);
   font-weight: 600;
@@ -48,16 +52,26 @@
   color: #fff;
 }
 
+.arrowIcon {
+  margin-left: 1.3rem;
+  font-size: 1.2rem;
+}
+
 
 .rightColumn {
-  padding-left: 14rem;
+  padding-left: 14.2rem;
 }
 
 .contentPart {
   position: absolute;
   bottom: 0;
-  padding: 2rem;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 1rem 1rem 2rem;
+  z-index: 2;
 }
+
 
 .chancellorImage {
   width: 100%;
@@ -67,52 +81,79 @@
 .description {
   color: var(--color-black);
   font: var(--font-16);
-  font-family: var(--font-Condensed);
+  font-family: var(--font-Roboto);
   letter-spacing: 0px;
   margin-bottom: 2rem;
-  max-width: 68%;
+  max-width: 80%;
+  font-weight: 300;
+}
+
+.leftColumn {
+  position: relative;
 }
 
 
+.leftColumn::after {
+  content: "";
+  background-color: #cecece;
+  width: 0.1rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -7rem;
+  opacity: 0.52;
+}
+
 .highlightBox {
-  border: 1px solid #dee2e6;
-  padding: 2.4rem 2.9rem 1.9rem;
+  border: 1px solid #D4D4D4;
+  padding: 2.4rem 1.9rem 1.9rem 2.9rem;
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 2.6rem;
-  
+  margin-bottom: 3.6rem;
+
 }
 
 .highlightNumber {
-  color:var(--color-73);
-  letter-spacing: -1.9px;
-  font:var(--font-38);
+  font: var(--font-48);
   font-family: var(--font-Condensed);
-  font-weight: 400;
   line-height: 0.8;
+  color: #16344E;
+  letter-spacing: -1.92px;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.highlightNumber span {
+  font: var(--font-24);
+  color: #16344E;
+  letter-spacing: -1.2px;
+  line-height: 1.3;
 }
 
 .sourceText {
-  color: var(--color-4e);
+  color: var(--color-black);
   font: var(--font-21);
   font-family: var(--font-Condensed);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .topSection p {
   color: var(--color-4e);
   font: var(--font-18);
   font-family: var(--font-Condensed);
-  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-weight: bold;
 }
 
 .cardTitle {
   font: var(--font-14);
   font-family: var(--font-Condensed);
   letter-spacing: 0px;
+  line-height: 1.7rem;
+  margin-bottom: 0;
 }
-
-
 
 .accreditationSlide p {
   font: var(--font-16);
@@ -120,22 +161,19 @@
   font-family: Geist, sans-serif;
 }
 
-/* .accreditationSlide {
-  border-right: 1px solid #d8dddd;
-} */
 .accreditationSlide:last-child {
   border: none;
 }
 
 .fifthSectionSlider {
-  margin-top: 8.3rem;
-  padding-inline: 5rem ;
+  margin-top: 6.7rem;
+  padding-inline: 5rem;
 }
 
 .fifthSectionSlider :global(.about-pagination) {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   height: 10px;
 }
 
@@ -147,8 +185,9 @@
 
 
 .fifthSectionSlider :global(.about-pagination .swiper-pagination-bullet-active) {
-  background-color: #16344e;
+  background-color: #ffffff;
   transform: scale(1.5);
+  border: solid 1px #f7bf3e;
 }
 
 .onlyMobile {
@@ -200,62 +239,54 @@
 /* Responsive Design */
 /* Responsive Design */
 
-@media (min-width: 1381px) and (max-width: 1919px) {
-  .accreditationLogo {
-    width: 30%;
-  }
-  .navButtons {
-    padding: 0.5rem 2rem;
-  }
-}
-
-@media (min-width: 1040px) and (max-width: 1380px) {
-  .accreditationLogo {
-    width: 25%;
-  }
-  .navButtons {
-    padding: 0.5rem 2rem;
-  }
-  .topSectionHeading {width: 50%;}
-  .rightColumn {padding-left: 4rem;}
-  
-}
-
-@media (min-width: 768px) and (max-width: 1040px) {
-  .fifthSection {
-    padding: 4rem 4rem;
-  }
-
+@media (min-width: 1921px) {
   .topSectionHeading {
-    width: 60%;
-  }
+    width: 50%;
 
-  .leftColumn {
-    border-right: unset;
-    padding: 0 12px;
-    width: 100%;
+  }
+}
+
+@media (min-width: 1381px) and (max-width: 1919px) {
+  .navButtons {
+    padding: 0.5rem 2rem;
   }
 
   .rightColumn {
-    padding-left: 1rem;
+    padding-left: 12.2rem;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .rightColumn {
+    padding-left: 5rem;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .topSectionHeading {
     width: 100%;
+
   }
 
-  .sourceText {
-    font-size: 1.2rem;
+  .rightColumn {
+    padding-left: 0rem !important;
   }
 
-  .navButtons {
-    padding: 0.4rem 1rem;
+  .rightColumn {
+    padding-left: 0;
+    padding-block: 6rem 0;
   }
 
-  .accreditationLogo {
-    width: 25%;
-  }
-
-  .accreditationSlide p {
-    color: #212121;
-    font-family: Geist, sans-serif;
+  .fifthSectionSlider {
+    margin-top: 4rem;
+    padding-inline: 0rem;
   }
 }
 
@@ -263,20 +294,54 @@
   .accreditationHeading {
     text-align: center;
     color: rgb(0, 54, 161);
-    font-size: 14px;
+    font: var(--font-14);
+    font-family: var(--font-Condensed);
     font-weight: 600;
-    margin-top: 1rem;
+    margin-block: 2.1rem;
+    line-height: 17px;
   }
 
+
+
   .fifthSection {
-    background: #16344e;
-    padding: 5rem 0 3rem 0;
+    padding-block: 4.4rem;
+  }
+
+  .fifthContainerSection {
+    padding: 0;
   }
 
   .fifthContainerSection {
     background: #e6ffff;
-    padding: 3rem 1.3rem;
   }
+
+  .topSection p {
+    color: var(--color-4e);
+    font: var(--font-14);
+    font-family: var(--font-Condensed);
+    margin-bottom: 1rem;
+  }
+
+  .topSectionHeading {
+    width: 55%;
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    color: var(--color-black);
+    letter-spacing: -1.63px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  .topSectionHeading span {
+    width: 40%;
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    letter-spacing: -1.63px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
 
   .topSection p {
     text-align: center;
@@ -288,7 +353,6 @@
   }
 
   .topSectionHeading {
-    width: 100%;
     margin-bottom: 1.3rem;
     text-align: center;
   }
@@ -298,7 +362,12 @@
   }
 
   .rightColumn {
-    padding-left: 12px;
+    padding-left: 0;
+    padding-block: 0;
+  }
+
+  .fifthMiddleSection {
+    margin-top: 2rem;
   }
 
   .onlyDesktop {
@@ -316,23 +385,21 @@
   }
 
   .aboutBtnDiv {
-    padding-top: 1.3rem;
     flex-wrap: wrap;
-    gap: 10px !important;
     justify-content: center;
+    padding-block: 1.5rem 3rem;
+    gap: 10px !important;
+    border-bottom: solid 0.5px #dee2e6;
   }
 
   .navButtons {
-    padding: 0.5rem 1rem;
+    padding: 1.1rem 2.3rem 1.1rem;
   }
 
   .onlyMobile :global(.swiper-wrapper) {
-    height: 120px;
+    height: 130px;
   }
 
-  .accreditationLogo {
-    width: 35%;
-  }
 
   .accreditationSlide p {
     font-size: 15px;
@@ -345,8 +412,71 @@
   }
 
   .accreditationSlide {
-    padding: 1rem;
+    padding: 1.6rem 1.8rem 1.6rem;
     background: #fff;
     border-radius: 8px;
   }
+
+  .highlightBox {
+    border: 1px solid #dee2e6;
+    padding: 3rem 4.1rem 3rem;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.6rem;
+
+  }
+
+  .cardTitle {
+    font: var(--font-16);
+    font-family: var(--font-Condensed);
+    letter-spacing: 0px;
+  }
+
+
+
+  .sourceText {
+    color: #FF0000;
+    font: var(--font-28);
+    letter-spacing: -1.19px;
+    font-family: var(--font-Condensed);
+    margin-bottom: 1rem;
+  }
+
+  .highlightBox {
+    gap: 1.5rem;
+
+  }
+
+  .accreditationSlide p {
+    font: var(--font-14);
+    color: var(--color-black);
+    line-height: 2.1rem;
+    gap: 1rem !important;
+    font-family: var(--font-Condensed);
+  }
+
+  .accreditationLogo {
+    width: 100%;
+    height: auto;
+    max-width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topSectionHeading {
+    width: 100%;
+  }
+
+  .topSectionHeading span {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .highlightBox {
+    padding: 2.4rem 2.9rem 1.9rem;
+    width: 100% !important;
+  }
+
+
 }

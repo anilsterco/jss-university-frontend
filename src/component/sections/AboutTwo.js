@@ -1,82 +1,140 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
+import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutTwo({ data }) {
-  // Render sections in the exact order they come from the API
-  const renderSection = (section, sectionIndex) => {
-    switch (section.type) {
-      case "slider":
-        return (
-          <div key={`slider-section-${sectionIndex}`} className="early-grid">
-            <Swiper
-              modules={[Navigation, EffectFade]}
-              effect="fade"
-              fadeEffect={{ crossFade: true }}
-              spaceBetween={30}
-              slidesPerView={1}
-              style={{ padding: "30px 30px" }}
-              navigation={{
-                nextEl: `.earlygrowth-next-${sectionIndex}`,
-                prevEl: `.earlygrowth-prev-${sectionIndex}`,
-              }}
-            >
-              {section.items
-                .sort((a, b) => a.position - b.position)
-                .map((item, index) => (
-                  <SwiperSlide key={item.item_uuid || index} className="early-slide">
-                    <figure>
-                      <Image
-                        src={item.file || "/default-image.jpg"}
-                        alt={item.title || "Early Growth"}
-                        width={700}
-                        height={400}
-                        style={{ width: "100%", height: "auto" }}
-                      />
-                    </figure>
-                    <div className="early_rgt">
-                      <h4>{item.title}</h4>
-                      <h5>{item.subtitle}</h5>
+  const [activeTab, setActiveTab] = useState(0);
 
-                      <div className="inst-reg">
-                        <h5>{item.bottomTitle}</h5>
-                        <h3>{item.bottomSubTitle}</h3>
-                      </div>
-                      <div className="early-arrows">
-                        <BsArrowLeftCircle className={`earlygrowth-prev-${sectionIndex}`} />
-                        <BsArrowRightCircle className={`earlygrowth-next-${sectionIndex}`} />
-                      </div>
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
+
+
+  const renderSlider = (items, sectionIndex) => {
+    if (!items || items.length === 0) return <p>No slider content available</p>;
+
+    return (
+      <div className="earlygrowth-slider-wrapper" style={{ position: "relative" }}>
+        <Swiper
+          modules={[Navigation, EffectFade, Autoplay]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={items.length > 1}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          navigation={{
+            nextEl: `.earlygrowth-next-${sectionIndex}`,
+            prevEl: `.earlygrowth-prev-${sectionIndex}`,
+          }}
+        >
+          {items.map((item, idx) => (
+            <SwiperSlide key={idx}>
+              <div
+                className="early-slide"
+                style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+              >
+                {item.image && (
+                  <div style={{ flex: 1 }}>
+                    <Image
+                      src={item.image}
+                      alt={
+                        item.title
+                          ? item.title.replace(/<[^>]+>/g, "")
+                          : "Early Growth"
+                      }
+                      width={600}
+                      height={400}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                )}
+                <div
+                  className="early_rgt"
+                  style={{ flex: 1 }}
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-duration="900"
+                >
+                  {item.subtitle && <h5>{item.subtitle}</h5>}
+                  {item.title && (
+                    <h4 dangerouslySetInnerHTML={{ __html: item.title }} />
+                  )}
+
+                  {/* Navigation Buttons */}
+                  <div className="nav_buttons">
+                    <div className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}>
+                      <Image src="/images/icons/circle-arrow-left.svg" alt="Arrow" width={22} height={22} />
                     </div>
-                  </SwiperSlide>
-                ))}
-            </Swiper>
-          </div>
-        );
+                    <div className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}>
+                      <Image src="/images/icons/circle-arrow-right.svg" alt="Arrow" width={22} height={22} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      default:
-        return null;
-    }
+
+      </div>
+    );
   };
 
   return (
     <section className="about_two">
       <div className="container">
-        {/* Render all sections in the exact order from API */}
-        {data.map((section, index) => renderSection(section, index))}
-        
-        {/* Fallback if no sections at all */}
-        {data.length === 0 && (
-          <div className="early-grid">
-            <p>No slider content available</p>
+        <div className="abou_t_sec">
+          <h5 className="about_subtitle">Early Growth and Achievements</h5>
+          <h2 className="pb_max_4rem">
+            In just its formative year (2024–2025), the University has made
+            impressive strides:
+          </h2>
+
+          <nav className="growth-tabs">
+            <ul>
+              {data?.[0]?.items?.map((tab, idx) => (
+                <li key={tab.position || idx}>
+                  <button
+                    type="button"
+                    className={activeTab === idx ? "active" : ""}
+                    onClick={() => setActiveTab(idx)}
+                  >
+                    {tab.tabName}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="grow_tb_contsec">
+            {data?.[0]?.items?.[activeTab]?.tabData?.length > 0 ? (
+              renderSlider(data[0].items[activeTab].tabData, activeTab)
+            ) : (
+              <p>No data available for this tab</p>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

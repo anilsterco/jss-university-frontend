@@ -1,19 +1,19 @@
 "use client";
 import { color } from "framer-motion";
 import { useEffect, useState } from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaYoutube,
+//   FaLinkedinIn,
+//   FaInstagram,
+// } from "react-icons/fa";
 
 export default function Footer() {
   const [data, setData] = useState(null);
-  const [footerData, setFooterData] = useState(null); 
-  const [loading, setLoading] = useState(true);       
-  const [error, setError] = useState(null); 
+  const [footerData, setFooterData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // useEffect(() => {
   //   const res = {
@@ -58,12 +58,10 @@ export default function Footer() {
   //   setData(res);
   // }, []);
 
-
-
- useEffect(() => {
+  useEffect(() => {
     async function fetchFooter() {
       try {
-        const res = await fetch("https://project-demo.in/jss/api/footer");
+        const res = await fetch("/api/footer");
         if (!res.ok) throw new Error("Failed to fetch footer data");
         const data = await res.json();
         setData(data);
@@ -76,8 +74,6 @@ export default function Footer() {
     fetchFooter();
   }, []);
 
- 
- 
   if (!data) return null;
 
   const renderIcon = (icon) => {
@@ -85,110 +81,117 @@ export default function Footer() {
     const style = { width: size, height: size };
     switch (icon) {
       case "facebook":
-        return <FaFacebookF style={{ ...style, color: "#FFf" }} />;
-      case "twitter":
-        return <FaTwitter style={{ ...style, color: "#FFf" }} />;
-      case "youtube":
-        return <FaYoutube style={{ ...style, color: "#FFf" }} />;
-      case "linkedin":
-        return <FaLinkedinIn style={{ ...style, color: "#FFf" }}/>;
+        return <img src="/images/footer/dash_facebook.svg" />;
       case "instagram":
-        return <FaInstagram style={{...style, color: "#fff"}}/>;
+        return <img src="/images/footer/dash_linkdin.svg" />;
+      case "youtube":
+        return <img src="/images/footer/dash_youtube.svg" />;
+      case "twitter":
+        return <img src="/images/footer/dash_insta.svg" />;
       default:
         return null;
     }
   };
-  
+
+  const socialIcons = [
+    { id: "facebook", src: "/images/footer/facebook.svg" },
+    { id: "instagram", src: "/images/footer/insta.svg" },
+    { id: "youtube", src: "/images/footer/youtube.svg" },
+    { id: "twitter", src: "/images/footer/twiter.svg" },
+  ];
 
   return (
     <footer className="footer_section">
       <div className="deshFooter">
         <div className="container">
-          <div className="col-lg-10 mx-auto">
-            <div className="footer_contact">
-              <div className="footer_left">
-                <div className="footer_logo">
-                  <img src="/images/footer/footer-logo.webp" alt="Logo" style={{ width: "9rem" }} />
-                </div>
-                <div className="connect_contant">
-                  <p className="fw-bold text-info">Connect with us</p>
-                  <p>{data.address}</p>
-                  <div className="col-md-12">
-                    <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
-                      <li>
-                        <a href="">{data.phone}</a>
-                      </li>
-                      <li>
-                        <a href="">{data.email}</a>
-                      </li>
-                      {data.landlines.map((line, i) => (
-                        <li key={i}>
-                          <a href="">{line}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <div className="footer_contact">
+            <div className="footer_left">
+              <div className="footer_logo">
+                <img
+                  src="/images/footer/footer-logo.webp"
+                  alt="Logo"
+                  style={{ width: "9rem" }}
+                />
               </div>
-              <div className="footer_right">
-                <button className="get_direc">GET DIRECTIONS</button>
-                <div className="social-icons">
-                  <ul className="list-unstyled">
-                    <p>Follow us on</p>
-                    {data.socials.map((s, i) => (
+              <div className="connect_contant">
+                <p className="fw-bold text-info">Connect with us</p>
+                <p>{data.address}</p>
+                <div className="col-md-12">
+                  <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
+                    <li>
+                      <a href="">{data.phone}</a>
+                    </li>
+                    <li>
+                      <a href="">{data.email}</a>
+                    </li>
+                    {data.landlines.map((line, i) => (
                       <li key={i}>
-                        <a
-                          href={s.url}
-                          className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                          style={{ width: "20px", height: "20px" }}
-                        >
-                          {renderIcon(s.icon)}
-                        </a>
+                        <a href="">{line}</a>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
+            <div className="footer_right">
+              <button className="get_direc">GET DIRECTIONS</button>
+              <div className="social-icons">
+                <ul className="list-unstyled">
+                  <p>Follow us on</p>
+                  {data.socials.map((s, i) => (
+                    <li key={i}>
+                      <a
+                        href={s.url}
+                        className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                        style={{ width: "20px", height: "20px" }}
+                      >
+                        {renderIcon(s.icon)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div className="col-lg-12">
-            <div className="row">
-              <div className="col-lg-10 mx-auto">
-                <div className="footer_border">
-                  <div className="footer_link">
-                    <ul className="list-unstyled">
-                      {data.sections.map((section, i) => (
-                        <li key={i}>
-                          <a href="#">{section.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="quick_link">
-                    <span className="side-border">Quick Links</span>
-                    <ul className="quick-item">
-                      {data.quickLinks.map((link, i) => (
-                        <li key={i}>
-                          <a href={link.url}>{link.label}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <div className="col-lg-12 mx-auto">
+            <div className="footer_border">
+              <div className="footer_link">
+                <ul className="list-unstyled">
+                  {data.sections.map((section, i) => (
+                    <li key={i}>
+                      <a href="#" className="links-itams">
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="quick_link">
+                <span className="side-border">Quick Links</span>
+                <ul className="quick-item">
+                  {data.quickLinks.map((link, i) => (
+                    <li key={i}>
+                      <a href={link.url}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="col-lg-10 mx-auto">
-            <div className="bottom_footer">
-              <p className="mb-1 mb-md-0">
-                © Copyright {new Date().getFullYear()} - JSS. All Rights
-                Reserved.
-              </p>
-              <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a> </p>
-            </div>
+          <div className="bottom_footer">
+            <p className="mb-1 mb-md-0">
+              © Copyright {new Date().getFullYear()} - JSS. All Rights
+              Reserved.
+            </p>
+            <p className="mb-0">
+              Website Design and Development by{" "}
+              <a href="https://www.stercodigitex.com/" target="_blank">
+                Sterco Digitex
+              </a>{" "}
+            </p>
           </div>
         </div>
       </div>
@@ -237,21 +240,11 @@ export default function Footer() {
             <div className="social-icons">
               <h4 className="font-medium ">Follow us on</h4>
               <ul className="list-unstyled mb-1 mx-auto justify-content-center flex gap-3">
-                <li>
-                  <img src="/images/footer/facebook.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/twiter.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/insta.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/youtube.svg" alt="icons" />
-                </li>
-                <li>
-                  <img src="/images/footer/linkdin.svg" alt="icons" />
-                </li>
+                {socialIcons.map((icon) => (
+                  <li key={icon.id}>
+                    <img src={icon.src} alt={`${icon.id} icon`} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -264,7 +257,12 @@ export default function Footer() {
                   © Copyright {new Date().getFullYear()} - JSS. All Rights
                   Reserved.
                 </p>
-                <p className="mb-0">Website Design and Development by <a href="https://www.stercodigitex.com/" target="_blank">Sterco</a></p>
+                <p className="mb-0">
+                  Website Design and Development by{" "}
+                  <a href="https://www.stercodigitex.com/" target="_blank">
+                    Sterco Digitex
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -346,6 +344,7 @@ export default function Footer() {
           text-align: center;
           margin-bottom: 1.5rem;
           line-height: 1;
+          width: 100%;
         }
         .footer_right .get_direc:hover {
           background-color: var(--color-100);
@@ -429,10 +428,12 @@ export default function Footer() {
           font-weight: 300;
           color: rgba(255, 255, 255, 0.5);
         }
-         .bottom_footer p a {
+        .bottom_footer p a {
           color: rgba(255, 255, 255, 0.5);
-         }
-         .bottom_footer p a:hover{color:var(--color-white)}
+        }
+        .bottom_footer p a:hover {
+          color: var(--color-white);
+        }
         .connect_contant ul li a {
           position: relative;
           font: var(--font-12);
@@ -452,12 +453,25 @@ export default function Footer() {
           width: 0.3rem;
           height: 0.3rem;
           position: absolute;
-          top: 0.5rem;
+          top: 0.7rem;
           left: -0.8rem;
         }
+        @media (max-width: 1280px) {
+          .footer_contact {
+            grid-template-columns: 75% 25%;
+            gap: 0rem;
+          }
+          .connect_contant:after {
+            right: 4rem;
+          }
+        }
+
         @media (max-width: 991px) {
           .deshFooter {
             display: none;
+          }
+          .connect_contant:after {
+            content: none;
           }
           .footer_section {
             background: #000;
@@ -479,8 +493,9 @@ export default function Footer() {
           padding-bottom: 0.6rem;
           font-family: var(--font-Roboto);
         }
-        .mobFooter .list-unstyled li a {
+        .mobFooter .list-unstyled li .links-itams {
           color: var(--color-white);
+          text-transform: uppercase !important;
         }
         .mobFooter .text-info {
           color: #0099ff;
@@ -543,9 +558,16 @@ export default function Footer() {
           font: normal normal bold 12px/16px Geist;
           margin-bottom: 1.5rem;
         }
-        .copy-rights p{letter-spacing: 0px;font: var(--font-13);
-          color: var(--color-white);font-family: var(--font-Roboto);}
-          .copy-rights p a{color: var(--color-white)}
+        .copy-rights p {
+          letter-spacing: 0px;
+          font: var(--font-13);
+          color: var(--color-white);
+          font-family: var(--font-Roboto);
+        }
+        .copy-rights p a {
+          color: var(--color-white);
+        }
+      
         @media (min-width: 992px) {
           .mobFooter {
             display: none;
@@ -555,4 +577,3 @@ export default function Footer() {
     </footer>
   );
 }
-

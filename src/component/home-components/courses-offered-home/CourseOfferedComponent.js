@@ -1,21 +1,42 @@
-// components/home-components/CoursesOffered/index.js
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { CiSearch } from "react-icons/ci";
+import React, { useState, useEffect } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-// ✅ All data stored separately for easy replacement (API later)
+const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
+  const [count, setCount] = useState(start);
+
+  useEffect(() => {
+    let startTime = null;
+
+    const animate = (time) => {
+      if (!startTime) startTime = time;
+      const progress = Math.min((time - startTime) / duration, 1);
+
+      const value = Math.floor(start + (end - start) * progress);
+      setCount(value);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [start, end, duration]);
+
+  return <>{count.toLocaleString("en-IN")}</>;
+};
 const dummyCoursesData = {
-  // title: "Start Your JSS Journey",
   title:
     '<span class="blue-text">Start Your</span> <span class="dark-blue-text ">JSS Journey</span>',
   subtitle: "Courses Offered",
   programs_count: "200",
   programs_text: "academic programs and pave the way to your ideal future.",
-
   programs: [
     {
       image: "/images/home-page/second-section-banner.png",
@@ -33,7 +54,6 @@ const dummyCoursesData = {
       slug: "/",
     },
   ],
-
   departments: [
     { short_name: "Engineering", slug: "#" },
     { short_name: "Pharmacy", slug: "#" },
@@ -42,183 +62,237 @@ const dummyCoursesData = {
     { short_name: "Applied Sciences", slug: "#" },
     { short_name: "Humanities", slug: "#" },
   ],
-
-  admission: {
-    year: "2025-26",
-    desc: "Sed ut perspiciatis unde omnis",
-    applyLink: "#",
-  },
   academic_year: {
     year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
     description: "Sed ut perspiciatis unde omnis",
   },
-  buttons: [
-    {
-      text: "Apply Now",
-      url: "https://project-demo.in/jss/api/homepage",
-    },
-  ],
+  buttons: [{ text: "Apply Now", url: "/api/homepage" }],
 };
 
 export default function CoursesOffered({ data }) {
   const coursesData = data ? data : dummyCoursesData;
-  const ProgramsCount = () => (
-    <div className={styles.programsCountWrapper}>
-      <h1 className={`display-4 programs-count ${styles.programsCount}`}>
-        {coursesData.programs_count}
-      </h1>
-      <span className={styles.programsCountPlus}>+</span>
-    </div>
-  );
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      easing: "ease-in-out",
+      duration: 800,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (query.trim() === "") {
+      setResults([]);
+      setHasSearched(false);
+      return;
+    }
+
+    const delay = setTimeout(() => {
+      setHasSearched(true);
+      setLoading(true);
+      fetch(`/api/courses/search?search=${query}`)
+        .then((res) => res.json())
+        .then((data) => setResults(data?.data || []))
+        .catch(() => setResults([]))
+        .finally(() => setLoading(false));
+    }, 300);
+
+    return () => clearTimeout(delay);
+  }, [query]);
 
   return (
-    <>
-      <section className={`second-section cource-sec ${styles.secondSection}`}>
-        <div className="container">
-          <div className={`row cource_top ${styles.topSection}`}>
-            {/* Left side */}
-            <div className="col-lg-4 mb-4 mb-lg-0">
-              <h5 className={`${styles.topSectionH5}`}>
-                {coursesData.subtitle}
-              </h5>
-              <h1
-                className={`fw-bold  ${styles.topSectionH1}`}
-                dangerouslySetInnerHTML={{ __html: coursesData.title }}
-              ></h1>
-              <p className={styles.showOnlyMobileSubHeading}>
-                {coursesData.programs_text}
-              </p>
-              {/* Search box */}
-              <div
-                className={`input-group shadow-sm rounded-pill overflow-hidden ${styles.searchBox}`}
-              >
+    <section className={`second-section cource-sec ${styles.secondSection}`}>
+      <div className="container">
+        <div className={`cource_top ${styles.topSection}`}>
+          {/* LEFT CONTENT */}
+          <div className="cource_col">
+            <h5
+              className={styles.topSectionH5}
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              {coursesData.subtitle}
+            </h5>
+
+            <h1
+              className={`fw-bold ${styles.topSectionH1}`}
+              dangerouslySetInnerHTML={{ __html: coursesData.title }}
+              data-aos="fade-up"
+              data-aos-delay="100"
+            />
+
+            <p
+              className={styles.showOnlyMobileSubHeading}
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {coursesData.programs_text}
+            </p>
+
+            {/* SEARCH */}
+            <div
+              className="search-wrapper position-relative"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="input-group programs_search overflow-hidden">
                 <input
                   type="text"
                   className="form-control border-0"
                   placeholder="Search Course"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  style={{ padding: "10px 20px" }}
                 />
                 <span className="input-group-text bg-white border-0">
-                  {/* <CiSearch /> */}
-                  <img
-                    src="images/home-page/icon-search.svg"
-                    className="img-fluid"
-                    alt="search"
-                  />
+                  <img src="images/home-page/icon-search.svg" alt="search" />
                 </span>
               </div>
 
-              {/* Programs count */}
-              <div
-                className={`d-flex align-items-center ${styles.programsCountSection}`}
-              >
-                <ProgramsCount />
-                <p className={styles.programsText}>
-                  {coursesData.programs_text}
-                </p>
-              </div>
+              {query && (
+                <div className="search-results">
+                  {loading ? (
+                    <div className="loading">Searching...</div>
+                  ) : results.length ? (
+                    results.map((item) => (
+                      <div className="search-item" key={item.id}>
+                        <Link
+                          href={`/programs/${item.slug}`}
+                          className="search-link"
+                        >
+                          {item.name}
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    hasSearched && (
+                      <div className="no-results">No courses found</div>
+                    )
+                  )}
+                </div>
+              )}
             </div>
 
-            {/* Right side cards */}
+            {/* COUNT */}
             <div
-              className={`col-lg-8 d-flex gap-3 ${styles.programsCardsSection}`}
+              className={`d-flex align-items-center ${styles.programsCountSection}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
             >
-              {coursesData.programs.map((level, i) => (
-                <Link
-                  href={level.slug}
-                  key={i}
-                  className="second-section-cards-image position-relative"
+              <div className={`program-hide ${styles.programsCountWrapper}`}>
+                <h1
+                  className={`display-4 programs-count ${styles.programsCount}`}
                 >
-                  <Image
-                    src={level.image}
-                    alt="slide image"
-                    width={200}
-                    height={300}
-                    className={styles.cardImage}
-                    priority
-                  />
-                  <div className={styles.cardOverlay}>
-                    <span
-                      className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
-                    >
-                      {level.name_short}{" "}
-                      <FaChevronRight
-                        fontSize={15}
-                        color="#b08f29"
-                        className={styles.rightDesktopArrow}
-                      />
-                      <PiArrowCircleRightThin
-                        fontSize={20}
-                        color="#fff"
-                        className={styles.rightMobileArrow}
-                      />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-              <div className={styles.showOnlyMobileCard}>
-                <Link href="#" className={styles.exploreAllLink}>
-                  <div className={styles.lastCardContentSection}>
-                    <p>Explore All</p>
-                    <h1 className="blue-text">26+</h1>
-                    <h5>ACADEMIC PROGRAMS</h5>
-                  </div>
-                  <div className={styles.lastCardArrow}>
-                    <PiArrowCircleRightThin fontSize={20} color="#16344E" />
-                  </div>
-                </Link>
+                  <Counter start={1} end={200} duration={2500} />
+                </h1>
+                <span className={styles.programsCountPlus}>+</span>
               </div>
+
+              <p className={`program-hide ${styles.programsText}`}>
+                {coursesData.programs_text}
+              </p>
             </div>
           </div>
 
-          {/* Bottom section */}
-          <div
-            className={`row  align-items-center program-row m-auto ${styles.exploreProgramSectionWrapper}`}
-          >
-            <div className="col-lg-8">
-              <h6 className={`fw-bold  ${styles.bottomSectionH6}`}>
-                Explore Programs by School of
-              </h6>
-              <div
-                className={`d-flex flex-wrap explore-program-section gap-3 ${styles.schoolsList}`}
+          {/* RIGHT CARDS */}
+          <div className={`cource_col ${styles.programsCardsSection}`}>
+            {coursesData.programs.map((level, i) => (
+              <Link
+                key={i}
+                href={{
+                  pathname: "/programs",
+                  query: {
+                    type: level.slug.toLowerCase().replace(/\s+/g, "-"),
+                  },
+                }}
+                className="second-section-cards-image position-relative"
+                data-aos="fade-up"
+                data-aos-delay={i * 150}
               >
-                {coursesData.departments.map((school, i) => (
-                  <Link
-                    href={`/schools/${school.slug}`}
-                    key={i}
-                    className=" d-flex justify-content-between align-items-center"
+                <Image
+                  src={level.image}
+                  alt="slide image"
+                  width={252}
+                  height={387}
+                  className={styles.cardImage}
+                />
+
+                <div className={styles.cardOverlay}>
+                  <span
+                    className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
                   >
-                    {school.short_name}{" "}
-                    <FaChevronRight fontSize={10} color="#16344ec4" />
-                  </Link>
-                ))}
-              </div>
+                    {level.name_short}
+                    <img
+                      src="images/home-page/course_list_icon.svg"
+                      alt="slide image"
+                      className={styles.cardIcons}
+                    />
+                    <PiArrowCircleRightThin
+                      className={styles.rightMobileArrow}
+                    />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= BOTTOM SECTION ================= */}
+        <div className="program_heading">
+          <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
+            Explore Programs by School of
+          </h6>
+        </div>
+        <div
+          className={`programsList_row align-items-center program-row ${styles.exploreProgramSectionWrapper}`}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div className="programs_col">
+            <div className={` explore-program-section ${styles.schoolsList}`}>
+              {coursesData.departments.map((school, i) => (
+                <Link
+                  key={i}
+                  href={`/schools/${school.slug}`}
+                  className="d-flex justify-content-between align-items-center"
+                >
+                  {school.short_name}
+                  <FaChevronRight fontSize={8} color="#16344ec4" />
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div
+            className={`programs_col admission_btn ${styles.admissionSection}`}
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <div className="addmission-col">
+              <h4
+                className="fw-bold add-item"
+                dangerouslySetInnerHTML={{
+                  __html: coursesData.academic_year.year,
+                }}
+              />
+              <p className="small">{coursesData.academic_year.description}</p>
             </div>
 
-            {/* Admission section */}
-            <div
-              className={`col-lg-4 d-flex gap-5 align-items-center ${styles.admissionSection}`}
-            >
-              <div className="addmission-col">
-                <h4
-                  className="fw-bold add-item"
-                  dangerouslySetInnerHTML={{
-                    __html: coursesData.academic_year.year,
-                  }}
-                ></h4>
-                <p className="small">{coursesData.academic_year.description}</p>
-              </div>
-              {coursesData.buttons[0].url && (
-                <Link
-                  href={coursesData.buttons[0].url}
-                  className="btn btn-warning rounded-pill"
-                >
-                  {coursesData.buttons[0].text}
-                </Link>
-              )}
+            <div className="add_btn">
+              <Link
+                href={coursesData.buttons[0].url}
+                className="btn btn-warning"
+              >
+                {coursesData.buttons[0].text}
+              </Link>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

@@ -1,4 +1,5 @@
 import { getPageSEO } from "@/lib/seo";
+import { Suspense } from "react";
 import ProgramClient from "./ProgramClient";
 import Script from "next/script";
 
@@ -8,6 +9,7 @@ export async function generateMetadata() {
 
 export default async function Program() {
   const seoData = await getPageSEO("program");
+
   return (
     <>
       <Script
@@ -17,7 +19,9 @@ export default async function Program() {
         }}
         strategy="beforeInteractive"
       />
+    <Suspense fallback={<div>Loading...</div>}>
       <ProgramClient />
+    </Suspense>
     </>
   );
 }

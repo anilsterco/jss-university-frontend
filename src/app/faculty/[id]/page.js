@@ -1,20 +1,22 @@
 "use client";
-
-import { useState, useEffect, use } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-
-const BASE_URL = "https://project-demo.in/jss/api";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+const BASE_URL = "/api/";
 
 export default function FacultyDetailPage({ params }) {
-  // React.use() se params ko unwrap karo
-  const { id } = use(params);
+  const { id } = React.use(params);
   const [faculty, setFaculty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [error, setError] = useState(null);
+  const [showFull, setShowFull] = useState(false);
+  const [addSectiondata, setAddSectiondata] = useState({ sections: [] });
+  const maxLength = 600;
 
   // Fetch faculty by ID
   const fetchFacultyDetail = async () => {
@@ -22,21 +24,15 @@ export default function FacultyDetailPage({ params }) {
       setLoading(true);
       setNotFound(false);
       setError(null);
-
       const res = await fetch(`${BASE_URL}/faculties/${id}`);
-
       if (!res.ok) {
         if (res.status === 404) {
           throw new Error("Faculty not found");
         }
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-
       const data = await res.json();
-      console.log("API Response data:", data);
-
       const facultyData = data.data || data.faculty || data;
-
       if (!facultyData || Object.keys(facultyData).length === 0) {
         setNotFound(true);
         return;
@@ -61,6 +57,11 @@ export default function FacultyDetailPage({ params }) {
     }
   }, [id]);
 
+  useEffect(() => {
+    if (faculty && faculty.sections) {
+      setAddSectiondata({ sections: faculty.sections });
+    }
+  }, [faculty]);
   // Loading UI
   if (loading) {
     return (
@@ -89,7 +90,7 @@ export default function FacultyDetailPage({ params }) {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-10">
-                <div className="innnr_head">
+                <div className="innnr_head ">
                   <h2>Faculty Not Found</h2>
                   {error && <p className="text-danger">Error: {error}</p>}
                   <Link href="/faculty" className="btn btn-primary mt-3">
@@ -125,7 +126,7 @@ export default function FacultyDetailPage({ params }) {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="innnr_head">
+              <div className="innnr_head faculty-heading">
                 <h2>FACULTY</h2>
                 <h3>
                   MEET OUR <span>FACULTY</span>
@@ -147,9 +148,9 @@ export default function FacultyDetailPage({ params }) {
                     <Image
                       src={facultyImage}
                       alt={facultyName}
-                      width={500}
+                      width={550}
                       height={500}
-                      className="img-fluid w-100"
+                      className="img-fluid faculty-banner w-100"
                       onError={(e) => {
                         e.target.src = "/default-avatar.png";
                       }}
@@ -164,7 +165,9 @@ export default function FacultyDetailPage({ params }) {
                   {facultyProfile && (
                     <div className="cus-profile-text">
                       <h6>Profile</h6>
-                      <p>{facultyProfile}</p>
+                      <div className="para-scroll">
+                        <p>{facultyProfile}</p>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -178,7 +181,7 @@ export default function FacultyDetailPage({ params }) {
       <section className="faulty-detail-sec1">
         <div className="container">
           <div className="row justify-content-end">
-            <div className="col-lg-11">
+            <div className="col-xl-11 col-lg-12">
               <div className="profile-info">
                 {/* Contact Box */}
                 <div className="profile-info-box">
@@ -186,7 +189,7 @@ export default function FacultyDetailPage({ params }) {
                     <>
                       <div className="info-box">
                         <div className="profile-icon">
-                          <i className="bi bi-envelope"></i>
+                          <img src="/images/custom-page/mail-faculty.svg" />
                         </div>
                         <div className="profile-email">
                           <p>Email Id</p>
@@ -200,7 +203,7 @@ export default function FacultyDetailPage({ params }) {
                   {facultyLinkedin && (
                     <div className="info-box">
                       <div className="profile-icon">
-                        <i className="bi bi-linkedin"></i>
+                        <img src="/images/custom-page/insta-faculty.svg" />
                       </div>
                       <div className="profile-email">
                         <p>LinkedIn Profile</p>
@@ -209,7 +212,7 @@ export default function FacultyDetailPage({ params }) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <u>{facultyLinkedin.replace(/^https?:\/\//, "")}</u>
+                          {facultyLinkedin.replace(/^https?:\/\//, "")}
                         </a>
                       </div>
                     </div>
@@ -239,32 +242,42 @@ export default function FacultyDetailPage({ params }) {
                   )}
 
                   {/* Research */}
-                  {facultyResearch && facultyResearch.length > 0 && (
+                  {facultyResearch.length > 0 && (
                     <div className="profile-education profile-research">
                       <h5>Research</h5>
                       <div className="research-list">
-                        {facultyResearch.map((key, index) => (
-                          <div className="research-box" key={index}>
-                            <div className="research-icon">
-                              <p>
-                                <img
-                                  src={key.image ? key.image : null}
-                                  alt="research-icon"
-                                />
-                                {key.title}
-                              </p>
+                        {facultyResearch
+                          .filter(
+                            (item) => item.title || item.image || item.link,
+                          )
+                          .map((key, index) => (
+                            <div className="research-box" key={index}>
+                              <div className="research-icon">
+                                <p>
+                                  {key.image && (
+                                    <Image
+                                      src={key.image}
+                                      alt="research-icon"
+                                      width={50}
+                                      height={50}
+                                    />
+                                  )}
+                                  {key.title}
+                                </p>
+                              </div>
+                              {key.link && (
+                                <div className="research-link">
+                                  <Link
+                                    href={key.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <i className="bi bi-box-arrow-up-right"></i>
+                                  </Link>
+                                </div>
+                              )}
                             </div>
-                            <div className="research-link">
-                              <Link
-                                href={key.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <i className="bi bi-box-arrow-up-right"></i>
-                              </Link>
-                            </div>
-                          </div>
-                        ))}
+                          ))}
                       </div>
                     </div>
                   )}
@@ -305,9 +318,34 @@ export default function FacultyDetailPage({ params }) {
                     </div>
                   )}
 
+                  {/* other section */}
+                  {addSectiondata?.sections?.length > 0 &&
+                    addSectiondata.sections.some(
+                      (section) => section.points.length > 0,
+                    ) && (
+                      <>
+                        {addSectiondata.sections.map(
+                          (section, idx) =>
+                            section.points.length > 0 && (
+                              <div
+                                key={idx}
+                                className="comman_profile"
+                              >
+                                <h5>{section.title}</h5>
+                                <ul>
+                                  {section.points.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ),
+                        )}
+                      </>
+                    )}
+
                   {/* Show message if no additional info */}
                   {facultyEducation.length === 0 &&
-                    Object.keys(facultyResearch).length === 0 &&
+                    facultyResearch.length === 0 &&
                     facultyTeaching.length === 0 &&
                     facultyAwards.length === 0 &&
                     facultySocialEngagement.length === 0 && (

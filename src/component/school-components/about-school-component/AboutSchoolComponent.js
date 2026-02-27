@@ -1,11 +1,24 @@
 // components/school-components/AboutSchool/index.js
 "use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styles from "./about-school.module.css";
 
 export default function AboutSchool({ data }) {
+  // 🔹 AOS INIT
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   const dummyAboutSchoolContent = {
     title:
       '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text">ENGINEERING EXCELLENCE.</span>',
@@ -19,7 +32,7 @@ export default function AboutSchool({ data }) {
       "Approved by All India Council for Technical Education (AICTE)",
     stats_number: "28+",
     stats_content: "ACRES CAMPUS AREA",
-    highlight: [
+    highlights: [
       {
         rank: "#20",
         text: "ENGINEERING COLLEGES IN UTTAR PRADESH",
@@ -37,26 +50,45 @@ export default function AboutSchool({ data }) {
       { text: "APPLY NOW", url: "#3" },
     ],
   };
+
   const aboutSchoolContent = data ? data : dummyAboutSchoolContent;
+
   return (
-    <div className={styles.aboutSchoolSection}>
+    <div
+      className={styles.aboutSchoolSection}
+      data-aos="fade-up"
+      data-aos-duration="1200"
+    >
       <div className="container">
-        <div className="row align-items-center">
+        <div className="school_row align-items-center">
+
           {/* LEFT COLUMN */}
-          <div className="col-md-6 mb-4">
+          <div className="school_about">
             <div className="about_school_left">
-              <h6 className={styles.subtitle}>{aboutSchoolContent.subtitle}</h6>
+              <h6
+                className={styles.subtitle}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {aboutSchoolContent.subtitle}
+              </h6>
 
               <h1
-                className={`${styles.title} `}
+                className={styles.title}
                 dangerouslySetInnerHTML={{ __html: aboutSchoolContent.title }}
+                data-aos="fade-up"
+                data-aos-delay="200"
               ></h1>
 
-              <p className={styles.description}>
+              <p
+                className={styles.description}
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 {aboutSchoolContent.description}
               </p>
 
-              <div>
+              <div data-aos="fade-up" data-aos-delay="400">
                 <button className={styles.arrowButton}>
                   <SlArrowRightCircle />
                 </button>
@@ -66,9 +98,14 @@ export default function AboutSchool({ data }) {
               <div className="row mt-4">
                 {aboutSchoolContent.highlights &&
                   aboutSchoolContent.highlights.map((item, index) => (
-                    <div className="col-md-6 about_rnk" key={index}>
+                    <div
+                      className="col-xl-6 col-lg-6 col-sm-6 about_rnk"
+                      key={index}
+                      data-aos="fade-up"
+                      data-aos-delay={500 + index * 100}
+                    >
                       <div className={styles.rankingCard}>
-                        <div className="counter_dfe">
+                        <div className="counter_dfe d-flex">
                           <span className={styles.rankNumber}>{item.rank}</span>
                           <p className={styles.rankText}>{item.text}</p>
                         </div>
@@ -81,7 +118,11 @@ export default function AboutSchool({ data }) {
               </div>
 
               {/* Buttons */}
-              <div className={styles.buttonsContainer}>
+              <div
+                className={styles.buttonsContainer}
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
                 {aboutSchoolContent.buttons &&
                   aboutSchoolContent.buttons.map((btn, i) => (
                     <div key={i}>
@@ -101,8 +142,12 @@ export default function AboutSchool({ data }) {
           </div>
 
           {/* RIGHT COLUMN (IMAGE CARD) */}
-          <div className="col-md-6 px-5 py-5">
-            <div className={styles.imageCard}>
+          <div className="school_about">
+            <div
+              className={styles.imageCard}
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               <Image
                 src={aboutSchoolContent.chancellor_img}
                 alt="School campus"
@@ -142,6 +187,7 @@ export default function AboutSchool({ data }) {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

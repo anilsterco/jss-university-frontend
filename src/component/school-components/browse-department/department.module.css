@@ -3,13 +3,10 @@
 .departmentSection {
   background-color: #f6f6f6;
   min-height: 100vh;
-  padding: 6rem 10rem 5rem 10rem;
+  padding: 6rem 0rem 0;
 }
 
-.departmentSection .container {
-  border-bottom: 1px solid #d1cbcb;
-  padding-bottom: 7rem;
-}
+
 
 .leftSide {
   display: flex;
@@ -17,54 +14,85 @@
   justify-content: space-between;
   margin-top: 4rem;
   height: 95%;
-  max-width:100%;
+  max-width: 100%;
 }
 
-.title {  
+.title {
   font-weight: bold;
-  margin-bottom: 1rem;
-  font: var(--font-60);  
-   line-height:0.9;  
-}
-.viewAllButton svg{ margin-left: 2rem;}
-.title span{
- font-family: 'Roboto Condensed';
- letter-spacing: -2.88px;
- text-transform: uppercase;
- 
+  margin-bottom: 2.2rem;
+  font: var(--font-60);
+  line-height: 0.9;
+  max-width: 80%;
 }
 
+.viewAllButton svg {
+  margin-left: 2rem;
+}
+
+.title span {
+  font-family: 'Roboto Condensed';
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+
+}
+
+.courseRow {
+  display: grid;
+  grid-template-columns: 30.7% 58%;
+  gap: 16rem;
+}
+
+.courseItemsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.smallHeadline {
+  text-transform: uppercase;
+  color: var(--color-4e);
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+  display: block;
+
+}
 
 .description {
-  margin-top: 15px;
+  font: var(--font-16);
   color: #333;
   line-height: 1.5;
-  font: var(--font-16);
-  
+  font-weight: 300;
+
 
 }
 
 .programsCount {
-  color: #16344e;
-  font: var(--font-48);
-  margin-bottom: 0.5rem;
-  line-height: 1;
+  color: #b08f29;
+  letter-spacing: -8.8px;
+  font: var(--font-110);
+  font-family: var(--font-Roboto);
+  font-weight: normal;
 }
 
 .programsText {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  font-family: var(--font-Condensed);
+  font: var(--font-24);
+  color: var(--color-27);
+  letter-spacing: -.48px;
+  padding-left: 3.6rem;
+  font-family: Geist, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .viewAllButton {
   border-radius: 0;
-  font-size: 14px;
+  font: var(--font-14);
   font-weight: 600;
   border: 1px solid #16344E;
-  padding: 0.5rem 1.5rem;
-  margin-bottom: 0.5rem;
+  padding: 1.1rem 1.5rem 1rem;
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
   background: unset;
   color: #16344E;
@@ -76,23 +104,17 @@
   color: #fff;
 }
 
-.applyButton {
-  border-radius: 0;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: #b08f29;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  font-family: var(--font-Condensed);
+.admistion_heading a {
+  font: var(--font-16);
+  padding: .8rem 2.4rem;
+  font-family: Noto Sans, sans-serif;
+  line-height: 1.5;
 }
 
-.applyButton:hover {
-  background-color: #9a7b24;
-  color: #fff;
+.departSec {
+  padding-block: 15.7rem 15rem;
 }
+
 
 .programCard {
   border-radius: 50px 0px 0px 0px;
@@ -109,7 +131,8 @@
 
 .cardImage {
   width: 100%;
-  height: auto;
+  object-fit: cover;
+  height: 100%;
 }
 
 .gradientOverlay {
@@ -148,17 +171,7 @@
   font: var(--font-18);
   font-family: var(--font-Condensed);
   font-weight: 700;
-  color: #B08F29;
-  
-}
-.browseHeader {
-  color: #b59c50;
-  font-weight: bold;
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  color: #16344E;
 }
 
 .browseLine {
@@ -172,27 +185,46 @@
 
 .divider {
   border-color: #eee;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 4rem 0;
 }
 
-.departmentItem {
+.browseHeader h2 {
+  font: var(--font-60);
+  color: var(--color-4e);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 4rem;
+
+}
+
+.browseHeader h2>span {
+  font: var(--font-60);
+  color: #018CE8;
+  margin-bottom: 3.8rem;
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  text-transform: uppercase;
+  line-height: 0.9;
+
+}
+
+.departData{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.6);  
-  color: #16344E;
-  border-radius: 0px; 
-  cursor: pointer;
-  font: var(--font-21);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  letter-spacing: -0.21px;
+  margin-block: 2rem;
+}
+
+
+.departData h4{
+  color: #B08F29;
+  border-radius: 0px;
+  font: var(--font-18);
   font-weight: bold;
   font-family: var(--font-Condensed);
-  height: 100%;
-  padding-inline: 2rem;
+  text-transform: uppercase;
 }
 
 .departmentItem:hover {
@@ -202,64 +234,138 @@
 }
 
 .departmentArrow {
-  font-size: 18px;
-  color: #868585;
+  font-size:2.2rem;
+  color: #002241bd;
   transition: color 0.3s ease;
+  flex-shrink: 0;
+
+}
+.departmentRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
+.departmentCol {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.departmentImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Text + icon overlay */
+
+
+.departData h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Arrow icon hover ONLY */
+.departmentArrow {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.departmentCol:hover .departmentArrow {
+  color: #ffcc00;
+}
+
+.fullLink {
+  inset: 0;
+  z-index: 3;
+}
 .departmentItem:hover .departmentArrow {
-  color: #b08f29;
+  color:var(--color-100);
 }
 
+.departmentRow {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2.3rem;
+}
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 2550px) {
+  .cardImage {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1750px) {
   .departmentSection {
-    padding: 5rem 6rem 4rem 6rem;
+    padding: 6rem 0rem 5rem;
   }
 
-  .title {
-    font-size: 48px;
+  .about_school_left {
+    border-right: 1px solid rgba(206, 206, 206, .52);
+    padding-right: 2rem;
   }
 
-  .programsCount {
-    font-size: 50px;
+}
+
+@media (max-width: 1024px) {
+  .leftSide {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .departmentSection {
+    padding: 0rem 0rem;
+  }
+
+  .cardTitle {
+    max-width: 60%;
+  }
+
+  .departmentSection .container {
+    padding-bottom: 4rem;
   }
 }
 
 @media (max-width: 992px) {
-  .departmentSection {
-    padding: 4rem 4rem 3rem 4rem;
-  }
-
   .leftSide {
     margin-top: 2rem;
     margin-bottom: 3rem;
   }
 
   .title {
-    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 2.2rem;
+    font: var(--font-40);
+    line-height: 1;
+
   }
 
-  .programsCount {
-    font-size: 45px;
+  .title span {
+    letter-spacing: -1.88px;
   }
 
   .browseLine {
     width: 70%;
   }
+
+  .programsCount {
+    color: #16344e;
+    font: var(--font-40);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+  }
+
+  .cardTitle {
+    font: var(--font-24);
+    font-family: var(--font-Condensed);
+  }
 }
 
 @media (max-width: 768px) {
   .departmentSection {
-    padding: 3rem 2rem 2rem 2rem;
-  }
-
-  .title {
-    font-size: 36px;
-  }
-
-  .programsCount {
-    font-size: 40px;
+    padding: 0rem 2rem 2rem 2rem;
   }
 
   .browseHeader {
@@ -282,38 +388,109 @@
     padding: 2rem 1rem 1rem 1rem;
   }
 
-  .title {
-    font-size: 32px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .programsCount {
-    font-size: 35px;
-  }
-
   .viewAllButton,
   .applyButton {
     width: 100%;
     margin-bottom: 0.75rem;
   }
 
-  .departmentItem {
-    font-size: 15px;
-    padding: 0.75rem;
+  .cardTitle {
+    font: var(--font-24);
+    font-weight: bold;
+    font-family: var(--font-Condensed);
   }
 
-  .cardTitle {
-    font-size: 18px;
-    bottom: 15px;
-    left: 15px;
+  .departmentItem {
+    padding: 0.75rem;
   }
 
   .cardArrow {
     bottom: 15px;
     right: 15px;
   }
+
+  .cardTitle {
+    max-width: 100%;
+  }
+
+  .departmentItem {
+    font: var(--font-16);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    letter-spacing: -0.21px;
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+    height: 100%;
+    padding-inline: 2rem;
+  }
 }
 
+.cardOverlay {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 10px;
+}
+
+.bannerLabel {
+  color: #fff;
+  border-left: 4px solid #ffc100;
+  width: 100%;
+  font-family: Geist, sans-serif;
+  font: var(--font-28);
+  position: absolute;
+  bottom: 2.2rem;
+  padding-left: 1.2rem;
+  gap: 1.2rem;
+  left: 0;
+  letter-spacing: -0.84px;
+  text-transform: uppercase;
+}
+
+.cardIcons {
+  padding-left: 1.2rem;
+}
+
+.Plusicon {
+  font: var(--font-52);
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  letter-spacing: -4.16px;
+  position: relative;
+  top: -5rem;
+  right: -1rem;
+}
+
+.admistion_heading {
+  display: flex;
+  gap: 2.7rem;
+  margin-top: 3.8rem;
+  align-items: center;
+}
+
+.admiCol h2 {
+  font: var(--font-24);
+  color: #16344e;
+  font-family: var(--font-Roboto);
+  letter-spacing: -.48px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.admiCol h2>span {
+  color: #018CE8;
+}
+
+.admiCol>p {
+  font: var(--font-18);
+  color: var(--color-black);
+  letter-spacing: -.36px;
+  margin-bottom: 0;
+  font-weight: 300;
+}

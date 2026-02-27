@@ -176,6 +176,7 @@
   width: 80%;
   font-family: var(--font-Condensed);
   font-weight: 700;
+  line-height: 1.2;
 
 }
 
@@ -230,74 +231,46 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 991px){
+.dep_cutting_edge {
+  padding:6rem 0 9rem 10rem;
+}
+.headerTitle {
+  font: var(--font-50);
+  letter-spacing: -2px;
+}
+}
 /* Responsive Design */
 @media (max-width: 768px) {
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .headerSection {
-    padding: 0 1rem;
-  }
-
-  .sliderWrapper {
-    padding: 0 1rem;
-  }
-
-  .buttonWrapper {
-    padding: 0 1rem;
-  }
-
-  .labCard {
-    flex: 0 0 280px;
-  }
-
-  .imageContainer {
-    height: 340px;
-  }
-
-  .labTitle {
-    font-size: 1rem;
-  }
+  .dep_cutting_edge {
+  padding:4rem 0 4rem 10rem;
 }
+.title {
+  font: var(--font-50);
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  letter-spacing: -2.40px;
+}
+.labTitle {
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 100%;
+  margin: 0;
+  font: var(--font-24);
+  width: 100%;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
 
-@media (max-width: 576px) {
-  .container {
-    padding: 3rem 0 2rem 0;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .description {
-    font-size: 0.875rem;
-  }
-
-  .labCard {
-    flex: 0 0 260px;
-  }
-
-  .imageContainer {
-    height: 320px;
-  }
-
-  .labInfo {
-    padding: 1rem;
-  }
-
-  .labTitle {
-    font-size: 0.9rem;
-    max-width: 65%;
-  }
-
-  .viewButton {
-    width: 36px;
-    height: 36px;
-  }
-
-  .applyButton {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.85rem;
-  }
+}
+}
+@media (max-width: 575px){
+.dep_cutting_edge {
+  padding:4rem 0 2rem 4rem;
+}
+.title {
+  font: var(--font-40);
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  letter-spacing: -2.20px;
+}
 }

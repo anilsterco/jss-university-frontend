@@ -1,62 +1,81 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutFour({ data }) {
-  
-  // Render dynamically based on section type
-  const renderSection = (section, sectionIndex) => {
-    switch (section.type) {
-      case "values":
-        return (
-          <div key={`values-section-${sectionIndex}`} className="values-section">
-            <div className="col-lg-10 mx-auto">
-              <h3 className="section-title text-center">Values</h3>
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
 
-              <div className="values-grid">
-                {section.items
-                  .sort((a, b) => a.position - b.position)
-                  .map((item, i) => (
-                    <div className="value-box" key={item.item_uuid || i}>
-                      <figure>
-                        <Image
-                          src={item.file}
-                          alt={item.title}
-                          width={70}
-                          height={70}
-                        />
-                      </figure>
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </div>
-        );
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
 
-      default:
-        return null;
-    }
-  };
+  if (!data || data.length === 0) return null;
 
   return (
-    <section className="about_four">
-      <div className="container">
-        <div className="row justify-content-center">
-          {/* Map every section dynamically */}
-          {data.map((section, index) => renderSection(section, index))}
+    <>
+      {data.map((section, sectionIndex) => {
+        if (section.type !== "leftSection") return null;
 
-          {/* Fallback */}
-          {data.length === 0 && (
-            <div className="col-lg-10 mx-auto">
-              <p className="text-center">No values available</p>
+        return (
+          <section
+            key={`left-section-${sectionIndex}`}
+            className="about_four"
+            data-aos="fade-up"
+          >
+            <div className="container">
+              {section.items
+                ?.sort((a, b) => a.position - b.position)
+                .map((item, idx) => (
+                  <div key={idx} className="about_f_value">
+                    {item.image && (
+                      <div
+                        className="ab_fo_imgsec"
+                        data-aos="fade-left"
+                        data-aos-delay="300"
+                      >
+                        <figure className="shine-effect">
+                          <Image
+                            src={item.image}
+                            alt={
+                              item.title
+                                ? item.title.slice(0, 50)
+                                : "About Section"
+                            }
+                            width={600}
+                            height={400}
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                          />
+                        </figure>
+                      </div>
+                    )}
+                    <div
+                      className="ab_f_content"
+                      data-aos="fade-right"
+                      data-aos-delay="200">
+                      {item.title && <h3>{item.title}</h3>}
+                      {item.paragraph?.length > 0 &&
+                        item.paragraph.map((p, i) => <p key={i}>{p.text}</p>)}
+                    </div>
+                  </div>
+                ))}
             </div>
-          )}
-        </div>
-      </div>
-    </section>
+          </section>
+        );
+      })}
+    </>
   );
 }

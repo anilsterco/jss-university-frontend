@@ -1,86 +1,102 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function AboutThree({ data }) {
-  // RENDER SECTIONS DYNAMICALLY
-  const renderSection = (section, index) => {
-    switch (section.type) {
-      case "visionMission":
-        const item = section.items[0]; // Only one item inside array
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [data]);
+
+  if (!data || data.length === 0) return null;
+
+  return (
+    <>
+      {data.map((section, index) => {
+        if (section.type !== "vision") return null;
+
+        const item = section.items?.[0];
+        if (!item) return null;
 
         return (
           <section
-            key={`vision-mission-${index}`}
+            key={`vision-${index}`}
             className="about_three"
+            data-aos="fade-up"
           >
             <div className="container">
               <div className="vsn_msn_grid">
-                {/* LEFT IMAGE */}
-                <div className="vsn-lft">
-                  <Image
-                    src={item.file}
-                    alt="Vision & Mission"
-                    width={700}
-                    height={500}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </div>
-
-                {/* RIGHT CONTENT */}
-                <div className="miss-rgt">
-                  
-                  {/* VISION */}
+                <div
+                  className="miss-rgt"
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                >
                   <div className="vsn">
-                    <h4>{item.visionTitle}</h4>
-                    <h5>{item.visionDesc}</h5>
+                    {item.title && (
+                      <h4
+                        dangerouslySetInnerHTML={{ __html: item.title }}
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                      />
+                    )}
 
-                    <ul className="custom-list">
-                      {[
-                        item.visionPoint1,
-                        item.visionPoint2,
-                        item.visionPoint3,
-                        item.visionPoint4,
-                      ]
-                        .filter(Boolean)
-                        .map((point, i) => (
-                          <li key={`vision-point-${i}`}>{point}</li>
+                    {item.subtitle && (
+                      <p data-aos="fade-up" data-aos-delay="400">
+                        {item.subtitle}
+                      </p>
+                    )}
+
+                    {item.points?.length > 0 && (
+                      <ul className="custom-list">
+                        {item.points.map((point, i) => (
+                          <li
+                            key={i}
+                            data-aos="fade-up"
+                            data-aos-delay={500 + i * 100}
+                          >
+                            {point.text}
+                          </li>
                         ))}
-                    </ul>
-                  </div>
-
-                  {/* MISSION */}
-                  <div className="msn">
-                    <h4>{item.missionTitle}</h4>
-                    <p>{item.missionDesc}</p>
-
-                    <h6>{item.missionSubtitle}</h6>
-
-                    <ul className="custom-list">
-                      {[
-                        item.missionPoint1,
-                        item.missionPoint2,
-                        item.missionPoint3,
-                        item.missionPoint4,
-                      ]
-                        .filter(Boolean)
-                        .map((point, i) => (
-                          <li key={`mission-point-${i}`}>{point}</li>
-                        ))}
-                    </ul>
+                      </ul>
+                    )}
                   </div>
                 </div>
+
+                {item.image && (
+                  <div
+                    className="vsn-lft shine-effect"
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                  >
+                    <img
+                      src={item.image}
+                      alt={
+                        item.title
+                          ? item.title.replace(/<[^>]+>/g, "")
+                          : "Vision"
+                      }
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </section>
         );
-
-      default:
-        return null;
-    }
-  };
-
-  return <>{data.map((section, index) => renderSection(section, index))}</>;
+      })}
+    </>
+  );
 }

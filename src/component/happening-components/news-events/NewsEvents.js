@@ -34,10 +34,9 @@ export default function EventsSection() {
   });
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["news-events", filters.month, filters.school, filters.page],
+    queryKey: ["happenings", filters.month, filters.school, filters.page],
     queryFn: () => {
       const queryParams = buildQueryParams();
-      console.log(queryParams);
       const endpoint = `/happenings?${queryParams}`;
       return happeningAPI.getEvents(endpoint);
     },
@@ -83,7 +82,6 @@ export default function EventsSection() {
   const buildQueryParams = () => {
     const params = new URLSearchParams();
 
-    // Always add page parameter
     params.append("page", filters.page);
 
     if (filters.month !== "") {
@@ -165,7 +163,7 @@ export default function EventsSection() {
           >
             {upCommingEvents.map((event) => (
               <SwiperSlide key={event.id}>
-                <Link href={"#"}>
+                <Link href={`/happenings/${event.slug || event.id}`}>
                   {event.banner_image && (
                     <Image
                       src={event.banner_image}
@@ -178,23 +176,25 @@ export default function EventsSection() {
                     />
                   )}
                 </Link>
-                <div className={styles.bannerTextBox}>
-                  <p className={styles.upcomingTag}>
-                    {event.event_type?.toUpperCase() || "EVENT"}
-                  </p>
-                  <h3 className={styles.bannerTitle}>
-                    {event.title?.toUpperCase()}
-                  </h3>
-                  <p className={styles.bannerDate}>
-                    {formatDate(event.event_date_from)}
-                  </p>
-                  <div className="d-flex gap-2">
-                    <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                      <FaChevronLeft size={8} color={"white"} />
-                    </button>
-                    <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                      <FaChevronRight size={8} color={"white"} />
-                    </button>
+                <div className="container p-sm-0">
+                  <div className={styles.bannerTextBox}>
+                    <p className={styles.upcomingTag}>
+                      {event.event_type?.toUpperCase() || "EVENT"}
+                    </p>
+                    <h3 className={styles.bannerTitle}>
+                      {event.title?.toUpperCase()}
+                    </h3>
+                    <p className={styles.bannerDate}>
+                      {formatDate(event.event_date_from)}
+                    </p>
+                    <div className="d-flex gap-2">
+                      <button className="upcoming-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                        <FaChevronLeft size={8} color={"white"} />
+                      </button>
+                      <button className="upcoming-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                        <FaChevronRight size={8} color={"white"} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -205,8 +205,9 @@ export default function EventsSection() {
             No Upcoming Events
           </div>
         )}
-
-        <div className={`d-flex justify-content-end gap-2 ${styles.filters}`}>
+        <div
+          className={`d-flex filter-sec justify-content-end gap-2 ${styles.filters}`}
+        >
           {filters.month !== "" || filters.school !== "" ? (
             <button className={styles.resetFilterButton} onClick={resetFilters}>
               Reset Filters
@@ -250,104 +251,116 @@ export default function EventsSection() {
         </div>
       </div>
 
-      {secondryItem != null ? (
-        <div className={`row mt-5 w-100 m-auto ${styles.secondarySection}`}>
-          <div className="col-md-7">
-            <div className={styles.secondaryImageWrapper}>
-              {secondryItem.banner_image && (
-                <Image
-                  src={secondryItem.banner_image}
-                  alt="Secondary Event"
-                  layout="responsive"
-                  width={700}
-                  height={400}
-                  className={styles.secondaryImage}
-                />
-              )}
+      <div className="container midd_events">
+        {secondryItem != null ? (
+          <div className={`row ${styles.secondarySection}`}>
+            <div className="col-md-7">
+              <div className={styles.secondaryImageWrapper}>
+                {secondryItem.banner_image && (
+                  <Image
+                    src={secondryItem.banner_image}
+                    alt="Secondary Event"
+                    layout="responsive"
+                    width={700}
+                    height={400}
+                    className={`w-100 ${styles.secondaryImage}`}
+                  />
+                )}
+              </div>
+            </div>
+            <div className="col-md-5">
+              <div className={styles.secondaryText}>
+                <p className={styles.eventDate}>
+                  {formatDate(secondryItem.event_date_from)}
+                </p>
+                <h3
+                  className={styles.eventTitle}
+                  dangerouslySetInnerHTML={{ __html: secondryItem.title }}
+                ></h3>
+
+                <p className={styles.eventDesc}>{secondryItem.desc}</p>
+                <Link
+                  href={`/happenings/${secondryItem.slug || secondryItem.id}`}
+                  style={{ color: "inherit" }}
+                >
+                  <BsArrowRightCircle fontSize={20} />
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="col-md-5">
-            <div className={styles.secondaryText}>
-              <p className={styles.eventDate}>
-                {formatDate(secondryItem.event_date_from)}
-              </p>
-              <h3 className={styles.eventTitle}>{secondryItem.title}</h3>
-              <p className={styles.eventDesc}>{secondryItem.desc}</p>
-              <Link href={"#"} style={{ color: "inherit" }}>
-                <BsArrowRightCircle fontSize={20} />
-              </Link>
-            </div>
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            No Result Found
           </div>
-        </div>
-      ) : (
-        <div style={{ textAlign: "center", marginTop: "5rem" }}>
-          No Result Found
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* Event Cards */}
-      {allEvents.length > 0 ? (
-        <>
-          <div className={`row w-100 m-auto ${styles.cardsRow}`}>
-            {allEvents.map((event, index) => {
-              const darkColors = ["#16344E", "#B08F29", "#00489A", "#AF251C"];
-              const shuffledColors = [...darkColors].sort(
-                () => Math.random() - 0.5
-              );
-              const bgColor = shuffledColors[index % 4];
+      <div className="container ">
+        {allEvents.length > 0 ? (
+          <>
+            <div className={`events_row latest-event m-auto ${styles.cardsRow}`}>
+              {allEvents.map((event, index) => {
+                const darkColors = ["#00489A", "#AF251C", "#AF251C"];
+                const shuffledColors = [...darkColors].sort(
+                  () => Math.random() - 0.5
+                );
+                const bgColor = shuffledColors[index % 4];
 
-              return (
-                <div key={event.id} className="col-md-3 mb-4">
-                  <Link href={`#`} style={{ color: "inherit" }}>
-                    <div
-                      className={`${styles.eventCard} ${
-                        !event.banner_image ? styles.textOnlyCard : ""
-                      }`}
-                      style={
-                        !event.banner_image
-                          ? { backgroundColor: event.bgColor || bgColor }
-                          : {}
-                      }
+                return (
+                  <div key={event.id} className="events_col">
+                    <Link
+                      href={`/happenings/${event.slug || event.id}`}
+                      style={{ color: "inherit" }}
                     >
-                      <p className={styles.eventType}>
-                        {!event.banner_image ? "Event" : ""}
-                      </p>
-                      {event.banner_image ? (
-                        <Image
-                          src={event.banner_image}
-                          alt={event.title}
-                          width={400}
-                          height={250}
-                          layout="responsive"
-                          className={styles.eventImage}
-                        />
-                      ) : null}
-                      <div className={styles.cardBody}>
-                        <h5 className={styles.cardTitle}>{event.title}</h5>
-                        <p className={styles.cardDate}>
-                          {formatDate(event.event_date_from)}
+                      <div
+                        className={`${styles.eventCard} ${
+                          !event.banner_image ? styles.textOnlyCard : ""
+                        }`}
+                        style={
+                          !event.banner_image
+                            ? { backgroundColor: event.bgColor || bgColor }
+                            : {}
+                        }
+                      >
+                        <p className={styles.eventType}>
+                          {!event.banner_image ? "Event" : ""}
                         </p>
+                        {event.banner_image ? (
+                          <Image
+                            src={event.banner_image}
+                            alt={event.title}
+                            width={400}
+                            height={250}
+                            layout="responsive"
+                            className={styles.eventImage}
+                          />
+                        ) : null}
+                        <div className={styles.cardBody}>
+                          <h5 className={styles.cardTitle}>{event.title}</h5>
+                          <p className={styles.cardDate}>
+                            {formatDate(event.event_date_from)}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
 
-          {/* Pagination Component */}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-            maxVisiblePages={5}
-          />
-        </>
-      ) : (
-        <div style={{ textAlign: "center", marginTop: "5rem" }}>
-          No Result Found
-        </div>
-      )}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+              maxVisiblePages={5}
+            />
+          </>
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            No Result Found
+          </div>
+        )}
+      </div>
     </section>
   );
 }

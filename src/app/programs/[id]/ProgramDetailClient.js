@@ -1,1034 +1,29 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/custom.style.css";
 import "@/styles/style.css";
+import { useParams } from "next/navigation";
 
-// Move programsData outside the component
-const programsData = {
-  "computer-science-engineering": {
-    id: 1,
-    title: "B.Tech Computer Science & Engineering",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "electrical-engineering": {
-    id: 2,
-    title: "B.Tech Electrical Engineering",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "mechanical-engineering": {
-    id: 3,
-    title: "B.Tech Mechanical Engineering",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "electronics-communication": {
-    id: 4,
-    title: "B.Tech Electronics & Communication Engineering",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "civil-engineering": {
-    id: 5,
-    title: "B.Tech Civil Engineering",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "business-administration": {
-    id: 6,
-    title: "MBA Business Administration",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "computer-applications": {
-    id: 7,
-    title: "MCA Computer Applications",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-
-  "pharmaceutical-sciences": {
-    id: 8,
-    title: "B.Pharma Pharmaceutical Sciences",
-    image: "/images/custom-page/product-detail-top-banner.webp",
-    admissionYear: "2025-26",
-    overview: {
-      description:
-        "Our B.Tech in Computer Science & Engineering program equips students with cutting-edge technical skills and problem-solving abilities to thrive in the dynamic tech industry.",
-      details:
-        "The curriculum blends theoretical foundations with hands-on experience through industry projects, hackathons, and research opportunities. Students gain expertise in AI, machine learning, cloud computing, and software development.",
-      duration: "4 Years (8 Semesters)",
-      fees: "₹1,45,000 per annum",
-    },
-    eligibility: {
-      image: "/images/custom-page/detail-eligiblity-banner.png",
-      marks: "75% MARKS",
-      description:
-        "Candidates must have studied Physics, Chemistry, and Mathematics in 10+2 with minimum 75% aggregate.",
-      jeeSeats: "60%",
-      jeeDescription:
-        "of total seats are filled through JEE (Main) 2025 All India Rank (CRL).",
-      remainingSeats:
-        "40% seats are filled through 10+2 Examination PCM Percentage.",
-      vacantSeats:
-        "Vacant seats are inter-transferable between the categories.",
-    },
-    educationalObjectives: {
-      peos: [
-        {
-          title: "PEO - 1",
-          description:
-            "To develop professionals capable of analyzing, designing and implementing software solutions for complex engineering problems.",
-        },
-        {
-          title: "PEO - 2",
-          description:
-            "To inculcate research aptitude and innovation in emerging areas of computer science and information technology.",
-        },
-        {
-          title: "PEO - 3",
-          description:
-            "To foster ethical practices and leadership qualities for successful career growth and societal contribution.",
-        },
-        {
-          title: "PEO - 4",
-          description:
-            "To promote lifelong learning and adaptability to rapidly evolving technologies in computing field.",
-        },
-      ],
-      pos: [
-        {
-          title: "PO - 1",
-          description:
-            "Engineering knowledge: Apply knowledge of mathematics, science, engineering fundamentals to solve complex computing problems.",
-        },
-        {
-          title: "PO - 2",
-          description:
-            "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems.",
-        },
-        {
-          title: "PO - 3",
-          description:
-            "Design/development of solutions: Design solutions for complex engineering problems and design system components.",
-        },
-        {
-          title: "PO - 4",
-          description:
-            "Conduct investigations: Use research-based knowledge to provide valid conclusions.",
-        },
-      ],
-    },
-    curriculum: {
-      title:
-        "Comprehensive curriculum covering cutting-edge technologies and fundamental computer science concepts.",
-      coreSubjects:
-        "Core subjects include Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Artificial Intelligence, Machine Learning, Cloud Computing, and Software Engineering. Advanced topics include Blockchain, IoT, Cybersecurity, and Big Data Analytics.",
-      image: "/images/custom-page/ciruclum-img.webp",
-    },
-    feeStructure: {
-      description:
-        "The fee structure is designed to provide quality education with state-of-the-art infrastructure and industry exposure.",
-      totalFees: "₹5,80,000 /-",
-      image: "/images/custom-page/fee-structure-img.png",
-      year: "for complete program (2024-2028)",
-      breakdown: [
-        "Tuition Fee: ₹4,80,000",
-        "Laboratory Fee: ₹60,000",
-        "Development Fee: ₹40,000",
-      ],
-    },
-    placement: {
-      percentage: "96%",
-      description: "placement record in 2023",
-      averagePackage: "₹12.5 LPA",
-      highestPackage: "₹42 LPA",
-      testimonial: {
-        name: "PRIYA SHARMA",
-        course: "B.Tech in Computer Science & Engineering",
-        batch: "Batch 2019-2023",
-        position: "Software Development Engineer at Amazon",
-        image: "/images/custom-page/placement-testimonial-banner.webp",
-        quote:
-          "The strong foundation in DSA and hands-on projects helped me crack product-based companies.",
-      },
-      recruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Goldman Sachs"],
-    },
-    careerOpportunities: {
-      title: "DIVERSE CAREER PATHWAYS IN TECHNOLOGY",
-      image: "/images/custom-page/detail-bottom-banner.png",
-      description:
-        "Graduates can pursue roles in software development, data science, AI/ML engineering, and research across various industries.",
-      opportunities: [
-        "Software Development Engineer",
-        "Data Scientist",
-        "Machine Learning Engineer",
-        "Cloud Solutions Architect",
-        "DevOps Engineer",
-        "Full Stack Developer",
-      ],
-    },
-  },
-};
-const BASE_URL = "https://project-demo.in/jss/api";
+const BASE_URL = "/api/";
 
 export default function ProgramDetailClient({ params }) {
-
   const [activeTab, setActiveTab] = useState("tab1");
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchProgramData = async () => {
-  //     try {
-  //       setLoading(true);
-
-  //       // Use the programsData object to get data based on ID
-  //       const data = programsData[id] || null;
-
-  //       // Simulate API delay
-  //       setTimeout(() => {
-  //         setProgramData(data);
-  //         setLoading(false);
-  //       }, 300);
-  //     } catch (error) {
-  //       console.error("Error fetching program data:", error);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   if (id) {
-  //     fetchProgramData();
-  //   }
-  // }, [id]);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
       .then((response) => response.json())
       .then((data) => {
-        setProgramData(data.data);
+        if (data.success) {
+          setProgramData(data.data);
+        }
         setLoading(false);
       })
       .catch((error) => {
@@ -1039,6 +34,41 @@ export default function ProgramDetailClient({ params }) {
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
+  };
+
+  const handlePreviousTestimonial = () => {
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + testimonials.length) % testimonials.length,
+      );
+    }
+  };
+
+  const handleNextTestimonial = () => {
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex(
+        (prevIndex) => (prevIndex + 1) % testimonials.length,
+      );
+    }
+  };
+
+  const handlePreviousCurriculum = () => {
+    if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
+      setCurrentCurriculumIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + curriculum.curriculum_desc.length) %
+          curriculum.curriculum_desc.length,
+      );
+    }
+  };
+
+  const handleNextCurriculum = () => {
+    if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
+      setCurrentCurriculumIndex(
+        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length,
+      );
+    }
   };
 
   if (loading) {
@@ -1075,7 +105,8 @@ export default function ProgramDetailClient({ params }) {
         <div
           style={{ fontSize: "24px", marginBottom: "20px", color: "#d32f2f" }}
         >
-          Program not found
+          No Sections Found For This Program. Please Add Sections To Display
+          Program Details.
         </div>
         <Link href="/programs" className="apply-btn1">
           Back to Programs
@@ -1084,6 +115,27 @@ export default function ProgramDetailClient({ params }) {
     );
   }
 
+  // Destructure data for easier access
+  const {
+    name,
+    banner,
+    admissionSection,
+    overview,
+    eligibility,
+    peos,
+    pos,
+    pso,
+    curriculum,
+    fee_structure,
+    testimonials,
+    career_opportunities,
+    apply_now_link,
+  } = programData;
+
+  const currentTestimonial = testimonials?.[currentTestimonialIndex];
+  const text = currentTestimonial?.short_description || "";
+  const [firstWord, ...restWords] = text.split(" ");
+
   return (
     <main className="site_main">
       {/* Program Detail Hero Section */}
@@ -1091,8 +143,8 @@ export default function ProgramDetailClient({ params }) {
         <div className="program-detail-img">
           <figure>
             <Image
-              src={programData.banner}
-              alt="program"
+              src={banner?.image || "/images/default-banner.webp"}
+              alt={banner?.name || name}
               width={1200}
               height={600}
               className="img-fluid w-100"
@@ -1101,7 +153,7 @@ export default function ProgramDetailClient({ params }) {
               <div className="program-detail-text">
                 <div className="innnr_head">
                   <h2>PROGRAMS</h2>
-                  <h3>{programData.name}</h3>
+                  <h3>{name}</h3>
                 </div>
               </div>
             </figcaption>
@@ -1110,137 +162,179 @@ export default function ProgramDetailClient({ params }) {
       </section>
 
       {/* Admission Open Section */}
-      <section className="admission-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="admission-box">
-                <div className="admission-box-text">
-                  <p>Admission Open for</p>
-                  <h2>{programData.admissionYear}</h2>
+      {admissionSection && (
+        <section className="admission-sec">
+          <div className="containerMD">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="ov_mainsec">
+                  <div className="admission-box">
+                    <div className="admission-box-text">
+                      <p>Admission Open for</p>
+                      <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+                    </div>
+                    <div className="overview-duration">
+                      <div className="overview-duration-text">
+                        <span>Course duration</span>
+                        <p>{admissionSection?.course_duration}</p>
+                      </div>
+                      {admissionSection?.annual_fees && (
+                        <div className="fees">
+                          <span>Annual Fees</span>
+                          <p>{admissionSection.annual_fees}</p>
+                        </div>
+                      )}
+                      <div className="structure-btns">
+                        {admissionSection?.program_structure && (
+                          <a
+                            href={admissionSection.program_structure}
+                            className="structure-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src="/images/custom-page/blue-pdf.png"
+                              alt="PDF"
+                              width={20}
+                              height={20}
+                              className="img-fluid"
+                            />
+                            Programme Structure
+                          </a>
+                        )}
+                        {admissionSection?.scholarship && (
+                          <a
+                            href={admissionSection.scholarship}
+                            className="structure-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src="/images/custom-page/scholer-icon.png"
+                              alt="PDF"
+                              width={20}
+                              height={20}
+                              className="img-fluid"
+                            />
+                            Scholarship
+                          </a>
+                        )}
+                      </div>
+                      {(admissionSection?.apply_now_link || apply_now_link) && (
+                        <a
+                          href={
+                            admissionSection?.apply_now_link || apply_now_link
+                          }
+                          target="_blank"
+                          className="apply-btn1"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                    </div>
+                    <div className="eligibility-text">
+                      <span>Eligibility Criteria</span>
+                      <h3>{admissionSection?.eligibility_marks}</h3>
+                      <p>{admissionSection?.eligibility_desc}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Overview Section */}
-      <section className="overview-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="over-view-box">
-                <div className="overview-text">
-                  <h5>Overview</h5>
-                  <h6>{programData.overview_title}</h6>
-                  <p>{programData.overview_desc}</p>
-                </div>
-                <div className="overview-duration">
-                  <div className="overview-duration-text">
-                    <span>Course duration</span>
-                    <p>{programData.course_duration}</p>
-                  </div>
-                  <div className="fees">
-                    <span>Annual Fees</span>
-                    <p>{programData.annual_fees}</p>
-                  </div>
-                  <div className="structure-btns">
-                    <a
-                      href={programData.program_structure}
-                      className="structure-btn"
+      {overview && (
+        <section className="overview-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="over-view-box">
+                  <div className="overview-text">
+                    <h5>Overview</h5>
+                    <h6>{overview?.overview_title || name}</h6>
+                    <p className={expanded ? "expanded_text" : ""}>
+                      {overview?.overview_desc}
+                    </p>
+                    <button
+                      className="btn read_more"
+                      onClick={() => setExpanded(!expanded)}
                     >
-                      <Image
-                        src="/images/custom-page/blue-pdf.png"
-                        alt="PDF"
-                        width={20}
-                        height={20}
-                        className="img-fluid"
-                      />
-                      Programme Structure
-                    </a>
-                    <a href={programData.scholarship} className="structure-btn">
-                      <Image
-                        src="/images/custom-page/scholer-icon.png"
-                        alt="PDF"
-                        width={20}
-                        height={20}
-                        className="img-fluid"
-                      />
-                      Scholarship
-                    </a>
+                      {expanded ? "Show Less" : "Show More"}
+                      <i
+                        className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}
+                      ></i>
+                    </button>
                   </div>
-                  <a
-                    href={programData.apply_now_link}
-                    target="_blank"
-                    className="apply-btn1"
-                  >
-                    Apply Now
-                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Eligibility Section */}
-      <section className="eligibility-sec" id="eligibilitySec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="eligibility-img">
-                <figure>
-                  {programData.overview_image && (
-                    <Image
-                      src={programData.overview_image}
-                      alt="program"
-                      width={1200}
-                      height={400}
-                      className="img-fluid w-100"
-                    />
-                  )}
+      {eligibility && (
+        <section className="eligibility-sec" id="eligibilitySec">
+          <div className="containerMD">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="eligibility-img">
+                  <figure>
+                    {overview?.overview_image && (
+                      <Image
+                        src={overview.overview_image}
+                        alt="Overview"
+                        width={1200}
+                        height={400}
+                        className="img-fluid w-100"
+                      />
+                    )}
+                    <figcaption>
+                      <div className="eligibility-box"></div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              {eligibility?.eligibility_criteria && (
+                <div className="col-lg-9">
+                  <div className="rank-box">
+                    <h6>Eligibility Criteria</h6>
 
-                  <figcaption>
-                    <div className="eligibility-box">
-                      <div className="eligibility-text">
-                        <span>Eligibility Criteria</span>
-                        <h3>{programData.eligibility_marks}</h3>
-                        <p>{programData.eligibility_desc}</p>
+                    <div className="rank-text">
+                      <div className="left-rank-text">
+                        <h2>{eligibility.eligibility_criteria}</h2>
+                      </div>
+
+                      <div className="right-rank-text">
+                        <p>{eligibility.eligibility_criteria_desc}</p>
                       </div>
                     </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div className="col-lg-9">
-              <div className="rank-box">
-                <h6>Eligibility Criteria</h6>
-                <div className="rank-text">
-                  <div className="left-rank-text">
-                    <h2>{programData.eligibility_criteria}</h2>
-                  </div>
-                  <div className="right-rank-text">
-                    <p>{programData.eligibility_criteria_desc}</p>
+
+                    {eligibility?.eligibility_criteria_notices?.length > 0 && (
+                      <div className="seats">
+                        {eligibility.eligibility_criteria_notices[0] && (
+                          <div className="seats-left-text">
+                            <p>{eligibility.eligibility_criteria_notices[0]}</p>
+                          </div>
+                        )}
+                        {eligibility.eligibility_criteria_notices[1] && (
+                          <div className="seats-right-text">
+                            <p>{eligibility.eligibility_criteria_notices[1]}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div className="seats">
-                  {programData.eligibility_criteria_notices && (
-                    <>
-                      <div className="seats-left-text">
-                        <p>{programData.eligibility_criteria_notices[0]}</p>
-                      </div>
-                      <div className="seats-right-text">
-                        <p>{programData.eligibility_criteria_notices[1]}</p>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Educational Objectives Section */}
       <section className="educational-sec">
@@ -1260,7 +354,7 @@ export default function ProgramDetailClient({ params }) {
                             handleTabClick("tab1");
                           }}
                         >
-                          Program Educational Objectives (PEOs)
+                          (PEOs)
                         </a>
                       </li>
                       <li>
@@ -1272,7 +366,19 @@ export default function ProgramDetailClient({ params }) {
                             handleTabClick("tab2");
                           }}
                         >
-                          Program Outcomes (POs)
+                          (POs)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#tab3"
+                          className={activeTab === "tab3" ? "active" : ""}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleTabClick("tab3");
+                          }}
+                        >
+                          (PSOs)
                         </a>
                       </li>
                     </ul>
@@ -1283,21 +389,29 @@ export default function ProgramDetailClient({ params }) {
                     data-title="Program Educational Objectives (PEOs)"
                   >
                     <div className="item-content">
+                      <h6>Program Educational Objectives </h6>
                       <div className="peo-list">
-                        {programData.peos &&
-                          programData.peos.map((peo, index) => (
+                        {peos && peos.length > 0 ? (
+                          peos.map((peo, index) => (
                             <div key={index} className="peo-box">
-                              <h3>PEO - {index + 1}</h3>
-                              <p>{peo}</p>
+                              <h3>{peo.title}</h3>
+                              <p>{peo.description}</p>
                             </div>
-                          ))}
+                          ))
+                        ) : (
+                          <p>No PEOs available</p>
+                        )}
                       </div>
-                      <a
-                        href={programData.apply_now_link}
-                        className="apply-btn1"
-                      >
-                        Apply Now
-                      </a>
+                      {apply_now_link && (
+                        <a
+                          href={apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div
@@ -1306,21 +420,60 @@ export default function ProgramDetailClient({ params }) {
                     data-title="Program Outcomes (POs)"
                   >
                     <div className="item-content">
+                      <h6>Program Outcomes </h6>
                       <div className="peo-list">
-                        {programData.pos &&
-                          programData.pos.map((po, index) => (
+                        {pos && pos.length > 0 ? (
+                          pos.map((po, index) => (
                             <div key={index} className="peo-box">
-                              <h3>PO - {index + 1}</h3>
-                              <p>{po}</p>
+                              <h3>{po.title}</h3>
+                              <p>{po.description}</p>
                             </div>
-                          ))}
+                          ))
+                        ) : (
+                          <p>No POs available</p>
+                        )}
                       </div>
-                      <a
-                        href={programData.apply_now_link}
-                        className="apply-btn1"
-                      >
-                        Apply Now
-                      </a>
+                      {apply_now_link && (
+                        <a
+                          href={apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div
+                    id="tab3"
+                    className={`item ${activeTab === "tab3" ? "active" : ""}`}
+                    data-title="Program Specific Outcomes (PSOs)"
+                  >
+                    <div className="item-content">
+                      <h6>Program Specific Outcomes</h6>
+                      <div className="peo-list">
+                        {pso && pso.length > 0 ? (
+                          pso.map((pso, index) => (
+                            <div key={index} className="peo-box">
+                              <h3>{pso.title}</h3>
+                              <p>{pso.description}</p>
+                            </div>
+                          ))
+                        ) : (
+                          <p>No PSOs available</p>
+                        )}
+                      </div>
+                      {apply_now_link && (
+                        <a
+                          href={apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>
@@ -1331,196 +484,327 @@ export default function ProgramDetailClient({ params }) {
       </section>
 
       {/* Curriculum Section */}
-      <section className="core-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="core-box">
-                <div className="core-text">
-                  <span>Curriculum</span>
-                  <h6>{programData.curriculum_title}</h6>
-                  <blockquote>Core Subjects:</blockquote>
-                  <p>
-                    {programData.curriculum_desc &&
-                      programData.curriculum_desc[0]}
-                  </p>
-                  <div className="core-pdf">
-                    <a href={programData.curriculum_pdf} target="_blank">
-                      <Image
-                        src="/images/custom-page/red-pdf-icon.png"
-                        alt="PDF"
-                        width={20}
-                        height={20}
-                        className="img-fluid"
-                      />
-                      Download PDF
-                    </a>
-                  </div>
-                </div>
-                <div className="core-img">
-                  <figure>
-                    {programData.curriculum_image && (
-                      <Image
-                        src={programData.curriculum_image}
-                        alt="program"
-                        width={500}
-                        height={300}
-                        className="img-fluid w-100"
-                      />
-                    )}
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {curriculum && (
+        <section className="core-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="core-box">
+                  <div className="core-text">
+                    <span>Curriculum</span>
+                    <h6>{curriculum?.curriculum_title}</h6>
+                    <blockquote>Core Subjects:</blockquote>
+                    <p>
+                      {curriculum?.curriculum_desc &&
+                        curriculum.curriculum_desc[currentCurriculumIndex]}
+                    </p>
+                    <div className="arrows">
+                      {/* Left Arrow */}
+                      <button
+                        className="arrow-btn left"
+                        onClick={handlePreviousCurriculum}
+                        title="Previous curriculum"
+                        disabled={currentCurriculumIndex === 0}
+                        style={{
+                          opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
+                          cursor:
+                            currentCurriculumIndex === 0
+                              ? "not-allowed"
+                              : "pointer",
+                        }}
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Left Arrow"
+                        />
+                      </button>
 
-      {/* Fee Structure Section */}
-      <section className="program-sec-six">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="structure">
-                <span>Fee Structure</span>
-                <p>{programData.fee_structure_title}</p>
-              </div>
-              <div className="structure-box">
-                <div className="structure-img">
-                  <figure>
-                    {programData.fee_structure_image && (
-                      <Image
-                        src={programData.fee_structure_image}
-                        alt="program"
-                        width={500}
-                        height={300}
-                        className="img-fluid w-100"
-                      />
+                      {/* Right Arrow */}
+                      <button
+                        className="arrow-btn right"
+                        onClick={handleNextCurriculum}
+                        title="Next curriculum"
+                        disabled={
+                          currentCurriculumIndex ===
+                          (curriculum?.curriculum_desc?.length || 1) - 1
+                        }
+                        style={{
+                          opacity:
+                            currentCurriculumIndex ===
+                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              ? 0.5
+                              : 1,
+                          cursor:
+                            currentCurriculumIndex ===
+                            (curriculum?.curriculum_desc?.length || 1) - 1
+                              ? "not-allowed"
+                              : "pointer",
+                        }}
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Right Arrow"
+                        />
+                      </button>
+                    </div>
+                    {curriculum?.curriculum_pdf && (
+                      <div className="core-pdf">
+                        <a
+                          href={curriculum.curriculum_pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src="/images/custom-page/red-pdf-icon.png"
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          Download
+                        </a>
+                      </div>
                     )}
-                  </figure>
-                </div>
-                <div className="structure-text">
-                  <p>The Total Fees for {programData.name} at JSS Noida is</p>
-                  <h2>{programData.course_total_fees}</h2>
-                  <span>{programData.academic_year}</span>
-                  <div className="engineering-btn">
-                    <a href={programData.apply_now_link} className="apply-btn1">
-                      Apply Now
-                    </a>
-                    <a
-                      href={programData.fee_structure_pdf}
-                      target="_blank"
-                      className="structure-btn"
-                    >
-                      <Image
-                        src={"/images/custom-page/red-pdf-icon.png"}
-                        alt="PDF"
-                        width={20}
-                        height={20}
-                        className="img-fluid"
-                      />
-                      DOWNLOAD
-                    </a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Placement Testimonial Section */}
-      {/* <section className="program-testimonial">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="program-testimonial-box">
-                <div className="testimonial-box">
-                  <div className="testimonial-text">
-                    <span>Placement Testimonial</span>
-                    <p>Empowering Minds Through World-Class Education</p>
-                  </div>
-                  <div className="across">
-                    <h2>{programData.placement.percentage}</h2>
-                    <p>{programData.placement.description}</p>
-                    <a href="#" className="apply-btn1">
-                      Apply Now
-                    </a>
-                  </div>
-                </div>
-                <div className="testimonial-img">
-                  <div className="testimonial-img-box">
+                  <div className="core-img">
                     <figure>
-                      <Image
-                        src={programData.placement.testimonial.image}
-                        alt="program"
-                        width={400}
-                        height={500}
-                        className="img-fluid w-100"
-                      />
-                      <figcaption>
-                        <div className="testimonial-img-text">
-                          <h4>{programData.placement.testimonial.name}</h4>
-                          <p>
-                            {programData.placement.testimonial.course}{" "}
-                            <span>.</span>{" "}
-                            {programData.placement.testimonial.batch}
-                          </p>
-                          <blockquote>
-                            {programData.placement.testimonial.position}
-                          </blockquote>
-                        </div>
-                        <a href="#" className="streched_link"></a>
-                      </figcaption>
+                      {curriculum?.curriculum_image && (
+                        <Image
+                          src={curriculum.curriculum_image}
+                          alt="Curriculum"
+                          width={500}
+                          height={300}
+                          className="img-fluid w-100"
+                        />
+                      )}
                     </figure>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section> */}
+        </section>
+      )}
 
-      {/* Career Opportunities Section */}
-      <section className="opportunitie-sec">
-        <div className="opportunitie-img">
-          <figure>
-            {programData.career_image && <Image
-              src={programData.career_image}
-              alt="program"
-              width={1200}
-              height={600}
-              className="img-fluid w-100"
-            />}
-            
-          </figure>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="opportunitie-box">
-                <div className="opportunitie-text">
-                  <blockquote>CAREER OPPORTUNITIES</blockquote>
-                  <h2>{programData.curriculum_title}</h2>
-                  <p>{programData.career_desc}</p>
+      {/* Fee Structure Section */}
+     {fee_structure?.fee_structure_title && (
+        <section className="program-sec-six">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="structure">
+                  <span>Fee Structure</span>
+                  <p>{fee_structure?.fee_structure_title}</p>
                 </div>
-                <div className="opportunitie-tab">
-                  <ul>
-                    {programData.useful_links &&
-                      JSON.parse(programData.useful_links).map(
-                        (opportunity, index) => (
-                          <li key={index}>
-                            <a href={opportunity.url}>{opportunity.text}</a>
-                          </li>
-                        )
+                <div className="structure-box">
+                  <div className="structure-img">
+                    <figure>
+                      {fee_structure?.fee_structure_image && (
+                        <Image
+                          src={fee_structure.fee_structure_image}
+                          alt="Fee Structure"
+                          width={500}
+                          height={400}
+                          className="img-fluid w-100"
+                        />
                       )}
-                  </ul>
+                    </figure>
+                  </div>
+                  <div className="structure-text">
+                    <p>{fee_structure?.fee_structure_short_description}</p>
+                    <h2>{fee_structure?.course_total_fees}</h2>
+                    <span>{fee_structure?.academic_year}</span>
+                    <div className="engineering-btn">
+                      {(fee_structure?.apply_now_link || apply_now_link) && (
+                        <a
+                          href={fee_structure?.apply_now_link || apply_now_link}
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                      {fee_structure?.fee_structure_pdf && (
+                        <a
+                          href={fee_structure.fee_structure_pdf}
+                          target="_blank"
+                          className="structure-btn"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src={"/images/custom-page/red-pdf-icon.png"}
+                            alt="PDF"
+                            width={20}
+                            height={20}
+                            className="img-fluid"
+                          />
+                          DOWNLOAD
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Testimonials Section */}
+      {testimonials && testimonials.length > 0 && (
+        <section className="program-testimonial">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="program-testimonial-box">
+                  <div className="testimonial-box">
+                    <div className="testimonial-text">
+                      <span>Placement Testimonial</span>
+                      <p>{currentTestimonial?.title}</p>
+                    </div>
+                    <div className="arrows">
+                      {/* Left Arrow */}
+                      <button
+                        className="arrow-btn left"
+                        onClick={handlePreviousTestimonial}
+                        title="Previous testimonial"
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Left Arrow"
+                        />
+                      </button>
+
+                      {/* Right Arrow */}
+                      <button
+                        className="arrow-btn right"
+                        onClick={handleNextTestimonial}
+                        title="Next testimonial"
+                      >
+                        <Image
+                          src="/images/icons/Arrow.svg"
+                          width={22}
+                          height={22}
+                          alt="Right Arrow"
+                        />
+                      </button>
+                    </div>
+                    <div className="across">
+                      <h2>{firstWord}</h2>
+                      <p>{restWords.join(" ")}</p>
+                      {(currentTestimonial?.apply_now_link ||
+                        apply_now_link) && (
+                        <a
+                          href={
+                            currentTestimonial?.apply_now_link || apply_now_link
+                          }
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div className="testimonial-img">
+                    <div className="testimonial-img-box">
+                      <figure>
+                        <Image
+                          src={currentTestimonial?.image}
+                          alt={currentTestimonial?.name}
+                          width={400}
+                          height={500}
+                          className="img-fluid w-100"
+                        />
+                        <figcaption>
+                          <div className="testimonial-img-text">
+                            <h4>{currentTestimonial?.name}</h4>
+                            <p>
+                              {currentTestimonial?.course}
+                              <span>.</span>
+                              {currentTestimonial?.batch}
+                            </p>
+                            <blockquote>
+                              {currentTestimonial?.designation} at{" "}
+                              {currentTestimonial?.company}
+                            </blockquote>
+                          </div>
+                          <a href="#" className="streched_link"></a>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Career Opportunities Section */}
+      {career_opportunities && (
+        <section className="opportunitie-sec">
+          <div className="opportunitie-img">
+            <figure>
+              {career_opportunities?.career_image && (
+                <Image
+                  src={career_opportunities.career_image}
+                  alt="Career Opportunities"
+                  width={1200}
+                  height={600}
+                  className="img-fluid w-100"
+                />
+              )}
+            </figure>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="opportunitie-box">
+                  <div className="opportunitie-text">
+                    <blockquote>
+                      {career_opportunities?.career_subtitle ||
+                        "CAREER OPPORTUNITIES"}
+                    </blockquote>
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: career_opportunities?.career_title,
+                      }}
+                    ></h2>
+                    <p>{career_opportunities?.career_desc}</p>
+                  </div>
+                  <div className="opportunitie-tab">
+                    <ul>
+                      {career_opportunities?.useful_links &&
+                        career_opportunities.useful_links.map(
+                          (opportunity, index) => (
+                            <li key={index}>
+                              <a
+                                href={opportunity.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {opportunity.text}
+                              </a>
+                            </li>
+                          ),
+                        )}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

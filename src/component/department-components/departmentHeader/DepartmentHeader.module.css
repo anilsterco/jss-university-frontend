@@ -1,0 +1,204 @@
+/* ===== Sticky Header ===== */
+
+.stickyHeader {
+  position: sticky;
+  top: 12%;
+  background: #ffffff;
+  z-index: 999;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  opacity: 1;
+  width: 100%;
+}
+
+.departmentMenu {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 1.2rem 1.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.departmentMenu::-webkit-scrollbar {
+  display: none;
+}
+
+.schoolToggle {
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  color: #16344e;
+  width: 23rem;
+}
+
+.schoolToggle .selectedName {
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.schoolToggle span:first-child {
+   font: var(--font-16);
+  font-family: var(--font-Roboto);
+  color: #16344E;
+}
+
+.schoolToggle span:last-child {
+   font: var(--font-18);
+   font-family: var(--font-Condensed);
+   line-height: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 1rem;
+}
+
+.engineeringDropdownContainer {
+  position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  width: 90rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.engineeringDropdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 300px;
+}
+
+.schoolsList {
+  background: #16344e;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.schoolsList h6 {
+  font: var(--font-18);
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  letter-spacing: 0;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.schoolItem {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.schoolItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.schoolItem.active {
+  color: #16344e;
+  /* font: var(--font-14); */
+  letter-spacing: 0;
+  background: #ffc100;
+  font-weight: 400;
+
+}
+
+.schoolItem a {
+  font: var(--font-14);
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.departmentsList {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  background: #224666;
+}
+
+.departmentsList h6 {
+  font: var(--font-18);
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+  letter-spacing: 0;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.departmentLink {
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.departmentLink {
+  font: var(--font-14);
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.departmentLink button {
+  font: var(--font-18);
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.departmentLink:hover {
+  background: #ffc100;
+  color: #ffffff;
+}
+
+.navItem {
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+  font: var(--font-18);
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.navItem:hover {
+  color: #0070f3;
+}
+
+.activeNav {
+  color: #018CE8;
+  font-weight: 600;
+}
+
+.noDept {
+  color: #fff;
+  padding: 8px 12px;
+  font: var(--font-14);
+}
+
+
+
+@media (max-width: 768px) {
+  .engineeringDropdown {
+    grid-template-columns: 1fr;
+  }
+
+  .engineeringDropdownContainer {
+    width: 100%;
+  }
+}

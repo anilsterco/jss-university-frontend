@@ -77,13 +77,13 @@ export default function MediaCoverage() {
   };
   return (
     <section className={styles.mediaSection}>
-      <div className={styles.galleryGrid}>
+     <div className="container">
+       <div className={styles.galleryGrid}>
         {galleryData.map((item) => (
           <div
             key={item.id}
             className={styles.galleryCard}
-            onClick={() => openModal(item)}
-          >
+            onClick={() => openModal(item)}>
             <div className={styles.cardImage}>
               <div className={styles.imagePlaceholder}>
                 <Image
@@ -99,6 +99,7 @@ export default function MediaCoverage() {
           </div>
         ))}
       </div>
+     </div>
 
       {/* Modal */}
       {isModalOpen && selectedGallery && (

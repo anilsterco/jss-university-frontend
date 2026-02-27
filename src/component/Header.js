@@ -4,17 +4,17 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { IoChevronDownOutline, IoTriangleSharp } from "react-icons/io5";
 import "@fontsource/roboto-condensed";
 
-const NAV_BASE_URL = "https://project-demo.in/jss/api/header";
-const ADMISSION_BASE_URL = "https://project-demo.in/jss/api/admission";
-const SCHOOL_DEPARTMENT_URL =
-  "https://project-demo.in/jss/api/school-department-list";
-
-const ContactApi = "https://project-demo.in/jss/api/contact-info";
-const Addmision_Api = "https://project-demo.in/jss/api/admission";
-const Program_Api = "https://project-demo.in/jss/api/program-list";
+const BASE_URL = "/api/";
+const NAV_BASE_URL = `${BASE_URL}header`;
+const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
+const ADMISSION_BASE_URL = `${BASE_URL}admission`;
+const SCHOOL_DEPARTMENT_URL = `${BASE_URL}school-department-list`;
+const ContactApi = `${BASE_URL}contact-info`;
+const Addmision_Api = `${BASE_URL}admission`;
+const Program_Api = `${BASE_URL}program-list`;
+const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
 
 const mobilePanelsData = [
   {
@@ -96,46 +96,14 @@ const mobilePanelsData = [
 
   {
     name: "Contact",
-    heading: "CAMPUS ADDRESS",
+    heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
     icon: "/images/header/contact-mob.svg",
-    // Menu: [
-    //   {
-    //     name: "JSS Academy of Technical Educaiton, Noida C-20/1, Sector-62, NOIDA, DISTT. U.P., INDIA-201301",
-    //     url: "",
-    //     contactIcon: "/images/header/address-icon.svg",
-    //   },
-    //   {
-    //     name: "principal@jssaten.ac.in",
-    //     url: "mailto:principal@jssaten.ac.in",
-    //     contactIcon: "/images/header/mail-icon.svg",
-    //   },
-    //   {
-    //     name: "8725033398",
-    //     url: "https://wa.me/8725033398",
-    //     contactIcon: "/images/header/phone-icon.svg",
-    //   },
-    // ],
   },
 
   {
     name: "Menu",
     icon: "/images/header/hamberger-mob.svg",
-    Menu: [
-      { name: "About JSS University", url: "/about" },
-      { name: "Academics", url: "/academics" },
-      { name: "Facilities", url: "/facilities" },
-      { name: "Examination", url: "/examination" },
-      { name: "Research & Innovation", url: "/research-and-innovation" },
-      { name: "Placements", url: "/placements" },
-    ],
-    Menubottom: [
-      { name: "Alumni", url: "/alumni" },
-      { name: "Testimonials", url: "/testimonials" },
-      { name: "Happenings", url: "/happenings" },
-      { name: "Careers", url: "/careers" },
-      { name: "Contact Us", url: "/contact-us" },
-    ],
   },
 ];
 
@@ -144,27 +112,30 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [admissionOpen, setAdmissionOpen] = useState(false);
-  const [engineeringDropdown, setEngineeringDropdown] = useState(false);
-  const [selectedSchool, setSelectedSchool] = useState(0);
-  const [selectedSchoolName, setSelectedSchoolName] = useState([]);
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const admissionRef = useRef(null);
-  const engineeringRef = useRef(null);
   const [headerData, setHeaderData] = useState(null);
   const [admissionData, setAdmissionData] = useState(null);
   const [engineeringData, setEngineeringData] = useState([]);
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
   useEffect(() => {
     async function fetchHeaderData() {
       try {
         const [res1, res2] = await Promise.all([
-          fetch(`${NAV_BASE_URL}`),
+          fetch(
+            `${
+              pathname.includes("schools") || pathname.includes("department")
+                ? SCHOOL_HEADER_URL
+                : NAV_BASE_URL
+            }`,
+          ),
           fetch(`${ADMISSION_BASE_URL}`),
         ]);
-
         if (!res1.ok || !res2.ok) {
           throw new Error("One or more API calls failed");
         }
@@ -176,249 +147,11 @@ export default function Header() {
       }
     }
     fetchHeaderData();
-  }, []);
+  }, [pathname]);
 
   const [activePanel, setActivePanel] = useState(null);
-  const togglePanel = (name) => {
-    setActivePanel(activePanel === name ? null : name);
-  };
-
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
-
-  // const navLinks = [
-  //   {
-  //     name: "ABOUT",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "ABOUT JSS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Learn more about JSS legacy, history and leadership history and leadership.",
-  //       ctas: [
-  //         { text: "Read More", href: "#", type: "primary" },
-  //         // { text: "Leadership", href: "#", type: "secondary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "UNDER GRADUTE",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "POST GRADUTE",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "PHD",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "ACADEMICS",
-  //     url: "/",
-  //     children: [
-  //       { title: "Schools", url: "/schools/school-of-engineering" },
-  //       { title: "Departments", url: "/department/mechanical-engineering" },
-  //       { title: "Programs", url: "/programs" },
-  //     ],
-  //     right: {
-  //       subtitle: "PROGRAMS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Leading the revolution in integrated learning where students shape their own future.",
-  //       ctas: [
-  //         { text: "VIEW ALL PROGRAMMES", url: "/programs", type: "primary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "Under Graduate",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Post Graduate",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "PhD Programmes",
-  //           url: "/programs",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "LIFE@JSS",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "JOIN JSS",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Apply now and step into your future at JSS Noida.",
-  //       ctas: [
-  //         { text: "Apply Now", href: "#", type: "primary" },
-  //         // { text: "Download Syllabus", href: "#", type: "secondary" },
-  //       ],
-  //       banners: [
-  //         {
-  //           title: "Scholarships",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Eligibility",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "FAQs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "PLACEMENTS",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "CAMPUS FACILITIES",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Hostels, clubs, amenities and more for a vibrant campus life.",
-  //       ctas: [{ text: "Explore Facilities", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Hostels",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Events",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "RESEARCH",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "SUPPORT & LIFE",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Guidance, mentoring and vibrant student support activities.",
-  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Life @ JSS",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Mentoring",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     name: "FACILITIES",
-  //     url: "/",
-  //     children: [],
-  //     right: {
-  //       subtitle: "SUPPORT & LIFE",
-  //       title: `
-  //       <span class="text-dark">START YOUR</span>
-  //       <span class="text-blue">JSS JOURNEY</span>
-  //     `,
-  //       desc: "Guidance, mentoring and vibrant student support activities.",
-  //       ctas: [{ text: "Get Support", href: "#", type: "primary" }],
-  //       banners: [
-  //         {
-  //           title: "Life @ JSS",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Mentoring",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //         {
-  //           title: "Clubs",
-  //           href: "#",
-  //           img: "/images/header/nav-hover-banner.webp",
-  //         },
-  //       ],
-  //     },
-  //   },
-  // ];
-
-  // const admissionsData = {
-  //   left: {
-  //     subtitle: "JOIN JSSATE NOIDA FOR 2025-26",
-  //     title: "STEP INTO YOUR FUTURE AT JSS NOIDA",
-  //     desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
-  //     querytext: "Any Query ? please mail us.",
-  //     email: "principal@jssaten.ac.in",
-  //     phone: "+91-9311830458",
-  //     ctas: [
-  //       { text: "APPLY NOW", url: "/apply-now", type: "primary" },
-  //       { text: "DOWNLOAD SYLLABUS", url: "#", type: "secondary" },
-  //     ],
-  //   },
-  //   middle: {
-  //     links: [
-  //       { title: "Scholarship", url: "/" },
-  //       { title: "Course, Eligibility & Fee Structure", url: "/" },
-  //       { title: "Admission Document & Undertaking", url: "/" },
-  //       { title: "Admissions Office Contacts", url: "/" },
-  //       { title: "Hostel Details", url: "/" },
-  //     ],
-  //     stats: {
-  //       text: "1,200+ ACROSS UG & PG PROGRAMS",
-  //       subtext: "Total student intake (annual)",
-  //       btnText: { text: "VIEW PROGRAMMES", url: "/programs" },
-  //     },
-  //   },
-  //   right: {
-  //     img: "/images/header/admission-banner.png",
-  //     alt: "Admissions Image",
-  //   },
-  // };
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -498,94 +231,17 @@ export default function Header() {
     },
   ];
 
-  // const engineeringData = {
-  //   schools: [
-  //     {
-  //       name: "Computer Science & Engineering",
-  //       departments: [
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Electronics & Communication",
-  //       departments: [
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Mechanical Engineering",
-  //       departments: [
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: "Electronics & Communication",
-  //       departments: [
-  //         {
-  //           text: "Data Science",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Cyber Security",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "Artificial Intelligence",
-  //           url: "/",
-  //         },
-  //         {
-  //           text: "IoT and Cloud",
-  //           url: "/",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        setMenuOpen(false);
+        setActivePanel(null);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -603,102 +259,6 @@ export default function Header() {
 
     fetchSchools();
   }, []);
-
-  useEffect(() => {
-    if (engineeringData?.length > 0) {
-      setSelectedSchoolName(engineeringData[0].name);
-    }
-  }, [engineeringData]);
-
-  // mob menu data
-
-  // MOB MENU API START
-
-  // contact start
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) return;
-    const fetchContactData = async () => {
-      try {
-        const res = await fetch(ContactApi);
-        const json = await res.json();
-
-        if (json.status && Array.isArray(json.data) && json.data.length > 0) {
-          const apiData = json.data[0];
-
-          setMobilePanels((prev) =>
-            prev.map((item) =>
-              item.name === "Contact"
-                ? {
-                    ...item,
-                    heading: apiData.title,
-                    Menu: [
-                      {
-                        name: apiData.address,
-                        url: apiData.direction_url,
-                        contactIcon: "/images/header/address-icon.svg",
-                      },
-                      {
-                        name: apiData.email,
-                        url: `mailto:${apiData.email}`,
-                        contactIcon: "/images/header/mail-icon.svg",
-                      },
-                      {
-                        name: apiData.phone,
-                        url: `tel:${apiData.phone}`,
-                        contactIcon: "/images/header/phone-icon.svg",
-                      },
-                    ],
-                  }
-                : item
-            )
-          );
-        }
-      } catch (err) {
-        console.error("FETCH ERROR:", err);
-      }
-    };
-
-    fetchContactData();
-  }, []);
-
-  // admission API
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) return;
-    const admiApifetch = async () => {
-      try {
-        const res = await fetch(Addmision_Api);
-        const json = await res.json();
-
-        if (json.success) {
-          setMobadmission(json.data);
-        }
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
-
-    admiApifetch();
-  }, []);
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) return;
-    const ProgApifetch = async () => {
-      try {
-        const res = await fetch(Program_Api);
-        const json = await res.json();
-        setMobProgramList(json.data);
-      } catch (err) {
-        console.error("Error fetching API:", err);
-      }
-    };
-
-    ProgApifetch();
-  }, []);
-
-  // MOB MENU API END
 
   useEffect(() => {
     setIsMounted(true);
@@ -741,25 +301,6 @@ export default function Header() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [isMounted]);
 
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const handleClickOutside = (e) => {
-      if (admissionRef.current && !admissionRef.current.contains(e.target)) {
-        setAdmissionOpen(false);
-      }
-      if (
-        engineeringRef.current &&
-        !engineeringRef.current.contains(e.target) &&
-        !e.target.closest(".school-toggle")
-      ) {
-        setEngineeringDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMounted]);
-
   const activeData = hamburgerMenudata[activeIndex] || hamburgerMenudata[0];
 
   if (!isMounted) {
@@ -777,667 +318,731 @@ export default function Header() {
     );
   }
 
+  const isHome = pathname === "/";
+  const isDepartment = pathname.includes("/department");
+  const isSchool = pathname.includes("/schools");
+
+  const isHomeDepartmentOrSchool = isHome || isDepartment || isSchool;
+  const loadPrograms = async () => {
+    if (mobProgramList.length > 0) return;
+    const res = await fetch(Program_Api);
+    const json = await res.json();
+    setMobProgramList(json.data || []);
+  };
+
+  const loadAdmissions = async () => {
+    if (mobAdmission) return;
+    const res = await fetch(Addmision_Api);
+    const json = await res.json();
+    setMobadmission(json.data || null);
+  };
+
+  const loadContacts = async () => {
+    const contactPanel = mobilePanels.find((x) => x.name === "Contact");
+    if (contactPanel?.Menu?.length > 0) return;
+    const res = await fetch(ContactApi);
+    const json = await res.json();
+
+    if (json.status && json.data.length > 0) {
+      const data = json.data[0];
+
+      setMobilePanels((prev) =>
+        prev.map((item) =>
+          item.name === "Contact"
+            ? {
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.address,
+                    url: data.direction_url,
+                    contactIcon: "/images/header/address-icon.svg",
+                  },
+                  {
+                    name: data.email,
+                    url: `mailto:${data.email}`,
+                    contactIcon: "/images/header/mail-icon.svg",
+                  },
+                  {
+                    name: data.phone,
+                    url: `tel:${data.phone}`,
+                    contactIcon: "/images/header/phone-icon.svg",
+                  },
+                ],
+              }
+            : item,
+        ),
+      );
+    }
+  };
+
+  const loadMenu = async () => {
+    const contactPanel = mobilePanels.find((x) => x.name === "Menu");
+    if (contactPanel?.Menu?.length > 0) return;
+    const res = await fetch(MOBILE_HEADER_URL);
+    const json = await res.json();
+    console.log("Mobile Menu API Response:", json.data[0]);
+
+    if (json.success && json.data.length > 0) {
+      const data = json.data[0];
+
+      setMobilePanels((prev) =>
+        prev.map((item) =>
+          item.name === "Menu"
+            ? {
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.title,
+                    url: data.url,
+                  },
+                ],
+              }
+            : item,
+        ),
+      );
+    }
+  };
+
+  const togglePanel = async (name) => {
+    if (activePanel === name) {
+      setActivePanel(null);
+      return;
+    }
+
+    if (name === "Courses") await loadPrograms();
+    if (name === "Admissions") await loadAdmissions();
+    if (name === "Contact") await loadContacts();
+    if (name === "Menu") await loadMenu();
+
+    setActivePanel(name);
+  };
+
+  const isHomeOrDepartment =
+    pathname === "/" || pathname.startsWith("/department");
+
   return (
-    <header className="site-header">
-      <div className={`nav-container ${scrolled ? "header-scrolled" : ""}`}>
-        <div
-          className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
-        >
-          <Link href="/" aria-label="Home">
-            <Image
-              src="/images/header/header-logo.png"
-              className="site-logo"
-              alt="Site Logo"
-              width={299}
-              height={108}
-              priority
-            />
-          </Link>
-
-          {(pathname.includes("schools") ||
-            pathname.includes("department")) && (
-            <>
-              <div
-                className="school-toggle"
-                onClick={() => setEngineeringDropdown((prev) => !prev)}
-              >
-                <p className="mb-0">School of</p>
-                <h5 className="fw-bold">
-                  {selectedSchoolName} <IoChevronDownOutline fontSize={15} />
-                </h5>
+    <header
+      className={`site-header
+    ${pathname.includes("programs") ? "no-shadow" : ""}
+    ${pathname !== "/" ? "programs-header" : ""}
+    ${pathname !== "/" ? "not-home" : ""}
+  `}
+    >
+      <div
+        className={`header-inner ${
+          pathname !== "/" ? "innerPage" : ""
+        } ${scrolled ? "header-scrolled" : ""}`}
+      >
+        <div className="containerXl">
+          <div
+            className={`nav-container
+    ${
+      pathname !== "/" &&
+      !pathname.includes("/schools") &&
+      !pathname.includes("/department")
+        ? "scroll_bg programs-nav not-home"
+        : ""
+    }
+  `}
+          >
+            <div
+              className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
+            >
+              <div className="dashbord-logo">
+                <Link href="/" aria-label="Home">
+                  <Image
+                    src={
+                      isHomeDepartmentOrSchool
+                        ? "/images/header/header-logo.png"
+                        : "/images/header/jss-moblogo.png"
+                    }
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={325}
+                    height={116}
+                    priority
+                  />
+                </Link>
               </div>
-              {engineeringDropdown && engineeringData.length > 0 && (
-                <div
-                  className="engineering-dropdown-container"
-                  ref={engineeringRef}
-                >
-                  <div className="engineering-dropdown">
-                    {/* LEFT SIDE: Schools List */}
-                    <div className="schools-list">
-                      <h6>Schools</h6>
-                      {engineeringData.map((school, idx) => {
-                        const schoolUrl = `/schools/${school.slug}`;
 
-                        return (
-                          <div
-                            key={idx}
-                            className={`school-item ${
-                              selectedSchool === idx ? "active" : ""
-                            }`}
-                            onClick={() => {
-                              setSelectedSchool(idx);
-                              setSelectedSchoolName(school.name);
-                              setEngineeringDropdown(false);
-                            }}
-                          >
-                            <Link href={schoolUrl} className="text-white">
-                              {school.name}
-                            </Link>
+              <div className="mob-logo">
+                <Link href="/" aria-label="Home">
+                  <Image
+                    src="/images/header/jss-moblogo.png"
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={299}
+                    height={108}
+                    priority
+                  />
+                </Link>
+              </div>
+            </div>
+
+            <div className="right-navbar">
+              <nav className="desktop-nav" aria-label="Main navigation">
+                <ul className="nav-list">
+                  {navLinks.map((l, i) => (
+                    <li
+                      key={i}
+                      className={`nav-item ${
+                        activeDropdown === i ? "active-items" : ""
+                      }`}
+                      onMouseEnter={() => setActiveDropdown(i)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <Link href={l.url} className={`nav-link nav-lists`}>
+                        {l.title}
+                      </Link>
+                      {activeDropdown === i && l.children?.length > 0 && (
+                        <div className="mega-dropdown" role="menu">
+                          <div className="mega-left">
+                            <ul>
+                              {l.children.map((d, j) => (
+                                <li key={j} className="mega-left-item">
+                                  <Link href={d.url} className="dropdown-item">
+                                    {d.title}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
-                        );
-                      })}
-                    </div>
+                          <div className="mega-right">
+                            {l.right ? (
+                              <>
+                                <div className="mega-right-text">
+                                  <p className="mega-subtitle">
+                                    {l.right.subtitle}
+                                  </p>
+                                  <h2
+                                    className="mega-title"
+                                    dangerouslySetInnerHTML={{
+                                      __html: l.right.title,
+                                    }}
+                                  />
+                                  <p className="mega-desc">{l.right.desc}</p>
+                                  <div className="mega-ctas">
+                                    {l.right.ctas?.map((cta, idx) => (
+                                      <Link
+                                        key={idx}
+                                        href={cta.url}
+                                        className={`cta program_btn ${cta.type}`}
+                                        style={{ color: "inherit" }}
+                                      >
+                                        {cta.text}
+                                        <svg
+                                          className="cta-arrow"
+                                          style={{ marginLeft: "2rem" }}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="16"
+                                          height="16"
+                                          fill="currentColor"
+                                          viewBox="0 0 16 16"
+                                        >
+                                          <path
+                                            fillRule="evenodd"
+                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
 
-                    {/* RIGHT SIDE: Departments */}
-                    <div className="departments-list">
-                      <h6 className="text-white">Departments</h6>
-                      <div className="link-content">
-                        {engineeringData[selectedSchool]?.departments?.map(
-                          (dept, i) => {
-                            const schoolSlug =
-                              engineeringData[selectedSchool]?.slug;
-                            const deptSlug = dept.slug;
-                            const deptUrl = `/department/${deptSlug}`;
+                                <div className="mega-right-banners">
+                                  {l.right.banners?.map((b, idx) => (
+                                    <Link
+                                      key={idx}
+                                      href={{
+                                        pathname: "/programs",
+                                        query: {
+                                          type: b.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, "-"),
+                                        },
+                                      }}
+                                    >
+                                      <div
+                                        className="banner"
+                                        onClick={() => setActiveDropdown(null)}
+                                      >
+                                        <Image
+                                          src={b.img}
+                                          alt={b.title}
+                                          width={260}
+                                          height={160}
+                                        />
+                                        <span className="banner-label">
+                                          {b.title}
+                                        </span>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </>
+                            ) : (
+                              <div className="mega-right-text">
+                                <h3 className="mega-title">
+                                  {l.dropdown && l.dropdown[0]?.name}
+                                </h3>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
-                            return (
-                              <Link
-                                key={i}
-                                href={deptUrl}
-                                className="department-links text-white"
-                                onClick={() => {
-                                  setEngineeringDropdown(false);
-                                }}
-                              >
-                                {dept.name}
-                              </Link>
-                            );
-                          }
-                        )}
+              <div className="right-navbar-section">
+                <div className="admission-wrap" ref={admissionRef}>
+                  <button
+                    className="admission-btn"
+                    onClick={() => setAdmissionOpen((prev) => !prev)}
+                  >
+                    ADMISSIONS
+                  </button>
+
+                  {admissionOpen && (
+                    <div className="admission-dropdown">
+                      <span className="dropdown-arrow"></span>
+                      <div className="ad-left">
+                        <p className="ad-subtitle">
+                          {admissionsData.left.subtitle}
+                        </p>
+                        <h2 className="ad-title">
+                          {admissionsData.left.title}
+                        </h2>
+                        <p className="ad-desc">{admissionsData.left.desc}</p>
+                        <div className="ad-contact">
+                          <span>{admissionsData.left.querytext}</span>
+                          <p>
+                            <img
+                              src="images/header/mailicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                            {admissionsData.left.email}
+                          </p>
+                          <p>
+                            <img
+                              src="images/header/phoneicon.svg"
+                              className="img-fluid"
+                              alt="mail"
+                            />
+                            {admissionsData.left.phone}
+                          </p>
+                        </div>
+                        <div className="ad-ctas">
+                          {admissionsData.left.ctas.map((cta, idx) => (
+                            <a
+                              key={idx}
+                              target="_blank"
+                              href={cta.url}
+                              className={`cta applynow ${cta.type}`}
+                            >
+                              {cta.text}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                      <IoTriangleSharp className="triangle-icon" />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </>
-          )}
-        </div>
 
-        <div className="right-navbar">
-          <nav className="desktop-nav" aria-label="Main navigation">
-            <ul className="nav-list">
-              {navLinks.map((l, i) => (
-                <li
-                  key={i}
-                  className="nav-item"
-                  // onClick={() => setActiveLink(i)}
-                >
-                  <Link href={l.url} className={`nav-link nav-lists`}>
-                    {l.title}
-                  </Link>
-                  {l.children && l.children.length > 0 && (
-                    <div className="mega-dropdown" role="menu">
-                      <div className="mega-left">
+                      <div className="ad-middle">
                         <ul>
-                          {l.children.map((d, j) => (
-                            <li key={j} className="mega-left-item">
-                              <Link href={d.url} className="dropdown-item">
-                                {d.title}
+                          {admissionsData.middle.links.map((link, idx) => (
+                            <li key={idx} className="ad-link">
+                              <Link
+                                href={link.url}
+                                style={{ color: "inherit" }}
+                              >
+                                {link.title}
+                                <img
+                                  src="/images/header/listicon.svg"
+                                  className="img-fluid"
+                                  alt="mail"
+                                />
                               </Link>
                             </li>
                           ))}
                         </ul>
-                      </div>
-
-                      <div className="mega-right">
-                        {l.right ? (
-                          <>
-                            <div className="mega-right-text">
-                              <p className="mega-subtitle">
-                                {l.right.subtitle}
-                              </p>
-                              <h2
-                                className="mega-title"
-                                dangerouslySetInnerHTML={{
-                                  __html: l.right.title,
-                                }}
-                              />
-                              <p className="mega-desc">{l.right.desc}</p>
-                              <div className="mega-ctas">
-                                {l.right.ctas?.map((cta, idx) => (
-                                  <Link
-                                    key={idx}
-                                    href={cta.url}
-                                    className={`cta program_btn ${cta.type}`}
-                                  >
-                                    {cta.text}
-                                    <svg
-                                      className="cta-arrow"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      fill="currentColor"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                      />
-                                    </svg>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="mega-right-banners">
-                              {l.right.banners?.map((b, idx) => (
-                                <Link key={idx} href={b.url}>
-                                  <div className="banner">
-                                    <Image
-                                      src={b.img}
-                                      alt={b.title}
-                                      width={260}
-                                      height={160}
-                                    />
-                                    <span className="banner-label">
-                                      {b.title}
-                                    </span>
-                                  </div>
-                                </Link>
-                              ))}
-                            </div>
-                          </>
-                        ) : (
-                          <div className="mega-right-text">
-                            <h3 className="mega-title">
-                              {l.dropdown && l.dropdown[0]?.name}
-                            </h3>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="right-navbar-section">
-            <div className="admission-wrap" ref={admissionRef}>
-              <button
-                className="admission-btn"
-                onClick={() => setAdmissionOpen((prev) => !prev)}
-              >
-                ADMISSIONS
-              </button>
-
-              {admissionOpen && (
-                <div className="admission-dropdown">
-                  <span className="dropdown-arrow"></span>
-                  <div className="ad-left">
-                    <p className="ad-subtitle">
-                      {admissionsData.left.subtitle}
-                    </p>
-                    <h2 className="ad-title">{admissionsData.left.title}</h2>
-                    <p className="ad-desc">{admissionsData.left.desc}</p>
-                    <div className="ad-contact">
-                      <span>{admissionsData.left.querytext}</span>
-                      <p>
-                        {" "}
-                        <img
-                          src="images/header/mailicon.svg"
-                          className="img-fluid"
-                          alt="mail"
-                        />{" "}
-                        {admissionsData.left.email}
-                      </p>
-                      <p>
-                        {" "}
-                        <img
-                          src="images/header/phoneicon.svg"
-                          className="img-fluid"
-                          alt="mail"
-                        />{" "}
-                        {admissionsData.left.phone}
-                      </p>
-                    </div>
-                    <div className="ad-ctas">
-                      {admissionsData.left.ctas.map((cta, idx) => (
-                        <a
-                          key={idx}
-                          target="_blank"
-                          href={cta.url}
-                          className={`cta applynow ${cta.type}`}
-                        >
-                          {cta.text}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="ad-middle">
-                    <ul>
-                      {admissionsData.middle.links.map((link, idx) => (
-                        <li key={idx} className="ad-link">
-                          <Link href={link.url} style={{ color: "inherit" }}>
-                            {link.title}
-                            <img
-                              src="/images/header/listicon.svg"
-                              className="img-fluid"
-                              alt="mail"
-                            />
+                        <div className="ad-stats">
+                          <h3>{admissionsData.middle.stats.text}</h3>
+                          <p>{admissionsData.middle.stats.subtext}</p>
+                          <Link
+                            href={admissionsData.middle.stats.btnText.url}
+                            style={{ color: "inherit" }}
+                          >
+                            <button className="stats-btn">
+                              {admissionsData.middle.stats.btnText.text}
+                            </button>
                           </Link>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="ad-stats">
-                      <h3>{admissionsData.middle.stats.text}</h3>
-                      <p>{admissionsData.middle.stats.subtext}</p>
-                      <Link
-                        href={admissionsData.middle.stats.btnText.url}
-                        style={{ color: "inherit" }}
-                      >
-                        <button className="stats-btn">
-                          {admissionsData.middle.stats.btnText.text}
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
+                        </div>
+                      </div>
 
-                  {admissionsData.right && (
-                    <div className="ad-right">
-                      <Image
-                        src={admissionsData.right.img}
-                        alt={admissionsData.right.alt}
-                        width={400}
-                        height={400}
-                        className="addmision-section-img"
-                      />
+                      {admissionsData.right && (
+                        <div className="ad-right">
+                          <Image
+                            src={admissionsData.right.img}
+                            alt={admissionsData.right.alt}
+                            width={400}
+                            height={400}
+                            className="addmision-section-img"
+                          />
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
-              )}
-            </div>
 
+                <button
+                  aria-label="Open menu"
+                  className="hamburger"
+                  onClick={openMenu}
+                >
+                  <Image
+                    src="/images/header/hum-icon.svg"
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={16}
+                    height={15}
+                    priority
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`backdrop ${menuOpen ? "show" : ""}`}
+            onClick={closeMenu}
+          />
+
+          <div
+            className={`menu-overlay ${menuOpen ? "open" : ""}`}
+            role="dialog"
+          >
             <button
-              aria-label="Open menu"
-              className="hamburger"
-              onClick={openMenu}
+              className="close-btn"
+              aria-label="Close menu"
+              onClick={closeMenu}
             >
-              <Image
-                src="/images/header/hum-icon.svg"
-                className="site-logo"
-                alt="Site Logo"
-                width={17}
-                height={16}
-                priority
-              />
+              <img src="images/header/close-icon.svg" />
             </button>
+
+            <div className="hamburger-layout">
+              <aside className="menu-left">
+                <ul>
+                  {hamburgerMenudata.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`menu-left-item ${
+                        activeIndex === idx ? "active" : ""
+                      }`}
+                      onClick={() => setActiveIndex(idx)}
+                    >
+                      {item.name}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+
+              <section className="menu-middle">
+                <div className="middle-title">
+                  <ul>
+                    <li>
+                      <a href="#">ABOUT JSSMVP</a>
+                    </li>
+                    <li>
+                      <a href="#">HERITAGE</a>
+                    </li>
+                    <li>
+                      <a href="#">ABOUT JSS</a>
+                    </li>
+                    <li>
+                      <a href="#">LEADERSHIP</a>
+                    </li>
+                  </ul>
+                </div>
+                <ul className="middle_ul">
+                  {activeData.Menu.map((s, i) => (
+                    <li key={i} className="middle-item">
+                      <a href="#"> {s}</a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="menu-right">
+                <div className="right-inner h-100">
+                  <div className="image-box">
+                    <div className="first-content">
+                      <h1
+                        dangerouslySetInnerHTML={{
+                          __html: activeData.firstContent.title,
+                        }}
+                      />
+                      <p>{activeData.firstContent.desc}</p>
+                      <Link href={activeData.firstContent.url}>
+                        <img src="images/header/banner-arrow.svg" />
+                      </Link>
+                      <div className="hamburger-section-img virtural-img">
+                        <Link href={activeData.firstContent.url}>
+                          <Image
+                            className="hum-small"
+                            src={activeData.firstContent.img}
+                            alt={activeData.firstContent.alt}
+                            fill
+                            style={{ objectFit: "cover" }}
+                          />
+                        </Link>
+                        <div className="items-menu_grp">
+                          <div className="items-menu_grp_cont">
+                            <h4>Virtual campus</h4>
+                            <p>Sed ut perspiciatis</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="second-content">
+                      <div className="hamburger-section-img">
+                        <Link href={activeData.secondContent.url}>
+                          <Image
+                            src={activeData.secondContent.img}
+                            alt={activeData.secondContent.alt}
+                            fill
+                            style={{ objectFit: "cover" }}
+                            sizes="100vw"
+                          />
+                        </Link>
+                        <div className="vid-thumb-grp">
+                          <div className="vid-thumb-icon"></div>
+                          <div className="vid-thumb-cont">
+                            <h6>MESSAGE FROM CHANCELLOR</h6>
+                            <h4>
+                              JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="acresData">
+                        <h1
+                          dangerouslySetInnerHTML={{
+                            __html: activeData.secondContent.title,
+                          }}
+                        />
+                        <p>{activeData.secondContent.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div className="panel-wrapper">
+            <div className="mob-menu-sec">
+              {mobilePanels.map((item) => (
+                <div
+                  key={item.name}
+                  className={`panel ${
+                    activePanel === item.name ? "open" : ""
+                  } ${item.name.toLowerCase()}-panel`}
+                >
+                  {item.name === "Courses" &&
+                    activePanel === "Courses" &&
+                    item.Menu && (
+                      <div className="mobCourses">
+                        <div className="course-heading">
+                          <h4>START YOUR JSS JOURNEY</h4>
+                        </div>
+                        <ul className="courses-menu">
+                          {mobProgramList.map((sub, idx) => (
+                            <li key={idx}>
+                              <figure>
+                                <div className="coursesImg">
+                                  <img
+                                    src={sub.image}
+                                    alt={sub.name}
+                                    className="course-img w-100"
+                                  />
+                                </div>
+                                <figcaption>
+                                  <h4>{sub.name}</h4>
+                                  <Link href={sub.slug}>
+                                    <img
+                                      src={"/images/header/courseIcon.svg"}
+                                      alt={`${sub.name} icon`}
+                                      className="course-icon"
+                                    />
+                                  </Link>
+                                </figcaption>
+                              </figure>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                  {item.name === "Admissions" &&
+                    activePanel === "Admissions" &&
+                    admissionData && (
+                      <div className="admissions-menu-wrapper">
+                        <ul className="admissions-menu">
+                          <div className="admissions-heading">
+                            <h4
+                              dangerouslySetInnerHTML={{ __html: item.heading }}
+                            ></h4>
+                          </div>
+
+                          {admissionData.middle.links.map((link, idx) => (
+                            <li key={idx}>
+                              <a href={link.url}>{link.title}</a>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="admissions-contact">
+                          <h4>{admissionData.left.querytext}</h4>
+                          <ul>
+                            <li>
+                              <img
+                                src="/images/header/mail-icon.svg"
+                                alt="email"
+                              />
+                              <a href={`mailto:${admissionData.left.email}`}>
+                                {admissionData.left.email}
+                              </a>
+                            </li>
+                            <li>
+                              <img
+                                src="/images/header/phone-icon.svg"
+                                alt="phone"
+                              />
+                              <a href={`tel:${admissionData.left.phone}`}>
+                                {admissionData.left.phone}
+                              </a>
+                            </li>
+                          </ul>
+                          <div className="contactBtn">
+                            {admissionData.left.ctas.map((btn, idx) => (
+                              <a
+                                key={idx}
+                                href={btn.url}
+                                className={
+                                  btn.type === "primary" ? "apply" : "dwnload"
+                                }
+                              >
+                                {btn.type === "secondary" && (
+                                  <img
+                                    src="/images/header/dwnlodIcon.png"
+                                    alt="download"
+                                  />
+                                )}
+                                {btn.text}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                  {item.name === "Contact" &&
+                    activePanel === "Contact" &&
+                    item.Menu && (
+                      <div className="contact-panel">
+                        <div className="contact-heading">
+                          <h4>{item.heading}</h4>
+                        </div>
+
+                        <div className="contactBanner">
+                          <img
+                            src={item.bgImg}
+                            alt="contact"
+                            className="contact-banner"
+                          />
+                        </div>
+                        <ul className="contact-info">
+                          {item.Menu.map((sub, idx) => (
+                            <li key={idx}>
+                              <div className="icon-img">
+                                <img src={sub.contactIcon} alt={sub.name} />
+                              </div>
+                              <a href={sub.url}>{sub.name}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  {item.name === "Menu" && activePanel === "Menu" && (
+                    <>
+                      {item.Menu && (
+                        <>
+                          <ul className="menu-top">
+                            {item.Menu.slice(0, 6).map((sub, idx) => (
+                              <li key={idx}>
+                                <a href={sub.url}>{sub.name}</a>
+                              </li>
+                            ))}
+                          </ul>
+                          {item.Menu.length > 6 && (
+                            <ul className="menu-bottom">
+                              {item.Menu.slice(1).map((sub, idx) => (
+                                <li key={idx}>
+                                  <a href={sub.url}>{sub.name}</a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mobile-bottom-menu">
+            <ul className="menu-list">
+              {mobilePanels.map((item) => (
+                <li
+                  key={item.name}
+                  className={
+                    activePanel === item.name ? "menu-item active" : "menu-item"
+                  }
+                >
+                  <button onClick={() => togglePanel(item.name)}>
+                    <div className="icon">
+                      <img src={item.icon} alt={`${item.name} icon`} />
+                    </div>
+                    <p className="menu-name">{item.name}</p>
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-
-      <div
-        className={`backdrop ${menuOpen ? "show" : ""}`}
-        onClick={closeMenu}
-      />
-
-      <div className={`menu-overlay ${menuOpen ? "open" : ""}`} role="dialog">
-        <button
-          className="close-btn"
-          aria-label="Close menu"
-          onClick={closeMenu}
-        >
-          <img src="images/header/close-icon.svg" />
-        </button>
-
-        <div className="hamburger-layout">
-          <aside className="menu-left">
-            <ul>
-              {hamburgerMenudata.map((item, idx) => (
-                <li
-                  key={idx}
-                  className={`menu-left-item ${
-                    activeIndex === idx ? "active" : ""
-                  }`}
-                  onClick={() => setActiveIndex(idx)}
-                >
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-          </aside>
-
-          <section className="menu-middle">
-            <div className="middle-title">
-              <ul>
-                <li>
-                  <a href="#">ABOUT JSSMVP</a>
-                </li>
-                <li>
-                  <a href="#">HERITAGE</a>
-                </li>
-                <li>
-                  <a href="#">ABOUT JSS</a>
-                </li>
-                <li>
-                  <a href="#">LEADERSHIP</a>
-                </li>
-              </ul>
-            </div>
-            <ul className="middle_ul">
-              {activeData.Menu.map((s, i) => (
-                <li key={i} className="middle-item">
-                  <a href="#"> {s}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="menu-right">
-            <div className="right-inner h-100">
-              <div className="image-box">
-                <div className="first-content">
-                  <h1
-                    dangerouslySetInnerHTML={{
-                      __html: activeData.firstContent.title,
-                    }}
-                  />
-                  <p>{activeData.firstContent.desc}</p>
-                  <Link href={activeData.firstContent.url}>
-                    <img src="images/header/banner-arrow.svg" />
-                  </Link>
-                  <div className="hamburger-section-img virtural-img">
-                    <Link href={activeData.firstContent.url}>
-                      <Image
-                        className="hum-small"
-                        src={activeData.firstContent.img}
-                        alt={activeData.firstContent.alt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    </Link>
-                    <div className="items-menu_grp">
-                      <div className="items-menu_grp_cont">
-                        <h4>Virtual campus</h4>
-                        <p>Sed ut perspiciatis</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="second-content">
-                  <div className="hamburger-section-img">
-                    <Link href={activeData.secondContent.url}>
-                      <Image
-                        src={activeData.secondContent.img}
-                        alt={activeData.secondContent.alt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="100vw"
-                      />
-                    </Link>
-                    <div className="vid-thumb-grp">
-                      <div className="vid-thumb-icon"></div>
-                      <div className="vid-thumb-cont">
-                        <h6>MESSAGE FROM CHANCELLOR</h6>
-                        <h4>
-                          JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="acresData">
-                    <h1
-                      dangerouslySetInnerHTML={{
-                        __html: activeData.secondContent.title,
-                      }}
-                    />
-                    <p>{activeData.secondContent.desc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      {/* mobile menu bottom start*/}
-      <div className="panel-wrapper">
-        <div className="mob-menu-sec">
-          {mobilePanels.map((item) => (
-            <div
-              key={item.name}
-              className={`panel ${
-                activePanel === item.name ? "open" : ""
-              } ${item.name.toLowerCase()}-panel`}
-            >
-              {/* Courses tab */}
-              {item.name === "Courses" &&
-                activePanel === "Courses" &&
-                item.Menu && (
-                  <div className="mobCourses">
-                    <div className="course-heading">
-                      <h4>START YOUR JSS JOURNEY</h4>
-                    </div>
-                    <ul className="courses-menu">
-                      {mobProgramList.map((sub, idx) => (
-                        <li key={idx}>
-                          <figure>
-                            <div className="coursesImg">
-                              <img
-                                src={sub.image}
-                                alt={sub.name}
-                                className="course-img w-100"
-                              />
-                            </div>
-                            <figcaption>
-                              <h4>{sub.name}</h4>
-                              <Link href={sub.slug}>
-                                <img
-                                  src={"/images/header/courseIcon.svg"}
-                                  alt={`${sub.name} icon`}
-                                  className="course-icon"
-                                />
-                              </Link>
-                            </figcaption>
-                          </figure>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-              {/* Admissions tab */}
-              {item.name === "Admissions" &&
-                activePanel === "Admissions" &&
-                mobAdmission && (
-                  <div className="admissions-menu-wrapper">
-                    <ul className="admissions-menu">
-                      <div className="admissions-heading">
-                        <h4
-                          dangerouslySetInnerHTML={{ __html: item.heading }}
-                        ></h4>
-                      </div>
-
-                      {mobAdmission.middle.links.map((link, idx) => (
-                        <li key={idx}>
-                          <a href={link.url}>{link.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                    {/* LEFT SECTION */}
-                    <div className="admissions-contact">
-                      <h4>{mobAdmission.left.querytext}</h4>
-
-                      <ul>
-                        <li>
-                          <img src="/images/header/mail-icon.svg" alt="email" />
-                          <a href={`mailto:${mobAdmission.left.email}`}>
-                            {mobAdmission.left.email}
-                          </a>
-                        </li>
-
-                        <li>
-                          <img
-                            src="/images/header/phone-icon.svg"
-                            alt="phone"
-                          />
-                          <a href={`tel:${mobAdmission.left.phone}`}>
-                            {mobAdmission.left.phone}
-                          </a>
-                        </li>
-                      </ul>
-
-                      <div className="contactBtn">
-                        {mobAdmission.left.ctas.map((btn, idx) => (
-                          <a
-                            key={idx}
-                            href={btn.url}
-                            className={
-                              btn.type === "primary" ? "apply" : "dwnload"
-                            }
-                          >
-                            {btn.type === "secondary" && (
-                              <img
-                                src="/images/header/dwnlodIcon.png"
-                                alt="download"
-                              />
-                            )}
-                            {btn.text}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-              {/* Contact tab */}
-              {item.name === "Contact" &&
-                activePanel === "Contact" &&
-                item.Menu && (
-                  <div className="contact-panel">
-                    <div className="contact-heading">
-                      <h4>{item.heading}</h4>
-                    </div>
-
-                    <div className="contactBanner">
-                      <img
-                        src={item.bgImg}
-                        alt="contact"
-                        className="contact-banner"
-                      />
-                    </div>
-
-                    <ul className="contact-info">
-                      {item.Menu.map((sub, idx) => (
-                        <li key={idx}>
-                          <div className="icon-img">
-                            <img src={sub.contactIcon} alt={sub.name} />
-                          </div>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-              {/* Menu tab */}
-              {item.name === "Menu" && activePanel === "Menu" && (
-                <>
-                  {item.Menu && (
-                    <ul className="menu-top">
-                      {item.Menu.map((sub, idx) => (
-                        <li key={idx}>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {item.Menubottom && (
-                    <ul className="menu-bottom">
-                      {item.Menubottom.map((sub, idx) => (
-                        <li key={idx}>
-                          <a href={sub.url}>{sub.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mobile-bottom-menu">
-        <ul className="menu-list">
-          {mobilePanels.map((item) => (
-            <li
-              key={item.name}
-              className={
-                activePanel === item.name ? "menu-item active" : "menu-item"
-              }
-            >
-              <button onClick={() => togglePanel(item.name)}>
-                <div className="icon">
-                  <img src={item.icon} alt={`${item.name} icon`} />
-                </div>
-                <p className="menu-name">{item.name}</p>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <style jsx>
         {`
-          /* --- Engineering Dropdown --- */
-          .school-toggle {
-            cursor: pointer;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s;
-            display: flex;
-            flex-direction: column;
-          }
-          .brand-wrap.logo-content {
-            display: flex;
-            align-items: center;
-            gap: 5rem;
-            justify-content: center;
-          }
-          .school-toggle p {
-            font: var(--font-16);
-            color: var(--color-white);
-            font-family: var(--font-Condensed);
-            letter-spacing: 0px;
-          }
-          .school-toggle h5 {
-            font: var(--font-24);
-            color: var(--color-white);
-            font-family: var(--font-Condensed);
-            letter-spacing: -1.1px;
-            font-weight: bold;
-            text-transform: uppercase;
-          }
           .logo-content img {
             width: 100%;
             height: 100%;
             object-fit: contain;
           }
-          .header-scrolled .school-toggle {
-            color: #16344e;
+
+          {/* .nav-container.header-scrolled.scroll_bg {
+            background: #f8f9fa !important;
           }
+          .nav-container.header-scrolled.not-home {
+            background: #f8f9fa !important;
+          } */}
+          .programs-nav .nav-list {
+            background: transparent;
+          }
+
           .engineering-dropdown-container {
             z-index: 1000;
             width: 100%;
@@ -1628,6 +1233,7 @@ export default function Header() {
             align-items: center;
             justify-content: space-between;
           }
+
           .site-header::before {
             content: "";
             position: absolute;
@@ -1647,11 +1253,11 @@ export default function Header() {
             );
           }
           .nav-list {
-            gap: 0rem;
+            gap: 5.9rem;
             margin: 0;
             list-style: none;
             display: flex;
-            padding: 0 0 0 2.8rem;
+            padding: 1.2rem 2.8rem 1.2rem 2.8rem;
             background-color: rgb(22, 52, 78, 78%);
             color: #fff;
           }
@@ -1660,13 +1266,16 @@ export default function Header() {
             display: flex;
             padding: 0;
             margin: 0;
-            gap: 0 6rem;
+            padding: 1.4rem 2.8rem 1.2rem;
           }
 
           .nav-item {
             position: relative;
           }
-          .nav-container.header-scrolled {
+          .nav-item:last-child {
+            padding-right: 0;
+          }
+          .header-inner.header-scrolled {
             background-color: var(--color-4e);
           }
 
@@ -1712,7 +1321,7 @@ export default function Header() {
           }
           .admission-btn {
             color: var(--color-black);
-            padding: 1.4rem 2rem 1.2rem;
+            padding: 1.2rem 2rem 1.2rem;
             letter-spacing: 0.8px;
             background-color: var(--color-100);
             border: none;
@@ -1842,19 +1451,49 @@ export default function Header() {
             border: 1px solid #ffc100;
             padding: 1rem 2rem;
             display: inline-flex;
-            color: var(--color-4e);
             font: var(--font-18);
             font-family: var(--font-Condensed);
-            font-weight: 700;
             align-items: center;
             gap: 3rem;
             var(--color-4e)-space: nowrap;
             -webkit-transition: all 0.5s ease;
             color: #000;
+            font-weight: 600;
+            letter-spacing: 0.72px;
+          }
+          .mega-ctas {
+            font: var(--font-13);
+            font-family: var(--font-Condensed);
+            letter-spacing: 0.72px;
+            cursor: pointer;
+            color: #16344e !important;
+            background: #fff;
+            border: 1px solid rgba(22, 52, 78, 0.4);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            max-width: 22rem;
+          }
+          .cta.program_btn {
+            display: flex;
+            justify-content: space-around;
+            color: inherit;
           }
           .ad-left .ad-ctas .cta.applynow.secondary {
             border: 1px solid #fff;
             color: #fff;
+            font: var(--font-18);
+            font-family: var(--font-Condensed);
+            font-weight: 600;
+            letter-spacing: 0.72px;
+          }
+          .applynow.primary {
+            background: #ffc100;
+            font: var(--font-18);
+            font-family: var(--font-Condensed);
+          }
+          .applynow.primary:hover {
+            color: #fff !important;
           }
 
           .ad-middle {
@@ -1925,7 +1564,7 @@ export default function Header() {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 16px 15px 16px;
+            padding: 1.6rem 1.5rem 1.6rem;
             background-color: #16344e;
             color: #fff;
             transition: background 0.3s ease;
@@ -2159,7 +1798,9 @@ export default function Header() {
           }
           .mega-left-item {
             cursor: pointer;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition:
+              background 0.3s ease,
+              color 0.3s ease;
             font-weight: 700;
             padding: 1px 0;
           }
@@ -2278,12 +1919,48 @@ export default function Header() {
             margin: 3rem 8rem;
           }
 
+          @media (max-width: 2550px) {
+            .mega-left {
+              width: 85rem;
+            }
+          }
+
+          @media (max-width: 1649px) {
+            .hamburger {
+              padding: 1.5rem 1.5rem 1.5rem;
+            }
+          }
           @media (max-width: 1599px) {
             .mega-right {
               padding-right: 6.8rem;
             }
             .site-header > .nav-container {
               padding-inline: 6.8rem;
+            }
+            .menu-middle {
+              padding: 7rem;
+            }
+            .menu-left-item {
+              padding: 1rem 5rem 1rem 10rem;
+            }
+            .menu-left {
+              padding-top: 6rem;
+            }
+            .right-inner .first-content {
+              padding-top: 0rem;
+            }
+            .acresData p {
+              max-width: 46%;
+            }
+            .mega-left {
+              width: 50rem;
+            }
+            .mega-right {
+              width: 72%;
+            }
+
+            .mega-right-text {
+              width: 26%;
             }
           }
 
@@ -2295,15 +1972,78 @@ export default function Header() {
             .mega-right-text {
               max-width: 100%;
             }
-            .banner {
-              width: 200px;
-              height: 130px;
+
+            .vid-thumb-cont {
+              padding-right: 2rem;
+            }
+            .engineering-dropdown {
+              width: 50%;
+            }
+            .ad-left {
+              padding: 4rem;
+            }
+            .ad-middle {
+              padding: 4rem;
+            }
+            .admission-dropdown {
+              top: 16rem;
+            }
+            .hamburger {
+              padding: 1.5rem 1.5rem 1.5rem;
+            }
+          }
+          @media (max-width: 1024px) {
+            .menu-middle {
+              padding: 7rem 5rem 0;
+            }
+            .menu-left-item {
+              padding: 1rem 2rem 1rem 6rem;
+            }
+            .menu-right {
+              padding-top: 7rem;
+            }
+            .right-inner .first-content {
+              width: 40%;
+            }
+            .menu-overlay.open .close-btn {
+              width: 25px;
+              height: 25px;
+              font-size: 15px;
+              top: -3px;
+              right: -33px;
+            }
+            .engineering-dropdown {
+              width: 60%;
+            }
+            .mega-right-banners {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .mega-right-text {
+              width: 65%;
+            }
+            .mega-left {
+              width: 40rem;
+            }
+          }
+          @media (max-width: 991px) {
+            .site-header {
+              position: relative;
+            }
+            .right-navbar {
+              display: none;
+            }
+            .brand-wrap {
+              margin: 0 auto;
+            }
+            .dashbord-logo {
+              display: none;
+            }
+            .engineering-dropdown {
+              width: 80%;
             }
           }
 
-           {
-            /* mob menu css start */
-          }
           .panel-wrapper {
             position: fixed;
             top: 0;
@@ -2328,6 +2068,7 @@ export default function Header() {
             flex-direction: column;
             box-sizing: border-box;
           }
+
           .panel-wrapper .panel.open {
             transform: translateY(0);
           }
@@ -2342,6 +2083,9 @@ export default function Header() {
           }
           .contact-info li {
             padding-block: 2rem;
+          }
+          .admissions-menu-wrapper {
+            width: 100%;
           }
           .admissions-menu-wrapper ul li {
             padding-block: 2rem;
@@ -2364,7 +2108,8 @@ export default function Header() {
             list-style: none;
             padding: 0;
             margin: 0;
-            padding: 5rem 4rem 12rem;
+            padding: 5rem 2rem 12rem;
+            width: 100%;
           }
           .courses-panel {
             position: relative;
@@ -2413,7 +2158,7 @@ export default function Header() {
           }
           .courses-menu figcaption {
             position: absolute;
-            bottom: 2rem;
+            bottom: 0rem;
             left: 0;
             width: 100%;
             padding: 1.2rem;
@@ -2429,6 +2174,7 @@ export default function Header() {
             font-family: var(--font-Condensed);
             letter-spacing: -0.6px;
             color: #fff;
+            text-transform: uppercase;
           }
           .course-heading h4 {
             text-align: center;
@@ -2452,7 +2198,7 @@ export default function Header() {
           }
           .admissions-contact {
             background: #e6ffff;
-            padding: 2rem 4rem 16rem;
+            padding: 2rem 2rem 16rem;
           }
           .admissions-heading h4 {
             font: var(--font-45);
@@ -2522,6 +2268,7 @@ export default function Header() {
           .contact-panel {
             background: #e6ffff;
             z-index: 1;
+            width: 100%;
           }
           .contact-panel .contact-info {
             padding-top: 0;
@@ -2542,6 +2289,15 @@ export default function Header() {
             font: var(--font-21);
             font-weight: 600;
           }
+          .containerXl {
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+          }
+          .nav-container {
+            width: 100%;
+          }
           .contact-panel .contact-info li:nth-child(3) a {
             color: #018ce8;
             letter-spacing: -0.21px;
@@ -2561,6 +2317,9 @@ export default function Header() {
           }
           .panel-wrapper .panel ul:nth-of-type(2) li {
             color: #000;
+          }
+          .header-inner.header-scrolled {
+            padding-block: 1.5rem;
           }
           .contact-heading {
             padding-block: 5rem 3rem;
@@ -2615,7 +2374,6 @@ export default function Header() {
             background: var(--color-e8);
             z-index: -1;
           }
-          /* Mobile Bottom Menu */
           .mobile-bottom-menu {
             position: fixed;
             bottom: 0;
@@ -2631,6 +2389,21 @@ export default function Header() {
             padding: 0;
             list-style: none;
             color: var(--color-4e);
+          }
+          .schoolDrp {
+            font: var(--font-16);
+            color: #16344e;
+            font-family: var(--font-Condensed);
+            font-weight: 500;
+          }
+          .schoolDrpheading {
+            font: var(--font-24);
+            color: #16344e;
+            font-family: var(--font-Condensed);
+            font-weight: 600;
+            letter-spacing: -1.1px;
+            line-height: 20px;
+            text-transform: uppercase;
           }
           .menu-list li {
             text-align: center;
@@ -2664,10 +2437,15 @@ export default function Header() {
           .icon {
             margin-bottom: 1.2rem;
           }
+          .site-header.no-shadow {
+            background: none !important;
+          }
 
-          /* Hide menu on desktop */
           @media (min-width: 992px) {
             .mobile-bottom-menu {
+              display: none;
+            }
+            .mob-logo {
               display: none;
             }
           }
@@ -2680,6 +2458,14 @@ export default function Header() {
             }
             .courses-menu li {
               padding: 0;
+            }
+            .brand-wrap.logo-content {
+              display: block;
+            }
+
+            .engineering-dropdown-container {
+              top: 85%;
+              left: 13%;
             }
           }
           @media (max-width: 667px) {
@@ -2703,6 +2489,17 @@ export default function Header() {
             .course-heading h4 {
               max-width: 99%;
             }
+            .site-header > .nav-container {
+              padding-inline: 0;
+            }
+            .engineering-dropdown {
+              width: 100%;
+              margin-inline: 2rem;
+            }
+            .engineering-dropdown-container {
+              top: 85%;
+              left: 0;
+            }
           }
           @media (max-width: 420px) {
             .admissions-heading h4 {
@@ -2710,11 +2507,44 @@ export default function Header() {
             }
             .admissions-contact {
               background: #e6ffff;
-              padding: 2rem 4rem 12rem;
+              padding: 2rem 2rem 12rem;
             }
             .contact-panel .contact-info li {
               max-width: 100%;
             }
+          }
+          .site-header.not-home {
+            background: none;
+          }
+          .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            width: 100%;
+          }
+
+          .header-inner {
+            width: 100%;
+            padding-block: 2.4rem;
+          }
+
+          .containerXl {
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding-inline: 9.8rem;
+          }
+
+          .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+          .innerPage.header-scrolled {
+            background: #deebf4;
           }
         `}
       </style>

@@ -1,7 +1,7 @@
 /* components/home-components/BelowBannerSection/BelowBannerSection.module.css */
 
 .belowBannerSection {
-  padding: 1rem 12rem;
+  padding: 1.6rem 12rem;
   background: #f6f6f6;
 }
 
@@ -125,11 +125,14 @@
   .linksContainer {
     gap: 2rem;
   }
+  .belowBannerSection {
+  padding-block: 2rem;
+}
 }
 
 @media (max-width: 768px) {
   .belowBannerSection {
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
   }
 
   .linksContainer {
@@ -153,12 +156,7 @@
     padding: 1rem 1rem;
   }
 
-  .yellowText {
-    font-size: 1.1rem;
-  }
-
   .button {
     padding: 0.75rem 1rem;
-    font-size: 13px;
   }
 }

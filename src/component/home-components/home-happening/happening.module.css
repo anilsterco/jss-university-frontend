@@ -1,13 +1,14 @@
 /* components/home-components/EventsGrid/EventsGrid.module.css */
 
 .eventSection {
-  padding-block: 5rem 11rem;
-  background: #f5f5f5;
+  padding-block: 3rem 11rem;
 }
+
 .container-fluid {
   max-width: 1780px;
 
 }
+
 .container {
   width: 100%;
 }
@@ -16,32 +17,34 @@
   text-align: center;
   margin: auto;
   padding-bottom: 7.2rem;
-  padding-top: 8rem;
+  padding-top: 6rem;
 }
 
 .headerSmall {
-    color: var(--color-4e);
-    font: var(--font-18);
-    font-family: var(--font-Condensed);
-    margin-bottom: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+  color: var(--color-4e);
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
 .headerTitle {
-    font: var(--font-60);
-    font-family: var(--font-Condensed);
-    color: var(--color-black);
-    letter-spacing: -2.88px;
-    font-weight: bold;
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  color: var(--color-black);
+  letter-spacing: -2.88px;
+  font-weight: bold;
 }
+
 .headerTitle span {
-    font: var(--font-60);
-    font-family: var(--font-Condensed);
-    letter-spacing: -2.88px;
-    font-weight: bold;
+  font: var(--font-60);
+  font-family: var(--font-Condensed);
+  letter-spacing: -2.88px;
+  font-weight: bold;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -93,7 +96,7 @@
 }
 
 .cardTag {
-   font: var(--font-16);
+  font: var(--font-16);
   color: var(--color-white);
   text-transform: uppercase;
   font-family: var(--font-Condensed);
@@ -106,7 +109,7 @@
 }
 
 .cardTitle {
- font: var(--font-16);
+  font: var(--font-16);
   font-weight: 400;
   line-height: 1.4;
 
@@ -117,15 +120,17 @@
 }
 
 .cardTitleLarge {
-   font: var(--font-36);
+  font: var(--font-36);
   color: var(--color-white);
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   padding-right: 14rem;
+  line-height: 0.92;
+  letter-spacing: -0.65px;
 }
 
 .cardSubtitle {
-font: var(--font-16);
+  font: var(--font-16);
   color: var(--color-white);
   font-family: var(--font-Condensed);
   letter-spacing: 0px;
@@ -136,27 +141,28 @@ font: var(--font-16);
 }
 
 .cardDate {
- font: var(--font-16);
+  font: var(--font-16);
   margin-top: 2.8rem;
   color: #333;
 }
 
 .cardDateWhite {
-  color:var(--color-white);
+  color: var(--color-white);
 }
 
 .orangeLine {
   background-color: #ffa600;
   width: 9.2rem;
-  height:0.5rem;
+  height: 0.5rem;
   margin-bottom: 1.8rem;
 }
+
 .rightArrow {
   color: #fff;
   border: 1px solid;
   border-radius: 50px;
-  padding:0.5rem;
-  font-size: 30px;
+  padding: 0.5rem;
+  font: var(--font-26);
   margin-top: 15px;
   cursor: pointer;
 }
@@ -164,7 +170,7 @@ font: var(--font-16);
 .seamEduLogo {
   display: flex;
   flex-direction: column;
-  gap:0.5rem;
+  gap: 0.5rem;
   margin: 20px 0;
 }
 
@@ -182,43 +188,66 @@ font: var(--font-16);
   font-weight: 300;
 }
 
-/* .cardImage {
-  object-fit: cover;
-} */
+
 .mobileView {
   display: none;
 }
+
 .desktopView {
   display: block;
+  position: relative;
+}
+
+.desktopView::after {
+  content: "";
+  background-color: #e5e5e5;
+  width: 65%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  transform: translate(25%);
 }
 
 
 /* Responsive Design */
 
 @media (min-width: 2200px) and (max-width:2550) {
-.cardTitleLarge {
-  padding-right: 28rem;
-}
-.cardSubtitleWhite {
-  margin-top: 2rem;
-  max-width: 60%;
-}
-.cardTitle {max-width: 60%;}
+  .cardTitleLarge {
+    padding-right: 13rem;
+  }
 
+  .cardSubtitleWhite {
+    margin-top: 2rem;
+    max-width: 60%;
+  }
+
+  .cardTitle {
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-auto-rows: 350px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardDate {
+    margin-top: 1.8rem;
+  }
 }
 
 @media (max-width:1366) {
-  .cardTitleLarge{padding-right: 0rem;}
-  
+  .cardTitleLarge {
+    padding-right: 0rem;
+  }
+
 }
 
 
 
 @media (max-width: 1200px) {
-  .eventSection {
-    padding: 4rem 3rem;
-  }
-
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -226,15 +255,23 @@ font: var(--font-16);
 
 @media (max-width: 992px) {
   .eventSection {
-    padding: 3rem 2rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+    padding: 4.4rem 2rem;
   }
 
 }
 
+@media (max-width:1024) {
+  .header {
+    padding-top: 4rem;
+  }
+}
+
+
+@media (max-width:991) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
 @media (max-width: 480px) {
   .grid {
@@ -244,7 +281,7 @@ font: var(--font-16);
 
 
   .contentPart {
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .cardLargeTopLeft {
@@ -256,27 +293,12 @@ font: var(--font-16);
   }
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
 
-  .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
-  }
-  .cardTag {
-    margin-bottom: 5px;
-  }
-  .orangeLine {
-    margin-bottom: 10px;
-  }
-}
 @media (max-width: 768px) {
   .mobileView {
     display: block;
   }
+
   .desktopView {
     display: none;
   }
@@ -284,20 +306,60 @@ font: var(--font-16);
   .mobileCard {
     height: 300px;
   }
- 
+
   .cardTitleLarge {
-    font-weight: 400;
+    letter-spacing: -0.47px;
+    font: var(--font-26);
+    font-family: var(--font-Condensed);
+    font-weight: 600;
+    line-height: 30px;
+    max-width: 80%;
   }
+
   .rightArrow {
     padding: 2px;
+    font-size: 2rem;
   }
-  .eventSection {
-    padding: 3rem 1rem;
-  }
+
   .orangeLine {
     background-color: #ffa600;
     width: 20%;
     height: 3px;
     margin-bottom: 20px;
   }
+
+  .headerSmall {
+    color: var(--color-4e);
+    font: var(--font-14);
+    font-family: var(--font-Condensed);
+    margin-bottom: 2.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 30px;
+    letter-spacing: 0px;
+  }
 }
+
+@media (max-width: 575px) {
+  .eventSection {
+    padding: 2rem 2rem;
+  }
+
+}
+
+.card {
+  position: relative;
+}
+.full_link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.rightArrow {
+  position: relative;
+  z-index: 3;
+}
+
+
+
