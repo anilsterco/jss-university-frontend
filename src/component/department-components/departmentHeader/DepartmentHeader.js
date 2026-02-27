@@ -26,6 +26,8 @@ export default function DepartmentHeader({ className }) {
   const [selectedSchoolName, setSelectedSchoolName] = useState("");
   const [selectedDepartmentName, setSelectedDepartmentName] = useState("");
   const [engineeringData, setEngineeringData] = useState([]);
+  const [hoveredSchool, setHoveredSchool] = useState(0);
+  const [hoveredDepartments, setHoveredDepartments] = useState([]);
   const engineeringRef = useRef(null);
 
   /* ================= Fetch Data ================= */
@@ -39,6 +41,8 @@ export default function DepartmentHeader({ className }) {
         if (json.status && json.data.length > 0) {
           setEngineeringData(json.data);
           setSelectedSchoolName(json.data[0].name);
+          setHoveredSchool(0);
+          setHoveredDepartments(json.data[0].departments || []);
 
           if (json.data[0].departments?.length > 0) {
             setSelectedDepartmentName(json.data[0].departments[0].name);
@@ -96,6 +100,8 @@ export default function DepartmentHeader({ className }) {
     }
   };
 
+  console.log('engineering data', engineeringData);
+
 
   return (
     <div className={styles.departmentHeaderWrapper}>
@@ -110,7 +116,7 @@ export default function DepartmentHeader({ className }) {
               >
                 <span>Departments Of</span>
                 <span>
-                  {selectedDepartmentName || selectedSchoolName}
+                  <span className={styles.selectedName}>{selectedDepartmentName || selectedSchoolName}</span>
                   <IoChevronDownOutline />
                 </span>
               </div>
@@ -126,41 +132,48 @@ export default function DepartmentHeader({ className }) {
                     <div className={styles.schoolsList}>
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => (
-                        <div
+                        <Link
                           key={idx}
+                          href={`/department/${school.slug}`}
                           className={`${styles.schoolItem} ${selectedSchool === idx ? styles.active : ""
                             }`}
-                          onClick={() => {
-                            setSelectedSchool(idx);
-                            setSelectedSchoolName(school.name);
-                            if (school.departments?.length > 0) {
-                              setSelectedDepartmentName(
-                                school.departments[0].name
-                              );
-                            }
+                          onMouseOver={() => {
+                            setHoveredSchool(idx);
+                            setHoveredDepartments(school.departments || []);
+                            // if (school.departments?.length > 0) {
+                            //   setSelectedDepartmentName(
+                            //     school.departments[0].name
+                            //   );
+                            // }
+                          }}
+                          onMouseOut={() => {
+
                           }}
                         >
                           {school.name}
-                        </div>
+                        </Link>
                       ))}
                     </div>
 
                     <div className={styles.departmentsList}>
                       <h6>Departments</h6>
-                      {engineeringData[selectedSchool]?.departments?.map(
-                        (dept, i) => (
+                      {hoveredDepartments.length > 0 ? (
+                        hoveredDepartments.map((dept, i) => (
                           <Link
                             key={i}
                             href={`/department/${dept.slug}`}
                             className={styles.departmentLink}
                             onClick={() => {
+                              setSelectedSchoolName(engineeringData[hoveredSchool].name);
                               setSelectedDepartmentName(dept.name);
                               setEngineeringDropdown(false);
                             }}
                           >
                             {dept.name}
                           </Link>
-                        )
+                        ))
+                      ) : (
+                        <p className={styles.noDept}>No departments available</p>
                       )}
                     </div>
 
