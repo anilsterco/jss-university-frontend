@@ -143,14 +143,11 @@ export default function EventsGrid({ data }) {
                   >
                     {eventsData.happenings[0] && eventsData.happenings[0].title}
                   </h2>
-                  {eventsData.happenings[0] && (
-                    <Link href={`/happenings/${eventsData.happenings[0].slug}`}>
-                      <GoArrowRight
-                        className={styles.rightArrow}
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      />
-                    </Link>
+                  {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
                   )}
                 </div>
               </div>
@@ -184,12 +181,12 @@ export default function EventsGrid({ data }) {
                       eventsData.happenings[1].event_date_from}
                   </p>
                 </div>
-                {eventsData.happenings[0] && (
-                  <Link
-                    href={`/happenings/${eventsData.happenings[1].slug}`}
-                    className={styles.full_link}
-                  ></Link>
-                )}
+                {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
               </div>
 
               <div className={styles.card}>
@@ -228,12 +225,12 @@ export default function EventsGrid({ data }) {
                       {eventsData.happenings[2] &&
                         eventsData.happenings[2].event_date_from}
                     </p>
-                    {eventsData.happenings[0] && (
-                      <Link
-                        href={`/happenings/${eventsData.happenings[2].slug}`}
-                        className={styles.full_link}
-                      ></Link>
-                    )}
+                     {eventsData.happenings?.[2]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[2].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                   </div>
                 </div>
               </div>
@@ -250,7 +247,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[3] && (
                   <Image
                     src={eventsData.happenings[3].image}
-                     alt="img"
+                    alt="img"
                     width={145}
                     height={160}
                     className={styles.cardImage}
@@ -268,17 +265,19 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[3] &&
                     eventsData.happenings[3].event_date_from}
                 </p>
-                <Link
-                  href={`/happenings/${eventsData.happenings[3].slug}`}
-                  className={styles.full_link}
-                ></Link>
+              {eventsData.happenings?.[3]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[3].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
               </div>
 
               <div className={styles.card}>
                 {eventsData.happenings[4] && (
                   <Image
                     src={eventsData.happenings[4].image}
-                     alt="img"
+                    alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -327,7 +326,7 @@ export default function EventsGrid({ data }) {
                 {eventsData.happenings[6] && (
                   <Image
                     src={eventsData.happenings[6].image}
-                     alt="img"
+                    alt="img"
                     fill
                     className={styles.cardImage}
                   />
@@ -373,10 +372,13 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[7] &&
                       eventsData.happenings[7].event_date_from}
                   </p>
-                  <Link
-                    href={`/happenings/${eventsData.happenings[7].slug}`}
-                    className={styles.full_link}
-                  ></Link>
+
+                  {eventsData.happenings?.[7]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[7].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                 </div>
               </div>
 
@@ -415,10 +417,13 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[8] &&
                     eventsData.happenings[8].event_date_from}
                 </p>
-                <Link
-                  href={`/happenings/${eventsData.happenings[8].slug}`}
-                  className={styles.full_link}
-                ></Link>
+               
+                {eventsData.happenings?.[8]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[8].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
               </div>
             </div>
           )}
@@ -456,13 +461,12 @@ export default function EventsGrid({ data }) {
                         {eventsData.happenings[0] &&
                           eventsData.happenings[0].title}
                       </h2>
-                      {eventsData.happenings[0] && (
-                        <Link
-                          href={`/happenings/${eventsData.happenings[0].slug}`}
-                        >
-                          <GoArrowRight className={styles.rightArrow} />
-                        </Link>
-                      )}
+                      {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -558,7 +562,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[4] && (
                       <Image
                         src={eventsData.happenings[4].image}
-                         alt="img"
+                        alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -578,7 +582,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[5] && (
                       <Image
                         src={eventsData.happenings[5].image}
-                         alt="img"
+                        alt="img"
                         fill
                         className={styles.cardImage}
                       />
@@ -595,13 +599,12 @@ export default function EventsGrid({ data }) {
                         {eventsData.happenings[5] &&
                           eventsData.happenings[5].short_description}
                       </p>
-                      {eventsData.happenings[5] && (
-                        <Link
-                          href={`/happenings/${eventsData.happenings[5].slug}`}
-                        >
-                          <GoArrowRight className={styles.rightArrow} />
-                        </Link>
-                      )}
+                     {eventsData.happenings?.[5]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[5].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -610,7 +613,7 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[6] && (
                       <Image
                         src={eventsData.happenings[6].image}
-                         alt="img"
+                        alt="img"
                         fill
                         className={styles.cardImage}
                       />

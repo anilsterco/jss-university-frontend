@@ -8,7 +8,6 @@ export default function LogoSlider({ data }) {
 
     const renderSection = (section, sectionIndex) => {
 
-        console.log('department facilityes', section);
         switch (section.type) {
             case "logo_slider":
                 return (

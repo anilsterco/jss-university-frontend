@@ -10,7 +10,6 @@ export default function TabsGrid({ data }) {
 
     const renderSection = (section, sectionIndex) => {
 
-        console.log('department faculties', section);
         switch (section.type) {
             case "tabsGrid":
                 return (

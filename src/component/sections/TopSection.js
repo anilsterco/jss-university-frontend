@@ -7,7 +7,6 @@ export default function TopSection({ data }) {
 
     const renderSection = (section, sectionIndex) => {
 
-        console.log('department facilityes', section);
         switch (section.type) {
             case "top_section":
                 return (
