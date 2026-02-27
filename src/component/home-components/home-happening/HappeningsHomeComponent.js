@@ -143,14 +143,11 @@ export default function EventsGrid({ data }) {
                   >
                     {eventsData.happenings[0] && eventsData.happenings[0].title}
                   </h2>
-                  {eventsData.happenings[0] && (
-                    <Link href={`/happenings/${eventsData.happenings[0].slug}`}>
-                      <GoArrowRight
-                        className={styles.rightArrow}
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                      />
-                    </Link>
+                  {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
                   )}
                 </div>
               </div>
@@ -184,12 +181,12 @@ export default function EventsGrid({ data }) {
                       eventsData.happenings[1].event_date_from}
                   </p>
                 </div>
-                {eventsData.happenings[0] && (
-                  <Link
-                    href={`/happenings/${eventsData.happenings[1].slug}`}
-                    className={styles.full_link}
-                  ></Link>
-                )}
+                {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
               </div>
 
               <div className={styles.card}>
@@ -228,12 +225,12 @@ export default function EventsGrid({ data }) {
                       {eventsData.happenings[2] &&
                         eventsData.happenings[2].event_date_from}
                     </p>
-                    {eventsData.happenings[0] && (
-                      <Link
-                        href={`/happenings/${eventsData.happenings[2].slug}`}
-                        className={styles.full_link}
-                      ></Link>
-                    )}
+                     {eventsData.happenings?.[2]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[2].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                   </div>
                 </div>
               </div>
@@ -268,10 +265,12 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[3] &&
                     eventsData.happenings[3].event_date_from}
                 </p>
-                <Link
-                  href={`/happenings/${eventsData.happenings[3].slug}`}
-                  className={styles.full_link}
-                ></Link>
+              {eventsData.happenings?.[3]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[3].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
               </div>
 
               <div className={styles.card}>
@@ -462,13 +461,12 @@ export default function EventsGrid({ data }) {
                         {eventsData.happenings[0] &&
                           eventsData.happenings[0].title}
                       </h2>
-                      {eventsData.happenings[0] && (
-                        <Link
-                          href={`/happenings/${eventsData.happenings[0].slug}`}
-                        >
-                          <GoArrowRight className={styles.rightArrow} />
-                        </Link>
-                      )}
+                      {eventsData.happenings?.[0]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[0].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -601,13 +599,12 @@ export default function EventsGrid({ data }) {
                         {eventsData.happenings[5] &&
                           eventsData.happenings[5].short_description}
                       </p>
-                      {eventsData.happenings[5] && (
-                        <Link
-                          href={`/happenings/${eventsData.happenings[5].slug}`}
-                        >
-                          <GoArrowRight className={styles.rightArrow} />
-                        </Link>
-                      )}
+                     {eventsData.happenings?.[5]?.slug && (
+                    <Link
+                      href={`/happenings/${eventsData.happenings[5].slug}`}
+                      className={styles.full_link}
+                    />
+                  )}
                     </div>
                   </div>
                 </SwiperSlide>
