@@ -85,6 +85,54 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                     </Link>
                   )}
                 </div>
+
+                <h1
+                  className={styles.bannerContentH1}
+                  dangerouslySetInnerHTML={{ __html: slide.title }}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                />
+
+                <p className={styles.bannerContentP} data-aos="fade-up" data-aos-delay="500">
+                  {slide.desc}
+                </p>
+
+                {slide.url && (
+                  <Link
+                    href={slide.url}
+                    className={styles.bannerContentA}
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
+                    {slide.linked_text || "Learn more"}
+                    <img
+                      src="/images/header/banner-arrow.svg"
+                      alt="arrow"
+                      className={styles.iconSpacing}
+                    />
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            <div className={styles.rightSection} data-aos="fade-left" data-aos-delay="300">
+              <div className={`${styles.imageWrapper} shine-effect`}>
+                <Image
+                  src={slide.desktop_banner || "/images/header/school-banner.png"}
+                  alt="image"
+                  width={1100}
+                  height={600}
+                  priority
+                  className={`w-100 ${styles.desktopBanner}`}
+                />
+                <Image
+                  src={slide.mobile_banner || "/images/home-page/mobile-main-banner.png"}
+                  alt={isDepartment ? name : "image"}
+                  width={600}
+                  height={600}
+                  priority
+                  className={styles.mobileBanner}
+                />
               </div>
             </div>
           </div>

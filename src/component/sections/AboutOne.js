@@ -61,14 +61,23 @@ export default function AboutOne({ data }) {
                           height={500}
                           className="img-fluid w-100"
                         />
-                        {(item.count || item.count_description) && (
+                        <div className="overlap_contents">
+                          {item?.countGroup && item.countGroup.map((singleItem, itemIdx) => (
+                            <figcaption key={itemIdx} className="image-overlay-caption">
+                              <h5>{singleItem.counter}</h5>
+                              <p>{singleItem.countDesc}</p>
+                            </figcaption>
+                          ))}
+                        </div>
+
+                        {/* {(item.count || item.count_description) && (
                           <figcaption className="image-overlay-caption">
                             {item.count && <h5>{item.count}</h5>}
                             {item.count_description && (
                               <p>{item.count_description}</p>
                             )}
                           </figcaption>
-                        )}
+                        )} */}
                       </figure>
                     )}
                   </div>
