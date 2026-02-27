@@ -18,11 +18,11 @@ export default function FacilitySix({ data }) {
           <section
             className="lib_cen_main  pt-0"
             key={`${sectionIndex}-${idx}`}>
-            <div className="containerMD">
+            <div className={`${item?.containerSize ? item.containerSize : 'containerMD'}`}>
               <div className="row">
                 <div className="col-lg-12">
-                  <div className="campu_grid_main capus_grid_two">
-                    <div className="campu_con_rgt">
+                  <div className={`campu_grid_main capus_grid_two ${item?.pageType == 'placement' && 'pb-0 border-0'}`}>
+                    <div className={`campu_con_rgt ${item.direction == 'reverse' && 'order-2'}`}>
                       {item.paragraph?.map((para, i) => (
                         <p key={i}>{para.text}</p>
                       ))}
@@ -37,7 +37,7 @@ export default function FacilitySix({ data }) {
                         </div>
                       )}
                     </div>
-                    <div className="cumpus_left_img">
+                    <div className={`cumpus_left_img`}>
                       {item.image && (
                         <figure className="shine-effect">
                           <Image
@@ -45,7 +45,7 @@ export default function FacilitySix({ data }) {
                             alt="Library Image"
                             width={800}
                             height={520}
-                            className="img-fluid w-100"
+                            className={`img-fluid w-100  ${item.direction == 'reverse' && 'rounded-0'}`}
                             data-aos="fade-up"
                             data-aos-delay="200"
                           />
@@ -53,25 +53,25 @@ export default function FacilitySix({ data }) {
                       )}
                       {item.imageDesc && <p>{item.imageDesc}</p>}
 
-                       {item.pdf && item.pdf.length > 0 && (
-                      <div className="studends_pdf">
-                        <ul>
-                          {item.pdf.map((pdfItem, i) => (
-                            <li key={i}>
-                              {pdfItem.pdf && (
-                                <Image
-                                  src={pdfItem.pdf}
-                                  alt={pdfItem.pdfName || "PDF Icon"}
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                              <span>{pdfItem.pdfName}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      {item.pdf && item.pdf.length > 0 && (
+                        <div className="studends_pdf">
+                          <ul>
+                            {item.pdf.map((pdfItem, i) => (
+                              <li key={i}>
+                                {pdfItem.pdf && (
+                                  <Image
+                                    src={pdfItem.pdf}
+                                    alt={pdfItem.pdfName || "PDF Icon"}
+                                    width={25}
+                                    height={25}
+                                  />
+                                )}
+                                <span>{pdfItem.pdfName}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

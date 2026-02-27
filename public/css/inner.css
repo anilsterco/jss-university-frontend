@@ -4,6 +4,11 @@
   padding-bottom: 3.8rem;
 }
 
+.inner-title.faculty_tabs {
+  padding-top: 0;
+  background: transparent;
+}
+
 .inner-title .innnr_head {
   text-align: center;
 }
@@ -3048,6 +3053,10 @@
 
 .ab_jss_c_col:last-child {
   border-left: none;
+}
+
+.ab_jss_c_col:first-child {
+  border: 1px solid var(--color-d4);
 }
 
 .ab_jss_c_col h4 {

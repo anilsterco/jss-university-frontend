@@ -29,8 +29,9 @@ export default function Placements({ data }) {
     const hasMore = visibleCount < boxes.length;
 
     return (
-      <div key={index} className={`${item?.category == "research" && "mt_3xl_10"}`}>
+      <div key={index} className={`${item?.category == "research" ? "mt_3xl_10" : item?.category == "placement" && "mt_3xl_7"}`}>
         {item?.heading && <h5 className="section_title">{item.heading}</h5>}
+        {item?.subTitle && <h6 className="section_subTitle">{item.subTitle}</h6>}
         <div className="placement_stats">
           {visibleItems.map((box, i) => (
             <div key={i} className="curriculum_box" data-aos="zoom-in">
