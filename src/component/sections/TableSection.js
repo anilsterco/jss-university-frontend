@@ -39,7 +39,7 @@ export default function TableSection({ data }) {
     }
 
     return (
-        <section className="table_section">
+        <section className={`table_section ${data[0].items[0].pageType == 'placement' && 'bg-gray'}`}>
             <div className="container">
                 {data && data.length > 0 ? (
                     data.map((section, index) => renderSection(section, index))
