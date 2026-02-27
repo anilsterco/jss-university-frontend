@@ -88,18 +88,18 @@ export default function PlacementsSection({ data, category, pageType }) {
     <section className={`${category !== 'slider' && styles.thirdSection}`}>
       <div className="container">
         {/* Section Header */}
-        {placementsData?.subtitle || placementsData?.title && (
+        {(placementsData?.subtitle || placementsData?.title) && (
           <div
             className={` ${styles.sectionHeader}`}
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <p className="fw-bold text-uppercase dark-blue-text">
-              {placementsData.subtitle?.toUpperCase()}
+              {placementsData?.subtitle?.toUpperCase()}
             </p>
             <h2
               className="fw-bold"
-              dangerouslySetInnerHTML={{ __html: placementsData.title }}
+              dangerouslySetInnerHTML={{ __html: placementsData?.title }}
             ></h2>
           </div>
         )}
