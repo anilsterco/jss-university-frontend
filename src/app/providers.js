@@ -14,7 +14,6 @@ export default function Providers({ children }) {
         },
       })
   );
-
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
