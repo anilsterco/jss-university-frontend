@@ -2803,6 +2803,10 @@ hr {
   margin-top: 12rem;
 }
 
+.inner_sub_header {
+  margin-top: 16.4rem
+}
+
 /* start responsive */
 
 @media (min-width: 1920px) {

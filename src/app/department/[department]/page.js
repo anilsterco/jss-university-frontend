@@ -10,22 +10,21 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import PlacementDepartment from "@/component/department-components/Placement-department/PlacementDepartment";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-
-const BASE_URL = "https://project-demo.in/jss/api";
+import { BASE_URL } from "@/config/config";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  return getPageSEO(slug);
+  const { department } = await params;
+  return getPageSEO(department);
 }
 
 async function getDepartmentData(slug) {
-  const res = await fetch(`${BASE_URL}/department/${slug}`, {
+  const res = await fetch(`${BASE_URL}department/${slug}`, {
     next: { revalidate: 120 },
   });
 
   if (!res.ok) {
     throw new Error(
-      `Failed to fetch department data for ${slug} (status ${res.status})`,
+      `Failed to fetch department data for ${department} (status ${res.status})`,
     );
   }
 
@@ -33,10 +32,12 @@ async function getDepartmentData(slug) {
 }
 
 export default async function DepartmentPage({ params }) {
-  const { slug } = await params;
+  const { department } = await params;
 
-  const departmentData = await getDepartmentData(slug);
-  const seoData = await getPageSEO(slug);
+  const departmentData = await getDepartmentData(department);
+  const seoData = await getPageSEO(department);
+
+  console.log('mechannical', department);
 
   return (
     <>
@@ -57,7 +58,7 @@ export default async function DepartmentPage({ params }) {
         name={departmentData?.department_name}
         isDepartment={true}
       />
-      <DepartmentHeader />
+      {departmentData?.sections?.tabs && <DepartmentHeader data={departmentData.sections.tabs} />}
       {departmentData?.sections?.about_school && (
         <AboutDepartmentComponent data={departmentData.sections.about_school} />
       )}
@@ -67,12 +68,12 @@ export default async function DepartmentPage({ params }) {
       {departmentData?.sections?.dean_message && (
         <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
-    
+
 
       {departmentData?.sections?.laboratories_data && (
         <LaboratoryComponent data={departmentData.sections.laboratories_data} />
       )}
-       
+
       {departmentData?.sections?.faculty_data && (
         <FacultyList data={departmentData.sections.faculty_data} />
       )}

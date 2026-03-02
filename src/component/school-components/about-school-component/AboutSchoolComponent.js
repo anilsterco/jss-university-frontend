@@ -56,7 +56,7 @@ export default function AboutSchool({ data }) {
 
   // ✅ Merge + sanitize API data
   const aboutSchoolContent = {
-    ...dummyAboutSchoolContent,
+    // ...dummyAboutSchoolContent,
     ...data,
     buttons:
       data?.buttons?.filter(
@@ -197,7 +197,7 @@ export default function AboutSchool({ data }) {
                   className={styles.accreditationLogo}
                 />
                 <p className={styles.small}>
-                 Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                  Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
                 </p>
               </div>
             </SwiperSlide>
@@ -212,7 +212,7 @@ export default function AboutSchool({ data }) {
                   className={styles.accreditationLogo}
                 />
                 <p className={styles.small}>
-                 Accredited by Board of Technical Education U.P
+                  Accredited by Board of Technical Education U.P
                 </p>
               </div>
             </SwiperSlide>
@@ -227,7 +227,7 @@ export default function AboutSchool({ data }) {
                   className={styles.accreditationLogo}
                 />
                 <p className={styles.small}>
-                Approved by the Pharmacy Council of India (PCI)
+                  Approved by the Pharmacy Council of India (PCI)
                 </p>
               </div>
             </SwiperSlide>
@@ -242,11 +242,11 @@ export default function AboutSchool({ data }) {
                   className={styles.accreditationLogo}
                 />
                 <p className={styles.small}>
-                 Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                  Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
                 </p>
               </div>
             </SwiperSlide>
-            
+
 
             <div className="about-pagination"></div>
           </Swiper>

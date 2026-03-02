@@ -2,11 +2,13 @@
 
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { IoChevronDownOutline } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
+import '@/styles/custom.style.css'
 
-export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
-  const [activeSection, setActiveSection] = useState(STATIC_SECTIONS[0].slug);
+export default function DepartmentHeader({ className, data }) {
+  const [activeSection, setActiveSection] = useState(data[0].slug);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
   const [selectedSchoolName, setSelectedSchoolName] = useState("");
@@ -15,6 +17,11 @@ export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
   const [hoveredSchool, setHoveredSchool] = useState(0);
   const [hoveredDepartments, setHoveredDepartments] = useState([]);
   const engineeringRef = useRef(null);
+  const pathname = usePathname();
+  const currentPage = pathname.split('/')[1];
+  const currentProgram = pathname.split('/')[3];
+
+  console.log('currentProgram', pathname);
 
   /* ================= Fetch Data ================= */
 
@@ -61,7 +68,7 @@ export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
 
   // useEffect(() => {
   //   const handleScroll = () => {
-  //     STATIC_SECTIONS.forEach((section) => {
+  //     data.forEach((section) => {
   //       const el = document.getElementById(section.id);
   //       if (el) {
   //         const rect = el.getBoundingClientRect();
@@ -88,7 +95,7 @@ export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
 
 
   return (
-    <div className={styles.departmentHeaderWrapper}>
+    <div className={`${styles.departmentHeaderWrapper} ${className}`}>
       <div className={styles.stickyHeader}>
         <nav className="containerXl">
           <div className={styles.departmentMenu}>
@@ -167,11 +174,11 @@ export default function DepartmentHeader({ className, STATIC_SECTIONS }) {
             </div>
 
             {/* ===== Static Menu ===== */}
-            {STATIC_SECTIONS.map((section) => (
+            {data.map((section) => (
               <Link
                 key={section.title}
-                href={section.slug}
-                className={`${styles.navItem} `}
+                href={'/' + currentPage + '/' + section.slug}
+                className={`${styles.navItem} ${section.slug.includes(currentProgram) ? styles.activeNav : ""}`}
               // ${activeSection === section.slug ? styles.activeNav : ""}
               // onClick={() => scrollToSection(section.id)}
               >

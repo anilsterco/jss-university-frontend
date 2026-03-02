@@ -14,37 +14,23 @@ export async function generateMetadata({ params }) {
   return getPageSEO(school);
 }
 
-async function getSchoolData(slug) {
-  const res = await fetch(`${BASE_URL}/school/${slug}`, {
+async function getSchoolData(slug, section) {
+  const res = await fetch(`${BASE_URL}school-pages/${slug}/${section}`, {
     next: { revalidate: 120 },
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch school data for ${slug} (status ${res.status})`);
+    throw new Error(`Failed to fetch school data for ${section} (status ${res.status})`);
   }
 
   return res.json();
 }
 
 export default async function SchoolPage({ params }) {
-  const { school } = await params;
+  const { school, section } = await params;
 
-  const schoolData = await getSchoolData(school);
+  const schoolData = await getSchoolData(school, section);
   const seoData = await getPageSEO(school);
-
-  const STATIC_SECTIONS = [
-    { title: "About The Department", slug: "school-of-engineering/about-the-school" },
-    { title: "Programs", slug: "school-of-engineering/programs" },
-    { title: "Research", slug: "school-of-engineering/research" },
-    { title: "Labs", slug: "school-of-engineering/labs" },
-    { title: "Facilities", slug: "school-of-engineering/facilities" },
-    { title: "Placements", slug: "school-of-engineering/placements" },
-    { title: "Faculties", slug: "school-of-engineering/faculties" },
-    { title: "Alumni", slug: "school-of-engineering/alumni" },
-    { title: "Innovations", slug: "school-of-engineering/innovations" },
-    { title: "FAQ's", slug: "school-of-engineering/faqs" },
-    { title: "Happenings", slug: "school-of-engineering/happenings" },
-  ];
 
   return (
     <>
@@ -56,38 +42,12 @@ export default async function SchoolPage({ params }) {
         strategy="beforeInteractive"
       />
 
-      <SchoolBannerComponent
-        data={schoolData?.sections?.banners}
-        name={schoolData?.school_name}
-      />
-
       {/* <BelowBannerComponent /> */}
-      <DepartmentHeader STATIC_SECTIONS={STATIC_SECTIONS} />
+      <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
 
-
-      {schoolData?.sections?.course_data?.title && (
-        <DepartmentComponent data={schoolData.sections.course_data} />
-      )}
-
-      {/* {schoolData?.sections?.placements?.title && (
-        <PlacementComponent data={schoolData.sections.placements} />
-      )} */}
-
-
-      {schoolData?.sections?.about_school?.title && (
-        <FacilitiesComponent data={schoolData.sections.about_school} />
-      )}
-      {schoolData?.sections?.about_school?.title && (
-        <AboutSchoolComponent data={schoolData.sections.about_school} />
-      )}
-
-      {schoolData?.sections?.testimonials?.title && (
-        <FacultySchool data={schoolData.sections.testimonials} />
-      )}
-
-      {schoolData?.sections?.happenings?.title && (
-        <HappingsHomeComponent data={schoolData.sections.happenings} />
-      )}
+      {section && section == 'programs' ? (
+        <h1>lkjsdf</h1>
+      ) : <h1>no data</h1>}
     </>
   );
 }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 }
 
 async function getSchoolData(slug) {
-    const res = await fetch(`${BASE_URL}/school/${slug}`, {
+    const res = await fetch(`${BASE_URL}school/${slug}`, {
         next: { revalidate: 120 },
     });
 
@@ -31,20 +31,6 @@ export default async function SchoolPage({ params }) {
 
     const schoolData = await getSchoolData(school);
     const seoData = await getPageSEO(school);
-
-    const STATIC_SECTIONS = [
-        { title: "About The Department", slug: "school-of-engineering/about-the-school" },
-        { title: "Programs", slug: "school-of-engineering/programs" },
-        { title: "Research", slug: "school-of-engineering/research" },
-        { title: "Labs", slug: "school-of-engineering/labs" },
-        { title: "Facilities", slug: "school-of-engineering/facilities" },
-        { title: "Placements", slug: "school-of-engineering/placements" },
-        { title: "Faculties", slug: "school-of-engineering/faculties" },
-        { title: "Alumni", slug: "school-of-engineering/alumni" },
-        { title: "Innovations", slug: "school-of-engineering/innovations" },
-        { title: "FAQ's", slug: "school-of-engineering/faqs" },
-        { title: "Happenings", slug: "school-of-engineering/happenings" },
-    ];
 
     return (
         <>
@@ -62,7 +48,7 @@ export default async function SchoolPage({ params }) {
             />
 
             {/* <BelowBannerComponent /> */}
-            <DepartmentHeader STATIC_SECTIONS={STATIC_SECTIONS} />
+            <DepartmentHeader data={schoolData?.sections?.tabs} />
 
 
             {schoolData?.sections?.course_data?.title && (

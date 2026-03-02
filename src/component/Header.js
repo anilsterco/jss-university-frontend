@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "@fontsource/roboto-condensed";
 
-const BASE_URL = "/api/";
+import { BASE_URL } from "@/config/config";
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
 const ADMISSION_BASE_URL = `${BASE_URL}admission`;
@@ -128,10 +128,9 @@ export default function Header() {
       try {
         const [res1, res2] = await Promise.all([
           fetch(
-            `${
-              pathname.includes("schools") || pathname.includes("department")
-                ? SCHOOL_HEADER_URL
-                : NAV_BASE_URL
+            `${pathname.includes("schools") || pathname.includes("department")
+              ? SCHOOL_HEADER_URL
+              : NAV_BASE_URL
             }`,
           ),
           fetch(`${ADMISSION_BASE_URL}`),
@@ -350,26 +349,26 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Contact"
             ? {
-                ...item,
-                heading: data.title,
-                Menu: [
-                  {
-                    name: data.address,
-                    url: data.direction_url,
-                    contactIcon: "/images/header/address-icon.svg",
-                  },
-                  {
-                    name: data.email,
-                    url: `mailto:${data.email}`,
-                    contactIcon: "/images/header/mail-icon.svg",
-                  },
-                  {
-                    name: data.phone,
-                    url: `tel:${data.phone}`,
-                    contactIcon: "/images/header/phone-icon.svg",
-                  },
-                ],
-              }
+              ...item,
+              heading: data.title,
+              Menu: [
+                {
+                  name: data.address,
+                  url: data.direction_url,
+                  contactIcon: "/images/header/address-icon.svg",
+                },
+                {
+                  name: data.email,
+                  url: `mailto:${data.email}`,
+                  contactIcon: "/images/header/mail-icon.svg",
+                },
+                {
+                  name: data.phone,
+                  url: `tel:${data.phone}`,
+                  contactIcon: "/images/header/phone-icon.svg",
+                },
+              ],
+            }
             : item,
         ),
       );
@@ -390,15 +389,15 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Menu"
             ? {
-                ...item,
-                heading: data.title,
-                Menu: [
-                  {
-                    name: data.title,
-                    url: data.url,
-                  },
-                ],
-              }
+              ...item,
+              heading: data.title,
+              Menu: [
+                {
+                  name: data.title,
+                  url: data.url,
+                },
+              ],
+            }
             : item,
         ),
       );
@@ -431,20 +430,18 @@ export default function Header() {
   `}
     >
       <div
-        className={`header-inner ${
-          pathname !== "/" ? "innerPage" : ""
-        } ${scrolled ? "header-scrolled" : ""}`}
+        className={`header-inner ${pathname !== "/" ? "innerPage" : ""
+          } ${scrolled ? "header-scrolled" : ""}`}
       >
         <div className="containerXl">
           <div
             className={`nav-container
-    ${
-      pathname !== "/" &&
-      !pathname.includes("/schools") &&
-      !pathname.includes("/department")
-        ? "scroll_bg programs-nav not-home"
-        : ""
-    }
+    ${pathname !== "/" &&
+                !pathname.includes("/schools") &&
+                !pathname.includes("/department")
+                ? "scroll_bg programs-nav not-home"
+                : ""
+              }
   `}
           >
             <div
@@ -487,9 +484,8 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className={`nav-item ${
-                        activeDropdown === i ? "active-items" : ""
-                      }`}
+                      className={`nav-item ${activeDropdown === i ? "active-items" : ""
+                        }`}
                       onMouseEnter={() => setActiveDropdown(i)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
@@ -738,9 +734,8 @@ export default function Header() {
                   {hamburgerMenudata.map((item, idx) => (
                     <li
                       key={idx}
-                      className={`menu-left-item ${
-                        activeIndex === idx ? "active" : ""
-                      }`}
+                      className={`menu-left-item ${activeIndex === idx ? "active" : ""
+                        }`}
                       onClick={() => setActiveIndex(idx)}
                     >
                       {item.name}
@@ -847,9 +842,8 @@ export default function Header() {
               {mobilePanels.map((item) => (
                 <div
                   key={item.name}
-                  className={`panel ${
-                    activePanel === item.name ? "open" : ""
-                  } ${item.name.toLowerCase()}-panel`}
+                  className={`panel ${activePanel === item.name ? "open" : ""
+                    } ${item.name.toLowerCase()}-panel`}
                 >
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
