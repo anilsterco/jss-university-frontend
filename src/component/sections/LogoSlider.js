@@ -25,7 +25,7 @@ export default function LogoSlider({ data }) {
     }
 
     return (
-        <section className=''>
+        <section>
             {data && data.length > 0 ? (
                 data.map((section, index) => renderSection(section, index))
             ) : (
@@ -33,7 +33,6 @@ export default function LogoSlider({ data }) {
                     <p>There is no data!</p>
                 </div>
             )}
-
         </section>
     )
 }

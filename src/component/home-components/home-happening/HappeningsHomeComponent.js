@@ -87,7 +87,6 @@ export default function EventsGrid({ data }) {
       },
     ],
   };
-  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -195,16 +194,13 @@ export default function EventsGrid({ data }) {
                     src={eventsData.happenings[2].image}
                     alt="img"
                     fill
-                    className={styles.cardImage}
-                  />
+                    className={styles.cardImage}/>
                 )}
-
                 <div className={styles.miniContentPart}>
                   <p
                     className={styles.cardTag}
                     data-aos="fade-up"
-                    data-aos-delay="400"
-                  >
+                    data-aos-delay="400">
                     {eventsData.happenings[2] &&
                       eventsData.happenings[2].event_type}
                   </p>
@@ -253,12 +249,10 @@ export default function EventsGrid({ data }) {
                     className={styles.cardImage}
                   />
                 )}
-
                 <h3
                   className={styles.cardTitle}
                   data-aos="fade-up"
-                  data-aos-delay="200"
-                >
+                  data-aos-delay="200">
                   {eventsData.happenings[3] && eventsData.happenings[3].title}
                 </h3>
                 <p className={styles.cardDate}>
@@ -268,8 +262,7 @@ export default function EventsGrid({ data }) {
               {eventsData.happenings?.[3]?.slug && (
                     <Link
                       href={`/happenings/${eventsData.happenings[3].slug}`}
-                      className={styles.full_link}
-                    />
+                      className={styles.full_link} />
                   )}
               </div>
 
@@ -333,7 +326,6 @@ export default function EventsGrid({ data }) {
                 )}
               </div>
 
-              {/* Event 8 */}
               <div
                 className={styles.card}
                 style={{ backgroundColor: "#00489A" }}
@@ -382,7 +374,6 @@ export default function EventsGrid({ data }) {
                 </div>
               </div>
 
-              {/* Event 9 */}
               <div className={styles.card} style={{ backgroundColor: "#fff" }}>
                 <p
                   className={`${styles.cardTag} ${styles.cardTagDark}`}

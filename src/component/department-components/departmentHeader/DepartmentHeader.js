@@ -52,7 +52,6 @@ export default function DepartmentHeader({ className }) {
         console.error("API Error:", err);
       }
     };
-
     fetchSchools();
   }, []);
 
@@ -126,7 +125,6 @@ export default function DepartmentHeader({ className }) {
                 >
                   <div className={styles.engineeringDropdown}>
 
-                    {/* ===== Schools ===== */}
                     <div className={styles.schoolsList}>
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => (
@@ -138,16 +136,8 @@ export default function DepartmentHeader({ className }) {
                           onMouseOver={() => {
                             setHoveredSchool(idx);
                             setHoveredDepartments(school.departments || []);
-                            // if (school.departments?.length > 0) {
-                            //   setSelectedDepartmentName(
-                            //     school.departments[0].name
-                            //   );
-                            // }
                           }}
-                          onMouseOut={() => {
-
-                          }}
-                        >
+                          onMouseOut={() => {}}>
                           {school.name}
                         </Link>
                       ))}
@@ -174,24 +164,18 @@ export default function DepartmentHeader({ className }) {
                         <p className={styles.noDept}>No departments available</p>
                       )}
                     </div>
-
                   </div>
                 </div>
               )}
             </div>
-
-            {/* ===== Static Menu ===== */}
             {STATIC_SECTIONS.map((section) => (
               <button
                 key={section.id}
-                className={`${styles.navItem} ${activeSection === section.id ? styles.activeNav : ""
-                  }`}
-                onClick={() => scrollToSection(section.id)}
-              >
+                className={`${styles.navItem} ${activeSection === section.id ? styles.activeNav : "" }`}
+                onClick={() => scrollToSection(section.id)}>
                 {section.label}
               </button>
             ))}
-
           </div>
         </nav>
       </div>
