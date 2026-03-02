@@ -10,6 +10,7 @@ import Script from "next/script";
 import { BASE_URL } from "@/config/config";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
+import Faculties from "@/pages/faculties/Faculties";
 
 export async function generateMetadata({ params }) {
   const { school } = await params;
@@ -22,7 +23,9 @@ async function getSchoolData(slug, section) {
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch school data for ${section} (status ${res.status})`);
+    throw new Error(
+      `Failed to fetch school data for ${section} (status ${res.status})`,
+    );
   }
 
   return res.json();
@@ -47,11 +50,17 @@ export default async function SchoolPage({ params }) {
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
 
-      {section && section == 'programs' ? (
+      {section && section == "programs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <Programs data={schoolData?.data} />
         </Suspense>
-      ) : <h1>no data</h1>}
+      ) : section == "faculties" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Faculties data={schoolData?.data} />
+        </Suspense>
+      ) : (
+        <h1>no data</h1>
+      )}
     </>
   );
 }
