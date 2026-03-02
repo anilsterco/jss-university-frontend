@@ -6,6 +6,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import ProgramBox from "@/component/programBox/ProgramBox";
 
 const BASE_URL = "/api/";
 
@@ -282,33 +283,7 @@ export default function ProgramClient() {
                   {programs && programs.length > 0 ? (
                     <div className={styles.programListBoxs}>
                       {programs.map((program, index) => (
-                        <div key={index} className={styles.cusProgramBox}>
-                          <Link
-                            href={`/programs/${program.slug ?? ""}`}
-                            className={styles.strechedLink}
-                          >
-                            <figure>
-                              <Image
-                                src={
-                                  program.image ??
-                                  "/images/programs/program-img.webp"
-                                }
-                                alt="program-image"
-                                width={400}
-                                height={250}
-                                className="img-fluid w-100"
-                              />
-                            </figure>
-                            <div className={styles.cusProgramText}>
-                              <p>{program.degree_name}</p>
-                              <h6>{program.name}</h6>
-                              <span>
-                                Know More{" "}
-                                <i className="bi bi-chevron-right"></i>
-                              </span>
-                            </div>
-                          </Link>
-                        </div>
+                        <ProgramBox key={index} data={program} />
                       ))}
                     </div>
                   ) : (

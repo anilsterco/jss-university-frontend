@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "@fontsource/roboto-condensed";
 
-const BASE_URL = "/api/";
+import { BASE_URL } from "@/config/config";
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
 const ADMISSION_BASE_URL = `${BASE_URL}admission`;
@@ -434,6 +434,7 @@ export default function Header() {
         className={`header-inner ${
           pathname !== "/" ? "innerPage" : ""
         } ${scrolled ? "header-scrolled" : ""}`}
+        onMouseLeave={() => setActiveDropdown(null)}
       >
         <div className="containerXl">
           <div
@@ -490,14 +491,18 @@ export default function Header() {
                       className={`nav-item ${
                         activeDropdown === i ? "active-items" : ""
                       }`}
-                      onMouseEnter={() => setActiveDropdown(i)}
-                      onMouseLeave={() => setActiveDropdown(null)}
+                      onMouseOver={() => setActiveDropdown(i)}
+                      // onMouseLeave={() => setActiveDropdown(null)}
                     >
                       <Link href={l.url} className={`nav-link nav-lists`}>
                         {l.title}
                       </Link>
+
                       {activeDropdown === i && l.children?.length > 0 && (
-                        <div className="mega-dropdown" role="menu">
+                        <div
+                          className={`mega-dropdown ${activeDropdown === i ? "d-flex" : ""}`}
+                          role="menu"
+                        >
                           <div className="mega-left">
                             <ul>
                               {l.children.map((d, j) => (
@@ -1257,7 +1262,7 @@ export default function Header() {
             margin: 0;
             list-style: none;
             display: flex;
-            padding: 1.2rem 2.8rem 1.2rem 2.8rem;
+            padding: 0 2.8rem;
             background-color: rgb(22, 52, 78, 78%);
             color: #fff;
           }
@@ -1774,11 +1779,6 @@ export default function Header() {
             top: 0;
             left: 0;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-          }
-
-          .nav-item:hover > .mega-dropdown,
-          .nav-item:focus-within > .mega-dropdown {
-            display: flex;
           }
 
           .mega-left {

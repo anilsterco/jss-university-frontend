@@ -89,11 +89,11 @@ export default function PlacementsSection({ data, category, pageType }) {
             data-aos-delay="100"
           >
             <p className="fw-bold text-uppercase dark-blue-text">
-              {placementsData.subtitle?.toUpperCase()}
+              {placementsData?.subtitle?.toUpperCase()}
             </p>
             <h2
               className="fw-bold"
-              dangerouslySetInnerHTML={{ __html: placementsData.title }}
+              dangerouslySetInnerHTML={{ __html: placementsData?.title }}
             ></h2>
           </div>
         )}
