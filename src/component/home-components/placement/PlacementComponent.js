@@ -18,10 +18,7 @@ const dummyPlacementsData = {
     '<span class="dark-blue-text ">FROM</span> <span class="blue-text">CAMPUS</span> <span class="dark-blue-text ">TO</span> <span class="blue-text">CORPORATE</span>',
   subtitle: "Placement",
   facts_and_figures: [
-    // Example stats
-    // { figure: "5000+", title: "STUDENTS HIRED" },
-    // { figure: "22.5", title: "LPA MAX" },
-    // { figure: "2000+", title: "RECRUITERS" },
+   
   ],
   testimonials: [
     {

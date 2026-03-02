@@ -5178,3 +5178,10 @@ hr {
     padding-block: 2rem;
   }
 }
+
+.leader-category-title  {
+   font: var(--font-26);
+    color: var(--color-4e);
+    text-transform: capitalize;
+    margin-block: 6rem;
+}
