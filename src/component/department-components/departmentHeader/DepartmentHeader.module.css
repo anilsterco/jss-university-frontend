@@ -19,11 +19,9 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
-
 .departmentMenu::-webkit-scrollbar {
   display: none;
 }
-
 .schoolToggle {
   cursor: pointer;
   font-weight: 600;
@@ -32,7 +30,6 @@
   color: #16344e;
   width: 23rem;
 }
-
 .schoolToggle .selectedName {
   white-space: nowrap;
   width: 100%;
@@ -44,6 +41,7 @@
    font: var(--font-16);
   font-family: var(--font-Roboto);
   color: #16344E;
+  font-weight: bold;
 }
 
 .schoolToggle span:last-child {

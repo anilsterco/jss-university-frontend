@@ -45,7 +45,6 @@ export default function DepartmentHeader({ className, data }) {
         console.error("API Error:", err);
       }
     };
-
     fetchSchools();
   }, []);
 
@@ -119,7 +118,6 @@ export default function DepartmentHeader({ className, data }) {
                 >
                   <div className={styles.engineeringDropdown}>
 
-                    {/* ===== Schools ===== */}
                     <div className={styles.schoolsList}>
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => (
@@ -131,16 +129,8 @@ export default function DepartmentHeader({ className, data }) {
                           onMouseOver={() => {
                             setHoveredSchool(idx);
                             setHoveredDepartments(school.departments || []);
-                            // if (school.departments?.length > 0) {
-                            //   setSelectedDepartmentName(
-                            //     school.departments[0].name
-                            //   );
-                            // }
                           }}
-                          onMouseOut={() => {
-
-                          }}
-                        >
+                          onMouseOut={() => { }}>
                           {school.name}
                         </Link>
                       ))}
@@ -167,7 +157,6 @@ export default function DepartmentHeader({ className, data }) {
                         <p className={styles.noDept}>No departments available</p>
                       )}
                     </div>
-
                   </div>
                 </div>
               )}
@@ -185,7 +174,6 @@ export default function DepartmentHeader({ className, data }) {
                 {section.title}
               </Link>
             ))}
-
           </div>
         </nav>
       </div>

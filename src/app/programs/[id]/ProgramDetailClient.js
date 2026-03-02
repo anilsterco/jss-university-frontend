@@ -16,6 +16,7 @@ export default function ProgramDetailClient({ params }) {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
     fetch(`${BASE_URL}/course/${params}`)
@@ -130,12 +131,15 @@ export default function ProgramDetailClient({ params }) {
     testimonials,
     career_opportunities,
     apply_now_link,
+    faqs,
   } = programData;
 
   const currentTestimonial = testimonials?.[currentTestimonialIndex];
   const text = currentTestimonial?.short_description || "";
   const [firstWord, ...restWords] = text.split(" ");
-
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
   return (
     <main className="site_main">
       {/* Program Detail Hero Section */}
@@ -591,7 +595,7 @@ export default function ProgramDetailClient({ params }) {
       )}
 
       {/* Fee Structure Section */}
-     {fee_structure?.fee_structure_title && (
+      {fee_structure?.fee_structure_title && (
         <section className="program-sec-six">
           <div className="container">
             <div className="row">
@@ -749,7 +753,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Career Opportunities Section */}
       {career_opportunities && (
         <section className="opportunitie-sec">
           <div className="opportunitie-img">
@@ -801,6 +804,27 @@ export default function ProgramDetailClient({ params }) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {faqs && faqs.length > 0 && (
+        <section className="faqSection">
+          <div className="container">
+            <h5 className="heading">FREQUENTLY ASKED QUESTIONS</h5>
+            <div className="faqList">
+              {faqs.map((faq, index) => (
+                <details key={faq.id} className="faqItem">
+                  <summary className="faqQuestion">
+                    <span className="icon"></span>
+                    <span>{faq.question}</span>
+                  </summary>
+                  <div className="faqAnswer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>

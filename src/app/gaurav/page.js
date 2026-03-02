@@ -128,8 +128,8 @@ const Page = () => {
     setGrandActiveTab(tabId);
   };
 
-  // ✅ Example data — replace with your CMS data
   const sections = [
+    {type:"jssmahavidyapith"},
     { type: "aboutjss_banner" },
     { type: "empower_sec" },
     { type: "fostering_sec" },
@@ -169,13 +169,13 @@ const Page = () => {
     { type: "grands-section" },
     { type: "grands-tabs-section" },
     { type: "Consultancy" },
+    { type: "Consultancy" },
 
     
   ];
 
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
-      /* ================= ABOUT JSS BANNER ================= */
 
       case "aboutjss_banner":
         return (
@@ -217,7 +217,128 @@ const Page = () => {
           </section>
         );
 
-      /* ================= TOP BANNER ================= */
+ case "jssmahavidyapith":
+        return (
+          <section className="fee_sturc_admain reserachTble" key={sectionIndex}>
+            <div className="container">
+              <div className="fee_stru_title ">
+                <h5>JSS MAHAVIDYAPEETHA</h5>
+                <h6>JSS ACADEMY OF TECHNICAL EDUCATION and JSS University, NOIDA</h6>
+                <p>
+                  Journal Details (last 5 years)
+                </p>
+              </div>
+              <div className="fee_strcu_table">
+                <div className="fee_table_wrapper">
+                  <table className="fee_table">
+                    <thead>
+                      <tr>
+                        <th>Sl. No.</th>
+                        <th>Name of Author</th>
+                        <th>Title of the paper</th>
+                        <th>Name of the Journal</th>
+                        <th>Publisher</th>
+                        <th>ISSN Number</th>
+                        <th>Volume, Issue, Page Numbers</th>
+                        <th>Month, Year of Publication </th>
+                        <th>Impact Factor (as per Journal Citation Reports, if available)</th>
+                        <th>SCI/ SCIE Indexed</th>
+                        <th>Scopus Indexed</th>
+                        <th>WoS (Web of Science) Indexed</th>
+                        <th>DOI (Digital Object Identifier)</th>
+                        <th>URL (if accessible online)</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <th>Anand Kumar Pandey and Sheeraz Kirmani</th>
+                        <td>Optimal location and sizing of hybrid systems by analytical crow search optimization algorithm,</td>
+                        <td>International Transactions on Electrical Energy Systems</td>
+                        <td></td>
+                        <td></td>
+                        <td>30.5, e1232, 2020</td>
+                        <td>Feb</td>
+                        <td>1.9</td>
+                        <td></td>
+                        <td>WoS</td>
+                        <td>Scopus</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <th>Anand Kumar Pandey and Sheeraz Kirmani</th>
+                        <td>Optimal location and sizing of hybrid systems by analytical crow search optimization algorithm,</td>
+                        <td>International Transactions on Electrical Energy Systems</td>
+                        <td></td>
+                        <td></td>
+                        <td>30.5, e1232, 2020</td>
+                        <td>Feb</td>
+                        <td>1.9</td>
+                        <td></td>
+                        <td>WoS</td>
+                        <td>Scopus</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <th>Anand Kumar Pandey and Sheeraz Kirmani</th>
+                        <td>Optimal location and sizing of hybrid systems by analytical crow search optimization algorithm,</td>
+                        <td>International Transactions on Electrical Energy Systems</td>
+                        <td></td>
+                        <td></td>
+                        <td>30.5, e1232, 2020</td>
+                        <td>Feb</td>
+                        <td>1.9</td>
+                        <td></td>
+                        <td>WoS</td>
+                        <td>Scopus</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <th>Anand Kumar Pandey and Sheeraz Kirmani</th>
+                        <td>Optimal location and sizing of hybrid systems by analytical crow search optimization algorithm,</td>
+                        <td>International Transactions on Electrical Energy Systems</td>
+                        <td></td>
+                        <td></td>
+                        <td>30.5, e1232, 2020</td>
+                        <td>Feb</td>
+                        <td>1.9</td>
+                        <td></td>
+                        <td>WoS</td>
+                        <td>Scopus</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <th>Anand Kumar Pandey and Sheeraz Kirmani</th>
+                        <td>Optimal location and sizing of hybrid systems by analytical crow search optimization algorithm,</td>
+                        <td>International Transactions on Electrical Energy Systems</td>
+                        <td></td>
+                        <td></td>
+                        <td>30.5, e1232, 2020</td>
+                        <td>Feb</td>
+                        <td>1.9</td>
+                        <td></td>
+                        <td>WoS</td>
+                        <td>Scopus</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                 
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
 
       case "empower_sec":
         return (
@@ -292,7 +413,6 @@ const Page = () => {
             </div>
           </section>
         );
-      /* ================= Fostering ================= */
 
       case "fostering_sec":
         return (
@@ -352,7 +472,6 @@ const Page = () => {
           </section>
         );
 
-      /* ================= Heritageone ================= */
       case "about_heritage":
         return (
           <section className="about_heri_one_sec" key={sectionIndex}>
@@ -2347,7 +2466,7 @@ const Page = () => {
           <section className="fee_sturc_admain" key={sectionIndex}>
             <div className="container">
               <div className="fee_stru_title">
-                <h5>Fee Structure 2025-26</h5>
+                <h5>JSS MAHAVIDYAPEETHA</h5>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -3937,7 +4056,72 @@ const Page = () => {
             </div>
           </section>
         );
+    
 
+
+
+ case "Consultancy":
+        return (
+          <section className="atm_mainsec consultancy_main" key={sectionIndex}>
+            <div className="container">
+              <div className="atm_fac_grid">
+                <div className="atm_g_cont">
+                  <h5>Consultancy</h5>
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                    aut fugit, sed quia consequuntur magni dolores eos qui
+                    ratione
+                  </p>
+                  <p>
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                    dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut
+                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem
+                  </p>
+                  <div className="downlo_guides">
+                    <a href="javascript:void()">
+                      {" "}
+                      <figure className="shine-effect">
+                        <Image
+                          src="/images/about-page/pdf_icon.webp"
+                          alt="About JSS Academy"
+                          width={15}
+                          height={20}
+                          className="img-fluid"
+                          data-aos="fade-up"
+                          data-aos-delay="200"
+                        />
+                      </figure>{" "}
+                      Reasearch Advisory Cell
+                    </a>
+                  </div>
+                </div>
+                <div className="atm_g_imgsec">
+                  <figure className="shine-effect img-full">
+                    <Image
+                      src="/images/about-page/consultancy_01.webp"
+                      alt="About JSS Academy"
+                      className="w-100"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      width={683}
+                      height={750}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+
+        
 
 
 

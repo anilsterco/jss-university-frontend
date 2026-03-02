@@ -26,15 +26,21 @@ export default function LeadershipClient() {
   // ================= API CALL =================
   useEffect(() => {
     setLoading(true);
+
     fetch("https://project-demo.in/jss/api/leadership")
       .then((res) => res.json())
       .then((resJson) => {
-        if (Array.isArray(resJson) && resJson.length > 0) {
-          setTopLeader(resJson[0]);
-          setLeaders(resJson.slice(1));
-        } else if (resJson.data && Array.isArray(resJson.data)) {
-          setTopLeader(resJson.data[0]);
-          setLeaders(resJson.data.slice(1));
+        if (resJson.success && resJson.data) {
+          const categories = resJson.data;
+
+          const firstCategory = Object.keys(categories)[0];
+          const firstCategoryLeaders = categories[firstCategory];
+
+          if (firstCategoryLeaders?.length > 0) {
+            setTopLeader(firstCategoryLeaders[0]);
+          }
+
+          setLeaders(categories);
         }
       })
       .catch((err) => console.error("API fetch error:", err))
@@ -47,7 +53,6 @@ export default function LeadershipClient() {
 
   return (
     <>
-      {/* ALWAYS STATIC – does NOT depend on loading */}
       <section className="inner-title">
         <div className="container">
           <div className="innnr_head text-center">
@@ -69,7 +74,6 @@ export default function LeadershipClient() {
         </div>
       </section>
 
-      {/* SHOW LOADING ONLY FOR LEADERSHIP CONTENT */}
       {loading && (
         <div className="text-center p-10">
           <p>Loading Leadership Data...</p>
@@ -82,10 +86,8 @@ export default function LeadershipClient() {
         </div>
       )}
 
-      {/* WHEN DATA IS READY, SHOW CONTENT */}
       {!loading && topLeader && (
         <>
-          {/* TOP LEADER SECTION */}
           <section className="leadership_one">
             <div className="container">
               <div className="top_img">
@@ -122,41 +124,60 @@ export default function LeadershipClient() {
             </div>
           </section>
 
-          {/* GRID SECTION */}
           <section className="leadership_two">
             <div className="container">
-              <div className="leadership_grid">
-                {leaders.map((leader) => (
-                  <div key={leader.id} className="leadership_grid_Bx">
-                    <figure>
-                      <span>
-                        <Image
-                          src={leader.image}
-                          alt={leader.name}
-                          width={400}
-                          height={400}
-                          // style={{ width: "100%", height: "auto" }}
-                        />
-                      </span>
-                      <figcaption>
-                        <h3>{leader.name}</h3>
-                        <p>{leader.designation}</p>
-                        <Image
-                          src={"/images/icons/leder-arrow.svg"}
-                          alt={"circularArrow"}
-                          width={20}
-                          height={20}
-                          className="arrow-icon"
-                        />
-                      </figcaption>
-                    </figure>
-                    <Link
-                      href={`/leadership/${leader.slug}`}
-                      className="links"
-                    ></Link>
-                  </div>
-                ))}
-              </div>
+              {Object.entries(leaders).map(
+                ([categoryName, categoryLeaders]) => {
+                  if (!categoryLeaders || categoryLeaders.length === 0)
+                    return null;
+
+                  return (
+                    <div key={categoryName} className="leader-category-block">
+                      <h2 className="leader-category-title">
+                        {categoryName}
+                      </h2>
+
+                      <div className="leadership_grid">
+                        {categoryLeaders.map((leader, index) => {
+                          if (topLeader && leader.id === topLeader.id)
+                            return null;
+
+                          return (
+                            <div key={leader.id} className="leadership_grid_Bx">
+                              <figure>
+                                <span>
+                                  <Image
+                                    src={leader.image}
+                                    alt={leader.name}
+                                    width={400}
+                                    height={400}
+                                  />
+                                </span>
+                                <figcaption>
+                                  <h3>{leader.name}</h3>
+                                  <p>{leader.designation}</p>
+                                  <Image
+                                    src={"/images/icons/leder-arrow.svg"}
+                                    alt="arrow"
+                                    width={20}
+                                    height={20}
+                                    className="arrow-icon"
+                                  />
+                                </figcaption>
+                              </figure>
+
+                              <Link
+                                href={`/leadership/${leader.slug}`}
+                                className="links"
+                              ></Link>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                },
+              )}
             </div>
           </section>
         </>
