@@ -169,13 +169,13 @@ const Page = () => {
     { type: "grands-section" },
     { type: "grands-tabs-section" },
     { type: "Consultancy" },
+    { type: "Consultancy" },
 
     
   ];
 
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
-      /* ================= ABOUT JSS BANNER ================= */
 
       case "aboutjss_banner":
         return (
@@ -217,7 +217,6 @@ const Page = () => {
           </section>
         );
 
-      /* ================= TOP BANNER ================= */
 
       case "empower_sec":
         return (
@@ -292,7 +291,6 @@ const Page = () => {
             </div>
           </section>
         );
-      /* ================= Fostering ================= */
 
       case "fostering_sec":
         return (
@@ -352,7 +350,6 @@ const Page = () => {
           </section>
         );
 
-      /* ================= Heritageone ================= */
       case "about_heritage":
         return (
           <section className="about_heri_one_sec" key={sectionIndex}>
@@ -3937,7 +3934,72 @@ const Page = () => {
             </div>
           </section>
         );
+    
 
+
+
+ case "Consultancy":
+        return (
+          <section className="atm_mainsec consultancy_main" key={sectionIndex}>
+            <div className="container">
+              <div className="atm_fac_grid">
+                <div className="atm_g_cont">
+                  <h5>Consultancy</h5>
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                    aut fugit, sed quia consequuntur magni dolores eos qui
+                    ratione
+                  </p>
+                  <p>
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                    dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut
+                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                    ad minima veniam, quis nostrum exercitationem
+                  </p>
+                  <div className="downlo_guides">
+                    <a href="javascript:void()">
+                      {" "}
+                      <figure className="shine-effect">
+                        <Image
+                          src="/images/about-page/pdf_icon.webp"
+                          alt="About JSS Academy"
+                          width={15}
+                          height={20}
+                          className="img-fluid"
+                          data-aos="fade-up"
+                          data-aos-delay="200"
+                        />
+                      </figure>{" "}
+                      Reasearch Advisory Cell
+                    </a>
+                  </div>
+                </div>
+                <div className="atm_g_imgsec">
+                  <figure className="shine-effect img-full">
+                    <Image
+                      src="/images/about-page/consultancy_01.webp"
+                      alt="About JSS Academy"
+                      className="w-100"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      width={683}
+                      height={750}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+
+
+        
 
 
 
