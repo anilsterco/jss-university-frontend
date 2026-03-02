@@ -8,6 +8,8 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { BASE_URL } from "@/config/config";
+import Programs from "@/pages/programs/Programs";
+import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
   const { school } = await params;
@@ -46,7 +48,9 @@ export default async function SchoolPage({ params }) {
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
 
       {section && section == 'programs' ? (
-        <h1>lkjsdf</h1>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Programs data={schoolData?.data} />
+        </Suspense>
       ) : <h1>no data</h1>}
     </>
   );

@@ -23,10 +23,10 @@
   padding: 1.6rem 2.5rem;
   border-radius: 8px;
   color: var(--color-black);
-  font-size: 1.4rem; 
-  line-height: 1.2; 
-  height: auto; 
-  min-height: auto; 
+  font-size: 1.4rem;
+  line-height: 1.2;
+  height: auto;
+  min-height: auto;
 }
 
 /* Remove focus/active borders */
@@ -36,23 +36,23 @@
   border: none !important;
   outline: none !important;
   box-shadow: 0px 16px 56px #00000017 !important;
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
 }
 
 .searchBox button {
   position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
   border: none;
   background: var(--color-white);
   cursor: pointer;
   z-index: 9;
-  padding: 0.5rem; 
+  padding: 0.5rem;
 }
 
 .searchBox button i {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }
 
 .searchBox input::placeholder {
@@ -60,7 +60,8 @@
   font: var(--font-18);
   font-style: italic;
   letter-spacing: -0.36px;
-  font-size: 1.8rem; /* Larger placeholder text */
+  font-size: 1.8rem;
+  /* Larger placeholder text */
 }
 
 /* Remove button focus styles */
@@ -98,9 +99,12 @@
   color: var(--color-27);
   padding-bottom: 1rem;
 }
-.programCategoryBox .formCheck input, .programCategoryBox .formCheck label{
+
+.programCategoryBox .formCheck input,
+.programCategoryBox .formCheck label {
   cursor: pointer;
 }
+
 .programCategoryBox .formCheck {
   align-items: center;
   display: flex;
@@ -681,6 +685,7 @@
   .eligibilitySec .container {
     max-width: 2032px;
   }
+
   .eligibilityText {
     width: 41.3%;
   }
@@ -777,6 +782,7 @@
   .item.active .itemContent {
     padding-top: 0;
   }
+
   .tabsSide .tabs li {
     margin-bottom: 2px;
   }
@@ -812,25 +818,32 @@
     display: block;
     height: 8rem;
   }
+
   .tabbedContent .tabs li {
     display: inline-block;
   }
+
   .tabbedContent .tabs li a {
     display: block;
   }
+
   .tabbedContent .item {
     min-height: 0;
   }
+
   .tabbedContent .item::before {
     display: none;
   }
+
   .tabbedContent.tabsSide .tabs {
     width: 150px;
     float: left;
   }
+
   .tabbedContent.tabsSide .tabs li {
     display: block;
   }
+
   .tabbedContent.tabsSide .item {
     margin-left: 150px;
   }
@@ -1500,7 +1513,7 @@
     grid-template-columns: 30% auto;
     gap: 3rem;
   }
-  
+
   .programListBoxs {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -1512,34 +1525,36 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   /* Filter above programs on mobile */
   .programCategory {
-    order: 1; /* Filter comes first */
+    order: 1;
+    /* Filter comes first */
   }
-  
+
   .programMainList {
-    order: 2; /* Programs come after */
+    order: 2;
+    /* Programs come after */
   }
-  
+
   .programListBoxs {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .programCategoryBox {
     padding: 2rem;
   }
-  
+
   .programSec1 {
     padding-block: 5rem;
   }
-  
+
   .searchBox input {
     padding: 1.4rem 2rem;
     font-size: 1.6rem;
   }
-  
+
   .searchBox button {
     right: 15px;
   }
@@ -1550,75 +1565,75 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .programCategoryBox {
     padding: 1.5rem;
     margin-block: 0 1.5rem;
   }
-  
+
   .programCategoryBox p {
     font-size: 1.6rem;
     padding-bottom: 0.8rem;
   }
-  
+
   .programCategoryBox .formCheck {
     padding: 1rem 0;
     font-size: 1.4rem;
   }
-  
+
   .programSec1 {
     padding-block: 4rem;
   }
-  
+
   .searchBox input {
     padding: 1.2rem 1.5rem;
     font-size: 1.6rem;
   }
-  
+
   .searchBox input::placeholder {
     font-size: 1.6rem;
   }
-  
+
   .searchBox button {
     right: 12px;
     padding: 0.3rem;
   }
-  
+
   .searchBox button i {
     font-size: 1.6rem;
   }
-  
+
   .cusProgramText {
     padding: 4rem 1.5rem 1.5rem 1.5rem;
     bottom: -15rem;
   }
-  
+
   .cusProgramText h6 {
     font-size: 1.8rem;
     padding-block: 0.8rem;
   }
-  
+
   .cusProgramText p {
     font-size: 1.3rem;
   }
-  
+
   .cusProgramText span {
     font-size: 1.1rem;
   }
-  
+
   .loadMoreContainer {
     padding: 6rem 0 0;
   }
-  
+
   .loadMoreContainer::before {
     top: 6.7rem;
   }
-  
+
   .loadMoreContainer a {
     padding: 0.8rem 1.2rem;
     font-size: 1.3rem;
   }
-  
+
   .loadMoreContainer a::before {
     width: 15rem;
     height: 35px;
@@ -1630,64 +1645,65 @@
   .programList {
     gap: 2rem;
   }
-  
+
   .programCategoryBox {
     padding: 2rem;
   }
-  
+
   .programCategoryBox p {
     font-size: 1.5rem;
     margin-bottom: 0;
   }
-   .programCategoryBox {
+
+  .programCategoryBox {
     padding: 2rem;
   }
-  
+
   .programCategoryBox .formCheck {
     padding: 0.8rem 0;
     font-size: 1.3rem;
     gap: 0.8rem;
   }
-  
+
   .searchBox input {
     padding: 1rem 1.2rem;
     font-size: 1.4rem;
   }
-  
+
   .searchBox input::placeholder {
     font-size: 1.4rem;
   }
-  
+
   .searchBox button {
     right: 10px;
     top: 50%;
   }
-  
+
   .searchBox button i {
     font-size: 1.4rem;
   }
-  
+
   .programSec1 {
     padding-block: 2rem;
   }
-  
+
   .cusProgramText {
     padding: 3rem 1rem 1rem 1rem;
     bottom: -12rem;
   }
-  
+
   .cusProgramText h6 {
     font-size: 1.6rem;
   }
-  
+
   .cusProgramText p {
     font-size: 1.2rem;
   }
-  
+
   .loadMoreContainer {
     padding: 4rem 0 0;
   }
-  
+
   .loadMoreContainer::before {
     top: 4.7rem;
   }
@@ -1705,9 +1721,11 @@
   .programCategoryBox .formCheck {
     min-height: 44px;
   }
+
   .cusProgramBox {
-    min-height: 200px; 
+    min-height: 200px;
   }
+
   .loadMoreContainer a {
     min-height: 44px;
     display: inline-flex;
@@ -1721,11 +1739,11 @@
   .programCategoryBox {
     padding: 2rem;
   }
-  
+
   .searchBox input {
     padding: 0.8rem 1rem;
   }
-  
+
   .cusProgramText {
     padding: 2rem 0.8rem 0.8rem 0.8rem;
   }
