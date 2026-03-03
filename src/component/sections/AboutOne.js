@@ -28,7 +28,7 @@ export default function AboutOne({ data }) {
       case "topBanner":
         return (
           <div
-            className="row justify-content-center about_top"
+            className={`row justify-content-center about_top ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
             key={`about-section-${sectionIndex}`}
             data-aos="fade-up"
             data-aos-duration="1200"
@@ -62,12 +62,16 @@ export default function AboutOne({ data }) {
                           className="img-fluid w-100"
                         />
                         <div className="overlap_contents">
-                          {item?.countGroup && item.countGroup.map((singleItem, itemIdx) => (
-                            <figcaption key={itemIdx} className="image-overlay-caption">
-                              <h5>{singleItem.counter}</h5>
-                              <p>{singleItem.countDesc}</p>
-                            </figcaption>
-                          ))}
+                          {item?.countGroup &&
+                            item.countGroup.map((singleItem, itemIdx) => (
+                              <figcaption
+                                key={itemIdx}
+                                className="image-overlay-caption"
+                              >
+                                <h5>{singleItem.counter}</h5>
+                                <p>{singleItem.countDesc}</p>
+                              </figcaption>
+                            ))}
                         </div>
 
                         {/* {(item.count || item.count_description) && (
@@ -146,7 +150,8 @@ export default function AboutOne({ data }) {
                                 <>
                                   <figcaption>
                                     <h4 className="estab_figure">
-                                      <span> #</span>{String(item.figure)}
+                                      <span> #</span>
+                                      {String(item.figure)}
                                     </h4>
                                     {item.description && (
                                       <p>{item.description}</p>

@@ -2838,6 +2838,18 @@ hr {
   left:-10rem;
 }
 
+/* grid_card_department_section */
+
+.grid_card_department_section{
+  background:#fff;
+  padding-top:4rem;
+}
+
+.grid_card_department_section .heading{
+  text-align: left;
+  font:var(--font-24)
+}
+
 /* start responsive */
 
 @media (min-width: 1920px) {

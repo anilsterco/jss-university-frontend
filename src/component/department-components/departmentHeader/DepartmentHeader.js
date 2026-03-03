@@ -164,7 +164,7 @@ export default function DepartmentHeader({ className, data }) {
               )}
             </div>
 
-            {data.map((section) => (
+            {data?.map((section) => (
               <Link
                 key={section.title}
                 href={"/" + currentPage + "/" + section.slug}

@@ -72,6 +72,10 @@
   padding-top: 6rem;
 }
 
+.about_top.padding-bottom{
+  padding-bottom:13rem;
+}
+
 .about_bottom {
   padding-bottom: 10rem;
 }
