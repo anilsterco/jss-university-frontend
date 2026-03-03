@@ -1134,7 +1134,7 @@ a:active {
   .depar-button {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+   
   }
 
   .blueBg {
@@ -1154,6 +1154,7 @@ a:active {
   .about_school_left {
     border-right: none;
   }
+  
 }
 
 @media (max-width: 991px) {
@@ -1245,7 +1246,7 @@ a:active {
   position: relative;
   width: 100%;
   margin-block: 2.7rem 3.9rem;
-  z-index: 999;
+  z-index: 222;
 }
 
 .input-group.programs_search {
@@ -2196,7 +2197,6 @@ a:active {
   margin: 0 auto;
 }
 
-/* FAQ Item */
 .faqItem {
   border-radius: 6px;
   margin-bottom: 12px;
@@ -2211,7 +2211,6 @@ a:active {
   color: #fff;
 }
 
-/* Question Section */
 .faqQuestion {
   list-style: none;
   cursor: pointer;
@@ -2235,13 +2234,13 @@ a:active {
   display: none;
 }
 
-.icon {
+.faqQuestion .icon {
   font-size: 24px;
   color: #0b2545;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.icon:after {
+.faqQuestion .icon:after {
   content: "+";
   border: 1px solid;
   border-radius: 40px;
@@ -2261,7 +2260,6 @@ a:active {
   border: unset;
 }
 
-/* Answer Section */
 .faqAnswer {
   padding: 0 4rem 1rem;
   background: #fff;
@@ -2283,7 +2281,6 @@ a:active {
   letter-spacing: -0.32px;
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -2296,7 +2293,6 @@ a:active {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .faqSection {
     padding: 0rem 0;
@@ -2323,7 +2319,6 @@ a:active {
   padding: 0 4rem 1rem;
 }
 
-/* Open Background */
 .faqItem[open] {
   background: #b59730;
   color: #fff;

@@ -164,7 +164,6 @@ export default function DepartmentHeader({ className, data }) {
               )}
             </div>
 
-            {/* ===== Static Menu ===== */}
             {data.map((section) => (
               <Link
                 key={section.title}
