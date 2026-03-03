@@ -391,7 +391,7 @@
   }
 
   .courseRow {
-    grid-template-columns: 30.7% 58%;
+    grid-template-columns: 33.7% 56%;
     gap: 8rem;
     padding-block: 6rem 0;
   }
@@ -403,6 +403,9 @@
   .departSec {
     padding-block: 10rem;
   }
+  .departmentRow {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 }
 
@@ -428,13 +431,6 @@
     width: 70%;
   }
 
-  .programsCount {
-    color: #16344e;
-    font: var(--font-40);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    letter-spacing: -1.4px;
-  }
 
   .cardTitle {
     font: var(--font-24);

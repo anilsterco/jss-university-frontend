@@ -1,10 +1,8 @@
-/* Container */
 .dep_faculty {
-  background-color:#F6F6F6;
+  background-color: #F6F6F6;
   padding: 0rem 0 10rem;
 }
 
-/* Header Section */
 .headerSection {
   margin-bottom: 4rem;
   padding-top: 10rem;
@@ -49,7 +47,6 @@
   color: #2c3e50;
 }
 
-/* Slider Wrapper */
 .sliderWrapper {
   position: relative;
   display: flex;
@@ -58,7 +55,6 @@
   padding: 0 1rem;
 }
 
-/* Navigation Buttons */
 .navButton {
   background-color: transparent;
   border: 2px solid #e74c3c;
@@ -86,7 +82,6 @@
   height: 24px;
 }
 
-/* Slider */
 .slider {
   display: flex;
   gap: 1.5rem;
@@ -96,14 +91,12 @@
   flex: 1;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* max-width: 80%; */
 }
 
 .slider::-webkit-scrollbar {
   display: none;
 }
 
-/* Faculty Card */
 .facultyCard {
   border-radius: 0;
   overflow: hidden;
@@ -147,7 +140,6 @@
   display: block;
 }
 
-/* Faculty Info */
 .facultyInfo {
   padding: 1.5rem;
   text-align: left;
@@ -173,9 +165,8 @@
   background-color: #ECC820;
 }
 
-/* Responsive Design */
 
-@media (max-width: 2024px){
+@media (max-width: 2024px) {
   .title {
     width: 90%;
 
@@ -184,14 +175,15 @@
 
 @media (max-width: 991px) {
 
-.title {
-  width: 44%;
-  font: var(--font-60);
-  font-family: var(--font-Condensed);
-  font-weight: 700;
-  letter-spacing: -2.88px;
-  text-align: left;
-}
+  .title {
+    width:60%;
+    font: var(--font-60);
+    font-family: var(--font-Condensed);
+    font-weight: 700;
+    letter-spacing: -2.88px;
+    text-align: left;
+  }
+
   .dep_faculty {
     background-color: #f5f5f5;
     padding: 0rem 0 6rem;
@@ -200,9 +192,7 @@
   .headerSection {
     border: none;
   }
-  .headerSection {
-  padding-top: 15rem;
-}
+
 }
 
 @media (max-width: 767px) {
@@ -222,8 +212,6 @@
     background-color: #f5f5f5;
     padding: 0rem 0 4rem;
   }
-
-
 }
 
 @media (max-width: 600px) {
@@ -241,8 +229,9 @@
     padding: 0rem 0 2rem;
   }
 }
-@media (max-width: 480px){
-.title {
+
+@media (max-width: 480px) {
+  .title {
     width: 100%;
     font: var(--font-36);
     font-family: var(--font-Condensed);
