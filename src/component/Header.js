@@ -342,7 +342,6 @@ export default function Header() {
     if (contactPanel?.Menu?.length > 0) return;
     const res = await fetch(ContactApi);
     const json = await res.json();
-
     if (json.status && json.data.length > 0) {
       const data = json.data[0];
 

@@ -5891,7 +5891,7 @@
   border-radius: 8px;
 }
 
-.message_img figure:before {
+/* .message_img figure:before {
   content: "";
   position: absolute;
   left: 0;
@@ -5902,7 +5902,7 @@
   background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   height: 207px;
   z-index: 9;
-}
+} */
 
 .message_img-thumb-grp {
   position: absolute;

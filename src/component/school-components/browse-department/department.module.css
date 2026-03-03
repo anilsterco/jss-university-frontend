@@ -403,9 +403,10 @@
   .departSec {
     padding-block: 10rem;
   }
+
   .departmentRow {
-  grid-template-columns: repeat(2, 1fr);
-}
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 }
 
@@ -435,6 +436,13 @@
   .cardTitle {
     font: var(--font-24);
     font-family: var(--font-Condensed);
+  }
+
+  .courseRow {
+    display: block;
+  }
+  .departSec {
+    padding-block: 8rem 6rem;
   }
 }
 
@@ -498,5 +506,15 @@
     font-family: var(--font-Condensed);
     height: 100%;
     padding-inline: 2rem;
+  }
+
+.courseItemsRow {
+  grid-template-columns: repeat(1, 1fr);
+}
+.departSec {
+    padding-block: 4rem 0 ;
+  }
+  .departmentRow {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
