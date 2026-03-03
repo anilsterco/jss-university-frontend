@@ -5,10 +5,10 @@ export default function ImageContent({ data, id, type }) {
   return (
     <div
       key={id}
-      className={`${styles.singleImageContent} ${styles[data.type]}`}
+      className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]}`}
     >
       <div
-        className={` row ${type == "bg_image_content" ? "flex-row-reverse" : ""} ${id % 2 !== 0 && "flex-row-reverse"}`}
+        className={` row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
         <div className="col-6 px_3xl_1_2">
           <Image
@@ -25,7 +25,7 @@ export default function ImageContent({ data, id, type }) {
 
         <div className={`col-6 px_3xl_1_2 `}>
           <div
-            className={`${styles.content_col} ${styles[type]} ${data?.type && styles[data.type]} ${id % 2 !== 0 && styles.odd}`}
+            className={`${styles.content_col} ${styles[type]} ${data?.type && styles[data.type]} ${data?.type !== "facilities" && id % 2 !== 0 && styles.odd}`}
           >
             {data?.heading && (
               <h4 className={styles.heading}>{data.heading}</h4>
@@ -44,7 +44,10 @@ export default function ImageContent({ data, id, type }) {
             {data?.listing && (
               <ul className={styles.ul}>
                 {data.listing.map((singleList, listIdx) => (
-                  <li key={listIdx}>{singleList.listing}</li>
+                  <li key={listIdx}>
+                    {singleList?.bold && <strong>{singleList.bold}: </strong>}
+                    {singleList.list}
+                  </li>
                 ))}
               </ul>
             )}
@@ -55,7 +58,7 @@ export default function ImageContent({ data, id, type }) {
         </div>
       </div>
 
-      {styles?.extraInfo && (
+      {data?.extraInfo && (
         <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
       )}
     </div>

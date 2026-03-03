@@ -13,7 +13,18 @@
     padding-right:12.5rem;
 }
 
-.content_col.department {
+.content_col.reverse_bg_white{
+    padding-top: 0;
+    padding-left: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+    padding-right:10rem;
+}
+
+.content_col.department,
+.content_col.facilities {
     padding-top: 0;
 }
 
@@ -79,7 +90,7 @@
     width: 0.7rem;
     background: #FFC100;
     border-radius: 50%;
-    top: 50%;
+    top: 12px;
     transform: translateY(-50%);
     left: 0;
 }
@@ -101,3 +112,9 @@
 .singleImageContent.department {
     padding-bottom: 15rem;
 }
+
+.singleImageContent.facilities {
+    /* padding:5rem 0 10rem; */
+    position:relative;
+}
+

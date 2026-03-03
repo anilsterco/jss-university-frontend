@@ -37,8 +37,6 @@ export default async function DepartmentPage({ params }) {
   const departmentData = await getDepartmentData(department);
   const seoData = await getPageSEO(department);
 
-  console.log('mechannical', department);
-
   return (
     <>
       <Script
@@ -58,7 +56,9 @@ export default async function DepartmentPage({ params }) {
         name={departmentData?.department_name}
         isDepartment={true}
       />
-      {departmentData?.sections?.tabs && <DepartmentHeader data={departmentData.sections.tabs} />}
+      {departmentData?.sections?.tabs && (
+        <DepartmentHeader data={departmentData.sections.tabs} />
+      )}
       {departmentData?.sections?.about_school && (
         <AboutDepartmentComponent data={departmentData.sections.about_school} />
       )}
@@ -68,7 +68,6 @@ export default async function DepartmentPage({ params }) {
       {departmentData?.sections?.dean_message && (
         <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
-
 
       {departmentData?.sections?.laboratories_data && (
         <LaboratoryComponent data={departmentData.sections.laboratories_data} />
