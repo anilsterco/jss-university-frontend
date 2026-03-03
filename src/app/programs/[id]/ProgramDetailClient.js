@@ -142,7 +142,6 @@ export default function ProgramDetailClient({ params }) {
   };
   return (
     <main className="site_main">
-      {/* Program Detail Hero Section */}
       <section className="program-detail">
         <div className="program-detail-img">
           <figure>
@@ -165,7 +164,6 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
-      {/* Admission Open Section */}
       {admissionSection && (
         <section className="admission-sec">
           <div className="containerMD">
@@ -250,7 +248,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Overview Section */}
       {overview && (
         <section className="overview-sec">
           <div className="container">
@@ -280,7 +277,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Eligibility Section */}
       {eligibility && (
         <section className="eligibility-sec" id="eligibilitySec">
           <div className="containerMD">
@@ -297,9 +293,6 @@ export default function ProgramDetailClient({ params }) {
                         className="img-fluid w-100"
                       />
                     )}
-                    <figcaption>
-                      <div className="eligibility-box"></div>
-                    </figcaption>
                   </figure>
                 </div>
               </div>
@@ -307,17 +300,14 @@ export default function ProgramDetailClient({ params }) {
                 <div className="col-lg-9">
                   <div className="rank-box">
                     <h6>Eligibility Criteria</h6>
-
                     <div className="rank-text">
                       <div className="left-rank-text">
                         <h2>{eligibility.eligibility_criteria}</h2>
                       </div>
-
                       <div className="right-rank-text">
                         <p>{eligibility.eligibility_criteria_desc}</p>
                       </div>
                     </div>
-
                     {eligibility?.eligibility_criteria_notices?.length > 0 && (
                       <div className="seats">
                         {eligibility.eligibility_criteria_notices[0] && (
@@ -340,7 +330,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Educational Objectives Section */}
       <section className="educational-sec">
         <div className="container">
           <div className="row">
