@@ -113,10 +113,6 @@
 }
 
 @media (max-width: 991px) {
-  .bannerContentH1 {
-    font: var(--font-40);
-  }
-
   .bannerContent {
     width: 65%;
   }
