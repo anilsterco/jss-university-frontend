@@ -11,6 +11,7 @@ import { BASE_URL } from "@/config/config";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
 import Faculties from "@/pages/faculties/Faculties";
+import CommonPage from "@/pages/commonPage/CommonPage";
 
 export async function generateMetadata({ params }) {
   const { school } = await params;
@@ -58,6 +59,8 @@ export default async function SchoolPage({ params }) {
         <Suspense fallback={<h1>Loading...</h1>}>
           <Faculties data={schoolData?.data} />
         </Suspense>
+      ) : schoolData?.slug?.includes(section) ? (
+        <CommonPage data={schoolData.sections} />
       ) : (
         <h1>no data</h1>
       )}
