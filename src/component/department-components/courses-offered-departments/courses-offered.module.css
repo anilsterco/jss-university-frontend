@@ -266,15 +266,14 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1040px) {
+@media (max-width: 1024px) {
   .programsCardsSection {
     justify-content: space-between;
   }
 
-  .programsCountSection {
-    margin: 0;
+.programsCountSection {
+    margin-bottom: 3rem  ;
   }
-
   .admissionSection {
     padding-bottom: 16px;
     padding-left: 1rem;
@@ -293,10 +292,8 @@
   }
 
   .topSection {
-    top: -5px;
-    right: -15px;
+    display: block;
   }
-
 
   .topSectionH5 {
     margin-bottom: 0.6rem;

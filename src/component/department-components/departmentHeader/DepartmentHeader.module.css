@@ -19,9 +19,11 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
+
 .departmentMenu::-webkit-scrollbar {
   display: none;
 }
+
 .schoolToggle {
   cursor: pointer;
   font-weight: 600;
@@ -30,6 +32,7 @@
   color: #16344e;
   width: 23rem;
 }
+
 .schoolToggle .selectedName {
   white-space: nowrap;
   width: 100%;
@@ -38,16 +41,16 @@
 }
 
 .schoolToggle span:first-child {
-   font: var(--font-16);
+  font: var(--font-16);
   font-family: var(--font-Roboto);
   color: #16344E;
   font-weight: bold;
 }
 
 .schoolToggle span:last-child {
-   font: var(--font-18);
-   font-family: var(--font-Condensed);
-   line-height: 2.2rem;
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  line-height: 2.2rem;
   font-weight: bold;
   display: flex;
   text-transform: uppercase;
@@ -189,14 +192,91 @@
   font: var(--font-14);
 }
 
+.departmentHeaderWrapper {
+  position: relative;
+  z-index: 1000;
+}
 
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-@media (max-width: 768px) {
+/* ------------------ MOBILE ------------------ */
+.mobileToggle {
+  display: none;
+}
+
+.navLinksWrapper {
+  display: flex;
+  gap: 25px;
+}
+
+.hamburgerBtn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .mobileToggle {
+    display: block;
+  }
+
+  .schoolDeptWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stickyHeader .containerXl {
+    padding-inline: 3.8rem;
+  }
+
   .engineeringDropdown {
-    grid-template-columns: 1fr;
+    display: block;
   }
 
   .engineeringDropdownContainer {
+    width: 70rem;
+
+  }
+
+  .navLinksWrapper {
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 3rem;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navLinksWrapper.open {
+    display: flex;
+  }
+
+  .navItem {
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .schoolDeptWrapper {
     width: 100%;
   }
 }
+@media (max-width: 991px){
+ .engineeringDropdownContainer {
+    width: 40rem;
+  }
+  .navItem {
+    padding: 1.5rem 0;
+  }
+}
+ 

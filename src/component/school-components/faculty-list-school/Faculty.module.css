@@ -176,7 +176,7 @@
 @media (max-width: 991px) {
 
   .title {
-    width:60%;
+    width: 60%;
     font: var(--font-60);
     font-family: var(--font-Condensed);
     font-weight: 700;
@@ -193,11 +193,14 @@
     border: none;
   }
 
+  .headerSection {
+    padding-top: 6rem;
+  }
 }
 
 @media (max-width: 767px) {
   .headerSection {
-    padding-top: 12rem;
+    padding-top: 6rem;
   }
 
   .title {
@@ -212,18 +215,20 @@
     background-color: #f5f5f5;
     padding: 0rem 0 4rem;
   }
+
 }
 
 @media (max-width: 600px) {
   .headerSection {
     padding-top: 15rem;
   }
+   .headerSection {
+    padding-top: 4rem;
+  }
 }
 
 @media (max-width: 575px) {
-  .headerSection {
-    padding-top: 16rem;
-  }
+ 
 
   .dep_faculty {
     padding: 0rem 0 2rem;

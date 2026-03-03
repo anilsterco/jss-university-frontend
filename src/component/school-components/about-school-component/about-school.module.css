@@ -341,3 +341,18 @@
   padding-inline: 3rem;
 }
 }
+@media (max-width: 991px) {
+.school_row{
+  grid-template-columns:repeat(1, 46.4% auto);
+ }
+ .buttonsContainer {
+  display: none;
+}
+ 
+}
+
+@media (max-width: 991px) {
+.school_row{
+  display: block;
+ }
+}

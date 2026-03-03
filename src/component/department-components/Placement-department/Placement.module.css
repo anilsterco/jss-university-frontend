@@ -1,4 +1,3 @@
-
 .thirdSection {
   background: #f6f6f6;
   padding-block: 12rem 6rem;
@@ -66,7 +65,7 @@
 .wallOfFameText {
   width: 60%;
   bottom: 8.7rem;
-  left:5.8rem;
+  left: 5.8rem;
   font: var(--font-50);
   font-family: var(--font-Condensed);
   letter-spacing: -2.4px;
@@ -79,10 +78,14 @@
 .placementvisit {
   position: absolute;
   bottom: 5rem;
-  left:5.8rem;
+  left: 5.8rem;
   z-index: 999;
 }
-.recruiterLogo {padding: 1.5rem;}
+
+.recruiterLogo {
+  padding: 1.5rem;
+}
+
 .wallOfFameText span {
   font-family: var(--font-Condensed);
   letter-spacing: -2.4px;
@@ -95,18 +98,17 @@
   position: relative;
   overflow: hidden;
 }
+
 .wallOfFameContainer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.45) 30%,
-    rgba(0, 0, 0, 0.25) 55%,
-    rgba(0, 0, 0, 0.1) 75%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.45) 30%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0) 100%);
   z-index: 1;
 }
 
@@ -133,18 +135,21 @@
   line-height: 0.9;
   margin-bottom: 0;
 }
+
 .statsRow {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border-top: solid 1px #DFDFDF;
   border-bottom: solid 1px #DFDFDF;
   margin-bottom: 8.4rem;
 }
+
 .figurContCol {
   border-left: solid 1px #DFDFDF;
-  border-right: solid 1px #DFDFDF ;
+  border-right: solid 1px #DFDFDF;
 }
+
 .sectionHeader h2 span {
   font: var(--font-60);
   font-family: var(--font-Condensed);
@@ -185,13 +190,15 @@
 .testimonialSwiper {
   padding: 3rem;
 }
+
 .placement_row {
   display: grid;
   grid-template-columns: repeat(1, 58.5% auto);
   gap: 6.9rem;
 }
+
 .figcount {
-   padding: 3.8rem 4.4rem 3.8rem;
+  padding: 3.8rem 4.4rem 3.8rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -207,25 +214,32 @@
   .figcount {
     padding: 3.8rem 4.4rem;
   }
+
   .placement_row {
-  grid-template-columns: repeat(1, 50.5% auto);
-}
-.testimonialImageContainer {
-  width: 100%;
-}
-.blueBg {
-  max-width: 27%;
-}
-.wallOfFameText {
-  width: 56%;}
+    grid-template-columns: repeat(1, 50.5% auto);
+  }
+
+  .testimonialImageContainer {
+    width: 100%;
+  }
+
+  .blueBg {
+    max-width: 27%;
+  }
+
+  .wallOfFameText {
+    width: 56%;
+  }
 }
 
 @media (max-width: 1366px) {
   .thirdSection {
     padding-block: 8rem;
   }
-.wallOfFameText {
-  width: 50%;}
+
+  .wallOfFameText {
+    width: 50%;
+  }
 
   .max-content-lg .placement_row {
     margin-bottom: 6rem;
@@ -255,6 +269,25 @@
 
   .wallOfFameContainer {
     object-fit: cover;
+  }
+
+  .placement_row {
+    display: block;
+  }
+
+  .blueBg {
+    max-width: 25%;
+    height: 100%;
+  }
+  .leftContent {
+  padding-bottom: 4rem;
+}
+.wallImage {
+  width: 100%;
+  height: auto;
+}
+.thirdSection {
+    padding-block: 6rem;
   }
 }
 
@@ -309,6 +342,9 @@
     font-weight: 500;
   }
 
+  .leftContent {
+    padding-bottom: 4rem;
+  }
 
 }
 
@@ -388,8 +424,8 @@
 }
 
 .testimonialImageContainer {
-  width: 216px; 
-  height: 240px; 
+  width: 216px;
+  height: 240px;
   flex-shrink: 0;
   padding: 0;
   position: relative;
@@ -410,4 +446,3 @@
 .testimonialContent {
   flex: 1;
 }
-

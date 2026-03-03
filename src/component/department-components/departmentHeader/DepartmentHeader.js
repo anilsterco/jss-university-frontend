@@ -3,12 +3,12 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IoChevronDownOutline } from "react-icons/io5";
+import { IoChevronDownOutline, IoMenu, IoClose } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 import "@/styles/custom.style.css";
 
 export default function DepartmentHeader({ className, data }) {
-  const [activeSection, setActiveSection] = useState(data?.[0].slug);
+  const [activeSection, setActiveSection] = useState(data?.[0]?.slug);
   const [engineeringDropdown, setEngineeringDropdown] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState(0);
   const [selectedSchoolName, setSelectedSchoolName] = useState("");
@@ -16,14 +16,12 @@ export default function DepartmentHeader({ className, data }) {
   const [engineeringData, setEngineeringData] = useState([]);
   const [hoveredSchool, setHoveredSchool] = useState(0);
   const [hoveredDepartments, setHoveredDepartments] = useState([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const engineeringRef = useRef(null);
   const pathname = usePathname();
   const currentPage = pathname.split("/")[1];
   const currentProgram = pathname.split("/")[3];
-
-  console.log("currentProgram", pathname);
-
-  /* ================= Fetch Data ================= */
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -48,6 +46,7 @@ export default function DepartmentHeader({ className, data }) {
     fetchSchools();
   }, []);
 
+  /* ================= Click Outside ================= */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -57,37 +56,9 @@ export default function DepartmentHeader({ className, data }) {
         setEngineeringDropdown(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     data.forEach((section) => {
-  //       const el = document.getElementById(section.id);
-  //       if (el) {
-  //         const rect = el.getBoundingClientRect();
-  //         if (rect.top <= 100 && rect.bottom >= 100) {
-  //           setActiveSection(section.id);
-  //         }
-  //       }
-  //     });
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-  // const scrollToSection = (id) => {
-  //   const el = document.getElementById(id);
-  //   if (el) {
-  //     window.scrollTo({
-  //       top: el.offsetTop - 80,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
 
   return (
     <div className={`${styles.departmentHeaderWrapper} ${className}`}>
@@ -106,6 +77,14 @@ export default function DepartmentHeader({ className, data }) {
                   </span>
                   <IoChevronDownOutline />
                 </span>
+              </div>
+              <div className={styles.mobileToggle}>
+                <button
+                  className={styles.hamburgerBtn}
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  {mobileMenuOpen ? <IoClose /> : <IoMenu />}
+                </button>
               </div>
 
               {engineeringDropdown && engineeringData.length > 0 && (
@@ -127,7 +106,6 @@ export default function DepartmentHeader({ className, data }) {
                             setHoveredSchool(idx);
                             setHoveredDepartments(school.departments || []);
                           }}
-                          onMouseOut={() => {}}
                         >
                           {school.name}
                         </Link>
@@ -148,6 +126,7 @@ export default function DepartmentHeader({ className, data }) {
                               );
                               setSelectedDepartmentName(dept.name);
                               setEngineeringDropdown(false);
+                              setMobileMenuOpen(false);
                             }}
                           >
                             {dept.name}
@@ -163,18 +142,26 @@ export default function DepartmentHeader({ className, data }) {
                 </div>
               )}
             </div>
-
-            {data.map((section) => (
-              <Link
-                key={section.title}
-                href={"/" + currentPage + "/" + section.slug}
-                className={`${styles.navItem} ${section.slug.includes(currentProgram) ? styles.activeNav : ""}`}
-                // ${activeSection === section.slug ? styles.activeNav : ""}
-                // onClick={() => scrollToSection(section.id)}
-              >
-                {section.title}
-              </Link>
-            ))}
+            <div
+              className={`${styles.navLinksWrapper} ${
+                mobileMenuOpen ? styles.open : ""
+              }`}
+            >
+              {data.map((section) => (
+                <Link
+                  key={section.title}
+                  href={"/" + currentPage + "/" + section.slug}
+                  className={`${styles.navItem} ${
+                    section.slug.includes(currentProgram)
+                      ? styles.activeNav
+                      : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {section.title}
+                </Link>
+              ))}
+            </div>
           </div>
         </nav>
       </div>
