@@ -2807,6 +2807,13 @@ hr {
   margin-top: 16.4rem
 }
 
+/* bg_image_content_section */
+
+.bg_image_content_section{
+  background:#00489A;
+  padding:12rem 0;
+}
+
 /* start responsive */
 
 @media (min-width: 1920px) {
