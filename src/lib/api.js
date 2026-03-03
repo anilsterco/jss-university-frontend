@@ -23,3 +23,7 @@ export const happeningAPI = {
 export const schoolListAPI = {
   getSchoolList: (endpoint = "/schools/all") => fetchData(endpoint),
 };
+export const galleryAPI = {
+  getGallery: (endpoint) =>
+    fetch(`${BASE_URL}${endpoint}`).then((res) => res.json()),
+};

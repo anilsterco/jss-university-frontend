@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.eventsSection.inner_happening {
+  padding: 0;
+}
+
 .bannerWrapper {
   position: relative;
   max-width: 1640px;

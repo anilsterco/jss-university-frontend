@@ -13,36 +13,50 @@ import Link from "next/link";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 import { CiImageOn } from "react-icons/ci";
 import { PiVideoCameraLight } from "react-icons/pi";
+import { LuLoader } from "react-icons/lu";
+import { useQuery } from "@tanstack/react-query";
+import { galleryAPI } from "@/lib/api";
 
-const BASE_URL = "https://project-demo.in/jss/api/happenings/gallery";
-
-export default function Gallery() {
+export default function Gallery({ className, programId }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [allGallaryData, setAllGallaryData] = useState([]);
-
   const [filterType, setFilterType] = useState("");
+  const [resolvedProgramId, setResolvedProgramId] = useState(null);
 
   useEffect(() => {
-    const fetchGalleryData = async () => {
-      try {
-        const url = filterType ? `${BASE_URL}?filter=${filterType}` : BASE_URL;
+    if (programId) {
+      setResolvedProgramId(programId);
+    }
+  }, [programId]);
 
-        const res = await fetch(url);
-        const data = await res.json();
-        setAllGallaryData(data);
-      } catch (err) {
-        console.error(err);
-        setAllGallaryData([]);
-      }
-    };
+  const buildQueryParams = () => {
+    const params = new URLSearchParams();
 
-    fetchGalleryData();
-  }, [filterType]);
+    if (filterType) {
+      params.append("filter", filterType);
+    }
 
-  const upCommingEvents = allGallaryData.upcoming_events || [];
-  const galleryData = allGallaryData.gallery_data || [];
+    if (resolvedProgramId) {
+      params.append("school", resolvedProgramId);
+    }
+
+    return params.toString();
+  };
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["gallery", filterType, resolvedProgramId],
+    queryFn: () => {
+      const queryParams = buildQueryParams();
+      return galleryAPI.getGallery(`/happenings/gallery?${queryParams}`);
+    },
+    staleTime: 5 * 60 * 1000,
+    cacheTime: 10 * 60 * 1000,
+    keepPreviousData: true,
+  });
+
+  const upCommingEvents = data?.upcoming_events || [];
+  const galleryData = data?.gallery_data || [];
 
   const openModal = (gallery) => {
     setSelectedGallery(gallery);
@@ -74,13 +88,9 @@ export default function Gallery() {
       setCurrentSlideIndex(currentSlideIndex - 1);
     } else {
       setCurrentSlideIndex(
-        selectedGallery ? selectedGallery.media.length - 1 : 0
+        selectedGallery ? selectedGallery.media.length - 1 : 0,
       );
     }
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlideIndex(index);
   };
 
   const formatDate = (dateString) => {
@@ -92,11 +102,24 @@ export default function Gallery() {
     });
   };
 
+  if (isLoading && !data)
+    return (
+      <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
+        <LuLoader />
+      </div>
+    );
+
+  if (error) return <div>Error loading gallery</div>;
+
   return (
     <section className={styles.mediaSection}>
       <div className="container">
-        <div className={styles.bannerWrapper}>
-          {upCommingEvents && upCommingEvents.length > 0 ? (
+        <div
+          className={`${styles.bannerWrapper} ${
+            className == "inner_happening" && "d-none"
+          }`}
+        >
+          {upCommingEvents.length > 0 ? (
             <Swiper
               modules={[Navigation, SwiperPagination, Autoplay]}
               navigation={{
@@ -147,26 +170,33 @@ export default function Gallery() {
               No Upcoming Events
             </div>
           )}
+
           <div className={styles.filterBox}>
             <button
-              className={styles.imageFilterButton}
-              onClick={() => setFilterType("image")}
+              className={`${styles.imageFilterButton} ${
+                filterType === "image" ? styles.activeFilter : ""
+              }`}
+              onClick={() =>
+                setFilterType(filterType === "image" ? "" : "image")
+              }
             >
               <CiImageOn fontSize={20} /> Images
             </button>
-
             <button
-              className={styles.videoFilterButton}
-              onClick={() => setFilterType("video")}
+              className={`${styles.videoFilterButton} ${
+                filterType === "video" ? styles.activeFilter : ""
+              }`}
+              onClick={() =>
+                setFilterType(filterType === "video" ? "" : "video")
+              }
             >
-              <PiVideoCameraLight fontSize={20} />
-              Videos
+              <PiVideoCameraLight fontSize={20} /> Videos
             </button>
           </div>
         </div>
 
         <div className={styles.galleryGrid}>
-          {galleryData &&
+          {galleryData.length > 0 ? (
             galleryData.map((item) => (
               <div
                 key={item.id}
@@ -197,7 +227,12 @@ export default function Gallery() {
                   <p className={styles.cardDate}>{formatDate(item.date)}</p>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <div style={{ textAlign: "center", marginTop: "5rem" }}>
+              No Gallery Items Found
+            </div>
+          )}
         </div>
       </div>
 
@@ -208,9 +243,8 @@ export default function Gallery() {
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button className={styles.closeButton} onClick={closeModal}>
-            <img src="images/custom-page/gallery_close.svg" alt="close btn"/>
+              <img src="images/custom-page/gallery_close.svg" alt="close btn" />
             </button>
 
             <div className={styles.slider}>
@@ -254,7 +288,7 @@ export default function Gallery() {
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 320 512"
                     height="8"
                     width="8"
@@ -270,7 +304,7 @@ export default function Gallery() {
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 320 512"
                     height="8"
                     width="8"

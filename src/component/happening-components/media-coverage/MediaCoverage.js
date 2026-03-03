@@ -3,30 +3,45 @@
 import React, { useState, useEffect } from "react";
 import styles from "./media-coverage.module.css";
 import Image from "next/image";
+import { LuLoader } from "react-icons/lu";
+import { useQuery } from "@tanstack/react-query";
+import { BASE_URL } from "@/config/config";
 
-const BASE_URL = "https://project-demo.in/jss/api/happenings/media-coverage";
-
-export default function MediaCoverage() {
+export default function MediaCoverage({ className, programId }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [mediaData, setMediaData] = useState([]);
+  const [resolvedProgramId, setResolvedProgramId] = useState(null);
 
   useEffect(() => {
-    const fetchMediaData = async () => {
-      try {
-        const res = await fetch(BASE_URL);
-        const data = await res.json();
-        setMediaData(data);
-      } catch (err) {
-        console.error(err);
-        setMediaData([]);
-      }
-    };
+    if (programId) {
+      setResolvedProgramId(programId);
+    }
+  }, [programId]);
 
-    fetchMediaData();
-  }, []);
-  const galleryData = mediaData || [];
+  const buildQueryParams = () => {
+    const params = new URLSearchParams();
+    if (resolvedProgramId) {
+      params.append("school", resolvedProgramId);
+    }
+    return params.toString();
+  };
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["media-coverage", resolvedProgramId],
+    queryFn: async () => {
+      const queryParams = buildQueryParams();
+      const url = `${BASE_URL}happenings/media-coverage${queryParams ? `?${queryParams}` : ""}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Failed to fetch media coverage");
+      return res.json();
+    },
+    staleTime: 5 * 60 * 1000,
+    cacheTime: 10 * 60 * 1000,
+    keepPreviousData: true,
+  });
+
+  const galleryData = data || [];
 
   const openModal = (gallery) => {
     setSelectedGallery(gallery);
@@ -58,13 +73,9 @@ export default function MediaCoverage() {
       setCurrentSlideIndex(currentSlideIndex - 1);
     } else {
       setCurrentSlideIndex(
-        selectedGallery ? selectedGallery.media.length - 1 : 0
+        selectedGallery ? selectedGallery.media.length - 1 : 0,
       );
     }
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlideIndex(index);
   };
 
   const formatDate = (dateString) => {
@@ -75,31 +86,48 @@ export default function MediaCoverage() {
       day: "numeric",
     });
   };
+
+  if (isLoading && !data)
+    return (
+      <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
+        <LuLoader />
+      </div>
+    );
+
+  if (error) return <div>Error loading media coverage</div>;
+
   return (
     <section className={styles.mediaSection}>
-     <div className="container">
-       <div className={styles.galleryGrid}>
-        {galleryData.map((item) => (
-          <div
-            key={item.id}
-            className={styles.galleryCard}
-            onClick={() => openModal(item)}>
-            <div className={styles.cardImage}>
-              <div className={styles.imagePlaceholder}>
-                <Image
-                  src={item.thumbnail}
-                  alt="Gallery Thumbnail"
-                  layout="responsive"
-                  width={1200}
-                  height={400}
-                  style={{ width: "100%", height: "auto" }}
-                />
+      <div className="container">
+        <div className={styles.galleryGrid}>
+          {galleryData.length > 0 ? (
+            galleryData.map((item) => (
+              <div
+                key={item.id}
+                className={styles.galleryCard}
+                onClick={() => openModal(item)}
+              >
+                <div className={styles.cardImage}>
+                  <div className={styles.imagePlaceholder}>
+                    <Image
+                      src={item.thumbnail}
+                      alt="Gallery Thumbnail"
+                      layout="responsive"
+                      width={1200}
+                      height={400}
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </div>
+                </div>
               </div>
+            ))
+          ) : (
+            <div style={{ textAlign: "center", marginTop: "5rem" }}>
+              No Media Coverage Found
             </div>
-          </div>
-        ))}
+          )}
+        </div>
       </div>
-     </div>
 
       {/* Modal */}
       {isModalOpen && selectedGallery && (
@@ -125,7 +153,6 @@ export default function MediaCoverage() {
 
             {/* Slider */}
             <div className={styles.slider}>
-              {/* Media Container */}
               <div className={styles.mediaContainer}>
                 {selectedGallery.media[currentSlideIndex].type === "video" ? (
                   <iframe
@@ -146,17 +173,19 @@ export default function MediaCoverage() {
                 )}
               </div>
             </div>
+
             {/* Modal Header */}
             <div className={styles.modalHeader}>
-              {/* Slide Counter */}
               <div className={styles.slideCounter}>
                 {currentSlideIndex + 1} / {selectedGallery.media.length}
               </div>
               <div>
-                <p className={styles.modalDate}>{selectedGallery.date}</p>
+                <p className={styles.modalDate}>
+                  {formatDate(selectedGallery.date)}
+                </p>
                 <h2 className={styles.modalTitle}>{selectedGallery.title}</h2>
               </div>
-              <div className={`d-flex gap-2`}>
+              <div className="d-flex gap-2">
                 <button
                   className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`}
                   onClick={previousSlide}

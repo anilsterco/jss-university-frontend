@@ -4,6 +4,11 @@
   padding-bottom: 4.5rem;
 }
 
+.happeningsContainer.inner_happening {
+  padding-top: 10rem;
+  background:transparent;
+}
+
 .happeningsTitle {
   font: var(--font-45);
   letter-spacing: -1.35px;
