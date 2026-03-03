@@ -210,7 +210,7 @@
 
 }
 
-.departData{
+.departData {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,7 +218,7 @@
 }
 
 
-.departData h4{
+.departData h4 {
   color: #B08F29;
   border-radius: 0px;
   font: var(--font-18);
@@ -235,12 +235,13 @@
 }
 
 .departmentArrow {
-  font-size:2.2rem;
+  font-size: 2.2rem;
   color: #002241bd;
   transition: color 0.3s ease;
   flex-shrink: 0;
 
 }
+
 .departmentRow {
   display: flex;
   flex-wrap: wrap;
@@ -275,150 +276,15 @@
   inset: 0;
   z-index: 3;
 }
+
 .departmentItem:hover .departmentArrow {
-  color:var(--color-100);
+  color: var(--color-100);
 }
 
 .departmentRow {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.3rem;
-}
-/* Responsive Design */
-@media (max-width: 2550px) {
-  .cardImage {
-    height: 100%;
-  }
-}
-
-@media (max-width: 1750px) {
-  .departmentSection {
-    padding: 6rem 0rem 5rem;
-  }
-
-  .about_school_left {
-    border-right: 1px solid rgba(206, 206, 206, .52);
-    padding-right: 2rem;
-  }
-
-}
-
-@media (max-width: 1024px) {
-  .leftSide {
-    margin-bottom: 4rem;
-    text-align: center;
-  }
-
-  .departmentSection {
-    padding: 0rem 0rem;
-  }
-
-  .cardTitle {
-    max-width: 60%;
-  }
-
-  .departmentSection .container {
-    padding-bottom: 4rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .leftSide {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .title {
-    font-weight: bold;
-    margin-bottom: 2.2rem;
-    font: var(--font-40);
-    line-height: 1;
-
-  }
-
-  .title span {
-    letter-spacing: -1.88px;
-  }
-
-  .browseLine {
-    width: 70%;
-  }
-
-  .programsCount {
-    color: #16344e;
-    font: var(--font-40);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    letter-spacing: -1.4px;
-  }
-
-  .cardTitle {
-    font: var(--font-24);
-    font-family: var(--font-Condensed);
-  }
-}
-
-@media (max-width: 768px) {
-  .departmentSection {
-    padding: 0rem 2rem 2rem 2rem;
-  }
-
-  .browseHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .browseLine {
-    width: 100%;
-  }
-
-  .programCard {
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .departmentSection {
-    padding: 2rem 1rem 1rem 1rem;
-  }
-
-  .viewAllButton,
-  .applyButton {
-    width: 100%;
-    margin-bottom: 0.75rem;
-  }
-
-  .cardTitle {
-    font: var(--font-24);
-    font-weight: bold;
-    font-family: var(--font-Condensed);
-  }
-
-  .departmentItem {
-    padding: 0.75rem;
-  }
-
-  .cardArrow {
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .cardTitle {
-    max-width: 100%;
-  }
-
-  .departmentItem {
-    font: var(--font-16);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    letter-spacing: -0.21px;
-    font-weight: bold;
-    font-family: var(--font-Condensed);
-    height: 100%;
-    padding-inline: 2rem;
-  }
 }
 
 .cardOverlay {
@@ -488,4 +354,149 @@
   letter-spacing: -.36px;
   margin-bottom: 0;
   font-weight: 300;
+}
+
+
+/* Responsive Design */
+@media (max-width: 2550px) {
+  .cardImage {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1750px) {
+  .departmentSection {
+    padding: 6rem 0rem 5rem;
+  }
+
+  .about_school_left {
+    border-right: 1px solid rgba(206, 206, 206, .52);
+    padding-right: 2rem;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .departmentSection {
+    padding: 0rem 0rem;
+  }
+
+  .cardTitle {
+    max-width: 60%;
+  }
+
+  .departmentSection .container {
+    padding-bottom: 4rem;
+  }
+
+  .courseRow {
+    grid-template-columns: 33.7% 56%;
+    gap: 8rem;
+    padding-block: 6rem 0;
+  }
+
+  .title {
+    max-width: 90%;
+  }
+
+  .departSec {
+    padding-block: 10rem;
+  }
+  .departmentRow {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 992px) {
+  .leftSide {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 2.2rem;
+    font: var(--font-40);
+    line-height: 1;
+
+  }
+
+  .title span {
+    letter-spacing: -1.88px;
+  }
+
+  .browseLine {
+    width: 70%;
+  }
+
+
+  .cardTitle {
+    font: var(--font-24);
+    font-family: var(--font-Condensed);
+  }
+}
+
+@media (max-width: 768px) {
+  .departmentSection {
+    padding: 0rem 2rem 2rem 2rem;
+  }
+
+  .browseHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .browseLine {
+    width: 100%;
+  }
+
+  .programCard {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .departmentSection {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .viewAllButton,
+  .applyButton {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardTitle {
+    font: var(--font-24);
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+  }
+
+  .departmentItem {
+    padding: 0.75rem;
+  }
+
+  .cardArrow {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .cardTitle {
+    max-width: 100%;
+  }
+
+  .departmentItem {
+    font: var(--font-16);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    letter-spacing: -0.21px;
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+    height: 100%;
+    padding-inline: 2rem;
+  }
 }

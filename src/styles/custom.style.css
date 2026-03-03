@@ -5244,5 +5244,5 @@ hr {
    font: var(--font-26);
     color: var(--color-4e);
     text-transform: capitalize;
-    margin-block: 6rem;
+    margin-block: 0rem 3rem;
 }

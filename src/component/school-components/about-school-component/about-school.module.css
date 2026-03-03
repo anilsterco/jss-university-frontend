@@ -330,3 +330,14 @@
  right: -4.5rem;
  top: 0;
 }
+
+
+@media (max-width: 1024px) {
+.school_row{
+  grid-template-columns:repeat(1, 56.4% auto);
+ }
+ .fifthSectionSlider {
+  margin-top: 2rem;
+  padding-inline: 3rem;
+}
+}
