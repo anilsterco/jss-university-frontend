@@ -20,8 +20,12 @@ export default function DepartmentHeader({ className, data }) {
 
   const engineeringRef = useRef(null);
   const pathname = usePathname();
-  const currentPage = pathname.split("/")[1];
-  const currentProgram = pathname.split("/")[3];
+  const pathParts = pathname.split("/");
+  const currentPage = pathParts[1]; // "schools" or "department"
+  const currentSlug = pathParts[2];
+  const currentProgram = pathParts[3];
+
+  const isSchoolPage = currentPage === "schools";
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -31,12 +35,31 @@ export default function DepartmentHeader({ className, data }) {
 
         if (json.status && json.data.length > 0) {
           setEngineeringData(json.data);
-          setSelectedSchoolName(json.data[0].name);
-          setHoveredSchool(0);
-          setHoveredDepartments(json.data[0].departments || []);
 
-          if (json.data[0].departments?.length > 0) {
-            setSelectedDepartmentName(json.data[0].departments[0].name);
+          if (isSchoolPage && currentSlug) {
+            const matchedSchoolIdx = json.data.findIndex(
+              (s) => s.slug === currentSlug,
+            );
+
+            if (matchedSchoolIdx !== -1) {
+              const matchedSchool = json.data[matchedSchoolIdx];
+              setSelectedSchool(matchedSchoolIdx);
+              setHoveredSchool(matchedSchoolIdx);
+              setSelectedSchoolName(matchedSchool.name);
+              setHoveredDepartments(matchedSchool.departments || []);
+              setSelectedDepartmentName("");
+            } else {
+              setSelectedSchoolName(json.data[0].name);
+              setHoveredDepartments(json.data[0].departments || []);
+            }
+          } else {
+            setSelectedSchoolName(json.data[0].name);
+            setHoveredSchool(0);
+            setHoveredDepartments(json.data[0].departments || []);
+
+            if (json.data[0].departments?.length > 0) {
+              setSelectedDepartmentName(json.data[0].departments[0].name);
+            }
           }
         }
       } catch (err) {
@@ -44,7 +67,7 @@ export default function DepartmentHeader({ className, data }) {
       }
     };
     fetchSchools();
-  }, []);
+  }, [isSchoolPage, currentSlug]);
 
   /* ================= Click Outside ================= */
   useEffect(() => {
@@ -60,6 +83,12 @@ export default function DepartmentHeader({ className, data }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const dropdownLabel = isSchoolPage ? "Schools Of" : "Departments Of";
+
+  const displayName = isSchoolPage
+    ? selectedSchoolName
+    : selectedDepartmentName || selectedSchoolName;
+
   return (
     <div className={`${styles.departmentHeaderWrapper} ${className}`}>
       <div className={styles.stickyHeader}>
@@ -70,11 +99,9 @@ export default function DepartmentHeader({ className, data }) {
                 className={styles.schoolToggle}
                 onClick={() => setEngineeringDropdown(!engineeringDropdown)}
               >
-                <span>Departments Of</span>
+                <span>{dropdownLabel}</span>
                 <span>
-                  <span className={styles.selectedName}>
-                    {selectedDepartmentName || selectedSchoolName}
-                  </span>
+                  <span className={styles.selectedName}>{displayName}</span>
                   <IoChevronDownOutline />
                 </span>
               </div>
@@ -100,7 +127,10 @@ export default function DepartmentHeader({ className, data }) {
                           key={idx}
                           href={`/schools/${school.slug}`}
                           className={`${styles.schoolItem} ${
-                            selectedSchool === idx ? styles.active : ""
+                            (isSchoolPage && school.slug === currentSlug) ||
+                            hoveredSchool === idx
+                              ? styles.active
+                              : ""
                           }`}
                           onMouseOver={() => {
                             setHoveredSchool(idx);
@@ -119,8 +149,13 @@ export default function DepartmentHeader({ className, data }) {
                           <Link
                             key={i}
                             href={`/department/${dept.slug}`}
-                            className={styles.departmentLink}
+                            className={`${styles.departmentLink} ${
+                              !isSchoolPage && dept.slug === currentSlug
+                                ? styles.active
+                                : ""
+                            }`}
                             onClick={() => {
+                              setSelectedSchool(hoveredSchool);
                               setSelectedSchoolName(
                                 engineeringData[hoveredSchool].name,
                               );
@@ -142,6 +177,7 @@ export default function DepartmentHeader({ className, data }) {
                 </div>
               )}
             </div>
+
             <div
               className={`${styles.navLinksWrapper} ${
                 mobileMenuOpen ? styles.open : ""
@@ -150,7 +186,9 @@ export default function DepartmentHeader({ className, data }) {
               {data.map((section) => (
                 <Link
                   key={section.title}
-                  href={"/" + currentPage + "/" + section.slug}
+                  href={
+                    "/" + currentPage + "/" + currentSlug + "/" + section.slug
+                  }
                   className={`${styles.navItem} ${
                     section.slug.includes(currentProgram)
                       ? styles.activeNav
