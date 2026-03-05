@@ -2,19 +2,21 @@ import Image from "next/image";
 import CounterCard from "../department-components/counterCard/CounterCard";
 import ImageContent from "../department-components/imageContent/ImageContent";
 
-export default function ImageContentRepeat({ data }) {
+export default function BgImageContent({ data }) {
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
-      case "imageContentRepeat":
+      case "bg_image_content":
         return (
-          <div
-            key={sectionIndex}
-            className={`single_image_content ${data[0]?.items?.[0]?.type}`}
-          >
+          <div key={sectionIndex} className="single_image_content">
             {section?.items &&
               section.items.length >= -1 &&
               section.items.map((item, idx) => (
-                <ImageContent key={idx} data={item} id={idx} />
+                <ImageContent
+                  key={idx}
+                  data={item}
+                  id={idx}
+                  type="bg_image_content"
+                />
               ))}
           </div>
         );
@@ -25,9 +27,7 @@ export default function ImageContentRepeat({ data }) {
   };
 
   return (
-    <section
-      className={`image_content_repeat_section ${data[0]?.items?.[0]?.type}`}
-    >
+    <section className="bg_image_content_section">
       <div className="container">
         {data && data.length > 0 ? (
           data.map((section, index) => renderSection(section, index))

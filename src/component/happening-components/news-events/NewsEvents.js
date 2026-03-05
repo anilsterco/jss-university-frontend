@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -16,12 +16,20 @@ import { useQuery } from "@tanstack/react-query";
 import { happeningAPI, schoolListAPI } from "@/lib/api";
 import Pagination from "@/component/common/pagination-component/Pagination";
 
-export default function EventsSection() {
+export default function EventsSection({ className, programId }) {
   const [filters, setFilters] = useState({
     month: "",
     school: "",
     page: 1,
   });
+
+  const [resolvedProgramId, setResolvedProgramId] = useState(null);
+
+  useEffect(() => {
+    if (programId) {
+      setResolvedProgramId(programId);
+    }
+  }, [programId]);
 
   const {
     data: schoolsList,
@@ -33,25 +41,11 @@ export default function EventsSection() {
     staleTime: 10 * 60 * 1000,
   });
 
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["happenings", filters.month, filters.school, filters.page],
-    queryFn: () => {
-      const queryParams = buildQueryParams();
-      const endpoint = `/happenings?${queryParams}`;
-      return happeningAPI.getEvents(endpoint);
-    },
-    staleTime: 5 * 60 * 1000,
-    cacheTime: 10 * 60 * 1000,
-    keepPreviousData: true,
-  });
+  const schools = schoolsList?.data || [];
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+  const getSchoolId = (schoolName) => {
+    const school = schools.find((s) => s.name === schoolName);
+    return school?.id || null;
   };
 
   const formatMonthToNumber = (monthName) => {
@@ -72,14 +66,7 @@ export default function EventsSection() {
     return months[monthName];
   };
 
-  const schools = schoolsList?.data || [];
-  const upCommingEvents = data?.data?.upcoming_events || [];
-  const secondryItem = data?.data?.first_event || null;
-  const allEvents = data?.data?.other_events || [];
-  const currentPage = data?.data?.pagination?.current_page || filters.page;
-  const totalPages = data?.data?.pagination?.last_page || 1;
-
-  const buildQueryParams = () => {
+  const buildQueryParams = (pid) => {
     const params = new URLSearchParams();
 
     params.append("page", filters.page);
@@ -89,18 +76,47 @@ export default function EventsSection() {
       params.append("month", monthNumber);
     }
 
-    if (filters.school !== "") {
+    if (pid) {
+      params.append("school", pid);
+    } else if (filters.school !== "") {
       const schoolId = getSchoolId(filters.school);
-      params.append("school", schoolId);
+      if (schoolId) params.append("school", schoolId);
     }
 
     return params.toString();
   };
 
-  const getSchoolId = (schoolName) => {
-    const school = schools.find((s) => s.name === schoolName);
-    return school?.id || null;
+  const { data, isLoading, error } = useQuery({
+    queryKey: [
+      "happenings",
+      filters.month,
+      filters.school,
+      filters.page,
+      resolvedProgramId,
+    ],
+    queryFn: () => {
+      const queryParams = buildQueryParams(resolvedProgramId);
+      return happeningAPI.getEvents(`/happenings?${queryParams}`);
+    },
+    staleTime: 5 * 60 * 1000,
+    cacheTime: 10 * 60 * 1000,
+    keepPreviousData: true,
+  });
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   };
+
+  const upCommingEvents = data?.data?.upcoming_events || [];
+  const secondryItem = data?.data?.first_event || null;
+  const allEvents = data?.data?.other_events || [];
+  const currentPage = data?.data?.pagination?.current_page || filters.page;
+  const totalPages = data?.data?.pagination?.last_page || 1;
 
   const months = [
     "January",
@@ -130,14 +146,6 @@ export default function EventsSection() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if ((isLoading && !data) || (schoolsLoading && !schoolsList))
-    return (
-      <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
-        <LuLoader />
-      </div>
-    );
-  if (error || schoolsError) return <div>Error loading data</div>;
-
   const resetFilters = () => {
     setFilters({
       page: 1,
@@ -146,9 +154,22 @@ export default function EventsSection() {
     });
   };
 
+  if ((isLoading && !data) || (schoolsLoading && !schoolsList))
+    return (
+      <div style={{ height: "100vh", textAlign: "center", marginTop: "5rem" }}>
+        <LuLoader />
+      </div>
+    );
+
+  if (error || schoolsError) return <div>Error loading data</div>;
+
   return (
-    <section className={styles.eventsSection}>
-      <div className={styles.bannerWrapper}>
+    <section className={`${styles.eventsSection}`}>
+      <div
+        className={`${styles.bannerWrapper} ${
+          className == "inner_happening" && "d-none"
+        }`}
+      >
         {upCommingEvents.length > 0 ? (
           <Swiper
             modules={[Navigation, SwiperPagination, Autoplay]}
@@ -205,6 +226,7 @@ export default function EventsSection() {
             No Upcoming Events
           </div>
         )}
+
         <div
           className={`d-flex filter-sec justify-content-end gap-2 ${styles.filters}`}
         >
@@ -222,7 +244,6 @@ export default function EventsSection() {
               <option value="" disabled hidden>
                 Select Month
               </option>
-
               {months.map((m) => (
                 <option key={m} value={m}>
                   {m}
@@ -277,7 +298,6 @@ export default function EventsSection() {
                   className={styles.eventTitle}
                   dangerouslySetInnerHTML={{ __html: secondryItem.title }}
                 ></h3>
-
                 <p className={styles.eventDesc}>{secondryItem.desc}</p>
                 <Link
                   href={`/happenings/${secondryItem.slug || secondryItem.id}`}
@@ -295,14 +315,16 @@ export default function EventsSection() {
         )}
       </div>
 
-      <div className="container ">
+      <div className="container">
         {allEvents.length > 0 ? (
           <>
-            <div className={`events_row latest-event m-auto ${styles.cardsRow}`}>
+            <div
+              className={`events_row latest-event m-auto ${styles.cardsRow}`}
+            >
               {allEvents.map((event, index) => {
                 const darkColors = ["#00489A", "#AF251C", "#AF251C"];
                 const shuffledColors = [...darkColors].sort(
-                  () => Math.random() - 0.5
+                  () => Math.random() - 0.5,
                 );
                 const bgColor = shuffledColors[index % 4];
 

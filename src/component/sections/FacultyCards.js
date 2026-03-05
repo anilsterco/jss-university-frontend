@@ -19,7 +19,7 @@ export default function FacultyCards({ tabs, heading, activeTab, data }) {
           {filteredFaculty?.map((faculty, facultyIdx) => (
             <div className="col-md-4 px_3xl_2_3" key={facultyIdx}>
               <div className="singleCard">
-                <Link href={faculty?.url || faculty?.slug}>
+                <Link href={faculty?.url || `/faculty/${faculty?.slug}`}>
                   <div className="faulty-img">
                     <figure>
                       <Image
