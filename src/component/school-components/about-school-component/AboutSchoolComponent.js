@@ -25,7 +25,7 @@ export default function AboutSchool({ data }) {
   const dummyAboutSchoolContent = {
     title:
       '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text">ENGINEERING EXCELLENCE.</span>',
-    subtitle: "ABOUT SCHOOL OF ENGINEERING",
+    subtitle: "",
     description:
       "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
     url: "/",
@@ -54,9 +54,7 @@ export default function AboutSchool({ data }) {
     ],
   };
 
-  // ✅ Merge + sanitize API data
   const aboutSchoolContent = {
-    // ...dummyAboutSchoolContent,
     ...data,
     buttons:
       data?.buttons?.filter(

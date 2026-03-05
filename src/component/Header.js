@@ -318,11 +318,16 @@ export default function Header() {
     );
   }
 
+  const pathParts = pathname.split("/").filter(Boolean);
   const isHome = pathname === "/";
-  const isDepartment = pathname.includes("/department");
-  const isSchool = pathname.includes("/schools");
+  const isSchoolHome = pathParts.length === 2 && pathParts[0] === "schools";
+  const isDepartmentHome =
+    pathParts.length === 2 && pathParts[0] === "department";
+  const isSchoolInner = pathParts.length > 2 && pathParts[0] === "schools";
+  const isDepartmentInner =
+    pathParts.length > 2 && pathParts[0] === "department";
+  const isHomeLikePage = isHome || isSchoolHome || isDepartmentHome;
 
-  const isHomeDepartmentOrSchool = isHome || isDepartment || isSchool;
   const loadPrograms = async () => {
     if (mobProgramList.length > 0) return;
     const res = await fetch(Program_Api);
@@ -424,28 +429,21 @@ export default function Header() {
   return (
     <header
       className={`site-header
-    ${pathname.includes("programs") ? "no-shadow" : ""}
-    ${pathname !== "/" ? "programs-header" : ""}
-    ${pathname !== "/" ? "not-home" : ""}
-  `}
+  ${pathname.includes("programs") ? "no-shadow" : ""}
+  ${!isHomeLikePage ? "programs-header not-home" : ""}
+  ${isSchoolInner || isDepartmentInner ? "school-dept-header" : ""}
+`}
     >
       <div
         className={`header-inner ${
-          pathname !== "/" ? "innerPage" : ""
+          !isHomeLikePage ? "innerPage" : ""
         } ${scrolled ? "header-scrolled" : ""}`}
-        onMouseLeave={() => setActiveDropdown(null)}
       >
         <div className="containerXl">
           <div
-            className={`nav-container
-    ${
-      pathname !== "/" &&
-      !pathname.includes("/schools") &&
-      !pathname.includes("/department")
-        ? "scroll_bg programs-nav not-home"
-        : ""
-    }
-  `}
+            className={`nav-container ${
+              !isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
+            }`}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -454,7 +452,7 @@ export default function Header() {
                 <Link href="/" aria-label="Home">
                   <Image
                     src={
-                      isHomeDepartmentOrSchool
+                      isHomeLikePage
                         ? "/images/header/header-logo.png"
                         : "/images/header/jss-moblogo.png"
                     }
@@ -1282,7 +1280,7 @@ export default function Header() {
           .header-inner.header-scrolled {
             background-color: var(--color-4e);
           }
-
+         
           .nav-link {
             text-decoration: none;
             color: inherit;
@@ -1803,7 +1801,7 @@ export default function Header() {
             font-weight: 700;
             padding: 1px 0;
           }
-
+          .header-inner.innerPage {background-color:#deebf4}
           .mega-right {
             display: flex;
             align-items: center;
@@ -1892,6 +1890,8 @@ export default function Header() {
             height: 207px;
             z-index: -1;
           }
+
+ 
           .items-menu_grp_cont h4 {
             font: var(--font-18);
             color: var(--color-white);
