@@ -26,8 +26,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
         <div className={`col-6 px_3xl_1_2 `}>
           <div
             className={`${styles.content_col} ${type
-              .split(" ")
-              .map((cls) => styles[cls] || "")
+              ?.split(" ")
+              ?.map((cls) => styles[cls] || "")
               .join(
                 " ",
               )} ${data?.type && styles[data.type]} ${data?.type !== "facilities" && id % 2 !== 0 && styles.odd}`}

@@ -1,0 +1,27 @@
+.inner_page {
+    padding: 10rem 0;
+}
+
+.innerPage_title {
+    font: var(--font-26);
+    margin-bottom: 7rem;
+}
+
+.labs_page .heading{
+color: #16344e;
+    font-weight: 700;
+    font: var(--font-26);
+    margin-bottom: 4rem;
+}
+
+.labs_page .sub_heading{
+color: #333;
+    font: var(--font-24);
+    max-width: 950px;
+    font-weight: 300;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+

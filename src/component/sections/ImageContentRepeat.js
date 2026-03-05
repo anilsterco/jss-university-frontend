@@ -7,10 +7,9 @@ export default function ImageContentRepeat({ data }) {
     switch (section.type) {
       case "imageContentRepeat":
         return (
-          <div className="row">
+          <div className="row" key={sectionIndex}>
             <div className={`${data[0]?.items?.[0]?.extraClass} mx-auto`}>
               <div
-                key={sectionIndex}
                 className={`single_image_content ${data[0]?.items?.[0]?.type}`}
               >
                 {section?.items &&
