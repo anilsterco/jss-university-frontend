@@ -169,10 +169,9 @@ export default function LeadershipDetailsPage({ params }) {
                 alt="Quote Icon"
                 width={148}
                 height={100}
-                style={{ height: "100%"}}
+                style={{ height: "100%" }}
                 className="tesIcon"
               />
-
             </figure>
             <div className="row">
               <div className="col-lg-6">
@@ -182,30 +181,45 @@ export default function LeadershipDetailsPage({ params }) {
                   {sections.message_from_chancellor.message.map(
                     (msg, index) => (
                       <p key={index}>{msg}</p>
-                    )
+                    ),
                   )}
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="message_img">
                   <figure>
-                    <Image
-                      src={
-                        sections.message_from_chancellor.video ||
-                        "/images/custom-page/about/chancellor-message.png"
-                      }
-                      alt={sections.message_from_chancellor.name}
-                      width={500}
-                      height={500}
-                      // style={{ width: "100%", height: "auto" }}
-                    />
+                    {sections?.message_from_chancellor?.video ? (
+                      <video
+                        src={sections.message_from_chancellor.video}
+                        controls
+                        muted
+                        playsInline
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      />
+                    ) : (
+                      <Image
+                        src={
+                          sections?.message_from_chancellor?.image ||
+                          "/images/custom-page/about/chancellor-message.png"
+                        }
+                        alt={
+                          sections?.message_from_chancellor?.name ||
+                          "Chancellor"
+                        }
+                        width={500}
+                        height={500}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    )}
                   </figure>
                 </div>
               </div>
             </div>
-
             <div className="message_footer_section">
-             <h4>{sections.message_from_chancellor.name}</h4>
+              <h4>{sections.message_from_chancellor.name}</h4>
             </div>
           </div>
         </div>

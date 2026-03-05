@@ -1,6 +1,6 @@
 /* Container */
 .dep_faculty {
-  background-color:#fff;
+  background-color: #fff;
   padding: 0rem 0 10rem;
 }
 
@@ -177,7 +177,7 @@
 /* Responsive Design */
 @media (max-width: 991px) {
   .title {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     font: var(--font-50);
     font-family: var(--font-Condensed);
@@ -193,9 +193,10 @@
   .headerSection {
     border: none;
   }
+
   .headerSection {
-  padding-top: 15rem;
-}
+    padding-top: 15rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -234,8 +235,9 @@
     padding: 0rem 0 2rem;
   }
 }
-@media (max-width: 480px){
-.title {
+
+@media (max-width: 480px) {
+  .title {
     width: 100%;
     font: var(--font-36);
     font-family: var(--font-Condensed);

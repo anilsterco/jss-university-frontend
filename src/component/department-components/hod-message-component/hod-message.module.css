@@ -175,6 +175,28 @@
   .card {
     padding-top: 6rem;
   }
+
+  .hodRow {
+    display: block;
+  }
+
+  .lineHod img {
+    right: -10rem;
+  }
+
+  .hodRow {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .messageText {
+    margin-bottom: 3rem;
+  }
+  .lineHod img {
+    display: none;
+  }
 }
 
 /* Responsive Design */
