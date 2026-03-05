@@ -13,6 +13,7 @@ import { Suspense } from "react";
 import Faculties from "@/pages/faculties/Faculties";
 import CommonPage from "@/pages/commonPage/CommonPage";
 import HappeningsClient from "@/app/happenings/HappeningsClient";
+import FaqPage from "@/pages/faq/Faq";
 
 export async function generateMetadata({ params }) {
   const { school } = await params;
@@ -63,6 +64,10 @@ export default async function SchoolPage({ params }) {
       ) : section == "happenings" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <HappeningsClient className="inner_happening" />
+        </Suspense>
+      ) : section == "faqs" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <FaqPage data={departmentData?.data} />
         </Suspense>
       ) : schoolData?.slug?.includes(section) ? (
         <CommonPage data={schoolData.sections} />
