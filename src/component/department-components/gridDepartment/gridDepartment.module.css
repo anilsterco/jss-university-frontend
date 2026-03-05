@@ -1,0 +1,16 @@
+.card {
+    padding: 3rem 0;
+    border-bottom: 1px solid #FFC100;
+    height: 100%;
+}
+
+.card p {
+    font: var(--font-16);
+    color: #444444;
+    font-weight: 500;
+    margin: 0;
+}
+
+.borderTop {
+    border-top: 1px solid #FFC100;
+}

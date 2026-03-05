@@ -8,7 +8,6 @@ import Link from "next/link";
 import "aos/dist/aos.css";
 
 const HODMessage = ({ data }) => {
-
   // 🔹 Dummy data fallback
   const dummyHodData = {
     title: "HOD MESSAGE",
@@ -21,15 +20,15 @@ const HODMessage = ({ data }) => {
     ],
   };
 
-  if (data && data.type == 'department') {
+  if (data && data.type == "department") {
     data = {
       title: data?.title,
       img: data?.image,
       name: data?.name,
       designation: data?.designation,
       message: data?.messages?.map((m) => m.message) || [],
-      type: data?.type
-    }
+      type: data?.type,
+    };
   }
 
   const hodData = data || dummyHodData;
@@ -69,7 +68,7 @@ const HODMessage = ({ data }) => {
                 data-aos-delay="400"
               >
                 <div className={styles.content}>
-                  {data?.type !== 'department' && (
+                  {data?.type !== "department" && (
                     <Image
                       src="/images/about-page/quote-left.svg"
                       alt="icon"
@@ -98,7 +97,14 @@ const HODMessage = ({ data }) => {
                   </div>
                   <div className={styles.hodInfo}>
                     <h4 className={styles.hodName}>{hodData.name}</h4>
-                    <p className={styles.hodDesignation}>{hodData.designation}</p>
+                    <p className={styles.hodDesignation}>
+                      {hodData.designation}
+                    </p>
+                    {hodData?.designation2 && (
+                      <p className={styles.hodDesignation}>
+                        {hodData.designation2}
+                      </p>
+                    )}
                   </div>
                   <div className={styles.lineHod}>
                     <Image
