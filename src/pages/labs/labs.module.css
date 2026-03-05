@@ -7,6 +7,10 @@
     margin-bottom: 7rem;
 }
 
+.labs_page {
+    margin-top:0;
+}
+
 .labs_page .heading{
 color: #16344e;
     font-weight: 700;
@@ -21,6 +25,20 @@ color: #333;
     font-weight: 300;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 7rem;
+}
+
+
+.table_section .heading{
+    text-align: left;
+}
+
+.table_images{
+    margin-top:8rem
+}
+
+.table_images img{
+    border-radius: 0.8rem;
 }
 
 
