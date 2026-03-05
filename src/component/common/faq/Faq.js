@@ -6,8 +6,8 @@ export default function Faq({ data, heading }) {
         {data?.map((faq, index) => (
           <details key={faq.id} className="faqItem">
             <summary className="faqQuestion">
+              <span className="faq_heading">{faq.question || faq.name}</span>
               <span className="icon"></span>
-              <span>{faq.question || faq.name}</span>
             </summary>
             <div className="faqAnswer">
               <p>{faq.answer || faq.slug}</p>
