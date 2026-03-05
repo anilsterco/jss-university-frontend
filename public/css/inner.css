@@ -396,6 +396,21 @@
   line-height: 1.4;
 }
 
+.about_subHeading.less{
+  padding-bottom: 3rem;
+
+}
+
+.about_desc{
+  font:var(--font-16);
+  color: #444444;
+  max-width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin:0;
+}
+
 .ab_estab_slider {
   padding: 0 1.5rem
 }

@@ -44,6 +44,24 @@
     gap: 3rem;
 }
 
+.content_col .pdf_group{
+    border-top:1px solid #D9D9D9;
+    margin-top:3.2rem;
+    padding-top:5rem;
+}
+
+.content_col .pdf_group a{
+    color:#333333;
+    font:var(--font-18);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.content_col .pdf_group img{
+    margin-right:1rem;
+}
+
 .content_col .desc {
     font: var(--font-16);
     line-height: 2.8rem;

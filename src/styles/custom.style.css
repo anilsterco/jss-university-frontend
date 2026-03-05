@@ -994,6 +994,10 @@
   background:#fff;
 }
 
+.image_content_repeat_section.white{
+  background:#fff;
+}
+
 /* .image_content_repeat_section.no-padding.single .imageContent{
 
 } */
@@ -2814,6 +2818,10 @@ hr {
 
 .top_section {
   margin-top: 12rem;
+}
+
+.top_section.bg-white{
+  padding:12rem 0 0;
 }
 
 .inner_sub_header {

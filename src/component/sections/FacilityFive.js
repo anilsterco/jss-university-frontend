@@ -36,11 +36,12 @@ export default function FacilityFive({ data }) {
                       href={item.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="pdf_link">
+                      className="pdf_link"
+                    >
                       {item.pdf && (
                         <figure className="shine-effect">
                           <Image
-                            src={item.pdf}
+                            src="/images/icons/pdf.png"
                             alt="PDF Icon"
                             width={15}
                             height={20}

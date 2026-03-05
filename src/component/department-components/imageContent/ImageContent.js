@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./imageContent.module.css";
+import Link from "next/link";
 
 export default function ImageContent({ data, id, type, extraClass }) {
   return (
@@ -43,6 +44,16 @@ export default function ImageContent({ data, id, type, extraClass }) {
                   </p>
                 ))}
             </div>
+            {data?.pdfs && (
+              <div className={styles.pdf_group}>
+                {data.pdfs.map((singlePdf, pdfIdx) => (
+                  <Link href={singlePdf.pdfLink} target="_blank" key={pdfIdx}>
+                    <Image src="/images/icons/pdf.png" height={20} width={15} />
+                    {singlePdf.pdfName}
+                  </Link>
+                ))}
+              </div>
+            )}
             {data?.subHeading && (
               <h5 className={styles.subHeading}>{data.subHeading}</h5>
             )}
