@@ -152,7 +152,7 @@ export default function DepartmentSection({ data }) {
           </div>
 
           <div className={styles.departmentRow}>
-            {departmentSection.departments.slice(0, 4).map((dept, index) => (
+            {departmentSection.departments?.slice(0, 4).map((dept, index) => (
               <div
                 className={styles.departmentCol}
                 key={index}
