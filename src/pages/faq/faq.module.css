@@ -1,0 +1,8 @@
+.inner_page {
+    padding: 10rem 0;
+}
+
+.innerPage_title {
+    font: var(--font-26);
+    margin-bottom: 7rem;
+}

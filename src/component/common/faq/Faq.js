@@ -7,10 +7,10 @@ export default function Faq({ data, heading }) {
           <details key={faq.id} className="faqItem">
             <summary className="faqQuestion">
               <span className="icon"></span>
-              <span>{faq.question}</span>
+              <span>{faq.question || faq.name}</span>
             </summary>
             <div className="faqAnswer">
-              <p>{faq.answer}</p>
+              <p>{faq.answer || faq.slug}</p>
             </div>
           </details>
         ))}
