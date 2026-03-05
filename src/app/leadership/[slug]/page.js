@@ -96,7 +96,6 @@ export default function LeadershipDetailsPage({ params }) {
                     alt={sections.banners.name}
                     width={1200}
                     height={600}
-                    // style={{ width: "100%", height: "auto", marginTop: "-98px" }}
                     className="img-fluid w-100"
                   />
                   <figcaption>
@@ -109,9 +108,6 @@ export default function LeadershipDetailsPage({ params }) {
                 </figure>
               </div>
               <div className="leadership_two_cnt2">
-                {/* {sections.about.description.map((desc, index) => (
-                      <p key={index}>{desc[0]}</p>
-                    ))} */}
                 <h3>{sections.banners.name}</h3>
                 <h5>{sections.banners.designation}</h5>
                 <p>{sections.banners.short_description}</p>
@@ -129,9 +125,6 @@ export default function LeadershipDetailsPage({ params }) {
               <div className="leader_row">
                 <div className="leader_col">
                   <div className="leadership_two_cnt">
-                    {/* {sections.about.description.map((desc, index) => (
-                      <p key={index}>{desc[0]}</p>
-                    ))} */}
                     <h5>{sections.about.description[0]}</h5>
                     <p>{sections.about.description[1]}</p>
                   </div>
@@ -159,7 +152,6 @@ export default function LeadershipDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* MESSAGE FROM CHANCELLOR */}
       <section className="message_section">
         <div className="container">
           <div className="message_warpper">
