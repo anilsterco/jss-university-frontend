@@ -986,9 +986,17 @@
   padding: 10rem 0;
 }
 
+.image_content_repeat_section.no-padding{
+  padding:0;
+}
+
 .image_content_repeat_section.reverse_bg_white{
   background:#fff;
 }
+
+/* .image_content_repeat_section.no-padding.single .imageContent{
+
+} */
 
 
 /* vision_mission_section */
@@ -2849,6 +2857,171 @@ hr {
   text-align: left;
   font:var(--font-24)
 }
+
+
+/* ===== Research Patents Section ===== */
+
+.research_patents_section{
+padding:100px 0;
+}
+
+.research_patents_section.no-border{
+  padding-top:0
+}
+
+.researchPatents {
+  display: flex;
+  gap: 0;
+}
+.patent_heading{
+  text-align: center;
+  font:var(--font-26);
+  color: #16344E;
+}
+
+.patent_subHeading{
+  margin-top:4rem;
+  font:var(--font-24);
+  font-weight: 300;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 4rem;
+}
+
+.research_leftTitle{
+  color: #16344E;
+  font:var(--font-21);
+  margin-bottom: 3rem;
+}
+
+.research_leftDesc{
+  font:var(--font-16);
+  color: #444444;
+}
+
+.research_patents_section .paddingTopBottom{
+  
+  border-top: 0.0625rem solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
+}
+
+.research_patents_section .paddingTopBottom.no-border{
+  border:none;
+}
+
+
+/* ---- LEFT ---- */
+.researchPatents__left {
+  flex: 1;
+  padding: 4.7rem 0;
+  border-right: 0.0625rem solid #d0d0d0;
+  padding-right:5rem;
+}
+
+.researchPatents__subtitle {
+  font:var(--font-24);
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  font-weight: 300;
+}
+
+.researchPatents__statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.researchPatents__statCard {
+  border: 0.0625rem solid #e2e2e2;
+  padding: 4.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.researchPatents__statNumber {
+  font-weight: 600;
+  font-size:4.8rem;
+  color: #16344E;
+  line-height: 1;
+  letter-spacing: -1.92px;
+  font-family: var(--font-Roboto);
+}
+
+.researchPatents__statLabel {
+  font:var(--font-14);
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+}
+
+/* ---- RIGHT ---- */
+.researchPatents__right {
+  flex: 1;
+  padding: 4.7rem 0;
+  padding-left: 5rem;
+}
+
+
+
+/* ---- TABLE ---- */
+.researchPatents__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.75rem;
+}
+
+.researchPatents__table thead tr {
+  background-color: #B08F29; /* gold/olive header */
+}
+
+.researchPatents__table thead th {
+  color: #ffffff;
+  font-weight: 600;
+  font:var(--font-18);
+  letter-spacing: 0.03em;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.researchPatents__table tbody tr {
+  background-color: #ffffff;
+}
+
+.researchPatents__table tbody tr:nth-child(even) {
+  background-color: #F0EFEF;
+}
+
+.researchPatents__table tbody td {
+  padding: 0.6875rem 1rem;
+  color: #333;
+  font:var(--font-16);
+  border-bottom: 0.0625rem solid #ebebeb;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 48rem) {
+  .researchPatents {
+    flex-direction: column;
+  }
+
+  .researchPatents__left {
+    border-right: none;
+    border-bottom: 0.0625rem solid #d0d0d0;
+    padding: 1rem 1rem 2rem;
+  }
+
+  .researchPatents__right {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .researchPatents__statsGrid {
+    max-width: 100%;
+  }
+}
+
 
 /* start responsive */
 

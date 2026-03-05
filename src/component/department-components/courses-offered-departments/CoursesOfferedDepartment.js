@@ -73,7 +73,6 @@ const CoursesOffered = () => {
                   type="text"
                   className="form-control border-0"
                   placeholder="Search Course"
-                  
                 />
                 <span className="input-group-text bg-white border-0">
                   <img src="/images/home-page/icon-search.svg" alt="search" />
@@ -129,7 +128,7 @@ const CoursesOffered = () => {
               </div>
             </Link>
 
-           <Link
+            <Link
               href="#"
               className="second-section-cards-image position-relative"
               data-aos="fade-up"
@@ -157,7 +156,6 @@ const CoursesOffered = () => {
                 </span>
               </div>
             </Link>
-
           </div>
         </div>
       </div>

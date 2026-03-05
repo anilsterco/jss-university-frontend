@@ -183,9 +183,9 @@ export default function DepartmentHeader({ className, data }) {
                 mobileMenuOpen ? styles.open : ""
               }`}
             >
-              {data.map((section) => (
+              {data.map((section, idx) => (
                 <Link
-                  key={section.title}
+                  key={idx}
                   href={"/" + currentPage + "/" + section.slug}
                   className={`${styles.navItem} ${
                     section.slug.includes(currentProgram)

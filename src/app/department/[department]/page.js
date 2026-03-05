@@ -24,7 +24,7 @@ async function getDepartmentData(slug) {
 
   if (!res.ok) {
     throw new Error(
-      `Failed to fetch department data for ${department} (status ${res.status})`,
+      `Failed to fetch department data for department (status ${res.status})`,
     );
   }
 

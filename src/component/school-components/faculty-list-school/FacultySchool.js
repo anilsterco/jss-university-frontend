@@ -86,7 +86,9 @@ export default function FacultyList() {
           />
         </div>
 
-        <div className={`${styles.sliderContainer} d-flex align-items-center gap-5`}>
+        <div
+          className={`${styles.sliderContainer} d-flex align-items-center gap-5`}
+        >
           <Swiper
             modules={[Navigation, Autoplay]}
             navigation={{
@@ -122,9 +124,7 @@ export default function FacultyList() {
                   />
 
                   <div className={styles.facultyInfo}>
-                    <h3 className={styles.facultyName}>
-                      {member.name}
-                    </h3>
+                    <h3 className={styles.facultyName}>{member.name}</h3>
                     <p className={styles.facultyDesignation}>
                       {member.designation}
                     </p>
@@ -139,7 +139,11 @@ export default function FacultyList() {
           className="faculty-prev"
           fontSize={28}
           color="#002238b5"
-          style={{ marginTop: "3rem", cursor: "pointer", marginRight: "0.5rem" }}
+          style={{
+            marginTop: "3rem",
+            cursor: "pointer",
+            marginRight: "0.5rem",
+          }}
         />
         <CiCircleChevRight
           className="faculty-next"

@@ -53,13 +53,12 @@ import TableSection from "@/component/sections/TableSection";
 import TopSection from "@/component/sections/TopSection";
 import LogoSlider from "@/component/sections/LogoSlider";
 import TabsGrid from "@/component/sections/TabsGrid";
-
-
-
+import { BASE_URL } from "@/config/config";
+import ResearchPatents from "@/component/sections/ResearchPatents";
 
 async function fetchPageData(slug) {
   try {
-    const res = await fetch(`https://project-demo.in/jss/api/pages/${slug}`, {
+    const res = await fetch(`${BASE_URL}pages/${slug}`, {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;
@@ -158,7 +157,8 @@ export default async function DynamicPage({ params }) {
     table_section: TableSection,
     top_section: TopSection,
     logo_slider: LogoSlider,
-    tabsGrid: TabsGrid
+    tabsGrid: TabsGrid,
+    ResearchPatents: ResearchPatents,
   };
 
   return (
@@ -173,10 +173,9 @@ export default async function DynamicPage({ params }) {
       )}
 
       {groupedSections?.map((section, index) => {
-
         const Component =
           sectionComponents[
-          section.type === "facilityGroup" ? "facilityGroup" : section.type
+            section.type === "facilityGroup" ? "facilityGroup" : section.type
           ];
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;

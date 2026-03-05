@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./imageContent.module.css";
 
-export default function ImageContent({ data, id, type }) {
+export default function ImageContent({ data, id, type, extraClass }) {
   return (
     <div
       key={id}
@@ -25,7 +25,12 @@ export default function ImageContent({ data, id, type }) {
 
         <div className={`col-6 px_3xl_1_2 `}>
           <div
-            className={`${styles.content_col} ${styles[type]} ${data?.type && styles[data.type]} ${data?.type !== "facilities" && id % 2 !== 0 && styles.odd}`}
+            className={`${styles.content_col} ${type
+              .split(" ")
+              .map((cls) => styles[cls] || "")
+              .join(
+                " ",
+              )} ${data?.type && styles[data.type]} ${data?.type !== "facilities" && id % 2 !== 0 && styles.odd}`}
           >
             {data?.heading && (
               <h4 className={styles.heading}>{data.heading}</h4>
