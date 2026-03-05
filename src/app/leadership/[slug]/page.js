@@ -138,23 +138,34 @@ export default function LeadershipDetailsPage({ params }) {
                 </div>
                 <div className="leader_col">
                   <div className="leadership_two_img">
-                    <figure>
+                    <figure
+                      style={{
+                        position: "relative",
+                        width: "608px",
+                        height: "403px",
+                      }}
+                    >
                       <Image
                         src={sections.about.image}
                         alt={sections.banners.name}
-                        width={600}
-                        height={600}
                         className="img-fluid"
+                        fill
+                        style={{
+                          objectFit: "cover",
+                          objectPosition: "top",
+                        }}
                       />
                     </figure>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="biographi_section">
-              <h3>Biography</h3>
-              <p>{sections.biography}</p>
-            </div>
+            {sections?.biography && (
+              <div className="biographi_section">
+                <h3>Biography</h3>
+                <p>{sections.biography}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
