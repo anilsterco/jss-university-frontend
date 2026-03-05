@@ -35,7 +35,6 @@ export default function LeadershipClient() {
       .then((resJson) => {
         if (resJson.success && resJson.data) {
           const data = resJson.data;
-
           setFeaturedLeader(data.featured || null);
           setManagementLeaders(data.management || []);
           setOtherLeaders(data.others || {});
@@ -67,6 +66,7 @@ export default function LeadershipClient() {
           </div>
         </div>
       </section>
+   {   console.log(aboutPage)}
 
       {loading && (
         <div className="text-center p-10">

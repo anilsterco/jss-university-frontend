@@ -289,12 +289,9 @@ export default function ProgramClient() {
                   ) : (
                     <h6 className="text-center">No programs available</h6>
                   )}
-
                   {programs && programs.length > 0 && hasMorePages && (
                     <div className={styles.loadMoreContainer}>
-                      <a id="loadMore" onClick={handleLoadMore}>
-                        Load More <i className="bi bi-arrow-down"></i>
-                      </a>
+                      <a id="loadMore" onClick={handleLoadMore}> Load More <i className="bi bi-arrow-down"></i> </a>
                     </div>
                   )}
                 </div>

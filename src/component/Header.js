@@ -122,6 +122,26 @@ export default function Header() {
   const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [megaMenuData, setMegaMenuData] = useState([]);
+
+  const [activeLeftIndex, setActiveLeftIndex] = useState(0);
+  const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch("https://project-demo.in/jss/api/hamburger");
+        const json = await res.json();
+        setMegaMenuData(json.data || []);
+      } catch (err) {
+        console.error("Hamburger API Error:", err);
+      }
+    };
+    fetchMenu();
+  }, []);
+
+  const activeLeftMenu = megaMenuData?.[activeLeftIndex] || {};
+  const activeMiddleMenu = activeLeftMenu.children?.[activeMiddleIndex] || {};
 
   useEffect(() => {
     async function fetchHeaderData() {
@@ -494,7 +514,6 @@ export default function Header() {
                       <Link href={l.url} className={`nav-link nav-lists`}>
                         {l.title}
                       </Link>
-
                       {activeDropdown === i && l.children?.length > 0 && (
                         <div
                           className={`mega-dropdown ${activeDropdown === i ? "d-flex" : ""}`}
@@ -620,7 +639,7 @@ export default function Header() {
                         </h2>
                         <p className="ad-desc">{admissionsData.left.desc}</p>
                         <div className="ad-contact">
-                          <span>{admissionsData.left.querytext}</span>
+                          <span> {admissionsData.left.querytext} </span>
                           <p>
                             <img
                               src="images/header/mailicon.svg"
@@ -737,15 +756,18 @@ export default function Header() {
             <div className="hamburger-layout">
               <aside className="menu-left">
                 <ul>
-                  {hamburgerMenudata.map((item, idx) => (
+                  {megaMenuData.map((item, idx) => (
                     <li
-                      key={idx}
-                      className={`menu-left-item ${
-                        activeIndex === idx ? "active" : ""
-                      }`}
-                      onClick={() => setActiveIndex(idx)}
+                      key={item.id}
+                      className={`menu-left-item ${activeLeftIndex === idx ? "active" : ""}`}
+                      onMouseEnter={() => {
+                        setActiveLeftIndex(idx);
+                        setActiveMiddleIndex(null);
+                      }}
                     >
-                      {item.name}
+                      <Link href={item.url || "#"} className="hambur_links">
+                        {item.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -754,24 +776,23 @@ export default function Header() {
               <section className="menu-middle">
                 <div className="middle-title">
                   <ul>
-                    <li>
-                      <a href="#">ABOUT JSSMVP</a>
-                    </li>
-                    <li>
-                      <a href="#">HERITAGE</a>
-                    </li>
-                    <li>
-                      <a href="#">ABOUT JSS</a>
-                    </li>
-                    <li>
-                      <a href="#">LEADERSHIP</a>
-                    </li>
+                    {activeLeftMenu.children?.map((item, idx) => (
+                      <li
+                        key={item.id}
+                        className={activeMiddleIndex === idx ? "active" : ""}
+                        onMouseEnter={() => setActiveMiddleIndex(idx)}
+                      >
+                        <Link href={item.url} className="hambur_link">
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <ul className="middle_ul">
-                  {activeData.Menu.map((s, i) => (
-                    <li key={i} className="middle-item">
-                      <a href="#"> {s}</a>
+                <ul className="middle-submenu">
+                  {activeMiddleMenu.children?.map((sub) => (
+                    <li key={sub.id}>
+                      <Link href={sub.url}>{sub.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -1628,6 +1649,7 @@ export default function Header() {
             font-weight: normal;
             transition: all 0.3s ease;
           }
+        
           .menu-left-item:hover {
             background: #ffc100;
             color: var(--color-4e);
@@ -1642,7 +1664,7 @@ export default function Header() {
           .menu-middle {
             background: rgba(255, 255, 255, 0.95);
             width: 20%;
-            padding: 9rem 9rem 9rem;
+            padding: 9rem 5rem 9rem;
           }
           .menu-right {
             background: rgba(255, 255, 255, 0.95);
@@ -1674,21 +1696,21 @@ export default function Header() {
             opacity: 1;
             z-index: -1;
           }
-          .middle-title > ul {
+          .middle-title ul {
             padding: 0;
             margin: 0;
             list-style-type: none;
           }
 
-          .middle-title > ul > li a {
+          .middle-title .hambur_link {
             font: var(--font-21);
-            color: var(--color-black);
             font-family: var(--font-Condensed);
             font-weight: bold;
             display: block;
             padding-bottom: 1.6rem;
+            color: var(--color-black);
           }
-          .middle-title > ul > li a:hover {
+          .middle-title ul li:hover {
             color: var(--color-e8);
           }
           .middle-title ul {
@@ -1922,6 +1944,10 @@ export default function Header() {
             .mega-left {
               width: 85rem;
             }
+            .nav-list {
+            gap: 3.9rem;
+          
+          }
           }
 
           @media (max-width: 1649px) {
