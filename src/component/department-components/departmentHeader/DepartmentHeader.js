@@ -186,9 +186,7 @@ export default function DepartmentHeader({ className, data }) {
               {data.map((section) => (
                 <Link
                   key={section.title}
-                  href={
-                    "/" + currentPage + "/" + currentSlug + "/" + section.slug
-                  }
+                  href={"/" + currentPage + "/" + section.slug}
                   className={`${styles.navItem} ${
                     section.slug.includes(currentProgram)
                       ? styles.activeNav

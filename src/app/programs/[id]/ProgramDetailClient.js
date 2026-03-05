@@ -6,8 +6,8 @@ import Link from "next/link";
 import "@/styles/custom.style.css";
 import "@/styles/style.css";
 import { useParams } from "next/navigation";
-
-const BASE_URL = "/api/";
+import { BASE_URL } from "@/config/config";
+import Faq from "@/component/common/faq/Faq";
 
 export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -19,7 +19,7 @@ export default function ProgramDetailClient({ params }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/course/${params}`)
+    fetch(`${BASE_URL}course/${params}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -801,20 +801,7 @@ export default function ProgramDetailClient({ params }) {
       {faqs && faqs.length > 0 && (
         <section className="faqSection">
           <div className="container">
-            <h5 className="heading">FREQUENTLY ASKED QUESTIONS</h5>
-            <div className="faqList">
-              {faqs.map((faq, index) => (
-                <details key={faq.id} className="faqItem">
-                  <summary className="faqQuestion">
-                    <span className="icon"></span>
-                    <span>{faq.question}</span>
-                  </summary>
-                  <div className="faqAnswer">
-                    <p>{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
+            <Faq data={faqs} heading={"FREQUENTLY ASKED QUESTIONS"} />
           </div>
         </section>
       )}
