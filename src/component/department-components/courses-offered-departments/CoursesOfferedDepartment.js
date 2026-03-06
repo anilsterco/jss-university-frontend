@@ -8,29 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 
-// 🔒 STATIC DATA
-const programs = [
-  {
-    name: "Undergraduate Programs",
-    shortName: "Undergraduate",
-    slug: "undergraduate",
-    image: "/images/programs/ug.jpg",
-  },
-  {
-    name: "Postgraduate Programs",
-    shortName: "Postgraduate",
-    slug: "postgraduate",
-    image: "/images/programs/pg.jpg",
-  },
-  {
-    name: "Doctoral Programs",
-    shortName: "Doctoral",
-    slug: "doctoral",
-    image: "/images/programs/phd.jpg",
-  },
-];
-
-const CoursesOffered = () => {
+const CoursesOffered = ({ data }) => {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
   }, []);
@@ -41,9 +19,11 @@ const CoursesOffered = () => {
         <div className={`cource_top ${styles.topSection}`}>
           {/* LEFT CONTENT */}
           <div className="cource_col">
-            <h5 className={styles.topSectionH5} data-aos="fade-up">
-              COURSES OFFERED
-            </h5>
+            {data?.subtitle && (
+              <h5 className={styles.topSectionH5} data-aos="fade-up">
+                {data.subtitle}
+              </h5>
+            )}
 
             <h1
               className={`fw-bold ${styles.topSectionH1}`}

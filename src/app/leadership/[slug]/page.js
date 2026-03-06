@@ -205,7 +205,7 @@ export default function LeadershipDetailsPage({ params }) {
                     ) : (
                       <Image
                         src={
-                          sections?.message_from_chancellor?.image ||
+                          sections?.message_from_chancellor?.message_image ||
                           "/images/custom-page/about/chancellor-message.png"
                         }
                         alt={

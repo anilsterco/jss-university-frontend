@@ -7,14 +7,14 @@ import TestimonialComponent from "../component/home-components/testimonial/Testi
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
+import { BASE_URL } from "@/config/config";
 
 export async function generateMetadata() {
   return await getPageSEO("home"); // or 'homepage'
 }
 
-const BASE_URL = "https://project-demo.in/jss/api";
 async function getSchoolData() {
-  const res = await fetch(`${BASE_URL}/homepage`, {
+  const res = await fetch(`${BASE_URL}homepage`, {
     next: { revalidate: 120 }, // cache for 2 mins
   });
 
@@ -38,7 +38,7 @@ export default async function HomePage() {
         strategy="beforeInteractive"
       />
       <BannerComponent data={homepageData.sections.banners} />
-      
+
       <div className="animated-hover">
         <CourseOfferedComponent
           data={homepageData.sections.departments_section}
