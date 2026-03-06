@@ -17,9 +17,7 @@ const dummyPlacementsData = {
   title:
     '<span class="dark-blue-text ">FROM</span> <span class="blue-text">CAMPUS</span> <span class="dark-blue-text ">TO</span> <span class="blue-text">CORPORATE</span>',
   subtitle: "Placement",
-  facts_and_figures: [
-   
-  ],
+  facts_and_figures: [],
   testimonials: [
     {
       image: "/images/home-page/testimonial-placeholder.png",
@@ -66,7 +64,7 @@ const dummyPlacementsData = {
 
 export default function PlacementsSection({ data, category, pageType }) {
   let placementsData;
-  if (category == 'slider') {
+  if (category == "slider") {
     placementsData = data;
   } else {
     placementsData = data || dummyPlacementsData;
@@ -80,24 +78,25 @@ export default function PlacementsSection({ data, category, pageType }) {
   }, []);
 
   return (
-    <section className={`${category !== 'slider' && styles.thirdSection}`}>
+    <section className={`${category !== "slider" && styles.thirdSection}`}>
       <div className="container">
-        {placementsData?.subtitle || placementsData?.title && (
+        {(placementsData?.subtitle || placementsData?.title) && (
           <div
-            className={` ${styles.sectionHeader}`}
+            className={styles.sectionHeader}
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <p className="fw-bold text-uppercase dark-blue-text">
               {placementsData?.subtitle?.toUpperCase()}
             </p>
+
             <h2
               className="fw-bold"
               dangerouslySetInnerHTML={{ __html: placementsData?.title }}
             ></h2>
           </div>
         )}
-        
+
         {placementsData?.facts_and_figures && (
           <div className={`${styles.placement_row}`}>
             <div className={`placement_col ${styles.leftContent}`}>
@@ -107,10 +106,13 @@ export default function PlacementsSection({ data, category, pageType }) {
                     key={i}
                     className={`${styles.figurContCol}`}
                     data-aos="fade-up"
-                    data-aos-delay={i * 150}>
+                    data-aos-delay={i * 150}
+                  >
                     <div className={`${styles.figcount}`}>
                       <h3 className={`${styles.statsNumber}`}>{stat.figure}</h3>
-                      <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
+                      <p className={`mb-0 ${styles.statsLabel}`}>
+                        {stat.title}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -125,19 +127,22 @@ export default function PlacementsSection({ data, category, pageType }) {
                 }}
                 spaceBetween={30}
                 slidesPerView={1}
-                className={`${styles.testimonialSwiper} testimonial-slider`}>
+                className={`${styles.testimonialSwiper} testimonial-slider`}
+              >
                 <div className={styles.blueBg}></div>
                 {placementsData?.testimonials?.map((t, i) => (
                   <SwiperSlide key={i}>
                     <div
                       className={`${styles.eachSlide} d-flex align-items-top `}
                       data-aos="fade-up"
-                      data-aos-delay={i * 150}>
+                      data-aos-delay={i * 150}
+                    >
                       <div className={`${styles.testimonialImageContainer} `}>
                         <FaQuoteLeft
                           className={`mb-3 ${styles.mobileQuoteIcon}`}
                           color="#b08f29"
-                          fontSize={30}/>
+                          fontSize={30}
+                        />
                         <Image
                           src={t.image}
                           alt={`${t.name} image`}
@@ -149,8 +154,9 @@ export default function PlacementsSection({ data, category, pageType }) {
                             position: "relative",
                           }}
                           priority
-                          className={`top-0 start-0 testiimg rounded ${styles.testimonialImage}`}/>
-                      </div>                     
+                          className={`top-0 start-0 testiimg rounded ${styles.testimonialImage}`}
+                        />
+                      </div>
                       <div className={`${styles.testimonialContent} `}>
                         <FaQuoteLeft
                           className={`${styles.desktopQuoteIcon}`}
@@ -162,7 +168,9 @@ export default function PlacementsSection({ data, category, pageType }) {
                         <small className="small-text">
                           {t.designation} {t.company}
                         </small>
-                        <div className={`d-flex gap-2 ${styles.testimonialIconContainer}`}>
+                        <div
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
+                        >
                           <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
                             <FaChevronLeft size={8} />
                           </button>
@@ -176,24 +184,29 @@ export default function PlacementsSection({ data, category, pageType }) {
                 ))}
               </Swiper>
             </div>
-         
+
             {placementsData?.hall_of_fame && (
               <div
                 className={`placement_col d-flex justify-content-lg-end px-0 ${styles.rightContent}`}
                 data-aos="fade-bottom"
-                data-aos-delay="200">
-                <div className={`position-relative ${styles.wallOfFameContainer} `}>
+                data-aos-delay="200"
+              >
+                <div
+                  className={`position-relative ${styles.wallOfFameContainer} `}
+                >
                   <Image
                     src={placementsData.hall_of_fame.image}
                     alt="Wall of Fame"
                     width={488}
                     height={600}
+                    className={styles.plc_img}
                     style={{
                       width: "100%",
                       borderTopLeftRadius: "10px",
                       borderBottomLeftRadius: "10px",
                       objectFit: "cover",
-                    }}/>
+                    }}
+                  />
                   <div
                     className={` ${styles.wallOfFameText}`}
                     dangerouslySetInnerHTML={{
@@ -213,10 +226,17 @@ export default function PlacementsSection({ data, category, pageType }) {
           </div>
         )}
 
-        <div className={`${category == 'slider' && 'pt_3xl_10'} ${styles.recruiterSection} ${pageType == 'placement' && styles.placement_slider} `} data-aos="fade-up">
+        <div
+          className={`${category == "slider" && "pt_3xl_10"} ${styles.recruiterSection} ${pageType == "placement" && styles.placement_slider} `}
+          data-aos="fade-up"
+        >
           <div className="row recruiter-logo w-100">
             <div className="col-lg-12 max-auto">
-              {placementsData?.subTitle ? <p className="small">{placementsData.subTitle}</p> : <p className="small">{'Our Recruiters'}</p>}
+              {placementsData?.subTitle ? (
+                <p className="small">{placementsData.subTitle}</p>
+              ) : (
+                <p className="small">{"Our Recruiters"}</p>
+              )}
               <div className="d-flex flex-wrap gap-4 align-items-center">
                 <Swiper
                   modules={[Navigation, Autoplay]}
@@ -232,8 +252,12 @@ export default function PlacementsSection({ data, category, pageType }) {
                     576: { slidesPerView: 3 },
                     768: { slidesPerView: 4 },
                     992: { slidesPerView: 5 },
-                    1200: { slidesPerView: 7 },}}>
-                  {(placementsData?.recruiters || placementsData?.slideData)?.map((rec, i) => (
+                    1200: { slidesPerView: 7 },
+                  }}
+                >
+                  {(
+                    placementsData?.recruiters || placementsData?.slideData
+                  )?.map((rec, i) => (
                     <SwiperSlide key={i} className="recruiter-slide ">
                       <Image
                         src={rec.image}

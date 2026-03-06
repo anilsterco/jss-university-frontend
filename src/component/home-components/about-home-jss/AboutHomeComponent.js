@@ -37,7 +37,7 @@ const dummyLegacyData = {
   ],
   buttons: [
     { text: "360 VIEW", url: "#" },
-    { text: "WHY JSS", url: "#", },
+    { text: "WHY JSS", url: "#" },
     { text: "APPLY NOW", url: "#" },
   ],
   logo_content: [
@@ -98,7 +98,6 @@ export default function LegacySection({ data }) {
                   height={370}
                   style={{ height: "100%", width: "100%" }}
                   className={`rounded ${styles.chancellorImage}`}
-
                 />
                 {/* Play Button Overlay */}
                 <div className={`${styles.contentPart}`}>
@@ -124,7 +123,11 @@ export default function LegacySection({ data }) {
               </div>
             </div>
 
-            <div className={`about-imgcol ${styles.rightColumn}`} data-aos="fade-up" data-aos-delay="400">
+            <div
+              className={`about-imgcol ${styles.rightColumn}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <p className={`fw-light ${styles.description}`}>
                 {legacyData.description}
               </p>
@@ -182,7 +185,13 @@ export default function LegacySection({ data }) {
                     </h1>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
-                      <p className={styles.sourceText}>{h.source}</p>
+                      <Image
+                        src={h.source}
+                        alt="Accreditation Logo"
+                        width={88}
+                        height={33}
+                        className={styles.sourceText}
+                      />
                     </div>
                   </SwiperSlide>
                 ))}
@@ -197,15 +206,21 @@ export default function LegacySection({ data }) {
                 {legacyData.buttons.map((btn, i) => (
                   <Link key={i} href={btn.url} className={styles.navButtons}>
                     {btn.text}
-                    {i == 1 && (<FaArrowRight className={styles.arrowIcon} />)}
+                    {i == 1 && <FaArrowRight className={styles.arrowIcon} />}
                   </Link>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className={styles.fifthSectionSlider} data-aos="fade-up" data-aos-delay="700" >
-            <p className={`${styles.accreditationHeading} ${styles.onlyMobile}`}>
+          <div
+            className={styles.fifthSectionSlider}
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <p
+              className={`${styles.accreditationHeading} ${styles.onlyMobile}`}
+            >
               GLOBAL PARTNERSHIPS AND ACADEMIC COLLABORATIONS
             </p>
             <Swiper

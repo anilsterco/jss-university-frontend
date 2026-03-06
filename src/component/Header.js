@@ -1987,9 +1987,12 @@ export default function Header() {
             .mega-right-text {
               width: 26%;
             }
+            .nav-list {
+            gap: 2.9rem;
+          }
           }
 
-          @media (max-width: 1100px) {
+          @media (max-width: 1149px) {
             .mega-dropdown {
               min-width: 700px;
               grid-template-columns: 1fr;
@@ -2016,6 +2019,7 @@ export default function Header() {
             .hamburger {
               padding: 1.5rem 1.5rem 1.5rem;
             }
+          
           }
           @media (max-width: 1024px) {
             .menu-middle {
@@ -2050,11 +2054,18 @@ export default function Header() {
             .mega-left {
               width: 40rem;
             }
-          }
+            .site-header::before {
+            width: 4px;
+            height: 400px;}}
           @media (max-width: 991px) {
             .site-header {
               position: relative;
+              background:#F6F6F6;
             }
+            
+            .header-inner.header-scrolled {
+             background:#F6F6F6;
+          }
             .right-navbar {
               display: none;
             }
@@ -2067,6 +2078,12 @@ export default function Header() {
             .engineering-dropdown {
               width: 80%;
             }
+            .site-header {
+            position: relative;
+          }
+          .site-header .header-inner.header-scrolled{
+            position:fixed
+          }
           }
 
           .panel-wrapper {
@@ -2541,14 +2558,7 @@ export default function Header() {
           .site-header.not-home {
             background: none;
           }
-          .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1100;
-            width: 100%;
-          }
+       
 
           .header-inner {
             width: 100%;

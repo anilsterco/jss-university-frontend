@@ -239,6 +239,18 @@ export default function CoursesOffered({ data }) {
                 </div>
               </Link>
             ))}
+             <div className={`course-items ${styles.showOnlyMobileCard}`}>
+                <Link href="#" className={styles.exploreAllLink}>
+                  <div className={styles.lastCardContentSection}>
+                    <p>Explore All</p>
+                    <h1 className="blue-text">26+</h1>
+                    <h5>ACADEMIC PROGRAMS</h5>
+                  </div>
+                  <div className={styles.lastCardArrow}>
+                    <PiArrowCircleRightThin fontSize={20} color="#16344E" />
+                  </div>
+                </Link>
+              </div>
           </div>
         </div>
 

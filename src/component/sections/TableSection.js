@@ -13,7 +13,8 @@ export default function TableSection({ data }) {
                         {section.items[0]?.heading && <h4 className="heading ">{section.items[0].heading}</h4>}
                         {section.items[0]?.subHeading && <p className=' sub_heading'>{section.items[0].subHeading}</p>}
 
-                        <table className="table-lab table table-bordered">
+                       <div className='table-responsive'>
+                         <table className="table-lab table table-bordered">
                             <thead>
                                 <tr>
                                     {section.items[0].tableHeadings.map((th, thIndex) => (
@@ -32,6 +33,7 @@ export default function TableSection({ data }) {
 
                             </tbody>
                         </table>
+                       </div>
 
                     </div>
                 )

@@ -941,6 +941,9 @@ body:has(.modal.show) {
     height: 0.46rem;
     top: 0.6rem;
   }
+        .containerXl {
+    padding-inline: 2rem;
+}
 }
 
 /* Search Area */

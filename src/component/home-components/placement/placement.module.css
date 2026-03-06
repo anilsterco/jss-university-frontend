@@ -284,6 +284,19 @@
   .wallOfFameContainer {
     object-fit: cover;
   }
+.wallOfFameContainer .plc_img {
+    height: 100%;
+  }
+   .blueBg {
+    max-width: 30%;
+    height: 80%;
+  }
+  .testimonialSwiper {
+  padding: 2.5rem;
+}
+.testimonialSwiper .eachSlide {
+  gap: 3.2rem;
+}
 }
 
 @media (max-width: 991px) {
@@ -319,33 +332,9 @@
     height: 100%;
   }
 
-  .sectionHeader h2 {
-    font: var(--font-40);
-    font-family: var(--font-Condensed);
-  }
-
-  .sectionHeader h2 span {
-    font: var(--font-40);
-    font-family: var(--font-Condensed);
-    letter-spacing: -1.88px;
-  }
-
-  .statsNumber {
-    font: var(--font-40);
-    letter-spacing: -1.4px;
-    color: var(--color-4e);
-    font-weight: 500;
-  }
-
-
-}
-
-@media (max-width: 767px) {
-  .sectionHeader p {
+.sectionHeader p {
     text-align: center;
-    font: var(--font-14);
-    font-family: var(--font-Condensed);
-    font-weight: bold;
+    margin-bottom: 1rem;
   }
 
   .thirdSection {
@@ -357,30 +346,18 @@
     padding-block: 1.2rem;
 
   }
-
+ .placement_row {
+  display: block;
+  }
   .testimonialSwiper p {
     margin-bottom: 1.6rem;
   }
 
   .sectionHeader h2 {
-    font: var(--font-34);
-    font-family: var(--font-Condensed);
-    letter-spacing: -1.63px;
     text-align: center;
-    line-height: 30px;
-  }
-
-  .sectionHeader h2 span {
-    font: var(--font-34);
-    font-family: var(--font-Condensed);
-    letter-spacing: -1.63px;
-    line-height: 30px;
   }
 
   .statsNumber {
-    letter-spacing: -2px;
-    font: var(--font-40);
-    font-family: var(--font-Condensed);
     font-weight: 600;
   }
 
@@ -431,5 +408,8 @@
   .recruiterSection {
     text-align: center;
   }
-
+.statsRow {
+  margin-bottom: 4rem;
 }
+}
+

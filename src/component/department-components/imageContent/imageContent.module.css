@@ -135,4 +135,35 @@
     /* padding:5rem 0 10rem; */
     position:relative;
 }
+@media screen and (max-width:1449px) {
+  .content_col {
+    padding-left: 4.4rem;
+    padding-top: 4rem;
+}
 
+}
+@media screen and (max-width:991px){
+  .content_col {
+    padding-left: 0rem;
+}
+.image_content_repeat_section {
+    padding-block: 4rem 2rem;
+  }
+  .content_col.reverse_bg_white{
+  padding-block: 4rem;
+}
+.content_col.department,
+.content_col.facilities {
+    padding-top: 4rem;
+}
+}
+@media screen and (max-width:767px) {
+
+  .content_col {
+    padding-left: 0;
+    padding-top: 4rem;
+}
+   .content_col.reverse_bg_white{
+    padding-right:0;
+}
+}

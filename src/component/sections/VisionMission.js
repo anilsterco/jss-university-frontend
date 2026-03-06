@@ -14,7 +14,7 @@ export default function VisionMission({ data }) {
                 <section key={idx} className="vision_mission_section">
                   <div className="container">
                     <div className="row">
-                      <div className="col-md-6 left_col">
+                      <div className="col-lg-6 col-md-12 left_col">
                         <div className="vision">
                           {item?.leftTitle && (
                             <h2 className="title">{item.leftTitle}</h2>
@@ -23,7 +23,7 @@ export default function VisionMission({ data }) {
                         </div>
                       </div>
 
-                      <div className="col-md-6">
+                      <div className="col-lg-6 col-md-12">
                         <div className="mission-card">
                           {item?.rightTitle && (
                             <h2 className="title">{item.rightTitle}</h2>

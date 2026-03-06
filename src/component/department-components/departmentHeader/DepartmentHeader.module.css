@@ -222,6 +222,10 @@
   cursor: pointer;
 }
 
+@media (max-width: 1549px){
+.departmentMenu {padding: 3rem;}
+}
+ 
 @media (max-width: 991px) {
   .mobileToggle {
     display: block;
@@ -277,6 +281,15 @@
   }
   .navItem {
     padding: 1.5rem 0;
+  }
+  .engineeringDropdownContainer {
+    width: 40rem;
+  }
+}
+@media (max-width: 520px){
+
+  .engineeringDropdownContainer {
+    width: 35rem;
   }
 }
  

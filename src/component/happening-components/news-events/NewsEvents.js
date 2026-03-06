@@ -275,7 +275,7 @@ export default function EventsSection({ className, programId }) {
       <div className="container midd_events">
         {secondryItem != null ? (
           <div className={`row ${styles.secondarySection}`}>
-            <div className="col-md-7">
+            <div className="col-lg-7 col-md-12">
               <div className={styles.secondaryImageWrapper}>
                 {secondryItem.banner_image && (
                   <Image
@@ -289,7 +289,7 @@ export default function EventsSection({ className, programId }) {
                 )}
               </div>
             </div>
-            <div className="col-md-5">
+            <div className="col-lg-5 col-md-12">
               <div className={styles.secondaryText}>
                 <p className={styles.eventDate}>
                   {formatDate(secondryItem.event_date_from)}
