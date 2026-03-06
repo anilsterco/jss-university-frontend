@@ -1,27 +1,36 @@
 "use client";
 
-export default function TabSection({ title, subtitle, uniqueCategories, pageType, activeTab, setActiveTab }) {
+import Link from "next/link";
+import { useState } from "react";
+
+export default function TabSection({ title, subtitle, tabs, slug }) {
+
+  const [activeTab, setActiveTab] = useState(slug);
+
+  const onTabClick = (url) => {
+    setActiveTab(url);
+  };
 
   return (
-    <section className={`inner-title ${pageType === 'faculty' ? 'faculty_tabs' : ''}`}>
+    <section className="inner-title">
       <div className="container">
         <div className="innnr_head text-center">
-          {subtitle && <h2>{subtitle}</h2>}
-          {title && <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>}
+          <h2>{subtitle}</h2>
 
-          {uniqueCategories?.length > 1 && (
-            <ul>
-              {uniqueCategories.map((category, i) => (
-                <li
-                  key={i}
-                  className={category === activeTab ? "active" : ""}
-                  onClick={() => setActiveTab(category)}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
-          )}
+          <h3 dangerouslySetInnerHTML={{ __html: title }} />
+
+          <ul>
+            {tabs.map((tab, i) => (
+              <li
+                key={i}
+                className={tab.url === activeTab ? "active" : ""}
+                onClick={() => onTabClick(tab.url)}
+              >
+                <Link href={tab.url}>{tab.text}</Link>
+              </li>
+            ))}
+          </ul>
+
         </div>
       </div>
     </section>

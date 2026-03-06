@@ -214,7 +214,6 @@ export default function AboutClient() {
 
   return (
     <main className="about-page">
-      {/* ========== TITLE SECTION ========== */}
       <section className="inner-title">
         <div className="container">
           <div className="innnr_head text-center">
@@ -226,8 +225,7 @@ export default function AboutClient() {
                   key={i}
                   className={tab.url === activeTab ? "active" : ""}
                   onClick={() => handleTabClick(tab.url)}
-                  style={{ cursor: "pointer" }}
-                >
+                  style={{ cursor: "pointer" }}>
                   {tab.text}
                 </li>
               ))}
@@ -238,11 +236,9 @@ export default function AboutClient() {
 
       {activeTab !== "/leadership" ? (
         <div className="about-content-layout">
-          {/* ========== ABOUT ONE ========== */}
           <section className="about_one">
             <div className="container">
               <div className="abt_cntnt">
-                
                 <p>{aboutData.description1}</p>
                 <figure>
                   <Image
@@ -254,11 +250,9 @@ export default function AboutClient() {
                   />
                 </figure>
               </div>
-
               <div className="estblish">
                 <p>{aboutData.establishText}</p>
               </div>
-
               <div className="top_log_grid">
                 {aboutData.associatedLogosTop.map((item, i) => (
                   <figure key={i}>
@@ -340,7 +334,6 @@ export default function AboutClient() {
             </div>
           </section>
 
-          {/* ========== ABOUT THREE - VISION & MISSION ========== */}
           <section className="about_three">
             <div className="container">
               <div className="vsn_msn_grid">
@@ -378,7 +371,6 @@ export default function AboutClient() {
             </div>
           </section>
 
-          {/* ========== ABOUT FOUR - VALUES ========== */}
           <section className="about_four">
             <div className="container">
               <div className="row justify-content-center">
@@ -393,8 +385,7 @@ export default function AboutClient() {
                               src={val.icon}
                               alt={val.title}
                               width={70}
-                              height={70}
-                            />
+                              height={70}/>
                           </figure>
                           <h3>{val.title}</h3>
                           <p>{val.text}</p>
