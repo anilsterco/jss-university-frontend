@@ -672,6 +672,13 @@ a:active {
   bottom: 0rem;
 }
 
+.menu-left-item .hambur_links {
+  font: var(--font-21);
+  color: var(--color-white);
+  font-weight: normal;
+  transition: all 0.3s ease;
+}
+
 .vid-thumb-grp {
   position: absolute;
   left: 0;
@@ -1011,6 +1018,30 @@ a:active {
   color: var(--color-29);
 }
 
+.middle-title .hambur_link {
+  font: var(--font-14);
+  font-family: var(--font-Condensed);
+  font-weight: normal;
+  display: block;
+  padding-bottom: 1.6rem;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.middle-title ul li:hover {
+  color: var(--color-e8);
+}
+
+.middle-submenu li>a {
+  font: var(--font-16);
+  font-family: var(--font-Roboto);
+  font-weight: normal;
+  display: block;
+  padding-bottom: 0.6rem;
+  color: var(--color-black);
+
+}
+
 .nav-item:hover {
   color: var(--color-29);
 }
@@ -1153,10 +1184,11 @@ a:active {
   .about_school_left {
     border-right: none;
   }
-.cource-sec .cource_top {
-  padding-top: 8rem;
 
-}
+  .cource-sec .cource_top {
+    padding-top: 8rem;
+
+  }
 }
 
 @media (max-width: 991px) {
