@@ -987,15 +987,15 @@ a:active {
 } */
 
 
-.active_head .nav-list:has(> li:nth-child(2):hover) {
+.active_head .nav-list:has(> li:nth-child(3):hover) {
   background-color: transparent !important;
 }
 
-.active_head .nav-list:has(> li:nth-child(2):hover)>li:not(:nth-child(2))>a {
+.active_head .nav-list:has(> li:nth-child(3):hover)>li:not(:nth-child(3))>a {
   color: rgb(22, 52, 78);
 }
 
-.active_head .nav-list>li:nth-child(2):hover>a {
+.active_head .nav-list>li:nth-child(3):hover>a {
   color: var(--color-29);
 }
 
@@ -1003,11 +1003,11 @@ a:active {
   color: var(--color-29);
 }
 
-.active_head .nav-list:has(> li:nth-child(2):hover)>li:not(:nth-child(2))>a {
+.active_head .nav-list:has(> li:nth-child(3):hover)>li:not(:nth-child(3))>a {
   color: rgb(22, 52, 78);
 }
 
-.active_head .nav-list>li:nth-child(2):hover>a {
+.active_head .nav-list>li:nth-child(3):hover>a {
   color: var(--color-29);
 }
 
