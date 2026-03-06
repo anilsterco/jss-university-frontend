@@ -14,12 +14,13 @@ export default function FacilityFour({ data }) {
         if (section.type !== "universityboasts") return null;
 
         const items = [...section.items].sort(
-          (a, b) => Number(a.position || 0) - Number(b.position || 0)
+          (a, b) => Number(a.position || 0) - Number(b.position || 0),
         );
         return (
           <section
             className="uni_boasts_rag_sec"
-            key={`uniboasts-${sectionIndex}`}>
+            key={`uniboasts-${sectionIndex}`}
+          >
             <div className="container">
               {items.map((item, idx) => (
                 <div key={idx}>
@@ -64,10 +65,10 @@ export default function FacilityFour({ data }) {
                           <figcaption>
                             <p>{box.title}</p>
                           </figcaption>
-                          <Link
+                          {/* <Link
                             href="javascript:void(0)"
                             className="page_link"
-                          ></Link>
+                          ></Link> */}
                         </div>
                       ))}
                     </div>

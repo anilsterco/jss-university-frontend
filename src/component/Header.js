@@ -131,6 +131,16 @@ export default function Header() {
   // from the nav <li> into the fixed mega-dropdown (there's a gap between them)
   const closeTimeoutRef = useRef(null);
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (admissionRef.current && !admissionRef.current.contains(e.target)) {
+        setAdmissionOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const handleNavMouseEnter = (i) => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
@@ -721,6 +731,7 @@ export default function Header() {
                               <Link
                                 href={link.url}
                                 style={{ color: "inherit" }}
+                                onClick={() => setAdmissionOpen(false)}
                               >
                                 {link.title}
                                 <img
