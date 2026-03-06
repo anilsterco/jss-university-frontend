@@ -60,10 +60,13 @@ export default async function DepartmentPage({ params }) {
         <DepartmentHeader data={departmentData.sections.tabs} />
       )}
       {departmentData?.sections?.about_school && (
-        <AboutDepartmentComponent data={departmentData.sections.about_school} />
+        <AboutDepartmentComponent
+          data={departmentData.sections.about_school}
+          params={department}
+        />
       )}
       {departmentData?.sections?.courses_data && (
-        <CoursesOfferedDepartment data={departmentData.sections.courses_data} />
+        <CoursesOfferedDepartment data={departmentData.sections.course_data} />
       )}
       {departmentData?.sections?.dean_message && (
         <HodMessageComponent data={departmentData.sections.dean_message} />

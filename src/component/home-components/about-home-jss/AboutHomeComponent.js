@@ -37,7 +37,7 @@ const dummyLegacyData = {
   ],
   buttons: [
     { text: "360 VIEW", url: "#" },
-    { text: "WHY JSS", url: "#", },
+    { text: "WHY JSS", url: "#" },
     { text: "APPLY NOW", url: "#" },
   ],
   logo_content: [
@@ -98,7 +98,6 @@ export default function LegacySection({ data }) {
                   height={370}
                   style={{ height: "100%", width: "100%" }}
                   className={`rounded ${styles.chancellorImage}`}
-
                 />
                 {/* Play Button Overlay */}
                 <div className={`${styles.contentPart}`}>
@@ -124,18 +123,24 @@ export default function LegacySection({ data }) {
               </div>
             </div>
 
-            <div className={`about-imgcol ${styles.rightColumn}`} data-aos="fade-up" data-aos-delay="400">
+            <div
+              className={`about-imgcol ${styles.rightColumn}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <p className={`fw-light ${styles.description}`}>
                 {legacyData.description}
               </p>
               <div className={`divider ${styles.rightArrowIconDiv}`}>
-                {legacyData.url && (
-                  <Image
-                    src="images/home-page/about_arrow.svg"
-                    alt="chancellor image"
-                    width={22}
-                    height={22}
-                  />
+                {legacyData?.url && (
+                  <Link href={legacyData.url}>
+                    <Image
+                      src="images/home-page/about_arrow.svg"
+                      alt="chancellor image"
+                      width={22}
+                      height={22}
+                    />
+                  </Link>
                 )}
               </div>
 
@@ -194,18 +199,24 @@ export default function LegacySection({ data }) {
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                {legacyData.buttons.map((btn, i) => (
+                {legacyData?.buttons.map((btn, i) => (
                   <Link key={i} href={btn.url} className={styles.navButtons}>
                     {btn.text}
-                    {i == 1 && (<FaArrowRight className={styles.arrowIcon} />)}
+                    {i == 1 && <FaArrowRight className={styles.arrowIcon} />}
                   </Link>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className={styles.fifthSectionSlider} data-aos="fade-up" data-aos-delay="700" >
-            <p className={`${styles.accreditationHeading} ${styles.onlyMobile}`}>
+          <div
+            className={styles.fifthSectionSlider}
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <p
+              className={`${styles.accreditationHeading} ${styles.onlyMobile}`}
+            >
               GLOBAL PARTNERSHIPS AND ACADEMIC COLLABORATIONS
             </p>
             <Swiper

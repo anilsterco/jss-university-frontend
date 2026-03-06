@@ -12,8 +12,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { usePathname } from "next/navigation";
 
 export default function AboutSchool({ data }) {
+  const pathname = usePathname();
+  const schoolSlug = pathname.split("/").filter(Boolean).pop();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -48,18 +52,25 @@ export default function AboutSchool({ data }) {
       },
     ],
     buttons: [
-      { text: "360 VIEW", url: "#1" },
-      { text: "WHY JSS", url: "#2" },
-      { text: "APPLY NOW", url: "#3" },
+      { text: "360 VIEW", url: "#" },
+      { text: "WHY JSS", url: "#" },
+      { text: "APPLY NOW", url: "#" },
     ],
   };
 
   const aboutSchoolContent = {
     ...data,
-    buttons:
-      data?.buttons?.filter(
-        (btn) => btn?.url && typeof btn.url === "string"
-      ) || dummyAboutSchoolContent.buttons,
+    highlights:
+      typeof data?.highlights === "string"
+        ? JSON.parse(data.highlights)
+        : data?.highlights || [],
+    buttons: (() => {
+      const raw =
+        typeof data?.buttons === "string"
+          ? JSON.parse(data.buttons)
+          : data?.buttons || [];
+      return raw.filter((btn) => btn?.url && typeof btn.url === "string");
+    })(),
   };
 
   return (
@@ -99,13 +110,15 @@ export default function AboutSchool({ data }) {
 
               <div data-aos="fade-up" data-aos-delay="400">
                 <button className={styles.arrowButton}>
-                  <SlArrowRightCircle />
+                  <Link href={`${schoolSlug}/about-the-school`}>
+                    <SlArrowRightCircle />
+                  </Link>
                 </button>
               </div>
 
               {/* Highlights */}
               <div className="row mt-4">
-                {aboutSchoolContent.highlights?.map((item, index) => (
+                {aboutSchoolContent?.highlights?.map((item, index) => (
                   <div
                     className="col-xl-5 col-lg-6 col-sm-6"
                     key={index}
@@ -113,34 +126,26 @@ export default function AboutSchool({ data }) {
                   >
                     <div className={styles.rankingCard}>
                       <div className="counter_dfe d-flex">
-                        <span className={styles.rankNumber}>
-                          {item.rank}
-                        </span>
+                        <span className={styles.rankNumber}>{item.rank}</span>
                       </div>
-                      <p className={styles.rankSource}>
-                        {item.source}
-                      </p>
+                      <p className={styles.rankSource}>{item.source}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* ✅ Safe Buttons Rendering */}
-              <div
+              {/* <div
                 className={styles.buttonsContainer}
                 data-aos="fade-up"
                 data-aos-delay="800"
               >
                 {aboutSchoolContent.buttons?.map((btn, i) => (
-                  <Link
-                    key={i}
-                    href={btn.url}
-                    className={styles.navButtons}
-                  >
+                  <Link key={i} href={btn.url} className={styles.navButtons}>
                     {btn.text}
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -185,66 +190,20 @@ export default function AboutSchool({ data }) {
               1280: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide className={styles.accreditationSlide}>
-              <div className="gap-5 d-flex align-items-center content">
-                <Image
-                  src="/images/about-page/about-logo01.png"
-                  alt="NAAC"
-                  width={80}
-                  height={80}
-                  className={styles.accreditationLogo}
-                />
-                <p className={styles.small}>
-                  Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
-                </p>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className={styles.accreditationSlide}>
-              <div className="gap-5 d-flex align-items-center content">
-                <Image
-                  src="/images/about-page/aboutlogo02.png"
-                  alt="UGC"
-                  width={80}
-                  height={80}
-                  className={styles.accreditationLogo}
-                />
-                <p className={styles.small}>
-                  Accredited by Board of Technical Education U.P
-                </p>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className={styles.accreditationSlide}>
-              <div className="gap-5 d-flex align-items-center content">
-                <Image
-                  src="/images/about-page/about-logo03.png"
-                  alt="AICTE"
-                  width={80}
-                  height={80}
-                  className={styles.accreditationLogo}
-                />
-                <p className={styles.small}>
-                  Approved by the Pharmacy Council of India (PCI)
-                </p>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className={styles.accreditationSlide}>
-              <div className="gap-5 d-flex align-items-center content">
-                <Image
-                  src="/images/about-page/about-logo01.png"
-                  alt="NIRF"
-                  width={80}
-                  height={80}
-                  className={styles.accreditationLogo}
-                />
-                <p className={styles.small}>
-                  Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU)
-                </p>
-              </div>
-            </SwiperSlide>
-
+            {data?.items?.map((singleItem, itemIdx) => (
+              <SwiperSlide key={itemIdx} className={styles.accreditationSlide}>
+                <div className="gap-5 d-flex align-items-center content">
+                  <Image
+                    src={singleItem.logo}
+                    alt="NAAC"
+                    width={80}
+                    height={80}
+                    className={styles.accreditationLogo}
+                  />
+                  <p className={styles.small}>{singleItem.content}</p>
+                </div>
+              </SwiperSlide>
+            ))}
 
             <div className="about-pagination"></div>
           </Swiper>

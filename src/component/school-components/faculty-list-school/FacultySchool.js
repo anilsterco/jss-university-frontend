@@ -11,7 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "swiper/css";
 
-export default function FacultyList() {
+export default function FacultyList({ data, schoolName }) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,7 +22,7 @@ export default function FacultyList() {
   const facultyData = {
     subtitle: "FACULTIES",
     title: `<span class="blue-text">GUIDING MINDS </span> 
-            <span class="dark-blue-text">OF COLLEGE OF PHARMACY</span>`,
+            <span class="dark-blue-text text-uppercase">OF ${schoolName ? schoolName : "COLLEGE OF PHARMACY"}</span>`,
     members: [
       {
         id: 1,
@@ -110,9 +110,9 @@ export default function FacultyList() {
             }}
             className={styles.slider}
           >
-            {facultyData.members.map((member) => (
-              <SwiperSlide key={member.id} className={styles.facultyCard}>
-                <Link href={`/faculty/${member.slug}`}>
+            {data?.map((member, memberId) => (
+              <SwiperSlide key={memberId} className={styles.facultyCard}>
+                <Link href={`/faculty/${member.url}`}>
                   <Image
                     src={member.img}
                     alt={member.name}

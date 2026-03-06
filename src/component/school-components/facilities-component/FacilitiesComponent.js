@@ -11,14 +11,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function FacilitiesComponent() {
+export default function FacilitiesComponent({ data }) {
   const FacilitiesComponentData = {
     subtitle: "FACILITIES",
     title: "EDUCATE. <span>INNOVATE</span>. SERVE.",
     description:
       "Committed to producing industry-ready engineers through advanced laboratories, research, and practical exposure.",
 
-    url: "/FacilitiesComponent",
+    url: "/facilities",
 
     labs: [
       {
@@ -88,7 +88,7 @@ export default function FacilitiesComponent() {
               0: { slidesPerView: 1 },
             }}
           >
-            {FacilitiesComponentData.labs.map((lab) => (
+            {data?.map((lab) => (
               <SwiperSlide key={lab.id} className={styles.facultyCard}>
                 <Link href={lab.url}>
                   <Image

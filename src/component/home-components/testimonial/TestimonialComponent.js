@@ -99,7 +99,7 @@ export default function TestimonialsSection({ data }) {
             className={`${styles.mainHeading}`}
             dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
           ></h2>
-          <Link href="#testimonials">
+          <Link href="/testimonials">
             <button className={styles.circleArrowBtn}>
               <Image
                 src="/images/icons/arrow2.svg"
