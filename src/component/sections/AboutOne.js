@@ -44,6 +44,7 @@ export default function AboutOne({ data }) {
                     className="abt_cntnt"
                     data-aos="fade-up"
                     data-aos-delay="100"
+                    id={item?.sectionId}
                   >
                     <h5 className="about_subtitle">{item.title}</h5>
                     {item.subtitle && <p>{item.subtitle}</p>}

@@ -139,7 +139,7 @@ export default function LeadershipDetailsPage({ params }) {
                       }}
                     >
                       <Image
-                        src={sections.about.image}
+                        src={sections.message_from_chancellor.message_image}
                         alt={sections.banners.name}
                         className="img-fluid"
                         fill

@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-export default function TabSection({ title, subtitle, tabs, slug }) {
+export default function TabSection({ title, subtitle, tabs }) {
+  const pathname = usePathname();
 
-  const [activeTab, setActiveTab] = useState(slug);
+  // Extract the last segment of the current path as the slug
+  const currentSlug = pathname.split("/").filter(Boolean).pop();
 
-  const onTabClick = (url) => {
-    setActiveTab(url);
+  const isActive = (tab) => {
+    const tabSlug = tab.url.split("/").filter(Boolean).pop();
+    const textSlug = tab.text.toLowerCase().replace(/\s+/g, "-");
+    return currentSlug === tabSlug || currentSlug === textSlug;
   };
 
   return (
@@ -21,16 +25,11 @@ export default function TabSection({ title, subtitle, tabs, slug }) {
 
           <ul>
             {tabs.map((tab, i) => (
-              <li
-                key={i}
-                className={tab.url === activeTab ? "active" : ""}
-                onClick={() => onTabClick(tab.url)}
-              >
+              <li key={i} className={isActive(tab) ? "active" : ""}>
                 <Link href={tab.url}>{tab.text}</Link>
               </li>
             ))}
           </ul>
-
         </div>
       </div>
     </section>
