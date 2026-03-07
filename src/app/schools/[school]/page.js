@@ -8,6 +8,7 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { BASE_URL } from "@/config/config";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const { school } = await params;
@@ -15,23 +16,31 @@ export async function generateMetadata({ params }) {
 }
 
 async function getSchoolData(slug) {
-  const res = await fetch(`${BASE_URL}school/${slug}`, {
-    next: { revalidate: 120 },
-  });
+  try {
+    const res = await fetch(`${BASE_URL}school/${slug}`, {
+      next: { revalidate: 120 },
+    });
 
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch school data for ${slug} (status ${res.status})`,
-    );
+    if (!res.ok) {
+      return null;
+    }
+
+    const data = await res.json();
+
+    if (!data || !data.school_name) return null;
+    return data;
+  } catch (error) {
+    return null;
   }
-
-  return res.json();
 }
 
 export default async function SchoolPage({ params }) {
   const { school } = await params;
 
   const schoolData = await getSchoolData(school);
+
+  if (!schoolData) notFound();
+
   const seoData = await getPageSEO(school);
 
   return (
