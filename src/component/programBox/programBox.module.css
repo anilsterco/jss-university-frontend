@@ -1643,17 +1643,16 @@
         height: 35px;
         left: -3rem;
     }
+
 }
 
 @media (max-width: 575px) {
     .programList {
         gap: 2rem;
     }
-
     .programCategoryBox {
         padding: 2rem;
     }
-
     .programCategoryBox p {
         font-size: 1.5rem;
         margin-bottom: 0;

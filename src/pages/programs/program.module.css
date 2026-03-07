@@ -5,4 +5,15 @@
 .innerPage_title {
     font: var(--font-26);
     margin-bottom: 7rem;
+  color: var(--color-4e);
+  font-weight: 700;
+  font-family: var(--font-Condensed);
+}
+@media (max-width: 768px) {
+.inner_page{padding-block: 6rem;}
+
+.innerPage_title {
+    margin-bottom: 3rem;
+  
+}
 }

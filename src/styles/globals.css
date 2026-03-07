@@ -224,6 +224,7 @@ p {
   .main-container .container {
     max-width: 758;
   }
+  
 }
 
 @media (max-width: 767px) {
@@ -963,6 +964,11 @@ a:active {
   background: transparent linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0% no-repeat padding-box;
 }
 
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
 /* .active_head .nav-list {
   background-color: transparent;
 }
@@ -1020,13 +1026,12 @@ a:active {
 }
 
 .middle-title .hambur_link {
-  font: var(--font-14);
+  font: var(--font-16);
   font-family: var(--font-Condensed);
   font-weight: normal;
   display: block;
   padding-bottom: 1.6rem;
   color: var(--color-black);
-  text-transform: uppercase;
 }
 
 .middle-title ul li:hover {
@@ -1204,8 +1209,12 @@ a:active {
   .program-row .col-lg-8:after {
     content: none;
   }
-
-
+.input-group.programs_search{
+  display: none;
+}
+ .program_heading {
+    display: none;
+  }
 
   .max-content-lg .placement_row {
     margin-bottom: 6rem;
@@ -1238,7 +1247,7 @@ a:active {
   }
 
   .logo-content img {
-    max-width: 23rem;
+    max-width: 30rem;
   }
 
   .programsCountSection {
@@ -1464,14 +1473,14 @@ a:active {
   }
 
   .events_row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
   }
 }
 
 @media (max-width: 991px) {
   .midd_events {
-    padding-top: 12rem;
+    padding-top: 4rem;
   }
 
   .events_row {
@@ -1487,6 +1496,10 @@ a:active {
 @media (max-width: 820px) {
   .latest-event:after {
     content: none;
+  }
+
+  .midd_events {
+    padding-top: 0rem;
   }
 
   .latest-event:before {
@@ -1579,12 +1592,30 @@ a:active {
   .school_row {
     grid-template-columns: repeat(1, 50% auto);
   }
+
+}
+
+@media (max-width: 1100px) {
+  .logo-content img {
+    width: 28rem;
+    height: auto;
+  }
+
+  .programsList_row {
+    grid-template-columns: repeat(1, 50% auto);
+    gap: 8.5rem;
+  }
+  .explore-program-section {
+    grid-template-columns: repeat(2, 1fr);
+}
+  
 }
 
 @media (max-width: 1024px) {
   .school_row {
     display: block;
   }
+
 }
 
 
@@ -1830,6 +1861,7 @@ a:active {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.4rem;
+  padding-bottom: 6rem;
 }
 
 .curriculum_box {
@@ -2249,7 +2281,7 @@ a:active {
   transition: all 0.3s ease;
 }
 
-.faqItem[open] .faqQuestion{
+.faqItem[open] .faqQuestion {
   background: #b59730;
   color: #fff;
 }
@@ -2268,9 +2300,9 @@ a:active {
 
 }
 
-.faqQuestion .faq_heading{
-  flex:1;
-  padding-right:2rem;
+.faqQuestion .faq_heading {
+  flex: 1;
+  padding-right: 2rem;
 }
 
 .faqItem[open] .faqQuestion {
@@ -2301,7 +2333,7 @@ a:active {
 
 .faqItem[open] .icon:after {
   content: "-";
-  color:#fff;
+  color: #fff;
 }
 
 .faqAnswer {
@@ -2343,6 +2375,10 @@ a:active {
     padding-bottom: 4rem;
   }
 
+  .program-module__6nFQSW__inner_page .row .col-md-6 {
+    margin-bottom: 2rem;
+  }
+
   .faqQuestion {
     font: var(--font-14);
   }
@@ -2350,6 +2386,15 @@ a:active {
   .faqAnswer p {
     font: var(--font-14);
     line-height: normal;
+  }
+
+  .events_row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .placement_stats {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -2363,7 +2408,7 @@ a:active {
   /* padding: 0 4rem 1rem; */
 }
 
-.faqItem[open] .faqQuestion{
+.faqItem[open] .faqQuestion {
   background: #b59730;
   color: #fff;
 }
@@ -2373,5 +2418,5 @@ a:active {
 } */
 
 .faqItem[open] .faqAnswer p {
-  color: #444!important;
+  color: #444 !important;
 }

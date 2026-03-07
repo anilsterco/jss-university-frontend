@@ -187,7 +187,13 @@ export default function LegacySection({ data }) {
                     </h1>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
-                      <p className={styles.sourceText}>{h.source}</p>
+                      <Image
+                        src={h.source}
+                        alt="Accreditation Logo"
+                        width={88}
+                        height={33}
+                        className={styles.sourceText}
+                      />
                     </div>
                   </SwiperSlide>
                 ))}

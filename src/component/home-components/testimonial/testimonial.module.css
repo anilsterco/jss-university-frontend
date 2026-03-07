@@ -314,7 +314,15 @@
   .testimonialsSection {
     padding-top: 8rem;
   }
+.headerContent {
+  margin-bottom: 2.5rem;
+  max-width: 40%;
+}
+.columnRight article:last-child {
+  width: 100%;
+  margin-left: -4rem;
 
+}
 }
 
 @media (max-width: 991px) {
@@ -323,13 +331,20 @@
   }
 
   .columnLeft {
-    width: 44%;
+    width: 35%;
   }
 
   .columnMiddle {
-    width: 24%;
+    width: 25%;
   }
 
+  .columnRight {
+    width: 30%;
+  }
+.testimonialCard {
+  width: 30.8rem;
+  margin-left: auto;
+}
 
   .quoteBar {
     padding: 2.2rem 2.2rem 2.2rem 2.2rem;
@@ -338,17 +353,36 @@
   .testimonialsLabel {
     margin-bottom: 2rem;
   }
+
+
 }
 
 @media (max-width: 768px) {
   .desktopView {
     display: none;
   }
-
+ .headerContent {
+  display: none;
+ }
   .testimonialsSection {
     margin-bottom: 0;
   }
 
+  .columnLeft {
+    width: 100%;
+  }
+
+  .columnMiddle {
+   width: 100%;
+  }
+
+  .columnRight {
+    width: 100%;
+  }
+.testimonialCard {
+  width: 100%;
+  margin-left: auto;
+}
   .mobileView {
     display: block;
     background: #e6ffff;
