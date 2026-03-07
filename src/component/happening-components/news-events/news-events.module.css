@@ -299,7 +299,7 @@
   }
 
   .secondaryText {
-    padding-inline: 8rem 20rem;
+    padding-inline: 8rem 10rem;
 
   }
 }
@@ -316,6 +316,10 @@
   .filterItem svg {
     top: 10px;
   }
+  .secondaryText {
+    padding-inline: 8rem 10rem;
+
+  }
 }
 
 @media (max-width: 1024px) {
@@ -329,13 +333,18 @@
   }
 
   .cardsRow {
-    padding-block: 12rem 8rem;
+    padding-block: 8rem;
   }
 
   .bannerWrapper::before {
     bottom: 23%;
   }
+ .secondaryText {
+    padding-inline: 0rem 0rem;
+    padding-block: 4rem 6rem; 
 
+  }
+ 
 }
 
 @media (max-width: 991px) {

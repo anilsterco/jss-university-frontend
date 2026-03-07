@@ -65,14 +65,14 @@ export default function LeadershipDetailsPage({ params }) {
                   }}
                 /> */}
                 <ul>
-                  <li>
-                    <Link href="/about">About JSS</Link>
-                  </li>
-                  <li>
+                   <li>
                     <Link href="/about-jssmvp">About JSSMVP</Link>
                   </li>
-                  <li>
+                   <li>
                     <Link href="/heritage">Heritage</Link>
+                  </li>
+                  <li>
+                    <Link href="/about">About JSS</Link>
                   </li>
                   <li className="active">
                     <Link href="/leadership">Leadership</Link>

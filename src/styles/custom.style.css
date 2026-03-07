@@ -983,19 +983,19 @@
 /* image content repeateer section */
 
 .image_content_repeat_section {
-  padding: 10rem 0;
+  padding: 8rem 0;
 }
 
-.image_content_repeat_section.no-padding{
-  padding:0;
+.image_content_repeat_section.no-padding {
+  padding: 0;
 }
 
-.image_content_repeat_section.reverse_bg_white{
-  background:#fff;
+.image_content_repeat_section.reverse_bg_white {
+  background: #fff;
 }
 
-.image_content_repeat_section.white{
-  background:#fff;
+.image_content_repeat_section.white {
+  background: #fff;
 }
 
 /* .image_content_repeat_section.no-padding.single .imageContent{
@@ -1023,7 +1023,7 @@
 }
 
 .vision_mission_section .vision {
-  padding-right: 100px;
+  padding-right: 10rem;
 }
 
 .vision_mission_section .vision .title {
@@ -2050,6 +2050,11 @@ hr {
   background: #ccc;
   border-radius: 4px;
 }
+.faculty_row {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.5rem;
+}
 
 /* faculty page responsive css start */
 
@@ -2081,6 +2086,7 @@ hr {
   .faulty-box {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 1024px) {
@@ -2103,13 +2109,27 @@ hr {
   .faulty-detail-sec1 {
     padding-bottom: 8rem;
   }
-
+.faculty_row {
+    grid-template-columns: repeat(2,1fr);
+}
 }
 
 @media (max-width:991px) {
   .program-testimonial-box {
     grid-template-columns: repeat(1, 1fr);
     gap: 4rem;
+  }
+
+  .vision_mission_section .mission-card {
+    padding: 4.2rem 6.4rem;
+  }
+
+  .vision_mission_section .vision {
+    padding-right: 2rem;
+  }
+
+  .vision_mission_section {
+    padding: 6rem 0;
   }
 
   .across {
@@ -2133,6 +2153,7 @@ hr {
   .overview-duration {
     min-height: 100%;
   }
+
 }
 
 @media (max-width:767px) {
@@ -2145,6 +2166,9 @@ hr {
   .opportunitie-text p {
     padding-right: 0;
   }
+  .faculty_row {
+    grid-template-columns: repeat(1,1fr);
+}
 
   .cus-profile-text {
     height: 390px;
@@ -2182,6 +2206,10 @@ hr {
 
   .info-box {
     flex-wrap: wrap;
+  }
+
+  .count_alumni_section {
+    padding-top: 4rem;
   }
 
 }
@@ -2596,7 +2624,7 @@ hr {
 /* grid_card_design1_section */
 
 .grid_card_design1_section {
-  padding-top: 10rem;
+  padding-block: 10rem;
 }
 
 .grid_card_design1_section .heading {
@@ -2820,8 +2848,8 @@ hr {
   margin-top: 12rem;
 }
 
-.top_section.bg-white{
-  padding:12rem 0 0;
+.top_section.bg-white {
+  padding: 12rem 0 0;
 }
 
 .inner_sub_header {
@@ -2830,92 +2858,93 @@ hr {
 
 /* bg_image_content_section */
 
-.bg_image_content_section{
-  background:#00489A;
-  padding:12rem 0;
+.bg_image_content_section {
+  background: #00489A;
+  padding: 12rem 0;
 }
 
-.single_image_content.facilities{
-  display:flex;
+.single_image_content.facilities {
+  display: flex;
   flex-direction: column;
-  gap:15rem;
+  gap: 15rem;
 }
 
-.single_image_content.facilities .singleImageContent{
-  position:relative;
+.single_image_content.facilities .singleImageContent {
+  position: relative;
 }
 
-.single_image_content.facilities .singleImageContent:not(:last-child)::before{
-  content:"";
-  position:absolute;
-  height:1px;
-  width:calc(100% + 20rem);
+.single_image_content.facilities .singleImageContent:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: calc(100% + 20rem);
   background: #D9D9D9;
-  bottom:-7.5rem;
-  left:-10rem;
+  bottom: -7.5rem;
+  left: -10rem;
 }
 
 /* grid_card_department_section */
 
-.grid_card_department_section{
-  background:#fff;
-  padding-top:4rem;
+.grid_card_department_section {
+  background: #fff;
+  padding-block: 4rem;
 }
 
-.grid_card_department_section .heading{
+.grid_card_department_section .heading {
   text-align: left;
-  font:var(--font-24)
+  font: var(--font-24)
 }
 
 
 /* ===== Research Patents Section ===== */
 
-.research_patents_section{
-padding:100px 0;
+.research_patents_section {
+  padding: 100px 0;
 }
 
-.research_patents_section.no-border{
-  padding-top:0
+.research_patents_section.no-border {
+  padding-top: 0
 }
 
 .researchPatents {
   display: flex;
   gap: 0;
 }
-.patent_heading{
+
+.patent_heading {
   text-align: center;
-  font:var(--font-26);
+  font: var(--font-26);
   color: #16344E;
 }
 
-.patent_subHeading{
-  margin-top:4rem;
-  font:var(--font-24);
+.patent_subHeading {
+  margin-top: 4rem;
+  font: var(--font-24);
   font-weight: 300;
   text-align: center;
   color: #333333;
   margin-bottom: 4rem;
 }
 
-.research_leftTitle{
+.research_leftTitle {
   color: #16344E;
-  font:var(--font-21);
+  font: var(--font-21);
   margin-bottom: 3rem;
 }
 
-.research_leftDesc{
-  font:var(--font-16);
+.research_leftDesc {
+  font: var(--font-16);
   color: #444444;
 }
 
-.research_patents_section .paddingTopBottom{
-  
+.research_patents_section .paddingTopBottom {
+
   border-top: 0.0625rem solid #ddd;
   border-bottom: 0.0625rem solid #ddd;
 }
 
-.research_patents_section .paddingTopBottom.no-border{
-  border:none;
+.research_patents_section .paddingTopBottom.no-border {
+  border: none;
 }
 
 
@@ -2924,11 +2953,11 @@ padding:100px 0;
   flex: 1;
   padding: 4.7rem 0;
   border-right: 0.0625rem solid #d0d0d0;
-  padding-right:5rem;
+  padding-right: 5rem;
 }
 
 .researchPatents__subtitle {
-  font:var(--font-24);
+  font: var(--font-24);
   color: #444;
   line-height: 1.6;
   margin-bottom: 1.75rem;
@@ -2952,7 +2981,7 @@ padding:100px 0;
 
 .researchPatents__statNumber {
   font-weight: 600;
-  font-size:4.8rem;
+  font-size: 4.8rem;
   color: #16344E;
   line-height: 1;
   letter-spacing: -1.92px;
@@ -2960,7 +2989,7 @@ padding:100px 0;
 }
 
 .researchPatents__statLabel {
-  font:var(--font-14);
+  font: var(--font-14);
   text-transform: uppercase;
   color: #000;
   text-align: center;
@@ -2983,13 +3012,14 @@ padding:100px 0;
 }
 
 .researchPatents__table thead tr {
-  background-color: #B08F29; /* gold/olive header */
+  background-color: #B08F29;
+  /* gold/olive header */
 }
 
 .researchPatents__table thead th {
   color: #ffffff;
   font-weight: 600;
-  font:var(--font-18);
+  font: var(--font-18);
   letter-spacing: 0.03em;
   padding: 0.75rem 1rem;
   text-align: left;
@@ -3006,7 +3036,7 @@ padding:100px 0;
 .researchPatents__table tbody td {
   padding: 0.6875rem 1rem;
   color: #333;
-  font:var(--font-16);
+  font: var(--font-16);
   border-bottom: 0.0625rem solid #ebebeb;
 }
 
@@ -4488,6 +4518,20 @@ padding:100px 0;
   .opportunitie-tab {
     margin-block: 4rem 0;
   }
+
+  .image_content_repeat_section {
+    padding-block: 4rem;
+  }
+
+  .content_col {
+    padding-left: 4rem;
+    padding-top: 6rem;
+  }
+
+  .vision_mission_section .vision {
+    padding-right: 6rem;
+  }
+
 }
 
 @media screen and (max-width:1024px) {
@@ -5017,7 +5061,11 @@ padding:100px 0;
     font: var(--font-24);
   }
 }
-
+@media all and (max-width: 2550px){
+.inner_sub_header {
+    margin-top: 14.4rem;
+}
+}
 /* about-us page responsive */
 @media screen and (max-width:1549px) {
   .about_three .vsn_msn_grid {
@@ -5104,13 +5152,20 @@ padding:100px 0;
   .about_three .vsn_msn_grid {
     margin-right: 0rem;
   }
+  .single_image_content.facilities .singleImageContent:not(:last-child):before {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
 }
 
 @media screen and (max-width: 1024px) {
   .about_one {
     padding-block: 6rem;
   }
-
+.image_content_repeat_section {
+    padding-block: 4rem 2rem;
+  }
   .about_one .top_log_grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -5119,7 +5174,12 @@ padding:100px 0;
     margin-inline: 0;
     grid-template-columns: repeat(2, 1fr);
   }
-
+.single_image_content.facilities {
+    gap: 6rem;
+}
+.single_image_content.facilities .singleImageContent:not(:last-child):before {
+    bottom: -2.5rem;
+}
   .early-slide {
     gap: 6rem;
   }
@@ -5237,6 +5297,23 @@ padding:100px 0;
   .across p {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .table_section {
+    padding: 4rem 0;
+  }
+
+  .pdf_list_section {
+    padding: 6rem 0;
+  }
+
+  .pdf_list_section ul {
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .table-lab.table {
+    width: 100%;
+    overflow-x: auto;
   }
 }
 
@@ -5364,6 +5441,23 @@ padding:100px 0;
   .about_one .top_log_grid figure figcaption p {
     margin-bottom: 0;
   }
+
+  .image_content_repeat_section {
+    padding-block: 2rem;
+  }
+
+  .vision_mission_section {
+    padding: 4rem 0;
+  }
+
+  .vision_mission_section .vision {
+    padding-right: 0rem;
+  }
+
+  .vision_mission_section .mission-card {
+    padding: 4.2rem 4.4rem;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -5434,9 +5528,9 @@ padding:100px 0;
   }
 }
 
-.leader-category-title  {
-   font: var(--font-26);
-    color: var(--color-4e);
-    text-transform: capitalize;
-    margin-block: 0rem 3rem;
+.leader-category-title {
+  font: var(--font-26);
+  color: var(--color-4e);
+  text-transform: capitalize;
+  margin-block: 0rem 3rem;
 }

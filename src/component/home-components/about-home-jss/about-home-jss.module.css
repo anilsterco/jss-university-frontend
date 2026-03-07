@@ -268,13 +268,33 @@
 
 @media (max-width: 1024px) {
   .rightColumn {
-    padding-left: 5rem;
+    padding-left: 0rem;
+    padding-block: 4rem;
   }
 
   .description {
     max-width: 100%;
   }
+.topSectionHeading {
+  width: 50%;
+}
+.fifthMiddleSection {
+  display: block;
+}
+.fifthSectionSlider {
+  margin-top: 4rem;
+  padding-inline: 0;
+}
+.highlightBox {
+ display: block;
 
+}
+.highlightNumber {
+margin-bottom: 2rem;
+}
+.leftColumn::after {
+ display: none;
+}
 }
 
 @media (max-width: 991px) {
@@ -302,7 +322,6 @@
   .accreditationHeading {
     text-align: center;
     color: rgb(0, 54, 161);
-    font: var(--font-14);
     font-family: var(--font-Condensed);
     font-weight: 600;
     margin-block: 2.1rem;

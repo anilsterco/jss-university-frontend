@@ -202,6 +202,7 @@ export default function PlacementsSection({ data, category, pageType }) {
                     alt="Wall of Fame"
                     width={488}
                     height={600}
+                    className={styles.plc_img}
                     style={{
                       width: "100%",
                       borderTopLeftRadius: "10px",

@@ -27,7 +27,7 @@
   letter-spacing: -1.35px;
   color: var(--color-4e);
   margin-bottom: 3.8rem;
-   font-family: var(--font-Condensed)
+  font-family: var(--font-Condensed)
 }
 
 .inner-title .innnr_head h3>span {
@@ -72,8 +72,8 @@
   padding-top: 6rem;
 }
 
-.about_top.padding-bottom{
-  padding-bottom:13rem;
+.about_top.padding-bottom {
+  padding-bottom: 13rem;
 }
 
 .about_bottom {
@@ -396,19 +396,19 @@
   line-height: 1.4;
 }
 
-.about_subHeading.less{
+.about_subHeading.less {
   padding-bottom: 3rem;
 
 }
 
-.about_desc{
-  font:var(--font-16);
+.about_desc {
+  font: var(--font-16);
   color: #444444;
   max-width: 95%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin:0;
+  margin: 0;
 }
 
 .ab_estab_slider {
@@ -1153,6 +1153,11 @@
   align-items: center;
   gap: 17.8rem;
   display: grid;
+}
+
+.atm_g_imgsec img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .atm_fac_grid h5 {
@@ -6073,6 +6078,14 @@
   .tesIcon {
     width: 12%;
   }
+
+  .about_f_value {
+    padding-top: 6rem;
+  }
+
+  .about_four {
+    padding-bottom: 6rem;
+  }
 }
 
 @media screen and (max-width:1024px) {
@@ -6130,6 +6143,39 @@
   .leadership_two_cnt h5 {
     padding-top: 4rem;
   }
+
+  .inner_sub_header {
+    margin-top: 12.4rem;
+  }
+
+  .about_top {
+    padding-top: 4rem;
+  }
+
+  .consultancy_main .atm_fac_grid {
+    display: block;
+  }
+
+  .consultancy_main {
+    padding-block: 4rem;
+  }
+
+  .about_f_value {
+    display: block;
+  }
+
+  .about_f_value .ab_f_content {
+    padding-left: 0rem;
+    padding-block: 4rem 0;
+  }
+
+  .consultancy_main .downlo_guides {
+    padding-top: 6rem;
+  }
+
+  .atm_g_imgsec img {
+    height: 100%;
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -6144,26 +6190,33 @@
   .biographi_section {
     padding-top: 2rem;
   }
-}
 
-@media screen and (max-width:480px) {
-
-  /* .inner-title .innnr_head h3 {
-    font: var(--font-30);
-    font-family: var(--font-Condensed);
-    letter-spacing: -1px;
-  } */
-  .leadership_one .top_img figure {
-    display: grid;
-    align-items: end;
-    position: relative;
-    margin-top: 0px;
+  .about_one .abt_cntnt {
+    padding-top: 2rem;
   }
+
+  .about_one .abt_cntnt p {
+    padding-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .consultancy_main .downlo_guides {
+    padding-top: 4rem;
+  }
+
+  .about_one .abt_cntnt p {
+    text-align: left;
+    font: var(--font-20);
+    max-width: 100%;
+    font-weight: 300;
+    line-height: normal;
+    line-height: 1.4;
+  }
+.about_top.padding-bottom {
+    padding-bottom: 4rem;
+}
 }
 
-/* leadership details page end */
-
-/* Responsive tweaks for leadership top section */
 @media (max-width: 768px) {
   .leadership_dtls_one .top_img figure figcaption {
     display: block;
@@ -6434,6 +6487,7 @@
     margin-top: 2rem;
   }
 
+
 }
 
 @media (max-width: 480px) {
@@ -6489,4 +6543,14 @@
     right: 6px;
   }
 
+  .leadership_one .top_img figure {
+    display: grid;
+    align-items: end;
+    position: relative;
+    margin-top: 0px;
+  }
+
 }
+
+
+/* leadership details page end */

@@ -1,6 +1,6 @@
 .bannerContent {
   color: #fff;
- margin: 10rem 0 0 0;
+  margin: 10rem 0 0 0;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
       rgba(0, 0, 0, 0.8) 100%);
   bottom: 0;
   align-items: center;
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -76,9 +76,10 @@
 
 /* Responsive Design */
 @media (min-width: 2550px) and (max-width:3800) {
- .bannerContent {
+  .bannerContent {
     left: 26.6rem;
-}
+  }
+
   .blueBg {
     max-width: 25%;
   }
@@ -86,10 +87,10 @@
 }
 
 @media (max-width: 1549px) {
-.bannerContent {
-  top: 52%;
-  left: 31.7%;
-}
+  .bannerContent {
+    top: 52%;
+    left: 31.7%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -98,11 +99,21 @@
     letter-spacing: -1.88px;
     font-family: var(--font-Condensed);
     padding-bottom: 4rem;
-    margin: 10rem 0 0 0;
+    margin: 2rem 0 0 0;
   }
+
 
   .bannerContent {
     width: 36%;
+  }
+
+  .bannerContent {
+    color: #fff;
+    margin: 0rem 0 0 0;
+  }
+
+  .bannerContentA {
+    padding-block: 2rem 1.2rem;
   }
 }
 
@@ -110,13 +121,15 @@
   .logo-content img {
     max-width: 30rem;
   }
-
   .bannerContentA {
     padding-top: 2rem;
   }
-
   .bannerContentH1 {
     padding-bottom: 2rem;
+  }
+  .containerXl {
+    padding-left: 6.8rem;
+    padding-right: 6.8rem;
   }
 }
 
@@ -127,27 +140,7 @@
   }
 
   .bannerContentH1 {
-    font: var(--font-40);
-    letter-spacing: -1.40px;
-    font-family: var(--font-Condensed);
     margin: 4rem 0 0 0;
-  }
-}
-
-@media screen and (max-width:767px) {
-  .bannerContent {
-    color: #fff;
-    width: 100%;
-    position: relative;
-    left: 0;
-    transform: translate(0);
-  }
-
-  .bannerOverlay {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    background: transparent
   }
 
   .desktopBanner {
@@ -157,23 +150,44 @@
   .mobileBanner {
     display: block;
   }
+    .bannerOverlay {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: transparent
+  }
+}
 
+@media screen and (max-width:991px) {
+  .bannerContent {
+    color: #fff;
+    width: 100%;
+    position: relative;
+    left: 0;
+    transform: translate(0);
+  }
+  .bannerContent {
+    margin: 2rem 0 0 0rem;
+
+  }
+  .bannerContentP {
+    margin-bottom: 2rem;
+  }
   .bannerOverlay {
     margin-inline: 2.1rem;
     text-align: center;
     margin: 0 auto;
   }
-
   .bannerContentH1 {
-    font: var(--font-28);
-    letter-spacing: -1.34px;
-    font-family: var(--font-Condensed);
     color: var(--color-black);
-    line-height: 30px;
   }
 
   .bannerContentH1 span {
     color: var(--color-e8);
+  }
+  .iconSpacing {
+    color: #000;
+    filter: brightness(0.1);
   }
 
 

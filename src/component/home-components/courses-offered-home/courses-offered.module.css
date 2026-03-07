@@ -106,9 +106,9 @@
   font: var(--font-24);
   color: #16344E;
   font-family: var(--font-Roboto);
- letter-spacing: -0.48px;
- line-height: 1.5;
- font-weight: bold;
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  font-weight: bold;
 }
 
 .admissionSection h4 span:nth-child(2) {
@@ -148,7 +148,8 @@
 
 .bottomSectionH6::before {
   content: "";
-  background-color:  #E1E1E1;;
+  background-color: #E1E1E1;
+  ;
   width: 72%;
   height: .1rem;
   position: absolute;
@@ -226,12 +227,14 @@
   .programsText {
     max-width: 55%;
   }
-  .topSection {
-  grid-template-columns: repeat(1, 35% auto);
-  gap: 8.3rem;
 
-}
- .bannerContent {
+  .topSection {
+    grid-template-columns: repeat(1, 35% auto);
+    gap: 8.3rem;
+
+  }
+
+  .bannerContent {
     left: 11.8%;
   }
 }
@@ -300,6 +303,11 @@
     margin-bottom: 0.6rem;
   }
 
+  .topSection {
+    grid-template-columns: repeat(1, 40% auto);
+    gap: 4rem;
+
+  }
 }
 
 @media (max-width:991) {
@@ -337,41 +345,26 @@
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .showOnlyMobileSubHeading {
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-    margin-bottom: 3rem;
-    font: var(--font-14);
+    margin-block: 2rem 3rem;
     font-weight: 300;
     line-height: 1.8rem;
   }
-
-  .topSectionH1 {
-    font: var(--font-34);
-    color: var(--color-4e);
-    font-weight: bold;
-    font-family: var(--font-Condensed);
-    text-transform: uppercase;
-    letter-spacing: -1.63px;
-    max-width: 100%;
-    list-style: 30px;
-  }
-
-  .topSectionH1 span:first-child {
-    font: var(--font-34);
-    font-family: var(--font-Condensed);
-    letter-spacing: -1.63px;
-    list-style: 30px;
-  }
-
+ .showOnlyMobileCard {
+  padding-block: 4rem 3rem;
+  padding-inline: 2.5rem 3.3rem;
+ }
   .showOnlyMobileCard h1 {
-    font: var(--font-48);
+    font: var(--font-60);
     letter-spacing: -2.4px;
     color: #018CE8;
     font-weight: 600;
+    margin-bottom: 3rem;
   }
 
   .showOnlyMobileCard h5 {
@@ -451,6 +444,7 @@
 
   .rightMobileArrow {
     display: block;
+   font-size: 30px;
   }
 
   .showOnlyMobileCard {
@@ -469,7 +463,11 @@
     position: absolute;
     bottom: 0;
   }
+ 
 
+  .lastCardArrow svg{
+    font-size: 30px;
+  }
   .cardImage {
     width: 100%;
     height: 100%;
@@ -503,7 +501,21 @@
   }
 
   .bannerLabel {
-    font: var(--font-20);
+    font: var(--font-28);
     letter-spacing: -0.6px;
+  }
+
+  .topSection {
+    display: block;
+
+  }
+
+  .lastCardContentSection p {
+    font: var(--font-20);
+    font-weight: normal;
+    font-family: var(--font-Roboto);
+    letter-spacing: -0.24px;
+    color: #16344E;
+    margin-bottom: 3rem;
   }
 }
