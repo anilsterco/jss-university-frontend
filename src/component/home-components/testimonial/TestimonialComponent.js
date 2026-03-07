@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styles from "./testimonial.module.css";
+import { WEB_URL } from "@/config/config";
 
 const dummyTestimonialsData = {
   title:
@@ -99,7 +100,7 @@ export default function TestimonialsSection({ data }) {
             className={`${styles.mainHeading}`}
             dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
           ></h2>
-          <Link href="/testimonials">
+          <Link href={`${WEB_URL}testimonials`}>
             <button className={styles.circleArrowBtn}>
               <Image
                 src="/images/icons/arrow2.svg"
@@ -175,7 +176,7 @@ export default function TestimonialsSection({ data }) {
             ))}
           </Swiper>
           <div className={`${styles.mobileViewArrow}`}>
-            <Link href="#testimonials">
+            <Link href={`${WEB_URL}testimonials`}>
               <button className={styles.circleArrowBtn}>
                 <svg
                   width="20"

@@ -25,7 +25,11 @@ export default function AboutOne({ data }) {
       case "hostelDetail":
         const item = section.items[0];
         return (
-          <section className="hostal_detailmain" key={sectionIndex}>
+          <section
+            className="hostal_detailmain"
+            key={sectionIndex}
+            id={item.sectionId}
+          >
             <div className="container">
               <div className="hostal_title">
                 {item.heading && <h5>{item.heading}</h5>}

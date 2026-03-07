@@ -10,8 +10,15 @@ import styles from "./facilities.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { WEB_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 
 export default function FacilitiesComponent({ data }) {
+  const pathname = usePathname();
+  const pathParts = pathname.split("/").filter(Boolean);
+
+  const pageType = pathParts[0];
+  const departmentSlug = pathParts[1];
   const FacilitiesComponentData = {
     subtitle: "FACILITIES",
     title: "EDUCATE. <span>INNOVATE</span>. SERVE.",
@@ -66,7 +73,16 @@ export default function FacilitiesComponent({ data }) {
           <p className={styles.description}>
             {FacilitiesComponentData.description}
           </p>
-          <Link href={FacilitiesComponentData.url}>
+          <Link
+            href={
+              WEB_URL +
+              pageType +
+              "/" +
+              departmentSlug +
+              "/" +
+              FacilitiesComponentData.url
+            }
+          >
             <SlArrowRightCircle fontSize={20} color="#fff" />
           </Link>
         </div>
@@ -90,7 +106,16 @@ export default function FacilitiesComponent({ data }) {
           >
             {data?.map((lab) => (
               <SwiperSlide key={lab.id} className={styles.facultyCard}>
-                <Link href={lab.url}>
+                <Link
+                  href={
+                    WEB_URL +
+                    pageType +
+                    "/" +
+                    departmentSlug +
+                    "/facilities#" +
+                    lab.url
+                  }
+                >
                   <Image
                     src={lab.img}
                     alt={lab.title}

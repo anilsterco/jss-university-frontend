@@ -10,6 +10,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 // import { FiPlus } from "react-icons/fi";
 import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
+import { WEB_URL } from "@/config/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -181,17 +182,22 @@ export default function FacilitiesComponent({ data }) {
             <div className={styles.cardSection}>
               {facilitiesData.facilities.map((card, index) => (
                 <div key={index} className={styles.cardImageContainer}>
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    style={{ width: "100%", objectFit: "cover" }}
-                  />
-                  <div className={styles.cardOverlay}></div>
-                  <h3 className={styles.cardContent}>{card.title}</h3>
+                  <Link href={WEB_URL + card?.main_link ?? "#"}>
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      style={{ width: "100%", objectFit: "cover" }}
+                    />
+                    <div className={styles.cardOverlay}></div>
+                    <h3 className={styles.cardContent}>{card.title}</h3>
+                  </Link>
                 </div>
               ))}
               <div className={styles.showOnlyMobileCard}>
-                <Link href="#" className={styles.exploreAllLink}>
+                <Link
+                  href={`${WEB_URL}academic-facilities`}
+                  className={styles.exploreAllLink}
+                >
                   <div className={styles.lastCardContentSection}>
                     <p>Explore All</p>
                     <h1 className="blue-text">28+</h1>
@@ -258,7 +264,7 @@ export default function FacilitiesComponent({ data }) {
                   <div>
                     <h2>
                       {panel.title}{" "}
-                      <Link href={panel.main_link ?? "#"}>
+                      <Link href={WEB_URL + panel.main_link ?? "#"}>
                         <Image
                           src="/images/home-page/facilivisit.svg"
                           alt="image"

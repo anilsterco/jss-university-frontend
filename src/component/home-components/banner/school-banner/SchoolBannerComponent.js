@@ -11,8 +11,14 @@ import styles from "./schoolBanner.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { WEB_URL } from "@/config/config";
 
-export default function SchoolSlider({ data, name, isDepartment = false }) {
+export default function SchoolSlider({
+  data,
+  name,
+  isDepartment = false,
+  slug,
+}) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -75,7 +81,10 @@ export default function SchoolSlider({ data, name, isDepartment = false }) {
                   />
                   <p className={styles.bannerContentP}>{slide.desc}</p>
                   {slide.url && (
-                    <Link href={slide.url} className={styles.bannerContentA}>
+                    <Link
+                      href={`${WEB_URL + "schools/" + slug + slide.url}`}
+                      className={styles.bannerContentA}
+                    >
                       {slide.linked_text || "Learn more"}
                       <img
                         src="/images/header/banner-arrow.svg"

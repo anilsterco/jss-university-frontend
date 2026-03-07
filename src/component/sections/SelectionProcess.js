@@ -32,7 +32,7 @@ export default function AboutOne({ data }) {
             data-aos="fade-up"
           >
             <div className="container">
-              <div className="ad_selec_procss">
+              <div className="ad_selec_procss" id="scholarship">
                 <h5 data-aos="fade-up" data-aos-delay="100">
                   Selection Process
                 </h5>
@@ -44,7 +44,8 @@ export default function AboutOne({ data }) {
                         className="ad_sel_col"
                         key={`step-${idx}`}
                         data-aos="fade-up"
-                        data-aos-delay={200 + idx * 150}>
+                        data-aos-delay={200 + idx * 150}
+                      >
                         <div className="ad_se_content">
                           <div className="se_step">
                             Step <span>{item.step}</span>

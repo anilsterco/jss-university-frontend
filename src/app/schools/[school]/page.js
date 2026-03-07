@@ -47,6 +47,7 @@ export default async function SchoolPage({ params }) {
       <SchoolBannerComponent
         data={schoolData?.sections?.banners}
         name={schoolData?.school_name}
+        slug={schoolData?.school_slug}
       />
 
       {/* <BelowBannerComponent /> */}
@@ -57,6 +58,7 @@ export default async function SchoolPage({ params }) {
           data={schoolData.sections.course_data}
           departments={schoolData.sections.departments}
           schoolName={schoolData?.school_name}
+          schoolSlug={schoolData?.school_slug}
         />
       )}
 

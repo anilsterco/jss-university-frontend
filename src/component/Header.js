@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "@fontsource/roboto-condensed";
 
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
 const ADMISSION_BASE_URL = `${BASE_URL}admission`;
@@ -181,7 +181,7 @@ export default function Header() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await fetch("https://project-demo.in/jss/api/hamburger");
+        const res = await fetch(`${BASE_URL}hamburger`);
         const json = await res.json();
         setMegaMenuData(json.data || []);
       } catch (err) {
@@ -193,6 +193,7 @@ export default function Header() {
 
   const activeLeftMenu = megaMenuData?.[activeLeftIndex] || {};
   const activeMiddleMenu = activeLeftMenu.children?.[activeMiddleIndex] || {};
+  const activeRightMenu = megaMenuData?.[activeLeftIndex]?.right || {};
 
   useEffect(() => {
     async function fetchHeaderData() {
@@ -456,7 +457,6 @@ export default function Header() {
     if (contactPanel?.Menu?.length > 0) return;
     const res = await fetch(MOBILE_HEADER_URL);
     const json = await res.json();
-    console.log("Mobile Menu API Response:", json.data[0]);
 
     if (json.success && json.data.length > 0) {
       const data = json.data[0];
@@ -694,12 +694,14 @@ export default function Header() {
                         <div className="ad-contact">
                           <span> {admissionsData.left.querytext} </span>
                           <p>
-                            <img
-                              src="images/header/mailicon.svg"
-                              className="img-fluid"
-                              alt="mail"
-                            />
-                            {admissionsData.left.email}
+                            <a href={`mailto:${admissionsData.left.email}`}>
+                              <img
+                                src="images/header/mailicon.svg"
+                                className="img-fluid"
+                                alt="mail"
+                              />
+                              {admissionsData.left.email}
+                            </a>
                           </p>
                           <p>
                             <img
@@ -729,7 +731,7 @@ export default function Header() {
                           {admissionsData.middle.links.map((link, idx) => (
                             <li key={idx} className="ad-link">
                               <Link
-                                href={link.url}
+                                href={WEB_URL + link.url}
                                 style={{ color: "inherit" }}
                                 onClick={() => setAdmissionOpen(false)}
                               >
@@ -804,7 +806,7 @@ export default function Header() {
               aria-label="Close menu"
               onClick={closeMenu}
             >
-              <img src="images/header/close-icon.svg" />
+              <img src="/images/header/close-icon.svg" />
             </button>
 
             <div className="hamburger-layout">
@@ -819,7 +821,15 @@ export default function Header() {
                         setActiveMiddleIndex(null);
                       }}
                     >
-                      <Link href={item.url || "#"} className="hambur_links">
+                      <Link
+                        href={WEB_URL + item.url || "#"}
+                        className="hambur_links"
+                        onClick={() => {
+                          if (item.url && item.url !== "#") {
+                            closeMenu();
+                          }
+                        }}
+                      >
                         {item.title}
                       </Link>
                     </li>
@@ -836,7 +846,13 @@ export default function Header() {
                         className={activeMiddleIndex === idx ? "active" : ""}
                         onMouseEnter={() => setActiveMiddleIndex(idx)}
                       >
-                        <Link href={item.url} className="hambur_link">
+                        <Link
+                          href={WEB_URL + item.url}
+                          className="hambur_link"
+                          onClick={() => {
+                            closeMenu();
+                          }}
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -846,7 +862,14 @@ export default function Header() {
                 <ul className="middle-submenu">
                   {activeMiddleMenu.children?.map((sub) => (
                     <li key={sub.id}>
-                      <Link href={sub.url}>{sub.title}</Link>
+                      <Link
+                        href={WEB_URL + sub.url}
+                        onClick={() => {
+                          closeMenu();
+                        }}
+                      >
+                        {sub.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -858,59 +881,92 @@ export default function Header() {
                     <div className="first-content">
                       <h1
                         dangerouslySetInnerHTML={{
-                          __html: activeData.firstContent.title,
+                          __html: activeRightMenu.first_section?.title,
                         }}
                       />
-                      <p>{activeData.firstContent.desc}</p>
-                      <Link href={activeData.firstContent.url}>
-                        <img src="images/header/banner-arrow.svg" />
-                      </Link>
-                      <div className="hamburger-section-img virtural-img">
-                        <Link href={activeData.firstContent.url}>
+                      {activeRightMenu.first_section?.subtitle && (
+                        <p>{activeRightMenu.first_section.subtitle}</p>
+                      )}
+
+                      {activeRightMenu.first_section?.link && (
+                        <Link
+                          href={WEB_URL + activeRightMenu.first_section.link}
+                          onClick={() => {
+                            closeMenu();
+                          }}
+                        >
+                          <img src="images/header/banner-arrow.svg" />
+                        </Link>
+                      )}
+
+                      {activeRightMenu.first_section?.image && (
+                        <div className="hamburger-section-img virtural-img">
                           <Image
                             className="hum-small"
-                            src={activeData.firstContent.img}
+                            src={activeRightMenu.first_section.image}
                             alt={activeData.firstContent.alt}
                             fill
                             style={{ objectFit: "cover" }}
                           />
-                        </Link>
-                        <div className="items-menu_grp">
-                          <div className="items-menu_grp_cont">
-                            <h4>Virtual campus</h4>
-                            <p>Sed ut perspiciatis</p>
+
+                          <div className="items-menu_grp">
+                            <div className="items-menu_grp_cont">
+                              {activeRightMenu.first_section?.heading && (
+                                <h4>{activeRightMenu.first_section.heading}</h4>
+                              )}
+                              {activeRightMenu.first_section?.subheading && (
+                                <p>
+                                  {activeRightMenu.first_section.subheading}
+                                </p>
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </div>
+
                     <div className="second-content">
-                      <div className="hamburger-section-img">
-                        <Link href={activeData.secondContent.url}>
+                      {activeRightMenu.second_section?.image && (
+                        <div className="hamburger-section-img">
                           <Image
-                            src={activeData.secondContent.img}
+                            src={activeRightMenu.second_section.image}
                             alt={activeData.secondContent.alt}
                             fill
                             style={{ objectFit: "cover" }}
                             sizes="100vw"
                           />
-                        </Link>
-                        <div className="vid-thumb-grp">
-                          <div className="vid-thumb-icon"></div>
-                          <div className="vid-thumb-cont">
-                            <h6>MESSAGE FROM CHANCELLOR</h6>
-                            <h4>
-                              JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
-                            </h4>
+
+                          <div className="vid-thumb-grp">
+                            {activeRightMenu.video_section?.video_url && (
+                              <Link
+                                href={activeRightMenu.video_section.video_url}
+                              >
+                                <div className="vid-thumb-icon"></div>
+                              </Link>
+                            )}
+
+                            <div className="vid-thumb-cont">
+                              {activeRightMenu.second_section?.title && (
+                                <h6>{activeRightMenu.second_section?.title}</h6>
+                              )}
+
+                              {activeRightMenu.second_section?.subtitle && (
+                                <h4>
+                                  {activeRightMenu.second_section?.subtitle}
+                                </h4>
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      )}
+
                       <div className="acresData">
                         <h1
                           dangerouslySetInnerHTML={{
-                            __html: activeData.secondContent.title,
+                            __html: activeRightMenu.second_section?.heading,
                           }}
                         />
-                        <p>{activeData.secondContent.desc}</p>
+                        <p>{activeRightMenu.second_section?.subheading}</p>
                       </div>
                     </div>
                   </div>
@@ -938,25 +994,28 @@ export default function Header() {
                         <ul className="courses-menu">
                           {mobProgramList.map((sub, idx) => (
                             <li key={idx}>
-                              <figure>
-                                <div className="coursesImg">
-                                  <img
-                                    src={sub.image}
-                                    alt={sub.name}
-                                    className="course-img w-100"
-                                  />
-                                </div>
-                                <figcaption>
-                                  <h4>{sub.name}</h4>
-                                  <Link href={sub.slug}>
+                              <Link
+                                href={`${WEB_URL}programs?type=${sub.slug}`}
+                              >
+                                <figure>
+                                  <div className="coursesImg">
+                                    <img
+                                      src={sub.image}
+                                      alt={sub.name}
+                                      className="course-img w-100"
+                                    />
+                                  </div>
+                                  <figcaption>
+                                    <h4>{sub.name}</h4>
+
                                     <img
                                       src={"/images/header/courseIcon.svg"}
                                       alt={`${sub.name} icon`}
                                       className="course-icon"
                                     />
-                                  </Link>
-                                </figcaption>
-                              </figure>
+                                  </figcaption>
+                                </figure>
+                              </Link>
                             </li>
                           ))}
                         </ul>

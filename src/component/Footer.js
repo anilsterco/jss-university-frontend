@@ -1,5 +1,5 @@
 "use client";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 import { color } from "framer-motion";
 import { useEffect, useState } from "react";
 // import {
@@ -168,7 +168,10 @@ export default function Footer() {
                 <ul className="list-unstyled">
                   {data.sections.map((section, i) => (
                     <li key={i}>
-                      <a href={section.url ?? "#"} className="links-itams">
+                      <a
+                        href={WEB_URL + section.url ?? "#"}
+                        className="links-itams"
+                      >
                         {section.title}
                       </a>
                     </li>
@@ -180,7 +183,7 @@ export default function Footer() {
                 <ul className="quick-item">
                   {data.quickLinks.map((link, i) => (
                     <li key={i}>
-                      <a href={link.url}>{link.label}</a>
+                      <a href={WEB_URL + link.url}>{link.label}</a>
                     </li>
                   ))}
                 </ul>
@@ -225,7 +228,10 @@ export default function Footer() {
             <ul className="list-unstyled Grid2">
               {data.sections?.map((section, i) => (
                 <li key={i}>
-                  <a href="#" className="hover:text-info transition-colors">
+                  <a
+                    href={WEB_URL + section.url ?? "#"}
+                    className="hover:text-info transition-colors"
+                  >
                     {section.title}
                   </a>
                 </li>
@@ -237,7 +243,7 @@ export default function Footer() {
             <ul className="quick-item">
               {data.quickLinks?.map((link, i) => (
                 <li key={i}>
-                  <a href={link.url}>{link.label}</a>
+                  <a href={WEB_URL + link.url}>{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -247,9 +253,16 @@ export default function Footer() {
             <div className="social-icons">
               <h4 className="font-medium ">Follow us on</h4>
               <ul className="list-unstyled mb-1 mx-auto justify-content-center flex gap-3">
-                {socialIcons.map((icon) => (
-                  <li key={icon.id}>
-                    <img src={icon.src} alt={`${icon.id} icon`} />
+                {data.socials.map((icon, iconIdx) => (
+                  <li key={iconIdx}>
+                    <a
+                      href={icon.url}
+                      target="_blank"
+                      className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                      style={{ width: "20px", height: "20px" }}
+                    >
+                      {renderIcon(icon.icon)}
+                    </a>
                   </li>
                 ))}
               </ul>

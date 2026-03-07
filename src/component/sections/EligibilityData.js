@@ -42,7 +42,10 @@ export default function EligibilityPrograms({ data }) {
   };
 
   return (
-    <section className="eligibilty_main">
+    <section
+      className={`eligibilty_main `}
+      id={`${eligibilitySection?.items[0]?.sectionId}`}
+    >
       <div className="container">
         <div className="eligib_grid_ad">
           <div className="eligib_cont">

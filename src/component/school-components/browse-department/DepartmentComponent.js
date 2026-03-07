@@ -10,9 +10,14 @@ import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./department.module.css";
 import { usePathname } from "next/navigation";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 
-export default function DepartmentSection({ data, departments, schoolName }) {
+export default function DepartmentSection({
+  data,
+  departments,
+  schoolName,
+  schoolSlug,
+}) {
   const departmentSection = data;
 
   const [query, setQuery] = useState("");
@@ -21,7 +26,10 @@ export default function DepartmentSection({ data, departments, schoolName }) {
   const [hasSearched, setHasSearched] = useState(false);
 
   const pathname = usePathname();
-  const departmentSlug = pathname.split("/").filter(Boolean).pop();
+  const pathParts = pathname.split("/").filter(Boolean);
+
+  const pageType = pathParts[0];
+  const departmentSlug = pathParts[1];
 
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -126,7 +134,9 @@ export default function DepartmentSection({ data, departments, schoolName }) {
 
               <div data-aos="fade-up" data-aos-delay="300">
                 <div className="depar-button">
-                  <Link href={`/programs`}>
+                  <Link
+                    href={`${WEB_URL + pageType + "/" + departmentSlug}/programs`}
+                  >
                     <button className={styles.viewAllButton}>
                       VIEW ALL PROGRAMMES <GoArrowRight />
                     </button>
