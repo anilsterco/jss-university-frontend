@@ -6,6 +6,15 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoMenu, IoClose } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 import "@/styles/custom.style.css";
+import { BASE_URL } from "@/config/config";
+
+// Converts slug to readable label while API loads
+// e.g. "computer-science-and-engineering-it" → "Computer Science And Engineering It"
+const slugToLabel = (slug) =>
+  slug
+    ?.split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ") || "";
 
 export default function DepartmentHeader({ className, data }) {
   const [activeSection, setActiveSection] = useState(data?.[0]?.slug);
@@ -17,6 +26,7 @@ export default function DepartmentHeader({ className, data }) {
   const [hoveredSchool, setHoveredSchool] = useState(0);
   const [hoveredDepartments, setHoveredDepartments] = useState([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const engineeringRef = useRef(null);
   const pathname = usePathname();
@@ -30,7 +40,7 @@ export default function DepartmentHeader({ className, data }) {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const res = await fetch("/api/school-department-list");
+        const res = await fetch(`${BASE_URL}school-department-list`);
         const json = await res.json();
 
         if (json.status && json.data.length > 0) {
@@ -53,17 +63,34 @@ export default function DepartmentHeader({ className, data }) {
               setHoveredDepartments(json.data[0].departments || []);
             }
           } else {
-            setSelectedSchoolName(json.data[0].name);
-            setHoveredSchool(0);
-            setHoveredDepartments(json.data[0].departments || []);
+            // Department page — find which school contains the current department slug
+            let matchedSchoolIdx = 0;
+            let matchedDeptName = "";
 
-            if (json.data[0].departments?.length > 0) {
-              setSelectedDepartmentName(json.data[0].departments[0].name);
+            for (let i = 0; i < json.data.length; i++) {
+              const dept = json.data[i].departments?.find(
+                (d) => d.slug === currentSlug,
+              );
+              if (dept) {
+                matchedSchoolIdx = i;
+                matchedDeptName = dept.name;
+                break;
+              }
             }
+
+            setSelectedSchool(matchedSchoolIdx);
+            setSelectedSchoolName(json.data[matchedSchoolIdx].name);
+            setHoveredSchool(matchedSchoolIdx);
+            setHoveredDepartments(
+              json.data[matchedSchoolIdx].departments || [],
+            );
+            setSelectedDepartmentName(matchedDeptName);
           }
         }
       } catch (err) {
         console.error("API Error:", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchSchools();
@@ -89,6 +116,9 @@ export default function DepartmentHeader({ className, data }) {
     ? selectedSchoolName
     : selectedDepartmentName || selectedSchoolName;
 
+  // While API loads, derive a readable label from the URL slug
+  const fallbackLabel = slugToLabel(currentSlug);
+
   return (
     <div className={`${styles.departmentHeaderWrapper} ${className}`}>
       <div className={styles.stickyHeader}>
@@ -101,7 +131,9 @@ export default function DepartmentHeader({ className, data }) {
               >
                 <span>{dropdownLabel}</span>
                 <span>
-                  <span className={styles.selectedName}>{displayName}</span>
+                  <span className={styles.selectedName}>
+                    {loading ? fallbackLabel : displayName || fallbackLabel}
+                  </span>
                   <IoChevronDownOutline />
                 </span>
               </div>
@@ -186,7 +218,9 @@ export default function DepartmentHeader({ className, data }) {
               {data.map((section, idx) => (
                 <Link
                   key={idx}
-                  href={"/" + currentPage + "/" + section.slug}
+                  href={
+                    "/" + currentPage + "/" + currentSlug + "/" + section.slug
+                  }
                   className={`${styles.navItem} ${
                     section.slug.includes(currentProgram)
                       ? styles.activeNav

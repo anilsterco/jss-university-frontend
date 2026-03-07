@@ -1,4 +1,5 @@
 "use client";
+import { BASE_URL } from "@/config/config";
 import { color } from "framer-motion";
 import { useEffect, useState } from "react";
 // import {
@@ -61,7 +62,7 @@ export default function Footer() {
   useEffect(() => {
     async function fetchFooter() {
       try {
-        const res = await fetch("/api/footer");
+        const res = await fetch(`${BASE_URL}footer`);
         if (!res.ok) throw new Error("Failed to fetch footer data");
         const data = await res.json();
         setData(data);
@@ -134,7 +135,13 @@ export default function Footer() {
               </div>
             </div>
             <div className="footer_right">
-              <button className="get_direc">GET DIRECTIONS</button>
+              <a
+                className="get_direc"
+                href="https://maps.app.goo.gl/ju8YpZh7ibsUxFPZ8"
+                target="_blank"
+              >
+                GET DIRECTIONS
+              </a>
               <div className="social-icons">
                 <ul className="list-unstyled">
                   <p>Follow us on</p>
@@ -142,6 +149,7 @@ export default function Footer() {
                     <li key={i}>
                       <a
                         href={s.url}
+                        target="_blank"
                         className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
                         style={{ width: "20px", height: "20px" }}
                       >
@@ -160,7 +168,7 @@ export default function Footer() {
                 <ul className="list-unstyled">
                   {data.sections.map((section, i) => (
                     <li key={i}>
-                      <a href="#" className="links-itams">
+                      <a href={section.url ?? "#"} className="links-itams">
                         {section.title}
                       </a>
                     </li>
@@ -183,8 +191,7 @@ export default function Footer() {
         <div className="container">
           <div className="bottom_footer">
             <p className="mb-1 mb-md-0">
-              © Copyright {new Date().getFullYear()} - JSS. All Rights
-              Reserved.
+              © Copyright {new Date().getFullYear()} - JSS. All Rights Reserved.
             </p>
             <p className="mb-0">
               Website Design and Development by{" "}

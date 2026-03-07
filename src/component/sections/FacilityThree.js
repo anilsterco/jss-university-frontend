@@ -26,7 +26,11 @@ export default function FacilityThree({ data }) {
         if (slides.length === 0) return null;
 
         return (
-          <section className="sport_fac_swiper" key={`sports-${sectionIndex}`}>
+          <section
+            className="sport_fac_swiper"
+            key={`sports-${sectionIndex}`}
+            id={item?.sectionId}
+          >
             <Swiper
               modules={[Navigation, EffectFade, Autoplay, Pagination]}
               effect="fade"

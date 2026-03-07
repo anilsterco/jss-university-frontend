@@ -7,7 +7,7 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function AboutDepartmentComponent({ data }) {
+export default function AboutDepartmentComponent({ data, params }) {
   // 🔹 Dummy Data (Fallback)
   const dummyCoursesData = {
     title: "COMPUTER SCIENCE & ENGINEERING",
@@ -66,7 +66,10 @@ export default function AboutDepartmentComponent({ data }) {
           {departmentData?.description && (
             <p className={styles.description}>{departmentData.description}</p>
           )}
-          <Link href="#" className={styles.arrowLink}>
+          <Link
+            href={`/department/${params}/about-the-department`}
+            className={styles.arrowLink}
+          >
             <Image
               src="/images/about-page/about-arrow.svg"
               alt="arrow"

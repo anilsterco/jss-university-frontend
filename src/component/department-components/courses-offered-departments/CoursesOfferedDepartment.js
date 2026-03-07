@@ -3,37 +3,43 @@
 import styles from "./courses-offered.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
+import { BASE_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 
-// 🔒 STATIC DATA
-const programs = [
-  {
-    name: "Undergraduate Programs",
-    shortName: "Undergraduate",
-    slug: "undergraduate",
-    image: "/images/programs/ug.jpg",
-  },
-  {
-    name: "Postgraduate Programs",
-    shortName: "Postgraduate",
-    slug: "postgraduate",
-    image: "/images/programs/pg.jpg",
-  },
-  {
-    name: "Doctoral Programs",
-    shortName: "Doctoral",
-    slug: "doctoral",
-    image: "/images/programs/phd.jpg",
-  },
-];
+const CoursesOffered = ({ data }) => {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
-const CoursesOffered = () => {
+  const pathname = usePathname();
+  const departmentSlug = pathname.split("/").filter(Boolean).pop();
+
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
   }, []);
+
+  useEffect(() => {
+    if (!query) return;
+
+    const delay = setTimeout(() => {
+      setHasSearched(true);
+      setLoading(true);
+      fetch(
+        `${BASE_URL}courses/search-by-department/${departmentSlug}?search=${encodeURIComponent(query)}`,
+      )
+        .then((res) => res.json())
+        .then((data) => setResults(data?.data || []))
+        .catch(() => setResults([]))
+        .finally(() => setLoading(false));
+    }, 300);
+
+    return () => clearTimeout(delay);
+  }, [query, departmentSlug]);
 
   return (
     <section className={`second-section cource-sec ${styles.secondSection}`}>
@@ -42,7 +48,7 @@ const CoursesOffered = () => {
           {/* LEFT CONTENT */}
           <div className="cource_col">
             <h5 className={styles.topSectionH5} data-aos="fade-up">
-              COURSES OFFERED
+              Courses Offered
             </h5>
 
             <h1
@@ -73,11 +79,37 @@ const CoursesOffered = () => {
                   type="text"
                   className="form-control border-0"
                   placeholder="Search Course"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  style={{ padding: "10px 20px" }}
                 />
                 <span className="input-group-text bg-white border-0">
                   <img src="/images/home-page/icon-search.svg" alt="search" />
                 </span>
               </div>
+
+              {query && (
+                <div className="search-results">
+                  {loading ? (
+                    <div className="loading">Searching...</div>
+                  ) : results.length ? (
+                    results.map((item) => (
+                      <div className="search-item" key={item.id}>
+                        <Link
+                          href={`/programs/${item.slug}`}
+                          className="search-link"
+                        >
+                          {item.name}
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    hasSearched && (
+                      <div className="no-results">No courses found</div>
+                    )
+                  )}
+                </div>
+              )}
             </div>
 
             {/* COUNT */}
@@ -87,7 +119,9 @@ const CoursesOffered = () => {
               data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
-                <h1 className={`display-4 ${styles.programsCount}`}>200</h1>
+                <h1 className={`display-4 ${styles.programsCount}`}>
+                  {data?.course_count}
+                </h1>
                 <span className={styles.programsCountPlus}>+</span>
               </div>
               <p className={`program-hide ${styles.programsText}`}>
@@ -99,63 +133,40 @@ const CoursesOffered = () => {
           {/* RIGHT CARDS */}
           <div className={`cource_col ${styles.programsCardsSection}`}>
             {/* Undergraduate */}
-            <Link
-              href="#"
-              className="second-section-cards-image position-relative"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <Image
-                src="/images/school-page/course01.webp"
-                alt="Undergraduate Programs"
-                width={252}
-                height={387}
-                className={styles.cardImage}
-              />
-
-              <div className={styles.cardOverlay}>
-                <span
-                  className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
+            {data?.programs &&
+              data.programs.map((program, programIdx) => (
+                <Link
+                  key={programIdx}
+                  href={`/programs?program=${program.slug}`}
+                  className="second-section-cards-image position-relative"
+                  data-aos="fade-up"
+                  data-aos-delay="0"
                 >
-                  UG
-                  <img
-                    src="/images/home-page/course_list_icon.svg"
-                    alt="icon"
-                    className={styles.cardIcons}
+                  <Image
+                    src={program.image}
+                    alt={program.name}
+                    width={252}
+                    height={387}
+                    className={styles.cardImage}
                   />
-                  <PiArrowCircleRightThin className={styles.rightMobileArrow} />
-                </span>
-              </div>
-            </Link>
 
-            <Link
-              href="#"
-              className="second-section-cards-image position-relative"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <Image
-                src="/images/school-page/course02.webp"
-                alt="Undergraduate Programs"
-                width={252}
-                height={387}
-                className={styles.cardImage}
-              />
-
-              <div className={styles.cardOverlay}>
-                <span
-                  className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
-                >
-                  PHD
-                  <img
-                    src="/images/home-page/course_list_icon.svg"
-                    alt="icon"
-                    className={styles.cardIcons}
-                  />
-                  <PiArrowCircleRightThin className={styles.rightMobileArrow} />
-                </span>
-              </div>
-            </Link>
+                  <div className={styles.cardOverlay}>
+                    <span
+                      className={`banner-label d-flex align-items-center gap-2 ${styles.bannerLabel}`}
+                    >
+                      {program.name_short}
+                      <img
+                        src="/images/home-page/course_list_icon.svg"
+                        alt="icon"
+                        className={styles.cardIcons}
+                      />
+                      <PiArrowCircleRightThin
+                        className={styles.rightMobileArrow}
+                      />
+                    </span>
+                  </div>
+                </Link>
+              ))}
           </div>
         </div>
       </div>

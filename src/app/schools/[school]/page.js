@@ -10,70 +10,77 @@ import Script from "next/script";
 import { BASE_URL } from "@/config/config";
 
 export async function generateMetadata({ params }) {
-    const { school } = await params;
-    return getPageSEO(school);
+  const { school } = await params;
+  return getPageSEO(school);
 }
 
 async function getSchoolData(slug) {
-    const res = await fetch(`${BASE_URL}school/${slug}`, {
-        next: { revalidate: 120 },
-    });
+  const res = await fetch(`${BASE_URL}school/${slug}`, {
+    next: { revalidate: 120 },
+  });
 
-    if (!res.ok) {
-        throw new Error(`Failed to fetch school data for ${slug} (status ${res.status})`);
-    }
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch school data for ${slug} (status ${res.status})`,
+    );
+  }
 
-    return res.json();
+  return res.json();
 }
 
 export default async function SchoolPage({ params }) {
-    const { school } = await params;
+  const { school } = await params;
 
-    const schoolData = await getSchoolData(school);
-    const seoData = await getPageSEO(school);
+  const schoolData = await getSchoolData(school);
+  const seoData = await getPageSEO(school);
 
-    return (
-        <>
-            <Script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(seoData.schema),
-                }}
-                strategy="beforeInteractive"
-            />
+  return (
+    <>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoData.schema),
+        }}
+        strategy="beforeInteractive"
+      />
 
-            <SchoolBannerComponent
-                data={schoolData?.sections?.banners}
-                name={schoolData?.school_name}
-            />
+      <SchoolBannerComponent
+        data={schoolData?.sections?.banners}
+        name={schoolData?.school_name}
+      />
 
-            {/* <BelowBannerComponent /> */}
-            <DepartmentHeader data={schoolData?.sections?.tabs} />
+      {/* <BelowBannerComponent /> */}
+      <DepartmentHeader data={schoolData?.sections?.tabs} />
 
+      {schoolData?.sections?.course_data?.title && (
+        <DepartmentComponent
+          data={schoolData.sections.course_data}
+          departments={schoolData.sections.departments}
+          schoolName={schoolData?.school_name}
+        />
+      )}
 
-            {schoolData?.sections?.course_data?.title && (
-                <DepartmentComponent data={schoolData.sections.course_data} />
-            )}
-
-            {/* {schoolData?.sections?.placements?.title && (
+      {/* {schoolData?.sections?.placements?.title && (
         <PlacementComponent data={schoolData.sections.placements} />
       )} */}
 
+      {schoolData?.sections?.about_school?.title && (
+        <FacilitiesComponent data={schoolData.sections.facilities} />
+      )}
+      {schoolData?.sections?.about_school?.title && (
+        <AboutSchoolComponent data={schoolData.sections.about_school} />
+      )}
 
-            {schoolData?.sections?.about_school?.title && (
-                <FacilitiesComponent data={schoolData.sections.about_school} />
-            )}
-            {schoolData?.sections?.about_school?.title && (
-                <AboutSchoolComponent data={schoolData.sections.about_school} />
-            )}
+      {schoolData?.sections?.faculty && (
+        <FacultySchool
+          data={schoolData.sections.faculty}
+          schoolName={schoolData?.school_name}
+        />
+      )}
 
-            {schoolData?.sections?.testimonials?.title && (
-                <FacultySchool data={schoolData.sections.testimonials} />
-            )}
-
-            {schoolData?.sections?.happenings?.title && (
-                <HappingsHomeComponent data={schoolData.sections.happenings} />
-            )}
-        </>
-    );
+      {schoolData?.sections?.happenings?.title && (
+        <HappingsHomeComponent data={schoolData.sections.happenings} />
+      )}
+    </>
+  );
 }

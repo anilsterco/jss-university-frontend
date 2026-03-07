@@ -132,13 +132,15 @@ export default function LegacySection({ data }) {
                 {legacyData.description}
               </p>
               <div className={`divider ${styles.rightArrowIconDiv}`}>
-                {legacyData.url && (
-                  <Image
-                    src="images/home-page/about_arrow.svg"
-                    alt="chancellor image"
-                    width={22}
-                    height={22}
-                  />
+                {legacyData?.url && (
+                  <Link href={legacyData.url}>
+                    <Image
+                      src="images/home-page/about_arrow.svg"
+                      alt="chancellor image"
+                      width={22}
+                      height={22}
+                    />
+                  </Link>
                 )}
               </div>
 
@@ -203,7 +205,7 @@ export default function LegacySection({ data }) {
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                {legacyData.buttons.map((btn, i) => (
+                {legacyData?.buttons.map((btn, i) => (
                   <Link key={i} href={btn.url} className={styles.navButtons}>
                     {btn.text}
                     {i == 1 && <FaArrowRight className={styles.arrowIcon} />}

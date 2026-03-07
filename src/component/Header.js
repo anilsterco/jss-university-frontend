@@ -127,6 +127,57 @@ export default function Header() {
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
 
+  // ✅ Timeout ref to delay closing — prevents glitch when mouse travels
+  // from the nav <li> into the fixed mega-dropdown (there's a gap between them)
+  const closeTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (admissionRef.current && !admissionRef.current.contains(e.target)) {
+        setAdmissionOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleNavMouseEnter = (i) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown(i);
+  };
+
+  const handleNavMouseLeave = () => {
+    // Small delay gives mouse time to reach the mega-dropdown before it closes
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 100);
+  };
+
+  const handleDropdownMouseEnter = () => {
+    // Mouse reached the dropdown — cancel the pending close
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    // Mouse left the dropdown — close it
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 100);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
+
   useEffect(() => {
     const fetchMenu = async () => {
       try {
@@ -508,8 +559,8 @@ export default function Header() {
                       className={`nav-item ${
                         activeDropdown === i ? "active-items" : ""
                       }`}
-                      onMouseOver={() => setActiveDropdown(i)}
-                      // onMouseLeave={() => setActiveDropdown(null)}
+                      onMouseEnter={() => handleNavMouseEnter(i)}
+                      onMouseLeave={handleNavMouseLeave}
                     >
                       <Link href={l.url} className={`nav-link nav-lists`}>
                         {l.title}
@@ -518,6 +569,8 @@ export default function Header() {
                         <div
                           className={`mega-dropdown ${activeDropdown === i ? "d-flex" : ""}`}
                           role="menu"
+                          onMouseEnter={handleDropdownMouseEnter}
+                          onMouseLeave={handleDropdownMouseLeave}
                         >
                           <div className="mega-left">
                             <ul>
@@ -678,6 +731,7 @@ export default function Header() {
                               <Link
                                 href={link.url}
                                 style={{ color: "inherit" }}
+                                onClick={() => setAdmissionOpen(false)}
                               >
                                 {link.title}
                                 <img

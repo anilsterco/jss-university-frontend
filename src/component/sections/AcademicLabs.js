@@ -21,17 +21,17 @@ export default function AcademicLabs({ data }) {
         if (section.type !== "academicLabs") return null;
 
         const items = [...section.items].sort(
-          (a, b) => Number(a.position || 0) - Number(b.position || 0)
+          (a, b) => Number(a.position || 0) - Number(b.position || 0),
         );
 
         return items.map((item, idx) => (
           <section
             key={`academicLabs-${sectionIndex}-${idx}`}
             className="academic_labmain"
+            id={`${item?.sectionId}`}
           >
             <div className="container max-content-lg pe-lg-0 me-lg-0">
               <div className="academic_grid">
-
                 <div className="academic_lab_leftsec">
                   {item.title && <h5>{item.title}</h5>}
                   {item.subtitle && <h4>{item.subtitle}</h4>}

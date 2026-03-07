@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import styles from "./placement.module.css";
+import { WEB_URL } from "@/config/config";
 
 const dummyPlacementsData = {
   title:
@@ -80,22 +81,24 @@ export default function PlacementsSection({ data, category, pageType }) {
   return (
     <section className={`${category !== "slider" && styles.thirdSection}`}>
       <div className="container">
-        {(placementsData?.subtitle || placementsData?.title) && (
-          <div
-            className={styles.sectionHeader}
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+        <div
+          className={` ${styles.sectionHeader}`}
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {placementsData?.subtitle && (
             <p className="fw-bold text-uppercase dark-blue-text">
-              {placementsData?.subtitle?.toUpperCase()}
+              {placementsData.subtitle?.toUpperCase()}
             </p>
+          )}
 
+          {placementsData?.title && (
             <h2
               className="fw-bold"
               dangerouslySetInnerHTML={{ __html: placementsData?.title }}
             ></h2>
-          </div>
-        )}
+          )}
+        </div>
 
         {placementsData?.facts_and_figures && (
           <div className={`${styles.placement_row}`}>
@@ -213,13 +216,17 @@ export default function PlacementsSection({ data, category, pageType }) {
                       __html: placementsData.hall_of_fame.heading,
                     }}
                   />
-                  <Image
-                    src="/images/home-page/jss_bannerIcon.svg"
-                    width={22}
-                    height={22}
-                    alt="Hall of Fame"
-                    className={`${styles.placementvisit}`}
-                  />
+                  <Link
+                    href={`${placementsData.hall_of_fame.url || WEB_URL + "placement"}`}
+                  >
+                    <Image
+                      src={`/images/home-page/jss_bannerIcon.svg`}
+                      width={22}
+                      height={22}
+                      alt="Hall of Fame"
+                      className={`${styles.placementvisit}`}
+                    />
+                  </Link>
                 </div>
               </div>
             )}

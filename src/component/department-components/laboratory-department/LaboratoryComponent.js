@@ -89,16 +89,16 @@ export default function Laboratories({ data }) {
               slidesPerView={3.5} // Default (Desktop large)
               className={styles.slider}
               breakpoints={{
-                1200: { slidesPerView: 3.5 }, 
-                991: { slidesPerView: 2 }, 
-                667: { slidesPerView: 2}, 
-                575: { slidesPerView: 1.3 }, 
-                0: { slidesPerView: 1 }, 
+                1200: { slidesPerView: 3.5 },
+                991: { slidesPerView: 2 },
+                667: { slidesPerView: 2 },
+                575: { slidesPerView: 1.3 },
+                0: { slidesPerView: 1 },
               }}
             >
               {labs.map((lab) => (
                 <SwiperSlide key={lab.id} className={styles.facultyCard}>
-                  <Link href={lab.url || "#"} key={lab.id}>
+                  <Link href={`/${lab.url || "#"}`} key={lab.id}>
                     <Image
                       src={lab.img || "/images/default-lab.png"}
                       alt={lab.title || "Lab Image"}

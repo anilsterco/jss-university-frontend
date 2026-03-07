@@ -250,20 +250,26 @@ export default function FacilitiesComponent({ data }) {
                   style={{ width: "100%", objectFit: "cover" }}
                 />
                 <div className={styles.verticalLine}>
-                  <div className={styles.slideNumberBox}>{index + 1 < 10 ? "0" + (index + 1) : index + 1}</div>
+                  <div className={styles.slideNumberBox}>
+                    {index + 1 < 10 ? "0" + (index + 1) : index + 1}
+                  </div>
                 </div>
                 <div className={styles.bannerContent}>
                   <div>
                     <h2>
                       {panel.title}{" "}
-                      <Image
-                        src="/images/home-page/facilivisit.svg"
-                        alt="image"
-                        width={22}
-                        height={22}
-                      />
+                      <Link href={panel.main_link ?? "#"}>
+                        <Image
+                          src="/images/home-page/facilivisit.svg"
+                          alt="image"
+                          width={22}
+                          height={22}
+                        />
+                      </Link>
                     </h2>
-                    <p className={styles.facilityDescription}>{panel.description}</p>
+                    <p className={styles.facilityDescription}>
+                      {panel.description}
+                    </p>
                   </div>
                 </div>
                 <div className={styles.bannerLinks}>

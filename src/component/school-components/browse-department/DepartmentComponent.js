@@ -9,9 +9,41 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./department.module.css";
+import { usePathname } from "next/navigation";
+import { BASE_URL } from "@/config/config";
 
-export default function DepartmentSection({ data }) {
+export default function DepartmentSection({ data, departments, schoolName }) {
   const departmentSection = data;
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  const pathname = usePathname();
+  const departmentSlug = pathname.split("/").filter(Boolean).pop();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+  }, []);
+
+  useEffect(() => {
+    if (!query) return;
+
+    const delay = setTimeout(() => {
+      setHasSearched(true);
+      setLoading(true);
+      fetch(
+        `${BASE_URL}courses/search-by-school/${departmentSlug}?search=${encodeURIComponent(query)}`,
+      )
+        .then((res) => res.json())
+        .then((data) => setResults(data?.data || []))
+        .catch(() => setResults([]))
+        .finally(() => setLoading(false));
+    }, 300);
+
+    return () => clearTimeout(delay);
+  }, [query, departmentSlug]);
 
   return (
     <div className={styles.departmentSection}>
@@ -36,6 +68,9 @@ export default function DepartmentSection({ data }) {
                       type="text"
                       className="form-control border-0"
                       placeholder="Search Course"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      style={{ padding: "10px 20px" }}
                     />
                     <span className="input-group-text bg-white border-0">
                       <img
@@ -44,6 +79,29 @@ export default function DepartmentSection({ data }) {
                       />
                     </span>
                   </div>
+
+                  {query && (
+                    <div className="search-results">
+                      {loading ? (
+                        <div className="loading">Searching...</div>
+                      ) : results.length ? (
+                        results.map((item) => (
+                          <div className="search-item" key={item.id}>
+                            <Link
+                              href={`/programs/${item.slug}`}
+                              className="search-link"
+                            >
+                              {item.name}
+                            </Link>
+                          </div>
+                        ))
+                      ) : (
+                        hasSearched && (
+                          <div className="no-results">No courses found</div>
+                        )
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div
@@ -127,10 +185,15 @@ export default function DepartmentSection({ data }) {
 
             <div className={`add_btn ${styles.admistion_heading}`}>
               <div className={styles.admiCol}>
-                <h2>
-                  Admission <span> 2025-26</span>
-                </h2>
-                <p>Sed ut perspiciatis unde omnis</p>
+                {departmentSection?.academic_year && (
+                  <h2>
+                    Admission <span>{departmentSection.academic_year}</span>
+                  </h2>
+                )}
+
+                {departmentSection?.programs_text && (
+                  <p>{departmentSection.programs_text}</p>
+                )}
               </div>
               <Link href={`/apply-now`} className=" btn btn-warning">
                 Apply Now
@@ -147,33 +210,44 @@ export default function DepartmentSection({ data }) {
           >
             <p>BROWSE BY</p>
             <h2>
-              DEPARTMENT OF <span>PHARMACY</span>
+              {/* DEPARTMENT OF <span>PHARMACY</span> {schoolName} */}
+              {(() => {
+                const words = schoolName?.split(" ") || [];
+                const last = words.pop();
+                return (
+                  <>
+                    {words.join(" ")} <span>{last}</span>
+                  </>
+                );
+              })()}
             </h2>
           </div>
 
           <div className={styles.departmentRow}>
-            {departmentSection.departments?.slice(0, 4).map((dept, index) => (
+            {departments?.slice(0, 4).map((dept, index) => (
               <div
                 className={styles.departmentCol}
                 key={index}
                 data-aos="fade-up"
               >
-                <Image
-                  src="/images/custom-page/departPla.webp"
-                  alt="Dummy Department"
-                  width={330}
-                  height={330}
-                  className={styles.departmentImage}
-                />
-                <div className={styles.departData}>
-                  <h4>{dept.name}</h4>
-                  <SlArrowRightCircle className={styles.departmentArrow} />
-                </div>
-                <Link
+                <Link href={`/department/${dept.slug}`}>
+                  <Image
+                    src="/images/custom-page/departPla.webp"
+                    alt="Dummy Department"
+                    width={330}
+                    height={330}
+                    className={styles.departmentImage}
+                  />
+                  <div className={styles.departData}>
+                    <h4>{dept.name}</h4>
+                    <SlArrowRightCircle className={styles.departmentArrow} />
+                  </div>
+                </Link>
+                {/* <Link
                   href={`/department/${dept.slug}`}
                   className={styles.fullLink}
                   aria-label={dept.name}
-                />
+                /> */}
               </div>
             ))}
           </div>
