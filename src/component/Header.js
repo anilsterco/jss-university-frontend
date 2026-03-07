@@ -562,7 +562,10 @@ export default function Header() {
                       onMouseEnter={() => handleNavMouseEnter(i)}
                       onMouseLeave={handleNavMouseLeave}
                     >
-                      <Link href={l.url} className={`nav-link nav-lists`}>
+                      <Link
+                        href={WEB_URL + l.url}
+                        className={`nav-link nav-lists`}
+                      >
                         {l.title}
                       </Link>
                       {activeDropdown === i && l.children?.length > 0 && (
