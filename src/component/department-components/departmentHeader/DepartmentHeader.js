@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoMenu, IoClose } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 import "@/styles/custom.style.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 
 // Converts slug to readable label while API loads
 // e.g. "computer-science-and-engineering-it" → "Computer Science And Engineering It"
@@ -218,9 +218,7 @@ export default function DepartmentHeader({ className, data }) {
               {data.map((section, idx) => (
                 <Link
                   key={idx}
-                  href={
-                    "/" + currentPage + "/" + currentSlug + "/" + section.slug
-                  }
+                  href={WEB_URL + currentPage + "/" + section.slug}
                   className={`${styles.navItem} ${
                     section.slug.includes(currentProgram)
                       ? styles.activeNav

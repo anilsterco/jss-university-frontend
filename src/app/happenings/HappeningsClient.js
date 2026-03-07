@@ -16,8 +16,6 @@ export default function HappeningsClient({ className }) {
   const type = pathname.split("/")[1] == "schools" ? "school" : "university";
   const program = pathname.split("/")[2];
 
-  console.log("happening pathname", type, program);
-
   const tabs = [
     { id: "news", label: "News & Events", component: NewsEvents },
     { id: "gallery", label: "Gallery", component: Gallery },

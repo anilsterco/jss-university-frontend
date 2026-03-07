@@ -7,6 +7,7 @@ import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { WEB_URL } from "@/config/config";
 
 const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
   const [count, setCount] = useState(start);
@@ -258,7 +259,7 @@ export default function CoursesOffered({ data }) {
               {coursesData.departments.map((school, i) => (
                 <Link
                   key={i}
-                  href={`/schools/${school.slug}`}
+                  href={`${WEB_URL}schools/${school.slug}/programs`}
                   className="d-flex justify-content-between align-items-center"
                 >
                   {school.short_name}
