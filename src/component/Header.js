@@ -123,6 +123,7 @@ export default function Header() {
   const [mobProgramList, setMobProgramList] = useState([]);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [megaMenuData, setMegaMenuData] = useState([]);
+  const [isAcademic, setIsAcademic] = useState(false);
 
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
@@ -141,11 +142,12 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleNavMouseEnter = (i) => {
+  const handleNavMouseEnter = (i, pageName) => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
+    setIsAcademic(pageName?.toLowerCase() === "academics");
     setActiveDropdown(i);
   };
 
@@ -153,6 +155,7 @@ export default function Header() {
     // Small delay gives mouse time to reach the mega-dropdown before it closes
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
+      setIsAcademic(false);
     }, 100);
   };
 
@@ -168,6 +171,7 @@ export default function Header() {
     // Mouse left the dropdown — close it
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
+      setIsAcademic(false);
     }, 100);
   };
 
@@ -199,14 +203,8 @@ export default function Header() {
     async function fetchHeaderData() {
       try {
         const [res1, res2] = await Promise.all([
-          fetch(
-            `${
-              pathname.includes("schools") || pathname.includes("department")
-                ? SCHOOL_HEADER_URL
-                : NAV_BASE_URL
-            }`,
-          ),
-          fetch(`${ADMISSION_BASE_URL}`),
+          fetch(NAV_BASE_URL), // ← always use NAV_BASE_URL for nav links
+          fetch(ADMISSION_BASE_URL),
         ]);
         if (!res1.ok || !res2.ok) {
           throw new Error("One or more API calls failed");
@@ -508,7 +506,7 @@ export default function Header() {
       <div
         className={`header-inner ${
           !isHomeLikePage ? "innerPage" : ""
-        } ${scrolled ? "header-scrolled" : ""}`}
+        } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
       >
         <div className="containerXl">
           <div
@@ -559,7 +557,7 @@ export default function Header() {
                       className={`nav-item ${
                         activeDropdown === i ? "active-items" : ""
                       }`}
-                      onMouseEnter={() => handleNavMouseEnter(i)}
+                      onMouseEnter={() => handleNavMouseEnter(i, l.title)}
                       onMouseLeave={handleNavMouseLeave}
                     >
                       <Link
@@ -1417,6 +1415,9 @@ export default function Header() {
           .header-inner.header-scrolled {
             background-color: var(--color-4e);
           }
+            .header-inner.header-scrolled.academics {
+            background-color: transparent;
+          }
          
           .nav-link {
             text-decoration: none;
@@ -1940,6 +1941,7 @@ export default function Header() {
             padding: 1px 0;
           }
           .header-inner.innerPage {background-color:#deebf4}
+          .header-inner.innerPage.academics {background-color:transparent}
           .mega-right {
             display: flex;
             align-items: center;

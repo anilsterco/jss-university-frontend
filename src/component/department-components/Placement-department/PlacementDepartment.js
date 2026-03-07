@@ -16,52 +16,67 @@ import "swiper/css/effect-fade";
 import "aos/dist/aos.css";
 import styles from "./Placement.module.css";
 
-const placementsData = {
-  subtitle: "Placements",
-  title:
-    '<span class="dark-blue-text">FROM </span><span class="blue-text">CAMPUS </span><span class="dark-blue-text">TO </span><span class="blue-text">CORPORATE</span>',
-  facts_and_figures: [
-    { figure: "5000+", title: "Students Placed" },
-    { figure: "22.5 LPA", title: "Highest Package" },
-    { figure: "1200+", title: "Recruiters" },
-  ],
-  testimonials: [
-    {
-      image: "/images/school-page/placment_testi.webp",
-      short_description:
-        "Mock interviews and guidance sessions boosted my confidence.",
-      name: "Rahul Sharma",
-      designation: "Associate Consultant",
-      company: "Infosys",
-    },
-    {
-      image: "/images/school-page/placment_testi.webp",
-      short_description:
-        "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet",
-      name: "Sneha Kapoor",
-      designation: "Data Analyst",
-      company: "Wipro",
-    },
-  ],
-  hall_of_fame: {
-    image: "/images/school-page/placment.webp",
-    heading:
-      "JSS <span class='text-warning'>PLACEMENTS 2024</span><br/>WALL OF FAME",
-  },
-  recruiters: [
-    { title: "TCS", image: "/images/school-page/logo01.png" },
-    { title: "Infosys", image: "/images/school-page/logo02.png" },
-    { title: "Wipro", image: "/images/school-page/logo03.png" },
-    { title: "Accenture", image: "/images/school-page/logo04.png" },
-    { title: "Cognizant", image: "/images/school-page/logo05.png" },
-    { title: "Flipkart", image: "/images/school-page/logo06.png" },
-    { title: "Flipkart", image: "/images/school-page/logo07.png" },
-    { title: "Flipkart", image: "/images/school-page/logo05.png" },
-  ],
-};
+// const placementsData = {
+//   subtitle: "Placements",
+//   title:
+//     '<span class="dark-blue-text">FROM </span><span class="blue-text">CAMPUS </span><span class="dark-blue-text">TO </span><span class="blue-text">CORPORATE</span>',
+//   facts_and_figures: [
+//     { figure: "5000+", title: "Students Placed" },
+//     { figure: "22.5 LPA", title: "Highest Package" },
+//     { figure: "1200+", title: "Recruiters" },
+//   ],
+//   testimonials: [
+//     {
+//       image: "/images/school-page/placment_testi.webp",
+//       short_description:
+//         "Mock interviews and guidance sessions boosted my confidence.",
+//       name: "Rahul Sharma",
+//       designation: "Associate Consultant",
+//       company: "Infosys",
+//     },
+//     {
+//       image: "/images/school-page/placment_testi.webp",
+//       short_description:
+//         "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet",
+//       name: "Sneha Kapoor",
+//       designation: "Data Analyst",
+//       company: "Wipro",
+//     },
+//   ],
+//   hall_of_fame: {
+//     image: "/images/school-page/placment.webp",
+//     heading:
+//       "JSS <span class='text-warning'>PLACEMENTS 2024</span><br/>WALL OF FAME",
+//   },
+//   recruiters: [
+//     { title: "TCS", image: "/images/school-page/logo01.png" },
+//     { title: "Infosys", image: "/images/school-page/logo02.png" },
+//     { title: "Wipro", image: "/images/school-page/logo03.png" },
+//     { title: "Accenture", image: "/images/school-page/logo04.png" },
+//     { title: "Cognizant", image: "/images/school-page/logo05.png" },
+//     { title: "Flipkart", image: "/images/school-page/logo06.png" },
+//     { title: "Flipkart", image: "/images/school-page/logo07.png" },
+//     { title: "Flipkart", image: "/images/school-page/logo05.png" },
+//   ],
+// };
 
-export default function PlacementsSection() {
+export default function PlacementsSection({ data }) {
   const swiperRef = useRef(null);
+
+  const recruiters = data?.recruiters || [];
+
+  const loopedRecruiters =
+    recruiters.length < 14
+      ? [
+          ...recruiters,
+          ...recruiters,
+          ...recruiters,
+          ...recruiters,
+          ...recruiters,
+          ...recruiters,
+          ...recruiters,
+        ]
+      : recruiters;
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -80,18 +95,18 @@ export default function PlacementsSection() {
         {/* HEADER */}
         <div className={styles.sectionHeader} data-aos="fade-up">
           <p className="fw-bold text-uppercase dark-blue-text">
-            {placementsData.subtitle}
+            {data.subtitle}
           </p>
           <h2
             className="fw-bold"
-            dangerouslySetInnerHTML={{ __html: placementsData.title }}
+            dangerouslySetInnerHTML={{ __html: data.title }}
           />
         </div>
 
         <div className={styles.placement_row}>
           <div className={`placement_col ${styles.leftContent}`}>
             <div className={styles.statsRow}>
-              {placementsData.facts_and_figures.map((stat, i) => (
+              {data.facts_and_figures.map((stat, i) => (
                 <div
                   key={i}
                   className={styles.figurContCol}
@@ -121,7 +136,7 @@ export default function PlacementsSection() {
               loop
             >
               <div className={styles.blueBg}></div>
-              {placementsData.testimonials.map((t, i) => (
+              {data.testimonials.map((t, i) => (
                 <SwiperSlide key={i}>
                   <div
                     className={`${styles.eachSlide} d-flex align-items-start`}
@@ -180,7 +195,7 @@ export default function PlacementsSection() {
           <div className={styles.rightContent} data-aos="fade-up">
             <div className={styles.wallOfFameContainer}>
               <Image
-                src={placementsData.hall_of_fame.image}
+                src={data.hall_of_fame.image}
                 alt="Wall of Fame"
                 width={500}
                 height={600}
@@ -189,7 +204,7 @@ export default function PlacementsSection() {
               <div
                 className={styles.wallOfFameText}
                 dangerouslySetInnerHTML={{
-                  __html: placementsData.hall_of_fame.heading,
+                  __html: data.hall_of_fame.heading,
                 }}
               />
               <Link href="#">
@@ -227,7 +242,7 @@ export default function PlacementsSection() {
                     1200: { slidesPerView: 7 },
                   }}
                 >
-                  {placementsData.recruiters?.map((rec, i) => (
+                  {loopedRecruiters.map((rec, i) => (
                     <SwiperSlide key={i} className="recruiter-slide">
                       <Image
                         src={rec.image}

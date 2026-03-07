@@ -54,7 +54,7 @@ const HODMessage = ({ data }) => {
                 data-aos-delay="200"
               >
                 <Image
-                  src={hodData?.img || ""}
+                  src={hodData?.img || null}
                   alt={hodData?.name || "Head of Department"}
                   width={476}
                   height={473}

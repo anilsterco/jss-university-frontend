@@ -26,38 +26,6 @@ export default function AboutSchool({ data }) {
     });
   }, []);
 
-  const dummyAboutSchoolContent = {
-    title:
-      '<span class="blue-text">EMPOWERING INNOVATION.</span><span class="dark-blue-text">ENGINEERING EXCELLENCE.</span>',
-    subtitle: "",
-    description:
-      "Located in the heart of Noida's academic corridor, the School of Engineering at JSS University stands as a beacon of technical education, innovation, and industry readiness.",
-    url: "/",
-    chancellor_img: "/images/school-page/about-school-banner.png",
-    chancellor_logo: "/images/home-page/fifth-slider-second-img.png",
-    logo_content:
-      "Approved by All India Council for Technical Education (AICTE)",
-    stats_number: "28+",
-    stats_content: "ACRES CAMPUS AREA",
-    highlights: [
-      {
-        rank: "#20",
-        text: "ENGINEERING COLLEGES IN UTTAR PRADESH",
-        source: "Outlook 2020",
-      },
-      {
-        rank: "#201-250",
-        text: "NATIONALLY ENGINEERING RANK (2024)",
-        source: "NIRF",
-      },
-    ],
-    buttons: [
-      { text: "360 VIEW", url: "#" },
-      { text: "WHY JSS", url: "#" },
-      { text: "APPLY NOW", url: "#" },
-    ],
-  };
-
   const aboutSchoolContent = {
     ...data,
     highlights:

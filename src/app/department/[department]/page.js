@@ -55,6 +55,7 @@ export default async function DepartmentPage({ params }) {
         data={departmentData?.sections?.banners}
         name={departmentData?.department_name}
         isDepartment={true}
+        slug={departmentData?.departments_slug}
       />
       {departmentData?.sections?.tabs && (
         <DepartmentHeader data={departmentData.sections.tabs} />
@@ -81,7 +82,7 @@ export default async function DepartmentPage({ params }) {
       )}
 
       {departmentData?.sections?.happenings && (
-        <PlacementDepartment data={departmentData.sections.happenings} />
+        <PlacementDepartment data={departmentData.sections.placements} />
       )}
 
       {departmentData?.sections?.happenings && (
