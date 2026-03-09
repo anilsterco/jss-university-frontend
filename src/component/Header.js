@@ -896,7 +896,7 @@ export default function Header() {
                             closeMenu();
                           }}
                         >
-                          <img src="images/header/banner-arrow.svg" />
+                          <img src="/images/header/banner-arrow.svg" />
                         </Link>
                       )}
 
@@ -1754,7 +1754,7 @@ export default function Header() {
             width: 23%;
             background: var(--color-e8);
             color: #fff;
-            padding-top: 9rem;
+            padding-top: 10rem;
           }
           .menu-left-item {
             padding: 1rem 7rem 1rem 14rem;
@@ -1779,22 +1779,23 @@ export default function Header() {
           }
 
           .menu-middle {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.90);
             width: 20%;
-            padding: 9rem 5rem 9rem;
+            padding: 10rem 9rem;
           }
           .menu-right {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.90);
           }
           .menu-middle::before {
-            content: "";
-            background-color: #e3e3e3;
-            width: 0.2rem;
-            position: absolute;
-            top: 11%;
-            bottom: 10%;
-            right: 58%;
-            transform: translateY(0);
+                content: "";
+                background-color: #707070;
+                width: 1px;
+                position: absolute;
+                top: 10rem;
+                height:calc(100% - 20rem);
+                right: 58%;
+                transform: translateY(0);
+                opacity:0.2;
           }
           .hamburger-layout:before {
             content: "";
@@ -2062,10 +2063,6 @@ export default function Header() {
             .mega-left {
               width: 85rem;
             }
-            .nav-list {
-            gap: 3.9rem;
-          
-          }
           }
 
           @media (max-width: 1649px) {

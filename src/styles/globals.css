@@ -681,6 +681,11 @@ a:active {
   transition: all 0.3s ease;
 }
 
+.menu-left-item:hover .hambur_links{
+  color:#16344E;
+  font-weight: bold;
+}
+
 .vid-thumb-grp {
   position: absolute;
   left: 0;
@@ -1026,9 +1031,9 @@ a:active {
 }
 
 .middle-title .hambur_link {
-  font: var(--font-16);
+  font: var(--font-21);
   font-family: var(--font-Condensed);
-  font-weight: normal;
+  font-weight: bold;
   display: block;
   padding-bottom: 1.6rem;
   color: var(--color-black);
@@ -1046,6 +1051,10 @@ a:active {
   padding-bottom: 0.6rem;
   color: var(--color-black);
 
+}
+
+.middle-submenu li::marker{
+  color:#018CE8;
 }
 
 .nav-item:hover {

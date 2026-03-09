@@ -64,12 +64,16 @@ export default function ImageContent({ data, id, type, extraClass }) {
             )}
             {data?.listing && (
               <ul className={styles.ul}>
-                {data.listing.map((singleList, listIdx) => (
-                  <li key={listIdx}>
-                    {singleList?.bold && <strong>{singleList.bold}: </strong>}
-                    {singleList.list}
-                  </li>
-                ))}
+                {data.listing.map((singleList, listIdx) =>
+                  singleList.bold || singleList.list ? (
+                    <li key={listIdx}>
+                      {singleList?.bold && <strong>{singleList.bold}: </strong>}
+                      {singleList.list}
+                    </li>
+                  ) : (
+                    <li key={listIdx}>{singleList.listing}</li>
+                  ),
+                )}
               </ul>
             )}
             {data?.bottomDesc && (

@@ -148,7 +148,7 @@ export default function CoursesOffered({ data }) {
                   placeholder="Search Course"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  style={{ padding: "10px 20px" }}
+                  style={{ padding: "10px 16px" }}
                 />
                 <span className="input-group-text bg-white border-0">
                   <img src="images/home-page/icon-search.svg" alt="search" />

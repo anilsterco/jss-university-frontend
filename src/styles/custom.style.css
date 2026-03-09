@@ -998,6 +998,14 @@
   background: #fff;
 }
 
+.image_content_repeat_section.library {
+  background: #00489A;
+}
+
+.image_content_repeat_section.library:before{
+  display:none;
+}
+
 /* .image_content_repeat_section.no-padding.single .imageContent{
 
 } */
