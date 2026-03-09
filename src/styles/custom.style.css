@@ -2636,10 +2636,28 @@ hr {
 
 /* placement_page */
 
+.placement_page.area-of-research{
+  background:#00489A;
+  padding:11rem 0;
+}
+
 .placement_page .section_title {
   font: var(--font-26);
   color: #16344E;
   margin-bottom: 4rem;
+}
+
+.placement_page.area-of-research .section_title{
+  color:#fff;
+}
+
+.placement_page .section_subDescription{
+  margin-bottom:3rem;
+  font:var(--font-16);
+}
+
+.placement_page.area-of-research .section_subDescription{
+  color:#fff;
 }
 
 .placement_page .placement_stats .icon {
@@ -2652,12 +2670,21 @@ hr {
   margin-right: 3rem;
 }
 
+.placement_page.area-of-research .section_subTitle{
+  color:#fff;
+}
+
 .placement_page .curriculum_box {
   display: flex;
 }
 
 .placement_page .curriculum_box .content {
   flex: 1;
+}
+
+
+.placement_page.area-of-research .placement_stats{
+  padding-bottom:0;
 }
 
 /* pdf_list_section */

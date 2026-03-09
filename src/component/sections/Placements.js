@@ -30,6 +30,9 @@ export default function Placements({ data }) {
         className={`${item?.category == "research" ? "mt_3xl_10" : item?.category == "placement" && "mt_3xl_7"}`}
       >
         {item?.heading && <h5 className="section_title">{item.heading}</h5>}
+        {item?.subDescription && (
+          <h6 className="section_subDescription">{item.subDescription}</h6>
+        )}
         {item?.subTitle && (
           <h6 className="section_subTitle">{item.subTitle}</h6>
         )}
@@ -68,7 +71,7 @@ export default function Placements({ data }) {
   };
 
   return (
-    <section className="placement_page">
+    <section className={`placement_page ${data?.[0]?.items?.[0]?.category}`}>
       <div className="container">
         {data?.map((section, index) => renderSection(section, index))}
       </div>

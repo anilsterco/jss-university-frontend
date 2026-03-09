@@ -11,6 +11,7 @@ import PlacementDepartment from "@/component/department-components/Placement-dep
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { BASE_URL } from "@/config/config";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const { department } = await params;
@@ -23,18 +24,22 @@ async function getDepartmentData(slug) {
   });
 
   if (!res.ok) {
-    throw new Error(
-      `Failed to fetch department data for department (status ${res.status})`,
-    );
+    return null;
   }
 
-  return res.json();
+  const data = await res.json();
+  if (!data) {
+    return null;
+  }
+
+  return data;
 }
 
 export default async function DepartmentPage({ params }) {
   const { department } = await params;
 
   const departmentData = await getDepartmentData(department);
+  if (!departmentData) notFound();
   const seoData = await getPageSEO(department);
 
   return (

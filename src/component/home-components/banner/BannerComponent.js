@@ -79,7 +79,7 @@ export default function HeroSlider({ data, slug }) {
                   </p>
                   {slide.url && (
                     <Link
-                      href={`${WEB_URL + "department/" + slug + slide.url}`}
+                      href={`${slug ? WEB_URL + "department/" + slug + slide.url : WEB_URL + slide.url}`}
                       className={styles.bannerContentA}
                       data-aos="fade-right"
                       data-aos-delay="300"

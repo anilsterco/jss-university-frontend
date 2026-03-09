@@ -15,6 +15,7 @@ import CommonPage from "@/pages/commonPage/CommonPage";
 import HappeningsClient from "@/app/happenings/HappeningsClient";
 import FaqPage from "@/pages/faq/Faq";
 import Labspage from "@/pages/labs/Labs";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const { department } = await params;
@@ -22,23 +23,28 @@ export async function generateMetadata({ params }) {
 }
 
 async function getDepartmentData(slug, section) {
-  const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, {
-    next: { revalidate: 120 },
-  });
+  try {
+    const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, {
+      next: { revalidate: 120 },
+    });
 
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch department data for ${section} (status ${res.status})`,
-    );
+    if (!res.ok) {
+      return null;
+    }
+
+    const data = await res.json();
+    if (!data) return null;
+    return data;
+  } catch (err) {
+    return null;
   }
-
-  return res.json();
 }
 
 export default async function DepartmentPage({ params }) {
   const { department, section } = await params;
 
   const departmentData = await getDepartmentData(department, section);
+  if (!departmentData) notFound();
   const seoData = await getPageSEO(department);
 
   return (
