@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "@fontsource/roboto-condensed";
+import { FaChevronDown } from "react-icons/fa6";
 
 import { BASE_URL, WEB_URL } from "@/config/config";
 const NAV_BASE_URL = `${BASE_URL}header`;
@@ -124,6 +125,7 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [megaMenuData, setMegaMenuData] = useState([]);
   const [isAcademic, setIsAcademic] = useState(false);
+  const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
 
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
@@ -451,30 +453,29 @@ export default function Header() {
   };
 
   const loadMenu = async () => {
-    const contactPanel = mobilePanels.find((x) => x.name === "Menu");
-    if (contactPanel?.Menu?.length > 0) return;
-    const res = await fetch(MOBILE_HEADER_URL);
-    const json = await res.json();
-
-    if (json.success && json.data.length > 0) {
-      const data = json.data[0];
-
-      setMobilePanels((prev) =>
-        prev.map((item) =>
-          item.name === "Menu"
-            ? {
-                ...item,
-                heading: data.title,
-                Menu: [
-                  {
-                    name: data.title,
-                    url: data.url,
-                  },
-                ],
-              }
-            : item,
-        ),
-      );
+    const menuPanel = mobilePanels.find((x) => x.name === "Menu");
+    if (menuPanel?.Menu?.length > 0) return;
+    try {
+      const res = await fetch(MOBILE_HEADER_URL);
+      const json = await res.json();
+      if (json.success && json.data.length > 0) {
+        setMobilePanels((prev) =>
+          prev.map((item) =>
+            item.name === "Menu"
+              ? {
+                  ...item,
+                  Menu: json.data.map((d) => ({
+                    name: d.title,
+                    url: d.url,
+                    children: d.children || [], // ← store children
+                  })),
+                }
+              : item,
+          ),
+        );
+      }
+    } catch (err) {
+      console.error("Mobile header API error:", err);
     }
   };
 
@@ -1113,30 +1114,113 @@ export default function Header() {
                         </ul>
                       </div>
                     )}
-                  {item.name === "Menu" && activePanel === "Menu" && (
-                    <>
-                      {item.Menu && (
-                        <>
-                          <ul className="menu-top">
-                            {item.Menu.slice(0, 6).map((sub, idx) => (
+
+                  {item.name === "Menu" &&
+                    activePanel === "Menu" &&
+                    item.Menu?.length > 0 && (
+                      <div className="mobile_menus">
+                        <ul className="menu-top">
+                          {item.Menu.slice(0, 6).map((sub, idx) => (
+                            <li key={idx} className="">
+                              <Link
+                                href={sub.children?.length > 0 ? "" : sub.url}
+                                className="menu-link"
+                                onClick={
+                                  sub.children?.length > 0
+                                    ? () =>
+                                        setOpenMenuAccordion(
+                                          openMenuAccordion === idx
+                                            ? null
+                                            : idx,
+                                        )
+                                    : () => setActivePanel(null) // ← add this
+                                }
+                                style={
+                                  sub.children?.length > 0
+                                    ? { cursor: "pointer" }
+                                    : {}
+                                }
+                              >
+                                <span className="menu_title">{sub.name}</span>
+                                {sub.children?.length > 0 && (
+                                  <span
+                                    className={`menu-arrow ${openMenuAccordion === idx ? "open" : ""}`}
+                                  >
+                                    <FaChevronDown size={12} />
+                                  </span>
+                                )}
+                              </Link>
+                              {sub.children?.length > 0 &&
+                                openMenuAccordion === idx && (
+                                  <ul className="menu-children">
+                                    {sub.children.map((child, cidx) => (
+                                      <li key={cidx}>
+                                        <a
+                                          href={child.url}
+                                          onClick={() => setActivePanel(null)}
+                                        >
+                                          {child.title}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                            </li>
+                          ))}
+                        </ul>
+                        {item.Menu.length > 6 && (
+                          <ul className="menu-bottom">
+                            {item.Menu.slice(6).map((sub, idx) => (
                               <li key={idx}>
-                                <a href={sub.url}>{sub.name}</a>
+                                <Link
+                                  href={sub.children?.length > 0 ? "" : sub.url}
+                                  className="menu-link"
+                                  onClick={
+                                    sub.children?.length > 0
+                                      ? () =>
+                                          setOpenMenuAccordion(
+                                            openMenuAccordion === `b${idx}`
+                                              ? null
+                                              : `b${idx}`,
+                                          )
+                                      : () => setActivePanel(null) // ← add this
+                                  }
+                                  style={
+                                    sub.children?.length > 0
+                                      ? { cursor: "pointer" }
+                                      : {}
+                                  }
+                                >
+                                  <span className="menu_title">{sub.name}</span>
+                                  {sub.children?.length > 0 && (
+                                    <span
+                                      className={`menu-arrow ${openMenuAccordion === `b${idx}` ? "open" : ""}`}
+                                    >
+                                      <FaChevronDown size={12} />
+                                    </span>
+                                  )}
+                                </Link>
+                                {sub.children?.length > 0 &&
+                                  openMenuAccordion === `b${idx}` && (
+                                    <ul className="menu-children">
+                                      {sub.children.map((child, cidx) => (
+                                        <li key={cidx}>
+                                          <a
+                                            href={child.url}
+                                            onClick={() => setActivePanel(null)}
+                                          >
+                                            {child.title}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
                               </li>
                             ))}
                           </ul>
-                          {item.Menu.length > 6 && (
-                            <ul className="menu-bottom">
-                              {item.Menu.slice(1).map((sub, idx) => (
-                                <li key={idx}>
-                                  <a href={sub.url}>{sub.name}</a>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
+                        )}
+                      </div>
+                    )}
                 </div>
               ))}
             </div>
@@ -1179,6 +1263,15 @@ export default function Header() {
           .programs-nav .nav-list {
             background: transparent;
           }
+
+          .mobile_menus{
+          width:100%;
+          }
+
+          .menu-top .menu-link{
+            color:#fff!important;
+          }
+
 
           .engineering-dropdown-container {
             z-index: 1000;
@@ -2393,8 +2486,15 @@ export default function Header() {
           .menu-top {
             background: var(--color-e8);
           }
+          .menu-top li a{
+            display:block;
+            display:flex;
+          }
           .menu-panel .menu-top {
             padding-bottom: 0;
+          }
+          .menu-panel .menu-link .menu_title{
+            flex:1;
           }
           .contactBtn {
             margin-top: 2rem;
