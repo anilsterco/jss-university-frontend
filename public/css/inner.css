@@ -2130,6 +2130,7 @@ margin-bottom: 1rem;
   border-radius: 5rem;
   font: var(--font-16);
   padding: 0.8rem 1.2rem;
+  font-weight: 500;
 }
 
 .hostal_d_btns a:hover {
