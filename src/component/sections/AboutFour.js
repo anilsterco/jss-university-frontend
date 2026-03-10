@@ -30,7 +30,7 @@ export default function AboutFour({ data }) {
         return (
           <section
             key={`left-section-${sectionIndex}`}
-            className="about_four"
+            className={`about_four ${section?.items[0]?.pageType}`}
             data-aos="fade-up"
           >
             <div className="container">
@@ -65,10 +65,16 @@ export default function AboutFour({ data }) {
                     <div
                       className="ab_f_content"
                       data-aos="fade-right"
-                      data-aos-delay="200">
+                      data-aos-delay="200"
+                    >
                       {item.title && <h3>{item.title}</h3>}
-                      {item.paragraph?.length > 0 &&
-                        item.paragraph.map((p, i) => <p key={i}>{p.text}</p>)}
+                      {item.paragraph?.length > 0 && (
+                        <div className="des_group">
+                          {item.paragraph.map((p, i) => (
+                            <p key={i}>{p.text}</p>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

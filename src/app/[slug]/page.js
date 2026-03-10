@@ -163,8 +163,6 @@ export default async function DynamicPage({ params }) {
 
   return (
     <>
-      {console.log(data)
-      }
       {hasTabs && (
         <TabSection
           title={data.tabs.title}

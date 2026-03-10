@@ -223,7 +223,8 @@
   color: var(--color-black);
   font-family: var(--font-Condensed);
   font-weight: 600;
-  line-height: 1.7;
+  line-height: initial;
+  margin-bottom:0.5rem;
 }
 
 .personRole {
@@ -231,7 +232,7 @@
   color: var(--color-black);
   font-family: var(--font-Condensed);
   font-weight: 300;
-
+  margin-bottom:0;
 }
 
 /* Video Modal */

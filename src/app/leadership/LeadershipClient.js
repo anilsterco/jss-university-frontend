@@ -6,31 +6,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { BASE_URL } from "@/config/config";
 
 export default function LeadershipClient() {
   const [managementLeaders, setManagementLeaders] = useState([]);
   const [otherLeaders, setOtherLeaders] = useState({});
   const [featuredLeader, setFeaturedLeader] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [aboutPage, setAboutPage] = useState(null);
 
   const pathname = usePathname();
 
-  const aboutPage = {
-    title: "SRI SUTTUR MATH THE <span>1000-YEAR LEGACY</span>",
-    subTitle: "ABOUT",
-    tabs: [
-      { text: "About JSSMVP", url: "/about-jssmvp" },
-      { text: "Heritage", url: "/heritage" },
-      { text: "About JSS", url: "/about-jss" },
-      { text: "Leadership", url: "/leadership" },
-    ],
-  };
-
-  // ================= API CALL =================
   useEffect(() => {
     setLoading(true);
 
-    fetch("https://project-demo.in/jss/api/leadership")
+    const fetchPageData = fetch(`${BASE_URL}pages/leadership`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        if (resJson.tabs) {
+          setAboutPage(resJson.tabs);
+        }
+      })
+      .catch((err) => console.error("Page API fetch error:", err));
+
+    const fetchLeadershipData = fetch(`${BASE_URL}leadership`)
       .then((res) => res.json())
       .then((resJson) => {
         if (resJson.success && resJson.data) {
@@ -40,33 +39,37 @@ export default function LeadershipClient() {
           setOtherLeaders(data.others || {});
         }
       })
-      .catch((err) => console.error("API fetch error:", err))
-      .finally(() => setLoading(false));
+      .catch((err) => console.error("Leadership API fetch error:", err));
+
+    Promise.all([fetchPageData, fetchLeadershipData]).finally(() =>
+      setLoading(false),
+    );
   }, []);
 
   return (
     <>
       {/* Inner Title & Tabs */}
-      <section className="inner-title">
-        <div className="container">
-          <div className="innnr_head text-center">
-            <h2>{aboutPage.subTitle}</h2>
-            <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }}></h3>
-            <ul>
-              {aboutPage.tabs.map((tab, i) => (
-                <li
-                  key={i}
-                  className={pathname === tab.url ? "active" : ""}
-                  style={{ cursor: "pointer" }}
-                >
-                  <Link href={tab.url}>{tab.text}</Link>
-                </li>
-              ))}
-            </ul>
+      {aboutPage && (
+        <section className="inner-title">
+          <div className="container">
+            <div className="innnr_head text-center">
+              <h2>{aboutPage.subTitle}</h2>
+              <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }}></h3>
+              <ul>
+                {aboutPage.tabs.map((tab, i) => (
+                  <li
+                    key={i}
+                    className={pathname === tab.url ? "active" : ""}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <Link href={tab.url}>{tab.text}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
-   {   console.log(aboutPage)}
+        </section>
+      )}
 
       {loading && (
         <div className="text-center p-10">
@@ -124,17 +127,11 @@ export default function LeadershipClient() {
                 <div className="leader-category-block">
                   <div className="leadership_grid">
                     {managementLeaders.map((leader) => {
-                      if (
-                        featuredLeader &&
-                        leader.id === featuredLeader.id
-                      )
+                      if (featuredLeader && leader.id === featuredLeader.id)
                         return null;
 
                       return (
-                        <div
-                          key={leader.id}
-                          className="leadership_grid_Bx"
-                        >
+                        <div key={leader.id} className="leadership_grid_Bx">
                           <figure>
                             <span>
                               <Image
@@ -171,12 +168,9 @@ export default function LeadershipClient() {
 
           {Object.entries(otherLeaders).map(
             ([categoryName, categoryLeaders]) => {
-              if (!categoryLeaders || categoryLeaders.length === 0)
-                return null;
+              if (!categoryLeaders || categoryLeaders.length === 0) return null;
               return (
-                <section
-                  key={categoryName}
-                  className="leadership_two pt-0">
+                <section key={categoryName} className="leadership_two pt-0">
                   <div className="container">
                     <div className="leader-category-block">
                       <h2 className="leader-category-title">
@@ -218,7 +212,7 @@ export default function LeadershipClient() {
                   </div>
                 </section>
               );
-            }
+            },
           )}
         </>
       )}

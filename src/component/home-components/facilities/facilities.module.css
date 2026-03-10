@@ -209,7 +209,8 @@
   }
 
   .bannerLinks {
-    left: 23.5%
+    left: 23.5%;
+    gap: 4.5rem;
   }
 }
 

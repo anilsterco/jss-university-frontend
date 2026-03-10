@@ -30,32 +30,25 @@ export default function EmpowringPeople({ data }) {
         return section.items
           ?.sort((a, b) => a.position - b.position)
           .map((item, index) => (
-            <section
-              className="about_jsstwo"
-              key={`${sectionIndex}-${index}`}
-            >
+            <section className="about_jsstwo" key={`${sectionIndex}-${index}`}>
               <div className="container">
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="grid_emaboutjss">
-                      <div
-                        className="grid_em_leftsec"
-                        data-aos="fade-right"
-                      >
+                      <div className="grid_em_leftsec" data-aos="fade-right">
                         <div className="about_subtitle">
                           <h5>{item.title}</h5>
                           {item.subtitle && <p>{item.subtitle}</p>}
                         </div>
 
-                        {item.paragraph?.map((para, i) => (
-                          <p key={i}>{para.paragraph}</p>
-                        ))}
+                        <div className="para">
+                          {item.paragraph?.map((para, i) => (
+                            <p key={i}>{para.paragraph}</p>
+                          ))}
+                        </div>
                       </div>
 
-                      <div
-                        className="grid_em_rigt"
-                        data-aos="fade-left"
-                      >
+                      <div className="grid_em_rigt" data-aos="fade-left">
                         {item.image && (
                           <div className="empo_rgt_imgsec">
                             <figure className="shine-effect">
@@ -73,10 +66,7 @@ export default function EmpowringPeople({ data }) {
                         {item.boxes?.length > 0 && (
                           <div className="ab_jss_coutsec">
                             {item.boxes.map((box, i) => (
-                              <div
-                                className="ab_jss_c_col"
-                                key={i}
-                              >
+                              <div className="ab_jss_c_col" key={i}>
                                 <h4>{box.number}</h4>
                                 <p>{box.description}</p>
                               </div>

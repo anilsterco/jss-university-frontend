@@ -958,6 +958,7 @@ a:active {
   color: #15354E;
   line-height: 1.7rem;
   margin-bottom: 1.3rem;
+  text-transform: uppercase;
 }
 
 .chance-msg {

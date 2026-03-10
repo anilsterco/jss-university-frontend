@@ -49,31 +49,36 @@ export default function AboutOne({ data }) {
                         data-aos="fade-up"
                         data-aos-delay="200"
                       >
-                        {item.titleOne && <h5>{item.titleOne}</h5>}
+                        {item.titleOne && (
+                          <h5 className="titleOne">{item.titleOne}</h5>
+                        )}
                         {(item.titleTwo || item["Title Two"]) && (
-                          <h5>{item.titleTwo || item["Title Two"]}</h5>
+                          <h5 className="titleTwo">
+                            {item.titleTwo || item["Title Two"]}
+                          </h5>
                         )}
                       </div>
                       {item.image && (
                         <figure
                           className="shine-effect"
                           data-aos="zoom-in"
-                          data-aos-delay="300">
+                          data-aos-delay="300"
+                        >
                           <Image
                             src={item.image}
                             alt={item.titleOne || "Heritage Section"}
                             width={800}
                             height={520}
-                            className="img-fluid w-100"/>
+                            className="img-fluid w-100"
+                          />
                         </figure>
                       )}
                       <div
                         className="heri_pri_btm_text"
                         data-aos="fade-up"
-                        data-aos-delay="400">
-                        {item.subtitleBelow && (
-                          <h3>{item.subtitleBelow}</h3>
-                        )}
+                        data-aos-delay="400"
+                      >
+                        {item.subtitleBelow && <h3>{item.subtitleBelow}</h3>}
                         {item.descBelow && <p>{item.descBelow}</p>}
                       </div>
                     </div>

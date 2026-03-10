@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-
-const BASE_URL = "https://project-demo.in/jss/api";
+import { BASE_URL } from "@/config/config";
 
 export default function LeadershipDetailsPage({ params }) {
   const unwrappedParams = React.use(params);
@@ -16,7 +15,7 @@ export default function LeadershipDetailsPage({ params }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${BASE_URL}/leadership/${slug}`)
+    fetch(`${BASE_URL}leadership/${slug}`)
       .then((res) => res.json())
       .then((resJson) => {
         if (resJson.status) {
@@ -65,10 +64,10 @@ export default function LeadershipDetailsPage({ params }) {
                   }}
                 /> */}
                 <ul>
-                   <li>
+                  <li>
                     <Link href="/about-jssmvp">About JSSMVP</Link>
                   </li>
-                   <li>
+                  <li>
                     <Link href="/heritage">Heritage</Link>
                   </li>
                   <li>
