@@ -1,13 +1,13 @@
 import { getPageSEO } from "@/lib/seo";
-import HappeningsClient from "./HappeningsClient";
+import LeadershipClient from "./LeadershipClient";
 import Script from "next/script";
 
 export async function generateMetadata() {
-  return await getPageSEO("happenings");
+  return await getPageSEO("leadership");
 }
 
-export default async function Happenings() {
-  const seoData = await getPageSEO("about");
+export default async function Leadership() {
+  const seoData = await getPageSEO("leadership");
   return (
     <>
       <Script
@@ -17,6 +17,7 @@ export default async function Happenings() {
         }}
         strategy="beforeInteractive"
       />
+      <LeadershipClient />
     </>
   );
 }
