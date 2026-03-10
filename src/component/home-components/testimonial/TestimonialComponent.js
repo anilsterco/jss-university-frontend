@@ -152,7 +152,7 @@ export default function TestimonialsSection({ data }) {
           <Swiper
             spaceBetween={100}
             slidesPerView={1}
-            style={{ paddingBottom: "1.1rem" }}
+            style={{ paddingBottom: "1.8rem" }}
           >
             {columnForMobile.map((item, i) => (
               <SwiperSlide key={i}>
@@ -162,6 +162,7 @@ export default function TestimonialsSection({ data }) {
                   onPlay={() => setSelectedVideo(item.video_url)}
                 />
               </SwiperSlide>
+              
             ))}
           </Swiper>
           <Swiper spaceBetween={100} slidesPerView={1}>

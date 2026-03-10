@@ -76,6 +76,12 @@ export default function LeadershipDetailsPage({ params }) {
                   <li className="active">
                     <Link href="/leadership">Leadership</Link>
                   </li>
+                   <li>
+                    <Link href="/organogram">Organogram</Link>
+                  </li>
+                   <li>
+                    <Link href="/academic-council">Academic Council</Link>
+                  </li>
                 </ul>
               </div>
             </div>

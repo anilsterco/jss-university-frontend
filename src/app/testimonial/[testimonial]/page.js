@@ -1,13 +1,14 @@
+import TabSection from "@/component/sections/TabSection";
 import { getPageSEO } from "@/lib/seo";
-import HappeningsClient from "./HappeningsClient";
 import Script from "next/script";
+import TestimonialDetail from "../TestimonialDetail";
 
 export async function generateMetadata() {
   return await getPageSEO("happenings");
 }
 
-export default async function Happenings() {
-  const seoData = await getPageSEO("about");
+export default async function TestimonialDe() {
+  const seoData = await getPageSEO("testimonial");
   return (
     <>
       <Script
@@ -17,6 +18,7 @@ export default async function Happenings() {
         }}
         strategy="beforeInteractive"
       />
+      <TestimonialDetail />
     </>
   );
 }

@@ -23,7 +23,7 @@
 }
 
 .early-slide .early_rgt {
-  padding-top: 3.2rem;
+  /* padding-top: 3.2rem; */
   /* max-width: 33%; */
 }
 
@@ -1133,6 +1133,18 @@
   margin-top: 2rem;
 }
 
+
+/* testimonial_detail_section */
+
+.testimonial_detail_section .right_col .name{
+  margin-top:3rem;
+  font:var(--font-22);
+}
+
+.testimonial_detail_section .right_col .designation{
+  font:var(--font-14);
+  margin-top:1rem;
+}
 
 
 @media all and (min-width: 800px) {

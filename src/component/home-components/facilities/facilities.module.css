@@ -371,7 +371,7 @@
     color: #16344e;
     font: var(--font-14);
     font-family: var(--font-Condensed);
-    margin-bottom: 5px;
+    margin-bottom: 0rem!important;
     font-weight: 400;
     letter-spacing: -0.21px;
   }
@@ -389,6 +389,7 @@
   .showOnlyMobileCard h5 {
     color: #16344e;
     font-weight: 400;
+    font: var(--font-14);
   }
 
   .mobileCardsContainer {
@@ -401,13 +402,35 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
+  .mobileContainer p {
+    color: #16344e;
+    font: var(--font-14);
+    font-family: var(--font-Condensed);
+    font-weight: 600;
+    margin-bottom: 3rem;
+    letter-spacing: 0px;
+  }
+  .sectionHeader {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 420px) {
+  .sectionHeader {
+    margin-top: 1.2rem;
+  }
+}
+@media (max-width: 380px) {
   .sectionHeader {
     margin-top: 1rem;
   }
 
   .showOnlyMobileCard div {
     padding: 1.5rem 1rem 0;
+  }
+  .mobileCardsContainer {
+    background: #f6f6f6;
+    padding-top: 2.5rem;
   }
 }
 

@@ -242,7 +242,7 @@ export default function LegacySection({ data }) {
             >
               {legacyData.logo_content.map((acc, i) => (
                 <SwiperSlide key={i} className={styles.accreditationSlide}>
-                  <div className="gap-5 d-flex align-items-center content">
+                  <div className="gap-2 gap-lg-5 d-flex align-items-center content custom-gap">
                     <Image
                       src={acc.image}
                       alt="Accreditation Logo"

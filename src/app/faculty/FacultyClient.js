@@ -55,7 +55,7 @@ export default function FacultyClient() {
     page = 1,
     search = "",
     schoolId = "",
-    type = ""
+    type = "",
   ) => {
     try {
       setApiLoading(true);
@@ -97,7 +97,7 @@ export default function FacultyClient() {
     try {
       setIsLoadingMore(true);
       const res = await fetch(
-        nextPageUrl.replace("https://project-demo.in/jss/api", "/api")
+        nextPageUrl.replace("https://project-demo.in/jss/api", "/api"),
       );
       if (!res.ok) throw new Error(`Load More API error: ${res.status}`);
       const data = await res.json();
@@ -170,7 +170,7 @@ export default function FacultyClient() {
                   <input
                     type="text"
                     className="input-fild"
-                    placeholder="Search by keywords"
+                    placeholder="Search by Name"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
