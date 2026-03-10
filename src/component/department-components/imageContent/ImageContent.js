@@ -26,7 +26,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
 
         <div className={`col-lg-6 col-md-12 px_3xl_1_2 `}>
           <div
-            className={`${styles.content_col} ${type
+            className={`content_col ${styles.content_col} ${type
               ?.split(" ")
               ?.map((cls) => styles[cls] || "")
               .join(
@@ -34,9 +34,9 @@ export default function ImageContent({ data, id, type, extraClass }) {
               )} ${data?.type && styles[data.type]} ${data?.type !== "facilities" && id % 2 !== 0 && styles.odd}`}
           >
             {data?.heading && (
-              <h4 className={styles.heading}>{data.heading}</h4>
+              <h4 className={`${styles.heading} head`}>{data.heading}</h4>
             )}
-            <div className={styles.descGroup}>
+            <div className={`${styles.descGroup} desc_group`}>
               {data?.desc &&
                 data.desc.map((singleDesc, descIdx) => (
                   <p key={descIdx} className={styles.desc}>

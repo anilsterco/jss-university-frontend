@@ -998,17 +998,29 @@
   background: #fff;
 }
 
-.image_content_repeat_section.library {
+.image_content_repeat_section.library-section {
   background: #00489A;
+  padding:12rem 0;
 }
 
-.image_content_repeat_section.library:before{
-  display:none;
+.single_image_content.reverse .row{
+  flex-direction: row-reverse;
 }
 
-/* .image_content_repeat_section.no-padding.single .imageContent{
+.single_image_content.reverse .content_col{
+  padding-top:0;
+  padding-left: 0;
+  padding-right:12.5rem;
+}
 
-} */
+.single_image_content.reverse .head{
+  color:#fff;
+  margin-bottom: 3rem;
+}
+
+.single_image_content.reverse .desc_group p{
+  color:#fff;
+}
 
 
 /* vision_mission_section */
