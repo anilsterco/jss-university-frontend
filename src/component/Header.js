@@ -2292,7 +2292,10 @@ export default function Header() {
           .site-header .header-inner.header-scrolled{
             position:fixed
           }
-          }
+           .site-header::before {
+           display:none}
+           }
+          
 
           .panel-wrapper {
             position: fixed;
