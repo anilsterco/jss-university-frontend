@@ -58,8 +58,8 @@ export default function AboutOne({ data }) {
                         <Image
                           src={item.file}
                           alt={item.title || "About JSS Academy"}
-                          width={800}
-                          height={500}
+                          width={2000}
+                          height={791}
                           className="img-fluid w-100"
                         />
                         <div className="overlap_contents">

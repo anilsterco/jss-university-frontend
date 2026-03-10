@@ -16,26 +16,37 @@ export default function FacultyClient() {
   const [selectedType, setSelectedType] = useState("");
 
   const [facultyListData, setFacultyListData] = useState([]);
+  const [typesList, setTypesList] = useState([]);
 
   // Pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [lastPage, setLastPage] = useState(1);
   const [nextPageUrl, setNextPageUrl] = useState(null);
 
   const [schoolsList, setSchoolsList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [apiLoading, setApiLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
-  const [schoolsLoading, setSchoolsLoading] = useState(true);
 
   const firstLoad = useRef(true);
+
+  // --------------------------
+  // Accumulate unique types
+  // --------------------------
+  const accumulateTypes = (newFaculty) => {
+    setTypesList((prev) => {
+      const existingIds = new Map(prev.map((t) => [t.type_id, t]));
+      newFaculty.forEach((f) => {
+        if (f.type_id && !existingIds.has(f.type_id)) {
+          existingIds.set(f.type_id, { type_id: f.type_id, type: f.type });
+        }
+      });
+      return Array.from(existingIds.values());
+    });
+  };
 
   // --------------------------
   // Fetch Schools
   // --------------------------
   const fetchSchoolsData = async () => {
     try {
-      setSchoolsLoading(true);
       const res = await fetch(SCHOOLS_API_URL);
       if (!res.ok) throw new Error(`Schools API error: ${res.status}`);
       const data = await res.json();
@@ -43,8 +54,6 @@ export default function FacultyClient() {
     } catch (err) {
       console.error("Schools fetch error:", err);
       setSchoolsList([]);
-    } finally {
-      setSchoolsLoading(false);
     }
   };
 
@@ -58,7 +67,6 @@ export default function FacultyClient() {
     type = "",
   ) => {
     try {
-      setApiLoading(true);
       setLoading(true);
 
       const params = new URLSearchParams();
@@ -67,8 +75,7 @@ export default function FacultyClient() {
       if (type) params.append("type", type);
       params.append("page", page);
 
-      const url = `${BASE_URL}/faculties?${params.toString()}`;
-      const res = await fetch(url);
+      const res = await fetch(`${BASE_URL}/faculties?${params.toString()}`);
       if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
       const data = await res.json();
 
@@ -76,14 +83,12 @@ export default function FacultyClient() {
       const pagination = data.data?.pagination;
 
       setFacultyListData(faculty);
-      setCurrentPage(pagination?.current_page || 1);
-      setLastPage(pagination?.last_page || 1);
       setNextPageUrl(pagination?.next_page_url || null);
+      accumulateTypes(faculty);
     } catch (err) {
       console.error("Faculty fetch error:", err);
       setFacultyListData([]);
     } finally {
-      setApiLoading(false);
       setLoading(false);
     }
   };
@@ -106,8 +111,8 @@ export default function FacultyClient() {
       const pagination = data.data?.pagination;
 
       setFacultyListData((prev) => [...prev, ...newFaculty]);
-      setCurrentPage(pagination?.current_page || currentPage);
       setNextPageUrl(pagination?.next_page_url || null);
+      accumulateTypes(newFaculty);
     } catch (err) {
       console.error("Load More error:", err);
     } finally {
@@ -177,7 +182,7 @@ export default function FacultyClient() {
                   <img
                     src="/images/custom-page/facility/serch-icon.svg"
                     alt=""
-                    className="search-icon "
+                    className="search-icon"
                   />
                 </div>
 
@@ -205,8 +210,8 @@ export default function FacultyClient() {
                     onChange={(e) => setSelectedType(e.target.value)}
                   >
                     <option value="">Select Faculty Type</option>
-                    {facultyListData.map((f, i) => (
-                      <option key={i} value={f.type_id}>
+                    {typesList.map((f) => (
+                      <option key={f.type_id} value={f.type_id}>
                         {f.type}
                       </option>
                     ))}
@@ -229,47 +234,39 @@ export default function FacultyClient() {
                 </div>
               ) : (
                 <>
-                  {/* Faculty Cards */}
-                  <div className="program-list-boxs faulty-list">
-                    {facultyListData.map((faculty) => (
-                      <div className="faulty-list-box" key={faculty.id}>
-                        <div className="faulty-img">
-                          <figure>
-                            <Image
-                              src={faculty.image}
-                              alt={faculty.name}
-                              className="img-fluid w-100"
-                              style={{
-                                width: "300px",
-                                height: "300px",
-                                objectFit: "cover",
-                              }}
-                              width={300}
-                              height={300}
-                            />
-                          </figure>
-                        </div>
-
-                        <div className="faulty-text">
-                          <h4>{faculty.name}</h4>
-                          <p>{faculty.designation || faculty.type}</p>
-                          <span>
-                            <RxCaretRight className="right-arrow" />
-                          </span>
-                        </div>
-
-                        <Link
-                          href={`/faculty/${faculty.slug}`}
-                          className="streched_link"
-                        ></Link>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* No Results */}
-                  {facultyListData.length === 0 && (
+                  {facultyListData.length === 0 ? (
                     <div className="text-center py-5">
                       <p>No faculty found.</p>
+                    </div>
+                  ) : (
+                    <div className="program-list-boxs faulty-list">
+                      {facultyListData.map((faculty) => (
+                        <div className="faulty-list-box" key={faculty.id}>
+                          <div className="faulty-img">
+                            <figure>
+                              <Image
+                                src={faculty.image}
+                                alt={faculty.name}
+                                className="img-fluid w-100"
+                                width={300}
+                                height={300}
+                                style={{ objectFit: "cover" }}
+                              />
+                            </figure>
+                          </div>
+                          <div className="faulty-text">
+                            <h4>{faculty.name}</h4>
+                            <p>{faculty.designation || faculty.type}</p>
+                            <span>
+                              <RxCaretRight className="right-arrow" />
+                            </span>
+                          </div>
+                          <Link
+                            href={`/faculty/${faculty.slug}`}
+                            className="streched_link"
+                          />
+                        </div>
+                      ))}
                     </div>
                   )}
 
@@ -278,8 +275,8 @@ export default function FacultyClient() {
                     <div className="load-more-container text-center mt-4">
                       <button
                         onClick={loadMore}
-                        style={{ cursor: "pointer" }}
                         disabled={isLoadingMore}
+                        style={{ cursor: "pointer" }}
                       >
                         {isLoadingMore ? "Loading..." : "Load More"}{" "}
                         <i className="bi bi-arrow-down ps-2"></i>

@@ -1427,7 +1427,7 @@
 
 .cusProgramText {
     position: absolute;
-    bottom: -18rem;
+    bottom: 0;
     left: 0;
     z-index: 99;
     transition: all 0.4s;
@@ -1453,9 +1453,9 @@
 }
 
 .cusProgramText h6 {
-    font: var(--font-21);
+    font: var(--font-18);
     color: var(--color-white);
-    font-weight: 500;
+    /* font-weight: 500; */
     padding-block: 1rem;
     letter-spacing: -0.63px;
 }
@@ -1470,9 +1470,9 @@
     color: var(--color-white);
 }
 
-.cusProgramBox:hover .cusProgramText {
+/* .cusProgramBox:hover .cusProgramText {
     bottom: 0;
-}
+} */
 
 .loadMoreContainer {
     text-align: center;
