@@ -5349,12 +5349,13 @@ margin-bottom: 1rem;
 
 .about_two .early-slide .early_rgt {
   padding-left: 8.4rem;
+  padding-top: 4rem;
 }
 
 .about_two .early-slide .early_rgt h4 span {
   color: var(--color-ff);
 }
-
+ .early-slide .imgsli_left{border-radius: 6rem 0.8rem 0.8rem 0.8rem;}
 .about_two .early-slide {
   grid-template-columns: 43.5% 55%;
   display: grid !important;

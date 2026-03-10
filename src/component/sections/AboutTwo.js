@@ -61,6 +61,7 @@ export default function AboutTwo({ data }) {
                           ? item.title.replace(/<[^>]+>/g, "")
                           : "Early Growth"
                       }
+                      className="imgsli_left"
                       width={600}
                       height={400}
                       style={{
