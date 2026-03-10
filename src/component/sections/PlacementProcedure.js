@@ -24,7 +24,7 @@ export default function PlacementProcedure({ data }) {
     return (
       <div key={index}>
         {item.heading && (
-          <div className="procedure_heading text-center">
+          <div className="procedure_heading">
             <h2>{item.heading}</h2>
           </div>
         )}
@@ -41,7 +41,7 @@ export default function PlacementProcedure({ data }) {
   };
 
   return (
-    <section className="placement_proSec">
+    <section className={`placement_proSec ${data?.[0]?.items?.[0].sectionType}`}>
       <div className="container">
         {data?.map((section, index) => renderSection(section, index))}
       </div>

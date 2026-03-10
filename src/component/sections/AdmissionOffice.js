@@ -28,7 +28,9 @@ export default function AboutOne({ data }) {
         return (
           <section className="admins_of_con" key={sectionIndex}>
             <div className="container">
-              <div className="ad_offc_contact">
+              <div className="ad_offc_contact" 
+                        data-aos="fade-up"
+                        data-aos-delay="200">
                 {/* Image */}
                 {item.image && (
                   <div className="ad_of_conimg">
@@ -39,8 +41,6 @@ export default function AboutOne({ data }) {
                         width={693}
                         height={267}
                         className="img-fluid w-100"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
                       />
                     </figure>
                   </div>
