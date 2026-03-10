@@ -343,7 +343,12 @@
     padding-bottom: 0;
   }
 
+  .cardIcons {
+    display: none;
+  }
+
 }
+
 
 @media (max-width: 991px) {
   .showOnlyMobileSubHeading {
@@ -355,10 +360,12 @@
     font-weight: 300;
     line-height: 1.8rem;
   }
- .showOnlyMobileCard {
-  padding-block: 4rem 3rem;
-  padding-inline: 2.5rem 3.3rem;
- }
+
+  .showOnlyMobileCard {
+    padding-block: 4rem 3rem;
+    padding-inline: 2.5rem 3.3rem;
+  }
+
   .showOnlyMobileCard h1 {
     font: var(--font-60);
     letter-spacing: -2.4px;
@@ -402,7 +409,6 @@
   .topSectionH1 {
     width: 100%;
     text-align: center;
-    line-height: 30px;
   }
 
   .searchBox {
@@ -444,13 +450,13 @@
 
   .rightMobileArrow {
     display: block;
-   font-size: 30px;
+    font-size: 30px;
   }
 
   .showOnlyMobileCard {
     background: #fff;
     border-radius: 30px 4px 10px 10px;
-    width: 45%;
+    width: 47%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -463,11 +469,12 @@
     position: absolute;
     bottom: 0;
   }
- 
 
-  .lastCardArrow svg{
+
+  .lastCardArrow svg {
     font-size: 30px;
   }
+
   .cardImage {
     width: 100%;
     height: 100%;
@@ -517,5 +524,60 @@
     letter-spacing: -0.24px;
     color: #16344E;
     margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .topSectionH1 {
+    font: var(--font-34);
+    letter-spacing: -1.63px;
+    font-family: var(--font-Condensed);
+   max-width: 65%;
+   margin: 0 auto;
+   line-height: 3rem;
+  }
+  .topSectionH1 span:first-child {
+    font: var(--font-34);
+    letter-spacing: -1.63px;
+    font-family: var(--font-Condensed);
+   max-width: 65%;
+   margin: 0 auto;
+   line-height: 3rem;
+  }
+}
+
+@media (max-width: 420px) {
+.bannerLabel {
+    font: var(--font-20);
+    letter-spacing: -0.6px;
+  }
+ .rightMobileArrow {
+    display: block;
+    font-size: 20px;
+  }
+ .lastCardContentSection p {
+    font: var(--font-16);
+    font-family: var(--font-Roboto);
+    letter-spacing: -0.24px;
+    margin-bottom: 0rem;
+  }
+  .showOnlyMobileCard {
+    padding: 3rem 3.4rem 1.3rem 1.5rem;
+  }
+
+  .showOnlyMobileCard h1 {
+    font: var(--font-48);
+    letter-spacing: -2.4px;
+    margin-bottom: 0rem;
+    line-height: 5.8rem;
+  }
+  .lastCardArrow svg {
+    font-size: 20px;
+  }
+}
+@media (max-width: 380px){
+.topSectionH1 {
+   max-width: 100%;
+
   }
 }

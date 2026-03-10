@@ -96,18 +96,17 @@
 
 .circleArrowBtn {
   cursor: pointer;
-  /* color: #994073; */
   background: none;
   border: none;
-  /* border: 1px solid #994073; */
   border-radius: 50%;
-  /* width: 2.2rem;
-  height: 2.2rem; */
+  height: 2.2rem;
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+      color: #994073;
+    
 }
 
 .circleArrowBtn:hover {
@@ -364,6 +363,12 @@
  .headerContent {
   display: none;
  }
+ .circleArrowBtn {
+margin-bottom: 3rem;
+  transition: all 0.3s ease;
+      color: #994073;
+    border: solid 1px;
+}
   .testimonialsSection {
     margin-bottom: 0;
   }
@@ -433,3 +438,4 @@
   }
 
 }
+

@@ -23,6 +23,8 @@ export default function LeadershipClient() {
       { text: "Heritage", url: "/heritage" },
       { text: "About JSS", url: "/about-jss" },
       { text: "Leadership", url: "/leadership" },
+       { text: "Organogram", url: "/organogram" },
+        { text: "Academic Council", url: "/academic-council"},
     ],
   };
 
@@ -46,7 +48,7 @@ export default function LeadershipClient() {
 
   return (
     <>
-      {/* Inner Title & Tabs */}
+      {/* Inner Title & Tabs */}        
       <section className="inner-title">
         <div className="container">
           <div className="innnr_head text-center">
@@ -57,8 +59,7 @@ export default function LeadershipClient() {
                 <li
                   key={i}
                   className={pathname === tab.url ? "active" : ""}
-                  style={{ cursor: "pointer" }}
-                >
+                  style={{ cursor: "pointer" }}>
                   <Link href={tab.url}>{tab.text}</Link>
                 </li>
               ))}
@@ -66,8 +67,6 @@ export default function LeadershipClient() {
           </div>
         </div>
       </section>
-   {   console.log(aboutPage)}
-
       {loading && (
         <div className="text-center p-10">
           <p>Loading Leadership Data...</p>

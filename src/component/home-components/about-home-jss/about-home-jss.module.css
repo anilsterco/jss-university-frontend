@@ -323,9 +323,10 @@ margin-bottom: 2rem;
     text-align: center;
     color: rgb(0, 54, 161);
     font-family: var(--font-Condensed);
+    font: var(--font-14);
     font-weight: 600;
     margin-block: 2.1rem;
-    line-height: 17px;
+    line-height: 1.7rem;
   }
 
 
@@ -355,7 +356,7 @@ margin-bottom: 2rem;
     font-family: var(--font-Condensed);
     color: var(--color-black);
     letter-spacing: -1.63px;
-    line-height: 30px;
+    line-height: 3rem;
     font-weight: bold;
     margin: 0 auto;
   }
@@ -366,7 +367,7 @@ margin-bottom: 2rem;
     font-family: var(--font-Condensed);
     letter-spacing: -1.63px;
     font-weight: bold;
-    line-height: 30px;
+    line-height: 3rem;
   }
 
 
@@ -408,7 +409,7 @@ margin-bottom: 2rem;
   .rightArrowIconDiv {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .aboutBtnDiv {
@@ -420,11 +421,11 @@ margin-bottom: 2rem;
   }
 
   .navButtons {
-    padding: 1.1rem 2.3rem 1.1rem;
+    padding: 1.1rem 1.3rem 1.1rem;
   }
 
   .onlyMobile :global(.swiper-wrapper) {
-    height: 130px;
+    height: 13rem;
   }
 
 
@@ -475,7 +476,7 @@ margin-bottom: 2rem;
   }
 
   .accreditationSlide p {
-    font: var(--font-14);
+    font: var(--font-15);
     color: var(--color-black);
     line-height: 2.1rem;
     gap: 1rem !important;
@@ -498,12 +499,55 @@ margin-bottom: 2rem;
     max-width: 100%;
   }
 }
+@media (max-width: 575px) {
+  .topSectionHeading {
+    width: 65%;
+    font: var(--font-34);
+    font-family: var(--font-Condensed);
+    color: var(--color-black);
+    letter-spacing: -1.63px;
+    line-height: 3rem;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+   .accreditationHeading {
+    max-width: 62%;
+    margin: 0 auto;
+    padding-bottom: 2.1rem;
+  }
+  .accreditationSlide p {
+   max-width: 60%;
+  }
+}
 
 @media (max-width: 420px) {
   .highlightBox {
     padding: 2.4rem 2.9rem 1.9rem;
     width: 100% !important;
   }
+ .accreditationHeading {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2.1rem;
+  }
+ .topSectionHeading {
+    width: 90%;
+  }
+  .accreditationSlide p {
+   max-width: 100%;
+  }
 
+}
+@media (max-width: 380px) {
+ 
+ .accreditationHeading {
+    max-width: 100%;
+  }
+ .topSectionHeading {
+    width: 100%;
+  }
+  .accreditationSlide p {
+   max-width: 100%;
+  }
 
 }

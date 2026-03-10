@@ -98,7 +98,7 @@ export default function EventsGrid({ data }) {
     <section className={styles.eventSection}>
       <div className="containerXl">
         <div
-          className={` happining-sec ${styles.desktopView}`}
+          className={`happining-sec ${styles.desktopView}`}
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -145,16 +145,16 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings?.[0]?.slug && (
                     <Link
                       href={`/happenings/${eventsData.happenings[0].slug}`}
-                      className={styles.full_link}
-                    />
+                      className={styles.full_link}/>
+                    
                   )}
+                  
                 </div>
               </div>
 
               <div
                 className={styles.card}
-                style={{ backgroundColor: "#AF251C" }}
-              >
+                style={{ backgroundColor: "#AF251C" }}>
                 <p
                   className={styles.cardTag}
                   data-aos="fade-up"
@@ -181,11 +181,11 @@ export default function EventsGrid({ data }) {
                   </p>
                 </div>
                 {eventsData.happenings?.[0]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[0].slug}`}
-                      className={styles.full_link}
-                    />
-                  )}
+                  <Link
+                    href={`/happenings/${eventsData.happenings[0].slug}`}
+                    className={styles.full_link}
+                  />
+                )}
               </div>
 
               <div className={styles.card}>
@@ -194,13 +194,15 @@ export default function EventsGrid({ data }) {
                     src={eventsData.happenings[2].image}
                     alt="img"
                     fill
-                    className={styles.cardImage}/>
+                    className={styles.cardImage}
+                  />
                 )}
                 <div className={styles.miniContentPart}>
                   <p
                     className={styles.cardTag}
                     data-aos="fade-up"
-                    data-aos-delay="400">
+                    data-aos-delay="400"
+                  >
                     {eventsData.happenings[2] &&
                       eventsData.happenings[2].event_type}
                   </p>
@@ -221,12 +223,12 @@ export default function EventsGrid({ data }) {
                       {eventsData.happenings[2] &&
                         eventsData.happenings[2].event_date_from}
                     </p>
-                     {eventsData.happenings?.[2]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[2].slug}`}
-                      className={styles.full_link}
-                    />
-                  )}
+                    {eventsData.happenings?.[2]?.slug && (
+                      <Link
+                        href={`/happenings/${eventsData.happenings[2].slug}`}
+                        className={styles.full_link}
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -252,18 +254,20 @@ export default function EventsGrid({ data }) {
                 <h3
                   className={styles.cardTitle}
                   data-aos="fade-up"
-                  data-aos-delay="200">
+                  data-aos-delay="200"
+                >
                   {eventsData.happenings[3] && eventsData.happenings[3].title}
                 </h3>
                 <p className={styles.cardDate}>
                   {eventsData.happenings[3] &&
                     eventsData.happenings[3].event_date_from}
                 </p>
-              {eventsData.happenings?.[3]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[3].slug}`}
-                      className={styles.full_link} />
-                  )}
+                {eventsData.happenings?.[3]?.slug && (
+                  <Link
+                    href={`/happenings/${eventsData.happenings[3].slug}`}
+                    className={styles.full_link}
+                  />
+                )}
               </div>
 
               <div className={styles.card}>
@@ -408,13 +412,13 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[8] &&
                     eventsData.happenings[8].event_date_from}
                 </p>
-               
+
                 {eventsData.happenings?.[8]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[8].slug}`}
-                      className={styles.full_link}
-                    />
-                  )}
+                  <Link
+                    href={`/happenings/${eventsData.happenings[8].slug}`}
+                    className={styles.full_link}
+                  />
+                )}
               </div>
             </div>
           )}
@@ -441,7 +445,6 @@ export default function EventsGrid({ data }) {
                         className={styles.cardImage}
                       />
                     )}
-
                     <div className={styles.contentPart}>
                       <div className={styles.orangeLine}></div>
                       <p className={styles.cardTag}>
@@ -453,11 +456,11 @@ export default function EventsGrid({ data }) {
                           eventsData.happenings[0].title}
                       </h2>
                       {eventsData.happenings?.[0]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[0].slug}`}
-                      className={styles.full_link}
-                    />
-                  )}
+                        <Link
+                          href={`/happenings/${eventsData.happenings[0].slug}`}
+                          className={styles.full_link}
+                        />
+                      )}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -590,12 +593,12 @@ export default function EventsGrid({ data }) {
                         {eventsData.happenings[5] &&
                           eventsData.happenings[5].short_description}
                       </p>
-                     {eventsData.happenings?.[5]?.slug && (
-                    <Link
-                      href={`/happenings/${eventsData.happenings[5].slug}`}
-                      className={styles.full_link}
-                    />
-                  )}
+                      {eventsData.happenings?.[5]?.slug && (
+                        <Link
+                          href={`/happenings/${eventsData.happenings[5].slug}`}
+                          className={styles.full_link}
+                        />
+                      )}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -674,6 +677,17 @@ export default function EventsGrid({ data }) {
                   </div>
                 </SwiperSlide>
               </Swiper>
+              <Link href="#">
+                <button className={styles.circleArrowBtn}>
+                  <Image
+                    src="/images/icons/arrow2.svg"
+                    alt="arrow"
+                    width={22}
+                    height={22}
+                  />
+                 
+                </button>
+              </Link>
             </>
           )}
         </div>

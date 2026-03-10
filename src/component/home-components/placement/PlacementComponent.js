@@ -172,10 +172,9 @@ export default function PlacementsSection({ data, category, pageType }) {
                           {t.designation} {t.company}
                         </small>
                         <div
-                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
-                        >
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}>
                           <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                            <FaChevronLeft size={8} />
+                            <FaChevronLeft size={8}/>
                           </button>
                           <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
                             <FaChevronRight size={8} />

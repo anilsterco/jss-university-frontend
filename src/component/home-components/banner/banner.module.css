@@ -121,12 +121,15 @@
   .logo-content img {
     max-width: 30rem;
   }
+
   .bannerContentA {
     padding-top: 2rem;
   }
+
   .bannerContentH1 {
     padding-bottom: 2rem;
   }
+
   .containerXl {
     padding-left: 6.8rem;
     padding-right: 6.8rem;
@@ -134,7 +137,10 @@
 }
 
 /* Responsive Design */
+
+
 @media screen and (max-width:991px) {
+
   .bannerContent {
     width: 64%;
   }
@@ -150,15 +156,14 @@
   .mobileBanner {
     display: block;
   }
-    .bannerOverlay {
+
+  .bannerOverlay {
     height: 100%;
     width: 100%;
     position: relative;
     background: transparent
   }
-}
 
-@media screen and (max-width:991px) {
   .bannerContent {
     color: #fff;
     width: 100%;
@@ -166,18 +171,22 @@
     left: 0;
     transform: translate(0);
   }
+
   .bannerContent {
     margin: 2rem 0 0 0rem;
 
   }
+
   .bannerContentP {
     margin-bottom: 2rem;
   }
+
   .bannerOverlay {
     margin-inline: 2.1rem;
     text-align: center;
     margin: 0 auto;
   }
+
   .bannerContentH1 {
     color: var(--color-black);
   }
@@ -185,6 +194,7 @@
   .bannerContentH1 span {
     color: var(--color-e8);
   }
+
   .iconSpacing {
     color: #000;
     filter: brightness(0.1);
@@ -210,14 +220,51 @@
 
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:767px) {
+  .bannerContentH1 {
+    margin: 2rem 0 0 0;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .bannerContentH1 {
+    font: var(--font-28);
+    letter-spacing: -1.34px;
+    font-family: var(--font-Condensed);
+    line-height: 3rem;
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width:520px){
+  .bannerContentH1 {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width:480px){
+  .bannerContentH1 {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width:420px){
+  .bannerContentH1 {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width:380px) {
+  .bannerContentH1 {
+    margin: 0 0 0;
+  }
+ 
   .logo-content img {
     max-width: 20rem;
   }
-
+ .bannerContentH1 {
+    max-width: 100%;
+  }
   .bannerContent {
     margin: 0 auto;
-    padding-inline: 2rem;
+    padding-inline: 0rem;
   }
 
   .bannerContentP {
@@ -231,4 +278,5 @@
   .bannerContentH1 {
     margin: 2rem 0 0 0;
   }
+ 
 }
