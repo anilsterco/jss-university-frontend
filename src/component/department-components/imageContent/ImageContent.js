@@ -47,7 +47,11 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.pdfs && (
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (
-                  <Link href={singlePdf.pdfLink} target="_blank" key={pdfIdx}>
+                  <Link
+                    href={singlePdf.pdfLink ?? ""}
+                    target="_blank"
+                    key={pdfIdx}
+                  >
                     <Image
                       src="/images/icons/pdf.png"
                       height={20}

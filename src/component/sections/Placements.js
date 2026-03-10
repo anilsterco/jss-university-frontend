@@ -48,6 +48,7 @@ export default function Placements({ data }) {
               <div className="content">
                 {box.title && <h3>{box.title}</h3>}
                 {box.subtitle && <p>{box.subtitle}</p>}
+                {box.eligibility && <h6>Eligibility: {box.eligibility}</h6>}
               </div>
             </div>
           ))}

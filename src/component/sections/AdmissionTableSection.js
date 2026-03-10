@@ -8,7 +8,6 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-
 export default function AboutOne({ data }) {
   useEffect(() => {
     AOS.init({
@@ -29,13 +28,17 @@ export default function AboutOne({ data }) {
           <section className="fee_sturc_admain" key={sectionIndex}>
             <div className="container">
               <div className="fee_stru_title">
-                <h5>Fee Structure 2025-26</h5>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled.
-                </p>
+                {section.items[0]?.heading && (
+                  <h5>{section.items[0].heading}</h5>
+                )}
+                {section.items[0]?.subheading && (
+                  <span
+                    className=" sub_heading"
+                    dangerouslySetInnerHTML={{
+                      __html: section.items[0].subheading,
+                    }}
+                  />
+                )}
               </div>
               <div className="fee_strcu_table">
                 <div className="fee_table_wrapper">
@@ -73,9 +76,5 @@ export default function AboutOne({ data }) {
     }
   };
 
-  return (
-    <>
-      {data?.map((section, index) => renderSection(section, index))}
-    </>
-  );
+  return <>{data?.map((section, index) => renderSection(section, index))}</>;
 }

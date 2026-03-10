@@ -14,7 +14,9 @@ export default function TopSection({ data }) {
               section.items.map((item, idx) => (
                 <React.Fragment key={idx}>
                   <h5 className="about_subtitle">{item.heading}</h5>
-                  <p className={`about_subHeading ${item?.desc && "less"}`}>
+                  <p
+                    className={`about_subHeading ${item?.sub_heading && "less"}`}
+                  >
                     {item.sub_heading}
                   </p>
                   {item?.desc && <p className="about_desc">{item.desc}</p>}

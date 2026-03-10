@@ -23,13 +23,15 @@ export default function TabSection({ title, subtitle, tabs }) {
 
           <h3 dangerouslySetInnerHTML={{ __html: title }} />
 
-          <ul>
-            {tabs.map((tab, i) => (
-              <li key={i} className={isActive(tab) ? "active" : ""}>
-                <Link href={tab.url}>{tab.text}</Link>
-              </li>
-            ))}
-          </ul>
+          {tabs.length > 1 && (
+            <ul>
+              {tabs.map((tab, i) => (
+                <li key={i} className={isActive(tab) ? "active" : ""}>
+                  <Link href={tab.url}>{tab.text}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>

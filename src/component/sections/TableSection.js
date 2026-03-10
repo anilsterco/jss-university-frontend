@@ -8,12 +8,17 @@ export default function TableSection({ data }) {
     switch (section.type) {
       case "table_section":
         return (
-          <div key={sectionIndex}>
+          <div key={sectionIndex} id="feestructure">
             {section.items[0]?.heading && (
               <h4 className="heading ">{section.items[0].heading}</h4>
             )}
             {section.items[0]?.subHeading && (
-              <p className=" sub_heading">{section.items[0].subHeading}</p>
+              <p
+                className=" sub_heading"
+                dangerouslySetInnerHTML={{
+                  __html: section.items[0].subHeading,
+                }}
+              />
             )}
 
             <div className="table-responsive">
