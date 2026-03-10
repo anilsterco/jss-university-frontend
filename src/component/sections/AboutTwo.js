@@ -25,12 +25,14 @@ export default function AboutTwo({ data }) {
     AOS.refresh();
   }, [data]);
 
-
   const renderSlider = (items, sectionIndex) => {
     if (!items || items.length === 0) return <p>No slider content available</p>;
 
     return (
-      <div className="earlygrowth-slider-wrapper" style={{ position: "relative" }}>
+      <div
+        className="earlygrowth-slider-wrapper"
+        style={{ position: "relative" }}
+      >
         <Swiper
           modules={[Navigation, EffectFade, Autoplay]}
           effect="fade"
@@ -48,7 +50,7 @@ export default function AboutTwo({ data }) {
             <SwiperSlide key={idx}>
               <div
                 className="early-slide"
-                style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+                style={{ display: "flex", gap: "2rem" }}
               >
                 {item.image && (
                   <div style={{ flex: 1 }}>
@@ -83,11 +85,25 @@ export default function AboutTwo({ data }) {
 
                   {/* Navigation Buttons */}
                   <div className="nav_buttons">
-                    <div className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}>
-                      <Image src="/images/icons/circle-arrow-left.svg" alt="Arrow" width={22} height={22} />
+                    <div
+                      className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}
+                    >
+                      <Image
+                        src="/images/icons/circle-arrow-left.svg"
+                        alt="Arrow"
+                        width={22}
+                        height={22}
+                      />
                     </div>
-                    <div className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}>
-                      <Image src="/images/icons/circle-arrow-right.svg" alt="Arrow" width={22} height={22} />
+                    <div
+                      className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}
+                    >
+                      <Image
+                        src="/images/icons/circle-arrow-right.svg"
+                        alt="Arrow"
+                        width={22}
+                        height={22}
+                      />
                     </div>
                   </div>
                 </div>
@@ -95,8 +111,6 @@ export default function AboutTwo({ data }) {
             </SwiperSlide>
           ))}
         </Swiper>
-
-
       </div>
     );
   };
