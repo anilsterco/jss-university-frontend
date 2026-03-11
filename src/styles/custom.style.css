@@ -1191,6 +1191,20 @@
   padding:5rem 0;
 }
 
+.testimonial-filter .filter-tabs{
+  display:flex;
+  justify-content: center;
+  gap:2rem;
+}
+
+.testimonial-filter .filter-tabs button{
+  border:none;
+  background:none;
+  font:var(--font-18);
+  font-weight: 500;
+  padding:1rem 3rem;
+}
+
 /* .testimonial-filter  */
 
 

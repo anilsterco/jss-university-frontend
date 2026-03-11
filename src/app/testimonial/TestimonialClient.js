@@ -111,7 +111,7 @@ export default function TestimonialClient() {
       )}
 
       {/* Testimonial List */}
-      <section className="faulty-sec1">
+      <section className="">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
