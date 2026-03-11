@@ -64,7 +64,7 @@ export default function Placements({ data }) {
                     )}
 
                     <div className="placement_stats">
-                      {visibleItems.map((box, i) => (
+                      {boxes.map((box, i) => (
                         <div
                           key={i}
                           className="curriculum_box"
@@ -94,7 +94,7 @@ export default function Placements({ data }) {
                       ))}
                     </div>
 
-                    {hasMore && (
+                    {/* {hasMore && (
                       <div className="placements_loader">
                         <button
                           className="btn btn-outline-primary"
@@ -109,7 +109,7 @@ export default function Placements({ data }) {
                           Load More <i className="bi bi-arrow-down"></i>
                         </button>
                       </div>
-                    )}
+                    )} */}
 
                     {item?.description && (
                       <div className="placeBottom">

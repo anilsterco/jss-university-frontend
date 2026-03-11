@@ -38,8 +38,8 @@ export default function PacementTabSection({ data }) {
             <h5 className="about_subtitle">Industry Institute Collaborations (MOUs & COEs)</h5>
             <nav className="growth-tabs">
               <ul>
-                {items.map((item) => (
-                  <li key={item.item_uuid}>
+                {items.map((item, idx) => (
+                  <li key={idx}>
                     <button
                       type="button"
                       className={

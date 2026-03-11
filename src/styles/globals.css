@@ -2035,7 +2035,17 @@ a:active {
   line-height: 1.7;
 }
 
-.placement_procedure {
+.placement .placement_proSec {
+  padding-bottom: 0;
+}
+
+.placement .placement_procedure {
+  padding-bottom: 6.2rem;
+  margin-bottom: 7.2rem;
+  border-bottom: 0.1rem solid var(--color-d6)
+}
+.placement .about_two .abou_t_sec{    padding-top: 0;}
+.placement .placement_procedure {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
@@ -2069,11 +2079,10 @@ a:active {
 .placeBottom p {
   font-family: var(--font-Roboto);
   color: #444444;
-  font-weight: 300;
   text-align: center;
   max-width: 80%;
   margin: 0 auto;
-  margin-block: 7.2rem 10rem;
+  margin-block: 1.2rem 10rem;
 
 }
 
@@ -2130,10 +2139,13 @@ a:active {
 .high_box {
   padding: 2.5rem 3.9rem 1.8rem 3.9rem;
   border: 1px solid #FFFFFF;
-
 }
 
-.high_box:nth-child(even) {
+.high_box:nth-child(1) {
+  border-right: none;
+}
+
+.high_box:nth-child(2) {
   border-right: none;
 }
 
