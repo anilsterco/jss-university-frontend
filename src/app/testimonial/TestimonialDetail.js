@@ -38,14 +38,12 @@ export default function TestimonialDetail({ hasTabs }) {
   return (
     <>
       <section className="testimonial_detail">
-        {hasTabs && (
-          <TabSection
-            title={data.tabs.title}
-            subtitle={data.tabs.subTitle}
-            tabs={data.tabs.tabs}
-            slug={data.slug}
-          />
-        )}
+        <TabSection
+          title={"sandeep"}
+          subtitle={"Testimonial"}
+          tabs={[]}
+          // slug={data.slug}
+        />
       </section>
       <section className="leadership_dtls_two testimonial_detail_section">
         <div className="container">
