@@ -18,9 +18,9 @@ export default function FacilitySix({ data }) {
 
         return items.map((item, idx) => (
           <section
-            className={`cafe_gues_mainsec pb-0 ${
-              items[0].belowtitle ? "pt-0" : ""
-            }`}
+            className={`cafe_gues_mainsec  ${
+              items[0].belowtitle ? "" : ""
+            } ${item.sectionType}`}
             key={`cafeguest-${sectionIndex}-${idx}`}
           >
             <div className="container">

@@ -28,7 +28,7 @@ export default function AboutOne({ data }) {
       case "topBanner":
         return (
           <div
-            className={`row justify-content-center about_top ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
+            className={`row justify-content-center about_top ${section?.items?.[0]?.sectionType} ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
             key={`about-section-${sectionIndex}`}
             data-aos="fade-up"
             data-aos-duration="1200"
