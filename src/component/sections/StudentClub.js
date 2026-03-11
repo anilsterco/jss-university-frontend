@@ -40,6 +40,7 @@ export default function StudentClub({ data }) {
             key={`student-club-${sectionIndex}`}
             className="student_clubsmain"
             data-aos="fade-up"
+            id="student-clubs"
           >
             <div className="container">
               <div className="row justify-content-center">

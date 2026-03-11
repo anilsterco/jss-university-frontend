@@ -32,6 +32,7 @@ export default function Fosteringcreativity({ data }) {
           ?.sort((a, b) => a.position - b.position)
           .map((item, index) => (
             <section
+              id="equal-opportunity-cell"
               className="about_fost_sec"
               key={`${sectionIndex}-${index}`}
             >

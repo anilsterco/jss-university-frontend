@@ -17,7 +17,7 @@ export default function FacilitySix({ data }) {
         );
 
         return items.map((item, idx) => (
-          <section
+          <section id="mentoring-scheme"
             className={`cafe_gues_mainsec  ${
               items[0].belowtitle ? "" : ""
             } ${item.sectionType}`}

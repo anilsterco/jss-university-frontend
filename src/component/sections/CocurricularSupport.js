@@ -15,7 +15,7 @@ export default function FacilityOne({ data }) {
   if (!sections.length) return null;
 
   return (
-    <section className="socio_econo_sec pt-0">
+    <section className="socio_econo_sec pt-0" id="co-curricular-support">
          <div className="containerMD border_bottom">
              {sections.map((section, sectionIndex) =>
             section.items?.map((item, index) => {

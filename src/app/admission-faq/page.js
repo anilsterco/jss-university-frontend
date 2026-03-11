@@ -27,14 +27,14 @@ export default async function Page() {
   return (
     <>
         <TabSection
-            title="test"
-            subtitle=""
+            title="Admission <span>FAQ's</span>"
+            subtitle="FAQ's"
             tabs=""
             slug=""
         />
         <section className={styles.inner_page}>
         <div className="container">
-            <Faq data={data} heading="FAQs" />
+            <Faq data={data} heading="" />
         </div>
         </section>
     </>

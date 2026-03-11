@@ -25,8 +25,8 @@ export default function Grants({ data = [] }) {
                 <Image
                   src={item?.image}
                   alt={item?.title || "Grants"}
-                  width={600}
-                  height={400}
+                  width={683}
+                  height={520}
                   className="img-fluid"
                   data-aos="fade-up"
                   data-aos-delay="200"

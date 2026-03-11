@@ -47,7 +47,10 @@ export default function AboutOne({ data }) {
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
       case "admissionOffice":
-        const item = section.items[0];
+        const item = section.items?.[0];
+
+        if (!item) return null;
+
         return (
           <section className="admins_of_con" key={sectionIndex}>
             <div className="container">
@@ -74,26 +77,45 @@ export default function AboutOne({ data }) {
                 {/* Heading & Contacts */}
                 <div className="add_of_context">
                   {item.heading && <h5>{item.heading}</h5>}
+
                   <ul>
                     {item.data?.map((contact, idx) => {
-                      const colonIndex = contact.info.indexOf(":");
-                      // Handle missing colon gracefully
-                      if (colonIndex === -1) {
-                        return <li key={idx}>{contact.info}</li>;
-                      }
-
-                      const label = contact.info.slice(0, colonIndex).trim();
-                      const rest = contact.info.slice(colonIndex + 1).trim();
-                      const values = rest ? rest.split(",") : [];
+                      const [label, value] = contact.info.split(":");
+                      const values = value?.split(",") || [];
 
                       return (
                         <li key={idx}>
-                          {label} :{" "}
-                          {values.length > 0
-                            ? values.map((v, i, arr) =>
-                                renderContactValue(v, i, arr),
-                              )
-                            : null}
+                          {label?.trim()} :{" "}
+                          {values.map((v, i) => {
+                            const cleaned = v.trim();
+                            let content;
+
+                            // Phone clickable
+                            if (/^\+?\d/.test(cleaned)) {
+                              content = (
+                                <a href={`tel:${cleaned.replace(/\s/g, "")}`}>
+                                  {cleaned}
+                                </a>
+                              );
+                            }
+                            // Email clickable
+                            else if (cleaned.includes("@")) {
+                              content = (
+                                <a href={`mailto:${cleaned}`}>{cleaned}</a>
+                              );
+                            }
+                            // Normal text
+                            else {
+                              content = <span>{cleaned}</span>;
+                            }
+
+                            return (
+                              <span key={i}>
+                                {i > 0 && ", "}
+                                {content}
+                              </span>
+                            );
+                          })}
                         </li>
                       );
                     })}

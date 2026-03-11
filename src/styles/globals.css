@@ -2146,6 +2146,7 @@ color: var(--color-4e);
   border-bottom: 0.1rem solid var(--color-d6)
 }
 .placement .about_two .abou_t_sec{    padding-top: 0;}
+
  .placement_procedure {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
