@@ -57,6 +57,7 @@ import { BASE_URL } from "@/config/config";
 import ResearchPatents from "@/component/sections/ResearchPatents";
 import FacilityTab from "@/component/sections/FacilityTab";
 import StudentClub from "@/component/sections/StudentClub";
+import AmenitiesList from "@/component/sections/AmenitiesList";
 
 async function fetchPageData(slug) {
   try {
@@ -163,6 +164,7 @@ export default async function DynamicPage({ params }) {
     ResearchPatents: ResearchPatents,
     facilitiesTab: FacilityTab,
     studentClub: StudentClub,
+    amenities_list: AmenitiesList,
   };
 
   return (

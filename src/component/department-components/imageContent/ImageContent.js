@@ -13,7 +13,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
       >
         <div className="col-lg-6 col-md-12 px_3xl_1_2">
           <Image
-            src={data.thumbnailImage || data.image}
+            src={data.thumbnailImage || data.image || null}
             width={683}
             height={520}
             alt=""
