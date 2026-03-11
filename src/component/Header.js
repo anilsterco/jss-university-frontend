@@ -8,6 +8,7 @@ import "@fontsource/roboto-condensed";
 import { FaChevronDown } from "react-icons/fa6";
 
 import { BASE_URL, WEB_URL } from "@/config/config";
+
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
 const ADMISSION_BASE_URL = `${BASE_URL}admission`;
@@ -126,7 +127,7 @@ export default function Header() {
   const [megaMenuData, setMegaMenuData] = useState([]);
   const [isAcademic, setIsAcademic] = useState(false);
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
-
+  const [activeMegaChildIndex, setActiveMegaChildIndex] = useState(0);
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
 
@@ -151,6 +152,7 @@ export default function Header() {
     }
     setIsAcademic(pageName?.toLowerCase() === "academics");
     setActiveDropdown(i);
+    setActiveMegaChildIndex(0); // reset to first child on new nav item hover
   };
 
   const handleNavMouseLeave = () => {
@@ -577,94 +579,215 @@ export default function Header() {
                           <div className="mega-left">
                             <ul>
                               {l.children.map((d, j) => (
-                                <li key={j} className="mega-left-item">
-                                  <Link href={d.url} className="dropdown-item">
+                                <li
+                                  key={j}
+                                  className={`mega-left-item ${activeMegaChildIndex === j ? "active" : ""}`}
+                                  onClick={() => {
+                                    if (
+                                      !d.url ||
+                                      d.url === "#" ||
+                                      d.url === ""
+                                    ) {
+                                      setActiveMegaChildIndex(j);
+                                    } else {
+                                      setActiveDropdown(null);
+                                    }
+                                  }}
+                                >
+                                  <Link
+                                    href={d.url || "#"}
+                                    className="dropdown-item"
+                                  >
                                     {d.title}
                                   </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
+
                           <div className="mega-right">
-                            {l.right ? (
-                              <>
-                                <div className="mega-right-text">
-                                  <p className="mega-subtitle">
-                                    {l.right.subtitle}
-                                  </p>
-                                  <h2
-                                    className="mega-title"
-                                    dangerouslySetInnerHTML={{
-                                      __html: l.right.title,
-                                    }}
-                                  />
-                                  <p className="mega-desc">{l.right.desc}</p>
-                                  <div className="mega-ctas">
-                                    {l.right.ctas?.map((cta, idx) => (
-                                      <Link
-                                        key={idx}
-                                        href={cta.url}
-                                        className={`cta program_btn ${cta.type}`}
-                                        style={{ color: "inherit" }}
+                            {(() => {
+                              const activeChild =
+                                l.children?.[activeMegaChildIndex];
+                              const isFirstChild = activeMegaChildIndex === 0;
+                              const rightData =
+                                activeChild?.right ||
+                                (isFirstChild ? l.right : null);
+
+                              // PROGRAMS (index 0) — existing content
+                              if (rightData) {
+                                return (
+                                  <>
+                                    <div className="mega-right-text">
+                                      <p className="mega-subtitle">
+                                        {rightData.subtitle}
+                                      </p>
+                                      <h2
+                                        className="mega-title"
+                                        dangerouslySetInnerHTML={{
+                                          __html: rightData.title,
+                                        }}
+                                      />
+                                      <p className="mega-desc">
+                                        {rightData.desc}
+                                      </p>
+                                      <div className="mega-ctas">
+                                        {rightData.ctas?.map((cta, idx) => (
+                                          <Link
+                                            key={idx}
+                                            href={cta.url}
+                                            className={`cta program_btn ${cta.type}`}
+                                            style={{ color: "inherit" }}
+                                          >
+                                            {cta.text}
+                                            <svg
+                                              className="cta-arrow"
+                                              style={{ marginLeft: "2rem" }}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width="16"
+                                              height="16"
+                                              fill="currentColor"
+                                              viewBox="0 0 16 16"
+                                            >
+                                              <path
+                                                fillRule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                              />
+                                            </svg>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    {rightData.banners?.length > 0 && (
+                                      <div className="mega-right-banners">
+                                        {rightData.banners.map((b, idx) => (
+                                          <Link
+                                            key={idx}
+                                            href={{
+                                              pathname: "/programs",
+                                              query: {
+                                                type: b.title
+                                                  .toLowerCase()
+                                                  .replace(/\s+/g, "-"),
+                                              },
+                                            }}
+                                          >
+                                            <div
+                                              className="banner"
+                                              onClick={() =>
+                                                setActiveDropdown(null)
+                                              }
+                                            >
+                                              <Image
+                                                src={b.img}
+                                                alt={b.title}
+                                                width={260}
+                                                height={160}
+                                              />
+                                              <span className="banner-label">
+                                                {b.title}
+                                              </span>
+                                            </div>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </>
+                                );
+                              }
+
+                              // SCHOOLS (index 1)
+                              if (activeMegaChildIndex === 1) {
+                                return (
+                                  <div className="mega-schools-list">
+                                    <ul>
+                                      {engineeringData.map((school) => (
+                                        <li key={school.id}>
+                                          <Link
+                                            href={`${WEB_URL}schools/${school.slug}`}
+                                            onClick={() =>
+                                              setActiveDropdown(null)
+                                            }
+                                          >
+                                            {school.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                );
+                              }
+
+                              // DEPARTMENTS (index 2)
+                              if (activeMegaChildIndex === 2) {
+                                // chunk into groups of 2 for column layout
+                                const columns = [];
+                                for (
+                                  let i = 0;
+                                  i < engineeringData.length;
+                                  i += 2
+                                ) {
+                                  columns.push(engineeringData.slice(i, i + 2));
+                                }
+
+                                return (
+                                  <div className="mega-departments-grid">
+                                    {columns.map((col, colIdx) => (
+                                      <div
+                                        key={colIdx}
+                                        className="mega-dept-column"
                                       >
-                                        {cta.text}
-                                        <svg
-                                          className="cta-arrow"
-                                          style={{ marginLeft: "2rem" }}
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          fill="currentColor"
-                                          viewBox="0 0 16 16"
-                                        >
-                                          <path
-                                            fillRule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                          />
-                                        </svg>
-                                      </Link>
+                                        {col.map((school) => (
+                                          <div
+                                            key={school.id}
+                                            className="mega-dept-block"
+                                          >
+                                            <h6 className="mega-dept-school-name">
+                                              <Link
+                                                href={`${WEB_URL}schools/${school.slug}`}
+                                                onClick={() =>
+                                                  setActiveDropdown(null)
+                                                }
+                                              >
+                                                {school.name}
+                                              </Link>
+                                            </h6>
+                                            {school.departments?.length > 0 && (
+                                              <ul>
+                                                {school.departments.map(
+                                                  (dept) => (
+                                                    <li key={dept.id}>
+                                                      <Link
+                                                        href={`${WEB_URL}department/${dept.slug}`}
+                                                        onClick={() =>
+                                                          setActiveDropdown(
+                                                            null,
+                                                          )
+                                                        }
+                                                      >
+                                                        {dept.name}
+                                                      </Link>
+                                                    </li>
+                                                  ),
+                                                )}
+                                              </ul>
+                                            )}
+                                          </div>
+                                        ))}
+                                      </div>
                                     ))}
                                   </div>
-                                </div>
+                                );
+                              }
 
-                                <div className="mega-right-banners">
-                                  {l.right.banners?.map((b, idx) => (
-                                    <Link
-                                      key={idx}
-                                      href={{
-                                        pathname: "/programs",
-                                        query: {
-                                          type: b.title
-                                            .toLowerCase()
-                                            .replace(/\s+/g, "-"),
-                                        },
-                                      }}
-                                    >
-                                      <div
-                                        className="banner"
-                                        onClick={() => setActiveDropdown(null)}
-                                      >
-                                        <Image
-                                          src={b.img}
-                                          alt={b.title}
-                                          width={260}
-                                          height={160}
-                                        />
-                                        <span className="banner-label">
-                                          {b.title}
-                                        </span>
-                                      </div>
-                                    </Link>
-                                  ))}
+                              // FACULTY LIST (index 3) or any other — placeholder
+                              return (
+                                <div style={{ height: "200px" }}>
+                                  other content
                                 </div>
-                              </>
-                            ) : (
-                              <div className="mega-right-text">
-                                <h3 className="mega-title">
-                                  {l.dropdown && l.dropdown[0]?.name}
-                                </h3>
-                              </div>
-                            )}
+                              );
+                            })()}
                           </div>
                         </div>
                       )}
@@ -2102,6 +2225,8 @@ export default function Header() {
             font-weight: 700;
             padding: 1px 0;
           }
+            .mega-left-item.active{background-color: var(--color-100); 
+    transition: all .3s, color .3s;}
           .header-inner.innerPage {background-color:#deebf4}
           .header-inner.innerPage.academics {background-color:transparent}
           .mega-right {
@@ -2111,6 +2236,9 @@ export default function Header() {
             width: 76%;
             display: flex;
             padding-right: 9.8rem;
+            padding-top:18rem;
+            padding-bottom:14rem;
+            height:700px;
           }
           .mega-right-text {
             width: 23%;
@@ -2211,14 +2339,102 @@ export default function Header() {
           }
           .mega-right-banners {
             display: flex;
-            margin-top: 18rem;
-            padding-bottom: 14rem;
             gap: 2.4rem;
             width: 100%;
           }
           .close-btn {
             margin: 3rem 8rem;
           }
+
+.mega-schools-list {
+  padding: 4rem 0;
+  width: 100%;
+}
+.mega-schools-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-schools-list ul li {
+  padding-block: 1rem;
+  border-bottom: 1px dashed rgba(22, 52, 78, 0.2);
+}
+.mega-schools-list ul li:last-child {
+  border-bottom: none;
+}
+.mega-schools-list li a {
+  font: var(--font-21);
+  color: var(--color-4e);
+  font-family: var(--font-Condensed);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.mega-schools-list ul li a:hover {
+  color: var(--color-e8);
+}
+
+/* Departments grid */
+.mega-departments-grid {
+  display: flex;
+  gap: 3rem;
+  padding: 4rem 0;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.mega-dept-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  flex: 0 0 auto;
+  width: 26rem;
+}
+.mega-dept-block h6 {
+  font: var(--font-16);
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  color: var(--color-4e);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.mega-dept-block h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+.mega-dept-block h6 a:hover {
+  color: var(--color-e8);
+}
+.mega-dept-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-dept-block ul li {
+  padding-block: 0.4rem;
+}
+.mega-dept-block ul li a {
+  font: var(--font-14);
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 1rem;
+}
+.mega-dept-block ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-e8);
+}
+.mega-dept-block ul li a:hover {
+  color: var(--color-e8);
+}
 
           @media (max-width: 2550px) {
             .mega-left {
