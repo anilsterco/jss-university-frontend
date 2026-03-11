@@ -55,6 +55,8 @@ import LogoSlider from "@/component/sections/LogoSlider";
 import TabsGrid from "@/component/sections/TabsGrid";
 import { BASE_URL } from "@/config/config";
 import ResearchPatents from "@/component/sections/ResearchPatents";
+import FacilityTab from "@/component/sections/FacilityTab";
+import StudentClub from "@/component/sections/StudentClub";
 
 async function fetchPageData(slug) {
   try {
@@ -159,6 +161,8 @@ export default async function DynamicPage({ params }) {
     logo_slider: LogoSlider,
     tabsGrid: TabsGrid,
     ResearchPatents: ResearchPatents,
+    facilitiesTab: FacilityTab,
+    studentClub: StudentClub,
   };
 
   return (

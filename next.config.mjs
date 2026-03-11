@@ -15,6 +15,7 @@ const nextConfig = {
       },
     ],
     domains: ["sd7", "localhost", "project-demo.in"],
+    unoptimized: true,
   },
 
   async rewrites() {
