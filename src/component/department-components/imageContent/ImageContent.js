@@ -9,7 +9,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
       className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]}`}
     >
       <div
-        className={` row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
+        className={`align-items-center row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
         <div className="col-lg-6 col-md-12 px_3xl_1_2">
           <Image
@@ -44,7 +44,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                   </p>
                 ))}
             </div>
-            {data?.pdfs && (
+            {data?.pdfs && data.pdfs.length > 0 && (
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (
                   <Link

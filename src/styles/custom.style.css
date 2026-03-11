@@ -981,7 +981,12 @@
 }
 
 /* image content repeateer section */
-
+.image_content_repeat_section.hostel_repeatsec {
+  padding-bottom: 0;
+}
+.image_content_repeat_section.hostel_repeatsec .single_image_content {padding-bottom: 12rem;
+  border-bottom: 1px solid #d9d9d9;
+}
 .image_content_repeat_section {
   padding: 8rem 0;
 }
@@ -1002,7 +1007,7 @@
   background: #00489A;
   padding:12rem 0;
 }
-
+.single_image_content {}
 .single_image_content.reverse .row{
   flex-direction: row-reverse;
 }

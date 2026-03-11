@@ -170,7 +170,7 @@ export default function LeadershipClient() {
             ([categoryName, categoryLeaders]) => {
               if (!categoryLeaders || categoryLeaders.length === 0) return null;
               return (
-                <section key={categoryName} className="leadership_two pt-0">
+                <section key={categoryName} className="leadership_two">
                   <div className="container">
                     <div className="leader-category-block">
                       <h2 className="leader-category-title">
