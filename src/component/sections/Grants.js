@@ -35,20 +35,19 @@ export default function Grants({ data = [] }) {
             </div>
             <div className="grands_content">
               {Array.isArray(item?.rightdecs) &&
-                item.rightdecs.map((r, idx) => (
-                  <p key={idx}>{r.Rightdecs}</p>
-                ))}
+                item.rightdecs.map((r, idx) => <p key={idx}>{r.Rightdecs}</p>)}
               <div className="downlo_guides">
                 {item?.pdftext && (
                   <a
                     href={item?.pdf || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pdf_link">
+                    className="pdf_link"
+                  >
                     {item.pdficon && (
                       <figure className="shine-effect">
                         <Image
-                          src={item.pdficon}
+                          src={"/images/icons/pdf.png"}
                           alt="PDF Icon"
                           width={15}
                           height={20}
