@@ -129,6 +129,7 @@ border-radius: 0.8rem;
   font: var(--font-16);
   color: var(--color-21);
   line-height: 2.8rem;
+  color: #444;
 }
 
 .about_one .top_log_grid {
