@@ -21,16 +21,41 @@ export default function AboutOne({ data }) {
     AOS.refresh();
   }, [data]);
 
+  const renderContactValue = (v, i, arr) => {
+    const cleaned = v.trim();
+
+    const element = cleaned.match(/^\+?\d/) ? (
+      <a key={i} href={`tel:${cleaned.replace(/\s/g, "")}`}>
+        {cleaned}
+      </a>
+    ) : cleaned.includes("@") ? (
+      <a key={i} href={`mailto:${cleaned}`}>
+        {cleaned}
+      </a>
+    ) : (
+      <span key={i}>{cleaned}</span>
+    );
+
+    // Add comma separator between values, but not after last
+    return i < arr.length - 1 ? (
+      <span key={`wrap-${i}`}>{element}, </span>
+    ) : (
+      element
+    );
+  };
+
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
       case "admissionOffice":
-        const item = section.items[0]; 
+        const item = section.items[0];
         return (
           <section className="admins_of_con" key={sectionIndex}>
             <div className="container">
-              <div className="ad_offc_contact" 
-                        data-aos="fade-up"
-                        data-aos-delay="200">
+              <div
+                className="ad_offc_contact"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 {/* Image */}
                 {item.image && (
                   <div className="ad_of_conimg">
@@ -51,36 +76,24 @@ export default function AboutOne({ data }) {
                   {item.heading && <h5>{item.heading}</h5>}
                   <ul>
                     {item.data?.map((contact, idx) => {
-                      // Split info by colon to separate label and value
-                      const [label, value] = contact.info.split(":");
-                      // If multiple values (like landlines), split by comma
-                      const values = value?.split(",") || [];
+                      const colonIndex = contact.info.indexOf(":");
+                      // Handle missing colon gracefully
+                      if (colonIndex === -1) {
+                        return <li key={idx}>{contact.info}</li>;
+                      }
+
+                      const label = contact.info.slice(0, colonIndex).trim();
+                      const rest = contact.info.slice(colonIndex + 1).trim();
+                      const values = rest ? rest.split(",") : [];
+
                       return (
                         <li key={idx}>
-                          {label.trim()} :{" "}
-                          {values.map((v, i) => {
-                            const cleaned = v.trim();
-                            // Make phone clickable if it contains digits
-                            if (cleaned.match(/^\+?\d/)) {
-                              return (
-                                <a
-                                  key={i}
-                                  href={`tel:${cleaned.replace(/\s/g, "")}`}
-                                >
-                                  {cleaned}
-                                </a>
-                              );
-                            }
-                            // Make email clickable
-                            if (cleaned.includes("@")) {
-                              return (
-                                <a key={i} href={`mailto:${cleaned}`}>
-                                  {cleaned}
-                                </a>
-                              );
-                            }
-                            return <span key={i}>{cleaned}</span>;
-                          }).reduce((prev, curr) => [prev, ", ", curr])}
+                          {label} :{" "}
+                          {values.length > 0
+                            ? values.map((v, i, arr) =>
+                                renderContactValue(v, i, arr),
+                              )
+                            : null}
                         </li>
                       );
                     })}
