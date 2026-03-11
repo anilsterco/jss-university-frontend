@@ -881,16 +881,23 @@ export default function Header() {
                 <div className="right-inner h-100">
                   <div className="image-box">
                     <div className="first-content">
-                      <h1
+                      {/* <h1
                         dangerouslySetInnerHTML={{
                           __html: activeRightMenu.first_section?.title,
                         }}
-                      />
-                      {activeRightMenu.first_section?.subtitle && (
+                      /> */}
+                      <h1>
+                        SRI SUTTUR MATH THE <span>1000 YEAR LEGACY</span>
+                      </h1>
+                      {/* {activeRightMenu.first_section?.subtitle && (
                         <p>{activeRightMenu.first_section.subtitle}</p>
-                      )}
+                      )} */}
+                      <p>
+                        The Genesis of the social-educational-spritual
+                        philosophy
+                      </p>
 
-                      {activeRightMenu.first_section?.link && (
+                      {/* {activeRightMenu.first_section?.link && (
                         <Link
                           href={WEB_URL + activeRightMenu.first_section.link}
                           onClick={() => {
@@ -899,9 +906,18 @@ export default function Header() {
                         >
                           <img src="/images/header/banner-arrow.svg" />
                         </Link>
-                      )}
+                      )} */}
 
-                      {activeRightMenu.first_section?.image && (
+                      <Link
+                        href={WEB_URL + "leadership"}
+                        onClick={() => {
+                          closeMenu();
+                        }}
+                      >
+                        <img src="/images/header/banner-arrow.svg" />
+                      </Link>
+
+                      {/* {activeRightMenu.first_section?.image && (
                         <div className="hamburger-section-img virtural-img">
                           <Image
                             className="hum-small"
@@ -916,6 +932,7 @@ export default function Header() {
                               {activeRightMenu.first_section?.heading && (
                                 <h4>{activeRightMenu.first_section.heading}</h4>
                               )}
+                              <h4>test</h4>
                               {activeRightMenu.first_section?.subheading && (
                                 <p>
                                   {activeRightMenu.first_section.subheading}
@@ -924,11 +941,28 @@ export default function Header() {
                             </div>
                           </div>
                         </div>
-                      )}
+                      )} */}
+
+                      <div className="hamburger-section-img virtural-img">
+                        <Image
+                          className="hum-small"
+                          src={"/images/virtual-campus.png"}
+                          alt={"image"}
+                          fill
+                          style={{ objectFit: "cover" }}
+                        />
+
+                        <div className="items-menu_grp">
+                          <div className="items-menu_grp_cont">
+                            <h4>Virtual campus</h4>
+                            <p>Sed ut perspiciatis</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <div className="second-content">
-                      {activeRightMenu.second_section?.image && (
+                      {/* {activeRightMenu.second_section?.image && (
                         <div className="hamburger-section-img">
                           <Image
                             src={activeRightMenu.second_section.image}
@@ -960,15 +994,46 @@ export default function Header() {
                             </div>
                           </div>
                         </div>
-                      )}
+                      )} */}
+
+                      <div className="hamburger-section-img">
+                        <Image
+                          src={"/images/header/humburger-second-banner.png"}
+                          alt={"image"}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          sizes="100vw"
+                        />
+
+                        <div className="vid-thumb-grp">
+                          {/* <Link href={`${WEB_URL}leadership`}>
+                            <div className="vid-thumb-icon"></div>
+                          </Link> */}
+
+                          <div className="vid-thumb-cont">
+                            <h6>MESSAGE FROM CHANCELLOR</h6>
+
+                            <h4>
+                              JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
 
                       <div className="acresData">
-                        <h1
+                        {/* <h1
                           dangerouslySetInnerHTML={{
                             __html: activeRightMenu.second_section?.heading,
                           }}
-                        />
-                        <p>{activeRightMenu.second_section?.subheading}</p>
+                        /> */}
+                        <h1>
+                          <span>21+</span>
+                          Acres
+                        </h1>
+                        <p>
+                          Campus Area of the social-educational-spritual
+                          philosophy
+                        </p>
                       </div>
                     </div>
                   </div>
