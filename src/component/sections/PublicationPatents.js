@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function PublicationPatents({ data = [] }) {
   useEffect(() => {
@@ -55,7 +57,21 @@ export default function PublicationPatents({ data = [] }) {
                             <td>{row.year}</td>
                             <td>{row.scopus}</td>
                             <td>{row.wos}</td>
-                            <td>{row.total}</td>
+                            <td>
+                              {row.total?.map((totalItem, totalIdx) => (
+                                <Link
+                                  key={totalIdx}
+                                  target="_blank"
+                                  href={totalItem.url}
+                                >
+                                  <Image
+                                    src={"/images/icons/pdf.png"}
+                                    width={30}
+                                    height={40}
+                                  />
+                                </Link>
+                              ))}
+                            </td>
                           </tr>
                         ))}
                       </tbody>

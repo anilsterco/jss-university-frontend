@@ -358,6 +358,7 @@ border-radius: 0.8rem;
 
 .about_four.heritage .about_f_value {
   grid-template-columns: 50% 50%;
+  align-items: start;
 }
 
 .about_f_value .ab_f_content {
@@ -892,7 +893,7 @@ border-radius: 0.8rem;
   margin-bottom: 0;
   font-family: var(--font-Condensed);
   font-weight: bold;
-  color: var(--color-4e);
+  color: var(--color-00);
 }
 
 .campu_con_rgt .ab_jss_c_col {
@@ -1466,7 +1467,10 @@ border-radius: 0.8rem;
   align-items: center;
   gap: 2.7rem;
 }
-
+.academic-facilities .research_grid_one .research_cont{
+  padding-right: 3rem;
+}.academic-facilities
+.research_grid_two .research_cont{padding-left: 0;}
 .research_grid_one .research_cont {
   padding-left: 9rem;
   padding-right: 1.5rem;
@@ -1510,7 +1514,6 @@ border-radius: 0.8rem;
   color: var(--color-4e);
   margin-bottom: 3.1rem;
   font-weight: normal;
-  margin-top: -3.1rem;
 }
 
 .re_obj_grid {
@@ -3361,7 +3364,7 @@ margin-bottom: 1rem;
   margin-bottom: 0;
   font-family: var(--font-Condensed);
   font-weight: bold;
-  color: var(--color-4e);
+  color: var(--color-black);
 }
 
 .campu_con_rgt .ab_jss_c_col {
@@ -3544,7 +3547,11 @@ margin-bottom: 1rem;
   font-weight: bold;
   margin-bottom: 2.4rem;
 }
-
+.academic-facilities
+.spo_fa_content h6{
+  font: var(--font-16);
+  line-height: 2.8rem;
+}
 .spo_fa_content h6 {
   font: var(--font-24);
   color: var(--color-white);
@@ -3556,8 +3563,16 @@ margin-bottom: 1rem;
   text-align: center;
   border: 0.1rem solid var(--color-white);
   padding: 3.8rem 0;
-}
+}.academic-facilities
+.spo_fa_counsec h4{
+color: var(--color-100);
+}.academic-facilities
+.spo_fa_counsec p{
+color: var(--color-100);
 
+}
+.about-jssmvp .about_one .estblish{padding-bottom: 0;}
+.academic-facilities .lib_cen_main .campu_grid_main.capus_grid_two .campu_con_rgt{padding-left: 0;max-width: 56.9rem;}
 .spo_fa_counsec h4 {
   font: var(--font-48);
   font-family: var(--font-Condensed);
@@ -3969,11 +3984,11 @@ margin-bottom: 1rem;
 }
 
 .re_lab_objective h4 {
-  font: var(--font-26);
+  font: var(--font-21);
   color: var(--color-4e);
   margin-bottom: 3.1rem;
-  font-weight: normal;
-  margin-top: -3.1rem;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 
 .re_obj_grid {

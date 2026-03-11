@@ -6,10 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fontsource/roboto-condensed/300.css";
 import "@fontsource/roboto-condensed/400.css";
 import "@fontsource/roboto-condensed/700.css";
-import "../../public/js/aos"
+import "../../public/js/aos";
 
 import ScriptLoader from "@/component/ScriptLoader";
-
+import MainWrapper from "@/component/MainWrapper";
 
 export const metadata = {
   title: "Jss University",
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           <Header />
-          <main className="main-container">{children}</main>
+          <MainWrapper>{children}</MainWrapper>
           <ScriptLoader />
           <Footer />
         </Providers>
