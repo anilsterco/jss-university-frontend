@@ -21,6 +21,29 @@ export default function AboutOne({ data }) {
     AOS.refresh();
   }, [data]);
 
+  const renderContactValue = (v, i, arr) => {
+    const cleaned = v.trim();
+
+    const element = cleaned.match(/^\+?\d/) ? (
+      <a key={i} href={`tel:${cleaned.replace(/\s/g, "")}`}>
+        {cleaned}
+      </a>
+    ) : cleaned.includes("@") ? (
+      <a key={i} href={`mailto:${cleaned}`}>
+        {cleaned}
+      </a>
+    ) : (
+      <span key={i}>{cleaned}</span>
+    );
+
+    // Add comma separator between values, but not after last
+    return i < arr.length - 1 ? (
+      <span key={`wrap-${i}`}>{element}, </span>
+    ) : (
+      element
+    );
+  };
+
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
       case "admissionOffice":

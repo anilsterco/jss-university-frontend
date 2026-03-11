@@ -1152,6 +1152,41 @@
 }
 
 
+/* amenities listing */
+
+.amenities_section{
+  padding:10rem 0;
+}
+
+.amenities_section .grid_group{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:5rem;
+}
+
+.amenities_section .grid_group li{
+  font:var(--font-18);
+  color: #444;
+    padding-left: 2.2rem;
+    position: relative;
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.amenities_section .grid_group li:before{
+  content: "";
+    background: #ffc100;
+    border-radius: 50%;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
