@@ -39,7 +39,7 @@ export default function Grants({ data = [] }) {
               <div className="downlo_guides">
                 {item?.pdftext && (
                   <a
-                    href={item?.pdf || "#"}
+                    href={item?.pdficon || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="pdf_link"
