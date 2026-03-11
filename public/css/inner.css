@@ -924,6 +924,7 @@ border-radius: 0.8rem;
   text-align: center;
 }
 
+
 .amenities_title h5 {
   font: var(--font-26);
   color: var(--color-4e);
@@ -931,13 +932,13 @@ border-radius: 0.8rem;
 }
 
 .amenities_title p {
-  font: var(--font-16);
-  padding-bottom: 5rem;
-  max-width: 92%;
-  margin: 0 auto;
-  padding-inline: 1rem;
-  line-height: 1.4;
-  color: var(--color-44);
+ font: var(--font-24);
+    text-align: center;
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 0 0 5rem;
+    font-weight: 300;
+    line-height: 1.4;
 }
 
 .amenities_gridmain {
@@ -3399,13 +3400,13 @@ margin-bottom: 1rem;
 }
 
 .amenities_title p {
-  font: var(--font-16);
-  padding-bottom: 5rem;
-  max-width: 92%;
-  margin: 0 auto;
-  padding-inline: 1rem;
-  line-height: 1.4;
-  color: var(--color-44);
+ font: var(--font-24);
+    text-align: center;
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 0 0 5rem;
+    font-weight: 300;
+    line-height: 1.4;
 }
 
 .amenities_gridmain {
