@@ -18,7 +18,7 @@ export default function FacilitySix({ data }) {
           <section
             className={`lib_cen_main pt-0 ${item.sectionType}`}
             key={`${sectionIndex}-${idx}`}>
-            <div className={`${item?.containerSize ? item.containerSize : 'containerMD'}`}>
+            <div className={`${item?.containerSize ? item.containerSize : 'container'}`}>
               <div className="row">
                 <div className="col-lg-12">
                   <div className={`campu_grid_main capus_grid_two ${item?.pageType == 'placement' && 'pb-0 border-0'}`}>

@@ -39,7 +39,7 @@ export default function ResearchLabs({ data }) {
                       }
                       alt={item.title || "Research Labs"}
                       className="w-100"
-                      width={800}
+                      width={683}
                       height={520}
                     />
                   </figure>
@@ -82,7 +82,7 @@ export default function ResearchLabs({ data }) {
                         src={item.image}
                         alt={item.title || "Research"}
                         className="w-100"
-                        width={800}
+                        width={683}
                         height={520}
                       />
                     </figure>
