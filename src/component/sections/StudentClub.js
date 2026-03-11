@@ -9,6 +9,7 @@ import "@/styles/custom.style.css";
 
 export default function StudentClub({ data }) {
   const [scuActiveTab, setScuActiveTab] = useState("tab0");
+  const [activeTabData, setActiveTabData] = useState(null);
 
   useEffect(() => {
     AOS.init({
@@ -22,8 +23,9 @@ export default function StudentClub({ data }) {
     AOS.refresh();
   }, [data]);
 
-  const handleScuTabChange = (tabId) => {
+  const handleScuTabChange = (tabId, tabData) => {
     setScuActiveTab(tabId);
+    setActiveTabData(tabData);
   };
 
   if (!data || data.length === 0) return null;
@@ -60,7 +62,7 @@ export default function StudentClub({ data }) {
                                     <button
                                       type="button"
                                       className={scuActiveTab === `tab${tabIdx}` ? "active" : ""}
-                                      onClick={() => handleScuTabChange(`tab${tabIdx}`)}
+                                      onClick={() => handleScuTabChange(`tab${tabIdx}`, tab)}
                                     >
                                       {tab.tabname}
                                     </button>
@@ -123,11 +125,12 @@ export default function StudentClub({ data }) {
                           </div>
                         )}
 
-                        {item.benifits && item.benifits.length > 0 && (
+                        {/* Benefits Section - Now shows benefits of active tab */}
+                        {activeTabData && activeTabData.benifits && activeTabData.benifits.length > 0 && (
                           <div className="scu_benfits" data-aos="fade-up">
                             <h5>Benefits</h5>
                             <div className="scu_benift_grid">
-                              {item.benifits.map((benefit, benIdx) => (
+                              {activeTabData.benifits.map((benefit, benIdx) => (
                                 <div className="scu_benifit_col" key={benIdx}>
                                   <p>{benefit.list}</p>
                                 </div>
