@@ -67,9 +67,9 @@
   color: #333333;
 }
 
-.inner-title .innnr_head ul li.active a{
+.inner-title .innnr_head ul li.active a {
   font-weight: bold;
-  color:#018CE8;
+  color: #018CE8;
 }
 
 .about_one {
@@ -105,7 +105,8 @@
   font-weight: 300;
   line-height: 1.4;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto;    
+  max-width: 92%;
 }
 
 .about_one .estblish {
@@ -118,6 +119,7 @@
 .about_one .estblish p {
   font: var(--font-16);
   color: var(--color-21);
+  line-height: 2.8rem;
 }
 
 .about_one .top_log_grid {
@@ -286,8 +288,8 @@
   padding-bottom: 14rem;
 }
 
-.about_four.heritage .about_f_value{
-  padding-top:10rem;
+.about_four.heritage .about_f_value {
+  padding-top: 10rem;
 }
 
 /* .about_four::after {
@@ -340,12 +342,12 @@
 
 }
 
-.about_f_value .ab_fo_imgsec{
+.about_f_value .ab_fo_imgsec {
   border-radius: 60px 8px 8px 8px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.about_four.heritage .about_f_value{
+.about_four.heritage .about_f_value {
   grid-template-columns: 50% 50%;
 }
 
@@ -354,26 +356,31 @@
   padding-right: 5rem;
 }
 
-.about_four.heritage .about_f_value .ab_f_content{
-  padding-right:0;
+.about_four.heritage .about_f_value .ab_f_content {
+  padding-right: 0;
   padding-left: 7.2rem;
 }
-
+.scholarship-facilities.about_four{padding-bottom: 0;}
+.placement_proSec.information{padding-top: 5rem;}
+.placement_proSec.information .procedure_heading{margin-bottom: 3rem;}
+.placement_proSec.information .procedure_box p{
+  font: var(--font-16);
+}
 .about_f_value .ab_f_content h3 {
   font: var(--font-24);
   padding-bottom: 4rem;
   margin: 0 auto;
   font-weight: 300;
   line-height: 1.4;
-  color:#333;
+  color: #333;
 }
 
 .ab_f_content p {
   color: var(--color-44);
 }
 
-.about_four.heritage p:not(:last-child){
-  margin-bottom:3rem;
+.about_four.heritage p:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 
@@ -412,7 +419,7 @@
 .about_subtitle {
   font: var(--font-26);
   color: var(--color-4e);
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .about_subHeading {
@@ -632,8 +639,8 @@
   color: var(--color-44);
 }
 
-.grid_em_leftsec .para p:not(:last-child){
- margin-bottom:3rem; 
+.grid_em_leftsec .para p:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 .about_subtitle h5 {
@@ -1793,6 +1800,18 @@
 .ad_se_content {
   max-width: 30.6rem;
 }
+.admission-selection-process .ad_sel_col {  border-bottom: 0.1rem solid var(--color-100);}
+.admission-selection-process .ad_se_content {
+  max-width: 100%;
+
+}
+
+.admission-selection-process .ad_se_content .se_step {
+  font: var(--font-24);
+  margin-bottom: 2.3rem;
+  font-family: var(--font-Roboto);
+  color: var(--color-4e);
+}
 
 .eligibilty_main {
   background-color: var(--color-9a);
@@ -1897,7 +1916,9 @@
   padding-block: 12rem 8.7rem;
   background-color: var(--color-white);
 }
-
+.fee_sturc_admain p:first-child{
+margin-bottom: 1rem;
+}
 .fee_stru_title h5 {
   color: var(--color-4e);
   font: var(--font-26);
@@ -2021,17 +2042,19 @@
 }
 
 .ad_offc_contact {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  height: 100%;
+     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: 100%;
+    display: grid;
+    background-color: var(--color-9a);
+    border-radius: 61rem 0 0 0.8rem;
 }
 
 .add_of_context {
   background-color: var(--color-9a);
   height: 100%;
   max-height: 26.7rem;
-  padding: 4.3rem 14.2rem 4.7rem 13.2rem;
+  padding: 4.3rem 14.2rem 4.7rem 11.8rem;
 }
 
 .add_of_context h5 {
@@ -2057,11 +2080,11 @@
 }
 
 .admins_of_con {
-  padding-bottom: 12rem;
+  padding-bottom: 15rem;
 }
 
 .ad_of_conimg img {
-  border-radius: 6rem 0.8rem 0.8rem 0.8rem;
+  border-radius: 6rem 0rem 0rem 0rem;
 }
 
 .host_de_grid {
@@ -2087,7 +2110,7 @@
   font: var(--font-24);
   font-weight: 300;
   color: var(--color-33);
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .hostal_det_col:first-child img {
@@ -2107,6 +2130,7 @@
   border-radius: 5rem;
   font: var(--font-16);
   padding: 0.8rem 1.2rem;
+  font-weight: 500;
 }
 
 .hostal_d_btns a:hover {
@@ -3154,7 +3178,7 @@
   margin-bottom: 4.5rem;
 }
 
-.ab_fost_lft_col p:not(:last-child){
+.ab_fost_lft_col p:not(:last-child) {
   margin-bottom: 3.5rem;
   color: var(--color-white);
 }
@@ -3226,17 +3250,17 @@
   font: var(--font-34);
   color: var(--color-9a);
   font-family: var(--font-Condensed);
-  padding:0;
+  padding: 0;
   position: relative;
-  margin:0;
+  margin: 0;
 }
 
-.heri_prici_names h5.titleOne{
-  padding-right:5.6rem;
+.heri_prici_names h5.titleOne {
+  padding-right: 5.6rem;
 }
 
-.heri_prici_names h5.titleTwo{
-  padding-left:5.6rem;
+.heri_prici_names h5.titleTwo {
+  padding-left: 5.6rem;
 }
 
 .heri_pri_btm_text {
@@ -4158,7 +4182,8 @@
 .admin_h_title {
   padding-block: 10rem 6rem;
 }
-
+.admission-selection-process.ad_selec_procss{padding-top: 12rem;
+    padding-bottom: 13rem;}
 .ad_selec_procss {
   padding-block: 10rem 10rem;
 }
@@ -4498,14 +4523,12 @@
   padding-bottom: 12rem;
 }
 
-.ad_of_conimg img {
-  border-radius: 6rem 0.8rem 0.8rem 0.8rem;
-}
+
 
 .host_de_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.2rem;
+  gap: 2.5rem;
   margin-bottom: 3rem;
 }
 
@@ -4525,7 +4548,7 @@
   font: var(--font-24);
   font-weight: 300;
   color: var(--color-33);
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .hostal_det_col:first-child img {
@@ -4545,6 +4568,7 @@
   border-radius: 5rem;
   font: var(--font-16);
   padding: 0.8rem 1.2rem;
+  color: var(--color-4e);
 }
 
 .hostal_d_btns a:hover {
@@ -5325,12 +5349,13 @@
 
 .about_two .early-slide .early_rgt {
   padding-left: 8.4rem;
+  padding-top: 4rem;
 }
 
 .about_two .early-slide .early_rgt h4 span {
   color: var(--color-ff);
 }
-
+ .early-slide .imgsli_left{border-radius: 6rem 0.8rem 0.8rem 0.8rem;}
 .about_two .early-slide {
   grid-template-columns: 43.5% 55%;
   display: grid !important;
@@ -6254,9 +6279,10 @@
     line-height: normal;
     line-height: 1.4;
   }
-.about_top.padding-bottom {
+
+  .about_top.padding-bottom {
     padding-bottom: 4rem;
-}
+  }
 }
 
 @media (max-width: 768px) {

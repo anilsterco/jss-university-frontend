@@ -160,7 +160,7 @@ export default function LegacySection({ data }) {
                       <p className={styles.cardTitle}>{h.text}</p>
                       <div className="d-flex align-items-center gap-2">
                         <Image
-                          src={h.source}
+                          src={h?.source}
                           alt="Source Logo"
                           width={118}
                           height={24}

@@ -67,8 +67,8 @@ export default function AboutOne({ data }) {
                           <Image
                             src={item.image}
                             alt={item.titleOne || "Heritage Section"}
-                            width={800}
-                            height={520}
+                            width={1390}
+                            height={550}
                             className="img-fluid w-100"
                           />
                         </figure>

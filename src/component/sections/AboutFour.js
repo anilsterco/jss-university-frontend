@@ -52,8 +52,8 @@ export default function AboutFour({ data }) {
                                 ? item.title.slice(0, 50)
                                 : "About Section"
                             }
-                            width={600}
-                            height={400}
+                            width={683}
+                            height={520}
                             style={{
                               width: "100%",
                               height: "auto",
