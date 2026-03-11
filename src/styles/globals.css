@@ -1619,6 +1619,9 @@ color: var(--color-4e);
   font: var(--font-18);
 }
 
+.events_col{
+  z-index: 2;
+}
 
 
 @media (max-width: 1449px) {
