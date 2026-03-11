@@ -43,6 +43,13 @@ export default function TableSection({ data }) {
                 </tbody>
               </table>
             </div>
+              {section.items[0]?.desc && (
+                <h5
+                
+                  className="sub_heading mt-5"
+                  dangerouslySetInnerHTML={{ __html: section.items[0].desc }}
+                />
+              )}
           </div>
         );
     }
