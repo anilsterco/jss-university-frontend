@@ -698,7 +698,7 @@ export default function Header() {
                           <p>
                             <a href={`mailto:${admissionsData.left.email}`}>
                               <img
-                                src="images/header/mailicon.svg"
+                                src="/images/header/mailicon.svg"
                                 className="img-fluid"
                                 alt="mail"
                               />
@@ -707,7 +707,7 @@ export default function Header() {
                           </p>
                           <p>
                             <img
-                              src="images/header/phoneicon.svg"
+                              src="/images/header/phoneicon.svg"
                               className="img-fluid"
                               alt="mail"
                             />
@@ -1642,6 +1642,9 @@ export default function Header() {
             letter-spacing: -0.24px;
             font-family: var(--font-Condensed);
             margin-bottom: 1.4rem;
+          }
+          .ad-contact img{
+          margin-right:1rem;
           }
           .ad-ctas {
             display: flex;

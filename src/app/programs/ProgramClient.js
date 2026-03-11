@@ -7,8 +7,7 @@ import styles from "./page.module.css";
 import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ProgramBox from "@/component/programBox/ProgramBox";
-
-const BASE_URL = "/api/";
+import { BASE_URL } from "@/config/config";
 
 export default function ProgramClient() {
   const params = useSearchParams();
@@ -35,7 +34,7 @@ export default function ProgramClient() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${BASE_URL}/school-department-list`)
+    fetch(`${BASE_URL}school-department-list`)
       .then((response) => response.json())
       .then((data) => {
         setSchoolData(data.data);
@@ -48,7 +47,7 @@ export default function ProgramClient() {
         console.error("Error:", error);
         setLoading(false);
       });
-    fetch(`${BASE_URL}/program-list`)
+    fetch(`${BASE_URL}program-list`)
       .then((response) => response.json())
       .then((data) => {
         setProgramData(data.data);
@@ -67,7 +66,7 @@ export default function ProgramClient() {
   }, [selectedSchool, selectedDepartment, activeProgram, searchProgram, page]);
 
   const fetchPrograms = async () => {
-    let url = `${BASE_URL}/programs/${activeProgram}`;
+    let url = `${BASE_URL}programs/${activeProgram}`;
     const params = [];
 
     if (selectedSchool) {
@@ -127,7 +126,7 @@ export default function ProgramClient() {
     }
 
     const totalPages = Math.ceil(
-      programListingData.total / programListingData.per_page
+      programListingData.total / programListingData.per_page,
     );
 
     if (page < totalPages) {
@@ -291,7 +290,10 @@ export default function ProgramClient() {
                   )}
                   {programs && programs.length > 0 && hasMorePages && (
                     <div className={styles.loadMoreContainer}>
-                      <a id="loadMore" onClick={handleLoadMore}> Load More <i className="bi bi-arrow-down"></i> </a>
+                      <a id="loadMore" onClick={handleLoadMore}>
+                        {" "}
+                        Load More <i className="bi bi-arrow-down"></i>{" "}
+                      </a>
                     </div>
                   )}
                 </div>
