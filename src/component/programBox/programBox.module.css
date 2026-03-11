@@ -1444,6 +1444,7 @@
     left: 0;
     width: 3px;
     height: 97px;
+    bottom: 3rem;
 }
 
 .cusProgramText p {
@@ -1468,6 +1469,20 @@
 
 .cusProgramText span i {
     color: var(--color-white);
+}
+
+.cusProgramText .heading_data{
+    display:flex;
+    align-items: center;
+}
+
+.cusProgramText .heading_data .left{
+    padding-right:1rem;
+    flex:1;
+}
+
+.cusProgramText .heading_data  .right{
+    
 }
 
 /* .cusProgramBox:hover .cusProgramText {

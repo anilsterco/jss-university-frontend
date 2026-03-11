@@ -1,3 +1,8 @@
+.message_section{
+  background: #fff;
+}
+
+
 .hod_message_section.department {
   background: #fff;
 }
@@ -9,6 +14,10 @@
   justify-content: center;
 }
 
+.message_section .container{
+  padding:0;
+}
+
 .container.department {
   padding: 0;
 }
@@ -17,6 +26,12 @@
   position: relative;
   border-top: 1px solid #D6D6D6;
   padding-top: 10rem;
+}
+
+.message_section .card{
+  border:None;
+  padding-bottom:10.5rem;
+  padding-top: 10.5rem;
 }
 
 .department .card {
@@ -90,6 +105,11 @@
   z-index: 1;
 }
 
+.message_section .content{
+  padding:0;
+  padding-right:18rem;
+}
+
 .department .content {
   padding: 0;
   padding-right: 18rem;
@@ -104,14 +124,26 @@
   font-weight: 700;
 }
 
+.message_section .title{
+  text-transform: initial;
+  font:var(--font-26);
+  margin-bottom:3rem;
+}
+
+.subMessage{
+  font:var(--font-16);
+  color: #444444;
+  margin-bottom:3rem;
+}
+
 .messageText {
   flex: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
 .paragraph {
-  color: #212121;
-  margin-bottom: 2rem;
+  color: #444;
+  margin-bottom: 3rem;
   font: var(--font-16);
 }
 
@@ -128,16 +160,14 @@
 .hodInfo {
   margin-top: auto;
   border-top: 1px solid var(--color-100);
-  padding-top: 3rem;
-  margin-top: 1rem;
+  padding-top: 3.5rem;
 }
 
 .hodName {
   color: #16344E;
   margin-bottom: 0.25rem;
-  font: var(--font-24);
-  font-family: var(--font-Condensed);
-  font-weight: 700;
+  font: var(--font-21);
+  font-weight: 500;
 }
 
 .hodDesignation {
@@ -152,6 +182,20 @@
   gap: 7.6rem;
   align-items: center;
 }
+
+
+.message_section .arrowLink{
+  border:none!important;
+  background:none;
+  font:var(--font-18);
+  color: #16344E;
+  font-weight: 500;
+}
+
+.message_section .arrowLink img{
+  margin-left: 1rem;
+}
+
 
 @media (max-width: 1024px) {
   .imagePlaceholder {
