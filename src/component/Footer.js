@@ -120,14 +120,14 @@ export default function Footer() {
                 <div className="col-md-12">
                   <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
                     <li>
-                      <a href="">{data.phone}</a>
+                     <a href={`tel:${data.phone}`}>{data.phone}</a>
                     </li>
                     <li>
-                      <a href="">{data.email}</a>
+                        <a href={`mailto:${data.email}`}>{data.email}</a>
                     </li>
                     {data.landlines.map((line, i) => (
                       <li key={i}>
-                        <a href="">{line}</a>
+                        <a href="#">{line}</a>
                       </li>
                     ))}
                   </ul>

@@ -426,26 +426,26 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Contact"
             ? {
-                ...item,
-                heading: data.title,
-                Menu: [
-                  {
-                    name: data.address,
-                    url: data.direction_url,
-                    contactIcon: "/images/header/address-icon.svg",
-                  },
-                  {
-                    name: data.email,
-                    url: `mailto:${data.email}`,
-                    contactIcon: "/images/header/mail-icon.svg",
-                  },
-                  {
-                    name: data.phone,
-                    url: `tel:${data.phone}`,
-                    contactIcon: "/images/header/phone-icon.svg",
-                  },
-                ],
-              }
+              ...item,
+              heading: data.title,
+              Menu: [
+                {
+                  name: data.address,
+                  url: data.direction_url,
+                  contactIcon: "/images/header/address-icon.svg",
+                },
+                {
+                  name: data.email,
+                  url: `mailto:${data.email}`,
+                  contactIcon: "/images/header/mail-icon.svg",
+                },
+                {
+                  name: data.phone,
+                  url: `tel:${data.phone}`,
+                  contactIcon: "/images/header/phone-icon.svg",
+                },
+              ],
+            }
             : item,
         ),
       );
@@ -463,13 +463,13 @@ export default function Header() {
           prev.map((item) =>
             item.name === "Menu"
               ? {
-                  ...item,
-                  Menu: json.data.map((d) => ({
-                    name: d.title,
-                    url: d.url,
-                    children: d.children || [], // ← store children
-                  })),
-                }
+                ...item,
+                Menu: json.data.map((d) => ({
+                  name: d.title,
+                  url: d.url,
+                  children: d.children || [], // ← store children
+                })),
+              }
               : item,
           ),
         );
@@ -505,15 +505,13 @@ export default function Header() {
 `}
     >
       <div
-        className={`header-inner ${
-          !isHomeLikePage ? "innerPage" : ""
-        } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
+        className={`header-inner ${!isHomeLikePage ? "innerPage" : ""
+          } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
       >
         <div className="containerXl">
           <div
-            className={`nav-container ${
-              !isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
-            }`}
+            className={`nav-container ${!isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
+              }`}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -555,9 +553,8 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className={`nav-item ${
-                        activeDropdown === i ? "active-items" : ""
-                      }`}
+                      className={`nav-item ${activeDropdown === i ? "active-items" : ""
+                        }`}
                       onMouseEnter={() => handleNavMouseEnter(i, l.title)}
                       onMouseLeave={handleNavMouseLeave}
                     >
@@ -706,12 +703,15 @@ export default function Header() {
                             </a>
                           </p>
                           <p>
-                            <img
-                              src="/images/header/phoneicon.svg"
-                              className="img-fluid"
-                              alt="mail"
-                            />
-                            {admissionsData.left.phone}
+                            <a href={`tel:${admissionsData.left.phone}`}>
+                              <img
+                                src="/images/header/phoneicon.svg"
+                                className="img-fluid"
+                                alt="mail"
+                              />
+                              {admissionsData.left.phone}
+                            </a>
+
                           </p>
                         </div>
                         <div className="ad-ctas">
@@ -982,9 +982,8 @@ export default function Header() {
               {mobilePanels.map((item) => (
                 <div
                   key={item.name}
-                  className={`panel ${
-                    activePanel === item.name ? "open" : ""
-                  } ${item.name.toLowerCase()}-panel`}
+                  className={`panel ${activePanel === item.name ? "open" : ""
+                    } ${item.name.toLowerCase()}-panel`}
                 >
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
@@ -1128,11 +1127,11 @@ export default function Header() {
                                 onClick={
                                   sub.children?.length > 0
                                     ? () =>
-                                        setOpenMenuAccordion(
-                                          openMenuAccordion === idx
-                                            ? null
-                                            : idx,
-                                        )
+                                      setOpenMenuAccordion(
+                                        openMenuAccordion === idx
+                                          ? null
+                                          : idx,
+                                      )
                                     : () => setActivePanel(null) // ← add this
                                 }
                                 style={
@@ -1178,11 +1177,11 @@ export default function Header() {
                                   onClick={
                                     sub.children?.length > 0
                                       ? () =>
-                                          setOpenMenuAccordion(
-                                            openMenuAccordion === `b${idx}`
-                                              ? null
-                                              : `b${idx}`,
-                                          )
+                                        setOpenMenuAccordion(
+                                          openMenuAccordion === `b${idx}`
+                                            ? null
+                                            : `b${idx}`,
+                                        )
                                       : () => setActivePanel(null) // ← add this
                                   }
                                   style={
@@ -1643,6 +1642,9 @@ export default function Header() {
             font-family: var(--font-Condensed);
             margin-bottom: 1.4rem;
           }
+            .ad-contact p a{
+              color: var(--color-white);
+            }
           .ad-contact img{
           margin-right:1rem;
           }

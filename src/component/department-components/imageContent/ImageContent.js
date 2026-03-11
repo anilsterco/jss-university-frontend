@@ -11,7 +11,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
       <div
         className={`align-items-center row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
-        <div className="col-lg-6 col-md-12 px_3xl_1_2">
+        <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border">
           <Image
             src={data.thumbnailImage || data.image}
             width={683}

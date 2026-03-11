@@ -103,19 +103,19 @@ export default function LeadershipClient() {
                     </h3>
                     <div className="d-flex gap-3">
                       <p>{featuredLeader.designation}</p>
-                      <Image
+                      {/* <Image
                         src={"/images/icons/circularArrow.svg"}
                         alt="arrow"
                         width={20}
                         height={20}
                         className="arrow-icon"
-                      />
+                      /> */}
                     </div>
                   </figcaption>
-                  <Link
+                  {/* <Link
                     href={`/leadership/${featuredLeader.slug}`}
                     className="links"
-                  ></Link>
+                  ></Link> */}
                 </figure>
               </div>
             </div>
@@ -144,19 +144,19 @@ export default function LeadershipClient() {
                             <figcaption>
                               <h3>{leader.name}</h3>
                               <p>{leader.designation}</p>
-                              <Image
+                              {/* <Image
                                 src={"/images/icons/leder-arrow.svg"}
                                 alt="arrow"
                                 width={20}
                                 height={20}
                                 className="arrow-icon"
-                              />
+                              /> */}
                             </figcaption>
                           </figure>
-                          <Link
+                          {/* <Link
                             href={`/leadership/${leader.slug}`}
                             className="links"
-                          ></Link>
+                          ></Link> */}
                         </div>
                       );
                     })}
@@ -192,19 +192,19 @@ export default function LeadershipClient() {
                               <figcaption>
                                 <h3>{leader.name}</h3>
                                 <p>{leader.designation}</p>
-                                <Image
+                                {/* <Image
                                   src={"/images/icons/leder-arrow.svg"}
                                   alt="arrow"
                                   width={20}
                                   height={20}
                                   className="arrow-icon"
-                                />
+                                /> */}
                               </figcaption>
                             </figure>
-                            <Link
+                            {/* <Link
                               href={`/leadership/${leader.slug}`}
                               className="links"
-                            ></Link>
+                            ></Link> */}
                           </div>
                         ))}
                       </div>

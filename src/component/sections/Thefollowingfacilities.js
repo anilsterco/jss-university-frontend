@@ -23,12 +23,18 @@ export default function AboutOne({ data }) {
 
   const renderSection = (section, sectionIndex) => {
     if (section.type === "thefollowingfacilities") {
+      const listItems = section.items[0]?.list || [];
+      const firstSix = listItems.slice(0, 6);
+      const restItems = listItems.slice(6);
+
       return (
         <section className="resea_facili_main" key={sectionIndex}>
           <div className="container">
             <div className="exte_mainsec">
               {section.items[0]?.title && <h6>{section.items[0].title}</h6>}
+
               <div className="exten_grid">
+              
                 {section.items[0]?.image && (
                   <div className="exte_imgsec">
                     <figure className="shine-effect">
@@ -44,16 +50,34 @@ export default function AboutOne({ data }) {
                     </figure>
                   </div>
                 )}
-                {section.items[0]?.list && section.items[0].list.length > 0 && (
+
+                {/* First 6 list items */}
+                {firstSix.length > 0 && (
                   <div className="exten_listyle">
                     <ul>
-                      {section.items[0].list.map((item, i) => (
-                        <li key={i}>{item.list}</li>
+                        {section.items[0]?.heading && <h4 className="text-left">{section.items[0].heading}</h4>}
+                      {firstSix.map((item, i) => (
+                        <li key={i}>
+                          <span dangerouslySetInnerHTML={{ __html: item.list }} />
+                        </li>
                       ))}
                     </ul>
                   </div>
                 )}
               </div>
+
+              {/* Remaining items below image */}
+              {restItems.length > 0 && (
+                <div className="exten_listyle below_list">
+                  <ul>
+                    {restItems.map((item, i) => (
+                      <li key={i}>
+                        <span dangerouslySetInnerHTML={{ __html: item.list }} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>

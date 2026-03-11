@@ -16,6 +16,7 @@ export default function FacilitySix({ data }) {
         );
         return items.map((item, idx) => (
           <section
+            id="complaint-committee"
             className={`lib_cen_main pt-0 ${item.sectionType}`}
             key={`${sectionIndex}-${idx}`}>
             <div className={`${item?.containerSize ? item.containerSize : 'container'}`}>

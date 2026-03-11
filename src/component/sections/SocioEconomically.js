@@ -16,7 +16,7 @@ export default function FacilityOne({ data }) {
   return (
     <>
       {socioSection.items.map((item, index) => (
-        <section className="socio_econo_sec" key={index}>
+        <section className="socio_econo_sec" id="socio-economically-disadvantaged-groups-cell" key={index}>
           <div className="containerMD">
             <section className="sedg_section_wrap">
               <div className="sedg_row_block border_bottom">
