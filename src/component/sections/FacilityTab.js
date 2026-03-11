@@ -9,7 +9,7 @@ import "@/styles/custom.style.css";
 
 export default function FacilityTab({ data }) {
   const [activeTab, setActiveTab] = useState("tab0");
-  const [activeAccordion, setActiveAccordion] = useState(0);
+  const [activeAccordion, setActiveAccordion] = useState(null);
 
   useEffect(() => {
     AOS.init({

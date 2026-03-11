@@ -1044,7 +1044,7 @@ border-radius: 0.8rem;
 
 .about_three .vsn_msn_grid {
   display: grid;
-  grid-template-columns: repeat(1, 43.9% auto);
+  grid-template-columns: repeat(1,47.9% auto);
   gap: 10.9rem;
   position: relative;
   z-index: 1;
@@ -3378,7 +3378,8 @@ margin-bottom: 1rem;
 .capus_grid_two .cumpus_left_img figure img {
   border-radius: 0.8rem 6rem 0.8rem 0.8rem;
 }
-
+.academic-facilities
+.campu_grid_main.capus_grid_two{border: none;}
 .campu_grid_main.capus_grid_two {
   border-bottom: 0.1rem solid var(--color-d4);
   padding-bottom: 10rem;
@@ -3534,7 +3535,7 @@ margin-bottom: 1rem;
 .sports_fac_slider .spo_fa_content {
   z-index: 9;
   flex-direction: column;
-  gap: 17.6rem;
+  gap: 12.6rem;
   max-width: 51.2rem;
   display: flex;
   position: relative;
