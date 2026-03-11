@@ -1,8 +1,12 @@
 .content_col {
     padding-left: 9.4rem;
-    padding-top: 7.2rem;
+        padding-right: 5rem;
 }
-
+.content_col h4{
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: var(--color-4e);
+}
 .content_col.bg_image_content{
     padding-top: 0;
     padding-left: 0;
@@ -66,7 +70,7 @@
     font: var(--font-16);
     line-height: 2.8rem;
     color: #444444;
-    font-family: var(--font-Condensed);
+    /* font-family: var(--font-Condensed); */
     margin: 0;
 }
 
@@ -126,7 +130,9 @@
     font-weight: bold;
     margin-top: 5rem;
 }
-
+.singleImageContent:first-child{
+    padding-bottom: 8rem;
+}
 .singleImageContent.department {
     padding-bottom: 15rem;
 }

@@ -35,7 +35,7 @@ export default function ImageContentRepeat({ data }) {
 
   return (
     <section
-      className={`image_content_repeat_section ${data[0]?.items?.[0]?.type}`}
+      className={`image_content_repeat_section ${data[0]?.items?.[0]?.type} ${data[0]?.items?.[0]?.sectionType}`}
     >
       <div className="container">
         {data && data.length > 0 ? (

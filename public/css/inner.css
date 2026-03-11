@@ -79,7 +79,16 @@
 .about_top {
   padding-top: 6rem;
 }
+.about_top.organogram_page{
+  padding-bottom: 10rem;
+}
+.about_one  .about_top.organogram_page .abt_cntnt {
+  padding-top: 0;
+}
 
+.about_one  .about_top.organogram_page .abt_cntnt figure img{
+border-radius: 0.8rem;
+}
 .about_top.padding-bottom {
   padding-bottom: 13rem;
 }
@@ -950,6 +959,9 @@
 .ameniti_item_col p {
   padding-top: 2rem;
   color: var(--color-44);
+  font: var(--font-21);
+  font-weight: 500;
+  color: var(--color-4e);
 }
 
 .ameniti_item_col figure img {
@@ -1219,7 +1231,7 @@
 .cafe_gues_mainsec {
   padding-block: 14rem 15rem;
 }
-
+.cafe_gues_mainsec.hostel_campus_facilities{padding-top: 8rem;}
 .cafe_gues_gridone {
   display: grid;
   grid-template-columns: 43.45% 56.5%;
@@ -3412,10 +3424,10 @@ margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.ameniti_item_col p {
+/* .ameniti_item_col p {
   padding-top: 2rem;
   color: var(--color-44);
-}
+} */
 
 .ameniti_item_col figure img {
   border-radius: 0.8rem;
@@ -3486,7 +3498,7 @@ margin-bottom: 1rem;
 }
 
 .amenities_loadmore {
-  padding-block: 7rem 15rem;
+  padding-block: 2rem 15rem;
 }
 
 .about_three {
@@ -3633,8 +3645,10 @@ margin-bottom: 1rem;
 }
 
 .uni_boa_itemse figcaption p {
-  color: var(--color-44);
-  padding-top: 2rem;
+     color: var(--color-4e);
+    font: var(--font-21);
+    padding-top: 2rem;
+    font-weight: 500;
 }
 
 .uni_boa_itemse:hover p {
@@ -5576,9 +5590,12 @@ margin-bottom: 1rem;
 .leadership_one .top_img figure {
   display: grid;
   align-items: end;
+  border-radius: 5rem 0.8rem 5rem 0.8rem ;
   position: relative;
 }
-
+.leadership_one .top_img figure>img{
+  border-radius: 5rem 0.8rem 5rem 0.8rem ;
+}
 .leadership_one .top_img figure>* {
   grid-area: 1 / 1;
 }
@@ -5667,8 +5684,11 @@ margin-bottom: 1rem;
   letter-spacing: -0.87px;
   line-height: 1.4;
   font-family: var(--font-Condensed);
+  transition: all 0.5s;
 }
-
+.leadership_two .leadership_grid .leadership_grid_Bx:hover figure  figcaption h3{
+  color: var(--color-e8);
+}
 .leadership_two .leadership_grid figure figcaption p {
   display: flex;
   flex-direction: column;
@@ -5711,7 +5731,24 @@ margin-bottom: 1rem;
   top: 0;
   z-index: 1;
 }
-
+.leadership_dtls_one .top_img{
+  position: relative;
+}
+.leadership_dtls_one .top_img figure:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.75) 100%
+  );
+  top: 0;
+  height: 100%;
+  z-index: 2;border-radius: 0 0.8rem  5rem 0;
+}
 .leadership_dtls_one .top_img figure {
   align-items: center;
   position: relative;
@@ -5719,7 +5756,7 @@ margin-bottom: 1rem;
   margin-top: 0;
   z-index: 2;
 }
-
+.leadership_dtls_one .top_img img{border-radius: 5rem 0.8rem  5rem 0.8rem;}
 .leadership_dtls_one .top_img figure>* {
   grid-area: 1 / 1;
 }
@@ -5729,7 +5766,7 @@ margin-bottom: 1rem;
   max-width: 48rem;
   margin-inline: auto 6.2rem;
   position: absolute;
-  z-index: 1;
+  z-index: 9;
   top: 0;
   bottom: 0;
   right: 0;
