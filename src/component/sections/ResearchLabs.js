@@ -28,7 +28,7 @@ export default function ResearchLabs({ data }) {
               </div>
             </div>
 
-            <div className="containerMD">
+            <div className="container">
               <div className="research_grid_one">
                 <div className="researh_imgsec">
                   <figure className="shine-effect img-full">
@@ -64,7 +64,7 @@ export default function ResearchLabs({ data }) {
             key={`researchSecond-${idx}`}
             className="research_labmain pb-0 pt-0"
           >
-            <div className="containerMD">
+            <div className="container">
               <div className="research_grid_two">
                 <div className="research_cont">
                   {item.title && <h2>{item.title}</h2>}
