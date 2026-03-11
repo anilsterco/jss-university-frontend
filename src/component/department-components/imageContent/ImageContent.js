@@ -36,14 +36,16 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.heading && (
               <h4 className={`${styles.heading} head`}>{data.heading}</h4>
             )}
-            <div className={`${styles.descGroup} desc_group`}>
-              {data?.desc &&
-                data.desc.map((singleDesc, descIdx) => (
+            {data.desc.length > 0 && (
+              <div className={`${styles.descGroup} desc_group`}>
+                {data.desc.map((singleDesc, descIdx) => (
                   <p key={descIdx} className={styles.desc}>
                     {singleDesc.desc}
                   </p>
                 ))}
-            </div>
+              </div>
+            )}
+
             {data?.pdfs && data.pdfs.length > 0 && (
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (

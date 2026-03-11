@@ -1161,7 +1161,7 @@
 .amenities_section .grid_group{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap:5rem;
+  gap:20rem;
 }
 
 .amenities_section .grid_group li{
@@ -1184,6 +1184,14 @@
     left: 0;
     transform: translateY(-50%);
 }
+
+/* testimonial-filter */
+
+.testimonial-filter{
+  padding:5rem 0;
+}
+
+/* .testimonial-filter  */
 
 
 

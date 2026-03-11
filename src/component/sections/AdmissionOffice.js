@@ -93,9 +93,7 @@ export default function AboutOne({ data }) {
                             // Phone clickable
                             if (/^\+?\d/.test(cleaned)) {
                               content = (
-                                <a
-                                  href={`tel:${cleaned.replace(/\s/g, "")}`}
-                                >
+                                <a href={`tel:${cleaned.replace(/\s/g, "")}`}>
                                   {cleaned}
                                 </a>
                               );
@@ -103,9 +101,7 @@ export default function AboutOne({ data }) {
                             // Email clickable
                             else if (cleaned.includes("@")) {
                               content = (
-                                <a href={`mailto:${cleaned}`}>
-                                  {cleaned}
-                                </a>
+                                <a href={`mailto:${cleaned}`}>{cleaned}</a>
                               );
                             }
                             // Normal text
