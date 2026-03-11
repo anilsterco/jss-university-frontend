@@ -31,10 +31,11 @@ export default function AboutOne({ data }) {
             key={`selection-process-${sectionIndex}`}
             data-aos="fade-up"
           >
+            
             <div className="container">
-              <div className="ad_selec_procss" id="scholarship">
+              <div className={`ad_selec_procss ${section.items?.[0]?.sectionType}`} id="scholarship">
                 <h5 data-aos="fade-up" data-aos-delay="100">
-                  Selection Process
+                  Selection Process 
                 </h5>
                 <div className="ad_selec_grid">
                   {section.items
@@ -48,7 +49,7 @@ export default function AboutOne({ data }) {
                       >
                         <div className="ad_se_content">
                           <div className="se_step">
-                            Step <span>{item.step}</span>
+                            Step {item.step}
                           </div>
                           {item.desc && <p>{item.desc}</p>}
                           {item.points && item.points.length > 0 && (
