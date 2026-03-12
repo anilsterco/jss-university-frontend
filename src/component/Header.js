@@ -123,7 +123,7 @@ export default function Header() {
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(1);
   const [megaMenuData, setMegaMenuData] = useState([]);
   const [isAcademic, setIsAcademic] = useState(false);
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
@@ -562,7 +562,7 @@ export default function Header() {
                         activeDropdown === i ? "active-items" : ""
                       }`}
                       onMouseEnter={() => handleNavMouseEnter(i, l.title)}
-                      onMouseLeave={handleNavMouseLeave}
+                      // onMouseLeave={handleNavMouseLeave}
                     >
                       <Link
                         href={WEB_URL + l.url}
@@ -575,7 +575,7 @@ export default function Header() {
                           className={`mega-dropdown ${activeDropdown === i ? "d-flex" : ""}`}
                           role="menu"
                           onMouseEnter={handleDropdownMouseEnter}
-                          onMouseLeave={handleDropdownMouseLeave}
+                          // onMouseLeave={handleDropdownMouseLeave}
                         >
                           <div className="mega-left">
                             <ul>
@@ -2464,7 +2464,7 @@ export default function Header() {
 
           @media (max-width: 2550px) {
             .mega-left {
-              width: 85rem;
+              width: 77rem;
             }
           }
 

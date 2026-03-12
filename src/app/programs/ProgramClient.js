@@ -189,7 +189,7 @@ export default function ProgramClient() {
                 <>
                   <input
                     type="text"
-                    placeholder="Search Course"
+                    placeholder="Search Programs"
                     name="search"
                     value={searchProgram}
                     onChange={(e) => handleSearch(e.target.value)}

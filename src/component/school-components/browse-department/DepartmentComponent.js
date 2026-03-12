@@ -60,7 +60,7 @@ export default function DepartmentSection({
           <div className="deparCol">
             <div className={styles.leftSide}>
               <div data-aos="fade-up" data-aos-delay="100">
-                <span className={styles.smallHeadline}>COURSES OFFERED</span>
+                <span className={styles.smallHeadline}>PROGRAMS OFFERED</span>
                 <h1
                   className={`${styles.title}`}
                   dangerouslySetInnerHTML={{ __html: departmentSection.title }}
@@ -75,7 +75,7 @@ export default function DepartmentSection({
                     <input
                       type="text"
                       className="form-control border-0"
-                      placeholder="Search Course"
+                      placeholder="Search Programs"
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       style={{ padding: "10px 20px" }}
@@ -138,7 +138,7 @@ export default function DepartmentSection({
                     href={`${WEB_URL + pageType + "/" + departmentSlug}/programs`}
                   >
                     <button className={styles.viewAllButton}>
-                      VIEW ALL PROGRAMMES <GoArrowRight />
+                      VIEW ALL PROGRAMES <GoArrowRight />
                     </button>
                   </Link>
                 </div>

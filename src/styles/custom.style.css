@@ -1225,6 +1225,22 @@
 }
 
 
+.step-and-startups-in-campus .placement_proSec {
+   padding-bottom:0;
+}
+
+/* .step-and-startups-in-campus .amenities_section {
+   padding:0;
+} */
+
+
+.step-and-startups-in-campus .image_content_repeat_section {
+   padding:0;
+}
+
+
+
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {

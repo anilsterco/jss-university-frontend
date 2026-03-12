@@ -161,13 +161,15 @@ export default function AboutSchool({ data }) {
             {data?.items?.map((singleItem, itemIdx) => (
               <SwiperSlide key={itemIdx} className={styles.accreditationSlide}>
                 <div className="gap-5 d-flex align-items-center content">
-                  <Image
-                    src={singleItem.logo}
-                    alt="NAAC"
-                    width={80}
-                    height={80}
-                    className={styles.accreditationLogo}
-                  />
+                  {singleItem.logo && (
+                    <Image
+                      src={singleItem.logo}
+                      alt="NAAC"
+                      width={80}
+                      height={80}
+                      className={styles.accreditationLogo}
+                    />
+                  )}
                   <p className={styles.small}>{singleItem.content}</p>
                 </div>
               </SwiperSlide>

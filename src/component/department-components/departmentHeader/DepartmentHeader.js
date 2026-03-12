@@ -55,11 +55,11 @@ export default function DepartmentHeader({ className, data }) {
               const matchedSchool = json.data[matchedSchoolIdx];
               setSelectedSchool(matchedSchoolIdx);
               setHoveredSchool(matchedSchoolIdx);
-              setSelectedSchoolName(matchedSchool.name);
+              setSelectedSchoolName(matchedSchool.name_short);
               setHoveredDepartments(matchedSchool.departments || []);
               setSelectedDepartmentName("");
             } else {
-              setSelectedSchoolName(json.data[0].name);
+              setSelectedSchoolName(json.data[0].name_short);
               setHoveredDepartments(json.data[0].departments || []);
             }
           } else {
