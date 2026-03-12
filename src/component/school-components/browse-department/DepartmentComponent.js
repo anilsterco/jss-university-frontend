@@ -242,7 +242,7 @@ export default function DepartmentSection({
               >
                 <Link href={`/department/${dept.slug}`}>
                   <Image
-                    src="/images/custom-page/departPla.webp"
+                    src={dept.image}
                     alt="Dummy Department"
                     width={330}
                     height={330}
