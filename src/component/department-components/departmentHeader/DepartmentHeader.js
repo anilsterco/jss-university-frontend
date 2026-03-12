@@ -110,7 +110,12 @@ export default function DepartmentHeader({ className, data }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const dropdownLabel = isSchoolPage ? "Schools Of" : "Departments Of";
+  const dropdownLabel =
+    isSchoolPage && pathParts[2] !== "college-of-pharmacy"
+      ? "Schools Of"
+      : pathParts[2] == "college-of-pharmacy"
+        ? "College Of"
+        : "Departments Of";
 
   const displayName = isSchoolPage
     ? selectedSchoolName

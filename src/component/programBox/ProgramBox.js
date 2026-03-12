@@ -33,6 +33,7 @@ export default function ProgramBox({ data, type }) {
                 src={"/images/icons/circle-arrow-white.svg"}
                 height={24}
                 width={24}
+                alt="circle arrow"
               />
             </div>
           </div>

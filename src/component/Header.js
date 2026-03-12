@@ -666,7 +666,7 @@ export default function Header() {
                                           <Link
                                             key={idx}
                                             href={{
-                                              pathname: "/programs",
+                                              pathname: `${WEB_URL}programs`,
                                               query: {
                                                 type: b.title
                                                   .toLowerCase()
