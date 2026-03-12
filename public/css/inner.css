@@ -5172,6 +5172,7 @@
 .recent-audit-observations .table_section:nth-child(even) {
   background-color: var(--color-f6);
 }
+.recent-audit-observations .ad_selec_procss{padding-top: 7rem;}
 
 .recent-audit-observations .ad_sel_col .se_step {
   font: var(--font-21);
