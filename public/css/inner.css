@@ -5259,6 +5259,9 @@
   margin-top: 2rem;
   display: inline-block;
 }
+.step-and-startups-in-campus .single_image_content .rep_border{
+  order: 2;
+}.step-and-startups-in-campus .single_image_content .content_col {padding-left: 0;padding-right: 10rem;}
 .careers .add_of_context ul li:nth-last-child(1) span{
   font-style: italic;
 }
