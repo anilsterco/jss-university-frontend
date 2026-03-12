@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { WEB_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 
 export default function SchoolSlider({
   data,
@@ -19,6 +20,18 @@ export default function SchoolSlider({
   isDepartment = false,
   slug,
 }) {
+  const pathname = usePathname();
+  const pathParts = pathname.split("/");
+  const currentPage = pathParts[1];
+  const currentSlug = pathParts[2];
+
+  const isSchoolPage =
+    currentPage === "schools" && currentSlug !== "college-of-pharmacy"
+      ? "Schools Of"
+      : currentSlug == "college-of-pharmacy"
+        ? "College Of"
+        : "Departments Of";
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -30,9 +43,9 @@ export default function SchoolSlider({
   const defaultBanner = [
     {
       id: 1,
-      label: "SCHOOL OF ENGINEERING",
+      label: "SCHOOL OF ENGINEERING1",
       title:
-        "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
+        "A1 TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
       desc: "A long-standing history of fostering new ideas and guiding students.",
       linked_text: "Learn more about JSS",
       url: "/about-us",
@@ -74,7 +87,7 @@ export default function SchoolSlider({
                   <div className={styles.bannerLabel}>
                     {isDepartment ? name : slide.label}
                   </div>
-                  <span className={styles.bannerSmall}>COLLEGE OF</span>
+                  <span className={styles.bannerSmall}>{isSchoolPage}</span>
                   <h1
                     className={styles.bannerContentH1}
                     dangerouslySetInnerHTML={{ __html: slide.title }}

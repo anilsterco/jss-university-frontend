@@ -94,113 +94,127 @@ export default function PlacementsSection({ data }) {
       <div className="container">
         {/* HEADER */}
         <div className={styles.sectionHeader} data-aos="fade-up">
-          <p className="fw-bold text-uppercase dark-blue-text">
-            {data.subtitle}
-          </p>
-          <h2
-            className="fw-bold"
-            dangerouslySetInnerHTML={{ __html: data.title }}
-          />
+          {data?.subtitle && (
+            <p className="fw-bold text-uppercase dark-blue-text">
+              {data.subtitle}
+            </p>
+          )}
+
+          {data?.title && (
+            <h2
+              className="fw-bold"
+              dangerouslySetInnerHTML={{ __html: data.title }}
+            />
+          )}
         </div>
 
         <div className={styles.placement_row}>
           <div className={`placement_col ${styles.leftContent}`}>
-            <div className={styles.statsRow}>
-              {data.facts_and_figures.map((stat, i) => (
-                <div
-                  key={i}
-                  className={styles.figurContCol}
-                  data-aos="fade-up"
-                  data-aos-delay={i * 150}
-                >
-                  <div className={styles.figcount}>
-                    <h3 className={styles.statsNumber}>{stat.figure}</h3>
-                    <p className={`mb-0 ${styles.statsLabel}`}>{stat.title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <Swiper
-              ref={swiperRef}
-              className={styles.testimonialSwiper}
-              modules={[Navigation, EffectFade, Autoplay]}
-              effect="fade"
-              fadeEffect={{ crossFade: true }}
-              slidesPerView={1}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
-              navigation={{
-                nextEl: ".testimonial-next",
-                prevEl: ".testimonial-prev",
-              }}
-              loop
-            >
-              <div className={styles.blueBg}></div>
-              {data.testimonials.map((t, i) => (
-                <SwiperSlide key={i}>
+            {data?.facts_and_figures && (
+              <div className={styles.statsRow}>
+                {data.facts_and_figures.map((stat, i) => (
                   <div
-                    className={`${styles.eachSlide} d-flex align-items-start`}
+                    key={i}
+                    className={styles.figurContCol}
                     data-aos="fade-up"
                     data-aos-delay={i * 150}
                   >
-                    <div className={styles.testimonialImageContainer}>
-                      <FaQuoteLeft
-                        className={styles.mobileQuoteIcon}
-                        color="#b08f29"
-                        fontSize={30}
-                      />
-                      <Image
-                        src={t.image}
-                        alt={`${t.name} image`}
-                        width={216}
-                        height={240}
-                        style={{
-                          width: "216px",
-                          height: "240px",
-                          objectFit: "cover",
-                          flexShrink: 0,
-                        }}
-                        className={`testiimg rounded ${styles.testimonialImage}`}
-                        priority
-                      />
-                    </div>
-
-                    <div className={styles.testimonialContent}>
-                      <FaQuoteLeft
-                        className={styles.desktopQuoteIcon}
-                        color="#b08f29"
-                        fontSize={36}
-                      />
-                      <p>{t.short_description}</p>
-                      <h6 className="small fw-bold">{t.name}</h6>
-                      <small className="small-text">
-                        {t.designation}, {t.company}
-                      </small>
-                      <div
-                        className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
-                      >
-                        <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronLeft size={8} />
-                        </button>
-                        <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
-                          <FaChevronRight size={8} />
-                        </button>
-                      </div>
+                    <div className={styles.figcount}>
+                      <h3 className={styles.statsNumber}>{stat.figure}</h3>
+                      <p className={`mb-0 ${styles.statsLabel}`}>
+                        {stat.title}
+                      </p>
                     </div>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                ))}
+              </div>
+            )}
+
+            {data?.testimonials && data.testimonials.length > 0 && (
+              <Swiper
+                ref={swiperRef}
+                className={styles.testimonialSwiper}
+                modules={[Navigation, EffectFade, Autoplay]}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
+                slidesPerView={1}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                navigation={{
+                  nextEl: ".testimonial-next",
+                  prevEl: ".testimonial-prev",
+                }}
+                loop
+              >
+                <div className={styles.blueBg}></div>
+                {data.testimonials.map((t, i) => (
+                  <SwiperSlide key={i}>
+                    <div
+                      className={`${styles.eachSlide} d-flex align-items-start`}
+                      data-aos="fade-up"
+                      data-aos-delay={i * 150}
+                    >
+                      <div className={styles.testimonialImageContainer}>
+                        <FaQuoteLeft
+                          className={styles.mobileQuoteIcon}
+                          color="#b08f29"
+                          fontSize={30}
+                        />
+                        <Image
+                          src={t.image}
+                          alt={`${t.name} image`}
+                          width={216}
+                          height={240}
+                          style={{
+                            width: "216px",
+                            height: "240px",
+                            objectFit: "cover",
+                            flexShrink: 0,
+                          }}
+                          className={`testiimg rounded ${styles.testimonialImage}`}
+                          priority
+                        />
+                      </div>
+
+                      <div className={styles.testimonialContent}>
+                        <FaQuoteLeft
+                          className={styles.desktopQuoteIcon}
+                          color="#b08f29"
+                          fontSize={36}
+                        />
+                        <p>{t.short_description}</p>
+                        <h6 className="small fw-bold">{t.name}</h6>
+                        <small className="small-text">
+                          {t.designation}, {t.company}
+                        </small>
+                        <div
+                          className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
+                        >
+                          <button className="testimonial-prev btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronLeft size={8} />
+                          </button>
+                          <button className="testimonial-next btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center py-2">
+                            <FaChevronRight size={8} />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
           </div>
           <div className={styles.rightContent} data-aos="fade-up">
             <div className={styles.wallOfFameContainer}>
-              <Image
-                src={data.hall_of_fame.image}
-                alt="Wall of Fame"
-                width={500}
-                height={600}
-                className={styles.wallImage}
-              />
+              {data?.hall_of_fame?.image && (
+                <Image
+                  src={data.hall_of_fame.image}
+                  alt="Wall of Fame"
+                  width={500}
+                  height={600}
+                  className={styles.wallImage}
+                />
+              )}
+
               <div
                 className={styles.wallOfFameText}
                 dangerouslySetInnerHTML={{

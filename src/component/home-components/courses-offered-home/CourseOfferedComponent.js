@@ -302,6 +302,7 @@ export default function CoursesOffered({ data }) {
               <Link
                 href={coursesData.buttons[0].url}
                 className="btn btn-warning"
+                target="_blank"
               >
                 {coursesData.buttons[0].text}
               </Link>
