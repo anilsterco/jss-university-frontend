@@ -2660,21 +2660,29 @@
   color: var(--color-4e);
   margin-bottom: 2.5rem;
 }
+
 .careers .placement_proSec {
   padding-bottom: 10rem;
 
 }
-.careers .admins_of_con{padding-bottom: 10rem;}
-.careers .resea_facili_main{
+
+.careers .admins_of_con {
+  padding-bottom: 10rem;
+}
+
+.careers .resea_facili_main {
   background-color: var(--color-white);
   padding-bottom: 2.5rem;
 }
+
 .resea_facili_main .exten_grid {
   width: 100%;
 }
-.rep_border img{
-    border-radius: 6rem 0.8rem 0.8rem 0.8rem;
+
+.rep_border img {
+  border-radius: 6rem 0.8rem 0.8rem 0.8rem;
 }
+
 .resea_facili_main .exte_mainsec h6 {
   text-align: left;
   font: var(--font-26);
@@ -2683,9 +2691,11 @@
   font-weight: bold;
   line-height: 1.7;
 }
-.careers .exten_listyle ul li b{
+
+.careers .exten_listyle ul li b {
   font-weight: 500;
 }
+
 .careers .exten_listyle ul li,
 .careers .exten_listyle ul li a {
   font: var(--font-24);
@@ -2694,7 +2704,8 @@
   font-family: var(--font-Condensed);
   margin-bottom: 1.4rem;
 }
-.careers .exten_listyle ul li a:hover{
+
+.careers .exten_listyle ul li a:hover {
   color: var(--color-00);
 }
 
@@ -5153,8 +5164,47 @@
   grid-template-columns: 54.4% 45.5%;
 }
 
+.recent-audit-observations .table_section {
+  padding-block: 5rem 5rem;
+}
+.recent-audit-observations .table_section .heading{    margin-bottom: 1rem;}
+.recent-audit-observations .table_section .sub_heading{    margin-bottom: 3rem;}
+.recent-audit-observations .table_section:nth-child(even) {
+  background-color: var(--color-f6);
+}
+
+.recent-audit-observations .ad_sel_col .se_step {
+  font: var(--font-21);
+  color: var(--color-4e);
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+.recent-audit-observations .ad_sel_col li:before {
+    content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+}
+.recent-audit-observations .ad_sel_col li {
+    font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 2.3rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;
+}
+
 .research .exten_grid .exten_listyle {
   padding-right: 0;
+}
+
+.step-and-startups-in-campus .amenities_section .grid_group {
+  background-color: var(--color-white);
+  padding: 6rem;
 }
 
 .step-and-startups-in-campus .exten_listyle.below_list {
