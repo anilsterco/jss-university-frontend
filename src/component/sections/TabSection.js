@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "@/styles/style.css";
+import "@/styles/custom.style.css";
 
 export default function TabSection({ title, subtitle, tabs }) {
   const pathname = usePathname();
@@ -23,14 +25,16 @@ export default function TabSection({ title, subtitle, tabs }) {
 
           <h3 dangerouslySetInnerHTML={{ __html: title }} />
 
-          {tabs.length > 1 && (
+          {Array.isArray(tabs) && tabs.length > 1 && (
             <ul>
               {tabs.map((tab, i) => (
                 <li key={i} className={isActive(tab) ? "active" : ""}>
                   {tab.url != "/jss-step" ? (
                     <Link href={tab.url}>{tab.text}</Link>
                   ) : (
-                    <Link href="https://www.jssstepnoida.org/" target="_blank">{tab.text}</Link>
+                    <Link href="https://www.jssstepnoida.org/" target="_blank">
+                      {tab.text}
+                    </Link>
                   )}
                 </li>
               ))}
