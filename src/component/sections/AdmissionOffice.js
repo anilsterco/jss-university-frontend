@@ -52,7 +52,7 @@ export default function AboutOne({ data }) {
         if (!item) return null;
 
         return (
-          <section className="admins_of_con" key={sectionIndex}>
+          <section className="admins_of_con" id="admissionsofc" key={sectionIndex}>
             <div className="container">
               <div
                 className="ad_offc_contact"

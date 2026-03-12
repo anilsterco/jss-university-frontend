@@ -32,6 +32,7 @@ export default function AboutOne({ data }) {
             key={`about-section-${sectionIndex}`}
             data-aos="fade-up"
             data-aos-duration="1200"
+            
           >
             {section.items
               .sort((a, b) => a.position - b.position)
@@ -62,7 +63,7 @@ export default function AboutOne({ data }) {
                           height={550}
                           className="img-fluid w-100"
                         />
-                        <div className="overlap_contents">
+                        <div className="overlap_contents" >
                           {item?.countGroup &&
                             item.countGroup.map((singleItem, itemIdx) => (
                               <figcaption
@@ -89,12 +90,13 @@ export default function AboutOne({ data }) {
 
                   {item.description && (
                     <div
+                   
                       className="estblish"
                       data-aos="fade-in"
                       data-aos-delay="300"
                       data-aos-duration="900"
                     >
-                      <p>{item.description}</p>
+                      <p id="mentoring-scheme">{item.description}</p>
                     </div>
                   )}
                 </div>
