@@ -2663,7 +2663,6 @@
 
 .careers .placement_proSec {
   padding-bottom: 10rem;
-
 }
 
 .careers .admins_of_con {
@@ -5180,6 +5179,17 @@
   margin-bottom: 2.5rem;
   font-weight: 500;
 }
+.careers .procedure_box{padding: 2rem;}
+.careers .procedure_box p{
+      font: var(--font-16);
+    font-family: var(--font-Roboto);
+    letter-spacing: 0;
+    color: #444;
+    font-weight: 400;
+    line-height: 1.7;
+}
+.careers .image_content_repeat_section {padding-block: 0 0rem;}
+.careers .image_content_repeat_section .singleImageContent {padding-bottom: 0;}
 .recent-audit-observations .ad_sel_col li:before {
     content: "";
     background-color: var(--color-100);
