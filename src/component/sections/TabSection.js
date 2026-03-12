@@ -27,7 +27,11 @@ export default function TabSection({ title, subtitle, tabs }) {
             <ul>
               {tabs.map((tab, i) => (
                 <li key={i} className={isActive(tab) ? "active" : ""}>
-                  <Link href={tab.url}>{tab.text}</Link>
+                  {tab.url != "/jss-step" ? (
+                    <Link href={tab.url}>{tab.text}</Link>
+                  ) : (
+                    <Link href="https://www.jssstepnoida.org/" target="_blank">{tab.text}</Link>
+                  )}
                 </li>
               ))}
             </ul>
