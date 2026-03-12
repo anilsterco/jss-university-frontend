@@ -26,6 +26,7 @@ export default function PlacementProcedure({ data }) {
         {item.heading && (
           <div className="procedure_heading">
             <h2>{item.heading}</h2>
+            <p>{item.description}</p>
           </div>
         )}
         <div className="placement_procedure">
