@@ -353,7 +353,8 @@ export default function Header() {
 
   const openMenu = () => {
     setMenuOpen(true);
-    setActiveIndex(0);
+    setActiveLeftIndex(0);
+    setActiveMiddleIndex(null);
   };
 
   const closeMenu = () => {
@@ -428,26 +429,26 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Contact"
             ? {
-              ...item,
-              heading: data.title,
-              Menu: [
-                {
-                  name: data.address,
-                  url: data.direction_url,
-                  contactIcon: "/images/header/address-icon.svg",
-                },
-                {
-                  name: data.email,
-                  url: `mailto:${data.email}`,
-                  contactIcon: "/images/header/mail-icon.svg",
-                },
-                {
-                  name: data.phone,
-                  url: `tel:${data.phone}`,
-                  contactIcon: "/images/header/phone-icon.svg",
-                },
-              ],
-            }
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.address,
+                    url: data.direction_url,
+                    contactIcon: "/images/header/address-icon.svg",
+                  },
+                  {
+                    name: data.email,
+                    url: `mailto:${data.email}`,
+                    contactIcon: "/images/header/mail-icon.svg",
+                  },
+                  {
+                    name: data.phone,
+                    url: `tel:${data.phone}`,
+                    contactIcon: "/images/header/phone-icon.svg",
+                  },
+                ],
+              }
             : item,
         ),
       );
@@ -465,13 +466,13 @@ export default function Header() {
           prev.map((item) =>
             item.name === "Menu"
               ? {
-                ...item,
-                Menu: json.data.map((d) => ({
-                  name: d.title,
-                  url: d.url,
-                  children: d.children || [], // ← store children
-                })),
-              }
+                  ...item,
+                  Menu: json.data.map((d) => ({
+                    name: d.title,
+                    url: d.url,
+                    children: d.children || [], // ← store children
+                  })),
+                }
               : item,
           ),
         );
@@ -507,13 +508,15 @@ export default function Header() {
 `}
     >
       <div
-        className={`header-inner ${!isHomeLikePage ? "innerPage" : ""
-          } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
+        className={`header-inner ${
+          !isHomeLikePage ? "innerPage" : ""
+        } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
       >
         <div className="containerXl">
           <div
-            className={`nav-container ${!isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
-              }`}
+            className={`nav-container ${
+              !isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
+            }`}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -555,8 +558,9 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className={`nav-item ${activeDropdown === i ? "active-items" : ""
-                        }`}
+                      className={`nav-item ${
+                        activeDropdown === i ? "active-items" : ""
+                      }`}
                       onMouseEnter={() => handleNavMouseEnter(i, l.title)}
                       onMouseLeave={handleNavMouseLeave}
                     >
@@ -834,7 +838,6 @@ export default function Header() {
                               />
                               {admissionsData.left.phone}
                             </a>
-
                           </p>
                         </div>
                         <div className="ad-ctas">
@@ -941,16 +944,22 @@ export default function Header() {
                     <li
                       key={item.id}
                       className={`menu-left-item ${activeLeftIndex === idx ? "active" : ""}`}
-                      onMouseEnter={() => {
+                      onClick={() => {
                         setActiveLeftIndex(idx);
                         setActiveMiddleIndex(null);
                       }}
                     >
                       <Link
-                        href={WEB_URL + item.url || "#"}
+                        href={
+                          item.url && item.url !== "#"
+                            ? WEB_URL + item.url
+                            : "#"
+                        }
                         className="hambur_links"
-                        onClick={() => {
-                          if (item.url && item.url !== "#") {
+                        onClick={(e) => {
+                          if (!item.url || item.url === "#") {
+                            e.preventDefault();
+                          } else {
                             closeMenu();
                           }
                         }}
@@ -1170,8 +1179,9 @@ export default function Header() {
               {mobilePanels.map((item) => (
                 <div
                   key={item.name}
-                  className={`panel ${activePanel === item.name ? "open" : ""
-                    } ${item.name.toLowerCase()}-panel`}
+                  className={`panel ${
+                    activePanel === item.name ? "open" : ""
+                  } ${item.name.toLowerCase()}-panel`}
                 >
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
@@ -1315,11 +1325,11 @@ export default function Header() {
                                 onClick={
                                   sub.children?.length > 0
                                     ? () =>
-                                      setOpenMenuAccordion(
-                                        openMenuAccordion === idx
-                                          ? null
-                                          : idx,
-                                      )
+                                        setOpenMenuAccordion(
+                                          openMenuAccordion === idx
+                                            ? null
+                                            : idx,
+                                        )
                                     : () => setActivePanel(null) // ← add this
                                 }
                                 style={
@@ -1365,11 +1375,11 @@ export default function Header() {
                                   onClick={
                                     sub.children?.length > 0
                                       ? () =>
-                                        setOpenMenuAccordion(
-                                          openMenuAccordion === `b${idx}`
-                                            ? null
-                                            : `b${idx}`,
-                                        )
+                                          setOpenMenuAccordion(
+                                            openMenuAccordion === `b${idx}`
+                                              ? null
+                                              : `b${idx}`,
+                                          )
                                       : () => setActivePanel(null) // ← add this
                                   }
                                   style={
@@ -1736,7 +1746,7 @@ export default function Header() {
             background: #f5f5f5;
           }
           .admission-wrap {
-            position: relative;
+            // position: relative;
             margin: 0 0.5rem;
           }
           .admission-btn {
@@ -1754,12 +1764,15 @@ export default function Header() {
           .admission-dropdown {
             z-index: 1200;
             background: #fff;
-            width: 85%;
+            // width: 85%;
             display: flex;
-            position: fixed;
+            position: absolute;
             top: 14rem;
-            right: 10rem;
+            // right: 10rem;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            left:0;
+            width:100%;
+            right:0;
           }
           .dropdown-arrow {
             border-bottom: 18px solid #fff;
@@ -2052,6 +2065,13 @@ export default function Header() {
             font-weight: normal;
             transition: all 0.3s ease;
           }
+            .menu-left-item.active {
+  background: #ffc100;
+  font-weight: bold;
+}
+.menu-left-item.active .hambur_links {
+  color: var(--color-4e);
+}
         
           .menu-left-item:hover {
             background: #ffc100;
@@ -2240,7 +2260,7 @@ export default function Header() {
             padding-right: 9.8rem;
             padding-top:18rem;
             padding-bottom:14rem;
-            height:700px;
+            height:74vh;
           }
           .mega-right-text {
             width: 23%;
@@ -2356,9 +2376,10 @@ export default function Header() {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 30%;
 }
 .mega-schools-list ul li {
-  padding-block: 1rem;
+  padding-block: 2rem 2rem;
   border-bottom: 1px dashed rgba(22, 52, 78, 0.2);
 }
 .mega-schools-list ul li:last-child {
@@ -2390,7 +2411,7 @@ export default function Header() {
   flex-direction: column;
   gap: 2.4rem;
   flex: 0 0 auto;
-  width: 26rem;
+  width: 31%;
 }
 .mega-dept-block h6 {
   font: var(--font-16);
@@ -3081,6 +3102,7 @@ export default function Header() {
             width: 100%;
             display: flex;
             justify-content: space-between;
+            position:relative;
           }
           .innerPage.header-scrolled {
             background: #deebf4;

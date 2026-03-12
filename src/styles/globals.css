@@ -842,6 +842,11 @@ color: var(--color-4e);
   font-weight: bold;
 }
 
+.menu-left-item.active .hambur_links{
+  color: var(--color-4e);
+  font-weight: bold;
+}
+
 .vid-thumb-grp {
   position: absolute;
   left: 0;
