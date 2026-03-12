@@ -24,9 +24,11 @@ export default function ContactClient() {
   const [courseList, setCourseList] = useState([]);
   const [stateList, setStateList] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
   const recaptchaRef = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
+  const [captchaError, setCaptchaError] = useState("");
 
   useEffect(() => {
     const fetchContactData = async () => {
@@ -69,15 +71,20 @@ export default function ContactClient() {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+    // Clear any previous status messages when user starts typing
+    if (submitStatus.message) {
+      setSubmitStatus({ type: "", message: "" });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!captchaToken) {
-      alert("Please complete the reCAPTCHA to verify you are not a robot.");
+      setCaptchaError("Please complete the reCAPTCHA to verify you are not a robot.");
       return;
     }
+    setCaptchaError("");
 
     if (isSubmitting) return;
     setIsSubmitting(true);
@@ -104,7 +111,12 @@ export default function ContactClient() {
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-      alert("Form submitted successfully!");
+
+      // Show success message in green
+      setSubmitStatus({
+        type: "success",
+        message: "Form submitted successfully! Our counselor will get in touch with you soon."
+      });
 
       setFormData({
         name: "",
@@ -116,11 +128,17 @@ export default function ContactClient() {
       });
       if (recaptchaRef.current) recaptchaRef.current.reset();
       setCaptchaToken(null);
+      setCaptchaError("");
     } catch (err) {
       console.error("Error:", err);
-      alert("An error occurred while submitting the form. Please try again.");
+      // Show error message in red
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred while submitting the form. Please try again."
+      });
       if (recaptchaRef.current) recaptchaRef.current.reset();
       setCaptchaToken(null);
+      setCaptchaError("");
     } finally {
       setIsSubmitting(false);
     }
@@ -166,6 +184,26 @@ export default function ContactClient() {
                     Fill in the details below and our counselor will get in
                     touch with you at the earliest.
                   </p>
+
+                  {/* Success/Error Message Display */}
+                  {submitStatus.message && (
+                    <div
+                      className={styles.statusMessage}
+                      style={{
+                        padding: "12px 16px",
+                        borderRadius: "8px",
+                        marginBottom: "20px",
+                        backgroundColor: submitStatus.type === "success" ? "#d4edda" : "#f8d7da",
+                        color: submitStatus.type === "success" ? "#155724" : "#721c24",
+                        border: submitStatus.type === "success" ? "1px solid #c3e6cb" : "1px solid #f5c6cb",
+                        fontSize: "14px",
+                        fontWeight: "500",
+                        textAlign: "center"
+                      }}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
 
                   <div className={styles.ContactForm}>
                     <form onSubmit={handleSubmit}>
@@ -253,13 +291,21 @@ export default function ContactClient() {
                         </label>
                       </div>
 
-                      <div className={styles.Form_fild} style={{ marginBottom: "20px" }}>
+                      <div className={styles.Form_fild} style={{ marginBottom: captchaError ? "5px" : "20px" }}>
                         <ReCAPTCHA
                           ref={recaptchaRef}
                           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "YOUR_SITE_KEY_HERE"}
-                          onChange={(token) => setCaptchaToken(token)}
+                          onChange={(token) => {
+                            setCaptchaToken(token);
+                            if (token) setCaptchaError("");
+                          }}
                         />
                       </div>
+                      {captchaError && (
+                        <p style={{ color: "red", fontSize: "14px", marginTop: "0", marginBottom: "15px" }}>
+                          {captchaError}
+                        </p>
+                      )}
 
                       <button
                         type="submit"
