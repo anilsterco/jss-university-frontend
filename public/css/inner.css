@@ -5208,6 +5208,11 @@
     list-style: none;
     position: relative;
 }
+.student-life .cafe_gues_mainsec{padding-block:5rem 5rem; }
+.student-life .cafe_gues_gridone{    margin-bottom: 10rem;}
+.student-life  .campu_grid_main.capus_grid_two .campu_con_rgt{padding-left: 0;max-width: 54.9rem;
+}
+.student-life .lib_cen_main .campu_grid_main {padding-top: 10rem;border-bottom: none;}
 
 .research .exten_grid .exten_listyle {
   padding-right: 0;

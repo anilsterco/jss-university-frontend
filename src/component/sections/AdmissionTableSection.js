@@ -25,7 +25,7 @@ export default function AboutOne({ data }) {
     switch (section.type) {
       case "tableSection":
         return (
-          <section className="fee_sturc_admain" key={sectionIndex}>
+          <section className="fee_sturc_admain" id="feestructure" key={sectionIndex}>
             <div className="container">
               <div className="fee_stru_title">
                 {section.items[0]?.heading && (

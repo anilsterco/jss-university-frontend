@@ -1165,12 +1165,13 @@
 }
 
 .amenities_section .grid_group li{
-  font:var(--font-18);
+     font: var(--font-16);
   color: #444;
     padding-left: 2.2rem;
     position: relative;
     list-style: none;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;    line-height: 2.8rem;
+
 }
 
 .amenities_section .grid_group li:before{

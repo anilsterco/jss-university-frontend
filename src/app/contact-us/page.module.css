@@ -262,8 +262,12 @@
   text-transform: inherit;
   border-left: 1px solid #DEDEDE;
   padding-left: 5rem;
+}.ContactAdd span{
+  transition: 0.5s;
 }
-
+.ContactAdd:hover span{
+  color: var(--color-100);
+}
 .ContactIcons {
   width: 5rem;
   height: 5rem;
