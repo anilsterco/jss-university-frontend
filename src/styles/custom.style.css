@@ -1205,6 +1205,15 @@
   padding:1rem 3rem;
 }
 
+.testimonial-filter .filter-tabs button.active{
+  background-color: var(--color-100);
+  border-radius: 5px;
+}
+
+.testimonial_detail_section .extra_details p{
+  padding-bottom:1rem;
+}
+
 /* .testimonial-filter  */
 
 
@@ -3159,6 +3168,13 @@ hr {
   color: #333;
   font: var(--font-16);
   border-bottom: 0.0625rem solid #ebebeb;
+}
+
+
+/* testimonial_list_section */
+
+.testimonial_list_section{
+  padding-bottom:10rem;
 }
 
 /* ---- Responsive ---- */

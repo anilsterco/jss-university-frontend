@@ -2056,7 +2056,6 @@ export default function Header() {
             padding-top: 10rem;
           }
           .menu-left-item {
-            padding: 1rem 7rem 1rem 14rem;
             cursor: pointer;
             position: relative;
             display: block;
@@ -2068,6 +2067,10 @@ export default function Header() {
             .menu-left-item.active {
   background: #ffc100;
   font-weight: bold;
+}
+  .menu-left-item .hambur_links {
+          display:inline-block;
+            padding: 1rem 7rem 1rem 14rem;
 }
 .menu-left-item.active .hambur_links {
   color: var(--color-4e);

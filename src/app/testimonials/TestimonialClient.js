@@ -111,7 +111,7 @@ export default function TestimonialClient() {
       )}
 
       {/* Testimonial List */}
-      <section className="">
+      <section className="testimonial_list_section">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
@@ -144,11 +144,11 @@ export default function TestimonialClient() {
                         </figure>
                       </div>
                       <div className="faulty-text">
-                        <h4>{item.name}</h4>
-                        {item.designation && <p>{item.designation}</p>}
-                        {item.company && (
+                        {item?.name && <h4>{item.name}</h4>}
+                        {/* {item.designation && <p>{item.designation}</p>} */}
+                        {/* {item.company && (
                           <p className="testimonial-company">{item.company}</p>
-                        )}
+                        )} */}
                         {(item.course || item.batch) && (
                           <p className="testimonial-course">
                             {[item.course, item.batch]
