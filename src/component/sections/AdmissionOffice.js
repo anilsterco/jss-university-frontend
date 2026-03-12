@@ -120,6 +120,8 @@ export default function AboutOne({ data }) {
                       );
                     })}
                   </ul>
+
+                  <a class="learn_more" href="">Apply Now</a>
                 </div>
               </div>
             </div>
