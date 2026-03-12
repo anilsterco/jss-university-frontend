@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
@@ -23,6 +24,9 @@ export default function ContactClient() {
   const [courseList, setCourseList] = useState([]);
   const [stateList, setStateList] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const recaptchaRef = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   useEffect(() => {
     const fetchContactData = async () => {
@@ -70,10 +74,16 @@ export default function ContactClient() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA to verify you are not a robot.");
+      return;
+    }
+
     if (isSubmitting) return;
     setIsSubmitting(true);
 
     const submitForm = new FormData();
+    submitForm.append("recaptcha_token", captchaToken);
 
     submitForm.append("name", formData.name);
     submitForm.append("email", formData.email);
@@ -104,9 +114,13 @@ export default function ContactClient() {
         course: "",
         agree: false,
       });
+      if (recaptchaRef.current) recaptchaRef.current.reset();
+      setCaptchaToken(null);
     } catch (err) {
       console.error("Error:", err);
       alert("An error occurred while submitting the form. Please try again.");
+      if (recaptchaRef.current) recaptchaRef.current.reset();
+      setCaptchaToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -239,6 +253,14 @@ export default function ContactClient() {
                         </label>
                       </div>
 
+                      <div className={styles.Form_fild} style={{ marginBottom: "20px" }}>
+                        <ReCAPTCHA
+                          ref={recaptchaRef}
+                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "YOUR_SITE_KEY_HERE"}
+                          onChange={(token) => setCaptchaToken(token)}
+                        />
+                      </div>
+
                       <button
                         type="submit"
                         className={styles.submitBtn}
@@ -256,7 +278,7 @@ export default function ContactClient() {
                     <p className={styles.address}>{contactUsData.address}</p>
                   </li>
                   <li>
-                    <a href="" className={styles.ContactAdd}>
+                    <a href={`mailto:${contactUsData.email}`} className={styles.ContactAdd}>
                       <MdMailOutline
                         color="#018ce8"
                         fontSize={16}
@@ -264,7 +286,8 @@ export default function ContactClient() {
                       />
                       <span>{contactUsData.email}</span>
                     </a>
-                    <a href="" className={styles.ContactAdd}>
+
+                    <a href={`tel:${contactUsData.phone}`} className={styles.ContactAdd}>
                       <BiPhoneCall
                         color="#018ce8"
                         fontSize={16}
