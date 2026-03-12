@@ -1218,6 +1218,13 @@
 
 
 
+.scu_tabs_main .bottom_desc{
+  margin-top:5rem;
+  color: var(--color-44);
+}
+
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;

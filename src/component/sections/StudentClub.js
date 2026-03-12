@@ -62,8 +62,14 @@ export default function StudentClub({ data }) {
                                   <li className="scu_tabs_li" key={tabIdx}>
                                     <button
                                       type="button"
-                                      className={scuActiveTab === `tab${tabIdx}` ? "active" : ""}
-                                      onClick={() => handleScuTabChange(`tab${tabIdx}`, tab)}
+                                      className={
+                                        scuActiveTab === `tab${tabIdx}`
+                                          ? "active"
+                                          : ""
+                                      }
+                                      onClick={() =>
+                                        handleScuTabChange(`tab${tabIdx}`, tab)
+                                      }
                                     >
                                       {tab.tabname}
                                     </button>
@@ -104,22 +110,35 @@ export default function StudentClub({ data }) {
                                         data-aos="fade-left"
                                         data-aos-delay="300"
                                       >
-                                        {tab.sidetitle && <h4>{tab.sidetitle}</h4>}
-                                        {tab.sidedesc && <p>{tab.sidedesc}</p>}
-                                        
-                                        {tab.objective && tab.objective.length > 0 && (
-                                          <>
-                                            <h6>Objective</h6>
-                                            <ul>
-                                              {tab.objective.map((obj, objIdx) => (
-                                                <li key={objIdx}>{obj.list}</li>
-                                              ))}
-                                            </ul>
-                                          </>
+                                        {tab.sidetitle && (
+                                          <h4>{tab.sidetitle}</h4>
                                         )}
+                                        {tab.sidedesc && <p>{tab.sidedesc}</p>}
+
+                                        {tab.objective &&
+                                          tab.objective.length > 0 && (
+                                            <>
+                                              <h6>Objective</h6>
+                                              <ul>
+                                                {tab.objective.map(
+                                                  (obj, objIdx) => (
+                                                    <li key={objIdx}>
+                                                      {obj.list}
+                                                    </li>
+                                                  ),
+                                                )}
+                                              </ul>
+                                            </>
+                                          )}
                                       </div>
                                     </div>
                                   </div>
+
+                                  {tab?.bottomDesc && (
+                                    <div className="bottom_desc">
+                                      <p>{tab.bottomDesc}</p>
+                                    </div>
+                                  )}
                                 </div>
                               ))}
                             </div>
@@ -127,18 +146,25 @@ export default function StudentClub({ data }) {
                         )}
 
                         {/* Benefits Section - Now shows benefits of active tab */}
-                        {activeTabData && activeTabData.benifits && activeTabData.benifits.length > 0 && (
-                          <div className="scu_benfits" data-aos="fade-up">
-                            <h5>Benefits</h5>
-                            <div className="scu_benift_grid">
-                              {activeTabData.benifits.map((benefit, benIdx) => (
-                                <div className="scu_benifit_col" key={benIdx}>
-                                  <p>{benefit.list}</p>
-                                </div>
-                              ))}
+                        {activeTabData &&
+                          activeTabData.benifits &&
+                          activeTabData.benifits.length > 0 && (
+                            <div className="scu_benfits" data-aos="fade-up">
+                              <h5>Benefits</h5>
+                              <div className="scu_benift_grid">
+                                {activeTabData.benifits.map(
+                                  (benefit, benIdx) => (
+                                    <div
+                                      className="scu_benifit_col"
+                                      key={benIdx}
+                                    >
+                                      <p>{benefit.list}</p>
+                                    </div>
+                                  ),
+                                )}
+                              </div>
                             </div>
-                          </div>
-                        )}
+                          )}
                       </div>
                     ))}
                 </div>

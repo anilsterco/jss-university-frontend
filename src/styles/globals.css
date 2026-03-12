@@ -2419,6 +2419,10 @@ color: var(--color-4e);
   font-weight: bold;
 }
 
+.studends_pdf ul li a{
+  color: #333333;
+}
+
 .studends_pdf ul li img {
   list-style: none;
   max-width: 1.4rem;
