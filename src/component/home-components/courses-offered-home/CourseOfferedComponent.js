@@ -301,7 +301,7 @@ export default function CoursesOffered({ data }) {
             <div className="add_btn">
               <Link
                 href={coursesData.buttons[0].url}
-                className="btn btn-warning"
+                className="btn btn-warning" target="_blank"
               >
                 {coursesData.buttons[0].text}
               </Link>
