@@ -60,7 +60,7 @@ export default function AboutOne({ data }) {
                         data-aos-delay={200 + idx * 150}
                       >
                         <div className="ad_se_content">
-                          <div className="se_step">Step {item.step}</div>
+                          <div className="se_step">{slug !== "recent-audit-observations" && 'Step'} {item.step}</div>
 
                           {item.desc && <p>{item.desc}</p>}
 
