@@ -526,8 +526,8 @@ export default function Header() {
                   <Image
                     src={
                       isHomeLikePage
-                        ? "/images/header/header-logo.png"
-                        : "/images/header/jss-moblogo.png"
+                        ? "/images/header/home.png"
+                        : "/images/header/inner-page.png"
                     }
                     className="site-logo"
                     alt="Site Logo"
@@ -541,7 +541,7 @@ export default function Header() {
               <div className="mob-logo">
                 <Link href="/" aria-label="Home">
                   <Image
-                    src="/images/header/jss-moblogo.png"
+                    src="/images/header/inner-page.png"
                     className="site-logo"
                     alt="Site Logo"
                     width={299}
