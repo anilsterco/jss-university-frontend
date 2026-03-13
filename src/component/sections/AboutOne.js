@@ -108,98 +108,95 @@ export default function AboutOne({ data }) {
 
       case "logoDesc":
         return (
-         <div className="container">
- <div
-            className="row justify-content-center"
-            key={`logo-section-${sectionIndex}`}
-          >
-            <div className="col-lg-12">
-              <div className="ab_estab_slider">
-                <Swiper
-                  modules={[Navigation, Autoplay, Pagination]}
-                  spaceBetween={30}
-                  slidesPerView={4}
-                  loop={true}
-                  pagination={{ clickable: true }}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                  }}
-                  breakpoints={{
-                    320: { slidesPerView: 1 },
-                    576: { slidesPerView: 2 },
-                    768: { slidesPerView: 3 },
-                    992: { slidesPerView: 4 },
-                  }}
-                >
-                  {section.items
-                    ?.sort(
-                      (a, b) =>
-                        Number(a.position || 0) - Number(b.position || 0),
-                    )
-                    .map((item, i) => {
-                      const hasFigure =
-                        item.figure !== null &&
-                        item.figure !== undefined &&
-                        item.figure !== "";
+          <div className="container" key={`logo-section-${sectionIndex}`}>
+            <div className="row justify-content-center">
+              <div className="col-lg-12">
+                <div className="ab_estab_slider">
+                  <Swiper
+                    modules={[Navigation, Autoplay, Pagination]}
+                    spaceBetween={30}
+                    slidesPerView={4}
+                    loop={true}
+                    pagination={{ clickable: true }}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
+                    breakpoints={{
+                      320: { slidesPerView: 1 },
+                      576: { slidesPerView: 2 },
+                      768: { slidesPerView: 3 },
+                      992: { slidesPerView: 4 },
+                    }}
+                  >
+                    {section.items
+                      ?.sort(
+                        (a, b) =>
+                          Number(a.position || 0) - Number(b.position || 0),
+                      )
+                      .map((item, i) => {
+                        const hasFigure =
+                          item.figure !== null &&
+                          item.figure !== undefined &&
+                          item.figure !== "";
 
-                      return (
-                        <SwiperSlide key={item.id || item.item_uuid || i}>
-                          <div className="estab_slide_item">
-                            <figure
-                              data-aos="fade-up"
-                              data-aos-delay={i * 150}
-                              data-aos-duration="800"
-                            >
-                              {hasFigure ? (
-                                <>
-                                  <figcaption>
-                                    <h4 className="estab_figure">
-                                      <span> #</span>
-                                      {String(item.figure)}
-                                    </h4>
-                                    {item.description && (
-                                      <p>{item.description}</p>
-                                    )}
-                                  </figcaption>
-                                  {item.file && (
-                                    <Image
-                                      src={item.file}
-                                      alt={item.description || "figure"}
-                                      width={120}
-                                      height={30}
-                                      style={{ objectFit: "contain" }}
-                                    />
-                                  )}
-                                </>
-                              ) : (
-                                <>
-                                  {item.file && (
-                                    <Image
-                                      src={item.file}
-                                      alt={item.description || "logo"}
-                                      width={72}
-                                      height={72}
-                                    />
-                                  )}
-                                  {item.description && (
+                        return (
+                          <SwiperSlide key={item.id || item.item_uuid || i}>
+                            <div className="estab_slide_item">
+                              <figure
+                                data-aos="fade-up"
+                                data-aos-delay={i * 150}
+                                data-aos-duration="800"
+                              >
+                                {hasFigure ? (
+                                  <>
                                     <figcaption>
-                                      <p>{item.description}</p>
+                                      <h4 className="estab_figure">
+                                        <span> #</span>
+                                        {String(item.figure)}
+                                      </h4>
+                                      {item.description && (
+                                        <p>{item.description}</p>
+                                      )}
                                     </figcaption>
-                                  )}
-                                </>
-                              )}
-                            </figure>
-                          </div>
-                        </SwiperSlide>
-                      );
-                    })}
-                </Swiper>
+                                    {item.file && (
+                                      <Image
+                                        src={item.file}
+                                        alt={item.description || "figure"}
+                                        width={120}
+                                        height={30}
+                                        style={{ objectFit: "contain" }}
+                                      />
+                                    )}
+                                  </>
+                                ) : (
+                                  <>
+                                    {item.file && (
+                                      <Image
+                                        src={item.file}
+                                        alt={item.description || "logo"}
+                                        width={72}
+                                        height={72}
+                                      />
+                                    )}
+                                    {item.description && (
+                                      <figcaption>
+                                        <p>{item.description}</p>
+                                      </figcaption>
+                                    )}
+                                  </>
+                                )}
+                              </figure>
+                            </div>
+                          </SwiperSlide>
+                        );
+                      })}
+                  </Swiper>
+                </div>
               </div>
             </div>
           </div>
-         </div>
         );
       default:
         return null;
