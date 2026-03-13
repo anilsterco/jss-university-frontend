@@ -134,7 +134,7 @@ export default function LeadershipDetailsPage({ params }) {
                     <p>{sections.about.description[1]}</p>
                   </div>
                 </div>
-                <div className="leader_col">
+                {/* <div className="leader_col">
                   <div className="leadership_two_img">
                     <figure
                       style={{
@@ -155,7 +155,7 @@ export default function LeadershipDetailsPage({ params }) {
                       />
                     </figure>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             {sections?.biography && (
@@ -182,10 +182,10 @@ export default function LeadershipDetailsPage({ params }) {
               />
             </figure>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-lg-12">
                 <div className="message_text">
-                  <h3>Message from Chancellor</h3>
-                  <h5>{sections.message_from_chancellor.designation}</h5>
+                  <h3>{sections.message_from_chancellor.designation}</h3>
+                  {/* <h5>{sections.message_from_chancellor.designation}</h5> */}
                   {sections.message_from_chancellor.message.map(
                     (msg, index) => (
                       <p key={index}>{msg}</p>
@@ -193,7 +193,7 @@ export default function LeadershipDetailsPage({ params }) {
                   )}
                 </div>
               </div>
-              <div className="col-lg-6">
+              {/* <div className="col-lg-6">
                 <div className="message_img">
                   <figure>
                     {sections?.message_from_chancellor?.video ? (
@@ -224,7 +224,7 @@ export default function LeadershipDetailsPage({ params }) {
                     )}
                   </figure>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="message_footer_section">
               <h4>{sections.message_from_chancellor.name}</h4>

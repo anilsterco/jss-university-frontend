@@ -813,7 +813,7 @@
   position: relative;
 }
 
-.heri_prici_names h5:first-child::after {
+/* .heri_prici_names h5:first-child::after {
   content: "";
   position: absolute;
   right: 0;
@@ -821,7 +821,7 @@
   width: 0.1rem;
   height: 6.2rem;
   background-color: var(--color-d4);
-}
+} */
 
 .heri_pri_btm_text {
   padding-top: 4rem;
@@ -6172,11 +6172,11 @@
   position: relative;
 }
 
-.leader_row {
+/* .leader_row {
   display: grid;
   grid-template-columns: repeat(1, 47% auto);
   gap: 8.6rem;
-}
+} */
 
 .leadership_two_cnt::before {
   width: 60%;

@@ -58,7 +58,7 @@ export default function AboutOne({ data }) {
                           </h5>
                         )}
                       </div>
-                      {item.image && (
+                      {/* {item.image && (
                         <figure
                           className="shine-effect"
                           data-aos="zoom-in"
@@ -72,7 +72,8 @@ export default function AboutOne({ data }) {
                             className="img-fluid w-100"
                           />
                         </figure>
-                      )}
+                      )} */}
+                      <iframe width="100%" height="546" src="https://www.youtube.com/embed/iThbgEP-3AU?si=eptqEhC_hr9MKSEq" title="Jss University Noida" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       <div
                         className="heri_pri_btm_text"
                         data-aos="fade-up"
