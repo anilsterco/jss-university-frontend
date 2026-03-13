@@ -6,6 +6,7 @@ import Link from "next/link";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { WEB_URL } from "@/config/config";
 const BASE_URL = "/api/";
 
 export default function FacultyDetailPage({ params }) {
@@ -309,7 +310,7 @@ export default function FacultyDetailPage({ params }) {
                   {/* Social Engagement */}
                   {facultySocialEngagement.length > 0 && (
                     <div className="profile-education profile-social">
-                      <h6>SOCIAL ENGAGEMENT</h6>
+                      <h5>Social Engagement</h5>
                       <ul>
                         {facultySocialEngagement.map((engagement, i) => (
                           <li key={i}>{engagement}</li>
@@ -327,10 +328,7 @@ export default function FacultyDetailPage({ params }) {
                         {addSectiondata.sections.map(
                           (section, idx) =>
                             section.points.length > 0 && (
-                              <div
-                                key={idx}
-                                className="comman_profile"
-                              >
+                              <div key={idx} className="comman_profile">
                                 <h5>{section.title}</h5>
                                 <ul>
                                   {section.points.map((point, i) => (
@@ -357,6 +355,10 @@ export default function FacultyDetailPage({ params }) {
                         </p>
                       </div>
                     )}
+
+                  <div className="back_btn">
+                    <Link href={`${WEB_URL}faculty`}>Back to Faculties</Link>
+                  </div>
                 </div>
               </div>
             </div>

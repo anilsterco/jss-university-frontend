@@ -1264,6 +1264,9 @@
 }
 
 
+
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
@@ -2036,6 +2039,21 @@ hr {
 .profile-info-text {
   position: relative;
   padding-inline: 0.8rem 0;
+}
+
+.profile-info-text .back_btn{
+  margin-top:3rem;
+}
+
+.profile-info-text .back_btn a{
+  border:1px solid gray;
+  color:#333;
+  padding:1rem 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: var(--font-Roboto);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
 }
 
 .profile-education:first-child {
