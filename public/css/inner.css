@@ -850,6 +850,20 @@
 .academic-council .table_section .table-lab tbody td:nth-child(2){
   width: 25%;
 }
+.governance .table_section .table-lab thead th:nth-child(2),
+.governance .table_section .table-lab tbody td:nth-child(2){
+  width: 25%;
+}
+.team-iqac .table_section{
+      padding: 5rem 0;
+}
+.governance .table_section .table-lab thead th:nth-child(2),
+.governance .table_section .table-lab tbody td:nth-child(2){
+  width: 25%;
+}
+.academic-council .table_section{
+      padding: 5rem 0;
+}
 .campu_facilities {
   padding-block: 10rem 0;
 }
