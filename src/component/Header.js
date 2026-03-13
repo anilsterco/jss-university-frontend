@@ -716,6 +716,13 @@ export default function Header() {
                                         </li>
                                       ))}
                                     </ul>
+                                    <Image
+                                      src={"/images/header/school-image.webp"}
+                                      width={1264}
+                                      height={756}
+                                      className="school_img"
+                                      alt="school image"
+                                    />
                                   </div>
                                 );
                               }
@@ -2263,7 +2270,7 @@ export default function Header() {
             padding-right: 9.8rem;
             padding-top:18rem;
             padding-bottom:14rem;
-            height:74vh;
+            min-height:74vh;
           }
           .mega-right-text {
             width: 23%;
@@ -2380,6 +2387,12 @@ export default function Header() {
   padding: 0;
   margin: 0;
   width: 30%;
+}
+.mega-schools-list .school_img {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 70%;
 }
 .mega-schools-list ul li {
   padding-block: 2rem 2rem;

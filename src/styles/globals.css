@@ -153,6 +153,8 @@ p {
 .mega-schools-list {
   padding: 4rem 0;
   width: 100%;
+  display:flex;
+  justify-content: space-between;
 }
 .mega-schools-list ul {
   list-style: none;
@@ -176,6 +178,11 @@ p {
 }
 .mega-schools-list ul li a:hover {
   color: var(--color-e8);
+}
+
+.mega-schools-list .school_img{
+  width: 65%;
+  height:auto;
 }
 
 /* Departments grid */
