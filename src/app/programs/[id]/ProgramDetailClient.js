@@ -277,7 +277,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {eligibility && (
         <section className="eligibility-sec" id="eligibilitySec">
           <div className="containerMD">
             <div className="row">
@@ -328,7 +327,6 @@ export default function ProgramDetailClient({ params }) {
             </div>
           </div>
         </section>
-      )}
 
       <section className="educational-sec">
         <div className="container">
@@ -477,7 +475,7 @@ export default function ProgramDetailClient({ params }) {
       </section>
 
       {/* Curriculum Section */}
-      {curriculum && (
+      {curriculum?.curriculum_title && (
         <section className="core-sec">
           <div className="container">
             <div className="row">

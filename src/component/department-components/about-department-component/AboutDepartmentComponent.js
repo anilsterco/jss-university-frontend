@@ -64,8 +64,14 @@ export default function AboutDepartmentComponent({ data, params }) {
             </h1>
           )}
           {departmentData?.description && (
-            <p className={styles.description}>{departmentData.description}</p>
+            <h1 className={styles.description}>{departmentData.description}</h1>
           )}
+
+          {departmentData?.points?.map((point, index) => (
+            <p key={index} className={styles.points}>
+              {point}
+            </p>
+          ))}
           <Link
             href={`/department/${params}/about-the-department`}
             className={styles.arrowLink}
