@@ -31,13 +31,25 @@
 }
 
 .description {
-  color: #212121;
+  color: #333333;
+  font: var(--font-24);
+  letter-spacing: 0px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding-inline: 5rem;
+  font-weight: 300;
+}
+
+.points {
+  color: #444;
   font: var(--font-16);
   font-weight: normal;
   letter-spacing: 0px;
   margin: 0 auto;
   line-height: 1.6;
   padding-inline: 5rem;
+  margin-top:3rem;
+  max-width: 90%;
 }
 
 .statsSection {
@@ -287,10 +299,13 @@
   font: var(--font-16);
   padding-left: 1rem;
 }
+.arrowLink{
+  margin-top:4rem;
+  display:block;
+}
 .arrowLink img {
   width: 2.2rem;
   height: 2.2rem;
-  margin-top: 4rem;
 }
 
 /* Responsive Design */

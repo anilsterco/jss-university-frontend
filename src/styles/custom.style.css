@@ -1259,6 +1259,9 @@
   max-width: 95%;
 }
 
+.department-page .about_page_section .header{
+  margin-bottom:2rem;
+}
 
 
 @media all and (min-width: 800px) {

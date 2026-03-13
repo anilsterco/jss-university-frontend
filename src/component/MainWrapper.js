@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
-const getSlugClass = (pathname) => {
+const getSlugClass = (pathname, typeOnly) => {
   if (!pathname) return "home";
 
   const segments = pathname.split("/").filter(Boolean);
@@ -12,12 +12,16 @@ const getSlugClass = (pathname) => {
 
   const first = segments[0];
   const last = segments[segments.length - 1];
-  return `${first}-${last}`;
+
+  return typeOnly == "true"
+    ? `${first}-${last} ${first}-page`
+    : `${first}-${last}`;
 };
 
 export default function MainWrapper({ children }) {
   const pathname = usePathname();
-  const slugClass = getSlugClass(pathname);
+  // const slugClass = getSlugClass(pathname);
+  const typeClass = getSlugClass(pathname, "true");
 
-  return <main className={`main-container ${slugClass}`}>{children}</main>;
+  return <main className={`main-container ${typeClass}`}>{children}</main>;
 }
