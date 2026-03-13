@@ -166,6 +166,34 @@ export default function LeadershipClient() {
             </section>
           )}
 
+          <div className="fee_strcu_table">
+            <div className="fee_table_wrapper">
+              <table className="fee_table">
+                <thead>
+                  <tr>
+                    <th>Sr. No</th>
+                     <th>Name</th>
+                      <th>Designation</th>
+                    {/* {section.items[0].tableHeadings.map((th, thIndex) => (
+                      <th key={thIndex}>{th.tableHeading}</th>
+                    ))} */}
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {console.log(otherLeaders)
+                  }
+                  {/* {otherLeaders.map((leader) => (
+                    <tr key={leader.id}>
+                      <td>{itemIdx + 1}</td>
+                     <td>{leader.name}</td>
+                     <td>{leader.designation}</td>
+                    </tr>
+                  ))} */}
+                </tbody>
+              </table>
+            </div>
+          </div>
           {Object.entries(otherLeaders).map(
             ([categoryName, categoryLeaders]) => {
               if (!categoryLeaders || categoryLeaders.length === 0) return null;

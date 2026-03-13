@@ -2207,7 +2207,7 @@ color: var(--color-4e);
 }
 
 .placement_highlights .heading {
-  padding-block: 0rem 10rem;
+  padding-block: 0rem 6rem;
   margin: 0 auto;
 }
 
@@ -2222,10 +2222,8 @@ color: var(--color-4e);
 }
 
 .high_lightRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 7.4rem;
-
+  width: 50%;
+margin: auto;
 }
 
 .high_lightRow .highLight_col {
