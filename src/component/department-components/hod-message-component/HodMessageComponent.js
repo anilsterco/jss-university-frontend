@@ -6,7 +6,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const HODMessage = ({ data }) => {
-  console.log("hod message data", data);
 
   const [expanded, setExpanded] = useState(false);
 
@@ -38,11 +37,12 @@ const HODMessage = ({ data }) => {
         designation: data?.designation,
         designation2: data?.designation2,
         subMessage: data?.subMessage,
-        messages: normalizeMessages(data?.messages),
+        messages: normalizeMessages(data?.message),
         type: data?.type,
         sectionType: data?.sectionType,
       }
     : null;
+    
 
   const hodData = normalizedData || dummyHodData;
 

@@ -243,7 +243,7 @@ export default function DepartmentSection({
                 <Link href={`/department/${dept.slug}`}>
                   <Image
                     src={dept.image}
-                    alt="Dummy Department"
+                    alt={dept.name}
                     width={330}
                     height={330}
                     className={styles.departmentImage}
