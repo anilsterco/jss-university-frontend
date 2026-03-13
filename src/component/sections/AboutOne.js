@@ -27,56 +27,57 @@ export default function AboutOne({ data }) {
     switch (section.type) {
       case "topBanner":
         return (
-          <div
-            className={`row justify-content-center about_top ${section?.items?.[0]?.sectionType} ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
-            key={`about-section-${sectionIndex}`}
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            
-          >
-            {section.items
-              .sort((a, b) => a.position - b.position)
-              .map((item, index) => (
-                <div
-                  className="col-lg-12"
-                  key={item.id || item.item_uuid || index}
-                >
-                  <div
-                    className="abt_cntnt"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    id={item?.sectionId}
-                  >
-                    <h5 className="about_subtitle">{item.title}</h5>
-                    {item.subtitle && <p>{item.subtitle}</p>}
-
-                    {item.file && (
-                      <figure
-                        className="shine-effect image-overlay-figure"
-                        data-aos="zoom-in"
-                        data-aos-duration="1000"
+          <section key={sectionIndex} className={`about_one`}>
+            <div className="container">
+              <div
+                className={`row justify-content-center about_top ${section?.items?.[0]?.sectionType} ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
+                key={`about-section-${sectionIndex}`}
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                {section.items
+                  .sort((a, b) => a.position - b.position)
+                  .map((item, index) => (
+                    <div
+                      className="col-lg-12"
+                      key={item.id || item.item_uuid || index}
+                    >
+                      <div
+                        className="abt_cntnt"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        id={item?.sectionId}
                       >
-                        <Image
-                          src={item.file}
-                          alt={item.title || "About JSS Academy"}
-                          width={1390}
-                          height={550}
-                          className="img-fluid w-100"
-                        />
-                        <div className="overlap_contents" >
-                          {item?.countGroup &&
-                            item.countGroup.map((singleItem, itemIdx) => (
-                              <figcaption
-                                key={itemIdx}
-                                className="image-overlay-caption"
-                              >
-                                <h5>{singleItem.counter}</h5>
-                                <p>{singleItem.countDesc}</p>
-                              </figcaption>
-                            ))}
-                        </div>
+                        <h5 className="about_subtitle">{item.title}</h5>
+                        {item.subtitle && <p>{item.subtitle}</p>}
 
-                        {/* {(item.count || item.count_description) && (
+                        {item.file && (
+                          <figure
+                            className="shine-effect image-overlay-figure"
+                            data-aos="zoom-in"
+                            data-aos-duration="1000"
+                          >
+                            <Image
+                              src={item.file}
+                              alt={item.title || "About JSS Academy"}
+                              width={1390}
+                              height={550}
+                              className="img-fluid w-100"
+                            />
+                            <div className="overlap_contents">
+                              {item?.countGroup &&
+                                item.countGroup.map((singleItem, itemIdx) => (
+                                  <figcaption
+                                    key={itemIdx}
+                                    className="image-overlay-caption"
+                                  >
+                                    <h5>{singleItem.counter}</h5>
+                                    <p>{singleItem.countDesc}</p>
+                                  </figcaption>
+                                ))}
+                            </div>
+
+                            {/* {(item.count || item.count_description) && (
                           <figcaption className="image-overlay-caption">
                             {item.count && <h5>{item.count}</h5>}
                             {item.count_description && (
@@ -84,24 +85,25 @@ export default function AboutOne({ data }) {
                             )}
                           </figcaption>
                         )} */}
-                      </figure>
-                    )}
-                  </div>
+                          </figure>
+                        )}
+                      </div>
 
-                  {item.description && (
-                    <div
-                   
-                      className="estblish"
-                      data-aos="fade-in"
-                      data-aos-delay="300"
-                      data-aos-duration="900"
-                    >
-                      <p id="mentoring-scheme">{item.description}</p>
+                      {item.description && (
+                        <div
+                          className="estblish"
+                          data-aos="fade-in"
+                          data-aos-delay="300"
+                          data-aos-duration="900"
+                        >
+                          <p id="mentoring-scheme">{item.description}</p>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-          </div>
+                  ))}
+              </div>
+            </div>
+          </section>
         );
 
       case "logoDesc":
@@ -203,16 +205,14 @@ export default function AboutOne({ data }) {
   };
 
   return (
-    <section className="about_one">
-      <div className="container">
-        {data && data.length > 0 ? (
-          data.map((section, index) => renderSection(section, index))
-        ) : (
-          <div className="abt_cntnt" data-aos="fade-up">
-            <p>Welcome to JSS Academy of Technical Education</p>
-          </div>
-        )}
-      </div>
-    </section>
+    <>
+      {data && data.length > 0 ? (
+        data.map((section, index) => renderSection(section, index))
+      ) : (
+        <div className="abt_cntnt" data-aos="fade-up">
+          <p>Welcome to JSS Academy of Technical Education</p>
+        </div>
+      )}
+    </>
   );
 }

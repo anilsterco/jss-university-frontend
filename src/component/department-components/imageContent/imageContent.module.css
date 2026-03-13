@@ -131,6 +131,13 @@
     margin-top: 5rem;
 }
 
+.extraPara{
+    margin-top:7rem;
+    font:var(--font-16);
+    color: #444444;
+    margin-bottom: 0;
+}
+
 .singleImageContent:first-child{
     padding-bottom: 8rem;
 }

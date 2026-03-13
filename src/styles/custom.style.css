@@ -991,6 +991,10 @@
   padding: 8rem 0;
 }
 
+.image_content_repeat_section.start .singleImageContent .align-items-center{
+  align-items: start!important;
+}
+
 .image_content_repeat_section.no-padding {
   padding: 0;
 }
@@ -1239,6 +1243,21 @@
 }
 
 
+/* department-innovations */
+
+.department-innovations .about_one{
+  background:#00489A;
+}
+
+.department-innovations .about_one .about_subtitle,
+.department-innovations .about_one p,
+.department-innovations .about_one .estblish p{
+  color:#fff;
+}
+
+.department-innovations .about_one .estblish{
+  max-width: 95%;
+}
 
 
 
