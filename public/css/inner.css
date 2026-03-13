@@ -1689,7 +1689,10 @@
   grid-template-columns: 60% 40%;
   align-items: center;
 }
-
+.faci_diff_tabs .fac_tab_con .fac_dif_tbimg img{
+  border-radius: 8rem 0.8rem 0.8rem 0.8rem;
+}
+.campus-facilities .amenities_gridmain{margin-bottom: 3rem;}
 .faci_diff_tabs .faci_accordion {
   padding-left: 14.4rem;
 }
@@ -3635,7 +3638,7 @@
   max-width: 51.2rem;
   display: flex;
   position: relative;
-  padding-block: 11.3rem 5rem;
+  padding-block: 30rem 5rem;
 }
 
 .spo_fa_content h5 {

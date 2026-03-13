@@ -116,6 +116,7 @@ p {
   font-family: var(--font-Roboto);
   color: var(--color-black);
   margin-bottom: 3rem;
+  line-height: 2.8rem;
 }
 
 .main-container .container {
@@ -2374,7 +2375,7 @@ margin: auto;
 }
 
 .sport_fac_swiper .swiper-pagination {
-  max-width: 29%;
+  max-width: 100%;
   margin: 0 auto;
 }
 

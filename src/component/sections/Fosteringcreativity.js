@@ -53,7 +53,7 @@ export default function Fosteringcreativity({ data }) {
                         ))}
 
                         {item.button_name && (
-                          <a
+                          <a target="_blank"
                             href={item.button_url || "#"}
                             className="learn_more"
                           >

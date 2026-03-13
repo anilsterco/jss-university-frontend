@@ -43,14 +43,13 @@ export default function FacilityTab({ data }) {
           <section
             key={`facilities-tab-${sectionIndex}`}
             className="facilities_diffent"
-            data-aos="fade-up"
           >
             <div className="container">
               {section.items
                 ?.sort((a, b) => a.position - b.position)
                 .map((item, itemIdx) => (
                   <div key={itemIdx}>
-                    <div className="fac_diff_title" data-aos="fade-up">
+                    <div className="fac_diff_title" >
                       <h5>{item.heading}</h5>
                       <p>{item.subheading}</p>
                     </div>
@@ -84,8 +83,6 @@ export default function FacilityTab({ data }) {
                                 {tab.image && (
                                   <div
                                     className="fac_dif_tbimg"
-                                    data-aos="fade-left"
-                                    data-aos-delay="300"
                                   >
                                     <figure className="shine-effect">
                                       <Image
@@ -102,8 +99,6 @@ export default function FacilityTab({ data }) {
                                 {tab.accordian && tab.accordian.length > 0 && (
                                   <div
                                     className="faci_accordion"
-                                    data-aos="fade-right"
-                                    data-aos-delay="200"
                                   >
                                     {tab.accordian.map((accordionItem, accIdx) => (
                                       <div className="faci_acc_item" key={accIdx}>
