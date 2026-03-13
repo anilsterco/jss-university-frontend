@@ -86,7 +86,7 @@ export default async function DepartmentPage({ params }) {
         <FacultyList data={departmentData.sections.faculty_data} />
       )}
 
-      {departmentData?.sections?.happenings && (
+      {departmentData?.sections?.placements && (
         <PlacementDepartment data={departmentData.sections.placements} />
       )}
 
