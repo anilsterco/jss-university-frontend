@@ -68,7 +68,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.subHeading && (
               <h5 className={styles.subHeading}>{data.subHeading}</h5>
             )}
-            {data?.listing && (
+            {data?.listing && data.listing.length > 0 && (
               <ul className={styles.ul}>
                 {data.listing.map((singleList, listIdx) =>
                   singleList.bold || singleList.list ? (
@@ -91,6 +91,10 @@ export default function ImageContent({ data, id, type, extraClass }) {
 
       {data?.extraInfo && (
         <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
+      )}
+
+      {data?.extraPara && (
+        <h5 className={styles.extraPara}>{data.extraPara}</h5>
       )}
     </div>
   );

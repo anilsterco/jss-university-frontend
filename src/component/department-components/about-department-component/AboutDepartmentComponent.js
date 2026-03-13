@@ -52,9 +52,13 @@ export default function AboutDepartmentComponent({ data, params }) {
   }, []);
 
   return (
-    <div className={`${styles.aboutDepartment}`}>
+    <div className={`about_page_section ${styles.aboutDepartment}`}>
       <div className="container">
-        <div className={styles.header} data-aos="fade-up" data-aos-delay="100">
+        <div
+          className={`${styles.header} header`}
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           {departmentData?.subtitle && (
             <p className={styles.subtitle}>{departmentData.subtitle}</p>
           )}
@@ -64,8 +68,14 @@ export default function AboutDepartmentComponent({ data, params }) {
             </h1>
           )}
           {departmentData?.description && (
-            <p className={styles.description}>{departmentData.description}</p>
+            <h6 className={styles.description}>{departmentData.description}</h6>
           )}
+
+          {departmentData?.points?.map((point, index) => (
+            <p key={index} className={styles.points}>
+              {point}
+            </p>
+          ))}
           <Link
             href={`/department/${params}/about-the-department`}
             className={styles.arrowLink}

@@ -62,13 +62,14 @@
 .programsCountWrapper {
   position: relative;
   display: inline-block;
+  display:flex;
 }
 
 .programsCountPlus {
   color: #ac9031;
   font: var(--font-52);
   font-weight: 400;
-  position: absolute;
+  /* position: absolute; */
   top: 0.4rem;
   letter-spacing: -4.16px;
   right: 0px;
@@ -94,7 +95,7 @@
   letter-spacing: -0.48px;
   font-weight: 300;
   font-family: "Geist", sans-serif;
-  padding-left: 3.6rem;
+  /* padding-left: 3.6rem; */
   line-height: 1.5;
 }
 
@@ -190,7 +191,7 @@
 }
 
 .programsCountSection {
-  gap: 2.7rem;
+  gap: 3.6rem;
 }
 
 .programsCardsSection {

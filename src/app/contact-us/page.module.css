@@ -182,11 +182,12 @@
 }
 
 .CheckCol .lableFild {
-  font-size: 12px;
-  padding-left: 1rem;
+  font-size:1.2rem;
+  /* padding-left: 1rem; */
   margin: 1rem 0;
-  font-family: var(--font-Roboto);
+  /* font-family: var(--font-Roboto); */
   color: var(--color-white);
+  font-family: var(--font-Geist);
 }
 
 .submitBtn {
@@ -302,6 +303,7 @@
   opacity: 0.87;
   border-radius: 50px 8px;
   height: 100%;
+  border:none;
 }
 @media (max-width:1024px){
  .contactDetails {grid-template-columns: 52% 48%;}

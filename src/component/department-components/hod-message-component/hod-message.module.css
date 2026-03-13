@@ -122,6 +122,9 @@
   color: #16344E;
   font-family: var(--font-Condensed);
   font-weight: 700;
+  text-transform: initial;
+  font:var(--font-26);
+  margin-bottom:3rem;
 }
 
 .message_section .title{
@@ -183,7 +186,7 @@
 }
 
 
-.message_section .arrowLink{
+.arrowLink{
   border:none!important;
   background:none;
   font:var(--font-18);
@@ -191,7 +194,7 @@
   font-weight: 500;
 }
 
-.message_section .arrowLink img{
+.arrowLink img{
   margin-left: 1rem;
 }
 
