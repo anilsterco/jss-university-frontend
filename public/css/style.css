@@ -215,6 +215,7 @@ p {
     font-family: var(--font-Roboto);
     color: var(--color-black);
     margin-bottom: 3rem;
+        line-height: 2.8rem;
 }
 
 p:last-of-type {

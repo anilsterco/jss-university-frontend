@@ -108,7 +108,8 @@ export default function AboutOne({ data }) {
 
       case "logoDesc":
         return (
-          <div
+         <div className="container">
+ <div
             className="row justify-content-center"
             key={`logo-section-${sectionIndex}`}
           >
@@ -198,6 +199,7 @@ export default function AboutOne({ data }) {
               </div>
             </div>
           </div>
+         </div>
         );
       default:
         return null;

@@ -73,8 +73,17 @@ export default function AboutOne({ data }) {
                           />
                         </figure>
                       )} */}
-                      <iframe width="100%" height="546" src="https://www.youtube.com/embed/iThbgEP-3AU?si=eptqEhC_hr9MKSEq" title="Jss University Noida" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      <div
+
+                      {item?.video_url && (
+                        <iframe
+                          width="100%"
+                          height="546"
+                          src={item.video_url.replace("watch?v=", "embed/")}
+                          title="video"
+                          frameBorder="0"
+                          allowFullScreen
+                        ></iframe>
+                      )}<div
                         className="heri_pri_btm_text"
                         data-aos="fade-up"
                         data-aos-delay="400"
