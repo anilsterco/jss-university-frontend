@@ -76,10 +76,10 @@ export default function LeadershipDetailsPage({ params }) {
                   <li className="active">
                     <Link href="/leadership">Leadership</Link>
                   </li>
-                   <li>
+                  <li>
                     <Link href="/organogram">Organogram</Link>
                   </li>
-                   <li>
+                  <li>
                     <Link href="/academic-council">Academic Council</Link>
                   </li>
                 </ul>
@@ -168,32 +168,33 @@ export default function LeadershipDetailsPage({ params }) {
         </div>
       </section>
 
-      <section className="message_section">
-        <div className="container">
-          <div className="message_warpper">
-            <figure>
-              <Image
-                src={"/images/custom-page/about/quote.png"}
-                alt="Quote Icon"
-                width={148}
-                height={100}
-                style={{ height: "100%" }}
-                className="tesIcon"
-              />
-            </figure>
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="message_text">
-                  <h3>{sections.message_from_chancellor.designation}</h3>
-                  {/* <h5>{sections.message_from_chancellor.designation}</h5> */}
-                  {sections.message_from_chancellor.message.map(
-                    (msg, index) => (
-                      <p key={index}>{msg}</p>
-                    ),
-                  )}
+      {sections.message_from_chancellor?.message?.length > 0 && (
+        <section className="message_section">
+          <div className="container">
+            <div className="message_warpper">
+              <figure>
+                <Image
+                  src={"/images/custom-page/about/quote.png"}
+                  alt="Quote Icon"
+                  width={148}
+                  height={100}
+                  style={{ height: "100%" }}
+                  className="tesIcon"
+                />
+              </figure>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="message_text">
+                    <h3>{sections.message_from_chancellor.designation}</h3>
+                    {/* <h5>{sections.message_from_chancellor.designation}</h5> */}
+                    {sections.message_from_chancellor.message.map(
+                      (msg, index) => (
+                        <p key={index}>{msg}</p>
+                      ),
+                    )}
+                  </div>
                 </div>
-              </div>
-              {/* <div className="col-lg-6">
+                {/* <div className="col-lg-6">
                 <div className="message_img">
                   <figure>
                     {sections?.message_from_chancellor?.video ? (
@@ -225,13 +226,16 @@ export default function LeadershipDetailsPage({ params }) {
                   </figure>
                 </div>
               </div> */}
-            </div>
-            <div className="message_footer_section">
-              <h4>{sections.message_from_chancellor.name}</h4>
+              </div>
+              <div className="message_footer_section">
+                <h4>{sections.message_from_chancellor.name}</h4>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      )}
+
     </main>
   );
 }
