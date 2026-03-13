@@ -5239,11 +5239,13 @@
 .student-life .cafe_gues_gridone {
   margin-bottom: 10rem;
 }
-
+.student-life .scu_content h6{    margin-top: 3.2rem;
+}
 .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
   padding-left: 0;
   max-width: 54.9rem;
 }
+.leadership_two .leadership_grid figure figcaption h3{text-transform: uppercase;}
 .student-life .scu_tab_inner .scu_gridmain{align-items: start;    grid-template-columns: 41.5% 46%;}
 .student-life .scu_imgsec {margin: 0;order: 2;}
 .student-life .scu_imgsec img{    border-radius: 0.8rem 6rem .8rem .8rem;}
@@ -5259,6 +5261,9 @@
   margin-top: 2rem;
   display: inline-block;
 }
+.step-and-startups-in-campus .single_image_content .rep_border{
+  order: 2;
+}.step-and-startups-in-campus .single_image_content .content_col {padding-left: 0;padding-right: 10rem;}
 .careers .add_of_context ul li:nth-last-child(1) span{
   font-style: italic;
 }
@@ -6009,7 +6014,12 @@
 .leadership_two .leadership_grid .leadership_grid_Bx:hover figure figcaption h3 {
   color: var(--color-e8);
 }
-
+.leadership_two .leadership_grid .leadership_grid_Bx:hover figure figcaption p{
+  color: var(--color-100);
+}
+.leadership_two .leadership_grid .leadership_grid_Bx figure figcaption p {
+  transition: all 0.5s;
+}
 .leadership_two .leadership_grid figure figcaption p {
   display: flex;
   flex-direction: column;
