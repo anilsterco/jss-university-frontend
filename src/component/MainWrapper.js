@@ -12,9 +12,10 @@ const getSlugClass = (pathname, typeOnly) => {
 
   const first = segments[0];
   const last = segments[segments.length - 1];
+  const full = segments.join("-");
 
-  return typeOnly == "true"
-    ? `${first}-${last} ${first}-page`
+  return typeOnly === "true"
+    ? `${first}-${last} ${first}-page ${full}`
     : `${first}-${last}`;
 };
 
