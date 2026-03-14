@@ -5264,7 +5264,12 @@ hr {
 }
 @media all and (max-width: 2550px){
 .inner_sub_header {
-    margin-top: 14.4rem;
+    margin-top: 15.2rem;
+}
+}
+@media all and (max-width: 2000px){
+.inner_sub_header {
+    margin-top: 16.5rem;
 }
 }
 /* about-us page responsive */
