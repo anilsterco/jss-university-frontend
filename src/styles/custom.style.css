@@ -1314,6 +1314,10 @@
   .tabs-side .tabs li {
     margin-bottom: 2px;
   }
+
+  .program-detail-text .innnr_head {
+  max-width: 100%;
+}
 }
 
 /* 
@@ -2347,18 +2351,21 @@ hr {
   }
 
   .admission-box {
-    width: 74%;
+    width:100%;
     margin: auto;
     position: relative;
     top: auto;
     left: 0;
     right: 0;
-    max-width: 74%;
+max-width:100%;
   }
-
+.program-detail-text .innnr_head {
+    max-width: 100%;
+}
   .overview-duration {
     min-height: 100%;
   }
+  .step-and-startups-in-campus .placement_proSec{ padding-bottom: 5rem;}  
 
 }
 
@@ -2394,7 +2401,7 @@ hr {
   }
 
   .profile-info-box:before {
-    height: 23rem;
+    height: 100%;
     width: 100%;
   }
 
@@ -2407,17 +2414,26 @@ hr {
   }
 
   .faulty-detail-sec1 {
-    padding-bottom: 2rem;
+    padding-bottom:5rem;
   }
 
   .info-box {
     flex-wrap: wrap;
   }
-
+  .profile-info-text{ padding-top: 5rem;}
+.cus-profile-text p {
+    padding-bottom: 0;
+}
   .count_alumni_section {
     padding-top: 4rem;
   }
-
+  .amenities_section .grid_group{ gap:3rem; }
+  .step-and-startups-in-campus .amenities_section .grid_group{padding: 3rem;}
+.curriculum_box { padding: 3rem; }
+.curriculum_box p{ margin-bottom: 0;}
+.placement_stats{    padding-bottom: 3rem;}
+.placements_loader:after{    width: 38%;}
+.placements_loader::before{    width: 38%;}
 }
 
 @media (max-width: 540px) {
@@ -4873,6 +4889,7 @@ hr {
     font: var(--font-40);
     letter-spacing: -1px;
     margin-bottom: 2rem;
+    padding-inline: 2rem;
   }
 
   .overview-text {
@@ -4977,8 +4994,9 @@ hr {
   }
 
   .program-detail-img figure>* {
-    height: 14.8rem;
+    height: auto;
     object-fit: cover;
+    min-height: 30rem;
   }
 
   .eligibility-img figure {
@@ -4993,6 +5011,10 @@ hr {
   .rank-box {
     margin-top: 4rem;
   }
+  .program-detail-text .innnr_head h3{font: var(--font-30);}
+  .admission-box{ max-width: 100%;}
+  .overview-duration .apply-btn1{ margin-left: 0;}
+  .item-content{ padding-top: 2rem;}
 }
 
 @media (max-width:575px) {
@@ -5589,7 +5611,7 @@ hr {
   }
 
   .about_one .estblish {
-    padding-block: 2rem;
+    padding-block: 2rem 0;
   }
 
   .about_one .estblish p {
@@ -5749,6 +5771,12 @@ hr {
     margin-top: 2rem;
 }
 .campus-facilities .amenities_gridmain{grid-template-columns: repeat(1, 1fr);}
+.amenities_section .grid_group{ grid-template-columns: repeat(1, 1fr); gap: 0;}
+.grid_group ul{ padding: 0;}
+.procedure_box p{ font: var(--font-18);}
+.step-and-startups-in-campus .placement_proSec {
+        padding-block: 5rem;
+    }
 
 }
 
@@ -5817,6 +5845,10 @@ hr {
   .about_five .quality_grid {
     padding-block: 2rem;
   }
+
+  .placements_loader:after, .placements_loader:before { width: 27%; }
+  .placements_loader:after, .placements_loader::after { width: 27%; }
+  .procedure_box h3{ line-height: 1.2;}
 }
 
 .leader-category-title {

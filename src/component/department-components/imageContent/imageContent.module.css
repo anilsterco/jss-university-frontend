@@ -185,4 +185,6 @@
    .content_col.reverse_bg_white{
     padding-right:0;
 }
+.singleImageContent:first-child { padding-bottom: 5rem; }
+
 }
