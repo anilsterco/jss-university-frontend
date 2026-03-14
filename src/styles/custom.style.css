@@ -1013,7 +1013,10 @@
   background: #00489A;
   padding:12rem 0;
 }
-.single_image_content {}
+ .schools-facilities .singleImageContent:first-child{padding-bottom: 0;} 
+ .schools-facilities .image_content_repeat_section.facilities  {padding-block: 15rem;} 
+ .schools-facilities .image_content_repeat_section.reverse_bg_white {padding-block: 13rem 15rem;}
+ 
 .single_image_content.reverse .row{
   flex-direction: row-reverse;
 }

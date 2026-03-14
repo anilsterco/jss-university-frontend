@@ -138,16 +138,16 @@ export default function FacultyList({ data }) {
           fontSize={24}
           color="#002238b5"
           style={{
-            marginTop: "5rem",
             cursor: "pointer",
             marginRight: "0.4rem",
+            marginTop:"2.5rem",
           }}
         />
         <CiCircleChevRight
           className="faculty-next"
           fontSize={24}
           color="#002238b5"
-          style={{ marginTop: "5rem", cursor: "pointer" }}
+          style={{ cursor: "pointer", marginTop:"2.5rem" ,}}
         />
       </div>
     </div>
