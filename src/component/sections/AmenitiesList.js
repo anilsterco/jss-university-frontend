@@ -25,10 +25,14 @@ export default function AmenitiesList({ data }) {
         if (section.type !== "amenities_list") return null;
         if (!section.items?.length) return null;
 
-        return (
+        return(
+          section?.items &&
+              section.items.length >= -1 &&
+              section.items.map((item, idx) => (
+                
           <section
-            key={sectionIndex}
-            className={`amenities_section ${section.items?.[0]?.category || ""}`}
+            key={idx}
+            className={`amenities_section ${item?.category || ""} ${item.sectionType}`}
           >
             <div className="container">
               {section.items.map((item, itemIndex) => {
@@ -43,7 +47,7 @@ export default function AmenitiesList({ data }) {
                 return (
                   <div key={itemIndex}>
                     {item?.heading && (
-                      <h5 class="about_subtitle">{item.heading}</h5>
+                      <h5 className="about_subtitle">{item.heading}</h5>
                     )}
                     {item?.subDescription && (
                       <h6 className="section_subDescription">
@@ -80,7 +84,10 @@ export default function AmenitiesList({ data }) {
               })}
             </div>
           </section>
-        );
+              ))
+        )
+
+      
       })}
     </>
   );

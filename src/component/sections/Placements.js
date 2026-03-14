@@ -1,23 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 
 export default function Placements({ data }) {
-  const [visibleCounts, setVisibleCounts] = useState({});
 
   useEffect(() => {
     AOS.init({ once: true, duration: 1000 });
   }, []);
-
-  const handleLoadMore = (sectionIndex, itemIndex, totalCount) => {
-    setVisibleCounts((prev) => ({
-      ...prev,
-      [`${sectionIndex}-${itemIndex}`]: totalCount,
-    }));
-  };
 
   return (
     <>
@@ -31,9 +23,6 @@ export default function Placements({ data }) {
               const key = `${sectionIndex}-${itemIndex}`;
               const boxes =
                 item.boxes?.filter((box) => box?.title || box?.subtitle) || [];
-              const visibleCount = visibleCounts[key] ?? 4;
-              const visibleItems = boxes.slice(0, visibleCount);
-              const hasMore = visibleCount < boxes.length;
 
               return (
                 <section
@@ -63,7 +52,7 @@ export default function Placements({ data }) {
                       )}
 
                       <div className="placement_stats">
-                        {visibleItems.map((box, i) => (
+                        {boxes.map((box, i) => (
                           <div
                             key={i}
                             className="curriculum_box"
@@ -93,22 +82,7 @@ export default function Placements({ data }) {
                         ))}
                       </div>
 
-                      {hasMore && (
-                        <div className="placements_loader">
-                          <button
-                            className="btn btn-outline-primary"
-                            onClick={() =>
-                              handleLoadMore(
-                                sectionIndex,
-                                itemIndex,
-                                boxes.length,
-                              )
-                            }
-                          >
-                            Load More <i className="bi bi-arrow-down"></i>
-                          </button>
-                        </div>
-                      )}
+                   
 
                       {item?.description && (
                         <div className="placeBottom">

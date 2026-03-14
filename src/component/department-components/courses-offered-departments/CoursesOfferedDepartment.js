@@ -48,7 +48,7 @@ const CoursesOffered = ({ data }) => {
           {/* LEFT CONTENT */}
           <div className="cource_col">
             <h5 className={styles.topSectionH5} data-aos="fade-up">
-              Courses Offered
+              Programe  Offered
             </h5>
 
             <h1
@@ -105,7 +105,7 @@ const CoursesOffered = ({ data }) => {
                     ))
                   ) : (
                     hasSearched && (
-                      <div className="no-results">No courses found</div>
+                      <div className="no-results">No Programe found</div>
                     )
                   )}
                 </div>
