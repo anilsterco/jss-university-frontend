@@ -124,10 +124,11 @@ export default function AboutOne({ data }) {
                       pauseOnMouseEnter: true,
                     }}
                     breakpoints={{
-                      320: { slidesPerView: 1 },
+                      1: { slidesPerView: 1 },
                       576: { slidesPerView: 2 },
                       768: { slidesPerView: 3 },
-                      992: { slidesPerView: 4 },
+                      999: { slidesPerView: 3 },
+                     1080: { slidesPerView: 4 },
                     }}
                   >
                     {section.items

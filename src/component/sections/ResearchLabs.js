@@ -65,7 +65,7 @@ export default function ResearchLabs({ data }) {
             className="research_labmain pb-0 pt-0"
           >
             <div className="container">
-              <div className="research_grid_two">
+              <div className="research_grid_two research_at">
                 <div className="research_cont">
                   {item.title && <h2>{item.title}</h2>}
 

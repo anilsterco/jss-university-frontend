@@ -5447,7 +5447,7 @@ hr {
   }
 
   .about_three {
-    padding-bottom: 6rem;
+    padding-block: 6rem;
   }
 
   .about_four .values-grid {
@@ -5514,9 +5514,9 @@ hr {
     margin-right: 0;
   }
 
-  .about_three .vsn_msn_grid {
+  /* .about_three .vsn_msn_grid {
     background-color: var(--color-f6);
-  }
+  } */
 
   .about_three .vsn_msn_grid {
     gap: 4rem;
@@ -5560,6 +5560,13 @@ hr {
     width: 100%;
     overflow-x: auto;
   }
+  .about_three .vsn_msn_grid .miss-rgt h4{    font: var(--font-40);}
+  .table_section .heading{    margin-bottom: 2rem;}
+  .image_content_repeat_section.hostel_repeatsec .single_image_content{padding-bottom:7rem;}
+  .ameminites_listmain {
+    padding-block: 7rem 0;
+}
+
 }
 
 @media screen and (max-width: 767px) {
@@ -5614,8 +5621,10 @@ hr {
   }
 
   .about_three .vsn_msn_grid {
-    display: block;
-  }
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
 
   .about_three .vsn_msn_grid .miss-rgt h5 {
     margin-bottom: 3rem;
@@ -5702,12 +5711,27 @@ hr {
   .vision_mission_section .mission-card {
     padding: 4.2rem 4.4rem;
   }
+.about_three .vsn_msn_grid .miss-rgt {
+        padding-top:0rem;
+        padding-right:0rem;
+    }
+        .about_three .vsn_msn_grid .miss-rgt h4 {
+        font: var(--font-30);
+        letter-spacing: -1px;
+    }
+}
 
+@media (max-width:640px){
+  .inner-title .innnr_head h3 {
+    font: var(--font-30);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
 }
 
 @media screen and (max-width: 480px) {
   .inner-title .innnr_head h3 {
-    margin-bottom: 3rem;
+    margin-bottom:0rem;
   }
 
   .abt_cntnt {
@@ -5716,7 +5740,6 @@ hr {
 
   .about_one .abt_cntnt p {
     text-align: left;
-    padding-bottom: 0;
   }
 
   .about_one {
@@ -5736,7 +5759,7 @@ hr {
   }
 
   .about_three {
-    padding-bottom: 2rem;
+    padding-block:4rem;
   }
 
   .about_one .estblish p {

@@ -3046,6 +3046,8 @@ export default function Header() {
           .menu-list li {
             text-align: center;
             padding-block: 2rem 0;
+            padding-bottom: 0;
+
           }
           .menu-item.active {
             background: #e5ffff;
@@ -3063,6 +3065,7 @@ export default function Header() {
             font-family: var(--font-Roboto);
             letter-spacing: 0px;
             font-weight: 300;
+            margin-bottom: 1rem;
           }
           .menu-list button {
             background: none;
@@ -3074,6 +3077,7 @@ export default function Header() {
           }
           .icon {
             margin-bottom: 1.2rem;
+            height: 2rem;
           }
           .site-header.no-shadow {
             background: none !important;
@@ -3178,7 +3182,14 @@ export default function Header() {
           .innerPage.header-scrolled {
             background: #deebf4;
           }
-
+            @media (max-width:360px){
+            .header-inner {
+            padding-block: 1.4rem;
+          }
+            .containerXl{ padding-inline:0rem}
+          }
+            .courses-panel::before{    height: 42%;}
+           
         `}
       </style>
     </header>

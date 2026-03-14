@@ -270,7 +270,7 @@ export default function Footer() {
           </div>
 
           {/* ===== BOTTOM FOOTER ===== */}
-          <div className="container">
+          <div className="container footer_cnt">
             <div className="col-lg-8 d-flex justify-content-center mx-auto">
               <div className="copy-rights">
                 <p>
@@ -591,7 +591,18 @@ export default function Footer() {
         @media (min-width: 992px) {
           .mobFooter {
             display: none;
+          }           
+        }
+          @media (max-width:767px){
+           .mobFooter .footer_link {
+            padding-inline:0.3rem;
           }
+          .mobFooter .quick_link{ padding-inline:0.3rem;}
+          .mobFooter .quick-item {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+          }
+
         }
       `}</style>
     </footer>

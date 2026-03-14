@@ -95,7 +95,7 @@ export default function EventsGrid({ data }) {
   }, []);
   const eventsData = data ? data : dummyEventsData;
   return (
-    <section className={styles.eventSection}>
+    <section className={`${styles.eventSection} homepage_happenings`} >
       <div className="containerXl">
         <div
           className={`happining-sec ${styles.desktopView}`}

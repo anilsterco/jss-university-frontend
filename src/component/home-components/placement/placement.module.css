@@ -453,8 +453,8 @@
   }
 
   .testimonialSwiper p {
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto 2rem;
   }
 
   .figcount {
@@ -496,8 +496,8 @@
     font: var(--font-18);
     color: #212121;
     letter-spacing: 0px;
-    margin-bottom: 0;
-    max-width: 90%;
+    margin-bottom: 2rem;
+    max-width: 100%;
     font-weight: 300;
     font-family: var(--font-Roboto);
     line-height: 2.2rem;
