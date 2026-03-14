@@ -23,6 +23,16 @@
   justify-content: center;
 }
 
+.bannerSmall{
+  font: var(--font-24);
+    color: #fff;
+    letter-spacing: -.67px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font-Condensed);
+    line-height: 5.4rem;
+}
+
 .bannerContentH1 {
   font: var(--font-60);
   color: var(--color-white);
