@@ -58,6 +58,7 @@ import ResearchPatents from "@/component/sections/ResearchPatents";
 import FacilityTab from "@/component/sections/FacilityTab";
 import StudentClub from "@/component/sections/StudentClub";
 import AmenitiesList from "@/component/sections/AmenitiesList";
+import LabCard from "@/component/sections/LabCard";
 
 async function fetchPageData(slug) {
   try {
@@ -165,6 +166,7 @@ export default async function DynamicPage({ params }) {
     facilitiesTab: FacilityTab,
     studentClub: StudentClub,
     amenities_list: AmenitiesList,
+    labCard: LabCard,
   };
 
   return (
@@ -181,7 +183,7 @@ export default async function DynamicPage({ params }) {
       {groupedSections?.map((section, index) => {
         const Component =
           sectionComponents[
-          section.type === "facilityGroup" ? "facilityGroup" : section.type
+            section.type === "facilityGroup" ? "facilityGroup" : section.type
           ];
         if (Component === FacilityOne) {
           return <Component key={index} data={section.sections} />;

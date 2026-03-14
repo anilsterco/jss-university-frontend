@@ -14,7 +14,7 @@ import Faculties from "@/pages/faculties/Faculties";
 import CommonPage from "@/pages/commonPage/CommonPage";
 import HappeningsClient from "@/app/happenings/HappeningsClient";
 import FaqPage from "@/pages/faq/Faq";
-import Labspage from "@/pages/labs/Labs";
+import Labspage from "@/pages/labs11/Labs";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
@@ -79,11 +79,12 @@ export default async function DepartmentPage({ params }) {
         <Suspense fallback={<h1>Loading...</h1>}>
           <FaqPage data={departmentData?.data} />
         </Suspense>
-      ) : section == "labs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Labspage data={departmentData} />
-        </Suspense>
-      ) : departmentData?.slug?.includes(section) ? (
+      ) : // : section == "labs" ? (
+      //   <Suspense fallback={<h1>Loading...</h1>}>
+      //     <Labspage data={departmentData} />
+      //   </Suspense>
+      // )
+      departmentData?.slug?.includes(section) ? (
         <CommonPage data={departmentData.sections} />
       ) : (
         <h1>no data</h1>

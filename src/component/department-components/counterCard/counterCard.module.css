@@ -20,7 +20,8 @@
 
 .counter_card img {
     margin: auto;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+    margin-top:0;
 }
 
 .counter_card .desc {
@@ -28,4 +29,5 @@
     line-height: 1.7rem;
     text-transform: uppercase;
     font-family: var(--font-Condensed);
+    margin-top: 1.1rem;
 }

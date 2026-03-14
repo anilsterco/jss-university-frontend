@@ -545,6 +545,7 @@
    margin: 0 auto;
    line-height: 3rem;
   }
+    .showOnlyMobileCard h1{margin-bottom: 0rem;}
 }
 
 @media (max-width: 420px) {

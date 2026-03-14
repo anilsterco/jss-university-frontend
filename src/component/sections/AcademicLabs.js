@@ -52,50 +52,58 @@ export default function AcademicLabs({ data }) {
                 {Array.isArray(item.sliderBox) && item.sliderBox.length > 0 && (
                   <div className="acade_lab_slider">
                     <Swiper
-                      modules={[Navigation, EffectFade, Pagination, Autoplay]}
-                      autoplay={{ delay: 3000, disableOnInteraction: false }}
-                      fadeEffect={{ crossFade: true }}
-                      spaceBetween={30}
-                      slidesPerView={1.75}
-                      loop={true}
-                      navigation={{
-                        prevEl: ".academic_labs_prev",
-                        nextEl: ".academic_labs_next",
-                      }}
-                    >
-                      {item.sliderBox.map((slide, sidx) => (
-                        <SwiperSlide key={sidx}>
-                          <figure className="shine-effect img-full">
-                            <Image
-                              src={slide.image}
-                              alt={item.title || "Academic Lab"}
-                              className="w-100"
-                              width={800}
-                              height={520}
-                              style={{ objectFit: "cover" }}
-                            />
-                          </figure>
-                        </SwiperSlide>
-                      ))}
+                        modules={[Navigation, EffectFade, Pagination, Autoplay]}
+                        autoplay={{ delay: 3000, disableOnInteraction: false }}
+                        fadeEffect={{ crossFade: true }}
+                        spaceBetween={30}
+                        slidesPerView={1.75}
+                        loop={true}
+                        navigation={{
+                          prevEl: ".academic_labs_prev",
+                          nextEl: ".academic_labs_next",
+                        }}
+                        breakpoints={{
+                          0: {
+                            slidesPerView: 1, // mobile
+                          },
+                          768: {
+                            slidesPerView: 1.75, // tablet & desktop
+                          },
+                        }}
+                      >
+                        {item.sliderBox.map((slide, sidx) => (
+                          <SwiperSlide key={sidx}>
+                            <figure className="shine-effect img-full">
+                              <Image
+                                src={slide.image}
+                                alt={item.title || "Academic Lab"}
+                                className="w-100"
+                                width={800}
+                                height={520}
+                                style={{ objectFit: "cover" }}
+                              />
+                            </figure>
+                          </SwiperSlide>
+                        ))}
 
-                      {/* NAV BUTTONS */}
-                      <div className="ac_pagination">
-                        <button className="ac_swi_btn academic_labs_next">
-                          <img
-                            src="/images/about-page/academic_lab_next.svg"
-                            alt="Next"
-                            className="img-fluid"
-                          />
-                        </button>
-                        <button className="ac_swi_btn academic_labs_prev">
-                          <img
-                            src="/images/about-page/academic_lab_next.svg"
-                            alt="Previous"
-                            className="img-fluid"
-                          />
-                        </button>
-                      </div>
-                    </Swiper>
+                        {/* NAV BUTTONS */}
+                        <div className="ac_pagination">
+                          <button className="ac_swi_btn academic_labs_next">
+                            <img
+                              src="/images/about-page/academic_lab_next.svg"
+                              alt="Next"
+                              className="img-fluid"
+                            />
+                          </button>
+                          <button className="ac_swi_btn academic_labs_prev">
+                            <img
+                              src="/images/about-page/academic_lab_next.svg"
+                              alt="Previous"
+                              className="img-fluid"
+                            />
+                          </button>
+                        </div>
+                      </Swiper>
                   </div>
                 )}
               </div>
