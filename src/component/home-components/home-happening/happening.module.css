@@ -1,7 +1,7 @@
 /* components/home-components/EventsGrid/EventsGrid.module.css */
 
 .eventSection {
-  padding-block: 3rem 11rem;
+  padding-block: 0rem 15rem;
 }
 
 .container-fluid {
@@ -17,7 +17,7 @@
   text-align: center;
   margin: auto;
   padding-bottom: 7.2rem;
-  padding-top: 6rem;
+  padding-top: 10rem;
 }
 
 .headerSmall {
@@ -201,11 +201,12 @@
 .desktopView::after {
   content: "";
   background-color: #e5e5e5;
-  width: 65%;
+  width: 82%;
   height: 1px;
   position: absolute;
   top: 0;
-  transform: translate(25%);
+  left: 50%;
+  transform: translateX(-50%)
 }
 
 
