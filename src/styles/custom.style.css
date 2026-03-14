@@ -979,7 +979,9 @@
   display: flex;
   padding-top: 10rem;
 }
-
+.schools-college-of-pharmacy-about-the-school .count_alumni_section { 
+  padding-block: 3rem;
+}
 /* image content repeateer section */
 .image_content_repeat_section.hostel_repeatsec {
   padding-bottom: 0;
