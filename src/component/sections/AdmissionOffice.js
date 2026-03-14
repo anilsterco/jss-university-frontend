@@ -52,7 +52,11 @@ export default function AboutOne({ data }) {
         if (!item) return null;
 
         return (
-          <section className="admins_of_con" id="admissionsofc" key={sectionIndex}>
+          <section
+            className="admins_of_con"
+            id="admissionsofc"
+            key={sectionIndex}
+          >
             <div className="container">
               <div
                 className="ad_offc_contact"
@@ -121,7 +125,13 @@ export default function AboutOne({ data }) {
                     })}
                   </ul>
 
-                  <a class="learn_more" href="">Apply Now</a>
+                  <a
+                    target="_blank"
+                    className="learn_more"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+                  >
+                    Apply Now
+                  </a>
                 </div>
               </div>
             </div>

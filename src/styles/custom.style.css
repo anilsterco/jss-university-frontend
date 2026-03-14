@@ -1264,7 +1264,20 @@
 }
 
 
+/* team-iqac */
 
+.team-iqac .innnr_head ul,
+.meeting-proceedings .innnr_head ul,
+.best-practices .innnr_head ul,
+.academic-audit-committee-composition .innnr_head ul,
+.about-iqac .innnr_head ul,
+.recent-audit-observations .innnr_head ul,
+.academic-audit-process .innnr_head ul,
+.strategic-plan .innnr_head ul,
+.iqac-committee-for-quality-enhancement .innnr_head ul,
+.calendar .innnr_head ul{
+  display:none;
+}
 
 
 @media all and (min-width: 800px) {
