@@ -6,8 +6,8 @@ import { RxCaretRight } from "react-icons/rx";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
+import { BASE_URL } from "@/config/config";
 
-const BASE_URL = "/api";
 const SCHOOLS_API_URL = "/api/schools/all";
 
 export default function FacultyClient() {
@@ -75,7 +75,7 @@ export default function FacultyClient() {
       if (type) params.append("type", type);
       params.append("page", page);
 
-      const res = await fetch(`${BASE_URL}/faculties?${params.toString()}`);
+      const res = await fetch(`${BASE_URL}faculties?${params.toString()}`);
       if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
       const data = await res.json();
 
@@ -101,9 +101,20 @@ export default function FacultyClient() {
 
     try {
       setIsLoadingMore(true);
-      const res = await fetch(
-        nextPageUrl.replace("https://project-demo.in/jss/api", "/api"),
-      );
+
+      // ✅ Build URL with current active filters instead of trusting nextPageUrl blindly
+      const urlObj = new URL(nextPageUrl);
+      const params = urlObj.searchParams;
+
+      if (searchTerm) params.set("search", searchTerm);
+      if (selectedSchool) params.set("school", selectedSchool);
+      if (selectedType) params.set("type", selectedType);
+
+      const proxiedUrl = urlObj
+        .toString()
+        .replace("https://project-demo.in/jss/api", "/api");
+
+      const res = await fetch(proxiedUrl);
       if (!res.ok) throw new Error(`Load More API error: ${res.status}`);
       const data = await res.json();
 
@@ -136,6 +147,11 @@ export default function FacultyClient() {
       firstLoad.current = false;
       return;
     }
+
+    // ✅ Reset immediately to prevent stale loadMore calls
+    setNextPageUrl(null);
+    setFacultyListData([]);
+
     const timeoutId = setTimeout(() => {
       fetchFacultyData(1, searchTerm, selectedSchool, selectedType);
     }, 500);
