@@ -5523,9 +5523,9 @@ hr {
   }
   .about_three .vsn_msn_grid .miss-rgt h4{    font: var(--font-40);}
   .table_section .heading{    margin-bottom: 2rem;}
-  .image_content_repeat_section.hostel_repeatsec .single_image_content{padding-bottom:7rem;}
+  .image_content_repeat_section.hostel_repeatsec .single_image_content{padding-bottom:5rem;}
   .ameminites_listmain {
-    padding-block: 7rem 0;
+    padding-block:5rem 0;
 }
 
 }
@@ -5680,6 +5680,21 @@ hr {
         font: var(--font-30);
         letter-spacing: -1px;
     }
+    .campus-facilities .amenities_gridmain{grid-template-columns: repeat(2, 1fr);}
+    .load_m_btnsec:before{top: 2rem;}
+    .load_m_btnsec { padding-block: 1.1rem 4rem; position: relative; }
+.uni_boasts_rag_sec { padding-block: 5em; }
+.uni_bo_title p{ max-width: 100%;}
+.uni_boa_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap:2 5.rem 2.6rem;
+    margin-top: 2rem;
+}
+.uni_b_imgsec figure img{ height: auto;}
+
+
+
+
 }
 
 @media (max-width:640px){
@@ -5688,6 +5703,14 @@ hr {
     margin-bottom: 2rem;
     line-height: 1.2;
 }
+
+.uni_boa_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap:2 5.rem 2.6rem;
+    margin-top: 2rem;
+}
+.campus-facilities .amenities_gridmain{grid-template-columns: repeat(1, 1fr);}
+
 }
 
 @media screen and (max-width: 480px) {

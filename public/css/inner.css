@@ -6721,6 +6721,13 @@
 .amenities_loadmore {
     padding-block: 2rem;
 }
+.uni_boasts_rag_sec {
+    padding-block: 7em;
+}
+
+.uni_bo_topsec{ display: flex; flex-wrap: wrap;}
+.uni_bo_text{ padding: 2rem 0 0;}
+.uni_boa_itemse figure img{ height: auto;}
 }
 
 @media screen and (max-width:767px) {

@@ -170,12 +170,17 @@
 .content_col.facilities {
     padding-top: 4rem;
 }
+.content_col.odd {
+        padding-right:0rem;
+}
+
 }
 @media screen and (max-width:767px) {
 
   .content_col {
     padding-left: 0;
     padding-top: 4rem;
+    padding-right: 0;
 }
    .content_col.reverse_bg_white{
     padding-right:0;
