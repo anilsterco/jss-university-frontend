@@ -6493,6 +6493,12 @@
     padding-block: 10rem 2rem;
 }
 
+.department-pharmacology-facilities .top_section {
+    background: var(--color-white);
+    margin-top: 0;
+    padding-block: 8rem 0;
+}
+
 
 @media screen and (max-width:1599px) {
   .message_warpper:after {
