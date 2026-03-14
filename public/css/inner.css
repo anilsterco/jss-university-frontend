@@ -6234,7 +6234,7 @@
 }
 
 .leadership_two_cnt p {
-  font: var(--font-13);
+  font: var(--font-16);
   color: var(--color-black);
   line-height: 1.5;
   padding-bottom: 7.2rem;
@@ -6345,7 +6345,7 @@
 }
 
 .message_warpper p {
-  font: var(--font-13);
+  font: var(--font-16);
   color: var(--color-white);
   line-height: 1.6;
   font-weight: 300;
