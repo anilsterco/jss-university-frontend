@@ -6494,6 +6494,7 @@
     padding-block: 10rem 2rem;
 }
 
+
 @media screen and (max-width:1599px) {
   .message_warpper:after {
     width: 10rem;
