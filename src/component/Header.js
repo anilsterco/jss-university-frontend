@@ -596,7 +596,7 @@ export default function Header() {
                                   }}
                                 >
                                   <Link
-                                    href={d.url || "#"}
+                                    href={WEB_URL + d.url || "#"}
                                     className="dropdown-item"
                                   >
                                     {d.title}
@@ -636,7 +636,7 @@ export default function Header() {
                                         {rightData.ctas?.map((cta, idx) => (
                                           <Link
                                             key={idx}
-                                            href={cta.url}
+                                            href={WEB_URL + cta.url}
                                             className={`cta program_btn ${cta.type}`}
                                             style={{ color: "inherit" }}
                                           >
@@ -884,7 +884,9 @@ export default function Header() {
                           <h3>{admissionsData.middle.stats.text}</h3>
                           <p>{admissionsData.middle.stats.subtext}</p>
                           <Link
-                            href={admissionsData.middle.stats.btnText.url}
+                            href={
+                              WEB_URL + admissionsData.middle.stats.btnText.url
+                            }
                             style={{ color: "inherit" }}
                           >
                             <button className="stats-btn">
@@ -960,7 +962,7 @@ export default function Header() {
                         href={
                           item.url && item.url !== "#"
                             ? WEB_URL + item.url
-                            : "#"
+                            : WEB_URL + "#"
                         }
                         className="hambur_links"
                         onClick={(e) => {
@@ -1241,7 +1243,7 @@ export default function Header() {
 
                           {admissionData.middle.links.map((link, idx) => (
                             <li key={idx}>
-                              <a href={link.url}>{link.title}</a>
+                              <a href={WEB_URL + link.url}>{link.title}</a>
                             </li>
                           ))}
                         </ul>
@@ -1312,7 +1314,7 @@ export default function Header() {
                               <div className="icon-img">
                                 <img src={sub.contactIcon} alt={sub.name} />
                               </div>
-                              <a href={sub.url}>{sub.name}</a>
+                              <a href={WEB_URL + sub.url}>{sub.name}</a>
                             </li>
                           ))}
                         </ul>
@@ -1360,7 +1362,7 @@ export default function Header() {
                                     {sub.children.map((child, cidx) => (
                                       <li key={cidx}>
                                         <a
-                                          href={child.url}
+                                          href={WEB_URL + child.url}
                                           onClick={() => setActivePanel(null)}
                                         >
                                           {child.title}
@@ -1377,7 +1379,11 @@ export default function Header() {
                             {item.Menu.slice(6).map((sub, idx) => (
                               <li key={idx}>
                                 <Link
-                                  href={sub.children?.length > 0 ? "" : sub.url}
+                                  href={
+                                    sub.children?.length > 0
+                                      ? ""
+                                      : WEB_URL + sub.url
+                                  }
                                   className="menu-link"
                                   onClick={
                                     sub.children?.length > 0

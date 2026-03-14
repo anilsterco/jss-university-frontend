@@ -64,6 +64,7 @@ export default function HeroSlider({ data, slug }) {
             <div className={styles.bannerOverlay}>
               <div className="container">
                 <div className={styles.bannerContent}>
+                  <span className={styles.bannerSmall}>Departments of</span>
                   <h1
                     className={styles.bannerContentH1}
                     dangerouslySetInnerHTML={{ __html: slide.title }}
