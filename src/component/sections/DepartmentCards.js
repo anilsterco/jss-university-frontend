@@ -1,8 +1,9 @@
+import { WEB_URL } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function FacultyCards({ tabs, heading, activeTab, data }) {
+export default function DepartmentCards({ tabs, heading, activeTab, data }) {
   // Simply filter — no state, no useEffect
   const filteredFaculty =
     tabs?.filter((tab) => tab.category === activeTab) || data;
@@ -18,11 +19,15 @@ export default function FacultyCards({ tabs, heading, activeTab, data }) {
           {filteredFaculty?.map((faculty, facultyIdx) => (
             <div className="faculty_col" key={facultyIdx}>
               <div className="singleCard">
-                <Link href={faculty?.url || `/faculty/${faculty?.slug}`}>
+                <Link href={`${WEB_URL}department/${faculty?.slug}`}>
                   <div className="faulty-img">
                     <figure>
                       <Image
-                        src={faculty.image}
+                        src={
+                          faculty.image
+                            ? faculty.image
+                            : "/images/virtual-campus.png"
+                        }
                         alt={faculty.name}
                         className="img-fluid w-100"
                         style={{ maxWidth: "100%", height: "auto" }}
