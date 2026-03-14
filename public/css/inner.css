@@ -6465,6 +6465,13 @@
 .message_footer p:last-of-type {
   margin-bottom: 3rem;
 }
+.department-pharmaceutics-about-us .hod-message-module__coWbsW__container{
+  background-color: var(--color-white);
+}
+
+.department-pharmaceutics-about-us .grid_card_design1_section {
+    padding-block: 10rem 2rem;
+}
 
 @media screen and (max-width:1599px) {
   .message_warpper:after {
