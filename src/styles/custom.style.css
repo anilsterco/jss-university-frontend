@@ -46,19 +46,17 @@
     background: #000;
     background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);
 }
-.department-pharmaceutics-facilities .top_section {
+.department-facilities .top_section {
     margin-top: 0;
     background: var(--color-white);
-    padding-block: 8rem 0;
+    padding-block: 12rem 0;
 }
-.library_section{
-      background: var(--color-white);
-}
+.department-facilities .top_section .about_subHeading.less { padding-bottom: 6rem; }
+.department-about-us .hod-message-module__coWbsW__content {padding-block: 0;}
+.library_section{ background: var(--color-white); }
 
 
-.about_two .early-slide .early_rgt .inst-reg {
-  padding-top: 4rem;
-}
+.about_two .early-slide .early_rgt .inst-reg { padding-top: 4rem; }
 
 .about_two .early-slide .early_rgt .inst-reg h5 {
   font: var(--font-18);
@@ -205,7 +203,9 @@
 .search-box button i {
   font-size: 1.8rem;
 }
-
+.department-pharmaceutics-facilities .singleImageContent:first-child{    
+    padding-bottom: 5rem;
+}
 .search-box input::placeholder {
   color: var(--color-black);
   font: var(--font-18);
@@ -1013,15 +1013,23 @@
 .image_content_repeat_section {
   padding: 8rem 0;
 }
-
+.department-facilities .image_content_repeat_section { padding-block: 0 10rem; }
+.department-facilities .single_image_content .singleImageContent{padding-bottom: 0; }
+.department-pharmaceutics-about-us .image_content_repeat_section{    
+    padding-bottom: 2rem;
+}
+.department-pharmaceutical-chemistry-facilities .image_content_repeat_section .singleImageContent:first-child{
+    padding-bottom: 0rem;
+}
+ 
 .image_content_repeat_section.start .singleImageContent .align-items-center{
   align-items: start!important;
 }
-
+.department-page .hod-message-module__coWbsW__container{padding-top: 0;}
 .image_content_repeat_section.no-padding {
   padding: 0;
 }
-
+.department-pharmaceutical-chemistry-about-us .about_one .estblish{padding-bottom: 0;}
 .image_content_repeat_section.reverse_bg_white {
   background: #fff;
 }
