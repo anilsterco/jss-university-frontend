@@ -847,24 +847,30 @@
   padding-block: 12rem 12rem;
   background-color: var(--color-white);
 }
+
 .academic-council .table_section .table-lab thead th:nth-child(2),
-.academic-council .table_section .table-lab tbody td:nth-child(2){
+.academic-council .table_section .table-lab tbody td:nth-child(2) {
   width: 25%;
 }
+
 .governance .table_section .table-lab thead th:nth-child(2),
-.governance .table_section .table-lab tbody td:nth-child(2){
+.governance .table_section .table-lab tbody td:nth-child(2) {
   width: 25%;
 }
-.team-iqac .table_section{
-      padding: 5rem 0;
+
+.team-iqac .table_section {
+  padding: 5rem 0;
 }
+
 .governance .table_section .table-lab thead th:nth-child(2),
-.governance .table_section .table-lab tbody td:nth-child(2){
+.governance .table_section .table-lab tbody td:nth-child(2) {
   width: 25%;
 }
-.academic-council .table_section + .table_section {
+
+.academic-council .table_section+.table_section {
   padding-top: 0;
 }
+
 .campu_facilities {
   padding-block: 10rem 0;
 }
@@ -951,7 +957,7 @@
 }
 
 .ameminites_listmain {
-  padding-block: 10rem 0;
+  padding-block: 10rem 10rem;
 }
 
 .amenities_title {
@@ -1704,10 +1710,15 @@
   grid-template-columns: 60% 40%;
   align-items: center;
 }
-.faci_diff_tabs .fac_tab_con .fac_dif_tbimg img{
+
+.faci_diff_tabs .fac_tab_con .fac_dif_tbimg img {
   border-radius: 8rem 0.8rem 0.8rem 0.8rem;
 }
-.campus-facilities .amenities_gridmain{margin-bottom: 3rem;}
+
+.campus-facilities .amenities_gridmain {
+  margin-bottom: 3rem;
+}
+
 .faci_diff_tabs .faci_accordion {
   padding-left: 14.4rem;
 }
@@ -3504,7 +3515,7 @@
 }
 
 .ameminites_listmain {
-  padding-block: 10rem 0;
+  padding-block: 10rem 10rem;
 }
 
 .amenities_title {
@@ -5183,7 +5194,10 @@
 .research .exten_grid {
   grid-template-columns: 54.4% 45.5%;
 }
-.step-and-startups-in-campus .amenities_section {padding: 0;}
+
+.facilities_section.amenities_section {
+  padding: 0;
+}
 
 .recent-audit-observations .table_section {
   padding-block: 5rem 5rem;
@@ -5256,20 +5270,43 @@
 .student-life .cafe_gues_mainsec {
   padding-block: 5rem 5rem;
 }
-.student-life .scu_benifit_col{    padding-bottom: 2rem;min-height: 100%;}
+
+.student-life .scu_benifit_col {
+  padding-bottom: 2rem;
+  min-height: 100%;
+}
+
 .student-life .cafe_gues_gridone {
   margin-bottom: 10rem;
 }
-.student-life .scu_content h6{    margin-top: 3.2rem;
+
+.student-life .scu_content h6 {
+  margin-top: 3.2rem;
 }
+
 .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
   padding-left: 0;
   max-width: 54.9rem;
 }
-.leadership_two .leadership_grid figure figcaption h3{text-transform: uppercase;}
-.student-life .scu_tab_inner .scu_gridmain{align-items: start;    grid-template-columns: 41.5% 46%;}
-.student-life .scu_imgsec {margin: 0;order: 2;}
-.student-life .scu_imgsec img{    border-radius: 0.8rem 6rem .8rem .8rem;}
+
+.leadership_two .leadership_grid figure figcaption h3 {
+  text-transform: uppercase;
+}
+
+.student-life .scu_tab_inner .scu_gridmain {
+  align-items: start;
+  grid-template-columns: 41.5% 46%;
+}
+
+.student-life .scu_imgsec {
+  margin: 0;
+  order: 2;
+}
+
+.student-life .scu_imgsec img {
+  border-radius: 0.8rem 6rem .8rem .8rem;
+}
+
 .careers .ad_offc_contact .learn_more {
   background-color: var(--color-100);
   border: 0.1rem solid var(--color-100);
@@ -5282,12 +5319,20 @@
   margin-top: 2rem;
   display: inline-block;
 }
-.step-and-startups-in-campus .single_image_content .rep_border{
+
+.step-and-startups-in-campus .single_image_content .rep_border {
   order: 2;
-}.step-and-startups-in-campus .single_image_content .content_col {padding-left: 0;padding-right: 10rem;}
-.careers .add_of_context ul li:nth-last-child(1) span{
+}
+
+.step-and-startups-in-campus .single_image_content .content_col {
+  padding-left: 0;
+  padding-right: 10rem;
+}
+
+.careers .add_of_context ul li:nth-last-child(1) span {
   font-style: italic;
 }
+
 .careers .add_of_context {
   max-height: 33.7rem;
 }
@@ -5824,27 +5869,45 @@
   .about_four .value-box:nth-last-child(-n + 2) {
     border-bottom: none;
   }
+
   .about_two {
     padding-bottom: 8rem;
-}
-.ab_estab_slider{ padding-top: 3rem;}
-.about_two .early-slide .early_rgt {
-  padding-left:4.4rem;
-  padding-top: 0rem;
-}
+  }
+
+  .ab_estab_slider {
+    padding-top: 3rem;
+  }
+
+  .about_two .early-slide .early_rgt {
+    padding-left: 4.4rem;
+    padding-top: 0rem;
+  }
 }
 
-@media (max-width:767px){
-  .about_one .estblish{ max-width: 100%;}
-  .about_two .early-slide{ grid-template-columns: repeat(1, 1fr);}
-  .about_two .early-slide .early_rgt{ padding-left: 0;}
+@media (max-width:767px) {
+  .about_one .estblish {
+    max-width: 100%;
+  }
+
+  .about_two .early-slide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about_two .early-slide .early_rgt {
+    padding-left: 0;
+  }
+
   .abou_t_sec {
     padding-top: 3rem;
-}
-.growth-tabs ul li:not(:last-child) {
+  }
+
+  .growth-tabs ul li:not(:last-child) {
     margin-right: 0;
-}
-.about_two .early-slide .early_rgt h4{ font:var(--font-24);}
+  }
+
+  .about_two .early-slide .early_rgt h4 {
+    font: var(--font-24);
+  }
 }
 
 @media (max-width: 600px) {
@@ -6056,12 +6119,15 @@
 .leadership_two .leadership_grid .leadership_grid_Bx:hover figure figcaption h3 {
   color: var(--color-e8);
 }
-.leadership_two .leadership_grid .leadership_grid_Bx:hover figure figcaption p{
+
+.leadership_two .leadership_grid .leadership_grid_Bx:hover figure figcaption p {
   color: var(--color-100);
 }
+
 .leadership_two .leadership_grid .leadership_grid_Bx figure figcaption p {
   transition: all 0.5s;
 }
+
 .leadership_two .leadership_grid figure figcaption p {
   display: flex;
   flex-direction: column;
@@ -6507,12 +6573,13 @@
 .message_footer p:last-of-type {
   margin-bottom: 3rem;
 }
-.department-pharmaceutics-about-us .hod-message-module__coWbsW__container{
+
+.department-pharmaceutics-about-us .hod-message-module__coWbsW__container {
   background-color: var(--color-white);
 }
 
 .department-pharmaceutics-about-us .grid_card_design1_section {
-    padding-block: 10rem 2rem;
+  padding-block: 10rem 2rem;
 }
 
 
@@ -6649,7 +6716,7 @@
 
   .consultancy_main {
     padding-block: 4rem;
-    
+
   }
 
   .about_f_value {
@@ -6669,60 +6736,167 @@
   .atm_g_imgsec img {
     height: 100%;
   }
-  .inner-title .innnr_head ul{ display: none;}
-  .ab_estab_slider .swiper-backface-hidden .swiper-slide{ height: auto;}
+
+  .inner-title .innnr_head ul {
+    display: none;
+  }
+
+  .ab_estab_slider .swiper-backface-hidden .swiper-slide {
+    height: auto;
+  }
+
   .about_four.heritage .about_f_value .ab_f_content {
     padding-left: 0;
     padding-right: 0;
-}
-.about_four.heritage .about_f_value {
+  }
+
+  .about_four.heritage .about_f_value {
     padding-top: 7rem;
-}
-.heri_principalmain {
+  }
+
+  .heri_principalmain {
     padding-block: 7rem;
-}
-.heri_pri_btm_text{max-width: 100%;}
-.about_one .abt_cntnt p{ max-width: 100%;}
-.about_one .estblish{ max-width: 100%;}
-.grid_emaboutjss{ display: flex; flex-wrap: wrap; flex-direction: column-reverse;}
-.about_jsstwo { padding-block: 7rem; }
-.about_fost_sec{ padding-block: 7rem;}
-.ab_fost_grid{ display: flex; flex-wrap: wrap; flex-direction: column-reverse; gap: 3rem;}
-.ab_fost_grid .grid_em_rigt{ width: 100%;}
-.about_top.organogram_page {
+  }
+
+  .heri_pri_btm_text {
+    max-width: 100%;
+  }
+
+  .about_one .abt_cntnt p {
+    max-width: 100%;
+  }
+
+  .about_one .estblish {
+    max-width: 100%;
+  }
+
+  .grid_emaboutjss {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .about_jsstwo {
+    padding-block: 7rem;
+  }
+
+  .about_fost_sec {
+    padding-block: 7rem;
+  }
+
+  .ab_fost_grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .ab_fost_grid .grid_em_rigt {
+    width: 100%;
+  }
+
+  .about_top.organogram_page {
     padding-bottom: 5rem;
-}
-.academic-council .table_section{
-      padding: 5rem 0 0;
-}
-.academic-council .table_section:last-child{
-      padding: 5rem 0;
-}
-.academic_grid{ display: flex; flex-direction: column-reverse;}
-.academic_grid .acade_lab_slider { order: 1; width: 100%; overflow: hidden; }
-.academic_lab_leftsec h5{ padding-top: 0;}
-.academic_labmain { padding-block: 7rem; }
-.academic_grid .ab_jss_coutsec{ margin-block: 5rem 0;}
-.research_labmain { padding-block: 7rem;}
-.research_grid_one, .research_grid_two{ display: flex; flex-wrap: wrap;}
-.research_grid_one .research_cont{ padding-left: 0;}
-.research_grid_two .researh_imgsec{ order: 1;}
-.academic-facilities .research_grid_one .research_cont { padding-right: 0; }
-.re_obj_grid { grid-template-columns: repeat(3, 1fr);}
-.research_grid_two .research_cont{padding-right: 0;}
-.researh_imgsec{ width:100%;}
-.research_grid_two .research_cont h2{ padding-right: 0;}
-.academic-facilities .lib_cen_main .campu_grid_main.capus_grid_two .campu_con_rgt{ max-width: 100%;}
-.academic-facilities .campu_grid_main.capus_grid_two{ display: flex; flex-wrap: wrap;}
-.lib_cen_main .cumpus_left_img p{max-width: 100%;}
-.research_grid_two.research_at{ flex-direction: column-reverse; padding-top: 4rem;}
-.acade_lab_slider img{ height: auto;}
-.academic-facilities .about_top {
+  }
+
+  .academic-council .table_section {
+    padding: 5rem 0 0;
+  }
+
+  .academic-council .table_section:last-child {
+    padding: 5rem 0;
+  }
+
+  .academic_grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .academic_grid .acade_lab_slider {
+    order: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .academic_lab_leftsec h5 {
+    padding-top: 0;
+  }
+
+  .academic_labmain {
+    padding-block: 7rem;
+  }
+
+  .academic_grid .ab_jss_coutsec {
+    margin-block: 5rem 0;
+  }
+
+  .research_labmain {
+    padding-block: 7rem;
+  }
+
+  .research_grid_one,
+  .research_grid_two {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .research_grid_one .research_cont {
+    padding-left: 0;
+  }
+
+  .research_grid_two .researh_imgsec {
+    order: 1;
+  }
+
+  .academic-facilities .research_grid_one .research_cont {
+    padding-right: 0;
+  }
+
+  .re_obj_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .research_grid_two .research_cont {
+    padding-right: 0;
+  }
+
+  .researh_imgsec {
+    width: 100%;
+  }
+
+  .research_grid_two .research_cont h2 {
+    padding-right: 0;
+  }
+
+  .academic-facilities .lib_cen_main .campu_grid_main.capus_grid_two .campu_con_rgt {
+    max-width: 100%;
+  }
+
+  .academic-facilities .campu_grid_main.capus_grid_two {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lib_cen_main .cumpus_left_img p {
+    max-width: 100%;
+  }
+
+  .research_grid_two.research_at {
+    flex-direction: column-reverse;
+    padding-top: 4rem;
+  }
+
+  .acade_lab_slider img {
+    height: auto;
+  }
+
+  .academic-facilities .about_top {
     padding-bottom: 4rem;
-}
-.amenities_loadmore {
+  }
+
+  .amenities_loadmore {
     padding-block: 2rem;
-}
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -6763,44 +6937,156 @@
   .about_top.padding-bottom {
     padding-bottom: 4rem;
   }
-  .hei__princi_grid h3 { max-width: 100%; padding-inline: 0; text-align: left; padding-bottom: 2rem; }
-  .heri_pri_btm_text p{ margin-bottom: 0;}
-  .about_four.heritage .about_f_value { padding-top: 5rem; }
-  .ab_f_content p{ margin-bottom: 0;}
-  .heri_principalmain { padding-block: 5rem; }
-  .heri_prici_names { margin-bottom: 3.85rem; }
-  .heri_pri_btm_text{ text-align: left;}
-.heri_prici_names h5.titleOne {
+
+  .hei__princi_grid h3 {
+    max-width: 100%;
+    padding-inline: 0;
+    text-align: left;
+    padding-bottom: 2rem;
+  }
+
+  .heri_pri_btm_text p {
+    margin-bottom: 0;
+  }
+
+  .about_four.heritage .about_f_value {
+    padding-top: 5rem;
+  }
+
+  .ab_f_content p {
+    margin-bottom: 0;
+  }
+
+  .heri_principalmain {
+    padding-block: 5rem;
+  }
+
+  .heri_prici_names {
+    margin-bottom: 3.85rem;
+  }
+
+  .heri_pri_btm_text {
+    text-align: left;
+  }
+
+  .heri_prici_names h5.titleOne {
     padding-right: 0;
-}
-.grid_emaboutjss{ gap: 4rem;}
-.para p:last-child{ margin-bottom: 0;}
-.about_jsstwo, .about_fost_sec { padding-block: 5rem; }
-.ab_jss_c_col{padding:3.3rem 2.5rem; width: 50%;}
-.ab_fost_lft_col h5{margin-bottom: 1.5rem;}
-.ab_jss_c_col h4{font: var(--font-30);}
-.leadership_two { padding-block: 4.8rem 6rem; }
-.amenities_title p{ max-width: 100%;}
-.researh_imgsec figure img{ height: auto;}
-.re_obj_grid { grid-template-columns: repeat(1, 1fr); }
-.re_obj_card{ min-height: auto;}
-.sports_fac_slider figure img{ height: 40rem;}
-.sports_fac_slider .spo_fa_content{ padding-block: 10rem;}
-.lib_cen_main .cumpus_left_img p{padding-top: 3rem;}
-.campu_grid_main.capus_grid_two{padding-bottom: 5rem;}
-.academic-facilities .facilities_diffent { padding-block:5rem; }
-.research_grid_two .research_cont h2{font: var(--font-24);}
-.faci_diff_tabs .fac_tab_con{grid-template-columns: repeat(1, 1fr)}
-.faci_diff_tabs .faci_accordion{ padding: 2rem 0;}
-.facilities_diffent .grow_tb_contsec, .fac_diff_title p { margin-bottom: 1.2rem; }
-.growth-tabs ul li{ padding-inline:0 1rem;}
-.lib_cen_main .ab_jss_coutsec { margin-top: 4.5rem; }
-.campu_con_rgt .ab_jss_c_col { padding: 3rem 2.4rem; }
-.academic_labmain { padding-block: 5rem; }
-.academic_lab_leftsec p{ padding-right: 0;}
-.academic_lab_leftsec h4{padding-right: 0rem;}
-.academic_grid .ab_jss_c_col h4{font: var(--font-30);}
-.research_labmain { padding-block: 5rem; }
+  }
+
+  .grid_emaboutjss {
+    gap: 4rem;
+  }
+
+  .para p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about_jsstwo,
+  .about_fost_sec {
+    padding-block: 5rem;
+  }
+
+  .ab_jss_c_col {
+    padding: 3.3rem 2.5rem;
+    width: 50%;
+  }
+
+  .ab_fost_lft_col h5 {
+    margin-bottom: 1.5rem;
+  }
+
+  .ab_jss_c_col h4 {
+    font: var(--font-30);
+  }
+
+  .leadership_two {
+    padding-block: 4.8rem 6rem;
+  }
+
+  .amenities_title p {
+    max-width: 100%;
+  }
+
+  .researh_imgsec figure img {
+    height: auto;
+  }
+
+  .re_obj_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .re_obj_card {
+    min-height: auto;
+  }
+
+  .sports_fac_slider figure img {
+    height: 40rem;
+  }
+
+  .sports_fac_slider .spo_fa_content {
+    padding-block: 10rem;
+  }
+
+  .lib_cen_main .cumpus_left_img p {
+    padding-top: 3rem;
+  }
+
+  .campu_grid_main.capus_grid_two {
+    padding-bottom: 5rem;
+  }
+
+  .academic-facilities .facilities_diffent {
+    padding-block: 5rem;
+  }
+
+  .research_grid_two .research_cont h2 {
+    font: var(--font-24);
+  }
+
+  .faci_diff_tabs .fac_tab_con {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  .faci_diff_tabs .faci_accordion {
+    padding: 2rem 0;
+  }
+
+  .facilities_diffent .grow_tb_contsec,
+  .fac_diff_title p {
+    margin-bottom: 1.2rem;
+  }
+
+  .growth-tabs ul li {
+    padding-inline: 0 1rem;
+  }
+
+  .lib_cen_main .ab_jss_coutsec {
+    margin-top: 4.5rem;
+  }
+
+  .campu_con_rgt .ab_jss_c_col {
+    padding: 3rem 2.4rem;
+  }
+
+  .academic_labmain {
+    padding-block: 5rem;
+  }
+
+  .academic_lab_leftsec p {
+    padding-right: 0;
+  }
+
+  .academic_lab_leftsec h4 {
+    padding-right: 0rem;
+  }
+
+  .academic_grid .ab_jss_c_col h4 {
+    font: var(--font-30);
+  }
+
+  .research_labmain {
+    padding-block: 5rem;
+  }
 
 
 }
@@ -6871,6 +7157,7 @@
     height: 1.5rem;
     right: 6px;
   }
+
   .leadership_grid_Bx .arrow-icon {
     width: 2rem;
     height: 2rem;
@@ -7082,15 +7369,19 @@
   }
 }
 
-@media (max-width:640px){
-   .leadership_two .leadership_grid {
+@media (max-width:640px) {
+  .leadership_two .leadership_grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  .leadership_one .top_img figure > img {
+
+  .leadership_one .top_img figure>img {
     min-height: 30rem;
     object-fit: cover;
-}
-.leadership_one .top_img figure figcaption h3{ max-width: 100%;}
+  }
+
+  .leadership_one .top_img figure figcaption h3 {
+    max-width: 100%;
+  }
 
 }
 
@@ -7153,19 +7444,76 @@
     position: relative;
     margin-top: 0px;
   }
+
   .ab_estab_slider {
-    padding:2rem 0;
-}
-.ab_jss_c_col{ padding: 3.3rem 1rem;}
-.abou_t_sec h2{padding-inline: 0rem;}
-.about_one .abt_cntnt { padding-top: 2rem; }
-.about_subtitle{ margin-bottom: 2rem;}
-.sports_fac_slider .spo_fa_content { padding-block: 8rem; }
-.facilities_diffent p{ margin-bottom: 0;}
-.campu_con_rgt .ab_jss_c_col { padding: 3rem 0.4rem; }
-.facilities_diffent h5{ line-height: 1.2;}
+    padding: 2rem 0;
+  }
+
+  .ab_jss_c_col {
+    padding: 3.3rem 1rem;
+  }
+
+  .abou_t_sec h2 {
+    padding-inline: 0rem;
+  }
+
+  .about_one .abt_cntnt {
+    padding-top: 2rem;
+  }
+
+  .about_subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .sports_fac_slider .spo_fa_content {
+    padding-block: 8rem;
+  }
+
+  .facilities_diffent p {
+    margin-bottom: 0;
+  }
+
+  .campu_con_rgt .ab_jss_c_col {
+    padding: 3rem 0.4rem;
+  }
+
+  .facilities_diffent h5 {
+    line-height: 1.2;
+  }
 
 }
+/* Full Page Loader Overlay */
+.leadership_loader {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+
+/* Animation */
+@keyframes pageSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* leadership details page end */
+
+
+
+
+
+
+
+
+
+
+
+
+
