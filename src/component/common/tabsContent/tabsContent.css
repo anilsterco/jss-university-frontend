@@ -1,0 +1,77 @@
+/* ── Tabs Section ── */
+.tabs_content_section {
+  padding: 12rem 0;
+}
+
+/* ── Tab Navigation ── */
+.tabs_group {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin:0;
+}
+
+.tabs_item {
+  padding: 10px 0;
+  cursor: pointer;
+  font:var(--font-16);
+  color: #333;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin-right:3rem;
+}
+
+.tabs_item:hover {
+  color: #b8960c;
+}
+
+.tabs_item.active {
+  color: #018CE8;
+  border-bottom: 2px solid #b8960c;
+  font-weight: 700;
+}
+
+/* ── Tab Content ── */
+.tabs_content {
+  margin-top:5rem;
+}
+
+.tabs_content_title {
+  font:var(--font-26);
+  font-weight: 700;
+  color: #16344E;
+  margin-bottom: 4rem;
+}
+
+/* ── List ── */
+.tabs_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabs_list_item {
+  position: relative;
+  padding-left: 2.2rem;
+  font:var(--font-16);
+  line-height: 2.8rem;
+  color: #444444;
+}
+
+.tabs_list_item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width:7px;
+  height:7px;
+  background: #FFC100;   /* golden bullet matching the image */
+  border-radius: 50%;
+}

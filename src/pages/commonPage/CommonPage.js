@@ -55,6 +55,8 @@ import TabsGrid from "@/component/sections/TabsGrid";
 import BgImageContent from "@/component/sections/BgImageContent";
 import GridDepartment from "@/component/sections/GridDepartment";
 import InnovationPanel from "@/component/sections/InnovationPanel";
+import TableContent from "@/component/sections/TableContent";
+import TabsContents from "@/component/sections/TabsContents";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -145,6 +147,8 @@ export default function CommonPage({ data }) {
     bg_image_content: BgImageContent,
     gridDepartment: GridDepartment,
     innovation_panel: InnovationPanel,
+    tableContent: TableContent,
+    tabsContents: TabsContents,
   };
 
   return (
