@@ -67,7 +67,7 @@ export default function Labspage({ data }) {
 
       <section className="table_section">
         <div className="container">
-          <h4 className="heading">Additional Lab Facility</h4>
+          <h4 className="heading">Additional Lab Facility111</h4>
           <table className="table-lab table table-bordered">
             <thead>
               <tr>

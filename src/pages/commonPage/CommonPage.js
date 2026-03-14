@@ -57,6 +57,7 @@ import GridDepartment from "@/component/sections/GridDepartment";
 import InnovationPanel from "@/component/sections/InnovationPanel";
 import TableContent from "@/component/sections/TableContent";
 import TabsContents from "@/component/sections/TabsContents";
+import LabCard from "@/component/sections/LabCard";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -149,6 +150,7 @@ export default function CommonPage({ data }) {
     innovation_panel: InnovationPanel,
     tableContent: TableContent,
     tabsContents: TabsContents,
+    labCard: LabCard,
   };
 
   return (

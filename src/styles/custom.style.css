@@ -1305,6 +1305,68 @@
   display:none;
 }
 
+/* labs_group_section */
+
+.labs_group_section{
+  padding-top:7rem;
+}
+
+.labs_group_section.about_two{
+  padding-bottom:0;
+}
+
+.labs_group_section.about_two .about_two {
+  padding-bottom:0;
+}
+
+.about_two.labs_group_section .early-slide .early_rgt h5{
+  font:var(--font-21);
+  color: #16344E;
+  margin-bottom: 1.5rem;
+}
+
+.about_two.labs_group_section .early-slide .early_rgt h4{
+  margin-bottom:4rem;
+}
+
+.about_two.labs_group_section .early-slide p{
+  color: #444444;
+  font:var(--font-16);
+  line-height:2.8rem;
+}
+
+.about_two.labs_group_section .early-slide ul{
+  margin-top:4rem;
+}
+
+.about_two.labs_group_section .early-slide li{
+  margin-bottom:1.5rem;
+  font:var(--font-18);
+}
+
+/* .labs_group_section .single_lab_card{
+  margin-top:7rem;
+} */
+
+.labs_group_section .single_lab_card.reverse .image_col{
+  order:2;
+}
+
+.labs_group_section .single_lab_card.reverse .early_rgt{
+  padding-left:0;
+  padding-right: 8.4rem;
+}
+
+.department-labs .about_subHeading.less{
+  padding-bottom:0;
+}
+
+
+.department-labs{
+  padding-bottom:13rem;
+}
+
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
