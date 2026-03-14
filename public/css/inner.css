@@ -81,7 +81,7 @@
 }
 
 .about_top.organogram_page {
-  padding-bottom: 10rem;
+  padding-block: 10rem;
 }
 
 .about_one .about_top.organogram_page .abt_cntnt {
@@ -118,7 +118,7 @@
   line-height: 1.4;
   text-align: center;
   margin: 0 auto;
-  max-width: 92%;
+  /* max-width: 92%; */
 }
 
 .about_one .estblish {
@@ -127,6 +127,7 @@
   max-width: 80%;
   margin: auto;
 }
+
 
 .about_one .estblish p {
   font: var(--font-16);
@@ -861,8 +862,8 @@
 .governance .table_section .table-lab tbody td:nth-child(2){
   width: 25%;
 }
-.academic-council .table_section{
-      padding: 5rem 0;
+.academic-council .table_section + .table_section {
+  padding-top: 0;
 }
 .campu_facilities {
   padding-block: 10rem 0;
@@ -6257,7 +6258,7 @@
 .leadership_two_cnt p {
   font: var(--font-16);
   color: var(--color-black);
-  line-height: 1.5;
+  line-height: 2.8rem;
   padding-bottom: 7.2rem;
 }
 
@@ -6368,7 +6369,7 @@
 .message_warpper p {
   font: var(--font-16);
   color: var(--color-white);
-  line-height: 1.6;
+  line-height: 2.8rem;
   font-weight: 300;
 }
 
@@ -6513,6 +6514,7 @@
 .department-pharmaceutics-about-us .grid_card_design1_section {
     padding-block: 10rem 2rem;
 }
+
 
 @media screen and (max-width:1599px) {
   .message_warpper:after {

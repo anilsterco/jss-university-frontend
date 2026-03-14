@@ -8,8 +8,8 @@ export default function CounterCard({ data }) {
             {data.image && (
                 <Image
                     src={data.image}
-                    height={66}
-                    width={83}
+                    height={73}
+                    width={73}
                     alt=''
                 />
             )}

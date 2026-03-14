@@ -22,7 +22,7 @@ export default function FacultyList({ data, schoolName }) {
   const facultyData = {
     subtitle: "FACULTIES",
     title: `<span class="blue-text">GUIDING MINDS </span> 
-            <span class="dark-blue-text text-uppercase">OF ${schoolName ? schoolName : "COLLEGE OF PHARMACY"}</span>`,
+            <span class="dark-blue-text text-uppercase">OF </br> ${schoolName ? schoolName : "COLLEGE OF PHARMACY"}</span>`,
     members: [
       {
         id: 1,

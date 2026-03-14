@@ -32,7 +32,28 @@
   color: var(--color-29);
   margin-bottom: 2.1rem;
 } */
-
+.about_one .overlap_contents{
+  z-index: 0;
+}
+.about_one .overlap_contents:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    padding: 20rem 10em 10rem;
+    left: 0;
+    z-index: -1;
+    bottom: 0;
+    background: #000;
+    background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);
+}
+.department-pharmaceutics-facilities .top_section {
+    margin-top: 0;
+    background: var(--color-white);
+    padding-block: 8rem 0;
+}
+.library_section{
+      background: var(--color-white);
+}
 
 
 .about_two .early-slide .early_rgt .inst-reg {
@@ -979,7 +1000,9 @@
   display: flex;
   padding-top: 10rem;
 }
-
+.schools-college-of-pharmacy-about-the-school .count_alumni_section { 
+  padding-block: 3rem;
+}
 /* image content repeateer section */
 .image_content_repeat_section.hostel_repeatsec {
   padding-bottom: 0;
@@ -1011,7 +1034,10 @@
   background: #00489A;
   padding:12rem 0;
 }
-.single_image_content {}
+ .schools-facilities .singleImageContent:first-child{padding-bottom: 0;} 
+ .schools-facilities .image_content_repeat_section.facilities  {padding-block: 15rem;} 
+ .schools-facilities .image_content_repeat_section.reverse_bg_white {padding-block: 13rem 15rem;}
+ 
 .single_image_content.reverse .row{
   flex-direction: row-reverse;
 }
@@ -1264,7 +1290,20 @@
 }
 
 
+/* team-iqac */
 
+.team-iqac .innnr_head ul,
+.meeting-proceedings .innnr_head ul,
+.best-practices .innnr_head ul,
+.academic-audit-committee-composition .innnr_head ul,
+.about-iqac .innnr_head ul,
+.recent-audit-observations .innnr_head ul,
+.academic-audit-process .innnr_head ul,
+.strategic-plan .innnr_head ul,
+.iqac-committee-for-quality-enhancement .innnr_head ul,
+.calendar .innnr_head ul{
+  display:none;
+}
 
 
 @media all and (min-width: 800px) {
