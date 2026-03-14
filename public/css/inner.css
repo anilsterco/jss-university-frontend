@@ -81,7 +81,7 @@
 }
 
 .about_top.organogram_page {
-  padding-bottom: 10rem;
+  padding-block: 10rem;
 }
 
 .about_one .about_top.organogram_page .abt_cntnt {
@@ -862,8 +862,8 @@
 .governance .table_section .table-lab tbody td:nth-child(2){
   width: 25%;
 }
-.academic-council .table_section{
-      padding: 5rem 0;
+.academic-council .table_section + .table_section {
+  padding-top: 0;
 }
 .campu_facilities {
   padding-block: 10rem 0;
@@ -6237,7 +6237,7 @@
 .leadership_two_cnt p {
   font: var(--font-16);
   color: var(--color-black);
-  line-height: 1.5;
+  line-height: 2.8rem;
   padding-bottom: 7.2rem;
 }
 
@@ -6348,7 +6348,7 @@
 .message_warpper p {
   font: var(--font-16);
   color: var(--color-white);
-  line-height: 1.6;
+  line-height: 2.8rem;
   font-weight: 300;
 }
 
