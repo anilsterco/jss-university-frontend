@@ -1405,6 +1405,8 @@ color: var(--color-4e);
     margin-left: 0;
   }
 
+  .card img{ height: auto;}
+
   .abt_cntnt {
     padding-top: 4rem;
   }
@@ -1427,6 +1429,9 @@ color: var(--color-4e);
     line-height: 1.7rem;
     text-transform: uppercase;
   }
+
+   .homepage_happenings .containerXl{   padding-inline: 2rem;}
+
 }
 
 @media (max-width: 767px) {
@@ -1437,6 +1442,7 @@ color: var(--color-4e);
 
   .cource-sec .cource_top {
     padding-top: 4rem;
+    padding-inline: 0;
   }
 
   .max-content-lg .placement_row {
@@ -1445,7 +1451,7 @@ color: var(--color-4e);
   }
 
   .logo-content img {
-    max-width: 30rem;
+    max-width: 22rem;
   }
 
   .programsCountSection {
@@ -1461,7 +1467,10 @@ color: var(--color-4e);
   .containerXl {
     padding-inline: 2rem;
   }
-
+ .homepage_happenings .containerXl {
+        padding-inline: 0rem;
+    }
+    .academic_labmain .max-content-lg{    padding-left: 2rem!important;}
 }
 
 @media screen and (max-width: 375px) {
@@ -2637,7 +2646,11 @@ margin: auto;
 
 @media (max-width: 420px) {
   .logo-content img {
-    width: 22.7rem;
+    width: 20rem;
     height: auto;
   }
+  .logo-content.scrolled img {
+    width: 16rem;
+}
+.footer_section .footer_cnt{ padding-inline: 0;}
 }

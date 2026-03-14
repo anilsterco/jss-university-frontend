@@ -405,7 +405,7 @@ margin-bottom: 3rem;
   }
 
   .cardImgContainer {
-    height: 250px;
+    height: auto;
   }
 
   .quoteTextOverlay {
@@ -422,10 +422,14 @@ margin-bottom: 3rem;
 
   .testimonialCard {
     height: 100%;
+     -webkit-border-top-left-radius: 150px;
+      -moz-border-radius-topleft: 150px;
+      border-top-left-radius: 150px;
   }
 
   .mobileView :global(.swiper-wrapper) {
     height: 100%;
+   
   }
 
   .mobileViewArrow {
@@ -440,3 +444,10 @@ margin-bottom: 3rem;
 
 }
 
+@media (max-width:550px){
+    .testimonialCard {
+    -webkit-border-top-left-radius: 70px;
+-moz-border-radius-topleft: 70px;
+border-top-left-radius: 70px;
+  }
+}

@@ -224,6 +224,10 @@
   .bannerContentH1 {
     margin: 2rem 0 0 0;
   }
+  .bannerContentP {
+    max-width: 95%;
+  }
+
 }
 
 @media screen and (max-width:575px) {
