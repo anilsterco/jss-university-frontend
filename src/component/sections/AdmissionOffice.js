@@ -124,14 +124,15 @@ export default function AboutOne({ data }) {
                       );
                     })}
                   </ul>
-
-                  <a
-                    target="_blank"
-                    className="learn_more"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
-                  >
-                    Apply Now
-                  </a>
+                  <div className="hostal_d_btns d-flex justify-content-left">
+                    <a
+                      target="_blank"
+                      className="btn btn-warning"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+                    >
+                      Apply Now
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

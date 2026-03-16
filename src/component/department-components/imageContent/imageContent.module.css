@@ -1,30 +1,32 @@
 .content_col {
     padding-left: 9.4rem;
-        padding-right: 5rem;
+    padding-right: 5rem;
 }
-.content_col h4{
+
+.content_col h4 {
     font-weight: bold;
     margin-bottom: 3rem;
     color: var(--color-4e);
 }
-.content_col.bg_image_content{
+
+.content_col.bg_image_content {
     padding-top: 0;
     padding-left: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    height:100%;
-    padding-right:12.5rem;
+    height: 100%;
+    padding-right: 12.5rem;
 }
 
-.content_col.reverse_bg_white{
+.content_col.reverse_bg_white {
     padding-top: 0;
     padding-left: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    height:100%;
-    padding-right:10rem;
+    height: 100%;
+    padding-right: 10rem;
 }
 
 .content_col.department,
@@ -37,10 +39,10 @@
     padding-right: 9.4rem;
 }
 
-.content_col.bg_image_content .heading{
-    color:#fff;
-    font:var(--font-26);
-    margin-bottom:3rem;
+.content_col.bg_image_content .heading {
+    color: #fff;
+    font: var(--font-26);
+    margin-bottom: 3rem;
 }
 
 .content_col .descGroup {
@@ -48,22 +50,22 @@
     gap: 3rem;
 }
 
-.content_col .pdf_group{
-    border-top:1px solid #D9D9D9;
-    margin-top:3.2rem;
-    padding-top:5rem;
+.content_col .pdf_group {
+    border-top: 1px solid #D9D9D9;
+    margin-top: 3.2rem;
+    padding-top: 5rem;
 }
 
-.content_col .pdf_group a{
-    color:#333333;
-    font:var(--font-18);
+.content_col .pdf_group a {
+    color: #333333;
+    font: var(--font-18);
     font-weight: bold;
     display: flex;
     align-items: center;
 }
 
-.content_col .pdf_group img{
-    margin-right:1rem;
+.content_col .pdf_group img {
+    margin-right: 1rem;
 }
 
 .content_col .desc {
@@ -74,8 +76,8 @@
     margin: 0;
 }
 
-.content_col.bg_image_content .desc{
-    color:#fff;
+.content_col.bg_image_content .desc {
+    color: #fff;
     font-family: var(--font-roboto);
 }
 
@@ -85,9 +87,6 @@
     font: var(--font-21);
     line-height: 3rem;
     font-weight: 500;
-    margin-bottom: 0;
-    /* font-family: var(--font-Condensed); */
-
 }
 
 .content_col ul {
@@ -131,60 +130,96 @@
     margin-top: 5rem;
 }
 
-.extraPara{
-    margin-top:7rem;
-    font:var(--font-16);
+.extraPara {
+    margin-top: 7rem;
+    font: var(--font-16);
     color: #444444;
     margin-bottom: 0;
 }
 
-.singleImageContent:first-child{
+.singleImageContent:first-child {
     padding-bottom: 8rem;
 }
+
 .singleImageContent.department {
     padding-bottom: 15rem;
 }
 
 .singleImageContent.facilities {
     /* padding:5rem 0 10rem; */
-    position:relative;
+    position: relative;
 }
+
 @media screen and (max-width:1449px) {
-  .content_col {
-    padding-left: 4.4rem;
-    padding-top: 4rem;
-}
+    .content_col {
+        padding-left: 4.4rem;
+        padding-top: 4rem;
+    }
 
 }
-@media screen and (max-width:991px){
-  .content_col {
-    padding-left: 0rem;
-}
-.image_content_repeat_section {
-    padding-block: 4rem 2rem;
-  }
-  .content_col.reverse_bg_white{
-  padding-block: 4rem;
-}
-.content_col.department,
-.content_col.facilities {
-    padding-top: 4rem;
-}
-.content_col.odd {
-        padding-right:0rem;
-}
+
+@media screen and (max-width:991px) {
+    .content_col {
+        padding-left: 0rem;
+    }
+
+    .image_content_repeat_section {
+        padding-block: 4rem 2rem;
+    }
+
+    .content_col.reverse_bg_white {
+        padding-block: 4rem;
+    }
+
+    .content_col.department,
+    .content_col.facilities {
+        padding-top: 4rem;
+    }
+
+    .content_col {
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .content_col.odd {
+        padding-right: 0rem;
+    }
+
+    .singleImageContent:first-child {
+        padding-bottom: 4rem;
+    }
 
 }
+
 @media screen and (max-width:767px) {
 
-  .content_col {
-    padding-left: 0;
-    padding-top: 4rem;
-    padding-right: 0;
-}
-   .content_col.reverse_bg_white{
-    padding-right:0;
-}
-.singleImageContent:first-child { padding-bottom: 5rem; }
+    .content_col {
+        padding-left: 0;
+        padding-top: 2rem;
+        padding-right: 0;
+    }
 
+    .content_col.reverse_bg_white {
+        padding-right: 0;
+    }
+
+    .singleImageContent:first-child {
+        padding-bottom: 3rem;
+    }
+.content_col ul {
+    margin-top: 2rem;
+    gap: 1.5rem;
+
+}
+
+}
+
+@media screen and (max-width:575px) {
+    .content_col h4 {
+        margin-bottom: 2rem;
+    }
+
+    .content_col .descGroup {
+        gap: 2rem;
+    }
 }

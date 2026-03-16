@@ -36,6 +36,9 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.heading && (
               <h4 className={`${styles.heading} head`}>{data.heading}</h4>
             )}
+            {data?.subHeading && (
+              <h5 className={styles.subHeading}>{data.subHeading}</h5>
+            )}
             {data.desc.length > 0 && (
               <div className={`${styles.descGroup} desc_group`}>
                 {data.desc.map((singleDesc, descIdx) => (
@@ -65,9 +68,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 ))}
               </div>
             )}
-            {data?.subHeading && (
-              <h5 className={styles.subHeading}>{data.subHeading}</h5>
-            )}
+
             {data?.listing && data.listing.length > 0 && (
               <ul className={styles.ul}>
                 {data.listing.map((singleList, listIdx) =>

@@ -27,7 +27,6 @@ export default function ImageContentRepeat({ data }) {
             </div>
           </div>
         );
-
       default:
         return <h1>there is some error in switch!!</h1>;
     }
