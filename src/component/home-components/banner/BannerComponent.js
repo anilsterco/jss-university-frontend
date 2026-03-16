@@ -9,7 +9,15 @@ import styles from "./banner.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { WEB_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 export default function HeroSlider({ data, slug }) {
+  const pathname = usePathname();
+  const pathParts = pathname.split("/");
+  const currentPage = pathParts[1];
+  const currentSlug = pathParts[2];
+
+  const isDepartmentPage = currentPage === "department" && true;
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -64,7 +72,10 @@ export default function HeroSlider({ data, slug }) {
             <div className={styles.bannerOverlay}>
               <div className="container">
                 <div className={styles.bannerContent}>
-                  <span className={styles.bannerSmall}>Departments of</span>
+                  {isDepartmentPage && (
+                    <span className={styles.bannerSmall}>Departments of</span>
+                  )}
+
                   <h1
                     className={styles.bannerContentH1}
                     dangerouslySetInnerHTML={{ __html: slide.title }}
