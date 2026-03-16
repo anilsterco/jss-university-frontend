@@ -35,7 +35,8 @@
 .about_one .overlap_contents{
   z-index: 0;
 }
-.about_one .overlap_contents:before {
+
+.department-facilities .about_one .overlap_contents:before {
     content: "";
     position: absolute;
     width: 100%;
