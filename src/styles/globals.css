@@ -189,7 +189,7 @@ p {
 .mega-departments-grid {
   display: flex;
   gap: 3rem;
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   width: 100%;
   overflow-y: auto;
   max-height: 70vh;
@@ -225,14 +225,15 @@ p {
   padding-block: 0.4rem;
 }
 .mega-dept-block ul li a {
-  font: var(--font-14);
+  font: var(--font-15);
   color: #555;
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 0rem;
+      line-height: 2.2rem;
 }
-.mega-dept-block ul li a::before {
+/* .mega-dept-block ul li a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -242,7 +243,7 @@ p {
   height: 4px;
   border-radius: 50%;
   background: var(--color-e8);
-}
+} */
 .mega-dept-block ul li a:hover {
   color: var(--color-e8);
 }

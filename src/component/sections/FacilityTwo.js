@@ -18,9 +18,6 @@ export default function FacilityTwo({ data }) {
         const headerItem = section.items?.[0];
         const boxes = headerItem?.boxex || [];
 
-        const visibleBoxes = boxes.slice(0, visibleCount);
-        const hasMore = visibleCount < boxes.length;
-
         return (
           <section
             className="ameminites_listmain"
@@ -36,7 +33,7 @@ export default function FacilityTwo({ data }) {
                     </div>
                   )}
                   <div className="amenities_gridmain">
-                    {visibleBoxes.map((box, idx) => (
+                    {boxes.map((box, idx) => (
                       <div className="ameniti_item_col" key={idx}>
                         {box.image && (
                           <figure className="shine-effect">
@@ -58,26 +55,6 @@ export default function FacilityTwo({ data }) {
                       </div>
                     ))}
                   </div>
-
-                  {/* LOAD MORE */}
-                  {(hasMore || headerItem?.desc) && (
-                    <div className="amenities_loadmore">
-                      {hasMore && (
-                        <div className="load_m_btnsec">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setVisibleCount((prev) => prev + 3)
-                            }
-                          >
-                            <a>LOAD MORE <i className="bi bi-arrow-down"></i></a> 
-                          </button>
-                        </div>
-                      )}
-
-                      {headerItem?.desc && <p>{headerItem.desc}</p>}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
