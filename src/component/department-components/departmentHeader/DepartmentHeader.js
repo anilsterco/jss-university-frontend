@@ -112,10 +112,10 @@ export default function DepartmentHeader({ className, data }) {
 
   const dropdownLabel =
     isSchoolPage && pathParts[2] !== "college-of-pharmacy"
-      ? "Schools Of"
+      ? "Schools of"
       : pathParts[2] == "college-of-pharmacy"
-        ? "College Of"
-        : "Departments Of";
+        ? "College of"
+        : "Departments of";
 
   const displayName = isSchoolPage
     ? selectedSchoolName
