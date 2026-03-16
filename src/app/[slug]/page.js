@@ -59,6 +59,11 @@ import FacilityTab from "@/component/sections/FacilityTab";
 import StudentClub from "@/component/sections/StudentClub";
 import AmenitiesList from "@/component/sections/AmenitiesList";
 import LabCard from "@/component/sections/LabCard";
+import BgImageContent from "@/component/sections/BgImageContent";
+import GridDepartment from "@/component/sections/GridDepartment";
+import InnovationPanel from "@/component/sections/InnovationPanel";
+import TableContent from "@/component/sections/TableContent";
+import TabsContents from "@/component/sections/TabsContents";
 
 async function fetchPageData(slug) {
   try {
@@ -166,6 +171,12 @@ export default async function DynamicPage({ params }) {
     facilitiesTab: FacilityTab,
     studentClub: StudentClub,
     amenities_list: AmenitiesList,
+
+    bg_image_content: BgImageContent,
+        gridDepartment: GridDepartment,
+        innovation_panel: InnovationPanel,
+        tableContent: TableContent,
+        tabsContents: TabsContents,
     labCard: LabCard,
   };
 
