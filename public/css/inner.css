@@ -83,9 +83,11 @@
 .about_top.organogram_page {
   padding-block: 10rem;
 }
-.about_top.organogram_page .overlap_contents:before{
- content: none;
+
+.about_top.organogram_page .overlap_contents:before {
+  content: none;
 }
+
 .about_one .about_top.organogram_page .abt_cntnt {
   padding-top: 0;
 }
@@ -7171,6 +7173,9 @@
   .imageContent-module__R4BLKG__content_col h4 {
     margin-bottom: 2rem;
   }
+      .admins_of_con {
+        padding-bottom: 0rem;
+    }
 
 }
 
@@ -7179,12 +7184,23 @@
     padding-inline: 3rem;
   }
 
+
+
   .about_f_value .ab_f_content h3 {
     padding-bottom: 2rem;
   }
 
   .ad_selec_grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .recent-audit-observations .ad_selec_procss {
+    padding-top: 2rem;
+  }
+
+  .ad_selec_grid .ad_sel_col {
+    padding: 2.7rem 2.5rem;
   }
 
   .leadership_two_cnt2 {
@@ -7427,7 +7443,9 @@
   .lib_cen_main .cumpus_left_img p {
     padding-top: 3rem;
   }
-
+.admins_of_con {
+        padding-bottom: 0rem;
+    }
   .campu_grid_main.capus_grid_two {
     padding-bottom: 5rem;
   }
@@ -7895,6 +7913,16 @@
     padding: 2.7rem 2.5rem;
   }
 
+  .recent-audit-observations .ad_sel_col li {
+    margin-bottom: 1.5rem;
+  }
+
+  .ad_selec_procss {
+    padding-block: 6rem;
+  }
+.recent-audit-observations .table_section {
+    padding-block: 3rem;
+}
   .admission-selection-process.ad_selec_procss {
     padding-bottom: 4rem;
   }
