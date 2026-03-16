@@ -169,7 +169,10 @@ export default function LabCard({ data }) {
                               dangerouslySetInnerHTML={{ __html: item.title }}
                             />
                           )}
-                          {item?.description && <p>{item.description}</p>}
+                          {item?.description &&
+                            item.description?.map((singleDes, desIdx) => (
+                              <p key={desIdx}>{singleDes.description}</p>
+                            ))}
                           {item?.listGroup && (
                             <ul>
                               {item.listGroup?.map((listItem, listIdx) => (

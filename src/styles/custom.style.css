@@ -1392,6 +1392,12 @@
 }
 
 
+.schools-departments .faulty-img figure{
+  border-radius: 7px;
+  overflow:hidden;
+}
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
