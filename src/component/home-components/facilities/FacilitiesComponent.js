@@ -264,14 +264,14 @@ export default function FacilitiesComponent({ data }) {
                   <div>
                     <h2>
                       {panel.title}{" "}
-                      <Link href={WEB_URL + panel.main_link ?? "#"}>
+                      <a href={WEB_URL + panel.main_link ?? "#"}>
                         <Image
                           src="/images/home-page/facilivisit.svg"
                           alt="image"
                           width={22}
                           height={22}
                         />
-                      </Link>
+                      </a>
                     </h2>
                     <p className={styles.facilityDescription}>
                       {panel.description}
@@ -281,7 +281,7 @@ export default function FacilitiesComponent({ data }) {
                 <div className={styles.bannerLinks}>
                   {panel.links &&
                     panel.links.map((item, index) => (
-                      <Link
+                      <a
                         key={index}
                         href={item.url ?? "#"}
                         className={styles.bannerLink}
@@ -293,7 +293,7 @@ export default function FacilitiesComponent({ data }) {
                           width={5}
                           height={10}
                         />
-                      </Link>
+                      </a>
                     ))}
                 </div>
               </figure>
