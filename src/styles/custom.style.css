@@ -1375,6 +1375,22 @@
 }
 
 
+.department-facilities .placement_page .section_title{
+  font:var(--font-21);
+  line-height:3rem;
+  color: #16344E;
+  font-weight: 500;
+  margin-bottom:3rem;
+}
+
+.department-facilities .placement_page .curriculum_box{
+  padding:3rem;
+}
+
+.department-facilities .placement_page .placement_stats{
+  padding-bottom:13rem;
+}
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
