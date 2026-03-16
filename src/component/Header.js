@@ -10,6 +10,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 
 import { FiSearch } from "react-icons/fi";
 import { BASE_URL, WEB_URL } from "@/config/config";
+import { useRouter } from "next/navigation";
 
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
@@ -133,6 +134,9 @@ export default function Header() {
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
   const [globleSearch, setglobleSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const router = useRouter();
 
   // ✅ Timeout ref to delay closing — prevents glitch when mouse travels
   // from the nav <li> into the fixed mega-dropdown (there's a gap between them)
@@ -396,6 +400,14 @@ export default function Header() {
     );
   }
 
+  const handleSearch = () => {
+    const trimmed = searchQuery.trim();
+    if (!trimmed) return;
+    setglobleSearch(false);
+    setSearchQuery("");
+    router.push(`${WEB_URL}search?q=${encodeURIComponent(trimmed)}`);
+  };
+
   const pathParts = pathname.split("/").filter(Boolean);
   const isHome = pathname === "/";
   const isSchoolHome = pathParts.length === 2 && pathParts[0] === "schools";
@@ -432,26 +444,26 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Contact"
             ? {
-              ...item,
-              heading: data.title,
-              Menu: [
-                {
-                  name: data.address,
-                  url: data.direction_url,
-                  contactIcon: "/images/header/address-icon.svg",
-                },
-                {
-                  name: data.email,
-                  url: `mailto:${data.email}`,
-                  contactIcon: "/images/header/mail-icon.svg",
-                },
-                {
-                  name: data.phone,
-                  url: `tel:${data.phone}`,
-                  contactIcon: "/images/header/phone-icon.svg",
-                },
-              ],
-            }
+                ...item,
+                heading: data.title,
+                Menu: [
+                  {
+                    name: data.address,
+                    url: data.direction_url,
+                    contactIcon: "/images/header/address-icon.svg",
+                  },
+                  {
+                    name: data.email,
+                    url: `mailto:${data.email}`,
+                    contactIcon: "/images/header/mail-icon.svg",
+                  },
+                  {
+                    name: data.phone,
+                    url: `tel:${data.phone}`,
+                    contactIcon: "/images/header/phone-icon.svg",
+                  },
+                ],
+              }
             : item,
         ),
       );
@@ -469,13 +481,13 @@ export default function Header() {
           prev.map((item) =>
             item.name === "Menu"
               ? {
-                ...item,
-                Menu: json.data.map((d) => ({
-                  name: d.title,
-                  url: d.url,
-                  children: d.children || [], // ← store children
-                })),
-              }
+                  ...item,
+                  Menu: json.data.map((d) => ({
+                    name: d.title,
+                    url: d.url,
+                    children: d.children || [], // ← store children
+                  })),
+                }
               : item,
           ),
         );
@@ -511,13 +523,15 @@ export default function Header() {
 `}
     >
       <div
-        className={`header-inner ${!isHomeLikePage ? "innerPage" : ""
-          } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
+        className={`header-inner ${
+          !isHomeLikePage ? "innerPage" : ""
+        } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
       >
         <div className="containerXl">
           <div
-            className={`nav-container ${!isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
-              }`}
+            className={`nav-container ${
+              !isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
+            }`}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -559,8 +573,9 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className={`nav-item ${activeDropdown === i ? "active-items" : ""
-                        }`}
+                      className={`nav-item ${
+                        activeDropdown === i ? "active-items" : ""
+                      }`}
                       onMouseEnter={() => handleNavMouseEnter(i, l.title)}
                       onMouseLeave={handleNavMouseLeave}
                     >
@@ -770,25 +785,25 @@ export default function Header() {
                                                 </h6>
                                                 {school.departments?.length >
                                                   0 && (
-                                                    <ul>
-                                                      {school.departments.map(
-                                                        (dept) => (
-                                                          <li key={dept.id}>
-                                                            <Link
-                                                              href={`${WEB_URL}department/${dept.slug}`}
-                                                              onClick={() =>
-                                                                setActiveDropdown(
-                                                                  null,
-                                                                )
-                                                              }
-                                                            >
-                                                              {dept.name}
-                                                            </Link>
-                                                          </li>
-                                                        ),
-                                                      )}
-                                                    </ul>
-                                                  )}
+                                                  <ul>
+                                                    {school.departments.map(
+                                                      (dept) => (
+                                                        <li key={dept.id}>
+                                                          <Link
+                                                            href={`${WEB_URL}department/${dept.slug}`}
+                                                            onClick={() =>
+                                                              setActiveDropdown(
+                                                                null,
+                                                              )
+                                                            }
+                                                          >
+                                                            {dept.name}
+                                                          </Link>
+                                                        </li>
+                                                      ),
+                                                    )}
+                                                  </ul>
+                                                )}
                                               </div>
                                             ))}
                                           </div>
@@ -920,7 +935,11 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-                <button aria-label="Open menu" className="hamburger me-2" onClick={() => setglobleSearch(true)}>
+                <button
+                  aria-label="Open menu"
+                  className="hamburger me-2"
+                  onClick={() => setglobleSearch(true)}
+                >
                   <FiSearch size={18} />
                 </button>
                 <button
@@ -1200,8 +1219,9 @@ export default function Header() {
               {mobilePanels.map((item) => (
                 <div
                   key={item.name}
-                  className={`panel ${activePanel === item.name ? "open" : ""
-                    } ${item.name.toLowerCase()}-panel`}
+                  className={`panel ${
+                    activePanel === item.name ? "open" : ""
+                  } ${item.name.toLowerCase()}-panel`}
                 >
                   {item.name === "Courses" &&
                     activePanel === "Courses" &&
@@ -1345,11 +1365,11 @@ export default function Header() {
                                 onClick={
                                   sub.children?.length > 0
                                     ? () =>
-                                      setOpenMenuAccordion(
-                                        openMenuAccordion === idx
-                                          ? null
-                                          : idx,
-                                      )
+                                        setOpenMenuAccordion(
+                                          openMenuAccordion === idx
+                                            ? null
+                                            : idx,
+                                        )
                                     : () => setActivePanel(null) // ← add this
                                 }
                                 style={
@@ -1399,11 +1419,11 @@ export default function Header() {
                                   onClick={
                                     sub.children?.length > 0
                                       ? () =>
-                                        setOpenMenuAccordion(
-                                          openMenuAccordion === `b${idx}`
-                                            ? null
-                                            : `b${idx}`,
-                                        )
+                                          setOpenMenuAccordion(
+                                            openMenuAccordion === `b${idx}`
+                                              ? null
+                                              : `b${idx}`,
+                                          )
                                       : () => setActivePanel(null) // ← add this
                                   }
                                   style={
@@ -1466,29 +1486,39 @@ export default function Header() {
             </ul>
           </div>
 
-
-
-
           {/* Popup */}
           {globleSearch && (
             <div className={`g_search_main ${open ? "active" : ""}`}>
               <div className="g_sc_box">
                 <div className="sec_inpu_box">
-                  <input type="text" className="form-control global_search_in" placeholder="Search..." ></input>
-                  <button type="button" className="btn global_search_btn"> <FiSearch size={16} /></button>
+                  <input
+                    type="text"
+                    className="form-control global_search_in"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  ></input>
+                  <button
+                    type="button"
+                    className="btn global_search_btn"
+                    onClick={handleSearch}
+                  >
+                    {" "}
+                    <FiSearch size={16} />
+                  </button>
                 </div>
-                <button onClick={() => setglobleSearch(false)} className="secbtn_close">
-                 <RiCloseLargeFill  size={30}/>
+                <button
+                  onClick={() => {
+                    setglobleSearch(false);
+                    setSearchQuery("");
+                  }}
+                  className="secbtn_close"
+                >
+                  <RiCloseLargeFill size={30} />
                 </button>
               </div>
             </div>
           )}
-
-
-
-
-
-
         </div>
       </div>
       <style jsx>
