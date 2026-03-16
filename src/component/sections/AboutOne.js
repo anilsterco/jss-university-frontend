@@ -27,7 +27,11 @@ export default function AboutOne({ data }) {
     switch (section.type) {
       case "topBanner":
         return (
-          <section key={sectionIndex} className={`about_one`}>
+          <section
+            key={sectionIndex}
+            className={`about_one`}
+            id={section?.items?.[0]?.sectionId}
+          >
             <div className="container">
               <div
                 className={`row justify-content-center about_top ${section?.items?.[0]?.sectionType} ${section?.items?.[0]?.sectionClass?.map((item) => item.sectionClass).join(" ")}`}
@@ -46,7 +50,7 @@ export default function AboutOne({ data }) {
                         className="abt_cntnt"
                         data-aos="fade-up"
                         data-aos-delay="100"
-                        id={item?.sectionId}
+                        // id={item?.sectionId}
                       >
                         <h5 className="about_subtitle">{item.title}</h5>
                         {item.subtitle && <p>{item.subtitle}</p>}
@@ -128,7 +132,7 @@ export default function AboutOne({ data }) {
                       576: { slidesPerView: 2 },
                       768: { slidesPerView: 3 },
                       999: { slidesPerView: 3 },
-                     1080: { slidesPerView: 4 },
+                      1080: { slidesPerView: 4 },
                     }}
                   >
                     {section.items
