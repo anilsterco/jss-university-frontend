@@ -11,9 +11,7 @@ export default function ProgramBox({ data, type }) {
       >
         <figure>
           <Image
-            src={
-              (data.image || data.banner) ?? "/images/programs/program-img.webp"
-            }
+            src={data.image ?? "/images/programs/program-img.webp"}
             alt="program-image"
             width={type == "program" ? 673 : 400}
             height={type == "program" ? 320 : 250}

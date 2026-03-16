@@ -170,6 +170,7 @@ export default function LabCard({ data }) {
                             />
                           )}
                           {item?.description &&
+                            item?.description.length > 0 &&
                             item.description?.map((singleDes, desIdx) => (
                               <p key={desIdx}>{singleDes.description}</p>
                             ))}
