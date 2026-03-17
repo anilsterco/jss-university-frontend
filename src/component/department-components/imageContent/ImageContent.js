@@ -65,37 +65,26 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 ))}
               </div>
             )}
-            {data?.subHeading && (
+           
+            
+             {data?.subHeading && (
               <h5 className={styles.subHeading}>{data.subHeading}</h5>
-            )}
-            {data?.listing && data.listing.length > 0 && (
-              <ul className={styles.ul}>
-                {data.listing.map((singleList, listIdx) =>
-                  singleList.bold || singleList.list ? (
-                    <li key={listIdx}>
-                      {singleList?.bold && <strong>{singleList.bold}: </strong>}
-                      {singleList.list}
-                    </li>
-                  ) : (
-                    <li key={listIdx}>{singleList.listing}</li>
-                  ),
-                )}
-              </ul>
             )}
             {data?.bottomDesc && (
               <p className={styles.bottomDesc}>{data.bottomDesc}</p>
+            )}
+
+            {data?.extraInfo && (
+              <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
+            )}
+
+            {data?.extraPara && (
+              <h5 className={styles.extraPara}>{data.extraPara}</h5>
             )}
           </div>
         </div>
       </div>
 
-      {data?.extraInfo && (
-        <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
-      )}
-
-      {data?.extraPara && (
-        <h5 className={styles.extraPara}>{data.extraPara}</h5>
-      )}
     </div>
   );
 }
