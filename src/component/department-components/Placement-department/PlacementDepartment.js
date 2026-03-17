@@ -203,75 +203,79 @@ export default function PlacementsSection({ data }) {
               </Swiper>
             )}
           </div>
-          <div className={styles.rightContent} data-aos="fade-up">
-            <div className={styles.wallOfFameContainer}>
-              {data?.hall_of_fame?.image && (
-                <Image
-                  src={data.hall_of_fame.image}
-                  alt="Wall of Fame"
-                  width={500}
-                  height={600}
-                  className={styles.wallImage}
-                />
-              )}
+          {data?.hall_of_fame && (
+            <div className={styles.rightContent} data-aos="fade-up">
+              <div className={styles.wallOfFameContainer}>
+                {data?.hall_of_fame?.image && (
+                  <Image
+                    src={data.hall_of_fame.image}
+                    alt="Wall of Fame"
+                    width={500}
+                    height={600}
+                    className={styles.wallImage}
+                  />
+                )}
 
-              <div
-                className={styles.wallOfFameText}
-                dangerouslySetInnerHTML={{
-                  __html: data.hall_of_fame.heading,
-                }}
-              />
-              <Link href="#">
-                <Image
-                  src="/images/home-page/jss_bannerIcon.svg"
-                  width={22}
-                  height={22}
-                  alt="Hall of Fame"
-                  className={`${styles.placementvisit}`}
+                <div
+                  className={styles.wallOfFameText}
+                  dangerouslySetInnerHTML={{
+                    __html: data.hall_of_fame.heading,
+                  }}
                 />
-              </Link>
+                <Link href="#">
+                  <Image
+                    src="/images/home-page/jss_bannerIcon.svg"
+                    width={22}
+                    height={22}
+                    alt="Hall of Fame"
+                    className={`${styles.placementvisit}`}
+                  />
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* RECRUITERS */}
-        <div className={`pt-5 ${styles.recruiterSection}`} data-aos="fade-up">
-          <div className="row recruiter-logo w-100">
-            <div className="col-lg-12 max-auto">
-              <p className="small">Our Recruiters</p>
-              <div className="d-flex flex-wrap gap-4 align-items-center">
-                <Swiper
-                  modules={[Autoplay]}
-                  autoplay={{ delay: 3000, disableOnInteraction: false }}
-                  loop={true}
-                  spaceBetween={30}
-                  slidesPerView={7}
-                  className="recruiters-slider"
-                  breakpoints={{
-                    0: { slidesPerView: 1 },
-                    375: { slidesPerView: 1 },
-                    576: { slidesPerView: 3 },
-                    768: { slidesPerView: 4 },
-                    992: { slidesPerView: 5 },
-                    1200: { slidesPerView: 7 },
-                  }}
-                >
-                  {loopedRecruiters.map((rec, i) => (
-                    <SwiperSlide key={i} className="recruiter-slide">
-                      <Image
-                        src={rec.image}
-                        alt={rec.title}
-                        width={150}
-                        height={100}
-                        className={`img-fluid ${styles.recruiterLogo}`}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+        {data?.recruiters && data.recruiters.length > 0 && (
+          <div className={`pt-5 ${styles.recruiterSection}`} data-aos="fade-up">
+            <div className="row recruiter-logo w-100">
+              <div className="col-lg-12 max-auto">
+                <p className="small">Our Recruiters</p>
+                <div className="d-flex flex-wrap gap-4 align-items-center">
+                  <Swiper
+                    modules={[Autoplay]}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    spaceBetween={30}
+                    slidesPerView={7}
+                    className="recruiters-slider"
+                    breakpoints={{
+                      0: { slidesPerView: 1 },
+                      375: { slidesPerView: 1 },
+                      576: { slidesPerView: 3 },
+                      768: { slidesPerView: 4 },
+                      992: { slidesPerView: 5 },
+                      1200: { slidesPerView: 7 },
+                    }}
+                  >
+                    {loopedRecruiters.map((rec, i) => (
+                      <SwiperSlide key={i} className="recruiter-slide">
+                        <Image
+                          src={rec.image}
+                          alt={rec.title}
+                          width={150}
+                          height={100}
+                          className={`img-fluid ${styles.recruiterLogo}`}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

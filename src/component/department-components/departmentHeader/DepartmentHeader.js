@@ -7,6 +7,7 @@ import { IoChevronDownOutline, IoMenu, IoClose } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 import "@/styles/custom.style.css";
 import { BASE_URL, WEB_URL } from "@/config/config";
+import { Skeleton } from "@/component/common/skeleton/Skeleton";
 
 // Converts slug to readable label while API loads
 // e.g. "computer-science-and-engineering-it" → "Computer Science And Engineering It"
@@ -137,7 +138,11 @@ export default function DepartmentHeader({ className, data }) {
                 <span>{dropdownLabel}</span>
                 <span>
                   <span className={styles.selectedName}>
-                    {loading ? fallbackLabel : displayName || fallbackLabel}
+                    {loading ? (
+                      <Skeleton width="100px" height="20px" />
+                    ) : (
+                      displayName || fallbackLabel
+                    )}
                   </span>
                   <IoChevronDownOutline />
                 </span>

@@ -2793,6 +2793,16 @@ a:active {
   color: #444 !important;
 }
 
+.faqItem .faqAnswer ul {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.faqItem .faqAnswer ul li{
+  font:var(--font-14);
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 420px) {
   .logo-content img {
     width: 20rem;

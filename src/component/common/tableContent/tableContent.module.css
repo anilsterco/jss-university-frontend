@@ -72,3 +72,17 @@ min-width: auto;
     top: 1rem;
     left: 0;
 }
+
+.tableContentSection .right_description{
+  margin-top:3rem;
+}
+
+.tableContentSection .right_description p{
+  font: var(--font-16);
+  color: #fff;
+  line-height: 2.8rem;
+}
+
+.tableContentSection .rightTable{
+  margin-top:3rem;
+}

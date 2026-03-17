@@ -7,7 +7,7 @@ import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { WEB_URL } from "@/config/config";
+import { APPLY_NOW, WEB_URL } from "@/config/config";
 
 const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
   const [count, setCount] = useState(start);
@@ -67,7 +67,7 @@ const dummyCoursesData = {
     year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
     description: "Sed ut perspiciatis unde omnis",
   },
-  buttons: [{ text: "Apply Now", url: "/api/homepage" }],
+  buttons: [{ text: "Apply Now", url: APPLY_NOW }],
 };
 
 export default function CoursesOffered({ data }) {
@@ -172,7 +172,7 @@ export default function CoursesOffered({ data }) {
                     ))
                   ) : (
                     hasSearched && (
-                      <div className="no-results">No courses found</div>
+                      <div className="no-results">No Programs found</div>
                     )
                   )}
                 </div>

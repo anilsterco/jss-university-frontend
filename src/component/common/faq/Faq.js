@@ -12,7 +12,7 @@ export default function Faq({ data, heading }) {
               <span className="icon"></span>
             </summary>
             <div className="faqAnswer">
-              <p>{faq.answer || faq.slug}</p>
+              <p dangerouslySetInnerHTML={{ __html: faq.answer || faq.slug }} />
             </div>
           </details>
         ))}

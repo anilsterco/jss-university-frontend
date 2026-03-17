@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./department.module.css";
 import { usePathname } from "next/navigation";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 
 export default function DepartmentSection({
   data,
@@ -24,6 +24,7 @@ export default function DepartmentSection({
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [programsCount, setProgramsCount] = useState(0);
 
   const pathname = usePathname();
   const pathParts = pathname.split("/").filter(Boolean);
@@ -53,6 +54,22 @@ export default function DepartmentSection({
     return () => clearTimeout(delay);
   }, [query, departmentSlug]);
 
+  useEffect(() => {
+    const getProgramsCount = async () => {
+      try {
+        const res = await fetch(
+          `${BASE_URL}school-pages/${departmentSlug}/programs`,
+        );
+        const data = await res.json();
+        setProgramsCount(data.data ? data.data.length : 0);
+      } catch (err) {
+        console.log("error while fetching programs count" + err);
+      }
+    };
+
+    getProgramsCount();
+  }, [departmentSlug]);
+
   return (
     <div className={styles.departmentSection}>
       <div className={`container ${styles.container}`}>
@@ -66,51 +83,53 @@ export default function DepartmentSection({
                   dangerouslySetInnerHTML={{ __html: departmentSection.title }}
                 ></h1>
 
-                <div
-                  className="search-wrapper position-relative"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <div className="input-group programs_search overflow-hidden">
-                    <input
-                      type="text"
-                      className="form-control border-0"
-                      placeholder="Search Programs"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      style={{ padding: "10px 20px" }}
-                    />
-                    <span className="input-group-text bg-white border-0">
-                      <img
-                        src="/images/home-page/icon-search.svg"
-                        alt="search"
+                {programsCount > 0 && (
+                  <div
+                    className="search-wrapper position-relative"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div className="input-group programs_search overflow-hidden">
+                      <input
+                        type="text"
+                        className="form-control border-0"
+                        placeholder="Search Programs"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        style={{ padding: "10px 20px" }}
                       />
-                    </span>
-                  </div>
-
-                  {query && (
-                    <div className="search-results">
-                      {loading ? (
-                        <div className="loading">Searching...</div>
-                      ) : results.length ? (
-                        results.map((item) => (
-                          <div className="search-item" key={item.id}>
-                            <Link
-                              href={`/programs/${item.slug}`}
-                              className="search-link"
-                            >
-                              {item.name}
-                            </Link>
-                          </div>
-                        ))
-                      ) : (
-                        hasSearched && (
-                          <div className="no-results">No courses found</div>
-                        )
-                      )}
+                      <span className="input-group-text bg-white border-0">
+                        <img
+                          src="/images/home-page/icon-search.svg"
+                          alt="search"
+                        />
+                      </span>
                     </div>
-                  )}
-                </div>
+
+                    {query && (
+                      <div className="search-results">
+                        {loading ? (
+                          <div className="loading">Searching...</div>
+                        ) : results.length ? (
+                          results.map((item) => (
+                            <div className="search-item" key={item.id}>
+                              <Link
+                                href={`/programs/${item.slug}`}
+                                className="search-link"
+                              >
+                                {item.name}
+                              </Link>
+                            </div>
+                          ))
+                        ) : (
+                          hasSearched && (
+                            <div className="no-results">No Programs found</div>
+                          )
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div
                   className={`d-flex align-items-center ${styles.programsCountSection}`}
@@ -121,7 +140,7 @@ export default function DepartmentSection({
                     className={`program-hide ${styles.programsCountWrapper}`}
                   >
                     <h1 className={`display-4 ${styles.programsCount}`}>
-                      {departmentSection.programs_count}
+                      {programsCount}
                       <sup className={styles.Plusicon}>+</sup>
                     </h1>
                   </div>
@@ -132,17 +151,19 @@ export default function DepartmentSection({
                 </div>
               </div>
 
-              <div data-aos="fade-up" data-aos-delay="300">
-                <div className="depar-button">
-                  <Link
-                    href={`${WEB_URL + pageType + "/" + departmentSlug}/programs`}
-                  >
-                    <button className={styles.viewAllButton}>
-                      VIEW ALL PROGRAMES <GoArrowRight />
-                    </button>
-                  </Link>
+              {programsCount > 0 && (
+                <div data-aos="fade-up" data-aos-delay="300">
+                  <div className="depar-button">
+                    <Link
+                      href={`${WEB_URL + pageType + "/" + departmentSlug}/programs`}
+                    >
+                      <button className={styles.viewAllButton}>
+                        VIEW ALL PROGRAMES <GoArrowRight />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -205,7 +226,11 @@ export default function DepartmentSection({
                   <p>{departmentSection.programs_text}</p>
                 )}
               </div>
-              <Link target="_blank" href={`https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform`} className=" btn btn-warning">
+              <Link
+                href={APPLY_NOW}
+                className=" btn btn-warning"
+                target="_blank"
+              >
                 Apply Now
               </Link>
             </div>
