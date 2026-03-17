@@ -172,7 +172,7 @@ export default function CoursesOffered({ data }) {
                     ))
                   ) : (
                     hasSearched && (
-                      <div className="no-results">No courses found</div>
+                      <div className="no-results">No Programs found</div>
                     )
                   )}
                 </div>
