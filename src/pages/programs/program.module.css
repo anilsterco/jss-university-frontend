@@ -9,11 +9,23 @@
   font-weight: 700;
   font-family: var(--font-Condensed);
 }
+
+.programs_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+}
 @media (max-width: 768px) {
 .inner_page{padding-block: 6rem;}
 
 .innerPage_title {
     margin-bottom: 3rem;
   
+}
+
+.programs_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 }
