@@ -2196,6 +2196,32 @@ a:active {
   margin-bottom: 1.6rem;
 }
 
+.curriculum_box .box_ul{
+  padding:0;
+  margin:0;
+  margin-top:4rem;
+}
+
+.curriculum_box .box_ul li{
+  font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;
+}
+
+.curriculum_box .box_ul li:before{
+  content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+}
+
 .placements_loader {
   text-align: center;
   padding-block: 4.1rem 0rem;

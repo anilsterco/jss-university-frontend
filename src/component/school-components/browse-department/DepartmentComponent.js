@@ -205,7 +205,7 @@ export default function DepartmentSection({
                   <p>{departmentSection.programs_text}</p>
                 )}
               </div>
-              <Link href={`/apply-now`} className=" btn btn-warning">
+              <Link target="_blank" href={`https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform`} className=" btn btn-warning">
                 Apply Now
               </Link>
             </div>
