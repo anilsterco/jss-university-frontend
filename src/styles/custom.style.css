@@ -72,6 +72,7 @@
   padding-block: 0;
 }
 
+
 .library_section {
   background: var(--color-white);
 }
@@ -6701,4 +6702,8 @@ hr {
   .facilities-box-text {
     position: relative;
   }
+}
+
+.department-master-of-computer-applications-facilities .department-facilities .image_content_repeat_section {
+    padding-block: 10rem 10rem;
 }
