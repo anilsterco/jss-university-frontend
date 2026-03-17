@@ -27,10 +27,10 @@ export default function SchoolSlider({
 
   const isSchoolPage =
     currentPage === "schools" && currentSlug !== "college-of-pharmacy"
-      ? "Schools Of"
+      ? "Schools of"
       : currentSlug == "college-of-pharmacy"
-        ? "College Of"
-        : "Departments Of";
+        ? "College of"
+        : "Departments of";
 
   useEffect(() => {
     AOS.init({

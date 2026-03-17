@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./department.module.css";
 import { usePathname } from "next/navigation";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 
 export default function DepartmentSection({
   data,
@@ -205,7 +205,7 @@ export default function DepartmentSection({
                   <p>{departmentSection.programs_text}</p>
                 )}
               </div>
-              <Link href={`/apply-now`} className=" btn btn-warning">
+              <Link href={APPLY_NOW} className=" btn btn-warning">
                 Apply Now
               </Link>
             </div>

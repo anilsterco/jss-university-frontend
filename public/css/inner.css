@@ -84,6 +84,10 @@
   padding-block: 10rem;
 }
 
+.about_top.organogram_page .overlap_contents:before {
+  content: none;
+}
+
 .about_one .about_top.organogram_page .abt_cntnt {
   padding-top: 0;
 }
@@ -4071,7 +4075,7 @@
 }
 
 .research_labmain {
-  padding-block: 15rem 15rem;
+  padding-block: 15rem;
 }
 
 .research_grid_one,
@@ -4663,7 +4667,7 @@
 .add_of_context {
   background-color: var(--color-9a);
   height: 100%;
-  max-height: 26.7rem;
+  max-height: 30.7rem;
   padding: 4.3rem 14.2rem 4.7rem 13.2rem;
 }
 
@@ -5908,6 +5912,7 @@
   .about_two .early-slide .early_rgt h4 {
     font: var(--font-24);
   }
+
 }
 
 @media (max-width: 600px) {
@@ -6573,7 +6578,8 @@
 .message_footer p:last-of-type {
   margin-bottom: 3rem;
 }
-.department-about-us .hod-message-module__coWbsW__container{
+
+.department-about-us .hod-message-module__coWbsW__container {
   background-color: var(--color-white);
 }
 
@@ -6582,9 +6588,9 @@
 }
 
 .department-pharmacology-facilities .top_section {
-    background: var(--color-white);
-    margin-top: 0;
-    padding-block: 8rem 0;
+  background: var(--color-white);
+  margin-top: 0;
+  padding-block: 8rem 0;
 }
 
 
@@ -6625,6 +6631,20 @@
   .biographi_section {
     padding-top: 6rem;
   }
+
+  .research_labmain {
+    padding-block: 10rem;
+  }
+
+  .lib_cen_main .cumpus_left_img p {
+    max-width: 100%;
+    padding-top: 6.1rem;
+  }
+
+  .academic-facilities .lib_cen_main .campu_grid_main.capus_grid_two .campu_con_rgt {
+    max-width: 90%;
+    padding-left: 0;
+  }
 }
 
 @media screen and (max-width:1100px) {
@@ -6656,6 +6676,49 @@
     padding-bottom: 2.2rem;
   }
 
+  .admission-selection-process.ad_selec_procss {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+
+  .eligib_cont h2 {
+    font: var(--font-40);
+    color: var(--color-white);
+    letter-spacing: -1px;
+    font-family: var(--font-Condensed);
+    margin-bottom: 3.1rem;
+    line-height: normal;
+  }
+
+  .fee_sturc_admain {
+    background-color: var(--color-white);
+    padding-block: 8rem 6rem;
+  }
+
+  .about_f_value .ab_f_content {
+    padding-left: 6.8rem;
+    padding-right: 2rem;
+  }
+
+  .add_of_context {
+    background-color: var(--color-9a);
+    height: 100%;
+    max-height: 33.7rem;
+    padding: 4.3rem 4.2rem 3.7rem 5.2rem;
+  }
+
+  .admins_of_con {
+    padding-bottom: 8rem;
+  }
+
+  .hostal_title h4 {
+    font: var(--font-24);
+    color: var(--color-33);
+    margin-bottom: 6rem;
+    font-weight: 300;
+    text-align: left;
+  }
+
   .biographi_section {
     padding-top: 4rem;
   }
@@ -6667,11 +6730,88 @@
   .message_warpper {
     padding-block: 6rem;
   }
+
+  .heri_principalmain {
+    padding-block: 8rem;
+  }
+
+  .about_four.heritage .about_f_value {
+    padding-top: 8rem;
+  }
+
+  .about_one .about_top {
+    padding-top: 0;
+  }
+
+  .about_one .abt_cntnt {
+    padding-top: 0rem;
+  }
+
+  .about_one .estblish {
+    max-width: 100%;
+    padding-block: 4rem 0;
+  }
+
+  .placeBottom p {
+    max-width: 100%;
+    margin-block: 1.2rem 6rem;
+  }
+
+  .placement_highlights {
+    padding-block: 6rem 8rem;
+  }
+
+  .placement_highlights .heading {
+    padding-block: 0 2rem;
+  }
+
+  .placement_proSec {
+    padding-block: 5rem 10rem;
+  }
+
+  .placement .placement_procedure {
+    margin-bottom: 5.2rem;
+    padding-bottom: 5.2rem;
+  }
+
+  .place_logos .early-grid {
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+
+  .placement_procedure {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about_two {
+    padding-bottom: 10rem;
+  }
+
+  .request_Row {
+    grid-template-columns: repeat(1, 50% auto);
+    gap: 6.3rem;
+  }
+
+  .placement_requ {
+    padding-bottom: 10.6rem;
+  }
 }
 
 @media screen and (max-width:991px) {
   .leader_row {
     display: block;
+  }
+
+  .faci_diff_tabs .faci_accordion {
+    padding-inline: 5.4rem 5.8rem;
+  }
+
+  .academic-facilities .facilities_diffent {
+    padding-block: 8rem;
+  }
+
+  .hostal_d_btns {
+    padding-bottom: 8.2rem;
   }
 
   .leadership_two_img figure img {
@@ -6735,7 +6875,7 @@
   }
 
   .consultancy_main .downlo_guides {
-    padding-top:0rem;
+    padding-top: 0rem;
   }
 
   .atm_g_imgsec img {
@@ -6901,41 +7041,141 @@
 
   .amenities_loadmore {
     padding-block: 2rem;
-}
-.uni_boasts_rag_sec {
+  }
+
+  .uni_boasts_rag_sec {
     padding-block: 7em;
-}
+  }
 
-.uni_bo_topsec{ display: flex; flex-wrap: wrap;}
-.uni_bo_text{ padding: 2rem 0 0;}
-.uni_boa_itemse figure img{ height: auto;}
-.step-and-startups-in-campus .exten_grid, .research .exten_grid{ grid-template-columns: repeat(1, 1fr);}
-.research .exten_grid .exten_listyle{ padding:3rem 0 0;}
-.step-and-startups-in-campus .exte_mainsec, .research .exte_mainsec{ padding-bottom: 5rem;}
-.index_res_grid{ width: 100%;}
-.resea_cre_items .ab_jss_coutsec .ab_jss_c_col{ padding: 4rem 1.5rem;}
-.publi_title{ max-width: 100%;}
-.publi_gridmain{ margin-left: 0; width: 100%;}
-.public_table{ padding-left: 3rem;}
-.publi_content { padding-top: 5.8rem; padding-right: 4rem; }
-.research .pulication_patent, .research .grands_mainsec { padding-block: 7rem; }
-.research .grands_maingrid{grid-template-columns: repeat(1, 1fr);}
-.research .grands_content{ padding:3rem 0 0;}
-.grans_tab_mainsec { padding-block: 7rem; }
-.atm_g_imgsec{ padding-top: 4rem;}
-.consultancy_main { padding-block: 7rem; }
-.grands_imgsec figure img{ width: 100%;}
-.pulication_patent { padding: 10rem 0rem; }
-.exten_listyle { padding-inline: 0; padding-top: 3rem; }
-.step-and-startups-in-campus .single_image_content .content_col{ padding: 0 0;}
-.singleImageContent  .row{ display: flex; flex-direction: column-reverse; gap: 3rem;}
-.placements_loader { padding-block: 2rem 7rem; position: relative; }
-.placements_loader:after{top: 3.8rem;}
-.placements_loader:before{top: 3.8rem;}
-.placement_procedure { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-.procedure_box p{ max-width: 100%;}
+  .uni_bo_topsec {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  .uni_bo_text {
+    padding: 2rem 0 0;
+  }
 
+  .uni_boa_itemse figure img {
+    height: auto;
+  }
+
+  .step-and-startups-in-campus .exten_grid,
+  .research .exten_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .research .exten_grid .exten_listyle {
+    padding: 3rem 0 0;
+  }
+
+  .step-and-startups-in-campus .exte_mainsec,
+  .research .exte_mainsec {
+    padding-bottom: 5rem;
+  }
+
+  .index_res_grid {
+    width: 100%;
+  }
+
+  .resea_cre_items .ab_jss_coutsec .ab_jss_c_col {
+    padding: 4rem 1.5rem;
+  }
+
+  .publi_title {
+    max-width: 100%;
+  }
+
+  .publi_gridmain {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .public_table {
+    padding-left: 3rem;
+  }
+
+  .publi_content {
+    padding-top: 5.8rem;
+    padding-right: 4rem;
+  }
+
+  .research .pulication_patent,
+  .research .grands_mainsec {
+    padding-block: 7rem;
+  }
+
+  .research .grands_maingrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .research .grands_content {
+    padding: 3rem 0 0;
+  }
+
+  .grans_tab_mainsec {
+    padding-block: 7rem;
+  }
+
+  .atm_g_imgsec {
+    padding-top: 4rem;
+  }
+
+  .consultancy_main {
+    padding-block: 7rem;
+  }
+
+  .grands_imgsec figure img {
+    width: 100%;
+  }
+
+  .pulication_patent {
+    padding: 10rem 0rem;
+  }
+
+  .exten_listyle {
+    padding-inline: 0;
+    padding-top: 3rem;
+  }
+
+  .step-and-startups-in-campus .single_image_content .content_col {
+    padding: 0 0;
+  }
+
+  .singleImageContent .row {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .placements_loader {
+    padding-block: 2rem 7rem;
+    position: relative;
+  }
+
+  .placements_loader:after {
+    top: 3.8rem;
+  }
+
+  .placements_loader:before {
+    top: 3.8rem;
+  }
+
+  .placement_procedure {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .procedure_box p {
+    max-width: 100%;
+  }
+
+  .imageContent-module__R4BLKG__content_col h4 {
+    margin-bottom: 2rem;
+  }
+      .admins_of_con {
+        padding-bottom: 0rem;
+    }
 
 }
 
@@ -6944,16 +7184,149 @@
     padding-inline: 3rem;
   }
 
+
+
+  .about_f_value .ab_f_content h3 {
+    padding-bottom: 2rem;
+  }
+
+  .ad_selec_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .recent-audit-observations .ad_selec_procss {
+    padding-top: 2rem;
+  }
+
+  .ad_selec_grid .ad_sel_col {
+    padding: 2.7rem 2.5rem;
+  }
+
   .leadership_two_cnt2 {
     margin-top: 2rem;
   }
-.consultancy_main { padding-block: 5rem; }
+
+  .eligib_grid_ad {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    display: grid;
+  }
+
+  .eligib_grid_ad .eligib_cont {
+    padding-right: 0;
+  }
+
+  .eligibilty_main {
+    padding-block: 6rem;
+  }
+
+  .edigiblity_tabs .growth-tabs {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .fee_sturc_admain {
+    background-color: var(--color-white);
+    padding-block: 4rem 6rem;
+  }
+
+  .placement_proSec.information {
+    padding-top: 3rem;
+  }
+
+  .procedure_heading h2 {
+    font: var(--font-22);
+    font-family: var(--font-Roboto);
+    color: #16344e;
+    font-weight: bold;
+    line-height: normal;
+  }
+
+  .procedure_box {
+    padding: 3.2rem 3.8rem 3.8rem 3.2rem;
+  }
+
+  .ad_offc_contact {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hostal_d_btns {
+    padding-bottom: 3rem;
+  }
+
+  .admins_of_con {
+    padding-bottom: 4rem;
+  }
+
+  .hostal_title {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .admission-selection-process.ad_selec_procss {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+
+  .host_de_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+  }
+
+  .add_of_context {
+    padding: 3.3rem 3.2rem 3.7rem 3.2rem;
+  }
+
+  .request_Row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.3rem;
+  }
+
+  .placement_highlights {
+    padding-block: 4rem 6rem;
+  }
+
+  .placement_highlights .heading {
+    padding-block: 0 0rem;
+  }
+
+  .procedure_heading {
+    margin-bottom: 3rem;
+  }
+
+  .place_logos .early-grid figure {
+    padding: 2.7rem 2.3rem;
+  }
+
+  .place_logos .early-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .high_box h3 {
+    font: var(--font-36);
+    letter-spacing: -1.92px;
+    font-family: var(--font-Roboto);
+    text-transform: uppercase;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .placement_requ {
+    padding-bottom: 6.6rem;
+  }
+
+  .consultancy_main {
+    padding-block: 5rem;
+  }
+
   .biographi_section {
     padding-top: 2rem;
   }
 
   .about_one .abt_cntnt {
-    padding-top: 4rem;
+    padding-top: 0rem;
   }
 
   .about_one .abt_cntnt p {
@@ -6998,7 +7371,7 @@
   }
 
   .heri_principalmain {
-    padding-block: 5rem;
+    padding-block: 3rem;
   }
 
   .heri_prici_names {
@@ -7011,49 +7384,213 @@
 
   .heri_prici_names h5.titleOne {
     padding-right: 0;
-}
-.grid_emaboutjss{ gap: 4rem;}
-.para p:last-child{ margin-bottom: 0;}
-.about_jsstwo, .about_fost_sec { padding-block: 5rem; }
-.ab_jss_c_col{padding:3.3rem 2.5rem; width: 50%;}
-.ab_fost_lft_col h5{margin-bottom: 1.5rem;}
-.ab_jss_c_col h4{font: var(--font-30);}
-.leadership_two { padding-block: 4.8rem 6rem; }
-.amenities_title p{ max-width: 100%;}
-.researh_imgsec figure img{ height: auto;}
-.re_obj_grid { grid-template-columns: repeat(1, 1fr); }
-.re_obj_card{ min-height: auto;}
-.sports_fac_slider figure img{ height: 40rem;}
-.sports_fac_slider .spo_fa_content{ padding-block: 10rem;}
-.lib_cen_main .cumpus_left_img p{padding-top: 3rem;}
-.campu_grid_main.capus_grid_two{padding-bottom: 5rem;}
-.academic-facilities .facilities_diffent { padding-block:5rem; }
-.research_grid_two .research_cont h2{font: var(--font-24);}
-.faci_diff_tabs .fac_tab_con{grid-template-columns: repeat(1, 1fr)}
-.faci_diff_tabs .faci_accordion{ padding: 2rem 0;}
-.facilities_diffent .grow_tb_contsec, .fac_diff_title p { margin-bottom: 1.2rem; }
-.growth-tabs ul li{ padding-inline:0 1rem;}
-.lib_cen_main .ab_jss_coutsec { margin-top: 4.5rem; }
-.campu_con_rgt .ab_jss_c_col { padding: 3rem 2.4rem; }
-.academic_labmain { padding-block: 5rem; }
-.academic_lab_leftsec p{ padding-right: 0;}
-.academic_lab_leftsec h4{padding-right: 0rem;}
-.academic_grid .ab_jss_c_col h4{font: var(--font-30);}
-.research_labmain { padding-block: 5rem; }
-.index_res_grid{grid-template-columns: repeat(1, 1fr); display: block;}
-.about_one .overlap_contents:before{ display: none;}
-.ab_jss_c_col{ width: 100%;}
-.resea_cre_items { border-right: 0px solid var(--color-d4); padding: 4.7rem 0rem 4.7rem 0; }
-.resea_cre_items2 { padding: 2rem 0 4.7rem 0rem; }
-.research .pulication_patent, .research .grands_mainsec { padding-block: 5rem; }
-.publi_gridmain{grid-template-columns: repeat(1, 1fr); display: block;}
-.publi_gridmain .publi_content{ border-bottom: 1px solid var(--color-d4); border-right: 0; padding-right: 0; padding-top: 3rem;}
-.public_table { padding-left: 0; padding-top: 3rem; }
-.grans_tab_mainsec { padding-block: 5rem; }
-.atm_fac_grid h5{ margin-bottom:2.5rem;}
-.about_one .abt_cntnt figure img { min-height: 30rem; object-fit: cover; object-position: left; }
-.research .resea_cre_items2 h3{ width: 100%;}
-.research .grands_mainsec .publi_title{    max-width: 100%;}
+  }
+
+  .grid_emaboutjss {
+    gap: 4rem;
+  }
+
+  .para p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about_jsstwo,
+  .about_fost_sec {
+    padding-block: 5rem;
+  }
+
+  .ab_jss_c_col {
+    padding: 3.3rem 2.5rem;
+    width: 50%;
+  }
+
+  .ab_fost_lft_col h5 {
+    margin-bottom: 1.5rem;
+  }
+
+  .ab_jss_c_col h4 {
+    font: var(--font-30);
+  }
+
+  .leadership_two {
+    padding-block: 4.8rem 6rem;
+  }
+
+  .amenities_title p {
+    max-width: 100%;
+  }
+
+  .researh_imgsec figure img {
+    height: auto;
+  }
+
+  .re_obj_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .re_obj_card {
+    min-height: auto;
+  }
+
+  .sports_fac_slider figure img {
+    height: 40rem;
+  }
+
+  .sports_fac_slider .spo_fa_content {
+    padding-block: 10rem;
+  }
+
+  .lib_cen_main .cumpus_left_img p {
+    padding-top: 3rem;
+  }
+.admins_of_con {
+        padding-bottom: 0rem;
+    }
+  .campu_grid_main.capus_grid_two {
+    padding-bottom: 5rem;
+  }
+
+  .academic-facilities .facilities_diffent {
+    padding-block: 5rem;
+  }
+
+  .research_grid_two .research_cont h2 {
+    font: var(--font-24);
+    font-weight: 600;
+    font-family: var(--font-Condensed);
+  }
+
+  .re_obj_card {
+    background-color: var(--color-white);
+    padding: 2rem;
+  }
+
+  .campu_grid_main.capus_grid_two {
+    padding-bottom: 3rem;
+  }
+
+  .grow_tb_contsec {
+    padding-top: 3rem;
+  }
+
+  .facilities_diffent p {
+    color: var(--color-44);
+    margin-bottom: 0;
+  }
+
+  .research_cont p {
+    margin-bottom: 2rem;
+  }
+
+  .faci_diff_tabs .fac_tab_con {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  .faci_diff_tabs .faci_accordion {
+    padding: 2rem 0;
+  }
+
+  .facilities_diffent .grow_tb_contsec,
+  .fac_diff_title p {
+    margin-bottom: 1.2rem;
+  }
+
+  .growth-tabs ul li {
+    padding-inline: 0 1rem;
+  }
+
+  .lib_cen_main .ab_jss_coutsec {
+    margin-top: 4.5rem;
+  }
+
+  .campu_con_rgt .ab_jss_c_col {
+    padding: 3rem 2.4rem;
+  }
+
+  .academic_labmain {
+    padding-block: 5rem;
+  }
+
+  .academic_lab_leftsec p {
+    padding-right: 0;
+  }
+
+  .academic_lab_leftsec h4 {
+    padding-right: 0rem;
+  }
+
+  .academic_grid .ab_jss_c_col h4 {
+    font: var(--font-30);
+  }
+
+  .research_labmain {
+    padding-block: 5rem;
+  }
+
+  .index_res_grid {
+    grid-template-columns: repeat(1, 1fr);
+    display: block;
+  }
+
+  .about_one .overlap_contents:before {
+    display: none;
+  }
+
+  .ab_jss_c_col {
+    width: 100%;
+  }
+
+  .resea_cre_items {
+    border-right: 0px solid var(--color-d4);
+    padding: 4.7rem 0rem 4.7rem 0;
+  }
+
+  .resea_cre_items2 {
+    padding: 2rem 0 4.7rem 0rem;
+  }
+
+  .research .pulication_patent,
+  .research .grands_mainsec {
+    padding-block: 5rem;
+  }
+
+  .publi_gridmain {
+    grid-template-columns: repeat(1, 1fr);
+    display: block;
+  }
+
+  .publi_gridmain .publi_content {
+    border-bottom: 1px solid var(--color-d4);
+    border-right: 0;
+    padding-right: 0;
+    padding-top: 3rem;
+  }
+
+  .public_table {
+    padding-left: 0;
+    padding-top: 3rem;
+  }
+
+  .grans_tab_mainsec {
+    padding-block: 5rem;
+  }
+
+  .atm_fac_grid h5 {
+    margin-bottom: 2.5rem;
+  }
+
+  .about_one .abt_cntnt figure img {
+    min-height: 30rem;
+    object-fit: cover;
+  }
+
+  .research .resea_cre_items2 h3 {
+    width: 100%;
+  }
+
+  .research .grands_mainsec .publi_title {
+    max-width: 100%;
+  }
 
 
 
@@ -7337,10 +7874,11 @@
     font-weight: 500;
     margin-top: 2rem;
   }
-.inner-title .innnr_head h3 {
+
+  .inner-title .innnr_head h3 {
     font: var(--font-30);
     margin-bottom: -0.2rem;
-}
+  }
 }
 
 @media (max-width:640px) {
@@ -7351,15 +7889,126 @@
   .leadership_one .top_img figure>img {
     min-height: 30rem;
     object-fit: cover;
+  }
+
+  .leadership_one .top_img figure figcaption h3 {
+    max-width: 100%;
+  }
+
+  .placement_procedure {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .procedure_box {
+    padding: 3rem;
+  }
 }
-.leadership_one .top_img figure figcaption h3{ max-width: 100%;}
-  .placement_procedure { grid-template-columns: repeat(1, 1fr); }
-.procedure_box{ padding: 3rem;}
+
+@media (max-width:575px) {
+  .ad_selec_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ad_selec_grid .ad_sel_col {
+    padding: 2.7rem 2.5rem;
+  }
+
+  .recent-audit-observations .ad_sel_col li {
+    margin-bottom: 1.5rem;
+  }
+
+  .ad_selec_procss {
+    padding-block: 6rem;
+  }
+.recent-audit-observations .table_section {
+    padding-block: 3rem;
+}
+  .admission-selection-process.ad_selec_procss {
+    padding-bottom: 4rem;
+  }
+
+  .eligibilty_main {
+    padding-block: 3rem;
+  }
+
+  .eligib_cont h5 {
+    font: var(--font-20);
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+  }
+
+  .fee_stru_title p {
+    color: var(--color-44);
+    margin-bottom: 2rem;
+  }
+
+  .fee_sturc_admain {
+    background-color: var(--color-white);
+    padding-block: 3rem;
+  }
+
+  .about_f_value {
+    padding-top: 3rem;
+  }
+
+  .procedure_box {
+    padding: 2rem;
+  }
+
+  .placement_proSec {
+    padding-block: 3rem;
+  }
+
+  .add_of_context {
+    height: 100%;
+    max-height: 30.7rem;
+  }
+
+  .hostal_title h4 {
+    margin-bottom: 3rem;
+  }
+
+  .about_f_value .ab_f_content {
+    padding-block: 3rem 0;
+
+  }
+
+  .eligib_cont h2 {
+    font: var(--font-24);
+    color: var(--color-white);
+    letter-spacing: 0;
+    font-family: var(--font-Condensed);
+    margin-bottom: 3.1rem;
+    line-height: normal;
+  }
 }
 
 @media (max-width: 480px) {
   .leadership_dtls_one .top_img figure figcaption {
     display: none;
+  }
+
+  .placement_highLight {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  .high_box {
+    border: none;
+    padding: 1.5rem 0.9rem 1.8rem;
+  }
+
+  .placement_highlights {
+    padding-block: 4rem;
+  }
+
+  .placement .placement_procedure {
+    margin-bottom: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .place_logos .early-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
   }
 
   .leadership_two_cnt p {
@@ -7376,6 +8025,24 @@
 
   .tesIcon {
     width: 15%;
+  }
+
+  .academic_grid {
+    gap: 2.3rem;
+  }
+
+  .academic_lab_leftsec h4 {
+    font: var(--font-20);
+    color: var(--color-white);
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    padding-right: 0;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .research_labmain {
+    padding-block: 4rem;
   }
 
   .message_text {
@@ -7418,31 +8085,8 @@
   }
 
   .ab_estab_slider {
-    padding:2rem 0;
-}
-.ab_jss_c_col{ padding: 3.3rem 1rem;}
-.abou_t_sec h2{padding-inline: 0rem;}
-.about_one .abt_cntnt { padding-top: 2rem; }
-.about_subtitle{ margin-bottom: 2rem;}
-.sports_fac_slider .spo_fa_content { padding-block: 8rem; }
-.facilities_diffent p{ margin-bottom: 0;}
-.campu_con_rgt .ab_jss_c_col { padding: 3rem 0.4rem; }
-.facilities_diffent h5{ line-height: 1.2;}
-.resea_cre_items .ab_jss_coutsec{ grid-template-columns: repeat(1, 1fr)}
-
-.public_table .fee_table {
-    min-width: auto;
-    width: auto;
-}
-.fee_strcu_table .fee_table_wrapper {
-    width: 100%;
-    overflow: scroll;
-}
-.fee_strcu_table {
-        width: 100%;
-       overflow: scroll;
-
-    }
+    padding: 2rem 0;
+  }
 
   .ab_jss_c_col {
     padding: 3.3rem 1rem;
@@ -7464,8 +8108,17 @@
     padding-block: 8rem;
   }
 
+  .heri_prici_names {
+    margin-bottom: 2rem;
+  }
+
   .facilities_diffent p {
     margin-bottom: 0;
+  }
+
+  .heri_pri_btm_text {
+
+    padding-top: 2rem;
   }
 
   .campu_con_rgt .ab_jss_c_col {
@@ -7476,7 +8129,134 @@
     line-height: 1.2;
   }
 
+  .resea_cre_items .ab_jss_coutsec {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  .public_table .fee_table {
+    min-width: 100%;
+    width: auto;
+  }
+
+  .fee_strcu_table .fee_table_wrapper {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .research .pulication_patent,
+  .research .grands_mainsec {
+    padding-block: 4rem 2rem;
+  }
+
+  .grands_mainsec .publi_title p {
+    text-align: left;
+  }
+
+  .fee_strcu_table {
+    width: 100%;
+    overflow: scroll;
+
+  }
+
+  .atm_fac_grid p {
+    margin-bottom: 2rem;
+  }
+
+  .atm_g_imgsec {
+    padding-top: 3rem;
+  }
+
+  .ab_jss_c_col {
+    padding: 3.3rem 1rem;
+  }
+
+  .abou_t_sec h2 {
+    padding-inline: 0rem;
+  }
+
+  .about_one .abt_cntnt {
+    padding-top: 2rem;
+  }
+
+  .about_subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .sports_fac_slider .spo_fa_content {
+    padding-block: 6rem;
+  }
+
+  .campu_con_rgt p {
+    margin-bottom: 2rem;
+  }
+
+  .facilities_diffent p {
+    margin-bottom: 0;
+  }
+
+  .lib_cen_main .ab_jss_coutsec {
+    margin-top: 3rem;
+    display: block;
+  }
+
+  .ab_jss_c_col {
+    max-width: 100%;
+  }
+
+  .ab_jss_c_col:last-child {
+    border-left: 1px solid var(--color-d4);
+  }
+
+  .academic_grid .ab_jss_coutsec {
+    margin-block: 3rem 0;
+    display: block;
+    border-top: none;
+  }
+
+  .academic-facilities .facilities_diffent {
+    padding-block: 3rem;
+  }
+
+  .campu_con_rgt .ab_jss_c_col {
+    padding: 3rem 0.4rem;
+  }
+
+  .facilities_diffent h5 {
+    line-height: 1.2;
+  }
+
+  .heri_prici_names {
+    text-align: left;
+  }
+
+  .about_four.heritage p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .hei__princi_grid h3 {
+    font: var(--font-22);
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .heri_prici_names h5 {
+    font: var(--font-24);
+    font-family: var(--font-Condensed);
+    font-weight: bold;
+  }
+
+  .placement_request_content p {
+    font: var(--font-20);
+    color: #16344e;
+    font-family: var(--font-Roboto);
+    letter-spacing: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
 }
+
 /* Full Page Loader Overlay */
 .leadership_loader {
   position: relative;
@@ -7489,6 +8269,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
 
 
 /* Animation */
@@ -7504,7 +8286,7 @@
 .department-master-of-computer-applications-about-us .grid_card_design1_section {
     padding-block: 2rem;
 }
-.department-master-of-computer-applications-facilities 
+.department-master-of-computer-applications-facilities {}
 
 /* leadership details page end */
 

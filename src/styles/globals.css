@@ -152,21 +152,25 @@ p {
 
 .mega-schools-list {
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
+
 .mega-schools-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .mega-schools-list ul li {
   padding-block: 1rem;
   border-bottom: 1px dashed rgba(22, 52, 78, 0.2);
 }
+
 .mega-schools-list ul li:last-child {
   border-bottom: none;
 }
+
 .mega-schools-list li a {
   font: var(--font-21);
   color: var(--color-4e);
@@ -175,14 +179,15 @@ p {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .mega-schools-list ul li a:hover {
   color: var(--color-e8);
 }
 
-.mega-schools-list .school_img{
+.mega-schools-list .school_img {
   width: 65%;
-  height:auto;
-      border-radius: 6rem 0.8rem 0.8rem 0.8rem;
+  height: auto;
+  border-radius: 6rem 0.8rem 0.8rem 0.8rem;
 }
 
 /* Departments grid */
@@ -194,6 +199,7 @@ p {
   overflow-y: auto;
   max-height: 70vh;
 }
+
 .mega-dept-column {
   display: flex;
   flex-direction: column;
@@ -201,6 +207,7 @@ p {
   flex: 0 0 auto;
   width: 26rem;
 }
+
 .mega-dept-block h6 {
   font: var(--font-16);
   font-family: var(--font-Condensed);
@@ -209,21 +216,26 @@ p {
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
+
 .mega-dept-block h6 a {
   color: inherit;
   text-decoration: none;
 }
+
 .mega-dept-block h6 a:hover {
   color: var(--color-e8);
 }
+
 .mega-dept-block ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .mega-dept-block ul li {
   padding-block: 0.4rem;
 }
+
 .mega-dept-block ul li a {
   font: var(--font-15);
   color: #555;
@@ -231,8 +243,9 @@ p {
   transition: color 0.3s ease;
   position: relative;
   padding-left: 0rem;
-      line-height: 2.2rem;
+  line-height: 2.2rem;
 }
+
 /* .mega-dept-block ul li a::before {
   content: "";
   position: absolute;
@@ -737,6 +750,36 @@ a:active {
   position: relative;
 }
 
+.dashbord-logo .nav_logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dashbord-logo .uniname {
+  font: var(--font-40);
+  color: var(--color-white);
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.dashbord-logo .uni_addrese {
+  font: var(--font-22);
+  color: var(--color-white);
+  font-weight: 500;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.innerPage .dashbord-logo .uniname, .innerPage .dashbord-logo .uni_addrese {
+  color: var(--color-4e);
+}
+
 .addmision-section-img {
   width: 100%;
   height: 100%;
@@ -785,8 +828,8 @@ a:active {
     z-index:-4;    
     right: 0;
 } */
-.mega-left-item.active a{
-color: var(--color-4e);
+.mega-left-item.active a {
+  color: var(--color-4e);
   font-weight: 700;
   /* transition: 0.3s ease, color 0.3s ease; */
 }
@@ -821,7 +864,7 @@ color: var(--color-4e);
 }
 
 .logo-content.scrolled img {
-  width: 20.9rem;
+  width: 10.5rem;
   height: auto;
 }
 
@@ -856,9 +899,9 @@ color: var(--color-4e);
   color: var(--color-white);
   font-weight: normal;
   transition: all 0.3s ease;
-  display:inline-block;
-            padding: 1rem 7rem 1rem 14rem;
-            width:100%;
+  display: inline-block;
+  padding: 1rem 7rem 1rem 14rem;
+  width: 100%;
 }
 
 .menu-left-item:hover .hambur_links {
@@ -866,7 +909,7 @@ color: var(--color-4e);
   font-weight: bold;
 }
 
-.menu-left-item.active .hambur_links{
+.menu-left-item.active .hambur_links {
   color: var(--color-4e);
   font-weight: bold;
 }
@@ -1223,12 +1266,12 @@ color: var(--color-4e);
   display: block;
   padding-bottom: 1.6rem;
   color: var(--color-black); */
-    display: block;
-    font: var(--font-18);
-    font-family: var(--font-Condensed);
-    color: var(--color-4e);
-    margin-bottom: 1.8rem;
-    font-weight: 700;
+  display: block;
+  font: var(--font-18);
+  font-family: var(--font-Condensed);
+  color: var(--color-4e);
+  margin-bottom: 1.8rem;
+  font-weight: 700;
 }
 
 .middle-title ul li:hover {
@@ -1424,7 +1467,9 @@ color: var(--color-4e);
     margin-left: 0;
   }
 
-  .card img{ height: auto;}
+  .card img {
+    height: auto;
+  }
 
   .abt_cntnt {
     padding-top: 4rem;
@@ -1449,7 +1494,9 @@ color: var(--color-4e);
     text-transform: uppercase;
   }
 
-   .homepage_happenings .containerXl{   padding-inline: 2rem;}
+  .homepage_happenings .containerXl {
+    padding-inline: 2rem;
+  }
 
 }
 
@@ -1486,10 +1533,14 @@ color: var(--color-4e);
   .containerXl {
     padding-inline: 2rem;
   }
- .homepage_happenings .containerXl {
-        padding-inline: 0rem;
-    }
-    .academic_labmain .max-content-lg{    padding-left: 2rem!important;}
+
+  .homepage_happenings .containerXl {
+    padding-inline: 0rem;
+  }
+
+  .academic_labmain .max-content-lg {
+    padding-left: 2rem !important;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -1663,7 +1714,7 @@ color: var(--color-4e);
   font: var(--font-18);
 }
 
-.events_col{
+.events_col {
   z-index: 2;
 }
 
@@ -1706,6 +1757,7 @@ color: var(--color-4e);
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
   }
+
 }
 
 @media (max-width: 991px) {
@@ -1713,10 +1765,10 @@ color: var(--color-4e);
     padding-top: 4rem;
   }
 
-  .events_row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  .placement_highLight {
+    display: block;
   }
+
 
   .cardsRow {
     padding-block: 12rem 4rem;
@@ -2095,6 +2147,30 @@ color: var(--color-4e);
   padding-bottom: 6rem;
 }
 
+.placement_stats.column-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.placement_stats.column-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.placement_stats.column-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.placement_stats.column-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.placement_stats.column-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.placement_stats.column-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .curriculum_box {
   background-color: var(--color-white);
   padding: 4rem 4.9rem 6.8rem 4rem;
@@ -2192,9 +2268,12 @@ color: var(--color-4e);
   margin-bottom: 7.2rem;
   border-bottom: 0.1rem solid var(--color-d6)
 }
-.placement .about_two .abou_t_sec{    padding-top: 0;}
 
- .placement_procedure {
+.placement .about_two .abou_t_sec {
+  padding-top: 0;
+}
+
+.placement_procedure {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
@@ -2259,10 +2338,11 @@ color: var(--color-4e);
 
 .high_lightRow {
   width: 60%;
-margin: auto;
+  margin: auto;
 }
-.placement_highlights .heading{
-      padding-block: 0 4rem;
+
+.placement_highlights .heading {
+  padding-block: 0 4rem;
 }
 
 .high_lightRow .highLight_col {
@@ -2456,7 +2536,7 @@ margin: auto;
   font-weight: bold;
 }
 
-.studends_pdf ul li a{
+.studends_pdf ul li a {
   color: #333333;
 }
 
@@ -2508,17 +2588,27 @@ margin: auto;
 .heading {
   text-align: center;
   color: #16344E;
-  font-size: 18px;
+  font: var(--font-18);
   letter-spacing: 0.5px;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   font-family: var(--font-Condensed);
   font-weight: 700;
+}
+
+.educational-box {
+  padding-bottom: 1rem;
 }
 
 .faqList {
   max-width: 90%;
   margin: 0 auto;
 }
+
+.program-testimonial {
+  padding-top: 3rem;
+}
+
+
 
 .faqItem {
   border-radius: 6px;
@@ -2623,6 +2713,17 @@ margin: auto;
     padding-bottom: 4rem;
   }
 
+  .high_lightRow {
+    width: 100%;
+    margin: auto;
+  }
+
+  .procedure_box p {
+    font: var(--font-20);
+    font-weight: 300;
+    line-height: normal;
+  }
+
   .program-module__6nFQSW__inner_page .row .col-md-6 {
     margin-bottom: 2rem;
   }
@@ -2671,8 +2772,12 @@ margin: auto;
     width: 20rem;
     height: auto;
   }
+
   .logo-content.scrolled img {
     width: 16rem;
-}
-.footer_section .footer_cnt{ padding-inline: 0;}
+  }
+
+  .footer_section .footer_cnt {
+    padding-inline: 0;
+  }
 }

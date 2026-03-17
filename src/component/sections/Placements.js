@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 
 export default function Placements({ data }) {
-
   useEffect(() => {
     AOS.init({ once: true, duration: 1000 });
   }, []);
@@ -51,7 +50,9 @@ export default function Placements({ data }) {
                         <h6 className="section_subTitle">{item.subTitle}</h6>
                       )}
 
-                      <div className="placement_stats">
+                      <div
+                        className={`placement_stats ${item?.totalColumns && "column-" + item?.totalColumns}`}
+                      >
                         {boxes.map((box, i) => (
                           <div
                             key={i}
@@ -81,8 +82,6 @@ export default function Placements({ data }) {
                           </div>
                         ))}
                       </div>
-
-                   
 
                       {item?.description && (
                         <div className="placeBottom">

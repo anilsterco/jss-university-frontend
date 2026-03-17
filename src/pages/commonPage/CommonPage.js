@@ -58,6 +58,10 @@ import InnovationPanel from "@/component/sections/InnovationPanel";
 import TableContent from "@/component/sections/TableContent";
 import TabsContents from "@/component/sections/TabsContents";
 import LabCard from "@/component/sections/LabCard";
+import ResearchPatents from "@/component/sections/ResearchPatents";
+import FacilityTab from "@/component/sections/FacilityTab";
+import StudentClub from "@/component/sections/StudentClub";
+import AmenitiesList from "@/component/sections/AmenitiesList";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -150,6 +154,10 @@ export default function CommonPage({ data }) {
     innovation_panel: InnovationPanel,
     tableContent: TableContent,
     tabsContents: TabsContents,
+    ResearchPatents: ResearchPatents,
+        facilitiesTab: FacilityTab,
+        studentClub: StudentClub,
+        amenities_list: AmenitiesList,
     labCard: LabCard,
   };
 

@@ -75,19 +75,21 @@ export default async function SchoolPage({ params }) {
         <PlacementComponent data={schoolData.sections.placements} />
       )} */}
 
-      {schoolData?.sections?.about_school?.title && (
-        <FacilitiesComponent data={schoolData.sections.facilities} />
-      )}
-      {schoolData?.sections?.about_school?.title && (
+      {schoolData?.sections?.facilities &&
+        schoolData?.sections?.facilities.length > 0 && (
+          <FacilitiesComponent data={schoolData.sections.facilities} />
+        )}
+      {schoolData?.sections?.about_school && (
         <AboutSchoolComponent data={schoolData.sections.about_school} />
       )}
 
-      {schoolData?.sections?.faculty && (
-        <FacultySchool
-          data={schoolData.sections.faculty}
-          schoolName={schoolData?.school_name}
-        />
-      )}
+      {schoolData?.sections?.faculty &&
+        schoolData?.sections?.faculty.length > 0 && (
+          <FacultySchool
+            data={schoolData.sections.faculty}
+            schoolName={schoolData?.school_name}
+          />
+        )}
 
       {schoolData?.sections?.happenings?.title && (
         <HappingsHomeComponent data={schoolData.sections.happenings} />

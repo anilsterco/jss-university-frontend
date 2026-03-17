@@ -8,7 +8,7 @@ const BASE_URL = "https://project-demo.in/jss/api";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
-  { src: "/images/custom-page/shareIcon.svg" },
+  // { src: "/images/custom-page/shareIcon.svg" },
 ];
 
 export default function Happenings({ params }) {
@@ -56,13 +56,13 @@ export default function Happenings({ params }) {
                     className="img-fluid w-100"
                   />
                 </li>
-                <li onClick={() => router.back()}>
+                {/* <li onClick={() => router.back()}>
                   <img
                     src={icons[1].src}
                     alt={icons[1].alt}
                     className="img-fluid w-100"
                   />
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

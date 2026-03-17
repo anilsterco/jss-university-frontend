@@ -75,16 +75,15 @@ export default async function DepartmentPage({ params }) {
         <Suspense fallback={<h1>Loading...</h1>}>
           <HappeningsClient className="inner_happening" />
         </Suspense>
+      ) : section == "labs" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Labspage data={departmentData?.sections} />
+        </Suspense>
       ) : section == "faqs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <FaqPage data={departmentData?.data} />
         </Suspense>
-      ) : // : section == "labs" ? (
-      //   <Suspense fallback={<h1>Loading...</h1>}>
-      //     <Labspage data={departmentData} />
-      //   </Suspense>
-      // )
-      departmentData?.slug?.includes(section) ? (
+      ) : departmentData?.slug?.includes(section) ? (
         <CommonPage data={departmentData.sections} />
       ) : (
         <h1>no data</h1>

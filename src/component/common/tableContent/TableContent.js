@@ -28,30 +28,32 @@ const TableContent = ({ data }) => {
             {data?.leftTable &&
               data.leftTable.map((tableData, tableIdx) => (
                 <div
-                  className=" table-responsive fee_strcu_table"
                   key={tableIdx}
+                  className={`table_section ${styles.table_section}`}
                 >
-                  <table
-                    className={`table-lab table table-bordered fee_table ${styles.tableLab}`}
-                  >
-                    <thead>
-                      <tr>
-                        {tableData?.tableHeading.map((th, thIndex) => (
-                          <th key={thIndex} className={styles.th}>
-                            {th.th}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tableData.tableBody.map((item, itemIdx) => (
-                        <tr key={itemIdx}>
-                          <td className={styles.td}>{item.sno}</td>
-                          <td className={styles.td}>{item.session}</td>
+                  <div className=" table-responsive" key={tableIdx}>
+                    <table
+                      className={`table-lab table table-bordered ${styles.tableLab}`}
+                    >
+                      <thead>
+                        <tr>
+                          {tableData?.tableHeading.map((th, thIndex) => (
+                            <th key={thIndex} className={styles.th}>
+                              {th.th}
+                            </th>
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {tableData.tableBody.map((item, itemIdx) => (
+                          <tr key={itemIdx}>
+                            <td className={styles.td}>{item.sno}</td>
+                            <td className={styles.td}>{item.session}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               ))}
           </div>
