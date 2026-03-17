@@ -10,7 +10,7 @@ import styles from "./facilities.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { WEB_URL } from "@/config/config";
+import { APPLY_NOW, WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
 
 export default function FacilitiesComponent({ data }) {
@@ -56,7 +56,7 @@ export default function FacilitiesComponent({ data }) {
 
     applyButton: {
       text: "APPLY NOW",
-      url: "/apply-now",
+      url: APPLY_NOW,
     },
   };
 

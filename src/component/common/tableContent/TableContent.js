@@ -27,7 +27,10 @@ const TableContent = ({ data }) => {
             )}
             {data?.leftTable &&
               data.leftTable.map((tableData, tableIdx) => (
-                <div className={`table_section ${styles.table_section}`}>
+                <div
+                  key={tableIdx}
+                  className={`table_section ${styles.table_section}`}
+                >
                   <div className=" table-responsive" key={tableIdx}>
                     <table
                       className={`table-lab table table-bordered ${styles.tableLab}`}

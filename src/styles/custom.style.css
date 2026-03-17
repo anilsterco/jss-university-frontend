@@ -1573,6 +1573,21 @@
 }
 
 
+.department-research .table_section{
+ padding-top:0;
+ background: inherit; 
+ padding-bottom:5rem;
+}
+
+.department-research .tabs_content_section{
+  padding-bottom:5rem;
+}
+
+.department-research .table_section:last-child{
+  padding-bottom:12rem;
+}
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
@@ -3494,6 +3509,7 @@ hr {
   color: #16344E;
   margin-bottom: 4rem;
   text-align: left;
+  letter-spacing: 0;
 }
 
 .table_section .table-lab {
