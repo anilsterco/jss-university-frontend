@@ -304,8 +304,8 @@
   width: 30%;
 }
 
-.department-pharmacognosy-about-us .about_one+.grid_card_design1_section {
-  padding-bottom: 0;
+.department-pharmacognosy-about-us .grid_card_design1_section {
+  padding-bottom: 10rem;
   padding-top: 5rem;
 }
 
