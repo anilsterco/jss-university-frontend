@@ -1684,6 +1684,15 @@
 }
 
 
+.department-page .program_section_2{
+  grid-template-columns: repeat(1, 50% auto);
+}
+
+.department-page .program_section_2 .programs-2{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
