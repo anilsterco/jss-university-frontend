@@ -100,42 +100,43 @@ const TableContent = ({ data }) => {
                 </div>
               )}
 
-              {data?.rightTableHeadings.length > 0 && (
-                <div
-                  className={`table_section ${styles.table_section} ${styles.rightTable}`}
-                >
-                  <div className=" table-responsive">
-                    <table
-                      className={`table-lab table table-bordered ${styles.tableLab}`}
-                    >
-                      <thead>
-                        <tr>
-                          {data?.rightTableHeadings.map((th, thIndex) => (
-                            <th key={thIndex} className={styles.th}>
-                              {th.th}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data?.rightTableDatas.map((tableDatas, tableIdx) => {
-                          return (
-                            tableDatas?.tableRow && (
-                              <tr key={tableIdx}>
-                                {tableDatas?.tableRow.map((item, itemIdx) => (
-                                  <td key={itemIdx} className={styles.td}>
-                                    {item.td}
-                                  </td>
-                                ))}
-                              </tr>
-                            )
-                          );
-                        })}
-                      </tbody>
-                    </table>
+              {data?.rightTableHeadings &&
+                data?.rightTableHeadings.length > 0 && (
+                  <div
+                    className={`table_section ${styles.table_section} ${styles.rightTable}`}
+                  >
+                    <div className=" table-responsive">
+                      <table
+                        className={`table-lab table table-bordered ${styles.tableLab}`}
+                      >
+                        <thead>
+                          <tr>
+                            {data?.rightTableHeadings.map((th, thIndex) => (
+                              <th key={thIndex} className={styles.th}>
+                                {th.th}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {data?.rightTableDatas.map((tableDatas, tableIdx) => {
+                            return (
+                              tableDatas?.tableRow && (
+                                <tr key={tableIdx}>
+                                  {tableDatas?.tableRow.map((item, itemIdx) => (
+                                    <td key={itemIdx} className={styles.td}>
+                                      {item.td}
+                                    </td>
+                                  ))}
+                                </tr>
+                              )
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </div>
         </div>
