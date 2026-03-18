@@ -150,6 +150,15 @@
     position: relative;
 }
 
+
+@media screen and (min-width: 1921px) and (max-width: 2550px) {
+   
+    .content_col {
+       padding-left: 8.4rem;
+        padding-right: 0rem;
+    }
+}
+
 @media screen and (max-width:1449px) {
     .content_col {
         padding-left: 4.4rem;
@@ -206,11 +215,12 @@
     .singleImageContent:first-child {
         padding-bottom: 3rem;
     }
-.content_col ul {
-    margin-top: 2rem;
-    gap: 1.5rem;
 
-}
+    .content_col ul {
+        margin-top: 2rem;
+        gap: 1.5rem;
+
+    }
 
 }
 
