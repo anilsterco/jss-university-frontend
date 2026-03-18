@@ -299,7 +299,10 @@
   display: none;
 }
 
-
+.schools-college-of-pharmacy-research .table_section thead th:nth-child(2),
+.schools-college-of-pharmacy-research .table_section tbody td:nth-child(2) {
+  width: 30%;
+}
 
 .about_four {
   position: relative;
@@ -7173,9 +7176,10 @@
   .imageContent-module__R4BLKG__content_col h4 {
     margin-bottom: 2rem;
   }
-      .admins_of_con {
-        padding-bottom: 0rem;
-    }
+
+  .admins_of_con {
+    padding-bottom: 0rem;
+  }
 
 }
 
@@ -7443,9 +7447,11 @@
   .lib_cen_main .cumpus_left_img p {
     padding-top: 3rem;
   }
-.admins_of_con {
-        padding-bottom: 0rem;
-    }
+
+  .admins_of_con {
+    padding-bottom: 0rem;
+  }
+
   .campu_grid_main.capus_grid_two {
     padding-bottom: 5rem;
   }
@@ -7920,9 +7926,11 @@
   .ad_selec_procss {
     padding-block: 6rem;
   }
-.recent-audit-observations .table_section {
+
+  .recent-audit-observations .table_section {
     padding-block: 3rem;
-}
+  }
+
   .admission-selection-process.ad_selec_procss {
     padding-bottom: 4rem;
   }
@@ -8280,33 +8288,24 @@
   }
 }
 
-.hod-message-module__coWbsW__hodImage{
-      height: auto;
+.hod-message-module__coWbsW__hodImage {
+  height: auto;
 }
+
 .department-master-of-computer-applications-about-us .grid_card_design1_section {
-    padding-block: 2rem;
+  padding-block: 2rem;
 }
+
 .department-master-of-computer-applications-placements .table_section:last-child {
-     background-color: var(--color-f6);
+  background-color: var(--color-f6);
 }
+
 main.main-container.department-about-us.department-page.department-chemistry-about-us .grid_card_design1_section {
-    padding-block: 0rem 10rem;
+  padding-block: 0rem 10rem;
 }
+
 .department-physics-about-us .grid_card_design1_section {
-    padding-block: 0rem 10rem;
+  padding-block: 0rem 10rem;
 }
 
 /* leadership details page end */
-
-
-
-
-
-
-
-
-
-
-
-
-
