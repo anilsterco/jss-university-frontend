@@ -36,6 +36,17 @@
   z-index: 0;
 }
 
+.department-facilities .about_one .overlap_contents:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    padding: 20rem 10em 10rem;
+    left: 0;
+    z-index: -1;
+    bottom: 0;
+    background: #000;
+    background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);}
+
 .about_one .overlap_contents:before {
   content: "";
   position: absolute;
@@ -60,6 +71,7 @@
 .department-about-us .hod-message-module__coWbsW__content {
   padding-block: 0;
 }
+
 
 .library_section {
   background: var(--color-white);
@@ -1569,6 +1581,87 @@
 
 .department-programs h1{
   font:var(--font-26)
+}
+
+
+.department-research .tabs_content_section .table_section{
+ padding-top:0;
+ background: inherit; 
+ padding-bottom:5rem;
+}
+
+.department-research .tabs_content_section{
+  padding-bottom:5rem;
+}
+
+.department-research .tabs_content_section .table_section:last-child{
+  padding-bottom:12rem;
+}
+
+
+/* Pagination */
+.pagination_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.pagination_list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination_btn {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #374151;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pagination_btn:hover:not(.disabled):not(.active) {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.pagination_btn.active {
+  background-color: #1d4ed8; /* change to your brand color */
+  color: #ffffff;
+  border-color: #1d4ed8;
+  pointer-events: none;
+}
+
+.pagination_btn.disabled,
+.pagination_btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination_ellipsis {
+  color: #6b7280;
+  font-size: 16px;
+  padding: 0 4px;
+  user-select: none;
+}
+
+.pagination_info {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 
@@ -3493,6 +3586,7 @@ hr {
   color: #16344E;
   margin-bottom: 4rem;
   text-align: left;
+  letter-spacing: 0;
 }
 
 .table_section .table-lab {
@@ -6674,4 +6768,8 @@ hr {
   .facilities-box-text {
     position: relative;
   }
+}
+
+.department-master-of-computer-applications-facilities .department-facilities .image_content_repeat_section {
+    padding-block: 10rem 10rem;
 }

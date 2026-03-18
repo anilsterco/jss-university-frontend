@@ -750,6 +750,36 @@ a:active {
   position: relative;
 }
 
+.dashbord-logo .nav_logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dashbord-logo .uniname {
+  font: var(--font-40);
+  color: var(--color-white);
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.dashbord-logo .uni_addrese {
+  font: var(--font-22);
+  color: var(--color-white);
+  font-weight: 500;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.innerPage .dashbord-logo .uniname, .innerPage .dashbord-logo .uni_addrese {
+  color: var(--color-4e);
+}
+
 .addmision-section-img {
   width: 100%;
   height: 100%;
@@ -834,7 +864,7 @@ a:active {
 }
 
 .logo-content.scrolled img {
-  width: 20.9rem;
+  width: 10.5rem;
   height: auto;
 }
 
@@ -1734,8 +1764,11 @@ a:active {
   .midd_events {
     padding-top: 4rem;
   }
-.placement_highLight {display: block;}
- 
+
+  .placement_highLight {
+    display: block;
+  }
+
 
   .cardsRow {
     padding-block: 12rem 4rem;
@@ -2114,27 +2147,27 @@ a:active {
   padding-bottom: 6rem;
 }
 
-.placement_stats.column-6{
+.placement_stats.column-6 {
   grid-template-columns: repeat(6, 1fr);
 }
 
-.placement_stats.column-5{
+.placement_stats.column-5 {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.placement_stats.column-4{
+.placement_stats.column-4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.placement_stats.column-3{
+.placement_stats.column-3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.placement_stats.column-2{
+.placement_stats.column-2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.placement_stats.column-1{
+.placement_stats.column-1 {
   grid-template-columns: repeat(1, 1fr);
 }
 
@@ -2161,6 +2194,32 @@ a:active {
   color: #444444;
   line-height: 1.7;
   margin-bottom: 1.6rem;
+}
+
+.curriculum_box .box_ul{
+  padding:0;
+  margin:0;
+  margin-top:4rem;
+}
+
+.curriculum_box .box_ul li{
+  font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;
+}
+
+.curriculum_box .box_ul li:before{
+  content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
 }
 
 .placements_loader {
@@ -2679,15 +2738,18 @@ a:active {
     padding: 0rem 0;
     padding-bottom: 4rem;
   }
-.high_lightRow {
+
+  .high_lightRow {
     width: 100%;
     margin: auto;
-}
-.procedure_box p {
+  }
+
+  .procedure_box p {
     font: var(--font-20);
     font-weight: 300;
     line-height: normal;
-}
+  }
+
   .program-module__6nFQSW__inner_page .row .col-md-6 {
     margin-bottom: 2rem;
   }
@@ -2729,6 +2791,16 @@ a:active {
 
 .faqItem[open] .faqAnswer p {
   color: #444 !important;
+}
+
+.faqItem .faqAnswer ul {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.faqItem .faqAnswer ul li{
+  font:var(--font-14);
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 420px) {

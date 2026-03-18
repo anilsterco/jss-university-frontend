@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { APPLY_NOW } from "@/config/config";
 
 export default function AboutOne({ data }) {
   useEffect(() => {
@@ -128,7 +129,7 @@ export default function AboutOne({ data }) {
                     <a
                       target="_blank"
                       className="btn btn-warning"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+                      href={APPLY_NOW}
                     >
                       Apply Now
                     </a>

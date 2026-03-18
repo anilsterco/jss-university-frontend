@@ -78,7 +78,16 @@ export default function Placements({ data }) {
                                   {box.eligibility}
                                 </p>
                               )}
+
+                              
+                            {box.listGroup && <ul className="box_ul">
+                              {box.listGroup.map((list, listIdx)=>(
+                                <li key={listIdx}>{list.list}</li>
+                              ))}
+                              </ul>}
                             </div>
+
+
                           </div>
                         ))}
                       </div>

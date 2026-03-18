@@ -86,17 +86,18 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.bottomDesc && (
               <p className={styles.bottomDesc}>{data.bottomDesc}</p>
             )}
+
+            {data?.extraInfo && (
+              <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
+            )}
+
+            {data?.extraPara && (
+              <h5 className={styles.extraPara}>{data.extraPara}</h5>
+            )}
           </div>
         </div>
       </div>
 
-      {data?.extraInfo && (
-        <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
-      )}
-
-      {data?.extraPara && (
-        <h5 className={styles.extraPara}>{data.extraPara}</h5>
-      )}
     </div>
   );
 }

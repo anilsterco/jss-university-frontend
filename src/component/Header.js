@@ -537,7 +537,7 @@ export default function Header() {
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
             >
               <div className="dashbord-logo">
-                <Link href="/" aria-label="Home">
+                {/* <Link href="/" aria-label="Home">
                   <Image
                     src={
                       isHomeLikePage
@@ -550,7 +550,26 @@ export default function Header() {
                     height={116}
                     priority
                   />
+                </Link> */}
+                 <Link href="/" aria-label="Home" className="nav_logo">
+                  <Image
+                    src={
+                      isHomeLikePage
+                        ? "/images/header/homenew.png"
+                        : "/images/header/homenew.png"
+                    }
+                    className="site-logo"
+                    alt="Site Logo"
+                    width={127}
+                    height={129}
+                    priority
+                  />
+                  <div className="logo_text">
+                      <div className="uniname">JSS University</div>
+                      <div className="uni_addrese">Noida, (Uttar Pradesh)</div>
+                </div>
                 </Link>
+                
               </div>
 
               <div className="mob-logo">
@@ -1547,7 +1566,7 @@ export default function Header() {
             color:#fff!important;
           }
 
-
+          
           .engineering-dropdown-container {
             z-index: 1000;
             width: 100%;
