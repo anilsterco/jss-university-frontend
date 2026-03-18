@@ -331,7 +331,6 @@ export default function Header() {
         const json = await res.json();
         if (json.status) {
           setEngineeringData(json.data);
-          setSelectedSchoolName(json.data[0]?.name);
         }
       } catch (error) {
         console.log("API Error:", error);
@@ -551,7 +550,7 @@ export default function Header() {
                     priority
                   />
                 </Link> */}
-                 <Link href="/" aria-label="Home" className="nav_logo">
+                <Link href="/" aria-label="Home" className="nav_logo">
                   <Image
                     src={
                       isHomeLikePage
@@ -565,11 +564,10 @@ export default function Header() {
                     priority
                   />
                   <div className="logo_text">
-                      <div className="uniname">JSS University</div>
-                      <div className="uni_addrese">Noida, (Uttar Pradesh)</div>
-                </div>
+                    <div className="uniname">JSS University</div>
+                    <div className="uni_addrese">Noida, (Uttar Pradesh)</div>
+                  </div>
                 </Link>
-                
               </div>
 
               <div className="mob-logo">
