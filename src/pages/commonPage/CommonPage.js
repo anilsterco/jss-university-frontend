@@ -62,6 +62,7 @@ import ResearchPatents from "@/component/sections/ResearchPatents";
 import FacilityTab from "@/component/sections/FacilityTab";
 import StudentClub from "@/component/sections/StudentClub";
 import AmenitiesList from "@/component/sections/AmenitiesList";
+import Accordions from "@/component/sections/Accordions";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -159,6 +160,7 @@ export default function CommonPage({ data }) {
         studentClub: StudentClub,
         amenities_list: AmenitiesList,
     labCard: LabCard,
+        table_section_tabs: Accordions,
   };
 
   return (
