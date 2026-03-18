@@ -303,7 +303,10 @@
 .schools-college-of-pharmacy-research .table_section tbody td:nth-child(2) {
   width: 30%;
 }
-
+.department-pharmacognosy-about-us .about_one + .grid_card_design1_section {
+  padding-bottom: 0;
+  padding-top: 5rem;
+}
 .about_four {
   position: relative;
   padding-bottom: 14rem;
