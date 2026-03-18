@@ -125,10 +125,18 @@ export default function DepartmentHeader({ className, data }) {
   // While API loads, derive a readable label from the URL slug
   const fallbackLabel = slugToLabel(currentSlug);
 
+  // Replace the static Home Link with this:
+  const homeHref =
+    currentPage === "schools"
+      ? `/schools/${currentSlug}`
+      : currentPage === "department"
+        ? `/department/${currentSlug}`
+        : WEB_URL;
+
   return (
     <div className={`${styles.departmentHeaderWrapper} ${className}`}>
       <div className={styles.stickyHeader}>
-        <nav className="containerXl">
+        <nav className="containerXl 111111111">
           <div className={styles.departmentMenu}>
             <div className={styles.schoolDeptWrapper}>
               <div
@@ -225,7 +233,14 @@ export default function DepartmentHeader({ className, data }) {
                 mobileMenuOpen ? styles.open : ""
               }`}
             >
-              {data.map((section, idx) => (
+              <Link
+                href={homeHref}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`${styles.navItem} `}
+              >
+                Home
+              </Link>
+              {data?.map((section, idx) => (
                 <Link
                   key={idx}
                   href={WEB_URL + currentPage + "/" + section.slug}
