@@ -89,7 +89,7 @@ const HODMessage = ({ data }) => {
                 data-aos-delay="400"
               >
                 <div className={styles.content}>
-                  {/* {hodData?.type !== "department" && (
+                  {hodData?.type !== "department" && (
                     <Image
                       src="/images/about-page/quote-left.svg"
                       alt="icon"
@@ -97,7 +97,7 @@ const HODMessage = ({ data }) => {
                       height={31}
                       className={styles.icons}
                     />
-                  )} */}
+                  )}
 
                   {hodData?.title && (
                     <h3 className={styles.title}>{hodData.title}</h3>

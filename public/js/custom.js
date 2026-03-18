@@ -39,14 +39,13 @@
           $("html, body").animate(
             { scrollTop: target.offset().top - 100 },
             500, // duration of scroll (adjust as needed)
-            "linear"
+            "linear",
           );
         }, 300); // delay before starting scroll
       }
     }
 
     $('a[href*="#"]:not([href="#"])').click(function (e) {
-      e.preventDefault(); // prevent default anchor behavior
       scrollToHash(this.hash);
     });
 
@@ -199,7 +198,7 @@
         tabPanes.forEach((pane) => pane.classList.remove("fade", "active"));
         tab.classList.add("active");
         const targetPane = document.querySelector(
-          tab.getAttribute("data-target")
+          tab.getAttribute("data-target"),
         );
         if (targetPane) {
           targetPane.classList.add("fade", "active");
@@ -361,142 +360,136 @@
     adjustMaxContent();
   });
 
- function adjustMaxContent() {
-  const container = document.querySelector(".container");
-  if (!container) return;
+  function adjustMaxContent() {
+    const container = document.querySelector(".container");
+    if (!container) return;
 
-  let containerWidth = container.clientWidth;
-  let windowWidth = document.body.clientWidth;
+    let containerWidth = container.clientWidth;
+    let windowWidth = document.body.clientWidth;
 
-  if (windowWidth > 4000) windowWidth = 4000;
+    if (windowWidth > 4000) windowWidth = 4000;
 
-  let maxContentWidth =
-    windowWidth - (windowWidth - containerWidth) / 2 + 16;
+    let maxContentWidth = windowWidth - (windowWidth - containerWidth) / 2 + 16;
 
-  const setMax = (selector, value) => {
-    document.querySelectorAll(selector).forEach(el => {
-      el.style.maxWidth = value;
-    });
-  };
+    const setMax = (selector, value) => {
+      document.querySelectorAll(selector).forEach((el) => {
+        el.style.maxWidth = value;
+      });
+    };
 
-  const resetMax = selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      el.style.maxWidth = "";
-    });
-  };
+    const resetMax = (selector) => {
+      document.querySelectorAll(selector).forEach((el) => {
+        el.style.maxWidth = "";
+      });
+    };
 
-  if (windowWidth >= 1920) {
-    setMax(
-      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-      maxContentWidth + "px"
-    );
-    
-    if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
-    if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
+    if (windowWidth >= 1920) {
+      setMax(
+        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+        maxContentWidth + "px",
+      );
 
-  } else if (windowWidth >= 1400) {
-    setMax(
-      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-      maxContentWidth + "px"
-    );
+      if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
+      if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
+    } else if (windowWidth >= 1400) {
+      setMax(
+        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+        maxContentWidth + "px",
+      );
+    } else if (windowWidth >= 1200) {
+      resetMax(".max-content-xxl");
+      setMax(
+        ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+        maxContentWidth + "px",
+      );
+    } else if (windowWidth >= 992) {
+      resetMax(".max-content-xxl, .max-content-xl");
+      setMax(
+        ".max-content-lg, .max-content-md, .max-content-sm, .max-content",
+        maxContentWidth + "px",
+      );
+    } else if (windowWidth >= 768) {
+      resetMax(".max-content-xxl, .max-content-xl, .max-content-lg");
+      setMax(
+        ".max-content-md, .max-content-sm, .max-content",
+        maxContentWidth + "px",
+      );
+    } else if (windowWidth >= 575) {
+      resetMax(
+        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md",
+      );
+      setMax(".max-content-sm, .max-content", maxContentWidth + "px");
+    } else {
+      document
+        .querySelectorAll(
+          ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm",
+        )
+        .forEach((el) => (el.style.width = ""));
 
-  } else if (windowWidth >= 1200) {
-    resetMax(".max-content-xxl");
-    setMax(
-      ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-      maxContentWidth + "px"
-    );
-
-  } else if (windowWidth >= 992) {
-    resetMax(".max-content-xxl, .max-content-xl");
-    setMax(
-      ".max-content-lg, .max-content-md, .max-content-sm, .max-content",
-      maxContentWidth + "px"
-    );
-
-  } else if (windowWidth >= 768) {
-    resetMax(".max-content-xxl, .max-content-xl, .max-content-lg");
-    setMax(
-      ".max-content-md, .max-content-sm, .max-content",
-      maxContentWidth + "px"
-    );
-
-  } else if (windowWidth >= 575) {
-    resetMax(
-      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md"
-    );
-    setMax(".max-content-sm, .max-content", maxContentWidth + "px");
-
-  } else {
-    document.querySelectorAll(
-      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm"
-    ).forEach(el => el.style.width = "");
-
-    document.querySelectorAll(".max-content").forEach(el => {
-      el.style.width = maxContentWidth + "px";
-    });
+      document.querySelectorAll(".max-content").forEach((el) => {
+        el.style.width = maxContentWidth + "px";
+      });
+    }
   }
-}
 
-/* =====================================
+  /* =====================================
    EDGE ALIGN ELEMENTS
 ===================================== */
-function alignEdgeElements() {
-  const windowWidth = window.innerWidth;
-  if (windowWidth < 768 || windowWidth > 4000) return;
+  function alignEdgeElements() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 768 || windowWidth > 4000) return;
 
-  const fullSection = document.querySelector(".full_touch");
-  const leftElement = document.querySelector(".left_touch");
-  const rightElement = document.querySelector(".right_touch");
+    const fullSection = document.querySelector(".full_touch");
+    const leftElement = document.querySelector(".left_touch");
+    const rightElement = document.querySelector(".right_touch");
 
-  if (!fullSection) return;
+    if (!fullSection) return;
 
-  const sectionRect = fullSection.getBoundingClientRect();
+    const sectionRect = fullSection.getBoundingClientRect();
 
-  if (sectionRect.width >= windowWidth) {
-    if (leftElement) leftElement.style.marginLeft = "0px";
-    if (rightElement) rightElement.style.marginRight = "0px";
-    return;
+    if (sectionRect.width >= windowWidth) {
+      if (leftElement) leftElement.style.marginLeft = "0px";
+      if (rightElement) rightElement.style.marginRight = "0px";
+      return;
+    }
+
+    if (leftElement) {
+      const leftRect = leftElement.getBoundingClientRect();
+      leftElement.style.marginLeft = -leftRect.left + "px";
+    }
+
+    if (rightElement) {
+      const rightRect = rightElement.getBoundingClientRect();
+      const rightGap = windowWidth - rightRect.right;
+      rightElement.style.marginRight = -rightGap + "px";
+    }
   }
 
-  if (leftElement) {
-    const leftRect = leftElement.getBoundingClientRect();
-    leftElement.style.marginLeft = -leftRect.left + "px";
-  }
-
-  if (rightElement) {
-    const rightRect = rightElement.getBoundingClientRect();
-    const rightGap = windowWidth - rightRect.right;
-    rightElement.style.marginRight = -rightGap + "px";
-  }
-}
-
-/* =====================================
+  /* =====================================
    AUTO RUN – NO REFRESH NEEDED
 ===================================== */
-function runAll() {
-  adjustMaxContent();
-  alignEdgeElements();
-}
+  function runAll() {
+    adjustMaxContent();
+    alignEdgeElements();
+  }
 
-document.addEventListener("DOMContentLoaded", runAll);
-window.addEventListener("load", runAll);
+  document.addEventListener("DOMContentLoaded", runAll);
+  window.addEventListener("load", runAll);
 
-let resizeRAF;
-window.addEventListener("resize", () => {
-  cancelAnimationFrame(resizeRAF);
-  resizeRAF = requestAnimationFrame(runAll);
-});
+  let resizeRAF;
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(resizeRAF);
+    resizeRAF = requestAnimationFrame(runAll);
+  });
 
-/* =====================================
+  /* =====================================
    DOM CHANGE OBSERVER (AJAX / CMS SAFE)
 ===================================== */
-const observer = new MutationObserver(runAll);
-observer.observe(document.body, {
-  childList: true,
-  subtree: true
-});
-
+  const observer = new MutationObserver(runAll);
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 
   // Run on load and resize
   window.addEventListener("load", alignEdgeElements);
@@ -518,21 +511,21 @@ observer.observe(document.body, {
 
       document.documentElement.style.setProperty(
         "--leftminus120",
-        marginValue + "px"
+        marginValue + "px",
       );
       document.documentElement.style.setProperty(
         "--rightminus120",
-        marginValue + "px"
+        marginValue + "px",
       );
     } else if (vw >= maxWidth) {
       // fixed max margin beyond maxWidth
       document.documentElement.style.setProperty(
         "--leftminus120",
-        maxMargin + "px"
+        maxMargin + "px",
       );
       document.documentElement.style.setProperty(
         "--rightminus120",
-        maxMargin + "px"
+        maxMargin + "px",
       );
     } else {
       // reset below minWidth
@@ -549,7 +542,7 @@ observer.observe(document.body, {
   function togglePanel(panelToShow, activeElement) {
     const isActive = $(panelToShow).hasClass("show");
     $(
-      ".mobile_panel01, .mobile_panel02, .mobile_panel03, .mobile_panel04"
+      ".mobile_panel01, .mobile_panel02, .mobile_panel03, .mobile_panel04",
     ).removeClass("show");
     if (!isActive) {
       $(panelToShow).addClass("show");
@@ -582,7 +575,7 @@ observer.observe(document.body, {
       function () {
         $(this).find(".mega-dropdown").removeClass("active-hover");
         $("body").removeClass("active_head"); // remove class from body
-      }
+      },
     );
   });
   $(function () {
@@ -594,7 +587,7 @@ observer.observe(document.body, {
       function () {
         $(this).removeClass("active-hover");
         $("body").removeClass("active_head");
-      }
+      },
     );
   });
 })(jQuery);
