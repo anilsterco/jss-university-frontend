@@ -133,10 +133,13 @@ export default function DepartmentHeader({ className, data }) {
         ? `/department/${currentSlug}`
         : WEB_URL;
 
+  // Home is active when there's no program segment in the URL
+  const isHomeActive = !currentProgram;
+
   return (
     <div className={`${styles.departmentHeaderWrapper} ${className}`}>
       <div className={styles.stickyHeader}>
-        <nav className="containerXl 111111111">
+        <nav className="containerXl">
           <div className={styles.departmentMenu}>
             <div className={styles.schoolDeptWrapper}>
               <div
@@ -236,7 +239,7 @@ export default function DepartmentHeader({ className, data }) {
               <Link
                 href={homeHref}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`${styles.navItem} `}
+                className={`${styles.navItem} ${isHomeActive ? styles.activeNav : ""}`}
               >
                 Home
               </Link>
