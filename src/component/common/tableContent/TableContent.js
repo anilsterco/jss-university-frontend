@@ -21,11 +21,12 @@ const TableContent = ({ data }) => {
     >
       <div className="container">
         <div className={styles.grid}>
-          <div className="left_col">
-            {data?.leftTitle && (
-              <h4 className={styles.left_title}>{data?.leftTitle}</h4>
-            )}
-            {data?.leftTable &&
+          {data?.leftTitle && data?.leftTable && (
+            <div className="left_col">
+              {data?.leftTitle && (
+                <h4 className={styles.left_title}>{data?.leftTitle}</h4>
+              )}
+              {data?.leftTable &&
               data.leftTable.map((tableData, tableIdx) => (
                 <div
                   key={tableIdx}
@@ -75,7 +76,9 @@ const TableContent = ({ data }) => {
                   </div>
                 </div>
               ))}
-          </div>
+            </div>
+            )}
+          
 
           <div className={styles.right_col}>
             <div className={styles.border_col}>
