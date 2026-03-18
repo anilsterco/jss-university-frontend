@@ -242,13 +242,15 @@ export default function FacilitiesComponent({ data }) {
           {facilitiesData.facilities.map((panel, index) => (
             <article
               key={index}
-              className={`panel imageWrapper panel-${index + 1}`}>
+              className={`panel imageWrapper panel-${index + 1}`}
+            >
               <figure className={styles.slideContainer}>
                 <img
                   className="img-fluid image"
                   src={panel.image}
                   alt={`Panel ${index + 1}`}
-                  style={{ width: "100%", objectFit: "cover" }}/>
+                  style={{ width: "100%", objectFit: "cover" }}
+                />
                 <div className={styles.verticalLine}>
                   <div className={styles.slideNumberBox}>
                     {index + 1 < 10 ? "0" + (index + 1) : index + 1}
@@ -258,14 +260,14 @@ export default function FacilitiesComponent({ data }) {
                   <div>
                     <h2>
                       {panel.title}
-                      <a href={WEB_URL + panel.main_link ?? "#"}>
+                      <Link href={WEB_URL + panel.main_link}>
                         <Image
                           src="/images/home-page/facilivisit.svg"
                           alt="image"
                           width={22}
                           height={22}
                         />
-                      </a>
+                      </Link>
                     </h2>
                     <p className={styles.facilityDescription}>
                       {panel.description}
@@ -275,17 +277,19 @@ export default function FacilitiesComponent({ data }) {
                 <div className={styles.bannerLinks}>
                   {panel.links &&
                     panel.links.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.url ?? "#"}
-                        className={styles.bannerLink}>
+                        href={item.url}
+                        className={styles.bannerLink}
+                      >
                         {item.text}
                         <Image
                           src="/images/home-page/facili_arrow.svg"
                           alt="image"
                           width={5}
-                          height={10}/>
-                      </a>
+                          height={10}
+                        />
+                      </Link>
                     ))}
                 </div>
               </figure>
