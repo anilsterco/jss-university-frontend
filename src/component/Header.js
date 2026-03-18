@@ -2351,9 +2351,10 @@ export default function Header() {
             padding: 0;
             list-style: none;
             text-align: center;
-            position: absolute;
+            // position: absolute;
             width: 100%;
-            top: 26%;
+            // top: 26%;
+            padding-top: 18rem;
           }
           .mega-left-item {
             cursor: pointer;
