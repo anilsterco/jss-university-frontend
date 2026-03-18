@@ -14,7 +14,7 @@ export default function Accordions({ data }) {
   };
 
   return (
-    <div className="iqac_master">
+    <div className={`iqac_master ${data?.[0]?.items[0]?.pageType}`}>
       {data && data.length > 0 ? (
         data.map((section, index) => renderSection(section, index))
       ) : (
