@@ -630,7 +630,7 @@ export default function Header() {
                                       }}
                                     >
                                       <Link
-                                        href={d.url || "#"}
+                                        href={WEB_URL + d.url || "#"}
                                         className="dropdown-item"
                                       >
                                         {d.title}
