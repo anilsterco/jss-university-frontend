@@ -77,7 +77,7 @@ export default function AboutDepartmentComponent({ data, params }) {
             </p>
           ))}
           <Link
-            href={`/department/${params}/about-the-department`}
+            href={`/department/${params}/about-us`}
             className={styles.arrowLink}
           >
             <Image
