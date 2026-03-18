@@ -213,9 +213,6 @@ export default function FacilitiesComponent({ data }) {
         </div>
       </div>
       <div className={styles.facilitiesContainer}>
-        {/* Custom CSS */}
-
-        {/* Main Banner */}
         <div className={styles.headerContent}>
           <div>
             {/* <FiPlus className={styles.plusIcon} /> */}
@@ -225,7 +222,6 @@ export default function FacilitiesComponent({ data }) {
               width={42}
               height={42}
             />
-
             <span className={styles.straightLine}></span>
           </div>
           <div>
@@ -246,15 +242,13 @@ export default function FacilitiesComponent({ data }) {
           {facilitiesData.facilities.map((panel, index) => (
             <article
               key={index}
-              className={`panel imageWrapper panel-${index + 1}`}
-            >
+              className={`panel imageWrapper panel-${index + 1}`}>
               <figure className={styles.slideContainer}>
                 <img
                   className="img-fluid image"
                   src={panel.image}
                   alt={`Panel ${index + 1}`}
-                  style={{ width: "100%", objectFit: "cover" }}
-                />
+                  style={{ width: "100%", objectFit: "cover" }}/>
                 <div className={styles.verticalLine}>
                   <div className={styles.slideNumberBox}>
                     {index + 1 < 10 ? "0" + (index + 1) : index + 1}
@@ -263,7 +257,7 @@ export default function FacilitiesComponent({ data }) {
                 <div className={styles.bannerContent}>
                   <div>
                     <h2>
-                      {panel.title}{" "}
+                      {panel.title}
                       <a href={WEB_URL + panel.main_link ?? "#"}>
                         <Image
                           src="/images/home-page/facilivisit.svg"
@@ -284,15 +278,13 @@ export default function FacilitiesComponent({ data }) {
                       <a
                         key={index}
                         href={item.url ?? "#"}
-                        className={styles.bannerLink}
-                      >
+                        className={styles.bannerLink}>
                         {item.text}
                         <Image
                           src="/images/home-page/facili_arrow.svg"
                           alt="image"
                           width={5}
-                          height={10}
-                        />
+                          height={10}/>
                       </a>
                     ))}
                 </div>
