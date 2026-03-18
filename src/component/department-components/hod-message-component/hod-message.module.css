@@ -113,18 +113,19 @@
 .department .content {
   padding: 0;
   padding-right: 18rem;
+  padding-top:1rem;
 }
 
 .title {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   font: var(--font-18);
+  line-height:3rem;
   color: #16344E;
   font-family: var(--font-Condensed);
   font-weight: 700;
-  text-transform: initial;
-  font:var(--font-26);
-  margin-bottom:3rem;
+  /* font:var(--font-26); */
+  margin-bottom:2.4rem;
 }
 
 .message_section .title{
@@ -148,6 +149,10 @@
   color: #444;
   margin-bottom: 3rem;
   font: var(--font-16);
+  color:#333;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 3rem;
 }
 
 .paragraph:last-child {
@@ -155,8 +160,10 @@
 }
 
 .hodImage {
-  border-top-left-radius: 8rem;
+  border-radius: 8px;
+  border-top-left-radius: 5rem;
   position: relative;
+  height:auto;
 }
 
 /* HOD Info */
@@ -181,8 +188,14 @@
 
 .hodRow {
   display: grid;
-  grid-template-columns:repeat(1, 42.7% auto);
+  grid-template-columns:repeat(1, 35% auto);
   gap: 7.6rem;
+}
+
+.hodRow .left_col{
+  display:flex;
+  align-items: center;
+  padding:10rem 0;
 }
 
 

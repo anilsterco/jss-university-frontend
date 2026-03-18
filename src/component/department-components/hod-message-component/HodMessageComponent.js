@@ -60,14 +60,14 @@ const HODMessage = ({ data }) => {
 
   return (
     <div
-      className={`${styles.hod_message_section} ${styles[hodData?.type] || ""} ${styles[hodData?.sectionType]}`}
+      className={`hod_message_section ${styles.hod_message_section} ${styles[hodData?.type] || ""} ${styles[hodData?.sectionType]}`}
     >
       <div className={`${styles.container} ${styles[hodData?.type] || ""}`}>
         <div className="container">
           <div className={styles.card} data-aos="fade-up">
-            <div className={styles.hodRow}>
+            <div className={`${styles.hodRow} hod_row`}>
               <div
-                className={styles.hodCol}
+                className={`${styles.hodCol} ${styles.left_col} left_col`}
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
@@ -100,7 +100,9 @@ const HODMessage = ({ data }) => {
                   )}
 
                   {hodData?.title && (
-                    <h3 className={styles.title}>{hodData.title}</h3>
+                    <h3 className={`${styles.title} hod_title`}>
+                      {hodData.title}
+                    </h3>
                   )}
 
                   {hodData?.subMessage && (
