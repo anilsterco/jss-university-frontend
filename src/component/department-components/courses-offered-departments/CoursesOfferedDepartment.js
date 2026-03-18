@@ -45,29 +45,33 @@ const CoursesOffered = ({ data }) => {
   return (
     <section className={`second-section cource-sec ${styles.secondSection}`}>
       <div className="container">
-        <div className={`cource_top ${styles.topSection}`}>
+        <div
+          className={`cource_top ${styles.topSection} program_section_${data.programs.length}`}
+        >
           {/* LEFT CONTENT */}
           <div className={`cource_col ${styles.left_col}`}>
             <h5 className={styles.topSectionH5} data-aos="fade-up">
-              Programe Offered
+              Programs Offered
             </h5>
 
-            <h1
-              className={`fw-bold ${styles.topSectionH1}`}
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Start Your <span>JSS Journey</span>
-            </h1>
+            {data?.title && (
+              <h1
+                className={`fw-bold ${styles.topSectionH1}`}
+                data-aos="fade-up"
+                data-aos-delay="100"
+                dangerouslySetInnerHTML={{ __html: data?.title }}
+              />
+            )}
 
-            <p
-              className={styles.showOnlyMobileSubHeading}
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Explore our academic programs and pave the way to your ideal
-              future.
-            </p>
+            {data?.desc && (
+              <p
+                className={styles.showOnlyMobileSubHeading}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                {data.desc}
+              </p>
+            )}
 
             {/* SEARCH (STATIC UI) */}
             {data?.course_count && data.course_count > 0 ? (
@@ -128,9 +132,12 @@ const CoursesOffered = ({ data }) => {
                   </h1>
                   <span className={styles.programsCountPlus}>+</span>
                 </div>
-                <p className={`program-hide ${styles.programsText}`}>
-                  academic programs and pave the way to your ideal future.
-                </p>
+                {data?.desc && (
+                  <p
+                    className={`program-hide ${styles.programsText}`}
+                    dangerouslySetInnerHTML={{ __html: data.desc }}
+                  />
+                )}
               </div>
             ) : null}
 
@@ -150,7 +157,9 @@ const CoursesOffered = ({ data }) => {
 
           {/* RIGHT CARDS */}
           <div className={`right_col ${styles.rightCol}`}>
-            <div className={`cource_col ${styles.programsCardsSection}`}>
+            <div
+              className={`cource_col ${styles.programsCardsSection} programs-${data.programs.length}`}
+            >
               {/* Undergraduate */}
               {data?.programs &&
                 data.programs.map((program, programIdx) => (
@@ -189,11 +198,13 @@ const CoursesOffered = ({ data }) => {
             </div>
             <div className={`add_btn ${styles.admistion_heading}`}>
               <div className={styles.admiCol}>
-                <h2>
-                  Admission <span>2026 - 2027</span>
-                </h2>
+                {data?.academic_year_desc && (
+                  <h2>
+                    Admission <span>{data?.academic_year_desc}</span>
+                  </h2>
+                )}
 
-                <p>SED UT PERSPICIATIS UNDE</p>
+                {data?.course_text && <p>{data?.course_text}</p>}
               </div>
               <Link
                 href={APPLY_NOW}
