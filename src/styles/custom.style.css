@@ -3578,6 +3578,13 @@ hr {
   padding: 10rem 0;
 }
 
+.pdf_list_section .mainTitle {
+  font: var(--font-21);
+  color: #16344E;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
 .pdf_list_section ul {
   display: flex;
   list-style-type: none;
