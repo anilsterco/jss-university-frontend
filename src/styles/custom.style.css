@@ -6905,7 +6905,7 @@ hr {
   background-color: var(--color-white);
 }
 .department-civil-engineering-facilities .about_one {
-    padding-bottom: 10rem;
+    padding-bottom: 12rem;
 }
 .department-engineering-data-science-about-us .grid_card_design1_section {
     padding-block: 0rem 10rem;
@@ -6915,4 +6915,77 @@ hr {
 }
 .department-electrical-electronics-engineering-about-us .grid_card_design1_section {
     padding-block: 0rem 10rem;
+}
+.department-mechanical-engineering-research .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-mechanical-engineering-about-us .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-mechanical-engineering-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
+    border: 0px solid #dfdfdf;
+}
+.department-mechanical-engineering-facilities .amenities_section .grid_group {
+    background: var(--color-white);
+    padding: 4rem;
+}
+.department-computer-science-and-engineering-it-research .research_about {
+    padding-bottom: 4rem;
+}
+
+.department-mechanical-engineering-placements .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-computer-science-and-engineering-it-placements .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.table_section p{margin-bottom: 4rem;}
+.department-electrical-electronics-engineering-facilities .image_content_repeat_section {
+    padding-block: 10rem;
+}
+.department-electrical-electronics-engineering-facilities .about_one {
+    padding-bottom: 10rem;
+}
+.department-electrical-electronics-engineering-placements .table_section thead th{    padding: 1.2rem 1.8rem;}
+.department-electronics-and-communication-engineering-about-us .grid_card_design1_section {
+    padding-block: 5rem 10rem;
+}
+.early-slide ul li::marker{
+color: #ffc100;
+}
+.department-page.department-engineering-aiml-facilities .image_content_repeat_section{  padding-block: 5rem 10rem;}
+.department-computer-science-and-engineering-about-us .grid_card_design1_section {
+    padding-block: 0 10rem;
+}
+.department-electrical-engineering-ee-research .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-electrical-engineering-ee-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
+    border: 0px solid #dfdfdf;
+    padding: 0rem 0rem;
+}
+.department-electrical-engineering-ee-placements .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-civil-engineering-about-us .grid_card_design1_section {
+    padding-block: 4rem 10rem;
+}
+.department-civil-engineering-research .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-page.department-civil-engineering-placements .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-engineering-data-science-research .res_table_maincms .table_section:last-child {
+    padding-block: 2rem 0rem;
+}
+.department-management-studies-facilities  .image_content_repeat_section {
+    padding-block: 10rem;
+}
+.department-management-studies-facilities .about_one .estblish {
+    padding-block: 4rem 8rem;
+}
+.department-management-studies-placements .amenities_section .grid_group {
+    background: #fff;
+    padding: 4rem;
 }

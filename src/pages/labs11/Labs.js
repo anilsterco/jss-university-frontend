@@ -9,10 +9,10 @@ export default function Labspage({ data }) {
       <section className={` ${styles.labs_page} ${styles.inner_page}`}>
         <div className="container">
           <h4 className={`${styles.heading} text-center`}>Labs</h4>
-          <p className={`text-center ${styles.sub_heading}`}>
+          {/* <p className={`text-center ${styles.sub_heading}`}>
             Committed to producing industry-ready engineers through advanced
             laboratories, research, and practical exposure.
-          </p>
+          </p> */}
 
           <div className="row mx_3xl_-1_3 mt_3xl_7">
             {data?.data &&
