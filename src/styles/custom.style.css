@@ -1693,6 +1693,21 @@
 }
 
 
+.accordion_section{
+    padding:10rem 0;
+}
+
+.accordion_section .faqAnswer .sub_title{
+  font:var(--font-21);
+  font-weight:500;
+  margin-bottom:1.5rem;
+}
+
+.accordion_section .faqAnswer ul{
+  margin-top:2rem;
+}
+
+
 @media all and (min-width: 800px) {
   .item.active .item-content {
     padding-top: 0;
