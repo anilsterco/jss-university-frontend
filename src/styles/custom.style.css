@@ -6814,3 +6814,18 @@ hr {
 .placement-sec2 {
     padding-bottom: 10rem;
 }
+.department-civil-engineering-placements .table_section.bg-gray{
+  background-color: var(--color-white);
+}
+.department-civil-engineering-facilities .about_one {
+    padding-bottom: 10rem;
+}
+.department-engineering-data-science-about-us .grid_card_design1_section {
+    padding-block: 0rem 10rem;
+}
+.department-engineering-data-science-research .res_table_maincms {
+    padding-block: 5rem 10rem;
+}
+.department-electrical-electronics-engineering-about-us .grid_card_design1_section {
+    padding-block: 0rem 10rem;
+}
