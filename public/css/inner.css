@@ -368,11 +368,16 @@
 .ed_schol_list table th:nth-child(10) {
      min-width: 30rem;
 }
+.department-computer-science-and-engineering-research .tableContentSection .grid_row,
 .department-computer-science-and-engineering-it-research .tableContentSection .grid_row {
   grid-template-columns: 1fr;
 }
 
-
+.department-management-studies-facilities .library_section{padding-top: 10rem;}
+.department-management-studies-placements .grid_group{    background-color: var(--color-white);
+    padding: 6rem;
+}
+.schools-computer-applications-about-the-school .count_alumni_section{padding-top: 0rem;}
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
 }
@@ -6516,6 +6521,13 @@
   padding-block: 5rem 12rem;
 }
 
+.message_section .message_text p:first-of-type {
+        font: var(--font-24);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
 .message_text h3 {
   font: var(--font-24);
   color: var(--color-100);
@@ -8401,9 +8413,9 @@
 }
 
 .department-master-of-computer-applications-about-us .grid_card_design1_section {
-  padding-block: 2rem;
+  padding-block: 10rem;
 }
-
+.department-master-of-computer-applications-facilities .library_section{padding-top: 10rem;}
 .department-master-of-computer-applications-placements .table_section:last-child {
   background-color: var(--color-f6);
 }
