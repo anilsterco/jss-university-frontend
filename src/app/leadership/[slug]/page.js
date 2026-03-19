@@ -106,8 +106,16 @@ export default function LeadershipDetailsPage({ params }) {
                   <figcaption>
                     <div className="desgtn">
                       <h3>{sections.banners.name}</h3>
-                      <h5>{sections.banners.designation}</h5>
-                      <p>{sections.banners.short_description}</p>
+                      {sections?.banners?.designation && (
+                        <h5>{sections.banners.designation}</h5>
+                      )}
+                      {sections?.banners?.short_description && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: sections.banners.short_description,
+                          }}
+                        />
+                      )}
                     </div>
                   </figcaption>
                 </figure>
@@ -172,10 +180,12 @@ export default function LeadershipDetailsPage({ params }) {
         </div>
       </section>
 
-      {sections.message_from_chancellor?.message?.length > 0 && (
-        <section className="message_section">
-          <div className="container">
-            <div className="message_warpper">
+      <section className="message_section">
+        <div className="container">
+          <div className="message_warpper">
+            {sections.message_from_chancellor?.designation.toLowerCase().includes(
+              "chancellor",
+            ) && (
               <figure>
                 <Image
                   src={"/images/custom-page/about/quote.png"}
@@ -186,19 +196,23 @@ export default function LeadershipDetailsPage({ params }) {
                   className="tesIcon"
                 />
               </figure>
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="message_text">
-                    <h3>{sections.message_from_chancellor.designation}</h3>
-                    {/* <h5>{sections.message_from_chancellor.designation}</h5> */}
-                    {sections.message_from_chancellor.message.map(
-                      (msg, index) => (
-                        <p key={index}>{msg}</p>
-                      ),
-                    )}
-                  </div>
+            )}
+
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="message_text">
+                  {sections.message_from_chancellor?.designation.toLowerCase().includes(
+                    "chancellor",
+                  ) && <h3>{sections.message_from_chancellor.designation}</h3>}
+
+                  {sections.message_from_chancellor.message.map(
+                    (msg, index) => (
+                      <p key={index}>{msg}</p>
+                    ),
+                  )}
                 </div>
-                {/* <div className="col-lg-6">
+              </div>
+              {/* <div className="col-lg-6">
                 <div className="message_img">
                   <figure>
                     {sections?.message_from_chancellor?.video ? (
@@ -230,14 +244,13 @@ export default function LeadershipDetailsPage({ params }) {
                   </figure>
                 </div>
               </div> */}
-              </div>
-              <div className="message_footer_section">
-                <h4>{sections.message_from_chancellor.name}</h4>
-              </div>
+            </div>
+            <div className="message_footer_section">
+              <h4>{sections.message_from_chancellor.name}</h4>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
     </main>
   );
 }
