@@ -20,7 +20,7 @@ export default function FacultyList({ data, schoolName }) {
     });
   }, []);
   const facultyData = {
-    subtitle: "FACULTIES",
+    subtitle: "Faculty",
     title: `<span class="blue-text">GUIDING MINDS </span> 
             <span class="dark-blue-text text-uppercase">OF </br> ${schoolName ? schoolName : "COLLEGE OF PHARMACY"}</span>`,
     members: [
