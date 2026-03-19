@@ -2618,6 +2618,11 @@ hr {
   gap: 1.2rem;
 }
 
+.research-list .research-link i{
+  color: var(--color-73);
+    font: var(--font-14);
+}
+
 .research-box {
   background-color: var(--color-white);
   padding: 0.1rem 1.5rem;

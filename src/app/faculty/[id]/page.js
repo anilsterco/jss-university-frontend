@@ -252,32 +252,32 @@ export default function FacultyDetailPage({ params }) {
                             (item) => item.title || item.image || item.link,
                           )
                           .map((key, index) => (
-                            <div className="research-box" key={index}>
-                              <div className="research-icon">
-                                <p>
-                                  {key.image && (
-                                    <Image
-                                      src={key.image}
-                                      alt="research-icon"
-                                      width={50}
-                                      height={50}
-                                    />
-                                  )}
-                                  {key.title}
-                                </p>
-                              </div>
-                              {key.link && (
-                                <div className="research-link">
-                                  <Link
-                                    href={key.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    <i className="bi bi-box-arrow-up-right"></i>
-                                  </Link>
+                            <Link
+                              href={key.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <div className="research-box" key={index}>
+                                <div className="research-icon">
+                                  <p>
+                                    {key.image && (
+                                      <Image
+                                        src={key.image}
+                                        alt="research-icon"
+                                        width={50}
+                                        height={50}
+                                      />
+                                    )}
+                                    {key.title}
+                                  </p>
                                 </div>
-                              )}
-                            </div>
+                                {key.link && (
+                                  <div className="research-link">
+                                    <i className="bi bi-box-arrow-up-right"></i>
+                                  </div>
+                                )}
+                              </div>
+                            </Link>
                           ))}
                       </div>
                     </div>
