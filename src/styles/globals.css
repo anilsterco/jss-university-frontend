@@ -516,7 +516,6 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none !important;
-  color: inherit;
 }
 
 .main-container {
@@ -776,7 +775,8 @@ a:active {
   line-height: 0.9;
 }
 
-.innerPage .dashbord-logo .uniname, .innerPage .dashbord-logo .uni_addrese {
+.innerPage .dashbord-logo .uniname,
+.innerPage .dashbord-logo .uni_addrese {
   color: var(--color-4e);
 }
 
@@ -2196,30 +2196,30 @@ a:active {
   margin-bottom: 1.6rem;
 }
 
-.curriculum_box .box_ul{
-  padding:0;
-  margin:0;
-  margin-top:4rem;
+.curriculum_box .box_ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 4rem;
 }
 
-.curriculum_box .box_ul li{
+.curriculum_box .box_ul li {
   font: var(--font-16);
-    color: var(--color-44);
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    list-style: none;
-    position: relative;
+  color: var(--color-44);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  list-style: none;
+  position: relative;
 }
 
-.curriculum_box .box_ul li:before{
+.curriculum_box .box_ul li:before {
   content: "";
-    background-color: var(--color-100);
-    border-radius: 5rem;
-    width: .7rem;
-    height: .7rem;
-    position: absolute;
-    top: .4rem;
-    left: 0;
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: .4rem;
+  left: 0;
 }
 
 .placements_loader {
@@ -2544,9 +2544,7 @@ a:active {
   align-items: center;
 }
 
-.studends_pdf {
-  padding-block: 3.2rem;
-}
+
 
 .studends_pdf ul {
   padding-left: 0;
@@ -2655,12 +2653,15 @@ a:active {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 10px 10px;
+  padding: 1.6rem 2.5rem;
   color: #16344E;
-  font-size: 21px;
+  font: var(--font-18);
+  font-weight: 500;
+  color: var(--color-4e);
   transition: all 0.3s ease;
   position: relative;
   font-weight: 400;
+  line-height: 3rem;
 
 }
 
@@ -2701,7 +2702,7 @@ a:active {
 }
 
 .faqAnswer {
-  padding: 2.4rem;
+  padding: 2.5rem;
   background: #fff;
   border-top: 1px solid #ddd;
   animation: fadeIn 0.3s ease;
@@ -2716,9 +2717,9 @@ a:active {
 
 .faqAnswer p {
   font: var(--font-16);
-  color: #fff !important;
+  color: #444444;
   line-height: 1.5;
-  letter-spacing: -0.32px;
+  letter-spacing: 0px;
 }
 
 @keyframes fadeIn {
@@ -2798,8 +2799,8 @@ a:active {
   margin-bottom: 0;
 }
 
-.faqItem .faqAnswer ul li{
-  font:var(--font-14);
+.faqItem .faqAnswer ul li {
+  font: var(--font-14);
   margin-bottom: 1rem;
 }
 
@@ -2816,4 +2817,14 @@ a:active {
   .footer_section .footer_cnt {
     padding-inline: 0;
   }
+}
+
+.acade_lab_slider figcaption {
+  color: #fff;
+  font: var(--font-26);
+  letter-spacing: 0px;
+  font-family: var(--font-Condensed);
+  font-weight: 700;
+  margin-top: 3rem;
+  text-transform: uppercase;
 }

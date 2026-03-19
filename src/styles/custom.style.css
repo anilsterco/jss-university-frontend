@@ -2423,27 +2423,39 @@ G41 .core-pdf::after {
 }
 
 .profile-info-box {
-  padding: 2rem 3rem;
+  padding: 2rem 0rem;
   position: relative;
   z-index: 0;
 }
 
-.profile-info-box::before {
-  content: "";
-  background-color: var(--color-e8);
-  position: absolute;
-  height: 23rem;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.profile-info-box:before {
+    content: "";
+    background-color: var(--color-e8);
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-block: 6rem;
 }
 
 .info-box {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-
+    gap: 1rem;
+    padding: 2rem 3rem;
+    display: flex;
+    position: relative;
+}
+.info-box::before{
+    content: "";
+    background-color: var(--color-e8);
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    padding-block: 6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 hr {
@@ -2587,6 +2599,7 @@ hr {
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
   line-height: 46px;
+  text-transform: uppercase;
 }
 
 .read-more-btn {

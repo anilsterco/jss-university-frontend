@@ -20,10 +20,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
             style={{
               width: "100%",
               height: "auto",
-            }}
-          />
+            }}/>
         </div>
-
         <div className={`col-lg-6 col-md-12 px_3xl_1_2 `}>
           <div
             className={`content_col ${styles.content_col} ${type
@@ -48,15 +46,13 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 ))}
               </div>
             )}
-
             {data?.pdfs && data.pdfs.length > 0 && (
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (
                   <Link
                     href={singlePdf.pdfLink ?? ""}
                     target="_blank"
-                    key={pdfIdx}
-                  >
+                    key={pdfIdx}  >
                     <Image
                       src="/images/icons/pdf.png"
                       height={20}
@@ -68,7 +64,6 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 ))}
               </div>
             )}
-
             {data?.listing && data.listing.length > 0 && (
               <ul className={styles.ul}>
                 {data.listing.map((singleList, listIdx) =>
@@ -86,18 +81,15 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.bottomDesc && (
               <p className={styles.bottomDesc}>{data.bottomDesc}</p>
             )}
-
             {data?.extraInfo && (
               <h5 className={styles.extraInfo}>{data.extraInfo}</h5>
             )}
-
             {data?.extraPara && (
               <h5 className={styles.extraPara}>{data.extraPara}</h5>
             )}
           </div>
         </div>
       </div>
-
     </div>
   );
 }

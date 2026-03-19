@@ -73,7 +73,7 @@ export default function HeroSlider({ data, slug }) {
               <div className="container">
                 <div className={styles.bannerContent}>
                   {isDepartmentPage && (
-                    <span className={styles.bannerSmall}>Departments of</span>
+                    <span className={styles.bannerSmall}>Department of</span>
                   )}
 
                   <h1

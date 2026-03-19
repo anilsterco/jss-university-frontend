@@ -236,13 +236,13 @@ export default function DepartmentSection({
           >
             <p>BROWSE BY</p>
             <h2>
-              {/* DEPARTMENT OF <span>PHARMACY</span> {schoolName} */}
+              
               {(() => {
                 const words = schoolName?.split(" ") || [];
                 const last = words.pop();
                 return (
                   <>
-                    {words.join(" ")} <span>{last}</span>
+                    Department of <span>{last}</span>
                   </>
                 );
               })()}
