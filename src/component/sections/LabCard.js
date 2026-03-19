@@ -11,6 +11,46 @@ import "swiper/css/effect-fade";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
+const ITEMS_LIMIT = 10;
+
+function ListGroup({ listGroup }) {
+  const [expanded, setExpanded] = useState(false);
+
+  if (!listGroup?.length) return null;
+
+  const hasMore = listGroup.length > ITEMS_LIMIT;
+  const visibleItems = expanded ? listGroup : listGroup.slice(0, ITEMS_LIMIT);
+
+  return (
+    <>
+      <ul>
+        {visibleItems.map((listItem, listIdx) => (
+          <li key={listIdx}>{listItem.list}</li>
+        ))}
+      </ul>
+      {hasMore && (
+        <button
+          type="button"
+          onClick={() => setExpanded((prev) => !prev)}
+          className="read-more-btn"
+        >
+          {expanded ? "Read Less" : "Read More"}
+          <Image
+            src="/images/icons/read_more.png"
+            alt="arrow"
+            width={22}
+            height={22}
+            style={{
+              transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.3s ease",
+            }}
+          />
+        </button>
+      )}
+    </>
+  );
+}
+
 export default function LabCard({ data }) {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -79,18 +119,13 @@ export default function LabCard({ data }) {
                               dangerouslySetInnerHTML={{ __html: item.title }}
                             />
                           )}
-                          {item?.description &&
-                            item?.description.length > 0 &&
-                            item.description?.map((singleDes, desIdx) => (
+                          {item?.description?.length > 0 &&
+                            item.description.map((singleDes, desIdx) => (
                               <p key={desIdx}>{singleDes.description}</p>
                             ))}
-                          {item?.listGroup && (
-                            <ul>
-                              {item.listGroup?.map((listItem, listIdx) => (
-                                <li key={listIdx}>{listItem.list}</li>
-                              ))}
-                            </ul>
-                          )}
+
+                          {/* ✅ Read more/less handled inside isolated component */}
+                          <ListGroup listGroup={item?.listGroup} />
                         </div>
                       </div>
                     </div>

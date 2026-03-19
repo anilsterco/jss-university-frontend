@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function EligibilityPrograms({ data }) {
-  const [activeTab, setActiveTab] = useState("eligi_tab_01");
+  const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -19,97 +19,86 @@ export default function EligibilityPrograms({ data }) {
   if (!data || data.length === 0) return null;
 
   const eligibilitySection = data.find((sec) => sec.type === "eligibilityData");
-  const programsSection = data.find((sec) => sec.type === "programsDesc");
-  const programs = programsSection?.items || [];
+  const eligibilityItem = eligibilitySection?.items[0];
+  const tabs = eligibilityItem?.tabsGroup || [];
 
-  const tabMapping = {
-    eligi_tab_01: "Undergraduate Programs",
-    eligi_tab_02: "Post graduate programs",
-    eligi_tab_03: "Pharmacy Programs",
-  };
+  // Set initial active tab to first tab's name on first render
+  if (activeTab === null && tabs.length > 0) {
+    setActiveTab(tabs[0].tabName);
+  }
 
-  const apiTabNameMapping = {
-    eligi_tab_01: "Under Graduate",
-    eligi_tab_02: "Post graduate programs",
-    eligi_tab_03: "Pharmacy Programs",
-  };
-
-  const getProgramsByTab = (tabId) => {
-    const tabName = apiTabNameMapping[tabId];
-    return programs
-      .filter((p) => p.tabName === tabName)
-      .sort((a, b) => a.position - b.position);
-  };
+  const activeTabData = tabs.find((tab) => tab.tabName === activeTab);
 
   return (
-    <section
-      className={`eligibilty_main `}
-      id={`${eligibilitySection?.items[0]?.sectionId}`}
-    >
+    <section className="eligibilty_main" id={eligibilityItem?.sectionId}>
       <div className="container">
         <div className="eligib_grid_ad">
           <div className="eligib_cont">
-            {eligibilitySection?.items[0]?.subheading && (
-              <h5>{eligibilitySection.items[0].subheading}</h5>
+            {eligibilityItem?.subheading && (
+              <h5>{eligibilityItem.subheading}</h5>
             )}
-            {eligibilitySection?.items[0]?.heading && (
+            {eligibilityItem?.heading && (
               <h2
-                dangerouslySetInnerHTML={{
-                  __html: eligibilitySection.items[0].heading,
-                }}
+                dangerouslySetInnerHTML={{ __html: eligibilityItem.heading }}
               />
             )}
 
             <div className="edigiblity_tabs">
+              {/* — Dynamic Tab Nav — */}
               <nav className="growth-tabs">
                 <ul>
-                  {Object.entries(tabMapping).map(([tabId, tabLabel]) => (
-                    <li key={tabId}>
+                  {tabs.map((tab) => (
+                    <li key={tab.tabName}>
                       <button
                         type="button"
-                        className={activeTab === tabId ? "active" : ""}
-                        onClick={() => setActiveTab(tabId)}
+                        className={activeTab === tab.tabName ? "active" : ""}
+                        onClick={() => setActiveTab(tab.tabName)}
                       >
-                        {tabLabel}
+                        {tab.tabName}
                       </button>
                     </li>
                   ))}
                 </ul>
               </nav>
 
+              {/* — Dynamic Tab Content — */}
               <div className="eligi_tab_con">
-                {Object.keys(tabMapping).map((tabId) => {
-                  const tabPrograms = getProgramsByTab(tabId);
-                  return (
-                    <div
-                      key={tabId}
-                      id={tabId}
-                      className={`growth-item ${activeTab === tabId ? "active" : ""}`}
-                    >
-                      {activeTab === tabId &&
-                        tabPrograms.map((program, i) => (
-                          <div key={i}>
-                            {program.points[0].length >
-                            (
-                              <ul>
-                                {program.points.map((point, idx) => (
-                                  <li key={idx}>{point.text}</li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
+                {activeTabData && (
+                  <div className="growth-item active">
+                    {/* Tab title */}
+                    {activeTabData.tabTitle && (
+                      <h3>{activeTabData.tabTitle}</h3>
+                    )}
+
+                    {/* Tab descriptions */}
+                    {activeTabData.tabDesc?.length > 0 && (
+                      <div className="tab-desc">
+                        {activeTabData.tabDesc.map((item, idx) => (
+                          <p key={idx}>{item.desc}</p>
                         ))}
-                    </div>
-                  );
-                })}
+                      </div>
+                    )}
+
+                    {/* Tab list items */}
+                    {activeTabData.tabLists?.length > 0 && (
+                      <ul>
+                        {activeTabData.tabLists.map((item, idx) => (
+                          <li key={idx}>{item.list}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
-          {eligibilitySection?.items[0]?.image && (
+
+          {/* — Eligibility Image — */}
+          {eligibilityItem?.image && (
             <div className="eligib_imgsec">
               <figure className="shine-effect">
                 <Image
-                  src={eligibilitySection.items[0].image}
+                  src={eligibilityItem.image}
                   alt="Eligibility"
                   width={1390}
                   height={550}
