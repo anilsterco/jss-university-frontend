@@ -1440,6 +1440,19 @@
   font: var(--font-18);
 }
 
+.about_two.labs_group_section .early-slide .read-more-btn{
+  font: var(--font-16);
+    color: #16344e;
+    background: none;
+    font-weight: 500;
+    border: none !important;
+    margin-top:2rem;
+}
+
+.about_two.labs_group_section .early-slide .read-more-btn img{
+  margin-left: 1rem;
+}
+
 /* .labs_group_section .single_lab_card{
   margin-top:7rem;
 } */
@@ -1690,6 +1703,80 @@
 
 .department-page .program_section_2 .programs-2{
   grid-template-columns: repeat(2, 1fr);
+}
+
+
+.accordion_section{
+    padding:10rem 0;
+}
+
+.accordion_section .faqAnswer .sub_title{
+  font:var(--font-21);
+  font-weight:500;
+  margin-bottom:1.5rem;
+}
+
+.accordion_section .faqAnswer ul{
+  margin-top:2rem;
+}
+
+
+/* admission page */
+
+.admission .eligib_cont h5{
+  font: var(--font-26);
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.admission .eligib_cont h2{
+  font: var(--font-42);
+  line-height: 4.2rem;
+  font-weight: bold;
+  letter-spacing: -2.02px;
+  text-transform: uppercase;
+  font-family: var(--font-Condensed);
+}
+
+.admission .eligi_tab_con{
+  padding:0;
+  margin-top:4rem;
+}
+
+.admission .eligi_tab_con h3{
+  font: var(--font-21);
+  line-height: 3rem;
+  font-weight: 500;
+  color:#fff;
+  margin-bottom: 3rem;
+}
+
+.admission .eligi_tab_con .tab-desc p{
+  padding:0;
+  margin:0;
+  font:var(--font-16);
+  font-weight: normal;
+}
+
+.admission .eligi_tab_con .tab-desc p:not(:last-child){
+  margin-bottom:1rem;
+}
+
+.admission .eligi_tab_con ul{
+  margin:0;
+  padding:0;
+margin-top:3rem;
+
+}
+
+.admission .eligi_tab_con li{
+  font:var(--font-16);
+  line-height:2.4rem;
+  font-weight: 300;
+}
+
+.admission .eligi_tab_con li:not(:last-child){
+  margin-bottom:3rem;
 }
 
 

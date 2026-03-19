@@ -66,6 +66,7 @@ import TableContent from "@/component/sections/TableContent";
 import TabsContents from "@/component/sections/TabsContents";
 import FaqPage from "@/pages/faq/Faq";
 import Accordions from "@/component/sections/Accordions";
+import Accordion from "@/component/sections/Accordion";
 
 async function fetchPageData(slug) {
   try {
@@ -180,6 +181,7 @@ export default async function DynamicPage({ params }) {
     tabsContents: TabsContents,
     labCard: LabCard,
     table_section_tabs: Accordions,
+    accordion: Accordion,
   };
 
   return (
