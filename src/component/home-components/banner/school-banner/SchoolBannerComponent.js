@@ -30,7 +30,7 @@ export default function SchoolSlider({
       ? "Schools of"
       : currentSlug == "college-of-pharmacy"
         ? "College of"
-        : "Departments of";
+        : "Department of";
 
   useEffect(() => {
     AOS.init({
