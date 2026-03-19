@@ -130,8 +130,12 @@ export default function LeadershipDetailsPage({ params }) {
               <div className="leader_row">
                 <div className="leader_col">
                   <div className="leadership_two_cnt">
-                    <h5>{sections.about.description[0]}</h5>
-                    <p>{sections.about.description[1]}</p>
+                    <h5>{sections.about?.description[0]}</h5>
+                    {sections?.about?.description?.map((desc, descIdx) => {
+                      if (descIdx != 0) {
+                        return <p key={descIdx}>{desc}</p>;
+                      }
+                    })}
                   </div>
                 </div>
                 {/* <div className="leader_col">
@@ -233,9 +237,7 @@ export default function LeadershipDetailsPage({ params }) {
             </div>
           </div>
         </section>
-
       )}
-
     </main>
   );
 }

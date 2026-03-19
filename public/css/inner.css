@@ -6338,6 +6338,10 @@
   font: var(--font-16);
   color: var(--color-black);
   line-height: 2.8rem;
+}
+
+.leadership_two_cnt p:last-child{
+
   padding-bottom: 7.2rem;
 }
 
