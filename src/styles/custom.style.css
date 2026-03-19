@@ -6801,3 +6801,16 @@ hr {
 .department-master-of-computer-applications-facilities .department-facilities .image_content_repeat_section {
     padding-block: 10rem 10rem;
 }
+/* .department-computer-science-and-engineering-it-placements .iqac_master:first-child{
+  background-color: #000;
+} */
+.department-page.department-computer-science-and-engineering-it-placements .table_section.bg-gray {
+
+  background-color: var(--color-white);
+}
+.placement_section1 {
+    padding: 10rem 0 0 0;
+}
+.placement-sec2 {
+    padding-bottom: 10rem;
+}
