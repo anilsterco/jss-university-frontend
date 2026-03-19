@@ -17,10 +17,10 @@ const TableContent = ({ data }) => {
 
   return (
     <section
-      className={`${styles.tableContentSection} ${styles[data?.sectionType]}`}
+      className={`${styles.tableContentSection} ${styles[data?.sectionType]} tableContentSection`}
     >
       <div className="container">
-        <div className={styles.grid}>
+        <div className={`${styles.grid} grid_row`}>
           {data?.leftTitle && data?.leftTable && (
             <div className="left_col">
               {data?.leftTitle && (
@@ -80,7 +80,7 @@ const TableContent = ({ data }) => {
             )}
           
 
-          <div className={styles.right_col}>
+          <div className={`${styles.right_col} right_col`}>
             <div className={styles.border_col}>
               {data?.rightTitle && (
                 <h4 className={styles.right_title}>{data?.rightTitle}</h4>

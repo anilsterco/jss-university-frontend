@@ -1,88 +1,90 @@
-.table_section{
-  padding:0;
-  background:transparent;
+.table_section {
+  padding: 0;
+  background: transparent;
 }
 
-.tableContentSection{
-  padding:10rem 0;
+.tableContentSection {
+  padding: 10rem 0;
 }
 
-.tableContentSection.blue{
-  background:#00489A;
+.tableContentSection.blue {
+  background: #00489A;
 }
 
-.tableContentSection .left_title{
+.tableContentSection .left_title {
   font: var(--font-26);
   color: #fff;
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
-.tableContentSection .grid{
+.tableContentSection .grid {
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5.4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 5.4rem;
 }
 
-.tableContentSection .tableLab{
-min-width: auto;
+.tableContentSection .tableLab {
+  min-width: auto;
 }
+
+
 
 /* .tableContentSection .tableLab th,
 .tableContentSection .tableLab td{
   padding: 1.5rem 1.2rem;
 } */
 
-.tableContentSection .right_col .border_col{
+.tableContentSection .right_col .border_col {
   border: 1px solid #DFDFDF;
-  padding:4rem 3rem;
+  padding: 4rem 3rem;
 }
 
-.tableContentSection .right_col .right_title{
+.tableContentSection .right_col .right_title {
   font: var(--font-26);
   color: #fff;
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
-.tableContentSection .right_col ul{
-  padding:0;
-  margin:0;
+.tableContentSection .right_col ul {
+  padding: 0;
+  margin: 0;
 }
 
-.tableContentSection .right_col .li{
+.tableContentSection .right_col .li {
   font: var(--font-16);
   color: #fff;
   line-height: 2.8rem;
-  position:relative;
+  position: relative;
   list-style-position: inside;
   list-style: none;
   padding-left: 2.2rem;
 }
 
-.tableContentSection .right_col .li:not(:last-child){
-  margin-bottom:1.5rem;
+.tableContentSection .right_col .li:not(:last-child) {
+  margin-bottom: 1.5rem;
 }
 
-.tableContentSection .right_col .li:before{
+.tableContentSection .right_col .li:before {
   content: "";
-    background-color: var(--color-100);
-    border-radius: 5rem;
-    width: .7rem;
-    height: .7rem;
-    position: absolute;
-    top: 1rem;
-    left: 0;
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: 1rem;
+  left: 0;
 }
 
-.tableContentSection .right_description{
-  margin-top:3rem;
+.tableContentSection .right_description {
+  margin-top: 3rem;
 }
 
-.tableContentSection .right_description p{
+.tableContentSection .right_description p {
   font: var(--font-16);
   color: #fff;
   line-height: 2.8rem;
 }
 
-.tableContentSection .rightTable{
-  margin-top:3rem;
+.tableContentSection .rightTable {
+  margin-top: 3rem;
 }
