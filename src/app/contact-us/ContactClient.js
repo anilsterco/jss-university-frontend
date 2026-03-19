@@ -6,9 +6,7 @@ import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
-
-const BASE_URL = "https://project-demo.in/jss/api/contact-info";
-const Courses_List_URL = "https://project-demo.in/jss/api/course-list";
+import { BASE_URL } from "@/config/config";
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({
@@ -33,7 +31,7 @@ export default function ContactClient() {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const res = await fetch(BASE_URL);
+        const res = await fetch(`${BASE_URL}contact-info`);
         const data = await res.json();
         setContactUsData(data.data[0] || []);
       } catch (err) {
@@ -45,7 +43,7 @@ export default function ContactClient() {
 
     const fetchCourseList = async () => {
       try {
-        const res = await fetch(Courses_List_URL);
+        const res = await fetch(`${BASE_URL}course-list`);
         const data = await res.json();
         setCourseList(data.data);
       } catch (err) {
@@ -81,7 +79,9 @@ export default function ContactClient() {
     e.preventDefault();
 
     if (!captchaToken) {
-      setCaptchaError("Please complete the reCAPTCHA to verify you are not a robot.");
+      setCaptchaError(
+        "Please complete the reCAPTCHA to verify you are not a robot.",
+      );
       return;
     }
     setCaptchaError("");
@@ -115,7 +115,8 @@ export default function ContactClient() {
       // Show success message in green
       setSubmitStatus({
         type: "success",
-        message: "Form submitted successfully! Our counselor will get in touch with you soon."
+        message:
+          "Form submitted successfully! Our counselor will get in touch with you soon.",
       });
 
       setFormData({
@@ -134,7 +135,8 @@ export default function ContactClient() {
       // Show error message in red
       setSubmitStatus({
         type: "error",
-        message: "An error occurred while submitting the form. Please try again."
+        message:
+          "An error occurred while submitting the form. Please try again.",
       });
       if (recaptchaRef.current) recaptchaRef.current.reset();
       setCaptchaToken(null);
@@ -193,12 +195,21 @@ export default function ContactClient() {
                         padding: "12px 16px",
                         borderRadius: "8px",
                         marginBottom: "20px",
-                        backgroundColor: submitStatus.type === "success" ? "#d4edda" : "#f8d7da",
-                        color: submitStatus.type === "success" ? "#155724" : "#721c24",
-                        border: submitStatus.type === "success" ? "1px solid #c3e6cb" : "1px solid #f5c6cb",
+                        backgroundColor:
+                          submitStatus.type === "success"
+                            ? "#d4edda"
+                            : "#f8d7da",
+                        color:
+                          submitStatus.type === "success"
+                            ? "#155724"
+                            : "#721c24",
+                        border:
+                          submitStatus.type === "success"
+                            ? "1px solid #c3e6cb"
+                            : "1px solid #f5c6cb",
                         fontSize: "14px",
                         fontWeight: "500",
-                        textAlign: "center"
+                        textAlign: "center",
                       }}
                     >
                       {submitStatus.message}
@@ -291,10 +302,16 @@ export default function ContactClient() {
                         </label>
                       </div>
 
-                      <div className={styles.Form_fild} style={{ marginBottom: captchaError ? "5px" : "20px" }}>
+                      <div
+                        className={styles.Form_fild}
+                        style={{ marginBottom: captchaError ? "5px" : "20px" }}
+                      >
                         <ReCAPTCHA
                           ref={recaptchaRef}
-                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "YOUR_SITE_KEY_HERE"}
+                          sitekey={
+                            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+                            "YOUR_SITE_KEY_HERE"
+                          }
                           onChange={(token) => {
                             setCaptchaToken(token);
                             if (token) setCaptchaError("");
@@ -302,7 +319,14 @@ export default function ContactClient() {
                         />
                       </div>
                       {captchaError && (
-                        <p style={{ color: "red", fontSize: "14px", marginTop: "0", marginBottom: "15px" }}>
+                        <p
+                          style={{
+                            color: "red",
+                            fontSize: "14px",
+                            marginTop: "0",
+                            marginBottom: "15px",
+                          }}
+                        >
                           {captchaError}
                         </p>
                       )}
@@ -324,7 +348,10 @@ export default function ContactClient() {
                     <p className={styles.address}>{contactUsData.address}</p>
                   </li>
                   <li>
-                    <a href={`mailto:${contactUsData.email}`} className={styles.ContactAdd}>
+                    <a
+                      href={`mailto:${contactUsData.email}`}
+                      className={styles.ContactAdd}
+                    >
                       <MdMailOutline
                         color="#018ce8"
                         fontSize={16}
@@ -333,13 +360,16 @@ export default function ContactClient() {
                       <span>{contactUsData.email}</span>
                     </a>
 
-                    <a href={`tel:${contactUsData.phone}`} className={styles.ContactAdd}>
+                    <a
+                      href={`tel:+${contactUsData.phone}`}
+                      className={styles.ContactAdd}
+                    >
                       <BiPhoneCall
                         color="#018ce8"
                         fontSize={16}
                         className={styles.ContactIcons}
                       />
-                      <span>{contactUsData.phone}</span>
+                      <span>+{contactUsData.phone}</span>
                     </a>
                   </li>
                 </ul>

@@ -6311,11 +6311,11 @@
   position: relative;
 }
 
-/* .leader_row {
+.testimonials-page .leader_row {
   display: grid;
   grid-template-columns: repeat(1, 47% auto);
   gap: 8.6rem;
-} */
+}
 
 .leadership_two_cnt::before {
   width: 60%;
@@ -6835,6 +6835,14 @@
 @media screen and (max-width:991px) {
   .leader_row {
     display: block;
+  }
+
+  .testimonials-page .leader_row {
+    display: block;
+  }
+
+  .testimonials-page .leader_row .leadership_two_img figure{
+    max-width: 100%;
   }
 
   .faci_diff_tabs .faci_accordion {
@@ -7647,6 +7655,11 @@
 
   .leadership_dtls_two {
     padding-block: 1rem;
+  }
+
+  .testimonials-page .leadership_dtls_two {
+    padding-top:5rem;
+    padding-bottom:5rem;
   }
 
   .message_img figure img {

@@ -21,31 +21,8 @@ export default function TestimonialDetail({ data }) {
       <section className="leadership_dtls_two testimonial_detail_section">
         <div className="container">
           <div className="row">
-            <div className="col-lg-11">
+            <div className="col-lg-12">
               <div className="leader_row">
-                {/* Left — text content */}
-                <div className="leader_col">
-                  <div className="leadership_two_cnt extra_details">
-                    {data.title && <h5>{data.title}</h5>}
-                    {data.short_description && <p>{data.short_description}</p>}
-                    {data.description && <p>{data.description}</p>}
-
-                    {(data.course || data.batch) && (
-                      <p className="testimonial-course">
-                        {[data.course, data.batch].filter(Boolean).join(" · ")}
-                      </p>
-                    )}
-
-                    {data.company && (
-                      <p className="testimonial-company">{data.company}</p>
-                    )}
-
-                    {data.location && (
-                      <p className="testimonial-location">{data.location}</p>
-                    )}
-                  </div>
-                </div>
-
                 {/* Right — image + name + designation */}
                 <div className="leader_col">
                   <div className="leadership_two_img right_col">
@@ -71,6 +48,28 @@ export default function TestimonialDetail({ data }) {
                     {data.name && <h5 className="name">{data.name}</h5>}
                     {data.designation && (
                       <p className="designation">{data.designation}</p>
+                    )}
+                  </div>
+                </div>
+                {/* Left — text content */}
+                <div className="leader_col">
+                  <div className="leadership_two_cnt extra_details">
+                    {data.title && <h5>{data.title}</h5>}
+                    {data.short_description && <p>{data.short_description}</p>}
+                    {data.description && <p>{data.description}</p>}
+
+                    {(data.course || data.batch) && (
+                      <p className="testimonial-course">
+                        {[data.course, data.batch].filter(Boolean).join(" · ")}
+                      </p>
+                    )}
+
+                    {data.company && (
+                      <p className="testimonial-company">{data.company}</p>
+                    )}
+
+                    {data.location && (
+                      <p className="testimonial-location">{data.location}</p>
                     )}
                   </div>
                 </div>

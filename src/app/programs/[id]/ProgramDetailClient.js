@@ -156,7 +156,7 @@ export default function ProgramDetailClient({ params }) {
               <div className="program-detail-text">
                 <div className="innnr_head">
                   <h2>PROGRAMS</h2>
-                  <h3>{name}</h3>
+                  {name && <h3>{name}</h3>}
                 </div>
               </div>
             </figcaption>
@@ -175,11 +175,15 @@ export default function ProgramDetailClient({ params }) {
                       <p>Admission Open for</p>
                       <h2>{admissionSection?.academic_year || "2025-26"}</h2>
                     </div>
+
                     <div className="overview-duration">
-                      <div className="overview-duration-text">
-                        <span>Course duration</span>
-                        <p>{admissionSection?.course_duration}</p>
-                      </div>
+                      {admissionSection?.course_duration && (
+                        <div className="overview-duration-text">
+                          <span>Course duration</span>
+                          <p>{admissionSection.course_duration}</p>
+                        </div>
+                      )}
+
                       {admissionSection?.annual_fees && (
                         <div className="fees">
                           <span>Annual Fees</span>
@@ -277,56 +281,56 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-        <section className="eligibility-sec" id="eligibilitySec">
-          <div className="containerMD">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="eligibility-img">
-                  <figure>
-                    {overview?.overview_image && (
-                      <Image
-                        src={overview.overview_image}
-                        alt="Overview"
-                        width={1200}
-                        height={400}
-                        className="img-fluid w-100"
-                      />
-                    )}
-                  </figure>
+      <section className="eligibility-sec" id="eligibilitySec">
+        <div className="containerMD">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="eligibility-img">
+                <figure>
+                  {overview?.overview_image && (
+                    <Image
+                      src={overview.overview_image}
+                      alt="Overview"
+                      width={1200}
+                      height={400}
+                      className="img-fluid w-100"
+                    />
+                  )}
+                </figure>
+              </div>
+            </div>
+            {eligibility?.eligibility_criteria && (
+              <div className="col-lg-9">
+                <div className="rank-box">
+                  <h6>Eligibility Criteria</h6>
+                  <div className="rank-text">
+                    <div className="left-rank-text">
+                      <h2>{eligibility.eligibility_criteria}</h2>
+                    </div>
+                    <div className="right-rank-text">
+                      <p>{eligibility.eligibility_criteria_desc}</p>
+                    </div>
+                  </div>
+                  {eligibility?.eligibility_criteria_notices?.length > 0 && (
+                    <div className="seats">
+                      {eligibility.eligibility_criteria_notices[0] && (
+                        <div className="seats-left-text">
+                          <p>{eligibility.eligibility_criteria_notices[0]}</p>
+                        </div>
+                      )}
+                      {eligibility.eligibility_criteria_notices[1] && (
+                        <div className="seats-right-text">
+                          <p>{eligibility.eligibility_criteria_notices[1]}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
-              {eligibility?.eligibility_criteria && (
-                <div className="col-lg-9">
-                  <div className="rank-box">
-                    <h6>Eligibility Criteria</h6>
-                    <div className="rank-text">
-                      <div className="left-rank-text">
-                        <h2>{eligibility.eligibility_criteria}</h2>
-                      </div>
-                      <div className="right-rank-text">
-                        <p>{eligibility.eligibility_criteria_desc}</p>
-                      </div>
-                    </div>
-                    {eligibility?.eligibility_criteria_notices?.length > 0 && (
-                      <div className="seats">
-                        {eligibility.eligibility_criteria_notices[0] && (
-                          <div className="seats-left-text">
-                            <p>{eligibility.eligibility_criteria_notices[0]}</p>
-                          </div>
-                        )}
-                        {eligibility.eligibility_criteria_notices[1] && (
-                          <div className="seats-right-text">
-                            <p>{eligibility.eligibility_criteria_notices[1]}</p>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
       <section className="educational-sec">
         <div className="container">
