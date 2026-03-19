@@ -309,6 +309,69 @@
   padding-top: 5rem;
 }
 
+.department-computer-science-and-engineering-it-research .tableContentSection .grid {
+  grid-template-columns: 1fr;
+}
+
+.tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__grid {
+  grid-template-columns: 1fr;
+}
+
+.ed_schol_list::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.ed_schol_list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ed_schol_list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.ed_schol_list:-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.ed_schol_list table th:nth-child(1) {
+      min-width: 13rem;
+}
+
+.ed_schol_list table th:nth-child(2) {
+      min-width: 30rem;;
+}
+
+.ed_schol_list table th:nth-child(3) {
+      min-width: 30rem;
+}
+
+.ed_schol_list table th:nth-child(4) {
+     min-width: 30rem;
+}
+.ed_schol_list table th:nth-child(5) {
+     min-width: 50rem;
+}
+.ed_schol_list table th:nth-child(6) {
+     min-width: 30rem;
+}
+
+.ed_schol_list table th:nth-child(7) {
+     min-width: 30rem;
+}
+.ed_schol_list table th:nth-child(8) {
+     min-width: 30rem;
+}
+.ed_schol_list table th:nth-child(9) {
+     min-width: 30rem;
+}
+.ed_schol_list table th:nth-child(10) {
+     min-width: 30rem;
+}
+.department-computer-science-and-engineering-it-research .tableContentSection .grid_row {
+  grid-template-columns: 1fr;
+}
+
 
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
@@ -6358,7 +6421,7 @@
   line-height: 2.8rem;
 }
 
-.leadership_two_cnt p:last-child{
+.leadership_two_cnt p:last-child {
 
   padding-bottom: 7.2rem;
 }
