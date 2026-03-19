@@ -1477,7 +1477,7 @@
 
 .labs_group_section.about_two .about_two.reverse .early_rgt{
   padding-left:0;
-  padding-right: 8.4rem;
+  padding-right: 7rem;
 }
 
 .labs_group_section.about_two .about_two.reverse .imgsli_left{
@@ -6988,4 +6988,13 @@ color: #ffc100;
 .department-management-studies-placements .amenities_section .grid_group {
     background: #fff;
     padding: 4rem;
+}
+.department-electronics-and-communication-engineering-labs img.imgsli_left {
+    height: 45rem !important;
+}
+.department-pharmaceutics-about-us .grid_card_design1_section .heading {
+    text-align: left;
+}
+.governance .table_section:nth-child(3) {
+    padding: 0rem 0 10rem;
 }
