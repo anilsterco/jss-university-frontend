@@ -3579,17 +3579,21 @@ hr {
 }
 
 .pdf_list_section ul {
-  display: flex;
-  list-style-type: none;
-  gap: 6rem;
-  margin: 0;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid #D6D6D6;
+gap: 6rem;
+    margin: 0;
+    padding-bottom: 4rem;
+    list-style-type: none;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+
 }
 
 .pdf_list_section li {
-  display: flex;
-  position: relative;
+    border-bottom: 1px solid #d6d6d6;
+    gap: 2rem;
+    display: flex;
+    position: relative;
+    padding-bottom: 1.5rem;
 }
 
 .pdf_list_section li:not(:last-child):before {
@@ -6998,3 +7002,13 @@ color: #ffc100;
 .governance .table_section:nth-child(3) {
     padding: 0rem 0 10rem;
 }
+.nirf .about_one .abt_cntnt figure img {
+    width: 28rem !important;
+    height: 20rem !important;
+    object-fit: cover;
+}
+.nirf .about_one .overlap_contents{display: none;}
+.nirf .about_one .estblish {
+    padding-block: 4rem 10rem;
+}
+.placement .procedure_box p { font: var(--font-21); font-weight: 300; }
