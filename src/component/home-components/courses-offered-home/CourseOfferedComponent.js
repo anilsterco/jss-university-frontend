@@ -190,8 +190,8 @@ export default function CoursesOffered({ data }) {
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
                   <Counter start={1} end={40} duration={2500} />
-                </h1>
                 <span className={styles.programsCountPlus}>+</span>
+                </h1>
               </div>
 
               <p className={`program-hide ${styles.programsText}`}>
