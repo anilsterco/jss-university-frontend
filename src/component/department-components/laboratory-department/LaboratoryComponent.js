@@ -67,7 +67,7 @@ export default function Laboratories({ data }) {
             <p className={styles.subtitle}>{laboratoriesData.subtitle}</p>
           )}
           {laboratoriesData.title && (
-            <h2 className={styles.title}>{laboratoriesData.title}</h2>
+            <h2 className={styles.title} dangerouslySetInnerHTML={{__html:laboratoriesData.title}} />
           )}
           {laboratoriesData.description && (
             <p className={styles.description}>{laboratoriesData.description}</p>

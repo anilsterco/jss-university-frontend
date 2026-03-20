@@ -18,8 +18,8 @@ export default function HappeningsClient({ className }) {
 
   const tabs = [
     { id: "news", label: "News & Events", component: NewsEvents },
-    { id: "gallery", label: "Gallery", component: Gallery },
-    { id: "media", label: "Media Coverage", component: MediaCoverage },
+    // { id: "gallery", label: "Gallery", component: Gallery },
+    // { id: "media", label: "Media Coverage", component: MediaCoverage },
     { id: "press", label: "Press Release", component: NoticeAnnouncement },
   ];
 

@@ -23,16 +23,21 @@
 }
 
 .title {
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(to right, #fff 28%, #ffc100 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  /* background: linear-gradient(to right, #fff 28%, #ffc100 100%); */
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
   width: 100%;
   margin-bottom: 0.75rem;
   font: var(--font-60);
   font-family: var(--font-Condensed);
   font-weight: 700;
   letter-spacing: -2.88px;
+  color: #fff;
+      text-transform: uppercase;
+}
+.title span{
+  color: #018CE8;
 }
 
 .description {

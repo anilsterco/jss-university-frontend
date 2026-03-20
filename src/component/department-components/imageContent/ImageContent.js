@@ -34,6 +34,11 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.heading && (
               <h4 className={`${styles.heading} head`}>{data.heading}</h4>
             )}
+            {data?.headingPara && <div className="heading_para_group">
+              {data?.headingPara?.map((singlePara, paraIdx)=>(
+              <p key={paraIdx} className={`${styles.headingPara} head`}>{singlePara.para}</p>
+            ))}
+            </div> }
             {data?.subHeading && (
               <h5 className={styles.subHeading}>{data.subHeading}</h5>
             )}
