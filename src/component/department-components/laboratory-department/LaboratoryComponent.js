@@ -5,8 +5,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
+import { WEB_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 
 export default function Laboratories({ data }) {
+  const pathname = usePathname();
   // Dynamic data structure
   // const laboratoriesData = {
   //   subtitle: "LABORATORIES",
@@ -57,6 +60,10 @@ export default function Laboratories({ data }) {
   const labs = laboratoriesData.labs || [];
   const applyButton = laboratoriesData.applyButton || { text: "", url: "#" };
   const mainUrl = laboratoriesData.url || "#";
+  const pathParts = pathname.split("/").filter(Boolean);
+
+  const pageType = pathParts[0];
+  const departmentSlug = pathParts[1];
 
   return (
     <div className={styles.dep_cutting_edge}>
@@ -72,7 +79,7 @@ export default function Laboratories({ data }) {
           {laboratoriesData.description && (
             <p className={styles.description}>{laboratoriesData.description}</p>
           )}
-          <Link href={mainUrl || "#"}>
+          <Link href={WEB_URL + pageType + `/${departmentSlug}/` + mainUrl || "#"}>
             <SlArrowRightCircle fontSize={20} color="white" />
           </Link>
         </div>
@@ -98,7 +105,7 @@ export default function Laboratories({ data }) {
             >
               {labs.map((lab) => (
                 <SwiperSlide key={lab.id} className={styles.facultyCard}>
-                  <Link href={`/${lab.url || "#"}`} key={lab.id}>
+                  {/* <Link href={`/${lab.url || "#"}`} key={lab.id}> */}
                     <Image
                       src={lab.img || "/images/default-lab.png"}
                       alt={lab.title || "Lab Image"}
@@ -111,9 +118,9 @@ export default function Laboratories({ data }) {
                     <div className={styles.gradientOverlay}></div>
                     <div className={styles.labInfo}>
                       <h3 className={styles.labTitle}>{lab.title || ""}</h3>
-                      <SlArrowRightCircle fontSize={20} color="white" />
+                      {/* <SlArrowRightCircle fontSize={20} color="white" /> */}
                     </div>
-                  </Link>
+                  {/* </Link> */}
                 </SwiperSlide>
               ))}
             </Swiper>

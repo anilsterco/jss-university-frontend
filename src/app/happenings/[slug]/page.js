@@ -3,12 +3,14 @@ import { useState, use, useEffect, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import Link from "next/link";
+import { WEB_URL } from "@/config/config";
 
 const BASE_URL = "https://project-demo.in/jss/api";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
-  // { src: "/images/custom-page/shareIcon.svg" },
+  { src: "/images/custom-page/backIcon.svg" },
 ];
 
 export default function Happenings({ params }) {
@@ -49,6 +51,16 @@ export default function Happenings({ params }) {
                 </h3>
               </div>
               <ul className={styles.happIcons}>
+                {/*  onClick={() => router.back()} */}
+                <li>
+                  <Link href={`${WEB_URL}happenings`}>
+                    <img
+                      src={icons[1].src}
+                      alt={icons[1].alt}
+                      className="img-fluid w-100"
+                    />
+                  </Link>
+                </li>
                 <li onClick={handlePrint}>
                   <img
                     src={icons[0].src}
@@ -56,13 +68,6 @@ export default function Happenings({ params }) {
                     className="img-fluid w-100"
                   />
                 </li>
-                {/* <li onClick={() => router.back()}>
-                  <img
-                    src={icons[1].src}
-                    alt={icons[1].alt}
-                    className="img-fluid w-100"
-                  />
-                </li> */}
               </ul>
             </div>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
@@ -77,6 +77,7 @@ export default function CoursesOffered({ data }) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const searchRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
@@ -105,6 +106,18 @@ export default function CoursesOffered({ data }) {
 
     return () => clearTimeout(delay);
   }, [query]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setResults([]);
+        setHasSearched(false);
+        // keeps the query text intact, just hides dropdown
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <section className={`second-section cource-sec ${styles.secondSection}`}>
@@ -140,6 +153,7 @@ export default function CoursesOffered({ data }) {
               className="search-wrapper position-relative"
               data-aos="fade-up"
               data-aos-delay="300"
+              ref={searchRef}
             >
               <div className="input-group programs_search overflow-hidden">
                 <input
@@ -165,6 +179,10 @@ export default function CoursesOffered({ data }) {
                         <Link
                           href={`/programs/${item.slug}`}
                           className="search-link"
+                          onClick={() => {
+                            setResults([]);
+                            setQuery("");
+                          }}
                         >
                           {item.name}
                         </Link>
@@ -190,7 +208,7 @@ export default function CoursesOffered({ data }) {
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
                   <Counter start={1} end={40} duration={2500} />
-                <span className={styles.programsCountPlus}>+</span>
+                  <span className={styles.programsCountPlus}>+</span>
                 </h1>
               </div>
 

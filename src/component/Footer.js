@@ -125,11 +125,14 @@ export default function Footer() {
                     <li>
                       <a href={`mailto:${data.email}`}>{data.email}</a>
                     </li>
-                    {data.landlines.map((line, i) => (
-                      <li key={i}>
-                        <a href="#">{line}</a>
-                      </li>
-                    ))}
+                    {data.landlines.map((line, i) => {
+                      const digits = line.replace(/[^\d+]/g, "");
+                      return (
+                        <li key={i}>
+                          <a href={`tel:${digits}`}>{line}</a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -458,8 +461,11 @@ export default function Footer() {
           position: relative;
           font: var(--font-12);
           color: #ffffff80;
-          font-weight: 300;
+          font-weight: 300;transition: 0.5s;
         }
+           .connect_contant ul li a:hover{
+               color: #fff;}
+
         .connect_contant ul li {
           position: relative;
         }

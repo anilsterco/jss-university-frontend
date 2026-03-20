@@ -106,7 +106,7 @@ export default function FacilitiesComponent({ data }) {
           >
             {data?.map((lab) => (
               <SwiperSlide key={lab.id} className={styles.facultyCard}>
-                <Link
+                {/* <Link
                   href={
                     WEB_URL +
                     pageType +
@@ -115,7 +115,7 @@ export default function FacilitiesComponent({ data }) {
                     "/facilities#" +
                     lab.url
                   }
-                >
+                > */}
                   <Image
                     src={lab.img}
                     alt={lab.title}
@@ -126,9 +126,9 @@ export default function FacilitiesComponent({ data }) {
                   />
                   <div className={styles.labInfo}>
                     <h3 className={styles.labTitle}>{lab.title}</h3>
-                    <SlArrowRightCircle className={styles.labIcon} />
+                    {/* <SlArrowRightCircle className={styles.labIcon} /> */}
                   </div>
-                </Link>
+                {/* </Link> */}
               </SwiperSlide>
             ))}
           </Swiper>
