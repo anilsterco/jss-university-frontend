@@ -5506,13 +5506,20 @@
 
 .research .grands_maingrid {
   grid-template-columns: 49.45% 50.5%;
+  padding-bottom: 0;
 }
 
+.research .grands_mainsec{
+  padding-bottom: 0;
+}
 
+.regulations .pdf_list_section:not(:last-child) {
+  padding-bottom: 0;
+}
 
-
-
-
+.outreach .image_content_repeat_section:nth-child(odd) {
+  background-color: var(--color-white);
+}
 
 .exten_grid {
   grid-template-columns: 48.4% 51.5%;
