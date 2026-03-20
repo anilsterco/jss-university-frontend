@@ -135,6 +135,8 @@ export default function Header() {
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
   const [globleSearch, setglobleSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  // Add this state near other states
+  const [searchError, setSearchError] = useState("");
 
   const router = useRouter();
 
@@ -404,6 +406,11 @@ export default function Header() {
   const handleSearch = () => {
     const trimmed = searchQuery.trim();
     if (!trimmed) return;
+    if (trimmed.length < 3) {
+      setSearchError("Please enter at least 3 characters");
+      return;
+    }
+    setSearchError("");
     setglobleSearch(false);
     setSearchQuery("");
     router.push(`${WEB_URL}search?q=${encodeURIComponent(trimmed)}`);
@@ -1496,23 +1503,44 @@ export default function Header() {
             <div className={`g_search_main ${open ? "active" : ""}`}>
               <div className="g_sc_box">
                 <div className="sec_inpu_box">
-                  <input
-                    type="text"
-                    className="form-control global_search_in"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyDown={(e) => e.key == "Enter" && handleSearch()}
-                  ></input>
-                  <button
-                    type="button"
-                    className="btn global_search_btn"
-                    onClick={handleSearch}
-                  >
-                    {" "}
-                    <FiSearch size={16} />
-                  </button>
+                  <div>
+                    <input
+                      type="text"
+                      className="form-control global_search_in"
+                      placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => {
+                        setSearchQuery(e.target.value);
+                        if (e.target.value.trim().length >= 3)
+                          setSearchError("");
+                      }}
+                      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                    />
+                    <button
+                      type="button"
+                      className="btn global_search_btn"
+                      onClick={handleSearch}
+                    >
+                      <FiSearch size={16} />
+                    </button>
+                  </div>
+
+                  {searchError && (
+                    <p
+                      className="search_error"
+                      style={{
+                        color: "#b7b7b7",
+                        font: "var(--font-12)",
+                        position: "absolute",
+                        marginTop: "0.5rem",
+                      }}
+                    >
+                      {searchError}
+                    </p>
+                  )}
                 </div>
+
+                {/* Error message */}
                 <button
                   onClick={() => {
                     setglobleSearch(false);

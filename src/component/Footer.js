@@ -125,11 +125,14 @@ export default function Footer() {
                     <li>
                       <a href={`mailto:${data.email}`}>{data.email}</a>
                     </li>
-                    {data.landlines.map((line, i) => (
-                      <li key={i}>
-                        <a href="#">{line}</a>
-                      </li>
-                    ))}
+                    {data.landlines.map((line, i) => {
+                      const digits = line.replace(/[^\d+]/g, "");
+                      return (
+                        <li key={i}>
+                          <a href={`tel:${digits}`}>{line}</a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>

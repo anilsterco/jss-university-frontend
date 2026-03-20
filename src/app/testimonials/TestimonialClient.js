@@ -19,6 +19,7 @@ export default function TestimonialClient() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
   const [modalLoading, setModalLoading] = useState(false);
+  const [modalAnimate, setModalAnimate] = useState(false);
 
   const allData = useRef([]);
 
@@ -90,6 +91,7 @@ export default function TestimonialClient() {
     setModalOpen(true);
     setModalData(null);
     setModalLoading(true);
+    setModalAnimate(false); // reset
     try {
       const res = await fetch(`${BASE_URL}testimonials/${slug}`);
       if (!res.ok) throw new Error(`Detail API error: ${res.status}`);
@@ -100,6 +102,10 @@ export default function TestimonialClient() {
       setModalData(null);
     } finally {
       setModalLoading(false);
+      // Small tick so the browser registers the initial state before animating
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setModalAnimate(true));
+      });
     }
   };
 
@@ -224,73 +230,92 @@ export default function TestimonialClient() {
       </section>
 
       {/* Modal */}
+      {/* Modal */}
       {modalOpen && (
-        <div className="testimonial-modal-overlay" onClick={closeModal}>
-          <div
-            className="testimonial-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="testimonial-modal-close" onClick={closeModal}>
-              <RiCloseLargeFill size={22} />
-            </button>
+        <>
+          {/* Full page loader — shows while data is fetching */}
+          {modalLoading && (
+            <div className="modal-page-loader">
+              <div className="loader-spinner" />
+            </div>
+          )}
 
-            {modalLoading ? (
-              <div className="modal-loading">
-                <p>Loading...</p>
-              </div>
-            ) : !modalData ? (
-              <div className="modal-loading">
-                <p>Something went wrong. Please try again.</p>
-              </div>
-            ) : (
-              <div className="modal-inner">
-                <div className="modal-left">
-                  <Image
-                    src={
-                      modalData.image?.startsWith("http")
-                        ? modalData.image
-                        : `https://project-demo.in/jss/${modalData.image}`
-                    }
-                    alt={modalData.alt_text || modalData.name}
-                    width={300}
-                    height={350}
-                    style={{
-                      objectFit: "cover",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
-                </div>
-                <div className="modal-right">
-                  {modalData.title && (
-                    <h3 className="modal_title">{modalData.title}</h3>
-                  )}
-                  {modalData.name && (
-                    <h3 className="modal_name">{modalData.name}</h3>
-                  )}
-                  {modalData.designation && (
-                    <p className="modal-designation">{modalData.designation}</p>
-                  )}
-                  {modalData.company && (
-                    <p className="modal-company">{modalData.company}</p>
-                  )}
-                  {(modalData.course || modalData.batch) && (
-                    <p className="modal-course">
-                      {[modalData.course, modalData.batch]
-                        .filter(Boolean)
-                        .join(" · ")}
-                    </p>
-                  )}
-                  {modalData.message && (
-                    <div className="modal-message">
-                      <p>{modalData.message}</p>
+          {/* Modal — only mounts once data is ready */}
+          {!modalLoading && (
+            <div
+              className={`testimonial-modal-overlay ${modalAnimate ? "overlay-visible" : ""}`}
+              onClick={closeModal}
+            >
+              <div
+                className={`testimonial-modal ${modalAnimate ? "modal-visible" : ""}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="testimonial-modal-close"
+                  onClick={closeModal}
+                >
+                  <RiCloseLargeFill size={22} />
+                </button>
+
+                {!modalData ? (
+                  <div className="modal-loading">
+                    <p>Something went wrong. Please try again.</p>
+                  </div>
+                ) : (
+                  <div className="modal-inner">
+                    <div className="modal-left">
+                      <Image
+                        src={
+                          modalData.image?.startsWith("http")
+                            ? modalData.image
+                            : `https://project-demo.in/jss/${modalData.image}`
+                        }
+                        alt={modalData.alt_text || modalData.name}
+                        width={300}
+                        height={350}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
                     </div>
-                  )}
-                </div>
+                    <div className="modal-right">
+                      <div className="right_content">
+                        {modalData.title && (
+                          <h3 className="modal_title">{modalData.title}</h3>
+                        )}
+                        {modalData.name && (
+                          <h3 className="modal_name">{modalData.name}</h3>
+                        )}
+                        {modalData.designation && (
+                          <p className="modal-designation">
+                            {modalData.designation}
+                          </p>
+                        )}
+                        {modalData.company && (
+                          <p className="modal-company">{modalData.company}</p>
+                        )}
+                        {(modalData.course || modalData.batch) && (
+                          <p className="modal-course">
+                            {[modalData.course, modalData.batch]
+                              .filter(Boolean)
+                              .join(" ")}
+                          </p>
+                        )}
+                        {modalData.message && (
+                          <div className="modal-message">
+                            <p>{modalData.message}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        </div>
+            </div>
+          )}
+        </>
       )}
     </main>
   );
