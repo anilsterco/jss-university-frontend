@@ -206,8 +206,7 @@ useEffect(() => {
                 data-aos-delay="200"
               >
                 <div
-                  className={`position-relative ${styles.wallOfFameContainer} `}
-                >
+                  className={`position-relative ${styles.wallOfFameContainer} `}>
                   <Image
                     src={placementsData.hall_of_fame.image}
                     alt="Wall of Fame"
@@ -219,8 +218,7 @@ useEffect(() => {
                       borderTopLeftRadius: "10px",
                       borderBottomLeftRadius: "10px",
                       objectFit: "cover",
-                    }}
-                  />
+                    }}/>
                   <div
                     className={` ${styles.wallOfFameText}`}
                     dangerouslySetInnerHTML={{
