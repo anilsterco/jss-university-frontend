@@ -84,22 +84,22 @@ export default function Footer() {
       case "facebook":
         return <img src="/images/footer/dash_facebook.svg" />;
       case "instagram":
-        return <img src="/images/footer/dash_linkdin.svg" />;
+        return <img src="/images/footer/dash_insta.svg" />;
       case "youtube":
         return <img src="/images/footer/dash_youtube.svg" />;
       case "twitter":
-        return <img src="/images/footer/dash_insta.svg" />;
+        return <img src="/images/footer/dash_linkdin.svg" />;
       default:
         return null;
     }
   };
 
-  const socialIcons = [
-    { id: "facebook", src: "/images/footer/facebook.svg" },
-    { id: "instagram", src: "/images/footer/insta.svg" },
-    { id: "youtube", src: "/images/footer/youtube.svg" },
-    { id: "twitter", src: "/images/footer/twiter.svg" },
-  ];
+  // const socialIcons = [
+  //   { id: "facebook", src: "/images/footer/facebook.svg" },
+  //   { id: "instagram", src: "/images/footer/insta.svg" },
+  //   { id: "youtube", src: "/images/footer/youtube.svg" },
+  //   { id: "twitter", src: "/images/footer/twiter.svg" },
+  // ];
 
   return (
     <footer className="footer_section">
@@ -120,10 +120,10 @@ export default function Footer() {
                 <div className="col-md-12">
                   <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
                     <li>
-                     <a href={`tel:${data.phone}`}>{data.phone}</a>
+                      <a href={`tel:${data.phone}`}>{data.phone}</a>
                     </li>
                     <li>
-                        <a href={`mailto:${data.email}`}>{data.email}</a>
+                      <a href={`mailto:${data.email}`}>{data.email}</a>
                     </li>
                     {data.landlines.map((line, i) => (
                       <li key={i}>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { RxCaretRight } from "react-icons/rx";
+import { RiCloseLargeFill } from "react-icons/ri";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
@@ -13,6 +14,11 @@ export default function TestimonialClient() {
   const [selectedType, setSelectedType] = useState("");
   const [typesList, setTypesList] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
+  const [modalLoading, setModalLoading] = useState(false);
 
   const allData = useRef([]);
 
@@ -62,6 +68,45 @@ export default function TestimonialClient() {
       );
     }
   }, [selectedType]);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  const openModal = async (slug) => {
+    setModalOpen(true);
+    setModalData(null);
+    setModalLoading(true);
+    try {
+      const res = await fetch(`${BASE_URL}testimonials/${slug}`);
+      if (!res.ok) throw new Error(`Detail API error: ${res.status}`);
+      const data = await res.json();
+      setModalData(data.data || data);
+    } catch (err) {
+      console.error("Modal fetch error:", err);
+      setModalData(null);
+    } finally {
+      setModalLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalData(null);
+  };
 
   return (
     <main className="site_main">
@@ -126,7 +171,12 @@ export default function TestimonialClient() {
               ) : (
                 <div className="program-list-boxs faulty-list">
                   {testimonialData.map((item) => (
-                    <div className="faulty-list-box" key={item.id}>
+                    <div
+                      className="faulty-list-box"
+                      key={item.id}
+                      onClick={() => openModal(item.slug)}
+                      style={{ cursor: "pointer" }}
+                    >
                       <div className="faulty-img">
                         <figure>
                           <Image
@@ -160,10 +210,10 @@ export default function TestimonialClient() {
                           <RxCaretRight className="right-arrow" />
                         </span>
                       </div>
-                      <Link
+                      {/* <Link
                         href={`/testimonials/${item.slug}`}
                         className="streched_link"
-                      />
+                      /> */}
                     </div>
                   ))}
                 </div>
@@ -172,6 +222,76 @@ export default function TestimonialClient() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {modalOpen && (
+        <div className="testimonial-modal-overlay" onClick={closeModal}>
+          <div
+            className="testimonial-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="testimonial-modal-close" onClick={closeModal}>
+              <RiCloseLargeFill size={22} />
+            </button>
+
+            {modalLoading ? (
+              <div className="modal-loading">
+                <p>Loading...</p>
+              </div>
+            ) : !modalData ? (
+              <div className="modal-loading">
+                <p>Something went wrong. Please try again.</p>
+              </div>
+            ) : (
+              <div className="modal-inner">
+                <div className="modal-left">
+                  <Image
+                    src={
+                      modalData.image?.startsWith("http")
+                        ? modalData.image
+                        : `https://project-demo.in/jss/${modalData.image}`
+                    }
+                    alt={modalData.alt_text || modalData.name}
+                    width={300}
+                    height={350}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </div>
+                <div className="modal-right">
+                  {modalData.title && (
+                    <h3 className="modal_title">{modalData.title}</h3>
+                  )}
+                  {modalData.name && (
+                    <h3 className="modal_name">{modalData.name}</h3>
+                  )}
+                  {modalData.designation && (
+                    <p className="modal-designation">{modalData.designation}</p>
+                  )}
+                  {modalData.company && (
+                    <p className="modal-company">{modalData.company}</p>
+                  )}
+                  {(modalData.course || modalData.batch) && (
+                    <p className="modal-course">
+                      {[modalData.course, modalData.batch]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </p>
+                  )}
+                  {modalData.message && (
+                    <div className="modal-message">
+                      <p>{modalData.message}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
