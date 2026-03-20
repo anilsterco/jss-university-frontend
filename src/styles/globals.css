@@ -2813,9 +2813,8 @@ a:active {
 .academic-facilities .research_labmain {padding-block: 5rem;}
 .academic-facilities .about_f_value {padding-top: 4rem;}
 .academic-facilities .about_four {padding-bottom: 0rem;}
-.academic-facilities .about_four .ab_f_content h3 {
-  font: var(--font-21);
-  color: #16344e;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0;}
+.academic-facilities .about_four .ab_f_content h3 { font: var(--font-21); color: #16344e; margin-bottom: 1.5rem; padding-bottom: 0;}
 .academic-facilities .about_two{padding-bottom: 0;}
+.academic-facilities .sport_fac_swiper + .research_labmain { padding-top: 10rem; }
+.academic-facilities .about_top{padding-bottom: 0;}
+.step-and-startups-in-campus .about_one .estblish{padding-bottom: 0;}

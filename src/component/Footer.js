@@ -458,8 +458,11 @@ export default function Footer() {
           position: relative;
           font: var(--font-12);
           color: #ffffff80;
-          font-weight: 300;
+          font-weight: 300;transition: 0.5s;
         }
+           .connect_contant ul li a:hover{
+               color: #fff;}
+
         .connect_contant ul li {
           position: relative;
         }
