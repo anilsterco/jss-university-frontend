@@ -113,7 +113,10 @@
   border-radius: 6rem 0.8rem 0.8rem 0.8rem;
 
 }
-.about-jssmvp .about_jsstwo{padding-top: 10rem;}
+
+.about-jssmvp .about_jsstwo {
+  padding-top: 10rem;
+}
 
 .about_one .abt_cntnt p {
   padding: 0;
@@ -123,7 +126,6 @@
   line-height: 1.4;
   text-align: center;
   margin: 0 auto;
-  max-width: 92%;
 }
 
 .about_one .estblish {
