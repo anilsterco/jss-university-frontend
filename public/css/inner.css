@@ -313,9 +313,9 @@
   grid-template-columns: 1fr;
 }
 
-.tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__grid {
+/* .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__grid {
   grid-template-columns: 1fr;
-}
+} */
 
 .ed_schol_list::-webkit-scrollbar {
   height: 8px;
