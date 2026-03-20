@@ -186,11 +186,18 @@ export default function CoursesOffered({ data }) {
               data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
-                <h1
-                  className={`display-4 programs-count ${styles.programsCount}`}
-                >
-                  <Counter start={1} end={200} duration={2500} />
-                </h1>
+                {coursesData?.programs_count && (
+                  <h1
+                    className={`display-4 programs-count ${styles.programsCount}`}
+                  >
+                    <Counter
+                      start={1}
+                      end={coursesData?.programs_count}
+                      duration={2500}
+                    />
+                  </h1>
+                )}
+
                 <span className={styles.programsCountPlus}>+</span>
               </div>
 
