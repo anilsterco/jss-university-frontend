@@ -22,14 +22,14 @@ export default function PdfLists({ data }) {
                         <Link
                           href={singlePdf?.pdf ? singlePdf.pdf : ""}
                           target="_blank"
-                        >
+                        >  <p>{singlePdf.pdf_type}</p>
                           <Image
                             src="/images/icons/pdf.png"
-                            width={15}
+                            width={20}
                             height={20}
                             alt="pdf"
                           />
-                          <p>{singlePdf.pdf_type}</p>
+                        
                         </Link>
                       </li>
                     ))}

@@ -3635,8 +3635,8 @@ hr {
 }
 
 .pdf_list_section .mainTitle {
-  font: var(--font-21);
-  color: #16344E;
+      font: var(--font-26);
+    color: var(--color-4e);
   font-weight: 500;
   margin-bottom: 4rem;
 }
@@ -3648,15 +3648,14 @@ gap: 6rem;
     list-style-type: none;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
+    padding: 0;
 
 }
 
 .pdf_list_section li {
-    border-bottom: 1px solid #d6d6d6;
-    gap: 2rem;
-    display: flex;
-    position: relative;
+border-bottom: 1px solid #d6d6d6;
     padding-bottom: 1.5rem;
+    position: relative;
 }
 
 .pdf_list_section li:not(:last-child):before {
@@ -3671,16 +3670,18 @@ gap: 6rem;
 
 .pdf_list_section li a {
   display: flex;
+  justify-content: space-between;
 }
 
 .pdf_list_section li img {
-  margin-right: 1.2rem;
+  height: 2.5rem;
 }
 
 .pdf_list_section li p {
   font: var(--font-18);
-  color: #333333;
-  font-weight: 700;
+  color: var(--color-4e);
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 
