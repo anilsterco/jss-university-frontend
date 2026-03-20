@@ -53,8 +53,13 @@ export default function FacilityTwo({ data }) {
                           </figcaption>
                         )}
                       </div>
+                      
                     ))}
                   </div>
+                   <div className="bottom_dec">
+                     {headerItem.desc && <p>{headerItem.desc}</p>}
+
+                   </div>
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ import "@/styles/custom.style.css";
 export default function StudentClub({ data }) {
   const [scuActiveTab, setScuActiveTab] = useState("tab0");
   const [activeTabData, setActiveTabData] = useState(null);
-
+  const [isExpanded, setIsExpanded] = useState(false);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -113,8 +113,32 @@ export default function StudentClub({ data }) {
                                         {tab.sidetitle && (
                                           <h4>{tab.sidetitle}</h4>
                                         )}
-                                        {tab.sidedesc && <p>{tab.sidedesc}</p>}
+                                        {tab.sidedesc && (
+                                          <p>
+                                            {isExpanded
+                                              ? tab.sidedesc
+                                              : tab.sidedesc.substring(0, 300) +
+                                                "..."}
 
+                                            {tab.sidedesc.length > 100 && (
+                                              <span
+                                                onClick={() =>
+                                                  setIsExpanded(!isExpanded)
+                                                }
+                                                style={{
+                                                  color: "#018ce8",
+                                                  fontWeight:"bold",
+                                                  cursor: "pointer",
+                                                  marginLeft: "5px",
+                                                }}
+                                              >
+                                                {isExpanded
+                                                  ? "Read Less"
+                                                  : "Read More"}
+                                              </span>
+                                            )}
+                                          </p>
+                                        )}
                                         {tab.objective &&
                                           tab.objective.length > 0 && (
                                             <>

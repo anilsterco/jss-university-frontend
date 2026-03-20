@@ -1779,6 +1779,44 @@ margin-top:3rem;
   margin-bottom:3rem;
 }
 
+/* conference p age */
+
+.gridCardDesign3_section {
+
+    background: #fff;
+    padding: 10rem 0;
+}
+
+.gridCardDesign3_section .grid{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.4rem 3.2rem;
+  display: grid;
+}
+
+.gridCardDesign3_section .grid figure{
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.gridCardDesign3_section .single_card .content{
+  padding:15px;
+}
+
+.gridCardDesign3_section .single_card .content .title{
+  font: var(--font-18);
+    color: var(--color-black);
+    letter-spacing: 0;
+    margin-bottom: 1.4rem;
+    line-height: 1.4;
+}
+
+.gridCardDesign3_section .single_card .content .cardDate{
+  font: var(--font-14);
+    color: #17536b;
+}
+
+
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
@@ -2510,27 +2548,39 @@ G41 .core-pdf::after {
 }
 
 .profile-info-box {
-  padding: 2rem 3rem;
+  padding: 2rem 0rem;
   position: relative;
   z-index: 0;
 }
 
-.profile-info-box::before {
-  content: "";
-  background-color: var(--color-e8);
-  position: absolute;
-  height: 23rem;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.profile-info-box:before {
+    content: "";
+    background-color: var(--color-e8);
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-block: 6rem;
 }
 
 .info-box {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-
+    gap: 1rem;
+    padding: 2rem 3rem;
+    display: flex;
+    position: relative;
+}
+.info-box::before{
+    content: "";
+    background-color: var(--color-e8);
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    padding-block: 6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 hr {
@@ -2618,6 +2668,11 @@ hr {
   gap: 1.2rem;
 }
 
+.research-list .research-link i{
+  color: var(--color-73);
+    font: var(--font-14);
+}
+
 .research-box {
   background-color: var(--color-white);
   padding: 0.1rem 1.5rem;
@@ -2674,6 +2729,7 @@ hr {
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
   line-height: 46px;
+  text-transform: uppercase;
 }
 
 .read-more-btn {
@@ -3576,6 +3632,13 @@ hr {
 
 .pdf_list_section {
   padding: 10rem 0;
+}
+
+.pdf_list_section .mainTitle {
+  font: var(--font-21);
+  color: #16344E;
+  font-weight: 500;
+  margin-bottom: 4rem;
 }
 
 .pdf_list_section ul {

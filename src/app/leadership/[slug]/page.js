@@ -183,9 +183,9 @@ export default function LeadershipDetailsPage({ params }) {
       <section className="message_section">
         <div className="container">
           <div className="message_warpper">
-            {sections.message_from_chancellor?.designation.toLowerCase().includes(
-              "chancellor",
-            ) && (
+            {sections.message_from_chancellor?.designation
+              .toLowerCase()
+              .includes("chancellor") && (
               <figure>
                 <Image
                   src={"/images/custom-page/about/quote.png"}
@@ -201,10 +201,11 @@ export default function LeadershipDetailsPage({ params }) {
             <div className="row">
               <div className="col-lg-12">
                 <div className="message_text">
-                  {sections.message_from_chancellor?.designation.toLowerCase().includes(
-                    "chancellor",
-                  ) && <h3>{sections.message_from_chancellor.designation}</h3>}
-
+                  {sections.message_from_chancellor?.designation
+                    .toLowerCase()
+                    .includes("chancellor") && (
+                    <h3>{sections.message_from_chancellor.designation}</h3>
+                  )}
                   {sections.message_from_chancellor.message.map(
                     (msg, index) => (
                       <p key={index}>{msg}</p>

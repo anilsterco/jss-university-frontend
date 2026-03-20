@@ -64,10 +64,10 @@ export default function AcademicLabs({ data }) {
                         }}
                         breakpoints={{
                           0: {
-                            slidesPerView: 1, // mobile
+                            slidesPerView: 1,
                           },
                           768: {
-                            slidesPerView: 1.75, // tablet & desktop
+                            slidesPerView: 1.75, 
                           },
                         }}
                       >
@@ -82,11 +82,14 @@ export default function AcademicLabs({ data }) {
                                 height={520}
                                 style={{ objectFit: "cover" }}
                               />
+                               <figcaption>
+                                {slide.title}
+                               </figcaption>
                             </figure>
                           </SwiperSlide>
                         ))}
 
-                        {/* NAV BUTTONS */}
+                   
                         <div className="ac_pagination">
                           <button className="ac_swi_btn academic_labs_next">
                             <img

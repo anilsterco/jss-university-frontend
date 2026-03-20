@@ -12,21 +12,29 @@ export default function PdfLists({ data }) {
             {section?.items &&
               section.items.length >= -1 &&
               section.items.map((item, idx) => (
-                <ul key={idx}>
-                  {item.pdfs.map((singlePdf, pdfIdx) => (
-                    <li key={pdfIdx}>
-                      <Link href={singlePdf.pdf} target="_blank">
-                        <Image
-                          src="/images/icons/pdf.png"
-                          width={15}
-                          height={20}
-                          alt="pdf"
-                        />
-                        <p>{singlePdf.pdf_type}</p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <React.Fragment key={idx}>
+                  {item?.mainTitle && (
+                    <h3 className="mainTitle">{item.mainTitle}</h3>
+                  )}
+                  <ul>
+                    {item.pdfs.map((singlePdf, pdfIdx) => (
+                      <li key={pdfIdx}>
+                        <Link
+                          href={singlePdf?.pdf ? singlePdf.pdf : ""}
+                          target="_blank"
+                        >
+                          <Image
+                            src="/images/icons/pdf.png"
+                            width={15}
+                            height={20}
+                            alt="pdf"
+                          />
+                          <p>{singlePdf.pdf_type}</p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </React.Fragment>
               ))}
           </div>
         );

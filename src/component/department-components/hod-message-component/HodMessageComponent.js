@@ -39,6 +39,7 @@ const HODMessage = ({ data }) => {
         messages: normalizeMessages(data?.message || data?.messages),
         type: data?.type,
         sectionType: data?.sectionType,
+        listGroup: data?.listGroup,
       }
     : null;
 
@@ -111,13 +112,22 @@ const HODMessage = ({ data }) => {
                     </p>
                   )}
 
-                  {hodData?.messages?.length > 0 && (
+                  {(hodData?.messages?.length > 0 ||
+                    hodData?.listGroup?.length > 0) && (
                     <div className={styles.messageText}>
-                      {visibleMessages.map((paragraph, index) => (
+                      {visibleMessages?.map((paragraph, index) => (
                         <p key={index} className={styles.paragraph}>
                           {paragraph}
                         </p>
                       ))}
+
+                      {hodData?.listGroup?.length > 0 && (
+                        <ul className={`${styles.listGroup} list_group`}>
+                          {hodData?.listGroup?.map((list, listIdx) => (
+                            <li key={listIdx}>{list.list}</li>
+                          ))}
+                        </ul>
+                      )}
 
                       {hasMore && (
                         <button
