@@ -3658,7 +3658,7 @@ border-bottom: 1px solid #d6d6d6;
     position: relative;
 }
 
-.pdf_list_section li:not(:last-child):before {
+/* .pdf_list_section li:not(:last-child):before {
   position: absolute;
   content: '';
   height: 2.5rem;
@@ -3666,7 +3666,7 @@ border-bottom: 1px solid #d6d6d6;
   background: #707070;
   right: -3rem;
   top: 0;
-}
+} */
 
 .pdf_list_section li a {
   display: flex;
