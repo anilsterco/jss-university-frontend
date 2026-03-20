@@ -64,7 +64,7 @@ const dummyCoursesData = {
     { short_name: "Humanities", slug: "#" },
   ],
   academic_year: {
-    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
+    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2026-27</span>`,
     description: "Sed ut perspiciatis unde omnis",
   },
   buttons: [{ text: "Apply Now", url: APPLY_NOW }],
