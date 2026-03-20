@@ -5517,8 +5517,9 @@
   padding-bottom: 0;
 }
 
-
-
+.outreach .image_content_repeat_section:nth-child(odd) {
+  background-color: var(--color-white);
+}
 
 .exten_grid {
   grid-template-columns: 48.4% 51.5%;
