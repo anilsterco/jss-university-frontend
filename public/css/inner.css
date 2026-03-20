@@ -111,12 +111,17 @@
 
 .about_one .abt_cntnt figure img {
   border-radius: 6rem 0.8rem 0.8rem 0.8rem;
-
 }
-
+.step-and-startups-in-campus .about_one .estblish{    padding-block: 4rem 4rem;}
 .about-jssmvp .about_jsstwo {
   padding-top: 10rem;
 }
+
+.scholarship-and-eligibility .about_one .estblish{    padding-block: 4rem 4rem;}
+.team-iqac .table_section .table-lab tbody td:first-child{
+      width:30%;
+}
+
 
 .about_one .abt_cntnt p {
   padding: 0;
