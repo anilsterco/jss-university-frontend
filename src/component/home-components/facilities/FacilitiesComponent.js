@@ -247,6 +247,7 @@ export default function FacilitiesComponent({ data }) {
                   src={panel.image}
                   alt={`Panel ${index + 1}`}
                   style={{ width: "100%", objectFit: "cover" }}
+               
                 />
                 <div className={styles.verticalLine}>
                   <div className={styles.slideNumberBox}>

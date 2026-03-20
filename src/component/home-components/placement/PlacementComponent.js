@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
-import { LuCircleArrowRight } from "react-icons/lu";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -63,6 +62,7 @@ const dummyPlacementsData = {
   ],
 };
 
+
 export default function PlacementsSection({ data, category, pageType }) {
   let placementsData;
   if (category == "slider") {
@@ -77,7 +77,10 @@ export default function PlacementsSection({ data, category, pageType }) {
       once: true,
     });
   }, []);
-
+const router = useRouter();
+useEffect(() => {
+  router.refresh();
+}, []);
   return (
     <section className={`${category !== "slider" && styles.thirdSection}`}>
       <div className="container">
