@@ -166,6 +166,7 @@
     padding-left: 0;
     list-style: none;
     display: flex;
+    margin-bottom:4rem;
 }
 
 .listGroup li{
@@ -223,8 +224,8 @@
 }
 
 .hodRow .left_col{
-  display:flex;
-  align-items: center;
+  /* display:flex; */
+  /* align-items: center; */
   padding:10rem 0;
 }
 
