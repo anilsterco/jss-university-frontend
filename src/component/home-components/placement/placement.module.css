@@ -24,7 +24,10 @@
 }
 
 .testimonialSwiper .eachSlide {
-  gap: 6.2rem;
+grid-template-columns: 29% 62.7%;
+    align-items: center;
+    gap: 6.2rem;
+    display: grid;
 }
 
 .testimonialSwiper small {
@@ -173,11 +176,11 @@
   border-bottom: 1px solid #DFDFDF;
 }
 
-.testimonialImageContainer {
+/* .testimonialImageContainer {
   width: 20%;
   height: 100%;
   padding: 1rem;
-}
+} */
 
 .mobileQuoteIcon {
   display: none;
@@ -188,10 +191,10 @@
   margin-bottom: 2.4rem;
 }
 
-.testimonialImageContainer {
+/* .testimonialImageContainer {
   width: 43%;
   padding: 0;
-}
+} */
 
 
 
