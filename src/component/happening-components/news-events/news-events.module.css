@@ -13,9 +13,6 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin-inline: 12rem;
-
-
 }
 
 .bannerImage {
@@ -353,6 +350,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    margin-block: 2rem;
   }
 
   .bannerWrapper::before {
@@ -444,11 +442,11 @@
 
   .bannerWrapper {
     max-width: 100%;
-    margin-inline: 4rem;
+    margin-inline: 2rem;
   }
 
   .bannerTextBox {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 }
 

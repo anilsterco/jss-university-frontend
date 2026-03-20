@@ -152,9 +152,9 @@
 
 
 @media screen and (min-width: 1921px) and (max-width: 2550px) {
-   
+
     .content_col {
-       padding-left: 8.4rem;
+        padding-left: 8.4rem;
         padding-right: 0rem;
     }
 }
@@ -182,9 +182,11 @@
 
     .content_col.department,
     .content_col.facilities {
-        padding-top: 4rem;
+        padding-top: 2rem;
     }
-
+.inner_sub_header {
+        margin-top: 0rem;
+    }
     .content_col {
         padding-left: 0;
         padding-top: 0;
@@ -201,7 +203,12 @@
 }
 
 @media screen and (max-width:767px) {
-
+    .content_col .subHeading {
+        margin-top: 2rem;
+    }
+.singleImageContent:first-child {
+    padding-bottom: 6rem;
+}
     .content_col {
         padding-left: 0;
         padding-top: 2rem;
@@ -220,6 +227,11 @@
         margin-top: 2rem;
         gap: 1.5rem;
 
+    }
+
+    .content_col .pdf_group {
+        margin-top: 2rem;
+        padding-top: 4rem;
     }
 
 }

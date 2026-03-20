@@ -330,6 +330,12 @@
  right: -4.5rem;
  top: 0;
 }
+@media (max-width: 1749px){
+.aboutSchoolSection {
+  background-color: #e6ffff;
+ padding-block: 10rem 8rem
+}
+}
 
 
 @media (max-width: 1024px) {
@@ -340,6 +346,11 @@
   margin-top: 2rem;
   padding-inline: 3rem;
 }
+.aboutSchoolSection {
+  background-color: #e6ffff;
+ padding-block: 6rem
+}
+
 }
 @media (max-width: 991px) {
 .school_row{
@@ -348,11 +359,9 @@
  .buttonsContainer {
   display: none;
 }
- 
-}
-
-@media (max-width: 991px) {
 .school_row{
   display: block;
  }
+
 }
+

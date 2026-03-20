@@ -471,10 +471,17 @@
   .modalHeader {
     padding: 1.5rem 1rem 1rem 1rem;
   }
+  .galleryGrid {
+
+  padding-block: 4rem;
+}
 
   .modalTitle {
     font-size: 1.1rem;
   }
+  .mediaSection {
+  padding: 0;
+}
 
   .thumbnails {
     padding: 1rem;

@@ -334,50 +334,66 @@
 .ed_schol_list:-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 .ed_schol_list table th:nth-child(1) {
-      min-width: 13rem;
+  min-width: 13rem;
 }
 
 .ed_schol_list table th:nth-child(2) {
-      min-width: 30rem;;
+  min-width: 30rem;
+  ;
 }
 
 .ed_schol_list table th:nth-child(3) {
-      min-width: 30rem;
+  min-width: 30rem;
 }
 
 .ed_schol_list table th:nth-child(4) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
+
 .ed_schol_list table th:nth-child(5) {
-     min-width: 50rem;
+  min-width: 50rem;
 }
+
 .ed_schol_list table th:nth-child(6) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
 
 .ed_schol_list table th:nth-child(7) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
+
 .ed_schol_list table th:nth-child(8) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
+
 .ed_schol_list table th:nth-child(9) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
+
 .ed_schol_list table th:nth-child(10) {
-     min-width: 30rem;
+  min-width: 30rem;
 }
+
 .department-computer-science-and-engineering-research .tableContentSection .grid_row,
 .department-computer-science-and-engineering-it-research .tableContentSection .grid_row {
   grid-template-columns: 1fr;
 }
 
-.department-management-studies-facilities .library_section{padding-top: 10rem;}
-.department-management-studies-placements .grid_group{    background-color: var(--color-white);
-    padding: 6rem;
+.department-management-studies-facilities .library_section {
+  padding-top: 10rem;
 }
-.schools-computer-applications-about-the-school .count_alumni_section{padding-top: 0rem;}
+
+.department-management-studies-placements .grid_group {
+  background-color: var(--color-white);
+  padding: 6rem;
+}
+
+.schools-computer-applications-about-the-school .count_alumni_section {
+  padding-top: 0rem;
+}
+
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
 }
@@ -3486,6 +3502,7 @@
   padding-right: 5.6rem;
   border-right: solid 1px #ddd;
 }
+
 .heri_prici_names h5.titleTwo {
   padding-left: 5.6rem;
 }
@@ -5400,9 +5417,11 @@
   align-items: start;
   grid-template-columns: 41.5% 46%;
 }
+
 .studends_pdf {
   margin-top: 7.8rem;
 }
+
 .student-life .scu_imgsec {
   margin: 0;
   order: 2;
@@ -5509,7 +5528,7 @@
   padding-bottom: 0;
 }
 
-.research .grands_mainsec{
+.research .grands_mainsec {
   padding-bottom: 0;
 }
 
@@ -5685,7 +5704,10 @@
   min-width: 100%;
 }
 
-.grands_mainsec {position: relative;}
+.grands_mainsec {
+  position: relative;
+}
+
 .grands_mainsec:after {
   content: "";
   background-color: #D9D9D9;
@@ -5706,17 +5728,20 @@
 .grands_mainsec .publi_title h4 {
   margin-bottom: 2.7rem;
 }
+
 .grands_mainsec .publi_title p {
   padding-bottom: 5.8rem;
   color: var(--color-44);
   margin-bottom: 0;
 }
+
 .grands_maingrid {
-  grid-template-columns: repeat(2 ,1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-left: auto;
   display: grid;
   padding-bottom: 10rem;
 }
+
 .grands_content p {
   color: var(--color-44);
   margin-bottom: 3rem;
@@ -5724,7 +5749,7 @@
 
 .grands_content {
   padding-left: 8.3rem;
-padding-right: 6rem;
+  padding-right: 6rem;
 }
 
 
@@ -5953,16 +5978,73 @@ padding-right: 6rem;
     padding-bottom: 4rem !important;
   }
 }
+
 @media(min-width:1920px) {
   .grands_content {
-  padding-left: 8.3rem;
-padding-right: 5rem;
+    padding-left: 8.3rem;
+    padding-right: 5rem;
+  }
 }
+
+
+@media (max-width: 1024px) {
+  .grands_content {
+    padding-left: 5.3rem;
+    padding-right: 1rem;
+  }
 }
+
 
 @media (max-width: 991px) {
   .inner-title {
     padding-top: 10rem;
+  }
+
+  .grands_maingrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 4rem;
+  }
+
+  .grands_content {
+    padding-inline: 0;
+    padding-block: 4rem 0;
+  }
+
+  .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
+    max-width: 100%;
+  }
+
+  .campu_grid_main {
+    display: block;
+  }
+
+  .lib_cen_main .ab_jss_coutsec {
+    margin-block: 4rem;
+  }
+
+  .campu_grid_main.capus_grid_two {
+    padding-bottom: 4rem;
+  }
+
+  .scu_gridmain {
+    display: block;
+  }
+
+  .scu_content {
+    margin-top: 4rem;
+  }
+
+  .student_clubsmain {
+    padding-block: 4rem;
+  }
+
+  .scu_benift_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.4rem;
+  }
+
+  .grands_mainsec {
+    padding-block: 4rem 0;
   }
 
   /* .inner-title .innnr_head h3  {
@@ -6018,6 +6100,11 @@ padding-right: 5rem;
     padding-top: 3rem;
   }
 
+  .scu_benift_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3.4rem;
+  }
+
   .growth-tabs ul li:not(:last-child) {
     margin-right: 0;
   }
@@ -6025,9 +6112,10 @@ padding-right: 5rem;
   .about_two .early-slide .early_rgt h4 {
     font: var(--font-24);
   }
-    .grands_content {
-padding-right: 0rem;
-}
+
+  .grands_content {
+    padding-right: 0rem;
+  }
 
 }
 
@@ -6544,10 +6632,10 @@ padding-right: 0rem;
 }
 
 .message_section .message_text p:first-of-type {
-        font: var(--font-24);
-    font-weight: 300;
-    line-height: 1.3;
-    margin-bottom: 2rem;
+  font: var(--font-24);
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 2rem;
 }
 
 .message_text h3 {
@@ -6777,6 +6865,15 @@ padding-right: 0rem;
     max-width: 90%;
     padding-left: 0;
   }
+
+  .about_one .estblish {
+    max-width: 100%;
+    padding-block: 4rem 4rem;
+  }
+
+  .placement_proSec {
+    padding-block: 4rem 6rem;
+  }
 }
 
 @media screen and (max-width:1100px) {
@@ -6807,7 +6904,9 @@ padding-right: 0rem;
   .leadership_two_cnt p {
     padding-bottom: 2.2rem;
   }
-
+    .about_one .estblish {
+        padding-block: 4rem 4rem;
+    }
   .admission-selection-process.ad_selec_procss {
     padding-top: 6rem;
     padding-bottom: 8rem;
@@ -6898,7 +6997,7 @@ padding-right: 0rem;
   }
 
   .placement_proSec {
-    padding-block: 5rem 10rem;
+    padding-block: 2rem 6rem;
   }
 
   .placement .placement_procedure {
@@ -6927,6 +7026,14 @@ padding-right: 0rem;
   .placement_requ {
     padding-bottom: 10.6rem;
   }
+
+  .resea_facili_main .exten_grid {
+    gap: 4rem;
+  }
+  .schools-facilities.schools-page .about_one .estblish {
+    padding-block: 4rem 2rem;
+}
+
 }
 
 @media screen and (max-width:991px) {
@@ -6934,11 +7041,20 @@ padding-right: 0rem;
     display: block;
   }
 
+  .about_one .estblish p {
+    text-align: left;
+  }
+
+  .careers .placement_proSec,
+  .careers .admins_of_con {
+    padding-bottom: 4rem;
+  }
+
   .testimonials-page .leader_row {
     display: block;
   }
 
-  .testimonials-page .leader_row .leadership_two_img figure{
+  .testimonials-page .leader_row .leadership_two_img figure {
     max-width: 100%;
   }
 
@@ -6987,9 +7103,9 @@ padding-right: 0rem;
     padding-top: 4rem;
   }
 
-  .inner_sub_header {
-    margin-top: 12.4rem;
-  }
+     .inner_sub_header {
+        margin-top: 0rem;
+    }
 
   .about_top {
     padding-top: 4rem;
@@ -7284,8 +7400,8 @@ padding-right: 0rem;
 
   .singleImageContent .row {
     display: flex;
-    flex-direction: column-reverse;
     gap: 2rem;
+    flex-direction: column;
   }
 
   .placements_loader {
@@ -7317,7 +7433,9 @@ padding-right: 0rem;
   .admins_of_con {
     padding-bottom: 0rem;
   }
-
+    .schools-about-the-school .about_one .estblish {
+        padding-block: 4rem 2rem;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -7325,6 +7443,9 @@ padding-right: 0rem;
     padding-inline: 3rem;
   }
 
+  .resea_facili_main .exten_grid {
+   display: block;
+  }
 
 
   .about_f_value .ab_f_content h3 {
@@ -7755,8 +7876,8 @@ padding-right: 0rem;
   }
 
   .testimonials-page .leadership_dtls_two {
-    padding-top:5rem;
-    padding-bottom:5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .message_img figure img {
@@ -8437,7 +8558,11 @@ padding-right: 0rem;
 .department-master-of-computer-applications-about-us .grid_card_design1_section {
   padding-block: 10rem;
 }
-.department-master-of-computer-applications-facilities .library_section{padding-top: 10rem;}
+
+.department-master-of-computer-applications-facilities .library_section {
+  padding-top: 10rem;
+}
+
 .department-master-of-computer-applications-placements .table_section:last-child {
   background-color: var(--color-f6);
 }

@@ -1870,7 +1870,7 @@ a:active {
 
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .logo-content img {
     width: 12rem;
     height: auto;
@@ -1887,11 +1887,30 @@ a:active {
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .school_row {
     display: block;
   }
 
+  .dashbord-logo .uniname {
+    font: var(--font-30);
+    color: var(--color-white);
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-family: var(--font-Condensed);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: .9;
+  }
+
+  .logo-content img {
+    width: 10rem;
+    height: auto;
+  }
+
+  .inner_sub_header {
+    margin-top: 14.5rem;
+  }
 }
 
 
@@ -2768,20 +2787,25 @@ a:active {
 .faqItem[open] summary .icon {
   transform: rotate(180deg);
 }
+
 .faqItem[open] .faqAnswer {
   max-height: 500px;
 }
+
 .faqItem[open] .faqQuestion {
   background: #b59730;
   color: #fff;
 }
+
 .faqItem[open] .faqAnswer p {
   color: #444 !important;
 }
+
 .faqItem .faqAnswer ul {
   margin-top: 1.5rem;
   margin-bottom: 0;
 }
+
 .faqItem .faqAnswer ul li {
   font: var(--font-14);
   margin-bottom: 1rem;
@@ -2792,9 +2816,11 @@ a:active {
     width: 20rem;
     height: auto;
   }
+
   .logo-content.scrolled img {
     width: 16rem;
   }
+
   .footer_section .footer_cnt {
     padding-inline: 0;
   }
@@ -2810,12 +2836,25 @@ a:active {
   text-transform: uppercase;
 }
 
-.academic-facilities .research_labmain {padding-block: 5rem;}
-.academic-facilities .about_f_value {padding-top: 4rem;}
-.academic-facilities .about_four {padding-bottom: 0rem;}
+.academic-facilities .research_labmain {
+  padding-block: 5rem;
+}
+
+.academic-facilities .about_f_value {
+  padding-top: 4rem;
+}
+
+.academic-facilities .about_four {
+  padding-bottom: 0rem;
+}
+
 .academic-facilities .about_four .ab_f_content h3 {
   font: var(--font-21);
   color: #16344e;
   margin-bottom: 1.5rem;
-  padding-bottom: 0;}
-.academic-facilities .about_two{padding-bottom: 0;}
+  padding-bottom: 0;
+}
+
+.academic-facilities .about_two {
+  padding-bottom: 0;
+}

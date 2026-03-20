@@ -5,27 +5,36 @@
 .innerPage_title {
     font: var(--font-26);
     margin-bottom: 7rem;
-  color: var(--color-4e);
-  font-weight: 700;
-  font-family: var(--font-Condensed);
+    color: var(--color-4e);
+    font-weight: 700;
+    font-family: var(--font-Condensed);
 }
 
-.programs_grid{
+.programs_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4.5rem;
 }
+
+@media (max-width: 991px) {
+    .inner_page {
+        padding-block: 6rem;
+    }
+}
+
 @media (max-width: 768px) {
-.inner_page{padding-block: 6rem;}
+    .inner_page {
+        padding-block: 6rem;
+    }
 
-.innerPage_title {
-    margin-bottom: 3rem;
-  
-}
+    .innerPage_title {
+        margin-bottom: 3rem;
 
-.programs_grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
+    }
+
+    .programs_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
