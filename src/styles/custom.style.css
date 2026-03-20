@@ -1779,6 +1779,44 @@ margin-top:3rem;
   margin-bottom:3rem;
 }
 
+/* conference p age */
+
+.gridCardDesign3_section {
+
+    background: #fff;
+    padding: 10rem 0;
+}
+
+.gridCardDesign3_section .grid{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.4rem 3.2rem;
+  display: grid;
+}
+
+.gridCardDesign3_section .grid figure{
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.gridCardDesign3_section .single_card .content{
+  padding:15px;
+}
+
+.gridCardDesign3_section .single_card .content .title{
+  font: var(--font-18);
+    color: var(--color-black);
+    letter-spacing: 0;
+    margin-bottom: 1.4rem;
+    line-height: 1.4;
+}
+
+.gridCardDesign3_section .single_card .content .cardDate{
+  font: var(--font-14);
+    color: #17536b;
+}
+
+
+
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
