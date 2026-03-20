@@ -50,7 +50,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (
                   <Link
-                    href={singlePdf.pdfLink ?? ""}
+                    href={singlePdf?.pdfFile ? singlePdf.pdfFile : singlePdf?.pdfLink ? singlePdf?.pdfLink : "#"}
                     target="_blank"
                     key={pdfIdx}  >
                     <Image

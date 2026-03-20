@@ -1477,7 +1477,7 @@
 
 .labs_group_section.about_two .about_two.reverse .early_rgt{
   padding-left:0;
-  padding-right: 8.4rem;
+  padding-right: 7rem;
 }
 
 .labs_group_section.about_two .about_two.reverse .imgsli_left{
@@ -1778,6 +1778,44 @@ margin-top:3rem;
 .admission .eligi_tab_con li:not(:last-child){
   margin-bottom:3rem;
 }
+
+/* conference p age */
+
+.gridCardDesign3_section {
+
+    background: #fff;
+    padding: 10rem 0;
+}
+
+.gridCardDesign3_section .grid{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.4rem 3.2rem;
+  display: grid;
+}
+
+.gridCardDesign3_section .grid figure{
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.gridCardDesign3_section .single_card .content{
+  padding:15px;
+}
+
+.gridCardDesign3_section .single_card .content .title{
+  font: var(--font-18);
+    color: var(--color-black);
+    letter-spacing: 0;
+    margin-bottom: 1.4rem;
+    line-height: 1.4;
+}
+
+.gridCardDesign3_section .single_card .content .cardDate{
+  font: var(--font-14);
+    color: #17536b;
+}
+
+
 
 
 @media all and (min-width: 800px) {
@@ -3597,24 +3635,27 @@ hr {
 }
 
 .pdf_list_section .mainTitle {
-  font: var(--font-21);
-  color: #16344E;
+      font: var(--font-26);
+    color: var(--color-4e);
   font-weight: 500;
   margin-bottom: 4rem;
 }
 
 .pdf_list_section ul {
-  display: flex;
-  list-style-type: none;
-  gap: 6rem;
-  margin: 0;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid #D6D6D6;
+gap: 6rem;
+    margin: 0;
+    padding-bottom: 4rem;
+    list-style-type: none;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    padding: 0;
+
 }
 
 .pdf_list_section li {
-  display: flex;
-  position: relative;
+border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 1.5rem;
+    position: relative;
 }
 
 .pdf_list_section li:not(:last-child):before {
@@ -3629,16 +3670,18 @@ hr {
 
 .pdf_list_section li a {
   display: flex;
+  justify-content: space-between;
 }
 
 .pdf_list_section li img {
-  margin-right: 1.2rem;
+  height: 2.5rem;
 }
 
 .pdf_list_section li p {
   font: var(--font-18);
-  color: #333333;
-  font-weight: 700;
+  color: var(--color-4e);
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 
@@ -7014,3 +7057,22 @@ color: #ffc100;
     background: #fff;
     padding: 4rem;
 }
+.department-electronics-and-communication-engineering-labs img.imgsli_left {
+    height: 45rem !important;
+}
+.department-pharmaceutics-about-us .grid_card_design1_section .heading {
+    text-align: left;
+}
+.governance .table_section:nth-child(3) {
+    padding: 0rem 0 10rem;
+}
+.nirf .about_one .abt_cntnt figure img {
+    width: 28rem !important;
+    height: 20rem !important;
+    object-fit: cover;
+}
+.nirf .about_one .overlap_contents{display: none;}
+.nirf .about_one .estblish {
+    padding-block: 4rem 10rem;
+}
+.placement .procedure_box p { font: var(--font-21); font-weight: 300; }
