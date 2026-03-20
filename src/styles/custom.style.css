@@ -1554,6 +1554,17 @@
       padding: 2.5rem 2rem;
       display:flex;
       width:100%;
+      align-items: center;
+    }
+
+    .search_listing_section .result-item .result-content{
+      flex:1;
+    }
+
+    .search_listing_section .result-item .result-content .result-description{
+      margin:0;
+      font:var(--font-14);
+      color:#333;
     }
 
     .search_listing_section .result-item:hover {
@@ -1565,11 +1576,12 @@
     }
 
     .search_listing_section .result-title {
-      font-size: 15px;
-      font-weight: 400;
+      font:var(--font-20);
+        font-weight: 400;
       color: #1a1a1a;
       letter-spacing: 0px;
       flex:1;
+      margin-bottom: 1rem;
     }
 
     .search_listing_section .result-arrow {
@@ -1815,7 +1827,96 @@ margin-top:3rem;
     color: #17536b;
 }
 
-
+.testimonial-modal-overlay {
+              position: fixed;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.6);
+              z-index: 2000;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 2rem;
+            }
+            .testimonial-modal-overlay .testimonial-modal {
+              background: #fff;
+              width: 100%;
+              max-width: 85rem;
+              max-height: 90vh;
+              overflow-y: auto;
+              position: relative;
+              border-radius: 4px;
+            }
+           .testimonial-modal-overlay  .testimonial-modal-close {
+              position: absolute;
+              top: 1.5rem;
+              right: 1.5rem;
+              background: none;
+              border: none;
+              cursor: pointer;
+              z-index: 10;
+              color: #16344e;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .testimonial-modal-overlay .modal-loading {
+              padding: 6rem;
+              text-align: center;
+            }
+            .testimonial-modal-overlay .modal-inner {
+              display: flex;
+              gap: 0;
+              min-height: 40rem;
+            }
+            .testimonial-modal-overlay .modal-left {
+              width: 35%;
+              flex-shrink: 0;
+              position: relative;
+            }
+            .testimonial-modal-overlay .modal-right {
+              flex: 1;
+              padding: 4rem 4rem 4rem 3.5rem;
+            }
+            .testimonial-modal-overlay .modal-right h3 {
+              font-size: 2.6rem;
+              font-weight: 700;
+              color: #16344e;
+              margin-bottom: 0.8rem;
+            }
+            .testimonial-modal-overlay .modal-designation,
+            .testimonial-modal-overlay .modal-company {
+              font-size: 1.5rem;
+              color: #555;
+              margin-bottom: 0.4rem;
+            }
+            .testimonial-modal-overlay .modal-course {
+              font-size: 1.4rem;
+              color: #018ce8;
+              margin-bottom: 2rem;
+              font-weight: 600;
+            }
+            .testimonial-modal-overlay .modal-message {
+              margin-top: 2rem;
+              padding-top: 2rem;
+              border-top: 1px dashed rgba(22, 52, 78, 0.2);
+            }
+            .testimonial-modal-overlay .modal-message p {
+              font-size: 1.5rem;
+              line-height: 1.8;
+              color: #444;
+            }
+            @media (max-width: 600px) {
+              .testimonial-modal-overlay .modal-inner {
+                flex-direction: column;
+              }
+              .testimonial-modal-overlay .modal-left {
+                width: 100%;
+                height: 25rem;
+              }
+              .testimonial-modal-overlay .modal-right {
+                padding: 2.5rem 2rem;
+              }
+            }
 
 
 @media all and (min-width: 800px) {
@@ -3658,7 +3759,7 @@ border-bottom: 1px solid #d6d6d6;
     position: relative;
 }
 
-.pdf_list_section li:not(:last-child):before {
+/* .pdf_list_section li:not(:last-child):before {
   position: absolute;
   content: '';
   height: 2.5rem;
@@ -3666,7 +3767,7 @@ border-bottom: 1px solid #d6d6d6;
   background: #707070;
   right: -3rem;
   top: 0;
-}
+} */
 
 .pdf_list_section li a {
   display: flex;

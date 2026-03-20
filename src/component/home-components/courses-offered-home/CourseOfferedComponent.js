@@ -64,7 +64,7 @@ const dummyCoursesData = {
     { short_name: "Humanities", slug: "#" },
   ],
   academic_year: {
-    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2025-26</span>`,
+    year: `<span class="dark-blue-text ">Admission</span><span class="blue-text"> 2026-27</span>`,
     description: "Sed ut perspiciatis unde omnis",
   },
   buttons: [{ text: "Apply Now", url: APPLY_NOW }],
@@ -189,9 +189,9 @@ export default function CoursesOffered({ data }) {
                 <h1
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
-                  <Counter start={1} end={200} duration={2500} />
-                </h1>
+                  <Counter start={1} end={40} duration={2500} />
                 <span className={styles.programsCountPlus}>+</span>
+                </h1>
               </div>
 
               <p className={`program-hide ${styles.programsText}`}>

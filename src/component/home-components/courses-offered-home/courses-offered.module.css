@@ -71,8 +71,7 @@
   position: absolute;
   top: 0.4rem;
   letter-spacing: -4.16px;
-  right: 0px;
-  left: 16.5rem;
+  right: -4rem;
   font-family: var(--font-Roboto) !important;
 }
 

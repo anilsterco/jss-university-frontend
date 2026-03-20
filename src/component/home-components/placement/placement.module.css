@@ -24,7 +24,10 @@
 }
 
 .testimonialSwiper .eachSlide {
-  gap: 6.2rem;
+grid-template-columns: 29% 62.7%;
+    align-items: center;
+    gap: 6.2rem;
+    display: grid;
 }
 
 .testimonialSwiper small {
@@ -57,8 +60,8 @@
   font: var(--font-18);
   color: #212121;
   letter-spacing: -0.36px;
-  margin-bottom: 2.8rem;
-  max-width: 95%;
+  margin-bottom: 2.4rem;
+  max-width: 100%;
   font-weight: 300;
   font-family: var(--font-Roboto);
   line-height: 1.7;
@@ -84,9 +87,9 @@
   z-index: 999;
 }
 
-.recruiterLogo {
+/* .recruiterLogo {
   padding: 1.5rem;
-}
+} */
 
 .wallOfFameText span {
   font-family: var(--font-Condensed);
@@ -173,11 +176,11 @@
   border-bottom: 1px solid #DFDFDF;
 }
 
-.testimonialImageContainer {
+/* .testimonialImageContainer {
   width: 20%;
   height: 100%;
   padding: 1rem;
-}
+} */
 
 .mobileQuoteIcon {
   display: none;
@@ -188,10 +191,10 @@
   margin-bottom: 2.4rem;
 }
 
-.testimonialImageContainer {
+/* .testimonialImageContainer {
   width: 43%;
   padding: 0;
-}
+} */
 
 
 
@@ -242,6 +245,7 @@
 
   .blueBg {
     max-width: 27%;
+    height: 86%;
   }
 
   .wallOfFameText {

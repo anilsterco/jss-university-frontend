@@ -244,7 +244,7 @@ export default function LegacySection({ data }) {
                 <SwiperSlide key={i} className={styles.accreditationSlide}>
                   <div className="gap-2 gap-lg-5 d-flex align-items-center content custom-gap">
                     <Image
-                      src={acc.image}
+                      src={acc?.image ? acc.image : null}
                       alt="Accreditation Logo"
                       width={80}
                       height={80}

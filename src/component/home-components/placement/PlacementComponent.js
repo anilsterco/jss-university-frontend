@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
-import { LuCircleArrowRight } from "react-icons/lu";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -63,6 +62,7 @@ const dummyPlacementsData = {
   ],
 };
 
+
 export default function PlacementsSection({ data, category, pageType }) {
   let placementsData;
   if (category == "slider") {
@@ -77,7 +77,10 @@ export default function PlacementsSection({ data, category, pageType }) {
       once: true,
     });
   }, []);
-
+const router = useRouter();
+useEffect(() => {
+  router.refresh();
+}, []);
   return (
     <section className={`${category !== "slider" && styles.thirdSection}`}>
       <div className="container">
@@ -136,7 +139,7 @@ export default function PlacementsSection({ data, category, pageType }) {
                 {placementsData?.testimonials?.map((t, i) => (
                   <SwiperSlide key={i}>
                     <div
-                      className={`${styles.eachSlide} d-flex align-items-top `}
+                      className={`${styles.eachSlide}`}
                       data-aos="fade-up"
                       data-aos-delay={i * 150}
                     >
@@ -203,8 +206,7 @@ export default function PlacementsSection({ data, category, pageType }) {
                 data-aos-delay="200"
               >
                 <div
-                  className={`position-relative ${styles.wallOfFameContainer} `}
-                >
+                  className={`position-relative ${styles.wallOfFameContainer} `}>
                   <Image
                     src={placementsData.hall_of_fame.image}
                     alt="Wall of Fame"
@@ -216,8 +218,7 @@ export default function PlacementsSection({ data, category, pageType }) {
                       borderTopLeftRadius: "10px",
                       borderBottomLeftRadius: "10px",
                       objectFit: "cover",
-                    }}
-                  />
+                    }}/>
                   <div
                     className={` ${styles.wallOfFameText}`}
                     dangerouslySetInnerHTML={{

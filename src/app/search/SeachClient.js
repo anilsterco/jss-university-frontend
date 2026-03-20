@@ -63,7 +63,16 @@ export default async function SearchClient({ query }) {
                 ) => (
                   <li key={idx} className="result-item">
                     <Link href={`${item.url}`} className="result_link">
-                      <span className="result-title">{item.title}</span>
+                      <div className="result-content">
+                        {item?.title && (
+                          <h3 className="result-title">{item.title}</h3>
+                        )}
+                        {item?.description && (
+                          <p className="result-description">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
                       <div className="result-arrow">
                         <FaChevronRight />
                       </div>
