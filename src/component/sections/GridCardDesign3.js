@@ -29,6 +29,7 @@ export default function GridCardDesign3({ data }) {
 
         return (
           <div
+          key={sectionIndex}
             className={`gridCardDesign3_section ${section?.items[0].sectionType}`}
           >
             <div className="container">
@@ -39,7 +40,7 @@ export default function GridCardDesign3({ data }) {
                     return (
                       <div key={itemIndex} className={`single_card`}>
                         <Link
-                          href={item.pdf}
+                          href={item?.pdf ? item.pdf : ''}
                           style={{ color: "inherit" }}
                           target="_blank"
                         >
