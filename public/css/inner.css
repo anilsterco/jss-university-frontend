@@ -399,7 +399,7 @@
 .department-management-studies-facilities .library_section {
   padding-top: 10rem;
 }
-
+.department-management-studies-placements .amenities_section  {padding-top: 0;}
 .department-management-studies-placements .grid_group {
   background-color: var(--color-white);
   padding: 6rem;
@@ -408,7 +408,11 @@
 .schools-computer-applications-about-the-school .count_alumni_section {
   padding-top: 0rem;
 }
-
+.btmPlace_para{padding-top: 2.5rem;}
+.btmPlace_para p{    font: var(--font-16);
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 2.8rem;}
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
 }
@@ -6816,7 +6820,7 @@
 }
 
 .department-pharmaceutics-about-us .grid_card_design1_section {
-  padding-block: 10rem 2rem;
+  padding-block:  2rem 10rem;
 }
 
 .department-research .table_section {

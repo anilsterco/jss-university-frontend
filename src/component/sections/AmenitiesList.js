@@ -79,6 +79,16 @@ export default function AmenitiesList({ data }) {
                         </div>
                       )}
                     </div>
+
+                    {item?.description && item.description?.length > 0 && (
+                      <div className="btmPlace_para">
+                        {item.description?.map((desc, descIdx)=>(
+                          <p key={descIdx}>{desc.desc}</p>
+                        ))}
+                    </div>
+                    )}
+
+                    
                   </div>
                 );
               })}
