@@ -136,13 +136,18 @@ export default function EventsGrid({ data }) {
                     {eventsData.happenings[0] &&
                       eventsData.happenings[0].event_type}
                   </p>
-                  <h2
-                    className={styles.cardTitleLarge}
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                  >
-                    {eventsData.happenings[0] && eventsData.happenings[0].title}
-                  </h2>
+
+                  {eventsData.happenings[0] && (
+                    <h2
+                      className={styles.cardTitleLarge}
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      dangerouslySetInnerHTML={{
+                        __html: eventsData.happenings[0].title,
+                      }}
+                    />
+                  )}
+
                   {eventsData.happenings?.[0]?.slug && (
                     <Link
                       href={`${WEB_URL}happenings/${eventsData.happenings[0].slug}`}

@@ -10,7 +10,7 @@ import Script from "next/script";
 import { BASE_URL } from "@/config/config";
 
 export async function generateMetadata() {
-  return await getPageSEO("home"); // or 'homepage'
+  return await getPageSEO();
 }
 
 async function getSchoolData() {
@@ -26,17 +26,19 @@ async function getSchoolData() {
 }
 
 export default async function HomePage() {
-  const seoData = await getPageSEO("home");
+  const seoData = await getPageSEO();
   const homepageData = await getSchoolData();
   return (
     <div>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
+
       <BannerComponent data={homepageData.sections.banners} />
 
       <div className="animated-hover">

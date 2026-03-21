@@ -68,6 +68,7 @@ import FaqPage from "@/pages/faq/Faq";
 import Accordions from "@/component/sections/Accordions";
 import Accordion from "@/component/sections/Accordion";
 import GridCardDesign3 from "@/component/sections/GridCardDesign3";
+import { getPageSEO } from "@/lib/seo";
 
 async function fetchPageData(slug) {
   try {
@@ -81,10 +82,17 @@ async function fetchPageData(slug) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  return await getPageSEO();
+}
+
 export default async function DynamicPage({ params }) {
   const { slug } = await params;
   const actualSlug = slug ?? "home";
-  const data = await fetchPageData(actualSlug);
+  const [data, seoData] = await Promise.all([
+    fetchPageData(actualSlug),
+    getPageSEO(),
+  ]);
   if (!data) return notFound();
 
   const hasTabs =
@@ -188,6 +196,16 @@ export default async function DynamicPage({ params }) {
 
   return (
     <>
+      {/* Schema JSON-LD */}
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
+
       {hasTabs && (
         <TabSection
           title={data.tabs.title}
@@ -211,27 +229,4 @@ export default async function DynamicPage({ params }) {
       })}
     </>
   );
-}
-
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const actualSlug = slug ?? "home";
-  try {
-    const data = await fetchPageData(actualSlug);
-    if (!data) {
-      return {
-        title: "Page Not Found",
-        description: "The requested page could not be found.",
-      };
-    }
-    return {
-      title: data.meta_title || data.title || "JSS Academy",
-      description: data.meta_description || `Page: ${data.title}`,
-    };
-  } catch (error) {
-    return {
-      title: "JSS Academy",
-      description: "JSS Academy of Technical Education",
-    };
-  }
 }

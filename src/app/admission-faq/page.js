@@ -2,8 +2,12 @@ import React from "react";
 import Faq from "@/component/common/faq/Faq";
 import TabSection from "@/component/sections/TabSection";
 import styles from "./page.module.css";
+import { BASE_URL } from "@/config/config";
+import { getPageSEO } from "@/lib/seo";
 
-const BASE_URL = "https://project-demo.in/jss/api/";
+export async function generateMetadata() {
+  return await getPageSEO();
+}
 
 async function getFaq() {
   try {
@@ -23,9 +27,18 @@ async function getFaq() {
 
 export default async function Page() {
   const data = await getFaq();
+  const seoData = await getPageSEO();
 
   return (
     <>
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
       <TabSection
         title="Admission <span>FAQ's</span>"
         subtitle="FAQ's"

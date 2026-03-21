@@ -11,6 +11,7 @@ import "swiper/css";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { WEB_URL } from "@/config/config";
 
 const dummyLegacyData = {
   title:
@@ -86,11 +87,15 @@ export default function LegacySection({ data }) {
 
           <div className={`${styles.fifthMiddleSection}`}>
             <div className={`${styles.leftColumn}`}>
+              <Link 
+                      href={`${WEB_URL}leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji`}
+                    >
               <div
                 className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
+                
                 <Image
                   src={legacyData.chancellor_img}
                   alt="chancellor image"
@@ -106,6 +111,7 @@ export default function LegacySection({ data }) {
                     data-aos="fade-up"
                     data-aos-delay="300"
                   >
+                    
                     {legacyData.video_url && (
                       <IoPlayCircleOutline
                         fontSize={36}
@@ -118,9 +124,12 @@ export default function LegacySection({ data }) {
                       <p>{legacyData.chancellor_title}</p>
                       <h5>{legacyData.chancellor_name}</h5>
                     </div>
+                    
                   </div>
                 </div>
+
               </div>
+</Link>
             </div>
 
             <div

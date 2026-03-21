@@ -285,6 +285,12 @@ export default function TestimonialClient() {
                         {modalData.title && (
                           <h3 className="modal_title">{modalData.title}</h3>
                         )}
+                        {/* {modalData.short_description && (
+                          <p className="modal_short_description">{modalData.short_description}</p>
+                        )} */}
+                        {modalData.description && (
+                          <p className="modal_description">{modalData.description}</p>
+                        )}
                         {modalData.name && (
                           <h3 className="modal_name">{modalData.name}</h3>
                         )}

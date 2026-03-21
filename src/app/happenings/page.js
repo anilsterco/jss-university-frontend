@@ -3,20 +3,22 @@ import HappeningsClient from "./HappeningsClient";
 import Script from "next/script";
 
 export async function generateMetadata() {
-  return await getPageSEO("happenings");
+  return await getPageSEO();
 }
 
 export default async function Happenings() {
-  const seoData = await getPageSEO("about");
+  const seoData = await getPageSEO();
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData?.schema && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+          strategy="beforeInteractive"
+        />
+      )}
       <HappeningsClient />
     </>
   );

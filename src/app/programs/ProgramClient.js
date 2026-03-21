@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
+
 import styles from "./page.module.css";
 import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
@@ -14,6 +13,8 @@ export default function ProgramClient() {
   const router = useRouter();
   const pathname = usePathname();
   const [activeProgram, setActiveProgram] = useState("under-graduate");
+  const [activeSchoolId, setActiveSchoolId] = useState(null);
+  const [activeDepartmentId, setActiveDepartmentId] = useState(null);
   const [selectedSchool, setSelectedSchool] = useState(null);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [schoolData, setSchoolData] = useState([]);
@@ -26,11 +27,39 @@ export default function ProgramClient() {
 
   useEffect(() => {
     const type = params.get("type");
-    if (type) {
-      setActiveProgram(type); // activate selected tab
-      router.replace(pathname); // remove ?type from URL
+    const school_id = params.get("school_id");
+    const department_id = params.get("department_id");
+
+    if (type) setActiveProgram(type);
+
+    if (school_id) {
+      setActiveSchoolId(Number(school_id));
+      setSelectedSchool(Number(school_id));
     }
-  }, [params]);
+
+    if (department_id) {
+      setActiveDepartmentId(Number(department_id));
+      setSelectedDepartment(Number(department_id));
+    }
+
+    router.replace(pathname);
+  }, []);
+
+  useEffect(() => {
+    if (!schoolData.length || !activeDepartmentId) return;
+
+    // Find which school this department belongs to
+    const parentSchool = schoolData.find((school) =>
+      school.departments?.some(
+        (dept) => dept.id === Number(activeDepartmentId),
+      ),
+    );
+
+    if (parentSchool) {
+      setActiveSchoolId(parentSchool.id);
+      setSelectedSchool(parentSchool.id);
+    }
+  }, [schoolData, activeDepartmentId]);
 
   useEffect(() => {
     setLoading(true);
@@ -38,15 +67,13 @@ export default function ProgramClient() {
       .then((response) => response.json())
       .then((data) => {
         setSchoolData(data.data);
-        if (data.data && data.data.length > 0) {
-          setSelectedSchool(data.data[0].id);
-        }
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
         setLoading(false);
       });
+
     fetch(`${BASE_URL}program-list`)
       .then((response) => response.json())
       .then((data) => {
@@ -102,11 +129,14 @@ export default function ProgramClient() {
   const tabs = programData;
   const handleSchoolToggle = (schoolId) => {
     setSelectedSchool(schoolId);
-    setSelectedDepartment(null);
+    setActiveSchoolId(schoolId);
+    setSelectedDepartment(null); // ← reset department
+    setActiveDepartmentId(null); // ← reset active department highlight
   };
 
   const handleDepartmentToggle = (departmentId) => {
     setSelectedDepartment(departmentId);
+    setActiveDepartmentId(departmentId);
   };
 
   const handleSearch = (value) => {
@@ -135,9 +165,7 @@ export default function ProgramClient() {
   };
 
   const getFilteredDepartments = () => {
-    if (!selectedSchool) {
-      return [];
-    }
+    if (!selectedSchool) return []; // returns empty — we handle message in JSX
     const school = schoolData.find((s) => s.id === selectedSchool);
     return school?.departments || [];
   };
@@ -227,7 +255,7 @@ export default function ProgramClient() {
                             className="check-box"
                             type="radio"
                             name="school"
-                            checked={selectedSchool === school.id}
+                            checked={activeSchoolId == school.id}
                             onChange={() => handleSchoolToggle(school.id)}
                             id={`school-${school.id}`}
                           />
@@ -243,10 +271,15 @@ export default function ProgramClient() {
                   </div>
 
                   {/* Departments Filter */}
+                  {/* Departments Filter */}
                   <div className={styles.programCategoryBox}>
                     <p>Filter by Departments</p>
                     {loading ? (
                       <div>Loading departments...</div>
+                    ) : !selectedSchool ? (
+                      <div className="select-school-msg">
+                        Please select a school first
+                      </div>
                     ) : filteredDepartments.length > 0 ? (
                       filteredDepartments.map((department) => (
                         <div
@@ -257,7 +290,7 @@ export default function ProgramClient() {
                             className="check-box"
                             type="radio"
                             name="department"
-                            checked={selectedDepartment === department.id}
+                            checked={activeDepartmentId == department.id}
                             onChange={() =>
                               handleDepartmentToggle(department.id)
                             }

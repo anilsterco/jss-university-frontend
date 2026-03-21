@@ -1,27 +1,26 @@
 import { getPageSEO } from "@/lib/seo";
 import ProgramDetailClient from "./ProgramDetailClient";
-import Script from "next/script";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  return await getPageSEO(id);
+  // const { id } = await params;
+  return await getPageSEO();
 }
 
 export default async function ProgramDetail({ params }) {
-  const seoData = await getPageSEO(params);
+  const seoData = await getPageSEO();
   const { id } = await params;
- 
+
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
-      <ProgramDetailClient params={id}/>
-     
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
+      <ProgramDetailClient params={id} />
     </>
   );
 }

@@ -4,9 +4,15 @@ import styles from "./hod-message.module.css";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { usePathname } from "next/navigation";
 
 const HODMessage = ({ data }) => {
   const [expanded, setExpanded] = useState(false);
+  const pathname = usePathname();
+
+  const pathParts = pathname.split("/").filter(Boolean)
+
+  console.log('innerpage pathParts',pathParts);
 
   // 🔹 Dummy data fallback
   const dummyHodData = {
@@ -90,7 +96,7 @@ const visibleMessages = expanded ? hodData.messages : hodData.messages.slice(0, 
                 data-aos-delay="400"
               >
                 <div className={styles.content}>
-                  {hodData?.type !== "department" && (
+                  {pathParts && pathParts.length < 3 && (
                     <Image
                       src="/images/about-page/quote-left.svg"
                       alt="icon"
