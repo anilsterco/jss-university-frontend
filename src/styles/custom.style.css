@@ -716,7 +716,7 @@
 .overview-duration {
   background-color: var(--color-white);
   padding: 2.2rem 2.5rem 2.9rem;
-  min-height: 34.7rem;
+  min-height: 31.9rem;
 }
 
 .overview-duration .apply-btn1 {
@@ -7555,16 +7555,10 @@ hr {
   .inner_faculties_search .faulty-box {
     display: block;
   }
-
   .search-box input {
     margin-bottom: 1.5rem;
   }
-
   .department-mechanical-engineering-research .about_one .estblish {
     padding-block: 2rem;
   }
-
-
-
-
 }

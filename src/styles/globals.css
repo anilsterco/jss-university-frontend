@@ -2898,3 +2898,13 @@ a:active {
 .step-and-startups-in-campus .about_one .estblish {
   padding-bottom: 0;
 }
+.collapsed_text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expanded_text {
+  display: block;
+}
