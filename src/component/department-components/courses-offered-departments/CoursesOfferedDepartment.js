@@ -165,7 +165,7 @@ const CoursesOffered = ({ data }) => {
                 data.programs.map((program, programIdx) => (
                   <Link
                     key={programIdx}
-                    href={`/programs?program=${program.slug}`}
+                    href={`${WEB_URL}programs?type=${program.slug}&department_id=${program.department_id}`}
                     className="second-section-cards-image position-relative"
                     data-aos="fade-up"
                     data-aos-delay="0"

@@ -172,6 +172,9 @@ export default function DepartmentSection({
                       pathname: "/programs",
                       query: {
                         type: prog.slug.toLowerCase().replace(/\s+/g, "-"),
+                        school_id: prog?.school_id
+                          ? prog.school_id
+                          : prog?.department_id,
                       },
                     }}
                   >
@@ -236,7 +239,6 @@ export default function DepartmentSection({
           >
             <p>BROWSE BY</p>
             <h2>
-              
               {(() => {
                 const words = schoolName?.split(" ") || [];
                 const last = words.pop();
