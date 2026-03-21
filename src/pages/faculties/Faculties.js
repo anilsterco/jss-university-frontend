@@ -55,13 +55,28 @@ export default function Faculties({ data }) {
   // --------------------------
   const fetchTypes = async () => {
     try {
-      const res = await fetch(`${BASE_URL}faculties/types/all`);
+      const parts = pathname.split("/").filter(Boolean);
+      // parts[0] = "schools" or "department"
+      // parts[1] = slug e.g. "college-of-pharmacy"
+
+      const segmentMap = {
+        schools: "school",
+        department: "department",
+      };
+
+      const segment = segmentMap[parts[0]] || parts[0];
+      const slug = parts[1] || "";
+
+      const res = await fetch(`${BASE_URL}faculties/types/${segment}/${slug}`);
       if (!res.ok) throw new Error(`Types API error: ${res.status}`);
       const json = await res.json();
-      const types = (json.types || []).map((t) => ({
+
+      // API now returns json.data instead of json.types
+      const types = (json.data || []).map((t) => ({
         type_id: t.id,
         type: t.name,
       }));
+
       setTypesList(types);
     } catch (err) {
       console.error("Types fetch error:", err);
