@@ -1,4 +1,4 @@
-.message_section{
+.message_section {
   background: #fff;
 }
 
@@ -14,8 +14,8 @@
   justify-content: center;
 }
 
-.message_section .container{
-  padding:0;
+.message_section .container {
+  padding: 0;
 }
 
 .container.department {
@@ -28,10 +28,10 @@
   padding-top: 10rem;
 }
 
-.message_section .card{
-  border:None;
-  padding-block:15rem;
-  
+.message_section .card {
+  border: None;
+  padding-block: 15rem;
+
 }
 
 .department .card {
@@ -105,39 +105,39 @@
   z-index: 1;
 }
 
-.message_section .content{
-  padding:0;
-  padding-right:18rem;
+.message_section .content {
+  padding: 0;
+  padding-right: 18rem;
 }
 
 .department .content {
   padding: 0;
   padding-right: 18rem;
-  padding-top:1rem;
+  padding-top: 1rem;
 }
 
 .title {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   font: var(--font-18);
-  line-height:3rem;
+  line-height: 3rem;
   color: #16344E;
   font-family: var(--font-Condensed);
   font-weight: 700;
   /* font:var(--font-26); */
-  margin-bottom:2.4rem;
+  margin-bottom: 2.4rem;
 }
 
-.message_section .title{
+.message_section .title {
   text-transform: initial;
-  font:var(--font-26);
-  margin-bottom:3rem;
+  font: var(--font-26);
+  margin-bottom: 3rem;
 }
 
-.subMessage{
-  font:var(--font-16);
+.subMessage {
+  font: var(--font-16);
   color: #444444;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 .messageText {
@@ -149,7 +149,7 @@
   color: #444;
   margin-bottom: 3rem;
   font: var(--font-16);
-  color:#333;
+  color: #333;
   letter-spacing: 0;
   line-height: 3rem;
 }
@@ -159,42 +159,42 @@
 }
 
 .listGroup {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   flex-direction: column;
-    gap: 1.5rem;
-    padding-left: 0;
-    list-style: none;
-    display: flex;
-    margin-bottom:4rem;
+  gap: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  margin-bottom: 4rem;
 }
 
-.listGroup li{
+.listGroup li {
   color: rgb(68, 68, 68);
-    align-items: flex-start;
-    padding-left: 1.3rem;
-    display: flex;
-    position: relative;
-    font: var(--font-16);
+  align-items: flex-start;
+  padding-left: 1.3rem;
+  display: flex;
+  position: relative;
+  font: var(--font-16);
 }
 
-.listGroup li:before{
+.listGroup li:before {
   content: "";
-    background-color: #ffc100;
-    border-radius: 50%;
-    flex-shrink: 0;
-    width: 5px;
-    height: 5px;
-    margin-top: 1rem;
-    position: absolute;
-    left: 0;
+  background-color: #ffc100;
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: 1rem;
+  position: absolute;
+  left: 0;
 }
 
 .hodImage {
   border-radius: 8px;
   border-top-left-radius: 5rem;
   position: relative;
-  height:auto;
+  height: auto;
 }
 
 /* HOD Info */
@@ -221,29 +221,55 @@
 
 .hodRow {
   display: grid;
-  grid-template-columns:repeat(1, 35% auto);
+  grid-template-columns: repeat(1, 35% auto);
   gap: 7.6rem;
 }
 
-.hodRow .left_col{
+.hodRow .left_col {
   /* display:flex; */
   /* align-items: center; */
-  padding:10rem 0;
+  padding: 10rem 0;
 }
 
 
-.arrowLink{
-  border:none!important;
-  background:none;
-  font:var(--font-18);
+.arrowLink {
+  border: none !important;
+  background: none;
+  font: var(--font-18);
   color: #16344E;
   font-weight: 500;
 }
 
-.arrowLink img{
+.arrowLink img {
   margin-left: 1rem;
 }
 
+@media (max-width: 1200px) {
+  .content {
+    padding-inline: 0rem 8rem;
+    padding-block: 6rem 8rem;
+  }
+
+  .card {
+    padding-top: 8rem;
+  }
+
+  .lineHod img {
+    right: 4rem;
+  }
+
+  .card {
+    padding-top: 6rem;
+  }
+
+  .hodRow .left_col {
+    padding: 4rem 0;
+  }
+
+ .hodRow .left_col {
+    padding: 0;
+  }
+}
 
 @media (max-width: 1024px) {
   .imagePlaceholder {
@@ -286,9 +312,13 @@
   .messageText {
     margin-bottom: 3rem;
   }
+
   .lineHod img {
     display: none;
   }
+  .department .card {
+  padding: 8rem 0;
+}
 }
 
 /* Responsive Design */
@@ -296,7 +326,9 @@
   .container {
     padding: 0rem 0;
   }
-
+  .department .card {
+  padding: 6rem 0;
+}
   .card {
     padding-top: 4rem;
   }

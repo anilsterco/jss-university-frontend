@@ -88,3 +88,20 @@
 .tableContentSection .rightTable {
   margin-top: 3rem;
 }
+
+
+@media (max-width:991px) {
+  .tableContentSection {
+  padding: 4rem 0;
+}
+
+}
+@media (max-width:767px) {
+  .tableContentSection {
+  padding: 4rem 0;
+}
+.tableContentSection .grid {
+  display: block;
+}
+
+}

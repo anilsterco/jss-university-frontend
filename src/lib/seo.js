@@ -1,6 +1,24 @@
+import { BASE_URL, SEO_URL } from "@/config/config";
+import { headers } from "next/headers";
+
 export async function getPageSEO(slug) {
   try {
-    const res = await fetch(`https://project-demo.in/jss/api/seo/${slug}`, {
+    // If no slug passed, auto-detect full URL from request headers
+    if (!slug) {
+      const headersList = await headers();
+      const host = headersList.get("host");
+      const protocol = "https";
+      const pathname =
+        headersList.get("x-invoke-path") ||
+        headersList.get("x-pathname") ||
+        "/";
+      // slug = `${protocol}://${host}${pathname}`;
+      slug = `${SEO_URL}${pathname}`;
+    }
+
+    console.log("slug", slug);
+
+    const res = await fetch(`${BASE_URL}seo/${encodeURIComponent(slug)}`, {
       cache: "force-cache",
       next: { revalidate: 3600 },
     });
@@ -12,14 +30,15 @@ export async function getPageSEO(slug) {
     return {
       title: data.data.title,
       description: data.data.description,
-      keywords: data.data.keywords,
+      keywords:
+        data.data.keywords.length > 0 ? data.data.keywords : "JSS University",
       alternates: {
-        canonical: data.data.alternates.canonical,
+        canonical: data.data.alternates?.canonical || slug,
       },
       openGraph: {
-        title: data.data.openGraph.title,
-        description: data.data.openGraph.description,
-        images: data.data.openGraph.images,
+        title: data.data.openGraph?.title || data.data.title,
+        description: data.data.openGraph?.description || data.data.description,
+        images: data.data.openGraph?.images || [],
       },
       schema: data.data.schema || {
         "@context": "https://schema.org",
@@ -30,17 +49,17 @@ export async function getPageSEO(slug) {
         datePublished: "2024-01-01",
         author: {
           "@type": "Person",
-          name: "John Doe",
+          name: "JSS University",
         },
       },
     };
   } catch (error) {
     return {
-      title: "Default Title",
-      description: "Default Description",
-      keywords: "Default Keywords",
+      title: "JSS University",
+      description: "JSS University",
+      keywords: "JSS University",
       alternates: {
-        canonical: "/default-url",
+        canonical: "/",
       },
     };
   }

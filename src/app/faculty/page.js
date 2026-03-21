@@ -3,20 +3,22 @@ import FacultyClient from "./FacultyClient";
 import Script from "next/script";
 
 export async function generateMetadata() {
-  return await getPageSEO("faculty");
+  return await getPageSEO();
 }
 
 export default async function Faculty() {
-  const seoData = await getPageSEO("faculty");
+  const seoData = await getPageSEO();
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData?.schema && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+          strategy="beforeInteractive"
+        />
+      )}
       <FacultyClient />
     </>
   );

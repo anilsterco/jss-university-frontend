@@ -5,6 +5,7 @@ import styles from "./faculties.module.css";
 import FacultyCards from "@/component/sections/FacultyCards";
 import { BASE_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
+import { RxReset } from "react-icons/rx";
 
 export default function Faculties({ data }) {
   const pathname = usePathname();
@@ -17,19 +18,21 @@ export default function Faculties({ data }) {
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const firstLoad = useRef(true);
+  const initialized = useRef(false);
+
+  // --------------------------
+  // Reset filters
+  // --------------------------
+  const handleReset = () => {
+    setSearchTerm("");
+    setSelectedType("");
+  };
 
   // --------------------------
   // Build API URL from pathname
-  // e.g. /department/mechanical-engineering/faculties
-  //   -> department-pages/mechanical-engineering/faculties
-  // e.g. /schools/college-of-pharmacy/faculties
-  //   -> school-pages/college-of-pharmacy/faculties
   // --------------------------
   const buildApiUrl = (search = "", type = "", page = 1) => {
     const parts = pathname.split("/").filter(Boolean);
-    // parts[0] = "department" or "schools"
-    // parts[1] = slug e.g. "mechanical-engineering"
 
     const segmentMap = {
       department: "department-pages",
@@ -40,27 +43,30 @@ export default function Faculties({ data }) {
     const slug = parts[1] || "";
 
     const params = new URLSearchParams();
-    if (search) params.set("search", search);
-    if (type) params.set("type", type);
+    if (search && search.trim() !== "") params.set("search", search);
+    if (type) params.set("type", String(type));
     if (page > 1) params.set("page", page);
 
     return `${BASE_URL}${segment}/${slug}/faculties?${params.toString()}`;
   };
 
   // --------------------------
-  // Accumulate unique types
+  // Fetch Types
   // --------------------------
-  // Fix accumulateTypes — use type string as key since no type_id in this API
-  const accumulateTypes = (newFaculty) => {
-    setTypesList((prev) => {
-      const existingTypes = new Map(prev.map((t) => [t.type, t]));
-      newFaculty.forEach((f) => {
-        if (f.type && !existingTypes.has(f.type)) {
-          existingTypes.set(f.type, { type_id: f.id, type: f.type }); // ← f.id as the filter value
-        }
-      });
-      return Array.from(existingTypes.values());
-    });
+  const fetchTypes = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}faculties/types/all`);
+      if (!res.ok) throw new Error(`Types API error: ${res.status}`);
+      const json = await res.json();
+      const types = (json.types || []).map((t) => ({
+        type_id: t.id,
+        type: t.name,
+      }));
+      setTypesList(types);
+    } catch (err) {
+      console.error("Types fetch error:", err);
+      setTypesList([]);
+    }
   };
 
   // --------------------------
@@ -70,6 +76,7 @@ export default function Faculties({ data }) {
     try {
       setLoading(true);
       const url = buildApiUrl(search, type, page);
+      console.log("Fetching faculty URL:", url); // ← debug
       const res = await fetch(url);
       if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
       const json = await res.json();
@@ -79,7 +86,6 @@ export default function Faculties({ data }) {
 
       setFacultyData(faculty);
       setNextPageUrl(pagination?.next_page_url || null);
-      accumulateTypes(faculty);
     } catch (err) {
       console.error("Faculty fetch error:", err);
       setFacultyData([]);
@@ -98,8 +104,9 @@ export default function Faculties({ data }) {
 
       const urlObj = new URL(nextPageUrl);
       const params = urlObj.searchParams;
-      if (searchTerm) params.set("search", searchTerm);
-      if (selectedType) params.set("type", selectedType);
+      if (searchTerm && searchTerm.trim() !== "")
+        params.set("search", searchTerm);
+      if (selectedType) params.set("type", String(selectedType));
 
       const proxiedUrl = urlObj
         .toString()
@@ -114,7 +121,6 @@ export default function Faculties({ data }) {
 
       setFacultyData((prev) => [...prev, ...newFaculty]);
       setNextPageUrl(pagination?.next_page_url || null);
-      accumulateTypes(newFaculty);
     } catch (err) {
       console.error("Load More error:", err);
     } finally {
@@ -123,20 +129,22 @@ export default function Faculties({ data }) {
   };
 
   // --------------------------
-  // Initial load
+  // Single initial load — fixes the double useEffect bug
   // --------------------------
   useEffect(() => {
-    fetchFaculty();
-  }, []);
+    const init = async () => {
+      await fetchTypes();
+      await fetchFaculty();
+      initialized.current = true; // ← mark ready AFTER both complete
+    };
+    init();
+  }, []); // ← only ONE useEffect for initial load
 
   // --------------------------
   // Filter change — debounced
   // --------------------------
   useEffect(() => {
-    if (firstLoad.current) {
-      firstLoad.current = false;
-      return;
-    }
+    if (!initialized.current) return; // ← skip on mount
 
     setNextPageUrl(null);
     setFacultyData([]);
@@ -184,12 +192,24 @@ export default function Faculties({ data }) {
                     >
                       <option value="">Select Designation</option>
                       {typesList.map((f) => (
-                        <option key={f?.id} value={f?.id}>
-                          {f?.type}
+                        <option key={f.type_id} value={f.type_id}>
+                          {f.type}
                         </option>
                       ))}
                     </select>
                   </div>
+
+                  {/* Reset Button */}
+                  {(searchTerm || selectedType) && (
+                    <button
+                      className="faculty-reset-btn"
+                      onClick={handleReset}
+                      type="button"
+                    >
+                      <RxReset size={16} />
+                      Reset
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

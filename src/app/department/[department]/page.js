@@ -14,8 +14,7 @@ import { BASE_URL } from "@/config/config";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  const { department } = await params;
-  return getPageSEO(department);
+  return getPageSEO();
 }
 
 async function getDepartmentData(slug) {
@@ -40,17 +39,19 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department);
   if (!departmentData) notFound();
-  const seoData = await getPageSEO(department);
+  const seoData = await getPageSEO();
 
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData?.schema && (
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+          strategy="beforeInteractive"
+        />
+      )}
       {/* <DepartmentSlider
         data={departmentData?.sections?.banners}
         name={departmentData?.departments_name}

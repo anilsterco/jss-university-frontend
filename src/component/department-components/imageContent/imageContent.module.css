@@ -164,7 +164,9 @@
         padding-left: 4.4rem;
         padding-top: 4rem;
     }
-
+ .content_col .bottomDesc {
+        margin-top: 0rem;
+    }
 }
 
 @media screen and (max-width:991px) {
@@ -184,9 +186,11 @@
     .content_col.facilities {
         padding-top: 2rem;
     }
-.inner_sub_header {
+
+    .inner_sub_header {
         margin-top: 0rem;
     }
+
     .content_col {
         padding-left: 0;
         padding-top: 0;
@@ -199,6 +203,7 @@
     .singleImageContent:first-child {
         padding-bottom: 4rem;
     }
+    
 
 }
 
@@ -206,9 +211,11 @@
     .content_col .subHeading {
         margin-top: 2rem;
     }
-.singleImageContent:first-child {
-    padding-bottom: 6rem;
-}
+
+    .singleImageContent:first-child {
+        padding-bottom: 6rem;
+    }
+
     .content_col {
         padding-left: 0;
         padding-top: 2rem;
@@ -244,4 +251,7 @@
     .content_col .descGroup {
         gap: 2rem;
     }
+
+   
+
 }
