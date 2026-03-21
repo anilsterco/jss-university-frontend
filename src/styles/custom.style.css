@@ -654,7 +654,7 @@
   line-height: 2.4rem;
   margin-bottom: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 10;
   /* show 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1071,18 +1071,24 @@
   padding-top: 0;
 }
 
-.department-about-us .hod_message_section .left_col {
+.department-about-us .hod_message_section .left_col,
+.schools-about-the-college .hod_message_section .left_col,
+.schools-about-the-school .hod_message_section .left_col {
   padding: 0;
   align-items: initial;
   display: unset;
 }
 
-.department-about-us .hod_message_section .hod_row {
+.department-about-us .hod_message_section .hod_row,
+.schools-about-the-college .hod_message_section .hod_row,
+.schools-about-the-school .hod_message_section .hod_row {
   gap: 11.8rem;
   grid-template-columns: repeat(1, 41% auto);
 }
 
-.department-about-us .hod_message_section .hod_title {
+.department-about-us .hod_message_section .hod_title,
+.schools-about-the-college .hod_message_section .hod_title,
+.schools-about-the-school .hod_message_section .hod_title {
   font: var(--font-26);
   line-height: 3rem;
   text-transform: initial;
@@ -1975,6 +1981,10 @@
 /* .search_error{
   
 } */
+
+.schools-about-the-college .hod_message_section{
+  background:#fff;
+}
 
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {

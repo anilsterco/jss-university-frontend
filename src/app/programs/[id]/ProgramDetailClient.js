@@ -264,15 +264,18 @@ export default function ProgramDetailClient({ params }) {
                     <p className={expanded ? "expanded_text" : ""}>
                       {overview?.overview_desc}
                     </p>
-                    <button
-                      className="btn read_more"
-                      onClick={() => setExpanded(!expanded)}
-                    >
-                      {expanded ? "Show Less" : "Show More"}
-                      <i
-                        className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}
-                      ></i>
-                    </button>
+                    {overview?.overview_desc &&
+                      overview?.overview_desc.split(" ").length > 200 && (
+                        <button
+                          className="btn read_more"
+                          onClick={() => setExpanded(!expanded)}
+                        >
+                          {expanded ? "Show Less" : "Show More"}
+                          <i
+                            className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}
+                          ></i>
+                        </button>
+                      )}
                   </div>
                 </div>
               </div>
@@ -340,137 +343,140 @@ export default function ProgramDetailClient({ params }) {
                 <article className="tabbed-content">
                   <nav className="tabs">
                     <ul>
-                      <li>
-                        <a
-                          href="#tab1"
-                          className={activeTab === "tab1" ? "active" : ""}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleTabClick("tab1");
-                          }}
-                        >
-                          (PEOs)
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#tab2"
-                          className={activeTab === "tab2" ? "active" : ""}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleTabClick("tab2");
-                          }}
-                        >
-                          (POs)
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#tab3"
-                          className={activeTab === "tab3" ? "active" : ""}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleTabClick("tab3");
-                          }}
-                        >
-                          (PSOs)
-                        </a>
-                      </li>
+                      {peos?.length > 0 && (
+                        <li>
+                          <a
+                            href="#tab1"
+                            className={activeTab === "tab1" ? "active" : ""}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleTabClick("tab1");
+                            }}
+                          >
+                            (PEOs)
+                          </a>
+                        </li>
+                      )}
+                      {pos?.length > 0 && (
+                        <li>
+                          <a
+                            href="#tab2"
+                            className={activeTab === "tab2" ? "active" : ""}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleTabClick("tab2");
+                            }}
+                          >
+                            (POs)
+                          </a>
+                        </li>
+                      )}
+                      {pso?.length > 0 && (
+                        <li>
+                          <a
+                            href="#tab3"
+                            className={activeTab === "tab3" ? "active" : ""}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleTabClick("tab3");
+                            }}
+                          >
+                            (PSOs)
+                          </a>
+                        </li>
+                      )}
                     </ul>
                   </nav>
-                  <div
-                    id="tab1"
-                    className={`item ${activeTab === "tab1" ? "active" : ""}`}
-                    data-title="Program Educational Objectives (PEOs)"
-                  >
-                    <div className="item-content">
-                      <h6>Program Educational Objectives </h6>
-                      <div className="peo-list">
-                        {peos && peos.length > 0 ? (
-                          peos.map((peo, index) => (
+
+                  {peos?.length > 0 && (
+                    <div
+                      id="tab1"
+                      className={`item ${activeTab === "tab1" ? "active" : ""}`}
+                      data-title="Program Educational Objectives (PEOs)"
+                    >
+                      <div className="item-content">
+                        <h6>Program Educational Objectives</h6>
+                        <div className="peo-list">
+                          {peos.map((peo, index) => (
                             <div key={index} className="peo-box">
                               <h3>{peo.title}</h3>
                               <p>{peo.description}</p>
                             </div>
-                          ))
-                        ) : (
-                          <p>No PEOs available</p>
+                          ))}
+                        </div>
+                        {apply_now_link && (
+                          <a
+                            href={apply_now_link}
+                            className="apply-btn1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
                         )}
                       </div>
-                      {apply_now_link && (
-                        <a
-                          href={apply_now_link}
-                          className="apply-btn1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
                     </div>
-                  </div>
-                  <div
-                    id="tab2"
-                    className={`item ${activeTab === "tab2" ? "active" : ""}`}
-                    data-title="Program Outcomes (POs)"
-                  >
-                    <div className="item-content">
-                      <h6>Program Outcomes </h6>
-                      <div className="peo-list">
-                        {pos && pos.length > 0 ? (
-                          pos.map((po, index) => (
+                  )}
+
+                  {pos?.length > 0 && (
+                    <div
+                      id="tab2"
+                      className={`item ${activeTab === "tab2" ? "active" : ""}`}
+                      data-title="Program Outcomes (POs)"
+                    >
+                      <div className="item-content">
+                        <h6>Program Outcomes</h6>
+                        <div className="peo-list">
+                          {pos.map((po, index) => (
                             <div key={index} className="peo-box">
                               <h3>{po.title}</h3>
                               <p>{po.description}</p>
                             </div>
-                          ))
-                        ) : (
-                          <p>No POs available</p>
+                          ))}
+                        </div>
+                        {apply_now_link && (
+                          <a
+                            href={apply_now_link}
+                            className="apply-btn1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
                         )}
                       </div>
-                      {apply_now_link && (
-                        <a
-                          href={apply_now_link}
-                          className="apply-btn1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
                     </div>
-                  </div>
-                  <div
-                    id="tab3"
-                    className={`item ${activeTab === "tab3" ? "active" : ""}`}
-                    data-title="Program Specific Outcomes (PSOs)"
-                  >
-                    <div className="item-content">
-                      <h6>Program Specific Outcomes</h6>
-                      <div className="peo-list">
-                        {pso && pso.length > 0 ? (
-                          pso.map((pso, index) => (
+                  )}
+
+                  {pso?.length > 0 && (
+                    <div
+                      id="tab3"
+                      className={`item ${activeTab === "tab3" ? "active" : ""}`}
+                      data-title="Program Specific Outcomes (PSOs)"
+                    >
+                      <div className="item-content">
+                        <h6>Program Specific Outcomes</h6>
+                        <div className="peo-list">
+                          {pso.map((p, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{pso.title}</h3>
-                              <p>{pso.description}</p>
+                              <h3>{p.title}</h3>
+                              <p>{p.description}</p>
                             </div>
-                          ))
-                        ) : (
-                          <p>No PSOs available</p>
+                          ))}
+                        </div>
+                        {apply_now_link && (
+                          <a
+                            href={apply_now_link}
+                            className="apply-btn1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
                         )}
                       </div>
-                      {apply_now_link && (
-                        <a
-                          href={apply_now_link}
-                          className="apply-btn1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
                     </div>
-                  </div>
+                  )}
                 </article>
               </div>
             </div>
@@ -493,59 +499,61 @@ export default function ProgramDetailClient({ params }) {
                       {curriculum?.curriculum_desc &&
                         curriculum.curriculum_desc[currentCurriculumIndex]}
                     </p>
-                    <div className="arrows">
-                      {/* Left Arrow */}
-                      <button
-                        className="arrow-btn left"
-                        onClick={handlePreviousCurriculum}
-                        title="Previous curriculum"
-                        disabled={currentCurriculumIndex === 0}
-                        style={{
-                          opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
-                          cursor:
-                            currentCurriculumIndex === 0
-                              ? "not-allowed"
-                              : "pointer",
-                        }}
-                      >
-                        <Image
-                          src="/images/icons/Arrow.svg"
-                          width={22}
-                          height={22}
-                          alt="Left Arrow"
-                        />
-                      </button>
+                    {curriculum?.curriculum_desc?.length > 1 && (
+                      <div className="arrows">
+                        {/* Left Arrow */}
+                        <button
+                          className="arrow-btn left"
+                          onClick={handlePreviousCurriculum}
+                          title="Previous curriculum"
+                          disabled={currentCurriculumIndex === 0}
+                          style={{
+                            opacity: currentCurriculumIndex === 0 ? 0.5 : 1,
+                            cursor:
+                              currentCurriculumIndex === 0
+                                ? "not-allowed"
+                                : "pointer",
+                          }}
+                        >
+                          <Image
+                            src="/images/icons/Arrow.svg"
+                            width={22}
+                            height={22}
+                            alt="Left Arrow"
+                          />
+                        </button>
 
-                      {/* Right Arrow */}
-                      <button
-                        className="arrow-btn right"
-                        onClick={handleNextCurriculum}
-                        title="Next curriculum"
-                        disabled={
-                          currentCurriculumIndex ===
-                          (curriculum?.curriculum_desc?.length || 1) - 1
-                        }
-                        style={{
-                          opacity:
+                        {/* Right Arrow */}
+                        <button
+                          className="arrow-btn right"
+                          onClick={handleNextCurriculum}
+                          title="Next curriculum"
+                          disabled={
                             currentCurriculumIndex ===
-                            (curriculum?.curriculum_desc?.length || 1) - 1
-                              ? 0.5
-                              : 1,
-                          cursor:
-                            currentCurriculumIndex ===
-                            (curriculum?.curriculum_desc?.length || 1) - 1
-                              ? "not-allowed"
-                              : "pointer",
-                        }}
-                      >
-                        <Image
-                          src="/images/icons/Arrow.svg"
-                          width={22}
-                          height={22}
-                          alt="Right Arrow"
-                        />
-                      </button>
-                    </div>
+                            curriculum.curriculum_desc.length - 1
+                          }
+                          style={{
+                            opacity:
+                              currentCurriculumIndex ===
+                              curriculum.curriculum_desc.length - 1
+                                ? 0.5
+                                : 1,
+                            cursor:
+                              currentCurriculumIndex ===
+                              curriculum.curriculum_desc.length - 1
+                                ? "not-allowed"
+                                : "pointer",
+                          }}
+                        >
+                          <Image
+                            src="/images/icons/Arrow.svg"
+                            width={22}
+                            height={22}
+                            alt="Right Arrow"
+                          />
+                        </button>
+                      </div>
+                    )}
                     {curriculum?.curriculum_pdf && (
                       <div className="core-pdf">
                         <a
