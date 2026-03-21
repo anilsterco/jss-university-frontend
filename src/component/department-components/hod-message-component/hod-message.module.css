@@ -203,7 +203,9 @@
   border-top: 1px solid var(--color-100);
   padding-top: 3.5rem;
 }
-
+.hodInfo h4 + p{
+  margin-bottom: 1rem;
+}
 .hodName {
   color: #16344E;
   margin-bottom: 0.25rem;
