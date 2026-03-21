@@ -10,7 +10,7 @@ import "@/styles/custom.style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
-export default function AboutOne({ data }) {
+export default function AboutOne({ data, extraClass }) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -29,7 +29,7 @@ export default function AboutOne({ data }) {
         return (
           <section
             key={sectionIndex}
-            className={`about_one`}
+            className={`about_one ${extraClass}`}
             id={section?.items?.[0]?.sectionId}
           >
             <div className="container">

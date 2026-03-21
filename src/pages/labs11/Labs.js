@@ -1,14 +1,21 @@
 import Image from "next/image";
 import styles from "./labs.module.css";
 import Link from "next/link";
+import AboutOne from "@/component/sections/AboutOne";
 import LabCard from "@/component/sections/LabCard";
 
 export default function Labspage({ data }) {
+  console.log("lab card data", data);
   return (
     <>
-      <section className={` ${styles.labs_page} ${styles.inner_page}`}>
+      {data?.[0]?.type == "topBanner" && (
+        <AboutOne data={data} extraClass={"inner_lab_page"} />
+      )}
+
+      <section
+        className={` ${styles.labs_page} ${styles.inner_page} ${data?.[0]?.type == "topBanner" ? "inner_lab_data_no_spacing" : ""}`}
+      >
         <div className="container">
-          <h4 className={`${styles.heading} text-center`}>Labs</h4>
           {/* <p className={`text-center ${styles.sub_heading}`}>
             Committed to producing industry-ready engineers through advanced
             laboratories, research, and practical exposure.

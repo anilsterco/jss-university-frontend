@@ -1982,17 +1982,31 @@
   
 } */
 
+.inner_lab_page.about_one .abt_cntnt p{
+  padding-bottom:0;
+}
+
 .schools-about-the-college .hod_message_section{
   background:#fff;
 }
 
+.inner_lab_data_no_spacing{
+  padding:0!important;
+}
+
 /* schools-college-of-pharmacy */
 
-.schools-college-of-pharmacy .faculty_section{
+.department-pharmaceutical-chemistry .faculty_section,
+.department-pharmacognosy .faculty_section,
+.department-pharmacology .faculty_section,
+.department-pharmaceutics .faculty_section{
   display:none
 }
 
-.schools-college-of-pharmacy .homepage_happenings .happining-sec:after{
+.department-pharmaceutical-chemistry .homepage_happenings .happining-sec:after,
+.department-pharmacognosy .homepage_happenings .happining-sec:after,
+.department-pharmacology .homepage_happenings .happining-sec:after,
+.department-pharmaceutics .homepage_happenings .happining-sec:after{
   display:none;
 }
 
