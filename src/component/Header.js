@@ -574,7 +574,7 @@ export default function Header() {
                   />
                   <div className="logo_text">
                     <div className="uniname">JSS University</div>
-                    <div className="uni_addrese">Noida, (Uttar Pradesh)</div>
+                    <div className="uni_addrese">Noida, Uttar Pradesh</div>
                   </div>
                 </Link>
               </div>
