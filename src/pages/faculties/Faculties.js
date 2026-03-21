@@ -182,7 +182,7 @@ export default function Faculties({ data }) {
                       value={selectedType}
                       onChange={(e) => setSelectedType(e.target.value)}
                     >
-                      <option value="">Select Faculty Type</option>
+                      <option value="">Select Designation</option>
                       {typesList.map((f) => (
                         <option key={f?.id} value={f?.id}>
                           {f?.type}
