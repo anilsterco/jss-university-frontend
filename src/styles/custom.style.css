@@ -37,15 +37,16 @@
 }
 
 .department-facilities .about_one .overlap_contents:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    padding: 20rem 10em 10rem;
-    left: 0;
-    z-index: -1;
-    bottom: 0;
-    background: #000;
-    background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);}
+  content: "";
+  position: absolute;
+  width: 100%;
+  padding: 20rem 10em 10rem;
+  left: 0;
+  z-index: -1;
+  bottom: 0;
+  background: #000;
+  background: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);
+}
 
 .about_one .overlap_contents:before {
   content: "";
@@ -1070,22 +1071,22 @@
   padding-top: 0;
 }
 
-.department-about-us .hod_message_section .left_col{
-  padding:0;
+.department-about-us .hod_message_section .left_col {
+  padding: 0;
   align-items: initial;
   display: unset;
 }
 
-.department-about-us .hod_message_section .hod_row{
+.department-about-us .hod_message_section .hod_row {
   gap: 11.8rem;
   grid-template-columns: repeat(1, 41% auto);
 }
 
-.department-about-us .hod_message_section .hod_title{
-  font:var(--font-26);
-  line-height:3rem;
+.department-about-us .hod_message_section .hod_title {
+  font: var(--font-26);
+  line-height: 3rem;
   text-transform: initial;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 .image_content_repeat_section.no-padding {
@@ -1400,15 +1401,15 @@
 }
 
 .labs_group_section.about_two .about_two {
-  padding-bottom:7rem;
+  padding-bottom: 7rem;
 }
 
-.labs_group_section .about_two .early-slide{
+.labs_group_section .about_two .early-slide {
   grid-template-columns: 50% 50%;
 }
 
-.labs_group_section.about_two .about_two.reverse .image_col{
-  order:2;
+.labs_group_section.about_two .about_two.reverse .image_col {
+  order: 2;
 }
 
 .about_two.labs_group_section .early-slide .early_rgt h5 {
@@ -1417,9 +1418,9 @@
   margin-bottom: 1.5rem;
 }
 
-.about_two.labs_group_section .early-slide .early_rgt h4{
-  font-family:var(--font-Roboto);
-  margin-bottom:4rem;
+.about_two.labs_group_section .early-slide .early_rgt h4 {
+  font-family: var(--font-Roboto);
+  margin-bottom: 4rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: -1.02px;
@@ -1440,16 +1441,16 @@
   font: var(--font-18);
 }
 
-.about_two.labs_group_section .early-slide .read-more-btn{
+.about_two.labs_group_section .early-slide .read-more-btn {
   font: var(--font-16);
-    color: #16344e;
-    background: none;
-    font-weight: 500;
-    border: none !important;
-    margin-top:2rem;
+  color: #16344e;
+  background: none;
+  font-weight: 500;
+  border: none !important;
+  margin-top: 2rem;
 }
 
-.about_two.labs_group_section .early-slide .read-more-btn img{
+.about_two.labs_group_section .early-slide .read-more-btn img {
   margin-left: 1rem;
 }
 
@@ -1471,44 +1472,44 @@
 }
 
 
-.department-labs{
-  padding-bottom:6rem;
+.department-labs {
+  padding-bottom: 6rem;
 }
 
-.labs_group_section.about_two .about_two.reverse .early_rgt{
-  padding-left:0;
+.labs_group_section.about_two .about_two.reverse .early_rgt {
+  padding-left: 0;
   padding-right: 7rem;
 }
 
-.labs_group_section.about_two .about_two.reverse .imgsli_left{
+.labs_group_section.about_two .about_two.reverse .imgsli_left {
   border-radius: .8rem 6rem 0.8rem .8rem;
 }
 
-.labs_group_section.about_two .about_two.reverse .early-slide{
-  grid-template-columns:  50% 50%;
+.labs_group_section.about_two .about_two.reverse .early-slide {
+  grid-template-columns: 50% 50%;
 }
 
 
-.department-facilities .placement_page .section_title{
-  font:var(--font-21);
-  line-height:3rem;
+.department-facilities .placement_page .section_title {
+  font: var(--font-21);
+  line-height: 3rem;
   color: #16344E;
   font-weight: 500;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
-.department-facilities .placement_page .curriculum_box{
-  padding:3rem;
+.department-facilities .placement_page .curriculum_box {
+  padding: 3rem;
 }
 
-.department-facilities .placement_page .placement_stats{
-  padding-bottom:13rem;
+.department-facilities .placement_page .placement_stats {
+  padding-bottom: 13rem;
 }
 
 
-.schools-departments .faulty-img figure{
+.schools-departments .faulty-img figure {
   border-radius: 7px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 
@@ -1516,86 +1517,86 @@
 /* search page */
 
 .search_listing_section {
-  padding:10rem 0;
+  padding: 10rem 0;
 }
 
 .search_listing_section .search-heading {
-      font-size: 22px;
-      font-weight: 400;
-      color: #3d52a0;
-      margin-bottom: 40px;
-      letter-spacing: -0.2px;
-    }
+  font-size: 22px;
+  font-weight: 400;
+  color: #3d52a0;
+  margin-bottom: 40px;
+  letter-spacing: -0.2px;
+}
 
-.search_listing_section     .search-heading span {
-      font-weight: 400;
-    }
+.search_listing_section .search-heading span {
+  font-weight: 400;
+}
 
-    .search_listing_section .results-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding:0;
-      margin:0;
-    }
+.search_listing_section .results-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
 
-    .search_listing_section .result-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #f5f5f5;
-      border-bottom: 1px dashed #ccc;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+.search_listing_section .result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border-bottom: 1px dashed #ccc;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-    .search_listing_section .result-item .result_link{
-      padding: 2.5rem 2rem;
-      display:flex;
-      width:100%;
-      align-items: center;
-    }
+.search_listing_section .result-item .result_link {
+  padding: 2.5rem 2rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
 
-    .search_listing_section .result-item .result-content{
-      flex:1;
-    }
+.search_listing_section .result-item .result-content {
+  flex: 1;
+}
 
-    .search_listing_section .result-item .result-content .result-description{
-      margin:0;
-      font:var(--font-14);
-      color:#333;
-    }
+.search_listing_section .result-item .result-content .result-description {
+  margin: 0;
+  font: var(--font-14);
+  color: #333;
+}
 
-    .search_listing_section .result-item:hover {
-      background-color: #ececec;
-    }
+.search_listing_section .result-item:hover {
+  background-color: #ececec;
+}
 
-    .search_listing_section .result-item:last-child {
-      border-bottom: 1px dashed #ccc;
-    }
+.search_listing_section .result-item:last-child {
+  border-bottom: 1px dashed #ccc;
+}
 
-    .search_listing_section .result-title {
-      font:var(--font-20);
-        font-weight: 400;
-      color: #1a1a1a;
-      letter-spacing: 0px;
-      flex:1;
-      margin-bottom: 1rem;
-    }
+.search_listing_section .result-title {
+  font: var(--font-20);
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0px;
+  flex: 1;
+  margin-bottom: 1rem;
+}
 
-    .search_listing_section .result-arrow {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: #fff;
-    }
+.search_listing_section .result-arrow {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff;
+}
 
-    /* .search_listing_section .result-arrow svg {
+/* .search_listing_section .result-arrow svg {
       width: 14px;
       height: 14px;
       color: #555;
@@ -1603,43 +1604,43 @@
 
 
 
-.iqac_master{
-  padding-bottom:1rem;
+.iqac_master {
+  padding-bottom: 1rem;
 }
 
-.iqac_master .faqItem .faqAnswer{
-  max-height:fit-content;
+.iqac_master .faqItem .faqAnswer {
+  max-height: fit-content;
 }
 
-.iqac_master .table_section{
-  padding:2rem 0;
+.iqac_master .table_section {
+  padding: 2rem 0;
 }
 
-.team-iqac .iqac_master:nth-child(2){
-    padding-top:10rem;
+.team-iqac .iqac_master:nth-child(2) {
+  padding-top: 10rem;
 }
 
-.team-iqac .iqac_master:last-child{
-    padding-bottom:10rem;
+.team-iqac .iqac_master:last-child {
+  padding-bottom: 10rem;
 }
 
-.department-programs h1{
-  font:var(--font-26)
+.department-programs h1 {
+  font: var(--font-26)
 }
 
 
-.department-research .tabs_content_section .table_section{
- padding-top:0;
- background: inherit; 
- padding-bottom:5rem;
+.department-research .tabs_content_section .table_section {
+  padding-top: 0;
+  background: inherit;
+  padding-bottom: 5rem;
 }
 
-.department-research .tabs_content_section{
-  padding-bottom:5rem;
+.department-research .tabs_content_section {
+  padding-bottom: 5rem;
 }
 
-.department-research .tabs_content_section .table_section:last-child{
-  padding-bottom:12rem;
+.department-research .tabs_content_section .table_section:last-child {
+  padding-bottom: 12rem;
 }
 
 
@@ -1682,7 +1683,8 @@
 }
 
 .pagination_btn.active {
-  background-color: #1d4ed8; /* change to your brand color */
+  background-color: #1d4ed8;
+  /* change to your brand color */
   color: #ffffff;
   border-color: #1d4ed8;
   pointer-events: none;
@@ -1709,39 +1711,39 @@
 }
 
 
-.department-page .program_section_2{
+.department-page .program_section_2 {
   grid-template-columns: repeat(1, 50% auto);
 }
 
-.department-page .program_section_2 .programs-2{
+.department-page .program_section_2 .programs-2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
 
-.accordion_section{
-    padding:10rem 0;
+.accordion_section {
+  padding: 10rem 0;
 }
 
-.accordion_section .faqAnswer .sub_title{
-  font:var(--font-21);
-  font-weight:500;
-  margin-bottom:1.5rem;
+.accordion_section .faqAnswer .sub_title {
+  font: var(--font-21);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
-.accordion_section .faqAnswer ul{
-  margin-top:2rem;
+.accordion_section .faqAnswer ul {
+  margin-top: 2rem;
 }
 
 
 /* admission page */
 
-.admission .eligib_cont h5{
+.admission .eligib_cont h5 {
   font: var(--font-26);
   line-height: 3rem;
   font-weight: bold;
 }
 
-.admission .eligib_cont h2{
+.admission .eligib_cont h2 {
   font: var(--font-42);
   line-height: 4.2rem;
   font-weight: bold;
@@ -1750,81 +1752,81 @@
   font-family: var(--font-Condensed);
 }
 
-.admission .eligi_tab_con{
-  padding:0;
-  margin-top:4rem;
+.admission .eligi_tab_con {
+  padding: 0;
+  margin-top: 4rem;
 }
 
-.admission .eligi_tab_con h3{
+.admission .eligi_tab_con h3 {
   font: var(--font-21);
   line-height: 3rem;
   font-weight: 500;
-  color:#fff;
+  color: #fff;
   margin-bottom: 3rem;
 }
 
-.admission .eligi_tab_con .tab-desc p{
-  padding:0;
-  margin:0;
-  font:var(--font-16);
+.admission .eligi_tab_con .tab-desc p {
+  padding: 0;
+  margin: 0;
+  font: var(--font-16);
   font-weight: normal;
 }
 
-.admission .eligi_tab_con .tab-desc p:not(:last-child){
-  margin-bottom:1rem;
+.admission .eligi_tab_con .tab-desc p:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
-.admission .eligi_tab_con ul{
-  margin:0;
-  padding:0;
-margin-top:3rem;
+.admission .eligi_tab_con ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 3rem;
 
 }
 
-.admission .eligi_tab_con li{
-  font:var(--font-16);
-  line-height:2.4rem;
+.admission .eligi_tab_con li {
+  font: var(--font-16);
+  line-height: 2.4rem;
   font-weight: 300;
 }
 
-.admission .eligi_tab_con li:not(:last-child){
-  margin-bottom:3rem;
+.admission .eligi_tab_con li:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 /* conference p age */
 
 .gridCardDesign3_section {
 
-    background: #fff;
-    padding: 10rem 0;
+  background: #fff;
+  padding: 10rem 0;
 }
 
-.gridCardDesign3_section .grid{
+.gridCardDesign3_section .grid {
   grid-template-columns: repeat(4, 1fr);
   gap: 4.4rem 3.2rem;
   display: grid;
 }
 
-.gridCardDesign3_section .grid figure{
+.gridCardDesign3_section .grid figure {
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
 
-.gridCardDesign3_section .single_card .content{
-  padding:15px;
+.gridCardDesign3_section .single_card .content {
+  padding: 15px;
 }
 
-.gridCardDesign3_section .single_card .content .title{
+.gridCardDesign3_section .single_card .content .title {
   font: var(--font-18);
-    color: var(--color-black);
-    letter-spacing: 0;
-    margin-bottom: 1.4rem;
-    line-height: 1.4;
+  color: var(--color-black);
+  letter-spacing: 0;
+  margin-bottom: 1.4rem;
+  line-height: 1.4;
 }
 
-.gridCardDesign3_section .single_card .content .cardDate{
+.gridCardDesign3_section .single_card .content .cardDate {
   font: var(--font-14);
-    color: #17536b;
+  color: #17536b;
 }
 
 .testimonial-modal-overlay {
@@ -2725,33 +2727,34 @@ G41 .core-pdf::after {
 }
 
 .profile-info-box:before {
-    content: "";
-    background-color: var(--color-e8);
-    z-index: -1;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-block: 6rem;
+  content: "";
+  background-color: var(--color-e8);
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-block: 6rem;
 }
 
 .info-box {
-    gap: 1rem;
-    padding: 2rem 3rem;
-    display: flex;
-    position: relative;
+  gap: 1rem;
+  padding: 2rem 3rem;
+  display: flex;
+  position: relative;
 }
-.info-box::before{
-    content: "";
-    background-color: var(--color-e8);
-    z-index: -1;
-    width: 100%;
-    height: auto;
-    padding-block: 6rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.info-box::before {
+  content: "";
+  background-color: var(--color-e8);
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  padding-block: 6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 hr {
@@ -2839,9 +2842,9 @@ hr {
   gap: 1.2rem;
 }
 
-.research-list .research-link i{
+.research-list .research-link i {
   color: var(--color-73);
-    font: var(--font-14);
+  font: var(--font-14);
 }
 
 .research-box {
@@ -2999,6 +3002,9 @@ hr {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .schools-facilities .image_content_repeat_section.facilities {
+    padding-block: 4rem 6rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3088,12 +3094,33 @@ hr {
   .atm_fac_grid h5 {
     margin-bottom: 1.5rem;
   }
+
+  .single_image_content.reverse .content_col {
+    padding-right: 2rem;
+  }
+
 }
 
 @media (max-width:991px) {
   .program-testimonial-box {
     grid-template-columns: repeat(1, 1fr);
     gap: 4rem;
+  }
+
+  .image_content_repeat_section.library-section {
+    padding: 6rem 0;
+  }
+
+  .schools-about-the-school.schools-page .singleImageContent:first-child {
+    padding-bottom: 2rem;
+  }
+
+  .team-iqac .iqac_master:nth-child(2) {
+    padding-top: 4rem;
+  }
+
+  .team-iqac .iqac_master:last-child {
+    padding-bottom: 4rem;
   }
 
   .amenities_section {
@@ -3151,6 +3178,18 @@ hr {
     padding-bottom: 5rem;
   }
 
+  .labs_group_section.about_two .about_two.reverse .early-slide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .labs_group_section {
+    padding-top: 2rem;
+  }
+
+  .single_image_content.reverse .content_col {
+    padding-right: 0em;
+  }
+
 }
 
 @media (max-width:767px) {
@@ -3158,6 +3197,14 @@ hr {
     gap: 4.3rem;
     padding-top: 3rem;
     padding-inline: 3rem;
+  }
+
+  .add_btn a {
+    margin-top: 2rem;
+  }
+
+  .image_content_repeat_section.library-section {
+    padding: 4rem 0;
   }
 
   .step-and-startups-in-campus .exte_mainsec,
@@ -3806,27 +3853,27 @@ hr {
 }
 
 .pdf_list_section .mainTitle {
-      font: var(--font-26);
-    color: var(--color-4e);
+  font: var(--font-26);
+  color: var(--color-4e);
   font-weight: 500;
   margin-bottom: 4rem;
 }
 
 .pdf_list_section ul {
-gap: 6rem;
-    margin: 0;
-    padding-bottom: 4rem;
-    list-style-type: none;
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    padding: 0;
+  gap: 6rem;
+  margin: 0;
+  padding-bottom: 4rem;
+  list-style-type: none;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  padding: 0;
 
 }
 
 .pdf_list_section li {
-border-bottom: 1px solid #d6d6d6;
-    padding-bottom: 1.5rem;
-    position: relative;
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 1.5rem;
+  position: relative;
 }
 
 /* .pdf_list_section li:not(:last-child):before {
@@ -5915,7 +5962,7 @@ border-bottom: 1px solid #d6d6d6;
   }
 
   .image_content_repeat_section {
-    padding-block: 4rem 2rem;
+    padding-block: 4rem;
   }
 
   .about_one .top_log_grid {
@@ -6034,6 +6081,11 @@ border-bottom: 1px solid #d6d6d6;
 
   .about_one .abt_cntnt p {
     padding-bottom: 3rem;
+    text-align: left;
+  }
+
+  .about_subtitle {
+    text-align: left;
   }
 
   .program-detail {
@@ -6071,9 +6123,11 @@ border-bottom: 1px solid #d6d6d6;
   .about_three .vsn_msn_grid .miss-rgt h4 {
     font: var(--font-40);
   }
-.placement_page .section_title {
+
+  .placement_page .section_title {
     margin-bottom: 3rem;
-}
+  }
+
   .table_section .heading {
     margin-bottom: 2rem;
   }
@@ -6086,6 +6140,19 @@ border-bottom: 1px solid #d6d6d6;
     padding-block: 5rem 0;
   }
 
+  .labs_group_section.about_two .about_two.reverse .early_rgt {
+    padding-left: 0;
+    padding-right: 0rem;
+  }
+
+  .labs_group_section .about_two .container {
+    padding-inline: 0;
+  }
+
+  .pdf_list_section ul {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
 }
 
 @media (max-width:575px) {
@@ -6093,14 +6160,20 @@ border-bottom: 1px solid #d6d6d6;
     margin-block: 0;
   }
 
+  .pdf_list_section {
+    padding: 4rem 0;
+  }
+
   .step-and-startups-in-campus .amenities_section .grid_group {
     padding: 2rem;
   }
-.placement_page .section_title {
+
+  .placement_page .section_title {
     font: var(--font-22);
     margin-bottom: 2rem;
     font-family: var(--font-Condensed);
-}
+  }
+
   .eligibility-img figure {
     display: block;
   }
@@ -6121,7 +6194,7 @@ border-bottom: 1px solid #d6d6d6;
     margin-bottom: 0;
   }
 
- 
+
 
   .amenities_section {
     padding: 2rem 0;
@@ -7125,8 +7198,9 @@ border-bottom: 1px solid #d6d6d6;
 }
 
 .department-master-of-computer-applications-facilities .department-facilities .image_content_repeat_section {
-    padding-block: 10rem 10rem;
+  padding-block: 10rem 10rem;
 }
+
 /* .department-computer-science-and-engineering-it-placements .iqac_master:first-child{
   background-color: #000;
 } */
@@ -7134,116 +7208,189 @@ border-bottom: 1px solid #d6d6d6;
 
   background-color: var(--color-white);
 }
+
 .placement_section1 {
-    padding: 10rem 0 0 0;
+  padding: 10rem 0 0 0;
 }
+
 .placement-sec2 {
-    padding-bottom: 10rem;
+  padding-bottom: 10rem;
 }
-.department-civil-engineering-placements .table_section.bg-gray{
+
+.department-civil-engineering-placements .table_section.bg-gray {
   background-color: var(--color-white);
 }
+
 .department-civil-engineering-facilities .about_one {
-    padding-bottom: 12rem;
+  padding-bottom: 12rem;
 }
+
 .department-engineering-data-science-about-us .grid_card_design1_section {
-    padding-block: 0rem 10rem;
+  padding-block: 0rem 10rem;
 }
+
 .department-engineering-data-science-research .res_table_maincms {
-    padding-block: 5rem 10rem;
+  padding-block: 5rem 10rem;
 }
+
 .department-electrical-electronics-engineering-about-us .grid_card_design1_section {
-    padding-block: 0rem 10rem;
+  padding-block: 0rem 10rem;
 }
+
 .department-mechanical-engineering-research .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-mechanical-engineering-about-us .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-mechanical-engineering-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
-    border: 0px solid #dfdfdf;
+  border: 0px solid #dfdfdf;
 }
+
 .department-mechanical-engineering-facilities .amenities_section .grid_group {
-    background: var(--color-white);
-    padding: 4rem;
+  background: var(--color-white);
+  padding: 4rem;
 }
+
 .department-computer-science-and-engineering-it-research .research_about {
-    padding-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 .department-mechanical-engineering-placements .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-computer-science-and-engineering-it-placements .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
-.table_section p{margin-bottom: 4rem;}
+
+.table_section p {
+  margin-bottom: 4rem;
+}
+
 .department-electrical-electronics-engineering-facilities .image_content_repeat_section {
-    padding-block: 10rem;
+  padding-block: 10rem;
 }
+
 .department-electrical-electronics-engineering-facilities .about_one {
-    padding-bottom: 10rem;
+  padding-bottom: 10rem;
 }
-.department-electrical-electronics-engineering-placements .table_section thead th{    padding: 1.2rem 1.8rem;}
+
+.department-electrical-electronics-engineering-placements .table_section thead th {
+  padding: 1.2rem 1.8rem;
+}
+
 .department-electronics-and-communication-engineering-about-us .grid_card_design1_section {
-    padding-block: 5rem 10rem;
+  padding-block: 5rem 10rem;
 }
-.early-slide ul li::marker{
-color: #ffc100;
+
+.early-slide ul li::marker {
+  color: #ffc100;
 }
-.department-page.department-engineering-aiml-facilities .image_content_repeat_section{  padding-block: 5rem 10rem;}
+
+.department-page.department-engineering-aiml-facilities .image_content_repeat_section {
+  padding-block: 5rem 10rem;
+}
+
 .department-computer-science-and-engineering-about-us .grid_card_design1_section {
-    padding-block: 0 10rem;
+  padding-block: 0 10rem;
 }
+
 .department-electrical-engineering-ee-research .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-electrical-engineering-ee-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
-    border: 0px solid #dfdfdf;
-    padding: 0rem 0rem;
+  border: 0px solid #dfdfdf;
+  padding: 0rem 0rem;
 }
+
 .department-electrical-engineering-ee-placements .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-civil-engineering-about-us .grid_card_design1_section {
-    padding-block: 4rem 10rem;
+  padding-block: 4rem 10rem;
 }
+
 .department-civil-engineering-research .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-page.department-civil-engineering-placements .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-engineering-data-science-research .res_table_maincms .table_section:last-child {
-    padding-block: 2rem 0rem;
+  padding-block: 2rem 0rem;
 }
-.department-management-studies-facilities  .image_content_repeat_section {
-    padding-block: 10rem;
+
+.department-management-studies-facilities .image_content_repeat_section {
+  padding-block: 10rem;
 }
+
 .department-management-studies-facilities .about_one .estblish {
-    padding-block: 4rem 8rem;
+  padding-block: 4rem 8rem;
 }
+
 .department-management-studies-placements .amenities_section .grid_group {
-    background: #fff;
-    padding: 4rem;
+  background: #fff;
+  padding: 4rem;
 }
+
 .department-electronics-and-communication-engineering-labs img.imgsli_left {
-    height: 45rem !important;
+  height: 45rem !important;
 }
+
 .department-pharmaceutics-about-us .grid_card_design1_section .heading {
-    text-align: left;
+  text-align: left;
 }
+
 .governance .table_section:nth-child(3) {
-    padding: 0rem 0 10rem;
+  padding: 0rem 0 10rem;
 }
+
 .nirf .about_one .abt_cntnt figure img {
-    width: 28rem !important;
-    height: 20rem !important;
-    object-fit: cover;
+  width: 28rem !important;
+  height: 20rem !important;
+  object-fit: cover;
 }
-.nirf .about_one .overlap_contents{display: none;}
+
+.nirf .about_one .overlap_contents {
+  display: none;
+}
+
 .nirf .about_one .estblish {
-    padding-block: 4rem 10rem;
+  padding-block: 4rem 10rem;
 }
-.placement .procedure_box p { font: var(--font-21); font-weight: 300; }
+
+.placement .procedure_box p {
+  font: var(--font-21);
+  font-weight: 300;
+}
+
+
+@media screen and (max-width:991px){
+.schools-facilities .image_content_repeat_section.reverse_bg_white {
+    padding-block: 6rem 0;
+}
+}
+
+@media screen and (max-width:767px) {
+  .nirf .about_one .abt_cntnt figure img {
+    width: 100% !important;
+  }
+
+  .nirf .about_one .estblish {
+    padding-block: 4rem;
+  }
+}
+
+@media screen and (max-width:575px){
+ .schools-facilities .image_content_repeat_section.facilities {
+        padding-block: 4rem ;
+    }
+}
+   

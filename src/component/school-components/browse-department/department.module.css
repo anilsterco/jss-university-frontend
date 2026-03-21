@@ -374,6 +374,15 @@
     padding-right: 2rem;
   }
 
+  .departSec {
+    padding-block: 10rem 5rem;
+  }
+
+  .departmentSection {
+    background-color: #f6f6f6;
+    min-height: 100%;
+    padding: 8rem 0rem 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -401,7 +410,7 @@
   }
 
   .departSec {
-    padding-block: 10rem;
+    padding-block: 6rem;
   }
 
   .departmentRow {
@@ -424,6 +433,10 @@
 
   }
 
+  .departmentSection .container {
+    padding-bottom: 0rem;
+  }
+
   .title span {
     letter-spacing: -1.88px;
   }
@@ -441,14 +454,35 @@
   .courseRow {
     display: block;
   }
+
   .departSec {
     padding-block: 8rem 6rem;
   }
 }
 
 @media (max-width: 768px) {
+  .departmentRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .courseRow {
+    padding-block: 2rem 0;
+  }
+
   .departmentSection {
     padding: 0rem 2rem 2rem 2rem;
+  }
+
+  .departSec {
+    padding-block: 4rem;
+  }
+
+  .schools-page .about-pagination {
+    display: none;
+  }
+
+  .schools-page .swiper-horizontal {
+    display: none;
   }
 
   .browseHeader {
@@ -508,14 +542,19 @@
     padding-inline: 2rem;
   }
 
-.courseItemsRow {
-  grid-template-columns: repeat(1, 1fr);
-}
-.departSec {
-    padding-block: 4rem 0 ;
+  .courseItemsRow {
+    grid-template-columns: repeat(1, 1fr);
   }
+
+  .departSec {
+    padding-block: 4rem 0;
+  }
+
   .departmentRow {
     grid-template-columns: repeat(1, 1fr);
   }
+.admistion_heading {
+  display: block;
 }
 
+}

@@ -5994,9 +5994,65 @@
   }
 }
 
+
+@media (max-width: 1024px) {
+  .grands_content {
+    padding-left: 5.3rem;
+    padding-right: 1rem;
+  }
+}
+
+
 @media (max-width: 991px) {
   .inner-title {
     padding-top: 10rem;
+  }
+
+  .grands_maingrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 4rem;
+  }
+
+  .grands_content {
+    padding-inline: 0;
+    padding-block: 4rem 0;
+  }
+
+  .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
+    max-width: 100%;
+  }
+
+  .campu_grid_main {
+    display: block;
+  }
+
+  .lib_cen_main .ab_jss_coutsec {
+    margin-block: 4rem;
+  }
+
+  .campu_grid_main.capus_grid_two {
+    padding-bottom: 4rem;
+  }
+
+  .scu_gridmain {
+    display: block;
+  }
+
+  .scu_content {
+    margin-top: 4rem;
+  }
+
+  .student_clubsmain {
+    padding-block: 4rem;
+  }
+
+  .scu_benift_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.4rem;
+  }
+
+  .grands_mainsec {
+    padding-block: 4rem 0;
   }
 
   /* .inner-title .innnr_head h3  {
@@ -6050,6 +6106,11 @@
 
   .abou_t_sec {
     padding-top: 3rem;
+  }
+
+  .scu_benift_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3.4rem;
   }
 
   .growth-tabs ul li:not(:last-child) {
@@ -6812,6 +6873,15 @@
     max-width: 90%;
     padding-left: 0;
   }
+
+  .about_one .estblish {
+    max-width: 100%;
+    padding-block: 4rem 4rem;
+  }
+
+  .placement_proSec {
+    padding-block: 4rem 6rem;
+  }
 }
 
 @media screen and (max-width:1100px) {
@@ -6842,7 +6912,9 @@
   .leadership_two_cnt p {
     padding-bottom: 2.2rem;
   }
-
+    .about_one .estblish {
+        padding-block: 4rem 4rem;
+    }
   .admission-selection-process.ad_selec_procss {
     padding-top: 6rem;
     padding-bottom: 8rem;
@@ -6933,7 +7005,7 @@
   }
 
   .placement_proSec {
-    padding-block: 5rem 10rem;
+    padding-block: 2rem 6rem;
   }
 
   .placement .placement_procedure {
@@ -6962,11 +7034,28 @@
   .placement_requ {
     padding-bottom: 10.6rem;
   }
+
+  .resea_facili_main .exten_grid {
+    gap: 4rem;
+  }
+  .schools-facilities.schools-page .about_one .estblish {
+    padding-block: 4rem 2rem;
+}
+
 }
 
 @media screen and (max-width:991px) {
   .leader_row {
     display: block;
+  }
+
+  .about_one .estblish p {
+    text-align: left;
+  }
+
+  .careers .placement_proSec,
+  .careers .admins_of_con {
+    padding-bottom: 4rem;
   }
 
   .testimonials-page .leader_row {
@@ -7022,9 +7111,9 @@
     padding-top: 4rem;
   }
 
-  .inner_sub_header {
-    margin-top: 12.4rem;
-  }
+     .inner_sub_header {
+        margin-top: 0rem;
+    }
 
   .about_top {
     padding-top: 4rem;
@@ -7319,8 +7408,8 @@
 
   .singleImageContent .row {
     display: flex;
-    flex-direction: column-reverse;
     gap: 2rem;
+    flex-direction: column;
   }
 
   .placements_loader {
@@ -7352,7 +7441,9 @@
   .admins_of_con {
     padding-bottom: 0rem;
   }
-
+    .schools-about-the-school .about_one .estblish {
+        padding-block: 4rem 2rem;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -7360,6 +7451,9 @@
     padding-inline: 3rem;
   }
 
+  .resea_facili_main .exten_grid {
+   display: block;
+  }
 
 
   .about_f_value .ab_f_content h3 {

@@ -18,6 +18,7 @@
   padding: 1.2rem 1.2rem;
   overflow-x: auto;
   scrollbar-width: none;
+  padding-top: 2rem;
 }
 
 .departmentMenu::-webkit-scrollbar {
@@ -222,10 +223,29 @@
   cursor: pointer;
 }
 
-@media (max-width: 1549px){
-.departmentMenu {padding: 3rem;}
+
+@media (min-width: 1921px) and (max-width: 2550px) {
+  .departmentMenu {
+    padding-top: 3rem;
+  }
 }
- 
+
+@media (max-width: 1649px) {
+  .departmentMenu {
+    padding-inline: 3rem;
+    padding-top: 6rem;
+  }
+}
+@media (max-width: 1366px) {
+  .departmentMenu {
+    padding-top: 8rem;
+  }
+}
+@media (max-width: 1199px) {
+  .departmentMenu {
+    padding-top: 2rem;
+  }
+}
 @media (max-width: 991px) {
   .mobileToggle {
     display: block;
@@ -275,8 +295,9 @@
     width: 100%;
   }
 }
-@media (max-width: 991px){
- .engineeringDropdownContainer {
+
+@media (max-width: 991px) {
+  .engineeringDropdownContainer {
     width: 40rem;
   }
   .navItem {
@@ -286,10 +307,12 @@
     width: 40rem;
   }
 }
-@media (max-width: 520px){
 
+@media (max-width: 520px) {
   .engineeringDropdownContainer {
     width: 35rem;
   }
+  .departmentMenu {
+    padding: 2rem;
+  }
 }
- 
