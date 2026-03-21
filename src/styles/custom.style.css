@@ -1029,7 +1029,7 @@
   padding-top: 10rem;
 }
 
-.schools-college-of-pharmacy-about-the-school .count_alumni_section {
+.schools-college-of-pharmacy-about-the-college .count_alumni_section {
   padding-block: 3rem;
 }
 
@@ -4245,7 +4245,7 @@ hr {
 .testimonial_list_section {
   padding-bottom: 10rem;
 }
-
+.testimonial_list_section .faulty-list-box img{border-radius: 6rem 0 0;}
 /* ---- Responsive ---- */
 @media (max-width: 48rem) {
   .researchPatents {
