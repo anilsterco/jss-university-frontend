@@ -2001,9 +2001,31 @@
   display: none;
 }
 
-.inner_faculties_search .faulty-box {
-  grid-template-columns: 50% 50%;
-}
+.inner_faculties_search .faulty-box{
+    grid-template-columns: 45% 45% 10%;
+  }
+
+  .inner_faculties_search .faculty-reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #fff;
+    color: #1e4264;
+    border: 1px solid #1e4264;
+    border-radius: 0.6rem;
+    padding: 0 1rem;
+    font: var(--font-14);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .inner_faculties_search .faculty-reset-btn:hover {
+    background: #1e4264;
+    color: #fff;
+    border: 1px solid #1e4264;
+  }
 
 
 @media all and (min-width: 800px) {
