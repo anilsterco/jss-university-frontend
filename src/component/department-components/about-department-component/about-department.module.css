@@ -4,9 +4,11 @@
   background-color: #F6F6F6;
   padding: 3rem 0 6rem;
 }
-.aboutDepartment .container{
+
+.aboutDepartment .container {
   border-bottom: solid 1px #ddd;
 }
+
 .header {
   text-align: center;
   margin-bottom: 3.9rem;
@@ -49,7 +51,7 @@
   margin: 0 auto;
   line-height: 1.6;
   padding-inline: 5rem;
-  margin-top:3rem;
+  margin-top: 3rem;
   max-width: 90%;
 }
 
@@ -300,10 +302,12 @@
   font: var(--font-16);
   padding-left: 1rem;
 }
-.arrowLink{
-  margin-top:4rem;
-  display:block;
+
+.arrowLink {
+  margin-top: 4rem;
+  display: block;
 }
+
 .arrowLink img {
   width: 2.2rem;
   height: 2.2rem;
@@ -359,6 +363,12 @@
     margin-top: 3rem;
   }
 
+  .points {
+    padding-inline: 0rem;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
   .title {
     font: var(--font-40);
     margin-bottom: 1.5rem;
@@ -370,8 +380,6 @@
   .description {
     padding-inline: 0;
   }
-
-  .statCardBody {}
 
   .statsSection {
     display: grid;
@@ -406,6 +414,16 @@
 
   }
 
+  .title {
+    text-align: left;
+  }
+
+  .description {
+    text-align: left;
+  }
+.subtitle {
+  text-align: left;
+}
   .visionCard {
     padding: 3rem;
   }
@@ -419,6 +437,9 @@
 
   }
 
+  .points {
+    text-align: left;
+  }
 
 }
 
@@ -446,11 +467,13 @@
   .visionCard {
     margin-top: 0rem;
   }
+
   .missionSection {
     padding: 0 0rem 0;
   }
+
   .visionDescription {
-  font: var(--font-16);
-}
+    font: var(--font-16);
+  }
 
 }

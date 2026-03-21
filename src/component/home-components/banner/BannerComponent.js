@@ -69,9 +69,9 @@ export default function HeroSlider({ data, slug }) {
               style={{ width: "100%", height: "100%" }}
               className={styles.mobileBanner}
             />
-            <div className={styles.bannerOverlay}>
+            <div className={` departBanner ${styles.bannerOverlay}`} >
               <div className="container">
-                <div className={styles.bannerContent}>
+                <div className={` departtext ${styles.bannerContent}`}>
                   {isDepartmentPage && (
                     <span className={styles.bannerSmall}>Department of</span>
                   )}

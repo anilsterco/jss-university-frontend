@@ -98,8 +98,8 @@ export default function Laboratories({ data }) {
               breakpoints={{
                 1200: { slidesPerView: 3.5 },
                 991: { slidesPerView: 2 },
-                667: { slidesPerView: 2 },
-                575: { slidesPerView: 1.3 },
+                667: { slidesPerView: 1 },
+                575: { slidesPerView: 1},
                 0: { slidesPerView: 1 },
               }}
             >

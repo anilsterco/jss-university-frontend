@@ -62,7 +62,7 @@
 .programsCountWrapper {
   position: relative;
   display: inline-block;
-  display:flex;
+  display: flex;
 }
 
 .programsCountPlus {
@@ -107,9 +107,9 @@
   font: var(--font-24);
   color: #16344E;
   font-family: var(--font-Roboto);
- letter-spacing: -0.48px;
- line-height: 1.5;
- font-weight: bold;
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  font-weight: bold;
 }
 
 .admissionSection h4 span:nth-child(2) {
@@ -149,7 +149,8 @@
 
 .bottomSectionH6::before {
   content: "";
-  background-color:  #E1E1E1;;
+  background-color: #E1E1E1;
+  ;
   width: 72%;
   height: .1rem;
   position: absolute;
@@ -195,7 +196,7 @@
   gap: 3.6rem;
 }
 
-.programButton .link{
+.programButton .link {
   font: var(--font-14);
   background: unset;
   color: #16344e;
@@ -210,58 +211,58 @@
   display: inline-block;
 }
 
-.programButton .link svg{
+.programButton .link svg {
   margin-left: 2rem;
 }
 
-.programButton .link:hover{
-  background:#000;
-  color:#fff;
+.programButton .link:hover {
+  background: #000;
+  color: #fff;
 }
 
 .programsCardsSection {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.3rem;
 }
 
-.left_col{
-  padding-top:4rem;
+.left_col {
+  padding-top: 4rem;
 }
 
-.rightCol .admistion_heading{
+.rightCol .admistion_heading {
   align-items: center;
-    gap: 2.7rem;
-    margin-top: 3.8rem;
-    display: flex;
+  gap: 2.7rem;
+  margin-top: 3.8rem;
+  display: flex;
 }
 
-.rightCol .admistion_heading h2{
+.rightCol .admistion_heading h2 {
   font: var(--font-24);
-    color: #16344e;
-    font-family: var(--font-Roboto);
-    letter-spacing: -.48px;
-    font-weight: bold;
-    line-height: 1.5;
+  color: #16344e;
+  font-family: var(--font-Roboto);
+  letter-spacing: -.48px;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
-.rightCol .admistion_heading h2 span{
+.rightCol .admistion_heading h2 span {
   color: #018ce8;
 }
 
-.rightCol .admistion_heading p{
+.rightCol .admistion_heading p {
   font: var(--font-18);
-    color: var(--color-black);
-    letter-spacing: -.36px;
-    margin-bottom: 0;
-    font-weight: 300;
+  color: var(--color-black);
+  letter-spacing: -.36px;
+  margin-bottom: 0;
+  font-weight: 300;
 }
 
-.rightCol .admistion_heading .applyNow{
+.rightCol .admistion_heading .applyNow {
   font: var(--font-16);
-    padding: .8rem 2.4rem;
-    font-family: Noto Sans, sans-serif;
-    line-height: 1.5;
+  padding: .8rem 2.4rem;
+  font-family: Noto Sans, sans-serif;
+  line-height: 1.5;
 }
 
 .rightDesktopArrow {
@@ -294,12 +295,14 @@
   .programsText {
     max-width: 55%;
   }
-  .topSection {
-  grid-template-columns: repeat(1, 35% auto);
-  gap: 8.3rem;
 
-}
- .bannerContent {
+  .topSection {
+    grid-template-columns: repeat(1, 35% auto);
+    gap: 8.3rem;
+
+  }
+
+  .bannerContent {
     left: 11.8%;
   }
 }
@@ -337,9 +340,10 @@
     justify-content: space-between;
   }
 
-.programsCountSection {
-    margin-bottom: 3rem  ;
+  .programsCountSection {
+    margin-bottom: 3rem;
   }
+
   .admissionSection {
     padding-bottom: 16px;
     padding-left: 1rem;
@@ -501,7 +505,7 @@
   }
 
   .programsCardsSection a {
-    width: 47%;
+    width: 100%;
   }
 
   .bannerLabel {
@@ -570,5 +574,16 @@
   .bannerLabel {
     font: var(--font-20);
     letter-spacing: -0.6px;
+  }
+}
+
+@media (max-width:575px) {
+  .programsCardsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width:480px) {
+  .programsCardsSection {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

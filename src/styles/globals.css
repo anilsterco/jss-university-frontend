@@ -358,6 +358,7 @@ p {
   .program-hide {
     display: none !important;
   }
+
 }
 
 
@@ -1260,12 +1261,6 @@ a:active {
 }
 
 .middle-title .hambur_link {
-  /* font: var(--font-21);
-  font-family: var(--font-Condensed);
-  font-weight: bold;
-  display: block;
-  padding-bottom: 1.6rem;
-  color: var(--color-black); */
   display: block;
   font: var(--font-18);
   font-family: var(--font-Condensed);
@@ -1520,6 +1515,7 @@ a:active {
   .containerXl {
     padding-inline: 4.8rem;
   }
+
 }
 
 @media screen and (max-width: 575px) {
@@ -1762,7 +1758,21 @@ a:active {
     display: block;
   }
 
-
+  .department-page .departBanner {
+    position: absolute;
+  }
+ 
+  .department-page .departtext {
+    position: absolute;
+  }
+ 
+  .department-page .departBanner h1 {
+    color: #fff;
+  }
+  .department-page .departBanner p {
+    color: #fff;
+    width: 100%;
+  }
   .cardsRow {
     padding-block: 12rem 4rem;
   }
@@ -1780,6 +1790,10 @@ a:active {
   .latest-event:before {
     content: none;
   }
+   .department-page .departBanner, .department-page .departtext {
+        margin-top: -4rem;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -1790,7 +1804,7 @@ a:active {
   .bannerTextBox {
     margin-top: 2rem;
   }
-
+ 
   .events_row {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
@@ -1876,6 +1890,11 @@ a:active {
     height: auto;
   }
 
+  .cource-sec .cource_top {
+    padding-top: 8rem;
+    margin-bottom: 2rem;
+  }
+
   .programsList_row {
     grid-template-columns: repeat(1, 50% auto);
     gap: 8.5rem;
@@ -1911,6 +1930,7 @@ a:active {
   .inner_sub_header {
     margin-top: 14.5rem;
   }
+
 }
 
 
@@ -1938,7 +1958,6 @@ a:active {
   transform: scale(1.08);
 }
 
-/* Shine effect */
 .animated-hover .second-section-cards-image::after {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
   content: "";
@@ -1957,7 +1976,6 @@ a:active {
   transition: all 0.8s ease;
 }
 
-/* Overlay smooth dark effect */
 .animated-hover .cardOverlay {
   transition: background 0.5s ease;
 }
@@ -1966,7 +1984,6 @@ a:active {
   background: rgba(0, 0, 0, 0.35);
 }
 
-/* Banner Label slide + color change */
 .animated-hover .bannerLabel {
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1976,7 +1993,6 @@ a:active {
   color: #ffc107;
 }
 
-/* Explore programs hover */
 .animated-hover .explore-program-section a {
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1986,7 +2002,6 @@ a:active {
   color: var(--color-4e);
 }
 
-/* Buttons hover */
 .animated-hover .btn-warning {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2142,7 +2157,6 @@ a:active {
   font-weight: 600;
   padding: 0;
   max-width: 100%;
-
 }
 
 .placement_page .section_subTitle {
@@ -2710,7 +2724,7 @@ a:active {
 }
 
 .faqItem[open] .icon::after {
-  content: "−"; /* use real minus sign, better than hyphen */
+  content: "−";
   color: #fff;
 }
 
@@ -2750,12 +2764,25 @@ a:active {
     padding: 0rem 0;
     padding-bottom: 4rem;
   }
-
+.about_one .overlap_contents {
+    padding-bottom: 2rem;
+    padding-inline: 2rem;
+}
+  .cource-sec .cource_top {
+    padding-top: 0rem;
+  }
+.about_one .abt_cntnt .image-overlay-caption {
+    width: 100%;
+    padding: 2rem 2rem;
+   
+}
   .high_lightRow {
     width: 100%;
     margin: auto;
   }
-
+.about_one .abt_cntnt .image-overlay-caption p {
+    text-align: center;
+}
   .procedure_box p {
     font: var(--font-20);
     font-weight: 300;
@@ -2837,11 +2864,37 @@ a:active {
   text-transform: uppercase;
 }
 
-.academic-facilities .research_labmain {padding-block: 5rem;}
-.academic-facilities .about_f_value {padding-top: 4rem;}
-.academic-facilities .about_four {padding-bottom: 0rem;}
-.academic-facilities .about_four .ab_f_content h3 { font: var(--font-21); color: #16344e; margin-bottom: 1.5rem; padding-bottom: 0;}
-.academic-facilities .about_two{padding-bottom: 0;}
-.academic-facilities .sport_fac_swiper + .research_labmain { padding-top: 10rem; }
-.academic-facilities .about_top{padding-bottom: 0;}
-.step-and-startups-in-campus .about_one .estblish{padding-bottom: 0;}
+.academic-facilities .research_labmain {
+  padding-block: 5rem;
+}
+
+.academic-facilities .about_f_value {
+  padding-top: 4rem;
+}
+
+.academic-facilities .about_four {
+  padding-bottom: 0rem;
+}
+
+.academic-facilities .about_four .ab_f_content h3 {
+  font: var(--font-21);
+  color: #16344e;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+.academic-facilities .about_two {
+  padding-bottom: 0;
+}
+
+.academic-facilities .sport_fac_swiper+.research_labmain {
+  padding-top: 10rem;
+}
+
+.academic-facilities .about_top {
+  padding-bottom: 0;
+}
+
+.step-and-startups-in-campus .about_one .estblish {
+  padding-bottom: 0;
+}

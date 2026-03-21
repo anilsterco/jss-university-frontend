@@ -112,14 +112,21 @@
 .about_one .abt_cntnt figure img {
   border-radius: 6rem 0.8rem 0.8rem 0.8rem;
 }
-.step-and-startups-in-campus .about_one .estblish{    padding-block: 4rem 4rem;}
+
+.step-and-startups-in-campus .about_one .estblish {
+  padding-block: 4rem 4rem;
+}
+
 .about-jssmvp .about_jsstwo {
   padding-top: 10rem;
 }
 
-.scholarship-and-eligibility .about_one .estblish{    padding-block: 4rem 4rem;}
-.team-iqac .table_section .table-lab tbody td:first-child{
-      width:30%;
+.scholarship-and-eligibility .about_one .estblish {
+  padding-block: 4rem 4rem;
+}
+
+.team-iqac .table_section .table-lab tbody td:first-child {
+  width: 30%;
 }
 
 
@@ -6095,7 +6102,9 @@
   .about_one .estblish {
     max-width: 100%;
   }
-
+.careers .add_of_context {
+    max-height: 30rem;
+}
   .about_two .early-slide {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -6912,9 +6921,11 @@
   .leadership_two_cnt p {
     padding-bottom: 2.2rem;
   }
-    .about_one .estblish {
-        padding-block: 4rem 4rem;
-    }
+
+  .about_one .estblish {
+    padding-block: 4rem 4rem;
+  }
+
   .admission-selection-process.ad_selec_procss {
     padding-top: 6rem;
     padding-bottom: 8rem;
@@ -7038,9 +7049,10 @@
   .resea_facili_main .exten_grid {
     gap: 4rem;
   }
+
   .schools-facilities.schools-page .about_one .estblish {
     padding-block: 4rem 2rem;
-}
+  }
 
 }
 
@@ -7111,9 +7123,9 @@
     padding-top: 4rem;
   }
 
-     .inner_sub_header {
-        margin-top: 0rem;
-    }
+  .inner_sub_header {
+    margin-top: 0rem;
+  }
 
   .about_top {
     padding-top: 4rem;
@@ -7441,9 +7453,10 @@
   .admins_of_con {
     padding-bottom: 0rem;
   }
-    .schools-about-the-school .about_one .estblish {
-        padding-block: 4rem 2rem;
-    }
+
+  .schools-about-the-school .about_one .estblish {
+    padding-block: 4rem 2rem;
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -7452,7 +7465,7 @@
   }
 
   .resea_facili_main .exten_grid {
-   display: block;
+    display: block;
   }
 
 
@@ -8156,6 +8169,14 @@
     font: var(--font-30);
     margin-bottom: -0.2rem;
   }
+
+  .res_table_maincms .table_section:last-child {
+    padding-block: 2rem;
+  }
+
+  .res_table_maincms .table_section:first-child {
+    padding-block: 2rem;
+  }
 }
 
 @media (max-width:640px) {
@@ -8260,6 +8281,7 @@
     margin-bottom: 3.1rem;
     line-height: normal;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -8587,5 +8609,11 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   padding-block: 0rem 10rem;
 }
 
+@media (max-width:575px) {
+  .department-computer-science-and-engineering-it-about-us .grid_card_design1_section {
+    padding-block: 0 6rem;
+  }
+
+}
 
 /* leadership details page end */
