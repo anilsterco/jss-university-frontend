@@ -1,22 +1,23 @@
 import { getPageSEO } from "@/lib/seo";
 import LeadershipClient from "./LeadershipClient";
-import Script from "next/script";
 
 export async function generateMetadata() {
-  return await getPageSEO("leadership");
+  return await getPageSEO();
 }
 
 export default async function Leadership() {
-  const seoData = await getPageSEO("leadership");
+  const seoData = await getPageSEO();
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
+
       <LeadershipClient />
     </>
   );

@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ProgramDetail({ params }) {
-  const seoData = await getPageSEO(params);
+  const seoData = await getPageSEO();
   const { id } = await params;
 
   return (

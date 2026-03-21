@@ -6,7 +6,6 @@ import AboutSchoolComponent from "@/component/school-components/about-school-com
 import FacultySchool from "@/component/school-components/faculty-list-school/FacultySchool";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
-import Script from "next/script";
 import { BASE_URL } from "@/config/config";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
@@ -18,8 +17,7 @@ import { notFound } from "next/navigation";
 import Departments from "@/pages/departments/Departments";
 
 export async function generateMetadata({ params }) {
-  const { school } = await params;
-  return getPageSEO(school);
+  return getPageSEO();
 }
 
 async function getSchoolData(slug, section) {
@@ -48,17 +46,18 @@ export default async function SchoolPage({ params }) {
 
   if (!schoolData) notFound();
 
-  const seoData = await getPageSEO(school);
+  const seoData = await getPageSEO();
 
   return (
     <>
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(seoData.schema),
-        }}
-        strategy="beforeInteractive"
-      />
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
