@@ -1986,6 +1986,16 @@
   background:#fff;
 }
 
+/* schools-college-of-pharmacy */
+
+.schools-college-of-pharmacy .faculty_section{
+  display:none
+}
+
+.schools-college-of-pharmacy .homepage_happenings .happining-sec:after{
+  display:none;
+}
+
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {
     flex-direction: column;

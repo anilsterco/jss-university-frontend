@@ -71,7 +71,7 @@ export default function FacultyList({ data, schoolName }) {
 
   return (
     <div
-      className={styles.dep_faculty}
+      className={`${styles.dep_faculty} faculty_section`}
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay="100"
