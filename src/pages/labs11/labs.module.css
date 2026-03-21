@@ -1,6 +1,6 @@
 .inner_page {
     padding: 10rem 0;
-    padding-bottom:0;
+    padding-bottom: 0;
 }
 
 .innerPage_title {
@@ -9,18 +9,18 @@
 }
 
 .labs_page {
-    margin-top:0;
+    margin-top: 0;
 }
 
-.labs_page .heading{
-color: #16344e;
+.labs_page .heading {
+    color: #16344e;
     font-weight: 700;
     font: var(--font-26);
     margin-bottom: 4rem;
 }
 
-.labs_page .sub_heading{
-color: #333;
+.labs_page .sub_heading {
+    color: #333;
     font: var(--font-24);
     max-width: 950px;
     font-weight: 300;
@@ -32,17 +32,27 @@ color: #333;
 
 
 
-.table_section .heading{
+.table_section .heading {
     text-align: left;
 }
 
-.table_images{
-    margin-top:8rem
+.table_images {
+    margin-top: 8rem
 }
 
-.table_images img{
+.table_images img {
     border-radius: 0.8rem;
 }
 
 
 
+@media (max-width:767px) {
+    .inner_page {
+        padding: 4rem 0;
+        padding-bottom: 0;
+    }
+
+    .labs_page .heading {
+        margin-bottom: 2rem;
+    }
+}

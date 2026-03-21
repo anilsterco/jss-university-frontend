@@ -1219,7 +1219,6 @@
 
 /* filter_grids_section */
 
-.filter_grids_section .faculty_grids .content {}
 
 .faculty_tabs button {
   border: none;
@@ -1840,103 +1839,115 @@
   padding: 2rem;
   transition: background 0.35s ease;
 }
+
 .testimonial-modal-overlay.overlay-visible {
   background: rgba(0, 0, 0, 0.6);
 }
-            .testimonial-modal-overlay .testimonial-modal {
-              background: #fff;
+
+.testimonial-modal-overlay .testimonial-modal {
+  background: #fff;
   width: 100%;
   max-width: 120rem;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
   border-radius: 4px;
-border-top-left-radius: 6rem;
+  border-top-left-radius: 6rem;
   opacity: 0;
   transform: translateY(40px);
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
-            }
-           .testimonial-modal-overlay  .testimonial-modal-close {
-              position: absolute;
-              top: 1.5rem;
-              right: 1.5rem;
-              background: none;
-              border: none;
-              cursor: pointer;
-              z-index: 10;
-              color: #16344e;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            .testimonial-modal.modal-visible {
+}
+
+.testimonial-modal-overlay .testimonial-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #16344e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-modal.modal-visible {
   opacity: 1;
   transform: translateY(0);
 }
-            .testimonial-modal-overlay .modal-loading {
-              padding: 6rem;
-              text-align: center;
-            }
-            .testimonial-modal-overlay .modal-inner {
-              display: flex;
-              gap: 0;
-              min-height: 40rem;
-            }
-            .testimonial-modal-overlay .modal-left {
-              width: 35%;
-              flex-shrink: 0;
-              position: relative;
-            }
-            .testimonial-modal-overlay .modal-right {
-              flex: 1;
-              padding: 10rem 8rem;
-              /* display: flex;
+
+.testimonial-modal-overlay .modal-loading {
+  padding: 6rem;
+  text-align: center;
+}
+
+.testimonial-modal-overlay .modal-inner {
+  display: flex;
+  gap: 0;
+  min-height: 40rem;
+}
+
+.testimonial-modal-overlay .modal-left {
+  width: 35%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.testimonial-modal-overlay .modal-right {
+  flex: 1;
+  padding: 10rem 8rem;
+  /* display: flex;
               align-items: center; */
-            }
-            .testimonial-modal-overlay .modal-right .modal_title{
-              font: var(--font-24);
-    color: var(--color-black);
-    font-weight: 300;
-    line-height: 1.3;
-              margin-bottom: 0.8rem;
-            }
+}
 
-            .testimonial-modal-overlay .modal-right .modal_name {
-              color: #16344e;
-              text-transform: uppercase;
-              font:var(--font-16);
-              font-weight: 700;
-              margin-top:5rem;
-              margin-bottom: 1.3rem;
-            }
+.testimonial-modal-overlay .modal-right .modal_title {
+  font: var(--font-24);
+  color: var(--color-black);
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
 
-            .testimonial-modal-overlay .modal-designation,
-            .testimonial-modal-overlay .modal-company {
-              font:var(--font-12);
-              color: #555;
-              margin-bottom: 0.4rem;
-            }
-            .testimonial-modal-overlay .modal-course {
-              font:var(--font-14);
-              color: #018ce8;
-              margin-top: 1.5rem;
-              font-weight: 600;
-              margin-bottom: 0;
-            }
-            .testimonial-modal-overlay .modal-message {
-              margin-top: 2rem;
-              padding-top: 2rem;
-              border-top: 1px dashed rgba(22, 52, 78, 0.2);
-            }
-            .testimonial-modal-overlay .modal-message p {
-              font-size: 1.5rem;
-              line-height: 1.8;
-              color: #444;
-            }
+.testimonial-modal-overlay .modal-right .modal_name {
+  color: #16344e;
+  text-transform: uppercase;
+  font: var(--font-16);
+  font-weight: 700;
+  margin-top: 5rem;
+  margin-bottom: 1.3rem;
+}
 
-            .modal-page-loader {
+.testimonial-modal-overlay .modal-designation,
+.testimonial-modal-overlay .modal-company {
+  font: var(--font-12);
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.testimonial-modal-overlay .modal-course {
+  font: var(--font-14);
+  color: #018ce8;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.testimonial-modal-overlay .modal-message {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(22, 52, 78, 0.2);
+}
+
+.testimonial-modal-overlay .modal-message p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.modal-page-loader {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
@@ -1956,39 +1967,43 @@ border-top-left-radius: 6rem;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* .search_error{
   
 } */
 
-            @media (max-width: 600px) {
-              .testimonial-modal-overlay .modal-inner {
-                flex-direction: column;
-              }
-              .testimonial-modal-overlay .modal-left {
-                width: 100%;
-                height: 25rem;
-              }
-              .testimonial-modal-overlay .modal-right {
-                padding: 2.5rem 2rem;
-              }
-            }
-
-
-
-  .inner_faculties_search{
-    margin-bottom:8rem;
+@media (max-width: 600px) {
+  .testimonial-modal-overlay .modal-inner {
+    flex-direction: column;
   }
 
-  .inner_faculties_search:before{
-    display:none;
+  .testimonial-modal-overlay .modal-left {
+    width: 100%;
+    height: 25rem;
   }
 
-  .inner_faculties_search .faulty-box{
-    grid-template-columns: 50% 50%;
+  .testimonial-modal-overlay .modal-right {
+    padding: 2.5rem 2rem;
   }
+}
+
+
+
+.inner_faculties_search {
+  margin-bottom: 8rem;
+}
+
+.inner_faculties_search:before {
+  display: none;
+}
+
+.inner_faculties_search .faulty-box {
+  grid-template-columns: 50% 50%;
+}
 
 
 @media all and (min-width: 800px) {
@@ -3013,6 +3028,18 @@ hr {
     padding-block: 4rem 0rem;
   }
 
+  .vision_mission_section .mission-card {
+    padding: 4rem 4rem;
+  }
+
+  .vision_mission_section {
+    padding: 8rem 0;
+  }
+
+  .department-about-us .hod-message-module__coWbsW__content {
+    padding-block: 0 6rem;
+  }
+
   .faulty-profile {
     gap: 6.3rem;
   }
@@ -3182,6 +3209,7 @@ hr {
     grid-template-columns: repeat(1, 1fr);
   }
 
+
   .labs_group_section {
     padding-top: 2rem;
   }
@@ -3190,6 +3218,32 @@ hr {
     padding-right: 0em;
   }
 
+  .department-about-us .hod_message_section .hod_row {
+    gap: 6rem;
+  }
+
+  .department-facilities .singleImageContent .row {
+    gap: 4rem;
+  }
+
+  .department-facilities .content_col {
+    padding-block: 0 4rem;
+    padding-inline: 0;
+  }
+
+  .department-facilities .image_content_repeat_section {
+    padding-block: 0 2rem;
+  }
+
+  .department-facilities .top_section {
+    padding-block: 6rem 0;
+  }
+
+  .department-facilities .top_section .about_subHeading.less {
+    padding-bottom: 4rem;
+    text-align: left;
+    padding-inline: 0;
+  }
 }
 
 @media (max-width:767px) {
@@ -3197,6 +3251,16 @@ hr {
     gap: 4.3rem;
     padding-top: 3rem;
     padding-inline: 3rem;
+  }
+
+  .department-page .labs_group_section.about_two .about_two.reverse .early-slide {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+
+  .department-about-us .hod_message_section .hod_row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
   }
 
   .add_btn a {
@@ -3337,7 +3401,7 @@ hr {
   }
 
   .placement_stats {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   .placements_loader:after {
@@ -5961,6 +6025,10 @@ hr {
     padding-block: 6rem 2rem;
   }
 
+  .placement_page.area-of-research {
+    padding: 6rem 0;
+  }
+
   .image_content_repeat_section {
     padding-block: 4rem;
   }
@@ -6160,6 +6228,14 @@ hr {
     margin-block: 0;
   }
 
+  .about_two.labs_group_section .early-slide .early_rgt h4 {
+    margin-bottom: 2rem;
+  }
+
+  .placement_page.area-of-research {
+    padding: 4rem 0;
+  }
+
   .pdf_list_section {
     padding: 4rem 0;
   }
@@ -6259,6 +6335,10 @@ hr {
 
   .rank-text {
     display: block;
+  }
+
+  .department-page .program_section_2 .programs-2 {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .seats {
@@ -6560,7 +6640,7 @@ hr {
   }
 
   .vision_mission_section .mission-card {
-    padding: 4.2rem 4.4rem;
+    padding: 3rem;
   }
 
   .about_three .vsn_msn_grid .miss-rgt {
@@ -7372,25 +7452,119 @@ hr {
 }
 
 
-@media screen and (max-width:991px){
-.schools-facilities .image_content_repeat_section.reverse_bg_white {
+@media screen and (max-width:991px) {
+  .schools-facilities .image_content_repeat_section.reverse_bg_white {
     padding-block: 6rem 0;
+  }
+
+  .department-mechanical-engineering-research .about_one .estblish,
+  .department-mechanical-engineering-about-us .about_one .estblish {
+    padding-block: 4rem 4rem;
+  }
+
+    .department-labs .about_two .early-slide .early_rgt {
+        padding-top: 0;
+        padding-left: 0;
+    }
+    .labs_group_section.about_two .about_two {
+    padding-bottom: 2rem;
+}
+.about_two.labs_group_section .early-slide p:last-child{
+  margin-bottom: 0;
 }
 }
+
 
 @media screen and (max-width:767px) {
   .nirf .about_one .abt_cntnt figure img {
     width: 100% !important;
   }
 
+  .department-mechanical-engineering-placements .about_one .estblish,
+  .department-computer-science-and-engineering-it-placements .about_one .estblish {
+    padding-block: 4rem 4rem;
+  }
+
+  .labs_group_section.about_two .about_two {
+    padding-bottom: 2rem;
+  }
+
+  .labs_group_section .about_two .early-slide {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
   .nirf .about_one .estblish {
     padding-block: 4rem;
   }
+
+  .department-mechanical-engineering-research .about_one .estblish {
+    padding-block: 4rem;
+  }
+
+  .department-mechanical-engineering-about-us .about_one .estblish {
+    padding-block: 4rem;
+  }
+
+  .vision_mission_section .vision p {
+    font: var(--font-24);
+    color: #ffffffeb;
+    font-weight: 300;
+    line-height: 3.6rem;
+  }
+
+  .department-research .table_section {
+    overflow: auto;
+  }
+
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .department-computer-science-and-engineering-it-placements .about_one .estblish {
+    padding-block: 2rem;
+  }
+
+  .placement_section1 {
+    padding: 4rem 0 0;
+  }
+
+  .placement-sec2 {
+    padding-bottom: 6rem;
+  }
+  .department-electrical-electronics-engineering-facilities .image_content_repeat_section {
+    padding-block: 4rem;
+}
+.department-electrical-electronics-engineering-facilities .about_one {
+    padding-bottom: 4rem;
+}
 }
 
-@media screen and (max-width:575px){
- .schools-facilities .image_content_repeat_section.facilities {
-        padding-block: 4rem ;
-    }
+@media screen and (max-width:575px) {
+  .schools-facilities .image_content_repeat_section.facilities {
+    padding-block: 4rem;
+  }
+
+  .department-mechanical-engineering-placements .about_one .estblish,
+
+
+  .nirf .about_one .estblish {
+    padding-block: 2rem;
+  }
+
+  .inner_faculties_search .faulty-box {
+    display: block;
+  }
+
+  .search-box input {
+    margin-bottom: 1.5rem;
+  }
+
+  .department-mechanical-engineering-research .about_one .estblish {
+    padding-block: 2rem;
+  }
+
+
+
+
 }
-   
