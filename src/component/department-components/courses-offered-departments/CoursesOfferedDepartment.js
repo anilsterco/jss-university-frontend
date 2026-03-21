@@ -141,7 +141,7 @@ const CoursesOffered = ({ data }) => {
               </div>
             ) : null}
 
-            {/* {data?.course_count && data.course_count > 0 ? (
+            {data?.course_count && data.course_count > 0 ? (
               <div data-aos="fade-up" data-aos-delay="300">
                 <div className={styles.programButton}>
                   <Link
@@ -152,7 +152,7 @@ const CoursesOffered = ({ data }) => {
                   </Link>
                 </div>
               </div>
-            ) : null} */}
+            ) : null}
           </div>
 
           {/* RIGHT CARDS */}
@@ -165,7 +165,7 @@ const CoursesOffered = ({ data }) => {
                 data.programs.map((program, programIdx) => (
                   <Link
                     key={programIdx}
-                    href={`/programs?program=${program.slug}`}
+                    href={`${WEB_URL}programs?type=${program.slug}&department_id=${program.department_id}`}
                     className="second-section-cards-image position-relative"
                     data-aos="fade-up"
                     data-aos-delay="0"
@@ -196,7 +196,7 @@ const CoursesOffered = ({ data }) => {
                   </Link>
                 ))}
             </div>
-            {/* <div className={`add_btn ${styles.admistion_heading}`}>
+            <div className={`add_btn ${styles.admistion_heading}`}>
               <div className={styles.admiCol}>
                 {data?.academic_year_desc && (
                   <h2>
@@ -213,7 +213,7 @@ const CoursesOffered = ({ data }) => {
               >
                 Apply Now
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

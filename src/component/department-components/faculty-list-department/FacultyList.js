@@ -63,7 +63,7 @@ export default function FacultyList({ data }) {
   const facultyData = data ? data : dummyFacultyData;
   return (
     <div
-      className={styles.dep_faculty}
+      className={`${styles.dep_faculty} faculty_section`}
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay="100"
@@ -140,14 +140,14 @@ export default function FacultyList({ data }) {
           style={{
             cursor: "pointer",
             marginRight: "0.4rem",
-            marginTop:"2.5rem",
+            marginTop: "2.5rem",
           }}
         />
         <CiCircleChevRight
           className="faculty-next"
           fontSize={24}
           color="#002238b5"
-          style={{ cursor: "pointer", marginTop:"2.5rem" ,}}
+          style={{ cursor: "pointer", marginTop: "2.5rem" }}
         />
       </div>
     </div>
