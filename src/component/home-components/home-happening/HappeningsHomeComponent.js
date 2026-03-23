@@ -194,7 +194,7 @@ export default function EventsGrid({ data }) {
                 )}
               </div>
 
-              <div className={styles.card}>
+              <div className={`${styles.card} ${styles.card_overlay}`}>
                 {eventsData.happenings[2] && (
                   <Image
                     src={eventsData.happenings[2].image}
@@ -248,7 +248,7 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[3] &&
                     eventsData.happenings[3].event_type}
                 </p>
-                {eventsData.happenings[3] && (
+                {/* {eventsData.happenings[3] && (
                   <Image
                     src={eventsData.happenings[3].image}
                     alt="img"
@@ -256,18 +256,20 @@ export default function EventsGrid({ data }) {
                     height={160}
                     className={styles.cardImage}
                   />
-                )}
-                <h3
-                  className={styles.cardTitle}
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  {eventsData.happenings[3] && eventsData.happenings[3].title}
-                </h3>
-                <p className={styles.cardDate}>
-                  {eventsData.happenings[3] &&
-                    eventsData.happenings[3].event_date_from}
-                </p>
+                )} */}
+                <div>
+                  <h3
+                    className={styles.cardTitle}
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    {eventsData.happenings[3] && eventsData.happenings[3].title}
+                  </h3>
+                  <p className={styles.cardDate}>
+                    {eventsData.happenings[3] &&
+                      eventsData.happenings[3].event_date_from}
+                  </p>
+                </div>
                 {eventsData.happenings?.[3]?.slug && (
                   <Link
                     href={`${WEB_URL}happenings/${eventsData.happenings[3].slug}`}
@@ -276,7 +278,7 @@ export default function EventsGrid({ data }) {
                 )}
               </div>
 
-              <div className={styles.card}>
+              <div className={`${styles.card} ${styles.card_overlay}`}>
                 {eventsData.happenings[4] && (
                   <>
                     <Image
@@ -285,12 +287,41 @@ export default function EventsGrid({ data }) {
                       fill
                       className={styles.cardImage}
                     />
-                    {eventsData.happenings?.[4]?.slug && (
-                      <Link
-                        href={`${WEB_URL}happenings/${eventsData.happenings[4].slug}`}
-                        className={styles.full_link}
-                      />
-                    )}
+                    <div className={styles.miniContentPart}>
+                      <p
+                        className={styles.cardTag}
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                      >
+                        {eventsData.happenings[4] &&
+                          eventsData.happenings[4].event_type}
+                      </p>
+
+                      <div>
+                        <h3
+                          className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                          data-aos="fade-up"
+                          data-aos-delay="500"
+                        >
+                          {eventsData.happenings[4] &&
+                            eventsData.happenings[4].title}
+                        </h3>
+                        <p
+                          className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                          data-aos="fade-up"
+                          data-aos-delay="600"
+                        >
+                          {eventsData.happenings[4] &&
+                            eventsData.happenings[4].event_date_from}
+                        </p>
+                        {eventsData.happenings?.[4]?.slug && (
+                          <Link
+                            href={`${WEB_URL}happenings/${eventsData.happenings[4].slug}`}
+                            className={styles.full_link}
+                          />
+                        )}
+                      </div>
+                    </div>
                   </>
                 )}
               </div>
@@ -333,7 +364,7 @@ export default function EventsGrid({ data }) {
               </div>
 
               {/* Event 7 */}
-              <div className={styles.card}>
+              <div className={`${styles.card} ${styles.card_overlay}`}>
                 {eventsData.happenings[6] && (
                   <>
                     <Image
@@ -342,12 +373,42 @@ export default function EventsGrid({ data }) {
                       fill
                       className={styles.cardImage}
                     />
-                    {eventsData.happenings?.[6]?.slug && (
-                      <Link
-                        href={`${WEB_URL}happenings/${eventsData.happenings[6].slug}`}
-                        className={styles.full_link}
-                      />
-                    )}
+
+                    <div className={styles.miniContentPart}>
+                      <p
+                        className={styles.cardTag}
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                      >
+                        {eventsData.happenings[6] &&
+                          eventsData.happenings[6].event_type}
+                      </p>
+
+                      <div>
+                        <h3
+                          className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                          data-aos="fade-up"
+                          data-aos-delay="500"
+                        >
+                          {eventsData.happenings[6] &&
+                            eventsData.happenings[6].title}
+                        </h3>
+                        <p
+                          className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                          data-aos="fade-up"
+                          data-aos-delay="600"
+                        >
+                          {eventsData.happenings[6] &&
+                            eventsData.happenings[6].event_date_from}
+                        </p>
+                        {eventsData.happenings?.[6]?.slug && (
+                          <Link
+                            href={`${WEB_URL}happenings/${eventsData.happenings[6].slug}`}
+                            className={styles.full_link}
+                          />
+                        )}
+                      </div>
+                    </div>
                   </>
                 )}
               </div>
@@ -365,7 +426,7 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[7].event_type}
                 </p>
                 <div>
-                  {eventsData.happenings[7] && (
+                  {/* {eventsData.happenings[7] && (
                     <Image
                       src={eventsData.happenings[7].image}
                       alt="img"
@@ -373,23 +434,25 @@ export default function EventsGrid({ data }) {
                       width={253}
                       className={styles.cardImage}
                     />
-                  )}
-                  <p
-                    className={`${styles.cardSubtitle} ${styles.cardSubtitleWhite}`}
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                  >
-                    {eventsData.happenings[7] &&
-                      eventsData.happenings[7].short_description}
-                  </p>
-                  <p
-                    className={`${styles.cardDate} ${styles.cardDateWhite}`}
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    {eventsData.happenings[7] &&
-                      eventsData.happenings[7].event_date_from}
-                  </p>
+                  )} */}
+                  <div>
+                    <h3
+                      className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      {eventsData.happenings[7] &&
+                        eventsData.happenings[7].title}
+                    </h3>
+                    <p
+                      className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      {eventsData.happenings[7] &&
+                        eventsData.happenings[7].event_date_from}
+                    </p>
+                  </div>
 
                   {eventsData.happenings?.[7]?.slug && (
                     <Link
@@ -409,7 +472,7 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[8] &&
                     eventsData.happenings[8].event_type}
                 </p>
-                {eventsData.happenings[8] && (
+                {/* {eventsData.happenings[8] && (
                   <Image
                     src={eventsData.happenings[8].image}
                     alt="img"
@@ -417,23 +480,25 @@ export default function EventsGrid({ data }) {
                     height={55}
                     className={styles.cardImage}
                   />
-                )}
+                )} */}
 
-                <h3
-                  className={styles.cardTitle}
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  {eventsData.happenings[8] && eventsData.happenings[8].title}
-                </h3>
-                <p
-                  className={styles.cardDate}
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  {eventsData.happenings[8] &&
-                    eventsData.happenings[8].event_date_from}
-                </p>
+                <div>
+                  <h3
+                    className={styles.cardTitle}
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    {eventsData.happenings[8] && eventsData.happenings[8].title}
+                  </h3>
+                  <p
+                    className={styles.cardDate}
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    {eventsData.happenings[8] &&
+                      eventsData.happenings[8].event_date_from}
+                  </p>
+                </div>
 
                 {eventsData.happenings?.[8]?.slug && (
                   <Link
