@@ -127,10 +127,13 @@ const HODMessage = ({ data }) => {
                     hodData?.listGroup?.length > 0 ||
                     hodData?.message_list?.length > 0) && (
                     <div className={styles.messageText}>
-                      <p
-                        className={styles.paragraph}
-                        dangerouslySetInnerHTML={{ __html: visibleMessages }}
-                      />
+                      {visibleMessages.map((paragraph, index) => (
+                        <div
+                          key={index}
+                          className={styles.paragraph}
+                          dangerouslySetInnerHTML={{ __html: paragraph }}
+                        />
+                      ))}
                       {hodData?.message_list?.length > 0 && expanded && (
                         <ul className={`${styles.listGroup} list_group`}>
                           {hodData?.message_list?.map((list, listIdx) => (
