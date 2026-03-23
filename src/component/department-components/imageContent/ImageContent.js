@@ -1,8 +1,15 @@
+"use client"
 import Image from "next/image";
 import styles from "./imageContent.module.css";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ImageContent({ data, id, type, extraClass }) {
+const [expanded, setExpanded] = useState(false);
+  const hasMore = data.desc.length > 2;
+
+  const visibleMessages = expanded ? data.desc : data.desc.slice(0, 2);
+
   return (
     <div
       key={id}
@@ -44,13 +51,35 @@ export default function ImageContent({ data, id, type, extraClass }) {
             )}
             {data.desc.length > 0 && (
               <div className={`${styles.descGroup} desc_group`}>
-                {data.desc.map((singleDesc, descIdx) => (
+                {visibleMessages?.map((singleDesc, descIdx) => (
                   <p key={descIdx} className={styles.desc}>
                     {singleDesc.desc}
                   </p>
                 ))}
               </div>
             )}
+            
+            {hasMore && (
+                        <button
+                          className={`${styles.arrowLink} read_more_button`}
+                          onClick={() => setExpanded((prev) => !prev)}
+                        >
+                          {expanded ? "Read Less" : "Read More"}
+                          <Image
+                            src="/images/icons/read_more.png"
+                            alt="arrow"
+                            width={22}
+                            height={22}
+                            style={{
+                              transform: expanded
+                                ? "rotate(180deg)"
+                                : "rotate(0deg)",
+                              transition: "transform 0.3s ease",
+                            }}
+                          />
+                        </button>
+                      )}
+
             {data?.pdfs && data.pdfs.length > 0 && (
               <div className={styles.pdf_group}>
                 {data.pdfs.map((singlePdf, pdfIdx) => (
