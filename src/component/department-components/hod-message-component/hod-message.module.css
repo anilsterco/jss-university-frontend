@@ -157,6 +157,34 @@
   margin-bottom: 0;
 }
 
+.paragraph p {
+  color: #333;
+  font: var(--font-16);
+  margin-top: 2rem;
+  letter-spacing: 0;
+  line-height: 3rem;
+}
+
+.paragraph ul li {
+  font: var(--font-16);
+  color: var(--color-44);
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  list-style: none;
+  position: relative;
+}
+
+.paragraph ul li:before {
+  content: "";
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: .4rem;
+  left: 0;
+}
+
 .listGroup {
   margin: 0;
   padding: 0;
@@ -202,9 +230,11 @@
   border-top: 1px solid var(--color-100);
   padding-top: 3.5rem;
 }
-.hodInfo h4 + p{
+
+.hodInfo h4+p {
   margin-bottom: 1rem;
 }
+
 .hodName {
   color: #16344E;
   margin-bottom: 0.25rem;
@@ -265,7 +295,7 @@
     padding: 4rem 0;
   }
 
- .hodRow .left_col {
+  .hodRow .left_col {
     padding: 0;
   }
 }
@@ -315,9 +345,10 @@
   .lineHod img {
     display: none;
   }
+
   .department .card {
-  padding: 8rem 0;
-}
+    padding: 8rem 0;
+  }
 }
 
 /* Responsive Design */
@@ -325,9 +356,11 @@
   .container {
     padding: 0rem 0;
   }
+
   .department .card {
-  padding: 6rem 0;
-}
+    padding: 6rem 0;
+  }
+
   .card {
     padding-top: 4rem;
   }
