@@ -59,25 +59,31 @@ export default function AmenitiesList({ data }) {
                     )}
 
                     <div className="grid_group">
+                      <div className="left_col">
+                        {item?.leftHeading && (
+                          <h5>{item.leftHeading}</h5>
+                        )}
                       {item?.leftListing && (
-                        <div className="left_col">
                           <ul>
                             {item.leftListing?.map((list, listIdx) => (
                               <li key={listIdx}>{list.list}</li>
                             ))}
                           </ul>
-                        </div>
                       )}
+                      </div>
 
+                      <div className="right_col">
+                        {item?.rightHeading && (
+                          <h5>{item.rightHeading}</h5>
+                        )}
                       {item?.rightListing && (
-                        <div className="right_col">
                           <ul>
                             {item.rightListing?.map((list, listIdx) => (
                               <li key={listIdx}>{list.list}</li>
                             ))}
                           </ul>
-                        </div>
                       )}
+                      </div>
                     </div>
 
                     {item?.description && item.description?.length > 0 && (

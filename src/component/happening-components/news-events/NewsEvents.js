@@ -16,7 +16,7 @@ import { useQuery } from "@tanstack/react-query";
 import { happeningAPI, schoolListAPI } from "@/lib/api";
 import Pagination from "@/component/common/pagination-component/Pagination";
 
-export default function EventsSection({ className, programId }) {
+export default function EventsSection({ className, programId, type }) {
   const [filters, setFilters] = useState({
     month: "",
     school: "",
@@ -76,11 +76,14 @@ export default function EventsSection({ className, programId }) {
       params.append("month", monthNumber);
     }
 
+    // Use "school" or "department" key based on type
+    const filterKey = type === "department" ? "department" : "school";
+
     if (pid) {
-      params.append("school", pid);
+      params.append(filterKey, pid);
     } else if (filters.school !== "") {
       const schoolId = getSchoolId(filters.school);
-      if (schoolId) params.append("school", schoolId);
+      if (schoolId) params.append(filterKey, schoolId);
     }
 
     return params.toString();
