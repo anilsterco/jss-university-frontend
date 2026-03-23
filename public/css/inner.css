@@ -404,16 +404,27 @@
   background-color: var(--color-white);
   padding: 6rem;
 }
-
+.department-maths-about-us .image_content_repeat_section {padding: 0;}
 .department-chemistry-facilities .image_content_repeat_section {padding-top: 10rem;}
 .schools-computer-applications-about-the-school .count_alumni_section {
   padding-top: 0rem;
 }
 .btmPlace_para{padding-top: 2.5rem;}
-.btmPlace_para p{    font: var(--font-16);
+.btmPlace_para p{ 
+  font: var(--font-16);
     color: #444;
     margin-bottom: 1.5rem;
     line-height: 2.8rem;}
+
+.department-physics-advisory-board .table_section .table-lab tbody td:nth-child(2),
+.department-maths-advisory-board .table_section .table-lab tbody td:nth-child(2){
+  width: 20%;
+}
+.department-advisory-board .table_section:not(:last-child) {
+  padding-bottom:0rem;
+}
+
+
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
 }
@@ -6821,7 +6832,7 @@
 }
 
 .department-pharmaceutics-about-us .grid_card_design1_section {
-  padding-block:  2rem 10rem;
+  padding-block:   10rem 2rem;
 }
 
 .department-research .table_section {
