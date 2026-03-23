@@ -10,9 +10,9 @@ const HODMessage = ({ data }) => {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
 
-  const pathParts = pathname.split("/").filter(Boolean)
+  const pathParts = pathname.split("/").filter(Boolean);
 
-  console.log('innerpage pathParts',pathParts);
+  console.log("innerpage pathParts", pathParts);
 
   // 🔹 Dummy data fallback
   const dummyHodData = {
@@ -46,15 +46,20 @@ const HODMessage = ({ data }) => {
         type: data?.type,
         sectionType: data?.sectionType,
         listGroup: data?.listGroup,
-        message_list:data?.message_list
+        message_list: data?.message_list,
       }
     : null;
 
   const hodData = normalizedData || dummyHodData;
 
-  const hasMore = hodData.messages.length > 2 || hodData?.message_list?.length > 0 || hodData?.listGroup?.length > 0;
+  const hasMore =
+    hodData.messages.length > 2 ||
+    hodData?.message_list?.length > 0 ||
+    hodData?.listGroup?.length > 0;
 
-const visibleMessages = expanded ? hodData.messages : hodData.messages.slice(0, 2);
+  const visibleMessages = expanded
+    ? hodData.messages
+    : hodData.messages.slice(0, 2);
 
   // 🔹 Initialize AOS
   useEffect(() => {
@@ -119,31 +124,27 @@ const visibleMessages = expanded ? hodData.messages : hodData.messages.slice(0, 
                   )}
 
                   {(hodData?.messages?.length > 0 ||
-                    hodData?.listGroup?.length > 0 || hodData?.message_list?.length > 0) && (
+                    hodData?.listGroup?.length > 0 ||
+                    hodData?.message_list?.length > 0) && (
                     <div className={styles.messageText}>
-                      {visibleMessages?.map((paragraph, index) => (
-                        <p key={index} className={styles.paragraph}>
-                          {paragraph}
-                        </p>
-                      ))}
-
-
+                      <p
+                        className={styles.paragraph}
+                        dangerouslySetInnerHTML={{ __html: visibleMessages }}
+                      />
                       {hodData?.message_list?.length > 0 && expanded && (
-  <ul className={`${styles.listGroup} list_group`}>
-    {hodData?.message_list?.map((list, listIdx) => (
-      <li key={listIdx}>{list}</li>
-    ))}
-  </ul>
-)}
-
+                        <ul className={`${styles.listGroup} list_group`}>
+                          {hodData?.message_list?.map((list, listIdx) => (
+                            <li key={listIdx}>{list}</li>
+                          ))}
+                        </ul>
+                      )}
                       {hodData?.listGroup?.length > 0 && expanded && (
-  <ul className={`${styles.listGroup} list_group`}>
-    {hodData?.listGroup?.map((list, listIdx) => (
-      <li key={listIdx}>{list.list}</li>
-    ))}
-  </ul>
-)}
-
+                        <ul className={`${styles.listGroup} list_group`}>
+                          {hodData?.listGroup?.map((list, listIdx) => (
+                            <li key={listIdx}>{list.list}</li>
+                          ))}
+                        </ul>
+                      )}
                       {hasMore && (
                         <button
                           className={styles.arrowLink}
