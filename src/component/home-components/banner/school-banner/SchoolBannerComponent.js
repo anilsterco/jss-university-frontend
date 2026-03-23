@@ -27,7 +27,7 @@ export default function SchoolSlider({
 
   const isSchoolPage =
     currentPage === "schools" && currentSlug !== "college-of-pharmacy"
-      ? "Schools of"
+      ? "School of"
       : currentSlug == "college-of-pharmacy"
         ? "College of"
         : "Department of";

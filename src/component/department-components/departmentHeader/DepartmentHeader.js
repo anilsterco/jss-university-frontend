@@ -113,7 +113,7 @@ export default function DepartmentHeader({ className, data }) {
 
   const dropdownLabel =
     isSchoolPage && pathParts[2] !== "college-of-pharmacy"
-      ? "Schools of"
+      ? "School of"
       : pathParts[2] == "college-of-pharmacy"
         ? "College of"
         : "Department of";
@@ -144,7 +144,8 @@ export default function DepartmentHeader({ className, data }) {
             <div className={styles.schoolDeptWrapper}>
               <div
                 className={styles.schoolToggle}
-                onClick={() => setEngineeringDropdown(!engineeringDropdown)}>
+                onClick={() => setEngineeringDropdown(!engineeringDropdown)}
+              >
                 <span style={{ fontWeight: "normal" }}>{dropdownLabel}</span>
                 <span>
                   <span className={styles.selectedName}>
@@ -160,7 +161,8 @@ export default function DepartmentHeader({ className, data }) {
               <div className={styles.mobileToggle}>
                 <button
                   className={styles.hamburgerBtn}
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
                   {mobileMenuOpen ? <IoClose /> : <IoMenu />}
                 </button>
               </div>
