@@ -261,6 +261,22 @@ p {
   color: var(--color-e8);
 }
 
+/* read more  */
+
+.read_more_button{
+      font: var(--font-18);
+    color: #16344e;
+    background: none;
+    font-weight: 500;
+    border: none !important;
+    margin-top:3rem;
+}
+
+.read_more_button img{
+      margin-left: 1rem;
+}
+
+
 @media (min-width: 1921px) {
   .containerXl {
     padding-inline: 9.8rem;
