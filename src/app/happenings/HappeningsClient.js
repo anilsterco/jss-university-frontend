@@ -11,10 +11,9 @@ import { BASE_URL } from "@/config/config";
 export default function HappeningsClient({ className }) {
   const [activeTab, setActiveTab] = useState("news");
   const [programId, setProgramId] = useState(null);
-  const [test, setTest] = useState(null);
 
   const pathname = usePathname();
-  const type = pathname.split("/")[1] == "schools" ? "school" : "university";
+  const type = pathname.split("/")[1] == "schools" ? "school" : "department";
   const program = pathname.split("/")[2];
 
   const tabs = [
@@ -36,15 +35,12 @@ export default function HappeningsClient({ className }) {
     }
 
     const data = await response.json();
-    setTest(data);
-    setProgramId(data.school_id);
+    setProgramId(type == "school" ? data.school_id : data.departments_id);
   };
 
   useEffect(() => {
     getProgramId();
   }, []);
-
-  console.log("happenings data", test);
 
   return (
     <div className={`${styles.happeningsContainer} ${styles[className]}`}>
@@ -69,7 +65,11 @@ export default function HappeningsClient({ className }) {
 
       <div className={styles.tabContent}>
         {ActiveComponent && (
-          <ActiveComponent className={className} programId={programId} />
+          <ActiveComponent
+            className={className}
+            programId={programId}
+            type={type}
+          />
         )}
       </div>
     </div>
