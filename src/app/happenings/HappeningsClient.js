@@ -11,6 +11,7 @@ import { BASE_URL } from "@/config/config";
 export default function HappeningsClient({ className }) {
   const [activeTab, setActiveTab] = useState("news");
   const [programId, setProgramId] = useState(null);
+  const [test, setTest] = useState(null);
 
   const pathname = usePathname();
   const type = pathname.split("/")[1] == "schools" ? "school" : "university";
@@ -35,12 +36,15 @@ export default function HappeningsClient({ className }) {
     }
 
     const data = await response.json();
+    setTest(data);
     setProgramId(data.school_id);
   };
 
   useEffect(() => {
     getProgramId();
   }, []);
+
+  console.log("happenings data", test);
 
   return (
     <div className={`${styles.happeningsContainer} ${styles[className]}`}>

@@ -209,6 +209,20 @@
   transform: translateX(-50%)
 }
 
+.card_overlay{
+  position: relative;
+}
+
+.card_overlay:before{
+  position:absolute;
+  z-index: 1;
+  background: linear-gradient(#00000026, #00000057);
+  height: 100%;
+  width: 100%;
+  left:0;
+  top:0;
+  content:''
+}
 
 /* Responsive Design */
 
