@@ -423,7 +423,9 @@
 .department-advisory-board .table_section:not(:last-child) {
   padding-bottom:0rem;
 }
-
+.approvals-accreditations .pdf_list_section:not(:last-child) {
+  padding-bottom:0rem;
+}
 
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
@@ -7243,6 +7245,7 @@
   .academic-council .table_section:last-child {
     padding: 5rem 0;
   }
+
 
   .academic_grid {
     display: flex;
