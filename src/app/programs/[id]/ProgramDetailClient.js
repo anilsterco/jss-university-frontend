@@ -334,7 +334,8 @@ export default function ProgramDetailClient({ params }) {
           </div>
         </div>
       </section>
-      {peos?.length > 0 && (
+
+      {peos && peos?.length > 0 && (
         <section className="educational-sec">
           <div className="container">
             <div className="row">
@@ -399,7 +400,7 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {peos.map((peo, index) => (
                               <div key={index} className="peo-box">
-                                <h3>PEO-{index + 1}{peo?.title && ': ' + peo.title}</h3>
+                                <h3>{peo.title}</h3>
                                 <p>{peo.description}</p>
                               </div>
                             ))}
@@ -429,7 +430,7 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {pos.map((po, index) => (
                               <div key={index} className="peo-box">
-                                <h3>PO-{index + 1}{po?.title && ': ' + po.title}</h3>
+                                <h3>{po.title}</h3>
                                 <p>{po.description}</p>
                               </div>
                             ))}
@@ -459,7 +460,7 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {pso.map((p, index) => (
                               <div key={index} className="peo-box">
-                                <h3>PSO-{index + 1}{p?.title && ': ' + p.title}</h3>
+                                <h3>{p.title}</h3>
                                 <p>{p.description}</p>
                               </div>
                             ))}
@@ -486,13 +487,17 @@ export default function ProgramDetailClient({ params }) {
       )}
       {/* Curriculum Section */}
       {curriculum?.curriculum_title && (
-        <section className="core-sec">
+        <section
+          className={`core-sec ${peos?.length < 1 ? "extra_space" : ""}`}
+        >
           <div className="container">
             <div className="row">
               <div className="col-lg-9">
                 <div className="core-box">
                   <div className="core-text">
-                    <span className="d-block mb-5">{curriculum?.curriculum_title}</span>
+                    <span className="d-block mb-5">
+                      {curriculum?.curriculum_title}
+                    </span>
                     <blockquote>Core Subjects:</blockquote>
                     <p>
                       {curriculum?.curriculum_desc &&
@@ -534,12 +539,12 @@ export default function ProgramDetailClient({ params }) {
                           style={{
                             opacity:
                               currentCurriculumIndex ===
-                                curriculum.curriculum_desc.length - 1
+                              curriculum.curriculum_desc.length - 1
                                 ? 0.5
                                 : 1,
                             cursor:
                               currentCurriculumIndex ===
-                                curriculum.curriculum_desc.length - 1
+                              curriculum.curriculum_desc.length - 1
                                 ? "not-allowed"
                                 : "pointer",
                           }}
@@ -703,17 +708,17 @@ export default function ProgramDetailClient({ params }) {
                       <p>{restWords.join(" ")}</p>
                       {(currentTestimonial?.apply_now_link ||
                         apply_now_link) && (
-                          <a
-                            href={
-                              currentTestimonial?.apply_now_link || apply_now_link
-                            }
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
-                        )}
+                        <a
+                          href={
+                            currentTestimonial?.apply_now_link || apply_now_link
+                          }
+                          className="apply-btn1"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="testimonial-img">

@@ -2914,3 +2914,19 @@ a:active {
 .step-and-startups-in-campus .about_one .estblish {
   padding-bottom: 0;
 }
+.collapsed_text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expanded_text {
+  display: block;
+}
+.core-sec.extra_space {
+  padding-block: 8rem;
+}
+.eligibility-sec {
+  padding-bottom: 6rem;
+}
