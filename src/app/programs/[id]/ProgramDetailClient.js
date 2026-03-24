@@ -401,7 +401,11 @@ export default function ProgramDetailClient({ params }) {
                             {peos.map((peo, index) => (
                               <div key={index} className="peo-box">
                                 <h3>{peo.title}</h3>
-                                <p>{peo.description}</p>
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: peo.description,
+                                  }}
+                                ></p>
                               </div>
                             ))}
                           </div>

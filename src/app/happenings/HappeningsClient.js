@@ -12,54 +12,51 @@ const ALL_TABS = [
 ];
 
 export default function HappeningsClient({ className }) {
-  const [activeTab, setActiveTab] = useState(null);
+  const [activeTab, setActiveTab] = useState("news");
   const [programId, setProgramId] = useState(null);
-  const [visibleTabs, setVisibleTabs] = useState(ALL_TABS); // start with all, hide empties later
+  const [visibleTabs, setVisibleTabs] = useState([ALL_TABS[0]]);
+  const [loading, setLoading] = useState(true);
 
   const pathname = usePathname();
-  const type = pathname.split("/")[1] == "schools" ? "school" : "department";
+  const type = pathname.split("/")[1] === "schools" ? "school" : "department";
   const program = pathname.split("/")[2];
 
-  const ActiveComponent = ALL_TABS.find(
-    (tab) => tab.id === activeTab,
-  )?.component;
-
-  const getProgramId = async () => {
-    const response = await fetch(`${BASE_URL}${type}/${program}`);
-    if (!response.ok)
-      throw new Error(
-        `Failed to fetch Id for ${type} (status ${response.status})`,
-      );
-    const data = await response.json();
-    setProgramId(type === "school" ? data.school_id : data.departments_id);
-  };
-
   useEffect(() => {
-    getProgramId();
-  }, []);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
 
-  // Called by each tab component when it knows if it has data
-  const handleTabDataStatus = (tabId, hasData) => {
-    setVisibleTabs((prev) => {
-      const updated = ALL_TABS.filter((tab) => {
-        if (tab.id === tabId) return hasData;
-        const existing = prev.find((t) => t.id === tab.id);
-        return existing !== undefined;
-      });
-      return updated;
-    });
-  };
+        // Step 1: Get school/department ID
+        const idRes = await fetch(`${BASE_URL}${type}/${program}`);
+        if (!idRes.ok) throw new Error(`Failed to fetch ID`);
+        const idData = await idRes.json();
 
-  // Set first visible tab as active once tabs are resolved
-  useEffect(() => {
-    if (visibleTabs.length > 0 && !activeTab) {
-      setActiveTab(visibleTabs[0].id);
-    }
-    // If active tab got hidden, switch to first visible
-    if (activeTab && !visibleTabs.find((t) => t.id === activeTab)) {
-      setActiveTab(visibleTabs[0]?.id || null);
-    }
-  }, [visibleTabs]);
+        const id = type === "school" ? idData.school_id : idData.departments_id;
+        setProgramId(id);
+
+        // Step 2: Get happening counts using that ID
+        const countRes = await fetch(
+          `${BASE_URL}happening/count?${type}=${id}`,
+        );
+        if (!countRes.ok) throw new Error(`Failed to fetch counts`);
+        const countData = await countRes.json();
+
+        // Step 3: Show press tab only if press_release_count > 0
+        if (countData.press_release_count > 0) {
+          setVisibleTabs(ALL_TABS);
+        } else {
+          setVisibleTabs([ALL_TABS[0]]);
+        }
+      } catch (err) {
+        console.error("HappeningsClient error:", err);
+        setVisibleTabs([ALL_TABS[0]]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [type, program]);
 
   return (
     <div className={`${styles.happeningsContainer} ${styles[className]}`}>
@@ -69,19 +66,27 @@ export default function HappeningsClient({ className }) {
       </h1>
 
       <div className={styles.tabHeaders}>
-        {visibleTabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`${styles.tabButton} ${activeTab === tab.id ? styles.activeTab : ""}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
+        {loading ? (
+          // Show only news tab as placeholder while loading
+          <button className={`${styles.tabButton} ${styles.activeTab}`}>
+            News & Events
           </button>
-        ))}
+        ) : (
+          visibleTabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`${styles.tabButton} ${
+                activeTab === tab.id ? styles.activeTab : ""
+              }`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))
+        )}
       </div>
 
       <div className={styles.tabContent}>
-        {/* Render all tab components but hide inactive ones */}
         {ALL_TABS.map((tab) => (
           <div
             key={tab.id}
@@ -91,7 +96,7 @@ export default function HappeningsClient({ className }) {
               className={className}
               programId={programId}
               type={type}
-              onDataStatus={(hasData) => handleTabDataStatus(tab.id, hasData)}
+              onDataStatus={() => {}}
             />
           </div>
         ))}
