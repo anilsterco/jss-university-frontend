@@ -2039,6 +2039,10 @@
     grid-template-columns: 45% 45% 10%;
   }
 
+  .inner_faculties_search .faulty-box.school-faculties{
+    grid-template-columns: 28% 28% 28% 10%;
+  }
+
   .inner_faculties_search .faculty-reset-btn {
     display: flex;
     align-items: center;

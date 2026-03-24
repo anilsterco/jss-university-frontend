@@ -1,12 +1,15 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { BASE_URL, WEB_URL } from "@/config/config";
 
-export default function LeadershipClientDetail({ leader }) {
+export default async function LeadershipClientDetail({ leader }) {
   const { sections } = leader;
+
+  const fetchPageData = await fetch(`${BASE_URL}pages/leadership`);
+  const pageData = await fetchPageData.json();
 
   return (
     <main className="site_main">
@@ -16,26 +19,22 @@ export default function LeadershipClientDetail({ leader }) {
           <div className="row justify-content-center">
             <div className="col-lg-12">
               <div className="innnr_head">
-                <h2>ABOUT</h2>
+                {pageData?.tabs?.subTitle && (
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: pageData?.tabs?.subTitle,
+                    }}
+                  />
+                )}
                 <ul>
-                  <li>
-                    <Link href="/about-jssmvp">About JSSMVP</Link>
-                  </li>
-                  <li>
-                    <Link href="/heritage">Heritage</Link>
-                  </li>
-                  <li>
-                    <Link href="/about">About JSS</Link>
-                  </li>
-                  <li className="active">
-                    <Link href="/leadership">Leadership</Link>
-                  </li>
-                  <li>
-                    <Link href="/organogram">Organogram</Link>
-                  </li>
-                  <li>
-                    <Link href="/academic-council">Academic Council</Link>
-                  </li>
+                  {pageData?.tabs?.tabs.map((tab, index) => (
+                    <li
+                      key={index}
+                      className={tab.url.includes("leadership") ? "active" : ""}
+                    >
+                      <Link href={`${WEB_URL + tab.url}`}>{tab.text}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

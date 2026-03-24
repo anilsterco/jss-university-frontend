@@ -17,47 +17,56 @@ export default function Faculties({ data }) {
   const [loading, setLoading] = useState(false);
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [departmentsList, setDepartmentsList] = useState([]);
+  const [selectedDepartment, setSelectedDepartment] = useState("");
 
   const initialized = useRef(false);
 
-  // --------------------------
-  // Reset filters
-  // --------------------------
+  const parts = pathname.split("/").filter(Boolean);
+
+  const segmentMap = {
+    department: "department-pages",
+    schools: "school-pages",
+  };
+
+  const segment = segmentMap[parts[0]] || parts[0];
+  const slug = parts[1] || "";
+
   const handleReset = () => {
     setSearchTerm("");
     setSelectedType("");
+    setSelectedDepartment("");
   };
 
-  // --------------------------
-  // Build API URL from pathname
-  // --------------------------
-  const buildApiUrl = (search = "", type = "", page = 1) => {
-    const parts = pathname.split("/").filter(Boolean);
-
-    const segmentMap = {
-      department: "department-pages",
-      schools: "school-pages",
-    };
-
-    const segment = segmentMap[parts[0]] || parts[0];
-    const slug = parts[1] || "";
-
+  const buildApiUrl = (search = "", type = "", department = "", page = 1) => {
     const params = new URLSearchParams();
     if (search && search.trim() !== "") params.set("search", search);
     if (type) params.set("type", String(type));
+    if (department) params.set("department", String(department));
     if (page > 1) params.set("page", page);
 
     return `${BASE_URL}${segment}/${slug}/faculties?${params.toString()}`;
   };
 
-  // --------------------------
-  // Fetch Types
-  // --------------------------
+  // fetch department list for department select
+  const fetchDepartments = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}school-department-list`);
+      if (!res.ok) throw new Error(`Departments API error: ${res.status}`);
+      const json = await res.json();
+
+      // Find the school that matches current slug in URL
+      const matchedSchool = (json.data || []).find((s) => s.slug === slug);
+      setDepartmentsList(matchedSchool?.departments || []);
+    } catch (err) {
+      console.error("Departments fetch error:", err);
+      setDepartmentsList([]);
+    }
+  };
+
   const fetchTypes = async () => {
     try {
       const parts = pathname.split("/").filter(Boolean);
-      // parts[0] = "schools" or "department"
-      // parts[1] = slug e.g. "college-of-pharmacy"
 
       const segmentMap = {
         schools: "school",
@@ -71,7 +80,6 @@ export default function Faculties({ data }) {
       if (!res.ok) throw new Error(`Types API error: ${res.status}`);
       const json = await res.json();
 
-      // API now returns json.data instead of json.types
       const types = (json.data || []).map((t) => ({
         type_id: t.id,
         type: t.name,
@@ -84,14 +92,15 @@ export default function Faculties({ data }) {
     }
   };
 
-  // --------------------------
-  // Fetch Faculty
-  // --------------------------
-  const fetchFaculty = async (search = "", type = "", page = 1) => {
+  const fetchFaculty = async (
+    search = "",
+    type = "",
+    department = "",
+    page = 1,
+  ) => {
     try {
       setLoading(true);
-      const url = buildApiUrl(search, type, page);
-      console.log("Fetching faculty URL:", url); // ← debug
+      const url = buildApiUrl(search, type, department, page);
       const res = await fetch(url);
       if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
       const json = await res.json();
@@ -109,9 +118,6 @@ export default function Faculties({ data }) {
     }
   };
 
-  // --------------------------
-  // Load More
-  // --------------------------
   const loadMore = async () => {
     if (!nextPageUrl) return;
     try {
@@ -143,33 +149,39 @@ export default function Faculties({ data }) {
     }
   };
 
-  // --------------------------
-  // Single initial load — fixes the double useEffect bug
-  // --------------------------
   useEffect(() => {
     const init = async () => {
       await fetchTypes();
       await fetchFaculty();
-      initialized.current = true; // ← mark ready AFTER both complete
+      initialized.current = true;
     };
     init();
-  }, []); // ← only ONE useEffect for initial load
+  }, []);
 
-  // --------------------------
-  // Filter change — debounced
-  // --------------------------
   useEffect(() => {
-    if (!initialized.current) return; // ← skip on mount
+    const init = async () => {
+      await fetchTypes();
+      if (parts[0] === "schools") {
+        await fetchDepartments();
+      }
+      await fetchFaculty();
+      initialized.current = true;
+    };
+    init();
+  }, []);
+
+  useEffect(() => {
+    if (!initialized.current) return;
 
     setNextPageUrl(null);
     setFacultyData([]);
 
     const timeout = setTimeout(() => {
-      fetchFaculty(searchTerm, selectedType, 1);
+      fetchFaculty(searchTerm, selectedType, selectedDepartment, 1);
     }, 500);
 
     return () => clearTimeout(timeout);
-  }, [searchTerm, selectedType]);
+  }, [searchTerm, selectedType, selectedDepartment]);
 
   return (
     <section className={styles.inner_page}>
@@ -180,8 +192,12 @@ export default function Faculties({ data }) {
         <section className="program-search faulty-sec inner_faculties_search">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-lg-8">
-                <div className="faulty-box">
+              <div
+                className={`${parts?.[0] === "schools" ? "col-lg-12" : "col-lg-8"}`}
+              >
+                <div
+                  className={`faulty-box ${parts?.[0] === "schools" ? "school-faculties" : ""}`}
+                >
                   {/* Search */}
                   <div className="search-box">
                     <input
@@ -214,8 +230,27 @@ export default function Faculties({ data }) {
                     </select>
                   </div>
 
+                  {/* department dropdown */}
+
+                  {parts?.[0] === "schools" && (
+                    <div className="faulty-drop-down">
+                      <select
+                        className="form-select"
+                        value={selectedDepartment}
+                        onChange={(e) => setSelectedDepartment(e.target.value)}
+                      >
+                        <option value="">Select Department</option>
+                        {departmentsList.map((d) => (
+                          <option key={d.id} value={d.id}>
+                            {d.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+
                   {/* Reset Button */}
-                  {(searchTerm || selectedType) && (
+                  {(searchTerm || selectedType || selectedDepartment) && (
                     <button
                       className="faculty-reset-btn"
                       onClick={handleReset}
