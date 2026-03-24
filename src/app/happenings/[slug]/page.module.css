@@ -40,6 +40,11 @@
   cursor: pointer;
 }
 
+.innerTitle .happIcons li  button{
+  border: none;
+    background: transparent;
+}
+
 .happIcons li img {
   max-width: 4.3rem;
   height: auto;

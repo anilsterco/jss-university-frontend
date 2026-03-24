@@ -16,6 +16,7 @@ import HappeningsClient from "@/app/happenings/HappeningsClient";
 import FaqPage from "@/pages/faq/Faq";
 import Labspage from "@/pages/labs11/Labs";
 import { notFound } from "next/navigation";
+import TabsContent from "@/component/common/tabsContent/TabsContent";
 
 export async function generateMetadata({ params }) {
   return getPageSEO();
@@ -89,6 +90,8 @@ export default async function DepartmentPage({ params }) {
       ) : (
         <h1>no data</h1>
       )}
+
+      {section && section == "research" && <TabsContent />}
     </>
   );
 }

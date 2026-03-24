@@ -7,6 +7,7 @@ import { WEB_URL } from "@/config/config";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
@@ -15,8 +16,17 @@ const icons = [
 
 export default function HappeningsClientDetail({ happeningsData }) {
   const contentRef = useRef(null);
+  const router = useRouter();
 
   const handlePrint = useReactToPrint({ contentRef });
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      router.push(WEB_URL + "/happenings");
+    }
+  };
 
   return (
     <div ref={contentRef}>
@@ -30,13 +40,13 @@ export default function HappeningsClientDetail({ happeningsData }) {
               </div>
               <ul className={styles.happIcons}>
                 <li>
-                  <Link href={`${WEB_URL}happenings`}>
+                  <button onClick={handleBack}>
                     <img
                       src={icons[1].src}
                       alt="back"
                       className="img-fluid w-100"
                     />
-                  </Link>
+                  </button>
                 </li>
                 <li onClick={handlePrint} style={{ cursor: "pointer" }}>
                   <img

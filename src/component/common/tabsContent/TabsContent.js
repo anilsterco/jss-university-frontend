@@ -3,12 +3,15 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./tabsContent.css";
+import { BASE_URL } from "@/config/config";
+import { usePathname } from "next/navigation";
 
-// ─── Tab → API + column config ───────────────────────────────────────────────
-const TAB_CONFIG = {
-  Patent: {
+const TAB_CONFIG = [
+  {
+    tabName: "Patents",
     endpoint: "patents",
     columns: [
+      { label: "Serial No.", key: "serial_no" },
       { label: "Patent Application No.", key: "patent_application_no" },
       { label: "Patent Status", key: "patent_status" },
       { label: "Inventor Name", key: "inventor_name" },
@@ -21,21 +24,12 @@ const TAB_CONFIG = {
       { label: "Source Proof", key: "source_proof" },
     ],
   },
-  Publication: {
-    endpoint: "journals", // adjust if Publication has its own endpoint
-    columns: [
-      { label: "Title", key: "title" },
-      { label: "Authors", key: "authors" },
-      { label: "Journal Name", key: "journal_name" },
-      { label: "Volume", key: "volume" },
-      { label: "Issue", key: "issue" },
-      { label: "Year", key: "year" },
-      { label: "DOI", key: "doi" },
-    ],
-  },
-  Conferences: {
+
+  {
+    tabName: "Conferences",
     endpoint: "conferences",
     columns: [
+      { label: "Serial No.", key: "serial_no" },
       { label: "Author Name", key: "author_name" },
       { label: "Paper Title", key: "paper_title" },
       { label: "Conference Name", key: "conference_name" },
@@ -46,18 +40,11 @@ const TAB_CONFIG = {
       { label: "Scopus Indexed", key: "scopus_indexed" },
     ],
   },
-  "Projects Submitted": {
-    endpoint: "projects-submitted",
-    columns: [
-      { label: "Project Title", key: "project_title" },
-      { label: "Investigator Names", key: "investigator_names" },
-      { label: "Funding Agency", key: "funding_agency" },
-      { label: "Amount (Rs.)", key: "amount_rs" },
-    ],
-  },
-  Journals: {
+  {
+    tabName: "Journals",
     endpoint: "journals",
     columns: [
+      { label: "Serial No.", key: "serial_no" },
       { label: "Author Name", key: "author_name" },
       { label: "Paper Title", key: "paper_title" },
       { label: "Journal Name", key: "journal_name" },
@@ -73,9 +60,22 @@ const TAB_CONFIG = {
       { label: "URL", key: "url" },
     ],
   },
-  "Projects Sanctioned": {
+  {
+    tabName: "Projects Submitted",
+    endpoint: "projects-submitted",
+    columns: [
+      { label: "Serial No.", key: "serial_no" },
+      { label: "Project Title", key: "project_title" },
+      { label: "Investigator Names", key: "investigator_names" },
+      { label: "Funding Agency", key: "funding_agency" },
+      { label: "Amount (Rs.)", key: "amount_rs" },
+    ],
+  },
+  {
+    tabName: "Projects Sanctioned",
     endpoint: "projects-sanctioned",
     columns: [
+      { label: "Serial No.", key: "serial_no" },
       { label: "Scheme", key: "scheme" },
       { label: "Proposals Sanctioned", key: "proposals_sanctioned" },
       { label: "Submitted Date", key: "submitted_date" },
@@ -86,21 +86,36 @@ const TAB_CONFIG = {
       { label: "Amount (Rs.)", key: "amount" },
     ],
   },
-};
+];
 
-const BASE_URL = "https://project-demo.in/jss/api/research";
-
-// ─── Component ────────────────────────────────────────────────────────────────
-const TabsContent = ({ item }) => {
+const TabsContent = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [tableData, setTableData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [departmentShortName, setDepartmentShortName] = useState(null);
 
-  const activeTabName = item?.tabsGroup?.[activeTab]?.tabName ?? "";
-  const activeData = item?.tabsGroup?.[activeTab];
-  const tabConfig = TAB_CONFIG[activeTabName];
+  const pathname = usePathname();
+  const path = pathname.split("/").filter(Boolean);
+
+  const activeTabConfig = TAB_CONFIG[activeTab];
+
+  const getDepartmentShortName = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}department/${path[1]}`);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch department");
+      }
+      const data = await response.json();
+
+      setDepartmentShortName(data?.departments_short_name);
+    } catch (err) {
+      console.log(err);
+      setDepartmentShortName(null);
+    }
+  };
 
   // Init AOS once
   useEffect(() => {
@@ -112,21 +127,21 @@ const TabsContent = ({ item }) => {
     setCurrentPage(1);
     setTableData([]);
     setTotalPages(1);
+    getDepartmentShortName();
   }, [activeTab]);
 
   // Fetch data whenever tab or page changes
   useEffect(() => {
-    if (!tabConfig?.endpoint) return;
+    if (!activeTabConfig?.endpoint) return;
 
     const fetchData = async () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `${BASE_URL}/${tabConfig.endpoint}?page=${currentPage}`,
+          `${BASE_URL}research/${activeTabConfig.endpoint}?page=${currentPage}&department=${departmentShortName}`,
         );
         const data = await res.json();
         setTableData(data);
-
         if (data?.total && data?.per_page) {
           setTotalPages(Math.ceil(data.total / data.per_page));
         } else if (data?.last_page) {
@@ -143,9 +158,8 @@ const TabsContent = ({ item }) => {
     };
 
     fetchData();
-  }, [activeTab, currentPage, tabConfig?.endpoint]);
+  }, [activeTab, currentPage, departmentShortName]);
 
-  // ── Pagination helpers ──────────────────────────────────────────────────────
   const getPageNumbers = () => {
     const pages = [];
     const delta = 1;
@@ -173,127 +187,109 @@ const TabsContent = ({ item }) => {
     setActiveTab(idx);
   };
 
-  // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <section className="tabs_content_section">
       <div className="container">
-        {/* Tab Navigation */}
+        {/* Tabs from TAB_CONFIG — no more props dependency */}
         <ul className="tabs_group">
-          {item?.tabsGroup?.map((tabItem, tabIdx) => (
+          {TAB_CONFIG.map((tab, tabIdx) => (
             <li
               key={tabIdx}
               className={`tabs_item ${activeTab === tabIdx ? "active" : ""}`}
               onClick={() => handleTabChange(tabIdx)}
             >
-              {tabItem.tabName}
+              {tab.tabName}
             </li>
           ))}
         </ul>
 
         {/* Tab Content */}
-        {activeData && (
+        {activeTabConfig && (
           <div className="tabs_content">
-            {activeData.title && (
-              <h2 className="tabs_content_title">{activeData.title}</h2>
-            )}
-            {activeData.listGroup?.length > 0 && (
-              <ul className="tabs_list">
-                {activeData.listGroup.map((listItem, listIdx) => (
-                  <li key={listIdx} className="tabs_list_item">
-                    {listItem.list}
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Table (only when a config exists for this tab) */}
-            {tabConfig && (
-              <div className="table_section">
-                <div className="table-responsive">
-                  <table className="table-lab table table-bordered">
-                    <thead>
+            {/* Table */}
+            <div className="table_section">
+              <div className="table-responsive">
+                <table className="table-lab table table-bordered">
+                  <thead>
+                    <tr>
+                      {activeTabConfig.columns.map((col) => (
+                        <th key={col.key}>{col.label}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {loading ? (
                       <tr>
-                        {tabConfig.columns.map((col) => (
-                          <th key={col.key}>{col.label}</th>
-                        ))}
+                        <td
+                          colSpan={activeTabConfig.columns.length}
+                          style={{ textAlign: "center", padding: "20px" }}
+                        >
+                          Loading...
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {loading ? (
-                        <tr>
-                          <td
-                            colSpan={tabConfig.columns.length}
-                            style={{ textAlign: "center", padding: "20px" }}
-                          >
-                            Loading...
-                          </td>
+                    ) : tableData?.data?.length > 0 ? (
+                      tableData.data.map((row, rowIdx) => (
+                        <tr key={rowIdx}>
+                          {activeTabConfig.columns.map((col) => (
+                            <td key={col.key}>{row[col.key] ?? "—"}</td>
+                          ))}
                         </tr>
-                      ) : tableData?.data?.length > 0 ? (
-                        tableData.data.map((row, rowIdx) => (
-                          <tr key={rowIdx}>
-                            {tabConfig.columns.map((col) => (
-                              <td key={col.key}>{row[col.key] ?? "—"}</td>
-                            ))}
-                          </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td
-                            colSpan={tabConfig.columns.length}
-                            style={{ textAlign: "center", padding: "20px" }}
-                          >
-                            No records found.
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-
-                {/* Pagination */}
-                {totalPages > 1 && (
-                  <div className="pagination_wrapper">
-                    <button
-                      className={`pagination_btn pagination_prev ${currentPage === 1 ? "disabled" : ""}`}
-                      onClick={() => handlePageChange(currentPage - 1)}
-                      disabled={currentPage === 1}
-                    >
-                      &lsaquo; Prev
-                    </button>
-
-                    <ul className="pagination_list">
-                      {getPageNumbers().map((page, idx) =>
-                        page === "..." ? (
-                          <li
-                            key={`ellipsis-${idx}`}
-                            className="pagination_ellipsis"
-                          >
-                            &hellip;
-                          </li>
-                        ) : (
-                          <li key={page}>
-                            <button
-                              className={`pagination_btn ${currentPage === page ? "active" : ""}`}
-                              onClick={() => handlePageChange(page)}
-                            >
-                              {page}
-                            </button>
-                          </li>
-                        ),
-                      )}
-                    </ul>
-
-                    <button
-                      className={`pagination_btn pagination_next ${currentPage === totalPages ? "disabled" : ""}`}
-                      onClick={() => handlePageChange(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                    >
-                      Next &rsaquo;
-                    </button>
-                  </div>
-                )}
+                      ))
+                    ) : (
+                      <tr>
+                        <td
+                          colSpan={activeTabConfig.columns.length}
+                          style={{ textAlign: "center", padding: "20px" }}
+                        >
+                          No records found.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
               </div>
-            )}
+
+              {/* Pagination stays exactly the same */}
+              {totalPages > 1 && (
+                <div className="pagination_wrapper">
+                  <button
+                    className={`pagination_btn pagination_prev ${currentPage === 1 ? "disabled" : ""}`}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                  >
+                    &lsaquo; Prev
+                  </button>
+                  <ul className="pagination_list">
+                    {getPageNumbers().map((page, idx) =>
+                      page === "..." ? (
+                        <li
+                          key={`ellipsis-${idx}`}
+                          className="pagination_ellipsis"
+                        >
+                          &hellip;
+                        </li>
+                      ) : (
+                        <li key={page}>
+                          <button
+                            className={`pagination_btn ${currentPage === page ? "active" : ""}`}
+                            onClick={() => handlePageChange(page)}
+                          >
+                            {page}
+                          </button>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                  <button
+                    className={`pagination_btn pagination_next ${currentPage === totalPages ? "disabled" : ""}`}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                  >
+                    Next &rsaquo;
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>
