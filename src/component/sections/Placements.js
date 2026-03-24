@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Placements({ data }) {
   useEffect(() => {
@@ -41,6 +42,11 @@ export default function Placements({ data }) {
                       {item?.heading && (
                         <h5 className="section_title">{item.heading}</h5>
                       )}
+                      {item?.italicHeading && (
+                        <h5 className="section_title italic">
+                          {item.italicHeading}
+                        </h5>
+                      )}
                       {item?.subDescription && (
                         <h6 className="section_subDescription">
                           {item.subDescription}
@@ -70,7 +76,30 @@ export default function Placements({ data }) {
                               </div>
                             )}
                             <div className="content">
-                              {box.title && <h3>{box.title}</h3>}
+                              {box.title && (
+                                <h3
+                                  dangerouslySetInnerHTML={{
+                                    __html: box.title,
+                                  }}
+                                />
+                              )}
+                              {box.designation && (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: box.designation,
+                                  }}
+                                  className="designation"
+                                />
+                              )}
+                              {box.mail && (
+                                <Link
+                                  href={`mailto:${box.mail}`}
+                                  className="mail"
+                                  dangerouslySetInnerHTML={{
+                                    __html: box.mail,
+                                  }}
+                                />
+                              )}
                               {box.subtitle && <p>{box.subtitle}</p>}
                               {box.eligibility && (
                                 <p>
@@ -79,15 +108,14 @@ export default function Placements({ data }) {
                                 </p>
                               )}
 
-                              
-                            {box.listGroup && <ul className="box_ul">
-                              {box.listGroup.map((list, listIdx)=>(
-                                <li key={listIdx}>{list.list}</li>
-                              ))}
-                              </ul>}
+                              {box.listGroup && (
+                                <ul className="box_ul">
+                                  {box.listGroup.map((list, listIdx) => (
+                                    <li key={listIdx}>{list.list}</li>
+                                  ))}
+                                </ul>
+                              )}
                             </div>
-
-
                           </div>
                         ))}
                       </div>

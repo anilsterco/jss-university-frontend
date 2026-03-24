@@ -2228,6 +2228,11 @@ a:active {
   margin-bottom: 1.6rem;
 }
 
+.curriculum_box h3 i{
+  font-style: italic;
+  font-weight: 700;
+}
+
 .curriculum_box p {
   font: var(--font-16);
   font-family: var(--font-Roboto);
@@ -2236,6 +2241,17 @@ a:active {
   color: #444444;
   line-height: 1.7;
   margin-bottom: 1.6rem;
+}
+
+.curriculum_box p.designation{
+  margin-bottom:0;
+}
+
+.curriculum_box a.mail{
+  margin-bottom:0;
+  display:inline-block;
+  font:var(--font-16);
+  text-decoration: underline!important;
 }
 
 .curriculum_box .box_ul {

@@ -3937,6 +3937,10 @@ hr {
   margin-bottom: 4rem;
 }
 
+.placement_page .section_title.italic{
+  font-style: italic;
+}
+
 .placement_page.area-of-research .section_title {
   color: #fff;
 }
