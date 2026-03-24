@@ -504,6 +504,17 @@
   font-weight: 600;
 }
 
+.exam_link {
+  font: var(--font-18);
+  color: #16344e;
+  background: 0 0;
+  font-weight: 500;
+  border: none !important;
+  text-decoration: underline!important;
+  display: block;margin-top: 2.5rem;
+}
+.national-academic-depository .image_content_repeat_section{padding-top: 0;padding-bottom: 10rem;}
+.national-academic-depository .image_content_repeat_section .singleImageContent {padding-bottom: 0;}
 .examination-overview .amenities_section ul {
   padding-left: 0;
 }
