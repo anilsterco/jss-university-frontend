@@ -335,158 +335,162 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
-      <section className="educational-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="educational-box">
-                <article className="tabbed-content">
-                  <nav className="tabs">
-                    <ul>
-                      {peos?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab1"
-                            className={activeTab === "tab1" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab1");
-                            }}
-                          >
-                            (PEOs)
-                          </a>
-                        </li>
-                      )}
-                      {pos?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab2"
-                            className={activeTab === "tab2" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab2");
-                            }}
-                          >
-                            (POs)
-                          </a>
-                        </li>
-                      )}
-                      {pso?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab3"
-                            className={activeTab === "tab3" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab3");
-                            }}
-                          >
-                            (PSOs)
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </nav>
-
-                  {peos?.length > 0 && (
-                    <div
-                      id="tab1"
-                      className={`item ${activeTab === "tab1" ? "active" : ""}`}
-                      data-title="Program Educational Objectives (PEOs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Educational Objectives</h6>
-                        <div className="peo-list">
-                          {peos.map((peo, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>{peo.title}</h3>
-                              <p>{peo.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+      {peos && peos?.length > 0 && (
+        <section className="educational-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="educational-box">
+                  <article className="tabbed-content">
+                    <nav className="tabs">
+                      <ul>
+                        {peos?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab1"
+                              className={activeTab === "tab1" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab1");
+                              }}
+                            >
+                              (PEOs)
+                            </a>
+                          </li>
                         )}
-                      </div>
-                    </div>
-                  )}
-
-                  {pos?.length > 0 && (
-                    <div
-                      id="tab2"
-                      className={`item ${activeTab === "tab2" ? "active" : ""}`}
-                      data-title="Program Outcomes (POs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Outcomes</h6>
-                        <div className="peo-list">
-                          {pos.map((po, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>{po.title}</h3>
-                              <p>{po.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+                        {pos?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab2"
+                              className={activeTab === "tab2" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab2");
+                              }}
+                            >
+                              (POs)
+                            </a>
+                          </li>
                         )}
-                      </div>
-                    </div>
-                  )}
-
-                  {pso?.length > 0 && (
-                    <div
-                      id="tab3"
-                      className={`item ${activeTab === "tab3" ? "active" : ""}`}
-                      data-title="Program Specific Outcomes (PSOs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Specific Outcomes</h6>
-                        <div className="peo-list">
-                          {pso.map((p, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>{p.title}</h3>
-                              <p>{p.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+                        {pso?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab3"
+                              className={activeTab === "tab3" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab3");
+                              }}
+                            >
+                              (PSOs)
+                            </a>
+                          </li>
                         )}
+                      </ul>
+                    </nav>
+
+                    {peos?.length > 0 && (
+                      <div
+                        id="tab1"
+                        className={`item ${activeTab === "tab1" ? "active" : ""}`}
+                        data-title="Program Educational Objectives (PEOs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Educational Objectives</h6>
+                          <div className="peo-list">
+                            {peos.map((peo, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>{peo.title}</h3>
+                                <p>{peo.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </article>
+                    )}
+
+                    {pos?.length > 0 && (
+                      <div
+                        id="tab2"
+                        className={`item ${activeTab === "tab2" ? "active" : ""}`}
+                        data-title="Program Outcomes (POs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Outcomes</h6>
+                          <div className="peo-list">
+                            {pos.map((po, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>{po.title}</h3>
+                                <p>{po.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {pso?.length > 0 && (
+                      <div
+                        id="tab3"
+                        className={`item ${activeTab === "tab3" ? "active" : ""}`}
+                        data-title="Program Specific Outcomes (PSOs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Specific Outcomes</h6>
+                          <div className="peo-list">
+                            {pso.map((p, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>{p.title}</h3>
+                                <p>{p.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </article>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Curriculum Section */}
       {curriculum?.curriculum_title && (
-        <section className="core-sec">
+        <section
+          className={`core-sec ${peos?.length < 1 ? "extra_space" : ""}`}
+        >
           <div className="container">
             <div className="row">
               <div className="col-lg-9">

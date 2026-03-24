@@ -2908,3 +2908,9 @@ a:active {
 .expanded_text {
   display: block;
 }
+.core-sec.extra_space {
+  padding-block: 8rem;
+}
+.eligibility-sec {
+  padding-bottom: 6rem;
+}
