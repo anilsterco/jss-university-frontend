@@ -654,7 +654,7 @@
   line-height: 2.4rem;
   margin-bottom: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 2;
   /* show 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -668,6 +668,7 @@
   transition: max-height 350ms ease;
   overflow: visible;
 }
+.programs-page .core-sec{padding-bottom: 5rem;}
 
 .expanded_icon {
   background-image: url("/images/programs/expent_text.svg");

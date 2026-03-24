@@ -265,7 +265,7 @@ export default function ProgramDetailClient({ params }) {
                       {overview?.overview_desc}
                     </p>
                     {overview?.overview_desc &&
-                      overview?.overview_desc.split(" ").length > 200 && (
+                      overview?.overview_desc.split(" ").length > 1 && (
                         <button
                           className="btn read_more"
                           onClick={() => setExpanded(!expanded)}
@@ -399,7 +399,7 @@ export default function ProgramDetailClient({ params }) {
                         <div className="peo-list">
                           {peos.map((peo, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{peo.title}</h3>
+                              <h3>PEO-{index+1}{peo?.title && ': ' + peo.title}</h3>
                               <p>{peo.description}</p>
                             </div>
                           ))}
@@ -429,7 +429,7 @@ export default function ProgramDetailClient({ params }) {
                         <div className="peo-list">
                           {pos.map((po, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{po.title}</h3>
+                              <h3>PO-{index+1}{po?.title && ': ' + po.title}</h3>
                               <p>{po.description}</p>
                             </div>
                           ))}
@@ -459,7 +459,7 @@ export default function ProgramDetailClient({ params }) {
                         <div className="peo-list">
                           {pso.map((p, index) => (
                             <div key={index} className="peo-box">
-                              <h3>{p.title}</h3>
+                              <h3>PSO-{index+1}{p?.title && ': ' + p.title}</h3>
                               <p>{p.description}</p>
                             </div>
                           ))}
@@ -492,8 +492,7 @@ export default function ProgramDetailClient({ params }) {
               <div className="col-lg-9">
                 <div className="core-box">
                   <div className="core-text">
-                    <span>Curriculum</span>
-                    <h6>{curriculum?.curriculum_title}</h6>
+                    <span className="d-block mb-5">{curriculum?.curriculum_title}</span>
                     <blockquote>Core Subjects:</blockquote>
                     <p>
                       {curriculum?.curriculum_desc &&
