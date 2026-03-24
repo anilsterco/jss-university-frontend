@@ -121,6 +121,12 @@ const [expanded, setExpanded] = useState(false);
             {data?.extraPara && (
               <h5 className={styles.extraPara}>{data.extraPara}</h5>
             )}
+
+            {data?.linkText && data?.linkText.length >0 && data.linkText.map((link, linkIdx)=>(
+              <Link key={linkIdx} href={link?.linkUrl || ''} target="_blank" className="exam_link">
+                {link?.textLink}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -244,7 +244,7 @@ export default function DepartmentSection({
                 const last = words.pop();
                 return (
                   <>
-                    Department of <span>{last}</span>
+                    Departments of <span>{last}</span>
                   </>
                 );
               })()}

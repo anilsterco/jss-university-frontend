@@ -395,25 +395,130 @@
 .department-computer-science-and-engineering-it-research .tableContentSection .grid_row {
   grid-template-columns: 1fr;
 }
- .grid_card_design1_section .heading{text-align: left;}
+
+.grid_card_design1_section .heading {
+  text-align: left;
+}
+
 .department-management-studies-facilities .library_section {
   padding-top: 10rem;
 }
-.department-management-studies-placements .amenities_section  {padding-top: 0;}
+
+.department-management-studies-placements .amenities_section {
+  padding-top: 0;
+}
+
 .department-management-studies-placements .grid_group {
   background-color: var(--color-white);
   padding: 6rem;
 }
 
-.department-chemistry-facilities .image_content_repeat_section {padding-top: 10rem;}
+.department-maths-about-us .image_content_repeat_section {
+  padding: 0;
+}
+
+.department-chemistry-facilities .image_content_repeat_section {
+  padding-top: 10rem;
+}
+
 .schools-computer-applications-about-the-school .count_alumni_section {
   padding-top: 0rem;
 }
-.btmPlace_para{padding-top: 2.5rem;}
-.btmPlace_para p{    font: var(--font-16);
-    color: #444;
-    margin-bottom: 1.5rem;
-    line-height: 2.8rem;}
+
+.btmPlace_para {
+  padding-top: 2.5rem;
+}
+
+.btmPlace_para p {
+  font: var(--font-16);
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 2.8rem;
+}
+
+.department-physics-advisory-board .table_section .table-lab tbody td:nth-child(2),
+.department-maths-advisory-board .table_section .table-lab tbody td:nth-child(2) {
+  width: 20%;
+}
+
+.department-advisory-board .table_section:not(:last-child) {
+  padding-bottom: 0rem;
+}
+
+.approvals-accreditations .pdf_list_section:not(:last-child) {
+  padding-bottom: 0rem;
+}
+
+.fee-structure .table_section:not(:last-child) {
+  padding-bottom: 0rem;
+}
+
+.examination-overview .table_section+.table_section {
+  padding-top: 0;
+}
+
+.examination-overview .grands_mainsec+.image_content_repeat_section {
+  padding-bottom: 0;
+}
+
+.fee-structure .table_section p {
+  margin-bottom: 2.5rem;
+}
+
+.fee-structure .table_section .heading {
+  margin-bottom: 3rem;
+}
+
+.examination-overview .table_section thead th:first-child {
+  min-width: 6rem;
+}
+
+.examination-overview .table_section thead th:first-child {
+  min-width: 6rem;
+}
+
+.examination-overview .table_section .table-lab tbody td:nth-child(2) {
+  width: auto;
+}
+
+.examination-overview .table_section .sub_heading {
+  margin-bottom: 2rem;
+}
+
+.examination-overview .table_section .heading {
+  margin-bottom: 2rem;
+}
+
+.examination-overview .amenities_section .grid_group {
+  background-color: var(--color-white);
+  padding: 4rem;
+}
+
+.examination-overview .amenities_section .grid_group h5 {
+  font: var(--font-22);
+  color: #16344e;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 4rem;
+  font-weight: 600;
+}
+
+.exam_link {
+  font: var(--font-18);
+  color: #16344e;
+  background: 0 0;
+  font-weight: 500;
+  border: none !important;
+  text-decoration: underline!important;
+  display: block;margin-top: 2.5rem;
+}
+.national-academic-depository .image_content_repeat_section{padding-top: 0;padding-bottom: 10rem;}
+.national-academic-depository .image_content_repeat_section .singleImageContent {padding-bottom: 0;}
+.examination-overview .amenities_section ul {
+  padding-left: 0;
+}
+
 .res_table_maincms .table_section:first-child {
   padding-block: 5rem 5rem;
 }
@@ -6107,9 +6212,11 @@
   .about_one .estblish {
     max-width: 100%;
   }
-.careers .add_of_context {
+
+  .careers .add_of_context {
     max-height: 30rem;
-}
+  }
+
   .about_two .early-slide {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -6821,7 +6928,7 @@
 }
 
 .department-pharmaceutics-about-us .grid_card_design1_section {
-  padding-block:  2rem 10rem;
+  padding-block: 10rem 2rem;
 }
 
 .department-research .table_section {
@@ -7232,6 +7339,7 @@
   .academic-council .table_section:last-child {
     padding: 5rem 0;
   }
+
 
   .academic_grid {
     display: flex;
