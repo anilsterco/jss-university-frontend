@@ -503,6 +503,7 @@
   margin-bottom: 4rem;
   font-weight: 600;
 }
+.programs-page .core-sec{    padding-block: 10rem 5rem;}
 
 .exam_link {
   font: var(--font-18);
