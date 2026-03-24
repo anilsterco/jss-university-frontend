@@ -334,156 +334,156 @@ export default function ProgramDetailClient({ params }) {
           </div>
         </div>
       </section>
-
-      <section className="educational-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <div className="educational-box">
-                <article className="tabbed-content">
-                  <nav className="tabs">
-                    <ul>
-                      {peos?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab1"
-                            className={activeTab === "tab1" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab1");
-                            }}
-                          >
-                            (PEOs)
-                          </a>
-                        </li>
-                      )}
-                      {pos?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab2"
-                            className={activeTab === "tab2" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab2");
-                            }}
-                          >
-                            (POs)
-                          </a>
-                        </li>
-                      )}
-                      {pso?.length > 0 && (
-                        <li>
-                          <a
-                            href="#tab3"
-                            className={activeTab === "tab3" ? "active" : ""}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleTabClick("tab3");
-                            }}
-                          >
-                            (PSOs)
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </nav>
-
-                  {peos?.length > 0 && (
-                    <div
-                      id="tab1"
-                      className={`item ${activeTab === "tab1" ? "active" : ""}`}
-                      data-title="Program Educational Objectives (PEOs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Educational Objectives</h6>
-                        <div className="peo-list">
-                          {peos.map((peo, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>PEO-{index+1}{peo?.title && ': ' + peo.title}</h3>
-                              <p>{peo.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+      {peos?.length > 0 && (
+        <section className="educational-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-9">
+                <div className="educational-box">
+                  <article className="tabbed-content">
+                    <nav className="tabs">
+                      <ul>
+                        {peos?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab1"
+                              className={activeTab === "tab1" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab1");
+                              }}
+                            >
+                              (PEOs)
+                            </a>
+                          </li>
                         )}
-                      </div>
-                    </div>
-                  )}
-
-                  {pos?.length > 0 && (
-                    <div
-                      id="tab2"
-                      className={`item ${activeTab === "tab2" ? "active" : ""}`}
-                      data-title="Program Outcomes (POs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Outcomes</h6>
-                        <div className="peo-list">
-                          {pos.map((po, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>PO-{index+1}{po?.title && ': ' + po.title}</h3>
-                              <p>{po.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+                        {pos?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab2"
+                              className={activeTab === "tab2" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab2");
+                              }}
+                            >
+                              (POs)
+                            </a>
+                          </li>
                         )}
-                      </div>
-                    </div>
-                  )}
-
-                  {pso?.length > 0 && (
-                    <div
-                      id="tab3"
-                      className={`item ${activeTab === "tab3" ? "active" : ""}`}
-                      data-title="Program Specific Outcomes (PSOs)"
-                    >
-                      <div className="item-content">
-                        <h6>Program Specific Outcomes</h6>
-                        <div className="peo-list">
-                          {pso.map((p, index) => (
-                            <div key={index} className="peo-box">
-                              <h3>PSO-{index+1}{p?.title && ': ' + p.title}</h3>
-                              <p>{p.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                        {apply_now_link && (
-                          <a
-                            href={apply_now_link}
-                            className="apply-btn1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+                        {pso?.length > 0 && (
+                          <li>
+                            <a
+                              href="#tab3"
+                              className={activeTab === "tab3" ? "active" : ""}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleTabClick("tab3");
+                              }}
+                            >
+                              (PSOs)
+                            </a>
+                          </li>
                         )}
+                      </ul>
+                    </nav>
+
+                    {peos?.length > 0 && (
+                      <div
+                        id="tab1"
+                        className={`item ${activeTab === "tab1" ? "active" : ""}`}
+                        data-title="Program Educational Objectives (PEOs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Educational Objectives</h6>
+                          <div className="peo-list">
+                            {peos.map((peo, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>PEO-{index + 1}{peo?.title && ': ' + peo.title}</h3>
+                                <p>{peo.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </article>
+                    )}
+
+                    {pos?.length > 0 && (
+                      <div
+                        id="tab2"
+                        className={`item ${activeTab === "tab2" ? "active" : ""}`}
+                        data-title="Program Outcomes (POs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Outcomes</h6>
+                          <div className="peo-list">
+                            {pos.map((po, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>PO-{index + 1}{po?.title && ': ' + po.title}</h3>
+                                <p>{po.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {pso?.length > 0 && (
+                      <div
+                        id="tab3"
+                        className={`item ${activeTab === "tab3" ? "active" : ""}`}
+                        data-title="Program Specific Outcomes (PSOs)"
+                      >
+                        <div className="item-content">
+                          <h6>Program Specific Outcomes</h6>
+                          <div className="peo-list">
+                            {pso.map((p, index) => (
+                              <div key={index} className="peo-box">
+                                <h3>PSO-{index + 1}{p?.title && ': ' + p.title}</h3>
+                                <p>{p.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                          {apply_now_link && (
+                            <a
+                              href={apply_now_link}
+                              className="apply-btn1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Apply Now
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </article>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      )}
       {/* Curriculum Section */}
       {curriculum?.curriculum_title && (
         <section className="core-sec">
@@ -534,12 +534,12 @@ export default function ProgramDetailClient({ params }) {
                           style={{
                             opacity:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? 0.5
                                 : 1,
                             cursor:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? "not-allowed"
                                 : "pointer",
                           }}
@@ -703,17 +703,17 @@ export default function ProgramDetailClient({ params }) {
                       <p>{restWords.join(" ")}</p>
                       {(currentTestimonial?.apply_now_link ||
                         apply_now_link) && (
-                        <a
-                          href={
-                            currentTestimonial?.apply_now_link || apply_now_link
-                          }
-                          className="apply-btn1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
+                          <a
+                            href={
+                              currentTestimonial?.apply_now_link || apply_now_link
+                            }
+                            className="apply-btn1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
+                        )}
                     </div>
                   </div>
                   <div className="testimonial-img">
