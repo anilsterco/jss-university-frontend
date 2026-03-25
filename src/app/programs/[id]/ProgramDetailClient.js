@@ -485,7 +485,7 @@ export default function ProgramDetailClient({ params }) {
                             {pso.map((p, index) => (
                               <div key={index} className="peo-box">
                                 <h3>{p.title || `PSO-${index + 1}`}</h3>
-                                 <p dangerouslySetInnerHTML={{__html:p.description}} />
+                                <p dangerouslySetInnerHTML={{__html:p.description}} />
                               </div>
                             ))}
                           </div>
