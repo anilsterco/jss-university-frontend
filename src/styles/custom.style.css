@@ -2165,6 +2165,28 @@ This is the minimum CSS that you will need in order for this to work
   padding: 2.8rem 5.6rem 4.1rem 3.9rem;
   border-radius: 8px;
 }
+.peo-box ul{
+  list-style: none;
+  margin-top: 2.5rem;
+  padding-left: 0;
+}
+.peo-box ul li{    font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 2.3rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;}
+
+.peo-box ul li:before {
+    content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+}
 
 .peo-box h3 {
   font: var(--font-28);
