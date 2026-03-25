@@ -225,6 +225,24 @@ export default function ProgramDetailClient({ params }) {
                             Scholarship
                           </a>
                         )}
+
+                        {admissionSection?.brouchure && (
+                          <a
+                            href={admissionSection.brouchure}
+                            className="structure-btn brochure_btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src="/images/custom-page/blue-pdf.png"
+                              alt="PDF"
+                              width={20}
+                              height={20}
+                              className="img-fluid"
+                            />
+                            Brochure
+                          </a>
+                        )}
                       </div>
                       {(admissionSection?.apply_now_link || apply_now_link) && (
                         <a

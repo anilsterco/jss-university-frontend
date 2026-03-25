@@ -764,6 +764,11 @@
   font-weight: 600;
 }
 
+.brochure_btn{
+  margin-left: 1.2rem;
+  cursor: pointer;
+}
+
 .structure-btn img {
   width: 2rem;
   margin-right: 0.5rem;
@@ -1643,6 +1648,7 @@
 
 .department-research .tabs_content_section {
   padding-bottom: 5rem;
+  padding-top:0;
 }
 
 .department-research .tabs_content_section .table_section:last-child {

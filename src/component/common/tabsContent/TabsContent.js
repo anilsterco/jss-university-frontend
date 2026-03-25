@@ -208,7 +208,7 @@ const TabsContent = () => {
           <div className="tabs_content">
             {/* Table */}
             <div className="table_section">
-              <div className="table-responsive">
+              <div className="table-responsive ed_schol_list">
                 <table className="table-lab table table-bordered">
                   <thead>
                     <tr>
