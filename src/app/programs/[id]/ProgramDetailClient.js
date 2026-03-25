@@ -420,7 +420,10 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {peos.map((peo, index) => (
                               <div key={index} className="peo-box">
-                                <h3>{peo.title || `PEO-${index + 1}`}</h3>
+                                <h3>
+                                  PEO-{index + 1}
+                                  {peo.title && `: ${peo.title}`}
+                                </h3>
                                 <p
                                   dangerouslySetInnerHTML={{
                                     __html: peo.description,
@@ -454,7 +457,10 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {pos.map((po, index) => (
                               <div key={index} className="peo-box">
-                                <h3>{po.title || `PO-${index + 1}`}</h3>
+                                <h3>
+                                  PO-{index + 1}
+                                  {po.title && `: ${po.title}`}
+                                </h3>
                                 <p>{po.description}</p>
                               </div>
                             ))}
@@ -484,7 +490,10 @@ export default function ProgramDetailClient({ params }) {
                           <div className="peo-list">
                             {pso.map((p, index) => (
                               <div key={index} className="peo-box">
-                                <h3>{p.title || `PSO-${index + 1}`}</h3>
+                                <h3>
+                                  PSO-{index + 1}
+                                  {p.title && `: ${p.title}`}
+                                </h3>
                                 <p dangerouslySetInnerHTML={{__html:p.description}} />
                               </div>
                             ))}
