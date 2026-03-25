@@ -528,9 +528,10 @@ export default function ProgramDetailClient({ params }) {
               <div className="col-lg-9">
                 <div className="core-box">
                   <div className="core-text">
-                    <span className="d-block mb-5">
+                    <span>Curriculum </span>
+                    <h6 className="d-block mb-5">
                       {curriculum?.curriculum_title}
-                    </span>
+                    </h6>
                     <blockquote>Core Subjects:</blockquote>
                     <p>
                       {curriculum?.curriculum_desc &&
