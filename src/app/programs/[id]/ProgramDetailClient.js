@@ -258,7 +258,9 @@ export default function ProgramDetailClient({ params }) {
                       )}
                     </div>
                     <div className="eligibility-text">
-                      <span>Eligibility Criteria</span>
+                      <Link href="/scholarship-and-eligibility#eligibilitySec">
+                        <span>Eligibility Criteria</span>
+                      </Link>
                       <h3>{admissionSection?.eligibility_marks}</h3>
                       <p>{admissionSection?.eligibility_desc}</p>
                     </div>

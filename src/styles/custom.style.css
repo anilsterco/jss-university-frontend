@@ -668,7 +668,10 @@
   transition: max-height 350ms ease;
   overflow: visible;
 }
-.programs-page .core-sec{padding-bottom: 5rem;}
+
+.programs-page .core-sec {
+  padding-bottom: 5rem;
+}
 
 .expanded_icon {
   background-image: url("/images/programs/expent_text.svg");
@@ -755,26 +758,50 @@
   flex-wrap: wrap;
   max-width: 22rem;
 }
+
 .department-engineering-data-science-about-us .image_content_repeat_section {
   padding: 0;
- }
- .department-engineering-aiml-research .about_one .estblish {padding-bottom: 4rem;}
- .department-engineering-aiml-about-us .about_one .estblish {padding-bottom: 4rem;}
-.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li{    font: var(--font-16);
-    color: var(--color-44);
-    margin-bottom: 2.3rem;
-    padding-left: 2rem;
-    list-style: none;
-    position: relative;}
+}
+
+.department-engineering-aiml-research .about_one .estblish {
+  padding-bottom: 4rem;
+}
+
+.department-engineering-aiml-about-us .about_one .estblish {
+  padding-bottom: 4rem;
+}
+
+.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li {
+  font: var(--font-16);
+  color: var(--color-44);
+  margin-bottom: 2.3rem;
+  padding-left: 2rem;
+  list-style: none;
+  position: relative;
+}
+
 .department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li:before {
-    content: "";
-    background-color: var(--color-100);
-    border-radius: 5rem;
-    width: .7rem;
-    height: .7rem;
-    position: absolute;
-    top: .4rem;
-    left: 0;
+  content: "";
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: .4rem;
+  left: 0;
+}
+
+.department-information-technology-placements .table_section thead th {
+  white-space: nowrap;
+}
+
+.department-information-technology-placements .table_section thead th:first-child {
+  min-width: auto;
+}
+
+.department-information-technology-placements .table_section thead th:nth-child(2) {
+  min-width: 20rem;
+
 }
 
 .structure-btn {
@@ -1672,7 +1699,7 @@
 
 .department-research .tabs_content_section {
   padding-bottom: 5rem;
-  padding-top:0;
+  padding-top: 0;
 }
 
 .department-research .tabs_content_section .table_section:last-child {
@@ -2013,16 +2040,16 @@
   
 } */
 
-.inner_lab_page.about_one .abt_cntnt p{
-  padding-bottom:0;
+.inner_lab_page.about_one .abt_cntnt p {
+  padding-bottom: 0;
 }
 
-.schools-about-the-college .hod_message_section{
-  background:#fff;
+.schools-about-the-college .hod_message_section {
+  background: #fff;
 }
 
-.inner_lab_data_no_spacing{
-  padding:0!important;
+.inner_lab_data_no_spacing {
+  padding: 0 !important;
 }
 
 /* schools-college-of-pharmacy */
@@ -2030,15 +2057,15 @@
 .department-pharmaceutical-chemistry .faculty_section,
 .department-pharmacognosy .faculty_section,
 .department-pharmacology .faculty_section,
-.department-pharmaceutics .faculty_section{
-  display:none
+.department-pharmaceutics .faculty_section {
+  display: none
 }
 
 .department-pharmaceutical-chemistry .homepage_happenings .happining-sec:after,
 .department-pharmacognosy .homepage_happenings .happining-sec:after,
 .department-pharmacology .homepage_happenings .happining-sec:after,
-.department-pharmaceutics .homepage_happenings .happining-sec:after{
-  display:none;
+.department-pharmaceutics .homepage_happenings .happining-sec:after {
+  display: none;
 }
 
 @media (max-width: 600px) {
@@ -2066,35 +2093,35 @@
   display: none;
 }
 
-.inner_faculties_search .faulty-box{
-    grid-template-columns: 45% 45% 10%;
-  }
+.inner_faculties_search .faulty-box {
+  grid-template-columns: 45% 45% 10%;
+}
 
-  .inner_faculties_search .faulty-box.school-faculties{
-    grid-template-columns: 28% 28% 28% 10%;
-  }
+.inner_faculties_search .faulty-box.school-faculties {
+  grid-template-columns: 28% 28% 28% 10%;
+}
 
-  .inner_faculties_search .faculty-reset-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    background: #fff;
-    color: #1e4264;
-    border: 1px solid #1e4264;
-    border-radius: 0.6rem;
-    padding: 0 1rem;
-    font: var(--font-14);
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
+.inner_faculties_search .faculty-reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #fff;
+  color: #1e4264;
+  border: 1px solid #1e4264;
+  border-radius: 0.6rem;
+  padding: 0 1rem;
+  font: var(--font-14);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-  .inner_faculties_search .faculty-reset-btn:hover {
-    background: #1e4264;
-    color: #fff;
-    border: 1px solid #1e4264;
-  }
+.inner_faculties_search .faculty-reset-btn:hover {
+  background: #1e4264;
+  color: #fff;
+  border: 1px solid #1e4264;
+}
 
 
 @media all and (min-width: 800px) {
@@ -2195,27 +2222,31 @@ This is the minimum CSS that you will need in order for this to work
   padding: 2.8rem 5.6rem 4.1rem 3.9rem;
   border-radius: 8px;
 }
-.peo-box ul{
+
+.peo-box ul {
   list-style: none;
   margin-top: 2.5rem;
   padding-left: 0;
 }
-.peo-box ul li{    font: var(--font-16);
-    color: var(--color-44);
-    margin-bottom: 2.3rem;
-    padding-left: 2rem;
-    list-style: none;
-    position: relative;}
+
+.peo-box ul li {
+  font: var(--font-16);
+  color: var(--color-44);
+  margin-bottom: 2.3rem;
+  padding-left: 2rem;
+  list-style: none;
+  position: relative;
+}
 
 .peo-box ul li:before {
-    content: "";
-    background-color: var(--color-100);
-    border-radius: 5rem;
-    width: .7rem;
-    height: .7rem;
-    position: absolute;
-    top: .4rem;
-    left: 0;
+  content: "";
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: .4rem;
+  left: 0;
 }
 
 .peo-box h3 {
@@ -2904,13 +2935,14 @@ hr {
   font: var(--font-18);
   color: var(--color-white);
 }
-.profile-info-box .profile-email a{  
+
+.profile-info-box .profile-email a {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
- 
+
 .profile-info-text {
   position: relative;
   padding-inline: 0.8rem 0;
@@ -3098,7 +3130,31 @@ hr {
   background: #ccc;
   border-radius: 4px;
 }
+.table-responsive {
+  overflow-x: auto;
+}
 
+/* Scrollbar */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+.table-responsive::-webkit-scrollbar-track {
+  background: #e5e5e5;
+  border-radius: 10px;
+}
+
+/* Scroll Thumb */
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #b08d2f;
+  border-radius: 10px;
+}
+
+/* Thumb Hover */
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #8a6d1f;
+}
 .faculty_row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3989,7 +4045,7 @@ hr {
   margin-bottom: 4rem;
 }
 
-.placement_page .section_title.italic{
+.placement_page .section_title.italic {
   font-style: italic;
 }
 
@@ -4432,7 +4488,11 @@ hr {
 .testimonial_list_section {
   padding-bottom: 10rem;
 }
-.testimonial_list_section .faulty-list-box img{border-radius: 6rem 0 0;}
+
+.testimonial_list_section .faulty-list-box img {
+  border-radius: 6rem 0 0;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 48rem) {
   .researchPatents {
@@ -7551,8 +7611,8 @@ hr {
   text-align: left;
 }
 
-.governance .table_section:nth-child(3) {
-  padding: 0rem 0 10rem;
+.governance .table_section:last-child {
+  padding-top: 0;
 }
 
 .nirf .about_one .abt_cntnt figure img {
@@ -7585,16 +7645,18 @@ hr {
     padding-block: 4rem 4rem;
   }
 
-    .department-labs .about_two .early-slide .early_rgt {
-        padding-top: 0;
-        padding-left: 0;
-    }
-    .labs_group_section.about_two .about_two {
+  .department-labs .about_two .early-slide .early_rgt {
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .labs_group_section.about_two .about_two {
     padding-bottom: 2rem;
-}
-.about_two.labs_group_section .early-slide p:last-child{
-  margin-bottom: 0;
-}
+  }
+
+  .about_two.labs_group_section .early-slide p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -7655,12 +7717,14 @@ hr {
   .placement-sec2 {
     padding-bottom: 6rem;
   }
+
   .department-electrical-electronics-engineering-facilities .image_content_repeat_section {
     padding-block: 4rem;
-}
-.department-electrical-electronics-engineering-facilities .about_one {
+  }
+
+  .department-electrical-electronics-engineering-facilities .about_one {
     padding-bottom: 4rem;
-}
+  }
 }
 
 @media screen and (max-width:575px) {
@@ -7678,9 +7742,11 @@ hr {
   .inner_faculties_search .faulty-box {
     display: block;
   }
+
   .search-box input {
     margin-bottom: 1.5rem;
   }
+
   .department-mechanical-engineering-research .about_one .estblish {
     padding-block: 2rem;
   }
