@@ -28,6 +28,7 @@ export default function Placements({ data }) {
                 <section
                   key={itemIndex}
                   className={`placement_page ${item?.category || ""} ${item?.sectionType}`}
+                  id="eligibilitySec"
                 >
                   <div className="container">
                     <div
