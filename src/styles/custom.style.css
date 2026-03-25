@@ -751,7 +751,15 @@
 
 .structure-btns {
   padding-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 22rem;
 }
+.department-engineering-data-science-about-us .image_content_repeat_section {
+  padding: 0;
+ }
+ .department-engineering-aiml-research .about_one .estblish {padding-bottom: 4rem;}
+ .department-engineering-aiml-about-us .about_one .estblish {padding-bottom: 4rem;}
 
 .structure-btn {
   border: 0.1rem solid #0000005e;
@@ -764,10 +772,10 @@
   font-weight: 600;
 }
 
-.brochure_btn{
+/* .brochure_btn{
   margin-left: 1.2rem;
   cursor: pointer;
-}
+} */
 
 .structure-btn img {
   width: 2rem;

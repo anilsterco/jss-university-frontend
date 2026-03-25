@@ -173,7 +173,7 @@ export default function ProgramDetailClient({ params }) {
                   <div className="admission-box">
                     <div className="admission-box-text">
                       <p>Admission Open for</p>
-                      <h2>{admissionSection?.academic_year || "2025-26"}</h2>
+                      <h2>{admissionSection?.academic_year || "2026-27"}</h2>
                     </div>
 
                     <div className="overview-duration">
