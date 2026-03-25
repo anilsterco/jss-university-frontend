@@ -212,7 +212,7 @@ export default function Header() {
   const activeMiddleMenu = activeLeftMenu.children?.[activeMiddleIndex] || {};
   const activeRightMenu = megaMenuData?.[0]?.right || {};
 
-  console.log("activeRightMenu", activeRightMenu);
+  // console.log("activeRightMenu", activeRightMenu);
 
   useEffect(() => {
     async function fetchHeaderData() {

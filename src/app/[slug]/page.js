@@ -69,6 +69,7 @@ import Accordions from "@/component/sections/Accordions";
 import Accordion from "@/component/sections/Accordion";
 import GridCardDesign3 from "@/component/sections/GridCardDesign3";
 import { getPageSEO } from "@/lib/seo";
+import TabsDataContent from "@/component/sections/TabsDataContents";
 
 async function fetchPageData(slug) {
   try {
@@ -187,6 +188,7 @@ export default async function DynamicPage({ params }) {
     gridDepartment: GridDepartment,
     innovation_panel: InnovationPanel,
     tableContent: TableContent,
+    tabsData: TabsDataContent,
     tabsContents: TabsContents,
     labCard: LabCard,
     table_section_tabs: Accordions,

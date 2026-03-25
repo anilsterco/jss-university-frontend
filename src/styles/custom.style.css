@@ -760,6 +760,22 @@
  }
  .department-engineering-aiml-research .about_one .estblish {padding-bottom: 4rem;}
  .department-engineering-aiml-about-us .about_one .estblish {padding-bottom: 4rem;}
+.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li{    font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 2.3rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;}
+.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li:before {
+    content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+}
 
 .structure-btn {
   border: 0.1rem solid #0000005e;

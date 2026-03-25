@@ -19,8 +19,12 @@
 
 .tableContentSection .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   gap: 5.4rem;
+}
+
+.tableContentGrid .grid {
+  grid-template-columns: 1fr 1fr;
 }
 
 .tableContentSection .tableLab {

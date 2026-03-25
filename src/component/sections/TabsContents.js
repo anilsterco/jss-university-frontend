@@ -3,7 +3,7 @@ import TabsContent from "../common/tabsContent/TabsContent";
 
 export default function TabsContents({ data }) {
   const renderSection = (section, sectionIndex) => {
-    console.log("section", section);
+    // console.log("section", section);
     switch (section.type) {
       case "tabsContents":
         return (

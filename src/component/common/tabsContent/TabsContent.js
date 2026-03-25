@@ -24,7 +24,6 @@ const TAB_CONFIG = [
       { label: "Source Proof", key: "source_proof" },
     ],
   },
-
   {
     tabName: "Conferences",
     endpoint: "conferences",
@@ -96,6 +95,10 @@ const TabsContent = () => {
   const [loading, setLoading] = useState(false);
   const [departmentShortName, setDepartmentShortName] = useState(null);
 
+  // Track whether ALL tabs are empty
+  const [allTabsEmpty, setAllTabsEmpty] = useState(false);
+  const [checkingAllTabs, setCheckingAllTabs] = useState(true);
+
   const pathname = usePathname();
   const path = pathname.split("/").filter(Boolean);
 
@@ -104,22 +107,45 @@ const TabsContent = () => {
   const getDepartmentShortName = async () => {
     try {
       const response = await fetch(`${BASE_URL}department/${path[1]}`);
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch department");
-      }
+      if (!response.ok) throw new Error("Failed to fetch department");
       const data = await response.json();
-
-      setDepartmentShortName(data?.departments_short_name);
-    } catch (err) {
-      console.log(err);
-      setDepartmentShortName(null);
+      return data?.departments_short_name ?? null;
+    } catch {
+      return null;
     }
   };
 
-  // Init AOS once
+  // On mount: check all tabs in parallel — if every one has 0 records, hide everything
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+
+    const checkAllTabs = async () => {
+      setCheckingAllTabs(true);
+      try {
+        const deptShortName = await getDepartmentShortName();
+        setDepartmentShortName(deptShortName);
+
+        const results = await Promise.all(
+          TAB_CONFIG.map((tab) =>
+            fetch(
+              `${BASE_URL}research/${tab.endpoint}?page=1&department=${deptShortName}`,
+            )
+              .then((r) => r.json())
+              .then((d) => (Array.isArray(d?.data) ? d.data.length : 0))
+              .catch(() => 0),
+          ),
+        );
+
+        const isEmpty = results.every((count) => count === 0);
+        setAllTabsEmpty(isEmpty);
+      } catch {
+        setAllTabsEmpty(false);
+      } finally {
+        setCheckingAllTabs(false);
+      }
+    };
+
+    checkAllTabs();
   }, []);
 
   // Reset to page 1 whenever the tab changes
@@ -127,12 +153,11 @@ const TabsContent = () => {
     setCurrentPage(1);
     setTableData([]);
     setTotalPages(1);
-    getDepartmentShortName();
   }, [activeTab]);
 
-  // Fetch data whenever tab or page changes
+  // Fetch data for the active tab
   useEffect(() => {
-    if (!activeTabConfig?.endpoint) return;
+    if (!activeTabConfig?.endpoint || !departmentShortName) return;
 
     const fetchData = async () => {
       setLoading(true);
@@ -187,10 +212,15 @@ const TabsContent = () => {
     setActiveTab(idx);
   };
 
+  // Still fetching all-tabs check — render nothing
+  if (checkingAllTabs) return null;
+
+  // Every tab is empty — hide the entire section
+  if (allTabsEmpty) return null;
+
   return (
     <section className="tabs_content_section">
       <div className="container">
-        {/* Tabs from TAB_CONFIG — no more props dependency */}
         <ul className="tabs_group">
           {TAB_CONFIG.map((tab, tabIdx) => (
             <li
@@ -203,10 +233,8 @@ const TabsContent = () => {
           ))}
         </ul>
 
-        {/* Tab Content */}
         {activeTabConfig && (
           <div className="tabs_content">
-            {/* Table */}
             <div className="table_section">
               <div className="table-responsive ed_schol_list">
                 <table className="table-lab table table-bordered">
@@ -249,7 +277,6 @@ const TabsContent = () => {
                 </table>
               </div>
 
-              {/* Pagination stays exactly the same */}
               {totalPages > 1 && (
                 <div className="pagination_wrapper">
                   <button
