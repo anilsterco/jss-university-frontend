@@ -4,8 +4,12 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import styles from "./tableContent.module.css";
+import { usePathname } from "next/navigation";
 
 const TableContent = ({ data }) => {
+  const pathname = usePathname();
+
+  const hideGrid = pathname === "/department/engineering-aiml/research";
   // 🔹 Initialize AOS
   useEffect(() => {
     AOS.init({
@@ -17,7 +21,7 @@ const TableContent = ({ data }) => {
 
   return (
     <section
-      className={`${styles.tableContentSection} ${styles[data?.sectionType]} tableContentSection`}
+      className={`${styles.tableContentSection} ${!hideGrid ? styles.tableContentGrid : ""} ${styles[data?.sectionType]} tableContentSection`}
     >
       <div className="container">
         <div className={`${styles.grid} grid_row`}>
@@ -27,58 +31,59 @@ const TableContent = ({ data }) => {
                 <h4 className={styles.left_title}>{data?.leftTitle}</h4>
               )}
               {data?.leftTable &&
-              data.leftTable.map((tableData, tableIdx) => (
-                <div
-                  key={tableIdx}
-                  className={`table_section ${styles.table_section}`}
-                >
-                  <div className=" table-responsive" key={tableIdx}>
-                    <table
-                      className={`table-lab table table-bordered ${styles.tableLab}`}
-                    >
-                      <thead>
-                        <tr>
-                          {tableData?.tableHeading.map((th, thIndex) => (
-                            <th key={thIndex} className={styles.th}>
-                              {th.th}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {tableData.tableBody.map((item, itemIdx) => (
-                          <tr key={itemIdx}>
-                            {item.sno && (
-                              <td className={styles.td}>{item.sno}</td>
-                            )}
-                            {item.session && (
-                              <td className={styles.td}>{item.session}</td>
-                            )}
-                            {item.guide && (
-                              <td className={styles.td}>{item.guide}</td>
-                            )}
-                            {item.scholarname && (
-                              <td className={styles.td}>{item.scholarname}</td>
-                            )}
-                            {item.td5 && (
-                              <td className={styles.td}>{item.td5}</td>
-                            )}
-                            {item.td6 && (
-                              <td className={styles.td}>{item.td6}</td>
-                            )}
-                            {item.td7 && (
-                              <td className={styles.td}>{item.td7}</td>
-                            )}
+                data.leftTable.map((tableData, tableIdx) => (
+                  <div
+                    key={tableIdx}
+                    className={`table_section ${styles.table_section}`}
+                  >
+                    <div className=" table-responsive" key={tableIdx}>
+                      <table
+                        className={`table-lab table table-bordered ${styles.tableLab}`}
+                      >
+                        <thead>
+                          <tr>
+                            {tableData?.tableHeading.map((th, thIndex) => (
+                              <th key={thIndex} className={styles.th}>
+                                {th.th}
+                              </th>
+                            ))}
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {tableData.tableBody.map((item, itemIdx) => (
+                            <tr key={itemIdx}>
+                              {item.sno && (
+                                <td className={styles.td}>{item.sno}</td>
+                              )}
+                              {item.session && (
+                                <td className={styles.td}>{item.session}</td>
+                              )}
+                              {item.guide && (
+                                <td className={styles.td}>{item.guide}</td>
+                              )}
+                              {item.scholarname && (
+                                <td className={styles.td}>
+                                  {item.scholarname}
+                                </td>
+                              )}
+                              {item.td5 && (
+                                <td className={styles.td}>{item.td5}</td>
+                              )}
+                              {item.td6 && (
+                                <td className={styles.td}>{item.td6}</td>
+                              )}
+                              {item.td7 && (
+                                <td className={styles.td}>{item.td7}</td>
+                              )}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
-            )}
-          
+          )}
 
           <div className={`${styles.right_col} right_col`}>
             <div className={styles.border_col}>

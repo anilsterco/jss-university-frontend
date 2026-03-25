@@ -17,6 +17,7 @@ import FaqPage from "@/pages/faq/Faq";
 import Labspage from "@/pages/labs11/Labs";
 import { notFound } from "next/navigation";
 import TabsContent from "@/component/common/tabsContent/TabsContent";
+import TabsDataContent from "@/component/sections/TabsDataContents";
 
 export async function generateMetadata({ params }) {
   return getPageSEO();

@@ -6,7 +6,7 @@ import "@/styles/custom.style.css";
 
 export default function IndexedResearch({ data }) {
   useEffect(() => {
-    import("aos").then(AOS => {
+    import("aos").then((AOS) => {
       AOS.init({
         duration: 1000,
         easing: "ease-in-out",
@@ -16,7 +16,7 @@ export default function IndexedResearch({ data }) {
   }, []);
 
   useEffect(() => {
-    import("aos").then(AOS => AOS.refresh());
+    import("aos").then((AOS) => AOS.refresh());
   }, [data]);
 
   const renderSection = (section, sectionIndex) => {
@@ -39,7 +39,9 @@ export default function IndexedResearch({ data }) {
           <div className="container">
             <div className="index_res_grid">
               <div className="resea_cre_items">
-                {section.items[0]?.subtitle && <h3>{section.items[0].subtitle}</h3>}
+                {section.items[0]?.subtitle && (
+                  <h3>{section.items[0].subtitle}</h3>
+                )}
                 <div className="ab_jss_coutsec">
                   {counts.map((item, i) => (
                     <div className="ab_jss_c_col" key={i}>
@@ -50,7 +52,9 @@ export default function IndexedResearch({ data }) {
                 </div>
               </div>
               <div className="resea_cre_items2">
-                {section.items[0]?.subtitleRight && <h3>{section.items[0].subtitleRight}</h3>}
+                {section.items[0]?.subtitleRight && (
+                  <h3>{section.items[0].subtitleRight}</h3>
+                )}
                 <div className="fee_strcu_table">
                   <div className="fee_table_wrapper">
                     <table className="fee_table">
