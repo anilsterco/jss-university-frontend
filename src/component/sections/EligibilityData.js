@@ -16,16 +16,20 @@ export default function EligibilityPrograms({ data }) {
     AOS.refresh();
   }, [data]);
 
-  if (!data || data.length === 0) return null;
-
-  const eligibilitySection = data.find((sec) => sec.type === "eligibilityData");
+  const eligibilitySection = data?.find(
+    (sec) => sec.type === "eligibilityData",
+  );
   const eligibilityItem = eligibilitySection?.items[0];
   const tabs = eligibilityItem?.tabsGroup || [];
 
-  // Set initial active tab to first tab's name on first render
-  if (activeTab === null && tabs.length > 0) {
-    setActiveTab(tabs[0].tabName);
-  }
+  // ✅ Properly set initial tab via useEffect — not during render
+  useEffect(() => {
+    if (tabs.length > 0) {
+      setActiveTab(tabs[0].tabName);
+    }
+  }, [eligibilityItem?.sectionId]); // re-run only when the section changes (different page)
+
+  if (!data || data.length === 0) return null;
 
   const activeTabData = tabs.find((tab) => tab.tabName === activeTab);
 
@@ -79,14 +83,20 @@ export default function EligibilityPrograms({ data }) {
                       </div>
                     )}
 
-                    {/* Tab list items */}
-                    {activeTabData.tabLists?.length > 0 && (
+                    {/* Tab list items OR raw HTML (from tabSection/new format) */}
+                    {activeTabData.tabLists?.length > 0 ? (
                       <ul>
                         {activeTabData.tabLists.map((item, idx) => (
                           <li key={idx}>{item.list}</li>
                         ))}
                       </ul>
-                    )}
+                    ) : activeTabData.tabHTML ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: activeTabData.tabHTML,
+                        }}
+                      />
+                    ) : null}
                   </div>
                 )}
               </div>

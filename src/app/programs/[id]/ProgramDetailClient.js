@@ -8,6 +8,7 @@ import "@/styles/style.css";
 import { useParams } from "next/navigation";
 import { BASE_URL } from "@/config/config";
 import Faq from "@/component/common/faq/Faq";
+import EligibilityPrograms from "@/component/sections/EligibilityData";
 
 export default function ProgramDetailClient({ params }) {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -72,6 +73,40 @@ export default function ProgramDetailClient({ params }) {
     }
   };
 
+  function convertTabSection(tabSection) {
+    if (!tabSection) return null;
+
+    const info = tabSection.tab_section_info?.[0];
+
+    const tabContent =
+      typeof tabSection.tab_section_content === "string"
+        ? JSON.parse(tabSection.tab_section_content)
+        : tabSection.tab_section_content || [];
+
+    const tabsGroup = tabContent.map((tab) => ({
+      tabName: tab.name,
+      tabTitle: tab.name,
+      tabDesc: [],
+      tabLists: [],
+      tabHTML: tab.data, // raw HTML
+    }));
+
+    return [
+      {
+        type: "eligibilityData",
+        items: [
+          {
+            heading: info?.title || "",
+            subheading: info?.subtitle || "",
+            image: info?.image || "",
+            sectionId: "tabSection",
+            tabsGroup,
+          },
+        ],
+      },
+    ];
+  }
+
   if (loading) {
     return (
       <div
@@ -133,6 +168,7 @@ export default function ProgramDetailClient({ params }) {
     apply_now_link,
     faqs,
     description,
+    tabSection,
   } = programData;
 
   const currentTestimonial = testimonials?.[currentTestimonialIndex];
@@ -878,6 +914,10 @@ export default function ProgramDetailClient({ params }) {
             </div>
           </div>
         </section>
+      )}
+
+      {tabSection && (
+        <EligibilityPrograms data={convertTabSection(tabSection)} />
       )}
 
       {faqs && faqs.length > 0 && (
