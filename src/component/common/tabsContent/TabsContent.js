@@ -236,7 +236,7 @@ const TabsContent = () => {
         {activeTabConfig && (
           <div className="tabs_content">
             <div className="table_section">
-              <div className="table-responsive ed_schol_list">
+              <div className="table-responsive">
                 <table className="table-lab table table-bordered">
                   <thead>
                     <tr>
