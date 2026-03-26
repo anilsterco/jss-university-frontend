@@ -36,27 +36,27 @@ export default function TabsDataContent({ data }) {
                   return (
                     <div key={itemIdx}>
                       {/* Section heading */}
-                      {item.heading && (
-                        <div data-aos="fade-up">
-                          <h5 className="heading_title">{item.heading}</h5>
-                        </div>
-                      )}
+
 
                       {/* Tab nav */}
-                      <div className="scu_tabs_main">
-                        <nav className="scu_tabs_nav">
-                          <ul className="scu_tabs_ul">
+                      <div className="patent_tab_main">
+                        {/* {item.heading && (
+                          <div data-aos="fade-up">
+                            <h5 className="heading_title">{item.heading}</h5>
+                          </div>
+                        )} */}
+                        <nav className="pate_tab_grp">
+                          <ul className="pate_tab_ul">
                             {item.tabs.map((tab, tabIdx) => (
-                              <li className="scu_tabs_li" key={tabIdx}>
-                                <button
-                                  type="button"
+                              <li className="pate_tab_li" key={tabIdx}>
+                                <span
                                   className={
                                     activeTab === tabIdx ? "active" : ""
                                   }
                                   onClick={() => setActiveTab(tabIdx)}
                                 >
                                   {tab.tabname}
-                                </button>
+                                </span>
                               </li>
                             ))}
                           </ul>

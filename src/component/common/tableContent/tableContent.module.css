@@ -27,6 +27,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.tableContentGrid .grid.no_table{
+  grid-template-columns: 1fr;
+}
+
 .tableContentSection .tableLab {
   min-width: auto;
 }
