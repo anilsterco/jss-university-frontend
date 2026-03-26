@@ -2252,7 +2252,10 @@ a:active {
   margin-bottom:0;
   display:inline-block;
   font:var(--font-16);
+  color: #b08f29;
   text-decoration: underline!important;
+  margin-top: 0.5rem;
+  font-weight: 500;
 }
 
 .curriculum_box .box_ul {
