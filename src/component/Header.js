@@ -140,8 +140,6 @@ export default function Header() {
 
   const router = useRouter();
 
-  // ✅ Timeout ref to delay closing — prevents glitch when mouse travels
-  // from the nav <li> into the fixed mega-dropdown (there's a gap between them)
   const closeTimeoutRef = useRef(null);
 
   useEffect(() => {
@@ -161,11 +159,10 @@ export default function Header() {
     }
     setIsAcademic(pageName?.toLowerCase() === "academics");
     setActiveDropdown(i);
-    setActiveMegaChildIndex(0); // reset to first child on new nav item hover
+    setActiveMegaChildIndex(0);
   };
 
   const handleNavMouseLeave = () => {
-    // Small delay gives mouse time to reach the mega-dropdown before it closes
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
       setIsAcademic(false);
@@ -188,7 +185,6 @@ export default function Header() {
     }, 100);
   };
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
@@ -211,8 +207,6 @@ export default function Header() {
   const activeLeftMenu = megaMenuData?.[activeLeftIndex] || {};
   const activeMiddleMenu = activeLeftMenu.children?.[activeMiddleIndex] || {};
   const activeRightMenu = megaMenuData?.[0]?.right || {};
-
-  // console.log("activeRightMenu", activeRightMenu);
 
   useEffect(() => {
     async function fetchHeaderData() {

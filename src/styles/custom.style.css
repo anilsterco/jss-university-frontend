@@ -2077,6 +2077,12 @@
   padding-bottom:10rem;
 }
 
+.department-labs .labs_group_section .early_rgt ul{
+  padding-left:0;
+}
+
+
+
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {
     flex-direction: column;

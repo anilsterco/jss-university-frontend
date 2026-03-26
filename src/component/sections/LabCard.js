@@ -11,7 +11,7 @@ import "swiper/css/effect-fade";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-const ITEMS_LIMIT = 10;
+const ITEMS_LIMIT = 5;
 
 function ListGroup({ listGroup }) {
   const [expanded, setExpanded] = useState(false);

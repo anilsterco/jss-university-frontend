@@ -85,9 +85,16 @@ export default function HappeningsClientDetail({ happeningsData }) {
                     />
                   </figure>
                   <div className={styles.happContant}>
-                    {section.content.map((paragraph, pIdx) => (
+                    {/* {section.content.map((paragraph, pIdx) => (
                       <p key={pIdx}>{paragraph}</p>
-                    ))}
+                    ))} */}
+                    {section.content && (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: section.content,
+                        }}
+                      ></p>
+                    )}
                   </div>
                 </div>
               </div>
