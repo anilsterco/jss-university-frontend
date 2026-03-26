@@ -36,7 +36,13 @@ export default function HappeningsClientDetail({ happeningsData }) {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h2>{happeningsData.innerTitle?.date}</h2>
-                <h3>{happeningsData.innerTitle?.heading}</h3>
+                {happeningsData.innerTitle?.heading && (
+                  <h3
+                    dangerouslySetInnerHTML={{
+                      __html: happeningsData.innerTitle?.heading,
+                    }}
+                  />
+                )}
               </div>
               <ul className={styles.happIcons}>
                 <li>
