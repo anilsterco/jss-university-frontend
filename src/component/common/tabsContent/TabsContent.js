@@ -240,6 +240,7 @@ const TabsContent = () => {
                 <table className="table-lab table table-bordered">
                   <thead>
                     <tr>
+                      <th>Sl. No.</th>
                       {activeTabConfig.columns.map((col) => (
                         <th key={col.key}>{col.label}</th>
                       ))}

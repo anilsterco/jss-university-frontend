@@ -132,6 +132,7 @@ export default function ProgramDetailClient({ params }) {
     career_opportunities,
     apply_now_link,
     faqs,
+    description,
   } = programData;
 
   const currentTestimonial = testimonials?.[currentTestimonialIndex];
@@ -494,7 +495,11 @@ export default function ProgramDetailClient({ params }) {
                                   PSO-{index + 1}
                                   {p.title && `: ${p.title}`}
                                 </h3>
-                                <p dangerouslySetInnerHTML={{__html:p.description}} />
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: p.description,
+                                  }}
+                                />
                               </div>
                             ))}
                           </div>
@@ -838,6 +843,35 @@ export default function ProgramDetailClient({ params }) {
                           ),
                         )}
                     </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {description && (
+        <section className="description-sec">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="description-box">
+                  <div className="description-text">
+                    {description.description_title && (
+                      <h2
+                        dangerouslySetInnerHTML={{
+                          __html: description.description_title,
+                        }}
+                      ></h2>
+                    )}
+                    {description.description_content && (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: description.description_content,
+                        }}
+                      ></div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -36,7 +36,13 @@ export default function HappeningsClientDetail({ happeningsData }) {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h2>{happeningsData.innerTitle?.date}</h2>
-                <h3>{happeningsData.innerTitle?.heading}</h3>
+                {happeningsData.innerTitle?.heading && (
+                  <h3
+                    dangerouslySetInnerHTML={{
+                      __html: happeningsData.innerTitle?.heading,
+                    }}
+                  />
+                )}
               </div>
               <ul className={styles.happIcons}>
                 <li>
@@ -85,9 +91,16 @@ export default function HappeningsClientDetail({ happeningsData }) {
                     />
                   </figure>
                   <div className={styles.happContant}>
-                    {section.content.map((paragraph, pIdx) => (
+                    {/* {section.content.map((paragraph, pIdx) => (
                       <p key={pIdx}>{paragraph}</p>
-                    ))}
+                    ))} */}
+                    {section.content && (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: section.content,
+                        }}
+                      ></p>
+                    )}
                   </div>
                 </div>
               </div>

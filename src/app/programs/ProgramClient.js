@@ -12,11 +12,23 @@ export default function ProgramClient() {
   const params = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const [activeProgram, setActiveProgram] = useState("under-graduate");
-  const [activeSchoolId, setActiveSchoolId] = useState(null);
-  const [activeDepartmentId, setActiveDepartmentId] = useState(null);
-  const [selectedSchool, setSelectedSchool] = useState(null);
-  const [selectedDepartment, setSelectedDepartment] = useState(null);
+
+  const [activeProgram, setActiveProgram] = useState(
+    () => params.get("type") || "under-graduate",
+  );
+  const [activeSchoolId, setActiveSchoolId] = useState(() =>
+    params.get("school_id") ? Number(params.get("school_id")) : null,
+  );
+  const [activeDepartmentId, setActiveDepartmentId] = useState(() =>
+    params.get("department_id") ? Number(params.get("department_id")) : null,
+  );
+  const [selectedSchool, setSelectedSchool] = useState(() =>
+    params.get("school_id") ? Number(params.get("school_id")) : null,
+  );
+  const [selectedDepartment, setSelectedDepartment] = useState(() =>
+    params.get("department_id") ? Number(params.get("department_id")) : null,
+  );
+
   const [schoolData, setSchoolData] = useState([]);
   const [programData, setProgramData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,30 +37,12 @@ export default function ProgramClient() {
   const timeoutRef = useRef(null);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    const type = params.get("type");
-    const school_id = params.get("school_id");
-    const department_id = params.get("department_id");
-
-    if (type) setActiveProgram(type);
-
-    if (school_id) {
-      setActiveSchoolId(Number(school_id));
-      setSelectedSchool(Number(school_id));
-    }
-
-    if (department_id) {
-      setActiveDepartmentId(Number(department_id));
-      setSelectedDepartment(Number(department_id));
-    }
-
-    router.replace(pathname);
-  }, []);
+  // ✅ REMOVED: the first useEffect that was setting state from params
+  //    (it was running after fetchPrograms already fired with stale defaults)
 
   useEffect(() => {
     if (!schoolData.length || !activeDepartmentId) return;
 
-    // Find which school this department belongs to
     const parentSchool = schoolData.find((school) =>
       school.departments?.some(
         (dept) => dept.id === Number(activeDepartmentId),
@@ -85,32 +79,37 @@ export default function ProgramClient() {
         setLoading(false);
       });
   }, []);
+
   useEffect(() => {
     setPage(1);
   }, [selectedSchool, selectedDepartment, activeProgram, searchProgram]);
+
   useEffect(() => {
     fetchPrograms();
   }, [selectedSchool, selectedDepartment, activeProgram, searchProgram, page]);
+  // ✅ REMOVED `params` from the dependency array — it was causing a double fetch
 
   const fetchPrograms = async () => {
     let url = `${BASE_URL}programs/${activeProgram}`;
-    const params = [];
+    const queryParams = []; // ✅ renamed to avoid shadowing the `params` from useSearchParams
 
     if (selectedSchool) {
-      params.push(`school_id=${encodeURIComponent(selectedSchool)}`);
+      queryParams.push(`school_id=${encodeURIComponent(selectedSchool)}`);
     }
     if (selectedDepartment) {
-      params.push(`department_id=${encodeURIComponent(selectedDepartment)}`);
+      queryParams.push(
+        `department_id=${encodeURIComponent(selectedDepartment)}`,
+      );
     }
     if (searchProgram) {
-      params.push(`search=${encodeURIComponent(searchProgram)}`);
+      queryParams.push(`search=${encodeURIComponent(searchProgram)}`);
     }
     if (page) {
-      params.push(`page=${encodeURIComponent(page)}`);
+      queryParams.push(`page=${encodeURIComponent(page)}`);
     }
 
-    if (params.length > 0) {
-      url += `?${params.join("&")}`;
+    if (queryParams.length > 0) {
+      url += `?${queryParams.join("&")}`;
     }
 
     const response = await fetch(url);

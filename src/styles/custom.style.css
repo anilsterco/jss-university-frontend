@@ -2067,6 +2067,53 @@
   display: none;
 }
 
+/* department-placements */
+
+.department-electrical-engineering-ee-placements .iqac_master:nth-child(5){
+  padding-top:10rem;
+}
+
+.department-electrical-engineering-ee-placements .iqac_master:last-child{
+  padding-bottom:10rem;
+}
+
+.department-labs .labs_group_section .early_rgt ul{
+  padding-left:0;
+}
+
+.programs-page .description-sec h1,
+.programs-page .description-sec h2,
+.programs-page .description-sec h3,
+.programs-page .description-sec h4{
+  margin-bottom:1rem;
+}
+
+.programs-page .description-sec ul{
+  list-style: none;
+  padding:0;
+  /* padding-left:2rem; */
+}
+
+.programs-page .description-sec li{
+  font: var(--font-16);
+  color: var(--color-44);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  list-style: none;
+  position: relative;
+}
+
+.programs-page .description-sec li:before{
+  content: "";
+  background-color: var(--color-100);
+  border-radius: 5rem;
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+}
+
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {
     flex-direction: column;
