@@ -24,7 +24,7 @@ const TableContent = ({ data }) => {
       className={`${styles.tableContentSection} ${!hideGrid ? styles.tableContentGrid : ""} ${styles[data?.sectionType]} tableContentSection`}
     >
       <div className="container">
-        <div className={`${styles.grid} grid_row`}>
+        <div className={`${styles.grid} grid_row ${data?.leftTable.length === 0 ? `${styles.no_table} no_table`  : ''}`}>
           {data?.leftTitle && data?.leftTable && (
             <div className="left_col">
               {data?.leftTitle && (

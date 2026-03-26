@@ -503,7 +503,10 @@
   margin-bottom: 4rem;
   font-weight: 600;
 }
-.programs-page .core-sec{    padding-block: 10rem 5rem;}
+
+.programs-page .core-sec {
+  padding-block: 10rem 5rem;
+}
 
 .exam_link {
   font: var(--font-18);
@@ -511,11 +514,20 @@
   background: 0 0;
   font-weight: 500;
   border: none !important;
-  text-decoration: underline!important;
-  display: block;margin-top: 2.5rem;
+  text-decoration: underline !important;
+  display: block;
+  margin-top: 2.5rem;
 }
-.national-academic-depository .image_content_repeat_section{padding-top: 0;padding-bottom: 10rem;}
-.national-academic-depository .image_content_repeat_section .singleImageContent {padding-bottom: 0;}
+
+.national-academic-depository .image_content_repeat_section {
+  padding-top: 0;
+  padding-bottom: 10rem;
+}
+
+.national-academic-depository .image_content_repeat_section .singleImageContent {
+  padding-bottom: 0;
+}
+
 .examination-overview .amenities_section ul {
   padding-left: 0;
 }
@@ -546,6 +558,62 @@
   padding-top: 10rem;
 }
 
+.patent_tab_main {
+  padding: 12rem 0;
+}
+
+.pate_tab_ul {
+  border-bottom: 1px solid #e0e0e0;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pate_tab_li {
+  display: inline-block;
+  margin-right: 3rem;
+  border-bottom: 2px solid transparent;
+}
+
+.pate_tab_li span {
+  cursor: pointer;
+  font: var(--font-16);
+  color: #333;
+  white-space: nowrap;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+.pate_tab_li .active {
+  color: #018ce8;
+  font-weight: 700;
+}
+
+.pate_tab_li:has(.active) {
+  border-bottom: 2px solid #b8960c;
+}
+ul.comon_list {
+    padding: 0;
+}
+ul.comon_list li {
+    font: var(--font-16);
+    color: var(--color-44);
+    margin-bottom: 2.3rem;
+    padding-left: 2rem;
+    list-style: none;
+    position: relative;
+}
+ul.comon_list li:before {
+    content: "";
+    background-color: var(--color-100);
+    border-radius: 5rem;
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+}
 /* .about_four::after {
   content: "";
   position: absolute;
