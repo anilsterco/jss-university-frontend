@@ -241,9 +241,10 @@ const TabsContent = () => {
                   <thead>
                     <tr>
                       <th>Sl. No.</th>
-                      {activeTabConfig.columns.map((col) => (
-                        <th key={col.key}>{col.label}</th>
-                      ))}
+                      {activeTabConfig.columns.map((col, idx) => {
+                        if (col.key === "serial_no") return null;
+                        return <th key={idx}>{col.label}</th>;
+                      })}
                     </tr>
                   </thead>
                   <tbody>

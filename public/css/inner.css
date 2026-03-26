@@ -457,6 +457,9 @@
 .department-maths-advisory-board .table_section .table-lab tbody td:nth-child(2) {
   width: 20%;
 }
+.academic_labs_next img {
+  transform: rotate(180deg);
+}
 
 .department-advisory-board .table_section:not(:last-child) {
   padding-bottom: 0rem;

@@ -1498,6 +1498,10 @@
   margin-top: 4rem;
 }
 
+.about_two.labs_group_section .early-slide ul.no_margin{
+  margin-top:1rem;
+}
+
 .about_two.labs_group_section .early-slide li {
   margin-bottom: 1.5rem;
   font: var(--font-18);
@@ -1514,6 +1518,10 @@
 
 .about_two.labs_group_section .early-slide .read-more-btn img {
   margin-left: 1rem;
+}
+
+.labs_group_section .early-slide .description1{
+  margin-top:3rem;
 }
 
 /* .labs_group_section .single_lab_card{
@@ -2113,6 +2121,30 @@
   top: 0.8rem;
   left: 0;
 }
+
+
+.inner_page {
+    padding: 10rem 0;
+}
+
+.innerPage_title {
+    font: var(--font-26);
+    margin-bottom: 7rem;
+  color: var(--color-4e);
+  font-weight: 700;
+  font-family: var(--font-Condensed);
+}
+
+@media (max-width:991px){
+  .inner_page {
+    padding: 6rem 0;
+}
+.innerPage_title {
+    margin-bottom: 4rem;
+}
+}
+
+
 
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {
@@ -3115,7 +3147,7 @@ hr {
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
   line-height: 46px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .read-more-btn {

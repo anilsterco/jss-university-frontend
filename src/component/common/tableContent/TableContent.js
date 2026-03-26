@@ -24,7 +24,9 @@ const TableContent = ({ data }) => {
       className={`${styles.tableContentSection} ${!hideGrid ? styles.tableContentGrid : ""} ${styles[data?.sectionType]} tableContentSection`}
     >
       <div className="container">
-        <div className={`${styles.grid} grid_row ${data?.leftTable.length === 0 ? `${styles.no_table} no_table`  : ''}`}>
+        <div
+          className={`${styles.grid} grid_row ${data?.leftTable.length === 0 ? `${styles.no_table} no_table` : ""}`}
+        >
           {data?.leftTitle && data?.leftTable && (
             <div className="left_col">
               {data?.leftTitle && (
@@ -91,6 +93,14 @@ const TableContent = ({ data }) => {
                 <h4 className={styles.right_title}>{data?.rightTitle}</h4>
               )}
 
+              {data?.rightSubTitle && (
+                <div className={styles.right_description}>
+                  {data.rightSubTitle.map((desc, descIdx) => (
+                    <p key={descIdx}>{desc.subTitle}</p>
+                  ))}
+                </div>
+              )}
+
               {data?.rightLists && (
                 <ul className={styles.ul}>
                   {data.rightLists.map((singleLi, liIdx) => (
@@ -100,6 +110,7 @@ const TableContent = ({ data }) => {
                   ))}
                 </ul>
               )}
+
               {data?.rightDescription && (
                 <div className={styles.right_description}>
                   {data.rightDescription.map((desc, descIdx) => (

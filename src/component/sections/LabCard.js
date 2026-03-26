@@ -13,7 +13,7 @@ import "@/styles/custom.style.css";
 
 const ITEMS_LIMIT = 5;
 
-function ListGroup({ listGroup }) {
+function ListGroup({ listGroup, className, description1 }) {
   const [expanded, setExpanded] = useState(false);
 
   if (!listGroup?.length) return null;
@@ -23,11 +23,24 @@ function ListGroup({ listGroup }) {
 
   return (
     <>
-      <ul>
+      <ul className={className}>
         {visibleItems.map((listItem, listIdx) => (
-          <li key={listIdx}>{listItem.list}</li>
+          <li
+            key={listIdx}
+            dangerouslySetInnerHTML={{ __html: listItem.list }}
+          />
         ))}
       </ul>
+      {description1?.length > 0 && (
+        <div className="description1">
+          {description1.map((singleDes, desIdx) => (
+            <p
+              key={desIdx}
+              dangerouslySetInnerHTML={{ __html: singleDes.description1 }}
+            />
+          ))}
+        </div>
+      )}
       {hasMore && (
         <button
           type="button"
@@ -124,8 +137,19 @@ export default function LabCard({ data }) {
                               <p key={desIdx}>{singleDes.description}</p>
                             ))}
 
-                          {/* ✅ Read more/less handled inside isolated component */}
-                          <ListGroup listGroup={item?.listGroup} />
+                          {item?.listTitle && (
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: item?.listTitle,
+                              }}
+                              className="mb-0"
+                            />
+                          )}
+                          <ListGroup
+                            listGroup={item?.listGroup}
+                            className={item?.listTitle ? "no_margin" : ""}
+                            description1={item?.description1}
+                          />
                         </div>
                       </div>
                     </div>

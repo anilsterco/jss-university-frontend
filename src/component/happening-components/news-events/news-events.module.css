@@ -271,6 +271,10 @@
   font-family: var(--font-Roboto);
   font-weight: 300;
   margin-bottom: 1.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .eventCard:hover {
