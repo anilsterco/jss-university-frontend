@@ -392,6 +392,12 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
+      
+
+      {tabSection && (
+        <EligibilityPrograms data={convertTabSection(tabSection)} />
+      )}
+
       {peos && peos?.length > 0 && (
         <section className="educational-sec">
           <div className="container">
@@ -914,10 +920,6 @@ export default function ProgramDetailClient({ params }) {
             </div>
           </div>
         </section>
-      )}
-
-      {tabSection && (
-        <EligibilityPrograms data={convertTabSection(tabSection)} />
       )}
 
       {faqs && faqs.length > 0 && (

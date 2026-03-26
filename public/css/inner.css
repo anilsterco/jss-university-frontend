@@ -395,12 +395,19 @@
 .department-computer-science-and-engineering-it-research .tableContentSection .grid_row {
   grid-template-columns: 1fr;
 }
-.department-civil-engineering-research .about_one .estblish{padding-bottom: 0;}
+
+.department-civil-engineering-research .about_one .estblish {
+  padding-bottom: 0;
+}
 
 .department-computer-science-and-engineering-research .about_one .estblish {
   padding-bottom: 4rem;
 }
-.department-information-technology-placements .about_one .estblish{padding-bottom: 0;}
+
+.department-information-technology-placements .about_one .estblish {
+  padding-bottom: 0;
+}
+
 .grid_card_design1_section .heading {
   text-align: left;
 }
@@ -457,6 +464,7 @@
 .department-maths-advisory-board .table_section .table-lab tbody td:nth-child(2) {
   width: 20%;
 }
+
 .academic_labs_next img {
   transform: rotate(180deg);
 }
@@ -464,6 +472,25 @@
 .department-advisory-board .table_section:not(:last-child) {
   padding-bottom: 0rem;
 }
+
+.programs-page .eligib_cont h5 {
+  padding: 0;
+  font: var(--font-24);
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+.programs-page .eligib_cont .growth-item{
+  padding-top: 4rem;
+  padding-right: 0;
+  padding-left: 0;
+}
+.programs-page .eligi_tab_con{
+  padding-left: 0; 
+}
+.programs-page .eligib_cont .growth-item p{    margin-top: 2.5rem;
+    margin-bottom: 2rem;}
 
 .approvals-accreditations .pdf_list_section:not(:last-child) {
   padding-bottom: 0rem;
@@ -8810,6 +8837,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .department-physics-about-us .grid_card_design1_section {
   padding-block: 0rem 10rem;
 }
+
 .department-information-technology-about-us .grid_card_design1_section {
   padding-block: 0rem 10rem;
 }
