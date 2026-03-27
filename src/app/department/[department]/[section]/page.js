@@ -18,6 +18,7 @@ import Labspage from "@/pages/labs11/Labs";
 import { notFound } from "next/navigation";
 import TabsContent from "@/component/common/tabsContent/TabsContent";
 import TabsDataContent from "@/component/sections/TabsDataContents";
+import Departments from "@/pages/departments/Departments";
 
 export async function generateMetadata({ params }) {
   return getPageSEO();
@@ -73,6 +74,14 @@ export default async function DepartmentPage({ params }) {
       ) : section == "faculties" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <Faculties data={departmentData?.data} />
+        </Suspense>
+      ) : section == "alumni" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Departments
+            data={departmentData?.data}
+            title="Alumni"
+            type="alumni"
+          />
         </Suspense>
       ) : section == "happenings" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
