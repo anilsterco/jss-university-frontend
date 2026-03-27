@@ -556,6 +556,18 @@
 .examination-overview .table_section .sub_heading {
   margin-bottom: 2rem;
 }
+.tabs_content_section .table_section thead th ,
+.tabs_content_section .table_section tbody td {
+ white-space: nowrap;
+}
+
+.schools-applied-sciences-academic-committees .table_section:not(:last-of-type) {
+  padding-bottom: 0;
+}
+
+.schools-applied-sciences-academic-committees .table_section table tbody td:nth-child(2) {
+  width: 25rem;
+}
 
 .examination-overview .table_section .heading {
   margin-bottom: 2rem;

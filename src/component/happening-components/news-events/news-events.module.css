@@ -84,6 +84,10 @@
   overflow: hidden;
 }
 
+.secondaryImageWrapper img{
+  object-fit: cover;
+}
+
 .eventCard {
   border-radius: 10px;
   overflow: hidden;

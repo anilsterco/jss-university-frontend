@@ -284,10 +284,9 @@ export default function EventsSection({ className, programId, type }) {
                   <Image
                     src={secondryItem.banner_image}
                     alt="Secondary Event"
-                    layout="responsive"
-                    width={700}
-                    height={400}
-                    className={`w-100 ${styles.secondaryImage}`}
+                    width={812}
+                    height={437}
+                    className={`${styles.secondaryImage}`}
                   />
                 )}
               </div>

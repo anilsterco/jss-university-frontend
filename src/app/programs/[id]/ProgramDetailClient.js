@@ -177,6 +177,8 @@ export default function ProgramDetailClient({ params }) {
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
+
+  console.log('tabSection',tabSection);
   return (
     <main className="site_main">
       <section className="program-detail">
@@ -394,7 +396,7 @@ export default function ProgramDetailClient({ params }) {
 
       
 
-      {tabSection && (
+      {tabSection && tabSection?.tab_section_content && tabSection?.tab_section_info.length !== 0 && (
         <EligibilityPrograms data={convertTabSection(tabSection)} />
       )}
 
