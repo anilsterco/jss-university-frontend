@@ -2155,7 +2155,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 4rem;
   z-index: 9999;
   width: 100%;
@@ -2210,12 +2210,17 @@
 
 .popup-modal .popup-content .grid .grid-item{
   border: 1px solid #EFEFEF;
-}
-
-.popup-modal .popup-content .grid .grid-item a{
   display:block;
   padding:2.4rem;
   padding-bottom:5rem;
+  color: #018CE8;
+  position: relative;
+  font-weight: normal;
+}
+
+.popup-modal .popup-content .grid .grid-item img{
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .popup-modal .popup-content .grid .grid-item .title{
@@ -2228,6 +2233,13 @@
   font-weight: bold;
   margin-bottom:0;
 }
+.link_logo{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
 
 .popup-modal .popup-content .grid .grid-item span{
   margin-top:1rem;
@@ -2236,6 +2248,7 @@
   font-family: var(--font-Noto);
   line-height:3rem;
   text-decoration: underline;
+  display:inline-block
 }
 
 
@@ -3382,6 +3395,35 @@ hr {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+}
+
+.faculty_row.alumni{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.faculty_row.alumni .faulty-img img{
+  border-radius: 8px;
+}
+
+.faculty_row.alumni .singleCard .content .category{
+  color: #666666;
+  letter-spacing: -0.32px;
+  font:var(--font-16);
+  line-height:2rem;
+  margin-top:1rem;
+  margin-bottom:0;
+}
+
+.faculty_row.alumni .singleCard .content .designation{
+  margin-top:1.2rem;
+  letter-spacing: -0.32px;
+
+}
+
+.faculty_row.alumni .singleCard .bar{
+  width:5.3rem;
+  margin-top:2.5rem;
 }
 
 /* faculty page responsive css start */
@@ -6958,9 +7000,8 @@ hr {
   .popup-modal .popup-content .grid .grid-item .title {
     font-size: 1.4rem;
     line-height: 1.6rem;
-    margin-top: 0;
   }
-
+.popup-modal .popup-content .grid .grid-item{padding: 2.5rem;}
   .popup-modal .popup-content .grid .grid-item span{
     font:var(--font-10);
     display:block;

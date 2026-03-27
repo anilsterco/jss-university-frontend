@@ -11,7 +11,7 @@ const TAB_CONFIG = [
     tabName: "Patents",
     endpoint: "patents",
     columns: [
-      { label: "Serial No.", key: "serial_no" },
+      { label: "Sl No.", key: "s_no" },
       { label: "Patent Application No.", key: "patent_application_no" },
       { label: "Patent Status", key: "patent_status" },
       { label: "Inventor Name", key: "inventor_name" },
@@ -28,7 +28,7 @@ const TAB_CONFIG = [
     tabName: "Conferences",
     endpoint: "conferences",
     columns: [
-      { label: "Serial No.", key: "serial_no" },
+      { label: "Sl No.", key: "s_no" },
       { label: "Author Name", key: "author_name" },
       { label: "Paper Title", key: "paper_title" },
       { label: "Conference Name", key: "conference_name" },
@@ -43,7 +43,7 @@ const TAB_CONFIG = [
     tabName: "Journals",
     endpoint: "journals",
     columns: [
-      { label: "Serial No.", key: "serial_no" },
+      { label: "Sl No.", key: "s_no" },
       { label: "Author Name", key: "author_name" },
       { label: "Paper Title", key: "paper_title" },
       { label: "Journal Name", key: "journal_name" },
@@ -63,7 +63,7 @@ const TAB_CONFIG = [
     tabName: "Projects Submitted",
     endpoint: "projects-submitted",
     columns: [
-      { label: "Serial No.", key: "serial_no" },
+      { label: "Sl No.", key: "s_no" },
       { label: "Project Title", key: "project_title" },
       { label: "Investigator Names", key: "investigator_names" },
       { label: "Funding Agency", key: "funding_agency" },
@@ -74,7 +74,7 @@ const TAB_CONFIG = [
     tabName: "Projects Sanctioned",
     endpoint: "projects-sanctioned",
     columns: [
-      { label: "Serial No.", key: "serial_no" },
+      { label: "Sl No.", key: "s_no" },
       { label: "Scheme", key: "scheme" },
       { label: "Proposals Sanctioned", key: "proposals_sanctioned" },
       { label: "Submitted Date", key: "submitted_date" },
@@ -240,7 +240,7 @@ const TabsContent = () => {
                 <table className="table-lab table table-bordered">
                   <thead>
                     <tr>
-                      <th>Sl. No.</th>
+                      {/* <th>Sl. No.</th> */}
                       {activeTabConfig.columns.map((col, idx) => {
                         if (col.key === "serial_no") return null;
                         return <th key={idx}>{col.label}</th>;

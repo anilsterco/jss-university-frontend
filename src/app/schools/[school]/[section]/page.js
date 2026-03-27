@@ -74,9 +74,9 @@ export default async function SchoolPage({ params }) {
         <Suspense fallback={<h1>Loading...</h1>}>
           <Departments data={schoolData?.data} />
         </Suspense>
-      ) : section == "alumuni" ? (
+      ) : section == "alumni" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
-          <Departments data={schoolData?.data} />
+          <Departments data={schoolData?.data} title="Alumni" type="alumni" />
         </Suspense>
       ) : section == "happenings" ? (
         <Suspense fallback={<h1>Loading...</h1>}>

@@ -7,22 +7,22 @@ import { IoClose } from "react-icons/io5";
 const modalData = [
   {
     title: "JSS Academy of Higher Education & Research, Mysuru",
-    image: "/images/popup/logo.png",
+    image: "/images/popup/logo1.webp",
     url: "https://jssuni.edu.in/",
   },
   {
     title: "JSS Science and Technology University",
-    image: "/images/popup/logo.png",
+    image: "/images/popup/logo2.webp",
     url: "https://jssuni.edu.in/",
   },
   {
     title: "JSS Science and Technology University",
-    image: "/images/popup/logo.png",
+    image: "/images/popup/logo3.webp",
     url: "https://jssuni.edu.in/",
   },
   {
     title: "JSS Science and Technology University",
-    image: "/images/popup/logo.png",
+    image: "/images/popup/logo4.webp",
     url: "https://jssuni.edu.in/",
   },
 ];
@@ -65,17 +65,21 @@ export default function PopupModal() {
           <div className="grid">
             {modalData.map((item, index) => (
               <div key={index} className="grid-item">
-                <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    width={300}
-                    height={146}
-                    src={item.image}
-                    alt={item.title}
-                    className="img-fluid"
-                  />
-                  <h5 className="title">{item.title}</h5>
-                  <span>Visit Us</span>
-                </a>
+                <Image
+                  width={300}
+                  height={146}
+                  layout="responsive"
+                  src={item.image}
+                  alt={item.title}
+                />
+                <h5 className="title">{item.title}</h5>
+                <span>Visit Us</span>
+                <a
+                  className="link_logo"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
               </div>
             ))}
           </div>

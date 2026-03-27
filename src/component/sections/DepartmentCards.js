@@ -3,7 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function DepartmentCards({ tabs, heading, activeTab, data }) {
+export default function DepartmentCards({
+  tabs,
+  heading,
+  activeTab,
+  data,
+  type,
+}) {
   // Simply filter — no state, no useEffect
   const filteredFaculty =
     tabs?.filter((tab) => tab.category === activeTab) || data;
@@ -15,7 +21,7 @@ export default function DepartmentCards({ tabs, heading, activeTab, data }) {
       <div className="container">
         {heading && <h5 className="about_subtitle">{heading}</h5>}
 
-        <div className="faculty_row">
+        <div className={`faculty_row ${type}`}>
           {filteredFaculty?.map((faculty, facultyIdx) => (
             <div className="faculty_col" key={facultyIdx}>
               <div className="singleCard">
@@ -31,13 +37,16 @@ export default function DepartmentCards({ tabs, heading, activeTab, data }) {
                         alt={faculty.name}
                         className="img-fluid w-100"
                         style={{ maxWidth: "100%", height: "auto" }}
-                        width={432}
-                        height={428}
+                        width={type == "alumni" ? 332 : 432}
+                        height={type == "alumni" ? 329 : 428}
                       />
                     </figure>
                   </div>
                   <div className="content">
                     <h4 className="name">{faculty.name}</h4>
+                    {faculty?.category && (
+                      <p className="category">{faculty.category}</p>
+                    )}
                     <p className="designation">
                       {faculty.designation || faculty.type}
                     </p>
