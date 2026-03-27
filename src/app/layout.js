@@ -11,6 +11,7 @@ import "../../public/js/aos";
 import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
+import PopupModal from "@/component/PopupModal";
 
 export const metadata = {
   title: "Jss University",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           <ScriptLoader />
           <Footer />
         </Providers>
+        <PopupModal />
       </body>
     </html>
   );
