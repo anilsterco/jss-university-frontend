@@ -48,9 +48,12 @@ export default function DepartmentCards({
                       {faculty?.category && (
                         <p className="category">{faculty.category}</p>
                       )}
-                      <p className="designation">
-                        {faculty.designation || faculty.type}
-                      </p>
+                      {type !== "alumni" && (
+                        <p className="designation">
+                          {faculty.designation || faculty.type}
+                        </p>
+                      )}
+
                       <div className="bar" />
                     </div>
                   </>
