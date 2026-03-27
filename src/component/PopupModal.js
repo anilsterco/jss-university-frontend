@@ -84,13 +84,13 @@ export default function PopupModal() {
               {popupData?.items?.map((item, index) => (
                 <div key={index} className="grid-item">
                   <Image
+                    src={item?.image}
                     width={300}
                     height={146}
                     layout="responsive"
-                    src={item.image}
-                    alt={item.title}
+                    alt={item?.title}
                   />
-                  <h5 className="title">{item.title}</h5>
+                  <h5 className="title">{item?.title}</h5>
                   <span>Visit Us</span>
                   <a
                     className="link_logo"
