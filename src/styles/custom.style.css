@@ -1498,8 +1498,8 @@
   margin-top: 4rem;
 }
 
-.about_two.labs_group_section .early-slide ul.no_margin{
-  margin-top:1rem;
+.about_two.labs_group_section .early-slide ul.no_margin {
+  margin-top: 1rem;
 }
 
 .about_two.labs_group_section .early-slide li {
@@ -1520,8 +1520,8 @@
   margin-left: 1rem;
 }
 
-.labs_group_section .early-slide .description1{
-  margin-top:3rem;
+.labs_group_section .early-slide .description1 {
+  margin-top: 3rem;
 }
 
 /* .labs_group_section .single_lab_card{
@@ -2077,32 +2077,32 @@
 
 /* department-placements */
 
-.department-electrical-engineering-ee-placements .iqac_master:nth-child(5){
-  padding-top:10rem;
+.department-electrical-engineering-ee-placements .iqac_master:nth-child(5) {
+  padding-top: 10rem;
 }
 
-.department-electrical-engineering-ee-placements .iqac_master:last-child{
-  padding-bottom:10rem;
+.department-electrical-engineering-ee-placements .iqac_master:last-child {
+  padding-bottom: 10rem;
 }
 
-.department-labs .labs_group_section .early_rgt ul{
-  padding-left:0;
+.department-labs .labs_group_section .early_rgt ul {
+  padding-left: 0;
 }
 
 .programs-page .description-sec h1,
 .programs-page .description-sec h2,
 .programs-page .description-sec h3,
-.programs-page .description-sec h4{
-  margin-bottom:1rem;
+.programs-page .description-sec h4 {
+  margin-bottom: 1rem;
 }
 
-.programs-page .description-sec ul{
+.programs-page .description-sec ul {
   list-style: none;
-  padding:0;
+  padding: 0;
   /* padding-left:2rem; */
 }
 
-.programs-page .description-sec li{
+.programs-page .description-sec li {
   font: var(--font-16);
   color: var(--color-44);
   margin-bottom: 1rem;
@@ -2111,7 +2111,7 @@
   position: relative;
 }
 
-.programs-page .description-sec li:before{
+.programs-page .description-sec li:before {
   content: "";
   background-color: var(--color-100);
   border-radius: 5rem;
@@ -2124,28 +2124,67 @@
 
 
 .inner_page {
-    padding: 10rem 0;
+  padding: 10rem 0;
 }
 
 .innerPage_title {
-    font: var(--font-26);
-    margin-bottom: 7rem;
+  font: var(--font-26);
+  margin-bottom: 7rem;
   color: var(--color-4e);
   font-weight: 700;
   font-family: var(--font-Condensed);
 }
 
-.programs-page .eligibilty_main .growth-item > h3{
-  display:none;
+.programs-page .eligibilty_main .growth-item>h3 {
+  display: none;
 }
 
-@media (max-width:991px){
+.expertise_wrapper {
+  padding-top: 10rem;
+}
+
+.expertise_wrapper h5 {
+  font: var(--font-26);
+  color: #16344e;
+  margin-bottom: 4rem;
+}
+.programs-page .eligib_cont h6 {
+  font: var(--font-16);
+  color: var(--color-white);
+  margin-bottom: 1.3rem;
+  margin-top: 2rem;
+  font-weight: 500;
+  list-style: none;
+  position: relative;
+}
+
+.expir_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.programs-page .eligib_cont h4 {
+  font: var(--font-22);
+  color: var(--color-white);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+
+}
+
+.programs-page .expir_grid .common_list {
+  padding: 3.5rem;
+  background-color: #ffff;
+}
+
+@media (max-width:991px) {
   .inner_page {
     padding: 6rem 0;
-}
-.innerPage_title {
+  }
+
+  .innerPage_title {
     margin-bottom: 4rem;
-}
+  }
 }
 
 
@@ -3212,6 +3251,7 @@ hr {
   background: #ccc;
   border-radius: 4px;
 }
+
 .table-responsive {
   overflow-x: auto;
 }
@@ -3237,6 +3277,7 @@ hr {
 .table-responsive::-webkit-scrollbar-thumb:hover {
   background: #8a6d1f;
 }
+
 .faculty_row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6451,6 +6492,11 @@ hr {
   .table-lab.table {
     width: 100%;
     overflow-x: auto;
+  }
+
+  .expir_grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .about_three .vsn_msn_grid .miss-rgt h4 {
