@@ -481,16 +481,21 @@
   font-weight: 300;
   line-height: 1.4;
 }
-.programs-page .eligib_cont .growth-item{
+
+.programs-page .eligib_cont .growth-item {
   padding-top: 4rem;
   padding-right: 0;
   padding-left: 0;
 }
-.programs-page .eligi_tab_con{
-  padding-left: 0; 
+
+.programs-page .eligi_tab_con {
+  padding-left: 0;
 }
-.programs-page .eligib_cont .growth-item p{    margin-top: 2.5rem;
-    margin-bottom: 2rem;}
+
+.programs-page .eligib_cont .growth-item p {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
 
 .approvals-accreditations .pdf_list_section:not(:last-child) {
   padding-bottom: 0rem;
@@ -527,6 +532,26 @@
 .examination-overview .table_section .table-lab tbody td:nth-child(2) {
   width: auto;
 }
+
+.phd_duration_section {
+  padding-block: 10rem 5rem;
+}
+
+.phd_duration_section h5 {
+  font: var(--font-26);
+  color: #16344e;
+  margin-bottom: 2.5rem;
+}
+
+.phd_duration_section p {
+  margin-bottom: 2.5rem;
+}
+
+
+.phd_duration_section table {
+  margin-bottom: 3.5rem;
+}
+
 
 .examination-overview .table_section .sub_heading {
   margin-bottom: 2rem;
@@ -2324,9 +2349,7 @@ ul.comon_list li:before {
   margin-top: 5rem;
 }
 
-.edigiblity_tabs .eligi_tab_con ul {
-  padding: 0;
-}
+
 
 .edigiblity_tabs .eligi_tab_con ul li {
   font: var(--font-16);
