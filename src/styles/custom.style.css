@@ -2142,7 +2142,7 @@
 
 /* popup */
 
-.popup-overlay{
+.popup-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -2162,6 +2162,8 @@
   max-width: 153.9rem;
 }
 
+
+
 .popup-close {
   position: absolute;
   top: 12px;
@@ -2173,8 +2175,8 @@
   line-height: 1;
 }
 
-.popup-modal .popup-close{
-  background:#018CE8;
+.popup-modal .popup-close {
+  background: #018CE8;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -2187,9 +2189,9 @@
   top: -15px;
 }
 
-.popup-modal .popup-content .popup-title{
-  font:var(--font-34);
-  line-height:3.6rem;
+.popup-modal .popup-content .popup-title {
+  font: var(--font-34);
+  line-height: 3.6rem;
   font-weight: normal;
   font-family: var(--font-Condensed);
   letter-spacing: -0.1rem;
@@ -2198,42 +2200,43 @@
   margin-bottom: 4rem;
 }
 
-.popup-modal .popup-content .popup-title span{
+.popup-modal .popup-content .popup-title span {
   color: #16344E;
 }
 
-.popup-modal .popup-content .grid{
-  display:grid;
+.popup-modal .popup-content .grid {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap:2rem;
+  gap: 2rem;
 }
 
-.popup-modal .popup-content .grid .grid-item{
+.popup-modal .popup-content .grid .grid-item {
   border: 1px solid #EFEFEF;
-  display:block;
-  padding:2.4rem;
-  padding-bottom:5rem;
+  display: block;
+  padding: 2.4rem;
+  padding-bottom: 5rem;
   color: #018CE8;
   position: relative;
   font-weight: normal;
 }
 
-.popup-modal .popup-content .grid .grid-item img{
+.popup-modal .popup-content .grid .grid-item img {
   max-width: 100%;
   object-fit: contain;
 }
 
-.popup-modal .popup-content .grid .grid-item .title{
+.popup-modal .popup-content .grid .grid-item .title {
   color: #16344E;
   letter-spacing: 0px;
-  font:var(--font-21);
-  line-height:2.6rem;
-  font-family:var(--font-Condensed);
-  margin-top:2rem;
+  font: var(--font-21);
+  line-height: 2.6rem;
+  font-family: var(--font-Condensed);
+  margin-top: 2rem;
   font-weight: bold;
-  margin-bottom:0;
+  margin-bottom: 0;
 }
-.link_logo{
+
+.link_logo {
   position: absolute;
   left: 0;
   top: 0;
@@ -2241,14 +2244,14 @@
   width: 100%;
 }
 
-.popup-modal .popup-content .grid .grid-item span{
-  margin-top:1rem;
+.popup-modal .popup-content .grid .grid-item span {
+  margin-top: 1rem;
   color: #018CE8;
-  font:var(--font-16);
+  font: var(--font-16);
   font-family: var(--font-Noto);
-  line-height:3rem;
+  line-height: 3rem;
   text-decoration: underline;
-  display:inline-block
+  display: inline-block
 }
 
 
@@ -2261,6 +2264,7 @@
   color: #16344e;
   margin-bottom: 4rem;
 }
+
 .programs-page .eligib_cont h6 {
   font: var(--font-16);
   color: var(--color-white);
@@ -3397,33 +3401,33 @@ hr {
   gap: 2.5rem;
 }
 
-.faculty_row.alumni{
+.faculty_row.alumni {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
-.faculty_row.alumni .faulty-img img{
+.faculty_row.alumni .faulty-img img {
   border-radius: 8px;
 }
 
-.faculty_row.alumni .singleCard .content .category{
+.faculty_row.alumni .singleCard .content .category {
   color: #666666;
   letter-spacing: -0.32px;
-  font:var(--font-16);
-  line-height:2rem;
-  margin-top:1rem;
-  margin-bottom:0;
+  font: var(--font-16);
+  line-height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
-.faculty_row.alumni .singleCard .content .designation{
-  margin-top:1.2rem;
+.faculty_row.alumni .singleCard .content .designation {
+  margin-top: 1.2rem;
   letter-spacing: -0.32px;
 
 }
 
-.faculty_row.alumni .singleCard .bar{
-  width:5.3rem;
-  margin-top:2.5rem;
+.faculty_row.alumni .singleCard .bar {
+  width: 5.3rem;
+  margin-top: 2.5rem;
 }
 
 /* faculty page responsive css start */
@@ -6994,18 +6998,22 @@ hr {
     width: 80px !important;
     height: auto !important;
     flex-shrink: 0;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
   }
 
   .popup-modal .popup-content .grid .grid-item .title {
     font-size: 1.4rem;
     line-height: 1.6rem;
   }
-.popup-modal .popup-content .grid .grid-item{padding: 2.5rem;}
-  .popup-modal .popup-content .grid .grid-item span{
-    font:var(--font-10);
-    display:block;
-    margin-top:0.5rem;
+
+  .popup-modal .popup-content .grid .grid-item {
+    padding: 2.5rem;
+  }
+
+  .popup-modal .popup-content .grid .grid-item span {
+    font: var(--font-10);
+    display: block;
+    margin-top: 0.5rem;
   }
 
 }
