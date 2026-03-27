@@ -12,9 +12,9 @@ export default function Faculties({ data }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const [facultyData, setFacultyData] = useState(data || []);
+  const [facultyData, setFacultyData] = useState(data || []); // ✅ use SSR data immediately
   const [typesList, setTypesList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(!data?.length); // ✅ skip loading if SSR data exists
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [departmentsList, setDepartmentsList] = useState([]);
@@ -48,14 +48,11 @@ export default function Faculties({ data }) {
     return `${BASE_URL}${segment}/${slug}/faculties?${params.toString()}`;
   };
 
-  // fetch department list for department select
   const fetchDepartments = async () => {
     try {
       const res = await fetch(`${BASE_URL}school-department-list`);
       if (!res.ok) throw new Error(`Departments API error: ${res.status}`);
       const json = await res.json();
-
-      // Find the school that matches current slug in URL
       const matchedSchool = (json.data || []).find((s) => s.slug === slug);
       setDepartmentsList(matchedSchool?.departments || []);
     } catch (err) {
@@ -66,26 +63,16 @@ export default function Faculties({ data }) {
 
   const fetchTypes = async () => {
     try {
-      const parts = pathname.split("/").filter(Boolean);
+      const segmentMap = { schools: "school", department: "department" };
+      const seg = segmentMap[parts[0]] || parts[0];
 
-      const segmentMap = {
-        schools: "school",
-        department: "department",
-      };
-
-      const segment = segmentMap[parts[0]] || parts[0];
-      const slug = parts[1] || "";
-
-      const res = await fetch(`${BASE_URL}faculties/types/${segment}/${slug}`);
+      const res = await fetch(`${BASE_URL}faculties/types/${seg}/${slug}`);
       if (!res.ok) throw new Error(`Types API error: ${res.status}`);
       const json = await res.json();
 
-      const types = (json.data || []).map((t) => ({
-        type_id: t.id,
-        type: t.name,
-      }));
-
-      setTypesList(types);
+      setTypesList(
+        (json.data || []).map((t) => ({ type_id: t.id, type: t.name })),
+      );
     } catch (err) {
       console.error("Types fetch error:", err);
       setTypesList([]);
@@ -149,27 +136,21 @@ export default function Faculties({ data }) {
     }
   };
 
+  // ✅ Single init useEffect — was duplicated before causing double fetch
   useEffect(() => {
     const init = async () => {
-      await fetchTypes();
-      await fetchFaculty();
+      // Run these in parallel — no need to await sequentially
+      await Promise.all([
+        fetchTypes(),
+        parts[0] === "schools" ? fetchDepartments() : Promise.resolve(),
+        fetchFaculty(),
+      ]);
       initialized.current = true;
     };
     init();
-  }, []);
+  }, []); // ✅ only one useEffect with []
 
-  useEffect(() => {
-    const init = async () => {
-      await fetchTypes();
-      if (parts[0] === "schools") {
-        await fetchDepartments();
-      }
-      await fetchFaculty();
-      initialized.current = true;
-    };
-    init();
-  }, []);
-
+  // ✅ Filter effect — only runs after init is done
   useEffect(() => {
     if (!initialized.current) return;
 
@@ -198,7 +179,6 @@ export default function Faculties({ data }) {
                 <div
                   className={`faulty-box ${parts?.[0] === "schools" ? "school-faculties" : ""}`}
                 >
-                  {/* Search */}
                   <div className="search-box">
                     <input
                       type="text"
@@ -214,7 +194,6 @@ export default function Faculties({ data }) {
                     />
                   </div>
 
-                  {/* Type Dropdown */}
                   <div className="faulty-drop-down">
                     <select
                       className="form-select"
@@ -229,8 +208,6 @@ export default function Faculties({ data }) {
                       ))}
                     </select>
                   </div>
-
-                  {/* department dropdown */}
 
                   {parts?.[0] === "schools" && (
                     <div className="faulty-drop-down">
@@ -249,7 +226,6 @@ export default function Faculties({ data }) {
                     </div>
                   )}
 
-                  {/* Reset Button */}
                   {(searchTerm || selectedType || selectedDepartment) && (
                     <button
                       className="faculty-reset-btn"
@@ -278,7 +254,6 @@ export default function Faculties({ data }) {
         ) : (
           <>
             <FacultyCards data={facultyData} />
-
             {nextPageUrl && (
               <div className="load-more-container text-center mt-4">
                 <button onClick={loadMore} disabled={isLoadingMore}>

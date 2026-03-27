@@ -405,6 +405,7 @@ p {
 .mobile_menus .menu-children {
   padding: 0 !important;
   padding-left: 2rem !important;
+  padding-right: 2rem !important;
 
 }
 
@@ -426,6 +427,8 @@ p {
 .mobile_menus .menu-children li a {
 
   font-size: 1.5rem !important;
+  color:#fff;
+  display:flex;
 }
 
 .mobile_menus .menu-bottom .menu-link {

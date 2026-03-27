@@ -12,8 +12,8 @@ export default function TabSection({ title, subtitle, tabs }) {
   const currentSlug = pathname.split("/").filter(Boolean).pop();
 
   const isActive = (tab) => {
-    const tabSlug = tab.url.split("/").filter(Boolean).pop();
-    const textSlug = tab.text.toLowerCase().replace(/\s+/g, "-");
+    const tabSlug = tab.url?.split("/").filter(Boolean).pop();
+    const textSlug = tab.text?.toLowerCase().replace(/\s+/g, "-");
     return currentSlug === tabSlug || currentSlug === textSlug;
   };
 
@@ -30,10 +30,10 @@ export default function TabSection({ title, subtitle, tabs }) {
               {tabs.map((tab, i) => (
                 <li key={i} className={isActive(tab) ? "active" : ""}>
                   {tab.url != "/jss-step" ? (
-                    <Link href={tab.url}>{tab.text}</Link>
+                    <Link href={tab?.url || "#"}>{tab?.text}</Link>
                   ) : (
                     <Link href="https://www.jssstepnoida.org/" target="_blank">
-                      {tab.text}
+                      {tab?.text}
                     </Link>
                   )}
                 </li>

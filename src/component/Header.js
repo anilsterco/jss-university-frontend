@@ -130,6 +130,7 @@ export default function Header() {
   const [megaMenuData, setMegaMenuData] = useState([]);
   const [isAcademic, setIsAcademic] = useState(false);
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
+  const [openChildAccordion, setOpenChildAccordion] = useState(null);
   const [activeMegaChildIndex, setActiveMegaChildIndex] = useState(0);
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
@@ -1398,12 +1399,64 @@ export default function Header() {
                                   <ul className="menu-children">
                                     {sub.children.map((child, cidx) => (
                                       <li key={cidx}>
-                                        <a
-                                          href={WEB_URL + child.url}
-                                          onClick={() => setActivePanel(null)}
+                                        <Link
+                                          href={
+                                            child.school?.length > 0
+                                              ? "#"
+                                              : WEB_URL + child.url
+                                          }
+                                          onClick={() => {
+                                            if (child.school?.length > 0) {
+                                              setOpenChildAccordion(
+                                                openChildAccordion === cidx
+                                                  ? null
+                                                  : cidx,
+                                              );
+                                            } else {
+                                              setActivePanel(null);
+                                            }
+                                          }}
+                                          style={
+                                            child.school?.length > 0
+                                              ? { cursor: "pointer" }
+                                              : {}
+                                          }
                                         >
-                                          {child.title}
-                                        </a>
+                                          <span className="menu_title">
+                                            {child.title}
+                                          </span>
+                                          {child.school?.length > 0 && (
+                                            <span
+                                              className={`menu-arrow ${openChildAccordion === cidx ? "open" : ""}`}
+                                            >
+                                              <FaChevronDown size={10} />
+                                            </span>
+                                          )}
+                                        </Link>
+
+                                        {child.school?.length > 0 &&
+                                          openChildAccordion === cidx && (
+                                            <ul className="menu-children">
+                                              {child.school.map(
+                                                (schoolItem, sidx) => (
+                                                  <li key={sidx}>
+                                                    <Link
+                                                      href={
+                                                        WEB_URL +
+                                                        "schools/" +
+                                                        schoolItem.slug
+                                                      }
+                                                      onClick={() =>
+                                                        setActivePanel(null)
+                                                      }
+                                                    >
+                                                      {schoolItem.name}
+                                                    </Link>
+                                                  </li>
+                                                ),
+                                              )}
+                                            </ul>
+                                          )}
                                       </li>
                                     ))}
                                   </ul>
