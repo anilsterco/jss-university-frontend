@@ -34,9 +34,11 @@
   color: var(--color-e8);
   font-family: var(--font-Condensed);
 }
+
 .department-master-of-computer-applications-about-us .grid_card_design1_section {
   padding-block: 10rem;
-} 
+}
+
 .inner-title .innnr_head ul {
   list-style: none;
   border-top: 1px solid #ccc;
@@ -630,16 +632,28 @@
 .res_table_maincms .table_section:last-child {
   padding-block: 5rem 8rem;
 }
+
 .department-chemistry-research .res_table_maincms .table_section:last-child {
   padding-block: 0 8rem;
 }
-.sectable{margin-top: 5rem;}
-.res_table_maincms  h4 {
+
+.sectable {
+  margin-top: 5rem;
+}
+
+.res_table_maincms h4 {
   font: var(--font-26);
   margin-bottom: 3rem;
 }
-.department-chemistry-research .tabs_content_section{padding-block: 5rem 5rem;}
-.department-chemistry-research.department-research .tabs_content_section .table_section:last-child{padding-bottom: 10rem;}
+
+.department-chemistry-research .tabs_content_section {
+  padding-block: 5rem 5rem;
+}
+
+.department-chemistry-research.department-research .tabs_content_section .table_section:last-child {
+  padding-bottom: 10rem;
+}
+
 .about_four {
   position: relative;
   padding-bottom: 14rem;
@@ -6286,10 +6300,18 @@ ul.comon_list li:before {
   .inner-title {
     padding-top: 10rem;
   }
-.department-master-of-computer-applications-about-us .grid_card_design1_section{padding-block: 5rem;}
+
+  .department-master-of-computer-applications-about-us .grid_card_design1_section {
+    padding-block: 5rem;
+  }
+
   .grands_maingrid {
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 4rem;
+  }
+
+  .placement_stats.column-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .grands_content {
@@ -6304,8 +6326,15 @@ ul.comon_list li:before {
   .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
     max-width: 100%;
   }
-.department-chemistry-research.department-research .tabs_content_section .table_section:last-child{padding-bottom:5rem;}
-.department-chemistry-research .res_table_maincms .table_section:last-child{    padding-block: 0 0rem;}
+
+  .department-chemistry-research.department-research .tabs_content_section .table_section:last-child {
+    padding-bottom: 5rem;
+  }
+
+  .department-chemistry-research .res_table_maincms .table_section:last-child {
+    padding-block: 0 0rem;
+  }
+
   .campu_grid_main {
     display: block;
   }
@@ -6414,6 +6443,8 @@ ul.comon_list li:before {
   .alumni .labs_group_section.about_two {
     padding-bottom: 5rem;
   }
+
+ 
 }
 
 @media (max-width:767px) {
@@ -6431,6 +6462,10 @@ ul.comon_list li:before {
 
   .about_two .early-slide .early_rgt {
     padding-left: 0;
+  }
+
+  .placement_stats.column-3 {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .abou_t_sec {
@@ -6457,9 +6492,10 @@ ul.comon_list li:before {
   .uni_boa_grid {
     grid-template-columns: 1fr;
   }
+
   .phd_duration_section {
     padding-block: 4rem 5rem;
-}
+  }
 
 }
 
@@ -9003,12 +9039,16 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .department-information-technology-about-us .grid_card_design1_section {
   padding-block: 0rem 10rem;
 }
+@media (max-width:991px){
+  .department-master-of-computer-applications-facilities .library_section{padding-top: 5rem;}
 
+}
 @media (max-width:575px) {
   .department-information-technology-about-us .grid_card_design1_section {
     padding-block: 0 6rem;
   }
 
 }
+
 
 /* leadership details page end */

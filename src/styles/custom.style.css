@@ -8114,6 +8114,9 @@ hr {
   .department-electrical-electronics-engineering-facilities .about_one {
     padding-bottom: 4rem;
   }
+   .department-facilities .placement_page .placement_stats {
+    padding-bottom: 5rem;
+  }
 }
 
 @media screen and (max-width:575px) {
@@ -8132,7 +8135,7 @@ hr {
     display: block;
   }
 
-  .search-box input {
+  .search-box  {
     margin-bottom: 1.5rem;
   }
 
