@@ -427,7 +427,7 @@ margin-bottom: 2rem;
   }
 
   .onlyMobile :global(.swiper-wrapper) {
-    height: 13rem;
+    height: auto;
   }
 
 
@@ -460,6 +460,7 @@ margin-bottom: 2rem;
     font: var(--font-16);
     font-family: var(--font-Condensed);
     letter-spacing: 0px;
+    margin-bottom: 1rem;
   }
 
 

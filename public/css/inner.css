@@ -556,9 +556,10 @@
 .examination-overview .table_section .sub_heading {
   margin-bottom: 2rem;
 }
-.tabs_content_section .table_section thead th ,
+
+.tabs_content_section .table_section thead th,
 .tabs_content_section .table_section tbody td {
- white-space: nowrap;
+  white-space: nowrap;
 }
 
 .schools-applied-sciences-academic-committees .table_section:not(:last-of-type) {
@@ -6361,6 +6362,25 @@ ul.comon_list li:before {
     padding-left: 4.4rem;
     padding-top: 0rem;
   }
+
+  .academic-council .table_section+.table_section {
+    padding-top: 5rem;
+  }
+
+  .campus-facilities .ameminites_listmain {
+    padding-block: 5rem;
+  }
+
+  .spo_fa_content h6 {
+    font: var(--font-18);
+  }
+  .uni_boa_grid{grid-template-columns: 1fr 1fr;    gap: 3rem;}
+  .campus-facilities .labs_group_section.about_two .about_two{padding-bottom: 5rem; }
+  .academic-facilities .labs_group_section.about_two .about_two{padding-bottom: 5rem; }
+  .grand_tabs_main .growth-tabs{margin-bottom: 3rem;}
+  .amenities_section .grid_group{grid-template-columns: 1fr;}
+  .mentoring-scheme .about_one {padding-block: 5rem 5rem;}
+
 }
 
 @media (max-width:767px) {
@@ -6400,6 +6420,9 @@ ul.comon_list li:before {
   .grands_content {
     padding-right: 0rem;
   }
+      .uni_boa_grid {
+        grid-template-columns: 1fr;
+    }
 
 }
 
@@ -7989,6 +8012,12 @@ ul.comon_list li:before {
 
   .sports_fac_slider .spo_fa_content {
     padding-block: 10rem;
+    padding-block: 3rem;
+    gap: 5rem;
+  }
+
+  .spo_fa_counsec {
+    padding: 1.8rem 0;
   }
 
   .lib_cen_main .cumpus_left_img p {
@@ -8154,6 +8183,30 @@ ul.comon_list li:before {
 @media (max-width: 768px) {
   .leadership_dtls_one .top_img figure figcaption {
     display: block;
+  }
+
+  .about-jssmvp .about_jsstwo {
+    padding-top: 5rem;
+  }
+
+  .about-jss .about_three .vsn_msn_grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+  }
+
+  .about_three .vsn_msn_grid .miss-rgt h4 {
+    letter-spacing: -.88px;
+    font: var(--font-36);
+  }
+
+  .academic-council .table_section thead th:first-child {
+    min-width: auto;
+  }
+
+
+  .academic-council .table_section .table-lab tbody td:nth-child(3) {
+    min-width: 35rem;
   }
 
   .tesIcon {
@@ -8752,13 +8805,13 @@ ul.comon_list li:before {
   }
 
   .sports_fac_slider .spo_fa_content {
-    padding-block: 6rem;
+    padding-block: 3rem;
   }
-
+.spo_fa_counsec h4{    font: var(--font-26);}
   .campu_con_rgt p {
     margin-bottom: 2rem;
   }
-
+.sport_fac_swiper .swiper-pagination{display: none;}
   .facilities_diffent p {
     margin-bottom: 0;
   }

@@ -577,13 +577,17 @@ export default function Header() {
               <div className="mob-logo">
                 <Link href="/" aria-label="Home">
                   <Image
-                    src="/images/header/inner-page.png"
+                    src="/images/header/homenew.png"
                     className="site-logo"
                     alt="Site Logo"
-                    width={299}
-                    height={108}
+                    width={180}
+                    height={70}
                     priority
                   />
+                    {/* <div className="logo_text">
+                    <div className="uniname">JSS University</div>
+                    <div className="uni_addrese">Noida, Uttar Pradesh</div>
+                  </div> */}
                 </Link>
               </div>
             </div>
@@ -1328,7 +1332,7 @@ export default function Header() {
                                 className={
                                   btn.type === "primary" ? "apply" : "dwnload"
                                 }
-                              >
+                             target="_blank" >
                                 {btn.type === "secondary" && (
                                   <img
                                     src="/images/header/dwnlodIcon.png"
@@ -3233,7 +3237,7 @@ export default function Header() {
           .site-header.no-shadow {
             background: none !important;
           }
-
+          .mob-logo{}
           @media (min-width: 992px) {
             .mobile-bottom-menu {
               display: none;
