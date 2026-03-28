@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
+import { BASE_URL } from "@/config/config";
 
 const modalData = [
   {
@@ -29,8 +30,21 @@ const modalData = [
 
 export default function PopupModal() {
   const [isVisible, setIsVisible] = useState(false);
+  const [popupData, setPopupData] = useState([]);
+
+  const fetchPopupData = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}popup`);
+      const data = await response.json();
+      setPopupData(data.popup);
+    } catch (error) {
+      setPopupData([]);
+      console.error("Error fetching popup data:", error);
+    }
+  };
 
   useEffect(() => {
+    fetchPopupData();
     const timer = setTimeout(() => {
       document.body.classList.add("overflow-hidden");
       setIsVisible(true);
@@ -58,31 +72,38 @@ export default function PopupModal() {
 
         {/* Your content here */}
         <div className="popup-content">
-          <h4 className="popup-title">
-            JSS <span>University</span> System
-          </h4>
+          {popupData?.heading && (
+            <h4
+              className="popup-title"
+              dangerouslySetInnerHTML={{ __html: popupData.heading }}
+            ></h4>
+          )}
 
-          <div className="grid">
-            {modalData.map((item, index) => (
-              <div key={index} className="grid-item">
-                <Image
-                  width={300}
-                  height={146}
-                  layout="responsive"
-                  src={item.image}
-                  alt={item.title}
-                />
-                <h5 className="title">{item.title}</h5>
-                <span>Visit Us</span>
-                <a
-                  className="link_logo"
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                ></a>
-              </div>
-            ))}
-          </div>
+          {popupData?.items?.length > 0 ? (
+            <div className="grid">
+              {popupData?.items?.map((item, index) => (
+                <div key={index} className="grid-item">
+                  <Image
+                    src={item?.image}
+                    width={300}
+                    height={146}
+                    layout="responsive"
+                    alt={item?.title}
+                  />
+                  <h5 className="title">{item?.title}</h5>
+                  <span>Visit Us</span>
+                  <a
+                    className="link_logo"
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  ></a>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <h3 className="text-center">No Data Found!</h3>
+          )}
         </div>
       </div>
     </>

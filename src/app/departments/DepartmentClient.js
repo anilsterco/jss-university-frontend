@@ -1,20 +1,28 @@
 import DepartmentCards from "@/component/sections/DepartmentCards";
 import TabSection from "@/component/sections/TabSection";
 
-export default function DepartmentClient() {
+export default function DepartmentClient({ schools = [] }) {
   return (
     <>
       <section className="testimonial_detail">
-        <TabSection title={"Departments"} subtitle={""} tabs={[]} />
+        <TabSection
+          title={"Departments"}
+          subtitle={""}
+          tabs={schools.map((s) => ({ name: s.name, slug: s.slug }))}
+        />
       </section>
 
-      <section className="inner_page">
-        <div className="container">
-          <h1 className={`innerPage_title text-center`}>Departments</h1>
+      {schools.map((school) => (
+        <section className="inner_page" key={school.id}>
+          <div className="container">
+            {/* School name as heading */}
+            <h1 className="innerPage_title text-center">{school.name}</h1>
 
-          <DepartmentCards data={[]} />
-        </div>
-      </section>
+            {/* Departments of this school */}
+            <DepartmentCards data={school.departments || []} />
+          </div>
+        </section>
+      ))}
     </>
   );
 }
