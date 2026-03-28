@@ -3265,6 +3265,10 @@ export default function Header() {
               left: 13%;
             }
           }
+               .header-inner {
+            width: 100%;
+            padding-block: 2.4rem;
+          }
           @media (max-width: 667px) {
             .contact-panel .contact-info li {
               max-width: 57%;
@@ -3297,6 +3301,10 @@ export default function Header() {
               top: 85%;
               left: 0;
             }
+              .header-inner {
+            padding-block: 0.8rem;
+          }
+              
           }
           @media (max-width: 420px) {
             .admissions-heading h4 {
@@ -3315,10 +3323,7 @@ export default function Header() {
           }
        
 
-          .header-inner {
-            width: 100%;
-            padding-block: 2.4rem;
-          }
+       
 
           .containerXl {
             max-width: 1920px;

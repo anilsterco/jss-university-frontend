@@ -36,8 +36,8 @@ export default function Grants({ data = [] }) {
             <div className="grands_content">
               {Array.isArray(item?.rightdecs) &&
                 item.rightdecs.map((r, idx) => <p key={idx}>{r.Rightdecs}</p>)}
-              <div className="downlo_guides">
                 {item?.pdftext && (
+              <div className="downlo_guides">
                   <a
                     href={item?.pdficon || "#"}
                     target="_blank"
@@ -57,8 +57,8 @@ export default function Grants({ data = [] }) {
                     )}
                     {item.pdftext}
                   </a>
-                )}
               </div>
+                )}
             </div>
           </div>
         </div>
