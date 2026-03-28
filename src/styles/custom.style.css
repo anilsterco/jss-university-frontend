@@ -3869,7 +3869,11 @@ hr {
 
 @media (max-width: 540px) {
 
-  .program-list-boxs,
+  .program-list-boxs {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
   .faulty-box {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
