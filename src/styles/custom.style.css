@@ -4235,6 +4235,7 @@ hr {
   top: 0.5rem;
   left: -2rem;
   opacity: 0;
+  display: none;
 }
 
 .menu-item.active,
