@@ -1242,6 +1242,10 @@ export default function Header() {
                             <li key={idx}>
                               <Link
                                 href={`${WEB_URL}programs?type=${sub.slug}`}
+                                onClick={() => {
+                                  // setMenuOpen(false);
+                                  setActivePanel(null);
+                                }}
                               >
                                 <figure>
                                   <div className="coursesImg">
@@ -1281,7 +1285,15 @@ export default function Header() {
 
                           {admissionData.middle.links.map((link, idx) => (
                             <li key={idx}>
-                              <a href={WEB_URL + link.url}>{link.title}</a>
+                              <Link
+                                href={WEB_URL + link.url}
+                                className="page-link"
+                                onClick={() => {
+                                  setActivePanel(null);
+                                }}
+                              >
+                                {link.title}
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -2862,7 +2874,8 @@ export default function Header() {
           .panel ul li:last-child {
             border: none;
           }
-          .panel ul li a {
+          .panel ul li a,
+          .panel ul li .page-link {
             letter-spacing: -0.18px;
             font: var(--font-18);
             color: var(--color-white);
