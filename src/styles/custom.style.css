@@ -729,6 +729,7 @@
 
 .overview-duration-text {
   border-bottom: 1px solid #66666626;
+  padding-bottom: 5px;
 }
 
 .overview-duration-text span,
@@ -2296,7 +2297,7 @@
 
 @media (max-width:991px) {
   .inner_page {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
 
   .innerPage_title {
@@ -3864,6 +3865,9 @@ hr {
   .placements_loader::before {
     width: 38%;
   }
+  .expertise_wrapper {
+    padding-top: 4rem;
+}
 
 }
 
@@ -6904,7 +6908,7 @@ hr {
   }
 
   .structure-btns {
-    display: block;
+    /* display: block; */
   }
 
   .structure-btn {
