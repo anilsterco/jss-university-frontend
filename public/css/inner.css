@@ -34,7 +34,9 @@
   color: var(--color-e8);
   font-family: var(--font-Condensed);
 }
-
+.department-master-of-computer-applications-about-us .grid_card_design1_section {
+  padding-block: 10rem;
+} 
 .inner-title .innnr_head ul {
   list-style: none;
   border-top: 1px solid #ccc;
@@ -6284,7 +6286,7 @@ ul.comon_list li:before {
   .inner-title {
     padding-top: 10rem;
   }
-
+.department-master-of-computer-applications-about-us .grid_card_design1_section{padding-block: 5rem;}
   .grands_maingrid {
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 4rem;
@@ -8980,9 +8982,7 @@ ul.comon_list li:before {
   height: auto;
 }
 
-.department-master-of-computer-applications-about-us .grid_card_design1_section {
-  padding-block: 10rem;
-}
+
 
 .department-master-of-computer-applications-facilities .library_section {
   padding-top: 10rem;

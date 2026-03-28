@@ -27,7 +27,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.tableContentGrid .grid.no_table{
+.tableContentGrid .grid.no_table {
   grid-template-columns: 1fr;
 }
 
@@ -100,16 +100,20 @@
 
 @media (max-width:991px) {
   .tableContentSection {
-  padding: 4rem 0;
-}
+    padding: 4rem 0;
+  }
+
 
 }
+
 @media (max-width:767px) {
   .tableContentSection {
-  padding: 4rem 0;
-}
-.tableContentSection .grid {
-  display: block;
-}
+    padding: 4rem 0;
+  }
 
+  .tableContentSection .grid {
+          display: flex;
+              gap:3rem;
+        flex-direction: column;
+  }
 }
