@@ -68,9 +68,9 @@ const CoursesOffered = ({ data }) => {
                 className={styles.showOnlyMobileSubHeading}
                 data-aos="fade-up"
                 data-aos-delay="200"
-              >
-                {data.desc}
-              </p>
+                dangerouslySetInnerHTML={{__html:data.desc}}
+              />
+                
             )}
 
             {/* SEARCH (STATIC UI) */}

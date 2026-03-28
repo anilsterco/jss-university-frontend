@@ -628,12 +628,16 @@
 .res_table_maincms .table_section:last-child {
   padding-block: 5rem 8rem;
 }
-
-.res_table_maincms .table_section h4 {
+.department-chemistry-research .res_table_maincms .table_section:last-child {
+  padding-block: 0 8rem;
+}
+.sectable{margin-top: 5rem;}
+.res_table_maincms  h4 {
   font: var(--font-26);
   margin-bottom: 3rem;
 }
-
+.department-chemistry-research .tabs_content_section{padding-block: 5rem 5rem;}
+.department-chemistry-research.department-research .tabs_content_section .table_section:last-child{padding-bottom: 10rem;}
 .about_four {
   position: relative;
   padding-bottom: 14rem;
@@ -6294,7 +6298,8 @@ ul.comon_list li:before {
   .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
     max-width: 100%;
   }
-
+.department-chemistry-research.department-research .tabs_content_section .table_section:last-child{padding-bottom:5rem;}
+.department-chemistry-research .res_table_maincms .table_section:last-child{    padding-block: 0 0rem;}
   .campu_grid_main {
     display: block;
   }

@@ -1732,6 +1732,8 @@
     .programSearch::before {
         height: 2rem;
     }
+    
+    
 }
 
 /* Ensure proper touch targets on mobile */
@@ -1741,15 +1743,16 @@
     }
 
     .cusProgramBox {
-        min-height: 200px;
+        /* min-height: 200px; */
     }
-
+    
     .loadMoreContainer a {
         min-height: 44px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
+   
 }
 
 /* Fix for very small screens */

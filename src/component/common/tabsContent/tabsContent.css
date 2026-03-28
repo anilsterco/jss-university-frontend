@@ -10,7 +10,7 @@
   display: flex;
   gap: 0;
   border-bottom: 1px solid #e0e0e0;
-  margin:0;
+  margin:0;flex-wrap: wrap;
 }
 
 .tabs_item {
@@ -75,4 +75,11 @@
   height:7px;
   background: #FFC100;   /* golden bullet matching the image */
   border-radius: 50%;
+}
+@media (max-width:991) {
+.tabs_group{
+  gap: 1rem;
+}
+.department-research .tabs_content_section{padding-top: 5rem;}
+.department-research .tabs_content_section .table_section:last-child{padding-bottom: 0rem;}
 }

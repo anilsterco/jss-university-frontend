@@ -263,17 +263,25 @@ p {
 
 /* read more  */
 
-.read_more_button{
-      font: var(--font-18);
-    color: #16344e;
-    background: none;
-    font-weight: 500;
-    border: none !important;
-    margin-top:3rem;
+.read_more_button {
+  font: var(--font-18);
+  color: #16344e;
+  background: none;
+  font-weight: 500;
+  border: none !important;
+  margin-top: 3rem;
 }
 
-.read_more_button img{
-      margin-left: 1rem;
+.schools-facilities .content_col .read_more_button {
+  color: var(--color-white);
+}
+
+.schools-facilities .content_col .read_more_button img {
+  filter: brightness(0) invert(1);
+}
+
+.read_more_button img {
+  margin-left: 1rem;
 }
 
 
@@ -427,8 +435,8 @@ p {
 .mobile_menus .menu-children li a {
 
   font-size: 1.5rem !important;
-  color:#fff;
-  display:flex;
+  color: #fff;
+  display: flex;
 }
 
 .mobile_menus .menu-bottom .menu-link {
@@ -1781,18 +1789,20 @@ a:active {
   .department-page .departBanner {
     position: absolute;
   }
- 
+
   .department-page .departtext {
     position: absolute;
   }
- 
+
   .department-page .departBanner h1 {
     color: #fff;
   }
+
   .department-page .departBanner p {
     color: #fff;
     width: 100%;
   }
+
   .cardsRow {
     padding-block: 12rem 4rem;
   }
@@ -1810,9 +1820,11 @@ a:active {
   .latest-event:before {
     content: none;
   }
-   .department-page .departBanner, .department-page .departtext {
-        margin-top: -4rem;
-    }
+
+  .department-page .departBanner,
+  .department-page .departtext {
+    margin-top: -4rem;
+  }
 
 }
 
@@ -1824,7 +1836,7 @@ a:active {
   .bannerTextBox {
     margin-top: 2rem;
   }
- 
+
   .events_row {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
@@ -2232,7 +2244,7 @@ a:active {
   margin-bottom: 1.6rem;
 }
 
-.curriculum_box h3 i{
+.curriculum_box h3 i {
   font-style: italic;
   font-weight: 700;
 }
@@ -2247,16 +2259,16 @@ a:active {
   margin-bottom: 1.6rem;
 }
 
-.curriculum_box p.designation{
-  margin-bottom:0;
+.curriculum_box p.designation {
+  margin-bottom: 0;
 }
 
-.curriculum_box a.mail{
-  margin-bottom:0;
-  display:inline-block;
-  font:var(--font-16);
+.curriculum_box a.mail {
+  margin-bottom: 0;
+  display: inline-block;
+  font: var(--font-16);
   color: #b08f29;
-  text-decoration: underline!important;
+  text-decoration: underline !important;
   margin-top: 0.5rem;
   font-weight: 500;
 }
@@ -2803,25 +2815,31 @@ a:active {
     padding: 0rem 0;
     padding-bottom: 4rem;
   }
-.about_one .overlap_contents {
+
+  .about_one .overlap_contents {
     padding-bottom: 2rem;
     padding-inline: 2rem;
-}
+  }
+
   .cource-sec .cource_top {
     padding-top: 0rem;
   }
-.about_one .abt_cntnt .image-overlay-caption {
+
+  .about_one .abt_cntnt .image-overlay-caption {
     width: 100%;
     padding: 2rem 2rem;
-   
-}
+
+  }
+
   .high_lightRow {
     width: 100%;
     margin: auto;
   }
-.about_one .abt_cntnt .image-overlay-caption p {
+
+  .about_one .abt_cntnt .image-overlay-caption p {
     text-align: center;
-}
+  }
+
   .procedure_box p {
     font: var(--font-20);
     font-weight: 300;
@@ -2937,6 +2955,7 @@ a:active {
 .step-and-startups-in-campus .about_one .estblish {
   padding-bottom: 0;
 }
+
 .collapsed_text {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -2947,9 +2966,11 @@ a:active {
 .expanded_text {
   display: block;
 }
+
 .core-sec.extra_space {
   padding-block: 8rem;
 }
+
 .eligibility-sec {
   padding-bottom: 6rem;
 }

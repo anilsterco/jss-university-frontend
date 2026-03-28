@@ -390,6 +390,14 @@
     height: auto;
     margin: 2rem 0;
   }
+.programButton{
+    text-align: center;
+
+}
+  .programButton .link {
+    margin-bottom: 3rem;
+    margin-top: 0;
+  }
 
   .programsCardsSection {
     justify-content: flex-start;
@@ -582,6 +590,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width:480px) {
   .programsCardsSection {
     grid-template-columns: repeat(1, 1fr);
