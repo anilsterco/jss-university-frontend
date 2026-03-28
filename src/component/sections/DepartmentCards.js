@@ -25,38 +25,6 @@ export default function DepartmentCards({
           {filteredFaculty?.map((faculty, facultyIdx) => (
             <div className="faculty_col" key={facultyIdx}>
               <div className="singleCard">
-                <Link href={`${WEB_URL}department/${faculty?.slug}`}>
-                  <div className="faulty-img">
-                    <figure>
-                      <Image
-                        src={
-                          faculty.image
-                            ? faculty.image
-                            : "/images/virtual-campus.png"
-                        }
-                        alt={faculty.name}
-                        className="img-fluid w-100"
-                        style={{ maxWidth: "100%", height: "auto" }}
-                        width={type == "alumni" ? 332 : 432}
-                        height={type == "alumni" ? 329 : 428}
-                      />
-                    </figure>
-                  </div>
-                  <div className="content">
-                    <h4 className="name">{faculty.name}</h4>
-                    {faculty?.category && (
-                      <p className="category">{faculty.category}</p>
-                    )}
-
-                    {type !== 'alumni' && (
-                      <p className="designation">
-                        {faculty.designation || faculty.type}
-                      </p>
-                    )}
-
-                    <div className="bar" />
-                  </div>
-                </Link>
                 {type === "alumni" ? (
                   <>
                     <div className="faulty-img">
