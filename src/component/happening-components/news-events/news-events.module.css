@@ -311,6 +311,10 @@
     padding-inline: 8rem 10rem;
 
   }
+  .bannerWrapper {
+    max-width: 100%;
+    margin-inline: 5rem;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -335,7 +339,7 @@
   .bannerTextBox {
     max-width: 48%;
   }
-
+.secondaryImageWrapper{    margin-top: 10rem;}
   .secondaryText {
     padding-inline: 6rem 0rem;
     padding-block: 0;

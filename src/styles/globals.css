@@ -1796,6 +1796,9 @@ a:active {
   .cardsRow {
     padding-block: 12rem 4rem;
   }
+   .eligibility-sec {
+    padding-bottom: 1rem !important;
+  }
 }
 
 @media (max-width: 820px) {

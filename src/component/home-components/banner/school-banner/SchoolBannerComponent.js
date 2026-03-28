@@ -77,8 +77,8 @@ export default function SchoolSlider({
             <Image
               src={slide.mobile_banner}
               alt="mobile banner"
-              fill
-              priority
+              width={300}
+              height={382}
               className={styles.mobileBanner}
             />
             <div className={styles.overlay}>

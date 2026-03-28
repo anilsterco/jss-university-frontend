@@ -35,7 +35,7 @@
 
 .bannerContent {
   z-index: 2;
-  width:50%;
+  width: 50%;
 }
 
 .bannerLabel {
@@ -45,15 +45,17 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+
 .bannerSmall {
   font: var(--font-24);
-  color:#fff ;
+  color: #fff;
   letter-spacing: -0.67px;
   font-weight: bold;
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   line-height: 5.4rem;
 }
+
 .bannerContentH1 {
   font: var(--font-60);
   font-family: var(--font-Condensed);
@@ -98,7 +100,7 @@
   margin-left: 15px;
   transition: transform 0.3s ease;
   color: #fff;
-  filter:invert(1);
+  filter: invert(1);
 }
 
 .bannerContentA:hover .iconSpacing {
@@ -120,9 +122,9 @@
 
 @media (max-width: 767px) {
 
-  .slideWrapper {
+  /* .slideWrapper {
     height: auto;
-  }
+  } */
 
   .desktopBanner {
     display: none;
@@ -130,6 +132,12 @@
 
   .mobileBanner {
     display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .slideWrapper {
+    height: auto;
   }
 
   .overlay {
@@ -145,16 +153,16 @@
 
   .bannerContentH1 {
     font: var(--font-28);
-    color: #000;
+    color: var(--color-white);
   }
 
   .bannerContentP {
-    color: #000;
+    color: var(--color-white);
   }
 
   .bannerContentA {
-    color: #16344E;
-    border-bottom: 1px solid #16344E;
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
     justify-content: center;
   }
 }

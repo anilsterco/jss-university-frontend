@@ -6291,6 +6291,10 @@ ul.comon_list li:before {
     padding-block: 4rem 0;
   }
 
+  .table_section thead th:first-child {
+    width: 6rem;
+  }
+
   .student-life .campu_grid_main.capus_grid_two .campu_con_rgt {
     max-width: 100%;
   }
@@ -6374,13 +6378,35 @@ ul.comon_list li:before {
   .spo_fa_content h6 {
     font: var(--font-18);
   }
-  .uni_boa_grid{grid-template-columns: 1fr 1fr;    gap: 3rem;}
-  .campus-facilities .labs_group_section.about_two .about_two{padding-bottom: 5rem; }
-  .academic-facilities .labs_group_section.about_two .about_two{padding-bottom: 5rem; }
-  .grand_tabs_main .growth-tabs{margin-bottom: 3rem;}
-  .amenities_section .grid_group{grid-template-columns: 1fr;}
-  .mentoring-scheme .about_one {padding-block: 5rem 5rem;}
 
+  .uni_boa_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .campus-facilities .labs_group_section.about_two .about_two {
+    padding-bottom: 5rem;
+  }
+
+  .academic-facilities .labs_group_section.about_two .about_two {
+    padding-bottom: 5rem;
+  }
+
+  .grand_tabs_main .growth-tabs {
+    margin-bottom: 3rem;
+  }
+
+  .amenities_section .grid_group {
+    grid-template-columns: 1fr;
+  }
+
+  .mentoring-scheme .about_one {
+    padding-block: 5rem 5rem;
+  }
+
+  .alumni .labs_group_section.about_two {
+    padding-bottom: 5rem;
+  }
 }
 
 @media (max-width:767px) {
@@ -6420,9 +6446,13 @@ ul.comon_list li:before {
   .grands_content {
     padding-right: 0rem;
   }
-      .uni_boa_grid {
-        grid-template-columns: 1fr;
-    }
+
+  .uni_boa_grid {
+    grid-template-columns: 1fr;
+  }
+  .phd_duration_section {
+    padding-block: 4rem 5rem;
+}
 
 }
 
@@ -7181,6 +7211,10 @@ ul.comon_list li:before {
   .placement_proSec {
     padding-block: 4rem 6rem;
   }
+
+  .popup-modal {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width:1100px) {
@@ -7342,6 +7376,11 @@ ul.comon_list li:before {
 
   .schools-facilities.schools-page .about_one .estblish {
     padding-block: 4rem 2rem;
+  }
+
+  .popup-modal {
+    width: 90%;
+    top: 5%;
   }
 
 }
@@ -7797,7 +7836,7 @@ ul.comon_list li:before {
 
   .edigiblity_tabs .growth-tabs {
     text-align: left;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
 
   .fee_sturc_admain {
@@ -8175,8 +8214,13 @@ ul.comon_list li:before {
   }
 
 
+  .popup-modal {
+    top: 6%;
+  }
 
-
+  .programs-page .core-sec {
+    padding-block: 2rem 5rem;
+  }
 
 }
 
@@ -8498,6 +8542,19 @@ ul.comon_list li:before {
   .res_table_maincms .table_section:first-child {
     padding-block: 2rem;
   }
+
+  .testimonial-filter .filter-tabs {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .testimonial-filter .filter-tabs button {
+    width: 47%;
+  }
+
+  .program-list-boxs {
+    gap: 3.5rem;
+  }
 }
 
 @media (max-width:640px) {
@@ -8520,6 +8577,10 @@ ul.comon_list li:before {
 
   .procedure_box {
     padding: 3rem;
+  }
+
+  .popup-modal {
+    top: 20%;
   }
 }
 
@@ -8807,11 +8868,19 @@ ul.comon_list li:before {
   .sports_fac_slider .spo_fa_content {
     padding-block: 3rem;
   }
-.spo_fa_counsec h4{    font: var(--font-26);}
+
+  .spo_fa_counsec h4 {
+    font: var(--font-26);
+  }
+
   .campu_con_rgt p {
     margin-bottom: 2rem;
   }
-.sport_fac_swiper .swiper-pagination{display: none;}
+
+  .sport_fac_swiper .swiper-pagination {
+    display: none;
+  }
+
   .facilities_diffent p {
     margin-bottom: 0;
   }
