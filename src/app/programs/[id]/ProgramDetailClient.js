@@ -282,19 +282,19 @@ export default function ProgramDetailClient({ params }) {
                             Brochure
                           </a>
                         )}
+                        {(admissionSection?.apply_now_link || apply_now_link) && (
+                          <a
+                            href={
+                              admissionSection?.apply_now_link || apply_now_link
+                            }
+                            target="_blank"
+                            className="apply-btn1"
+                            rel="noopener noreferrer"
+                          >
+                            Apply Now
+                          </a>
+                        )}
                       </div>
-                      {(admissionSection?.apply_now_link || apply_now_link) && (
-                        <a
-                          href={
-                            admissionSection?.apply_now_link || apply_now_link
-                          }
-                          target="_blank"
-                          className="apply-btn1"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
-                      )}
                     </div>
                     <div className="eligibility-text">
                       <Link href="/scholarship-and-eligibility#eligibilitySec">

@@ -729,6 +729,7 @@
 
 .overview-duration-text {
   border-bottom: 1px solid #66666626;
+  padding-bottom: 5px;
 }
 
 .overview-duration-text span,
@@ -2296,7 +2297,7 @@
 
 @media (max-width:991px) {
   .inner_page {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
 
   .innerPage_title {
