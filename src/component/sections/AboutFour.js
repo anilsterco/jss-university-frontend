@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import Link from "next/link";
 
 export default function AboutFour({ data }) {
   useEffect(() => {
@@ -75,6 +76,13 @@ export default function AboutFour({ data }) {
                           ))}
                         </div>
                       )}
+                      {item?.linkUrl && (
+                        <Link
+                        className="read_more_btn"
+                        href={item.linkUrl}
+                      >{item.linkText}</Link>
+                      )}
+                      
                     </div>
                   </div>
                 ))}

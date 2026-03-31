@@ -2295,6 +2295,21 @@
   background-color: #ffff;
 }
 
+.read_more_btn{
+  background-color: var(--color-100);
+    font: var(--font-16);
+    color: var(--color-4e);
+    font-family: var(--font-notosans);
+    border-radius: 5rem;
+    padding: .9rem 1.2rem;
+    font-weight: 400;
+}
+
+.heritage .about_f_value .read_more_btn{
+  margin-top:1rem;    display: inline-block;
+  padding: .9rem 1.5rem;
+}
+
 @media (max-width:991px) {
   .inner_page {
     padding: 3rem 0;
@@ -8138,6 +8153,7 @@ hr {
   .search-box  {
     margin-bottom: 1.5rem;
   }
+ .schools-faculties .search-box{margin-bottom: 0;}
 
   .faulty-box.school-faculties .search-box input {
     margin-bottom: 0rem;
