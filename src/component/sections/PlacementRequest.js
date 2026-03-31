@@ -9,6 +9,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "aos/dist/aos.css";
 import "swiper/css/navigation";
 import "swiper/css";
+import Link from "next/link";
 
 export default function PlacementRequest({ data }) {
   useEffect(() => {
@@ -170,6 +171,17 @@ export default function PlacementRequest({ data }) {
                     </a>
                   )}
                 </div>
+                {item.linkGroup.length > 0 &&
+                  item.linkGroup.map((item, itemIdx) => (
+                    <Link
+                      key={itemIdx}
+                      href={item.linkUrl}
+                      target="_blank"
+                      className="read_more_btn mt-4 d-inline-block px-5"
+                    >
+                      {item.linkText}
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>

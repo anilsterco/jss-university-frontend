@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import Link from "next/link";
 
 const ITEMS_LIMIT = 5;
 
@@ -150,6 +151,17 @@ export default function LabCard({ data }) {
                             className={item?.listTitle ? "no_margin" : ""}
                             description1={item?.description1}
                           />
+
+                          {item?.linkGroup?.length > 0 && item.linkGroup.map((item, idx)=>(
+                            <Link
+                            key={idx}
+                              href={item.linkUrl}
+                              target="_blank"
+                              className="read_more_btn px-5 mt-4 d-inline-block"
+                            >
+                              {item.linkText}
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </div>
