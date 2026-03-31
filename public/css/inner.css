@@ -659,6 +659,10 @@
   padding-bottom: 14rem;
 }
 
+.regulations-policy .pdf_list_section:not(:last-child) {
+  padding-bottom: 0;
+}
+
 .about_four.heritage .about_f_value {
   padding-top: 10rem;
 }
@@ -6444,7 +6448,7 @@ ul.comon_list li:before {
     padding-bottom: 5rem;
   }
 
- 
+
 }
 
 @media (max-width:767px) {
@@ -8598,7 +8602,7 @@ ul.comon_list li:before {
   .program-list-boxs {
     gap: 3.5rem;
   }
- 
+
 }
 
 @media (max-width:640px) {
@@ -9040,10 +9044,14 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .department-information-technology-about-us .grid_card_design1_section {
   padding-block: 0rem 10rem;
 }
-@media (max-width:991px){
-  .department-master-of-computer-applications-facilities .library_section{padding-top: 5rem;}
+
+@media (max-width:991px) {
+  .department-master-of-computer-applications-facilities .library_section {
+    padding-top: 5rem;
+  }
 
 }
+
 @media (max-width:575px) {
   .department-information-technology-about-us .grid_card_design1_section {
     padding-block: 0 6rem;
