@@ -8598,6 +8598,7 @@ ul.comon_list li:before {
   .program-list-boxs {
     gap: 3.5rem;
   }
+ 
 }
 
 @media (max-width:640px) {
