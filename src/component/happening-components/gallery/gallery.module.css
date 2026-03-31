@@ -93,7 +93,9 @@
   background-color: #b8b8b8;
   border-radius: 25px;
 }
-
+.imagePlaceholder img{
+  border-radius: 0.8rem;
+}
 .imagePlaceholder p {
   margin-top: 0.5rem;
   font-size: 14px;

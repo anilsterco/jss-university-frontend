@@ -501,13 +501,19 @@
   margin-bottom: 2rem;
 }
 
-.approvals-accreditations .pdf_list_section:not(:last-child) {
+.approvals .pdf_list_section:not(:last-child) {
   padding-bottom: 0rem;
 }
 
 .fee-structure .table_section:not(:last-child) {
   padding-bottom: 0rem;
 }
+.accreditations-and-rankings .ab_estab_slider{padding-block: 10rem 10rem;}
+.accreditations-and-rankings .estab_slide_item img{
+  width: 20rem;
+  height: 100%;
+}
+.national-academic-depository .about_one .estblish{padding-top: 0;}
 
 .examination-overview .table_section+.table_section {
   padding-top: 0;
@@ -662,7 +668,9 @@
 .regulations-policy .pdf_list_section:not(:last-child) {
   padding-bottom: 0;
 }
-
+.academics-regulations .pdf_list_section:not(:last-child) {
+  padding-bottom: 0;
+}
 .about_four.heritage .about_f_value {
   padding-top: 10rem;
 }

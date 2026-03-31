@@ -5,11 +5,21 @@ import NewsEvents from "@/component/happening-components/news-events/NewsEvents"
 import NoticeAnnouncement from "@/component/happening-components/notice-announcement/NoticeAnnouncement";
 import { usePathname } from "next/navigation";
 import { BASE_URL } from "@/config/config";
+import Gallery from "@/component/happening-components/gallery/Gallery";
+import MediaCoverage from "@/component/happening-components/media-coverage/MediaCoverage";
 
 const ALL_TABS = [
   { id: "news", label: "News & Events", component: NewsEvents },
   { id: "press", label: "Press Release", component: NoticeAnnouncement },
+  { id: "gallery", label: "Gallery", component: Gallery },
+  { id: "media", label: "Media Coverage", component: MediaCoverage },
 ];
+
+const TAB_COUNT_MAP = {
+  press: "press_release_count",
+  gallery: "gallery_count",
+  media: "media_coverage_count",
+};
 
 export default function HappeningsClient({ className }) {
   const [activeTab, setActiveTab] = useState("news");
@@ -18,6 +28,7 @@ export default function HappeningsClient({ className }) {
   const [loading, setLoading] = useState(true);
 
   const pathname = usePathname();
+  const isGlobalHappenings = pathname === "/happenings";
   const type = pathname.split("/")[1] === "schools" ? "school" : "department";
   const program = pathname.split("/")[2];
 
@@ -26,37 +37,55 @@ export default function HappeningsClient({ className }) {
       try {
         setLoading(true);
 
-        // Step 1: Get school/department ID
-        const idRes = await fetch(`${BASE_URL}${type}/${program}`);
-        if (!idRes.ok) throw new Error(`Failed to fetch ID`);
-        const idData = await idRes.json();
+        let countData;
 
-        const id = type === "school" ? idData.school_id : idData.departments_id;
-        setProgramId(id);
-
-        // Step 2: Get happening counts using that ID
-        const countRes = await fetch(
-          `${BASE_URL}happening/count?${type}=${id}`,
-        );
-        if (!countRes.ok) throw new Error(`Failed to fetch counts`);
-        const countData = await countRes.json();
-
-        // Step 3: Show press tab only if press_release_count > 0
-        if (countData.press_release_count > 0) {
-          setVisibleTabs(ALL_TABS);
+        if (isGlobalHappenings) {
+          // Global happenings page — no type/program, call count API directly
+          const countRes = await fetch(`${BASE_URL}happening/count`);
+          if (!countRes.ok) throw new Error(`Failed to fetch counts`);
+          countData = await countRes.json();
         } else {
-          setVisibleTabs([ALL_TABS[0]]);
+          // School/department page — fetch ID first, then counts
+          const idRes = await fetch(`${BASE_URL}${type}/${program}`);
+          if (!idRes.ok) throw new Error(`Failed to fetch ID`);
+          const idData = await idRes.json();
+
+          const id =
+            type === "school" ? idData.school_id : idData.departments_id;
+          setProgramId(id);
+
+          const countRes = await fetch(
+            `${BASE_URL}happening/count?${type}=${id}`,
+          );
+          if (!countRes.ok) throw new Error(`Failed to fetch counts`);
+          countData = await countRes.json();
         }
+
+        // Build visible tabs: always show "news", then add others based on count
+        const tabs = ALL_TABS.filter((tab) => {
+          if (tab.id === "news") return true; // always visible
+          const countKey = TAB_COUNT_MAP[tab.id];
+          return countKey && countData[countKey] > 0;
+        });
+
+        setVisibleTabs(tabs);
+
+        // Reset activeTab if it's no longer visible
+        const tabIds = tabs.map((t) => t.id);
+        setActiveTab((prev) => (tabIds.includes(prev) ? prev : "news"));
       } catch (err) {
         console.error("HappeningsClient error:", err);
         setVisibleTabs([ALL_TABS[0]]);
+        setActiveTab("news");
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [type, program]);
+  }, [isGlobalHappenings, type, program]);
+
+  const ActiveTab = ALL_TABS.find((tab) => tab.id === activeTab);
 
   return (
     <div className={`${styles.happeningsContainer} ${styles[className]}`}>
@@ -67,7 +96,6 @@ export default function HappeningsClient({ className }) {
 
       <div className={styles.tabHeaders}>
         {loading ? (
-          // Show only news tab as placeholder while loading
           <button className={`${styles.tabButton} ${styles.activeTab}`}>
             News & Events
           </button>
@@ -87,19 +115,13 @@ export default function HappeningsClient({ className }) {
       </div>
 
       <div className={styles.tabContent}>
-        {ALL_TABS.map((tab) => (
-          <div
-            key={tab.id}
-            style={{ display: activeTab === tab.id ? "block" : "none" }}
-          >
-            <tab.component
-              className={className}
-              programId={programId}
-              type={type}
-              onDataStatus={() => {}}
-            />
-          </div>
-        ))}
+        {!loading && ActiveTab && (
+          <ActiveTab.component
+            className={className}
+            programId={programId}
+            type={type}
+          />
+        )}
       </div>
     </div>
   );
