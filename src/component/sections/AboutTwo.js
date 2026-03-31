@@ -40,7 +40,7 @@ export default function AboutTwo({ data }) {
           spaceBetween={30}
           slidesPerView={1}
           loop={items.length > 1}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          // autoplay={{ delay: 2500, disableOnInteraction: false }}
           navigation={{
             nextEl: `.earlygrowth-next-${sectionIndex}`,
             prevEl: `.earlygrowth-prev-${sectionIndex}`,
@@ -52,24 +52,42 @@ export default function AboutTwo({ data }) {
                 className="early-slide"
                 style={{ display: "flex", gap: "2rem" }}
               >
-                {item.image && (
+                {(item.image || item.video) && (
                   <div style={{ flex: 1 }}>
-                    <Image
-                      src={item.image}
-                      alt={
-                        item.title
-                          ? item.title.replace(/<[^>]+>/g, "")
-                          : "Early Growth"
-                      }
-                      className="imgsli_left"
-                      width={600}
-                      height={400}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
+                    {item.video ? (
+                      <video
+                        src={item.video}
+                        width={600}
+                        height={400}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="imgsli_left"
+                        style={{
+                          // width: "100%",
+                          // height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      <Image
+                        src={item.image}
+                        alt={
+                          item.title
+                            ? item.title.replace(/<[^>]+>/g, "")
+                            : "Early Growth"
+                        }
+                        className="imgsli_left"
+                        width={600}
+                        height={400}
+                        style={{
+                          // width: "100%",
+                          // height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    )}
                   </div>
                 )}
                 <div
@@ -120,11 +138,21 @@ export default function AboutTwo({ data }) {
     <section className="about_two">
       <div className="container">
         <div className="abou_t_sec">
-          <h5 className="about_subtitle">Early Growth and Achievements</h5>
-          <h2 className="pb_max_4rem">
-            In just its formative year (2024–2025), the University has made
-            impressive strides:
-          </h2>
+          <h5
+            className="about_subtitle"
+            dangerouslySetInnerHTML={{
+              __html:
+                data[0]?.items[0]?.title || "Early Growth and Achievements",
+            }}
+          />
+          <h2
+            className="pb_max_4rem"
+            dangerouslySetInnerHTML={{
+              __html:
+                data[0]?.items[0]?.subTitle ||
+                "In just its formative year (2024–2025), the University has made impressive strides:",
+            }}
+          />
 
           <nav className="growth-tabs">
             <ul>

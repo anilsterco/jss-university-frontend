@@ -8,6 +8,7 @@ import HappingsHomeComponent from "../component/home-components/home-happening/H
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { BASE_URL } from "@/config/config";
+import PopupModal from "@/component/PopupModal";
 
 export async function generateMetadata() {
   return await getPageSEO();
@@ -51,6 +52,8 @@ export default async function HomePage() {
       <AboutHomeComponent data={homepageData.sections.about_section} />
       <TestimonialComponent data={homepageData.sections.testimonial_section} />
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
+
+      <PopupModal />
     </div>
   );
 }

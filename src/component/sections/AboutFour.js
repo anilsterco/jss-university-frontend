@@ -7,6 +7,11 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 export default function AboutFour({ data }) {
   useEffect(() => {
@@ -39,28 +44,132 @@ export default function AboutFour({ data }) {
                 ?.sort((a, b) => a.position - b.position)
                 .map((item, idx) => (
                   <div key={idx} className="about_f_value">
-                    {item.image && (
+                    {(item.image || item.imageVideo?.length > 0) && (
                       <div
                         className="ab_fo_imgsec"
                         data-aos="fade-left"
                         data-aos-delay="300"
                       >
-                        <figure className="shine-effect">
-                          <Image
-                            src={item.image}
-                            alt={
-                              item.title
-                                ? item.title.slice(0, 50)
-                                : "About Section"
-                            }
-                            width={683}
-                            height={520}
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                            }}
-                          />
-                        </figure>
+                        {item?.image && (
+                          <figure className="shine-effect">
+                            <Image
+                              src={item.image}
+                              alt={
+                                item.title
+                                  ? item.title.slice(0, 50)
+                                  : "About Section"
+                              }
+                              width={683}
+                              height={520}
+                              style={{
+                                width: "100%",
+                                height: "auto",
+                              }}
+                            />
+                          </figure>
+                        )}
+                        {item?.imageVideo?.length > 0 && (
+                          <figure className="shine-effect">
+                            {item.imageVideo.length === 1 ? (
+                              // Single item - show directly
+                              item.imageVideo[0].video ? (
+                                <video
+                                  src={item.imageVideo[0].video}
+                                  width={683}
+                                  height={520}
+                                  autoPlay
+                                  muted
+                                  loop
+                                  playsInline
+                                  style={{
+                                    width: "100%",
+                                    height: "auto",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              ) : (
+                                <Image
+                                  src={item.imageVideo[0].image}
+                                  alt={
+                                    item.title
+                                      ? item.title.slice(0, 50)
+                                      : "About Section"
+                                  }
+                                  width={683}
+                                  height={520}
+                                  style={{ width: "100%", height: "auto" }}
+                                />
+                              )
+                            ) : (
+                              // Multiple items - Swiper slider
+                              <div style={{ position: "relative" }}>
+                                <Swiper
+                                  modules={[Autoplay, Navigation]}
+                                  autoplay={{
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                  }}
+                                  navigation={{
+                                    nextEl: `.swiper-next-${idx}`,
+                                    prevEl: `.swiper-prev-${idx}`,
+                                  }}
+                                  loop={true}
+                                  slidesPerView={1}
+                                >
+                                  {item.imageVideo.map((media, mediaIdx) => (
+                                    <SwiperSlide key={mediaIdx}>
+                                      {media.video ? (
+                                        <video
+                                          src={media.video}
+                                          width={683}
+                                          height={520}
+                                          autoPlay
+                                          muted
+                                          loop
+                                          playsInline
+                                          style={{
+                                            // width: "100%",
+                                            // height: "auto",
+                                            objectFit: "cover",
+                                          }}
+                                        />
+                                      ) : (
+                                        <Image
+                                          src={media.image}
+                                          alt={
+                                            item.title
+                                              ? item.title.slice(0, 50)
+                                              : "About Section"
+                                          }
+                                          width={683}
+                                          height={520}
+                                          style={
+                                            {
+                                              // width: "100%",
+                                              // height: "auto",
+                                            }
+                                          }
+                                        />
+                                      )}
+                                    </SwiperSlide>
+                                  ))}
+                                </Swiper>
+
+                                {/* Custom Nav Buttons */}
+                                <button
+                                  className={`swiper-button-prev swiper-prev-${idx}`}
+                                >
+                                  <MdChevronLeft />
+                                </button>
+                                <button
+                                  className={`swiper-button-next swiper-next-${idx}`}
+                                >
+                                  <MdChevronRight />
+                                </button>
+                              </div>
+                            )}
+                          </figure>
+                        )}
                       </div>
                     )}
                     <div
@@ -77,12 +186,10 @@ export default function AboutFour({ data }) {
                         </div>
                       )}
                       {item?.linkUrl && (
-                        <Link
-                        className="read_more_btn"
-                        href={item.linkUrl}
-                      >{item.linkText}</Link>
+                        <Link className="read_more_btn" href={item.linkUrl}>
+                          {item.linkText}
+                        </Link>
                       )}
-                      
                     </div>
                   </div>
                 ))}

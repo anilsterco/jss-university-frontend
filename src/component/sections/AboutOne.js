@@ -55,19 +55,34 @@ export default function AboutOne({ data, extraClass }) {
                         <h5 className="about_subtitle">{item.title}</h5>
                         {item.subtitle && <p>{item.subtitle}</p>}
 
-                        {item.file && (
+                        {(item.file || item.video) && (
                           <figure
                             className="shine-effect image-overlay-figure"
                             data-aos="zoom-in"
                             data-aos-duration="1000"
                           >
-                            <Image
-                              src={item.file}
-                              alt={item.title || "About JSS Academy"}
-                              width={1390}
-                              height={550}
-                              className="img-fluid w-100"
-                            />
+                            {item.video ? (
+                              <video
+                                src={item.video}
+                                width={1390}
+                                height={550}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className=""
+                                style={{ objectFit: "cover" }}
+                              />
+                            ) : (
+                              <Image
+                                src={item.file}
+                                alt={item.title || "About JSS Academy"}
+                                width={1390}
+                                height={550}
+                                className="img-fluid w-100"
+                              />
+                            )}
+
                             <div className="overlap_contents">
                               {item?.countGroup &&
                                 item.countGroup.map((singleItem, itemIdx) => (
@@ -80,15 +95,6 @@ export default function AboutOne({ data, extraClass }) {
                                   </figcaption>
                                 ))}
                             </div>
-
-                            {/* {(item.count || item.count_description) && (
-                          <figcaption className="image-overlay-caption">
-                            {item.count && <h5>{item.count}</h5>}
-                            {item.count_description && (
-                              <p>{item.count_description}</p>
-                            )}
-                          </figcaption>
-                        )} */}
                           </figure>
                         )}
                       </div>
