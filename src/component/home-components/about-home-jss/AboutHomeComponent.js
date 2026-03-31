@@ -71,6 +71,26 @@ export default function LegacySection({ data }) {
     });
   }, []);
 
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return "";
+
+    // Already an embed URL
+    if (url.includes("/embed/")) return url;
+
+    let videoId = "";
+    // Handle https://youtu.be/VIDEO_ID
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1].split("?")[0];
+    }
+
+    // Handle https://www.youtube.com/watch?v=VIDEO_ID
+    else if (url.includes("watch?v=")) {
+      videoId = url.split("watch?v=")[1].split("&")[0];
+    }
+
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  };
+
   return (
     <section className={`${styles.fifthSection}`}>
       <div className="container">
@@ -87,49 +107,49 @@ export default function LegacySection({ data }) {
 
           <div className={`${styles.fifthMiddleSection}`}>
             <div className={`${styles.leftColumn}`}>
-              <Link 
-                      href={`${WEB_URL}leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji`}
-                    >
-              <div
-                className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
-                data-aos="fade-up"
-                data-aos-delay="300"
+              <Link
+                href={`${WEB_URL}leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji`}
               >
-                
-                <Image
-                  src={legacyData.chancellor_img}
-                  alt="chancellor image"
-                  width={600}
-                  height={370}
-                  style={{ height: "100%", width: "100%" }}
-                  className={`rounded ${styles.chancellorImage}`}
-                />
-                {/* Play Button Overlay */}
-                <div className={`${styles.contentPart}`}>
-                  <div
-                    className="chance-msg"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    
-                    {legacyData.video_url && (
-                      <IoPlayCircleOutline
-                        fontSize={36}
-                        className="text-warning"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setVideoPopup(true)}
-                      />
-                    )}
-                    <div className="chance-msg-contant">
-                      <p>{legacyData.chancellor_title}</p>
-                      <h5>{legacyData.chancellor_name}</h5>
+                <div
+                  className={`position-relative contentPart shineEffect ${styles.leftColumn}`}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <Image
+                    src={legacyData.chancellor_img}
+                    alt="chancellor image"
+                    width={600}
+                    height={370}
+                    style={{ height: "100%", width: "100%" }}
+                    className={`rounded ${styles.chancellorImage}`}
+                  />
+                  {/* Play Button Overlay */}
+                  <div className={`${styles.contentPart}`}>
+                    <div
+                      className="chance-msg"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      {legacyData.video_url && (
+                        <IoPlayCircleOutline
+                          fontSize={36}
+                          className="text-warning"
+                          style={{ cursor: "pointer" }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            setVideoPopup(true);
+                          }}
+                        />
+                      )}
+                      <div className="chance-msg-contant">
+                        <p>{legacyData.chancellor_title}</p>
+                        <h5>{legacyData.chancellor_name}</h5>
+                      </div>
                     </div>
-                    
                   </div>
                 </div>
-
-              </div>
-</Link>
+              </Link>
             </div>
 
             <div
@@ -275,7 +295,7 @@ export default function LegacySection({ data }) {
               <iframe
                 width="100%"
                 height="100%"
-                src={legacyData.video_url}
+                src={getYouTubeEmbedUrl(legacyData?.video_url)}
                 title="Testimonial Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

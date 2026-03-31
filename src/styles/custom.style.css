@@ -2310,6 +2310,40 @@
   padding: .9rem 1.5rem;
 }
 
+.swiper-button-next,
+.swiper-button-prev{
+  position: absolute;
+  top: 50%;
+  margin-top:0!important;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.5)!important;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.swiper-button-next{
+  left:unset;
+  right: "10px",
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg{
+  height: auto;
+  width: auto;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: "";
+}
+
 @media (max-width:991px) {
   .inner_page {
     padding: 3rem 0;
