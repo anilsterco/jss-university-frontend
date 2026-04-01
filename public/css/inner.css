@@ -30,10 +30,43 @@
   font-family: var(--font-Condensed)
 }
 
+.ombudsperson .about_one .abt_cntnt p {
+  padding-bottom: 0;
+}
+
 .academic-audit-process .grid_group {
   padding: 5rem;
   background-color: var(--color-white);
 }
+
+.institutional-development-plan .about_one .abt_cntnt p {
+  padding-bottom: 0;
+}
+
+.institutional-development-plan .grid_group {
+  background-color: var(--color-white);
+  padding: 5rem;
+}
+
+.institutional-development-plan .grid_group h5 {
+  font: var(--font-24);
+  font-family: var(--font-Roboto);
+  color: #16344e;
+  margin-bottom: 2.2rem;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+.institutional-development-plan .grid_group.left_col ul li,
+.institutional-development-plan .grid_group .left_col ul {
+  padding-left: 0;
+}
+
+.institutional-development-plan .grid_group .left_col ul li::before {
+  display: none;
+}
+.institutional-development-plan .about_subtitle{text-align: left;}
+.institutional-development-plan .placement_proSec {padding: 0;}
 
 .academic-audit-process .grid_group h5 {
   font: var(--font-24);
@@ -43,6 +76,7 @@
   font-weight: bold;
   line-height: 1.7;
 }
+
 
 .academic-audit-process .amenities_section {
   padding: 0;
@@ -3718,11 +3752,11 @@ ul.comon_list li:before {
 }
 
 .grid_emaboutjss .empo_rgt_imgsec,
-.grid_emaboutjss .grid_em_rigt{
+.grid_emaboutjss .grid_em_rigt {
 
   border-radius: 6rem 0.8rem 0.8rem 0.8rem;
   overflow: hidden;
-} 
+}
 
 /* .grid_emaboutjss .empo_rgt_imgsec figure img {
 } */
