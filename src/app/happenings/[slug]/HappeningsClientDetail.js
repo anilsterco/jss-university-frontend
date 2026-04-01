@@ -116,17 +116,21 @@ export default function HappeningsClientDetail({ happeningsData }) {
             <div className={styles.releGrid}>
               {happeningsData.related?.map((item, idx) => (
                 <div className={styles.relecol} key={idx}>
-                  <figure>
-                    <img
-                      src={item.img}
-                      alt={item.alt}
-                      className="img-fluid w-100"
-                    />
-                    <figcaption>
-                      <h4>{item.title}</h4>
-                      <p>{item.date}</p>
-                    </figcaption>
-                  </figure>
+                  <Link href={`${WEB_URL}happenings/${item.slug}`}>
+                    <figure>
+                      <img
+                        src={item.img}
+                        alt={item.alt}
+                        className="img-fluid w-100"
+                      />
+                      <figcaption>
+                        <h4>{item.title}</h4>
+                        {item.date.toLowerCase() !== "coming soon" && (
+                          <p>{item.date}</p>
+                        )}
+                      </figcaption>
+                    </figure>
+                  </Link>
                 </div>
               ))}
             </div>

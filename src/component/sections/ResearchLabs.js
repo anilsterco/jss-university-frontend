@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "swiper/css/navigation";
 import "swiper/css";
@@ -35,125 +35,127 @@ export default function ResearchLabs({ data }) {
 
             <div className="container">
               <div className="research_grid_one">
+                {/* ── Image / Video / Swiper ── */}
                 <div className="researh_imgsec">
-                  <figure className="shine-effect img-full">
-                    {item?.image && (
+                  {/* Case 1: imageVideo array exists → use it (ignore item.image) */}
+                  {item?.imageVideo?.length > 0 ? (
+                    item.imageVideo.length === 1 ? (
+                      // Single media item
+                      <figure className="shine-effect">
+                        {item.imageVideo[0].video ? (
+                          <video
+                            src={item.imageVideo[0].video}
+                            width={683}
+                            height={520}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              objectFit: "cover",
+                            }}
+                          />
+                        ) : (
+                          <Image
+                            src={item.imageVideo[0].image}
+                            alt={
+                              item.title
+                                ? item.title.slice(0, 50)
+                                : "Research Lab"
+                            }
+                            width={683}
+                            height={520}
+                            style={{ width: "100%", height: "auto" }}
+                          />
+                        )}
+                      </figure>
+                    ) : (
+                      // Multiple media items → Swiper
+                      <div
+                        className="research_swiper_wrapper"
+                        style={{ position: "relative" }}
+                      >
+                        <Swiper
+                          modules={[Autoplay, Navigation]}
+                          autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                          }}
+                          navigation={{
+                            nextEl: `.swiper-next-research-${idx}`,
+                            prevEl: `.swiper-prev-research-${idx}`,
+                          }}
+                          loop={true}
+                          slidesPerView={1}
+                        >
+                          {item.imageVideo.map((media, mediaIdx) => (
+                            <SwiperSlide key={mediaIdx}>
+                              {media.video ? (
+                                <video
+                                  src={media.video}
+                                  width={683}
+                                  height={520}
+                                  autoPlay
+                                  muted
+                                  loop
+                                  playsInline
+                                  style={{
+                                    // width: "100%",
+                                    // height: "auto",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              ) : (
+                                <Image
+                                  src={media.image}
+                                  alt={
+                                    item.title
+                                      ? item.title.slice(0, 50)
+                                      : "Research Lab"
+                                  }
+                                  width={683}
+                                  height={520}
+                                  style={{
+                                    // width: "100%",
+                                    // height: "auto",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              )}
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
+
+                        {/* Unique nav buttons per slide instance */}
+                        <button
+                          className={`swiper-button-prev swiper-prev-research-${idx}`}
+                        >
+                          <MdChevronLeft />
+                        </button>
+                        <button
+                          className={`swiper-button-next swiper-next-research-${idx}`}
+                        >
+                          <MdChevronRight />
+                        </button>
+                      </div>
+                    )
+                  ) : item?.image ? (
+                    // Case 2: fallback to item.image
+                    <figure className="shine-effect img-full">
                       <Image
-                        src={
-                          item.image ||
-                          "/images/about-page/research_lab_01.webp"
-                        }
+                        src={item.image}
                         alt={item.title || "Research Labs"}
-                        className="w-100"
+                        // className="w-100"
                         width={683}
                         height={520}
                       />
-                    )}
-
-                    {item?.imageVideo?.length > 0 && (
-                      <figure className="shine-effect">
-                        {item.imageVideo.length === 1 ? (
-                          // Single item - show directly
-                          item.imageVideo[0].video ? (
-                            <video
-                              src={item.imageVideo[0].video}
-                              width={800}
-                              height={520}
-                              autoPlay
-                              muted
-                              loop
-                              playsInline
-                              style={{
-                                // width: "100%",
-                                // height: "auto",
-                                objectFit: "cover",
-                              }}
-                            />
-                          ) : (
-                            <Image
-                              src={item.imageVideo[0].image}
-                              alt={
-                                item.title
-                                  ? item.title.slice(0, 50)
-                                  : "About Section"
-                              }
-                              width={800}
-                              height={520}
-                              // style={{ width: "100%", height: "auto" }}
-                            />
-                          )
-                        ) : (
-                          <div style={{ position: "relative" }}>
-                            <Swiper
-                              modules={[Autoplay, Navigation]}
-                              autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: false,
-                              }}
-                              navigation={{
-                                nextEl: `.swiper-next-${idx}`,
-                                prevEl: `.swiper-prev-${idx}`,
-                              }}
-                              loop={true}
-                              slidesPerView={1}
-                            >
-                              {item.imageVideo.map((media, mediaIdx) => (
-                                <SwiperSlide key={mediaIdx}>
-                                  {media.video ? (
-                                    <video
-                                      src={media.video}
-                                      width={800}
-                                      height={520}
-                                      autoPlay
-                                      muted
-                                      loop
-                                      playsInline
-                                      style={{
-                                        // width: "100%",
-                                        // height: "auto",
-                                        objectFit: "cover",
-                                      }}
-                                    />
-                                  ) : (
-                                    <Image
-                                      src={media.image}
-                                      alt={
-                                        item.title
-                                          ? item.title.slice(0, 50)
-                                          : "About Section"
-                                      }
-                                      width={800}
-                                      height={520}
-                                      style={
-                                        {
-                                          // width: "100%",
-                                          // height: "auto",
-                                        }
-                                      }
-                                    />
-                                  )}
-                                </SwiperSlide>
-                              ))}
-                            </Swiper>
-
-                            {/* Custom Nav Buttons */}
-                            <button
-                              className={`swiper-button-prev swiper-prev-${idx}`}
-                            >
-                              <MdChevronLeft />
-                            </button>
-                            <button
-                              className={`swiper-button-next swiper-next-${idx}`}
-                            >
-                              <MdChevronRight />
-                            </button>
-                          </div>
-                        )}
-                      </figure>
-                    )}
-                  </figure>
+                    </figure>
+                  ) : null}
                 </div>
 
+                {/* ── Text Content ── */}
                 <div className="research_cont">
                   {Array.isArray(item.decs) &&
                     item.decs.map((d, i) => <p key={i}>{d.paragraph}</p>)}
@@ -174,11 +176,7 @@ export default function ResearchLabs({ data }) {
               <div className="research_grid_two research_at">
                 <div className="research_cont">
                   {item.title && (
-                    <h2
-                      dangerouslySetInnerHTML={{
-                        __html: item.title,
-                      }}
-                    />
+                    <h2 dangerouslySetInnerHTML={{ __html: item.title }} />
                   )}
                   {Array.isArray(item.desc) &&
                     item.desc.map((d, i) => <p key={i}>{d.paragraph}</p>)}
@@ -204,7 +202,7 @@ export default function ResearchLabs({ data }) {
       {objectiveSection?.items
         ?.sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
         .map((item, idx) => (
-          <section key={`objective-${idx}`} className="research_labmain  pt-0">
+          <section key={`objective-${idx}`} className="research_labmain pt-0">
             <div className="container">
               <div className="re_lab_objective">
                 {item.heading && <h4>{item.heading}</h4>}
