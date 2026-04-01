@@ -584,7 +584,7 @@ export default function Header() {
                     height={70}
                     priority
                   />
-                    {/* <div className="logo_text">
+                  {/* <div className="logo_text">
                     <div className="uniname">JSS University</div>
                     <div className="uni_addrese">Noida, Uttar Pradesh</div>
                   </div> */}
@@ -916,9 +916,10 @@ export default function Header() {
                           {admissionsData.middle.links.map((link, idx) => (
                             <li key={idx} className="ad-link">
                               <Link
-                                href={WEB_URL + link.url}
+                                href={`${link?.target == "_blank" ? link.url : WEB_URL + link.url}`}
                                 style={{ color: "inherit" }}
                                 onClick={() => setAdmissionOpen(false)}
+                                target={link?.target}
                               >
                                 {link.title}
                                 <img
@@ -1332,7 +1333,8 @@ export default function Header() {
                                 className={
                                   btn.type === "primary" ? "apply" : "dwnload"
                                 }
-                             target="_blank" >
+                                target="_blank"
+                              >
                                 {btn.type === "secondary" && (
                                   <img
                                     src="/images/header/dwnlodIcon.png"

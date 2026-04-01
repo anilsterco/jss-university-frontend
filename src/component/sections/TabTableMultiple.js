@@ -44,7 +44,7 @@ export default function TabTableMultiple({ data }) {
                     {tabs.length > 0 && (
                       <div className="tab_nav_wrapper">
                         {tabs.map((tab, tabIndex) => (
-                          <li>
+                          <li key={tabIndex}>
                             <button
                               key={tabIndex}
                               className={`tab_nav_btn ${activeTabIndex === tabIndex ? "active" : ""}`}
