@@ -53,9 +53,7 @@ export default function NewsLetter({ className, programId }) {
   } = useQuery({
     queryKey: ["regulations-policy"],
     queryFn: async () => {
-      const res = await fetch(
-        "https://project-demo.in/jss/api/pages/regulations-policy",
-      );
+      const res = await fetch(`${BASE_URL}pages/jss-newsletter`);
       if (!res.ok) throw new Error("Failed to fetch regulations policy");
       return res.json();
     },
