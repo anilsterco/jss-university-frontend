@@ -186,7 +186,7 @@ export default function AboutFour({ data }) {
                         </div>
                       )}
                       {item?.linkUrl && (
-                        <Link className="read_more_btn" href={item.linkUrl}>
+                        <Link className="read_more_btn" href={item.linkUrl} target="_blank">
                           {item.linkText}
                         </Link>
                       )}
