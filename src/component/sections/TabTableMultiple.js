@@ -79,6 +79,27 @@ export default function TabTableMultiple({ data }) {
                   const tableDataTwo =
                     tab.TableDataTwo || tab["Table Data Two"] || [];
 
+                    const tableTitleThree =
+                    tab.tableTitleThree || tab.tabletitlethree || null;
+                  const tableHeadThree =
+                    tab.tableHeadThree || tab.tableheadthree || [];
+                  const tableDataThree =
+                    tab.TableDataThree || tab["Table Data Three"] || [];
+
+                    const tableTitleFour =
+                    tab.tableTitleFour || tab.tabletitlefour || null;
+                  const tableHeadFour =
+                    tab.tableHeadFour || tab.tableheadfour || [];
+                  const tableDataFour =
+                    tab.TableDataFour || tab["Table Data Four"] || [];
+
+                     const tableTitleFive =
+                    tab.tableTitleFive || tab.tabletitlefive || null;
+                  const tableHeadFive =
+                    tab.tableHeadFive || tab.tableheadfive || [];
+                  const tableDataFive =
+                    tab.TableDataFive || tab["Table Data Five"] || [];
+
                   return (
                     <div
                       key={tabIndex}
@@ -138,6 +159,82 @@ export default function TabTableMultiple({ data }) {
                           </div>
                         </div>
                       )}
+
+                      {/* ── Table Three ── */}
+{tableTitleThree && tableDataThree?.length > 0 && (
+  <div className="table_section">
+    <h4 className="heading">{tableTitleThree}</h4>
+    <div className="table_responsive">
+      <table className="grand_proj_table">
+        {tableHeadThree?.length > 0 && (
+          <thead>
+            <tr>
+              {tableHeadThree.map((col, colIdx) => (
+                <th key={colIdx}>{col.name}</th>
+              ))}
+            </tr>
+          </thead>
+        )}
+        <tbody
+          dangerouslySetInnerHTML={{
+            __html: tableDataThree.map((r) => r.data).join(""),
+          }}
+        />
+      </table>
+    </div>
+  </div>
+)}
+
+{/* ── Table Four ── */}
+{tableTitleFour && tableDataFour?.length > 0 && (
+  <div className="table_section">
+    <h4 className="heading">{tableTitleFour}</h4>
+    <div className="table_responsive">
+      <table className="grand_proj_table">
+        {tableHeadFour?.length > 0 && (
+          <thead>
+            <tr>
+              {tableHeadFour.map((col, colIdx) => (
+                <th key={colIdx}>{col.name}</th>
+              ))}
+            </tr>
+          </thead>
+        )}
+        <tbody
+          dangerouslySetInnerHTML={{
+            __html: tableDataFour.map((r) => r.data).join(""),
+          }}
+        />
+      </table>
+    </div>
+  </div>
+)}
+
+{/* ── Table Five ── */}
+{tableTitleFive && tableDataFive?.length > 0 && (
+  <div className="table_section">
+    <h4 className="heading">{tableTitleFive}</h4>
+    <div className="table_responsive">
+      <table className="grand_proj_table">
+        {tableHeadFive?.length > 0 && (
+          <thead>
+            <tr>
+              {tableHeadFive.map((col, colIdx) => (
+                <th key={colIdx}>{col.name}</th>
+              ))}
+            </tr>
+          </thead>
+        )}
+        <tbody
+          dangerouslySetInnerHTML={{
+            __html: tableDataFive.map((r) => r.data).join(""),
+          }}
+        />
+      </table>
+    </div>
+  </div>
+)}
+
                     </div>
                   );
                 })}
