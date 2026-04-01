@@ -141,7 +141,7 @@
   }
 
   .overlay {
-    background: none;
+    background: rgba(0, 0, 0, 0.4);
     position: absolute;
   }
 

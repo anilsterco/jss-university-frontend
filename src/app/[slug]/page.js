@@ -70,6 +70,7 @@ import Accordion from "@/component/sections/Accordion";
 import GridCardDesign3 from "@/component/sections/GridCardDesign3";
 import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
+import TabTableMultiple from "@/component/sections/TabTableMultiple";
 
 async function fetchPageData(slug) {
   try {
@@ -194,6 +195,7 @@ export default async function DynamicPage({ params }) {
     table_section_tabs: Accordions,
     accordion: Accordion,
     gridCardDesign3: GridCardDesign3,
+    tabTableMultiple: TabTableMultiple,
   };
 
   return (

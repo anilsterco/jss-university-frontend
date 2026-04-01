@@ -2344,6 +2344,26 @@
   content: "";
 }
 
+.tab_table_multiple_section{
+  background:#fff;
+  padding: 10rem 0;
+}
+.tab_table_multiple_section .table_section{
+  padding:0;
+}
+
+.tab_table_multiple_section .table_section:not(:last-child){
+  margin-bottom: 7rem;
+}
+
+.tab_table_multiple_section .table_section thead th:first-child{
+  padding-left: 3.7rem;
+}
+
+.tab_table_multiple_section .table_section thead th{
+  padding: 1.6rem 1.2rem;
+}
+
 @media (max-width:991px) {
   .inner_page {
     padding: 3rem 0;

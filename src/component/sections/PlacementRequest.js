@@ -149,12 +149,17 @@ export default function PlacementRequest({ data }) {
                 <div className="top_discrip">
                   <p>{item.title}</p>
                 </div>
-                <h2>{item.name}</h2>
-                <div className="condi_data">
-                  {item.designation && <span>{item.designation}</span>}
-                  {item.phone && <span>Phone: {item.phone}</span>}
-                  {item.email && <span>Email: {item.email}</span>}
-                </div>
+                {item?.name && <h2>{item.name}</h2>}
+                {!item?.designation && !item?.phone && !item?.email ? (
+                  <></>
+                ) : (
+                  <div className="condi_data">
+                    {item.designation && <span>{item.designation}</span>}
+                    {item.phone && <span>Phone: {item.phone}</span>}
+                    {item.email && <span>Email: {item.email}</span>}
+                  </div>
+                )}
+
                 <div className="pdf_filecol">
                   <img
                     src={"images/about-page/application_icons.png"}
