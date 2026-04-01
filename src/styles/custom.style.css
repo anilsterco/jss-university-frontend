@@ -2364,6 +2364,10 @@
   padding: 1.6rem 1.2rem;
 }
 
+.happenings .pdf_list_section .pdfs_row:not(:last-child){
+  margin-bottom: 10rem;
+}
+
 @media (max-width:991px) {
   .inner_page {
     padding: 3rem 0;

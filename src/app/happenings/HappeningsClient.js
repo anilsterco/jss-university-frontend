@@ -7,18 +7,21 @@ import { usePathname } from "next/navigation";
 import { BASE_URL } from "@/config/config";
 import Gallery from "@/component/happening-components/gallery/Gallery";
 import MediaCoverage from "@/component/happening-components/media-coverage/MediaCoverage";
+import NewsLetter from "@/component/happening-components/news-letter/NewsLetter";
 
 const ALL_TABS = [
   { id: "news", label: "News & Events", component: NewsEvents },
   { id: "press", label: "Press Release", component: NoticeAnnouncement },
   { id: "gallery", label: "Gallery", component: Gallery },
   { id: "media", label: "Media Coverage", component: MediaCoverage },
+  { id: "newsletter", label: "News Letter", component: NewsLetter },
 ];
 
 const TAB_COUNT_MAP = {
   press: "press_release_count",
   gallery: "gallery_count",
   media: "media_coverage_count",
+  newsletter: "newsletter",
 };
 
 export default function HappeningsClient({ className }) {
