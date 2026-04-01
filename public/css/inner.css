@@ -30,6 +30,41 @@
   font-family: var(--font-Condensed)
 }
 
+.academic-audit-process .grid_group {
+  padding: 5rem;
+  background-color: var(--color-white);
+}
+
+.academic-audit-process .grid_group h5 {
+  font: var(--font-24);
+  font-family: var(--font-Roboto);
+  color: #16344e;
+  margin-bottom: 2.2rem;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+.academic-audit-process .amenities_section {
+  padding: 0;
+}
+
+.academic-audit-process .grid_group .left_col ul li,
+.academic-audit-process .grid_group .left_col ul {
+  padding-left: 0;
+}
+
+.academic-audit-process .grid_group .left_col ul li::before {
+  display: none;
+}
+
+.academic-audit-process .about_one .abt_cntnt p {
+  padding-bottom: 0;
+}
+
+.procedure_heading p {
+  color: #444;
+}
+
 .inner-title .innnr_head h3>span {
   color: var(--color-e8);
   font-family: var(--font-Condensed);
@@ -508,12 +543,19 @@
 .fee-structure .table_section:not(:last-child) {
   padding-bottom: 0rem;
 }
-.accreditations-and-rankings .ab_estab_slider{padding-block: 10rem 10rem;}
-.accreditations-and-rankings .estab_slide_item img{
+
+.accreditations-and-rankings .ab_estab_slider {
+  padding-block: 10rem 10rem;
+}
+
+.accreditations-and-rankings .estab_slide_item img {
   width: 20rem;
   height: 100%;
 }
-.national-academic-depository .about_one .estblish{padding-top: 0;}
+
+.national-academic-depository .about_one .estblish {
+  padding-top: 0;
+}
 
 .examination-overview .table_section+.table_section {
   padding-top: 0;
@@ -668,9 +710,11 @@
 .regulations-policy .pdf_list_section:not(:last-child) {
   padding-bottom: 0;
 }
+
 .exam-regulations .pdf_list_section:not(:last-child) {
   padding-bottom: 0;
 }
+
 .about_four.heritage .about_f_value {
   padding-top: 10rem;
 }
@@ -6321,6 +6365,7 @@ ul.comon_list li:before {
     padding-top: 10rem;
   }
 
+
   .department-master-of-computer-applications-about-us .grid_card_design1_section {
     padding-block: 5rem;
   }
@@ -7453,6 +7498,14 @@ ul.comon_list li:before {
     display: block;
   }
 
+  .academic-audit-process .amenities_section {
+    padding-block: 5rem 5rem;
+  }
+
+  .academic-audit-process .amenities_section .grid_group {
+    grid-template-columns: 1fr;
+  }
+
   .about_one .estblish p {
     text-align: left;
   }
@@ -7855,6 +7908,10 @@ ul.comon_list li:before {
 @media screen and (max-width:767px) {
   .message_text {
     padding-inline: 3rem;
+  }
+
+  .academic-audit-process .amenities_section {
+    padding-block: 2rem 2rem;
   }
 
   .resea_facili_main .exten_grid {
