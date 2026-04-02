@@ -13,17 +13,24 @@ import "swiper/css/pagination";
 import { APPLY_NOW, WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
 
-export default function FacilitiesComponent({ data }) {
+export default function FacilitiesComponent({ data,schoolName }) {
   const pathname = usePathname();
   const pathParts = pathname.split("/").filter(Boolean);
 
   const pageType = pathParts[0];
   const departmentSlug = pathParts[1];
+
+  const schoolword = schoolName?.split(" ") || [];
+
+  console.log(schoolName);
+  
+  const last = schoolName === "College of Pharmacy" ? 'pharmacist' : schoolword.pop();
+
   const FacilitiesComponentData = {
     subtitle: "FACILITIES",
     title: "EDUCATE. <span>INNOVATE</span>. SERVE.",
     description:
-      "Committed to producing industry-ready engineers through advanced laboratories, research, and practical exposure.",
+    `Committed to producing industry-ready ${last.toLowerCase()} through advanced laboratories, research, and practical exposure.`,
 
     url: "/facilities",
 

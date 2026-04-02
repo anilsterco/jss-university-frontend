@@ -36,7 +36,19 @@ export default function PlacementProcedure({ data }) {
               {box.subtitle && <p>{box.subtitle}</p>}
             </div>
           ))}
+
+          
+
+          
         </div>
+
+        {item?.bottomDescription && item?.bottomDescription.length > 0 && (
+            <div className="bottom_desc">
+              {item.bottomDescription?.map((desc, descIdx)=>(
+                <p key={descIdx} dangerouslySetInnerHTML={{__html:desc.desc}} className="mt-5" />
+              ))}
+            </div>
+          )}
       </div>
     );
   };
