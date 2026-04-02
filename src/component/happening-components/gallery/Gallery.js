@@ -16,12 +16,10 @@ import { PiVideoCameraLight } from "react-icons/pi";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
 import { galleryAPI } from "@/lib/api";
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
+import Pagination from "@/component/common/pagination-component/Pagination";
 
 const isMp4Url = (url) => url && url.endsWith(".mp4");
 
-// Convert any YouTube URL to proper embed URL
 const toYouTubeEmbedUrl = (url) => {
   if (!url) return "";
 
@@ -60,6 +58,7 @@ export default function Gallery({ className, programId }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [filterType, setFilterType] = useState("image");
   const [resolvedProgramId, setResolvedProgramId] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     if (programId) {
@@ -70,10 +69,13 @@ export default function Gallery({ className, programId }) {
   const buildQueryParams = () => {
     const params = new URLSearchParams();
     if (resolvedProgramId) params.append("school", resolvedProgramId);
+    if (filterType) params.append("filter", filterType);
+    params.append("page", currentPage);
     return params.toString();
   };
 
   const { data, isLoading, error } = useQuery({
+    queryKey: ["happeningsGallery", resolvedProgramId, filterType, currentPage],
     queryFn: () => {
       const queryParams = buildQueryParams();
       return galleryAPI.getGallery(`/happenings/gallery?${queryParams}`);
@@ -87,10 +89,7 @@ export default function Gallery({ className, programId }) {
   const rawGalleryData = data?.gallery_data || [];
 
   // ── Client-side filter ────────────────────────────────────────────────────
-  const galleryData = rawGalleryData.filter((item) => {
-    if (!filterType) return true;
-    return getItemType(item) === filterType;
-  });
+  const galleryData = rawGalleryData;
 
   // ── Modal controls ────────────────────────────────────────────────────────
 
@@ -204,7 +203,10 @@ export default function Gallery({ className, programId }) {
               className={`${styles.imageFilterButton} ${
                 filterType === "image" ? styles.activeFilter : ""
               }`}
-              onClick={() => setFilterType("image")}
+              onClick={() => {
+                setFilterType("image");
+                setCurrentPage(1);
+              }}
             >
               <CiImageOn fontSize={20} /> Images
             </button>
@@ -212,7 +214,10 @@ export default function Gallery({ className, programId }) {
               className={`${styles.videoFilterButton} ${
                 filterType === "video" ? styles.activeFilter : ""
               }`}
-              onClick={() => setFilterType("video")}
+              onClick={() => {
+                setFilterType("video");
+                setCurrentPage(1);
+              }}
             >
               <PiVideoCameraLight fontSize={20} /> Videos
             </button>
@@ -316,6 +321,17 @@ export default function Gallery({ className, programId }) {
             </div>
           )}
         </div>
+
+        {/* ── Pagination ── */}
+        {data?.pagination && data.pagination.last_page > 1 && (
+          <div className="mt-5 d-flex justify-content-center">
+            <Pagination
+              currentPage={data.pagination.current_page}
+              totalPages={data.pagination.last_page}
+              onPageChange={(page) => setCurrentPage(page)}
+            />
+          </div>
+        )}
       </div>
 
       {/* ── Modal ── */}

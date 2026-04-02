@@ -10,6 +10,21 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
+
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return "";
+  let videoId = "";
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/,
+  );
+  if (match && match[1]) {
+    videoId = match[1];
+  }
+  return videoId
+    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&mute=1&controls=0&playlist=${videoId}`
+    : url;
+};
+
 export default function HeroSlider({ data, slug }) {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
@@ -51,25 +66,79 @@ export default function HeroSlider({ data, slug }) {
       >
         {bannerData.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <Image
-              src={slide.desktop_banner}
-              alt="slide image"
-              width={1920}
-              height={810}
-              priority
-              style={{ width: "100%", objectFit: "cover" }}
-              className={styles.desktopBanner}
-            />
-            <Image
-              src={slide.mobile_banner}
-              alt="slide image"
-              width={1920}
-              height={810}
-              priority
-              style={{ width: "100%", height: "100%" }}
-              className={styles.mobileBanner}
-            />
-            <div className={` departBanner ${styles.bannerOverlay}`} >
+            {slide.video_url ? (
+              <iframe
+                src={getYouTubeEmbedUrl(slide.video_url)}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{
+                  width: "100%",
+                  aspectRatio: "1920/810",
+                  pointerEvents: "none",
+                }}
+              ></iframe>
+            ) : slide.desktop_video || slide.mobile_video ? (
+              <>
+                {slide.desktop_video && (
+                  <video
+                    src={slide.desktop_video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={styles.desktopBanner}
+                    width={1920}
+                    height={810}
+                    style={{ objectFit: "cover" }}
+                  />
+                )}
+                {slide.mobile_video && (
+                  <video
+                    src={slide.mobile_video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={styles.mobileBanner}
+                    width={1920}
+                    height={810}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
+              </>
+            ) : (
+              <>
+                {slide.desktop_banner && (
+                  <Image
+                    src={slide.desktop_banner}
+                    alt="slide image"
+                    width={1920}
+                    height={810}
+                    priority
+                    style={{ width: "100%", objectFit: "cover" }}
+                    className={styles.desktopBanner}
+                  />
+                )}
+                {slide.mobile_banner && (
+                  <Image
+                    src={slide.mobile_banner}
+                    alt="slide image"
+                    width={1920}
+                    height={810}
+                    priority
+                    style={{ width: "100%", height: "100%" }}
+                    className={styles.mobileBanner}
+                  />
+                )}
+              </>
+            )}
+            <div className={` departBanner ${styles.bannerOverlay}`}>
               <div className="container">
                 <div className={` departtext ${styles.bannerContent}`}>
                   {isDepartmentPage && (

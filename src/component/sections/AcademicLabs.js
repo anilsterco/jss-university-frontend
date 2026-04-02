@@ -59,8 +59,8 @@ export default function AcademicLabs({ data }) {
                       slidesPerView={1.75}
                       loop={true}
                       navigation={{
-                        prevEl: ".academic_labs_prev",
-                        nextEl: ".academic_labs_next",
+                        prevEl: ".academic_labs_next",
+                        nextEl: ".academic_labs_prev",
                       }}
                       breakpoints={{
                         0: {
@@ -108,18 +108,19 @@ export default function AcademicLabs({ data }) {
                       ))}
 
                       <div className="ac_pagination">
-                        <button className="ac_swi_btn academic_labs_next">
+                        <button className="ac_swi_btn academic_labs_prev">
                           <img
                             src="/images/about-page/academic_lab_next.svg"
                             alt="Next"
                             className="img-fluid"
                           />
                         </button>
-                        <button className="ac_swi_btn academic_labs_prev">
+                        <button className="ac_swi_btn academic_labs_next">
                           <img
                             src="/images/about-page/academic_lab_next.svg"
                             alt="Previous"
-                            className="img-fluid"
+                            className="img-fluid rotate-180"
+                            style={{ transform: "rotate(180deg)" }}
                           />
                         </button>
                       </div>

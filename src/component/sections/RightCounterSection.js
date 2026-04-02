@@ -1,6 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import "swiper/css/navigation";
+import "swiper/css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
@@ -47,7 +52,111 @@ export default function FacilitySix({ data }) {
                       )}
                     </div>
                     <div className={`cumpus_left_img`}>
-                      {item.image && (
+                      {item?.imageVideo?.length > 0 ? (
+                        item.imageVideo.length === 1 ? (
+                          // Single media item
+                          <figure className="shine-effect">
+                            {item.imageVideo[0].video ? (
+                              <video
+                                src={item.imageVideo[0].video}
+                                width={683}
+                                height={520}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                  objectFit: "cover",
+                                }}
+                              />
+                            ) : (
+                              <Image
+                                src={item.imageVideo[0].image}
+                                alt={
+                                  item.title
+                                    ? item.title.slice(0, 50)
+                                    : "Research Lab"
+                                }
+                                width={683}
+                                height={520}
+                                style={{ width: "100%", height: "auto" }}
+                              />
+                            )}
+                          </figure>
+                        ) : (
+                          // Multiple media items → Swiper
+                          <div
+                            className="research_swiper_wrapper"
+                            style={{ position: "relative" }}
+                          >
+                            <Swiper
+                              modules={[Autoplay, Navigation]}
+                              autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                              }}
+                              navigation={{
+                                nextEl: `.swiper-next-right-counter-${idx}`,
+                                prevEl: `.swiper-prev-right-counter-${idx}`,
+                              }}
+                              loop={true}
+                              slidesPerView={1}
+                            >
+                              {item.imageVideo.map((media, mediaIdx) => (
+                                <SwiperSlide key={mediaIdx}>
+                                  {media.video ? (
+                                    <video
+                                      src={media.video}
+                                      width={683}
+                                      height={520}
+                                      autoPlay
+                                      muted
+                                      loop
+                                      playsInline
+                                      style={{
+                                        // width: "100%",
+                                        // height: "auto",
+                                        objectFit: "cover",
+                                      }}
+                                    />
+                                  ) : (
+                                    <Image
+                                      src={media.image}
+                                      alt={
+                                        item.title
+                                          ? item.title.slice(0, 50)
+                                          : "Research Lab"
+                                      }
+                                      width={683}
+                                      height={520}
+                                      style={{
+                                        // width: "100%",
+                                        // height: "auto",
+                                        objectFit: "cover",
+                                      }}
+                                    />
+                                  )}
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+
+                            {/* Unique nav buttons per slide instance */}
+                            <button
+                              className={`swiper-button-prev swiper-prev-right-counter-${idx}`}
+                            >
+                              <MdChevronLeft />
+                            </button>
+                            <button
+                              className={`swiper-button-next swiper-next-right-counter-${idx}`}
+                            >
+                              <MdChevronRight />
+                            </button>
+                          </div>
+                        )
+                      ) : item?.image ? (
+                        // Case 2: fallback to item.image
                         <figure className="shine-effect">
                           <Image
                             src={item.image}
@@ -59,7 +168,7 @@ export default function FacilitySix({ data }) {
                             data-aos-delay="200"
                           />
                         </figure>
-                      )}
+                      ) : null}
                       {item.imageDesc && <p>{item.imageDesc}</p>}
 
                       {item.pdf && item.pdf.length > 0 && (

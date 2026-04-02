@@ -56,6 +56,23 @@ export default function FacilityThree({ data }) {
                         />
                       </figure>
                     )}
+
+                    {slide.video && (
+                      <figure className="shine-effect img-full">
+                        <video
+                          src={slide.video}
+                          alt={slide.title || "Sports Facility"}
+                          className="w-100"
+                          width={1920}
+                          height={790}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          style={{ objectFit: "cover" }}
+                        />
+                      </figure>
+                    )}
                     <div className="container">
                       <div className="spo_fa_content">
                         <div className="spo_sli_hed">
