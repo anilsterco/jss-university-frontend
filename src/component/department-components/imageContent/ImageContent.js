@@ -23,7 +23,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
       <div
         className={`align-items-center row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
-        <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border">
+        <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border px-0">
           {data?.imageVideo?.length > 0 ? (
             data.imageVideo.length === 1 ? (
               // Single media item
@@ -39,7 +39,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     playsInline
                     style={{
                       width: "100%",
-                      height: "auto",
+                      // height: "auto",
                       objectFit: "cover",
                     }}
                   />
@@ -49,7 +49,11 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
                     width={683}
                     height={520}
-                    style={{ width: "100%", height: "auto" }}
+                    style={{
+                      width: "100%",
+                      // height: "auto",
+                      objectFit: "cover",
+                    }}
                   />
                 )}
               </figure>
@@ -84,7 +88,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           loop
                           playsInline
                           style={{
-                            // width: "100%",
+                            width: "100%",
                             // height: "auto",
                             objectFit: "cover",
                           }}
@@ -100,7 +104,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           width={683}
                           height={520}
                           style={{
-                            // width: "100%",
+                            width: "100%",
                             // height: "auto",
                             objectFit: "cover",
                           }}
@@ -131,10 +135,13 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 width={683}
                 height={520}
                 alt=""
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
+                style={
+                  {
+                    // width: "100%",
+                    // height: "auto",
+                    // objectFit: "cover",
+                  }
+                }
               />
             </figure>
           ) : null}

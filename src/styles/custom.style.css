@@ -1105,6 +1105,12 @@
   padding: 8rem 0;
 }
 
+.image_content_repeat_section .swiper-slide img,
+.image_content_repeat_section .swiper-slide video{
+  border-radius: 6rem 0.8rem 0.8rem;
+  overflow: hidden;
+}
+
 .department-facilities .image_content_repeat_section {
   padding-block: 0 10rem;
 }
@@ -2367,6 +2373,8 @@
 .happenings .pdf_list_section .pdfs_row:not(:last-child){
   margin-bottom: 10rem;
 }
+
+
 
 @media (max-width:991px) {
   .inner_page {

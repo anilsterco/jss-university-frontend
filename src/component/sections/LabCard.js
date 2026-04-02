@@ -113,7 +113,7 @@ export default function LabCard({ data }) {
                                   {item.imageVideo[0].video ? (
                                     <video
                                       src={item.imageVideo[0].video}
-                                      width={685}
+                                      width={683}
                                       height={450}
                                       autoPlay
                                       muted
@@ -133,7 +133,7 @@ export default function LabCard({ data }) {
                                           ? item.title.slice(0, 50)
                                           : "Research Lab"
                                       }
-                                      width={685}
+                                      width={683}
                                       height={450}
                                       style={{
                                         width: "100%",
@@ -166,14 +166,14 @@ export default function LabCard({ data }) {
                                         {media.video ? (
                                           <video
                                             src={media.video}
-                                            width={685}
-                                      height={450}
+                                            width={683}
+                                            height={450}
                                             autoPlay
                                             muted
                                             loop
                                             playsInline
                                             style={{
-                                              // width: "100%",
+                                              width: "100%",
                                               // height: "auto",
                                               objectFit: "cover",
                                             }}
@@ -186,10 +186,10 @@ export default function LabCard({ data }) {
                                                 ? item.title.slice(0, 50)
                                                 : "Research Lab"
                                             }
-                                            width={685}
-                                      height={450}
+                                            width={683}
+                                            height={450}
                                             style={{
-                                              // width: "100%",
+                                              width: "100%",
                                               // height: "auto",
                                               objectFit: "cover",
                                             }}
@@ -223,11 +223,11 @@ export default function LabCard({ data }) {
                                       : "Early Growth"
                                   }
                                   className="imgsli_left"
-                                  width={685}
-                                      height={450}
+                                  width={683}
+                                  height={450}
                                   style={{
                                     width: "100%",
-                                    height: "100%",
+                                    // height: "100%",
                                     objectFit: "cover",
                                   }}
                                 />
