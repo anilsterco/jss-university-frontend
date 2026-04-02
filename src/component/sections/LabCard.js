@@ -104,7 +104,7 @@ export default function LabCard({ data }) {
                         className="early-slide"
                         style={{ display: "flex", gap: "2rem" }}
                       >
-                        {item.image && (
+                        {(item.image || item?.imageVideo?.length > 0) && (
                           <div style={{ flex: 1 }} className="image_col">
                             {item?.imageVideo?.length > 0 ? (
                               item.imageVideo.length === 1 ? (
@@ -163,38 +163,40 @@ export default function LabCard({ data }) {
                                   >
                                     {item.imageVideo.map((media, mediaIdx) => (
                                       <SwiperSlide key={mediaIdx}>
-                                        {media.video ? (
-                                          <video
-                                            src={media.video}
-                                            width={683}
-                                            height={450}
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline
-                                            style={{
-                                              width: "100%",
-                                              // height: "auto",
-                                              objectFit: "cover",
-                                            }}
-                                          />
-                                        ) : (
-                                          <Image
-                                            src={media.image}
-                                            alt={
-                                              item.title
-                                                ? item.title.slice(0, 50)
-                                                : "Research Lab"
-                                            }
-                                            width={683}
-                                            height={450}
-                                            style={{
-                                              width: "100%",
-                                              // height: "auto",
-                                              objectFit: "cover",
-                                            }}
-                                          />
-                                        )}
+                                        <figure className="shine-effect">
+                                          {media.video ? (
+                                            <video
+                                              src={media.video}
+                                              width={683}
+                                              height={450}
+                                              autoPlay
+                                              muted
+                                              loop
+                                              playsInline
+                                              style={{
+                                                width: "100%",
+                                                // height: "auto",
+                                                objectFit: "cover",
+                                              }}
+                                            />
+                                          ) : (
+                                            <Image
+                                              src={media.image}
+                                              alt={
+                                                item.title
+                                                  ? item.title.slice(0, 50)
+                                                  : "Research Lab"
+                                              }
+                                              width={683}
+                                              height={450}
+                                              style={{
+                                                width: "100%",
+                                                // height: "auto",
+                                                objectFit: "cover",
+                                              }}
+                                            />
+                                          )}
+                                        </figure>
                                       </SwiperSlide>
                                     ))}
                                   </Swiper>

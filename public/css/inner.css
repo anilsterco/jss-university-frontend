@@ -3225,6 +3225,10 @@ ul.comon_list li:before {
   border-radius: 6rem 0.8rem 0.8rem 0.8rem;
 }
 
+.flex-row-reverse .rep_border img {
+  border-radius: 0.8rem 6rem 0.8rem 0.8rem;
+}
+
 .resea_facili_main .exte_mainsec h6 {
   text-align: left;
   font: var(--font-26);
