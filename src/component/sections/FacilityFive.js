@@ -59,7 +59,7 @@ export default function FacilityFive({ data }) {
                   </div>
                 </div>
 
-                {item.image && (
+                {(item.image || imageVideo.imageVideo.length > 0) && (
                   <div className="atm_g_imgsec">
                     {item?.imageVideo?.length > 0 ? (
                       item.imageVideo.length === 1 ? (
