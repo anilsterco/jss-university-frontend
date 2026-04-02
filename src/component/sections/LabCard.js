@@ -235,7 +235,7 @@ export default function LabCard({ data }) {
                                 />
                               </figure>
                             ) : null}
-                          </div>,
+                          </div>
                         )}
                         <div
                           className="early_rgt"
