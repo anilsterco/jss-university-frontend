@@ -78,7 +78,10 @@ export default async function SchoolPage({ params }) {
 
       {schoolData?.sections?.facilities &&
         schoolData?.sections?.facilities.length > 0 && (
-          <FacilitiesComponent data={schoolData.sections.facilities} />
+          <FacilitiesComponent 
+            data={schoolData.sections.facilities}
+            schoolName={schoolData?.school_name}
+          />
         )}
       {schoolData?.sections?.about_school && (
         <AboutSchoolComponent data={schoolData.sections.about_school} />

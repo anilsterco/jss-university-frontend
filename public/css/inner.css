@@ -76,11 +76,14 @@
   font-weight: bold;
   line-height: 1.7;
 }
+.accreditations-and-rankings .about_one .estblish{padding: 0;}
+.accreditations-and-rankings .about_one .abt_cntnt p{padding-bottom: 2rem;}
 
-
+.accreditations-and-rankings .about_top{padding-top: 0;}
 .academic-audit-process .amenities_section {
   padding: 0;
 }
+.department-pharmaceutical-chemistry-research .image_content_repeat_section {padding-top: 0;}
 
 .academic-audit-process .grid_group .left_col ul li,
 .academic-audit-process .grid_group .left_col ul {
