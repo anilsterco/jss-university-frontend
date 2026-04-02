@@ -1481,6 +1481,10 @@
   order: 2;
 }
 
+.labs_group_section .about_two.reverse figure{
+  border-radius: 0.8rem 6rem 0.8rem 0.8rem;
+}
+
 .about_two.labs_group_section .early-slide .early_rgt h5 {
   font: var(--font-21);
   color: #16344E;
