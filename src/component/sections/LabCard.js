@@ -104,7 +104,7 @@ export default function LabCard({ data }) {
                         className="early-slide"
                         style={{ display: "flex", gap: "2rem" }}
                       >
-                        {item.image && (
+                        {(item.image || item?.imageVideo?.length > 0) && (
                           <div style={{ flex: 1 }} className="image_col">
                             {item?.imageVideo?.length > 0 ? (
                               item.imageVideo.length === 1 ? (
@@ -235,7 +235,7 @@ export default function LabCard({ data }) {
                                 />
                               </figure>
                             ) : null}
-                          </div>
+                          </div>,
                         )}
                         <div
                           className="early_rgt"

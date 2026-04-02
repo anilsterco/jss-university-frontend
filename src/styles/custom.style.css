@@ -2378,6 +2378,11 @@
   margin-bottom: 10rem;
 }
 
+.lib_cen_main .campu_grid_main .cumpus_left_img figure{
+  border-radius: 0.8rem 6rem 0.8rem 0.8rem;
+  display: flex;
+}
+
 
 
 @media (max-width:991px) {
