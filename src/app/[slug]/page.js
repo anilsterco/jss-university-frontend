@@ -71,6 +71,7 @@ import GridCardDesign3 from "@/component/sections/GridCardDesign3";
 import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
+import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
 
 async function fetchPageData(slug) {
   try {

@@ -10,7 +10,7 @@ import "swiper/css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
-export default function ResearchLabs({ data }) {
+export default function ResearchLabsSecond({ data }) {
   if (!Array.isArray(data)) return null;
 
   const researchLabs = data.find((s) => s.type === "researchLabs");
@@ -182,123 +182,17 @@ export default function ResearchLabs({ data }) {
                     item.desc.map((d, i) => <p key={i}>{d.paragraph}</p>)}
                 </div>
                 <div className="researh_imgsec">
-                  {item?.imageVideo?.length > 0 ? (
-                    item.imageVideo.length === 1 ? (
-                      // Single media item
-                      <figure className="shine-effect">
-                        {item.imageVideo[0].video ? (
-                          <video
-                            src={item.imageVideo[0].video}
-                            width={683}
-                            height={520}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                              objectFit: "cover",
-                            }}
-                          />
-                        ) : (
-                          <Image
-                            src={item.imageVideo[0].image}
-                            alt={
-                              item.title
-                                ? item.title.slice(0, 50)
-                                : "Research Lab"
-                            }
-                            width={683}
-                            height={520}
-                            style={{ width: "100%", height: "auto" }}
-                          />
-                        )}
-                      </figure>
-                    ) : (
-                      // Multiple media items → Swiper
-                      <div
-                        className="research_swiper_wrapper"
-                        style={{ position: "relative" }}
-                      >
-                        <Swiper
-                          modules={[Autoplay, Navigation]}
-                          autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                          }}
-                          navigation={{
-                            nextEl: `.swiper-next-research-${idx}`,
-                            prevEl: `.swiper-prev-research-${idx}`,
-                          }}
-                          loop={true}
-                          slidesPerView={1}
-                        >
-                          {item.imageVideo.map((media, mediaIdx) => (
-                            <SwiperSlide key={mediaIdx}>
-                              <figure className="shine-effect">
-                                {media.video ? (
-                                  <video
-                                    src={media.video}
-                                    width={683}
-                                    height={520}
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    style={{
-                                      // width: "100%",
-                                      // height: "auto",
-                                      objectFit: "cover",
-                                    }}
-                                  />
-                                ) : (
-                                  <Image
-                                    src={media.image}
-                                    alt={
-                                      item.title
-                                        ? item.title.slice(0, 50)
-                                        : "Research Lab"
-                                    }
-                                    width={683}
-                                    height={520}
-                                    style={{
-                                      // width: "100%",
-                                      // height: "auto",
-                                      objectFit: "cover",
-                                    }}
-                                  />
-                                )}
-                              </figure>
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-
-                        {/* Unique nav buttons per slide instance */}
-                        <button
-                          className={`swiper-button-prev swiper-prev-research-${idx}`}
-                        >
-                          <MdChevronLeft />
-                        </button>
-                        <button
-                          className={`swiper-button-next swiper-next-research-${idx}`}
-                        >
-                          <MdChevronRight />
-                        </button>
-                      </div>
-                    )
-                  ) : item?.image ? (
-                    // Case 2: fallback to item.image
+                  {item.image && (
                     <figure className="shine-effect img-full">
                       <Image
                         src={item.image}
-                        alt={item.title || "Research Labs"}
-                        // className="w-100"
+                        alt={item.title || "Research"}
+                        className="w-100"
                         width={683}
                         height={520}
                       />
                     </figure>
-                  ) : null}
+                  )}
                 </div>
               </div>
             </div>

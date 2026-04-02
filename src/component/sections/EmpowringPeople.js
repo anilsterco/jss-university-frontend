@@ -111,8 +111,8 @@ export default function EmpowringPeople({ data }) {
                                     disableOnInteraction: false,
                                   }}
                                   navigation={{
-                                    nextEl: `.swiper-next-${index}`,
-                                    prevEl: `.swiper-prev-${index}`,
+                                    nextEl: `.swiper-next-${index}-empowering`,
+                                    prevEl: `.swiper-prev-${index}-empowering`,
                                   }}
                                   loop={true}
                                   slidesPerView={1}
@@ -158,12 +158,12 @@ export default function EmpowringPeople({ data }) {
 
                                 {/* Custom Nav Buttons */}
                                 <button
-                                  className={`swiper-button-prev swiper-prev-${index}`}
+                                  className={`swiper-button-prev swiper-prev-${index}-empowering`}
                                 >
                                   <MdChevronLeft />
                                 </button>
                                 <button
-                                  className={`swiper-button-next swiper-next-${index}`}
+                                  className={`swiper-button-next swiper-next-${index}-empowering`}
                                 >
                                   <MdChevronRight />
                                 </button>

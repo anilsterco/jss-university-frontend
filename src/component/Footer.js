@@ -1,6 +1,7 @@
 "use client";
 import { BASE_URL, WEB_URL } from "@/config/config";
 import { color } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 // import {
 //   FaFacebookF,
@@ -186,7 +187,13 @@ export default function Footer() {
                 <ul className="quick-item">
                   {data.quickLinks.map((link, i) => (
                     <li key={i}>
-                      <a href={WEB_URL + link.url}>{link.label}</a>
+                      <a
+                        href={link.target_blank ? link.url : WEB_URL + link.url}
+                        className="link-item"
+                        target={link.target_blank ? "_blank" : "_self"}
+                      >
+                        {link.label}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -246,7 +253,13 @@ export default function Footer() {
             <ul className="quick-item">
               {data.quickLinks?.map((link, i) => (
                 <li key={i}>
-                  <a href={WEB_URL + link.url}>{link.label}</a>
+                  <a
+                    href={link.target_blank ? link.url : WEB_URL + link.url}
+                    className="link-item"
+                    target={link.target_blank ? "_blank" : "_self"}
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -405,6 +418,13 @@ export default function Footer() {
           align-items: center;
           padding: 0;
           margin: 0;
+        }
+
+        .quick-item li .link-item {
+          font: var(--font-13);
+          color: var(--color-white);
+          opacity: 0.8;
+          font-weight: 300;
         }
         .quick-item ul li::marker {
           display: none;
@@ -565,7 +585,7 @@ export default function Footer() {
         .mobFooter .quick-item li {
           list-style: none;
         }
-        .mobFooter .quick-item li a {
+        .mobFooter .quick-item .link-item {
           font: var(--font-13);
           color: var(--color-white);
           opacity: 1;
