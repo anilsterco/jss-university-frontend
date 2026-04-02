@@ -113,8 +113,8 @@ export default function LabCard({ data }) {
                                   {item.imageVideo[0].video ? (
                                     <video
                                       src={item.imageVideo[0].video}
-                                      width={600}
-                                      height={400}
+                                      width={685}
+                                      height={450}
                                       autoPlay
                                       muted
                                       loop
@@ -133,8 +133,8 @@ export default function LabCard({ data }) {
                                           ? item.title.slice(0, 50)
                                           : "Research Lab"
                                       }
-                                      width={683}
-                                      height={750}
+                                      width={685}
+                                      height={450}
                                       style={{
                                         width: "100%",
                                         objectFit: "cover",
@@ -166,8 +166,8 @@ export default function LabCard({ data }) {
                                         {media.video ? (
                                           <video
                                             src={media.video}
-                                            width={600}
-                                            height={400}
+                                            width={685}
+                                      height={450}
                                             autoPlay
                                             muted
                                             loop
@@ -186,8 +186,8 @@ export default function LabCard({ data }) {
                                                 ? item.title.slice(0, 50)
                                                 : "Research Lab"
                                             }
-                                            width={600}
-                                            height={400}
+                                            width={685}
+                                      height={450}
                                             style={{
                                               // width: "100%",
                                               // height: "auto",
@@ -223,8 +223,8 @@ export default function LabCard({ data }) {
                                       : "Early Growth"
                                   }
                                   className="imgsli_left"
-                                  width={600}
-                                  height={400}
+                                  width={685}
+                                      height={450}
                                   style={{
                                     width: "100%",
                                     height: "100%",

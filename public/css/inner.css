@@ -76,6 +76,9 @@
   font-weight: bold;
   line-height: 1.7;
 }
+.labs_group_section.about_two .about_two.reverse .image_col img,
+.labs_group_section.about_two .about_two.reverse .image_col video{border-radius: 6rem 0.8rem 0.8rem 0.8rem;}
+
 .accreditations-and-rankings .about_one .estblish{padding: 0;}
 .accreditations-and-rankings .about_one .abt_cntnt p{padding-bottom: 2rem;}
 
