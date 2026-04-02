@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import "swiper/css/navigation";
+import "swiper/css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -101,22 +106,133 @@ export default function LabCard({ data }) {
                       >
                         {item.image && (
                           <div style={{ flex: 1 }} className="image_col">
-                            <Image
-                              src={item.image}
-                              alt={
-                                item.title
-                                  ? item.title.replace(/<[^>]+>/g, "")
-                                  : "Early Growth"
-                              }
-                              className="imgsli_left"
-                              width={600}
-                              height={400}
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                              }}
-                            />
+                            {item?.imageVideo?.length > 0 ? (
+                              item.imageVideo.length === 1 ? (
+                                // Single media item
+                                <figure className="shine-effect">
+                                  {item.imageVideo[0].video ? (
+                                    <video
+                                      src={item.imageVideo[0].video}
+                                      width={600}
+                                      height={400}
+                                      autoPlay
+                                      muted
+                                      loop
+                                      playsInline
+                                      style={{
+                                        width: "100%",
+                                        // height: "auto",
+                                        objectFit: "cover",
+                                      }}
+                                    />
+                                  ) : (
+                                    <Image
+                                      src={item.imageVideo[0].image}
+                                      alt={
+                                        item.title
+                                          ? item.title.slice(0, 50)
+                                          : "Research Lab"
+                                      }
+                                      width={683}
+                                      height={750}
+                                      style={{
+                                        width: "100%",
+                                        objectFit: "cover",
+                                      }}
+                                    />
+                                  )}
+                                </figure>
+                              ) : (
+                                // Multiple media items → Swiper
+                                <div
+                                  className="research_swiper_wrapper"
+                                  style={{ position: "relative" }}
+                                >
+                                  <Swiper
+                                    modules={[Autoplay, Navigation]}
+                                    autoplay={{
+                                      delay: 3000,
+                                      disableOnInteraction: false,
+                                    }}
+                                    navigation={{
+                                      nextEl: `.swiper-next-lab-card`,
+                                      prevEl: `.swiper-prev-lab-card`,
+                                    }}
+                                    loop={true}
+                                    slidesPerView={1}
+                                  >
+                                    {item.imageVideo.map((media, mediaIdx) => (
+                                      <SwiperSlide key={mediaIdx}>
+                                        {media.video ? (
+                                          <video
+                                            src={media.video}
+                                            width={600}
+                                            height={400}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            style={{
+                                              // width: "100%",
+                                              // height: "auto",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        ) : (
+                                          <Image
+                                            src={media.image}
+                                            alt={
+                                              item.title
+                                                ? item.title.slice(0, 50)
+                                                : "Research Lab"
+                                            }
+                                            width={600}
+                                            height={400}
+                                            style={{
+                                              // width: "100%",
+                                              // height: "auto",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        )}
+                                      </SwiperSlide>
+                                    ))}
+                                  </Swiper>
+
+                                  {/* Unique nav buttons per slide instance */}
+                                  <button
+                                    className={`swiper-button-prev swiper-prev-lab-card`}
+                                  >
+                                    <MdChevronLeft />
+                                  </button>
+                                  <button
+                                    className={`swiper-button-next swiper-next-lab-card`}
+                                  >
+                                    <MdChevronRight />
+                                  </button>
+                                </div>
+                              )
+                            ) : item?.image ? (
+                              // Case 2: fallback to item.image
+                              <figure className="shine-effect">
+                                <Image
+                                  src={item.image}
+                                  alt={
+                                    item.title
+                                      ? item.title.replace(/<[^>]+>/g, "")
+                                      : "Early Growth"
+                                  }
+                                  className="imgsli_left"
+                                  width={600}
+                                  height={400}
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              </figure>
+                            ) : null}
                           </div>
                         )}
                         <div
@@ -152,16 +268,17 @@ export default function LabCard({ data }) {
                             description1={item?.description1}
                           />
 
-                          {item?.linkGroup?.length > 0 && item.linkGroup.map((item, idx)=>(
-                            <Link
-                            key={idx}
-                              href={item.linkUrl}
-                              target="_blank"
-                              className="read_more_btn px-5 mt-4 d-inline-block"
-                            >
-                              {item.linkText}
-                            </Link>
-                          ))}
+                          {item?.linkGroup?.length > 0 &&
+                            item.linkGroup.map((item, idx) => (
+                              <Link
+                                key={idx}
+                                href={item.linkUrl}
+                                target="_blank"
+                                className="read_more_btn px-5 mt-4 d-inline-block"
+                              >
+                                {item.linkText}
+                              </Link>
+                            ))}
                         </div>
                       </div>
                     </div>

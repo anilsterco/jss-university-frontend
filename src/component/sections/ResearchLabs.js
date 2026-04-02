@@ -170,7 +170,7 @@ export default function ResearchLabs({ data }) {
         .map((item, idx) => (
           <section
             key={`researchSecond-${idx}`}
-            className={`research_labmain second pb-0 pt-0 ${idx % 2 === 0 ? "right" : "left"}`}
+            className={`research_labmain second pb-0 pt-0 ${idx % 2 === 0 ? "section_right" : "left"}`}
           >
             <div className="container">
               <div className="research_grid_two research_at">
