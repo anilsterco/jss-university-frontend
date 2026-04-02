@@ -230,7 +230,7 @@ export default function LegacySection({ data }) {
 
               {/* Buttons */}
               <div
-                className={`d-flex gap-3 about-home-buttons ${styles.aboutBtnDiv}`}
+                className={`d-flex gap-3 about-home-buttons mt-3 ${styles.aboutBtnDiv}`}
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
