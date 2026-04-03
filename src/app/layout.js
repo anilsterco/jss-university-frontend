@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           <ScriptLoader />
           <Footer />
           <a
-            href="https://wa.me/+919886544263"
+            href="https://wa.me/+919311830458"
             target="_blank"
             className="whatsapp-btn"
           >

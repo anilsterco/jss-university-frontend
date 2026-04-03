@@ -56,7 +56,7 @@ export default async function HomePage() {
 
       <div className="fixButtons">
         <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+          href="https://universitysolutions.in/admission/index_jssun.html"
           target="_blank"
           className="vertical-floating-btn"
         >

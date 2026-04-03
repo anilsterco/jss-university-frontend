@@ -129,6 +129,7 @@ export default async function DynamicPage({ params }) {
   const sectionComponents = {
     topBanner: AboutOne,
     logoDesc: AboutOne,
+    logoDescGrid: AboutOne,
     figureDesc: AboutOne,
     earlyGrowth: AboutTwo,
     vision: AboutThree,
