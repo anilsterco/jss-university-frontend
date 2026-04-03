@@ -2400,6 +2400,17 @@
   color: #ffffff !important;
 }
 
+.tab_table_multiple_section .pdf_group .mainTitle {
+  font: var(--font-26);
+  color: #16344e;
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+.tab_table_multiple_section .pdf_group .pdfs_row {
+  margin-bottom: 10rem;
+}
+
 @media (max-width: 991px) {
   .inner_page {
     padding: 3rem 0;

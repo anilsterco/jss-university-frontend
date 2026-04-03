@@ -79,21 +79,21 @@ export default function TabTableMultiple({ data }) {
                   const tableDataTwo =
                     tab.TableDataTwo || tab["Table Data Two"] || [];
 
-                    const tableTitleThree =
+                  const tableTitleThree =
                     tab.tableTitleThree || tab.tabletitlethree || null;
                   const tableHeadThree =
                     tab.tableHeadThree || tab.tableheadthree || [];
                   const tableDataThree =
                     tab.TableDataThree || tab["Table Data Three"] || [];
 
-                    const tableTitleFour =
+                  const tableTitleFour =
                     tab.tableTitleFour || tab.tabletitlefour || null;
                   const tableHeadFour =
                     tab.tableHeadFour || tab.tableheadfour || [];
                   const tableDataFour =
                     tab.TableDataFour || tab["Table Data Four"] || [];
 
-                     const tableTitleFive =
+                  const tableTitleFive =
                     tab.tableTitleFive || tab.tabletitlefive || null;
                   const tableHeadFive =
                     tab.tableHeadFive || tab.tableheadfive || [];
@@ -103,7 +103,7 @@ export default function TabTableMultiple({ data }) {
                   return (
                     <div
                       key={tabIndex}
-                      className={`tab_panel ${isActive ? "active" : ""}`}
+                      className={`pdf_list_section tab_panel ${isActive ? "active" : ""}`}
                       style={{ display: isActive ? "block" : "none" }}
                     >
                       {/* ── Table One ── */}
@@ -133,6 +133,13 @@ export default function TabTableMultiple({ data }) {
                         </div>
                       )}
 
+                      {tab?.pdfGroup1 && (
+                        <div
+                          className="pdf_group pdf_group_1"
+                          dangerouslySetInnerHTML={{ __html: tab.pdfGroup1 }}
+                        ></div>
+                      )}
+
                       {/* ── Table Two ── */}
                       {tableTitleTwo && tableDataTwo?.length > 0 && (
                         <div className="table_section">
@@ -160,81 +167,114 @@ export default function TabTableMultiple({ data }) {
                         </div>
                       )}
 
+                      {tab?.pdfGroup2 && (
+                        <div
+                          className="pdf_group pdf_group_2"
+                          dangerouslySetInnerHTML={{ __html: tab.pdfGroup2 }}
+                        ></div>
+                      )}
+
                       {/* ── Table Three ── */}
-{tableTitleThree && tableDataThree?.length > 0 && (
-  <div className="table_section">
-    <h4 className="heading">{tableTitleThree}</h4>
-    <div className="table_responsive">
-      <table className="grand_proj_table">
-        {tableHeadThree?.length > 0 && (
-          <thead>
-            <tr>
-              {tableHeadThree.map((col, colIdx) => (
-                <th key={colIdx}>{col.name}</th>
-              ))}
-            </tr>
-          </thead>
-        )}
-        <tbody
-          dangerouslySetInnerHTML={{
-            __html: tableDataThree.map((r) => r.data).join(""),
-          }}
-        />
-      </table>
-    </div>
-  </div>
-)}
+                      {tableTitleThree && tableDataThree?.length > 0 && (
+                        <div className="table_section">
+                          <h4 className="heading">{tableTitleThree}</h4>
+                          <div className="table_responsive">
+                            <table className="grand_proj_table">
+                              {tableHeadThree?.length > 0 && (
+                                <thead>
+                                  <tr>
+                                    {tableHeadThree.map((col, colIdx) => (
+                                      <th key={colIdx}>{col.name}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                              )}
+                              <tbody
+                                dangerouslySetInnerHTML={{
+                                  __html: tableDataThree
+                                    .map((r) => r.data)
+                                    .join(""),
+                                }}
+                              />
+                            </table>
+                          </div>
+                        </div>
+                      )}
 
-{/* ── Table Four ── */}
-{tableTitleFour && tableDataFour?.length > 0 && (
-  <div className="table_section">
-    <h4 className="heading">{tableTitleFour}</h4>
-    <div className="table_responsive">
-      <table className="grand_proj_table">
-        {tableHeadFour?.length > 0 && (
-          <thead>
-            <tr>
-              {tableHeadFour.map((col, colIdx) => (
-                <th key={colIdx}>{col.name}</th>
-              ))}
-            </tr>
-          </thead>
-        )}
-        <tbody
-          dangerouslySetInnerHTML={{
-            __html: tableDataFour.map((r) => r.data).join(""),
-          }}
-        />
-      </table>
-    </div>
-  </div>
-)}
+                      {tab?.pdfGroup3 && (
+                        <div
+                          className="pdf_group pdf_group_3"
+                          dangerouslySetInnerHTML={{ __html: tab.pdfGroup3 }}
+                        ></div>
+                      )}
 
-{/* ── Table Five ── */}
-{tableTitleFive && tableDataFive?.length > 0 && (
-  <div className="table_section">
-    <h4 className="heading">{tableTitleFive}</h4>
-    <div className="table_responsive">
-      <table className="grand_proj_table">
-        {tableHeadFive?.length > 0 && (
-          <thead>
-            <tr>
-              {tableHeadFive.map((col, colIdx) => (
-                <th key={colIdx}>{col.name}</th>
-              ))}
-            </tr>
-          </thead>
-        )}
-        <tbody
-          dangerouslySetInnerHTML={{
-            __html: tableDataFive.map((r) => r.data).join(""),
-          }}
-        />
-      </table>
-    </div>
-  </div>
-)}
+                      {/* ── Table Four ── */}
+                      {tableTitleFour && tableDataFour?.length > 0 && (
+                        <div className="table_section">
+                          <h4 className="heading">{tableTitleFour}</h4>
+                          <div className="table_responsive">
+                            <table className="grand_proj_table">
+                              {tableHeadFour?.length > 0 && (
+                                <thead>
+                                  <tr>
+                                    {tableHeadFour.map((col, colIdx) => (
+                                      <th key={colIdx}>{col.name}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                              )}
+                              <tbody
+                                dangerouslySetInnerHTML={{
+                                  __html: tableDataFour
+                                    .map((r) => r.data)
+                                    .join(""),
+                                }}
+                              />
+                            </table>
+                          </div>
+                        </div>
+                      )}
 
+                      {tab?.pdfGroup4 && (
+                        <div
+                          className="pdf_group pdf_group_4"
+                          dangerouslySetInnerHTML={{ __html: tab.pdfGroup4 }}
+                        ></div>
+                      )}
+
+                      {/* ── Table Five ── */}
+                      {tableTitleFive && tableDataFive?.length > 0 && (
+                        <div className="table_section">
+                          <h4 className="heading">{tableTitleFive}</h4>
+                          <div className="table_responsive">
+                            <table className="grand_proj_table">
+                              {tableHeadFive?.length > 0 && (
+                                <thead>
+                                  <tr>
+                                    {tableHeadFive.map((col, colIdx) => (
+                                      <th key={colIdx}>{col.name}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                              )}
+                              <tbody
+                                dangerouslySetInnerHTML={{
+                                  __html: tableDataFive
+                                    .map((r) => r.data)
+                                    .join(""),
+                                }}
+                              />
+                            </table>
+                          </div>
+                        </div>
+                      )}
+
+                      {tab?.pdfGroup5 && (
+                        <div
+                          className="pdf_group pdf_group_5"
+                          dangerouslySetInnerHTML={{ __html: tab.pdfGroup5 }}
+                        ></div>
+                      )}
                     </div>
                   );
                 })}
