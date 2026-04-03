@@ -7,7 +7,7 @@ import TestimonialComponent from "../component/home-components/testimonial/Testi
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
 import Link from "next/link";
 
@@ -55,10 +55,14 @@ export default async function HomePage() {
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
 
       <div className="fixButtons">
-        <Link href="" target="_blank" className="vertical-floating-btn">
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+          target="_blank"
+          className="vertical-floating-btn"
+        >
           Apply Now
         </Link>
-        <Link href="" target="_blank" className="vertical-floating-btn">
+        <Link href={WEB_URL + "programs"} className="vertical-floating-btn">
           Programs
         </Link>
       </div>

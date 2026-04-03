@@ -1052,6 +1052,7 @@ export default function Header() {
                           onClick={() => {
                             closeMenu();
                           }}
+                          target={item?.target_blank ? "_blank" : "_self"}
                         >
                           {item.title}
                         </Link>
