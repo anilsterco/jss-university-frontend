@@ -9,6 +9,7 @@ import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { BASE_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return await getPageSEO();
@@ -52,6 +53,15 @@ export default async function HomePage() {
       <AboutHomeComponent data={homepageData.sections.about_section} />
       <TestimonialComponent data={homepageData.sections.testimonial_section} />
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
+
+      <div className="fixButtons">
+        <Link href="" target="_blank" className="vertical-floating-btn">
+          Apply Now
+        </Link>
+        <Link href="" target="_blank" className="vertical-floating-btn">
+          Programs
+        </Link>
+      </div>
 
       <PopupModal />
     </div>
