@@ -14,7 +14,7 @@ const ALL_TABS = [
   { id: "press", label: "Press Release", component: NoticeAnnouncement },
   { id: "gallery", label: "Gallery", component: Gallery },
   { id: "media", label: "Media Coverage", component: MediaCoverage },
-  { id: "newsletter", label: "News Letter", component: NewsLetter },
+  { id: "newsletter", label: "Annual Reports & Newsletter", component: NewsLetter },
 ];
 
 const TAB_COUNT_MAP = {

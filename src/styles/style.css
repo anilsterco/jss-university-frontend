@@ -136,6 +136,20 @@ html {
   margin: 0 auto;
   padding-inline: 9.8rem;
 }
+@media (max-width: 1699px) {
+  :root {
+  --font-16: normal normal 1.85rem / 1.5 var(--font-Roboto);
+
+  }
+}
+
+@media (max-width: 990px) {
+  :root {
+  --font-16: normal normal 1.5rem / 1.5 var(--font-Roboto);
+
+  }
+}
+
 
 @media (max-width: 1750px) {
   .main-container .container {
@@ -174,9 +188,10 @@ html {
     max-width: 1000px;
   }
 
-  /* html {
-    font-size: 40.5%;
-  } */
+     html {
+        font-size: 50.5%;
+    }
+  
 }
 
 @media (max-width: 1280px) {
