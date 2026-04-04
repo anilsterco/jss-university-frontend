@@ -7,8 +7,9 @@ import TestimonialComponent from "../component/home-components/testimonial/Testi
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return await getPageSEO();
@@ -52,6 +53,19 @@ export default async function HomePage() {
       <AboutHomeComponent data={homepageData.sections.about_section} />
       <TestimonialComponent data={homepageData.sections.testimonial_section} />
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
+
+      <div className="fixButtons">
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEaKuAJ81q1vbtoAquwTmhK7o8kJ1GWLZcIBu7_sDnGc3Q/closedform"
+          target="_blank"
+          className="vertical-floating-btn"
+        >
+          Apply Now
+        </Link>
+        <Link href={WEB_URL + "programs"} className="vertical-floating-btn">
+          Programs
+        </Link>
+      </div>
 
       <PopupModal />
     </div>

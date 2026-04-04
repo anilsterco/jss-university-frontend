@@ -303,7 +303,8 @@ export default function Gallery({ className, programId }) {
                     {/* Badge only for image cards */}
                     {itemType !== "video" && item.stats && (
                       <div className={styles.cardBadge}>
-                        {item.stats.photos} PHOTOS {item.stats.videos} VIDEOS
+                        {item.stats.photos} PHOTOS
+                        {/* {item.stats.videos} VIDEOS */}
                       </div>
                     )}
                   </div>

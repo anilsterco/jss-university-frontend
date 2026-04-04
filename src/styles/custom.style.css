@@ -74,11 +74,9 @@
   padding-block: 0;
 }
 
-
 .library_section {
   background: var(--color-white);
 }
-
 
 .about_two .early-slide .early_rgt .inst-reg {
   padding-top: 4rem;
@@ -312,7 +310,8 @@
   transition: all 0.4s;
   padding: 6rem 2rem 2rem 2rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   border-radius: 0 0 1rem 1rem;
 }
 
@@ -545,7 +544,7 @@
   display: grid;
 }
 
-.program-detail-img figure>* {
+.program-detail-img figure > * {
   grid-area: 1 / 1;
 }
 
@@ -659,7 +658,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: max-height 350ms ease;
-
 }
 
 .overview-text p.expanded_text {
@@ -705,7 +703,7 @@
   border: none;
   color: var(--color-4e);
   z-index: 9;
-  transition: all .5s;
+  transition: all 0.5s;
   position: relative;
   border-radius: 0;
   margin-top: 1rem;
@@ -714,8 +712,6 @@
   align-items: baseline;
   gap: 1rem;
 }
-
-
 
 .overview-duration {
   background-color: var(--color-white);
@@ -736,7 +732,6 @@
 .fees span {
   font: var(--font-14);
   color: var(--color-4e);
-
 }
 
 .overview-duration-text p,
@@ -772,7 +767,10 @@
   padding-bottom: 4rem;
 }
 
-.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li {
+.department-electronics-and-communication-engineering-labs
+  .about_two.labs_group_section
+  .early-slide
+  li {
   font: var(--font-16);
   color: var(--color-44);
   margin-bottom: 2.3rem;
@@ -781,14 +779,17 @@
   position: relative;
 }
 
-.department-electronics-and-communication-engineering-labs .about_two.labs_group_section .early-slide li:before {
+.department-electronics-and-communication-engineering-labs
+  .about_two.labs_group_section
+  .early-slide
+  li:before {
   content: "";
   background-color: var(--color-100);
   border-radius: 5rem;
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
   position: absolute;
-  top: .4rem;
+  top: 0.4rem;
   left: 0;
 }
 
@@ -796,13 +797,18 @@
   white-space: nowrap;
 }
 
-.department-information-technology-placements .table_section thead th:first-child {
+.department-information-technology-placements
+  .table_section
+  thead
+  th:first-child {
   min-width: auto;
 }
 
-.department-information-technology-placements .table_section thead th:nth-child(2) {
+.department-information-technology-placements
+  .table_section
+  thead
+  th:nth-child(2) {
   min-width: 20rem;
-
 }
 
 .structure-btn {
@@ -874,7 +880,7 @@
   display: grid;
 }
 
-.eligibility-img figure>* {
+.eligibility-img figure > * {
   grid-area: 1 / 1;
 }
 
@@ -908,7 +914,6 @@
   background-color: var(--color-white);
   padding: 3rem 13rem 0;
   margin-right: 6rem;
-
 }
 
 .rank-box h6 {
@@ -987,8 +992,6 @@
   right: -13rem;
   top: -1px;
 }
-
-
 
 .educational-sec {
   padding-block: 8rem;
@@ -1106,7 +1109,7 @@
 }
 
 .image_content_repeat_section .swiper-slide img,
-.image_content_repeat_section .swiper-slide video{
+.image_content_repeat_section .swiper-slide video {
   border-radius: 6rem 0.8rem 0.8rem;
   overflow: hidden;
 }
@@ -1123,7 +1126,9 @@
   padding-bottom: 2rem;
 }
 
-.department-pharmaceutical-chemistry-facilities .image_content_repeat_section .singleImageContent:first-child {
+.department-pharmaceutical-chemistry-facilities
+  .image_content_repeat_section
+  .singleImageContent:first-child {
   padding-bottom: 0rem;
 }
 
@@ -1176,7 +1181,7 @@
 }
 
 .image_content_repeat_section.library-section {
-  background: #00489A;
+  background: #00489a;
   padding: 12rem 0;
 }
 
@@ -1211,11 +1216,10 @@
   color: #fff;
 }
 
-
 /* vision_mission_section */
 
 .vision_mission_section {
-  background-color: #00489A;
+  background-color: #00489a;
   padding: 13rem 0;
 }
 
@@ -1277,22 +1281,21 @@
 
 .vision_mission_section .mission-card ul li::before {
   position: absolute;
-  content: '';
+  content: "";
   flex-shrink: 0;
   width: 5px;
   height: 5px;
   left: 0;
   border-radius: 50%;
-  background-color: #FFC100;
+  background-color: #ffc100;
   margin-top: 1rem;
 }
 
 /* filter_grids_section */
 
-
 .faculty_tabs button {
   border: none;
-  background: transparent
+  background: transparent;
 }
 
 .faculty_grids .singleCard .content {
@@ -1300,14 +1303,14 @@
 }
 
 .faculty_grids .singleCard .name {
-  color: #16344E;
+  color: #16344e;
   font: var(--font-21);
   font-weight: 500;
   margin: 0;
 }
 
 .faculty_grids .singleCard .designation {
-  color: #018CE8;
+  color: #018ce8;
   font: var(--font-16);
   margin: 0;
   margin-top: 1rem;
@@ -1316,11 +1319,10 @@
 .faculty_grids .singleCard .bar {
   height: 5px;
   width: 70px;
-  background: #ECC820;
+  background: #ecc820;
   display: block;
   margin-top: 2rem;
 }
-
 
 /* testimonial_detail_section */
 
@@ -1333,7 +1335,6 @@
   font: var(--font-14);
   margin-top: 1rem;
 }
-
 
 /* amenities listing */
 
@@ -1355,15 +1356,14 @@
   list-style: none;
   margin-bottom: 1.5rem;
   line-height: 2.8rem;
-
 }
 
 .amenities_section .grid_group li:before {
   content: "";
   background: #ffc100;
   border-radius: 50%;
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
   position: absolute;
   top: 12px;
   left: 0;
@@ -1401,13 +1401,10 @@
 
 /* .testimonial-filter  */
 
-
-
 .scu_tabs_main .bottom_desc {
   margin-top: 5rem;
   color: var(--color-44);
 }
-
 
 .step-and-startups-in-campus .placement_proSec {
   padding-bottom: 0;
@@ -1417,16 +1414,14 @@
    padding:0;
 } */
 
-
 .step-and-startups-in-campus .image_content_repeat_section {
   padding: 0;
 }
 
-
 /* department-innovations */
 
 .department-innovations .about_one {
-  background: #00489A;
+  background: #00489a;
 }
 
 .department-innovations .about_one .about_subtitle,
@@ -1442,7 +1437,6 @@
 .department-page .about_page_section .header {
   margin-bottom: 2rem;
 }
-
 
 /* team-iqac */
 
@@ -1481,13 +1475,13 @@
   order: 2;
 }
 
-.labs_group_section .about_two.reverse figure{
+.labs_group_section .about_two.reverse figure {
   border-radius: 0.8rem 6rem 0.8rem 0.8rem;
 }
 
 .about_two.labs_group_section .early-slide .early_rgt h5 {
   font: var(--font-21);
-  color: #16344E;
+  color: #16344e;
   margin-bottom: 1.5rem;
 }
 
@@ -1552,7 +1546,6 @@
   padding-bottom: 0;
 }
 
-
 .department-labs {
   padding-bottom: 6rem;
 }
@@ -1563,18 +1556,17 @@
 }
 
 .labs_group_section.about_two .about_two.reverse .imgsli_left {
-  border-radius: .8rem 6rem 0.8rem .8rem;
+  border-radius: 0.8rem 6rem 0.8rem 0.8rem;
 }
 
 .labs_group_section.about_two .about_two.reverse .early-slide {
   grid-template-columns: 50% 50%;
 }
 
-
 .department-facilities .placement_page .section_title {
   font: var(--font-21);
   line-height: 3rem;
-  color: #16344E;
+  color: #16344e;
   font-weight: 500;
   margin-bottom: 3rem;
 }
@@ -1587,13 +1579,10 @@
   padding-bottom: 13rem;
 }
 
-
 .schools-departments .faulty-img figure {
   border-radius: 7px;
   overflow: hidden;
 }
-
-
 
 /* search page */
 
@@ -1683,8 +1672,6 @@
       color: #555;
     } */
 
-
-
 .iqac_master {
   padding-bottom: 1rem;
 }
@@ -1706,9 +1693,8 @@
 }
 
 .department-programs h1 {
-  font: var(--font-26)
+  font: var(--font-26);
 }
-
 
 .department-research .tabs_content_section .table_section {
   padding-top: 0;
@@ -1723,7 +1709,6 @@
 .department-research .tabs_content_section .table_section:last-child {
   padding-bottom: 12rem;
 }
-
 
 /* Pagination */
 .pagination_wrapper {
@@ -1755,7 +1740,10 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .pagination_btn:hover:not(.disabled):not(.active) {
@@ -1791,7 +1779,6 @@
   color: #6b7280;
 }
 
-
 .department-page .program_section_2 {
   grid-template-columns: repeat(1, 50% auto);
 }
@@ -1799,7 +1786,6 @@
 .department-page .program_section_2 .programs-2 {
   grid-template-columns: repeat(2, 1fr);
 }
-
 
 .accordion_section {
   padding: 10rem 0;
@@ -1814,7 +1800,6 @@
 .accordion_section .faqAnswer ul {
   margin-top: 2rem;
 }
-
 
 /* admission page */
 
@@ -1861,7 +1846,6 @@
   margin: 0;
   padding: 0;
   margin-top: 3rem;
-
 }
 
 .admission .eligi_tab_con li {
@@ -1877,7 +1861,6 @@
 /* conference p age */
 
 .gridCardDesign3_section {
-
   background: #fff;
   padding: 10rem 0;
 }
@@ -2076,7 +2059,7 @@
 .department-pharmacognosy .faculty_section,
 .department-pharmacology .faculty_section,
 .department-pharmaceutics .faculty_section {
-  display: none
+  display: none;
 }
 
 .department-pharmaceutical-chemistry .homepage_happenings .happining-sec:after,
@@ -2126,13 +2109,12 @@
   content: "";
   background-color: var(--color-100);
   border-radius: 5rem;
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
   position: absolute;
   top: 0.8rem;
   left: 0;
 }
-
 
 .inner_page {
   padding: 10rem 0;
@@ -2146,10 +2128,9 @@
   font-family: var(--font-Condensed);
 }
 
-.programs-page .eligibilty_main .growth-item>h3 {
+.programs-page .eligibilty_main .growth-item > h3 {
   display: none;
 }
-
 
 /* popup */
 
@@ -2173,8 +2154,6 @@
   max-width: 153.9rem;
 }
 
-
-
 .popup-close {
   position: absolute;
   top: 12px;
@@ -2187,7 +2166,7 @@
 }
 
 .popup-modal .popup-close {
-  background: #018CE8;
+  background: #018ce8;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -2206,13 +2185,13 @@
   font-weight: normal;
   font-family: var(--font-Condensed);
   letter-spacing: -0.1rem;
-  color: #018CE8;
+  color: #018ce8;
   text-align: center;
   margin-bottom: 4rem;
 }
 
 .popup-modal .popup-content .popup-title span {
-  color: #16344E;
+  color: #16344e;
 }
 
 .popup-modal .popup-content .grid {
@@ -2222,11 +2201,11 @@
 }
 
 .popup-modal .popup-content .grid .grid-item {
-  border: 1px solid #EFEFEF;
+  border: 1px solid #efefef;
   display: block;
   padding: 2.4rem;
   padding-bottom: 5rem;
-  color: #018CE8;
+  color: #018ce8;
   position: relative;
   font-weight: normal;
 }
@@ -2237,7 +2216,7 @@
 }
 
 .popup-modal .popup-content .grid .grid-item .title {
-  color: #16344E;
+  color: #16344e;
   letter-spacing: 0px;
   font: var(--font-21);
   line-height: 2.6rem;
@@ -2257,14 +2236,13 @@
 
 .popup-modal .popup-content .grid .grid-item span {
   margin-top: 1rem;
-  color: #018CE8;
+  color: #018ce8;
   font: var(--font-16);
   font-family: var(--font-Noto);
   line-height: 3rem;
   text-decoration: underline;
-  display: inline-block
+  display: inline-block;
 }
-
 
 .expertise_wrapper {
   padding-top: 10rem;
@@ -2297,7 +2275,6 @@
   color: var(--color-white);
   font-weight: 500;
   margin-bottom: 1.5rem;
-
 }
 
 .programs-page .expir_grid .common_list {
@@ -2305,30 +2282,31 @@
   background-color: #ffff;
 }
 
-.read_more_btn{
+.read_more_btn {
   background-color: var(--color-100);
-    font: var(--font-16);
-    color: var(--color-4e);
-    font-family: var(--font-notosans);
-    border-radius: 5rem;
-    padding: .9rem 1.2rem;
-    font-weight: 400;
+  font: var(--font-16);
+  color: var(--color-4e);
+  font-family: var(--font-notosans);
+  border-radius: 5rem;
+  padding: 0.9rem 1.2rem;
+  font-weight: 400;
 }
 
-.heritage .about_f_value .read_more_btn{
-  margin-top:1rem;    display: inline-block;
-  padding: .9rem 1.5rem;
+.heritage .about_f_value .read_more_btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
 }
 
 .swiper-button-next,
-.swiper-button-prev{
+.swiper-button-prev {
   position: absolute;
   top: 50%;
-  margin-top:0!important;
+  margin-top: 0 !important;
   left: 10px;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(0,0,0,0.5)!important;
+  background: rgba(0, 0, 0, 0.5) !important;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -2338,13 +2316,13 @@
   font-size: 2rem;
 }
 
-.swiper-button-next{
-  left:unset;
-  right: "10px",
+.swiper-button-next {
+  left: unset;
+  right: "10px";
 }
 
 .swiper-button-next svg,
-.swiper-button-prev svg{
+.swiper-button-prev svg {
   height: auto;
   width: auto;
 }
@@ -2354,38 +2332,86 @@
   content: "";
 }
 
-.tab_table_multiple_section{
-  background:#fff;
+.tab_table_multiple_section {
+  background: #fff;
   padding: 10rem 0;
 }
-.tab_table_multiple_section .table_section{
-  padding:0;
+.tab_table_multiple_section .table_section {
+  padding: 0;
 }
 
-.tab_table_multiple_section .table_section:not(:last-child){
+.tab_table_multiple_section .table_section:not(:last-child) {
   margin-bottom: 7rem;
 }
 
-.tab_table_multiple_section .table_section thead th:first-child{
+.tab_table_multiple_section .table_section thead th:first-child {
   padding-left: 3.7rem;
 }
 
-.tab_table_multiple_section .table_section thead th{
+.tab_table_multiple_section .table_section thead th {
   padding: 1.6rem 1.2rem;
 }
 
-.happenings .pdf_list_section .pdfs_row:not(:last-child){
+.happenings .pdf_list_section .pdfs_row:not(:last-child) {
   margin-bottom: 10rem;
 }
 
-.lib_cen_main .campu_grid_main .cumpus_left_img figure{
+.lib_cen_main .campu_grid_main .cumpus_left_img figure {
   border-radius: 0.8rem 6rem 0.8rem 0.8rem;
   display: flex;
 }
 
+/* Floating Vertical Buttons on Right Edge */
+.fixButtons {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
+.vertical-floating-btn {
+  background-color: #16344e;
+  border: 1px solid #a1a1a1;
+  color: #ffffff !important;
+  padding: 20px 12px;
+  font: var(--font-14);
+  text-transform: uppercase;
+  font-weight: 400;
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 1px;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0.4rem 0 0 0.4rem;
+}
 
-@media (max-width:991px) {
+.vertical-floating-btn:hover {
+  background-color: #ffc100;
+  color: #ffffff !important;
+}
+
+.tab_table_multiple_section .pdf_group .mainTitle {
+  font: var(--font-26);
+  color: #16344e;
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+.tab_table_multiple_section .pdf_group .pdfs_row {
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 991px) {
   .inner_page {
     padding: 3rem 0;
   }
@@ -2394,8 +2420,6 @@
     margin-bottom: 4rem;
   }
 }
-
-
 
 @media (max-width: 600px) {
   .testimonial-modal-overlay .modal-inner {
@@ -2411,8 +2435,6 @@
     padding: 2.5rem 2rem;
   }
 }
-
-
 
 .inner_faculties_search {
   margin-bottom: 8rem;
@@ -2451,7 +2473,6 @@
   color: #fff;
   border: 1px solid #1e4264;
 }
-
 
 @media all and (min-width: 800px) {
   .item.active .item-content {
@@ -2571,10 +2592,10 @@ This is the minimum CSS that you will need in order for this to work
   content: "";
   background-color: var(--color-100);
   border-radius: 5rem;
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
   position: absolute;
-  top: .4rem;
+  top: 0.4rem;
   left: 0;
 }
 
@@ -2736,7 +2757,6 @@ G41 .core-pdf::after {
   color: var(--color-black);
   font-weight: 400;
   padding-inline: 0 14rem;
-
 }
 
 .structure-text h2 {
@@ -2888,7 +2908,7 @@ G41 .core-pdf::after {
   display: grid;
 }
 
-.testimonial-img-box figure>* {
+.testimonial-img-box figure > * {
   grid-area: 1 / 1;
 }
 
@@ -2896,7 +2916,8 @@ G41 .core-pdf::after {
   transition: all 0.4s;
   padding: 6rem 2rem 3rem 3rem;
   width: 100%;
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -2909,7 +2930,7 @@ G41 .core-pdf::after {
   text-transform: uppercase;
   font-weight: 600;
   font-family: var(--font-Condensed);
-  line-height: 30px
+  line-height: 30px;
 }
 
 .testimonial-img-text p {
@@ -3160,7 +3181,7 @@ G41 .core-pdf::after {
   position: absolute;
   width: 4.8rem;
   height: 0.5rem;
-  background-color: #018CE8;
+  background-color: #018ce8;
   top: -2rem;
 }
 
@@ -3299,7 +3320,6 @@ hr {
 .profile-education {
   border-bottom: 0.1rem solid var(--color-d6);
   padding-block: 2.4rem;
-
 }
 
 .profile-education h5 {
@@ -3410,7 +3430,7 @@ hr {
   margin-top: 5px;
   font: var(--font-16);
   font-family: var(--font-Condensed);
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .inner-title .innnr_head.faculty-heading h3 {
@@ -3433,7 +3453,6 @@ hr {
   display: flex;
   align-items: center;
 }
-
 
 .cus-profile-text {
   position: relative;
@@ -3513,7 +3532,6 @@ hr {
 .faculty_row.alumni .singleCard .content .designation {
   margin-top: 1.2rem;
   letter-spacing: -0.32px;
-
 }
 
 .faculty_row.alumni .singleCard .bar {
@@ -3661,7 +3679,6 @@ hr {
     padding-right: 2rem;
   }
 
-
   .popup-modal {
     padding: 3rem;
   }
@@ -3669,10 +3686,9 @@ hr {
   .popup-modal .popup-content .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
   .program-testimonial-box {
     grid-template-columns: repeat(1, 1fr);
     gap: 4rem;
@@ -3753,7 +3769,6 @@ hr {
     grid-template-columns: repeat(1, 1fr);
   }
 
-
   .labs_group_section {
     padding-top: 2rem;
   }
@@ -3802,7 +3817,7 @@ hr {
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .faulty-profile {
     gap: 4.3rem;
     padding-top: 3rem;
@@ -3813,7 +3828,6 @@ hr {
   .schools-about-the-college .hod_message_section .hod_row,
   .schools-about-the-school .hod_message_section .hod_row {
     grid-template-columns: 1fr;
-
   }
 
   .inner_faculties_search .faulty-box.school-faculties {
@@ -3821,7 +3835,10 @@ hr {
     display: grid;
   }
 
-  .department-page .labs_group_section.about_two .about_two.reverse .early-slide {
+  .department-page
+    .labs_group_section.about_two
+    .about_two.reverse
+    .early-slide {
     display: flex !important;
     flex-direction: column-reverse;
   }
@@ -3916,7 +3933,6 @@ hr {
 
   .para-scroll {
     height: calc(100% - 80px);
-
   }
 
   .profile-info-box:before {
@@ -3979,14 +3995,11 @@ hr {
   .placements_loader::before {
     width: 38%;
   }
-
 }
 
 @media (max-width: 540px) {
-
   .program-list-boxs {
     grid-template-columns: repeat(1, 1fr);
-
   }
 
   .faulty-box {
@@ -4013,7 +4026,6 @@ hr {
 }
 
 @media (max-width: 480px) {
-
   .program-list-boxs,
   .faulty-box {
     grid-template-columns: repeat(1, 1fr);
@@ -4058,7 +4070,6 @@ hr {
   .faulty-detail-sec1 {
     padding-bottom: 4rem;
   }
-
 }
 
 /* Facilities */
@@ -4103,7 +4114,7 @@ hr {
 }
 
 .facilities-img img {
-  border-radius: 5rem .8rem;
+  border-radius: 5rem 0.8rem;
 }
 
 .facilities-img-box {
@@ -4148,9 +4159,9 @@ hr {
 }
 
 .facilities-box-text::before {
-  content: '';
+  content: "";
   background-color: var(--color-100);
-  height: .4rem;
+  height: 0.4rem;
   position: absolute;
   width: 93%;
   left: 0;
@@ -4205,21 +4216,22 @@ hr {
 }
 
 .facilities-list-box figure img {
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
 
-.facilities-list-box figure>* {
+.facilities-list-box figure > * {
   grid-area: 1 / 1;
 }
 
 .facilities-list-text {
-  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(0deg, #000000 0%, #00000000 100%) 0%
+    0% no-repeat padding-box;
   padding: 2.5rem 5rem 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: end;
   height: 100%;
-  border-radius: 0 0 .8rem .8rem;
+  border-radius: 0 0 0.8rem 0.8rem;
   overflow: hidden;
 }
 
@@ -4379,7 +4391,9 @@ hr {
 .labs-info {
   width: 30%;
   text-align: left;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .labs-title {
@@ -4425,7 +4439,7 @@ hr {
 
 .grid_card_design1_section .heading {
   font: var(--font-21);
-  color: #16344E;
+  color: #16344e;
   font-weight: 500;
   margin-bottom: 4rem;
 }
@@ -4433,13 +4447,13 @@ hr {
 /* placement_page */
 
 .placement_page.area-of-research {
-  background: #00489A;
+  background: #00489a;
   padding: 11rem 0;
 }
 
 .placement_page .section_title {
   font: var(--font-26);
-  color: #16344E;
+  color: #16344e;
   margin-bottom: 4rem;
 }
 
@@ -4463,7 +4477,7 @@ hr {
 .placement_page .placement_stats .icon {
   height: 8.5rem;
   width: 8.5rem;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4481,7 +4495,6 @@ hr {
 .placement_page .curriculum_box .content {
   flex: 1;
 }
-
 
 .placement_page.area-of-research .placement_stats {
   padding-bottom: 0;
@@ -4508,7 +4521,6 @@ hr {
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   padding: 0;
-
 }
 
 .pdf_list_section li {
@@ -4543,8 +4555,6 @@ hr {
   margin-bottom: 0;
 }
 
-
-
 /* grid_card_design2_section */
 
 .grid_card_design2_section {
@@ -4553,7 +4563,7 @@ hr {
 }
 
 .grid_card_design2_section .heading {
-  color: #16344E;
+  color: #16344e;
   font-weight: 700;
   font: var(--font-26);
 }
@@ -4579,7 +4589,7 @@ hr {
 }
 
 .grid_card_design2_section .content .name {
-  color: #16344E;
+  color: #16344e;
   font: var(--font-21);
   font-weight: 500;
 }
@@ -4588,7 +4598,7 @@ hr {
   width: 5.3rem;
   height: 0.5rem;
   display: block;
-  background: #ECC820;
+  background: #ecc820;
   margin-top: 2rem;
 }
 
@@ -4619,13 +4629,13 @@ hr {
 }
 
 .table_section.bg-gray {
-  background: #f6f6f6
+  background: #f6f6f6;
 }
 
 .table_section .heading {
   font: var(--font-26);
   font-weight: bold;
-  color: #16344E;
+  color: #16344e;
   margin-bottom: 4rem;
   text-align: left;
   letter-spacing: 0;
@@ -4637,7 +4647,7 @@ hr {
 }
 
 .table_section thead tr {
-  background-color: #B08F29;
+  background-color: #b08f29;
   color: #fff;
 }
 
@@ -4657,7 +4667,7 @@ hr {
 
 .table_section .table-lab tbody tr {
   background-color: #fff;
-  border: none
+  border: none;
 }
 
 .table_section .table-lab tbody tr:nth-child(even) {
@@ -4670,7 +4680,7 @@ hr {
   border: none;
   text-align: left;
   padding: 1.2rem 3.6rem;
-  background: transparent
+  background: transparent;
 }
 
 .table_section .table-lab tbody td:first-child {
@@ -4680,7 +4690,6 @@ hr {
 .table_section .table-lab tbody td:nth-child(2) {
   width: 220px;
 }
-
 
 /* top_section */
 
@@ -4693,13 +4702,13 @@ hr {
 }
 
 .inner_sub_header {
-  margin-top: 16.4rem
+  margin-top: 16.4rem;
 }
 
 /* bg_image_content_section */
 
 .bg_image_content_section {
-  background: #00489A;
+  background: #00489a;
   padding: 12rem 0;
 }
 
@@ -4718,7 +4727,7 @@ hr {
   position: absolute;
   height: 1px;
   width: calc(100% + 20rem);
-  background: #D9D9D9;
+  background: #d9d9d9;
   bottom: -7.5rem;
   left: -10rem;
 }
@@ -4732,9 +4741,8 @@ hr {
 
 .grid_card_department_section .heading {
   text-align: left;
-  font: var(--font-24)
+  font: var(--font-24);
 }
-
 
 /* ===== Research Patents Section ===== */
 
@@ -4743,7 +4751,7 @@ hr {
 }
 
 .research_patents_section.no-border {
-  padding-top: 0
+  padding-top: 0;
 }
 
 .researchPatents {
@@ -4754,7 +4762,7 @@ hr {
 .patent_heading {
   text-align: center;
   font: var(--font-26);
-  color: #16344E;
+  color: #16344e;
 }
 
 .patent_subHeading {
@@ -4767,7 +4775,7 @@ hr {
 }
 
 .research_leftTitle {
-  color: #16344E;
+  color: #16344e;
   font: var(--font-21);
   margin-bottom: 3rem;
 }
@@ -4778,7 +4786,6 @@ hr {
 }
 
 .research_patents_section .paddingTopBottom {
-
   border-top: 0.0625rem solid #ddd;
   border-bottom: 0.0625rem solid #ddd;
 }
@@ -4786,7 +4793,6 @@ hr {
 .research_patents_section .paddingTopBottom.no-border {
   border: none;
 }
-
 
 /* ---- LEFT ---- */
 .researchPatents__left {
@@ -4822,7 +4828,7 @@ hr {
 .researchPatents__statNumber {
   font-weight: 600;
   font-size: 4.8rem;
-  color: #16344E;
+  color: #16344e;
   line-height: 1;
   letter-spacing: -1.92px;
   font-family: var(--font-Roboto);
@@ -4842,8 +4848,6 @@ hr {
   padding-left: 5rem;
 }
 
-
-
 /* ---- TABLE ---- */
 .researchPatents__table {
   width: 100%;
@@ -4852,7 +4856,7 @@ hr {
 }
 
 .researchPatents__table thead tr {
-  background-color: #B08F29;
+  background-color: #b08f29;
   /* gold/olive header */
 }
 
@@ -4870,7 +4874,7 @@ hr {
 }
 
 .researchPatents__table tbody tr:nth-child(even) {
-  background-color: #F0EFEF;
+  background-color: #f0efef;
 }
 
 .researchPatents__table tbody td {
@@ -4879,7 +4883,6 @@ hr {
   font: var(--font-16);
   border-bottom: 0.0625rem solid #ebebeb;
 }
-
 
 /* testimonial_list_section */
 
@@ -4911,7 +4914,6 @@ hr {
     max-width: 100%;
   }
 }
-
 
 /* start responsive */
 
@@ -5667,7 +5669,6 @@ hr {
   .res-center {
     gap: 4rem;
     padding: 6rem 4rem 8rem 0;
-
   }
 
   .objectives-titel {
@@ -5803,7 +5804,6 @@ hr {
 
   .facilities-sec2 {
     padding-top: 4rem;
-
   }
 
   .facilities-box-text {
@@ -5847,7 +5847,6 @@ hr {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     padding: 4rem 2rem 4rem;
-
   }
 
   .res-center-img {
@@ -5889,7 +5888,6 @@ hr {
 
   .initiatives {
     grid-template-columns: repeat(1, 1fr);
-
   }
 
   .initiatives-img {
@@ -5926,7 +5924,7 @@ hr {
   }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .facilities-box-text {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -5961,7 +5959,6 @@ hr {
   .academics-labs-text {
     padding-inline: 0;
     padding-block: 0rem;
-
   }
 
   .menu-header {
@@ -6007,33 +6004,24 @@ hr {
   }
 }
 
-
 /* program details responsive */
 
-
-
-@media screen and (max-width:1750px) {
-
-
+@media screen and (max-width: 1750px) {
   .program-sec-six {
     padding-bottom: 11rem;
   }
 }
 
-@media screen and (max-width:1549px) {
-
-
+@media screen and (max-width: 1549px) {
   .engineering-btn {
     margin-top: 4rem;
   }
 }
 
-@media screen and (max-width:1399px) {
+@media screen and (max-width: 1399px) {
   .tabs ul:after {
     right: -36rem;
   }
-
-
 
   .opportunitie-box {
     bottom: 5rem;
@@ -6061,14 +6049,10 @@ hr {
   }
 }
 
-@media screen and (max-width:1366px) {
-
-
+@media screen and (max-width: 1366px) {
   .over-view-box {
     grid-template-columns: repeat(1, 74% auto);
   }
-
-
 
   .rank-box {
     margin-right: 2rem;
@@ -6119,9 +6103,7 @@ hr {
   }
 }
 
-@media screen and (max-width:1280px) {
-
-
+@media screen and (max-width: 1280px) {
   .tabs ul:after {
     right: 0rem;
   }
@@ -6187,10 +6169,9 @@ hr {
   .vision_mission_section .vision {
     padding-right: 6rem;
   }
-
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .over-view-box {
     display: flex;
     flex-direction: column-reverse;
@@ -6205,7 +6186,6 @@ hr {
     background-color: var(--color-f6);
     padding-block: 6rem 0;
   }
-
 
   .overview-text {
     padding-block: 6rem;
@@ -6228,8 +6208,6 @@ hr {
     display: flex;
     gap: 1rem;
   }
-
-
 
   .rank-box {
     margin-right: 2rem;
@@ -6264,7 +6242,6 @@ hr {
   .structure-box {
     grid-template-columns: repeat(1, 38% auto);
     gap: 4rem;
-
   }
 
   .program-sec-six:before {
@@ -6281,10 +6258,9 @@ hr {
   .opportunitie-tab ul li {
     padding-right: 2rem;
   }
-
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
   .program-detail-text .innnr_head h3 {
     font: var(--font-40);
     letter-spacing: -1px;
@@ -6305,7 +6281,7 @@ hr {
   }
 }
 
-@media (max-width:799px) {
+@media (max-width: 799px) {
   .eligibility-text {
     width: 44.6%;
     margin-right: 6%;
@@ -6393,7 +6369,7 @@ hr {
     padding-block: 4rem;
   }
 
-  .program-detail-img figure>* {
+  .program-detail-img figure > * {
     height: auto;
     object-fit: cover;
     min-height: 30rem;
@@ -6429,9 +6405,6 @@ hr {
   }
 }
 
-
-
-
 .about_two .early-slide .early_rgt h5 {
   font: var(--font-18);
   font-weight: 300;
@@ -6452,19 +6425,14 @@ hr {
   margin-bottom: 2.1rem;
 } */
 
-
 @media (min-width: 2200px) {
   .eligibility-sec .container {
     max-width: 2032px !important;
   }
 
-
-
   .core-box {
     grid-template-columns: repeat(1, 61% auto);
   }
-
-
 
   .core-text h6 {
     padding-right: 7rem;
@@ -6494,7 +6462,6 @@ hr {
 
   .structure-text p {
     padding-inline: 0 23rem;
-
   }
 
   .testimonial-text p,
@@ -6530,7 +6497,7 @@ hr {
 }
 
 /* about-us page responsive */
-@media screen and (max-width:1549px) {
+@media screen and (max-width: 1549px) {
   .about_three .vsn_msn_grid {
     margin-right: -5.8rem;
   }
@@ -6592,20 +6559,17 @@ hr {
   .about_five {
     padding-bottom: 8;
   }
-
 }
 
 @media screen and (max-width: 1300px) {
   .about_three .vsn_msn_grid {
     margin-right: -10.8rem;
   }
-
 }
 
 @media screen and (max-width: 1200px) {
   .inner-title {
     padding-top: 18rem;
-
   }
 
   .about_three .vsn_msn_grid .miss-rgt ul {
@@ -6700,7 +6664,9 @@ hr {
   .inner-title {
     padding-top: 3rem;
   }
-.grid_card_design1_section{padding-block: 5rem;}
+  .grid_card_design1_section {
+    padding-block: 5rem;
+  }
   .about_one .estblish {
     padding-block: 4rem 0;
   }
@@ -6831,7 +6797,7 @@ hr {
   }
 }
 
-@media (max-width:575px) {
+@media (max-width: 575px) {
   .program-detail-text .innnr_head h3 {
     margin-block: 0;
   }
@@ -6878,8 +6844,6 @@ hr {
     margin-bottom: 0;
   }
 
-
-
   .amenities_section {
     padding: 2rem 0;
   }
@@ -6919,9 +6883,9 @@ hr {
   }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .overview-text {
-    padding-block: 2rem
+    padding-block: 2rem;
   }
 
   .overview-duration-text p,
@@ -7068,7 +7032,7 @@ hr {
   .engineering-btn .structure-btn {
     font: var(--font-16);
     text-transform: uppercase;
-    letter-spacing: .72px;
+    letter-spacing: 0.72px;
     padding: 1rem 1.5rem;
     font-weight: 700;
   }
@@ -7076,7 +7040,7 @@ hr {
   .apply-btn1 {
     font: var(--font-16);
     text-transform: uppercase;
-    letter-spacing: .72px;
+    letter-spacing: 0.72px;
     margin-left: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 700;
@@ -7135,7 +7099,6 @@ hr {
     display: block;
     margin-top: 0.5rem;
   }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -7194,7 +7157,7 @@ hr {
 
   .about_two .early-slide .early_rgt .inst-reg h3 {
     font: var(--font-24);
-    letter-spacing: -0.80px;
+    letter-spacing: -0.8px;
     color: var(--color-4e);
     line-height: 1;
     font-family: var(--font-Condensed);
@@ -7253,7 +7216,6 @@ hr {
   .about_five .quality_grid {
     display: block;
     margin: 0;
-
   }
 
   .about_four .value-box h3 {
@@ -7330,7 +7292,7 @@ hr {
 
   .uni_boa_grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2 5.rem 2.6rem;
+    gap: 2 5rem 2.6rem;
     margin-top: 2rem;
   }
 
@@ -7343,12 +7305,9 @@ hr {
     font-weight: 600;
     font-family: var(--font-Condensed);
   }
-
-
-
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   .inner-title .innnr_head h3 {
     font: var(--font-30);
     margin-bottom: 2rem;
@@ -7417,7 +7376,6 @@ hr {
   .step-and-startups-in-campus .placement_proSec {
     padding-block: 3rem;
   }
-
 }
 
 .leader-category-title {
@@ -7427,7 +7385,7 @@ hr {
   margin-block: 0rem 3rem;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
   .inner-title .innnr_head h3 {
     margin-bottom: 0rem;
   }
@@ -7471,7 +7429,6 @@ hr {
 
   .peo-list {
     grid-template-columns: repeat(1, 1fr);
-
   }
 
   .program-testimonial {
@@ -7604,7 +7561,7 @@ hr {
   }
 
   .about_two .early-slide .early_rgt .inst-reg h3 {
-    letter-spacing: -0.60px;
+    letter-spacing: -0.6px;
     line-height: normal;
   }
 
@@ -7729,7 +7686,6 @@ hr {
     font-family: var(--font-Roboto);
     font-weight: 300;
     line-height: normal;
-
   }
 
   .facilities-text p {
@@ -7751,7 +7707,7 @@ hr {
     font: var(--font-22);
     color: var(--color-black);
     text-transform: uppercase;
-    letter-spacing: -0.60px;
+    letter-spacing: -0.6px;
     font-weight: 600;
     font-family: var(--font-Condensed);
   }
@@ -7931,15 +7887,17 @@ hr {
   }
 }
 
-.department-master-of-computer-applications-facilities .department-facilities .image_content_repeat_section {
+.department-master-of-computer-applications-facilities
+  .department-facilities
+  .image_content_repeat_section {
   padding-block: 10rem 10rem;
 }
 
 /* .department-computer-science-and-engineering-it-placements .iqac_master:first-child{
   background-color: #000;
 } */
-.department-page.department-computer-science-and-engineering-it-placements .table_section.bg-gray {
-
+.department-page.department-computer-science-and-engineering-it-placements
+  .table_section.bg-gray {
   background-color: var(--color-white);
 }
 
@@ -7967,7 +7925,8 @@ hr {
   padding-block: 5rem 10rem;
 }
 
-.department-electrical-electronics-engineering-about-us .grid_card_design1_section {
+.department-electrical-electronics-engineering-about-us
+  .grid_card_design1_section {
   padding-block: 0rem 10rem;
 }
 
@@ -7979,7 +7938,10 @@ hr {
   padding-block: 4rem 8rem;
 }
 
-.department-mechanical-engineering-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
+.department-mechanical-engineering-research
+  .tableContent-module__Rl7LKW__tableContentSection
+  .tableContent-module__Rl7LKW__right_col
+  .tableContent-module__Rl7LKW__border_col {
   border: 0px solid #dfdfdf;
 }
 
@@ -7996,7 +7958,9 @@ hr {
   padding-block: 4rem 8rem;
 }
 
-.department-computer-science-and-engineering-it-placements .about_one .estblish {
+.department-computer-science-and-engineering-it-placements
+  .about_one
+  .estblish {
   padding-block: 4rem 8rem;
 }
 
@@ -8004,7 +7968,8 @@ hr {
   margin-bottom: 4rem;
 }
 
-.department-electrical-electronics-engineering-facilities .image_content_repeat_section {
+.department-electrical-electronics-engineering-facilities
+  .image_content_repeat_section {
   padding-block: 10rem;
 }
 
@@ -8012,11 +7977,15 @@ hr {
   padding-bottom: 10rem;
 }
 
-.department-electrical-electronics-engineering-placements .table_section thead th {
+.department-electrical-electronics-engineering-placements
+  .table_section
+  thead
+  th {
   padding: 1.2rem 1.8rem;
 }
 
-.department-electronics-and-communication-engineering-about-us .grid_card_design1_section {
+.department-electronics-and-communication-engineering-about-us
+  .grid_card_design1_section {
   padding-block: 5rem 10rem;
 }
 
@@ -8024,11 +7993,13 @@ hr {
   color: #ffc100;
 }
 
-.department-page.department-engineering-aiml-facilities .image_content_repeat_section {
+.department-page.department-engineering-aiml-facilities
+  .image_content_repeat_section {
   padding-block: 2rem 10rem;
 }
 
-.department-computer-science-and-engineering-about-us .grid_card_design1_section {
+.department-computer-science-and-engineering-about-us
+  .grid_card_design1_section {
   padding-block: 0 10rem;
 }
 
@@ -8036,7 +8007,10 @@ hr {
   padding-block: 4rem 8rem;
 }
 
-.department-electrical-engineering-ee-research .tableContent-module__Rl7LKW__tableContentSection .tableContent-module__Rl7LKW__right_col .tableContent-module__Rl7LKW__border_col {
+.department-electrical-engineering-ee-research
+  .tableContent-module__Rl7LKW__tableContentSection
+  .tableContent-module__Rl7LKW__right_col
+  .tableContent-module__Rl7LKW__border_col {
   border: 0px solid #dfdfdf;
   padding: 0rem 0rem;
 }
@@ -8057,7 +8031,9 @@ hr {
   padding-block: 4rem 8rem;
 }
 
-.department-engineering-data-science-research .res_table_maincms .table_section:last-child {
+.department-engineering-data-science-research
+  .res_table_maincms
+  .table_section:last-child {
   padding-block: 2rem 0rem;
 }
 
@@ -8105,8 +8081,7 @@ hr {
   font-weight: 300;
 }
 
-
-@media screen and (max-width:991px) {
+@media screen and (max-width: 991px) {
   .schools-facilities .image_content_repeat_section.reverse_bg_white {
     padding-block: 6rem 0;
   }
@@ -8134,14 +8109,15 @@ hr {
   }
 }
 
-
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .nirf .about_one .abt_cntnt figure img {
     width: 100% !important;
   }
 
   .department-mechanical-engineering-placements .about_one .estblish,
-  .department-computer-science-and-engineering-it-placements .about_one .estblish {
+  .department-computer-science-and-engineering-it-placements
+    .about_one
+    .estblish {
     padding-block: 4rem 4rem;
   }
 
@@ -8154,7 +8130,7 @@ hr {
   }
 
   .labs_group_section .about_two .early-slide {
-    grid-template-columns: repeat(1, 1fr)
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .nirf .about_one .estblish {
@@ -8185,7 +8161,9 @@ hr {
     overflow-x: auto;
   }
 
-  .department-computer-science-and-engineering-it-placements .about_one .estblish {
+  .department-computer-science-and-engineering-it-placements
+    .about_one
+    .estblish {
     padding-block: 2rem;
   }
 
@@ -8197,26 +8175,25 @@ hr {
     padding-bottom: 6rem;
   }
 
-  .department-electrical-electronics-engineering-facilities .image_content_repeat_section {
+  .department-electrical-electronics-engineering-facilities
+    .image_content_repeat_section {
     padding-block: 4rem;
   }
 
   .department-electrical-electronics-engineering-facilities .about_one {
     padding-bottom: 4rem;
   }
-   .department-facilities .placement_page .placement_stats {
+  .department-facilities .placement_page .placement_stats {
     padding-bottom: 5rem;
   }
 }
 
-@media screen and (max-width:575px) {
+@media screen and (max-width: 575px) {
   .schools-facilities .image_content_repeat_section.facilities {
     padding-block: 4rem;
   }
 
   .department-mechanical-engineering-placements .about_one .estblish,
-
-
   .nirf .about_one .estblish {
     padding-block: 2rem;
   }
@@ -8225,10 +8202,12 @@ hr {
     display: block;
   }
 
-  .search-box  {
+  .search-box {
     margin-bottom: 1.5rem;
   }
- .schools-faculties .search-box{margin-bottom: 0;}
+  .schools-faculties .search-box {
+    margin-bottom: 0;
+  }
 
   .faulty-box.school-faculties .search-box input {
     margin-bottom: 0rem;

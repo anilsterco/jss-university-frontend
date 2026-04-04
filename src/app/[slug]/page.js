@@ -72,6 +72,7 @@ import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+import Textarea from "@/component/sections/Textarea";
 
 async function fetchPageData(slug) {
   try {
@@ -197,6 +198,7 @@ export default async function DynamicPage({ params }) {
     accordion: Accordion,
     gridCardDesign3: GridCardDesign3,
     tabTableMultiple: TabTableMultiple,
+    textArea: Textarea,
   };
 
   return (
