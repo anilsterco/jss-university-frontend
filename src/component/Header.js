@@ -1047,7 +1047,9 @@ export default function Header() {
                         onMouseEnter={() => setActiveMiddleIndex(idx)}
                       >
                         <Link
-                          href={WEB_URL + item.url}
+                          href={
+                            item?.target_blank ? item.url : WEB_URL + item.url
+                          }
                           className="hambur_link"
                           onClick={() => {
                             closeMenu();

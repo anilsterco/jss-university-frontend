@@ -79,9 +79,9 @@ export default function HeroSlider({ data, slug }) {
                   pointerEvents: "none",
                 }}
               ></iframe>
-            ) : slide.desktop_video || slide.mobile_video ? (
+            ) : (
               <>
-                {slide.desktop_video && (
+                {slide.desktop_video ? (
                   <video
                     src={slide.desktop_video}
                     autoPlay
@@ -93,8 +93,20 @@ export default function HeroSlider({ data, slug }) {
                     height={810}
                     style={{ objectFit: "cover" }}
                   />
+                ) : (
+                  slide.desktop_banner && (
+                    <Image
+                      src={slide.desktop_banner}
+                      alt="slide image"
+                      width={1920}
+                      height={810}
+                      priority
+                      style={{ width: "100%", objectFit: "cover" }}
+                      className={styles.desktopBanner}
+                    />
+                  )
                 )}
-                {slide.mobile_video && (
+                {slide.mobile_video ? (
                   <video
                     src={slide.mobile_video}
                     autoPlay
@@ -110,31 +122,18 @@ export default function HeroSlider({ data, slug }) {
                       objectFit: "cover",
                     }}
                   />
-                )}
-              </>
-            ) : (
-              <>
-                {slide.desktop_banner && (
-                  <Image
-                    src={slide.desktop_banner}
-                    alt="slide image"
-                    width={1920}
-                    height={810}
-                    priority
-                    style={{ width: "100%", objectFit: "cover" }}
-                    className={styles.desktopBanner}
-                  />
-                )}
-                {slide.mobile_banner && (
-                  <Image
-                    src={slide.mobile_banner}
-                    alt="slide image"
-                    width={1920}
-                    height={810}
-                    priority
-                    style={{ width: "100%", height: "100%" }}
-                    className={styles.mobileBanner}
-                  />
+                ) : (
+                  slide.mobile_banner && (
+                    <Image
+                      src={slide.mobile_banner}
+                      alt="slide image"
+                      width={1920}
+                      height={810}
+                      priority
+                      style={{ width: "100%", height: "100%" }}
+                      className={styles.mobileBanner}
+                    />
+                  )
                 )}
               </>
             )}
@@ -161,7 +160,7 @@ export default function HeroSlider({ data, slug }) {
                   {slide.url && (
                     <Link
                       href={`${slug ? WEB_URL + "department/" + slug + slide.url : WEB_URL + slide.url}`}
-                      className={styles.bannerContentA}
+                      className={`${styles.bannerContentA} bannerBtn `}
                       data-aos="fade-right"
                       data-aos-delay="300"
                     >

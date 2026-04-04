@@ -110,7 +110,7 @@ export default function TabTableMultiple({ data }) {
                       {tableTitle && tableDataOne?.length > 0 && (
                         <div className="table_section">
                           <h4 className="heading ">{tableTitle}</h4>
-                          <div className="table_responsive">
+                          <div className="table-responsive">
                             <table className="grand_proj_table">
                               {tableHead?.length > 0 && (
                                 <thead>
@@ -144,7 +144,7 @@ export default function TabTableMultiple({ data }) {
                       {tableTitleTwo && tableDataTwo?.length > 0 && (
                         <div className="table_section">
                           <h4 className="heading">{tableTitleTwo}</h4>
-                          <div className="table_responsive">
+                          <div className="table-responsive">
                             <table className="grand_proj_table">
                               {tableHeadTwo?.length > 0 && (
                                 <thead>
@@ -178,7 +178,7 @@ export default function TabTableMultiple({ data }) {
                       {tableTitleThree && tableDataThree?.length > 0 && (
                         <div className="table_section">
                           <h4 className="heading">{tableTitleThree}</h4>
-                          <div className="table_responsive">
+                          <div className="table-responsive">
                             <table className="grand_proj_table">
                               {tableHeadThree?.length > 0 && (
                                 <thead>
@@ -212,7 +212,7 @@ export default function TabTableMultiple({ data }) {
                       {tableTitleFour && tableDataFour?.length > 0 && (
                         <div className="table_section">
                           <h4 className="heading">{tableTitleFour}</h4>
-                          <div className="table_responsive">
+                          <div className="table-responsive">
                             <table className="grand_proj_table">
                               {tableHeadFour?.length > 0 && (
                                 <thead>
@@ -246,7 +246,7 @@ export default function TabTableMultiple({ data }) {
                       {tableTitleFive && tableDataFive?.length > 0 && (
                         <div className="table_section">
                           <h4 className="heading">{tableTitleFive}</h4>
-                          <div className="table_responsive">
+                          <div className="table-responsive">
                             <table className="grand_proj_table">
                               {tableHeadFive?.length > 0 && (
                                 <thead>

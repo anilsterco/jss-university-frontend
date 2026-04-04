@@ -209,6 +209,78 @@ export default function AboutOne({ data, extraClass }) {
             </div>
           </div>
         );
+
+      case "logoDescGrid":
+        return (
+          <div className="container" key={`logo-grid-section-${sectionIndex}`}>
+            <div className="row justify-content-center">
+              {section.items
+                ?.sort(
+                  (a, b) => Number(a.position || 0) - Number(b.position || 0),
+                )
+                .map((item, i) => {
+                  const hasFigure =
+                    item.figure !== null &&
+                    item.figure !== undefined &&
+                    item.figure !== "";
+
+                  return (
+                    <div
+                      className="col-12 col-sm-6 col-lg-3 mb-4"
+                      key={item.id || item.item_uuid || i}
+                    >
+                      <div className="estab_slide_item h-100">
+                        <figure
+                          data-aos="fade-up"
+                          data-aos-delay={i * 150}
+                          data-aos-duration="800"
+                          className="h-100"
+                        >
+                          {hasFigure ? (
+                            <>
+                              <figcaption>
+                                <h4 className="estab_figure">
+                                  <span> #</span>
+                                  {String(item.figure)}
+                                </h4>
+                                {item.description && <p>{item.description}</p>}
+                              </figcaption>
+                              {item.file && (
+                                <Image
+                                  src={item.file}
+                                  alt={item.description || "figure"}
+                                  width={120}
+                                  height={30}
+                                  style={{ objectFit: "contain" }}
+                                />
+                              )}
+                            </>
+                          ) : (
+                            <>
+                              {item.file && (
+                                <Image
+                                  src={item.file}
+                                  alt={item.description || "logo"}
+                                  width={72}
+                                  height={72}
+                                />
+                              )}
+                              {item.description && (
+                                <figcaption className="mt-3">
+                                  <p>{item.description}</p>
+                                </figcaption>
+                              )}
+                            </>
+                          )}
+                        </figure>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        );
+
       default:
         return null;
     }
