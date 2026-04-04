@@ -12,7 +12,7 @@ export default function ScriptLoader() {
       {/* Non-critical scripts */}
       <Script src="/js/aos.js" strategy="afterInteractive" />
       <Script src="/js/swiper-bundle.min.js" strategy="afterInteractive" />
-      <Script src="/js/smoothscroll.min.js" strategy="afterInteractive" />
+      <Script src="/js/SmoothScroll.min.js" strategy="afterInteractive" />
       <Script src="/js/ScrollTrigger.min.js" strategy="afterInteractive" />
       <Script src="/js/custom.js" strategy="afterInteractive" />
     </>
