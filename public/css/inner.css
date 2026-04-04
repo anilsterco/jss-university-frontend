@@ -771,7 +771,7 @@
   padding-bottom: 0;
 }
 
-.academics-policies .pdf_list_section:not(:last-child) {
+.examination-regulations-policies .pdf_list_section:not(:last-child) {
   padding-bottom: 0;
 }
 
@@ -1397,8 +1397,9 @@ ul.comon_list li:before {
   line-height: 2.8rem;
 }
 
-.approvals-recognitions .ab_estab_slider {
+.approvals-recognitions .row.justify-content-center {
   padding-block: 8rem 8rem;
+  justify-content: start !important;
 }
 
 .pate_boxmain h5 {
@@ -1414,8 +1415,24 @@ ul.comon_list li:before {
   margin-bottom: 2.5rem;
 }
 
+.awards-and-rankings .estab_slide_item h5 {
+  color: var(--color-4e);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
 .awards-and-rankings .row.justify-content-center {
   justify-content: start !important;
+  padding-bottom: 7rem;
+}
+
+.awards-and-rankings .placement_proSec {
+  padding-top: 0;
+  padding-bottom: 6rem;
+}
+
+.awards-and-rankings .about_one .estblish {
+  padding: 0;
 }
 
 .committees .tab_table_multiple_section .pdf_list_section {
@@ -1440,13 +1457,22 @@ ul.comon_list li:before {
   display: inline-block;
   margin-top: 2rem;
 }
-.central-instrumentation-facilities .about_four   {
-padding-bottom: 0;
+
+.central-instrumentation-facilities .about_four {
+  padding-bottom: 0;
 }
-.central-instrumentation-facilities .about_one .estblish{padding-bottom: 0;}
+
+.central-instrumentation-facilities .about_one .estblish {
+  padding-bottom: 0;
+}
+
 .publications .table_section {
   padding: 0;
   background: transparent;
+}
+
+.publications .pdf_list_section {
+  padding-top: 5rem;
 }
 
 .publications .table_section .table-lab tbody td:first-child {
@@ -9294,6 +9320,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     padding-top: 5rem;
   }
 
+  .awards-and-rankings .row.justify-content-center {
+    padding-bottom: 5rem;
+  }
 }
 
 @media (max-width:575px) {
@@ -9301,6 +9330,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     padding-block: 0 6rem;
   }
 
+  .awards-and-rankings .row.justify-content-center {
+    padding-bottom: 3rem;
+  }
 }
 
 
