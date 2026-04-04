@@ -1396,7 +1396,7 @@ ul.comon_list li:before {
   color: #444;
   line-height: 2.8rem;
 }
-
+.approvals-recognitions .ab_estab_slider{padding-block: 8rem 8rem;}
 .pate_boxmain h5 {
   font: var(--font-21);
   color: var(--color-4e);
@@ -1410,10 +1410,14 @@ ul.comon_list li:before {
   margin-bottom: 2.5rem;
 }
 
-.awards-and-rankings .placement_proSec .row.justify-content-center {
+.awards-and-rankings .row.justify-content-center {
   justify-content: start !important;
 }
-.committees .tab_table_multiple_section  .pdf_list_section {padding: 0;}
+
+.committees .tab_table_multiple_section .pdf_list_section {
+  padding: 0;
+}
+
 .patent_boxgrid .patent_box h6 {
   font: var(--font-24);
   font-family: var(--font-Roboto);
