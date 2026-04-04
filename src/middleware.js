@@ -6,7 +6,7 @@ export function middleware(request) {
   const nonce = crypto.randomUUID();
 
   // 'unsafe-eval' is only needed for Next.js in development mode
-  const isDev = process.env.NODE_ENV === "production";
+  const isDev = process.env.NODE_ENV === "development";
 
   const cspHeader = `
     default-src 'self';
