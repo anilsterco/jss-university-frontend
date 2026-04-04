@@ -11,11 +11,12 @@ export function middleware(request) {
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' ${isDev ? "'unsafe-eval'" : ""};
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
     img-src 'self' data: blob: https:;
     media-src 'self' https:;
-    font-src 'self' https://fonts.gstatic.com;
+    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
     connect-src 'self' https:;
+    frame-src 'self' https://www.youtube.com https://youtube.com;
     frame-ancestors 'none';
   `
     .replace(/\s{2,}/g, " ")
