@@ -270,7 +270,7 @@ export default function AboutOne({ data, extraClass }) {
                                 />
                               )}
                               {item?.title && (
-                                <h5 className="mt-4 grid_title mb-0">
+                                <h5 className="mt-4 grid_title">
                                   {item.title}
                                 </h5>
                               )}
