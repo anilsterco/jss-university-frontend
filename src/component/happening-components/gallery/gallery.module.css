@@ -1,5 +1,5 @@
 .mediaSection {
-  padding: 4rem 0;
+  padding-block: 10rem 2rem;
 }
 
 .bannerWrapper {
@@ -60,14 +60,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6rem;
-  padding-block: 10rem 6rem;
+  padding-block: 1rem 0rem;
 }
 
 /* Gallery Card */
 .galleryCard {
   border-radius: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -93,7 +95,7 @@
   background-color: #b8b8b8;
   border-radius: 25px;
 }
-.imagePlaceholder img{
+.imagePlaceholder img {
   border-radius: 0.8rem;
 }
 .imagePlaceholder p {
@@ -130,7 +132,7 @@
   display: flex;
   position: absolute;
   bottom: 10%;
-  right: 5%;
+  right: 0%;
   z-index: 1;
 }
 
@@ -234,7 +236,6 @@
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
-
 }
 
 /* Modal Header */
@@ -248,9 +249,9 @@
 
 .modalTitle {
   color: #fff;
-   font: var(--font-36);
-   letter-spacing: -0.65px;
-   text-transform: uppercase;
+  font: var(--font-36);
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.2;
@@ -362,12 +363,12 @@
 }
 
 .slideCounter span {
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0 0.75rem;
   font: var(--font-16);
   font-weight: 300;
   opacity: 0.5;
-  padding-left: 4rem
+  padding-left: 4rem;
 }
 
 /* Thumbnails */
@@ -474,16 +475,15 @@
     padding: 1.5rem 1rem 1rem 1rem;
   }
   .galleryGrid {
-
-  padding-block: 4rem;
-}
+    padding-block: 4rem;
+  }
 
   .modalTitle {
     font-size: 1.1rem;
   }
   .mediaSection {
-  padding: 0;
-}
+    padding: 0;
+  }
 
   .thumbnails {
     padding: 1rem;

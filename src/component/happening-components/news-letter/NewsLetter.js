@@ -28,7 +28,6 @@ export default function NewsLetter({ className, programId }) {
     return params.toString();
   };
 
-  // ── Old query (kept as-is) ──
   const { data, isLoading, error } = useQuery({
     queryKey: ["media-coverage", resolvedProgramId],
     queryFn: async () => {
