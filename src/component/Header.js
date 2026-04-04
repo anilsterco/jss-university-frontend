@@ -1128,6 +1128,14 @@ export default function Header() {
                               )}
                             </div>
                           </div>
+
+                          <Link
+                            href={WEB_URL}
+                            className="links"
+                            onClick={() => {
+                              closeMenu();
+                            }}
+                          />
                         </div>
                       )}
 
@@ -1162,11 +1170,7 @@ export default function Header() {
 
                           <div className="vid-thumb-grp">
                             {activeRightMenu.video_section?.video_url && (
-                              <Link
-                                href={activeRightMenu.video_section.video_url}
-                              >
-                                <div className="vid-thumb-icon"></div>
-                              </Link>
+                              <div className="vid-thumb-icon"></div>
                             )}
 
                             <div className="vid-thumb-cont">
@@ -1181,6 +1185,19 @@ export default function Header() {
                               )}
                             </div>
                           </div>
+
+                          <Link
+                            href={
+                              activeRightMenu.video_section?.video_url
+                                ? activeRightMenu.video_section.video_url
+                                : WEB_URL +
+                                  "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
+                            }
+                            className="links"
+                            onClick={() => {
+                              closeMenu();
+                            }}
+                          />
                         </div>
                       )}
 
