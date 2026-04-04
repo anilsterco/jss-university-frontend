@@ -1,5 +1,5 @@
 .happeningsContainer {
-  background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 18%, var(--color-f6) 0%, var(--color-f6) 100%);
+  background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 37rem, var(--color-f6) 0%, var(--color-f6) 100%);
   padding-top: 20rem;
   padding-bottom: 4.5rem;
 }

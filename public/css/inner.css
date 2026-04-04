@@ -1404,6 +1404,16 @@ ul.comon_list li:before {
   font-weight: 500;
 }
 
+.awards-and-rankings .estab_slide_item img {
+  width: 17rem;
+  height: auto;
+  margin-bottom: 2.5rem;
+}
+
+.awards-and-rankings .placement_proSec .row.justify-content-center {
+  justify-content: start !important;
+}
+.committees .tab_table_multiple_section  .pdf_list_section {padding: 0;}
 .patent_boxgrid .patent_box h6 {
   font: var(--font-24);
   font-family: var(--font-Roboto);
@@ -1416,9 +1426,11 @@ ul.comon_list li:before {
   padding: 0;
   background: transparent;
 }
+
 .publication .table_section .table-lab tbody td:first-child {
-    width: 28rem;
+  width: 28rem;
 }
+
 .heri_pri_btm_text {
   padding-top: 4rem;
   text-align: center;
