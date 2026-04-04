@@ -1426,12 +1426,12 @@ ul.comon_list li:before {
   line-height: 1.3;
 }
 
-.publication .table_section {
+.publications .table_section {
   padding: 0;
   background: transparent;
 }
 
-.publication .table_section .table-lab tbody td:first-child {
+.publications .table_section .table-lab tbody td:first-child {
   width: 28rem;
 }
 

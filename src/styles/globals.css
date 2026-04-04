@@ -837,6 +837,7 @@ a:active {
   text-align: left;
   z-index: 9;
   transition: none;
+  text-wrap: auto;
 }
 
 /* .mega-left-item .dropdown-item:hover {
