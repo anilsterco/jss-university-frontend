@@ -2045,7 +2045,7 @@ a:active {
 .shine-effect {
   position: relative;
   overflow: hidden;
-  display: flex;
+  /* display: flex; */
   transition: transform 0.3s ease;
 }
 
