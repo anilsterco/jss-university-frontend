@@ -91,7 +91,11 @@ export default function HeroSlider({ data, slug }) {
                     className={styles.desktopBanner}
                     width={1920}
                     height={810}
-                    style={{ objectFit: "cover" }}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "cover",
+                    }}
                   />
                 ) : (
                   slide.desktop_banner && (
@@ -101,7 +105,11 @@ export default function HeroSlider({ data, slug }) {
                       width={1920}
                       height={810}
                       priority
-                      style={{ width: "100%", objectFit: "cover" }}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        objectFit: "cover",
+                      }}
                       className={styles.desktopBanner}
                     />
                   )

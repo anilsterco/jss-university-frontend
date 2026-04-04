@@ -9,6 +9,7 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 export default function AboutOne({ data, extraClass }) {
   useEffect(() => {
@@ -199,6 +200,9 @@ export default function AboutOne({ data, extraClass }) {
                                   </>
                                 )}
                               </figure>
+                              {item?.url && (
+                                <Link href={item.url} target="_blank" />
+                              )}
                             </div>
                           </SwiperSlide>
                         );
@@ -229,7 +233,7 @@ export default function AboutOne({ data, extraClass }) {
                       className="col-12 col-sm-6 col-lg-3 mb-4"
                       key={item.id || item.item_uuid || i}
                     >
-                      <div className="estab_slide_item h-100">
+                      <div className="estab_slide_item h-100 position-relative">
                         <figure
                           data-aos="fade-up"
                           data-aos-delay={i * 150}
@@ -265,14 +269,29 @@ export default function AboutOne({ data, extraClass }) {
                                   height={72}
                                 />
                               )}
+                              {item?.title && (
+                                <h5 className="mt-4 grid_title mb-0">
+                                  {item.title}
+                                </h5>
+                              )}
                               {item.description && (
-                                <figcaption className="mt-3">
+                                <figcaption
+                                  className={item?.title ? "mt-1" : "mt-3"}
+                                >
                                   <p>{item.description}</p>
                                 </figcaption>
                               )}
                             </>
                           )}
                         </figure>
+
+                        {item?.url && (
+                          <Link
+                            href={item.url}
+                            className="links"
+                            target="_blank"
+                          />
+                        )}
                       </div>
                     </div>
                   );

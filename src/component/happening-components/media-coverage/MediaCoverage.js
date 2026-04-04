@@ -58,24 +58,22 @@ export default function MediaCoverage({ className, programId }) {
   };
 
   const nextSlide = () => {
-    if (
-      selectedGallery &&
-      currentSlideIndex < selectedGallery.media.length - 1
-    ) {
-      setCurrentSlideIndex(currentSlideIndex + 1);
-    } else {
-      setCurrentSlideIndex(0);
-    }
+    const currentIndex = galleryData.findIndex(
+      (item) => item.id === selectedGallery.id,
+    );
+    const nextIndex = (currentIndex + 1) % galleryData.length;
+    setSelectedGallery(galleryData[nextIndex]);
+    setCurrentSlideIndex(0);
   };
 
   const previousSlide = () => {
-    if (currentSlideIndex > 0) {
-      setCurrentSlideIndex(currentSlideIndex - 1);
-    } else {
-      setCurrentSlideIndex(
-        selectedGallery ? selectedGallery.media.length - 1 : 0,
-      );
-    }
+    const currentIndex = galleryData.findIndex(
+      (item) => item.id === selectedGallery.id,
+    );
+    const prevIndex =
+      (currentIndex - 1 + galleryData.length) % galleryData.length;
+    setSelectedGallery(galleryData[prevIndex]);
+    setCurrentSlideIndex(0);
   };
 
   const formatDate = (dateString) => {
@@ -177,12 +175,15 @@ export default function MediaCoverage({ className, programId }) {
             {/* Modal Header */}
             <div className={styles.modalHeader}>
               <div className={styles.slideCounter}>
-                {currentSlideIndex + 1} / {selectedGallery.media.length}
+                {galleryData.findIndex(
+                  (item) => item.id === selectedGallery.id,
+                ) + 1}{" "}
+                / {galleryData.length}
               </div>
               <div>
-                <p className={styles.modalDate}>
+                {/* <p className={styles.modalDate}>
                   {formatDate(selectedGallery.date)}
-                </p>
+                </p> */}
                 <h2 className={styles.modalTitle}>{selectedGallery.title}</h2>
               </div>
               <div className="d-flex gap-2">

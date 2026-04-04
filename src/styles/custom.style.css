@@ -2374,8 +2374,8 @@
 }
 
 .vertical-floating-btn {
-  background-color: #16344e;
-  border: 1px solid #a1a1a1;
+  background-color: #f2613f;
+  border: 1px solid #d5421f;
   color: #ffffff !important;
   padding: 20px 12px;
   font: var(--font-14);
@@ -2396,7 +2396,7 @@
 }
 
 .vertical-floating-btn:hover {
-  background-color: #ffc100;
+  background-color: #d5421f;
   color: #ffffff !important;
 }
 
@@ -2425,6 +2425,10 @@
   color: white;
   border-radius: 50%;
   text-decoration: none;
+}
+
+.campus-facilities .atm_mainsec figure {
+  display: flex;
 }
 
 @media (max-width: 991px) {
@@ -2465,6 +2469,11 @@
 
   .testimonial-modal-overlay .modal-right {
     padding: 2.5rem 2rem;
+  }
+
+  .vertical-floating-btn {
+    font: var(--font-10);
+    padding: 15px 4px;
   }
 }
 

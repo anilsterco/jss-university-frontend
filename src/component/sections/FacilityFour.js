@@ -53,7 +53,147 @@ export default function FacilityFour({ data }) {
                     <div className="uni_boa_grid">
                       {item.boxes.map((box, bidx) => (
                         <div className="uni_boa_itemse" key={bidx}>
-                          <figure className="shine-effect img-full">
+                          {(box.image || box?.imageVideo?.length > 0) && (
+                            <div style={{ flex: 1 }} className="image_col">
+                              {(box.image || box?.imageVideo?.length > 0) && (
+                                <div style={{ flex: 1 }} className="image_col">
+                                  {box?.imageVideo?.length > 0 ? (
+                                    box.imageVideo.length === 1 ? (
+                                      // Single media item
+                                      <figure className="shine-effect img-full">
+                                        {box.imageVideo[0].video ? (
+                                          <video
+                                            src={box.imageVideo[0].video}
+                                            width={446}
+                                            height={300}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            style={{
+                                              // height: "auto",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        ) : (
+                                          <Image
+                                            src={box.imageVideo[0].image}
+                                            alt={
+                                              box.title
+                                                ? box.title.slice(0, 50)
+                                                : "Research Lab"
+                                            }
+                                            width={446}
+                                            height={300}
+                                            style={{
+                                              // width: "100%",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        )}
+                                      </figure>
+                                    ) : (
+                                      // Multiple media items → Swiper
+                                      <div
+                                        className="research_swiper_wrapper"
+                                        style={{ position: "relative" }}
+                                      >
+                                        <Swiper
+                                          modules={[Autoplay, Navigation]}
+                                          autoplay={{
+                                            delay: 3000,
+                                            disableOnInteraction: false,
+                                          }}
+                                          navigation={{
+                                            nextEl: `.swiper-next-lab-card`,
+                                            prevEl: `.swiper-prev-lab-card`,
+                                          }}
+                                          loop={true}
+                                          slidesPerView={1}
+                                        >
+                                          {box.imageVideo.map(
+                                            (media, mediaIdx) => (
+                                              <SwiperSlide key={mediaIdx}>
+                                                <figure className="shine-effect img-full">
+                                                  {media.video ? (
+                                                    <video
+                                                      src={media.video}
+                                                      width={446}
+                                                      height={300}
+                                                      autoPlay
+                                                      muted
+                                                      loop
+                                                      playsInline
+                                                      style={{
+                                                        // width: "100%",
+                                                        // height: "auto",
+                                                        objectFit: "cover",
+                                                      }}
+                                                    />
+                                                  ) : (
+                                                    <Image
+                                                      src={media.image}
+                                                      alt={
+                                                        box.title
+                                                          ? box.title.slice(
+                                                              0,
+                                                              50,
+                                                            )
+                                                          : "Research Lab"
+                                                      }
+                                                      width={446}
+                                                      height={300}
+                                                      style={{
+                                                        // width: "100%",
+                                                        // height: "auto",
+                                                        objectFit: "cover",
+                                                      }}
+                                                    />
+                                                  )}
+                                                </figure>
+                                              </SwiperSlide>
+                                            ),
+                                          )}
+                                        </Swiper>
+
+                                        {/* Unique nav buttons per slide instance */}
+                                        <button
+                                          className={`swiper-button-prev swiper-prev-lab-card`}
+                                        >
+                                          <MdChevronLeft />
+                                        </button>
+                                        <button
+                                          className={`swiper-button-next swiper-next-lab-card`}
+                                        >
+                                          <MdChevronRight />
+                                        </button>
+                                      </div>
+                                    )
+                                  ) : box?.image ? (
+                                    <figure className="shine-effect img-full">
+                                      <Image
+                                        src={box.image}
+                                        alt={
+                                          box.title
+                                            ? box.title.replace(/<[^>]+>/g, "")
+                                            : "Early Growth"
+                                        }
+                                        className="imgsli_left"
+                                        width={446}
+                                        height={300}
+                                        style={{
+                                          // height: "100%",
+                                          objectFit: "cover",
+                                        }}
+                                      />
+                                    </figure>
+                                  ) : null}
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          {/* <figure className="shine-effect img-full">
                             <Image
                               src={box.image}
                               alt={box.title}
@@ -61,7 +201,7 @@ export default function FacilityFour({ data }) {
                               width={446}
                               height={300}
                             />
-                          </figure>
+                          </figure> */}
                           <figcaption>
                             <p>{box.title}</p>
                           </figcaption>

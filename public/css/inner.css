@@ -1396,7 +1396,11 @@ ul.comon_list li:before {
   color: #444;
   line-height: 2.8rem;
 }
-.approvals-recognitions .ab_estab_slider{padding-block: 8rem 8rem;}
+
+.approvals-recognitions .ab_estab_slider {
+  padding-block: 8rem 8rem;
+}
+
 .pate_boxmain h5 {
   font: var(--font-21);
   color: var(--color-4e);
@@ -1426,6 +1430,20 @@ ul.comon_list li:before {
   line-height: 1.3;
 }
 
+.central-instrumentation-facilities .about_f_value {
+  padding: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.central-instrumentation-facilities .about_f_value .read_more_btn {
+  display: inline-block;
+  margin-top: 2rem;
+}
+.central-instrumentation-facilities .about_four   {
+padding-bottom: 0;
+}
+.central-instrumentation-facilities .about_one .estblish{padding-bottom: 0;}
 .publications .table_section {
   padding: 0;
   background: transparent;
