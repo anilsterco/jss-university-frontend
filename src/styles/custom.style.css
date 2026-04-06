@@ -2506,7 +2506,8 @@
   font: var(--font-14);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease;    display: grid;
+    grid-template-columns: 40% 60%;
 }
 
 .inner_faculties_search .faculty-reset-btn:hover {
