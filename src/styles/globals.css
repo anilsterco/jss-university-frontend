@@ -2773,6 +2773,9 @@ a:active {
   animation: fadeIn 0.3s ease;
   width: 94%;
 }
+.department-placements .faqAnswer{
+  width: 100%;
+}
 
 .faqItem[open] .faqAnswer {
   border-top: none;
