@@ -131,7 +131,10 @@ export default function FacultyDetailClient({ faculty }) {
                       <h5>Education</h5>
                       <ul>
                         {facultyEducation.map((edu, i) => (
-                          <li key={i}>{edu}</li>
+                          <li
+                            key={i}
+                            dangerouslySetInnerHTML={{ __html: edu }}
+                          />
                         ))}
                       </ul>
                     </div>
@@ -183,7 +186,10 @@ export default function FacultyDetailClient({ faculty }) {
                       <h5>Teaching</h5>
                       <ul>
                         {facultyTeaching.map((subject, i) => (
-                          <li key={i}>{subject}</li>
+                          <li
+                            key={i}
+                            dangerouslySetInnerHTML={{ __html: subject }}
+                          />
                         ))}
                       </ul>
                     </div>
@@ -194,7 +200,10 @@ export default function FacultyDetailClient({ faculty }) {
                       <h5>Awards & Recognition</h5>
                       <ul>
                         {facultyAwards.map((award, i) => (
-                          <li key={i}>{award}</li>
+                          <li
+                            key={i}
+                            dangerouslySetInnerHTML={{ __html: award }}
+                          />
                         ))}
                       </ul>
                     </div>
@@ -205,7 +214,10 @@ export default function FacultyDetailClient({ faculty }) {
                       <h5>Social Engagement</h5>
                       <ul>
                         {facultySocialEngagement.map((engagement, i) => (
-                          <li key={i}>{engagement}</li>
+                          <li
+                            key={i}
+                            dangerouslySetInnerHTML={{ __html: engagement }}
+                          />
                         ))}
                       </ul>
                     </div>
@@ -223,7 +235,12 @@ export default function FacultyDetailClient({ faculty }) {
                                 <h5>{section.title}</h5>
                                 <ul>
                                   {section.points.map((point, i) => (
-                                    <li key={i}>{point}</li>
+                                    <li
+                                      key={i}
+                                      dangerouslySetInnerHTML={{
+                                        __html: point,
+                                      }}
+                                    />
                                   ))}
                                 </ul>
                               </div>
