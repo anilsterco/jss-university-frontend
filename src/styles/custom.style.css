@@ -2269,6 +2269,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
 }
+.expir_grid2{
+  display: grid;
+  grid-template-columns:  1fr;
+  background-color: var(--color-white);
+  padding: 5rem;
+}
 
 .programs-page .eligib_cont h4 {
   font: var(--font-22);
