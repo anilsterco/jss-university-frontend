@@ -646,7 +646,7 @@
 }
 
 .overview-text p {
-  font: var(--font-14);
+  font: var(--font-16);
   color: var(--color-black);
   font-weight: 400;
   padding-inline: 0 5rem;

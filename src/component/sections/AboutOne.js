@@ -5,6 +5,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -56,48 +57,156 @@ export default function AboutOne({ data, extraClass }) {
                         <h5 className="about_subtitle">{item.title}</h5>
                         {item.subtitle && <p>{item.subtitle}</p>}
 
-                        {(item.file || item.video) && (
-                          <figure
-                            className="shine-effect image-overlay-figure"
-                            data-aos="zoom-in"
-                            data-aos-duration="1000"
-                          >
-                            {item.video ? (
-                              <video
-                                src={item.video}
-                                width={1390}
-                                height={550}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                className=""
-                                style={{ objectFit: "cover" }}
-                              />
-                            ) : (
-                              <Image
-                                src={item.file}
-                                alt={item.title || "About JSS Academy"}
-                                width={1390}
-                                height={550}
-                                className="img-fluid w-100"
-                              />
-                            )}
+                        <div className="atm_g_imgsec">
+                          {item?.imageVideo?.length > 0 ? (
+                            item.imageVideo.length === 1 ? (
+                              // ✅ Single media
+                              <figure className="shine-effect image-overlay-figure">
+                                {item.imageVideo[0].video ? (
+                                  <video
+                                    src={item.imageVideo[0].video}
+                                    width={1390}
+                                    height={550}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    style={{
+                                      width: "100%",
+                                      height: "auto",
+                                      objectFit: "cover",
+                                    }}
+                                  />
+                                ) : (
+                                  <Image
+                                    src={item.imageVideo[0].image}
+                                    alt={item.title?.slice(0, 50) || "Research Lab"}
+                                    width={1390}
+                                    height={550}
+                                    style={{ width: "100%", height: "auto" }}
+                                  />
+                                )}
 
-                            <div className="overlap_contents">
-                              {item?.countGroup &&
-                                item.countGroup.map((singleItem, itemIdx) => (
-                                  <figcaption
-                                    key={itemIdx}
-                                    className="image-overlay-caption"
-                                  >
+                                {/* ✅ KEEP OVERLAY */}
+                                <div className="overlap_contents">
+                                  {item?.countGroup?.map((singleItem, idx) => (
+                                    <figcaption key={idx} className="image-overlay-caption">
+                                      <h5>{singleItem.counter}</h5>
+                                      <p>{singleItem.countDesc}</p>
+                                    </figcaption>
+                                  ))}
+                                </div>
+                              </figure>
+                            ) : (
+                              // ✅ Multiple media (Swiper)
+                              <div className="research_swiper_wrapper" style={{ position: "relative" }}>
+                                <Swiper
+                                  modules={[Autoplay, Navigation]}
+                                  autoplay={{
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                  }}
+                                  navigation={{
+                                    nextEl: ".swiper-next-placement",
+                                    prevEl: ".swiper-prev-placement",
+                                  }}
+                                  loop={true}
+                                  slidesPerView={1}
+                                >
+                                  {item.imageVideo.map((media, idx) => (
+                                    <SwiperSlide key={idx}>
+                                      <figure className="shine-effect image-overlay-figure">
+                                        {media.video ? (
+                                          <video
+                                            src={media.video}
+                                            width={1390}
+                                            height={550}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            style={{
+                                              width: "100%",
+                                              height: "auto",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        ) : (
+                                          <Image
+                                            src={media.image}
+                                            alt={item.title?.slice(0, 50) || "Research Lab"}
+                                            width={1390}
+                                            height={550}
+                                            style={{
+                                              width: "100%",
+                                              height: "auto",
+                                              objectFit: "cover",
+                                            }}
+                                          />
+                                        )}
+
+                                        {/* ✅ KEEP OVERLAY IN EACH SLIDE */}
+                                        <div className="overlap_contents">
+                                          {item?.countGroup?.map((singleItem, i) => (
+                                            <figcaption key={i} className="image-overlay-caption">
+                                              <h5>{singleItem.counter}</h5>
+                                              <p>{singleItem.countDesc}</p>
+                                            </figcaption>
+                                          ))}
+                                        </div>
+                                      </figure>
+                                    </SwiperSlide>
+                                  ))}
+                                </Swiper>
+
+                                <button className="swiper-button-prev swiper-prev-placement">
+                                  <MdChevronLeft />
+                                </button>
+                                <button className="swiper-button-next swiper-next-placement">
+                                  <MdChevronRight />
+                                </button>
+                              </div>
+                            )
+                          ) : (item.file || item.video) ? (
+                            // ✅ ORIGINAL FALLBACK (UNCHANGED + OVERLAY KEPT)
+                            <figure
+                              className="shine-effect image-overlay-figure"
+                              data-aos="zoom-in"
+                              data-aos-duration="1000"
+                            >
+                              {item.video ? (
+                                <video
+                                  src={item.video}
+                                  width={1390}
+                                  height={550}
+                                  autoPlay
+                                  muted
+                                  loop
+                                  playsInline
+                                  style={{ objectFit: "cover" }}
+                                />
+                              ) : (
+                                <Image
+                                  src={item.file}
+                                  alt={item.title || "About JSS Academy"}
+                                  width={1390}
+                                  height={550}
+                                  className="img-fluid w-100"
+                                />
+                              )}
+
+                              {/* ✅ IMPORTANT: PRESERVED */}
+                              <div className="overlap_contents">
+                                {item?.countGroup?.map((singleItem, itemIdx) => (
+                                  <figcaption key={itemIdx} className="image-overlay-caption">
                                     <h5>{singleItem.counter}</h5>
                                     <p>{singleItem.countDesc}</p>
                                   </figcaption>
                                 ))}
-                            </div>
-                          </figure>
-                        )}
+                              </div>
+                            </figure>
+                          ) : null}
+                        </div>
                       </div>
 
                       {item.description && (
