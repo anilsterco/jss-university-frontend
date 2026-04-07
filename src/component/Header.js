@@ -2235,6 +2235,7 @@ export default function Header() {
           .menu-overlay.open {
             pointer-events: auto;
           }
+            
           .hamburger-layout {
             position: absolute;
             top: 0;
@@ -2716,6 +2717,12 @@ export default function Header() {
             .hamburger {
               padding: 1.5rem 1.5rem 1.5rem;
             }
+               .menu-left-item {
+             padding: 1rem 5rem 0.5rem 0;
+            }
+              .hamburger-layout{    height: 79.6rem;
+
+              }
           }
           @media (max-width: 1599px) {
             // .mega-right {
@@ -2727,9 +2734,7 @@ export default function Header() {
             .menu-middle {
               padding: 7rem;
             }
-            .menu-left-item {
-              padding: 1rem 5rem 1rem 10rem;
-            }
+           
             .menu-left {
               padding-top: 6rem;
             }
@@ -2752,8 +2757,17 @@ export default function Header() {
             .nav-list {
             gap: 2.9rem;
           }
-          }
-
+          } 
+          @media (max-width: 1366px) {
+  .menu-left-item {
+             padding: 1rem 5rem 0.5rem 10rem;
+            }
+            }
+          @media (max-width: 1280px) {
+  .menu-left-item {
+             padding: 1rem 5rem 0.5rem 10rem;
+            }
+            }
           @media (max-width: 1149px) {
             .mega-dropdown {
               min-width: 700px;
@@ -3436,7 +3450,12 @@ transform: translateY(0);
     color:var(--color-white);
     }
 
+@media (max-width: 1366px){
+.hamburger-layout{
+height: 78.6rem;
 
+}
+}
         `}
       </style>
     </header>

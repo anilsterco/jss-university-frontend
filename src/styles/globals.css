@@ -1894,6 +1894,7 @@ a:active {
   .school_row {
     grid-template-columns: repeat(1, 50% auto);
   }
+  .menu-left-item .hambur_links{padding: 1rem 7rem 1rem 2rem;}
 }
 
 @media (max-width: 1200px) {
