@@ -169,7 +169,23 @@ export default function FacilitySix({ data }) {
                           />
                         </figure>
                       ) : null}
-                      {item.imageDesc && <p>{item.imageDesc}</p>}
+
+                      <div className="desc_group">
+                        {item.imageDesc && (
+                          <p>
+                            {item.imageDesc}{" "}
+                            {item?.desc_btns[0]?.btn_link && (
+                              <Link
+                                href={item?.desc_btns[0]?.btn_link}
+                                className="btn read_more_btn btn1"
+                                target="_blank"
+                              >
+                                {item?.desc_btns[0]?.btn_name}
+                              </Link>
+                            )}
+                          </p>
+                        )}
+                      </div>
 
                       {item.pdf && item.pdf.length > 0 && (
                         <div className="studends_pdf">

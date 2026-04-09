@@ -2269,9 +2269,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
 }
-.expir_grid2{
+.expir_grid2 {
   display: grid;
-  grid-template-columns:  1fr;
+  grid-template-columns: 1fr;
   background-color: var(--color-white);
   padding: 5rem;
 }
@@ -2296,6 +2296,16 @@
   border-radius: 5rem;
   padding: 0.9rem 1.2rem;
   font-weight: 400;
+}
+
+.read_more_btn.btn1 {
+  background-color: var(--color-100);
+}
+
+.read_more_btn.btn1:hover,
+.read_more_btn.btn1:focus,
+.read_more_btn.btn1:active {
+  background: #e6b000;
 }
 
 .heritage .about_f_value .read_more_btn {
@@ -2512,8 +2522,9 @@
   font: var(--font-14);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;    display: grid;
-    grid-template-columns: 40% 60%;
+  transition: background 0.2s ease;
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
 
 .inner_faculties_search .faculty-reset-btn:hover {

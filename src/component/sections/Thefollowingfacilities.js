@@ -34,7 +34,6 @@ export default function AboutOne({ data }) {
               {section.items[0]?.title && <h6>{section.items[0].title}</h6>}
 
               <div className="exten_grid">
-              
                 {section.items[0]?.image && (
                   <div className="exte_imgsec">
                     <figure className="shine-effect">
@@ -52,18 +51,47 @@ export default function AboutOne({ data }) {
                 )}
 
                 {/* First 6 list items */}
-                {firstSix.length > 0 && (
-                  <div className="exten_listyle">
+                <div className="exten_listyle">
+                  {firstSix.length > 0 && (
                     <ul>
-                        {section.items[0]?.heading && <h4 className="text-left">{section.items[0].heading}</h4>}
+                      {section.items[0]?.heading && (
+                        <h4 className="text-left">
+                          {section.items[0].heading}
+                        </h4>
+                      )}
                       {firstSix.map((item, i) => (
                         <li key={i}>
-                          <span dangerouslySetInnerHTML={{ __html: item.list }} />
+                          <span
+                            dangerouslySetInnerHTML={{ __html: item.list }}
+                          />
                         </li>
                       ))}
                     </ul>
-                  </div>
-                )}
+                  )}
+
+                  {section.items[0]?.pdfIcons.length > 0 && (
+                    <div className="downlo_guides">
+                      {section.items[0]?.pdfIcons.map((pdf, i) => (
+                        <a key={i} href={pdf.pdf} target="_blank">
+                          <figure className="shine-effect">
+                            <Image
+                              alt="PDF Icon"
+                              loading="lazy"
+                              width="15"
+                              height="20"
+                              decoding="async"
+                              data-nimg="1"
+                              className="img-fluid"
+                              style={{ color: "transparent" }}
+                              src="/images/icons/pdf.png"
+                            />
+                          </figure>
+                          {pdf.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Remaining items below image */}
