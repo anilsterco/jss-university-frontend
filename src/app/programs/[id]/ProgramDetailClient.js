@@ -6,7 +6,7 @@ import Link from "next/link";
 import "@/styles/custom.style.css";
 import "@/styles/style.css";
 import { useParams } from "next/navigation";
-import { BASE_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL } from "@/config/config";
 import Faq from "@/component/common/faq/Faq";
 import EligibilityPrograms from "@/component/sections/EligibilityData";
 
@@ -178,7 +178,7 @@ export default function ProgramDetailClient({ params }) {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  console.log('tabSection',tabSection);
+  console.log("tabSection", tabSection);
   return (
     <main className="site_main">
       <section className="program-detail">
@@ -282,11 +282,13 @@ export default function ProgramDetailClient({ params }) {
                             Brochure
                           </a>
                         )}
-                        {(admissionSection?.apply_now_link || apply_now_link) && (
+                        {(admissionSection?.apply_now_link ||
+                          apply_now_link) && (
                           <a
-                            href={
-                              admissionSection?.apply_now_link || apply_now_link
-                            }
+                            href={APPLY_NOW}
+                            // href={
+                            //   admissionSection?.apply_now_link || apply_now_link
+                            // }
                             target="_blank"
                             className="apply-btn1"
                             rel="noopener noreferrer"
@@ -394,11 +396,11 @@ export default function ProgramDetailClient({ params }) {
         </div>
       </section>
 
-      
-
-      {tabSection && tabSection?.tab_section_content && tabSection?.tab_section_info.length !== 0 && (
-        <EligibilityPrograms data={convertTabSection(tabSection)} />
-      )}
+      {tabSection &&
+        tabSection?.tab_section_content &&
+        tabSection?.tab_section_info.length !== 0 && (
+          <EligibilityPrograms data={convertTabSection(tabSection)} />
+        )}
 
       {peos && peos?.length > 0 && (
         <section className="educational-sec">

@@ -7,7 +7,7 @@ import TestimonialComponent from "../component/home-components/testimonial/Testi
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
 import Link from "next/link";
 
@@ -56,7 +56,7 @@ export default async function HomePage() {
 
       <div className="fixButtons">
         <Link
-          href="https://universitysolutions.in/admission/index_jssun.html"
+          href={APPLY_NOW}
           target="_blank"
           className="vertical-floating-btn"
         >

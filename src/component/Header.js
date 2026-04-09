@@ -9,7 +9,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 import { FiSearch } from "react-icons/fi";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import { useRouter } from "next/navigation";
 
 const NAV_BASE_URL = `${BASE_URL}header`;
@@ -902,7 +902,7 @@ export default function Header() {
                             <a
                               key={idx}
                               target="_blank"
-                              href={cta.url}
+                              href={`${idx === 0 ? APPLY_NOW : cta.url}`}
                               className={`cta applynow ${cta.type}`}
                             >
                               {cta.text}
