@@ -197,7 +197,7 @@ export default function FacultyClient() {
                   />
                   <img
                     src="/images/custom-page/facility/serch-icon.svg"
-                    alt=""
+                    alt="Search"
                     className="search-icon"
                   />
                 </div>

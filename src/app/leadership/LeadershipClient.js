@@ -228,6 +228,7 @@ export default function LeadershipClient() {
                   <Link
                     href={`/leadership/${featuredLeader.slug}`}
                     className="links"
+                    aria-label={`View leadership: ${featuredLeader.name}`}
                   />
                 </figure>
               </div>
@@ -305,7 +306,7 @@ function LeaderCard({ leader }) {
           />
         </figcaption>
       </figure>
-      <Link href={`/leadership/${leader.slug}`} className="links" />
+      <Link href={`/leadership/${leader.slug}`} className="links" aria-label={`View leadership: ${leader.name}`} />
     </div>
   );
 }

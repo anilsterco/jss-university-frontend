@@ -101,7 +101,11 @@ export default function TestimonialsSection({ data }) {
             dangerouslySetInnerHTML={{ __html: testimonialsData.title }}
           ></h2>
           <Link href={`${WEB_URL}testimonials`}>
-            <button className={styles.circleArrowBtn}>
+            <button
+              type="button"
+              className={styles.circleArrowBtn}
+              aria-label="View all testimonials"
+            >
               <Image
                 src="/images/icons/arrow2.svg"
                 alt="arrow"
@@ -178,7 +182,11 @@ export default function TestimonialsSection({ data }) {
           </Swiper>
           <div className={`${styles.mobileViewArrow}`}>
             <Link href={`${WEB_URL}testimonials`}>
-              <button className={styles.circleArrowBtn}>
+              <button
+                type="button"
+                className={styles.circleArrowBtn}
+                aria-label="View all testimonials"
+              >
                 <svg
                   width="20"
                   height="20"

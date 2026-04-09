@@ -240,6 +240,7 @@ export default function DepartmentHeader({ className, data }) {
                 href={homeHref}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`${styles.navItem} ${isHomeActive ? styles.activeNav : ""}`}
+                aria-label={`View Home`}
               >
                 Home
               </Link>

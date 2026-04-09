@@ -224,6 +224,7 @@ export default function DepartmentSection({
                 href={APPLY_NOW}
                 className=" btn btn-warning"
                 target="_blank"
+                aria-label="Apply Now"
               >
                 Apply Now
               </Link>

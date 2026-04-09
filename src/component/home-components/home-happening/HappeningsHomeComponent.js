@@ -152,6 +152,7 @@ export default function EventsGrid({ data }) {
                     <Link
                       href={`${WEB_URL}happenings/${eventsData.happenings[0].slug}`}
                       className={styles.full_link}
+                      aria-hidden="true"
                     />
                   )}
                 </div>
@@ -765,7 +766,11 @@ export default function EventsGrid({ data }) {
                 </SwiperSlide>
               </Swiper>
               <Link href="#">
-                <button className={styles.circleArrowBtn}>
+                <button
+                  type="button"
+                  className={styles.circleArrowBtn}
+                  aria-label="View all happenings"
+                >
                   <Image
                     src="/images/icons/arrow2.svg"
                     alt="arrow"

@@ -108,14 +108,22 @@ export default function AcademicLabs({ data }) {
                       ))}
 
                       <div className="ac_pagination">
-                        <button className="ac_swi_btn academic_labs_prev">
+                        <button
+                          type="button"
+                          className="ac_swi_btn academic_labs_prev"
+                          aria-label="Next slide"
+                        >
                           <img
                             src="/images/about-page/academic_lab_next.svg"
                             alt="Next"
                             className="img-fluid"
                           />
                         </button>
-                        <button className="ac_swi_btn academic_labs_next">
+                        <button
+                          type="button"
+                          className="ac_swi_btn academic_labs_next"
+                          aria-label="Previous slide"
+                        >
                           <img
                             src="/images/about-page/academic_lab_next.svg"
                             alt="Previous"

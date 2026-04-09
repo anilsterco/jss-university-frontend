@@ -144,12 +144,16 @@ export default function FacilitySix({ data }) {
 
                             {/* Unique nav buttons per slide instance */}
                             <button
+                              type="button"
                               className={`swiper-button-prev swiper-prev-right-counter-${idx}`}
+                              aria-label="Previous slide"
                             >
                               <MdChevronLeft />
                             </button>
                             <button
+                              type="button"
                               className={`swiper-button-next swiper-next-right-counter-${idx}`}
+                              aria-label="Next slide"
                             >
                               <MdChevronRight />
                             </button>

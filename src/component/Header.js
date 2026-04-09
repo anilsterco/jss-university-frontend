@@ -607,6 +607,7 @@ export default function Header() {
                       <Link
                         href={WEB_URL + l.url}
                         className={`nav-link nav-lists`}
+                        aria-label={`View ${l.title}`}
                       >
                         {l.title}
                       </Link>
@@ -881,7 +882,7 @@ export default function Header() {
                               <img
                                 src="/images/header/mailicon.svg"
                                 className="img-fluid"
-                                alt="mail"
+                                alt="Email"
                               />
                               {admissionsData.left.email}
                             </a>
@@ -891,7 +892,7 @@ export default function Header() {
                               <img
                                 src="/images/header/phoneicon.svg"
                                 className="img-fluid"
-                                alt="mail"
+                                alt="Phone"
                               />
                               {admissionsData.left.phone}
                             </a>
@@ -920,12 +921,13 @@ export default function Header() {
                                 style={{ color: "inherit" }}
                                 onClick={() => setAdmissionOpen(false)}
                                 target={link?.target}
+                                aria-label={`View ${link.title}`}
                               >
                                 {link.title}
                                 <img
                                   src="/images/header/listicon.svg"
                                   className="img-fluid"
-                                  alt="mail"
+                                  alt="Arrow"
                                 />
                               </Link>
                             </li>
@@ -1000,7 +1002,7 @@ export default function Header() {
               aria-label="Close menu"
               onClick={closeMenu}
             >
-              <img src="/images/header/close-icon.svg" />
+              <img src="/images/header/close-icon.svg" alt="Close menu" />
             </button>
 
             <div className="hamburger-layout">
@@ -1022,6 +1024,7 @@ export default function Header() {
                             : WEB_URL + "#"
                         }
                         className="hambur_links"
+                        aria-label={`View ${item.title}`}
                         onClick={(e) => {
                           if (!item.url || item.url === "#") {
                             e.preventDefault();
@@ -1100,7 +1103,7 @@ export default function Header() {
                             closeMenu();
                           }}
                         >
-                          <img src="/images/header/banner-arrow.svg" />
+                          <img src="/images/header/banner-arrow.svg" alt="Arrow" />
                         </Link>
                       )}
 
@@ -1132,6 +1135,7 @@ export default function Header() {
                           <Link
                             href={WEB_URL}
                             className="links"
+                            aria-label={`View ${activeRightMenu?.first_section?.title}`}
                             onClick={() => {
                               closeMenu();
                             }}
@@ -1194,6 +1198,7 @@ export default function Header() {
                                   "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
                             }
                             className="links"
+                            aria-label={`View ${activeRightMenu.video_section?.video_url ? activeRightMenu.video_section.video_url : "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji"}`}
                             onClick={() => {
                               closeMenu();
                             }}
@@ -1316,6 +1321,7 @@ export default function Header() {
                                 onClick={() => {
                                   setActivePanel(null);
                                 }}
+                                aria-label={`View ${link.title}`}
                               >
                                 {link.title}
                               </Link>

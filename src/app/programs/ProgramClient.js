@@ -221,7 +221,7 @@ export default function ProgramClient() {
                     value={searchProgram}
                     onChange={(e) => handleSearch(e.target.value)}
                   />
-                  <button type="submit">
+                  <button type="button" aria-label="Search programs">
                     <i className="bi bi-search"></i>
                   </button>
                 </>

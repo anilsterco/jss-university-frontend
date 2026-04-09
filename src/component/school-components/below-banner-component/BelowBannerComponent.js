@@ -46,7 +46,7 @@ export default function BelowBannerSection() {
                 data-aos="fade-up"
                 data-aos-delay={300 + i * 100}
               >
-                <Link href={link.url} className={styles.link}>
+                <Link href={link.url} className={styles.link} aria-label={`View ${link.label}`}>
                   {link.label}
                 </Link>
               </li>
@@ -57,11 +57,12 @@ export default function BelowBannerSection() {
             data-aos="fade-up"
             data-aos-delay="700"
           >
-            <button className={styles.button}>
+            <button className={styles.button} aria-label="Download Brochure">
               DOWNLOAD BROCHURE
             </button>
             <button
               className={`${styles.button} ${styles.buttonPrimary}`}
+              aria-label="Apply Now"
             >
               APPLY NOW
             </button>

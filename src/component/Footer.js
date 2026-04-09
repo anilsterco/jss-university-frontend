@@ -83,13 +83,13 @@ export default function Footer() {
     const style = { width: size, height: size };
     switch (icon) {
       case "facebook":
-        return <img src="/images/footer/dash_facebook.svg" />;
+        return <img src="/images/footer/dash_facebook.svg" alt="Facebook" />;
       case "instagram":
-        return <img src="/images/footer/dash_insta.svg" />;
+        return <img src="/images/footer/dash_insta.svg" alt="Instagram" />;
       case "youtube":
-        return <img src="/images/footer/dash_youtube.svg" />;
+        return <img src="/images/footer/dash_youtube.svg" alt="YouTube" />;
       case "twitter":
-        return <img src="/images/footer/dash_linkdin.svg" />;
+        return <img src="/images/footer/dash_linkdin.svg" alt="Twitter" />;
       default:
         return null;
     }
@@ -151,14 +151,15 @@ export default function Footer() {
                   <p>Follow us on</p>
                   {data.socials.map((s, i) => (
                     <li key={i}>
-                      <a
+                      <Link
                         href={s.url}
                         target="_blank"
                         className="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
                         style={{ width: "20px", height: "20px" }}
+                        aria-label={`Follow us on ${s.icon}`}
                       >
                         {renderIcon(s.icon)}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -175,6 +176,7 @@ export default function Footer() {
                       <a
                         href={WEB_URL + section.url ?? "#"}
                         className="links-itams"
+                        aria-label={`View ${section.title}`}
                       >
                         {section.title}
                       </a>
@@ -191,6 +193,7 @@ export default function Footer() {
                         href={link.target_blank ? link.url : WEB_URL + link.url}
                         className="link-item"
                         target={link.target_blank ? "_blank" : "_self"}
+                        aria-label={`View ${link.label}`}
                       >
                         {link.label}
                       </a>
@@ -257,6 +260,7 @@ export default function Footer() {
                     href={link.target_blank ? link.url : WEB_URL + link.url}
                     className="link-item"
                     target={link.target_blank ? "_blank" : "_self"}
+                    aria-label={`View ${link.label}`}
                   >
                     {link.label}
                   </a>

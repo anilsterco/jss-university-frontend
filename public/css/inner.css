@@ -1444,12 +1444,12 @@ ul.comon_list li:before {
 
 .awards-and-rankings .row.justify-content-center {
   justify-content: start !important;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
 }
 
 .awards-and-rankings .placement_proSec {
-  padding-top: 0;
-  padding-bottom: 6rem;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
 }
 
 .awards-and-rankings .about_one .estblish {
@@ -9326,7 +9326,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   }
 
   .awards-and-rankings .row.justify-content-center {
-    padding-bottom: 5rem;
+    padding-top: 5rem;
   }
 }
 
@@ -9336,6 +9336,11 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   }
 
   .awards-and-rankings .row.justify-content-center {
+    padding-top: 3rem;
+  }
+
+  .awards-and-rankings .placement_proSec{
+    padding-top: 3rem;
     padding-bottom: 3rem;
   }
 }

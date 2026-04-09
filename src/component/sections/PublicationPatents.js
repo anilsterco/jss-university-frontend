@@ -66,6 +66,7 @@ export default function PublicationPatents({ data = [] }) {
                                 >
                                   <Image
                                     src={"/images/icons/pdf.png"}
+                                    alt="PDF"
                                     width={30}
                                     height={40}
                                   />

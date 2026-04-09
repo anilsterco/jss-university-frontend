@@ -177,18 +177,28 @@ useEffect(() => {
                         <div
                           className={`d-flex gap-2 ${styles.testimonialIconContainer}`}
                         >
-                          <button className="testimonial-prev btn border-0 p-0">
+                          <button
+                            type="button"
+                            className="testimonial-prev btn border-0 p-0"
+                            aria-label="Previous testimonial"
+                          >
                             <img
                               src={"/images/icons/slider_arrow_left.png"}
                               width={22}
                               height={22}
+                              alt="Previous testimonial"
                             />
                           </button>
-                          <button className="testimonial-next btn border-0 p-0">
+                          <button
+                            type="button"
+                            className="testimonial-next btn border-0 p-0"
+                            aria-label="Next testimonial"
+                          >
                             <img
                               src={"/images/icons/slider_arrow_right.png"}
                               width={22}
                               height={22}
+                              alt="Next testimonial"
                             />
                           </button>
                         </div>

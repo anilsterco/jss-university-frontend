@@ -130,12 +130,16 @@ export default function ResearchLabsSecond({ data }) {
 
                         {/* Unique nav buttons per slide instance */}
                         <button
+                          type="button"
                           className={`swiper-button-prev swiper-prev-research-${idx}`}
+                          aria-label="Previous slide"
                         >
                           <MdChevronLeft />
                         </button>
                         <button
+                          type="button"
                           className={`swiper-button-next swiper-next-research-${idx}`}
+                          aria-label="Next slide"
                         >
                           <MdChevronRight />
                         </button>

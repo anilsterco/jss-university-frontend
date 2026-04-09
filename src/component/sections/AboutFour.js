@@ -157,12 +157,16 @@ export default function AboutFour({ data }) {
 
                                 {/* Custom Nav Buttons */}
                                 <button
+                                  type="button"
                                   className={`swiper-button-prev swiper-prev-${idx}`}
+                                  aria-label="Previous slide"
                                 >
                                   <MdChevronLeft />
                                 </button>
                                 <button
+                                  type="button"
                                   className={`swiper-button-next swiper-next-${idx}`}
+                                  aria-label="Next slide"
                                 >
                                   <MdChevronRight />
                                 </button>

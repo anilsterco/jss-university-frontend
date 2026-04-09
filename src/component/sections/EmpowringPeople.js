@@ -158,12 +158,16 @@ export default function EmpowringPeople({ data }) {
 
                                 {/* Custom Nav Buttons */}
                                 <button
+                                  type="button"
                                   className={`swiper-button-prev swiper-prev-${index}-empowering`}
+                                  aria-label="Previous slide"
                                 >
                                   <MdChevronLeft />
                                 </button>
                                 <button
+                                  type="button"
                                   className={`swiper-button-next swiper-next-${index}-empowering`}
+                                  aria-label="Next slide"
                                 >
                                   <MdChevronRight />
                                 </button>

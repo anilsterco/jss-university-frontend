@@ -116,12 +116,16 @@ export default function ImageContent({ data, id, type, extraClass }) {
 
                 {/* Unique nav buttons per slide instance */}
                 <button
+                  type="button"
                   className={`swiper-button-prev swiper-prev-image-content`}
+                  aria-label="Previous slide"
                 >
                   <MdChevronLeft />
                 </button>
                 <button
+                  type="button"
                   className={`swiper-button-next swiper-next-image-content`}
+                  aria-label="Next slide"
                 >
                   <MdChevronRight />
                 </button>

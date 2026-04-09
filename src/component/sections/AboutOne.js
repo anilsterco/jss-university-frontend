@@ -159,10 +159,18 @@ export default function AboutOne({ data, extraClass }) {
                                   ))}
                                 </Swiper>
 
-                                <button className="swiper-button-prev swiper-prev-placement">
+                                <button
+                                  type="button"
+                                  className="swiper-button-prev swiper-prev-placement"
+                                  aria-label="Previous slide"
+                                >
                                   <MdChevronLeft />
                                 </button>
-                                <button className="swiper-button-next swiper-next-placement">
+                                <button
+                                  type="button"
+                                  className="swiper-button-next swiper-next-placement"
+                                  aria-label="Next slide"
+                                >
                                   <MdChevronRight />
                                 </button>
                               </div>
@@ -399,6 +407,7 @@ export default function AboutOne({ data, extraClass }) {
                             href={item.url}
                             className="links"
                             target="_blank"
+                            aria-label={`View ${item.title}`}
                           />
                         )}
                       </div>

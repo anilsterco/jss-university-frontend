@@ -135,7 +135,12 @@ export default function MediaCoverage({ className, programId }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
-            <button className={styles.closeButton} onClick={closeModal}>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={closeModal}
+              aria-label="Close media coverage"
+            >
               <svg
                 width="24"
                 height="24"
@@ -188,8 +193,10 @@ export default function MediaCoverage({ className, programId }) {
               </div>
               <div className="d-flex gap-2">
                 <button
+                  type="button"
                   className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`}
                   onClick={previousSlide}
+                  aria-label="Previous slide"
                 >
                   <svg
                     width="24"
@@ -203,8 +210,10 @@ export default function MediaCoverage({ className, programId }) {
                   </svg>
                 </button>
                 <button
+                  type="button"
                   className={`${styles.sliderArrow} ${styles.sliderArrowRight}`}
                   onClick={nextSlide}
+                  aria-label="Next slide"
                 >
                   <svg
                     width="24"

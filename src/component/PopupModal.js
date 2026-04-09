@@ -97,6 +97,7 @@ export default function PopupModal() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit ${item?.title}`}
                   ></a>
                 </div>
               ))}

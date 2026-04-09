@@ -46,7 +46,11 @@ export default function HappeningsClientDetail({ happeningsData }) {
               </div>
               <ul className={styles.happIcons}>
                 <li>
-                  <button onClick={handleBack}>
+                  <button
+                    type="button"
+                    onClick={handleBack}
+                    aria-label="Go back"
+                  >
                     <img
                       src={icons[1].src}
                       alt="back"

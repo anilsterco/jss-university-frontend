@@ -342,7 +342,12 @@ export default function Gallery({ className, programId }) {
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className={styles.closeButton} onClick={closeModal}>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={closeModal}
+              aria-label="Close gallery"
+            >
               <img src="images/custom-page/gallery_close.svg" alt="close btn" />
             </button>
 
@@ -401,8 +406,10 @@ export default function Gallery({ className, programId }) {
 
               <div className="d-flex gap-2">
                 <button
+                  type="button"
                   className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`}
                   onClick={previousSlide}
+                  aria-label="Previous slide"
                 >
                   <svg
                     stroke="currentColor"
@@ -417,8 +424,10 @@ export default function Gallery({ className, programId }) {
                   </svg>
                 </button>
                 <button
+                  type="button"
                   className={`${styles.sliderArrow} ${styles.sliderArrowRight}`}
                   onClick={nextSlide}
+                  aria-label="Next slide"
                 >
                   <svg
                     stroke="currentColor"

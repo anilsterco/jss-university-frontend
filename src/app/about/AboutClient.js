@@ -458,6 +458,7 @@ export default function AboutClient() {
                       <Link
                         href={`/leadership/${leadershipTopSection.slug}`}
                         className="links"
+                        aria-label={`View leadership: ${leadershipTopSection.name}`}
                       ></Link>
                     </figure>
                   </div>
@@ -496,6 +497,7 @@ export default function AboutClient() {
                         <Link
                           href={`/leadership/${leadershipTopSection.slug}`}
                           className="links"
+                          aria-label={`View leadership: ${leader.name}`}
                         ></Link>
                       </div>
                     ))}

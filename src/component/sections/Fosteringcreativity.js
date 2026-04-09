@@ -173,12 +173,16 @@ export default function Fosteringcreativity({ data }) {
 
                                   {/* Custom Nav Buttons */}
                                   <button
+                                    type="button"
                                     className={`swiper-button-prev swiper-prev-${index}`}
+                                    aria-label="Previous slide"
                                   >
                                     <MdChevronLeft />
                                   </button>
                                   <button
+                                    type="button"
                                     className={`swiper-button-next swiper-next-${index}`}
+                                    aria-label="Next slide"
                                   >
                                     <MdChevronRight />
                                   </button>

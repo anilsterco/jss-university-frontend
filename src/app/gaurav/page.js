@@ -717,7 +717,7 @@ const Page = () => {
                       <figcaption>
                         <p>Multipurpose Hall</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                     <div className="ameniti_item_col">
                       <figure className="shine-effect">
@@ -734,7 +734,7 @@ const Page = () => {
                       <figcaption>
                         <p>Reprographics Facilities</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                     <div className="ameniti_item_col">
                       <figure className="shine-effect">
@@ -751,7 +751,7 @@ const Page = () => {
                       <figcaption>
                         <p>Coffee Day Shop</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                     <div className="ameniti_item_col">
                       <figure className="shine-effect">
@@ -768,7 +768,7 @@ const Page = () => {
                       <figcaption>
                         <p>General Utilities Shop</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                     <div className="ameniti_item_col">
                       <figure className="shine-effect">
@@ -785,7 +785,7 @@ const Page = () => {
                       <figcaption>
                         <p>Primary Health Center</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                     <div className="ameniti_item_col">
                       <figure className="shine-effect">
@@ -802,7 +802,7 @@ const Page = () => {
                       <figcaption>
                         <p>Fitness Center</p>
                       </figcaption>
-                      <a href="Javascript:void()" className="page_link"></a>
+                      <span className="page_link" aria-hidden="true" />
                     </div>
                   </div>
                   <div className="amenities_loadmore">
@@ -1093,7 +1093,7 @@ const Page = () => {
                     <figcaption>
                       <p>Kho Kho</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                   <div className="uni_boa_itemse">
                     <figure className="shine-effect img-full">
@@ -1110,7 +1110,7 @@ const Page = () => {
                     <figcaption>
                       <p>Table Tennis</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                   <div className="uni_boa_itemse">
                     <figure className="shine-effect img-full">
@@ -1127,7 +1127,7 @@ const Page = () => {
                     <figcaption>
                       <p> Kabaddi</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                   <div className="uni_boa_itemse">
                     <figure className="shine-effect img-full">
@@ -1144,7 +1144,7 @@ const Page = () => {
                     <figcaption>
                       <p>Chess</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                   <div className="uni_boa_itemse">
                     <figure className="shine-effect img-full">
@@ -1161,7 +1161,7 @@ const Page = () => {
                     <figcaption>
                       <p>Basketball</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                   <div className="uni_boa_itemse">
                     <figure className="shine-effect img-full">
@@ -1178,7 +1178,7 @@ const Page = () => {
                     <figcaption>
                       <p>Badminton</p>
                     </figcaption>
-                    <a href="javascript:void()" className="page_link"></a>
+                    <span className="page_link" aria-hidden="true" />
                   </div>
                 </div>
               </div>
@@ -1447,14 +1447,22 @@ const Page = () => {
                       </figure>
                     </SwiperSlide>
                     <div className="ac_pagination">
-                      <button className="ac_swi_btn academic_labs_next">
+                      <button
+                        type="button"
+                        className="ac_swi_btn academic_labs_next"
+                        aria-label="Next slide"
+                      >
                         <img
                           src="/images/about-page/academic_lab_next.svg"
                           alt="About JSS Academy"
                           className="img-fluid"
                         />
                       </button>
-                      <button className="ac_swi_btn academic_labs_prev">
+                      <button
+                        type="button"
+                        className="ac_swi_btn academic_labs_prev"
+                        aria-label="Previous slide"
+                      >
                         {" "}
                         <img
                           src="/images/about-page/academic_lab_next.svg"

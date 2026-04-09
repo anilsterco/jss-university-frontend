@@ -88,7 +88,10 @@ export default function FacultyDetailClient({ faculty }) {
                     <>
                       <div className="info-box">
                         <div className="profile-icon">
-                          <img src="/images/custom-page/mail-faculty.svg" />
+                          <img
+                            src="/images/custom-page/mail-faculty.svg"
+                            alt="Email"
+                          />
                         </div>
                         <div className="profile-email">
                           <p>Email Id</p>
@@ -101,7 +104,10 @@ export default function FacultyDetailClient({ faculty }) {
                   {facultyLinkedin && (
                     <div className="info-box">
                       <div className="profile-icon">
-                        <img src="/images/custom-page/insta-faculty.svg" />
+                        <img
+                          src="/images/custom-page/insta-faculty.svg"
+                          alt="LinkedIn"
+                        />
                       </div>
                       <div className="profile-email">
                         <p>LinkedIn Profile</p>

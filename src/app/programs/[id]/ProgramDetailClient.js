@@ -829,7 +829,7 @@ export default function ProgramDetailClient({ params }) {
                               {currentTestimonial?.company}
                             </blockquote>
                           </div>
-                          <a href="#" className="streched_link"></a>
+                          <span className="streched_link" aria-hidden="true" />
                         </figcaption>
                       </figure>
                     </div>
@@ -882,6 +882,7 @@ export default function ProgramDetailClient({ params }) {
                                 href={opportunity.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label={`View opportunity: ${opportunity.text}`}
                               >
                                 {opportunity.text}
                               </a>
