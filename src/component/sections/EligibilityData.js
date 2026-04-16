@@ -113,7 +113,7 @@ export default function EligibilityPrograms({ data }) {
                         {tabApiData && tabApiData.degrees.map((apiItem, apiIdx)=>
                           <div key={apiIdx} className="program_box">
                             {apiItem?.degree_name && <h6 className="degree_name">{apiItem.degree_name}</h6>}
-                            {apiItem?.courses && apiItem.courses.length > 0 && (
+                            {apiItem?.courses && apiItem.courses.length > 0 ? (
                               <ul className="courses">
                                 {apiItem.courses.map((courseItem, courseIdx)=>(
                                   <li key={courseIdx}>
@@ -125,7 +125,7 @@ export default function EligibilityPrograms({ data }) {
                                   </li>
                                 ))}
                               </ul>
-                            ) }
+                            ) : <p className="not_found">No Courses Found!</p> }
                             {apiItem?.eligibility && <h6 className="eligibility">{apiItem.eligibility}</h6>}
                           </div>
                         )}

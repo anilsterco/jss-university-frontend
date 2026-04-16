@@ -5261,7 +5261,7 @@ ul.comon_list li:before {
 
 .eligi_tab_con .growth-item .program_tabs .courses{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .eligi_tab_con .growth-item .program_tabs .courses li{
@@ -6598,6 +6598,11 @@ ul.comon_list li:before {
 .grands_imgsec img {
   height: 100%;
   object-fit: cover;
+}
+
+.not_found{
+  font:var(--font-12)!important;
+
 }
 
 /* Responsive */
