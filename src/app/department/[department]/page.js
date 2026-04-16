@@ -75,7 +75,7 @@ export default async function DepartmentPage({ params }) {
       {departmentData?.sections?.courses_data && (
         <CoursesOfferedDepartment data={departmentData.sections.course_data} />
       )}
-      {departmentData?.sections?.dean_message && (
+      {departmentData?.sections?.dean_message && departmentData.sections.dean_message.message !== null && departmentData.sections.dean_message.name !== null && (
         <HodMessageComponent data={departmentData.sections.dean_message} />
       )}
 
