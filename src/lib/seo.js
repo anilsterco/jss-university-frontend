@@ -16,8 +16,6 @@ export async function getPageSEO(slug) {
       slug = `${SEO_URL}${pathname}`;
     }
 
-    console.log("slug", slug);
-
     const res = await fetch(`${BASE_URL}seo/${encodeURIComponent(slug)}`, {
       cache: "force-cache",
       next: { revalidate: 3600 },

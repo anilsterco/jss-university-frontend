@@ -9,6 +9,10 @@
     vertical-align: middle;
 }
 
+.skeleton.transparent{
+    background:rgba(255 255 255 / 20%)
+}
+
 @keyframes shimmer {
     0% {
         background-position: 200% 0;

@@ -2579,6 +2579,11 @@ ul.comon_list li:before {
   display: grid;
 }
 
+.eligib_grid_ad.programs{
+  grid-template-columns: unset;
+  padding: 10rem 0;
+}
+
 .eligib_cont h5 {
   font: var(--font-26);
   color: var(--color-white);
@@ -5229,6 +5234,45 @@ ul.comon_list li:before {
 
 .eligi_tab_con .growth-item {
   padding-right: 3rem;
+}
+
+.eligi_tab_con .growth-item .program_tabs{
+  margin-bottom:5rem;
+}
+
+.eligi_tab_con .growth-item .program_tabs .program_box{
+  border-radius: 0.3rem;
+  position:relative;
+  text-align: left;
+  background: rgba(255 255 255 / 0.07);
+  padding: 3rem 4rem;
+}
+
+.eligi_tab_con .growth-item .program_tabs .program_box:not(:first-child){
+  margin-top:3rem;
+}
+
+.eligi_tab_con .growth-item .program_tabs .degree_name{
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  color:#fff;
+}
+
+.eligi_tab_con .growth-item .program_tabs .courses{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.eligi_tab_con .growth-item .program_tabs .courses li{
+  margin-bottom:2rem;
+}
+
+.eligi_tab_con .growth-item .program_tabs .eligibility{
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  display: block;
 }
 
 .fee_sturc_admain {
