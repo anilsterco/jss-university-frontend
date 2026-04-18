@@ -639,8 +639,9 @@ export default function Header() {
                                       }}
                                     >
                                       <Link
-                                        href={WEB_URL + d.url || "#"}
+                                        href={d.url !== '#' ? WEB_URL + d.url : "#"}
                                         className="dropdown-item"
+                                        role={d.url == '#' ? 'button' : ''}
                                       >
                                         {d.title}
                                       </Link>
