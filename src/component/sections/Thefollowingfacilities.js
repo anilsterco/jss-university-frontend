@@ -69,7 +69,7 @@ export default function AboutOne({ data }) {
                     </ul>
                   )}
 
-                  {section.items[0]?.pdfIcons.length > 0 && (
+                  {section.items[0]?.pdfIcons?.length > 0 && (
                     <div className="downlo_guides">
                       {section.items[0]?.pdfIcons.map((pdf, i) => (
                         <a key={i} href={pdf.pdf} target="_blank">
