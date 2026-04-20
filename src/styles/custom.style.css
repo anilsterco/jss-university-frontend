@@ -4743,6 +4743,10 @@ hr {
   background: transparent;
 }
 
+.table_section .table-lab tbody td div{
+  width: max-content;
+}
+
 .table_section .table-lab tbody td:first-child {
   width: 80px;
 }
