@@ -162,17 +162,17 @@
 
 /* Lab Info */
 .labInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   z-index: 2;
-  gap: 1rem;
-  
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .5rem;
+    min-height: 90px;
+    padding: 1.5rem;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .labTitle {
@@ -181,7 +181,7 @@
   max-width: 100%;
   margin: 0;
   font: var(--font-26);
-  width: 98%;
+  width: 80%;
   font-family: var(--font-Condensed);
   font-weight: 700;
   line-height: 1.2;
@@ -238,7 +238,16 @@
   color: #1e3c72;
   transform: translateY(-2px);
 }
-
+@media (max-width: 1549px){
+.labInfo {
+    min-height: 80px;
+}
+}
+@media (max-width: 1024px){
+.labInfo {
+    min-height: 70px;
+}
+}
 @media (max-width: 991px) {
   .dep_cutting_edge {
     padding: 4rem 0 4rem 0rem;
