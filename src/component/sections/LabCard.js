@@ -255,6 +255,12 @@ export default function LabCard({ data }) {
                               dangerouslySetInnerHTML={{ __html: item.title }}
                             />
                           )}
+                          {item.titlebottom && (
+                            <>
+                              <blockquote>{item.titlebottom}</blockquote>
+                            </>
+                          )}
+
                           {item?.description?.length > 0 &&
                             item.description.map((singleDes, desIdx) => (
                               <p key={desIdx}>{singleDes.description}</p>
