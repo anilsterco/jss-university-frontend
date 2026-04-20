@@ -283,6 +283,13 @@ p {
   margin-left: 1rem;
 }
 
+
+
+.tableContentSection .right_col.grid_design .right_lists{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (min-width: 1921px) {
   .containerXl {
     padding-inline: 9.8rem;
@@ -375,6 +382,12 @@ p {
 
   .program-hide {
     display: none !important;
+  }
+
+
+  .tableContentSection .right_col.grid_design .right_lists{
+    display:block;
+    /* grid-template-columns: repeat(3, 1fr); */
   }
 }
 

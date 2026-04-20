@@ -58,11 +58,6 @@
   margin: 0;
 }
 
-.tableContentSection .right_col.grid_design ul{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .tableContentSection .right_col .li {
   font: var(--font-16);
   color: #fff;

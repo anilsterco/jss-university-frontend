@@ -102,7 +102,7 @@ const TableContent = ({ data }) => {
               )}
 
               {data?.rightLists && (
-                <ul className={styles.ul}>
+                <ul className={`${styles.ul} right_lists`}>
                   {data.rightLists.map((singleLi, liIdx) => (
                     <li key={liIdx} className={styles.li}>
                       {singleLi.list}
