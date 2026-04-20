@@ -2,70 +2,8 @@
 
 import { useEffect, useState } from "react";
 import './applyNow.css'
-import { useQuery } from "@tanstack/react-query";
 import { BASE_URL, WEB_URL } from "@/config/config";
 import Link from "next/link";
-
-const STREAMS = {
-  "School of Engineering & Technology": [
-    "Computer Science & Engineering",
-    "Electronics & Communication",
-    "Mechanical Engineering",
-    "Civil Engineering",
-    "Information Technology",
-    "Electrical Engineering",
-  ],
-  "School of Business & Management": [
-    "Business Administration (MBA)",
-    "Marketing",
-    "Finance & Accounting",
-    "Human Resource Management",
-    "Operations Management",
-  ],
-  "School of Arts & Humanities": [
-    "English Literature",
-    "History",
-    "Philosophy",
-    "Psychology",
-    "Sociology",
-    "Political Science",
-  ],
-  "School of Sciences": [
-    "Physics",
-    "Chemistry",
-    "Mathematics",
-    "Biology",
-    "Biotechnology",
-    "Environmental Science",
-  ],
-  "School of Law": [
-    "LLB (Hons)",
-    "Corporate Law",
-    "Criminal Law",
-    "International Law",
-    "Intellectual Property Law",
-  ],
-  "School of Medicine & Health Sciences": [
-    "MBBS",
-    "Nursing",
-    "Pharmacy",
-    "Public Health",
-    "Physiotherapy",
-  ],
-  "School of Architecture & Design": [
-    "Architecture",
-    "Interior Design",
-    "Urban Planning",
-    "Graphic Design",
-    "Fashion Design",
-  ],
-  "School of Education": [
-    "B.Ed (Primary)",
-    "B.Ed (Secondary)",
-    "Special Education",
-    "Educational Psychology",
-  ],
-};
 
 export default function ApplyNowForm() {
   const [form, setForm] = useState({
@@ -82,6 +20,7 @@ export default function ApplyNowForm() {
   const [focused, setFocused] = useState(null);
   const [totalSchools, setTotalSchools] = useState([]);
   const [selectedStream, setSelectedStream] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(()=>{
     const fetchSchoolDepartmentList = async()=>{
@@ -100,8 +39,6 @@ export default function ApplyNowForm() {
     setSelectedStream(streamData);
   }, [form.school])
 
-
-  const availableStreams = form.school ? STREAMS[form.school] || [] : [];
 
   const validate = () => {
     const newErrors = {};
@@ -130,14 +67,43 @@ export default function ApplyNowForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    setSubmitted(true);
+
+    try{
+        setLoading(true);
+        const response = await fetch(`${BASE_URL}apply-form`, {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(form)
+        });
+
+        if(!response.ok){
+            throw new Error(result?.message || "Failed to submit form");
+        }
+
+        const result = await response.json();
+
+        setSubmitted(true);
+        setErrors({});
+
+    }catch(error){
+        console.error("Submit error:", error.message);
+        setErrors((prev) => ({
+            ...prev,
+            api: error.message,
+        }));
+    }finally{
+        setLoading(false);
+    }
+
   };
 
   const handleReset = () => {
@@ -181,6 +147,9 @@ export default function ApplyNowForm() {
     <>
       <div className="apply-wrapper">
         <div className="container">
+            {errors.api && (
+                <div className="form-error">{errors.api}</div>
+            )}
         <div className="apply-card">
           <div className="apply-header">
             <div className="header-content">
@@ -346,10 +315,16 @@ export default function ApplyNowForm() {
               </div>
             </div>
 
-            <button type="submit" className="btn-primary btn-submit">
-              Submit Application
-              <span className="btn-arrow">→</span>
-            </button>
+            {loading ? (
+                <button type="submit" className="btn-primary btn-submit">
+                    Loading...
+                </button>
+            ) : (
+                <button type="submit" className="btn-primary btn-submit">
+                    Submit Application
+                    <span className="btn-arrow">→</span>
+                </button>
+            )}
           </form>
         </div>
         </div>

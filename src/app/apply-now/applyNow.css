@@ -222,6 +222,15 @@
     margin-top: 1.2rem;
   }
 
+  .form-error{
+    color:#fff;
+    font:var(--font-16);
+    background:red;
+    padding:0.5rem 1rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
 
   @media(max-width:767px){
     .apply-wrapper{
