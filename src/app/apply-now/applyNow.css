@@ -61,7 +61,7 @@
   .apply-wrapper .field-group {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .field {
@@ -150,7 +150,7 @@
     font-size: 1.1rem;
   }
 
-  .apply-form .btn-submit{
+  .apply-wrapper .btn-submit{
     border: 1px solid var(--color-4e);
     color: #fff;
     background:var(--color-4e);
@@ -162,7 +162,7 @@
     margin-top:3rem;
   }
 
-  .apply-form .btn-submit .btn-arrow{
+  .apply-wrapper .btn-submit .btn-arrow{
     margin-left: 1rem;
   }
 
@@ -189,7 +189,7 @@
     font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
-    box-shadow: 0 0 0 0.8rem rgba(192,57,43,0.07);
+    box-shadow: 0 0 0 .8rem #1c334d26;
     animation: popIn 0.5s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 

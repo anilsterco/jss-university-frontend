@@ -1,18 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './applyNow.css'
-
-const SCHOOLS = [
-  "School of Engineering & Technology",
-  "School of Business & Management",
-  "School of Arts & Humanities",
-  "School of Sciences",
-  "School of Law",
-  "School of Medicine & Health Sciences",
-  "School of Architecture & Design",
-  "School of Education",
-];
+import { useQuery } from "@tanstack/react-query";
+import { BASE_URL, WEB_URL } from "@/config/config";
+import Link from "next/link";
 
 const STREAMS = {
   "School of Engineering & Technology": [
@@ -75,16 +67,6 @@ const STREAMS = {
   ],
 };
 
-const QUALIFICATIONS = [
-  "10th (Secondary)",
-  "12th (Higher Secondary)",
-  "Diploma",
-  "Bachelor's Degree",
-  "Master's Degree",
-  "PhD",
-  "Other",
-];
-
 export default function ApplyNowForm() {
   const [form, setForm] = useState({
     name: "",
@@ -98,6 +80,26 @@ export default function ApplyNowForm() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState(null);
+  const [totalSchools, setTotalSchools] = useState([]);
+  const [selectedStream, setSelectedStream] = useState([]);
+
+  useEffect(()=>{
+    const fetchSchoolDepartmentList = async()=>{
+        const res = await fetch(`${BASE_URL}school-department-list`);
+        const data = await res.json();
+
+        // data.data
+        setTotalSchools(data.data);
+    }
+
+    fetchSchoolDepartmentList();
+  }, [])
+
+  useEffect(()=>{
+    const streamData = totalSchools.find((school)=>school.name === form.school)?.departments;
+    setSelectedStream(streamData);
+  }, [form.school])
+
 
   const availableStreams = form.school ? STREAMS[form.school] || [] : [];
 
@@ -110,7 +112,7 @@ export default function ApplyNowForm() {
     if (!form.phone.trim()) newErrors.phone = "Phone number is required";
     else if (!/^\+?[\d\s\-()]{8,}$/.test(form.phone))
       newErrors.phone = "Enter a valid phone number";
-    if (!form.qualification) newErrors.qualification = "Select a qualification";
+    if (!form.qualification) newErrors.qualification = "Enter qualification";
     if (!form.school) newErrors.school = "Select a school";
     if (!form.stream) newErrors.stream = "Select a stream";
     return newErrors;
@@ -165,9 +167,9 @@ export default function ApplyNowForm() {
                 <strong>{form.school}</strong>. We'll be in touch at{" "}
                 <strong>{form.email}</strong> shortly.
                 </p>
-                <button className="btn-primary" onClick={handleReset}>
-                Submit Another Application
-                </button>
+                <Link href={WEB_URL} className="btn-primary btn-submit">
+                Go to Homepage
+                </Link>
             </div>
           </div>
         </div>
@@ -266,25 +268,17 @@ export default function ApplyNowForm() {
                 <label className="field-label" htmlFor="qualification">
                   Qualification
                 </label>
-                <div className="select-wrapper">
-                  <select
-                    id="qualification"
-                    name="qualification"
-                    className="field-select"
-                    value={form.qualification}
-                    onChange={handleChange}
-                    onFocus={() => setFocused("qualification")}
-                    onBlur={() => setFocused(null)}
-                  >
-                    <option value="">Select qualification</option>
-                    {QUALIFICATIONS.map((q) => (
-                      <option key={q} value={q}>
-                        {q}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="select-arrow">▾</span>
-                </div>
+                <input
+                  id="qualification"
+                  name="qualification"
+                  type="text"
+                  className="field-input"
+                  placeholder="Enter Qualification"
+                  value={form.qualification}
+                  onChange={handleChange}
+                  onFocus={() => setFocused("phone")}
+                  onBlur={() => setFocused(null)}
+                />
                 {errors.qualification && (
                   <span className="field-error">{errors.qualification}</span>
                 )}
@@ -306,10 +300,10 @@ export default function ApplyNowForm() {
                     onBlur={() => setFocused(null)}
                   >
                     <option value="">Select school</option>
-                    {SCHOOLS.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
+                    {totalSchools.length > 0 && totalSchools.map((school, schoolIdx)=>(
+                        <option key={schoolIdx} value={school.name}>
+                            {school.name}
+                        </option>
                     ))}
                   </select>
                   <span className="select-arrow">▾</span>
@@ -338,9 +332,9 @@ export default function ApplyNowForm() {
                     <option value="">
                       {form.school ? "Select stream" : "Select a school first"}
                     </option>
-                    {availableStreams.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
+                    {selectedStream?.length > 0 && selectedStream?.map((s) => (
+                      <option key={s.name} value={s.name}>
+                        {s.name}
                       </option>
                     ))}
                   </select>
