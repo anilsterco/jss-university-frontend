@@ -4717,6 +4717,7 @@ hr {
   border: none;
   background: transparent;
   color: #fff;
+  vertical-align: middle;
   /* min-width: 35rem; */
 }
 

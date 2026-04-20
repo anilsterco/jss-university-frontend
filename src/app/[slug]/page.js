@@ -73,6 +73,7 @@ import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
 import Textarea from "@/component/sections/Textarea";
+import CustomTableSection from "@/component/sections/CustomTableSection";
 
 async function fetchPageData(slug) {
   try {
@@ -181,6 +182,7 @@ export default async function DynamicPage({ params }) {
     pdf_lists: PdfLists,
     gridCardDesign2: GridCardDesign2,
     table_section: TableSection,
+    custom_table_section:CustomTableSection,
     top_section: TopSection,
     logo_slider: LogoSlider,
     tabsGrid: TabsGrid,
