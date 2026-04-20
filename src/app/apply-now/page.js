@@ -12,14 +12,14 @@ export default function ApplyNowForm() {
     phone: "",
     qualification: "",
     school: "",
-    stream: "",
+    department: "",
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState(null);
   const [totalSchools, setTotalSchools] = useState([]);
-  const [selectedStream, setSelectedStream] = useState([]);
+  const [selectedDepartment, setSelectedDepartment] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(()=>{
@@ -35,8 +35,8 @@ export default function ApplyNowForm() {
   }, [])
 
   useEffect(()=>{
-    const streamData = totalSchools.find((school)=>school.name === form.school)?.departments;
-    setSelectedStream(streamData);
+    const departmentData = totalSchools.find((school)=>school.name === form.school)?.departments;
+    setSelectedDepartment(departmentData);
   }, [form.school])
 
 
@@ -51,7 +51,7 @@ export default function ApplyNowForm() {
       newErrors.phone = "Enter a valid phone number";
     if (!form.qualification) newErrors.qualification = "Enter qualification";
     if (!form.school) newErrors.school = "Select a school";
-    if (!form.stream) newErrors.stream = "Select a stream";
+    if (!form.department) newErrors.department = "Select a stream";
     return newErrors;
   };
 
@@ -59,7 +59,7 @@ export default function ApplyNowForm() {
     const { name, value } = e.target;
     setForm((prev) => {
       const updated = { ...prev, [name]: value };
-      if (name === "school") updated.stream = "";
+      if (name === "school") updated.department = "";
       return updated;
     });
     if (errors[name]) {
@@ -80,16 +80,15 @@ export default function ApplyNowForm() {
         const response = await fetch(`${BASE_URL}apply-form`, {
             method:"POST",
             headers:{
+                Accept: "application/json",
                 "Content-Type":"application/json"
             },
             body:JSON.stringify(form)
         });
 
         if(!response.ok){
-            throw new Error(result?.message || "Failed to submit form");
+            throw new Error("Failed to submit form");
         }
-
-        const result = await response.json();
 
         setSubmitted(true);
         setErrors({});
@@ -113,7 +112,7 @@ export default function ApplyNowForm() {
       phone: "",
       qualification: "",
       school: "",
-      stream: "",
+      department: "",
     });
     setErrors({});
     setSubmitted(false);
@@ -129,7 +128,7 @@ export default function ApplyNowForm() {
                 <h2 className="success-title">Application Submitted!</h2>
                 <p className="success-text">
                 Thank you, <strong>{form.name}</strong>. We've received your
-                application for <strong>{form.stream}</strong> at{" "}
+                application for <strong>{form.department}</strong> at{" "}
                 <strong>{form.school}</strong>. We'll be in touch at{" "}
                 <strong>{form.email}</strong> shortly.
                 </p>
@@ -283,25 +282,25 @@ export default function ApplyNowForm() {
               </div>
 
               {/* Stream */}
-              <div className={`field ${errors.stream ? "field--error" : ""} ${focused === "stream" ? "field--focused" : ""} ${!form.school ? "field--disabled" : ""}`}>
-                <label className="field-label" htmlFor="stream">
+              <div className={`field ${errors.department ? "field--error" : ""} ${focused === "department" ? "field--focused" : ""} ${!form.school ? "field--disabled" : ""}`}>
+                <label className="field-label" htmlFor="department">
                   Stream
                 </label>
                 <div className="select-wrapper">
                   <select
-                    id="stream"
-                    name="stream"
+                    id="department"
+                    name="department"
                     className="field-select"
-                    value={form.stream}
+                    value={form.department}
                     onChange={handleChange}
-                    onFocus={() => setFocused("stream")}
+                    onFocus={() => setFocused("department")}
                     onBlur={() => setFocused(null)}
                     disabled={!form.school}
                   >
                     <option value="">
                       {form.school ? "Select stream" : "Select a school first"}
                     </option>
-                    {selectedStream?.length > 0 && selectedStream?.map((s) => (
+                    {selectedDepartment?.length > 0 && selectedDepartment?.map((s) => (
                       <option key={s.name} value={s.name}>
                         {s.name}
                       </option>
@@ -309,8 +308,8 @@ export default function ApplyNowForm() {
                   </select>
                   <span className="select-arrow">▾</span>
                 </div>
-                {errors.stream && (
-                  <span className="field-error">{errors.stream}</span>
+                {errors.department && (
+                  <span className="field-error">{errors.department}</span>
                 )}
               </div>
             </div>
