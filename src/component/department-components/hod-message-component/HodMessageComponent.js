@@ -8,11 +8,36 @@ import { usePathname } from "next/navigation";
 
 const HODMessage = ({ data }) => {
   const [expanded, setExpanded] = useState(false);
+  const [charLimit, setCharLimit] = useState(440);
   const pathname = usePathname();
 
   const pathParts = pathname.split("/").filter(Boolean);
 
   console.log("innerpage pathParts", pathParts);
+
+  useEffect(() => {
+    const updateCharLimit = () => {
+      const width = window.innerWidth;
+  
+      if (width < 480) {
+        setCharLimit(200);       // mobile small
+      } else if (width < 768) {
+        setCharLimit(300);       // mobile large
+      } else if (width < 1024) {
+        setCharLimit(400);       // tablet
+      } else if (width < 1280) {
+        setCharLimit(500);       // small desktop
+      }else if (width < 2000) {
+        setCharLimit(500);       // small desktop
+      } else {
+        setCharLimit(440);       // large desktop
+      }
+    };
+  
+    updateCharLimit();           // run on mount
+    window.addEventListener("resize", updateCharLimit);
+    return () => window.removeEventListener("resize", updateCharLimit);
+  }, []);
 
   // 🔹 Dummy data fallback
   const dummyHodData = {
@@ -52,14 +77,38 @@ const HODMessage = ({ data }) => {
 
   const hodData = normalizedData || dummyHodData;
 
+  const fullText = hodData.messages.join(" ");
+
   const hasMore =
-    hodData.messages.length > 2 ||
+    fullText.length > charLimit ||        // ← was CHAR_LIMIT
     hodData?.message_list?.length > 0 ||
     hodData?.listGroup?.length > 0;
 
-  const visibleMessages = expanded
-    ? hodData.messages
-    : hodData.messages.slice(0, 2);
+  const getVisibleMessages = () => {
+    if (expanded) return hodData.messages;
+  
+    let charCount = 0;
+    const result = [];
+  
+    for (const msg of hodData.messages) {
+      if (charCount >= charLimit) break;
+  
+      const remaining = charLimit - charCount;
+  
+      if (charCount + msg.length <= charLimit) {
+        result.push(msg);
+        charCount += msg.length;
+      } else {
+        // Truncate this paragraph and add ellipsis
+        result.push(msg.slice(0, remaining).trimEnd() + "...");
+        break;
+      }
+    }
+  
+    return result;
+  };
+
+  const visibleMessages = getVisibleMessages();
 
   // 🔹 Initialize AOS
   useEffect(() => {
