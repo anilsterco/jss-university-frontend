@@ -1559,6 +1559,14 @@
   border-radius: 0.8rem 6rem 0.8rem 0.8rem;
 }
 
+.about_two.labs_group_section .early-slide blockquote
+ {
+    font: var(--font-24);
+    padding-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
 .labs_group_section.about_two .about_two.reverse .early-slide {
   grid-template-columns: 50% 50%;
 }
@@ -6322,6 +6330,9 @@ hr {
   .opportunitie-tab ul li {
     padding-right: 2rem;
   }
+  .popup-modal {
+    max-width: 115.9rem;
+}
 }
 
 @media (max-width: 991px) {
