@@ -87,7 +87,7 @@ const TableContent = ({ data }) => {
             </div>
           )}
 
-          <div className={`${styles.right_col} right_col ${data?.leftTitle && data?.leftTable ? 'grid_design' : ''}`}>
+          <div className={`${styles.right_col} right_col ${data?.leftTitle && data?.leftTable ? '' : 'grid_design'}`}>
             <div className={styles.border_col}>
               {data?.rightTitle && (
                 <h4 className={styles.right_title}>{data?.rightTitle}</h4>
