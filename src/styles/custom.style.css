@@ -2360,6 +2360,19 @@
   background: #fff;
   padding: 10rem 0;
 }
+
+.tab_table_multiple_section table caption{
+  text-align: center;
+  font:var(--font-14);
+  font-weight: 500;
+  margin-top:3rem;
+  color:#000;
+}
+
+.tab_table_multiple_section table caption span{
+  color:red;
+}
+
 .tab_table_multiple_section .table_section {
   padding: 0;
 }
