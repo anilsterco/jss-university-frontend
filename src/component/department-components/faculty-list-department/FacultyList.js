@@ -9,58 +9,10 @@ import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import AOS from "aos";
 import "aos/dist/aos.css";
 export default function FacultyList({ data }) {
-  const dummyFacultyData = {
-    subtitle: "FACULTY LIST",
-    title: `<span class="blue-text">GUIDING MINDS OF</span> <span class="dark-blue-text"> COMPUTER SCIENCE & ENGINEERING</span>`,
-    members: [
-      {
-        id: 1,
-        name: "Dr. Anjali Mehra",
-        designation: "Assistant Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#1",
-      },
-      {
-        id: 2,
-        name: "Dr. Jaspreet Kaur",
-        designation: "Assistant Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#2",
-      },
-      {
-        id: 3,
-        name: "Vinooth P",
-        designation: "Assistant Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#3",
-      },
-      {
-        id: 4,
-        name: "Dr. Anjali Mehra",
-        designation: "Assistant Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#4",
-      },
-      {
-        id: 5,
-        name: "Dr. Rajesh Kumar",
-        designation: "Associate Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#5",
-      },
-      {
-        id: 6,
-        name: "Dr. Priya Singh",
-        designation: "Assistant Professor",
-        img: "/images/home-page/seven-dummy-img.png",
-        url: "#6",
-      },
-    ],
-  };
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
   }, []);
-  const facultyData = data ? data : dummyFacultyData;
+  const facultyData = data || {};
   return (
     <div
       className={`${styles.dep_faculty} faculty_section`}
@@ -108,7 +60,7 @@ export default function FacultyList({ data }) {
               },
             }}
           >
-            {facultyData.members.map((slide) => (
+            {Object.values(facultyData?.members).map((slide) => (
               <SwiperSlide key={slide.id} className={styles.facultyCard}>
                 <Link href={`/faculty/${slide.url}`} key={slide.id}>
                   <Image
