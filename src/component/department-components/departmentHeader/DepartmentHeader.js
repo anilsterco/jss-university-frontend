@@ -169,10 +169,10 @@ export default function DepartmentHeader({ className, data }) {
 
               {engineeringDropdown && engineeringData.length > 0 && (
                 <div
-                  className={styles.engineeringDropdownContainer}
+                  className={`${styles.engineeringDropdownContainer} ${hoveredDepartments.length == 0 ? styles.single : ''}`}
                   ref={engineeringRef}
                 >
-                  <div className={styles.engineeringDropdown}>
+                  <div className={`${styles.engineeringDropdown}`}>
                     <div className={styles.schoolsList}>
                       <h6>Schools</h6>
                       {engineeringData.map((school, idx) => (
@@ -195,37 +195,41 @@ export default function DepartmentHeader({ className, data }) {
                       ))}
                     </div>
 
-                    <div className={styles.departmentsList}>
-                      <h6>Departments</h6>
-                      {hoveredDepartments.length > 0 ? (
-                        hoveredDepartments.map((dept, i) => (
-                          <Link
-                            key={i}
-                            href={`/department/${dept.slug}`}
-                            className={`${styles.departmentLink} ${
-                              !isSchoolPage && dept.slug === currentSlug
-                                ? styles.active
-                                : ""
-                            }`}
-                            onClick={() => {
-                              setSelectedSchool(hoveredSchool);
-                              setSelectedSchoolName(
-                                engineeringData[hoveredSchool].name,
-                              );
-                              setSelectedDepartmentName(dept.name);
-                              setEngineeringDropdown(false);
-                              setMobileMenuOpen(false);
-                            }}
-                          >
-                            {dept.name}
-                          </Link>
-                        ))
-                      ) : (
-                        <p className={styles.noDept}>
-                          No departments available
-                        </p>
-                      )}
-                    </div>
+                    {hoveredDepartments.length > 0 && (
+                      <div className={styles.departmentsList}>
+                        <h6>Departments</h6>
+                        {hoveredDepartments.length > 0 ? (
+                          hoveredDepartments.map((dept, i) => (
+                            <Link
+                              key={i}
+                              href={`/department/${dept.slug}`}
+                              className={`${styles.departmentLink} ${
+                                !isSchoolPage && dept.slug === currentSlug
+                                  ? styles.active
+                                  : ""
+                              }`}
+                              onClick={() => {
+                                setSelectedSchool(hoveredSchool);
+                                setSelectedSchoolName(
+                                  engineeringData[hoveredSchool].name,
+                                );
+                                setSelectedDepartmentName(dept.name);
+                                setEngineeringDropdown(false);
+                                setMobileMenuOpen(false);
+                              }}
+                            >
+                              {dept.name}
+                            </Link>
+                          ))
+                        ) : (
+                          <p className={styles.noDept}>
+                            No departments available
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    
                   </div>
                 </div>
               )}

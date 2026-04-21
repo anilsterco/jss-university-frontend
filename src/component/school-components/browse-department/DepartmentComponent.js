@@ -57,7 +57,7 @@ export default function DepartmentSection({
   return (
     <div className={styles.departmentSection}>
       <div className={`container ${styles.container}`}>
-        <div className={`${styles.courseRow}`}>
+        <div className={`${styles.courseRow}  ${departments?.length == 0 ? styles.bottom_space : ''}`}>
           <div className="deparCol">
             <div className={styles.leftSide}>
               <div data-aos="fade-up" data-aos-delay="100">
@@ -232,55 +232,61 @@ export default function DepartmentSection({
           </div>
         </div>
 
-        <div className={styles.departSec}>
-          <div
-            className={styles.browseHeader}
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
-            <p>BROWSE BY</p>
-            <h2>
-              {(() => {
-                const words = schoolName?.split(" ") || [];
-                const last = words.pop();
-                return (
-                  <>
-                    Departments of <span>{last}</span>
-                  </>
-                );
-              })()}
-            </h2>
-          </div>
+        {departments?.length > 0 && (
+          <div className={styles.departSec}>
+            <div
+              className={styles.browseHeader}
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <p>BROWSE BY</p>
+              <h2>
+                {(() => {
+                  const isPharmacy = (departmentSlug == 'college-of-pharmacy')
+                  const words = isPharmacy ? schoolName?.split(" ") || [] : schoolName.replace('School of ', '');
+                  const last = isPharmacy ? words.pop() : null;
 
-          <div className={styles.departmentRow}>
-            {departments?.slice(0, 4).map((dept, index) => (
-              <div
-                className={styles.departmentCol}
-                key={index}
-                data-aos="fade-up"
-              >
-                <Link href={`/department/${dept.slug}`}>
-                  <Image
-                    src={dept.image}
-                    alt={dept.name}
-                    width={330}
-                    height={330}
-                    className={styles.departmentImage}
-                  />
-                  <div className={styles.departData}>
-                    <h4>{dept.name}</h4>
-                    <SlArrowRightCircle className={styles.departmentArrow} />
-                  </div>
-                </Link>
-                {/* <Link
-                  href={`/department/${dept.slug}`}
-                  className={styles.fullLink}
-                  aria-label={dept.name}
-                /> */}
-              </div>
-            ))}
+                  return (
+                    <>
+                      Departments of <span>{isPharmacy ? last : words}</span>
+                    </>
+                  );
+                })()}
+              </h2>
+            </div>
+
+            <div className={styles.departmentRow}>
+              {departments?.slice(0, 4).map((dept, index) => (
+                <div
+                  className={styles.departmentCol}
+                  key={index}
+                  data-aos="fade-up"
+                >
+                  <Link href={`/department/${dept.slug}`}>
+                    <Image
+                      src={dept.image}
+                      alt={dept.name}
+                      width={330}
+                      height={330}
+                      className={styles.departmentImage}
+                    />
+                    <div className={styles.departData}>
+                      <h4>{dept.name}</h4>
+                      <SlArrowRightCircle className={styles.departmentArrow} />
+                    </div>
+                  </Link>
+                  {/* <Link
+                    href={`/department/${dept.slug}`}
+                    className={styles.fullLink}
+                    aria-label={dept.name}
+                  /> */}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        
       </div>
     </div>
   );

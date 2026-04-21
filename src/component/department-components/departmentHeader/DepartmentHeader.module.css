@@ -71,10 +71,18 @@
   z-index: 999;
 }
 
+.engineeringDropdownContainer.single{
+  width:45rem;
+}
+
 .engineeringDropdown {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 300px;
+}
+
+.engineeringDropdownContainer.single .engineeringDropdown{
+  display:block;
 }
 
 .schoolsList {
@@ -297,19 +305,19 @@
 }
 
 @media (max-width: 991px) {
-  .engineeringDropdownContainer {
-    width: 40rem;
-  }
+  
   .navItem {
     padding: 1.5rem 0;
   }
-  .engineeringDropdownContainer {
+  .engineeringDropdownContainer,
+  .engineeringDropdownContainer.single {
     width: 40rem;
   }
 }
 
 @media (max-width: 520px) {
-  .engineeringDropdownContainer {
+  .engineeringDropdownContainer,
+  .engineeringDropdownContainer.single {
     width: 35rem;
   }
   .departmentMenu {

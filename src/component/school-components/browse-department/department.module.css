@@ -42,6 +42,10 @@
   gap: 16rem;
 }
 
+.courseRow.bottom_space{
+  padding-bottom:10rem;
+}
+
 .courseItemsRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -497,6 +501,10 @@
 
   .programCard {
     margin-bottom: 1.5rem;
+  }
+
+  .courseRow.bottom_space{
+    padding-bottom:3rem;
   }
 }
 

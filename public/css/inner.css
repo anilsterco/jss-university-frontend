@@ -3738,8 +3738,12 @@ ul.comon_list li:before {
   padding: 2.2rem 4rem 3.2rem 4rem;
   border-radius: 0.8rem;
   height: 100%;
-  min-height: 21rem;
+  min-height: 23rem;
 }
+
+/* .department-master-of-computer-applications-about-us .estab_slide_item{
+  min-height: 25rem;
+} */
 
 .estab_slide_item p {
   color: var(--color-27);
@@ -6618,6 +6622,10 @@ ul.comon_list li:before {
     padding-left: 8.3rem;
     padding-right: 5rem;
   }
+
+  /* .department-master-of-computer-applications-about-us .estab_slide_item{
+  min-height: 25rem;
+} */
 }
 
 @media (max-width: 1024px) {
@@ -7536,6 +7544,10 @@ ul.comon_list li:before {
   .message_warpper:before {
     width: 10rem;
     left: -9.8rem;
+  }
+
+  .department-master-of-computer-applications-about-us .estab_slide_item{
+    min-height: 25rem;
   }
 }
 
@@ -8934,6 +8946,10 @@ ul.comon_list li:before {
 
   .program-list-boxs {
     gap: 3.5rem;
+  }
+
+  .department-master-of-computer-applications-about-us .estab_slide_item{
+    min-height:auto;
   }
 }
 

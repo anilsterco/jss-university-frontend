@@ -4721,7 +4721,7 @@ hr {
 .table_section thead th {
   font: var(--font-18);
   font-weight: 600;
-  padding: 1.2rem 3.6rem;
+  padding: 1.2rem 2rem;
   border: none;
   background: transparent;
   color: #fff;
@@ -4729,9 +4729,9 @@ hr {
   /* min-width: 35rem; */
 }
 
-.table_section thead th:first-child {
+/* .table_section thead th:first-child {
   min-width: 13rem;
-}
+} */
 
 .table_section .table-lab tbody tr {
   background-color: #fff;
@@ -4747,7 +4747,7 @@ hr {
   color: #444444;
   border: none;
   text-align: left;
-  padding: 1.2rem 3.6rem;
+  padding: 1.2rem 2rem;
   background: transparent;
 }
 
@@ -4755,13 +4755,21 @@ hr {
   width: max-content;
 }
 
-.table_section .table-lab tbody td:first-child {
+/* .table_section .table-lab tbody td:first-child {
   width: 80px;
-}
+} */
 
-.table_section .table-lab tbody td:nth-child(2) {
-  width: 220px;
-}
+/* .table_section .table-lab tbody td:nth-child(2) {
+  min-width: 220px;
+} */
+
+/* .department-master-of-computer-applications-research .table_section .table-lab tbody td:nth-child(2){
+  width:auto;
+} */
+
+/* .department-master-of-computer-applications-research .table_section .table-lab tbody td:nth-child(4){
+  width:100px;
+} */
 
 /* top_section */
 
