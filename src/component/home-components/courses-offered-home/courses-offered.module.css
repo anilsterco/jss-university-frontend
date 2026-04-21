@@ -266,7 +266,12 @@
     left: 53%;
   }
 }
+@media (max-width:1024){
+.topSection {
+  display: block;
 
+  }
+}
 @media (min-width: 768px) and (max-width: 1040px) {
   .programsCardsSection {
     justify-content: space-between;
@@ -308,45 +313,6 @@
     gap: 4rem;
 
   }
-}
-
-@media (max-width:991) {
-  .bottomSectionH6::after {
-    width: 100%;
-    left: 0;
-  }
-
-  .cource-sec .cource_top {
-    padding-top: 6rem;
-  }
-
-  .topSectionH1 {
-    max-width: 100%;
-  }
-
-  .searchBox {
-    width: 60%;
-    height: auto;
-    margin: 2rem 0;
-  }
-
-  .programsCardsSection {
-    justify-content: flex-start;
-  }
-
-  .bottomSectionH6::after {
-    content: none;
-  }
-
-  .admissionSection {
-    border-right: none;
-    padding-bottom: 0;
-  }
-
-  .cardIcons {
-    display: none;
-  }
-
 }
 
 
@@ -524,6 +490,56 @@
     letter-spacing: -0.24px;
     color: #16344E;
     margin-bottom: 3rem;
+  }
+   .bottomSectionH6::after {
+    width: 100%;
+    left: 0;
+  }
+.topSectionH1 {
+  font: var(--font-40);
+  color: var(--color-4e);
+  font-weight: bold;
+  letter-spacing: -2.88px;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+  max-width: 100%;
+  line-height: 0.9;
+  margin-top: 2rem;
+}
+.topSectionH1 span:first-child {
+  font: var(--font-40);
+  color: var(--color-e8);
+  letter-spacing: -2.88px;
+  font-family: var(--font-Condensed);
+  text-transform: uppercase;
+}
+  .cource-sec .cource_top {
+    padding-top: 6rem;
+  }
+
+
+
+  .searchBox {
+    width: 60%;
+    height: auto;
+    margin: 2rem 0;
+  }
+
+  .programsCardsSection {
+    justify-content: flex-start;
+  }
+
+  .bottomSectionH6::after {
+    content: none;
+  }
+
+  .admissionSection {
+    border-right: none;
+    padding-bottom: 0;
+  }
+
+  .cardIcons {
+    display: none;
   }
 }
 

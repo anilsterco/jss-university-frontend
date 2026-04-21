@@ -639,9 +639,11 @@ export default function Header() {
                                       }}
                                     >
                                       <Link
-                                        href={d.url !== '#' ? WEB_URL + d.url : "#"}
+                                        href={
+                                          d.url !== "#" ? WEB_URL + d.url : "#"
+                                        }
                                         className="dropdown-item"
-                                        role={d.url == '#' ? 'button' : ''}
+                                        role={d.url == "#" ? "button" : ""}
                                       >
                                         {d.title}
                                       </Link>
@@ -730,6 +732,7 @@ export default function Header() {
                                                     alt={b.title}
                                                     width={348}
                                                     height={438}
+                                                    className="courses_img"
                                                   />
                                                   <span className="banner-label">
                                                     {b.title}
@@ -978,10 +981,10 @@ export default function Header() {
                 >
                   <Image
                     src="/images/header/hum-icon.svg"
-                    className="site-logo"
+                    className="site-logo humb_icon"
                     alt="Site Logo"
-                    width={16}
-                    height={15}
+                    width={18}
+                    height={18}
                     priority
                   />
                 </button>
@@ -1104,7 +1107,10 @@ export default function Header() {
                             closeMenu();
                           }}
                         >
-                          <img src="/images/header/banner-arrow.svg" alt="Arrow" />
+                          <img
+                            src="/images/header/banner-arrow.svg"
+                            alt="Arrow"
+                          />
                         </Link>
                       )}
 
@@ -2210,7 +2216,7 @@ export default function Header() {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 1.6rem 1.5rem 1.6rem;
+            padding: 1.5rem 1.5rem 1.5rem;
             background-color: #16344e;
             color: #fff;
             transition: background 0.3s ease;
@@ -2272,16 +2278,16 @@ export default function Header() {
             transition: all 0.3s ease;
           }
             .menu-left-item.active {
-  background: #ffc100;
-  font-weight: bold;
-}
-  .menu-left-item .hambur_links {
-          display:inline-block;
-            padding: 1rem 7rem 1rem 14rem;
-}
-.menu-left-item.active .hambur_links {
-  color: var(--color-4e);
-}
+              background: #ffc100;
+              font-weight: bold;
+            }
+              .menu-left-item .hambur_links {
+                      display:inline-block;
+                        padding: 1rem 7rem 1rem 14rem;
+            }
+            .menu-left-item.active .hambur_links {
+              color: var(--color-4e);
+            }
         
           .menu-left-item:hover {
             background: #ffc100;
@@ -2506,11 +2512,11 @@ export default function Header() {
           .header-inner.innerPage.academics {background-color:transparent}
           .mega-right {
           align-items: center;
-    gap: 3.4rem;
-    // min-height: 74vh;
-    padding-top: 18rem;
-    padding-bottom: 16.3rem;
-    display: flex;
+        gap: 3.4rem;
+        // min-height: 74vh;
+        padding-top: 18rem;
+        padding-bottom: 16.3rem;
+        display: flex;
           }
           .mega-right-text {
             width: 23%;
@@ -2718,12 +2724,13 @@ export default function Header() {
             //   width: 77rem;
             // }
           }
+           @media (max-width: 1749px){
+          .hamburger {
+                    padding: 1.3rem;
+                  }
+           }
+      
 
-          @media (max-width: 1649px) {
-            .hamburger {
-              padding: 1.5rem 1.5rem 1.5rem;
-            }
-          }
           @media (max-width: 1599px) {
             // .mega-right {
             //   padding-right: 6.8rem;
@@ -2732,7 +2739,7 @@ export default function Header() {
               padding-inline: 6.8rem;
             }
             .menu-middle {
-              padding: 7rem;
+              padding-inline:4rem
             }
             .menu-left-item {
               padding: 1rem 5rem 1rem 10rem;
@@ -2759,8 +2766,18 @@ export default function Header() {
             .nav-list {
             gap: 2.9rem;
           }
-          }
 
+           .hamburger {
+              padding: 1.3rem;
+            }
+          }
+           @media (max-width: 1200px){
+           .hamburger {
+              padding: 1.2rem;
+             }
+          
+           }
+   
           @media (max-width: 1149px) {
             .mega-dropdown {
               min-width: 700px;
@@ -2769,7 +2786,7 @@ export default function Header() {
             .mega-right-text {
               max-width: 100%;
             }
-
+             
             .vid-thumb-cont {
               padding-right: 2rem;
             }
@@ -2785,14 +2802,15 @@ export default function Header() {
             .admission-dropdown {
               top: 16rem;
             }
-            .hamburger {
-              padding: 1.5rem 1.5rem 1.5rem;
-            }
+       .right-inner .first-content h1 {
+           
+            max-width: 95%;
+          }
           
           }
           @media (max-width: 1024px) {
             .menu-middle {
-              padding: 7rem 5rem 0;
+              padding: 7rem 2rem 0;
             }
             .menu-left-item {
               padding: 1rem 2rem 1rem 6rem;
@@ -2815,7 +2833,7 @@ export default function Header() {
             }
             .mega-right-banners {
               display: grid;
-              grid-template-columns: repeat(2, 1fr);
+              grid-template-columns: repeat(3, 1fr);
             }
             .mega-right-text {
               width: 65%;
@@ -2825,7 +2843,28 @@ export default function Header() {
             }
             .site-header::before {
             width: 4px;
-            height: 400px;}}
+            height: 400px;}
+             .meg_drop_main{
+            grid-template-columns: 31% 65%;
+            gap: 4rem;
+                }
+                .banner-label {
+            font: var(--font-20);
+            color: var(--color-white);
+            font-family: var(--font-Condensed);
+            font-weight: 600;
+           padding: 1.2rem 1rem;
+          }
+          .courses_img {
+            border-radius: 2rem;
+          }
+           .nav-list {
+            gap: 1.2rem;
+           
+          }
+
+          
+            }
           @media (max-width: 991px) {
             .site-header {
               position: relative;

@@ -6681,6 +6681,10 @@ hr {
     left: 0;
     right: 0;
   }
+  .popup-modal {
+    max-width: 120.9rem;
+ 
+}
 }
 
 @media screen and (max-width: 1024px) {
