@@ -13,7 +13,7 @@ import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
 
 export const metadata = {
-  title: "Jss University",
+  title: "JSS University",
   description: "A Next.js project with Zustand and SEO setup",
 };
 

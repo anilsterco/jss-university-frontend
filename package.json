@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "@fontsource/roboto-condensed": "^5.2.8",

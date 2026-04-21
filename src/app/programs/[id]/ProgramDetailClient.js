@@ -285,10 +285,9 @@ export default function ProgramDetailClient({ params }) {
                         {(admissionSection?.apply_now_link ||
                           apply_now_link) && (
                           <a
-                            href={APPLY_NOW}
-                            // href={
-                            //   admissionSection?.apply_now_link || apply_now_link
-                            // }
+                            href={
+                              admissionSection?.apply_now_link || APPLY_NOW
+                            }
                             target="_blank"
                             className="apply-btn1"
                             rel="noopener noreferrer"
@@ -481,7 +480,7 @@ export default function ProgramDetailClient({ params }) {
                           </div>
                           {apply_now_link && (
                             <a
-                              href={apply_now_link}
+                              href={apply_now_link || APPLY_NOW}
                               className="apply-btn1"
                               target="_blank"
                               rel="noopener noreferrer"
@@ -514,7 +513,7 @@ export default function ProgramDetailClient({ params }) {
                           </div>
                           {apply_now_link && (
                             <a
-                              href={apply_now_link}
+                              href={apply_now_link || APPLY_NOW}
                               className="apply-btn1"
                               target="_blank"
                               rel="noopener noreferrer"
@@ -551,7 +550,7 @@ export default function ProgramDetailClient({ params }) {
                           </div>
                           {apply_now_link && (
                             <a
-                              href={apply_now_link}
+                            href={apply_now_link || APPLY_NOW}
                               className="apply-btn1"
                               target="_blank"
                               rel="noopener noreferrer"
