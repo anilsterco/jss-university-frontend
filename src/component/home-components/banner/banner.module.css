@@ -97,35 +97,38 @@
 
 }
 
-@media (max-width: 1549px) {
+@media (max-width: 1599px) {
   .bannerContent {
     top: 52%;
     left: 31.7%;
   }
+  .bannerContent {
+  color: #fff;
+  margin: 20rem 0 0 0;
+  width: 40%;
+}
 }
 
 @media (max-width: 1200px) {
   .bannerContentH1 {
-    font: var(--font-50);
-    letter-spacing: -1.88px;
+    font: var(--font-40);
+    letter-spacing: -1.40px;
     font-family: var(--font-Condensed);
-    padding-bottom: 4rem;
-    margin: 2rem 0 0 0;
+    padding-bottom: 1rem;
+    margin: 0;
   }
-
-
-  .bannerContent {
-    width: 40%;
-  }
-
   .bannerContent {
     color: #fff;
-    margin: 0rem 0 0 0;
+    margin: 5rem 0 0 0;
   }
 
   .bannerContentA {
     padding-block: 2rem 1.2rem;
   }
+  .iconSpacing {
+  margin-left: 2rem;
+  max-width: 2.5rem;
+}
 }
 
 @media (max-width: 1024px) {
@@ -138,7 +141,7 @@
   }
 
   .bannerContentH1 {
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
   }
 
   .containerXl {

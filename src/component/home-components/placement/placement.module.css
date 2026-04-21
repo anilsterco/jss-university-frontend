@@ -24,10 +24,10 @@
 }
 
 .testimonialSwiper .eachSlide {
-grid-template-columns: 29% 62.7%;
-    align-items: center;
-    gap: 6.2rem;
-    display: grid;
+  grid-template-columns: 29% 62.7%;
+  align-items: center;
+  gap: 6.2rem;
+  display: grid;
 }
 
 .testimonialSwiper small {
@@ -243,20 +243,23 @@ grid-template-columns: 29% 62.7%;
     width: 100%;
   }
 
-  .blueBg {
-    max-width: 27%;
-    height: 86%;
-  }
-
   .wallOfFameText {
     width: 56%;
   }
+  .testimonialSwiper .eachSlide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.2rem;
+  }
+  .testimonialSwiper {
+  padding: 3rem 0 3rem 3rem;
+}
 }
 
 @media (max-width: 1366px) {
   .thirdSection {
     padding-block: 8rem;
   }
+
 
   .wallOfFameText {
     width: 50%;
@@ -270,14 +273,9 @@ grid-template-columns: 29% 62.7%;
     max-width: 100%;
   }
 
-  .testimonialImageContainer {
-    width: 55%;
-
-  }
-
   .blueBg {
-    max-width: 25%;
-    height: 92%;
+    max-width: 30%;
+    height: 100%;
   }
 
 }
@@ -285,7 +283,6 @@ grid-template-columns: 29% 62.7%;
 @media (max-width: 1024px) {
   .testimonialImageContainer {
     width: 100%;
-
   }
 
   .wallOfFameContainer {
@@ -294,11 +291,6 @@ grid-template-columns: 29% 62.7%;
 
   .wallOfFameContainer .plc_img {
     height: 100%;
-  }
-
-  .blueBg {
-    max-width: 30%;
-    height: 80%;
   }
 
   .testimonialSwiper {
@@ -330,8 +322,6 @@ grid-template-columns: 29% 62.7%;
 
   .testimonialImageContainer {
     width: 50%;
-
-
   }
 
   .testimonialSwiper .eachSlide {
@@ -355,7 +345,6 @@ grid-template-columns: 29% 62.7%;
   .testimonialSwiper {
     padding-inline: 0;
     padding-block: 1.2rem;
-
   }
 
   .placement_row {
@@ -425,6 +414,18 @@ grid-template-columns: 29% 62.7%;
   .statsRow {
     margin-bottom: 4rem;
   }
+  .sectionHeader h2 {
+  font: var(--font-40);
+  font-family: var(--font-Condensed);
+  letter-spacing: -1.88px;
+  line-height: 0.9;
+  margin-bottom: 0;
+}
+.sectionHeader h2 span {
+  font: var(--font-40);
+  font-family: var(--font-Condensed);
+  letter-spacing: -1.88px;
+}
 }
 
 @media (max-width: 767px) {
@@ -432,7 +433,6 @@ grid-template-columns: 29% 62.7%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
   .figurContCol:last-child {
     display: none;
   }
@@ -447,7 +447,6 @@ grid-template-columns: 29% 62.7%;
     max-width: 60%;
     margin: 0 auto;
   }
-
   .sectionHeader h2 span {
     font: var(--font-34);
     font-family: var(--font-Condensed);
@@ -455,12 +454,10 @@ grid-template-columns: 29% 62.7%;
     line-height: 3rem;
     max-width: 60%;
   }
-
   .testimonialSwiper p {
     max-width: 100%;
     margin: 0 auto 2rem;
   }
-
   .figcount {
     padding: 3.4rem 3.3rem 3.5rem;
   }
