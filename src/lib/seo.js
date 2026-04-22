@@ -30,6 +30,14 @@ export async function getPageSEO(slug) {
       description: data.data.description,
       keywords:
         data.data.keywords.length > 0 ? data.data.keywords : "JSS University",
+      robots: {
+        index: data.data.robots?.index ?? true,   // false = noindex
+        follow: data.data.robots?.follow ?? true,  // false = nofollow
+        googleBot: {
+          index: data.data.robots?.index ?? true,
+          follow: data.data.robots?.follow ?? true,
+        },
+      },
       alternates: {
         canonical: data.data.alternates?.canonical || slug,
       },
@@ -58,6 +66,10 @@ export async function getPageSEO(slug) {
       keywords: "JSS University",
       alternates: {
         canonical: "/",
+      },
+      robots: {
+        index: false,
+        follow: false,
       },
     };
   }
