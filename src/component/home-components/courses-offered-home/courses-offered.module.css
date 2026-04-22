@@ -254,9 +254,10 @@
   .programsCountPlus {
     font-size: 4.7rem;
     top: 4px;
-    right: 0px;
   }
-
+.programsCountSection {
+  gap: 3.7rem;
+}
   .programsText {
     padding-left: 2rem
   }
