@@ -3846,8 +3846,14 @@ hr {
   }
 
   .labs_group_section.about_two .about_two.reverse .early-slide {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: unset;
+    display: block !important;
+    /* flex-direction: column-reverse; */
   }
+
+  /* .labs_group_section.about_two .about_two.reverse .image_col{
+    order:unset;
+  } */
 
   .labs_group_section {
     padding-top: 2rem;
@@ -6885,6 +6891,7 @@ hr {
   .labs_group_section.about_two .about_two.reverse .early_rgt {
     padding-left: 0;
     padding-right: 0rem;
+    margin-top:3rem;
   }
 
   .labs_group_section .about_two .container {

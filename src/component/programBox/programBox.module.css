@@ -1459,6 +1459,7 @@
     /* font-weight: 500; */
     padding-block: 1rem;
     letter-spacing: -0.63px;
+    min-height:5.1rem;
 }
 
 .cusProgramText span {
@@ -1712,6 +1713,7 @@
 
     .cusProgramText h6 {
         font-size: 1.6rem;
+        min-height:unset;
     }
 
     .cusProgramText p {

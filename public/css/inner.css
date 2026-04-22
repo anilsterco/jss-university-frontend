@@ -4483,7 +4483,7 @@ ul.comon_list li:before {
 
 .uni_boa_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   gap: 5.2rem 2.6rem;
   margin-top: 6rem;
 }
@@ -7533,6 +7533,17 @@ ul.comon_list li:before {
   background: var(--color-white);
   margin-top: 0;
   padding-block: 8rem 0;
+}
+
+@media screen and (max-width: 1920px) {
+  .uni_boa_grid{
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .uni_boa_grid .uni_boa_itemse img{
+    width:100%;
+    height:auto;
+  }
 }
 
 @media screen and (max-width: 1599px) {

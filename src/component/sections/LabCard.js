@@ -146,7 +146,7 @@ export default function LabCard({ data }) {
                                 // Multiple media items → Swiper
                                 <div
                                   className="research_swiper_wrapper"
-                                  style={{ position: "relative" }}
+                                  style={{ position: "relative" , width: "100%", overflow: "hidden"  }}
                                 >
                                   <Swiper
                                     modules={[Autoplay, Navigation]}
@@ -160,6 +160,7 @@ export default function LabCard({ data }) {
                                     }}
                                     loop={true}
                                     slidesPerView={1}
+                                    style={{ width: "100%" }}
                                   >
                                     {item.imageVideo.map((media, mediaIdx) => (
                                       <SwiperSlide key={mediaIdx}>
