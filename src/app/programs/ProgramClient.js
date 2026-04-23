@@ -241,7 +241,7 @@ export default function ProgramClient() {
                 <div className={styles.programCategory}>
                   {/* Schools Filter */}
                   <div className={styles.programCategoryBox}>
-                    <p>Browse by School</p>
+                    <p>Browse by Schools</p>
                     {loading ? (
                       <div>Loading schools...</div>
                     ) : (
