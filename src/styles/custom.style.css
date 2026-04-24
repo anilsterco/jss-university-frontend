@@ -650,7 +650,7 @@
   color: var(--color-black);
   font-weight: 400;
   padding-inline: 0 5rem;
-  line-height: 2.4rem;
+  line-height: 3.1rem;
   margin-bottom: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -849,6 +849,14 @@
   padding: 0.8rem 1.5rem;
 }
 
+.academic_apply_now{
+  margin-top: 2rem;
+}
+.academic_apply_now a{
+  display: block;
+  text-align: center;
+}
+
 .apply-btn1:hover {
   background-color: var(--color-100);
   color: var(--color-black);
@@ -889,7 +897,9 @@
   padding: 3rem;
   border-radius: 0px 0px 50px 8px;
 }
-
+.eligibility-link span:hover{
+      color: var(--color-100);
+}
 .eligibility-text span {
   font: var(--font-18);
   color: var(--color-white);
@@ -994,8 +1004,9 @@
 }
 
 .educational-sec {
-  padding-block: 8rem;
+  padding-block: 0rem 8rem;
   background-color: var(--color-f6);
+  margin-top: -1rem;
 }
 
 .tabbed-content {
@@ -1003,6 +1014,13 @@
   padding: 0;
   margin: 1rem auto;
 }
+/* .tabs {
+    width: 100%; 
+    border-top: 1px solid var(--color-d6);
+    position: relative;
+    display: block;
+} */
+
 
 .tabs ul {
   margin: 0;
@@ -1011,9 +1029,17 @@
   clear: left;
   border-top: 1px solid var(--color-d6);
   position: relative;
+  top: -1;
 }
 
-.tabs ul::before {
+.pos_tab_line{
+    height: 0.1rem;
+    background: var(--color-d6);
+    position: relative;
+    z-index: 999;
+}
+
+/* .tabs ul::before {
   content: "";
   background: var(--color-d6);
   height: 1px;
@@ -1021,17 +1047,17 @@
   width: 12rem;
   left: -12rem;
   top: -1px;
-}
+} */
 
-.tabs ul::after {
+/* .tabs ul::after {
   content: "";
   background: var(--color-d6);
   height: 1px;
   position: absolute;
-  width: 40rem;
-  right: -40rem;
+  width: 20rem;
+  right: -32rem;
   top: -1px;
-}
+} */
 
 .tabs ul {
   display: inline-block;
@@ -2209,13 +2235,13 @@
 }
 
 .popup-modal .popup-content .grid .grid-item {
-  border: 1px solid #efefef;
-  display: block;
-  padding: 2.4rem;
-  padding-bottom: 5rem;
-  color: #018ce8;
-  position: relative;
-  font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    color: #018ce8;
+    border: 1px solid #efefef;
+    padding: 2.4rem 2.4rem 5rem; /* Keeps the space at the bottom */
+    font-weight: normal;
+    position: relative;
 }
 
 .popup-modal .popup-content .grid .grid-item img {
@@ -2243,13 +2269,15 @@
 }
 
 .popup-modal .popup-content .grid .grid-item span {
-  margin-top: 1rem;
-  color: #018ce8;
-  font: var(--font-16);
-  font-family: var(--font-Noto);
-  line-height: 3rem;
-  text-decoration: underline;
-  display: inline-block;
+
+    margin-top: auto; /* This pushes the span to the bottom of the flex container */
+    color: #018ce8;
+    font: var(--font-16);
+    font-family: var(--font-Noto);
+    padding-top: 1rem; /* Maintains a minimum gap from the title */
+    line-height: 3rem;
+    text-decoration: underline;
+    display: inline-block;
 }
 
 .expertise_wrapper {
@@ -2492,6 +2520,9 @@
   .home .departBanner .bannerBtn img {
     filter: invert(1);
   }
+  .headerBottomBanner {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2644,7 +2675,7 @@ This is the minimum CSS that you will need in order for this to work
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
-  padding: 1rem 0 5.1rem;
+  padding: 3rem 0 5.1rem;
 }
 
 .peo-box {
@@ -2691,6 +2722,7 @@ This is the minimum CSS that you will need in order for this to work
   font: var(--font-16);
   color: var(--color-21);
   font-weight: 400;
+  margin-top: 2.5rem;
 }
 
 .tabbed-content .apply-btn1 {
@@ -3765,6 +3797,15 @@ hr {
 
   .popup-modal .popup-content .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .headerBottomBanner__menu{
+    gap:10px !important
+  }
+  .headerBottomBanner__container{
+    gap: 1rem !important;
+  }
+  .headerBottomBanner__left{
+padding-right: 1rem !important
   }
 }
 
@@ -8323,4 +8364,72 @@ hr {
   .department-mechanical-engineering-research .about_one .estblish {
     padding-block: 2rem;
   }
+}
+
+
+.headerBottomBanner {
+  width: 100%;
+  /* background: #f5f5f5; */
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.headerBottomBanner__container {
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 15px 19px;
+    display: flex;
+    gap: 5rem;
+}
+
+.headerBottomBanner__left {
+  font: var(--font-21);
+  font-weight: 600;
+  color: #b08f29;
+  border-right: 1px solid #cdcdcd;
+    padding-right: 3rem;
+}
+
+.headerBottomBanner__menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #555;
+}
+
+.headerBottomBanner__menu a {
+    font: var(--font-18);
+    color: #15354e;
+    font-weight: 500;
+}
+
+.headerBottomBanner__menu a:hover {
+  color: #b08f29;
+}
+
+.headerBottomBanner__menu .dot {
+  width: 5px;
+  height: 5px;
+  background: #c4a000;
+  border-radius: 50%;
+}
+
+.headerBottomBanner__actions {
+  margin-left: auto;
+}
+.headerBottomBanner__actions a{
+  background-color: var(--color-100);
+    text-transform: uppercase;
+        color: var(--color-4e);
+    font-weight: bold;
+    line-height: 1.5;
+}
+.headerBottomBanner__actions .apply-btn1:hover {
+    background-color: var(--color-4e);
+    color: var(--color-white);
 }

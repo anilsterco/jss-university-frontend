@@ -91,14 +91,14 @@ export default function PopupModal() {
                     alt={item?.title}
                   />
                   <h5 className="title">{item?.title}</h5>
-                  <span>Visit Us</span>
-                  <a
+                  <span>Visit Us</span><a
                     className="link_logo"
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit ${item?.title}`}
                   ></a>
+                  
                 </div>
               ))}
             </div>

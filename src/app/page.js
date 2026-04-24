@@ -10,6 +10,7 @@ import Script from "next/script";
 import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
 import Link from "next/link";
+import HeaderBottomBanner from "@/component/home-components/HeaderBottomBanner";
 
 export async function generateMetadata() {
   return await getPageSEO();
@@ -42,6 +43,8 @@ export default async function HomePage() {
       )}
 
       <BannerComponent data={homepageData.sections.banners} />
+
+      <HeaderBottomBanner/>
 
       <div className="animated-hover">
         <CourseOfferedComponent

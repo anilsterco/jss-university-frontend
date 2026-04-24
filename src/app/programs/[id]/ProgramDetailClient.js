@@ -298,8 +298,22 @@ export default function ProgramDetailClient({ params }) {
                       </div>
                     </div>
                     <div className="eligibility-text">
-                      <Link href="/scholarship-and-eligibility#eligibilitySec">
+                      <Link href="/scholarship-and-eligibility#eligibilitySec" className="eligibility-link">
                         <span>Eligibility Criteria</span>
+                         <svg
+                            className="cta-arrow"
+                            style={{ marginLeft: "1rem",marginBottom:'0.5rem' }}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="#fff"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                            />
+                          </svg>
                       </Link>
                       <h3>{admissionSection?.eligibility_marks}</h3>
                       <p>{admissionSection?.eligibility_desc}</p>
@@ -401,11 +415,16 @@ export default function ProgramDetailClient({ params }) {
           <EligibilityPrograms data={convertTabSection(tabSection)} />
         )}
 
+        
+      <div className="containerMD">
+          <div className="pos_tab_line"></div>
+      </div>  
+
       {peos && peos?.length > 0 && (
         <section className="educational-sec">
           <div className="container">
             <div className="row">
-              <div className="col-lg-9">
+              <div className="col-lg-12">
                 <div className="educational-box">
                   <article className="tabbed-content">
                     <nav className="tabs">
@@ -420,7 +439,7 @@ export default function ProgramDetailClient({ params }) {
                                 handleTabClick("tab1");
                               }}
                             >
-                              (PEOs)
+                              Program Educational Objectives (PEOs)
                             </a>
                           </li>
                         )}
@@ -434,7 +453,7 @@ export default function ProgramDetailClient({ params }) {
                                 handleTabClick("tab2");
                               }}
                             >
-                              (POs)
+                             Program Outcomes (POs)
                             </a>
                           </li>
                         )}
@@ -448,7 +467,7 @@ export default function ProgramDetailClient({ params }) {
                                 handleTabClick("tab3");
                               }}
                             >
-                              (PSOs)
+                              Program Specific Outcomes (PSOs)
                             </a>
                           </li>
                         )}
@@ -462,7 +481,7 @@ export default function ProgramDetailClient({ params }) {
                         data-title="Program Educational Objectives (PEOs)"
                       >
                         <div className="item-content">
-                          <h6>Program Educational Objectives</h6>
+                          {/* <h6>Program Educational Objectives</h6> */}
                           <div className="peo-list">
                             {peos.map((peo, index) => (
                               <div key={index} className="peo-box">
@@ -499,7 +518,7 @@ export default function ProgramDetailClient({ params }) {
                         data-title="Program Outcomes (POs)"
                       >
                         <div className="item-content">
-                          <h6>Program Outcomes</h6>
+                          {/* <h6>Program Outcomes</h6> */}
                           <div className="peo-list">
                             {pos.map((po, index) => (
                               <div key={index} className="peo-box">
@@ -532,7 +551,7 @@ export default function ProgramDetailClient({ params }) {
                         data-title="Program Specific Outcomes (PSOs)"
                       >
                         <div className="item-content">
-                          <h6>Program Specific Outcomes</h6>
+                          {/* <h6>Program Specific Outcomes</h6> */}
                           <div className="peo-list">
                             {pso.map((p, index) => (
                               <div key={index} className="peo-box">
@@ -575,7 +594,7 @@ export default function ProgramDetailClient({ params }) {
         >
           <div className="container">
             <div className="row">
-              <div className="col-lg-9">
+              <div className="col-lg-12">
                 <div className="core-box">
                   <div className="core-text">
                     <span>Curriculum </span>

@@ -202,15 +202,15 @@
 }
 
 .departmentHeaderWrapper {
-  position: relative;
+  /* position: relative; */
+  position: sticky;
+  top: 125px;
+  z-index: 1000;
   z-index: 1000;
 }
 
 .stickyHeader {
-  position: sticky;
-  top: 0;
   background: white;
-  z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -221,7 +221,7 @@
 
 .navLinksWrapper {
   display: flex;
-  gap: 25px;
+  gap: 45px;
 }
 
 .hamburgerBtn {

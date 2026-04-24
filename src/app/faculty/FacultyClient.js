@@ -172,7 +172,7 @@ export default function FacultyClient() {
               <div className="innnr_head">
                 <h2>FACULTY</h2>
                 <h3>
-                  MEET OUR <span>FACULTY</span>
+                TEACHING <span>FACULTY</span>
                 </h3>
               </div>
             </div>

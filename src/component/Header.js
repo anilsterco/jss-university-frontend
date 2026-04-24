@@ -679,6 +679,8 @@ export default function Header() {
                                           <p className="mega-desc">
                                             {rightData.desc}
                                           </p>
+                                          
+                                          {/* apply now button */}
                                           <div className="mega-ctas">
                                             {rightData.ctas?.map((cta, idx) => (
                                               <Link
@@ -690,7 +692,7 @@ export default function Header() {
                                                 {cta.text}
                                                 <svg
                                                   className="cta-arrow"
-                                                  style={{ marginLeft: "2rem" }}
+                                                  style={{ marginLeft: "1rem" }}
                                                   xmlns="http://www.w3.org/2000/svg"
                                                   width="16"
                                                   height="16"
@@ -704,6 +706,9 @@ export default function Header() {
                                                 </svg>
                                               </Link>
                                             ))}
+                                          </div>
+                                          <div className="academic_apply_now">
+                                          <Link href="https://jss-university-frontend-sepia.vercel.app/apply-now" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
                                           </div>
                                         </div>
 
@@ -722,7 +727,7 @@ export default function Header() {
                                                 }}
                                               >
                                                 <div
-                                                  className="banner"
+                                                  className="banner shine-effect"
                                                   onClick={() =>
                                                     setActiveDropdown(null)
                                                   }

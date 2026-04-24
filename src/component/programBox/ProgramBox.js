@@ -7,9 +7,9 @@ export default function ProgramBox({ data, type }) {
     <div className={styles.cusProgramBox}>
       <Link
         href={`/programs/${data.slug ?? ""}`}
-        className={styles.strechedLink}
+        className={`shine-effect ${styles.strechedLink}`}
       >
-        <figure>
+        <figure className="">
           <Image
             src={data.image ?? "/images/programs/program-img.webp"}
             alt="program-image"

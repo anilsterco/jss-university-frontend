@@ -1380,6 +1380,7 @@
   font: var(--font-18);
   color: var(--color-27);
   padding-bottom: 1rem;
+  font-weight: 500;
 }
 
 .programCategoryBox .formCheck {
