@@ -2243,7 +2243,7 @@
     flex-direction: column;
     color: #018ce8;
     border: 1px solid #efefef;
-    padding: 2.4rem 2.4rem 5rem; /* Keeps the space at the bottom */
+    padding:0rem 2.4rem 4rem;
     font-weight: normal;
     position: relative;
 }
@@ -2262,7 +2262,7 @@
   margin-top: 2rem;
   font-weight: bold;
   margin-bottom: 0;
-   margin-bottom: 1rem;
+   /* margin-bottom: 1rem; */
     min-height: 52px; 
     /* text-align: center; */
 }
@@ -2273,6 +2273,10 @@
   top: 0;
   height: 100%;
   width: 100%;
+}
+.popup_grid .visit_button{
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .popup-modal .popup-content .grid .grid-item span {
