@@ -93,6 +93,7 @@ export default function PopupModal() {
                   />
                   <h5 className="title">{item?.title}</h5>
                   {/* <span>Visit Us</span> */}
+                  <div className="visit_button">
                   <a
                     className="apply-btn1"
                     href={item.link}
@@ -102,6 +103,7 @@ export default function PopupModal() {
                   >Visit Us</a>
                   {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
 
+                </div>
                 </div>
               ))}
             </div>
