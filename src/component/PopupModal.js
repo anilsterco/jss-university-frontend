@@ -4,6 +4,7 @@ import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import { BASE_URL } from "@/config/config";
+import Link from "next/link";
 
 const modalData = [
   {
@@ -80,7 +81,7 @@ export default function PopupModal() {
           )}
 
           {popupData?.items?.length > 0 ? (
-            <div className="grid">
+            <div className="grid popup_grid">
               {popupData?.items?.map((item, index) => (
                 <div key={index} className="grid-item">
                   <Image
@@ -91,14 +92,16 @@ export default function PopupModal() {
                     alt={item?.title}
                   />
                   <h5 className="title">{item?.title}</h5>
-                  <span>Visit Us</span><a
-                    className="link_logo"
+                  {/* <span>Visit Us</span> */}
+                  <a
+                    className="apply-btn1"
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit ${item?.title}`}
-                  ></a>
-                  
+                  >Visit Us</a>
+                  {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
+
                 </div>
               ))}
             </div>

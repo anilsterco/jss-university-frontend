@@ -849,6 +849,10 @@
   padding: 0.8rem 1.5rem;
 }
 
+.popup_grid .apply-btn1 {
+    width: fit-content;
+  }
+
 .academic_apply_now{
   margin-top: 2rem;
 }
@@ -2258,6 +2262,9 @@
   margin-top: 2rem;
   font-weight: bold;
   margin-bottom: 0;
+   margin-bottom: 1rem;
+    min-height: 52px; 
+    /* text-align: center; */
 }
 
 .link_logo {
