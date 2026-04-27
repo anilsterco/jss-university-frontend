@@ -7895,7 +7895,20 @@ ul.comon_list li:before {
   }
 
   .inner-title .innnr_head ul {
-    display: none;
+    margin-top:2.5rem;
+    gap: 2rem;
+  }
+
+  .inner-title .innnr_head ul li{
+    padding-top: 1rem;
+  }
+  
+  .inner-title .innnr_head ul li a{
+    font:var(--font-14);
+  }
+
+  .programs .inner-title{
+    padding-bottom: 2rem;
   }
 
   .ab_estab_slider .swiper-backface-hidden .swiper-slide {

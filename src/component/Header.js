@@ -912,7 +912,7 @@ export default function Header() {
                             <a
                               key={idx}
                               target="_blank"
-                              href={`${idx === 0 ? APPLY_NOW : cta.url}`}
+                              href={`${cta.url || APPLY_NOW}`}
                               className={`cta applynow ${cta.type}`}
                             >
                               {cta.text}

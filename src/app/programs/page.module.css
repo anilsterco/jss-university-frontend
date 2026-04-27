@@ -1733,6 +1733,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  .program_box{
+    background:red;
+  }
 }
 
 /* Fix for very small screens */
