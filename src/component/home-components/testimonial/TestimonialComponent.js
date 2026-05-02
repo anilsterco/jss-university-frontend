@@ -154,11 +154,11 @@ export default function TestimonialsSection({ data }) {
             TESTIMONIALS
           </p>
           <Swiper
-            spaceBetween={100}
-            slidesPerView={1}
+            spaceBetween={15}
+            slidesPerView={2}
             style={{ paddingBottom: "1.8rem" }}
           >
-            {columnForMobile.map((item, i) => (
+            {testimonialsData?.testimonials?.map((item, i) => (
               <SwiperSlide key={i}>
                 <TestimonialCard
                   key={i}
@@ -169,7 +169,7 @@ export default function TestimonialsSection({ data }) {
               
             ))}
           </Swiper>
-          <Swiper spaceBetween={100} slidesPerView={1}>
+          {/* <Swiper spaceBetween={100} slidesPerView={1}>
             {column3.map((item, i) => (
               <SwiperSlide key={i}>
                 <TestimonialCard
@@ -179,7 +179,7 @@ export default function TestimonialsSection({ data }) {
                 />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
           <div className={`${styles.mobileViewArrow}`}>
             <Link href={`${WEB_URL}testimonials`}>
               <button
