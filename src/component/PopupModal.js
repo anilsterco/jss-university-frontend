@@ -86,24 +86,26 @@ export default function PopupModal() {
                 <div key={index} className="grid-item">
                   <Image
                     src={item?.image}
-                    width={300}
-                    height={146}
-                    layout="responsive"
+                   className="img-fluid"
+                    // layout="responsive"
+                    width={0}
+                    height={0}
                     alt={item?.title}
+                    style={{ width: '100%', height: 'auto' }}
                   />
-                  <h5 className="title">{item?.title}</h5>
+                  {/* <h5 className="title">{item?.title}</h5> */}
                   {/* <span>Visit Us</span> */}
-                  <div className="visit_button">
-                  <a
-                    className="apply-btn1"
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${item?.title}`}
-                  >Visit Us</a>
-                  {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
+                    <div className="visit_button">
+                      <Link
+                        className="apply-btn1"
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${item?.title}`}
+                      >View Details</Link>
+                    {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
 
-                </div>
+                  </div>
                 </div>
               ))}
             </div>

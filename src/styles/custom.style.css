@@ -2180,16 +2180,17 @@
 }
 
 .popup-modal {
-  position: fixed;
-  top: 23.7rem;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 9999;
   background: #fff;
   border-radius: 10px;
-  padding: 4rem;
-  z-index: 9999;
   width: 100%;
-  max-width: 153.9rem;
+  max-width: 140rem;
+  padding: 4rem;
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: none;
 }
 
 .popup-close {
@@ -2234,7 +2235,7 @@
 
 .popup-modal .popup-content .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 
@@ -2242,16 +2243,16 @@
     display: flex;
     flex-direction: column;
     color: #018ce8;
-    border: 1px solid #efefef;
-    padding:0rem 2.4rem 4rem;
+    /* border: 1px solid #efefef; */
+    /* padding:0rem 2.4rem 4rem; */
     font-weight: normal;
     position: relative;
 }
 
-.popup-modal .popup-content .grid .grid-item img {
+/* .popup-modal .popup-content .grid .grid-item img {
   max-width: 100%;
   object-fit: contain;
-}
+} */
 
 .popup-modal .popup-content .grid .grid-item .title {
   color: #16344e;
@@ -3664,6 +3665,12 @@ hr {
 
 /* faculty page responsive css start */
 
+@media (max-width: 1920px) {
+  .popup-modal{
+    max-width: 100rem;
+  }
+}
+
 @media (max-width: 1366px) {
   .faulty-text h4 {
     font-size: 24px;
@@ -3807,7 +3814,7 @@ hr {
   }
 
   .popup-modal .popup-content .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .headerBottomBanner__menu{
     gap:10px !important
@@ -5196,13 +5203,13 @@ padding-right: 1rem !important
   }
 
   .popup-modal .popup-content .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.4rem;
   }
 
   .popup-modal .popup-content .grid .grid-item a {
-    padding: 1.6rem;
-    padding-bottom: 3rem;
+    /* padding: 1.6rem;
+    padding-bottom: 3rem; */
   }
 }
 
@@ -7225,13 +7232,14 @@ padding-right: 1rem !important
   }
 
   .popup-modal .popup-content .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.2rem;
   }
 
   .popup-modal .popup-content .grid .grid-item a {
-    padding: 1.6rem;
-    padding-bottom: 2rem;
+    font:var(--font-10)
+    /* padding: 1.6rem;
+    padding-bottom: 2rem; */
     /* display: flex;
     align-items: center;
     gap: 1.6rem; */
@@ -7250,7 +7258,7 @@ padding-right: 1rem !important
   }
 
   .popup-modal .popup-content .grid .grid-item {
-    padding: 2.5rem;
+    /* padding: 2.5rem; */
   }
 
   .popup-modal .popup-content .grid .grid-item span {
