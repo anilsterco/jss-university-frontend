@@ -102,7 +102,7 @@ export default function PopupModal() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${item?.title}`}
-                      >View Details</Link>
+                      >Apply Now</Link>
                     {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
 
                   </div>

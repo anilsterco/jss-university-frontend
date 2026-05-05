@@ -10,7 +10,7 @@ const HeaderBottomBanner = () => {
 
                     <div className="headerBottomBanner__left">
                         <span className="headerBottomBanner__admission">
-                            Admission 2025-26
+                            Admission 2026-27
                         </span>
                     </div>
 

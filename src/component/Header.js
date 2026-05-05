@@ -688,6 +688,7 @@ export default function Header() {
                                                 href={cta.url}
                                                 className={`cta program_btn ${cta.type}`}
                                                 style={{ color: "inherit" }}
+                                                onClick={handleDropdownMouseLeave}
                                               >
                                                 {cta.text}
                                                 <svg
@@ -708,7 +709,9 @@ export default function Header() {
                                             ))}
                                           </div>
                                           <div className="academic_apply_now">
-                                          <Link href="https://jss-university-frontend-sepia.vercel.app/apply-now" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
+                                          <Link 
+                                                onClick={handleDropdownMouseLeave}
+                                                 href="https://jss-university-frontend-sepia.vercel.app/apply-now" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
                                           </div>
                                         </div>
 
