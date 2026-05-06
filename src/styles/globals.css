@@ -1065,7 +1065,7 @@ a:active {
 
 .programsList_row {
   display: grid;
-  grid-template-columns: repeat(1, 59% auto);
+  grid-template-columns: repeat(1, 75% auto);
   gap: 10.5rem;
   align-items: center;
   border-bottom: solid 1px #ddd;
@@ -1074,7 +1074,7 @@ a:active {
 
 .explore-program-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem 1.2rem;
   align-items: center;
   position: relative;
@@ -1096,6 +1096,15 @@ a:active {
   align-items: center;
   gap: 3.7rem;
   margin-top: 1.5rem;
+}
+
+.home .admission_btn{
+  gap: 0;
+  display: block;
+}
+
+.home .admission_btn .add_btn{
+  margin-top:2rem;
 }
 
 .programs-count {
@@ -2520,6 +2529,14 @@ a:active {
   padding: 2.7rem 3.3rem;
 }
 
+.place_logos .early-grid figure .name{
+  text-align: center;
+  margin-top:1.5rem;
+  margin-bottom: 0;
+  font:var(--font-20);
+  font-weight: 400;
+}
+
 .request_Row {
   display: grid;
   grid-template-columns: repeat(1, 58% auto);
@@ -2900,6 +2917,11 @@ a:active {
 .faqItem .faqAnswer ul li {
   font: var(--font-14);
   margin-bottom: 1rem;
+}
+
+
+.tabs_accordion[open] .faqAnswer{
+  max-height:unset;
 }
 
 @media (max-width: 420px) {

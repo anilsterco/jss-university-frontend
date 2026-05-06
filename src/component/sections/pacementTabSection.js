@@ -33,7 +33,7 @@ export default function PacementTabSection({ data }) {
       ) || [];
 
     return (
-      <section className="about_two" key={index}>
+      <section className="about_two tabs_group_section" key={index}>
         <div className="container">
           <div className="abou_t_sec">
             <h5 className="about_subtitle">{items[0].heading}</h5>
@@ -87,6 +87,9 @@ export default function PacementTabSection({ data }) {
                                 height={100}
                                 className="img-fluid"
                               />
+                              {img.title && (
+                                <h5 className="name">{img.title}</h5>
+                              )}
                             </figure>
                           ))}
                         </div>
