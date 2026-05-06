@@ -23,7 +23,7 @@ const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
 
 const mobilePanelsData = [
   {
-    name: "Courses",
+    name: "Programs",
     icon: "/images/header/cource-mob.svg",
     visitIcon: "/images/header/courseIcon.svg",
     Menu: [
@@ -520,10 +520,10 @@ export default function Header() {
   return (
     <header
       className={`site-header
-  ${pathname.includes("programs") ? "no-shadow" : ""}
-  ${!isHomeLikePage ? "programs-header not-home" : ""}
-  ${isSchoolInner || isDepartmentInner ? "school-dept-header" : ""}
-`}
+        ${pathname.includes("programs") ? "no-shadow" : ""}
+        ${!isHomeLikePage ? "programs-header not-home" : ""}
+        ${isSchoolInner || isDepartmentInner ? "school-dept-header" : ""}
+      `}
     >
       <div
         className={`header-inner ${
