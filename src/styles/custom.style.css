@@ -2518,9 +2518,51 @@
   padding-bottom:0;
 }
 
+.placement .tabs_group_section:nth-child(6) .early-grid{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.placement .tabs_group_section:nth-child(6) figure{
+  text-align: center;
+}
+
 .single_image_content .inner_bottom_data{
   margin-top:4rem;
 }
+
+.hostel-rules {
+  margin: 7rem 0 0 0;
+}
+.hostel-rules h5 {
+  color: var(--color-4e);
+  margin-bottom: 3rem;
+  font: var(--font-24);
+  font-weight: 700;
+  text-align: center;
+}
+.hostel-rules p {
+  text-align: center;
+}
+.hostel_list {
+  margin: 7rem 0 0 0;
+}
+.hostel_list h6 {
+  color: var(--color-4e);
+  margin-bottom: 3rem;
+  font: var(--font-21);
+  font-weight: 700;
+}
+.hostel_list_cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  gap: 0 7rem;
+}
+.hostel_list_cont ul li {
+  padding-bottom: 1.2rem;
+} 
+
+
 
 @media (max-width: 991px) {
   .inner_page {
@@ -2578,6 +2620,19 @@
   .whatsapp-btn svg{
     width: 1.8rem;
   }
+
+  .placement .tabs_group_section:nth-child(6) .early-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hostel-rules{
+    margin: 0; 
+  }
+
+  .hostel_list_cont{
+    display:block;
+  }
+  
 }
 
 .inner_faculties_search {
