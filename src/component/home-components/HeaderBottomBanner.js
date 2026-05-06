@@ -21,7 +21,7 @@ const HeaderBottomBanner = () => {
                         <span className="dot"></span>
                         <Link href="admission#admissionsofc">Admissions Office Contacts</Link>
                         <span className="dot"></span>
-                        <Link href="admission-faq">FAQ'S</Link>
+                        <Link href="admission-faq">FAQs</Link>
                     </div>
 
                     <div className="headerBottomBanner__actions">
