@@ -266,6 +266,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
               ))}
           </div>
         </div>
+
+        <div className="inner_bottom_data" dangerouslySetInnerHTML={{__html:data?.bottomHTML}} />
       </div>
     </div>
   );

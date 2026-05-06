@@ -2518,6 +2518,10 @@
   padding-bottom:0;
 }
 
+.single_image_content .inner_bottom_data{
+  margin-top:4rem;
+}
+
 @media (max-width: 991px) {
   .inner_page {
     padding: 3rem 0;
