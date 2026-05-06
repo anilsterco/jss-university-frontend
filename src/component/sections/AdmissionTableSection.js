@@ -68,6 +68,9 @@ export default function AboutOne({ data }) {
                   </table>
                 </div>
               </div>
+              {section.items[0]?.description && (
+                <div className="description" dangerouslySetInnerHTML={{__html:section.items[0]?.description}} />
+              )}
             </div>
           </section>
         );

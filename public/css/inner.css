@@ -2728,6 +2728,10 @@ ul.comon_list li:before {
   background: var(--color-ef);
 }
 
+.fee_sturc_admain .description{
+  margin-top:4rem;
+}
+
 .scholarship_main {
   padding-block: 10rem 12.9rem;
 }
