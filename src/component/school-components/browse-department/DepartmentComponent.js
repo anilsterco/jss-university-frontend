@@ -248,7 +248,8 @@ export default function DepartmentSection({
 
                   return (
                     <>
-                      Departments of <span>{isPharmacy ? last : words}</span>
+                      Departments
+                       {/* of <span>{isPharmacy ? last : words}</span> */}
                     </>
                   );
                 })()}
