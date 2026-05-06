@@ -9,7 +9,12 @@ export default function Accordions1({ data }) {
         return (
           <React.Fragment key={sectionIndex}>
             {/* <IQAC data={section.items} /> */}
-            <AccordionTabs data={section.items} />
+            <div className="container">
+              {section?.items[0].mainTitle && (
+                <h5 className="about_subtitle">{section?.items[0].mainTitle}</h5>
+              )}
+              <AccordionTabs data={section.items} />
+            </div>
           </React.Fragment>
         );
     }

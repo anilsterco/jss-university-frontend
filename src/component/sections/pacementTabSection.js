@@ -31,36 +31,40 @@ export default function PacementTabSection({ data }) {
       section.items?.sort(
         (a, b) => Number(a.position) - Number(b.position)
       ) || [];
+
     return (
       <section className="about_two" key={index}>
         <div className="container">
           <div className="abou_t_sec">
-            <h5 className="about_subtitle">Industry Institute Collaborations (MOUs & COEs)</h5>
-            <nav className="growth-tabs">
-              <ul>
-                {items.map((item, idx) => (
-                  <li key={idx}>
-                    <button
-                      type="button"
-                      className={
-                        activeGrowthTab === `growthTab${item.position}`
-                          ? "active"
-                          : ""
-                      }
-                      onClick={() =>
-                        handleGrowthTabClick(
-                          `growthTab${item.position}`
-                        )
-                      }
-                    >
-                      {item.tab_name}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <h5 className="about_subtitle">{items[0].heading}</h5>
+            {items?.length > 1 && (
+               <nav className="growth-tabs">
+                  <ul>
+                    {items.map((item, idx) => (
+                      <li key={idx}>
+                        <button
+                          type="button"
+                          className={
+                            activeGrowthTab === `growthTab${item.position}`
+                              ? "active"
+                              : ""
+                          }
+                          onClick={() =>
+                            handleGrowthTabClick(
+                              `growthTab${item.position}`
+                            )
+                          }
+                        >
+                          {item.tab_name}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+           
 
-            <div className="grow_tb_contsec">
+            <div className={`grow_tb_contsec ${items?.length < 2 ? 'pt-0' : ''}`}>
               {items.map((item) => (
                 <div
                   key={item.item_uuid}

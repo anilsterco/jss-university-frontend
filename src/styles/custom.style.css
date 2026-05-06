@@ -2362,29 +2362,6 @@
   padding: 0.9rem 1.5rem;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  margin-top: 0 !important;
-  left: 10px;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  font-size: 2rem;
-}
-
-.swiper-button-next {
-  left: unset;
-  right: "10px";
-}
-
 .swiper-button-next svg,
 .swiper-button-prev svg {
   height: auto;
@@ -2394,7 +2371,10 @@
 .swiper-button-next:after,
 .swiper-button-prev:after {
   content: "";
+  display:none;
 }
+
+
 
 .tab_table_multiple_section {
   background: #fff;
@@ -2523,6 +2503,14 @@
   text-transform: capitalize;
   font:var(--font-14);
   font-weight: 500;
+}
+
+.main-container.placement .iqac_master{
+  padding-bottom: 10rem;
+}
+
+.main-container.placement .accordion_tabs_lists{
+  max-width: 100%;
 }
 
 @media (max-width: 991px) {

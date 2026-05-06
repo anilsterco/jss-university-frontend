@@ -1,16 +1,27 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 
 export default function AccordionTabs({ data, heading }) {
   const sortedData = data
     ? [...data].sort((a, b) => (a?.position ?? 0) - (b?.position ?? 0))
     : [];
 
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleToggle = (idx) => {
+    setOpenIndex((prev) => (prev === idx ? null : idx));
+  };
+
   return (
     <div className="faqList accordion_tabs_lists">
-      {sortedData.map((item) => (
+      {sortedData.map((item, idx) => (
         <details
           key={item.item_uuid}
           className="faqItem"
+          open={openIndex === idx}
+          onToggle={(e) => {
+            if (e.target.open) handleToggle(idx);
+          }}
         >
           <summary className="faqQuestion">
             <span className="faq_heading">{item.heading}</span>
