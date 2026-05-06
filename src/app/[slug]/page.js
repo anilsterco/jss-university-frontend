@@ -78,8 +78,12 @@ import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple"
 import Accordions1 from "@/component/sections/Accordions1";
 
 async function fetchPageData(slug) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}pages/${slug}`, {
+    const res = await fetch(`${BASE_URL}pages/${slug}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;

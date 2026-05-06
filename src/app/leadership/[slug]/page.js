@@ -4,8 +4,11 @@ import { getPageSEO } from "@/lib/seo";
 import LeadershipClientDetail from "./LeadershipClientDetail";
 
 async function fetchLeader(slug) {
+  const isDev = process.env.NODE_ENV === 'development';
   try {
-    const res = await fetch(`${BASE_URL}leadership/${slug}`, {
+    const res = await fetch(`${BASE_URL}leadership/${slug}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;

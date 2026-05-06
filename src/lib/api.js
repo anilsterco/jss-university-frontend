@@ -3,7 +3,11 @@ const BASE_URL =
 
 // --- Generic fetch function with SSR caching ---
 async function fetchData(endpoint, options = {}) {
-  const res = await fetch(`${BASE_URL}${endpoint}`, {
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}${endpoint}`, isDev ? {
+    cache:"no-store"
+  } : {
     next: { revalidate: 120 }, // cache for 2 mins, change as needed
     ...options,
   });

@@ -18,7 +18,11 @@ export async function generateMetadata({ params }) {
 }
 
 async function getDepartmentData(slug) {
-  const res = await fetch(`${BASE_URL}department/${slug}`, {
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}department/${slug}`, isDev ? {
+    cache:"no-store"
+  } : {
     next: { revalidate: 120 },
   });
 

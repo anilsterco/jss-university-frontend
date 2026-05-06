@@ -17,8 +17,12 @@ export async function generateMetadata() {
 }
 
 async function getSchoolData() {
-  const res = await fetch(`${BASE_URL}homepage`, {
-    next: { revalidate: 120 }, // cache for 2 mins
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}homepage`, isDev ? {
+    cache:"no-store"
+  } : {
+    next: { revalidate: 120 },
   });
 
   if (!res.ok) {

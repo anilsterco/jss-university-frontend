@@ -21,8 +21,12 @@ export async function generateMetadata({ params }) {
 }
 
 async function getSchoolData(slug, section) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}school-pages/${slug}/${section}`, {
+    const res = await fetch(`${BASE_URL}school-pages/${slug}/${section}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 120 },
     });
 
