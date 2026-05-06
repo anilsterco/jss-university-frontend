@@ -1,11 +1,16 @@
+"use client"
 import Image from "next/image";
 import styles from "./labs.module.css";
 import Link from "next/link";
 import AboutOne from "@/component/sections/AboutOne";
 import LabCard from "@/component/sections/LabCard";
+import { usePathname } from "next/navigation";
 
 export default function Labspage({ data }) {
-  console.log("lab card data", data);
+  const pathname = usePathname();
+
+  const slug = pathname.split('/').filter(Boolean)[1]
+
   return (
     <>
       {data?.[0]?.type == "topBanner" && (
@@ -16,10 +21,25 @@ export default function Labspage({ data }) {
         className={` ${styles.labs_page} ${styles.inner_page} ${data?.[0]?.type == "topBanner" ? "inner_lab_data_no_spacing" : ""}`}
       >
         <div className="container">
-          {/* <p className={`text-center ${styles.sub_heading}`}>
-            Committed to producing industry-ready engineers through advanced
-            laboratories, research, and practical exposure.
-          </p> */}
+          {slug == 'information-technology' && (
+            <>
+              <div className="container">
+                <h5 class="about_subtitle">Labs</h5>
+                  <p className={`text-center`}>
+                  The Department of Information Technology is equipped with well-established laboratories that support both academic and research activities. These laboratories are designed to provide students with hands-on experience in core and emerging areas of computing, enabling the effective application of theoretical concepts.
+                  </p>
+    
+                  <p className={`text-center`}>
+                  Each laboratory is equipped with the necessary hardware and software resources aligned with the curriculum requirements of undergraduate and postgraduate programs. They facilitate practical sessions, project development, and research activities, thereby enhancing students’ technical competencies and problem-solving skills.
+                  </p>
+    
+                  <p className={`text-center`}>
+                  In addition to regular lab sessions, the department actively promotes innovation and experiential learning through project-based work and research initiatives conducted within these laboratories.
+                  </p>
+              </div>
+            </>
+          )}
+          
 
           <div className="row mx_3xl_-1_3 mt_3xl_7">
             {data?.data &&

@@ -2563,6 +2563,10 @@
 } 
 
 
+.testimonial_inner_page{
+  padding-top:10rem;
+}
+
 
 @media (max-width: 991px) {
   .inner_page {
@@ -2631,6 +2635,10 @@
 
   .hostel_list_cont{
     display:block;
+  }
+
+  .testimonial_inner_page{
+    padding-top:7rem;
   }
   
 }
