@@ -297,8 +297,8 @@ export default function Footer() {
                   © Copyright {new Date().getFullYear()} - JSS. All Rights
                   Reserved.
                 </p>
-                <p className="mb-0">
-                  Website Design and Development by{" "}
+                <p className="mb-0 text-center">
+                  Website Design and Development by{" "}<br/>
                   <a href="https://www.stercodigitex.com/" target="_blank">
                     Sterco Digitex
                   </a>
@@ -419,7 +419,7 @@ export default function Footer() {
         .quick-item {
           gap: 1.3rem;
           display: flex;
-          align-items: center;
+          align-items: start;
           padding: 0;
           margin: 0;
         }

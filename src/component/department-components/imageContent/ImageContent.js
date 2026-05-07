@@ -21,7 +21,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
       className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]}`}
     >
       <div
-        className={`align-items-center row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
+        className={`row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
         <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border px-0">
           {data?.imageVideo?.length > 0 ? (
