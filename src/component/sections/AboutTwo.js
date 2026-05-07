@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade, Autoplay } from "swiper/modules";
-import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,8 +13,19 @@ import "swiper/css/effect-fade";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
+const MOBILE_BREAKPOINT = 768;
+
 export default function AboutTwo({ data }) {
   const [activeTab, setActiveTab] = useState(0);
+  const [openAccordion, setOpenAccordion] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -29,10 +39,7 @@ export default function AboutTwo({ data }) {
     if (!items || items.length === 0) return <p>No slider content available</p>;
 
     return (
-      <div
-        className="earlygrowth-slider-wrapper"
-        style={{ position: "relative" }}
-      >
+      <div className="earlygrowth-slider-wrapper" style={{ position: "relative" }}>
         <Swiper
           modules={[Navigation, EffectFade, Autoplay]}
           effect="fade"
@@ -40,7 +47,6 @@ export default function AboutTwo({ data }) {
           spaceBetween={30}
           slidesPerView={1}
           loop={items.length > 1}
-          // autoplay={{ delay: 2500, disableOnInteraction: false }}
           navigation={{
             nextEl: `.earlygrowth-next-${sectionIndex}`,
             prevEl: `.earlygrowth-prev-${sectionIndex}`,
@@ -48,10 +54,7 @@ export default function AboutTwo({ data }) {
         >
           {items.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <div
-                className="early-slide"
-                style={{ display: "flex", gap: "2rem" }}
-              >
+              <div className="early-slide" style={{ display: "flex", gap: "2rem" }}>
                 {(item.image || item.video) && (
                   <div style={{ flex: 1 }}>
                     {item.video ? (
@@ -64,28 +67,16 @@ export default function AboutTwo({ data }) {
                         loop
                         playsInline
                         className="imgsli_left"
-                        style={{
-                          // width: "100%",
-                          // height: "100%",
-                          objectFit: "cover",
-                        }}
+                        style={{ objectFit: "cover" }}
                       />
                     ) : (
                       <Image
                         src={item.image}
-                        alt={
-                          item.title
-                            ? item.title.replace(/<[^>]+>/g, "")
-                            : "Early Growth"
-                        }
+                        alt={item.title ? item.title.replace(/<[^>]+>/g, "") : "Early Growth"}
                         className="imgsli_left"
                         width={600}
                         height={400}
-                        style={{
-                          // width: "100%",
-                          // height: "100%",
-                          objectFit: "cover",
-                        }}
+                        style={{ objectFit: "cover", width:"100%", height:"auto" }}
                       />
                     )}
                   </div>
@@ -101,28 +92,12 @@ export default function AboutTwo({ data }) {
                   {item.title && (
                     <h4 dangerouslySetInnerHTML={{ __html: item.title }} />
                   )}
-
-                  {/* Navigation Buttons */}
                   <div className="nav_buttons">
-                    <div
-                      className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}
-                    >
-                      <Image
-                        src="/images/icons/circle-arrow-left.svg"
-                        alt="Arrow"
-                        width={22}
-                        height={22}
-                      />
+                    <div className={`earlygrowth-prev-${sectionIndex} earlygrowth-nav earlygrowth-nav-prev`}>
+                      <Image src="/images/icons/circle-arrow-left.svg" alt="Arrow" width={22} height={22} />
                     </div>
-                    <div
-                      className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}
-                    >
-                      <Image
-                        src="/images/icons/circle-arrow-right.svg"
-                        alt="Arrow"
-                        width={22}
-                        height={22}
-                      />
+                    <div className={`earlygrowth-next-${sectionIndex} earlygrowth-nav earlygrowth-nav-next`}>
+                      <Image src="/images/icons/circle-arrow-right.svg" alt="Arrow" width={22} height={22} />
                     </div>
                   </div>
                 </div>
@@ -134,6 +109,8 @@ export default function AboutTwo({ data }) {
     );
   };
 
+  const tabs = data?.[0]?.items || [];
+
   return (
     <section className="about_two">
       <div className="container">
@@ -141,8 +118,7 @@ export default function AboutTwo({ data }) {
           <h5
             className="about_subtitle"
             dangerouslySetInnerHTML={{
-              __html:
-                data[0]?.items[0]?.title || "Early Growth and Achievements",
+              __html: data[0]?.items[0]?.title || "Early Growth and Achievements",
             }}
           />
           <h2
@@ -154,29 +130,70 @@ export default function AboutTwo({ data }) {
             }}
           />
 
-          <nav className="growth-tabs">
-            <ul>
-              {data?.[0]?.items?.map((tab, idx) => (
-                <li key={tab.position || idx}>
-                  <button
-                    type="button"
-                    className={activeTab === idx ? "active" : ""}
-                    onClick={() => setActiveTab(idx)}
-                  >
-                    {tab.tabName}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* ── DESKTOP: Tab layout ── */}
+          {!isMobile && (
+            <>
+              <nav className="growth-tabs">
+                <ul>
+                  {tabs.map((tab, idx) => (
+                    <li key={tab.position || idx}>
+                      <button
+                        type="button"
+                        className={activeTab === idx ? "active" : ""}
+                        onClick={() => setActiveTab(idx)}
+                      >
+                        {tab.tabName}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
-          <div className="grow_tb_contsec">
-            {data?.[0]?.items?.[activeTab]?.tabData?.length > 0 ? (
-              renderSlider(data[0].items[activeTab].tabData, activeTab)
-            ) : (
-              <p>No data available for this tab</p>
-            )}
-          </div>
+              <div className="grow_tb_contsec">
+                {tabs[activeTab]?.tabData?.length > 0 ? (
+                  renderSlider(tabs[activeTab].tabData, activeTab)
+                ) : (
+                  <p>No data available for this tab</p>
+                )}
+              </div>
+            </>
+          )}
+
+          {/* ── MOBILE: Accordion layout ── */}
+          {isMobile && (
+            <div>
+              {tabs.map((tab, idx) => {
+                const isOpen = openAccordion === idx;
+                return (
+                  <details
+                    key={tab.position || idx}
+                    className="faqItem tabs_accordion"
+                    open={isOpen}
+                    onToggle={(e) => {
+                      if (e.target.open) {
+                        setOpenAccordion(idx);
+                      } else if (openAccordion === idx) {
+                        setOpenAccordion(null);
+                      }
+                    }}
+                  >
+                    <summary className="faqQuestion">
+                      <span className="faq_heading">{tab.tabName}</span>
+                      <span className="icon"></span>
+                    </summary>
+                    <div className="faqAnswer">
+                      {tab.tabData?.length > 0 ? (
+                        renderSlider(tab.tabData, `mob-${idx}`)
+                      ) : (
+                        <p>No data available</p>
+                      )}
+                    </div>
+                  </details>
+                );
+              })}
+            </div>
+          )}
+
         </div>
       </div>
     </section>

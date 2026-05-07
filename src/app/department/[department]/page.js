@@ -95,7 +95,7 @@ export default async function DepartmentPage({ params }) {
         <PlacementDepartment data={departmentData.sections.placements} />
       )}
 
-      {departmentData?.sections?.happenings && (
+      {departmentData?.sections?.happenings?.happenings.length > 0 && (
         <HappingsHomeComponent data={departmentData.sections.happenings} />
       )}
       {/* {departmentData?.sections?.faqs && (

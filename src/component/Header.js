@@ -23,6 +23,7 @@ const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
 
 const mobilePanelsData = [
   {
+    title:"Programs",
     name: "Courses",
     icon: "/images/header/cource-mob.svg",
     visitIcon: "/images/header/courseIcon.svg",
@@ -51,6 +52,7 @@ const mobilePanelsData = [
   },
 
   {
+    title:"Admissions",
     name: "Admissions",
     heading:
       "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
@@ -100,6 +102,7 @@ const mobilePanelsData = [
   },
 
   {
+    title:"Contact",
     name: "Contact",
     heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
@@ -107,6 +110,7 @@ const mobilePanelsData = [
   },
 
   {
+    title:"Menu",
     name: "Menu",
     icon: "/images/header/hamberger-mob.svg",
   },
@@ -126,7 +130,7 @@ export default function Header() {
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobAdmission, setMobadmission] = useState(null);
   const [mobProgramList, setMobProgramList] = useState([]);
-  const [activeDropdown, setActiveDropdown] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState([]); //[]
   const [megaMenuData, setMegaMenuData] = useState([]);
   const [isAcademic, setIsAcademic] = useState(false);
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
@@ -787,59 +791,42 @@ export default function Header() {
 
                                   // DEPARTMENTS (index 2)
                                   if (activeMegaChildIndex === 2) {
-                                    // chunk into groups of 2 for column layout
+                                    // Define column sizes explicitly: 2, 2, 3
+                                    const columnSizes = [2, 2, 3];
                                     const columns = [];
-                                    for (
-                                      let i = 0;
-                                      i < engineeringData.length;
-                                      i += 2
-                                    ) {
-                                      columns.push(
-                                        engineeringData.slice(i, i + 2),
-                                      );
+                                    let index = 0;
+                                  
+                                    for (const size of columnSizes) {
+                                      columns.push(engineeringData.slice(index, index + size));
+                                      index += size;
                                     }
-
+                                  
                                     return (
                                       <div className="mega-departments-grid">
                                         {columns.map((col, colIdx) => (
-                                          <div
-                                            key={colIdx}
-                                            className="mega-dept-column"
-                                          >
+                                          <div key={colIdx} className="mega-dept-column">
                                             {col.map((school) => (
-                                              <div
-                                                key={school.id}
-                                                className="mega-dept-block"
-                                              >
+                                              <div key={school.id} className="mega-dept-block">
                                                 <h6 className="mega-dept-school-name">
                                                   <Link
                                                     href={`${WEB_URL}schools/${school.slug}`}
-                                                    onClick={() =>
-                                                      setActiveDropdown(null)
-                                                    }
+                                                    onClick={() => setActiveDropdown(null)}
                                                   >
                                                     {school.name}
                                                   </Link>
                                                 </h6>
-                                                {school.departments?.length >
-                                                  0 && (
+                                                {school.departments?.length > 0 && (
                                                   <ul>
-                                                    {school.departments.map(
-                                                      (dept) => (
-                                                        <li key={dept.id}>
-                                                          <Link
-                                                            href={`${WEB_URL}department/${dept.slug}`}
-                                                            onClick={() =>
-                                                              setActiveDropdown(
-                                                                null,
-                                                              )
-                                                            }
-                                                          >
-                                                            {dept.name}
-                                                          </Link>
-                                                        </li>
-                                                      ),
-                                                    )}
+                                                    {school.departments.map((dept) => (
+                                                      <li key={dept.id}>
+                                                        <Link
+                                                          href={`${WEB_URL}department/${dept.slug}`}
+                                                          onClick={() => setActiveDropdown(null)}
+                                                        >
+                                                          {dept.name}
+                                                        </Link>
+                                                      </li>
+                                                    ))}
                                                   </ul>
                                                 )}
                                               </div>
@@ -1597,7 +1584,7 @@ export default function Header() {
                     <div className="icon">
                       <img src={item.icon} alt={`${item.name} icon`} />
                     </div>
-                    <p className="menu-name">{item.name}</p>
+                    <p className="menu-name">{item.title}</p>
                   </button>
                 </li>
               ))}

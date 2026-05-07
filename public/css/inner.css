@@ -6856,7 +6856,7 @@ ul.comon_list li:before {
   }
 
   .about_two .early-slide .early_rgt h4 {
-    font: var(--font-24);
+    font: var(--font-18);
   }
 
   .grands_content {
@@ -6870,6 +6870,16 @@ ul.comon_list li:before {
   .phd_duration_section {
     padding-block: 4rem 5rem;
   }
+
+  .tabs_group_section .early-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about_three .vsn_msn_grid{
+    flex-flow: column-reverse wrap;
+    display: flex;
+    gap:0;
+  }
 }
 
 @media (max-width: 600px) {
@@ -6881,6 +6891,8 @@ ul.comon_list li:before {
     padding-top: 6rem;
     padding-bottom: 3.5rem;
   }
+
+  
 }
 
 .about_five {
@@ -8687,6 +8699,10 @@ ul.comon_list li:before {
   .programs-page .core-sec {
     padding-block: 2rem 5rem;
   }
+
+  .about_two{
+    padding-bottom:5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -8705,7 +8721,7 @@ ul.comon_list li:before {
 
   .about_three .vsn_msn_grid .miss-rgt h4 {
     letter-spacing: -0.88px;
-    font: var(--font-36);
+    font: var(--font-30);
   }
 
   .academic-council .table_section thead th:first-child {
@@ -9044,6 +9060,10 @@ ul.comon_list li:before {
   .popup-modal {
     top: 20%;
   }
+
+  .early-slide .imgsli_left{
+    border-radius: 3rem .2rem .2rem;
+  }
 }
 
 @media (max-width: 575px) {
@@ -9153,6 +9173,15 @@ ul.comon_list li:before {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
+
+
+.tabs_group_section .early-grid{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.place_logos .early-grid figure .name{
+  font:var(--font-14)
+}
 
   .leadership_two_cnt p {
     padding-bottom: 0;

@@ -34,7 +34,7 @@ export default function PlacementRequest({ data }) {
                     alt={item.name || "Placement Officer"}
                     width={600}
                     height={450}
-                    className=""
+                    style={{width:"100%", height:"auto"}}
                   />
                 </figure>
               )}

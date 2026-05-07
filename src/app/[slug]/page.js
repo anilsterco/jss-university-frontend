@@ -76,6 +76,7 @@ import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
 import Accordions1 from "@/component/sections/Accordions1";
+import '../../styles/custom.style.css'
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === 'development';

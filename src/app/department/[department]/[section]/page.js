@@ -19,6 +19,7 @@ import { notFound } from "next/navigation";
 import TabsContent from "@/component/common/tabsContent/TabsContent";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import Departments from "@/pages/departments/Departments";
+import TestimonialInnerPage from "@/pages/testimonials/Testimonials";
 
 export async function generateMetadata({ params }) {
   return getPageSEO();
@@ -94,6 +95,10 @@ export default async function DepartmentPage({ params }) {
       ) : section == "labs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <Labspage data={departmentData?.sections} />
+        </Suspense>
+      ) : section == "testimonials" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <TestimonialInnerPage data={departmentData?.data} />
         </Suspense>
       ) : section == "faqs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>

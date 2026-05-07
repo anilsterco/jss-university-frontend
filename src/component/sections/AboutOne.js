@@ -159,6 +159,7 @@ export default function AboutOne({ data, extraClass }) {
                                   ))}
                                 </Swiper>
 
+
                                 <button
                                   type="button"
                                   className="swiper-button-prev swiper-prev-placement"
@@ -173,6 +174,8 @@ export default function AboutOne({ data, extraClass }) {
                                 >
                                   <MdChevronRight />
                                 </button>
+
+
                               </div>
                             )
                           ) : (item.file || item.video) ? (
