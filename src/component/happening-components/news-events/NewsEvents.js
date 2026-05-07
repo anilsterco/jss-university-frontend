@@ -226,7 +226,7 @@ export default function EventsSection({ className, programId, type }) {
           </Swiper>
         ) : (
           <div style={{ textAlign: "center", padding: "4rem" }}>
-            No Upcoming Events
+            {/* No Upcoming Events */}
           </div>
         )}
 
