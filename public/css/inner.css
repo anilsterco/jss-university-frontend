@@ -9521,14 +9521,14 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .leadership-dr-nilani-p .leadership_dtls_two .leadership_two_cnt p,
   .leadership-prof-dr-satyendra-patnaik .leadership_dtls_two .leadership_two_cnt p,
   .leadership-dr-anindita-de .leadership_dtls_two .leadership_two_cnt p,
-  .leadership-dr-sonam-patel .leadership_dtls_two .leadership_two_cnt p {
-      padding-bottom: 0;
-  }
+  .leadership-dr-sonam-patel .leadership_dtls_two .leadership_two_cnt p{padding-bottom:0;}
   .committees .growth-tabs ul li button{letter-spacing:.8px;background-color:#16344e;font:var(--font-18);font-family:var(--font-Condensed);border:none;padding:0.8rem 1.5rem;color:var(--color-white);font-weight:bold;}
   .committees .growth-tabs ul li button.active{color:var(--color-black);background-color:var(--color-100);}
   .committees .tab_table_multiple_section{padding:6rem 0 0;}
   .institutional-development-plan .vision_mission_section .mission-card ul li{padding-left:2.2rem;}
   .institutional-development-plan .vision_mission_section .mission-card ul li:before{content:"";width:.7rem;height:.7rem;margin-top:0.7rem;}
+  .internation-conference .single_card .content h5{min-height:5rem;}
+  .central-instrumentation-facilities .about_f_value .read_more_btn:hover{background-color:var(--color-4e);color:#ffffff;}
 
 @media(max-width:1024px){
   .cus-profile-text{
@@ -9553,6 +9553,18 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide figure{height:100%;}
   .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide{height:100%;}
   .academic-facilities .academic_labmain .academic_grid{gap:7rem 0;}
+  .academic-facilities .research_labmain.section_right{margin-bottom:7rem;}
+  .campus-facilities .image_content_repeat_section .single_image_content figure,
+  .campus-facilities .image_content_repeat_section .single_image_content figure img{height:100%;width:100%;}
+  .campus-facilities .image_content_repeat_section .single_image_content figure img{object-fit:cover;}
+  .campus-facilities .amenities_section .grid_group{gap:0;}
+  .campus-facilities .about_two.labs_group_section .swiper-wrapper figure,
+  .campus-facilities .about_two.labs_group_section .swiper-wrapper figure video,
+  .campus-facilities .about_two.labs_group_section .swiper-wrapper figure img{width:100%;height:100%;}
+  .campus-facilities .about_two.labs_group_section .swiper-wrapper figure img{object-fit:cover;}
+  .internation-conference .conference_section .content{padding:1.5rem 0;}
+  .internation-conference .conference_section .grid{grid-template-columns:repeat(3,1fr);}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(3,1fr);}
 
 }
 @media(max-width:767px){
@@ -9574,10 +9586,34 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .approvals-recognitions .estab_slide_item{min-height:20rem;}
   .approvals-recognitions .row.justify-content-center{padding-block: 6rem;}
   .academic-facilities .academic_labmain .academic_grid{gap:5rem 0;}
+  .academic-facilities .sports_fac_slider{display:block;}
+  .academic-facilities .sports_fac_slider figure{position:relative;}
+  .academic-facilities .sports_fac_slider figure:after{content:"";opacity:.64;background:linear-gradient(270deg,#0000 0%,#000 100%) no-repeat padding-box padding-box;position:absolute;inset:0;}
+  .academic-facilities .sports_fac_slider:after{display:none;}
+  .academic-facilities .sport_fac_swiper{background-color:var(--color-9a);}
+  .academic-facilities .research_labmain.section_right{margin-bottom:5rem;}
+  .campus-facilities .ameminites_listmain .bottom_dec{padding-bottom:0;}
+  .campus-facilities .about_two.labs_group_section video,
+  .campus-facilities .image_content_repeat_section video{height:100%;object-fit:cover;}
+  .jss-news-letter .pdf_list_section li p{padding-right:4rem;}
+  .internation-conference .conference_section .grid{grid-template-columns:repeat(2,1fr);}
+  .main-container.placement .iqac_master{padding-bottom:6rem;}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(2,1fr);}
+  .central-instrumentation-facilities .image_content_repeat_section .imageContent-module__R4BLKG__bottomDesc {
+    margin: 4rem 0 0 0;
+}
 }
 @media(max-width:575px){
   .institutional-development-plan .amenities_section .grid_group{padding:3rem;}
   .faulty-box{gap:1rem 2rem;}
+  .academic-facilities .academic_labmain .ab_jss_coutsec .ab_jss_c_col{max-width:100%;}
+  .campus-facilities .ameminites_listmain .ameniti_item_col p{margin-bottom:4rem;}
+  .campus-facilities .uni_boa_grid{gap:2rem;}
+  .internation-conference .conference_section .grid{grid-template-columns:repeat(1,1fr);}
+  .internation-conference .single_card .content h5{min-height:auto;}
+  .internation-conference .conference_section .grid{gap:1rem 0;}
+  .internation-conference .conference_section{padding:6rem 0;}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(1,1fr);}
 }
 
 @media(max-width:480px){
