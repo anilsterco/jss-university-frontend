@@ -1668,9 +1668,8 @@ a:active {
 .search-item .search-link {
   font: var(--font-14);
   color: var(--color-black);
-  font: var(--font-14);
   font-weight: normal;
-  font-family: var(--font-Condensed);
+  font-family: var(--font-Roboto);
 }
 
 .search-item:hover .search-link {

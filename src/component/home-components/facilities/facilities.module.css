@@ -5,7 +5,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 11.5%;
+  left: 11.4%;
 }
 
 .slideNumberBox {
@@ -161,7 +161,7 @@
   height: 100%;
   width: 1px;
   background-color: #16344e;
-  margin-left: 1.8rem;
+  margin-left: 2.1rem;
   display: block;
 }
 
@@ -201,7 +201,7 @@
 
 @media (min-width: 1921px) and (max-width:3800) {
   .verticalLine {
-    left: 20.5%;
+    left: 20.6%;
   }
 
   .bannerContent {
