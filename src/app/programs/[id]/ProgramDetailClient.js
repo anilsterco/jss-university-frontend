@@ -11,7 +11,7 @@ import Faq from "@/component/common/faq/Faq";
 import EligibilityPrograms from "@/component/sections/EligibilityData";
 
 export default function ProgramDetailClient({ params }) {
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState(null);
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -34,9 +34,21 @@ export default function ProgramDetailClient({ params }) {
       });
   }, [params]);
 
+  useEffect(() => {
+    if (!programData) return;
+    if (activeTab) return; // don't override user's selection
+  
+    const { peos, pos, pso } = programData;
+  
+    if (peos?.length > 0) setActiveTab("tab1");
+    else if (pos?.length > 0) setActiveTab("tab2");
+    else if (pso?.length > 0) setActiveTab("tab3");
+  }, [programData]);
+
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
+
 
   const handlePreviousTestimonial = () => {
     if (testimonials && testimonials.length > 0) {
@@ -178,7 +190,6 @@ export default function ProgramDetailClient({ params }) {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  console.log("tabSection", tabSection);
   return (
     <main className="site_main">
       <section className="program-detail">
@@ -420,7 +431,7 @@ export default function ProgramDetailClient({ params }) {
           <div className="pos_tab_line"></div>
       </div>  
 
-      {peos && peos?.length > 0 && (
+      {(peos?.length > 0 || pos?.length > 0 || pso?.length > 0) && (
         <section className="educational-sec">
           <div className="container">
             <div className="row">

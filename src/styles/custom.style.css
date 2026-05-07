@@ -2567,6 +2567,13 @@
   padding-top:10rem;
 }
 
+.topBanner_para{
+  text-align: center;
+  color: #444;
+  font: var(--font-16);
+  line-height: 2.8rem;
+}
+
 
 @media (max-width: 991px) {
   .inner_page {
@@ -2639,6 +2646,14 @@
 
   .testimonial_inner_page{
     padding-top:7rem;
+  }
+
+  .main-container .container.inner_labs_container{
+    /* padding-inline:0; */
+  }
+
+  .topBanner_para{
+    text-align: left;
   }
   
 }
