@@ -9528,6 +9528,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .institutional-development-plan .vision_mission_section .mission-card ul li{padding-left:2.2rem;}
   .institutional-development-plan .vision_mission_section .mission-card ul li:before{content:"";width:.7rem;height:.7rem;margin-top:0.7rem;}
   .internation-conference .single_card .content h5{min-height:5rem;}
+  .central-instrumentation-facilities .about_f_value .read_more_btn:hover{background-color:var(--color-4e);color:#ffffff;}
 
 @media(max-width:1024px){
   .cus-profile-text{
@@ -9562,9 +9563,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .campus-facilities .about_two.labs_group_section .swiper-wrapper figure img{width:100%;height:100%;}
   .campus-facilities .about_two.labs_group_section .swiper-wrapper figure img{object-fit:cover;}
   .internation-conference .conference_section .content{padding:1.5rem 0;}
-    .internation-conference .conference_section .grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
+  .internation-conference .conference_section .grid{grid-template-columns:repeat(3,1fr);}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(3,1fr);}
+
 }
 @media(max-width:767px){
   .institutional-development-plan section:nth-child(6).amenities_section .grid_group .right_col ul{flex-direction:column;}
@@ -9595,8 +9596,11 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .campus-facilities .about_two.labs_group_section video,
   .campus-facilities .image_content_repeat_section video{height:100%;object-fit:cover;}
   .jss-news-letter .pdf_list_section li p{padding-right:4rem;}
-  .internation-conference .conference_section .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .internation-conference .conference_section .grid{grid-template-columns:repeat(2,1fr);}
+  .main-container.placement .iqac_master{padding-bottom:6rem;}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(2,1fr);}
+  .central-instrumentation-facilities .image_content_repeat_section .imageContent-module__R4BLKG__bottomDesc {
+    margin: 4rem 0 0 0;
 }
 }
 @media(max-width:575px){
@@ -9609,6 +9613,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .internation-conference .single_card .content h5{min-height:auto;}
   .internation-conference .conference_section .grid{gap:1rem 0;}
   .internation-conference .conference_section{padding:6rem 0;}
+  .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(1,1fr);}
 }
 
 @media(max-width:480px){
