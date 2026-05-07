@@ -71,6 +71,7 @@ export default function AboutOne({ data, extraClass }) {
                                     muted
                                     loop
                                     playsInline
+                                    className="img-fluid"
                                     style={{
                                       width: "100%",
                                       height: "auto",
@@ -83,6 +84,7 @@ export default function AboutOne({ data, extraClass }) {
                                     alt={item.title?.slice(0, 50) || "Research Lab"}
                                     width={1390}
                                     height={550}
+                                    className="img-fluid"
                                     style={{ width: "100%", height: "auto" }}
                                   />
                                 )}
@@ -125,6 +127,7 @@ export default function AboutOne({ data, extraClass }) {
                                             muted
                                             loop
                                             playsInline
+                                    className="img-fluid"
                                             style={{
                                               width: "100%",
                                               height: "auto",
@@ -193,6 +196,7 @@ export default function AboutOne({ data, extraClass }) {
                                   autoPlay
                                   muted
                                   loop
+                                    className="img-fluid"
                                   playsInline
                                   style={{ objectFit: "cover" }}
                                 />

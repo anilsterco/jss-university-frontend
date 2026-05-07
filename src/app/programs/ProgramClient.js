@@ -8,10 +8,25 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ProgramBox from "@/component/programBox/ProgramBox";
 import { BASE_URL } from "@/config/config";
 
+function useIsMobile(breakpoint = 768){
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(()=>{
+    const check = ()=>setIsMobile(window.innerWidth <= breakpoint)
+    check();
+
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint])
+
+  return isMobile;
+}
+
 export default function ProgramClient() {
   const params = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   const [activeProgram, setActiveProgram] = useState(
     () => params.get("type") || "under-graduate",
@@ -36,9 +51,6 @@ export default function ProgramClient() {
   const [programListingData, setProgramListingData] = useState([]);
   const timeoutRef = useRef(null);
   const [page, setPage] = useState(1);
-
-  // ✅ REMOVED: the first useEffect that was setting state from params
-  //    (it was running after fetchPrograms already fired with stale defaults)
 
   useEffect(() => {
     if (!schoolData.length || !activeDepartmentId) return;
@@ -244,6 +256,22 @@ export default function ProgramClient() {
                     <p>Browse by Schools</p>
                     {loading ? (
                       <div>Loading schools...</div>
+                    ) : isMobile ?(
+                      <select
+                        value={activeSchoolId ?? ''}
+                        className="programs_select_dropdown"
+                        onChange={(e)=>{
+                          const val = e.target.value;
+                          handleSchoolToggle(val == '' ? null : Number(val))
+                        }}
+                      >
+                        <option value="" selected disabled>--Select--</option>
+                        {schoolData.map((school, idx)=>(
+                          <option key={idx} value={school.id}>
+                            {school.name}
+                          </option>
+                        ))}
+                      </select>
                     ) : (
                       schoolData.map((school) => (
                         <div
@@ -275,7 +303,24 @@ export default function ProgramClient() {
                     <p>Filter by Departments</p>
                     {loading ? (
                       <div>Loading departments...</div>
-                    ) : !selectedSchool ? (
+                    ) : isMobile ? (
+                      <select
+                        value={activeDepartmentId ?? ""}
+                        className="programs_select_dropdown"
+                        disabled={!selectedSchool}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          handleDepartmentToggle(val === "" ? null : Number(val));
+                        }}
+                      >
+                        <option value="" selected disabled>--Select--</option>
+                        {filteredDepartments.map((department) => (
+                          <option key={department.id} value={department.id}>
+                            {department.name}
+                          </option>
+                        ))}
+                      </select>
+                    ) :  !selectedSchool ? (
                       <div className="select-school-msg">
                         Please select a school first
                       </div>

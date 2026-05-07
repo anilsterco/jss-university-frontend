@@ -465,8 +465,8 @@ export default function Header() {
                     contactIcon: "/images/header/mail-icon.svg",
                   },
                   {
-                    name: data.phone,
-                    url: `tel:${data.phone}`,
+                    name: '+'+data.phone,
+                    url: `tel:+${data.phone}`,
                     contactIcon: "/images/header/phone-icon.svg",
                   },
                 ],
@@ -1339,7 +1339,7 @@ export default function Header() {
                                 src="/images/header/mail-icon.svg"
                                 alt="email"
                               />
-                              <a href={`mailto:${admissionData.left.email}`}>
+                              <a className="liText" href={`mailto:${admissionData.left.email}`}>
                                 {admissionData.left.email}
                               </a>
                             </li>
@@ -1348,7 +1348,7 @@ export default function Header() {
                                 src="/images/header/phone-icon.svg"
                                 alt="phone"
                               />
-                              <a href={`tel:${admissionData.left.phone}`}>
+                              <a className="liText" href={`tel:${admissionData.left.phone}`}>
                                 {admissionData.left.phone}
                               </a>
                             </li>
@@ -1359,7 +1359,7 @@ export default function Header() {
                                 key={idx}
                                 href={btn.url}
                                 className={
-                                  btn.type === "primary" ? "apply" : "dwnload"
+                                  `links1 ${btn.type === "primary" ? "apply" : "dwnload"}`
                                 }
                                 target="_blank"
                               >
@@ -1398,7 +1398,7 @@ export default function Header() {
                               <div className="icon-img">
                                 <img src={sub.contactIcon} alt={sub.name} />
                               </div>
-                              <a href={WEB_URL + sub.url}>{sub.name}</a>
+                              <a href={sub.url}>{sub.name}</a>
                             </li>
                           ))}
                         </ul>
@@ -3070,7 +3070,6 @@ export default function Header() {
           }
           .admissions-contact ul li > a {
             color: #018ce8;
-            letter-spacing: -0.21px;
             font: var(--font-21);
             font-weight: 600;
           }
@@ -3141,7 +3140,6 @@ export default function Header() {
           }
           .contact-panel .contact-info li:nth-child(2) a {
             color: #018ce8;
-            letter-spacing: -0.21px;
             font: var(--font-21);
             font-weight: 600;
           }
@@ -3156,7 +3154,6 @@ export default function Header() {
           }
           .contact-panel .contact-info li:nth-child(3) a {
             color: #018ce8;
-            letter-spacing: -0.21px;
             font: var(--font-21);
             font-weight: 600;
           }
@@ -3342,6 +3339,10 @@ export default function Header() {
             .course-heading h4 {
               max-width: 60%;
             }
+
+            .admissions-menu-wrapper .admissions-contact li a{
+              font:var(--font-16);
+            }
           }
           @media (max-width: 576px) {
             .contact-panel .contact-info li {
@@ -3367,6 +3368,24 @@ export default function Header() {
               .header-inner {
             padding-block: 0.8rem;
           }
+
+          .contactBtn {
+            display: block;
+          }
+
+           .contactBtn .links1{
+            width:100%;
+            display:block;
+            text-align:center;
+           }
+
+           .contactBtn .links1.dwnload{
+            margin-top:1rem;
+           }
+
+           .contactBtn .links1.dwnload img{
+            margin-right:1rem;
+           }
               
           }
           @media (max-width: 420px) {
