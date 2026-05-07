@@ -8679,10 +8679,10 @@ ul.comon_list li:before {
     margin-bottom: 2.5rem;
   }
 
-  .about_one .abt_cntnt figure img {
+  /* .about_one .abt_cntnt figure img {
     min-height: 30rem;
     object-fit: cover;
-  }
+  } */
 
   .research .resea_cre_items2 h3 {
     width: 100%;
@@ -9570,7 +9570,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .legacy .heri_principalmain .heri_prici_names .titleOne{border-bottom:1px solid #ddd;border-right:0;padding-bottom:2rem;text-align:center;}
   .legacy .heri_principalmain .heri_prici_names{flex-direction:column;gap:2rem 0;margin-top:4rem;}
   .legacy .heri_principalmain .heri_prici_names .titleTwo{padding-left:0;text-align:center;}
-  .about-jss-university .about_one .atm_g_imgsec video{height:45rem;}
+  /* .about-jss-university .about_one .atm_g_imgsec video{height:45rem;} */
   .approvals-recognitions .estab_slide_item{min-height:20rem;}
   .approvals-recognitions .row.justify-content-center{padding-block: 6rem;}
   .academic-facilities .academic_labmain .academic_grid{gap:5rem 0;}
