@@ -235,7 +235,7 @@ export default function LegacySection({ data }) {
                 data-aos-delay="600"
               >
                 {legacyData?.buttons.map((btn, i) => (
-                  <Link key={i} href={btn.url} className={styles.navButtons}>
+                  <Link key={i} href={btn.url} className={styles.navButtons} target={`${btn.text == 'APPLY NOW' ? '_blank' : '_self'}`}>
                     {btn.text}
                     {i == 1 && <FaArrowRight className={styles.arrowIcon} />}
                   </Link>
