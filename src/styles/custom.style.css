@@ -2567,6 +2567,13 @@
   padding-top:10rem;
 }
 
+.topBanner_para{
+  text-align: center;
+  color: #444;
+  font: var(--font-16);
+  line-height: 2.8rem;
+}
+
 
 @media (max-width: 991px) {
   .inner_page {
@@ -2639,6 +2646,33 @@
 
   .testimonial_inner_page{
     padding-top:7rem;
+  }
+
+  .main-container .container.inner_labs_container{
+    /* padding-inline:0; */
+  }
+
+  .topBanner_para{
+    text-align: left;
+  }
+
+  .programs_select_dropdown{
+    width: 100%;
+    height:3rem;  
+    font-size:12px;
+    margin-top:0.5rem;
+  }
+
+  
+
+  .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content,
+  .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content .peo-list{
+    padding:0;
+  }
+
+  .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content .peo-box{
+    padding:0;
+    margin-bottom:2.5rem;
   }
   
 }
@@ -4301,6 +4335,10 @@ padding-right: 1rem !important
   .faulty-detail-sec1 {
     padding-bottom: 4rem;
   }
+
+  
+
+  
 }
 
 /* Facilities */

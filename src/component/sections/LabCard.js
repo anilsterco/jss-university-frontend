@@ -121,7 +121,7 @@ export default function LabCard({ data }) {
                                       playsInline
                                       style={{
                                         width: "100%",
-                                        // height: "auto",
+                                        height: "auto",
                                         objectFit: "cover",
                                       }}
                                     />
@@ -135,6 +135,7 @@ export default function LabCard({ data }) {
                                       }
                                       width={685}
                                       height={450}
+                                      className="img-fluid"
                                       style={{
                                         width: "100%",
                                         objectFit: "cover",
@@ -174,6 +175,7 @@ export default function LabCard({ data }) {
                                               muted
                                               loop
                                               playsInline
+                                              className="img-fluid"
                                               style={{
                                                 // width: "100%",
                                                 // height: "auto",
@@ -190,6 +192,7 @@ export default function LabCard({ data }) {
                                               }
                                               width={685}
                                               height={450}
+                                              className="img-fluid"
                                               style={{
                                                 // width: "100%",
                                                 // height: "auto",
@@ -229,7 +232,7 @@ export default function LabCard({ data }) {
                                       ? item.title.replace(/<[^>]+>/g, "")
                                       : "Early Growth"
                                   }
-                                  className="imgsli_left"
+                                  className="imgsli_left img-fluid"
                                   width={685}
                                   height={450}
                                   style={{

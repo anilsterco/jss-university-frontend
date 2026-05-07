@@ -37,6 +37,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     muted
                     loop
                     playsInline
+                    className="img-fluid"
                     style={{
                       width: "100%",
                       // height: "auto",
@@ -49,6 +50,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
                     width={683}
                     height={520}
+                    className="img-fluid"
                     style={{
                       width: "100%",
                       // height: "auto",
@@ -87,6 +89,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           muted
                           loop
                           playsInline
+                          className="img-fluid"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -103,6 +106,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           }
                           width={683}
                           height={520}
+                          className="img-fluid"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -139,6 +143,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 width={683}
                 height={520}
                 alt=""
+                className="img-fluid"
                 style={
                   {
                     // width: "100%",

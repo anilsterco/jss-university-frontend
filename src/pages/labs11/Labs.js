@@ -23,17 +23,17 @@ export default function Labspage({ data }) {
         <div className="container">
           {slug == 'information-technology' && (
             <>
-              <div className="container">
-                <h5 class="about_subtitle">Labs</h5>
-                  <p className={`text-center`}>
+              <div className="container inner_labs_container">
+                {/* <h5 class="about_subtitle">Labs</h5> */}
+                  <p className="topBanner_para">
                   The Department of Information Technology is equipped with well-established laboratories that support both academic and research activities. These laboratories are designed to provide students with hands-on experience in core and emerging areas of computing, enabling the effective application of theoretical concepts.
                   </p>
     
-                  <p className={`text-center`}>
+                  <p className="topBanner_para">
                   Each laboratory is equipped with the necessary hardware and software resources aligned with the curriculum requirements of undergraduate and postgraduate programs. They facilitate practical sessions, project development, and research activities, thereby enhancing students’ technical competencies and problem-solving skills.
                   </p>
     
-                  <p className={`text-center`}>
+                  <p className="topBanner_para">
                   In addition to regular lab sessions, the department actively promotes innovation and experiential learning through project-based work and research initiatives conducted within these laboratories.
                   </p>
               </div>

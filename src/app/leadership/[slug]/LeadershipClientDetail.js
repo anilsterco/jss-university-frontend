@@ -112,7 +112,8 @@ export default async function LeadershipClientDetail({ leader }) {
       </section>
 
       {/* MESSAGE SECTION */}
-      <section className="message_section">
+      {sections.message_from_chancellor?.message.length > 0 && (
+        <section className="message_section">
         <div className="container">
           <div className="message_warpper">
             {sections.message_from_chancellor?.designation
@@ -151,6 +152,8 @@ export default async function LeadershipClientDetail({ leader }) {
           </div>
         </div>
       </section>
+      )}
+
     </main>
   );
 }
