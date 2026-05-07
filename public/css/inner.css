@@ -9506,3 +9506,84 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 
 /* leadership details page end */
+
+/* css starts here */
+
+  .institutional-development-plan section:nth-child(6).amenities_section .grid_group{display:block;}
+  .institutional-development-plan section:nth-child(6).amenities_section .grid_group .right_col ul{display:flex;gap:0 6rem;margin:5rem 0 0 0;padding:0;}
+  .institutional-development-plan section:nth-child(6).amenities_section .grid_group .left_col ul li{padding:0;}
+  .leadership-mr-an-veerendra-kumar .leadership_dtls_two,.leadership-dr-shiddayya-s-shirur .leadership_dtls_two{padding-block:8rem 0;}
+  .leadership-dr-tg-mamatha .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-dr-h-r-mahadevaswamy .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-mr-ns-manoj-kumar .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-mr-ns-manoj-kumar .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-dr-b-manoj-kumar .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-dr-nilani-p .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-prof-dr-satyendra-patnaik .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-dr-anindita-de .leadership_dtls_two .leadership_two_cnt p,
+  .leadership-dr-sonam-patel .leadership_dtls_two .leadership_two_cnt p {
+      padding-bottom: 0;
+  }
+  .committees .growth-tabs ul li button{letter-spacing:.8px;background-color:#16344e;font:var(--font-18);font-family:var(--font-Condensed);border:none;padding:0.8rem 1.5rem;color:var(--color-white);font-weight:bold;}
+  .committees .growth-tabs ul li button.active{color:var(--color-black);background-color:var(--color-100);}
+  .committees .tab_table_multiple_section{padding:6rem 0 0;}
+  .institutional-development-plan .vision_mission_section .mission-card ul li{padding-left:2.2rem;}
+  .institutional-development-plan .vision_mission_section .mission-card ul li:before{content:"";width:.7rem;height:.7rem;margin-top:0.7rem;}
+
+@media(max-width:1024px){
+  .cus-profile-text{
+    height: auto;
+  }
+  .academic-facilities .academic_labmain .ab_jss_coutsec .ab_jss_c_col {
+    max-width: 100%;
+    padding: 3rem 2rem;
+}
+}
+@media(max-width:991px){
+  .institutional-development-plan section:nth-child(4) .grid_group{gap:2rem;}
+  .admission-sec .overview-duration .overview-duration-text{padding-bottom:2rem;margin-bottom:2rem;}
+  .institutional-development-plan .about_one{padding-bottom:3rem;}
+  .institutional-development-plan .vision_mission_section .mission-card{margin:2rem 0 0 0;}
+  .institutional-development-plan .vision_mission_section .mission-card ul li{padding-left:2.2rem;}
+  .institutional-development-plan .vision_mission_section + .amenities_section .left_col ul li:before,.institutional-development-plan section:nth-child(6).amenities_section .grid_group ul li:before{top:10px;}
+  .faulty-box{gap:1.5rem 2rem;}
+  .approvals-recognitions .estab_slide_item p{font:var(--font-18);margin:2rem 0 0 0;}
+  .academic-facilities .academic_labmain .ab_jss_coutsec .ab_jss_c_col{max-width:27.4rem;}
+  .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide figure img{height:100%;object-fit:cover;}
+  .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide figure{height:100%;}
+  .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide{height:100%;}
+  .academic-facilities .academic_labmain .academic_grid{gap:7rem 0;}
+
+}
+@media(max-width:767px){
+  .institutional-development-plan section:nth-child(6).amenities_section .grid_group .right_col ul{flex-direction:column;}
+  .inner-title .innnr_head ul{display:none;}
+  .educational-sec .tabbed-content .apply-btn1{width:auto;}
+  .faqItem .faqAnswer ul li{line-height:1.5;}
+  .faqAnswer p{line-height:1.6;}
+  .institutional-development-plan .vision_mission_section ul li:before{content:"";margin-top:0.8rem;}
+  .procedure_box p{line-height:1.5;}
+  .institutional-development-plan .about_one .abt_cntnt .atm_g_imgsec{display:none;}
+  .institutional-development-plan .vision_mission_section + .amenities_section .left_col ul li:before,.institutional-development-plan section:nth-child(6).amenities_section .grid_group ul li:before{top:12px;}
+  .institutional-development-plan .vision_mission_section .mission-card ul li:before{margin-top:0.6rem;}
+  .program-search.faulty-sec .search-box{margin-bottom:0;}
+  .legacy .heri_principalmain .heri_prici_names .titleOne{border-bottom:1px solid #ddd;border-right:0;padding-bottom:2rem;text-align:center;}
+  .legacy .heri_principalmain .heri_prici_names{flex-direction:column;gap:2rem 0;margin-top:4rem;}
+  .legacy .heri_principalmain .heri_prici_names .titleTwo{padding-left:0;text-align:center;}
+  .about-jss-university .about_one .atm_g_imgsec video{height:45rem;}
+  .approvals-recognitions .estab_slide_item{min-height:20rem;}
+  .approvals-recognitions .row.justify-content-center{padding-block: 6rem;}
+  .academic-facilities .academic_labmain .academic_grid{gap:5rem 0;}
+}
+@media(max-width:575px){
+  .institutional-development-plan .amenities_section .grid_group{padding:3rem;}
+  .faulty-box{gap:1rem 2rem;}
+}
+
+@media(max-width:480px){
+  .admission-sec .overview-duration .structure-btns{gap:1.5rem 0;}
+  .admission-sec .overview-duration .overview-duration-text{margin-bottom:1.5rem;padding-bottom:1.5rem;}
+}
+
+
+/* css ends here */

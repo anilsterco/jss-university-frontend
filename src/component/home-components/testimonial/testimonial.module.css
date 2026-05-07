@@ -64,6 +64,9 @@
   margin-bottom: 2.5rem;
   max-width: 35%;
 }
+.headerContent button:hover img{
+  filter: invert(1);
+}
 
 .testimonialsLabel {
   color: var(--color-4e);

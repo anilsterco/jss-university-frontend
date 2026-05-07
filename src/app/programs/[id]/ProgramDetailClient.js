@@ -218,7 +218,7 @@ export default function ProgramDetailClient({ params }) {
                     <div className="overview-duration">
                       {admissionSection?.course_duration && (
                         <div className="overview-duration-text">
-                          <span>Course duration</span>
+                          <span>Course Duration</span>
                           <p>{admissionSection.course_duration}</p>
                         </div>
                       )}

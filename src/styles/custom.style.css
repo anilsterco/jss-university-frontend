@@ -3496,12 +3496,12 @@ hr {
   color: var(--color-white);
 }
 
-.profile-info-box .profile-email a {
+/* .profile-info-box .profile-email a {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
+} */
 
 .profile-info-text {
   position: relative;

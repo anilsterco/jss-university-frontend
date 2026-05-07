@@ -117,6 +117,9 @@
   border-bottom:.1rem dotted #ffc717;
   padding-bottom: 0.6rem;
 }
+.bannerLink:hover{
+      color: var(--color-29);
+}
 
 .headingContainer {
   position: relative;
