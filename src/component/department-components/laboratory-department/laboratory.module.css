@@ -306,3 +306,7 @@
     letter-spacing: -2.20px;
   }
 }
+
+.headerSection a svg:hover{
+  fill:var(--color-100)
+}
