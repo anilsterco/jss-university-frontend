@@ -233,9 +233,12 @@ export default function ProgramDetailClient({ params }) {
           <div key={index} className="peo-box">
             <h3>
               {tab.prefix}-{index + 1}
-              {item.title && `: ${item.title}`}
+              {/* {item.title && `: ${item.title}`} */}
             </h3>
-            <p dangerouslySetInnerHTML={{ __html: item.description }} />
+            <div className="content_heading">
+              <span>{item.title && `${item.title} : `}</span>
+              <p dangerouslySetInnerHTML={{ __html: item.description }} />
+            </div>
           </div>
         ))}
       </div>
@@ -416,9 +419,8 @@ export default function ProgramDetailClient({ params }) {
                         >
                           {expanded ? "Show Less" : "Show More"}
                           <i
-                            className={`ms-2 ${
-                              expanded ? "expanded_icon" : "expanded_icon_bottom"
-                            }`}
+                            className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"
+                              }`}
                           ></i>
                         </button>
                       )}
@@ -618,12 +620,12 @@ export default function ProgramDetailClient({ params }) {
                           style={{
                             opacity:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? 0.5
                                 : 1,
                             cursor:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? "not-allowed"
                                 : "pointer",
                           }}

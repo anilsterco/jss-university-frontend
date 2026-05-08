@@ -121,7 +121,7 @@ export default function Footer() {
                 <div className="col-md-12">
                   <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
                     <li>
-                      <a href={`tel:+${data.phone}`}>+{data.phone}</a>
+                      <a href={`tel:${data.phone}`}>{`+${data.phone}`}</a>
                     </li>
                     <li>
                       <a href={`mailto:${data.email}`}>{data.email}</a>
@@ -230,7 +230,7 @@ export default function Footer() {
               <ul className="list-unstyled d-block text-center">
                 {data.phone && (
                   <li>
-                    <a href={`tel:${data.phone}`}>{data.phone}</a>
+                    <a href={`tel:+${data.phone}`}>{`+${data.phone}`}</a>
                   </li>
                 )}
               </ul>
