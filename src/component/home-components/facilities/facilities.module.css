@@ -202,17 +202,17 @@
 
 
 
-@media (min-width: 1921px) and (max-width:3800) {
+@media (min-width: 1921px) and (max-width:2400px) {
   .verticalLine {
-    left: 20.6%;
+    left: 15.2%;
   }
 
   .bannerContent {
-    left: 23.2%;
+    left: 18.2%;
   }
 
   .bannerLinks {
-    left: 23.5%;
+    left: 18.2%;
     gap: 4.5rem;
   }
 }
