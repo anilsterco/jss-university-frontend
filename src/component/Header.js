@@ -142,10 +142,12 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   // Add this state near other states
   const [searchError, setSearchError] = useState("");
+  const [scrollDirection, setScrollDirection] = useState("up");
 
   const router = useRouter();
 
   const closeTimeoutRef = useRef(null);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -349,13 +351,20 @@ export default function Header() {
 
   useEffect(() => {
     if (!isMounted) return;
-
+  
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      const currentY = window.scrollY;
+      setScrolled(currentY > 80);
+      
+      if (currentY > prevScrollY.current && currentY > 80) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      prevScrollY.current = currentY;
     };
-
+  
     handleScroll();
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMounted]);
@@ -530,9 +539,7 @@ export default function Header() {
 `}
     >
       <div
-        className={`header-inner ${
-          !isHomeLikePage ? "innerPage" : ""
-        } ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""}`}
+        className={`header-inner ${!isHomeLikePage ? "innerPage" : ""} ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""} ${scrollDirection === "down" ? "header-hidden" : ""}`}
       >
         <div className="containerXl">
           <div
@@ -1256,7 +1263,68 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="panel-wrapper">
+          
+
+          {/* Popup */}
+          {globleSearch && (
+            <div className={`g_search_main ${open ? "active" : ""}`}>
+              <div className="g_sc_box">
+                <div className="sec_inpu_box">
+                  <div>
+                    <input
+                      type="text"
+                      className="form-control global_search_in"
+                      placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => {
+                        setSearchQuery(e.target.value);
+                        if (e.target.value.trim().length >= 3)
+                          setSearchError("");
+                      }}
+                      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                    />
+                    <button
+                      type="button"
+                      className="btn global_search_btn"
+                      onClick={handleSearch}
+                    >
+                      <FiSearch size={16} />
+                    </button>
+                  </div>
+
+                  {searchError && (
+                    <p
+                      className="search_error"
+                      style={{
+                        color: "#b7b7b7",
+                        font: "var(--font-12)",
+                        position: "absolute",
+                        marginTop: "0.5rem",
+                      }}
+                    >
+                      {searchError}
+                    </p>
+                  )}
+                </div>
+
+                {/* Error message */}
+                <button
+                  onClick={() => {
+                    setglobleSearch(false);
+                    setSearchQuery("");
+                  }}
+                  className="secbtn_close"
+                >
+                  <RiCloseLargeFill size={30} />
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="mobile_bottom_menu_fixed">
+        <div className="panel-wrapper">
             <div className="mob-menu-sec">
               {mobilePanels.map((item) => (
                 <div
@@ -1574,6 +1642,7 @@ export default function Header() {
               ))}
             </div>
           </div>
+
           <div className="mobile-bottom-menu">
             <ul className="menu-list">
               {mobilePanels.map((item) => (
@@ -1593,64 +1662,9 @@ export default function Header() {
               ))}
             </ul>
           </div>
-
-          {/* Popup */}
-          {globleSearch && (
-            <div className={`g_search_main ${open ? "active" : ""}`}>
-              <div className="g_sc_box">
-                <div className="sec_inpu_box">
-                  <div>
-                    <input
-                      type="text"
-                      className="form-control global_search_in"
-                      placeholder="Search..."
-                      value={searchQuery}
-                      onChange={(e) => {
-                        setSearchQuery(e.target.value);
-                        if (e.target.value.trim().length >= 3)
-                          setSearchError("");
-                      }}
-                      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                    />
-                    <button
-                      type="button"
-                      className="btn global_search_btn"
-                      onClick={handleSearch}
-                    >
-                      <FiSearch size={16} />
-                    </button>
-                  </div>
-
-                  {searchError && (
-                    <p
-                      className="search_error"
-                      style={{
-                        color: "#b7b7b7",
-                        font: "var(--font-12)",
-                        position: "absolute",
-                        marginTop: "0.5rem",
-                      }}
-                    >
-                      {searchError}
-                    </p>
-                  )}
-                </div>
-
-                {/* Error message */}
-                <button
-                  onClick={() => {
-                    setglobleSearch(false);
-                    setSearchQuery("");
-                  }}
-                  className="secbtn_close"
-                >
-                  <RiCloseLargeFill size={30} />
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
+      
+      
       <style jsx>
         {`
           .logo-content img {
@@ -2895,6 +2909,20 @@ export default function Header() {
           }
            .site-header::before {
            display:none}
+
+           .site-header .header-inner.header-scrolled {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              z-index: 1100;
+              transition: transform 0.3s ease;
+              box-shadow: 0 2px 20px rgba(0 0 0 / 10%);
+            }
+
+            .site-header .header-inner.header-scrolled.header-hidden {
+              transform: translateY(-100%);
+            }
            }
           
 
@@ -3233,6 +3261,10 @@ export default function Header() {
             background: var(--color-e8);
             z-index: -1;
           }
+            .mobile_bottom_menu_fixed{
+              position:fixed;
+              z-index: 1101;
+            }
           .mobile-bottom-menu {
             position: fixed;
             bottom: 0;
