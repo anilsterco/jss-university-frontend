@@ -6880,6 +6880,57 @@ ul.comon_list li:before {
     display: flex;
     gap:0;
   }
+
+  
+
+  .eligi_tab_con .growth-item .program_tabs .courses{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .eligibilty_main .eligib_grid_ad.programs{
+    padding:0;
+    padding-top:3rem;
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .program_box{
+    padding: 3rem 0;
+    border-bottom:1px solid #ddd;
+    border-radius: 0;
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .degree_name{
+    color: var(--color-4e);
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .courses li{
+    color:var(--color-2e);
+    margin-bottom: 0.8rem;
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .eligibility{
+    font: var(--font-16);
+    color:var(--color-2e)
+  }
+
+  .eligi_tab_con .growth-item{
+    padding:0;
+  }
+
+  .eligibilty_main .edigiblity_tabs .eligi_tab_con{
+    margin:0;
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .program_box:not(:first-child){
+    margin:0;
+  }
+
+  .eligibilty_main .eligi_tab_con .growth-item .program_tabs{
+    margin:0;
+  }
+
+  .eligi_tab_con .growth-item .program_tabs .courses{
+    margin:2rem 0 0;
+  }
 }
 
 @media (max-width: 600px) {
