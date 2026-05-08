@@ -9645,6 +9645,10 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .inner-title .innnr_head ul{display:none;}
   .educational-sec .tabbed-content .apply-btn1{width:auto;}
   .faqItem .faqAnswer ul li{line-height:1.5;}
+  .edigiblity_tabs .eligi_tab_con ul li{color:var(--color-44);font-weight: 400;}
+  .programs-page .eligib_cont h4{color: var(--color-44);}
+  .programs-page .eligib_cont h6{color: var(--color-44);}
+  .programs-page .eligib_cont .growth-item{padding-top: 0;}
   .faqAnswer p{line-height:1.6;}
   .institutional-development-plan .vision_mission_section ul li:before{content:"";margin-top:0.8rem;}
   .procedure_box p{line-height:1.5;}
