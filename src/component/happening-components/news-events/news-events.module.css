@@ -292,6 +292,7 @@
   overflow: hidden;
 }
 
+
 .eventCard:hover {
   transform: translateY(-3px);
 }
@@ -570,4 +571,12 @@
   .cardTitle {
     min-height: auto;
   }
+}
+
+.news-events-module__WsP3GG__secondaryText + a svg:hover{
+  stroke: var(--color-100);
+}
+
+.secondaryText a:hover {
+  background-color: var(--color-100);
 }
