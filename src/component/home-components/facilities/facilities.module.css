@@ -202,7 +202,7 @@
 
 
 
-@media (min-width: 1921px) and (max-width:2400px) {
+@media (min-width: 1921px) and (max-width:2300px) {
   .verticalLine {
     left: 15.2%;
   }
@@ -216,6 +216,76 @@
     gap: 4.5rem;
   }
 }
+
+@media (min-width: 2301) and (max-width:2400px) {
+    .verticalLine {
+      left: 19.13%;
+    }
+    .bannerContent {
+      left: 21.5%;
+    }
+    .bannerLinks {
+      left: 21.5%;
+    }
+}
+@media (min-width: 2501) and (max-width:2700px) {
+    .verticalLine {
+      left: 21.1%;
+    }
+    .bannerContent {
+      left: 23.3%;
+    }
+    .bannerLinks {
+      left: 23.3%;
+    }
+}
+@media (min-width: 2701) and (max-width:3000px) {
+    .verticalLine {
+      left: 24.25%;
+    }
+    .bannerContent {
+      left: 26.3%;
+    }
+    .bannerLinks {
+      left: 26.3%;
+    }
+}
+@media (min-width: 3001) and (max-width:4000px) {
+    .verticalLine {
+      left: 30.7%;
+    }
+    .bannerContent {
+      left: 32.1%;
+    }
+    .bannerLinks {
+      left: 32.1%;
+    }
+}
+
+@media (min-width: 4001) and (max-width:6000px) {
+    .verticalLine {
+      left: 37.1%;
+    }
+    .bannerContent {
+      left: 38.2%;
+    }
+    .bannerLinks {
+      left: 38.2%;
+    }
+}
+
+@media (min-width: 6001) and (max-width:8000px) {
+    .verticalLine {
+      left: 40.35%;
+    }
+    .bannerContent {
+      left: 41.2%;
+    }
+    .bannerLinks {
+      left: 41.2%;
+    }
+}
+
 
 
 
