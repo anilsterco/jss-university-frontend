@@ -254,7 +254,7 @@ export default function TestimonialClient() {
                   className="testimonial-modal-close"
                   onClick={closeModal}
                 >
-                  <RiCloseLargeFill size={22} />
+                  <RiCloseLargeFill size={19} />
                 </button>
 
                 {!modalData ? (
