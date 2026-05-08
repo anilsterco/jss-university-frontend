@@ -9529,7 +9529,21 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .institutional-development-plan .vision_mission_section .mission-card ul li:before{content:"";width:.7rem;height:.7rem;margin-top:0.7rem;}
   .internation-conference .single_card .content h5{min-height:5rem;}
   .central-instrumentation-facilities .about_f_value .read_more_btn:hover{background-color:var(--color-4e);color:#ffffff;}
+  .fee_strcu_table .fee_table thead th{background-color:var(--color-9a);}
+  .table_section thead tr{background-color:var(--color-9a);}
+  .team-iqac .iqac_master .table_section{padding:0;}
+  .team-iqac .iqac_master .faqAnswer{width:100%;}
+  .academic-credits .about_top{padding-top:0;}
+  .academic-credits .estblish{padding:0;}
+  .alumni .about_two .early_rgt a.read_more_btn:hover{background-color:var(--color-4e);color:var(--color-white);}
 
+
+@media(max-width:1366px){
+  .admission .admins_of_con .ad_offc_contact{height:100%;}
+  .admission .admins_of_con .ad_offc_contact .ad_of_conimg,.admission .admins_of_con .ad_offc_contact .ad_of_conimg figure,.admission .admins_of_con .ad_offc_contact .ad_of_conimg figure img{height:100%;}
+  .admission .admins_of_con .ad_offc_contact .ad_of_conimg figure img{object-fit:cover;}
+  .admission .admins_of_con .ad_offc_contact .add_of_context{max-height:35.7rem;}
+}
 @media(max-width:1024px){
   .cus-profile-text{
     height: auto;
@@ -9565,6 +9579,10 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .internation-conference .conference_section .content{padding:1.5rem 0;}
   .internation-conference .conference_section .grid{grid-template-columns:repeat(3,1fr);}
   .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(3,1fr);}
+  .admission .eligibilty_main .eligib_cont{padding-right:0;}
+  .admission .hostal_detailmain{margin:8rem 0 0 0;}
+  .academic-credits .image_content_repeat_section figure img{width:100%;}
+  .academic-credits .image_content_repeat_section .singleImageContent .row{gap:4rem;}
 
 }
 @media(max-width:767px){
@@ -9599,9 +9617,11 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .internation-conference .conference_section .grid{grid-template-columns:repeat(2,1fr);}
   .main-container.placement .iqac_master{padding-bottom:6rem;}
   .patents .pate_boxmain .patent_boxgrid{grid-template-columns:repeat(2,1fr);}
-  .central-instrumentation-facilities .image_content_repeat_section .imageContent-module__R4BLKG__bottomDesc {
-    margin: 4rem 0 0 0;
-}
+  .central-instrumentation-facilities .image_content_repeat_section .imageContent-module__R4BLKG__bottomDesc{margin:4rem 0 0 0;}
+  .admission .eligibilty_main .eligib_grid_ad{padding:0;}
+  .admission .admins_of_con .ad_offc_contact .add_of_context{max-height:100%;}
+  .academic-credits .image_content_repeat_section .singleImageContent .row{gap:2rem;}
+
 }
 @media(max-width:575px){
   .institutional-development-plan .amenities_section .grid_group{padding:3rem;}
