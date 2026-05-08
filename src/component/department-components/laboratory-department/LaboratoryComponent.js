@@ -115,7 +115,7 @@ export default function Laboratories({ data }) {
                       priority
                       className={styles.slideImage}
                     />
-                    <div className={styles.gradientOverlay}></div>
+                    <div className={styles.gradientOverlay_lab}></div>
                     <div className={styles.labInfo}>
                       <h3 className={styles.labTitle}>{lab.title || ""}</h3>
                       {/* <SlArrowRightCircle fontSize={20} color="white" /> */}

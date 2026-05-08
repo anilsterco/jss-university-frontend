@@ -1972,15 +1972,18 @@ export default function Header() {
             // width: 85%;
             display: flex;
             position: absolute;
-            top: 12rem;
+            top: 14rem;
             // right: 10rem;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
             left:0;
             width:100%;
             right:0;
           }
-          .header-scrolled  .admission-dropdown{
-           top: 9rem;
+          // .header-scrolled  .admission-dropdown{
+          //  top: 9rem;
+          // }
+          .header-scrolled .admission-dropdown{
+          top: 12rem;
           }
           .dropdown-arrow {
             border-bottom: 18px solid #fff;

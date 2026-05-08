@@ -28,6 +28,7 @@
   color: var(--color-4e);
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
+  text-transform: uppercase;
 }
 
 .ombudsperson .about_one .abt_cntnt p {
@@ -6560,6 +6561,9 @@ ul.comon_list li:before {
   padding-top: 4rem;
 }
 
+.alumni_prestigious {
+  color:var(--color-4e) !important;
+}
 .about_two .early-slide .early_rgt h4 span {
   color: var(--color-ff);
 }
