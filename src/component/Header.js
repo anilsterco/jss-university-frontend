@@ -1018,10 +1018,11 @@ export default function Header() {
                     >
                       <Link
                         href={
-                          item.url && item.url !== "#"
-                            ? WEB_URL + item.url
-                            : WEB_URL + "#"
+                          item.url && item.url.includes('.pdf')
+                            ? item.url
+                            : WEB_URL + item.url
                         }
+                        target={item?.target_blank ? '_blank' : '_self'}
                         className="hambur_links"
                         aria-label={`View ${item.title}`}
                         onClick={(e) => {
@@ -1050,7 +1051,9 @@ export default function Header() {
                       >
                         <Link
                           href={
-                            item?.target_blank ? item.url : WEB_URL + item.url
+                            item.url && item.url.includes('.pdf')
+                              ? item.url
+                              : WEB_URL + item.url
                           }
                           className="hambur_link"
                           onClick={() => {
