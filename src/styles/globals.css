@@ -3007,3 +3007,28 @@ a:active {
     max-width: 1.6rem;
   }
 }
+
+
+.placement_col .position-relative a img:hover,
+.facilities-module__UE4CmG__bannerContent h2 a img:hover,
+.facilities-module__UE4CmG__bannerLink:hover img,
+.about-imgcol a img:hover{
+  filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}
+.grow_tb_contsec .early_rgt .nav_buttons img:hover {
+    filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}
+.about-school-module__mCvPRG__arrowButton svg:hover{
+  fill: var(--color-100);
+}
+.grid_card:hover a .left img{
+  filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+  -webkit-filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}
+
+.grid_card .programBox-module__eMo-0G__cusProgramBox:hover .programBox-module__eMo-0G__cusProgramText img{
+  filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}
+.eligibility-text .eligibility-link:hover svg{
+  filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}

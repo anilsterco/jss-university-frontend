@@ -165,6 +165,10 @@
   background-color: #ECC820;
 }
 
+  .dep_faculty svg:hover,
+  .school_about a svg:hover{
+      fill: #fc0;
+  }
 
 @media (max-width: 2024px) {
   .title {

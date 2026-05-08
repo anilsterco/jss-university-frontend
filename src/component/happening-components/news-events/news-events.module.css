@@ -119,6 +119,7 @@
   letter-spacing: 0px;
   line-height: 1.4;
   margin-bottom: 1.4rem;
+  min-height: 11rem;
 }
 
 .cardDate {
@@ -290,6 +291,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 
 .eventCard:hover {
   transform: translateY(-3px);
@@ -533,4 +535,48 @@
 
 
 
+}
+
+@media(max-width:1799px){
+  .cardTitle {
+    min-height: 14rem;
+  }
+}
+
+@media(max-width:1649px){
+  .cardTitle {
+    min-height: 16rem;
+  }
+}
+
+@media(max-width:1399px){
+  .cardTitle {
+    min-height: 12rem;
+  }
+}
+
+@media(max-width:1366px){
+  .cardTitle {
+    min-height: 12rem;
+  }
+}
+
+
+@media(max-width:991px){
+  .cardTitle {
+    min-height: 8rem;
+  }
+}
+@media(max-width:767px){
+  .cardTitle {
+    min-height: auto;
+  }
+}
+
+.news-events-module__WsP3GG__secondaryText + a svg:hover{
+  stroke: var(--color-100);
+}
+
+.secondaryText a:hover {
+  background-color: var(--color-100);
 }
