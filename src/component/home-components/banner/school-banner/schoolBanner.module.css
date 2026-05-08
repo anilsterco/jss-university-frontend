@@ -107,6 +107,9 @@
   transform: translateX(5px);
 }
 
+.iconSpacing img:hover{
+      filter: invert(1);
+}
 
 @media (max-width: 1200px) {
   .bannerContent {

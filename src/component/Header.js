@@ -1135,7 +1135,7 @@ export default function Header() {
                           </div>
 
                           <Link
-                            href={WEB_URL}
+                            href="#"
                             className="links"
                             aria-label={`View ${activeRightMenu?.first_section?.title}`}
                             onClick={() => {
