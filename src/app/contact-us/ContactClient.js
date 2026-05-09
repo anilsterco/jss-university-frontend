@@ -18,7 +18,7 @@ export default function ContactClient() {
     agree: false,
   });
 
-  const [contactUsData, setContactUsData] = useState([]);
+  const [contactUsData, setContactUsData] = useState({});
   const [courseList, setCourseList] = useState([]);
   const [stateList, setStateList] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,7 +33,7 @@ export default function ContactClient() {
       try {
         const res = await fetch(`${BASE_URL}contact-info`);
         const data = await res.json();
-        setContactUsData(data.data[0] || []);
+        setContactUsData(data.data?.[0] ?? {});
       } catch (err) {
         console.error(err);
         setContactUsData([]);
@@ -389,13 +389,32 @@ export default function ContactClient() {
                 height: "500px",
               }}
             >
-              <iframe
-                src={contactUsData.direction_url}
-                className={styles.mapIframs}
-                width="100%"
-                height={580}
-                loading="lazy"
-              ></iframe>
+              {contactUsData.direction_url ? (
+                <iframe
+                  title="JSS University on Google Maps"
+                  src={contactUsData.direction_url}
+                  className={styles.mapIframs}
+                  width="100%"
+                  height={580}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <div
+                  className={styles.mapIframs}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#f0f0f0",
+                    color: "#666",
+                    fontSize: "14px",
+                  }}
+                >
+                  Map unavailable (no embed URL from contact info yet).
+                </div>
+              )}
             </div>
           </div>
         </div>
