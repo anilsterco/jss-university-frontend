@@ -451,7 +451,7 @@ export default function ProgramDetailClient({ params }) {
               </div>
             </div>
             {eligibility?.eligibility_criteria && (
-              <div className="col-lg-9">
+              <div className="col-lg-12">
                 <div className="rank-box">
                   <h6>Eligibility Criteria</h6>
                   <div className="rank-text">

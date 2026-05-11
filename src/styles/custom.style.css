@@ -917,7 +917,7 @@
 .rank-box {
   background-color: var(--color-white);
   padding: 3rem 13rem 0;
-  margin-right: 6rem;
+  /* margin-right: 6rem; */
 }
 
 .rank-box h6 {
