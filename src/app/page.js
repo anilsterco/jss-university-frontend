@@ -63,8 +63,8 @@ export default async function HomePage() {
 
       <div className="fixButtons">
         <Link
-          href={WEB_URL + 'apply-now'}
-          // target="_blank"
+          href={APPLY_NOW}
+          target="_blank"
           className="vertical-floating-btn"
         >
           Apply Now

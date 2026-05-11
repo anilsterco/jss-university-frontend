@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import { BASE_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL } from "@/config/config";
 import Link from "next/link";
 
 const modalData = [
@@ -98,7 +98,7 @@ export default function PopupModal() {
                     <div className="visit_button">
                       <Link
                         className="apply-btn1"
-                        href={item.link}
+                        href={APPLY_NOW}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${item?.title}`}
