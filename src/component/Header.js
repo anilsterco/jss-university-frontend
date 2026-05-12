@@ -23,7 +23,7 @@ const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
 
 const mobilePanelsData = [
   {
-    title:"Programs",
+    title: "Programs",
     name: "Courses",
     icon: "/images/header/cource-mob.svg",
     visitIcon: "/images/header/courseIcon.svg",
@@ -52,7 +52,7 @@ const mobilePanelsData = [
   },
 
   {
-    title:"Admissions",
+    title: "Admissions",
     name: "Admissions",
     heading:
       "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
@@ -102,7 +102,7 @@ const mobilePanelsData = [
   },
 
   {
-    title:"Contact",
+    title: "Contact",
     name: "Contact",
     heading: "CAMPUS ADDRESS ",
     bgImg: "/images/header/cont-mobmenu.png",
@@ -110,7 +110,7 @@ const mobilePanelsData = [
   },
 
   {
-    title:"Menu",
+    title: "Menu",
     name: "Menu",
     icon: "/images/header/hamberger-mob.svg",
   },
@@ -351,11 +351,11 @@ export default function Header() {
 
   useEffect(() => {
     if (!isMounted) return;
-  
+
     const handleScroll = () => {
       const currentY = window.scrollY;
       setScrolled(currentY > 80);
-      
+
       if (currentY > prevScrollY.current && currentY > 80) {
         setScrollDirection("down");
       } else {
@@ -363,7 +363,7 @@ export default function Header() {
       }
       prevScrollY.current = currentY;
     };
-  
+
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -460,26 +460,26 @@ export default function Header() {
         prev.map((item) =>
           item.name === "Contact"
             ? {
-                ...item,
-                heading: data.title,
-                Menu: [
-                  {
-                    name: data.address,
-                    url: data.direction_url,
-                    contactIcon: "/images/header/address-icon.svg",
-                  },
-                  {
-                    name: data.email,
-                    url: `mailto:${data.email}`,
-                    contactIcon: "/images/header/mail-icon.svg",
-                  },
-                  {
-                    name: '+'+data.phone,
-                    url: `tel:+${data.phone}`,
-                    contactIcon: "/images/header/phone-icon.svg",
-                  },
-                ],
-              }
+              ...item,
+              heading: data.title,
+              Menu: [
+                {
+                  name: data.address,
+                  url: data.direction_url,
+                  contactIcon: "/images/header/address-icon.svg",
+                },
+                {
+                  name: data.email,
+                  url: `mailto:${data.email}`,
+                  contactIcon: "/images/header/mail-icon.svg",
+                },
+                {
+                  name: '+' + data.phone,
+                  url: `tel:+${data.phone}`,
+                  contactIcon: "/images/header/phone-icon.svg",
+                },
+              ],
+            }
             : item,
         ),
       );
@@ -497,13 +497,13 @@ export default function Header() {
           prev.map((item) =>
             item.name === "Menu"
               ? {
-                  ...item,
-                  Menu: json.data.map((d) => ({
-                    name: d.title,
-                    url: d.url,
-                    children: d.children || [], // ← store children
-                  })),
-                }
+                ...item,
+                Menu: json.data.map((d) => ({
+                  name: d.title,
+                  url: d.url,
+                  children: d.children || [], // ← store children
+                })),
+              }
               : item,
           ),
         );
@@ -543,9 +543,8 @@ export default function Header() {
       >
         <div className="containerXl">
           <div
-            className={`nav-container ${
-              !isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
-            }`}
+            className={`nav-container ${!isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
+              }`}
           >
             <div
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
@@ -609,9 +608,8 @@ export default function Header() {
                   {navLinks.map((l, i) => (
                     <li
                       key={i}
-                      className={`nav-item ${
-                        activeDropdown === i ? "active-items" : ""
-                      }`}
+                      className={`nav-item ${activeDropdown === i ? "active-items" : ""
+                        }`}
                       onMouseEnter={() => handleNavMouseEnter(i, l.title)}
                       onMouseLeave={handleNavMouseLeave}
                     >
@@ -690,7 +688,7 @@ export default function Header() {
                                           <p className="mega-desc">
                                             {rightData.desc}
                                           </p>
-                                          
+
                                           {/* apply now button */}
                                           <div className="mega-ctas">
                                             {rightData.ctas?.map((cta, idx) => (
@@ -720,9 +718,9 @@ export default function Header() {
                                             ))}
                                           </div>
                                           <div className="academic_apply_now">
-                                          <Link 
-                                                onClick={handleDropdownMouseLeave}
-                                                 href={APPLY_NOW} target="_blank" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
+                                            <Link
+                                              onClick={handleDropdownMouseLeave}
+                                              href={APPLY_NOW} target="_blank" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
                                           </div>
                                         </div>
 
@@ -802,12 +800,12 @@ export default function Header() {
                                     const columnSizes = [2, 2, 3];
                                     const columns = [];
                                     let index = 0;
-                                  
+
                                     for (const size of columnSizes) {
                                       columns.push(engineeringData.slice(index, index + size));
                                       index += size;
                                     }
-                                  
+
                                     return (
                                       <div className="mega-departments-grid">
                                         {columns.map((col, colIdx) => (
@@ -1207,7 +1205,7 @@ export default function Header() {
                               activeRightMenu.video_section?.video_url
                                 ? activeRightMenu.video_section.video_url
                                 : WEB_URL +
-                                  "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
+                                "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
                             }
                             className="links"
                             aria-label={`View ${activeRightMenu.video_section?.video_url ? activeRightMenu.video_section.video_url : "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji"}`}
@@ -1263,7 +1261,7 @@ export default function Header() {
             </div>
           </div>
 
-          
+
 
           {/* Popup */}
           {globleSearch && (
@@ -1325,175 +1323,280 @@ export default function Header() {
 
       <div className="mobile_bottom_menu_fixed">
         <div className="panel-wrapper">
-            <div className="mob-menu-sec">
-              {mobilePanels.map((item) => (
-                <div
-                  key={item.name}
-                  className={`panel ${
-                    activePanel === item.name ? "open" : ""
+          <div className="mob-menu-sec">
+            {mobilePanels.map((item) => (
+              <div
+                key={item.name}
+                className={`panel ${activePanel === item.name ? "open" : ""
                   } ${item.name.toLowerCase()}-panel`}
-                >
-                  {item.name === "Courses" &&
-                    activePanel === "Courses" &&
-                    item.Menu && (
-                      <div className="mobCourses">
-                        <div className="course-heading">
-                          <h4>START YOUR JSS JOURNEY</h4>
-                        </div>
-                        <ul className="courses-menu">
-                          {mobProgramList.map((sub, idx) => (
-                            <li key={idx}>
-                              <Link
-                                href={`${WEB_URL}programs?type=${sub.slug}`}
-                                onClick={() => {
-                                  // setMenuOpen(false);
-                                  setActivePanel(null);
-                                }}
-                              >
-                                <figure>
-                                  <div className="coursesImg">
-                                    <img
-                                      src={sub.image}
-                                      alt={sub.name}
-                                      className="course-img w-100"
-                                    />
-                                  </div>
-                                  <figcaption>
-                                    <h4>{sub.name}</h4>
-
-                                    <img
-                                      src={"/images/header/courseIcon.svg"}
-                                      alt={`${sub.name} icon`}
-                                      className="course-icon"
-                                    />
-                                  </figcaption>
-                                </figure>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+              >
+                {item.name === "Courses" &&
+                  activePanel === "Courses" &&
+                  item.Menu && (
+                    <div className="mobCourses">
+                      <div className="course-heading">
+                        <h4>START YOUR JSS JOURNEY</h4>
                       </div>
-                    )}
-
-                  {item.name === "Admissions" &&
-                    activePanel === "Admissions" &&
-                    admissionData && (
-                      <div className="admissions-menu-wrapper">
-                        <ul className="admissions-menu">
-                          <div className="admissions-heading">
-                            <h4
-                              dangerouslySetInnerHTML={{ __html: item.heading }}
-                            ></h4>
-                          </div>
-
-                          {admissionData.middle.links.map((link, idx) => (
-                            <li key={idx}>
-                              <Link
-                                href={WEB_URL + link.url}
-                                className="page-link"
-                                onClick={() => {
-                                  setActivePanel(null);
-                                }}
-                                aria-label={`View ${link.title}`}
-                              >
-                                {link.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="admissions-contact">
-                          <h4>{admissionData.left.querytext}</h4>
-                          <ul>
-                            <li>
-                              <img
-                                src="/images/header/mail-icon.svg"
-                                alt="email"
-                              />
-                              <a className="liText" href={`mailto:${admissionData.left.email}`}>
-                                {admissionData.left.email}
-                              </a>
-                            </li>
-                            <li>
-                              <img
-                                src="/images/header/phone-icon.svg"
-                                alt="phone"
-                              />
-                              <a className="liText" href={`tel:${admissionData.left.phone}`}>
-                                {admissionData.left.phone}
-                              </a>
-                            </li>
-                          </ul>
-                          <div className="contactBtn">
-                            {admissionData.left.ctas.map((btn, idx) => (
-                              <a
-                                key={idx}
-                                href={btn.url}
-                                className={
-                                  `links1 ${btn.type === "primary" ? "apply" : "dwnload"}`
-                                }
-                                target="_blank"
-                              >
-                                {btn.type === "secondary" && (
+                      <ul className="courses-menu">
+                        {mobProgramList.map((sub, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={`${WEB_URL}programs?type=${sub.slug}`}
+                              onClick={() => {
+                                // setMenuOpen(false);
+                                setActivePanel(null);
+                              }}
+                            >
+                              <figure>
+                                <div className="coursesImg">
                                   <img
-                                    src="/images/header/dwnlodIcon.png"
-                                    alt="download"
+                                    src={sub.image}
+                                    alt={sub.name}
+                                    className="course-img w-100"
                                   />
-                                )}
-                                {btn.text}
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
+                                </div>
+                                <figcaption>
+                                  <h4>{sub.name}</h4>
 
-                  {item.name === "Contact" &&
-                    activePanel === "Contact" &&
-                    item.Menu && (
-                      <div className="contact-panel">
-                        <div className="contact-heading">
-                          <h4>{item.heading}</h4>
+                                  <img
+                                    src={"/images/header/courseIcon.svg"}
+                                    alt={`${sub.name} icon`}
+                                    className="course-icon"
+                                  />
+                                </figcaption>
+                              </figure>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                {item.name === "Admissions" &&
+                  activePanel === "Admissions" &&
+                  admissionData && (
+                    <div className="admissions-menu-wrapper">
+                      <ul className="admissions-menu">
+                        <div className="admissions-heading">
+                          <h4
+                            dangerouslySetInnerHTML={{ __html: item.heading }}
+                          ></h4>
                         </div>
 
-                        <div className="contactBanner">
-                          <img
-                            src={item.bgImg}
-                            alt="contact"
-                            className="contact-banner"
-                          />
-                        </div>
-                        <ul className="contact-info">
-                          {item.Menu.map((sub, idx) => (
-                            <li key={idx}>
-                              <div className="icon-img">
-                                <img src={sub.contactIcon} alt={sub.name} />
-                              </div>
-                              <a href={sub.url}>{sub.name}</a>
-                            </li>
-                          ))}
+                        {admissionData.middle.links.map((link, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={WEB_URL + link.url}
+                              className="page-link"
+                              onClick={() => {
+                                setActivePanel(null);
+                              }}
+                              aria-label={`View ${link.title}`}
+                            >
+                              {link.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="admissions-contact">
+                        <h4>{admissionData.left.querytext}</h4>
+                        <ul>
+                          <li>
+                            <img
+                              src="/images/header/mail-icon.svg"
+                              alt="email"
+                            />
+                            <a className="liText" href={`mailto:${admissionData.left.email}`}>
+                              {admissionData.left.email}
+                            </a>
+                          </li>
+                          <li>
+                            <img
+                              src="/images/header/phone-icon.svg"
+                              alt="phone"
+                            />
+                            <a className="liText" href={`tel:${admissionData.left.phone}`}>
+                              {admissionData.left.phone}
+                            </a>
+                          </li>
                         </ul>
+                        <div className="contactBtn">
+                          {admissionData.left.ctas.map((btn, idx) => (
+                            <a
+                              key={idx}
+                              href={btn.url}
+                              className={
+                                `links1 ${btn.type === "primary" ? "apply" : "dwnload"}`
+                              }
+                              target="_blank"
+                            >
+                              {btn.type === "secondary" && (
+                                <img
+                                  src="/images/header/dwnlodIcon.png"
+                                  alt="download"
+                                />
+                              )}
+                              {btn.text}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    )}
+                    </div>
+                  )}
 
-                  {item.name === "Menu" &&
-                    activePanel === "Menu" &&
-                    item.Menu?.length > 0 && (
-                      <div className="mobile_menus">
-                        <ul className="menu-top">
-                          {item.Menu.slice(0, 6).map((sub, idx) => (
-                            <li key={idx} className="">
+                {item.name === "Contact" &&
+                  activePanel === "Contact" &&
+                  item.Menu && (
+                    <div className="contact-panel">
+                      <div className="contact-heading">
+                        <h4>{item.heading}</h4>
+                      </div>
+
+                      <div className="contactBanner">
+                        <img
+                          src={item.bgImg}
+                          alt="contact"
+                          className="contact-banner"
+                        />
+                      </div>
+                      <ul className="contact-info">
+                        {item.Menu.map((sub, idx) => (
+                          <li key={idx}>
+                            <div className="icon-img">
+                              <img src={sub.contactIcon} alt={sub.name} />
+                            </div>
+                            <a href={sub.url}>{sub.name}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                {item.name === "Menu" &&
+                  activePanel === "Menu" &&
+                  item.Menu?.length > 0 && (
+                    <div className="mobile_menus">
+                      <ul className="menu-top">
+                        {item.Menu.slice(0, 6).map((sub, idx) => (
+                          <li key={idx} className="">
+                            <Link
+                              href={sub.children?.length > 0 ? "" : sub.url}
+                              className="menu-link"
+                              onClick={
+                                sub.children?.length > 0
+                                  ? () =>
+                                    setOpenMenuAccordion(
+                                      openMenuAccordion === idx
+                                        ? null
+                                        : idx,
+                                    )
+                                  : () => setActivePanel(null) // ← add this
+                              }
+                              style={
+                                sub.children?.length > 0
+                                  ? { cursor: "pointer" }
+                                  : {}
+                              }
+                            >
+                              <span className="menu_title">{sub.name}</span>
+                              {sub.children?.length > 0 && (
+                                <span
+                                  className={`menu-arrow ${openMenuAccordion === idx ? "open" : ""}`}
+                                >
+                                  <FaChevronDown size={12} />
+                                </span>
+                              )}
+                            </Link>
+                            {sub.children?.length > 0 &&
+                              openMenuAccordion === idx && (
+                                <ul className="menu-children">
+                                  {sub.children.map((child, cidx) => (
+                                    <li key={cidx}>
+                                      <Link
+                                        href={
+                                          child.school?.length > 0
+                                            ? "#"
+                                            : WEB_URL + child.url
+                                        }
+                                        onClick={() => {
+                                          if (child.school?.length > 0) {
+                                            setOpenChildAccordion(
+                                              openChildAccordion === cidx
+                                                ? null
+                                                : cidx,
+                                            );
+                                          } else {
+                                            setActivePanel(null);
+                                          }
+                                        }}
+                                        style={
+                                          child.school?.length > 0
+                                            ? { cursor: "pointer" }
+                                            : {}
+                                        }
+                                      >
+                                        <span className="menu_title">
+                                          {child.title}
+                                        </span>
+                                        {child.school?.length > 0 && (
+                                          <span
+                                            className={`menu-arrow ${openChildAccordion === cidx ? "open" : ""}`}
+                                          >
+                                            <FaChevronDown size={10} />
+                                          </span>
+                                        )}
+                                      </Link>
+
+                                      {child.school?.length > 0 &&
+                                        openChildAccordion === cidx && (
+                                          <ul className="menu-children">
+                                            {child.school.map(
+                                              (schoolItem, sidx) => (
+                                                <li key={sidx}>
+                                                  <Link
+                                                    href={
+                                                      WEB_URL +
+                                                      "schools/" +
+                                                      schoolItem.slug
+                                                    }
+                                                    onClick={() =>
+                                                      setActivePanel(null)
+                                                    }
+                                                  >
+                                                    {schoolItem.name}
+                                                  </Link>
+                                                </li>
+                                              ),
+                                            )}
+                                          </ul>
+                                        )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                          </li>
+                        ))}
+                      </ul>
+                      {item.Menu.length > 6 && (
+                        <ul className="menu-bottom">
+                          {item.Menu.slice(6).map((sub, idx) => (
+                            <li key={idx}>
                               <Link
-                                href={sub.children?.length > 0 ? "" : sub.url}
+                                href={
+                                  sub.children?.length > 0
+                                    ? ""
+                                    : WEB_URL + sub.url
+                                }
                                 className="menu-link"
                                 onClick={
                                   sub.children?.length > 0
                                     ? () =>
-                                        setOpenMenuAccordion(
-                                          openMenuAccordion === idx
-                                            ? null
-                                            : idx,
-                                        )
+                                      setOpenMenuAccordion(
+                                        openMenuAccordion === `b${idx}`
+                                          ? null
+                                          : `b${idx}`,
+                                      )
                                     : () => setActivePanel(null) // ← add this
                                 }
                                 style={
@@ -1505,75 +1608,23 @@ export default function Header() {
                                 <span className="menu_title">{sub.name}</span>
                                 {sub.children?.length > 0 && (
                                   <span
-                                    className={`menu-arrow ${openMenuAccordion === idx ? "open" : ""}`}
+                                    className={`menu-arrow ${openMenuAccordion === `b${idx}` ? "open" : ""}`}
                                   >
                                     <FaChevronDown size={12} />
                                   </span>
                                 )}
                               </Link>
                               {sub.children?.length > 0 &&
-                                openMenuAccordion === idx && (
+                                openMenuAccordion === `b${idx}` && (
                                   <ul className="menu-children">
                                     {sub.children.map((child, cidx) => (
                                       <li key={cidx}>
-                                        <Link
-                                          href={
-                                            child.school?.length > 0
-                                              ? "#"
-                                              : WEB_URL + child.url
-                                          }
-                                          onClick={() => {
-                                            if (child.school?.length > 0) {
-                                              setOpenChildAccordion(
-                                                openChildAccordion === cidx
-                                                  ? null
-                                                  : cidx,
-                                              );
-                                            } else {
-                                              setActivePanel(null);
-                                            }
-                                          }}
-                                          style={
-                                            child.school?.length > 0
-                                              ? { cursor: "pointer" }
-                                              : {}
-                                          }
+                                        <a
+                                          href={child.url}
+                                          onClick={() => setActivePanel(null)}
                                         >
-                                          <span className="menu_title">
-                                            {child.title}
-                                          </span>
-                                          {child.school?.length > 0 && (
-                                            <span
-                                              className={`menu-arrow ${openChildAccordion === cidx ? "open" : ""}`}
-                                            >
-                                              <FaChevronDown size={10} />
-                                            </span>
-                                          )}
-                                        </Link>
-
-                                        {child.school?.length > 0 &&
-                                          openChildAccordion === cidx && (
-                                            <ul className="menu-children">
-                                              {child.school.map(
-                                                (schoolItem, sidx) => (
-                                                  <li key={sidx}>
-                                                    <Link
-                                                      href={
-                                                        WEB_URL +
-                                                        "schools/" +
-                                                        schoolItem.slug
-                                                      }
-                                                      onClick={() =>
-                                                        setActivePanel(null)
-                                                      }
-                                                    >
-                                                      {schoolItem.name}
-                                                    </Link>
-                                                  </li>
-                                                ),
-                                              )}
-                                            </ul>
-                                          )}
+                                          {child.title}
+                                        </a>
                                       </li>
                                     ))}
                                   </ul>
@@ -1581,90 +1632,36 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                        {item.Menu.length > 6 && (
-                          <ul className="menu-bottom">
-                            {item.Menu.slice(6).map((sub, idx) => (
-                              <li key={idx}>
-                                <Link
-                                  href={
-                                    sub.children?.length > 0
-                                      ? ""
-                                      : WEB_URL + sub.url
-                                  }
-                                  className="menu-link"
-                                  onClick={
-                                    sub.children?.length > 0
-                                      ? () =>
-                                          setOpenMenuAccordion(
-                                            openMenuAccordion === `b${idx}`
-                                              ? null
-                                              : `b${idx}`,
-                                          )
-                                      : () => setActivePanel(null) // ← add this
-                                  }
-                                  style={
-                                    sub.children?.length > 0
-                                      ? { cursor: "pointer" }
-                                      : {}
-                                  }
-                                >
-                                  <span className="menu_title">{sub.name}</span>
-                                  {sub.children?.length > 0 && (
-                                    <span
-                                      className={`menu-arrow ${openMenuAccordion === `b${idx}` ? "open" : ""}`}
-                                    >
-                                      <FaChevronDown size={12} />
-                                    </span>
-                                  )}
-                                </Link>
-                                {sub.children?.length > 0 &&
-                                  openMenuAccordion === `b${idx}` && (
-                                    <ul className="menu-children">
-                                      {sub.children.map((child, cidx) => (
-                                        <li key={cidx}>
-                                          <a
-                                            href={child.url}
-                                            onClick={() => setActivePanel(null)}
-                                          >
-                                            {child.title}
-                                          </a>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mobile-bottom-menu">
-            <ul className="menu-list">
-              {mobilePanels.map((item) => (
-                <li
-                  key={item.name}
-                  className={
-                    activePanel === item.name ? "menu-item active" : "menu-item"
-                  }
-                >
-                  <button onClick={() => togglePanel(item.name)}>
-                    <div className="icon">
-                      <img src={item.icon} alt={`${item.name} icon`} />
+                      )}
                     </div>
-                    <p className="menu-name">{item.title}</p>
-                  </button>
-                </li>
-              ))}
-            </ul>
+                  )}
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className="mobile-bottom-menu">
+          <ul className="menu-list">
+            {mobilePanels.map((item) => (
+              <li
+                key={item.name}
+                className={
+                  activePanel === item.name ? "menu-item active" : "menu-item"
+                }
+              >
+                <button onClick={() => togglePanel(item.name)}>
+                  <div className="icon">
+                    <img src={item.icon} alt={`${item.name} icon`}  />
+                  </div>
+                  <p className="menu-name">{item.title}</p>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      
-      
+
+
       <style jsx>
         {`
           .logo-content img {
@@ -2991,7 +2988,7 @@ export default function Header() {
             list-style: none;
             padding: 0;
             margin: 0;
-            padding: 5rem 2rem 12rem;
+            padding: 0.5rem 4rem 8rem;
             width: 100%;
           }
           .courses-panel {
@@ -3013,7 +3010,7 @@ export default function Header() {
           .mobCourses ul {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            padding-block: 0 12rem;
+            // padding-block: 0 12rem;
             gap: 1.5rem;
           }
           .mobCourses ul li {
@@ -3161,7 +3158,7 @@ export default function Header() {
           }
           .contact-panel .contact-info {
             padding-top: 0;
-            margin-top: -5rem;
+            // margin-top: -5rem;
           }
           .contact-panel .contact-info li {
             text-align: center;
@@ -3200,7 +3197,7 @@ export default function Header() {
           .panel-wrapper .panel ul:nth-of-type(2) {
             background: #e6ffff;
             padding-top: 0;
-            height: 100%;
+            height: auto;
           }
           .panel-wrapper .panel ul:nth-of-type(2) li {
             color: #000;
@@ -3298,7 +3295,7 @@ export default function Header() {
           }
           .menu-list li {
             text-align: center;
-            padding-block: 2rem 0;
+            padding-block: 1.5rem 0;
             padding-bottom: 0;
 
           }
@@ -3318,7 +3315,8 @@ export default function Header() {
             font-family: var(--font-Roboto);
             letter-spacing: 0px;
             font-weight: 300;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
+            font-size:1.3rem
           }
           .menu-list button {
             background: none;
@@ -3329,9 +3327,15 @@ export default function Header() {
             cursor: pointer;
           }
           .icon {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.5rem;
             height: 2rem;
           }
+          .icon img {
+            height:1.8rem
+            }
+            .menu-list .menu-item:last-child .icon img{
+            height:1.4rem
+            }
           .site-header.no-shadow {
             background: none !important;
           }

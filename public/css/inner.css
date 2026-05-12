@@ -6946,9 +6946,23 @@ ul.comon_list li:before {
     padding-top: 6rem;
     padding-bottom: 3.5rem;
   }
-
-  
 }
+@media (max-width: 600px) {
+   .careers .add_of_context {
+    max-height: 33rem;
+  }
+}
+@media (max-width: 401px) {
+   .careers .add_of_context {
+    max-height: 36rem;
+  }
+}
+@media (max-width: 356px) {
+   .careers .add_of_context {
+    max-height: 38rem;
+  }
+}
+
 
 .about_five {
   padding-block: 0rem 14rem;
