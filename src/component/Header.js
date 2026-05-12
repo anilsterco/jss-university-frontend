@@ -1622,6 +1622,7 @@ export default function Header() {
                                         <a
                                           href={child.url}
                                           onClick={() => setActivePanel(null)}
+                                          target={child.url.includes('.pdf') ? '_blank' : '_self'}
                                         >
                                           {child.title}
                                         </a>
