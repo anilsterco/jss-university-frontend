@@ -129,7 +129,7 @@ export default function AboutOne({ data }) {
                     <a
                       target="_blank"
                       className="btn btn-warning"
-                      href={item?.applyUrl ?? APPLY_NOW}
+                      href={APPLY_NOW}
                     >
                       Apply Now
                     </a>

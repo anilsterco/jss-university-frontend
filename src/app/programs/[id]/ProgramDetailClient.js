@@ -242,16 +242,16 @@ export default function ProgramDetailClient({ params }) {
           </div>
         ))}
       </div>
-      {apply_now_link && (
+      {/* {apply_now_link && ( */}
         <a
-          href={apply_now_link || APPLY_NOW}
+          href={APPLY_NOW}
           className="apply-btn1"
           target="_blank"
           rel="noopener noreferrer"
         >
           Apply Now
         </a>
-      )}
+      {/* )} */}
     </div>
   );
 
@@ -355,16 +355,16 @@ export default function ProgramDetailClient({ params }) {
                             Brochure
                           </a>
                         )}
-                        {(admissionSection?.apply_now_link || apply_now_link) && (
+                        {/* {(admissionSection?.apply_now_link || apply_now_link) && ( */}
                           <a
-                            href={admissionSection?.apply_now_link || APPLY_NOW}
+                            href={APPLY_NOW}
                             target="_blank"
                             className="apply-btn1"
                             rel="noopener noreferrer"
                           >
                             Apply Now
                           </a>
-                        )}
+                        {/* )} */}
                       </div>
                     </div>
                     <div className="eligibility-text">
@@ -706,10 +706,10 @@ export default function ProgramDetailClient({ params }) {
                     <h2>{fee_structure?.course_total_fees}</h2>
                     <span>{fee_structure?.academic_year}</span>
                     <div className="engineering-btn">
-                      {(fee_structure?.apply_now_link || apply_now_link) && (
+                      {/* {(fee_structure?.apply_now_link || apply_now_link) && ( */}
                         <a
                           href={
-                            fee_structure?.apply_now_link || apply_now_link
+                            APPLY_NOW
                           }
                           className="apply-btn1"
                           target="_blank"
@@ -717,7 +717,7 @@ export default function ProgramDetailClient({ params }) {
                         >
                           Apply Now
                         </a>
-                      )}
+                      {/* )} */}
                       {fee_structure?.fee_structure_pdf && (
                         <a
                           href={fee_structure.fee_structure_pdf}
@@ -784,10 +784,10 @@ export default function ProgramDetailClient({ params }) {
                     <div className="across">
                       <h2>{firstWord}</h2>
                       <p>{restWords.join(" ")}</p>
-                      {(currentTestimonial?.apply_now_link || apply_now_link) && (
+                      {/* {(currentTestimonial?.apply_now_link || apply_now_link) && ( */}
                         <a
                           href={
-                            currentTestimonial?.apply_now_link || apply_now_link
+                            APPLY_NOW
                           }
                           className="apply-btn1"
                           target="_blank"
@@ -795,7 +795,7 @@ export default function ProgramDetailClient({ params }) {
                         >
                           Apply Now
                         </a>
-                      )}
+                      {/* )} */}
                     </div>
                   </div>
                   <div className="testimonial-img">

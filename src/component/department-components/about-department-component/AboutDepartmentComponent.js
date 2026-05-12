@@ -76,8 +76,9 @@ export default function AboutDepartmentComponent({ data, params }) {
               {point}
             </p>
           ))}
-          <Link
-            href={`/department/${params}/about-us`}
+          {departmentData?.about_url && (
+            <Link
+            href={`/department/${params}/${departmentData.about_url}`}
             className={styles.arrowLink}
           >
             <Image
@@ -87,6 +88,8 @@ export default function AboutDepartmentComponent({ data, params }) {
               height={30}
             />
           </Link>
+          )}
+          
         </div>
 
         {/* <div className={styles.statsSection}>

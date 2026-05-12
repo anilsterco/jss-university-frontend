@@ -1,3 +1,4 @@
+import { APPLY_NOW } from "@/config/config";
 import Link from "next/link";
 import React from "react";
 // import "./headerBottomBanner.css";
@@ -25,7 +26,7 @@ const HeaderBottomBanner = () => {
                     </div>
 
                     <div className="headerBottomBanner__actions">
-                        <Link href="https://jss-university-frontend-sepia.vercel.app/apply-now" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
+                        <Link href={APPLY_NOW} target="_blank" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
                     </div>
 
                 </div>

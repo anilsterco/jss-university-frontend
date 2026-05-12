@@ -722,7 +722,7 @@ export default function Header() {
                                           <div className="academic_apply_now">
                                           <Link 
                                                 onClick={handleDropdownMouseLeave}
-                                                 href="https://jss-university-frontend-sepia.vercel.app/apply-now" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
+                                                 href={APPLY_NOW} target="_blank" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
                                           </div>
                                         </div>
 

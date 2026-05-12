@@ -32,7 +32,9 @@ export default function HappeningsClient({ className }) {
 
   const pathname = usePathname();
   const isGlobalHappenings = pathname === "/happenings";
-  const type = pathname.split("/")[1] === "schools" ? "school" : "department";
+  const type = isGlobalHappenings || pathname.split("/")[1] === "schools" 
+  ? "school" 
+  : "department";
   const program = pathname.split("/")[2];
 
   useEffect(() => {
