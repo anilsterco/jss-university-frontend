@@ -477,3 +477,8 @@
   }
 
 }
+
+.aboutDepartment .arrowLink img:hover {
+    filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+    -webkit-filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+}

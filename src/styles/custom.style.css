@@ -2175,7 +2175,7 @@
   background: #fff;
   border-radius: 10px;
   width: 100%;
-  max-width: 140rem;
+  max-width: 80rem;
   padding: 4rem;
   position: fixed;
   top: 8%;
@@ -3802,7 +3802,7 @@ hr {
 
 @media (max-width: 1920px) {
   .popup-modal {
-    max-width: 65rem;
+    max-width: 80rem;
   }
 }
 
@@ -6557,7 +6557,7 @@ hr {
   }
 
   .popup-modal {
-    max-width: 115.9rem;
+    max-width: 80rem;
   }
 }
 
@@ -6888,7 +6888,7 @@ hr {
   }
 
   .popup-modal {
-    max-width: 120.9rem;
+    max-width: 80rem;
 
   }
 }

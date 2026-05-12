@@ -8,15 +8,20 @@ export function middleware(request) {
   // 'unsafe-eval' is only needed for Next.js in development mode
   const isDev = process.env.NODE_ENV === "development";
 
+  // Note: 'strict-dynamic' is omitted so host allowlists apply; required for
+  // react-google-recaptcha (gstatic/www.google.com) and Google Maps embeds.
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' ${isDev ? "'unsafe-eval'" : ""};
+    script-src 'self' 'nonce-${nonce}' 'unsafe-inline' https://www.google.com https://www.gstatic.com ${isDev ? "'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
     img-src 'self' data: blob: https:;
     media-src 'self' https:;
     font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
     connect-src 'self' https:;
-    frame-src 'self' https://www.youtube.com https://youtube.com;
+    frame-src 'self'
+      https://www.youtube.com https://youtube.com
+      https://www.google.com https://www.gstatic.com
+      https://maps.google.com https://www.google.com/maps/;
     frame-ancestors 'none';
   `
     .replace(/\s{2,}/g, " ")
