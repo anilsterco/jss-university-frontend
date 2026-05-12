@@ -257,14 +257,20 @@
 
 @media screen and (max-width:575px) {
   .bannerContentH1 {
-    font: var(--font-28);
+    font: var(--font-24);
     letter-spacing: -1.34px;
     font-family: var(--font-Condensed);
     line-height: 3rem;
     max-width: 65%;
     margin: 0 auto;
+    margin-top: 1.3rem;
   }
-
+  .bannerContentP{
+    margin-top: 1rem;
+  }
+.bannerSmall{
+  font: var(--font-20);
+}
 }
 
 @media screen and (max-width:520px) {

@@ -207,7 +207,10 @@
 
 @media screen and (max-width:767px) {
     .content_col .subHeading {
-        margin-top: 2rem;
+        margin-top: 0rem;
+        margin-bottom: 1.2rem;
+        font: var(--font-18);
+        font-weight: 500;
     }
 
     .content_col {
@@ -234,12 +237,12 @@
         margin-top: 2rem;
         padding-top: 4rem;
     }
-
 }
 
 @media screen and (max-width:575px) {
     .content_col h4 {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        font: var(--font-20);
     }
 
     .content_col .descGroup {

@@ -364,6 +364,10 @@
   .card {
     padding-top: 4rem;
   }
+  .hodName{
+    font: var(--font-18);
+    font-weight: 500;
+  }
 
 }
 

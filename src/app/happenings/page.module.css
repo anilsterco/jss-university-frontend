@@ -66,13 +66,13 @@
 
 @media (max-width: 767px) {
   .happeningsContainer {
-    padding-top: 6rem;
+    padding-top: 3rem;
     background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 13%, var(--color-f6) 0%, var(--color-f6) 100%);
 
   }
 
   .happeningsTitle {
-    font: var(--font-34);
+    font: var(--font-26);
     letter-spacing: -1.35px;
     color: var(--color-4e);
     font-family: var(--font-Condensed);

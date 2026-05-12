@@ -3035,3 +3035,10 @@ a:active {
 }
 
 
+@media (max-width:767px) {
+  .curriculum_box h3{
+    font: var(--font-18);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+}

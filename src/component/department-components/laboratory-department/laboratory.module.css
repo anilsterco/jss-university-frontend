@@ -294,16 +294,27 @@
   }
 }
 
+@media (max-width:767px) {
+  .title{
+    font: var(--font-30);
+  }
+  
+}
+
 @media (max-width: 575px) {
   .dep_cutting_edge {
     padding: 4rem 0 2rem 0rem;
   }
 
   .title {
-    font: var(--font-40);
+    font: var(--font-30);
     font-family: var(--font-Condensed);
     font-weight: 700;
-    letter-spacing: -2.20px;
+    letter-spacing: 0.8px;
+  }
+  .labTitle{
+    font:var(--font-18);
+    font-weight: 700;
   }
 }
 

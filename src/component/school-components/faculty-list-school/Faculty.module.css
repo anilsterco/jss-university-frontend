@@ -203,6 +203,10 @@
 }
 
 @media (max-width: 767px) {
+  .facultyName{
+    font: var(--font-18);
+    font-weight: bold;
+  }
   .headerSection {
     padding-top: 6rem;
   }
@@ -233,8 +237,6 @@
 }
 
 @media (max-width: 575px) {
- 
-
   .dep_faculty {
     padding: 0rem 0 2rem;
   }
@@ -243,7 +245,7 @@
 @media (max-width: 480px) {
   .title {
     width: 100%;
-    font: var(--font-36);
+    font: var(--font-28);
     font-family: var(--font-Condensed);
     font-weight: 700;
     letter-spacing: -2px;

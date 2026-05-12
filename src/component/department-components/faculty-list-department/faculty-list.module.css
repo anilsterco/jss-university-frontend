@@ -255,10 +255,14 @@
 @media (max-width: 480px) {
   .title {
     width: 100%;
-    font: var(--font-36);
+    font: var(--font-28);
     font-family: var(--font-Condensed);
     font-weight: 700;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
+  }
+  .facultyName{
+    font: var(--font-18);
+    font-weight: 500;
   }
 }
 
