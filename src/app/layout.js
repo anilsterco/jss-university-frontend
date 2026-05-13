@@ -14,13 +14,18 @@ import Script from "next/script";
 import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { BASE_URL } from "@/config/config";
+import getPageRedirect from "@/utils/getPageRedirect";
 
 export const metadata = {
   title: "JSS University",
   description: "A Next.js project with Zustand and SEO setup",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
   return (
     <html lang="en">
       {/* Google Tag Manager */}

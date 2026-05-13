@@ -1,41 +1,38 @@
 // middleware.js
 import { NextResponse } from "next/server";
 import { BASE_URL } from "./config/config";
+import getPageRedirect from "./utils/getPageRedirect";
 
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
-  const fullUrl = request.nextUrl.href;
-
+  
+  const redirectUrl = await getPageRedirect(pathname.replace(/^\//, "")); 
+  if (redirectUrl) {
+    return NextResponse.redirect(redirectUrl);
+  }
 
 
   // Skip static files — anything with a file extension
-  const isStaticFile = /\.[a-zA-Z0-9]+$/.test(pathname);
-  if (isStaticFile) {
-    return NextResponse.next();
-  }
+  // const isStaticFile = /\.[a-zA-Z0-9]+$/.test(pathname);
+  // if (isStaticFile) {
+  //   return NextResponse.next();
+  // }
 
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
-
-    const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, { // ✅ encode it
-      signal: controller.signal,
-      cache: "no-store",
-    });
+  // try {
+  //   const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, { // ✅ encode it
+  //     cache: "no-store",
+  //   });
   
+  //   if (res.ok) {
+  //     const data = await res.json();
 
-    clearTimeout(timeoutId);
-
-    if (res.ok) {
-      const data = await res.json();
-
-      if (data?.status) {
-        return NextResponse.redirect(new URL(data.data, request.url));
-      }
-    }
-  } catch (err) {
-    console.error("Redirect API error:", err?.message);
-  }
+  //     if (data?.status) {
+  //       return NextResponse.redirect(new URL(data.data, request.url));
+  //     }
+  //   }
+  // } catch (err) {
+  //   console.error("Redirect API error:", err?.message);
+  // }
 
   // Generate a random nonce for this request
   const nonce = crypto.randomUUID();
