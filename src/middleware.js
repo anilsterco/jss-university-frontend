@@ -3,36 +3,38 @@ import { NextResponse } from "next/server";
 import { BASE_URL } from "./config/config";
 
 export async function middleware(request) {
+  const { pathname } = request.nextUrl;
   const fullUrl = request.nextUrl.href;
 
+
+
   // Skip static files — anything with a file extension
-  const isStaticFile = /\.[a-zA-Z0-9]+$/.test(fullUrl);
+  const isStaticFile = /\.[a-zA-Z0-9]+$/.test(pathname);
   if (isStaticFile) {
     return NextResponse.next();
   }
 
-  try{
-    if (fullUrl) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2000);
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2000);
 
-      const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, {
-        signal: controller.signal,
-        cache: "no-store",
-      });
+    const res = await fetch(`${BASE_URL}redirection/${encodeURIComponent(fullUrl)}`, { // ✅ encode it
+      signal: controller.signal,
+      cache: "no-store",
+    });
+      console.log(fullUrl);
+  
 
-      clearTimeout(timeoutId);
+    clearTimeout(timeoutId);
 
-      if (res.ok) {
-        const data = await res.json();
+    if (res.ok) {
+      const data = await res.json();
 
-        // If API returns a redirect target, redirect to it
-        if (data?.status) {
-          return NextResponse.redirect(new URL(data.data, request.url));
-        }
+      if (data?.status) {
+        return NextResponse.redirect(new URL(data.data, request.url));
       }
     }
-  }catch(err){
+  } catch (err) {
     console.error("Redirect API error:", err?.message);
   }
 
