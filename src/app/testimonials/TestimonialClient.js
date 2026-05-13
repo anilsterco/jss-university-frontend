@@ -7,7 +7,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
-import { BASE_URL } from "@/config/config";
+import { ASSETS_URL, BASE_URL } from "@/config/config";
 
 export default function TestimonialClient() {
   const [testimonialData, setTestimonialData] = useState([]);
@@ -189,7 +189,7 @@ export default function TestimonialClient() {
                             src={
                               item.image?.startsWith("http")
                                 ? item.image
-                                : `https://project-demo.in/jss/${item.image}`
+                                : `${ASSETS_URL}${item.image}`
                             }
                             alt={item.alt_text || item.name}
                             className="img-fluid w-100"
@@ -268,7 +268,7 @@ export default function TestimonialClient() {
                         src={
                           modalData.image?.startsWith("http")
                             ? modalData.image
-                            : `https://project-demo.in/jss/${modalData.image}`
+                            : `${ASSETS_URL}${modalData.image}`
                         }
                         alt={modalData.alt_text || modalData.name}
                         width={300}

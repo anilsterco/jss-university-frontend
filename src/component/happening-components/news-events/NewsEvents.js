@@ -99,7 +99,7 @@ export default function EventsSection({ className, programId, type }) {
     ],
     queryFn: () => {
       const queryParams = buildQueryParams(resolvedProgramId);
-      return happeningAPI.getEvents(`/happenings?${queryParams}`);
+      return happeningAPI.getEvents(`happenings?${queryParams}`);
     },
     staleTime: 5 * 60 * 1000,
     cacheTime: 10 * 60 * 1000,

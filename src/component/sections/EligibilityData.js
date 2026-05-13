@@ -5,7 +5,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-import { WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config";
 import { Skeleton } from "../common/skeleton/Skeleton";
 
 const MOBILE_BREAKPOINT = 768;
@@ -61,7 +61,7 @@ export default function EligibilityPrograms({ data }) {
 
       try {
         const res = await fetch(
-          `https://project-demo.in/jss/api/programs/section/${slug}`
+          `${BASE_URL}programs/section/${slug}`
         );
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const json = await res.json();

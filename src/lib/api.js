@@ -1,5 +1,4 @@
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://project-demo.in/jss/api";
+import { BASE_URL } from "@/config/config";
 
 // --- Generic fetch function with SSR caching ---
 async function fetchData(endpoint, options = {}) {
@@ -22,10 +21,10 @@ async function fetchData(endpoint, options = {}) {
 
 // --- 🔹 HOME PAGE APIs ---
 export const happeningAPI = {
-  getEvents: (endpoint = "/happenings") => fetchData(endpoint),
+  getEvents: (endpoint = "happenings") => fetchData(endpoint),
 };
 export const schoolListAPI = {
-  getSchoolList: (endpoint = "/schools/all") => fetchData(endpoint),
+  getSchoolList: (endpoint = "schools/all") => fetchData(endpoint),
 };
 export const galleryAPI = {
   getGallery: (endpoint) =>

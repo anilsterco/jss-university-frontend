@@ -118,7 +118,7 @@ export default function Faculties({ data }) {
 
       const proxiedUrl = urlObj
         .toString()
-        .replace("https://project-demo.in/jss/api", "/api");
+        .replace(`${BASE_URL}`, "/api");
 
       const res = await fetch(proxiedUrl);
       if (!res.ok) throw new Error(`Load More error: ${res.status}`);

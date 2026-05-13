@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ASSETS_URL } from "@/config/config";
 
 export default function AboutDepartmentComponent({ data, params }) {
   // 🔹 Dummy Data (Fallback)
@@ -21,7 +22,7 @@ export default function AboutDepartmentComponent({ data, params }) {
         id: 3,
         value: "",
         label: "National Board of Accreditation (NBA)",
-        logo: "https://project-demo.in/jss/assets/img/facts/1762853705_6913034925b8c.png",
+        logo: `${ASSETS_URL}img/facts/1762853705_6913034925b8c.png`,
       },
     ],
     vision: {
@@ -38,7 +39,7 @@ export default function AboutDepartmentComponent({ data, params }) {
       ],
     },
     image:
-      "https://project-demo.in/jss/assets/img/departments/1762856534_69130e56601ae.png",
+      `${ASSETS_URL}img/departments/1762856534_69130e56601ae.png`,
   };
 
   const departmentData = data || dummyCoursesData;

@@ -100,7 +100,7 @@ export default function ContactClient() {
     submitForm.append("consent", formData.agree ? "1" : "0");
 
     try {
-      const res = await fetch("https://project-demo.in/jss/api/contact-form", {
+      const res = await fetch(`${BASE_URL}contact-form`, {
         method: "POST",
         body: submitForm,
         headers: {

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import { BASE_URL } from "./src/config/config.js";
+
 const nextConfig = {
   // ✅ ADD THIS (fix your warning)
   allowedDevOrigins: ['192.168.100.27'],
@@ -21,7 +23,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: blob:",
-              "connect-src 'self' https://www.google.com https://project-demo.in",
+              "connect-src 'self' https://www.google.com https://backoffice.jssuninoida.edu.in",
             ].join("; "),
           },
           {
@@ -51,17 +53,17 @@ const nextConfig = {
         protocol: "http",
         hostname: "sd7",
         port: "8080",
-        pathname: "/jss/assets/img/banners/**",
+        pathname: "/assets/img/banners/**",
       },
       {
         protocol: "https",
-        hostname: "project-demo.in",
+        hostname: "backoffice.jssuninoida.edu.in",
         pathname: "/**",
       },
     ],
 
     // ⚠️ REMOVE THIS (deprecated warning)
-    // domains: ["sd7", "localhost", "project-demo.in"],
+    // domains: ["sd7", "localhost", "backoffice.jssuninoida.edu.in"],
 
     unoptimized: true,
   },
@@ -70,7 +72,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://project-demo.in/jss/api/:path*",
+        destination: `${BASE_URL}:path*`,
       },
     ];
   },

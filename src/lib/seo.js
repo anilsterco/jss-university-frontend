@@ -13,9 +13,13 @@ export async function getPageSEO(slug) {
         headersList.get("x-pathname") ||
         "/";
       // slug = `${protocol}://${host}${pathname}`;
-      slug = `${SEO_URL}${pathname}`;
-    }
+      slug = `${pathname.replace('/', '')}`;
+      if(slug == null || slug == ''){
+        slug = 'home'
+      }
 
+      console.log('slug',slug);
+    }
     const res = await fetch(`${BASE_URL}seo/${encodeURIComponent(slug)}`, {
       cache: "force-cache",
       next: { revalidate: 3600 },

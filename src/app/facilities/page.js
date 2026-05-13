@@ -123,7 +123,7 @@ export default function FacilitiesPage() {
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
           image:
-            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
+            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/aicte-idea",
         },
         {
@@ -142,7 +142,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
+            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/cs-labs",
         },
         {
@@ -161,7 +161,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            "https://project-demo.in/jss/assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png",
+            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/electrical-labs",
         },
         {
