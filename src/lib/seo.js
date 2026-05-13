@@ -6,23 +6,15 @@ export async function getPageSEO(slug) {
     // If no slug passed, auto-detect full URL from request headers
     if (!slug) {
       const headersList = await headers();
-      const host = headersList.get("host");
-      const protocol = "https";
       const pathname =
         headersList.get("x-invoke-path") ||
         headersList.get("x-pathname") ||
         "/";
-      // slug = `${protocol}://${host}${pathname}`;
-      slug = `${pathname.replace('/', '')}`;
-      if(slug == null || slug == ''){
-        slug = 'home'
-      }
-
-      console.log('slug',slug);
+        slug = pathname.replace(/^\//, '') || 'home';
     }
-    const res = await fetch(`${BASE_URL}seo/${encodeURIComponent(slug)}`, {
-      cache: "force-cache",
-      next: { revalidate: 3600 },
+    const res = await fetch(`${BASE_URL}seo/${slug}`, {
+      cache: "no-store",
+      // next: { revalidate: 600 },
     });
 
     if (!res.ok) throw new Error("SEO data not found");

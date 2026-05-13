@@ -11,7 +11,7 @@ import { BASE_URL } from "@/config/config";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  return await getPageSEO();
 }
 
 async function getSchoolData(slug) {
