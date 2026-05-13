@@ -18,11 +18,10 @@ export async function middleware(request) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 2000);
 
-    const res = await fetch(`${BASE_URL}redirection/${encodeURIComponent(fullUrl)}`, { // ✅ encode it
+    const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, { // ✅ encode it
       signal: controller.signal,
       cache: "no-store",
     });
-      console.log(fullUrl);
   
 
     clearTimeout(timeoutId);
