@@ -1,7 +1,41 @@
 // middleware.js
 import { NextResponse } from "next/server";
+import { BASE_URL } from "./config/config";
 
-export function middleware(request) {
+export async function middleware(request) {
+  const fullUrl = request.nextUrl.href;
+
+  // Skip static files — anything with a file extension
+  const isStaticFile = /\.[a-zA-Z0-9]+$/.test(fullUrl);
+  if (isStaticFile) {
+    return NextResponse.next();
+  }
+
+  try{
+    if (fullUrl) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+      const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, {
+        signal: controller.signal,
+        cache: "no-store",
+      });
+
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const data = await res.json();
+
+        // If API returns a redirect target, redirect to it
+        if (data?.status) {
+          return NextResponse.redirect(new URL(data.data, request.url));
+        }
+      }
+    }
+  }catch(err){
+    console.error("Redirect API error:", err?.message);
+  }
+
   // Generate a random nonce for this request
   const nonce = crypto.randomUUID();
 
