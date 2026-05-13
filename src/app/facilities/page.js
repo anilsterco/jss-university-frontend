@@ -8,6 +8,7 @@ import "@/styles/custom.style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ASSETS_URL } from "@/config/config";
 
 export default function FacilitiesPage() {
   const [activeTab, setActiveTab] = useState("academic");
@@ -123,7 +124,7 @@ export default function FacilitiesPage() {
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/aicte-idea",
         },
         {
@@ -142,7 +143,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/cs-labs",
         },
         {
@@ -161,7 +162,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/electrical-labs",
         },
         {

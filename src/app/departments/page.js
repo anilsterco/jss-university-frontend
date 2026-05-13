@@ -9,10 +9,18 @@ export async function generateMetadata() {
 export default async function DepartmentsPage() {
   const seoData = await getPageSEO();
 
-  const res = await fetch(`${BASE_URL}school-department-list`);
-  const data = await res.json();
-
-  const schools = data?.data || [];
+  let schools = [];
+  try {
+    const res = await fetch(`${BASE_URL}school-department-list`, {
+      next: { revalidate: 600 },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      schools = data?.data || [];
+    }
+  } catch (error) {
+    console.error("Failed to load school list for departments:", error.message);
+  }
 
   return (
     <>
