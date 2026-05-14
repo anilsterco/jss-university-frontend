@@ -79,6 +79,7 @@ import Accordions1 from "@/component/sections/Accordions1";
 import '../../styles/custom.style.css'
 import { headers } from "next/headers";
 import getPageRedirect from "@/utils/getPageRedirect";
+import GrantsReceived1 from "@/component/sections/GrantsReceived1";
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === 'development';
@@ -182,6 +183,7 @@ export default async function DynamicPage({ params }) {
     indexedResearch: IndexedResearch,
     publicationPatents: PublicationPatents,
     grantsreceived: GrantsReceived,
+    tab_with_custom_data: GrantsReceived1,
     grants: Grants,
     auditoriumSeminar: AuditoriumSeminar,
     universityGreen: UniversityGreen,
