@@ -7998,7 +7998,9 @@ ul.comon_list li:before {
     gap: 2rem;
     display: none;
   }
-
+.programs .inner-title .innnr_head ul {
+    display: flex;
+  }
   .inner-title .innnr_head ul li {
     padding-top: 1rem;
   }
@@ -9937,7 +9939,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .inner-title .innnr_head ul {
     display: none;
   }
-
+ .programs .inner-title .innnr_head ul {
+    display: flex;
+    color: #333;
+    font: var(--font-16);
+    font-weight: 500;
+  }
   .educational-sec .tabbed-content .apply-btn1 {
     width: auto;
   }

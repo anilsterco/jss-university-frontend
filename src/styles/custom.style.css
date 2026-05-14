@@ -2604,6 +2604,12 @@
   .headerBottomBanner {
     display: none;
   }
+  .programs_select_dropdown {
+  width: 100%;
+  height: 3rem;
+  font:var(--font-14);
+  margin-top: 0.5rem;
+}
 }
 @media (max-width: 767px) {
   .single_image_content .inner_bottom_data{
@@ -3553,6 +3559,11 @@ hr {
 .profile-email a {
   font: var(--font-18);
   color: var(--color-white);
+  display: inline-block;
+  max-width: 318px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* .profile-info-box .profile-email a {
