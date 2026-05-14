@@ -99,12 +99,12 @@ export default function FacilitiesComponent({ data,schoolName }) {
             navigation={false}
             pagination={false}
             loop={true}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
             spaceBetween={20}
             slidesPerView={2.8}
             className={styles.slider}
             breakpoints={{
-              1200: { slidesPerView: 2.8 },
+              1200: { slidesPerView: 3 },
               991: { slidesPerView: 2 },
               667: { slidesPerView: 2 },
               575: { slidesPerView: 1.3 },

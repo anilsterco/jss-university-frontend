@@ -9722,6 +9722,58 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   color: var(--color-white);
 }
 
+/* acadmic facilities css starts here */
+
+.academic-facilities .about_one .estblish {
+    padding-bottom: 4rem;
+}
+.academic-facilities .research_labmain {
+    padding: 10rem 0;
+}
+.academic-facilities .research_labmain .re_lab_objective {
+    margin: 5rem 0 0 0;
+}
+.academic-facilities .about_two.labs_group_section {
+    padding-top: 10rem;
+}
+.academic-facilities .lib_cen_main .campu_grid_main.capus_grid_two {
+    padding-bottom: 0;
+}
+.academic-facilities .about_two.labs_group_section .about_two {
+    padding-bottom: 0;
+}
+.academic-facilities .atm_mainsec.consultancy_main {
+    margin: 10rem 0 0 0;
+}
+.campus-facilities .image_content_repeat_section{
+  padding: 10rem 0;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec {
+    padding-bottom: 0;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .single_image_content {
+    padding-bottom: 10rem;
+}
+.campus-facilities .ameminites_listmain .bottom_dec {
+    padding: 0;
+}
+.campus-facilities .uni_boasts_rag_sec {
+    padding-block: 10rem 10rem;
+}
+.campus-facilities .about_two.labs_group_section {
+    padding-top: 0;
+}
+.campus-facilities .about_two.labs_group_section .about_two {
+    padding-bottom: 0;
+}
+.campus-facilities .amenities_section .grid_group .left_col h5 {
+    margin-bottom: 4rem;
+}
+.schools-facilities .about_four .about_f_value {
+    padding-top: 0;
+}
+/* acadmic facilities css ends here */
+
 
 @media(max-width:1366px) {
   .admission .admins_of_con .ad_offc_contact {
@@ -9741,6 +9793,11 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .admission .admins_of_con .ad_offc_contact .add_of_context {
     max-height: 35.7rem;
   }
+  .academic-facilities .research_labmain .research_grid_one .research_cont {
+    padding-left: 4rem;
+    padding-right: 0;
+    padding-bottom: 4rem;
+}
 }
 
 @media(max-width:1024px) {
@@ -9867,7 +9924,99 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .academic-credits .image_content_repeat_section .singleImageContent .row {
     gap: 4rem;
   }
-
+  .academic-facilities .about_one {
+    padding-block: 6rem 0;
+  }
+  .academic-facilities .about_one .atm_g_imgsec {
+    padding-top: 0;
+}
+.academic-facilities .about_top {
+    padding-bottom: 6rem;
+}
+.academic-facilities .about_one .estblish {
+    padding-bottom: 0;
+}
+.academic_labmain {
+    padding-block: 6rem;
+}
+.academic-facilities .research_labmain {
+    padding: 6rem 0;
+}
+.academic-facilities .research_labmain .research_grid_one .research_cont {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.academic-facilities .research_labmain .re_lab_objective {
+    margin: 0;
+}
+.academic-facilities .sport_fac_swiper + .research_labmain {
+    padding-top: 6rem;
+}
+.academic-facilities .about_two.labs_group_section {
+    padding-top: 6rem;
+}
+.academic-facilities .about_f_value {
+    padding-top: 6rem;
+}
+.academic-facilities .atm_mainsec.consultancy_main {
+    margin: 6rem 0 0;
+}
+.academic-facilities .facilities_diffent {
+    padding-block: 6rem;
+}
+.about_two.labs_group_section.lab_card_bottom {
+    padding-bottom: 6rem;
+}
+.campus-facilities .image_content_repeat_section{
+  padding: 5rem 0;
+}
+.campus-facilities .about_one .atm_g_imgsec {
+    padding-top: 0;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {
+    padding-top: 3rem;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .single_image_content {
+    padding-bottom: 6rem;
+}
+.campus-facilities .uni_boasts_rag_sec {
+    padding-block: 6rem;
+}
+.campus-facilities .uni_boasts_rag_sec .uni_bo_text {
+    padding: 4rem 0 0;
+}
+.campus-facilities .ameminites_listmain {
+    padding-block: 6rem;
+}
+.campus-facilities .about_one {
+    padding-block: 6rem 0;
+}
+.campus-facilities .image_content_repeat_section {
+    padding: 7rem 0;
+}
+.campus-facilities .image_content_repeat_section .hostel-rules {
+    margin: 6rem 0 0;
+}
+.campus-facilities .consultancy_main {
+    padding-block: 6rem;
+}
+.campus-facilities .image_content_repeat_section {
+    padding: 6rem 0;
+}
+.campus-facilities .uni_boasts_rag_sec .uni_bo_title {
+    margin-bottom: 4rem;
+}
+.campus-facilities .image_content_repeat_section.image-repeat-test .content_col {
+    margin: 3rem 0 0 0;
+    padding: 0;
+}
+.campus-facilities .amenities_section {
+    padding: 6rem 0;
+}
+.internation-conference .gridCardDesign3_section {
+    padding: 6rem 0;
+}
 }
 
 @media(max-width:767px) {
@@ -10093,7 +10242,90 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .academic-credits .image_content_repeat_section .singleImageContent .row {
     gap: 2rem;
   }
-
+.academic-facilities .about_one {
+  padding-block: 4rem 0;
+}
+.academic-facilities .about_top {
+    padding-bottom: 4rem;
+}
+.academic_labmain {
+    padding-block: 4rem;
+}
+.academic-facilities .research_labmain {
+    padding: 4rem 0;
+}
+.academic-facilities .sport_fac_swiper + .research_labmain {
+    padding-top: 4rem;
+}
+.academic-facilities .about_two.labs_group_section {
+    padding-top: 4rem;
+}
+.academic-facilities .about_f_value {
+    padding-top: 4rem;
+}
+.academic-facilities .atm_mainsec.consultancy_main {
+    margin: 4rem 0 0;
+}
+.academic-facilities .facilities_diffent {
+    padding-block: 4rem;
+}
+.about_two.labs_group_section.lab_card_bottom {
+    padding-bottom: 4rem;
+}
+.academic-facilities .lib_cen_main .ab_jss_coutsec {
+    margin-bottom: 2rem;
+}
+.academic-facilities .atm_mainsec.consultancy_main{
+    padding-block: 4rem;
+}
+.academic-facilities .about_one .estblish {
+    padding-block: 2rem 0;
+}
+.campus-facilities .about_one {
+    padding-block: 4rem 0;
+}
+.campus-facilities .image_content_repeat_section {
+    padding: 4rem 0;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {
+    padding-top: 1rem;
+}
+.campus-facilities .image_content_repeat_section .hostel-rules {
+    margin: 4rem 0 0;
+}
+.image_content_repeat_section.hostel_repeatsec .hostel_list {
+    margin: 5rem 0 0;
+}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .single_image_content {
+    padding-bottom: 4rem;
+}
+.campus-facilities .ameminites_listmain {
+    padding-block: 4rem;
+}
+.campus-facilities .ameminites_listmain .bottom_dec{
+  margin-top: 3rem;
+}
+.campus-facilities .uni_boasts_rag_sec {
+    padding-block: 4rem;
+}
+.campus-facilities .uni_boasts_rag_sec .uni_bo_title {
+    margin-bottom: 2rem;
+}
+.campus-facilities .uni_boa_grid{
+    margin-top: 3rem;
+}
+.campus-facilities .consultancy_main {
+    padding-block: 4rem;
+}
+.campus-facilities .image_content_repeat_section.image-repeat-test .content_col {
+    margin: 1rem 0 0;
+}
+.campus-facilities .amenities_section {
+    padding: 4rem 0;
+}
+.internation-conference .gridCardDesign3_section {
+    padding: 4rem 0;
+}
 }
 
 @media(max-width:575px) {
@@ -10148,6 +10380,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .patents .pate_boxmain .patent_boxgrid {
     grid-template-columns: repeat(1, 1fr);
   }
+  .academic-facilities .about_one .estblish #mentoring-scheme {
+    margin-bottom: 0;
+}
+.internation-conference .conference_section {
+    padding: 4rem 0;
+}
 }
 
 @media(max-width:480px) {

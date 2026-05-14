@@ -80,231 +80,235 @@ export default function LabCard({ data }) {
   }, [data]);
 
   return (
-    <section className="about_two labs_group_section">
-      <div className="container">
-        {data?.map((section, sectionIndex) => {
+    // <section className={`about_two labs_group_section `}>
+    //   <div className="container">
+        data?.map((section, sectionIndex) => {
           if (section.type !== "labCard") return null;
           if (!section.items?.length) return null;
 
           const shouldAddClass = Math.floor(sectionIndex / 2) % 2 === 0;
 
           return (
-            <section
-              key={sectionIndex}
-              className={`about_two ${shouldAddClass ? "reverse" : ""}`}
-            >
+            <section className={`about_two labs_group_section ${section?.items?.[0]?.customClass || ""}`} key={sectionIndex}>
               <div className="container">
-                {section.items.map((item, itemIndex) => {
-                  return (
-                    <div
-                      key={itemIndex}
-                      className={`single_lab_card ${item.sectionType}`}
-                    >
-                      <div
-                        className="early-slide"
-                        style={{ display: "flex", gap: "2rem" }}
-                      >
-                        {(item.image || item?.imageVideo?.length > 0) && (
-                          <div style={{ flex: 1 }} className="image_col">
-                            {item?.imageVideo?.length > 0 ? (
-                              item.imageVideo.length === 1 ? (
-                                // Single media item
-                                <figure className="shine-effect">
-                                  {item.imageVideo[0].video ? (
-                                    <video
-                                      src={item.imageVideo[0].video}
-                                      width={685}
-                                      height={450}
-                                      autoPlay
-                                      muted
-                                      loop
-                                      playsInline
-                                      style={{
-                                        width: "100%",
-                                        height: "auto",
-                                        objectFit: "cover",
-                                      }}
-                                    />
+                <div
+                  key={sectionIndex}
+                  className={`about_two ${shouldAddClass ? "reverse" : ""}`}
+                >
+                  <div className="container">
+                    {section.items.map((item, itemIndex) => {
+                      return (
+                        <div
+                          key={itemIndex}
+                          className={`single_lab_card ${item.sectionType}`}
+                        >
+                          <div
+                            className="early-slide"
+                            style={{ display: "flex", gap: "2rem" }}
+                          >
+                            {(item.image || item?.imageVideo?.length > 0) && (
+                              <div style={{ flex: 1 }} className="image_col">
+                                {item?.imageVideo?.length > 0 ? (
+                                  item.imageVideo.length === 1 ? (
+                                    // Single media item
+                                    <figure className="shine-effect">
+                                      {item.imageVideo[0].video ? (
+                                        <video
+                                          src={item.imageVideo[0].video}
+                                          width={685}
+                                          height={450}
+                                          autoPlay
+                                          muted
+                                          loop
+                                          playsInline
+                                          style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            objectFit: "cover",
+                                          }}
+                                        />
+                                      ) : (
+                                        <Image
+                                          src={item.imageVideo[0].image}
+                                          alt={
+                                            item.title
+                                              ? item.title.slice(0, 50)
+                                              : "Research Lab"
+                                          }
+                                          width={685}
+                                          height={450}
+                                          className="img-fluid"
+                                          style={{
+                                            width: "100%",
+                                            objectFit: "cover",
+                                          }}
+                                        />
+                                      )}
+                                    </figure>
                                   ) : (
+                                    // Multiple media items → Swiper
+                                    <div
+                                      className="research_swiper_wrapper"
+                                      style={{ position: "relative" , width: "100%", overflow: "hidden"  }}
+                                    >
+                                      <Swiper
+                                        modules={[Autoplay, Navigation]}
+                                        autoplay={{
+                                          delay: 3000,
+                                          disableOnInteraction: false,
+                                        }}
+                                        navigation={{
+                                          nextEl: `.swiper-next-lab-card`,
+                                          prevEl: `.swiper-prev-lab-card`,
+                                        }}
+                                        loop={true}
+                                        slidesPerView={1}
+                                        style={{ width: "100%" }}
+                                      >
+                                        {item.imageVideo.map((media, mediaIdx) => (
+                                          <SwiperSlide key={mediaIdx}>
+                                            <figure className="shine-effect">
+                                              {media.video ? (
+                                                <video
+                                                  src={media.video}
+                                                  width={685}
+                                                  height={450}
+                                                  autoPlay
+                                                  muted
+                                                  loop
+                                                  playsInline
+                                                  className="img-fluid"
+                                                  style={{
+                                                    // width: "100%",
+                                                    // height: "auto",
+                                                    objectFit: "cover",
+                                                  }}
+                                                />
+                                              ) : (
+                                                <Image
+                                                  src={media.image}
+                                                  alt={
+                                                    item.title
+                                                      ? item.title.slice(0, 50)
+                                                      : "Research Lab"
+                                                  }
+                                                  width={685}
+                                                  height={450}
+                                                  className="img-fluid"
+                                                  style={{
+                                                    // width: "100%",
+                                                    // height: "auto",
+                                                    objectFit: "cover",
+                                                  }}
+                                                />
+                                              )}
+                                            </figure>
+                                          </SwiperSlide>
+                                        ))}
+                                      </Swiper>
+
+                                      {/* Unique nav buttons per slide instance */}
+                                      <button
+                                        type="button"
+                                        className={`swiper-button-prev swiper-prev-lab-card`}
+                                        aria-label="Previous slide"
+                                      >
+                                        <MdChevronLeft />
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className={`swiper-button-next swiper-next-lab-card`}
+                                        aria-label="Next slide"
+                                      >
+                                        <MdChevronRight />
+                                      </button>
+                                    </div>
+                                  )
+                                ) : item?.image ? (
+                                  // Case 2: fallback to item.image
+                                  <figure className="shine-effect">
                                     <Image
-                                      src={item.imageVideo[0].image}
+                                      src={item.image}
                                       alt={
                                         item.title
-                                          ? item.title.slice(0, 50)
-                                          : "Research Lab"
+                                          ? item.title.replace(/<[^>]+>/g, "")
+                                          : "Early Growth"
                                       }
+                                      className="imgsli_left img-fluid"
                                       width={685}
                                       height={450}
-                                      className="img-fluid"
                                       style={{
                                         width: "100%",
+                                        // height: "100%",
                                         objectFit: "cover",
                                       }}
                                     />
-                                  )}
-                                </figure>
-                              ) : (
-                                // Multiple media items → Swiper
-                                <div
-                                  className="research_swiper_wrapper"
-                                  style={{ position: "relative" , width: "100%", overflow: "hidden"  }}
-                                >
-                                  <Swiper
-                                    modules={[Autoplay, Navigation]}
-                                    autoplay={{
-                                      delay: 3000,
-                                      disableOnInteraction: false,
-                                    }}
-                                    navigation={{
-                                      nextEl: `.swiper-next-lab-card`,
-                                      prevEl: `.swiper-prev-lab-card`,
-                                    }}
-                                    loop={true}
-                                    slidesPerView={1}
-                                    style={{ width: "100%" }}
-                                  >
-                                    {item.imageVideo.map((media, mediaIdx) => (
-                                      <SwiperSlide key={mediaIdx}>
-                                        <figure className="shine-effect">
-                                          {media.video ? (
-                                            <video
-                                              src={media.video}
-                                              width={685}
-                                              height={450}
-                                              autoPlay
-                                              muted
-                                              loop
-                                              playsInline
-                                              className="img-fluid"
-                                              style={{
-                                                // width: "100%",
-                                                // height: "auto",
-                                                objectFit: "cover",
-                                              }}
-                                            />
-                                          ) : (
-                                            <Image
-                                              src={media.image}
-                                              alt={
-                                                item.title
-                                                  ? item.title.slice(0, 50)
-                                                  : "Research Lab"
-                                              }
-                                              width={685}
-                                              height={450}
-                                              className="img-fluid"
-                                              style={{
-                                                // width: "100%",
-                                                // height: "auto",
-                                                objectFit: "cover",
-                                              }}
-                                            />
-                                          )}
-                                        </figure>
-                                      </SwiperSlide>
-                                    ))}
-                                  </Swiper>
-
-                                  {/* Unique nav buttons per slide instance */}
-                                  <button
-                                    type="button"
-                                    className={`swiper-button-prev swiper-prev-lab-card`}
-                                    aria-label="Previous slide"
-                                  >
-                                    <MdChevronLeft />
-                                  </button>
-                                  <button
-                                    type="button"
-                                    className={`swiper-button-next swiper-next-lab-card`}
-                                    aria-label="Next slide"
-                                  >
-                                    <MdChevronRight />
-                                  </button>
-                                </div>
-                              )
-                            ) : item?.image ? (
-                              // Case 2: fallback to item.image
-                              <figure className="shine-effect">
-                                <Image
-                                  src={item.image}
-                                  alt={
-                                    item.title
-                                      ? item.title.replace(/<[^>]+>/g, "")
-                                      : "Early Growth"
-                                  }
-                                  className="imgsli_left img-fluid"
-                                  width={685}
-                                  height={450}
-                                  style={{
-                                    width: "100%",
-                                    // height: "100%",
-                                    objectFit: "cover",
-                                  }}
+                                  </figure>
+                                ) : null}
+                              </div>
+                            )}
+                            <div
+                              className="early_rgt"
+                              style={{ flex: 1 }}
+                              data-aos="fade-up"
+                              data-aos-delay="200"
+                              data-aos-duration="400"
+                              suppressHydrationWarning
+                            >
+                              {item.subTitle && <h5>{item.subTitle}</h5>}
+                              {item.title && (
+                                <h4
+                                  dangerouslySetInnerHTML={{ __html: item.title }}
                                 />
-                              </figure>
-                            ) : null}
+                              )}
+                              {item.titlebottom && (
+                                <>
+                                  <blockquote>{item.titlebottom}</blockquote>
+                                </>
+                              )}
+
+                              {item?.description?.length > 0 &&
+                                item.description.map((singleDes, desIdx) => (
+                                  <p key={desIdx}>{singleDes.description}</p>
+                                ))}
+
+                              {item?.listTitle && (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item?.listTitle,
+                                  }}
+                                  className="mb-0"
+                                />
+                              )}
+                              <ListGroup
+                                listGroup={item?.listGroup}
+                                className={item?.listTitle ? "no_margin" : ""}
+                                description1={item?.description1}
+                              />
+
+                              {item?.linkGroup?.length > 0 &&
+                                item.linkGroup.map((item, idx) => (
+                                  <Link
+                                    key={idx}
+                                    href={item.linkUrl}
+                                    target="_blank"
+                                    className="read_more_btn px-5 mt-4 d-inline-block"
+                                  >
+                                    {item.linkText}
+                                  </Link>
+                                ))}
+                            </div>
                           </div>
-                        )}
-                        <div
-                          className="early_rgt"
-                          style={{ flex: 1 }}
-                          data-aos="fade-left"
-                          data-aos-delay="200"
-                          data-aos-duration="900"
-                          suppressHydrationWarning
-                        >
-                          {item.subTitle && <h5>{item.subTitle}</h5>}
-                          {item.title && (
-                            <h4
-                              dangerouslySetInnerHTML={{ __html: item.title }}
-                            />
-                          )}
-                          {item.titlebottom && (
-                            <>
-                              <blockquote>{item.titlebottom}</blockquote>
-                            </>
-                          )}
-
-                          {item?.description?.length > 0 &&
-                            item.description.map((singleDes, desIdx) => (
-                              <p key={desIdx}>{singleDes.description}</p>
-                            ))}
-
-                          {item?.listTitle && (
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html: item?.listTitle,
-                              }}
-                              className="mb-0"
-                            />
-                          )}
-                          <ListGroup
-                            listGroup={item?.listGroup}
-                            className={item?.listTitle ? "no_margin" : ""}
-                            description1={item?.description1}
-                          />
-
-                          {item?.linkGroup?.length > 0 &&
-                            item.linkGroup.map((item, idx) => (
-                              <Link
-                                key={idx}
-                                href={item.linkUrl}
-                                target="_blank"
-                                className="read_more_btn px-5 mt-4 d-inline-block"
-                              >
-                                {item.linkText}
-                              </Link>
-                            ))}
                         </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                      );
+                    })}
+                  </div>
+                </div>
+            </div>
             </section>
           );
-        })}
-      </div>
-    </section>
+        })
+    //   </div>
+    // </section>
   );
 }
