@@ -64,7 +64,7 @@ export default async function RootLayout({ children }) {
           <Footer />
 
           <a
-            href="https://wa.me/+919311830458"
+            href="https://wa.me/+917599201722"
             target="_blank"
             className="whatsapp-btn"
           >
