@@ -758,7 +758,7 @@ export default function EventsGrid({ data }) {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <Link href="#">
+              <Link href="/happenings">
                 <button
                   type="button"
                   className={styles.circleArrowBtn}
