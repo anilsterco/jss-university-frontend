@@ -11,7 +11,8 @@ import { BASE_URL } from "@/config/config";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  return await getPageSEO();
+  const { school } = await params;
+  return await getPageSEO(`schools/${school}`);
 }
 
 async function getSchoolData(slug) {
@@ -44,7 +45,7 @@ export default async function SchoolPage({ params }) {
 
   if (!schoolData) notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`schools/${school}`);
 
   return (
     <>

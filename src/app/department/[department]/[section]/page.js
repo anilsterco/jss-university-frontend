@@ -22,7 +22,8 @@ import Departments from "@/pages/departments/Departments";
 import TestimonialInnerPage from "@/pages/testimonials/Testimonials";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { department, section } = await params;
+  return getPageSEO(`department/${department}/${section}`);
 }
 
 async function getDepartmentData(slug, section) {
@@ -52,7 +53,7 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department, section);
   if (!departmentData) notFound();
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`department/${department}/${section}`);
 
   const pageName = department.replace(/-/g, ' ') + " " + section.replace(/-/g, ' ');
   const titleCase = pageName

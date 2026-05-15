@@ -14,7 +14,8 @@ import { BASE_URL } from "@/config/config";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { department } = await params;
+  return getPageSEO(`department/${department}`);
 }
 
 async function getDepartmentData(slug) {
@@ -43,7 +44,7 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department);
   if (!departmentData) notFound();
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`department/${department}`);
 
   return (
     <>

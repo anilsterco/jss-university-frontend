@@ -17,7 +17,8 @@ import { notFound } from "next/navigation";
 import Departments from "@/pages/departments/Departments";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { school, section } = await params;
+  return getPageSEO(`schools/${school}/${section}`);
 }
 
 async function getSchoolData(slug, section) {
@@ -50,7 +51,7 @@ export default async function SchoolPage({ params }) {
 
   if (!schoolData) notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`schools/${school}/${section}`);
 
   const pageName = school.replace(/-/g, ' ') + " " + section;
   const titleCase = pageName
