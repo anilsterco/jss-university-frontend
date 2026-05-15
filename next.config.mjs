@@ -15,18 +15,6 @@ const nextConfig = {
             value: "SAMEORIGIN",
           },
           {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com",
-              "frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps/",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: https: blob:",
-              "connect-src 'self' https://www.google.com https://backoffice.jssuninoida.edu.in",
-            ].join("; "),
-          },
-          {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },

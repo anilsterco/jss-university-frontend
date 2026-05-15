@@ -10,7 +10,6 @@ import "../../public/js/aos";
 import "../styles/custom.style.css";
 
 import Script from "next/script";
-
 import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
@@ -18,13 +17,16 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { BASE_URL } from "@/config/config";
 import getPageRedirect from "@/utils/getPageRedirect";
+import GoogleAnalytics from "@/component/GoogleAnalytics";
 
 export const metadata = {
-  title: "JSS University",
-  description: "A Next.js project with Zustand and SEO setup",
+  title: "JSS University Noida",
+  description: "JSS University Noida",
 };
 
 export default async function RootLayout({ children }) {
+  const headersList = await headers();
+  const nonce = headersList.get("x-nonce");
 
   return (
     <html lang="en">
@@ -43,6 +45,19 @@ export default async function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-M7QC44X3');
           `}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4F2ZKG2HVD"
+          strategy="afterInteractive"
+         
+        />
+        <Script id="google-analytics" strategy="afterInteractive" >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4F2ZKG2HVD');
+          `}
+        </Script>
       </head>
 
       <body>
@@ -57,6 +72,7 @@ export default async function RootLayout({ children }) {
         </noscript>
 
         <Providers>
+          <GoogleAnalytics />
           <Header />
           <HashScrollHandler />
           <MainWrapper>{children}</MainWrapper>

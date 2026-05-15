@@ -44,16 +44,17 @@ export async function middleware(request) {
   // react-google-recaptcha (gstatic/www.google.com) and Google Maps embeds.
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'unsafe-inline' https://www.google.com https://www.gstatic.com ${isDev ? "'unsafe-eval'" : ""};
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com ${isDev ? "'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
     img-src 'self' data: blob: https:;
     media-src 'self' https:;
     font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
-    connect-src 'self' https:;
+    connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https:;
     frame-src 'self'
       https://www.youtube.com https://youtube.com
       https://www.google.com https://www.gstatic.com
-      https://maps.google.com https://www.google.com/maps/;
+      https://maps.google.com https://www.google.com/maps/
+      https://www.googletagmanager.com;
     frame-ancestors 'none';
   `
     .replace(/\s{2,}/g, " ")

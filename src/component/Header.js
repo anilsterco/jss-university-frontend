@@ -1056,7 +1056,7 @@ export default function Header() {
                       >
                         <Link
                           href={
-                            item.url && item.url.includes('.pdf')
+                            item.url && (item.url.includes('.pdf') || item?.target_blank)
                               ? item.url
                               : WEB_URL + item.url
                           }
