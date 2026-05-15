@@ -3653,7 +3653,7 @@ ul.comon_list li:before {
 }
 
 .grand_proj_table thead th {
-  background: var(--color-29);
+  background-color: var(--color-9a);
   color: var(--color-white);
   font: var(--font-16);
   text-align: left;
@@ -6454,7 +6454,7 @@ ul.comon_list li:before {
 }
 
 .grand_proj_table thead th {
-  background: var(--color-29);
+  background-color: var(--color-9a);
   color: var(--color-white);
   font: var(--font-16);
   text-align: left;

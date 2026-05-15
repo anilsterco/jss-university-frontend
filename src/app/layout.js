@@ -80,7 +80,7 @@ export default async function RootLayout({ children }) {
           <Footer />
 
           <a
-            href="https://wa.me/919311830458?text=Hello%20JSS%20University"
+            href="https://wa.me/917599201722?text=Hello%20JSS%20University"
             target="_blank"
             className="whatsapp-btn"
           >
