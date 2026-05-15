@@ -193,7 +193,7 @@ export default function ProgramClient() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h2>PROGRAMS</h2>
+                <h1>PROGRAMS</h1>
                 <h3>
                   COMPREHENSIVE <span>ACADEMIC PROGRAMS</span> <br />
                   FOR <span>LIFELONG LEARNING</span>

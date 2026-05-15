@@ -54,6 +54,12 @@ export default async function DepartmentPage({ params }) {
   if (!departmentData) notFound();
   const seoData = await getPageSEO();
 
+  const pageName = department.replace(/-/g, ' ') + " " + section.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return (
     <>
       {seoData?.schema && (
@@ -65,6 +71,10 @@ export default async function DepartmentPage({ params }) {
           strategy="beforeInteractive"
         />
       )}
+
+      
+
+        <h1 className="d-none">{titleCase}</h1>
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader

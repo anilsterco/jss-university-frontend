@@ -52,6 +52,12 @@ export default async function SchoolPage({ params }) {
 
   const seoData = await getPageSEO();
 
+  const pageName = school.replace(/-/g, ' ') + " " + section;
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return (
     <>
       {seoData?.schema && (
@@ -62,6 +68,8 @@ export default async function SchoolPage({ params }) {
           }}
         />
       )}
+
+      <h1 className="d-none">{titleCase}</h1>
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />

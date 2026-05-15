@@ -122,7 +122,7 @@ export default function TestimonialClient() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h2>Testimonials</h2>
+                <h1>Testimonials</h1>
                 <h3>
                   Discover Student Journeys of <span>Success</span>
                 </h3>

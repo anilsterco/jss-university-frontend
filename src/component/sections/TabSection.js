@@ -17,10 +17,17 @@ export default function TabSection({ title, subtitle, tabs }) {
     return currentSlug === tabSlug || currentSlug === textSlug;
   };
 
+  const pageName = currentSlug.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return (
     <section className="inner-title">
       <div className="container">
         <div className="innnr_head text-center">
+          <h1 className="d-none">{titleCase}</h1>
           <h2>{subtitle}</h2>
 
           <h3 dangerouslySetInnerHTML={{ __html: title }} />

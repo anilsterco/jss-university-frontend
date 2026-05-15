@@ -200,7 +200,7 @@ export default function FacultyClient() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h2>FACULTY</h2>
+                <h1>FACULTY</h1>
 
                 <h3>
                   TEACHING <span>FACULTY</span>

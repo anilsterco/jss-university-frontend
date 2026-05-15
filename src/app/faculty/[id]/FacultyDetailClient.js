@@ -5,11 +5,15 @@ import Link from "next/link";
 import { WEB_URL } from "@/config/config";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { usePathname } from "next/navigation";
 
 export default function FacultyDetailClient({ faculty }) {
+  const pathname = usePathname();
   const [addSectiondata] = useState({
     sections: faculty.sections || [],
   });
+
+  const currentSlug = pathname.split("/").filter(Boolean).pop();
 
   const facultyName = faculty.name || "Unknown Faculty";
   const facultyDesignation = faculty.designation || faculty.type || "";
@@ -23,6 +27,12 @@ export default function FacultyDetailClient({ faculty }) {
   const facultyAwards = faculty.awards || [];
   const facultySocialEngagement = faculty.socialEngagement || [];
 
+  const pageName = currentSlug.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return (
     <main className="site_main">
       {/* Title Section */}
@@ -31,6 +41,7 @@ export default function FacultyDetailClient({ faculty }) {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head faculty-heading">
+                <h1 className="d-none">{titleCase}</h1>
                 <h2>FACULTY</h2>
                 <h3>
                   MEET OUR <span>FACULTY</span>

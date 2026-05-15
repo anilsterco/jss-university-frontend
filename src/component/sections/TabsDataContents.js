@@ -6,8 +6,6 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 
 export default function TabsDataContent({ data }) {
-  console.log("data", data);
-
   const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {

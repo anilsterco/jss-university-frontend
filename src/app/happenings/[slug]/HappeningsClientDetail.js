@@ -7,7 +7,7 @@ import { WEB_URL } from "@/config/config";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import styles from "./page.module.css";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
@@ -15,6 +15,9 @@ const icons = [
 ];
 
 export default function HappeningsClientDetail({ happeningsData }) {
+  const pathname = usePathname();
+  const currentSlug = pathname.split("/").filter(Boolean).pop();
+
   const contentRef = useRef(null);
   const router = useRouter();
 
@@ -28,6 +31,12 @@ export default function HappeningsClientDetail({ happeningsData }) {
     }
   };
 
+  const pageName = currentSlug.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return (
     <div ref={contentRef}>
       <section className={styles.innerTitle}>
@@ -35,6 +44,7 @@ export default function HappeningsClientDetail({ happeningsData }) {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
+                <h1 className="d-none">{titleCase}</h1>
                 <h2>{happeningsData.innerTitle?.date}</h2>
                 {happeningsData.innerTitle?.heading && (
                   <h3

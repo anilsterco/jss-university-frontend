@@ -82,7 +82,7 @@ export default function PacementTabSection({ data }) {
                             <figure key={i}>
                               <Image
                                 src={img.image || "/images/about-page/adobe_logo.png"}
-                                alt={item.tab_name}
+                                alt={img.title}
                                 width={180}
                                 height={100}
                                 className="img-fluid"

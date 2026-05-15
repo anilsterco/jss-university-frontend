@@ -13,8 +13,6 @@ const HODMessage = ({ data }) => {
 
   const pathParts = pathname.split("/").filter(Boolean);
 
-  console.log("innerpage pathParts", pathParts);
-
   useEffect(() => {
     const updateCharLimit = () => {
       const width = window.innerWidth;

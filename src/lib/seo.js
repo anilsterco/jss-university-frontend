@@ -35,7 +35,7 @@ export async function getPageSEO(slug) {
         },
       },
       alternates: {
-        canonical: data.data.alternates?.canonical || slug,
+        canonical: data.data.alternates?.canonical || `${SEO_URL}${slug}`,
       },
       openGraph: {
         title: data.data.openGraph?.title || data.data.title,

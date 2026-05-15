@@ -22,8 +22,6 @@ export default function FacilitiesComponent({ data,schoolName }) {
 
   const schoolword = schoolName?.split(" ") || [];
 
-  console.log(schoolName);
-  
   const last = schoolName === "College of Pharmacy" ? 'pharmacist' : schoolword.pop();
 
   const FacilitiesComponentData = {

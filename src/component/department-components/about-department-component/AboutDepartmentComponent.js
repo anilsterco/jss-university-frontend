@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ASSETS_URL } from "@/config/config";
+import { ASSETS_URL, WEB_URL } from "@/config/config";
 
 export default function AboutDepartmentComponent({ data, params }) {
   // 🔹 Dummy Data (Fallback)
@@ -79,7 +79,7 @@ export default function AboutDepartmentComponent({ data, params }) {
           ))}
           {departmentData?.about_url && (
             <Link
-            href={`/department/${params}/${departmentData.about_url}`}
+            href={`${WEB_URL}department/${params}/${departmentData.about_url}`}
             className={styles.arrowLink}
           >
             <Image

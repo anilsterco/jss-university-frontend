@@ -7840,7 +7840,8 @@ hr {
     padding-inline: 2rem;
   }
 
-  .inner-title .innnr_head h2 {
+  .inner-title .innnr_head h2,
+  .inner-title .innnr_head h1 {
     padding-bottom: 0;
   }
 

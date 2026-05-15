@@ -12,7 +12,6 @@ export default async function getPageRedirect(slug) {
 
     const fullUrl = `${protocol}://${host}/${slug}`;
     
-    console.log('fullUrl',fullUrl);
     const res = await fetch(`${BASE_URL}redirection/${fullUrl}`, {
       cache: "no-store",
     });

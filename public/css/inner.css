@@ -13,7 +13,8 @@
   text-align: center;
 }
 
-.inner-title .innnr_head h2 {
+.inner-title .innnr_head h2,
+.inner-title .innnr_head h1 {
   font: var(--font-18);
   padding-bottom: 2rem;
   letter-spacing: 0.72px;
@@ -10052,7 +10053,8 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     padding-top: 1.5rem;
   }
 
-  .inner-title .innnr_head h2 {
+  .inner-title .innnr_head h2,
+  .inner-title .innnr_head h1 {
     padding-bottom: 1rem;
   }
 
