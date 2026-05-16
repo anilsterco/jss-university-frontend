@@ -7,8 +7,10 @@ import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
 import { BASE_URL } from "@/config/config";
+import { useRouter } from "next/navigation";
 
 export default function ContactClient() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -113,23 +115,24 @@ export default function ContactClient() {
       }
 
       // Show success message in green
-      setSubmitStatus({
-        type: "success",
-        message:
-          "Form submitted successfully! Our counselor will get in touch with you soon.",
-      });
+      // setSubmitStatus({
+      //   type: "success",
+      //   message:
+      //     "Form submitted successfully! Our counselor will get in touch with you soon.",
+      // });
+      router.push("/thank-you");
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        state: "",
-        course: "",
-        agree: false,
-      });
-      if (recaptchaRef.current) recaptchaRef.current.reset();
-      setCaptchaToken(null);
-      setCaptchaError("");
+      // setFormData({
+      //   name: "",
+      //   email: "",
+      //   phone: "",
+      //   state: "",
+      //   course: "",
+      //   agree: false,
+      // });
+      // if (recaptchaRef.current) recaptchaRef.current.reset();
+      // setCaptchaToken(null);
+      // setCaptchaError("");
     } catch (err) {
       console.error("Error:", err);
       // Show error message in red
@@ -350,7 +353,7 @@ export default function ContactClient() {
                   <li>
                     <a
                       href={`mailto:${contactUsData.email}`}
-                      className={styles.ContactAdd}
+                      className={`${styles.ContactAdd} CTA_Email`}
                     >
                       <MdMailOutline
                         color="#018ce8"
@@ -362,7 +365,7 @@ export default function ContactClient() {
 
                     <a
                       href={`tel:+${contactUsData.phone}`}
-                      className={styles.ContactAdd}
+                      className={`${styles.ContactAdd} CTA_Number`}
                     >
                       <BiPhoneCall
                         color="#018ce8"

@@ -222,7 +222,7 @@ export default function DepartmentSection({
               </div>
               <Link
                 href={APPLY_NOW}
-                className=" btn btn-warning"
+                className=" btn btn-warning CTA_Applynow"
                 target="_blank"
                 aria-label="Apply Now"
               >

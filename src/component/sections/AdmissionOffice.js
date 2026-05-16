@@ -26,11 +26,11 @@ export default function AboutOne({ data }) {
     const cleaned = v.trim();
 
     const element = cleaned.match(/^\+?\d/) ? (
-      <a key={i} href={`tel:${cleaned.replace(/\s/g, "")}`}>
+      <a key={i} className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
         {cleaned}
       </a>
     ) : cleaned.includes("@") ? (
-      <a key={i} href={`mailto:${cleaned}`}>
+      <a className="CTA_Email" key={i} href={`mailto:${cleaned}`}>
         {cleaned}
       </a>
     ) : (
@@ -98,7 +98,7 @@ export default function AboutOne({ data }) {
                             // Phone clickable
                             if (/^\+?\d/.test(cleaned)) {
                               content = (
-                                <a href={`tel:${cleaned.replace(/\s/g, "")}`}>
+                                <a className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
                                   {cleaned}
                                 </a>
                               );
@@ -106,7 +106,7 @@ export default function AboutOne({ data }) {
                             // Email clickable
                             else if (cleaned.includes("@")) {
                               content = (
-                                <a href={`mailto:${cleaned}`}>{cleaned}</a>
+                                <a className="CTA_Email" href={`mailto:${cleaned}`}>{cleaned}</a>
                               );
                             }
                             // Normal text
@@ -128,7 +128,7 @@ export default function AboutOne({ data }) {
                   <div className="hostal_d_btns d-flex justify-content-left">
                     <a
                       target="_blank"
-                      className="btn btn-warning"
+                      className="btn btn-warning CTA_Applynow"
                       href={APPLY_NOW}
                     >
                       Apply Now

@@ -95,7 +95,7 @@ export default function Placements({ data }) {
                               {box.mail && (
                                 <Link
                                   href={`mailto:${box.mail}`}
-                                  className="mail"
+                                  className="mail CTA_Email"
                                   dangerouslySetInnerHTML={{
                                     __html: box.mail,
                                   }}

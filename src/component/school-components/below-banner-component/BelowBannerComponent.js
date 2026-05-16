@@ -57,11 +57,11 @@ export default function BelowBannerSection() {
             data-aos="fade-up"
             data-aos-delay="700"
           >
-            <button className={styles.button} aria-label="Download Brochure">
+            <button className={`${styles.button} CTA_Brochure`} aria-label="Download Brochure">
               DOWNLOAD BROCHURE
             </button>
             <button
-              className={`${styles.button} ${styles.buttonPrimary}`}
+              className={`${styles.button} ${styles.buttonPrimary} CTA_Applynow`}
               aria-label="Apply Now"
             >
               APPLY NOW

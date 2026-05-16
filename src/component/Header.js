@@ -11,6 +11,8 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
 import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import { useRouter } from "next/navigation";
+import { PiArrowCircleRightThin } from "react-icons/pi";
+import { Counter } from "./home-components/courses-offered-home/CourseOfferedComponent";
 
 const NAV_BASE_URL = `${BASE_URL}header`;
 const SCHOOL_HEADER_URL = `${BASE_URL}school-header`;
@@ -55,7 +57,7 @@ const mobilePanelsData = [
     title: "Admissions",
     name: "Admissions",
     heading:
-      "<span class='blue-text'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
+      "<span class='blue-text CTA_Applynow'>APPLY NOW </span> <span class='text-dark'>FOR 2025</span>",
     icon: "/images/header/admi-mob.svg",
     Menu: [
       { name: "Scholarship", url: "/admissions/calendar" },
@@ -89,7 +91,7 @@ const mobilePanelsData = [
         {
           label: "APPLY NOW",
           link: "/apply",
-          className: "apply",
+          className: "apply CTA_Applynow",
         },
         {
           label: "DOWNLOAD SYLLABUS",
@@ -140,6 +142,7 @@ export default function Header() {
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
   const [globleSearch, setglobleSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [programsCount, setProgramsCount] = useState(null);
   // Add this state near other states
   const [searchError, setSearchError] = useState("");
   const [scrollDirection, setScrollDirection] = useState("up");
@@ -439,6 +442,7 @@ export default function Header() {
     const res = await fetch(Program_Api);
     const json = await res.json();
     setMobProgramList(json.data || []);
+    setProgramsCount(json?.program_count?.department_programs_count);
   };
 
   const loadAdmissions = async () => {
@@ -720,7 +724,7 @@ export default function Header() {
                                           <div className="academic_apply_now">
                                             <Link
                                               onClick={handleDropdownMouseLeave}
-                                              href={APPLY_NOW} target="_blank" className="apply-btn1" rel="noopener noreferrer">Apply Now</Link>
+                                              href={APPLY_NOW} target="_blank" className="apply-btn1 CTA_Applynow" rel="noopener noreferrer">Apply Now</Link>
                                           </div>
                                         </div>
 
@@ -882,7 +886,7 @@ export default function Header() {
                         <div className="ad-contact">
                           <span> {admissionsData.left.querytext} </span>
                           <p>
-                            <a href={`mailto:${admissionsData.left.email}`}>
+                            <a className="CTA_Email" href={`mailto:${admissionsData.left.email}`}>
                               <img
                                 src="/images/header/mailicon.svg"
                                 className="img-fluid"
@@ -892,7 +896,7 @@ export default function Header() {
                             </a>
                           </p>
                           <p>
-                            <a href={`tel:${admissionsData.left.phone}`}>
+                            <a className="CTA_Number" href={`tel:${admissionsData.left.phone}`}>
                               <img
                                 src="/images/header/phoneicon.svg"
                                 className="img-fluid"
@@ -908,7 +912,7 @@ export default function Header() {
                               key={idx}
                               target="_blank"
                               href={`${cta.url || APPLY_NOW}`}
-                              className={`cta applynow ${cta.type}`}
+                              className={`cta applynow ${cta.type} ${cta.text == 'APPLY NOW' ? 'CTA_Applynow' : 'CTA_Brochure'}`}
                             >
                               {cta.text}
                             </a>
@@ -1368,6 +1372,33 @@ export default function Header() {
                             </Link>
                           </li>
                         ))}
+                        <li>
+                            <Link
+                              href={`${WEB_URL}programs`}
+                              className="explore_programs"
+                              onClick={() => {
+                                // setMenuOpen(false);
+                                setActivePanel(null);
+                              }}
+                            >
+                              <div>
+                                <p>Explore All</p>
+                                <h4
+                                  className="blue-text counter"
+                                >
+                                  <Counter start={1} end={programsCount} duration={2500} />+
+                                </h4>
+                                <h5 className="title">ACADEMIC PROGRAMS</h5>
+                              </div>
+                              <div className="arrow_btn">
+                                <img
+                                    src={"/images/header/courseIcon.svg"}
+                                    alt={`icon`}
+                                    className="course-icon"
+                                  />
+                              </div>
+                            </Link>
+                          </li>
                       </ul>
                     </div>
                   )}
@@ -1407,7 +1438,7 @@ export default function Header() {
                               src="/images/header/mail-icon.svg"
                               alt="email"
                             />
-                            <a className="liText" href={`mailto:${admissionData.left.email}`}>
+                            <a className="liText CTA_Email" href={`mailto:${admissionData.left.email}`}>
                               {admissionData.left.email}
                             </a>
                           </li>
@@ -1416,7 +1447,7 @@ export default function Header() {
                               src="/images/header/phone-icon.svg"
                               alt="phone"
                             />
-                            <a className="liText" href={`tel:${admissionData.left.phone}`}>
+                            <a className="liText CTA_Number" href={`tel:${admissionData.left.phone}`}>
                               {admissionData.left.phone}
                             </a>
                           </li>

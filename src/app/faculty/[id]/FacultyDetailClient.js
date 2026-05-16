@@ -106,7 +106,7 @@ export default function FacultyDetailClient({ faculty }) {
                         </div>
                         <div className="profile-email">
                           <p>Email Id</p>
-                          <a href={`mailto:${facultyEmail}`}>{facultyEmail}</a>
+                          <a className="CTA_Email" href={`mailto:${facultyEmail}`}>{facultyEmail}</a>
                         </div>
                       </div>
                       <hr />

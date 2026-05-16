@@ -65,7 +65,7 @@ export default async function HomePage() {
         <Link
           href={APPLY_NOW}
           target="_blank"
-          className="vertical-floating-btn"
+          className="vertical-floating-btn CTA_Applynow"
         >
           Apply Now
         </Link>

@@ -2741,11 +2741,11 @@ const Page = () => {
                   <h5>Admissions Office Contacts</h5>
                   <ul>
                     <li>
-                      Phone : <a href="tel:+91- 9311830458">+91- 9311830458</a>
+                      Phone : <a className="CTA_Number" href="tel:+91- 9311830458">+91- 9311830458</a>
                     </li>
                     <li>
                       Email :{" "}
-                      <a href="mailto:admissions@jssuninoida.edu.in">
+                      <a className="CTA_Email" href="mailto:admissions@jssuninoida.edu.in">
                         admissions@jssuninoida.edu.in
                       </a>
                     </li>

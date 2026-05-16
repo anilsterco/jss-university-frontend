@@ -128,7 +128,7 @@ export default function ApplyNowFormClient({ schools = [] }) {
           <div className="apply-header">
             <div className="header-content">
               <span className="header-eyebrow">Admissions 2025–26</span>
-              <h1 className="header-title">Apply Now</h1>
+              <h1 className="header-title ">Apply Now</h1>
               <p className="header-subtitle">
                 Begin your journey — fill out the form below to get started.
               </p>

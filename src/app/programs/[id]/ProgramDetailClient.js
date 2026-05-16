@@ -245,7 +245,7 @@ export default function ProgramDetailClient({ params }) {
       {/* {apply_now_link && ( */}
         <a
           href={APPLY_NOW}
-          className="apply-btn1"
+          className="apply-btn1 CTA_Applynow"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -308,7 +308,7 @@ export default function ProgramDetailClient({ params }) {
                         {admissionSection?.program_structure && (
                           <a
                             href={admissionSection.program_structure}
-                            className="structure-btn"
+                            className="structure-btn CTA_ProgrameStructure"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -317,7 +317,7 @@ export default function ProgramDetailClient({ params }) {
                               alt="PDF"
                               width={20}
                               height={20}
-                              className="img-fluid"
+                              className="img-fluid "
                             />
                             Programe Structure
                           </a>
@@ -351,7 +351,7 @@ export default function ProgramDetailClient({ params }) {
                               alt="PDF"
                               width={20}
                               height={20}
-                              className="img-fluid"
+                              className="img-fluid CTA_Brochure"
                             />
                             Brochure
                           </a>
@@ -360,7 +360,7 @@ export default function ProgramDetailClient({ params }) {
                           <a
                             href={APPLY_NOW}
                             target="_blank"
-                            className="apply-btn1"
+                            className="apply-btn1 CTA_Applynow"
                             rel="noopener noreferrer"
                           >
                             Apply Now
@@ -712,7 +712,7 @@ export default function ProgramDetailClient({ params }) {
                           href={
                             APPLY_NOW
                           }
-                          className="apply-btn1"
+                          className="apply-btn1 CTA_Applynow"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -790,7 +790,7 @@ export default function ProgramDetailClient({ params }) {
                           href={
                             APPLY_NOW
                           }
-                          className="apply-btn1"
+                          className="apply-btn1 CTA_Applynow"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

@@ -1,3 +1,48 @@
+.courses-menu .explore_programs{
+  background:#fff;
+  display:block;
+  height: 100%;
+  padding-block: 2rem;
+  padding-inline: 1.5rem;
+  position:relative;
+}
+
+.courses-menu .explore_programs p{
+  font: var(--font-20);
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  letter-spacing: -.24px;
+  color: #16344e;
+  margin-bottom: 3rem;
+}
+
+.courses-menu .explore_programs .counter{
+  font: var(--font-60);
+  letter-spacing: -2.4px;
+  color: #018ce8;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.courses-menu .explore_programs .title{
+  font: var(--font-20);
+  font-weight: 600;
+  color: #16344e;
+  letter-spacing: -.6px;
+  font-family: var(--font-Condensed);
+  margin-bottom: 1.8rem;
+}
+
+.courses-menu .explore_programs .arrow_btn{
+  position:absolute;
+  bottom:1.8rem;
+}
+
+.courses-menu .explore_programs .arrow_btn img{
+  filter:invert(1) brightness(0.7)
+}
+
 .program-search {
   position: relative;
 }
@@ -2576,6 +2621,27 @@
 }
 
 
+/* thank you page */
+
+.thank-you{
+  padding: 40rem 0 25rem 0;
+}
+
+.thank-you .thank_you_page{
+  text-align: center;
+}
+
+.thank_you_page .heading{
+  font:var(--font-42);
+  margin-bottom: 1rem;
+}
+
+.thank_you_page .btn{
+  font:var(--font-14);
+  margin-top:2rem;
+}
+
+
 @media (max-width: 991px) {
   .inner_page {
     padding: 3rem 0;
@@ -2629,6 +2695,27 @@
   .faculty_grids .singleCard .name{
     font:var(--font-16);
     font-weight: 500;
+  }
+
+  .thank-you{
+    padding: 10rem 0;
+  }
+
+  .thank_you_page .heading{
+    text-align: center;
+  }
+
+  .thank_you_page .heading{
+    font:var(--font-24)
+  }
+
+  .thank_you_page p{
+    font:var(--font-14)
+  }
+
+  .thank_you_page .btn{
+    font:var(--font-10);
+    width: auto;
   }
 }
 
@@ -4328,6 +4415,20 @@ hr {
 }
 
 @media (max-width: 480px) {
+
+  .courses-menu .explore_programs p{
+    font: var(--font-16);
+    font-family: var(--font-Roboto);
+    letter-spacing: -.24px;
+    margin-bottom: 0;
+  }
+
+  .courses-menu .explore_programs .counter{
+    font: var(--font-40);
+    letter-spacing: -2.4px;
+    margin-bottom: 0;
+    line-height: 5.8rem;
+  }
 
   .program-list-boxs,
   .faulty-box {

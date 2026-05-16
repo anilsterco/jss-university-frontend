@@ -208,7 +208,7 @@ const CoursesOffered = ({ data }) => {
               </div>
               <Link
                 href={APPLY_NOW}
-                className={`btn btn-warning ${styles.applyNow}`}
+                className={`btn btn-warning ${styles.applyNow} CTA_Applynow`}
                 target="_blank"
               >
                 Apply Now

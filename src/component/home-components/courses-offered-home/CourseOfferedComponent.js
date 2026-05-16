@@ -9,7 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { APPLY_NOW, WEB_URL } from "@/config/config";
 
-const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
+export const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
   const [count, setCount] = useState(start);
 
   useEffect(() => {
@@ -207,7 +207,7 @@ export default function CoursesOffered({ data }) {
                 <h1
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
-                  <Counter start={1} end={40} duration={2500} />
+                  <Counter start={1} end={coursesData.programs_count} duration={2500} />
                   <span className={styles.programsCountPlus}>+</span>
                 </h1>
               </div>
@@ -265,7 +265,11 @@ export default function CoursesOffered({ data }) {
               >
                 <div className={styles.lastCardContentSection}>
                   <p>Explore All</p>
-                  <h1 className="blue-text">26+</h1>
+                  <h1
+                     className="blue-text"
+                  >
+                    <Counter start={1} end={coursesData.programs_count} duration={2500} />+
+                  </h1>
                   <h5>ACADEMIC PROGRAMS</h5>
                 </div>
                 <div className={styles.lastCardArrow}>
@@ -319,7 +323,7 @@ export default function CoursesOffered({ data }) {
             <div className="add_btn">
               <Link
                 href={coursesData.buttons[0].url}
-                className="btn btn-warning"
+                className="btn btn-warning CTA_Applynow"
                 target="_blank"
               >
                 {coursesData.buttons[0].text}

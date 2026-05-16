@@ -97,7 +97,7 @@ export default function PopupModal() {
                   {/* <span>Visit Us</span> */}
                     <div className="visit_button">
                       <Link
-                        className="apply-btn1"
+                        className="apply-btn1 CTA_Applynow"
                         href={APPLY_NOW}
                         target="_blank"
                         rel="noopener noreferrer"

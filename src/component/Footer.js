@@ -121,16 +121,16 @@ export default function Footer() {
                 <div className="col-md-12">
                   <ul className="list-unstyled d-flex flex-column flex-md-row flex-wrap  mb-0">
                     <li>
-                      <a href={`tel:${data.phone}`}>{`+${data.phone}`}</a>
+                      <a className="CTA_Number" href={`tel:${data.phone}`}>{`+${data.phone}`}</a>
                     </li>
                     <li>
-                      <a href={`mailto:${data.email}`}>{data.email}</a>
+                      <a className="CTA_Email" href={`mailto:${data.email}`}>{data.email}</a>
                     </li>
                     {data.landlines.map((line, i) => {
                       const digits = line.replace(/[^\d+]/g, "");
                       return (
                         <li key={i}>
-                          <a href={`tel:${digits}`}>{line}</a>
+                          <a className="CTA_Number" href={`tel:${digits}`}>{line}</a>
                         </li>
                       );
                     })}
@@ -230,7 +230,7 @@ export default function Footer() {
               <ul className="list-unstyled d-block text-center">
                 {data.phone && (
                   <li>
-                    <a href={`tel:+${data.phone}`}>{`+${data.phone}`}</a>
+                    <a className="CTA_Number" href={`tel:+${data.phone}`}>{`+${data.phone}`}</a>
                   </li>
                 )}
               </ul>
