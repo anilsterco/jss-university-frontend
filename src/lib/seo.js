@@ -45,7 +45,7 @@ export async function getPageSEO(slug) {
       pathname = await detectPathname();
     }
 
-    const apiSlug = pathname === "/" ? "" : pathname.replace(/^\//, "");
+    const apiSlug = pathname === "/" ? "home" : pathname.replace(/^\//, "");
 
     const res = await fetch(`${BASE_URL}seo/${apiSlug}`, {
       cache: "no-store",
