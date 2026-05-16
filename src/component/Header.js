@@ -2372,7 +2372,7 @@ export default function Header() {
             bottom: 0;
             width: 100%;
             height: 100%;
-            background-image: url(images/header/ham-overlay.png);
+            background-image: url(images/header/ham-overlay.webp);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
             background-size: cover;
