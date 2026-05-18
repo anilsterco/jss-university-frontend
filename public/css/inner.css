@@ -9810,6 +9810,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .image-repeat-test .rep_border .research_swiper_wrapper .swiper-wrapper .swiper-slide video {
   height: 100%;
 }
+.academic-facilities .about_one .about_top {
+    padding-bottom: 0;
+}
 @media(max-width:1366px) {
   .admission .admins_of_con .ad_offc_contact {
     height: 100%;
@@ -9839,10 +9842,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   .cus-profile-text {
     height: auto;
   }
-
   .academic-facilities .academic_labmain .ab_jss_coutsec .ab_jss_c_col {
     max-width: 100%;
     padding: 3rem 2rem;
+  }
+  .academic-facilities .about_one{
+    padding-bottom: 0;
   }
 }
 
@@ -10078,6 +10083,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 .campus-facilities .about_two.labs_group_section {
     padding-bottom: 6rem;
+}
+.academic-facilities .about_one .estblish {
+    padding-bottom: 4rem;
 }
 }
 
@@ -10411,6 +10419,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
   .research_labmain .research_grid_one {
       margin-bottom: 4rem;
+  }
+  .academic-facilities .about_one .estblish {
+      padding-block: 3rem 3rem;
   }
 }
 
