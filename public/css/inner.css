@@ -9776,7 +9776,15 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     padding-top: 0;
 }
 /* acadmic facilities css ends here */
-
+.campus-facilities .about_two.labs_group_section {
+    padding-bottom: 10rem;
+}
+@media(min-width:1921px){
+  .academic-facilities .research_labmain .research_grid_one .research_cont {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+}
 
 @media(max-width:1366px) {
   .admission .admins_of_con .ad_offc_contact {
@@ -10334,6 +10342,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 .internation-conference .gridCardDesign3_section {
     padding: 4rem 0;
+}
+.campus-facilities .about_two.labs_group_section {
+    padding-bottom: 6rem;
 }
 }
 
