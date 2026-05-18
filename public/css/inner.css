@@ -9727,9 +9727,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 
 /* acadmic facilities css starts here */
 
-.academic-facilities .about_one .estblish {
+/* .academic-facilities .about_one .estblish {
     padding-bottom: 4rem;
-}
+} */
 .academic-facilities .research_labmain {
     padding: 10rem 0;
 }
@@ -9812,6 +9812,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 .academic-facilities .about_one .about_top {
     padding-bottom: 0;
+}
+.academic-facilities .about_one .estblish {
+    padding-bottom: 10rem;
 }
 @media(max-width:1366px) {
   .admission .admins_of_con .ad_offc_contact {
@@ -10085,7 +10088,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     padding-bottom: 6rem;
 }
 .academic-facilities .about_one .estblish {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
 }
 }
 
@@ -10421,7 +10424,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
       margin-bottom: 4rem;
   }
   .academic-facilities .about_one .estblish {
-      padding-block: 3rem 3rem;
+      padding-block: 3rem 4rem;
   }
 }
 
