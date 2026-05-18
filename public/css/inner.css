@@ -10409,6 +10409,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .campus-facilities .atm_mainsec.consultancy_main .atm_g_imgsec {
     padding-top: 0;
 }
+  .research_labmain .research_grid_one {
+      margin-bottom: 4rem;
+  }
 }
 
 @media(max-width:575px) {
