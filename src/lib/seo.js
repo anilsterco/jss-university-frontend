@@ -102,8 +102,8 @@ export async function getPageSEO(slug) {
         canonical: normalizeCanonical(null, pathname),
       },
       robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
       },
     };
   }
