@@ -29,7 +29,7 @@ export default function FacilityThree({ data }) {
           <section
             className="sport_fac_swiper"
             key={`sports-${sectionIndex}`}
-            id={item?.sectionId}
+           id={`${item?.sectionId || "library"}`}
           >
             <Swiper
               modules={[Navigation, EffectFade, Autoplay, Pagination]}
