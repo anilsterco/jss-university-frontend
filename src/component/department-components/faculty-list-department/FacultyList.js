@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "./faculty-list.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -7,12 +8,23 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import AOS from "aos";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "aos/dist/aos.css";
+
 export default function FacultyList({ data }) {
   useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
   }, []);
+
   const facultyData = data || {};
+
   return (
     <div
       className={`${styles.dep_faculty} faculty_section`}
@@ -21,16 +33,24 @@ export default function FacultyList({ data }) {
       data-aos-delay="100"
     >
       <div className="container">
+        {/* Header */}
         <div className={styles.headerSection}>
-          <p className={styles.subtitle}>{facultyData.subtitle}</p>
+          <p className={styles.subtitle}>
+            {facultyData.subtitle}
+          </p>
+
           <h2
-            className={`${styles.title}`}
-            dangerouslySetInnerHTML={{ __html: facultyData.title }}
+            className={styles.title}
+            dangerouslySetInnerHTML={{
+              __html: facultyData.title,
+            }}
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"
-          ></h2>
+          />
         </div>
+
+        {/* Slider */}
         <div
           className={`${styles.sliderContainer} d-flex align-items-center gap-5`}
         >
@@ -40,8 +60,14 @@ export default function FacultyList({ data }) {
               nextEl: ".faculty-next",
               prevEl: ".faculty-prev",
             }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             pagination={false}
-            loop={true}
+            loop={false}
+            speed={1000}
             spaceBetween={45}
             slidesPerView={4}
             className={styles.slider}
@@ -60,47 +86,72 @@ export default function FacultyList({ data }) {
               },
             }}
           >
-            {Object.values(facultyData?.members).map((slide) => (
-              <SwiperSlide key={slide.id} className={styles.facultyCard}>
-                <Link href={`/faculty/${slide.url}`} key={slide.id}>
-                  <Image
-                    src={slide.img}
-                    alt="slide image"
-                    width={500}
-                    height={500}
-                    style={{ width: "100%", height: "100%" }}
-                    priority
-                    className={styles.slideImage}
-                  />
+            {Object.values(facultyData?.members || {}).map(
+              (slide) => (
+                <SwiperSlide
+                  key={slide.id}
+                  className={styles.facultyCard}
+                >
+                  <Link href={`/faculty/${slide.url}`}>
+                    <Image
+                      src={slide.img}
+                      alt={slide.name || "Faculty Image"}
+                      width={500}
+                      height={500}
+                      priority
+                      className={styles.slideImage}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
 
-                  <div className={styles.facultyInfo}>
-                    <h3 className={styles.facultyName}>{slide.name}</h3>
-                    <p className={styles.facultyDesignation}>
-                      {slide.designation}
-                    </p>
-                    <div className={styles.underline}></div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
+                    <div className={styles.facultyInfo}>
+                      <h3 className={styles.facultyName}>
+                        {slide.name}
+                      </h3>
+
+                      <p
+                        className={
+                          styles.facultyDesignation
+                        }
+                      >
+                        {slide.designation}
+                      </p>
+
+                      <div
+                        className={styles.underline}
+                      ></div>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
         </div>
-        <CiCircleChevLeft
-          className="faculty-prev"
-          fontSize={24}
-          color="#002238b5"
-          style={{
-            cursor: "pointer",
-            marginRight: "0.4rem",
-            marginTop: "2.5rem",
-          }}
-        />
-        <CiCircleChevRight
-          className="faculty-next"
-          fontSize={24}
-          color="#002238b5"
-          style={{ cursor: "pointer", marginTop: "2.5rem" }}
-        />
+
+        {/* Navigation */}
+        <div >
+          <CiCircleChevLeft
+            className="faculty-prev"
+            fontSize={24}
+            color="#002238b5"
+            style={{
+              cursor: "pointer",
+              marginRight: "0.4rem",
+            }}
+          />
+
+          <CiCircleChevRight
+            className="faculty-next"
+            fontSize={24}
+            color="#002238b5"
+            style={{
+              cursor: "pointer",
+            }}
+          />
+        </div>
       </div>
     </div>
   );
