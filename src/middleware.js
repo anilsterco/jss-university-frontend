@@ -8,7 +8,7 @@ export async function middleware(request) {
   
   const redirectUrl = await getPageRedirect(pathname.replace(/^\//, "")); 
   if (redirectUrl) {
-    return NextResponse.redirect(redirectUrl);
+    return NextResponse.redirect(redirectUrl, { status: 301 });
   }
 
 
