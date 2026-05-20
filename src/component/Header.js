@@ -2815,6 +2815,16 @@ export default function Header() {
               padding: 1.3rem;
             }
           }
+
+          @media (min-width: 1200px) and (max-width: 1749px){
+            .mega-left ul {
+                    padding-top: 24rem;
+                  }
+             .mega-right {
+                    padding-top: 24rem;
+                  }
+          }
+        
            @media (max-width: 1200px){
            .hamburger {
               padding: 1.2rem;
