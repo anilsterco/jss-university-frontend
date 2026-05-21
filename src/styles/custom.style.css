@@ -2717,13 +2717,15 @@
     font:var(--font-10);
     width: auto;
   }
+  .placement .tabs_group_section:nth-child(6) .early-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+.placement .about_two.tabs_group_section:nth-child(6) {
+    padding-top: 4rem;
+}
 }
 
 @media (max-width: 600px) {
-  
-
-  
-
   .testimonial-modal-overlay .modal-right {
     padding: 2.5rem 2rem;
   }
@@ -2772,14 +2774,10 @@
     font-size: 12px;
     margin-top: 0.5rem;
   }
-
-
-
   .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content,
   .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content .peo-list {
     padding: 0;
   }
-
   .programs-btech-in-computer-science-and-engineering-data-science .educational-box .item-content .peo-box {
     padding: 0;
     margin-bottom: 2.5rem;
@@ -4423,13 +4421,21 @@ hr {
     margin-bottom: 0;
   }
 
+   .tabs_group_section .early-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .place_logos .early-grid figure img {
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+  }
   .courses-menu .explore_programs .counter{
     font: var(--font-40);
     letter-spacing: -2.4px;
     margin-bottom: 0;
     line-height: 5.8rem;
   }
-
   .program-list-boxs,
   .faulty-box {
     grid-template-columns: repeat(1, 1fr);
@@ -6034,6 +6040,31 @@ hr {
     height: 39rem;
     right: -7rem;
   }
+  .jss-step-incubation .amenities_section {
+    padding: 6rem 0;
+}
+.jss-step-incubation .exte_mainsec {
+    padding-bottom: 0;
+}
+.jss-step-incubation .about_top {
+    padding-top: 0;
+}
+.jss-step-incubation .consultancy_main .atm_fac_grid {
+    padding-block: 4rem;
+}
+.jss-step-incubation .content_col {
+    padding-right: 0;
+    padding-top: 0;
+}
+.jss-step-incubation .exten_listyle {
+    padding-inline: 1rem 0rem;
+}
+.jss-step-incubation .resea_facili_main {
+    padding-block: 2rem 0;
+}
+.jss-step-incubation .exten_listyle {
+        padding-top: 0;
+    }
 }
 
 @media screen and (max-width: 1449px) {
@@ -6703,6 +6734,8 @@ hr {
   .core-pdf:after {
     content: none;
   }
+  
+
 }
 
 @media (max-width: 799px) {

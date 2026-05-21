@@ -1851,6 +1851,7 @@ a:active {
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }
+ 
 }
 
 .coming-container {
@@ -2365,6 +2366,9 @@ a:active {
 
 .placement_proSec {
   padding-block: 7.4rem 15rem;
+}
+.jss-step-incubation .placement_proSec {
+    padding-block: 7.4rem 4rem;
 }
 
 .procedure_heading {
@@ -2923,7 +2927,14 @@ a:active {
 .tabs_accordion[open] .faqAnswer{
   max-height:unset;
 }
-
+@media (max-width: 575px) {
+ .placement .high_box {
+    padding: 2.5rem 2rem 1.8rem;
+}
+  .placement .placeBottom p {
+     text-align: left;
+    }
+}
 @media (max-width: 420px) {
   .logo-content img {
     width: 8rem;
@@ -3007,8 +3018,13 @@ a:active {
   .humb_icon {
     max-width: 1.6rem;
   }
+  
 }
-
+@media (max-width: 1366px) {
+.logo-content img {
+    max-width: 13rem;
+}
+}
 
 .placement_col .position-relative a img:hover,
 .facilities-module__UE4CmG__bannerContent h2 a img:hover,
