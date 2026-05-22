@@ -1405,7 +1405,17 @@
 .amenities_section {
   padding: 10rem 0;
 }
-
+.research-and-development-cell .amenities_section {
+    padding-block: 0rem 2rem;
+    background: #fff;
+}
+.research-and-development-cell .table_section {padding-block: 8rem;}
+.research-and-development-cell .table_section:last-of-type {
+    padding-block: 0 10rem;
+}
+.research-and-development-cell .rea_main .comon_list {
+    margin-bottom: 0;
+}
 .amenities_section .grid_group {
   display: grid;
   grid-template-columns: 1fr 1fr;

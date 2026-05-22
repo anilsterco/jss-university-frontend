@@ -312,8 +312,8 @@ export default function AboutOne({ data, extraClass }) {
                                       <Image
                                         src={item.file}
                                         alt={item.description || "logo"}
-                                        width={72}
-                                        height={72}
+                                        width={100}
+                                        height={100}
                                       />
                                     )}
                                     {item.description && (
@@ -389,8 +389,8 @@ export default function AboutOne({ data, extraClass }) {
                                 <Image
                                   src={item.file}
                                   alt={item.description || "logo"}
-                                  width={72}
-                                  height={72}
+                                  width={100}
+                                  height={100}
                                 />
                               )}
                               {item?.title && (
