@@ -63,6 +63,12 @@ export default async function HomePage() {
 
       <div className="fixButtons">
         <Link
+          href={WEB_URL + 'upcoming-events'}
+          className="vertical-floating-btn"
+        >
+          Upcoming Events
+        </Link>
+        <Link
           href={APPLY_NOW}
           target="_blank"
           className="vertical-floating-btn CTA_Applynow"
