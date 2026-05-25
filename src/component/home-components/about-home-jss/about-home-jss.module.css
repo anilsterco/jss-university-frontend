@@ -139,7 +139,10 @@
   margin-bottom: 1rem;
   font-weight: 700;
 }
-
+.sourceText {
+   height: auto;
+   width: auto;
+  }
 .topSection p {
   color: var(--color-4e);
   font: var(--font-18);
