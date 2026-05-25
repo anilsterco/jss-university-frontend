@@ -416,8 +416,7 @@ p {
 
 .mobile_menus .menu-children {
   padding: 0 !important;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
+  padding-inline: 0.5rem !important;
 }
 
 .mobile_menus .menu-top .menu-children {
