@@ -8748,3 +8748,9 @@ hr {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+.schools-humanities-facilities .early_rgt p:first-of-type{
+    font: var(--font-24);
+    font-weight: 300;
+    line-height: 1.4;
+}
+.about-jss-university .grid_card_design1_section {padding-bottom: 0;}

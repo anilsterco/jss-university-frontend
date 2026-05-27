@@ -344,14 +344,22 @@
   .contactSecond {padding-block: 0 2rem;}
   .mapSection {padding-block: 4rem 8rem;}
   .ContactMap {margin-top: 3rem;}
+  .Form_fild {width: 100%;}
+  .Form_fild input{width: 100%;}
 }
 @media (max-width:480px){
 .formBox {padding: 2rem;}
 .CheckCol {margin-bottom: 2rem;}
 .ContactInfo ul li p {font: var(--font-18);letter-spacing: -.7px;font-weight: 700;font-family: var(--font-Condensed);}
 .mapSection {padding-block: 2rem 6rem;}
-.infoRow {padding-left: 4rem;}
+.infoRow {padding-left: 2rem;}
 .contactSection h3 {font: var(--font-26)}
 .formBox .formSubText {padding-right: 2rem;}
 .ContactMap {margin-top: 2rem;}
+  .ContactAdd {font: var(--font-18);font-weight: 300;}
+  .ContactInfo ul li p {font: var(--font-18); font-weight: 700;letter-spacing: -0.70px;font-family: var(--font-Condensed);padding-inline: 0rem 0;}
+.ContactAdd {gap: 1rem;}
+  .ContactAdd{padding-inline: 0rem 0;}
+  .contactDetails {display: block;}
+
 }
