@@ -42,8 +42,8 @@ const CoursesOffered = ({ data }) => {
     return () => clearTimeout(delay);
   }, [query, departmentSlug]);
 
-return (
-  <>
+  return (
+    <>
     
     {data?.programs &&
       data.programs.length > 0 && (
@@ -244,7 +244,7 @@ return (
         </section>
       )}
   </>
-);
+  );
 };
 
 export default CoursesOffered;
