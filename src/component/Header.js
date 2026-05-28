@@ -1361,7 +1361,6 @@ export default function Header() {
                                 </div>
                                 <figcaption>
                                   <h4>{sub.name}</h4>
-
                                   <img
                                     src={"/images/header/courseIcon.svg"}
                                     alt={`${sub.name} icon`}
@@ -2609,7 +2608,7 @@ export default function Header() {
           .banner-label {
             background: transparent;
             width: 100%;
-            padding-inline: 2.2rem;
+            padding:1.6rem 9.2rem 1.6rem 2.2rem;
             padding-block: 1.6rem;
             font-weight: 700;
             position: absolute;
@@ -2910,7 +2909,7 @@ export default function Header() {
             color: var(--color-white);
             font-family: var(--font-Condensed);
             font-weight: 600;
-           padding: 1.2rem 1rem;
+           padding:1.6rem 9.2rem 1.6rem 2.2rem;
           }
           .courses_img {
             border-radius: 2rem;

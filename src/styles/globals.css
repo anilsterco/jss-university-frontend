@@ -3050,3 +3050,23 @@ a:active {
 }
 
 .student-life .faqItem {background: #f7f7f7;}
+.committees .grand_tabs_main {padding-bottom: 6rem;}
+.back_btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius:0;
+  background: #16344e;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 500;
+  font: var(--font-24);
+  padding: .2rem 1rem;
+  font-family: Noto Sans, sans-serif;line-height: 1.5;
+  margin-block: 0 6rem;
+}
+
+.back_btn:hover {
+  background:#e6b000;
+  color: #fff;
+}
