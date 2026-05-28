@@ -52,7 +52,7 @@ export default function AboutOne({ data, extraClass }) {
                         className="abt_cntnt"
                         data-aos="fade-up"
                         data-aos-delay="100"
-                        // id={item?.sectionId}
+                      // id={item?.sectionId}
                       >
                         <h5 className="about_subtitle">{item.title}</h5>
                         {item.subtitle && <p>{item.subtitle}</p>}
@@ -89,7 +89,6 @@ export default function AboutOne({ data, extraClass }) {
                                   />
                                 )}
 
-                                {/* ✅ KEEP OVERLAY */}
                                 <div className="overlap_contents">
                                   {item?.countGroup?.map((singleItem, idx) => (
                                     <figcaption key={idx} className="image-overlay-caption">
@@ -100,7 +99,7 @@ export default function AboutOne({ data, extraClass }) {
                                 </div>
                               </figure>
                             ) : (
-                              // ✅ Multiple media (Swiper)
+
                               <div className="research_swiper_wrapper" style={{ position: "relative" }}>
                                 <Swiper
                                   modules={[Autoplay, Navigation]}
@@ -127,7 +126,7 @@ export default function AboutOne({ data, extraClass }) {
                                             muted
                                             loop
                                             playsInline
-                                    className="img-fluid"
+                                            className="img-fluid"
                                             style={{
                                               width: "100%",
                                               height: "auto",
@@ -182,7 +181,6 @@ export default function AboutOne({ data, extraClass }) {
                               </div>
                             )
                           ) : (item.file || item.video) ? (
-                            // ✅ ORIGINAL FALLBACK (UNCHANGED + OVERLAY KEPT)
                             <figure
                               className="shine-effect image-overlay-figure"
                               data-aos="zoom-in"
@@ -196,7 +194,7 @@ export default function AboutOne({ data, extraClass }) {
                                   autoPlay
                                   muted
                                   loop
-                                    className="img-fluid"
+                                  className="img-fluid"
                                   playsInline
                                   style={{ objectFit: "cover" }}
                                 />
@@ -210,7 +208,6 @@ export default function AboutOne({ data, extraClass }) {
                                 />
                               )}
 
-                              {/* ✅ IMPORTANT: PRESERVED */}
                               <div className="overlap_contents">
                                 {item?.countGroup?.map((singleItem, itemIdx) => (
                                   <figcaption key={itemIdx} className="image-overlay-caption">
@@ -241,45 +238,179 @@ export default function AboutOne({ data, extraClass }) {
           </section>
         );
 
+      // case "logoDesc":
+      //   return (
+      //     <div className="container" key={`logo-section-${sectionIndex}`}>
+      //       <div className="row justify-content-center">
+      //         <div className="col-lg-12">
+      //           <div className="ab_estab_slider">
+      //             <Swiper
+      //               modules={[Navigation, Autoplay, Pagination]}
+      //               spaceBetween={30}
+      //               slidesPerView={4}
+      //               loop={true}
+      //               pagination={{ clickable: true }}
+      //               autoplay={{
+      //                 delay: 2500,
+      //                 disableOnInteraction: false,
+      //                 pauseOnMouseEnter: true,
+      //               }}
+      //               breakpoints={{
+      //                 1: { slidesPerView: 1 },
+      //                 576: { slidesPerView: 2 },
+      //                 768: { slidesPerView: 3 },
+      //                 999: { slidesPerView: 3 },
+      //                 1080: { slidesPerView: 4 },
+      //               }}
+      //             >
+      //               {section.items
+      //                 ?.sort(
+      //                   (a, b) =>
+      //                     Number(a.position || 0) - Number(b.position || 0),
+      //                 )
+      //                 .map((item, i) => {
+      //                   const hasFigure =
+      //                     item.figure !== null &&
+      //                     item.figure !== undefined &&
+      //                     item.figure !== "";
+
+      //                   return (
+      //                     <SwiperSlide key={item.id || item.item_uuid || i}>
+      //                       <div className="estab_slide_item">
+      //                         <figure
+      //                           data-aos="fade-up"
+      //                           data-aos-delay={i * 150}
+      //                           data-aos-duration="800"
+      //                         >
+      //                           {hasFigure ? (
+      //                             <>
+      //                               <figcaption>
+      //                                 <h4 className="estab_figure">
+      //                                   <span> #</span>
+      //                                   {String(item.figure)}
+      //                                 </h4>
+      //                                 {item.description && (
+      //                                   <p>{item.description}</p>
+      //                                 )}
+      //                               </figcaption>
+      //                               {item.file && (
+      //                                 <Image
+      //                                   src={item.file}
+      //                                   alt={item.description || "figure"}
+      //                                   width={120}
+      //                                   height={30}
+      //                                   style={{ objectFit: "contain" }}
+      //                                 />
+      //                               )}
+      //                             </>
+      //                           ) : (
+      //                             <>
+      //                               {item.file && (
+      //                                 <Image
+      //                                   src={item.file}
+      //                                   alt={item.description || "logo"}
+      //                                   width={100}
+      //                                   height={100}
+      //                                 />
+      //                               )}
+      //                               {item.description && (
+      //                                 <figcaption>
+      //                                   <p>{item.description}</p>
+      //                                 </figcaption>
+      //                               )}
+      //                             </>
+      //                           )}
+      //                         </figure>
+      //                         {item?.url && (
+      //                           <Link href={item.url} target="_blank" />
+      //                         )}
+      //                       </div>
+      //                     </SwiperSlide>
+      //                   );
+      //                 })}
+      //             </Swiper>
+      //           </div>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   );
+
+
+
       case "logoDesc":
         return (
           <div className="container" key={`logo-section-${sectionIndex}`}>
             <div className="row justify-content-center">
               <div className="col-lg-12">
-                <div className="ab_estab_slider">
-                  <Swiper
-                    modules={[Navigation, Autoplay, Pagination]}
-                    spaceBetween={30}
-                    slidesPerView={4}
-                    loop={true}
-                    pagination={{ clickable: true }}
-                    autoplay={{
-                      delay: 2500,
-                      disableOnInteraction: false,
-                      pauseOnMouseEnter: true,
-                    }}
-                    breakpoints={{
-                      1: { slidesPerView: 1 },
-                      576: { slidesPerView: 2 },
-                      768: { slidesPerView: 3 },
-                      999: { slidesPerView: 3 },
-                      1080: { slidesPerView: 4 },
-                    }}
-                  >
-                    {section.items
-                      ?.sort(
-                        (a, b) =>
-                          Number(a.position || 0) - Number(b.position || 0),
-                      )
-                      .map((item, i) => {
-                        const hasFigure =
-                          item.figure !== null &&
-                          item.figure !== undefined &&
-                          item.figure !== "";
+                <div className="row g-4">
+                  {section.items
+                    ?.sort(
+                      (a, b) =>
+                        Number(a.position || 0) - Number(b.position || 0),
+                    )
+                    .map((item, i) => {
+                      const hasFigure =
+                        item.figure !== null &&
+                        item.figure !== undefined &&
+                        item.figure !== "";
 
-                        return (
-                          <SwiperSlide key={item.id || item.item_uuid || i}>
-                            <div className="estab_slide_item">
+                      return (
+                        <div
+                          className="col-12 col-sm-6 col-md-4 col-lg-3"
+                          key={item.id || item.item_uuid || i}
+                        >
+                          <div className="estab_slide_item h-100">
+                            {item?.url ? (
+                              <Link href={item.url} target="_blank">
+                                <figure
+                                  data-aos="fade-up"
+                                  data-aos-delay={i * 150}
+                                  data-aos-duration="800"
+                                >
+                                  {hasFigure ? (
+                                    <>
+                                      <figcaption>
+                                        <h4 className="estab_figure">
+                                          <span>#</span>
+                                          {String(item.figure)}
+                                        </h4>
+
+                                        {item.description && (
+                                          <p>{item.description}</p>
+                                        )}
+                                      </figcaption>
+
+                                      {item.file && (
+                                        <Image
+                                          src={item.file}
+                                          alt={item.description || "figure"}
+                                          width={120}
+                                          height={30}
+                                          style={{ objectFit: "contain" }}
+                                        />
+                                      )}
+                                    </>
+                                  ) : (
+                                    <>
+                                      {item.file && (
+                                        <Image
+                                          src={item.file}
+                                          alt={item.description || "logo"}
+                                          width={100}
+                                          height={100}
+                                        />
+                                      )}
+
+                                      {item.description && (
+                                        <figcaption>
+                                          <p>{item.description}</p>
+                                        </figcaption>
+                                      )}
+                                    </>
+                                  )}
+                                </figure>
+                              </Link>
+                            ) : (
                               <figure
                                 data-aos="fade-up"
                                 data-aos-delay={i * 150}
@@ -289,13 +420,15 @@ export default function AboutOne({ data, extraClass }) {
                                   <>
                                     <figcaption>
                                       <h4 className="estab_figure">
-                                        <span> #</span>
+                                        <span>#</span>
                                         {String(item.figure)}
                                       </h4>
+
                                       {item.description && (
                                         <p>{item.description}</p>
                                       )}
                                     </figcaption>
+
                                     {item.file && (
                                       <Image
                                         src={item.file}
@@ -316,6 +449,7 @@ export default function AboutOne({ data, extraClass }) {
                                         height={100}
                                       />
                                     )}
+
                                     {item.description && (
                                       <figcaption>
                                         <p>{item.description}</p>
@@ -324,14 +458,11 @@ export default function AboutOne({ data, extraClass }) {
                                   </>
                                 )}
                               </figure>
-                              {item?.url && (
-                                <Link href={item.url} target="_blank" />
-                              )}
-                            </div>
-                          </SwiperSlide>
-                        );
-                      })}
-                  </Swiper>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
             </div>
