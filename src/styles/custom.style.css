@@ -4430,7 +4430,10 @@ hr {
     letter-spacing: -.24px;
     margin-bottom: 0;
   }
-
+.vertical-floating-btn {
+    font: var(--font-10);
+    padding: 1.5rem 0.2rem;
+  }
    .tabs_group_section .early-grid {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -8745,3 +8748,9 @@ hr {
   background-color: var(--color-4e);
   color: var(--color-white);
 }
+.schools-humanities-facilities .early_rgt p:first-of-type{
+    font: var(--font-24);
+    font-weight: 300;
+    line-height: 1.4;
+}
+.about-jss-university .grid_card_design1_section {padding-bottom: 0;}
