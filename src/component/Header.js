@@ -2295,7 +2295,7 @@ export default function Header() {
             position: absolute;
             top: 0;
             right: 0;
-            height: 75.6rem;
+            height: 80rem;
             width: 0;
             display: flex;
             overflow: hidden;
@@ -2326,7 +2326,7 @@ export default function Header() {
             }
               .menu-left-item .hambur_links {
                       display:inline-block;
-                        padding: 1rem 7rem 1rem 14rem;
+                        padding: 1rem 6rem 1rem 14rem;
             }
             .menu-left-item.active .hambur_links {
               color: var(--color-4e);
@@ -2410,7 +2410,7 @@ export default function Header() {
             font-weight: normal;
             padding-bottom: 0;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 1.4rem;
             transition: color 0.3s ease;
             color: var(--color-black);
           }
@@ -2837,7 +2837,9 @@ export default function Header() {
            .hamburger {
               padding: 1.2rem;
              }
-          
+           .menu-left-item {
+              padding: 1rem 5rem 1rem 6rem;
+            }
            }
    
           @media (max-width: 1149px) {
