@@ -2295,7 +2295,7 @@ export default function Header() {
             position: absolute;
             top: 0;
             right: 0;
-            height: 75.6rem;
+            height: 80rem;
             width: 0;
             display: flex;
             overflow: hidden;
@@ -2837,7 +2837,9 @@ export default function Header() {
            .hamburger {
               padding: 1.2rem;
              }
-          
+           .menu-left-item {
+              padding: 1rem 5rem 1rem 6rem;
+            }
            }
    
           @media (max-width: 1149px) {
