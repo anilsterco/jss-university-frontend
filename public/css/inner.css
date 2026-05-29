@@ -7455,7 +7455,7 @@ ul.comon_list li:before {
 }
 
 .message_section {
-  padding-block: 5rem 12rem;
+  padding-block: 5rem 6rem;
 }
 
 /* .message_section .message_text p:first-of-type {
@@ -10304,3 +10304,5 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 
 /* css ends here */
+
+  

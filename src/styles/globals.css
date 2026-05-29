@@ -3055,4 +3055,16 @@ a:active {
 .back_btn:hover {background:#e6b000;color: #fff;}
 .green-initiative .about_f_value {padding-top: 4rem;}
 .green-initiative .about_four {padding-bottom: 4rem;}
-
+.green-initiative .about_four:last-child {padding-bottom: 8rem;}
+.green-initiative .about_f_value .ab_f_content h3 {
+      font: var(--font-34);
+    color: var(--color-4e);
+   font-family: var(--font-Roboto);
+    text-transform: uppercase;
+    letter-spacing: -1.02px;
+    font-weight: 700;
+    
+}
+.green-initiative .about_f_value .ab_f_content h3>span {
+    color: var(--color-ff);
+}
