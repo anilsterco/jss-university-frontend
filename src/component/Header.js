@@ -2608,7 +2608,7 @@ export default function Header() {
           .banner-label {
             background: transparent;
             width: 100%;
-            padding:1.6rem 9.2rem 1.6rem 2.2rem;
+            padding:1.6rem 12.2rem 1.6rem 2.2rem;
             padding-block: 1.6rem;
             font-weight: 700;
             position: absolute;
@@ -2809,12 +2809,18 @@ export default function Header() {
             .nav-list {
             gap: 2.9rem;
           }
-
+           .banner-label {
+            padding:1.6rem 10.2rem 1.6rem 2.2rem;
+          }
            .hamburger {
               padding: 1.3rem;
             }
           }
-
+           @media (max-width: 1420px){
+            .banner-label {
+            padding:1.6rem 9.2rem 1.6rem 2.2rem;
+          }
+           }
           @media (min-width: 1200px) and (max-width: 1749px){
             .mega-left ul {
                     padding-top: 24rem;
@@ -2842,7 +2848,9 @@ export default function Header() {
             .mega-right-text {
               max-width: 100%;
             }
-             
+              .banner-label {
+               padding:1.6rem 6.2rem 1.6rem 2.2rem;
+               }
             .vid-thumb-cont {
               padding-right: 2rem;
             }
@@ -2877,6 +2885,7 @@ export default function Header() {
             .right-inner .first-content {
               width: 40%;
             }
+              
             .menu-overlay.open .close-btn {
               width: 25px;
               height: 25px;
@@ -2909,7 +2918,10 @@ export default function Header() {
             color: var(--color-white);
             font-family: var(--font-Condensed);
             font-weight: 600;
-           padding:1.6rem 9.2rem 1.6rem 2.2rem;
+           padding:1.6rem 2.2rem 1.6rem 2.2rem;
+          }
+           .mega-right {
+            padding-bottom: 8.3rem;
           }
           .courses_img {
             border-radius: 2rem;
