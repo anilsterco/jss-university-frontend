@@ -2410,7 +2410,7 @@ export default function Header() {
             font-weight: normal;
             padding-bottom: 0;
             position: relative;
-            padding-left: 1.4rem;
+            padding-left: 1.5rem;
             transition: color 0.3s ease;
             color: var(--color-black);
           }

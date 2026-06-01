@@ -136,7 +136,8 @@ export default async function LeadershipClientDetail({ leader }) {
                     {sections.message_from_chancellor?.designation
                       ?.toLowerCase()
                       .includes("chancellor") && (
-                        <h3>{sections.message_from_chancellor.designation}</h3>
+                        // <h3>{sections.message_from_chancellor.designation}</h3>
+                        <h3>Message</h3>
                       )}
                     {sections.message_from_chancellor?.message?.map(
                       (msg, index) => (
