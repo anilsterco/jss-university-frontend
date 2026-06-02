@@ -155,12 +155,12 @@
   background: #e6b000;
   color: var(--color-white);
   border: none;
-  padding: 1.4rem 3.4rem;
-  border-radius: 0.8rem;
+  padding: 1.2rem 2.2rem;
   cursor: pointer;
   font: var(--font-16);
   font-weight: 600;
   transition: all 0.3s ease;
+  margin-top: 3rem;
 }
 
 .submitBtn:hover {
@@ -246,7 +246,44 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
 
+.addBtn {
+  border: none;
+  background: var(--color-4e);
+  color: var(--color-white);
+  font: var(--font-14);
+  font-weight: 600;
+  padding: 1rem 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  opacity: 0.9;
+}
+
+.experienceCard {
+  border: 0.1rem solid var(--color-d9);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: var(--color-white);
+}
+
+.cardTitle {
+  font: var(--font-18);
+  font-weight: 600;
+  color: var(--color-4e);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--color-d9);
+}
 @media (max-width: 991px) {
   .formGrid {
     grid-template-columns: repeat(2, 1fr);
