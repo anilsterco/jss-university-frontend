@@ -2550,7 +2550,7 @@ a:active {
 
 .request_Row {
   display: grid;
-  grid-template-columns: repeat(1, 58% auto);
+  grid-template-columns: repeat(1, 42% auto);
   gap: 14.3rem;
   align-items: center;
 }
