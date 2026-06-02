@@ -143,7 +143,7 @@ export default function PhDApplicationForm() {
             name="address"
             placeholder="Address for Communication"
             className={styles.textarea}
-            rows="3"
+            rows="1"
             onChange={handleChange}
           />
         </div>
