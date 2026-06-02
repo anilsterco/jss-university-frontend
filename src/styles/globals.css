@@ -3056,29 +3056,23 @@ a:active {
 .green-initiative .about_f_value {padding-top: 4rem;}
 .green-initiative .about_four {padding-bottom: 4rem;}
 .green-initiative .about_four:last-child {padding-bottom: 8rem;}
-.green-initiative .about_f_value .ab_f_content h3 {
-      font: var(--font-34);
-    color: var(--color-4e);
-   font-family: var(--font-Roboto);
-    text-transform: uppercase;
-    letter-spacing: -1.02px;
-    font-weight: 700;
-    
-}
-.green-initiative .about_f_value .ab_f_content h3>span {
-    color: var(--color-ff);
-}
-.about-jss-university .about_four + .container {
-  padding-bottom: 8rem;
-}
- .about-jss-university .about_four + .container .estab_slide_item figure {
-    justify-content: center;
-    align-items: center;
-    padding: 4rem;
-    display: flex;
-}
-
- .about-jss-university .about_four + .container .estab_slide_item  figure img {
-    width: 75%;
-    height: auto;
-}
+.green-initiative .about_f_value .ab_f_content h3 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Roboto);text-transform: uppercase;letter-spacing: -1.02px;font-weight: 700; }
+.green-initiative .about_f_value .ab_f_content h3>span {color: var(--color-ff);}
+.about-jss-university .about_four + .container {padding-bottom: 8rem;}
+.about-jss-university .about_four + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 4rem;display: flex;}
+.about-jss-university .about_four + .container .estab_slide_item  figure img {width: 75%;height: auto;}
+.overview .grans_tab_mainsec {padding-block: 0rem 8rem;}
+.jss-legacy .about_jsstwo {padding-block: 4rem;}
+.overview .image_content_repeat_section .hostel-rules {margin: 0rem 0 0;}
+.overview .image_content_repeat_section {padding-block: 0 10rem;}
+.overview .hostel-rules h5{text-align: left;}
+.overview .hostel-rules p{text-align: left;}
+.overview  .hod-message-module__coWbsW__container {justify-content: center;align-items: center;padding: 4rem 0 4rem;display: flex;}
+.program-events .department-facilities .about_one .overlap_contents:before, .about_one .overlap_contents:before{display: none;}
+.program-events .about_one .estblish{padding-bottom: 0;}
+.program-events .about_f_value { padding-top: 8rem;}
+.program-events .research_labmain {padding-block: 0;}
+.program-events .image_content_repeat_section {padding-block: 0 8rem;}
+.program-events .single_image_content .inner_bottom_data{margin: 0;}
+.program-events .image_content_repeat_section .hostel-rules {margin: 0;}
+.program-events  .about_four {padding-bottom: 8rem;}
