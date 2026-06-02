@@ -20,6 +20,7 @@ export default function PdfLists({ data }) {
                       singlePdf?.pdf ||
                       singlePdf?.url ||
                       singlePdf?.link ||
+                      singlePdf?.pdf_url || 
                       "";
 
                     const isPdf =
@@ -29,12 +30,13 @@ export default function PdfLists({ data }) {
                       <li key={pdfIdx}>
                         <Link
                           href={fileUrl}
-                          target="_blank"
+                          target={singlePdf?.pdf ? '_blank' : '_self'}
                           rel="noopener noreferrer"
                         >
                           <p>{singlePdf?.pdf_type}</p>
 
-                          <Image
+                          {singlePdf?.pdf && (
+                              <Image
                             src={
                               isPdf
                                 ? "/images/icons/pdf.png"
@@ -44,6 +46,9 @@ export default function PdfLists({ data }) {
                             height={20}
                             alt={isPdf ? "pdf" : "link"}
                           />
+                          )}
+
+                          
                         </Link>
                       </li>
                     );
