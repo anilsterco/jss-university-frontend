@@ -2,11 +2,27 @@
 import React, { useState } from "react";
 
 import styles from "./PhdForm.module.css";
-import { style } from "framer-motion/client";
 
 export default function PhDApplicationForm() {
   const [formData, setFormData] = useState({});
-
+  const [experiences, setExperiences] = useState([
+    {
+      designation: "",
+      institution: "",
+      from: "",
+      to: "",
+      appointmentDate: "",
+    },
+  ]);
+  const [researchExperiences, setResearchExperiences] = useState([
+    {
+      designation: "",
+      fundingAgency: "",
+      from: "",
+      to: "",
+      theme: "",
+    },
+  ]);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,6 +39,33 @@ export default function PhDApplicationForm() {
     "GATE/NET/Others",
   ];
 
+
+  const addExperience = () => {
+    setExperiences([
+      ...experiences,
+      {
+        designation: "",
+        institution: "",
+        from: "",
+        to: "",
+        appointmentDate: "",
+      },
+    ]);
+  };
+
+  const addResearchExperience = () => {
+    setResearchExperiences([
+      ...researchExperiences,
+      {
+        designation: "",
+        fundingAgency: "",
+        from: "",
+        to: "",
+        theme: "",
+      },
+    ]);
+  };
+
   return (
     <div className={`container ${styles.formContainer}`}>
 
@@ -32,7 +75,7 @@ export default function PhDApplicationForm() {
 
       {/* Personal Details */}
       <section className={styles.FormSec}>
-        <h2 className={styles.sectionTitle}>A. Personal Details</h2>
+        <h2 className={styles.sectionTitle}>Personal Details</h2>
 
         <div className={styles.formGrid}>
           <input
@@ -150,7 +193,7 @@ export default function PhDApplicationForm() {
       </section>
 
       <section className={styles.FormSec}>
-        <h2 className={styles.sectionTitle}>B. Academic Details</h2>
+        <h2 className={styles.sectionTitle}>Academic Details</h2>
 
         {academicRows.map((qualification, index) => (
           <div key={index} className={styles.academicBlock}>
@@ -201,134 +244,169 @@ export default function PhDApplicationForm() {
         </p>
       </section>
 
-     <section className={styles.FormSec}>
-  <h2 className={styles.sectionTitle}>
-    C. Teaching / Professional Experience
-  </h2>
 
-  {[1, 2, 3, 4].map((item) => (
-    <div key={item} className={styles.experienceBlock}>
-      <h3 className={styles.subHeading}>Experience {item}</h3>
+      <section className={styles.FormSec}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>
+            Teaching / Professional Experience
+          </h2>
 
-      <div className={styles.formGrid}>
-
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>Designation</span>
-          <input
-            type="text"
-            placeholder="Enter Designation"
-            className={styles.input}
-          />
+          <button
+            type="button"
+            className={styles.addBtn}
+            onClick={addExperience}
+          >
+            + Add Experience
+          </button>
         </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>Institution</span>
-          <input
-            type="text"
-            placeholder="Enter Institution"
-            className={styles.input}
-          />
+        {experiences.map((exp, index) => (
+          <div key={index} className={styles.experienceCard}>
+            <div className={styles.cardTitle}>
+              Experience {index + 1}
+            </div>
+
+            <div className={styles.formGrid}>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>Designation</span>
+                <input
+                  type="text"
+                  placeholder="Enter Designation"
+                  className={styles.input}
+                />
+              </div>
+
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>Institution</span>
+                <input
+                  type="text"
+                  placeholder="Enter Institution"
+                  className={styles.input}
+                />
+              </div>
+
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>From Date</span>
+                <input
+                  type="date"
+                  className={styles.input}
+                />
+              </div>
+
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>To Date</span>
+                <input
+                  type="date"
+                  className={styles.input}
+                />
+              </div>
+
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  Date of Appointment
+                </span>
+                <input
+                  type="date"
+                  className={styles.input}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+
+
+
+
+
+
+
+      <section className={styles.FormSec}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>
+            Research Experience Details
+          </h2>
+
+          <button
+            type="button"
+            className={styles.addBtn}
+            onClick={addResearchExperience}
+          >
+            + Add Research Experience
+          </button>
         </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>From </span>
-          <input
-            type="date"
-            className={styles.input}
-          />
-        </div>
+        {researchExperiences.map((item, index) => (
+          <div key={index} className={styles.experienceCard}>
+            <div className={styles.cardTitle}>
+              Research Experience {index + 1}
+            </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>To </span>
-          <input
-            type="date"
-            className={styles.input}
-          />
-        </div>
+            <div className={styles.formGrid}>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>Date of Appointment</span>
-          <input
-            type="date"
-            className={styles.input}
-          />
-        </div>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  Designation / Fellowship
+                </span>
+                <input
+                  type="text"
+                  placeholder="JRF / SRF / Research Associate"
+                  className={styles.input}
+                />
+              </div>
 
-      </div>
-    </div>
-  ))}
-</section>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  Funding Agency
+                </span>
+                <input
+                  type="text"
+                  placeholder="Enter Funding Agency"
+                  className={styles.input}
+                />
+              </div>
 
-    <section className={styles.FormSec}>
-  <h2 className={styles.sectionTitle}>
-    D. Research Experience Details
-  </h2>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  From Date
+                </span>
+                <input
+                  type="date"
+                  className={styles.input}
+                />
+              </div>
 
-  {[1, 2, 3, 4].map((item) => (
-    <div key={item} className={styles.experienceBlock}>
-      <h3 className={styles.subHeading}>
-        Research Experience {item}
-      </h3>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  To Date
+                </span>
+                <input
+                  type="date"
+                  className={styles.input}
+                />
+              </div>
 
-      <div className={styles.formGrid}>
+              <div className={styles.fieldGroup}>
+                <span className={styles.fieldLabel}>
+                  Theme of Research
+                </span>
+                <input
+                  type="text"
+                  placeholder="Enter Research Theme"
+                  className={styles.input}
+                />
+              </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>
-            Designation / Fellowship
-          </span>
-          <input
-            type="text"
-            placeholder="JRF / SRF / Research Associate"
-            className={styles.input}
-          />
-        </div>
+            </div>
+          </div>
+        ))}
+      </section>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>
-            Funding Agency
-          </span>
-          <input
-            type="text"
-            placeholder="Enter Funding Agency"
-            className={styles.input}
-          />
-        </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>
-            From 
-          </span>
-          <input
-            type="date"
-            className={styles.input}
-          />
-        </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>
-            To 
-          </span>
-          <input
-            type="date"
-            className={styles.input}
-          />
-        </div>
 
-        <div className={styles.fieldGroup}>
-          <span className={styles.fieldLabel}>
-            Theme of Research
-          </span>
-          <input
-            type="text"
-            placeholder="Enter Research Theme"
-            className={styles.input}
-          />
-        </div>
 
-      </div>
-    </div>
-  ))}
-</section>
       <section className={styles.FormSec}>
         <h2 className={styles.sectionTitle}>Additional Information</h2>
 
