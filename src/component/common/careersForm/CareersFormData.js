@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import styles from "./CareersFormData.module.css";
 
 export default function CareersFormData() {
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    const [errors, setErrors] = useState({});
+    const [showPopup, setShowPopup] = useState(false);
     const [formData, setFormData] = useState({
         full_name: "",
         email: "",
@@ -12,39 +16,34 @@ export default function CareersFormData() {
         aadhar_number: "",
         pan_number: "",
         address: "",
-
         school: "",
         department: "",
         post_applied_for: "",
-
         teaching_experience: "",
         current_designation: "",
         current_organization: "",
         experience_type: "",
-
         highest_qualification: "",
         net_eligibility_qualification: "",
         phd_status: "",
         specialization: "",
         research_experience: "",
-
-        indexed_journal_publications: 0,
-        conference_publications: 0,
+        indexed_journal_publications: "",
+        conference_publications: "",
         research_profile_link: "",
-
-        utility_patents_filed: 0,
-        utility_patents_published: 0,
-        utility_patents_granted: 0,
-
-        phd_scholars_guided: 0,
-        ongoing_scholars: 0,
-
+        utility_patents_filed: "",
+        utility_patents_published: "",
+        utility_patents_granted: "",
+        phd_scholars_guided: "",
+        ongoing_scholars: "",
         declaration_accepted: false,
         terms_accepted: false,
     });
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
+
+        console.log(name, value);
 
         setFormData((prev) => ({
             ...prev,
@@ -55,8 +54,12 @@ export default function CareersFormData() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
         setLoading(true);
         setMessage("");
+        setMessage("");
+        setErrors({});
+
 
         try {
             const response = await fetch(
@@ -70,12 +73,19 @@ export default function CareersFormData() {
                     body: JSON.stringify(formData),
                 }
             );
-
             const result = await response.json();
 
-            if (response.ok && result.success) {
-                setMessage("Application submitted successfully.");
 
+            if (response.ok) {
+                setMessage(result.message || "Application submitted successfully");
+                setErrors({});
+                setShowPopup(true);
+
+                setTimeout(() => {
+                    setShowPopup(false);
+                }, 3000);
+
+                // reset form
                 setFormData({
                     full_name: "",
                     email: "",
@@ -96,27 +106,35 @@ export default function CareersFormData() {
                     phd_status: "",
                     specialization: "",
                     research_experience: "",
-                    indexed_journal_publications: 0,
-                    conference_publications: 0,
+                    indexed_journal_publications: "",
+                    conference_publications: "",
                     research_profile_link: "",
-                    utility_patents_filed: 0,
-                    utility_patents_published: 0,
-                    utility_patents_granted: 0,
-                    phd_scholars_guided: 0,
-                    ongoing_scholars: 0,
+                    utility_patents_filed: "",
+                    utility_patents_published: "",
+                    utility_patents_granted: "",
+                    phd_scholars_guided: "",
+                    ongoing_scholars: "",
                     declaration_accepted: false,
                     terms_accepted: false,
                 });
+
             } else {
-                setMessage(result.message || "Submission failed");
+                setMessage(result.message || "Validation Failed");
+                setErrors(result.errors || {});
             }
+
+
         } catch (error) {
             console.error(error);
             setMessage("Something went wrong");
         } finally {
             setLoading(false);
         }
+
+
+
     };
+
 
     return (
         <div className={`container ${styles.formContainer}`}>
@@ -129,56 +147,111 @@ export default function CareersFormData() {
 
                     <div className={styles.formGrid}>
 
-                        <input
-                            type="text"
-                            name="fullName"
-                            placeholder="Full Name"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email Address"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="mobile"
-                            placeholder="WhatsApp Mobile Number"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="city"
-                            placeholder="Current City & State"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="aadhar"
-                            placeholder="Aadhar ID Number"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="pan"
-                            placeholder="PAN Card Number"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <textarea
-                            name="address"
-                            placeholder="Residential Address"
-                            className={styles.textarea}
-                            rows="3"
-                            onChange={handleChange}
-                        />
+                        <div className="fild-col">
+                            <input
+                                type="text"
+                                name="full_name"
+                                placeholder="Full Name"
+                                className={styles.input}
+                                value={formData.full_name}
+                                onChange={handleChange}
+                            />
+                            {errors.full_name && (
+                                <p className={styles.error}>
+                                    {errors.full_name[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email Address"
+                                className={styles.input}
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                            {errors.email && (
+                                <p className={styles.error}>
+                                    {errors.email[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <input
+                                type="text"
+                                name="mobile"
+                                placeholder="WhatsApp Mobile Number"
+                                value={formData.mobile}
+                                className={styles.input}
+                                onChange={handleChange}
+                            />
+                            {errors.mobile && (
+                                <p className={styles.error}>
+                                    {errors.mobile[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <input
+                                type="text"
+                                name="city"
+                                placeholder="Current City & State"
+                                className={styles.input}
+                                value={formData.city}
+                                onChange={handleChange}
+                            />
+                            {errors.city && (
+                                <p className={styles.error}>
+                                    {errors.city[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <input
+                                type="text"
+                                name="aadhar_number"
+                                placeholder="Aadhar ID Number"
+                                className={styles.input}
+                                value={formData.aadhar_number}
+                                onChange={handleChange}
+                            />
+                            {errors.aadhar_number && (
+                                <p className={styles.error}>
+                                    {errors.aadhar_number[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <input
+                                type="text"
+                                name="pan_number"
+                                placeholder="PAN Card Number"
+                                className={styles.input}
+                                value={formData.pan_number}
+                                onChange={handleChange}
+                            />
+                            {errors.pan_number && (
+                                <p className={styles.error}>
+                                    {errors.pan_number[0]}
+                                </p>
+                            )}
+                        </div>
+                        <div className="fild-col">
+                            <textarea
+                                name="address"
+                                placeholder="Residential Address"
+                                className={styles.textarea}
+                                value={formData.address}
+                                rows="3"
+                                onChange={handleChange}
+                            />
+                            {errors.address && (
+                                <p className={styles.error}>
+                                    {errors.address[0]}
+                                </p>
+                            )}
+                        </div>
                     </div>
                 </section>
 
@@ -188,7 +261,6 @@ export default function CareersFormData() {
                     </h2>
 
                     <div className={styles.formGrid}>
-
                         <div className={styles.fieldGroup}>
                             <span className={styles.fieldLabel}>
                                 School Applying For
@@ -196,54 +268,66 @@ export default function CareersFormData() {
                             <select
                                 name="school"
                                 className={styles.input}
-                                onChange={handleChange}>
+                                value={formData.school}
+                                onChange={handleChange} >
                                 <option value="">Select School</option>
-                                <option>School of Engineering</option>
-                                <option>College of Pharmacy</option>
-                                <option>School of Management</option>
-                                <option>School of Computer Applications</option>
-                                <option>School of Applied Sciences</option>
-                                <option>School of Humanities and Social Sciences</option>
-                                <option>School of Life Sciences</option>
+                                <option value="School of Engineering">School of Engineering</option>
+                                <option value="College of Pharmacy">College of Pharmacy</option>
+                                <option value="School of Management">School of Management</option>
+                                <option value="School of Computer Applications">School of Computer Applications</option>
+                                <option value="School of Applied Sciences">School of Applied Sciences</option>
+                                <option value="School of Humanities and Social Sciences">School of Humanities and Social Sciences</option>
+                                <option value="School of Life Sciences">School of Life Sciences</option>
                             </select>
+                            {errors.school && (
+                                <p className={styles.error}>
+                                    {errors.school[0]}
+                                </p>
+                            )}
                         </div>
                         <div className={styles.fieldGroup}>
                             <span className={styles.fieldLabel}>
                                 Department Applying For
                             </span>
                             <select
-                                name="school"
+                                name="department"
                                 className={styles.input}
-                                onChange={handleChange}>
+                                onChange={handleChange} value={formData.department}>
                                 <option value="">Select Department</option>
-                                <option>Aerospace Engineering</option>
-                                <option>Artificial Intelligence and Machine Learning</option>
-                                <option>Civil Engineering</option>
-                                <option>Electrical and Electronics Engineering</option>
-                                <option>Electrical Engineering</option>
-                                <option>Electronics And Communication Engineering</option>
-                                <option>Mechanical Engineering</option>
+                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                <option value="Artificial Intelligence and Machine Learning">Artificial Intelligence and Machine Learning</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Electronics And Communication Engineering">Electronics And Communication Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
                             </select>
+                            {errors.department && (
+                                <p className={styles.error}>
+                                    {errors.department[0]}
+                                </p>
+                            )}
                         </div>
                         <div className={styles.fieldGroup}>
                             <span className={styles.fieldLabel}>
                                 Post Applying For
                             </span>
-
                             <select
-                                name="post"
-                                className={styles.input}
-                                onChange={handleChange}
-                            >
+                                name="post_applied_for"
+                                value={formData.post_applied_for}
+                                onChange={handleChange} className={styles.input}>
                                 <option value="">Select Post</option>
-
-                                <option>Professor</option>
-                                <option>Associate Professor</option>
-                                <option>Assistant Professor</option>
-                                <option>Adjunct Faculty</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                                <option value="Assistant Professor">Assistant Professor</option>
+                                <option value="Adjunct Faculty">Adjunct Faculty</option>
                             </select>
+                            {errors.post_applied_for && (
+                                <p className={styles.error}>
+                                    {errors.post_applied_for[0]}
+                                </p>
+                            )}
                         </div>
-
                     </div>
                 </section>
 
@@ -254,7 +338,10 @@ export default function CareersFormData() {
 
                     <div className={styles.formGrid}>
 
-                        <select className={styles.input}>
+                        <select name="teaching_experience"
+                            value={formData.teaching_experience}
+                            onChange={handleChange}
+                            className={styles.input}>
                             <option value="">
                                 Teaching Experience (in Years)
                             </option>
@@ -264,26 +351,54 @@ export default function CareersFormData() {
                             <option>3-5 Years</option>
                             <option>5+ Years</option>
                         </select>
+                        {errors.teaching_experience && (
+                            <p className={styles.error}>
+                                {errors.teaching_experience[0]}
+                            </p>
+                        )}
 
                         <input
                             type="text"
+                            name="current_designation"
+                            value={formData.current_designation}
                             placeholder="Current / Last Designation"
                             className={styles.input}
+                            onChange={handleChange}
                         />
+                        {errors.current_designation && (
+                            <p className={styles.error}>
+                                {errors.current_designation[0]}
+                            </p>
+                        )}
 
                         <input
                             type="text"
+                            name="current_organization"
+                            value={formData.current_organization}
                             placeholder="Current / Last Organization"
                             className={styles.input}
+                            onChange={handleChange}
                         />
+                        {errors.current_organization && (
+                            <p className={styles.error}>
+                                {errors.current_organization[0]}
+                            </p>
+                        )}
 
-                        <select className={styles.input}>
+                        <select className={styles.input} name="experience_type"
+                            value={formData.experience_type}
+                            onChange={handleChange}  >
                             <option value="">Experience Type</option>
                             <option>Teaching</option>
                             <option>Industry</option>
                             <option>Research</option>
                             <option>Administration</option>
                         </select>
+                        {errors.experience_type && (
+                            <p className={styles.error}>
+                                {errors.experience_type[0]}
+                            </p>
+                        )}
 
                     </div>
                 </section>
@@ -296,7 +411,10 @@ export default function CareersFormData() {
 
                     <div className={styles.formGrid}>
 
-                        <select className={styles.input}>
+                        <select name="highest_qualification"
+                            value={formData.highest_qualification}
+                            onChange={handleChange}
+                            className={styles.input}>
                             <option value="">Highest Qualification</option>
                             <option>Bachelor's Degree</option>
                             <option>Master's Degree</option>
@@ -305,8 +423,16 @@ export default function CareersFormData() {
                             <option>Postdoctoral Research</option>
                             <option>Diploma/Certification</option>
                         </select>
+                        {errors.highest_qualification && (
+                            <p className={styles.error}>
+                                {errors.highest_qualification[0]}
+                            </p>
+                        )}
 
-                        <select className={styles.input}>
+                        <select name="net_eligibility_qualification"
+                            value={formData.net_eligibility_qualification}
+                            onChange={handleChange}
+                            className={styles.input}>
                             <option value="">
                                 NET / Eligibility Qualification
                             </option>
@@ -318,7 +444,10 @@ export default function CareersFormData() {
                             <option>NET Exempted</option>
                         </select>
 
-                        <select className={styles.input}>
+                        <select className={styles.input} name="phd_status"
+                            value={formData.phd_status}
+                            onChange={handleChange}
+                        >
                             <option value="">PhD Status</option>
                             <option>Not Enrolled</option>
                             <option>Pursuing PhD</option>
@@ -327,10 +456,16 @@ export default function CareersFormData() {
 
                         <input
                             type="text"
+                            name="specialization"
+                            value={formData.specialization}
                             placeholder="Specialization / Subject Area"
                             className={styles.input}
+                            onChange={handleChange}
                         />
-                        <select className={styles.input}>
+                        <select name="research_experience"
+                            value={formData.research_experience}
+                            onChange={handleChange}
+                            className={styles.input}>
                             <option value="">Research Experience</option>
                             <option>None</option>
                             <option>Less than 1 Year</option>
@@ -350,6 +485,9 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="indexed_journal_publications"
+                                value={formData.indexed_journal_publications}
+                                onChange={handleChange}
                                 className={styles.input}
                                 placeholder="Enter Number"
                             />
@@ -361,6 +499,9 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="conference_publications"
+                                value={formData.conference_publications}
+                                onChange={handleChange}
                                 className={styles.input}
                                 placeholder="Enter Number"
                             />
@@ -372,9 +513,17 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="url"
+                                name="research_profile_link"
+                                value={formData.research_profile_link}
+                                onChange={handleChange}
                                 className={styles.input}
                                 placeholder="https://"
                             />
+                            {errors.research_profile_link && (
+                                <p className={styles.error}>
+                                    {errors.research_profile_link[0]}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -388,8 +537,10 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="utility_patents_filed"
+                                value={formData.utility_patents_filed}
+                                onChange={handleChange}
                                 className={styles.input}
-                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -399,8 +550,10 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="utility_patents_published"
+                                value={formData.utility_patents_published}
+                                onChange={handleChange}
                                 className={styles.input}
-                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -410,8 +563,10 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="utility_patents_granted"
+                                value={formData.utility_patents_granted}
+                                onChange={handleChange}
                                 className={styles.input}
-                                placeholder="Enter Number"
                             />
                         </div>
                     </div>
@@ -428,8 +583,10 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="phd_scholars_guided"
+                                value={formData.phd_scholars_guided}
+                                onChange={handleChange}
                                 className={styles.input}
-                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -439,8 +596,10 @@ export default function CareersFormData() {
                             </span>
                             <input
                                 type="number"
+                                name="ongoing_scholars"
+                                value={formData.ongoing_scholars}
+                                onChange={handleChange}
                                 className={styles.input}
-                                placeholder="Enter Number"
                             />
                         </div>
                     </div>
@@ -450,25 +609,88 @@ export default function CareersFormData() {
                     <h2 className={styles.sectionTitle}>Declaration</h2>
 
                     <label className={styles.checkboxLabel}>
-                        <input type="checkbox" />
+                        <input
+                            type="checkbox"
+                            name="declaration_accepted"
+                            checked={formData.declaration_accepted}
+                            onChange={handleChange}
+                        />
                         I hereby declare that all information submitted by me is true and
                         correct to the best of my knowledge. I understand that any false
                         information may lead to cancellation of my candidature.
+
+                        {errors.declaration_accepted && (
+                            <p className={styles.error}>
+                                {errors.declaration_accepted[0]}
+                            </p>
+                        )}
                     </label>
 
                     <label className={styles.checkboxLabel}>
-                        <input type="checkbox" />
+                        <input
+                            type="checkbox"
+                            name="terms_accepted"
+                            checked={formData.terms_accepted}
+                            onChange={handleChange}
+                        />
                         I agree to the terms and conditions of JSS University Noida.
+                        {errors.terms_accepted && (
+                            <p className={styles.error}>
+                                {errors.terms_accepted[0]}
+                            </p>
+                        )}
                     </label>
+                    {message && (
+                        <div
+                            className={
+                                Object.keys(errors).length
+                                    ? styles.errorBox
+                                    : styles.success
+                            }
+                        >
+                            {message}
+                        </div>
+                    )}
+
+
+
+
+
+
+
+
 
                     <button
                         type="submit"
                         className={styles.submitBtn}
+                        disabled={loading}
                     >
-                        Submit Application
+                        {loading ? "Submitting..." : "Submit Application"}
                     </button>
                 </section>
             </form>
+
+            {showPopup && (
+                <div className={styles.popupOverlay}>
+                    <div className={styles.popup}>
+                        <div className={styles.successIcon}>✓</div>
+
+                        <h3>Application Submitted</h3>
+
+                        <p>{message}</p>
+
+                        <button
+                            type="button"
+                            onClick={() => setShowPopup(false)}
+                            className={styles.popupBtn}
+                        >
+                            OK
+                        </button>
+                    </div>
+                </div>
+
+            )}
+
         </div>
     );
 }

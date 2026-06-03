@@ -3069,14 +3069,15 @@ a:active {
 .overview .hostel-rules h5{text-align: left;}
 .overview .hostel-rules p{text-align: left;}
 .overview  .hod-message-module__coWbsW__container {justify-content: center;align-items: center;padding: 4rem 0 4rem;display: flex;}
-.program-events .department-facilities .about_one .overlap_contents:before, .about_one .overlap_contents:before{display: none;}
-.program-events .about_one .estblish{padding-bottom: 0;}
-.program-events .about_f_value { padding-top: 8rem;}
-.program-events .research_labmain {padding-block: 0;}
-.program-events .image_content_repeat_section {padding-block: 0 8rem;}
-.program-events .single_image_content .inner_bottom_data{margin: 0;}
-.program-events .image_content_repeat_section .hostel-rules {margin: 0;}
-.program-events .about_four {padding-bottom: 8rem;}
+.events .department-facilities .about_one .overlap_contents:before, .about_one .overlap_contents:before{display: none;}
+.events .about_one .estblish{padding-bottom: 0;}
+.events .about_f_value { padding-top: 8rem;}
+.events .research_labmain {padding-block: 0;}
+.events .research_grid_one .research_cont {padding-right: 10.5rem;}
+.events .image_content_repeat_section {padding-block: 0 8rem;}
+.events .single_image_content .inner_bottom_data{margin: 0;}
+.events .image_content_repeat_section .hostel-rules {margin: 0;}
+.events .about_four {padding-bottom: 8rem;}
 .overview .resea_facili_main .exten_listyle ul li:before{display: none;}
 .overview .exten_listyle ul li {padding-left: 0;}
 .overview .curriculum_box .box_ul li:before {display: none;}
