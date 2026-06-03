@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { APPLY_NOW } from "@/config/config";
+import { usePathname } from "next/navigation";
 
 export default function AboutOne({ data }) {
   useEffect(() => {
@@ -44,6 +45,13 @@ export default function AboutOne({ data }) {
       element
     );
   };
+
+
+  const pathname = usePathname();
+
+  const applyNowLink = pathname?.includes("careers")
+    ? "https://docs.google.com/forms/d/e/1FAIpQLSfyaj_zD4nQuuvA-KNQwN5Bhav7dNSNvji-5imhyZ13xXOxnQ/viewform?pli=1"
+    : APPLY_NOW;
 
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
@@ -128,8 +136,9 @@ export default function AboutOne({ data }) {
                   <div className="hostal_d_btns d-flex justify-content-left">
                     <a
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="btn btn-warning CTA_Applynow"
-                      href={APPLY_NOW}
+                      href={applyNowLink}
                     >
                       Apply Now
                     </a>
