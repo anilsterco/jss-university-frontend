@@ -10129,6 +10129,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .careers .content_col {padding-right: 0;}
 .ombudsperson .atm_g_imgsec {padding-top: 0;}
 .ombudsperson .about_one .estblish p, .grid_em_leftsec p {margin-bottom: 4rem;}
+.student-resources .amenities_section .grid_group{gap: 4rem;}
 }
 
 @media(max-width:767px) {

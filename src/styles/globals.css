@@ -1824,6 +1824,7 @@ a:active {
   .eligibility-sec {
     padding-bottom: 1rem !important;
   }
+  
 }
 
 @media (max-width: 820px) {
@@ -3075,5 +3076,13 @@ a:active {
 .program-events .image_content_repeat_section {padding-block: 0 8rem;}
 .program-events .single_image_content .inner_bottom_data{margin: 0;}
 .program-events .image_content_repeat_section .hostel-rules {margin: 0;}
-.program-events  .about_four {padding-bottom: 8rem;}
-
+.program-events .about_four {padding-bottom: 8rem;}
+.overview .resea_facili_main .exten_listyle ul li:before{display: none;}
+.overview .exten_listyle ul li {padding-left: 0;}
+.overview .curriculum_box .box_ul li:before {display: none;}
+.overview .curriculum_box .box_ul li {padding-left: 0;}
+.student-resources .amenities_section .grid_group {background-color: var(--color-white);padding: 6rem;}
+.student-resources .amenities_section .grid_group h5 {font: var(--font-22);color: #16344e;text-align: left;letter-spacing: 0;margin-bottom: 4rem;font-weight: 600;}
+.student-resources .amenities_section ul {padding-left: 0;}
+.student-resources .amenities_section{padding-bottom: 0;}
+.student-resources .top_section {margin-top: 6rem;}
