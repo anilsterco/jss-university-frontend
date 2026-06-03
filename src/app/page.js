@@ -5,7 +5,7 @@ import FacilitiesComponent from "../component/home-components/facilities/Facilit
 import AboutHomeComponent from "../component/home-components/about-home-jss/AboutHomeComponent";
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
-import PhDApplicationForm from "../component/common/Phd-form/PhDApplicationForm";
+// import PhDApplicationForm from "../component/common/Phd-form/PhDApplicationForm";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
@@ -82,7 +82,8 @@ export default async function HomePage() {
       </div>
 
       <PopupModal />
-      <PhDApplicationForm />
+      {/* <PhDApplicationForm />
+      <CareersFormData /> */}
     </div>
   );
 }
