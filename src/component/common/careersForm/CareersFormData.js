@@ -541,6 +541,7 @@ export default function CareersFormData() {
                                 value={formData.utility_patents_filed}
                                 onChange={handleChange}
                                 className={styles.input}
+                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -554,6 +555,7 @@ export default function CareersFormData() {
                                 value={formData.utility_patents_published}
                                 onChange={handleChange}
                                 className={styles.input}
+                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -567,6 +569,7 @@ export default function CareersFormData() {
                                 value={formData.utility_patents_granted}
                                 onChange={handleChange}
                                 className={styles.input}
+                                placeholder="Enter Number"
                             />
                         </div>
                     </div>
@@ -587,6 +590,7 @@ export default function CareersFormData() {
                                 value={formData.phd_scholars_guided}
                                 onChange={handleChange}
                                 className={styles.input}
+                                placeholder="Enter Number"
                             />
                         </div>
 
@@ -600,6 +604,7 @@ export default function CareersFormData() {
                                 value={formData.ongoing_scholars}
                                 onChange={handleChange}
                                 className={styles.input}
+                                placeholder="Enter Number"
                             />
                         </div>
                     </div>
