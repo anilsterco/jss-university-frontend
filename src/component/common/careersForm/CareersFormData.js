@@ -40,6 +40,68 @@ export default function CareersFormData() {
         terms_accepted: false,
     });
 
+    const [academicQualifications, setAcademicQualifications] = useState([
+        {
+            highest_qualification: "",
+            net_eligibility_qualification: "",
+            phd_status: "",
+            specialization: "",
+            research_experience: "",
+        },
+    ]);
+
+    const [professionalExperiences, setProfessionalExperiences] = useState([
+        {
+            teaching_experience: "",
+            current_designation: "",
+            current_organization: "",
+            experience_type: "",
+        },
+    ]);
+
+    const addAcademicQualification = () => {
+        setAcademicQualifications([
+            ...academicQualifications,
+            {
+                highest_qualification: "",
+                net_eligibility_qualification: "",
+                phd_status: "",
+                specialization: "",
+                research_experience: "",
+            },
+        ]);
+    };
+
+    const addProfessionalExperience = () => {
+        setProfessionalExperiences([
+            ...professionalExperiences,
+            {
+                teaching_experience: "",
+                current_designation: "",
+                current_organization: "",
+                experience_type: "",
+            },
+        ]);
+    };
+
+    const handleAcademicChange = (index, e) => {
+        const { name, value } = e.target;
+
+        const updated = [...academicQualifications];
+        updated[index][name] = value;
+
+        setAcademicQualifications(updated);
+    };
+
+
+    const handleProfessionalChange = (index, e) => {
+        const { name, value } = e.target;
+
+        const updated = [...professionalExperiences];
+        updated[index][name] = value;
+
+        setProfessionalExperiences(updated);
+    };
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
 
@@ -332,148 +394,164 @@ export default function CareersFormData() {
                 </section>
 
                 <section className={styles.FormSec}>
-                    <h2 className={styles.sectionTitle}>
-                        Professional Experience
-                    </h2>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionTitle}>
+                            Professional Experience
+                        </h2>
 
-                    <div className={styles.formGrid}>
-
-                        <select name="teaching_experience"
-                            value={formData.teaching_experience}
-                            onChange={handleChange}
-                            className={styles.input}>
-                            <option value="">
-                                Teaching Experience (in Years)
-                            </option>
-                            <option>Fresher</option>
-                            <option>Less than 1 Year</option>
-                            <option>1-3 Years</option>
-                            <option>3-5 Years</option>
-                            <option>5+ Years</option>
-                        </select>
-                        {errors.teaching_experience && (
-                            <p className={styles.error}>
-                                {errors.teaching_experience[0]}
-                            </p>
-                        )}
-
-                        <input
-                            type="text"
-                            name="current_designation"
-                            value={formData.current_designation}
-                            placeholder="Current / Last Designation"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        {errors.current_designation && (
-                            <p className={styles.error}>
-                                {errors.current_designation[0]}
-                            </p>
-                        )}
-
-                        <input
-                            type="text"
-                            name="current_organization"
-                            value={formData.current_organization}
-                            placeholder="Current / Last Organization"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        {errors.current_organization && (
-                            <p className={styles.error}>
-                                {errors.current_organization[0]}
-                            </p>
-                        )}
-
-                        <select className={styles.input} name="experience_type"
-                            value={formData.experience_type}
-                            onChange={handleChange}  >
-                            <option value="">Experience Type</option>
-                            <option>Teaching</option>
-                            <option>Industry</option>
-                            <option>Research</option>
-                            <option>Administration</option>
-                        </select>
-                        {errors.experience_type && (
-                            <p className={styles.error}>
-                                {errors.experience_type[0]}
-                            </p>
-                        )}
-
+                        <button
+                            type="button"
+                            className={styles.addBtn}
+                            onClick={addProfessionalExperience}
+                        >
+                            + Add Experience
+                        </button>
                     </div>
+
+                    {professionalExperiences.map((exp, index) => (
+                        <div key={index} className={styles.experienceCard}>
+                            <div className={styles.cardTitle}>
+                                Experience {index + 1}
+                            </div>
+
+                            <div className={styles.formGrid}>
+                                <select
+                                    name="teaching_experience"
+                                    value={exp.teaching_experience}
+                                    onChange={(e) => handleProfessionalChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">Teaching Experience (in Years)</option>
+                                    <option>Fresher</option>
+                                    <option>Less than 1 Year</option>
+                                    <option>1-3 Years</option>
+                                    <option>3-5 Years</option>
+                                    <option>5+ Years</option>
+                                </select>
+
+                                <input
+                                    type="text"
+                                    name="current_designation"
+                                    value={exp.current_designation}
+                                    placeholder="Current / Last Designation"
+                                    className={styles.input}
+                                    onChange={(e) => handleProfessionalChange(index, e)}
+                                />
+
+                                <input
+                                    type="text"
+                                    name="current_organization"
+                                    value={exp.current_organization}
+                                    placeholder="Current / Last Organization"
+                                    className={styles.input}
+                                    onChange={(e) => handleProfessionalChange(index, e)}
+                                />
+
+                                <select
+                                    name="experience_type"
+                                    value={exp.experience_type}
+                                    onChange={(e) => handleProfessionalChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">Experience Type</option>
+                                    <option>Teaching</option>
+                                    <option>Industry</option>
+                                    <option>Research</option>
+                                    <option>Administration</option>
+                                </select>
+                            </div>
+                        </div>
+                    ))}
                 </section>
 
 
                 <section className={styles.FormSec}>
-                    <h2 className={styles.sectionTitle}>
-                        Academic Qualifications
-                    </h2>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionTitle}>
+                            Academic Qualifications
+                        </h2>
 
-                    <div className={styles.formGrid}>
-
-                        <select name="highest_qualification"
-                            value={formData.highest_qualification}
-                            onChange={handleChange}
-                            className={styles.input}>
-                            <option value="">Highest Qualification</option>
-                            <option>Bachelor's Degree</option>
-                            <option>Master's Degree</option>
-                            <option>M.Phil</option>
-                            <option>PhD</option>
-                            <option>Postdoctoral Research</option>
-                            <option>Diploma/Certification</option>
-                        </select>
-                        {errors.highest_qualification && (
-                            <p className={styles.error}>
-                                {errors.highest_qualification[0]}
-                            </p>
-                        )}
-
-                        <select name="net_eligibility_qualification"
-                            value={formData.net_eligibility_qualification}
-                            onChange={handleChange}
-                            className={styles.input}>
-                            <option value="">
-                                NET / Eligibility Qualification
-                            </option>
-
-                            <option>Qualified UGC NET</option>
-                            <option>Qualified CSIR NET</option>
-                            <option>Qualified SET</option>
-                            <option>NET/SET Not Qualified</option>
-                            <option>NET Exempted</option>
-                        </select>
-
-                        <select className={styles.input} name="phd_status"
-                            value={formData.phd_status}
-                            onChange={handleChange}
+                        <button
+                            type="button"
+                            className={styles.addBtn}
+                            onClick={addAcademicQualification}
                         >
-                            <option value="">PhD Status</option>
-                            <option>Not Enrolled</option>
-                            <option>Pursuing PhD</option>
-                            <option>PhD Awarded</option>
-                        </select>
-
-                        <input
-                            type="text"
-                            name="specialization"
-                            value={formData.specialization}
-                            placeholder="Specialization / Subject Area"
-                            className={styles.input}
-                            onChange={handleChange}
-                        />
-                        <select name="research_experience"
-                            value={formData.research_experience}
-                            onChange={handleChange}
-                            className={styles.input}>
-                            <option value="">Research Experience</option>
-                            <option>None</option>
-                            <option>Less than 1 Year</option>
-                            <option>1-3 Years</option>
-                            <option>3+ Years</option>
-                        </select>
-
+                            + Add Qualification
+                        </button>
                     </div>
+
+                    {academicQualifications.map((qualification, index) => (
+                        <div key={index} className={styles.experienceCard}>
+                            <div className={styles.cardTitle}>
+                                Qualification {index + 1}
+                            </div>
+
+                            <div className={styles.formGrid}>
+                                <select
+                                    name="highest_qualification"
+                                    value={qualification.highest_qualification}
+                                    onChange={(e) => handleAcademicChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">Highest Qualification</option>
+                                    <option>Bachelor's Degree</option>
+                                    <option>Master's Degree</option>
+                                    <option>M.Phil</option>
+                                    <option>PhD</option>
+                                    <option>Postdoctoral Research</option>
+                                    <option>Diploma/Certification</option>
+                                </select>
+
+                                <select
+                                    name="net_eligibility_qualification"
+                                    value={qualification.net_eligibility_qualification}
+                                    onChange={(e) => handleAcademicChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">NET / Eligibility Qualification</option>
+                                    <option>Qualified UGC NET</option>
+                                    <option>Qualified CSIR NET</option>
+                                    <option>Qualified SET</option>
+                                    <option>NET/SET Not Qualified</option>
+                                    <option>NET Exempted</option>
+                                </select>
+
+                                <select
+                                    name="phd_status"
+                                    value={qualification.phd_status}
+                                    onChange={(e) => handleAcademicChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">PhD Status</option>
+                                    <option>Not Enrolled</option>
+                                    <option>Pursuing PhD</option>
+                                    <option>PhD Awarded</option>
+                                </select>
+
+                                <input
+                                    type="text"
+                                    name="specialization"
+                                    value={qualification.specialization}
+                                    placeholder="Specialization / Subject Area"
+                                    className={styles.input}
+                                    onChange={(e) => handleAcademicChange(index, e)}
+                                />
+
+                                <select
+                                    name="research_experience"
+                                    value={qualification.research_experience}
+                                    onChange={(e) => handleAcademicChange(index, e)}
+                                    className={styles.input}
+                                >
+                                    <option value="">Research Experience</option>
+                                    <option>None</option>
+                                    <option>Less than 1 Year</option>
+                                    <option>1-3 Years</option>
+                                    <option>3+ Years</option>
+                                </select>
+                            </div>
+                        </div>
+                    ))}
                 </section>
                 <section className={styles.FormSec}>
                     <h2 className={styles.sectionTitle}>Publications</h2>
@@ -609,6 +687,52 @@ export default function CareersFormData() {
                         </div>
                     </div>
                 </section>
+
+                <section className={styles.FormSec}>
+                    <h2 className={styles.sectionTitle}>
+                        Other Achievements
+                    </h2>
+
+                    <div className={styles.formGrid}>
+                        <div className={styles.fieldGroup}>
+                            <span className={styles.fieldLabel}>
+                                Other Achievements
+                            </span>
+                            <textarea
+                                name="other_achievements"
+                                value={formData.other_achievements}
+                                onChange={handleChange}
+                                className={styles.textarea}
+                                placeholder="Enter Other Achievements"
+                                rows="6"
+                            />
+                        </div>
+
+                    </div>
+
+                </section>
+                <section className={styles.FormSec}>
+                    <h2 className={styles.sectionTitle}>
+                        Upload Resume/CV
+                    </h2>
+                    <div className={styles.formGrid}>
+                        <div className={styles.fieldGroup}>
+                            <input
+                                type="file"
+                                name="writeup_file"
+                                accept=".pdf,.doc,.docx"
+                                className={styles.input}
+                            />
+                            {errors.writeup_file && (
+                                <p className={styles.error}>
+                                    {errors.writeup_file[0]}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                </section>
+
+
 
                 <section className={styles.declarationSection}>
                     <h2 className={styles.sectionTitle}>Declaration</h2>

@@ -50,7 +50,7 @@ export default function AboutOne({ data }) {
   const pathname = usePathname();
 
   const applyNowLink = pathname?.includes("careers")
-    ? "https://docs.google.com/forms/d/e/1FAIpQLSfyaj_zD4nQuuvA-KNQwN5Bhav7dNSNvji-5imhyZ13xXOxnQ/viewform?pli=1"
+    ? "https://jss-university-frontend-sepia.vercel.app/career-form"
     : APPLY_NOW;
 
   const renderSection = (section, sectionIndex) => {
@@ -109,7 +109,7 @@ export default function AboutOne({ data }) {
                                 <a className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
                                   {cleaned}
                                 </a>
-                              ); 
+                              );
                             }
                             // Email clickable
                             else if (cleaned.includes("@")) {
@@ -138,7 +138,6 @@ export default function AboutOne({ data }) {
                       rel="noopener noreferrer"
                       className="btn btn-warning CTA_Applynow"
                       href={applyNowLink}
-                      target="_blank"
                     >
                       Apply Now
                     </a>
