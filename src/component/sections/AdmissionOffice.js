@@ -109,7 +109,7 @@ export default function AboutOne({ data }) {
                                 <a className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
                                   {cleaned}
                                 </a>
-                              );
+                              ); 
                             }
                             // Email clickable
                             else if (cleaned.includes("@")) {
@@ -138,6 +138,7 @@ export default function AboutOne({ data }) {
                       rel="noopener noreferrer"
                       className="btn btn-warning CTA_Applynow"
                       href={applyNowLink}
+                      target="_blank"
                     >
                       Apply Now
                     </a>
