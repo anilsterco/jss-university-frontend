@@ -50,7 +50,7 @@ export default function AboutOne({ data }) {
   const pathname = usePathname();
 
   const applyNowLink = pathname?.includes("careers")
-    ? "https://jss-university-frontend-sepia.vercel.app/career-form"
+    ? "https://docs.google.com/forms/d/e/1FAIpQLSfyaj_zD4nQuuvA-KNQwN5Bhav7dNSNvji-5imhyZ13xXOxnQ/viewform?pli=1"
     : APPLY_NOW;
 
   const renderSection = (section, sectionIndex) => {
@@ -135,7 +135,6 @@ export default function AboutOne({ data }) {
                   </ul>
                   <div className="hostal_d_btns d-flex justify-content-left">
                     <a
-                      target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-warning CTA_Applynow"
                       href={applyNowLink}
