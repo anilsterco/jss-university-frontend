@@ -3061,7 +3061,7 @@ a:active {
 .green-initiative .about_f_value .ab_f_content h3>span {color: var(--color-ff);}
 .about-jss-university .about_four + .container {padding-bottom: 8rem;}
 .about-jss-university .about_four + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 2rem;display: flex;}
-.about-jss-university .about_four + .container .estab_slide_item  figure img {width: 75%;height: auto;}
+.about-jss-university .about_four + .container .estab_slide_item  figure img {width: 60%;height: auto;}
 .overview .grans_tab_mainsec {padding-block: 0rem 8rem;}
 .jss-legacy .about_jsstwo {padding-block: 4rem;}
 .overview .image_content_repeat_section .hostel-rules {margin: 0rem 0 0;}
@@ -3088,9 +3088,9 @@ a:active {
 .student-resources .amenities_section{padding-bottom: 0;}
 .student-resources .top_section {margin-top: 6rem;}
 .awards-and-rankings .awaid-list {list-style: none;padding-left: 0;}
-.awards-and-rankings .awaid-list li{
-      font: var(--font-16);
-    font-weight: 400;
-    font-family: var(--font-Roboto);
-    margin-bottom: 2.5rem;
-}
+.awards-and-rankings .awaid-list li{font: var(--font-16);font-weight: 400;font-family: var(--font-Roboto);margin-bottom: 2.5rem;}
+
+.recruiters .grands_mainsec + .container {padding-bottom: 8rem;}
+.recruiters .grands_mainsec + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 2rem;display: flex;}
+.recruiters .grands_mainsec + .container .estab_slide_item  figure img {width: 70%;height: auto;}
+.recruiters .grands_mainsec + .container .estab_slide_item  {min-height: 0;}
