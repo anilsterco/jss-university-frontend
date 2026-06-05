@@ -2326,7 +2326,7 @@ export default function Header() {
             }
               .menu-left-item .hambur_links {
                       display:inline-block;
-                        padding: 1rem 6rem 1rem 14rem;
+                        padding: 1rem 6rem 1rem 10rem;
             }
             .menu-left-item.active .hambur_links {
               color: var(--color-4e);

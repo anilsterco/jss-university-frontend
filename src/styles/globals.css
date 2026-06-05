@@ -926,7 +926,7 @@ a:active {
   font-weight: normal;
   transition: all 0.3s ease;
   display: inline-block;
-  padding: 1rem 7rem 1rem 14rem;
+  padding: 1rem 7rem 1rem 10rem;
   width: 100%;
 }
 
