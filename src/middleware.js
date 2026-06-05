@@ -7,7 +7,7 @@ export async function middleware(request) {
   if (pathname === "/phd-application-form") {
     const nonce = crypto.randomUUID();
 
-    const isDev = process.env.NODE_ENV === "development";
+    const isDev = process.env.NODE_ENV === "development"; 
 
     const cspHeader = `
       default-src 'self';
