@@ -1,4 +1,4 @@
-import PhDApplicationForm from "@/component/common/phd-form/PhDApplicationForm";
+import PhDApplicationForm from "@/component/common/Phd-form/PhDApplicationForm";
 
 export default function Page() {
   return <PhDApplicationForm />;
