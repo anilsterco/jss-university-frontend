@@ -3087,3 +3087,10 @@ a:active {
 .student-resources .amenities_section ul {padding-left: 0;}
 .student-resources .amenities_section{padding-bottom: 0;}
 .student-resources .top_section {margin-top: 6rem;}
+.awards-and-rankings .awaid-list {list-style: none;padding-left: 0;}
+.awards-and-rankings .awaid-list li{
+      font: var(--font-16);
+    font-weight: 400;
+    font-family: var(--font-Roboto);
+    margin-bottom: 2.5rem;
+}

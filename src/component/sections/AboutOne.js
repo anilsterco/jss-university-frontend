@@ -542,7 +542,7 @@ export default function AboutOne({ data, extraClass }) {
                               )}
 
                               {item.Listiing && item.Listiing.length > 0 && (
-                                <ul className="custom-list">
+                                <ul className="awaid-list">
                                   {item.Listiing.map((listItem, index) => (
                                     <li key={index}>{listItem.Listiing}</li>
                                   ))}
