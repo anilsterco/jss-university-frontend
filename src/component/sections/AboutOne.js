@@ -472,7 +472,7 @@ export default function AboutOne({ data, extraClass }) {
       case "logoDescGrid":
         return (
           <div className="container" key={`logo-grid-section-${sectionIndex}`}>
-            
+
             <div className="row justify-content-center">
               {section.items
                 ?.sort(
@@ -485,14 +485,14 @@ export default function AboutOne({ data, extraClass }) {
                     item.figure !== "";
 
                   return (
-                    
+
                     <div
                       className="col-12 col-sm-6 col-lg-3 mb-4"
                       key={item.id || item.item_uuid || i}
                     >
-                      
+
                       <div className="estab_slide_item h-100 position-relative">
-                        
+
                         <figure
                           data-aos="fade-up"
                           data-aos-delay={i * 150}
@@ -539,6 +539,14 @@ export default function AboutOne({ data, extraClass }) {
                                 >
                                   <p>{item.description}</p>
                                 </figcaption>
+                              )}
+
+                              {item.Listiing && item.Listiing.length > 0 && (
+                                <ul className="custom-list">
+                                  {item.Listiing.map((listItem, index) => (
+                                    <li key={index}>{listItem.Listiing}</li>
+                                  ))}
+                                </ul>
                               )}
                             </>
                           )}
