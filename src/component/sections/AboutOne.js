@@ -56,7 +56,9 @@ export default function AboutOne({ data, extraClass }) {
                       >
                         <h5 className="about_subtitle">{item.title}</h5>
                         {item.subtitle && <p>{item.subtitle}</p>}
-
+                        {item.Subdescription?.map((sub, index) => (
+                          <span key={index}>{sub.Subdescription}</span>
+                        ))}
                         <div className="atm_g_imgsec">
                           {item?.imageVideo?.length > 0 ? (
                             item.imageVideo.length === 1 ? (
@@ -428,7 +430,6 @@ export default function AboutOne({ data, extraClass }) {
                                         <p>{item.description}</p>
                                       )}
                                     </figcaption>
-
                                     {item.file && (
                                       <Image
                                         src={item.file}
@@ -449,7 +450,6 @@ export default function AboutOne({ data, extraClass }) {
                                         height={100}
                                       />
                                     )}
-
                                     {item.description && (
                                       <figcaption>
                                         <p>{item.description}</p>
@@ -472,7 +472,6 @@ export default function AboutOne({ data, extraClass }) {
       case "logoDescGrid":
         return (
           <div className="container" key={`logo-grid-section-${sectionIndex}`}>
-
             <div className="row justify-content-center">
               {section.items
                 ?.sort(
@@ -483,16 +482,12 @@ export default function AboutOne({ data, extraClass }) {
                     item.figure !== null &&
                     item.figure !== undefined &&
                     item.figure !== "";
-
                   return (
-
                     <div
                       className="col-12 col-sm-6 col-lg-3 mb-4"
                       key={item.id || item.item_uuid || i}
                     >
-
                       <div className="estab_slide_item h-100 position-relative">
-
                         <figure
                           data-aos="fade-up"
                           data-aos-delay={i * 150}
@@ -551,7 +546,6 @@ export default function AboutOne({ data, extraClass }) {
                             </>
                           )}
                         </figure>
-
                         {item?.url && (
                           <Link
                             href={item.url}
@@ -567,7 +561,6 @@ export default function AboutOne({ data, extraClass }) {
             </div>
           </div>
         );
-
       default:
         return null;
     }

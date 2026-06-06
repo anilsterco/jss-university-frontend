@@ -57,22 +57,17 @@ export default function AboutOne({ data }) {
     switch (section.type) {
       case "admissionOffice":
         const item = section.items?.[0];
-
         if (!item) return null;
-
         return (
           <section
             className="admins_of_con"
             id="admissionsofc"
-            key={sectionIndex}
-          >
+            key={sectionIndex}>
             <div className="container">
               <div
                 className="ad_offc_contact"
                 data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                {/* Image */}
+                data-aos-delay="200">
                 {item.image && (
                   <div className="ad_of_conimg">
                     <figure className="shine-effect">
@@ -90,20 +85,16 @@ export default function AboutOne({ data }) {
                 {/* Heading & Contacts */}
                 <div className="add_of_context">
                   {item.heading && <h5>{item.heading}</h5>}
-
                   <ul>
                     {item.data?.map((contact, idx) => {
                       const [label, value] = contact.info.split(":");
                       const values = value?.split(",") || [];
-
                       return (
                         <li key={idx}>
                           {label?.trim()} :{" "}
                           {values.map((v, i) => {
                             const cleaned = v.trim();
                             let content;
-
-                            // Phone clickable
                             if (/^\+?\d/.test(cleaned)) {
                               content = (
                                 <a className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
@@ -111,17 +102,14 @@ export default function AboutOne({ data }) {
                                 </a>
                               );
                             }
-                            // Email clickable
                             else if (cleaned.includes("@")) {
                               content = (
                                 <a className="CTA_Email" href={`mailto:${cleaned}`}>{cleaned}</a>
                               );
                             }
-                            // Normal text
                             else {
                               content = <span>{cleaned}</span>;
                             }
-
                             return (
                               <span key={i}>
                                 {i > 0 && ", "}
@@ -134,11 +122,7 @@ export default function AboutOne({ data }) {
                     })}
                   </ul>
                   <div className="hostal_d_btns d-flex justify-content-left">
-                    <a
-                      rel="noopener noreferrer"
-                      className="btn btn-warning CTA_Applynow"
-                      href={applyNowLink}
-                    >
+                    <a rel="noopener noreferrer" className="btn btn-warning CTA_Applynow" href={applyNowLink}>
                       Apply Now
                     </a>
                   </div>
@@ -147,11 +131,9 @@ export default function AboutOne({ data }) {
             </div>
           </section>
         );
-
       default:
         return null;
     }
   };
-
   return <>{data?.map((section, index) => renderSection(section, index))}</>;
 }

@@ -72,6 +72,10 @@ import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+import societiesFculties from "@/component/sections/SocietiesFculties";
+import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
+
+import SocietiesEvents from "@/component/sections/SocietiesEvents";
 import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
@@ -218,6 +222,10 @@ export default async function DynamicPage({ params }) {
     tabTableMultiple: TabTableMultiple,
     tabCustomTableMultiple: TabCustomTableMultiple,
     textArea: Textarea,
+    societiesFculties: societiesFculties,
+    societiesEvent: SocietiesEvents,
+    AchievementsRecognitions:AchievementsRecognitions,
+    
   };
 
   return (
