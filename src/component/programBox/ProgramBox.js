@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ProgramBox({ data, type }) {
   return (
-    <div className={styles.cusProgramBox}>
+    <div className={`${styles.cusProgramBox}`}>
       <Link
         href={`/programs/${data.slug ?? ""}`}
         className={`shine-effect ${styles.strechedLink}`}

@@ -1,35 +1,31 @@
 /** @type {import('next').NextConfig} */
+import { BASE_URL } from "./src/config/config.js";
+
 const nextConfig = {
+  // ✅ ADD THIS (fix your warning)
+  allowedDevOrigins: ['192.168.100.27'],
+
   async headers() {
     return [
       {
-        source: "/(.*)", // apply to all routes
+        source: "/(.*)",
         headers: [
-          // ✅ Prevent iframe embedding
           {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
           },
-
-          // ✅ Prevent MIME sniffing
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },
-
-          // ✅ Referrer Policy
           {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
-
-          // ✅ Permissions Policy
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
-
-          // ✅ Already exists but keep strong
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
@@ -45,15 +41,18 @@ const nextConfig = {
         protocol: "http",
         hostname: "sd7",
         port: "8080",
-        pathname: "/jss/assets/img/banners/**",
+        pathname: "/assets/img/banners/**",
       },
       {
         protocol: "https",
-        hostname: "project-demo.in",
+        hostname: "backoffice.jssuninoida.edu.in",
         pathname: "/**",
       },
     ],
-    domains: ["sd7", "localhost", "project-demo.in"],
+
+    // ⚠️ REMOVE THIS (deprecated warning)
+    // domains: ["sd7", "localhost", "backoffice.jssuninoida.edu.in"],
+
     unoptimized: true,
   },
 
@@ -61,7 +60,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://project-demo.in/jss/api/:path*",
+        destination: `${BASE_URL}:path*`,
       },
     ];
   },

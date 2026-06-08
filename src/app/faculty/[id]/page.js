@@ -4,8 +4,12 @@ import { getPageSEO } from "@/lib/seo";
 import FacultyDetailClient from "./FacultyDetailClient";
 
 async function fetchFaculty(id) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}faculties/${id}`, {
+    const res = await fetch(`${BASE_URL}faculties/${id}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;

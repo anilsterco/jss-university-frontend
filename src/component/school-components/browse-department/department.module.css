@@ -434,7 +434,6 @@
     margin-bottom: 2.2rem;
     font: var(--font-40);
     line-height: 1;
-
   }
 
   .departmentSection .container {
@@ -507,7 +506,30 @@
     padding-bottom:3rem;
   }
 }
-
+@media (max-width: 767px) {
+   .title {
+    font: var(--font-30);
+  }
+  .browseHeader h2 {
+    font: var(--font-22);
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  .browseHeader p{
+    margin-bottom: 1rem;
+  }
+  .admiCol h2 {
+  font: var(--font-20);
+  }
+  .admiCol p{
+    font: var(--font-16);
+    font-weight: 300;
+  }
+  .bannerLabel{
+    font: var(--font-20);
+  }
+}
 @media (max-width: 576px) {
   .departmentSection {
     padding: 2rem 1rem 1rem 1rem;

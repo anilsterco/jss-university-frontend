@@ -415,6 +415,9 @@
 }
 
 @media (max-width: 767px) {
+  .cardIcons {
+    display: none;
+  }
   .showOnlyMobileSubHeading {
     display: flex;
     justify-content: center;
@@ -588,6 +591,16 @@
 @media (max-width:575px) {
   .programsCardsSection {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .rightCol .admistion_heading{
+    display: block;
+  }
+  .rightCol .admistion_heading h2{
+    font: var(--font-20);
+  }
+  .rightCol .admistion_heading p{
+    font: var(--font-16);
+    font-weight: 300;
   }
 }
 

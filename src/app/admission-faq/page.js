@@ -10,8 +10,11 @@ export async function generateMetadata() {
 }
 
 async function getFaq() {
+  const isDev = process.env.NODE_ENV === 'development';
   try {
-    const res = await fetch(`${BASE_URL}admission/faq`, {
+    const res = await fetch(`${BASE_URL}admission/faq`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 120 },
     });
 

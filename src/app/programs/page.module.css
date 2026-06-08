@@ -1733,6 +1733,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  .program_box{
+    background:red;
+  }
 }
 
 /* Fix for very small screens */
@@ -1748,4 +1752,48 @@
   .cusProgramText {
     padding: 2rem 0.8rem 0.8rem 0.8rem;
   }
+}
+
+@media (max-width: 767px) {
+
+  .programCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .programCategoryBox select.programs_select_dropdown {
+    width: 100%;
+    height: 5rem;
+    padding: 0 1.6rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 1.2rem;
+    background-color: #fff;
+    color: #222;
+    font-size: 1.4rem;
+    font-weight: 500;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+    /* custom arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.6rem;
+  }
+
+  .programCategoryBox select.programs_select_dropdown:focus {
+    border-color: #c89b5b;
+    box-shadow: 0 0 0 3px rgba(200,155,91,0.15);
+  }
+
+  .programCategoryBox select.programs_select_dropdown:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+  }
+
 }

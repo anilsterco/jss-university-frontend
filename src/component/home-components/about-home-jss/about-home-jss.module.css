@@ -139,7 +139,10 @@
   margin-bottom: 1rem;
   font-weight: 700;
 }
-
+.sourceText {
+   height: auto;
+   width: auto;
+  }
 .topSection p {
   color: var(--color-4e);
   font: var(--font-18);
@@ -253,6 +256,7 @@
     width: 50%;
 
   }
+  
 }
 
 @media (min-width: 1381px) and (max-width: 1919px) {
@@ -265,7 +269,14 @@
   }
 }
 
-
+@media (max-width: 1366px){
+.topSectionHeading {
+  width: 55%;
+}
+.description {
+  max-width: 90%;
+}
+}
 
 @media (max-width: 1024px) {
   .rightColumn {
@@ -277,7 +288,7 @@
     max-width: 100%;
   }
 .topSectionHeading {
-  width: 50%;
+  width: 60%;
 }
 .fifthMiddleSection {
   display: block;

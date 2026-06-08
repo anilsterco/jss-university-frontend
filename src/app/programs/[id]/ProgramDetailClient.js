@@ -5,19 +5,29 @@ import Image from "next/image";
 import Link from "next/link";
 import "@/styles/custom.style.css";
 import "@/styles/style.css";
-import { useParams } from "next/navigation";
 import { APPLY_NOW, BASE_URL } from "@/config/config";
 import Faq from "@/component/common/faq/Faq";
 import EligibilityPrograms from "@/component/sections/EligibilityData";
 
+const MOBILE_BREAKPOINT = 768;
+
 export default function ProgramDetailClient({ params }) {
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState(null);
   const [programData, setProgramData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [currentCurriculumIndex, setCurrentCurriculumIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState(null);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     fetch(`${BASE_URL}course/${params}`)
@@ -34,15 +44,30 @@ export default function ProgramDetailClient({ params }) {
       });
   }, [params]);
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-  };
+  useEffect(() => {
+    if (!programData) return;
+    if (activeTab) return;
+    const { peos, pos, pso } = programData;
+    if (peos?.length > 0) setActiveTab("tab1");
+    else if (pos?.length > 0) setActiveTab("tab2");
+    else if (pso?.length > 0) setActiveTab("tab3");
+  }, [programData]);
+
+  useEffect(() => {
+    if (!programData) return;
+    const { peos, pos, pso } = programData;
+    if (peos?.length > 0) setOpenAccordion("tab1");
+    else if (pos?.length > 0) setOpenAccordion("tab2");
+    else if (pso?.length > 0) setOpenAccordion("tab3");
+  }, [programData]);
+
+  const handleTabClick = (tabId) => setActiveTab(tabId);
 
   const handlePreviousTestimonial = () => {
     if (testimonials && testimonials.length > 0) {
       setCurrentTestimonialIndex(
         (prevIndex) =>
-          (prevIndex - 1 + testimonials.length) % testimonials.length,
+          (prevIndex - 1 + testimonials.length) % testimonials.length
       );
     }
   };
@@ -50,7 +75,7 @@ export default function ProgramDetailClient({ params }) {
   const handleNextTestimonial = () => {
     if (testimonials && testimonials.length > 0) {
       setCurrentTestimonialIndex(
-        (prevIndex) => (prevIndex + 1) % testimonials.length,
+        (prevIndex) => (prevIndex + 1) % testimonials.length
       );
     }
   };
@@ -60,7 +85,7 @@ export default function ProgramDetailClient({ params }) {
       setCurrentCurriculumIndex(
         (prevIndex) =>
           (prevIndex - 1 + curriculum.curriculum_desc.length) %
-          curriculum.curriculum_desc.length,
+          curriculum.curriculum_desc.length
       );
     }
   };
@@ -68,16 +93,14 @@ export default function ProgramDetailClient({ params }) {
   const handleNextCurriculum = () => {
     if (curriculum?.curriculum_desc && curriculum.curriculum_desc.length > 0) {
       setCurrentCurriculumIndex(
-        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length,
+        (prevIndex) => (prevIndex + 1) % curriculum.curriculum_desc.length
       );
     }
   };
 
   function convertTabSection(tabSection) {
     if (!tabSection) return null;
-
     const info = tabSection.tab_section_info?.[0];
-
     const tabContent =
       typeof tabSection.tab_section_content === "string"
         ? JSON.parse(tabSection.tab_section_content)
@@ -88,7 +111,7 @@ export default function ProgramDetailClient({ params }) {
       tabTitle: tab.name,
       tabDesc: [],
       tabLists: [],
-      tabHTML: tab.data, // raw HTML
+      tabHTML: tab.data,
     }));
 
     return [
@@ -139,7 +162,11 @@ export default function ProgramDetailClient({ params }) {
         }}
       >
         <div
-          style={{ fontSize: "24px", marginBottom: "20px", color: "#d32f2f" }}
+          style={{
+            fontSize: "24px",
+            marginBottom: "20px",
+            color: "#d32f2f",
+          }}
         >
           No Sections Found For This Program. Please Add Sections To Display
           Program Details.
@@ -151,7 +178,6 @@ export default function ProgramDetailClient({ params }) {
     );
   }
 
-  // Destructure data for easier access
   const {
     name,
     banner,
@@ -174,11 +200,61 @@ export default function ProgramDetailClient({ params }) {
   const currentTestimonial = testimonials?.[currentTestimonialIndex];
   const text = currentTestimonial?.short_description || "";
   const [firstWord, ...restWords] = text.split(" ");
+
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  console.log("tabSection", tabSection);
+  const tabItems = [
+    {
+      id: "tab1",
+      label: "Program Educational Objectives (PEOs)",
+      data: peos,
+      prefix: "PEO",
+    },
+    {
+      id: "tab2",
+      label: "Program Outcomes (POs)",
+      data: pos,
+      prefix: "PO",
+    },
+    {
+      id: "tab3",
+      label: "Program Specific Outcomes (PSOs)",
+      data: pso,
+      prefix: "PSO",
+    },
+  ].filter((tab) => tab.data?.length > 0);
+
+  const renderTabContent = (tab) => (
+    <div className="item-content">
+      <div className="peo-list">
+        {tab.data.map((item, index) => (
+          <div key={index} className="peo-box">
+            <h3>
+              {tab.prefix}-{index + 1}
+              {/* {item.title && `: ${item.title}`} */}
+            </h3>
+            <div className="content_heading">
+              <span>{item.title && `${item.title} : `}</span>
+              <p dangerouslySetInnerHTML={{ __html: item.description }} />
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* {apply_now_link && ( */}
+        <a
+          href={APPLY_NOW}
+          className="apply-btn1 CTA_Applynow"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apply Now
+        </a>
+      {/* )} */}
+    </div>
+  );
+
   return (
     <main className="site_main">
       <section className="program-detail">
@@ -194,6 +270,7 @@ export default function ProgramDetailClient({ params }) {
             <figcaption>
               <div className="program-detail-text">
                 <div className="innnr_head">
+                {name && <h1 className="d-none">{name}</h1>}
                   <h2>PROGRAMS</h2>
                   {name && <h3>{name}</h3>}
                 </div>
@@ -214,15 +291,13 @@ export default function ProgramDetailClient({ params }) {
                       <p>Admission Open for</p>
                       <h2>{admissionSection?.academic_year || "2026-27"}</h2>
                     </div>
-
                     <div className="overview-duration">
                       {admissionSection?.course_duration && (
                         <div className="overview-duration-text">
-                          <span>Course duration</span>
+                          <span>Course Duration</span>
                           <p>{admissionSection.course_duration}</p>
                         </div>
                       )}
-
                       {admissionSection?.annual_fees && (
                         <div className="fees">
                           <span>Annual Fees</span>
@@ -233,7 +308,7 @@ export default function ProgramDetailClient({ params }) {
                         {admissionSection?.program_structure && (
                           <a
                             href={admissionSection.program_structure}
-                            className="structure-btn"
+                            className="structure-btn CTA_ProgrameStructure"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -242,7 +317,7 @@ export default function ProgramDetailClient({ params }) {
                               alt="PDF"
                               width={20}
                               height={20}
-                              className="img-fluid"
+                              className="img-fluid "
                             />
                             Programe Structure
                           </a>
@@ -264,7 +339,6 @@ export default function ProgramDetailClient({ params }) {
                             Scholarship
                           </a>
                         )}
-
                         {admissionSection?.brouchure && (
                           <a
                             href={admissionSection.brouchure}
@@ -277,43 +351,43 @@ export default function ProgramDetailClient({ params }) {
                               alt="PDF"
                               width={20}
                               height={20}
-                              className="img-fluid"
+                              className="img-fluid CTA_Brochure"
                             />
                             Brochure
                           </a>
                         )}
-                        {(admissionSection?.apply_now_link ||
-                          apply_now_link) && (
+                        {/* {(admissionSection?.apply_now_link || apply_now_link) && ( */}
                           <a
-                            href={
-                              admissionSection?.apply_now_link || APPLY_NOW
-                            }
+                            href={APPLY_NOW}
                             target="_blank"
-                            className="apply-btn1"
+                            className="apply-btn1 CTA_Applynow"
                             rel="noopener noreferrer"
                           >
                             Apply Now
                           </a>
-                        )}
+                        {/* )} */}
                       </div>
                     </div>
                     <div className="eligibility-text">
-                      <Link href="/scholarship-and-eligibility#eligibilitySec" className="eligibility-link">
+                      <Link
+                        href="/scholarship-and-eligibility#eligibilitySec"
+                        className="eligibility-link"
+                      >
                         <span>Eligibility Criteria</span>
-                         <svg
-                            className="cta-arrow"
-                            style={{ marginLeft: "1rem",marginBottom:'0.5rem' }}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            viewBox="0 0 16 16"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                            />
-                          </svg>
+                        <svg
+                          className="cta-arrow"
+                          style={{ marginLeft: "1rem", marginBottom: "0.5rem" }}
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#fff"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                          />
+                        </svg>
                       </Link>
                       <h3>{admissionSection?.eligibility_marks}</h3>
                       <p>{admissionSection?.eligibility_desc}</p>
@@ -346,7 +420,8 @@ export default function ProgramDetailClient({ params }) {
                         >
                           {expanded ? "Show Less" : "Show More"}
                           <i
-                            className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"}`}
+                            className={`ms-2 ${expanded ? "expanded_icon" : "expanded_icon_bottom"
+                              }`}
                           ></i>
                         </button>
                       )}
@@ -377,7 +452,7 @@ export default function ProgramDetailClient({ params }) {
               </div>
             </div>
             {eligibility?.eligibility_criteria && (
-              <div className="col-lg-9">
+              <div className="col-lg-12">
                 <div className="rank-box">
                   <h6>Eligibility Criteria</h6>
                   <div className="rank-text">
@@ -415,179 +490,86 @@ export default function ProgramDetailClient({ params }) {
           <EligibilityPrograms data={convertTabSection(tabSection)} />
         )}
 
-        
       <div className="containerMD">
-          <div className="pos_tab_line"></div>
-      </div>  
+        <div className="pos_tab_line"></div>
+      </div>
 
-      {peos && peos?.length > 0 && (
+      {tabItems.length > 0 && (
         <section className="educational-sec">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
                 <div className="educational-box">
-                  <article className="tabbed-content">
-                    <nav className="tabs">
-                      <ul>
-                        {peos?.length > 0 && (
-                          <li>
-                            <a
-                              href="#tab1"
-                              className={activeTab === "tab1" ? "active" : ""}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleTabClick("tab1");
-                              }}
-                            >
-                              Program Educational Objectives (PEOs)
-                            </a>
-                          </li>
-                        )}
-                        {pos?.length > 0 && (
-                          <li>
-                            <a
-                              href="#tab2"
-                              className={activeTab === "tab2" ? "active" : ""}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleTabClick("tab2");
-                              }}
-                            >
-                             Program Outcomes (POs)
-                            </a>
-                          </li>
-                        )}
-                        {pso?.length > 0 && (
-                          <li>
-                            <a
-                              href="#tab3"
-                              className={activeTab === "tab3" ? "active" : ""}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleTabClick("tab3");
-                              }}
-                            >
-                              Program Specific Outcomes (PSOs)
-                            </a>
-                          </li>
-                        )}
-                      </ul>
-                    </nav>
 
-                    {peos?.length > 0 && (
-                      <div
-                        id="tab1"
-                        className={`item ${activeTab === "tab1" ? "active" : ""}`}
-                        data-title="Program Educational Objectives (PEOs)"
-                      >
-                        <div className="item-content">
-                          {/* <h6>Program Educational Objectives</h6> */}
-                          <div className="peo-list">
-                            {peos.map((peo, index) => (
-                              <div key={index} className="peo-box">
-                                <h3>
-                                  PEO-{index + 1}
-                                  {peo.title && `: ${peo.title}`}
-                                </h3>
-                                <p
-                                  dangerouslySetInnerHTML={{
-                                    __html: peo.description,
-                                  }}
-                                ></p>
-                              </div>
-                            ))}
-                          </div>
-                          {apply_now_link && (
-                            <a
-                              href={apply_now_link || APPLY_NOW}
-                              className="apply-btn1"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Apply Now
-                            </a>
-                          )}
+                  {/* ── DESKTOP: Tab layout ── */}
+                  {!isMobile && (
+                    <article className="tabbed-content">
+                      <nav className="tabs">
+                        <ul>
+                          {tabItems.map((tab) => (
+                            <li key={tab.id}>
+                              <a
+                                href={`#${tab.id}`}
+                                className={activeTab === tab.id ? "active" : ""}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleTabClick(tab.id);
+                                }}
+                              >
+                                {tab.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+                      {tabItems.map((tab) => (
+                        <div
+                          key={tab.id}
+                          id={tab.id}
+                          className={`item ${activeTab === tab.id ? "active" : ""}`}
+                          data-title={tab.label}
+                        >
+                          {renderTabContent(tab)}
                         </div>
-                      </div>
-                    )}
+                      ))}
+                    </article>
+                  )}
 
-                    {pos?.length > 0 && (
-                      <div
-                        id="tab2"
-                        className={`item ${activeTab === "tab2" ? "active" : ""}`}
-                        data-title="Program Outcomes (POs)"
-                      >
-                        <div className="item-content">
-                          {/* <h6>Program Outcomes</h6> */}
-                          <div className="peo-list">
-                            {pos.map((po, index) => (
-                              <div key={index} className="peo-box">
-                                <h3>
-                                  PO-{index + 1}
-                                  {po.title && `: ${po.title}`}
-                                </h3>
-                                <p>{po.description}</p>
-                              </div>
-                            ))}
+                  {/* ── MOBILE: Accordion layout ── */}
+                  {isMobile && (
+                    <div>
+                      {tabItems.map((tab) => (
+                        <details
+                          key={tab.id}
+                          className="faqItem tabs_accordion"
+                          open={openAccordion === tab.id}
+                          onToggle={(e) => {
+                            if (e.target.open) {
+                              setOpenAccordion(tab.id);
+                            } else if (openAccordion === tab.id) {
+                              setOpenAccordion(null);
+                            }
+                          }}
+                        >
+                          <summary className="faqQuestion">
+                            <span className="faq_heading">{tab.label}</span>
+                            <span className="icon"></span>
+                          </summary>
+                          <div className="faqAnswer">
+                            {renderTabContent(tab)}
                           </div>
-                          {apply_now_link && (
-                            <a
-                              href={apply_now_link || APPLY_NOW}
-                              className="apply-btn1"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Apply Now
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    )}
+                        </details>
+                      ))}
+                    </div>
+                  )}
 
-                    {pso?.length > 0 && (
-                      <div
-                        id="tab3"
-                        className={`item ${activeTab === "tab3" ? "active" : ""}`}
-                        data-title="Program Specific Outcomes (PSOs)"
-                      >
-                        <div className="item-content">
-                          {/* <h6>Program Specific Outcomes</h6> */}
-                          <div className="peo-list">
-                            {pso.map((p, index) => (
-                              <div key={index} className="peo-box">
-                                <h3>
-                                  PSO-{index + 1}
-                                  {p.title && `: ${p.title}`}
-                                </h3>
-                                <p
-                                  dangerouslySetInnerHTML={{
-                                    __html: p.description,
-                                  }}
-                                />
-                              </div>
-                            ))}
-                          </div>
-                          {apply_now_link && (
-                            <a
-                            href={apply_now_link || APPLY_NOW}
-                              className="apply-btn1"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Apply Now
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </article>
                 </div>
               </div>
             </div>
           </div>
         </section>
       )}
-      {/* Curriculum Section */}
+
       {curriculum?.curriculum_title && (
         <section
           className={`core-sec ${peos?.length < 1 ? "extra_space" : ""}`}
@@ -608,7 +590,6 @@ export default function ProgramDetailClient({ params }) {
                     </p>
                     {curriculum?.curriculum_desc?.length > 1 && (
                       <div className="arrows">
-                        {/* Left Arrow */}
                         <button
                           className="arrow-btn left"
                           onClick={handlePreviousCurriculum}
@@ -629,8 +610,6 @@ export default function ProgramDetailClient({ params }) {
                             alt="Left Arrow"
                           />
                         </button>
-
-                        {/* Right Arrow */}
                         <button
                           className="arrow-btn right"
                           onClick={handleNextCurriculum}
@@ -642,12 +621,12 @@ export default function ProgramDetailClient({ params }) {
                           style={{
                             opacity:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? 0.5
                                 : 1,
                             cursor:
                               currentCurriculumIndex ===
-                              curriculum.curriculum_desc.length - 1
+                                curriculum.curriculum_desc.length - 1
                                 ? "not-allowed"
                                 : "pointer",
                           }}
@@ -700,7 +679,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Fee Structure Section */}
       {fee_structure?.fee_structure_title && (
         <section className="program-sec-six">
           <div className="container">
@@ -729,16 +707,18 @@ export default function ProgramDetailClient({ params }) {
                     <h2>{fee_structure?.course_total_fees}</h2>
                     <span>{fee_structure?.academic_year}</span>
                     <div className="engineering-btn">
-                      {(fee_structure?.apply_now_link || apply_now_link) && (
+                      {/* {(fee_structure?.apply_now_link || apply_now_link) && ( */}
                         <a
-                          href={fee_structure?.apply_now_link || apply_now_link}
-                          className="apply-btn1"
+                          href={
+                            APPLY_NOW
+                          }
+                          className="apply-btn1 CTA_Applynow"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           Apply Now
                         </a>
-                      )}
+                      {/* )} */}
                       {fee_structure?.fee_structure_pdf && (
                         <a
                           href={fee_structure.fee_structure_pdf}
@@ -747,7 +727,7 @@ export default function ProgramDetailClient({ params }) {
                           rel="noopener noreferrer"
                         >
                           <Image
-                            src={"/images/custom-page/red-pdf-icon.png"}
+                            src="/images/custom-page/red-pdf-icon.png"
                             alt="PDF"
                             width={20}
                             height={20}
@@ -765,7 +745,6 @@ export default function ProgramDetailClient({ params }) {
         </section>
       )}
 
-      {/* Testimonials Section */}
       {testimonials && testimonials.length > 0 && (
         <section className="program-testimonial">
           <div className="container">
@@ -778,7 +757,6 @@ export default function ProgramDetailClient({ params }) {
                       <p>{currentTestimonial?.title}</p>
                     </div>
                     <div className="arrows">
-                      {/* Left Arrow */}
                       <button
                         className="arrow-btn left"
                         onClick={handlePreviousTestimonial}
@@ -791,8 +769,6 @@ export default function ProgramDetailClient({ params }) {
                           alt="Left Arrow"
                         />
                       </button>
-
-                      {/* Right Arrow */}
                       <button
                         className="arrow-btn right"
                         onClick={handleNextTestimonial}
@@ -809,19 +785,18 @@ export default function ProgramDetailClient({ params }) {
                     <div className="across">
                       <h2>{firstWord}</h2>
                       <p>{restWords.join(" ")}</p>
-                      {(currentTestimonial?.apply_now_link ||
-                        apply_now_link) && (
+                      {/* {(currentTestimonial?.apply_now_link || apply_now_link) && ( */}
                         <a
                           href={
-                            currentTestimonial?.apply_now_link || apply_now_link
+                            APPLY_NOW
                           }
-                          className="apply-btn1"
+                          className="apply-btn1 CTA_Applynow"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           Apply Now
                         </a>
-                      )}
+                      {/* )} */}
                     </div>
                   </div>
                   <div className="testimonial-img">
@@ -905,7 +880,7 @@ export default function ProgramDetailClient({ params }) {
                                 {opportunity.text}
                               </a>
                             </li>
-                          ),
+                          )
                         )}
                     </ul>
                   </div>

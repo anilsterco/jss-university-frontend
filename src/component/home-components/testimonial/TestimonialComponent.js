@@ -153,23 +153,26 @@ export default function TestimonialsSection({ data }) {
           <p className={`${styles.testimonialsLabel} text-center`}>
             TESTIMONIALS
           </p>
-          <Swiper
-            spaceBetween={100}
-            slidesPerView={1}
-            style={{ paddingBottom: "1.8rem" }}
-          >
-            {columnForMobile.map((item, i) => (
-              <SwiperSlide key={i}>
-                <TestimonialCard
-                  key={i}
-                  data={item}
-                  onPlay={() => setSelectedVideo(item.video_url)}
-                />
-              </SwiperSlide>
-              
-            ))}
-          </Swiper>
-          <Swiper spaceBetween={100} slidesPerView={1}>
+        <Swiper
+          spaceBetween={15}
+          slidesPerView={1}
+          breakpoints={{
+            480: {
+              slidesPerView: 2,
+            },
+          }}
+          style={{ paddingBottom: "1.8rem" }}
+        >
+          {testimonialsData?.testimonials?.map((item, i) => (
+            <SwiperSlide key={i}>
+              <TestimonialCard
+                data={item}
+                onPlay={() => setSelectedVideo(item.video_url)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+          {/* <Swiper spaceBetween={100} slidesPerView={1}>
             {column3.map((item, i) => (
               <SwiperSlide key={i}>
                 <TestimonialCard
@@ -179,7 +182,7 @@ export default function TestimonialsSection({ data }) {
                 />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
           <div className={`${styles.mobileViewArrow}`}>
             <Link href={`${WEB_URL}testimonials`}>
               <button

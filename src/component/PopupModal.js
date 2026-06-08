@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import { BASE_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL } from "@/config/config";
 import Link from "next/link";
 
 const modalData = [
@@ -86,24 +86,26 @@ export default function PopupModal() {
                 <div key={index} className="grid-item">
                   <Image
                     src={item?.image}
-                    width={300}
-                    height={146}
-                    layout="responsive"
+                   className="img-fluid"
+                    // layout="responsive"
+                    width={0}
+                    height={0}
                     alt={item?.title}
+                    style={{ width: '100%', height: 'auto' }}
                   />
-                  <h5 className="title">{item?.title}</h5>
+                  {/* <h5 className="title">{item?.title}</h5> */}
                   {/* <span>Visit Us</span> */}
-                  <div className="visit_button">
-                  <a
-                    className="apply-btn1"
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${item?.title}`}
-                  >Visit Us</a>
-                  {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
+                    <div className="visit_button">
+                      <Link
+                        className="apply-btn1 CTA_Applynow"
+                        href={APPLY_NOW}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${item?.title}`}
+                      >Apply Now</Link>
+                    {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
 
-                </div>
+                  </div>
                 </div>
               ))}
             </div>

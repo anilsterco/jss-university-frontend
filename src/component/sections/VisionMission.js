@@ -2,8 +2,6 @@ import React from "react";
 
 export default function VisionMission({ data }) {
   const renderSection = (section, sectionIndex) => {
-    console.log("mission vision content ", section);
-
     switch (section.type) {
       case "vision_mission":
         return (

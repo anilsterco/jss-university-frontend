@@ -7,34 +7,86 @@ import "@fontsource/roboto-condensed/300.css";
 import "@fontsource/roboto-condensed/400.css";
 import "@fontsource/roboto-condensed/700.css";
 import "../../public/js/aos";
+import "../styles/custom.style.css";
 
+import Script from "next/script";
 import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { BASE_URL } from "@/config/config";
+import getPageRedirect from "@/utils/getPageRedirect";
+import GoogleAnalytics from "@/component/GoogleAnalytics";
 
 export const metadata = {
-  title: "JSS University",
-  description: "A Next.js project with Zustand and SEO setup",
+  title: "JSS University Noida",
+  description: "JSS University Noida",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const headersList = await headers();
+  const nonce = headersList.get("x-nonce");
+
   return (
     <html lang="en">
+      {/* Google Tag Manager */}
+      <head>
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M7QC44X3');
+          `}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4F2ZKG2HVD"
+          strategy="afterInteractive"
+         
+        />
+        <Script id="google-analytics" strategy="afterInteractive" >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4F2ZKG2HVD');
+          `}
+        </Script>
+      </head>
+
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M7QC44X3"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
         <Providers>
+          <GoogleAnalytics />
           <Header />
           <HashScrollHandler />
           <MainWrapper>{children}</MainWrapper>
           <ScriptLoader />
           <Footer />
+
           <a
-            href="https://wa.me/+919311830458"
+            href="https://wa.me/917599201722?text=Hello%20JSS%20University"
             target="_blank"
             className="whatsapp-btn"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
+              width="24"
               fill="white"
               viewBox="0 0 24 24"
             >

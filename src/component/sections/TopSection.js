@@ -18,7 +18,7 @@ export default function TopSection({ data }) {
                   section.items.length >= -1 &&
                   section.items.map((item, idx) => (
                     <React.Fragment key={idx}>
-                      <h5 className="about_subtitle">{item.heading}</h5>
+                      <h5 className="about_subtitle" dangerouslySetInnerHTML={{__html:item?.heading}}/>
                       <p
                         className={`about_subHeading ${item?.sub_heading && "less"}`}
                       >

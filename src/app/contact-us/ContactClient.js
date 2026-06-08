@@ -7,8 +7,10 @@ import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
 import { BASE_URL } from "@/config/config";
+import { useRouter } from "next/navigation";
 
 export default function ContactClient() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +20,7 @@ export default function ContactClient() {
     agree: false,
   });
 
-  const [contactUsData, setContactUsData] = useState([]);
+  const [contactUsData, setContactUsData] = useState({});
   const [courseList, setCourseList] = useState([]);
   const [stateList, setStateList] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,7 +35,7 @@ export default function ContactClient() {
       try {
         const res = await fetch(`${BASE_URL}contact-info`);
         const data = await res.json();
-        setContactUsData(data.data[0] || []);
+        setContactUsData(data.data?.[0] ?? {});
       } catch (err) {
         console.error(err);
         setContactUsData([]);
@@ -100,7 +102,7 @@ export default function ContactClient() {
     submitForm.append("consent", formData.agree ? "1" : "0");
 
     try {
-      const res = await fetch("https://project-demo.in/jss/api/contact-form", {
+      const res = await fetch(`${BASE_URL}contact-form`, {
         method: "POST",
         body: submitForm,
         headers: {
@@ -113,23 +115,24 @@ export default function ContactClient() {
       }
 
       // Show success message in green
-      setSubmitStatus({
-        type: "success",
-        message:
-          "Form submitted successfully! Our counselor will get in touch with you soon.",
-      });
+      // setSubmitStatus({
+      //   type: "success",
+      //   message:
+      //     "Form submitted successfully! Our counselor will get in touch with you soon.",
+      // });
+      router.push("/thank-you");
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        state: "",
-        course: "",
-        agree: false,
-      });
-      if (recaptchaRef.current) recaptchaRef.current.reset();
-      setCaptchaToken(null);
-      setCaptchaError("");
+      // setFormData({
+      //   name: "",
+      //   email: "",
+      //   phone: "",
+      //   state: "",
+      //   course: "",
+      //   agree: false,
+      // });
+      // if (recaptchaRef.current) recaptchaRef.current.reset();
+      // setCaptchaToken(null);
+      // setCaptchaError("");
     } catch (err) {
       console.error("Error:", err);
       // Show error message in red
@@ -350,7 +353,7 @@ export default function ContactClient() {
                   <li>
                     <a
                       href={`mailto:${contactUsData.email}`}
-                      className={styles.ContactAdd}
+                      className={`${styles.ContactAdd} CTA_Email`}
                     >
                       <MdMailOutline
                         color="#018ce8"
@@ -362,7 +365,7 @@ export default function ContactClient() {
 
                     <a
                       href={`tel:+${contactUsData.phone}`}
-                      className={styles.ContactAdd}
+                      className={`${styles.ContactAdd} CTA_Number`}
                     >
                       <BiPhoneCall
                         color="#018ce8"
@@ -389,13 +392,32 @@ export default function ContactClient() {
                 height: "500px",
               }}
             >
-              <iframe
-                src={contactUsData.direction_url}
-                className={styles.mapIframs}
-                width="100%"
-                height={580}
-                loading="lazy"
-              ></iframe>
+              {contactUsData.direction_url ? (
+                <iframe
+                  title="JSS University on Google Maps"
+                  src={contactUsData.direction_url}
+                  className={styles.mapIframs}
+                  width="100%"
+                  height={580}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <div
+                  className={styles.mapIframs}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#f0f0f0",
+                    color: "#666",
+                    fontSize: "14px",
+                  }}
+                >
+                  Map unavailable (no embed URL from contact info yet).
+                </div>
+              )}
             </div>
           </div>
         </div>

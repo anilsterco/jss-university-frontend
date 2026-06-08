@@ -5,9 +5,7 @@ import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
-
-const BASE_URL = "https://project-demo.in/jss/api/contact-info";
-const Courses_List_URL = "https://project-demo.in/jss/api/course-list";
+import { BASE_URL } from "@/config/config";
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({
@@ -27,7 +25,7 @@ export default function ContactClient() {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const res = await fetch(BASE_URL);
+        const res = await fetch(`${BASE_URL}contact-info`);
         const data = await res.json();
         setContactUsData(data.data[0] || []);
       } catch (err) {
@@ -39,7 +37,7 @@ export default function ContactClient() {
 
     const fetchCourseList = async () => {
       try {
-        const res = await fetch(Courses_List_URL);
+        const res = await fetch(`${BASE_URL}course-list`);
         const data = await res.json();
         setCourseList(data.data);
       } catch (err) {
@@ -83,7 +81,7 @@ export default function ContactClient() {
     submitForm.append("consent", formData.agree ? "1" : "0");
 
     try {
-      const res = await fetch("https://project-demo.in/jss/api/contact-form", {
+      const res = await fetch(`${BASE_URL}contact-form`, {
         method: "POST",
         body: submitForm,
         headers: {

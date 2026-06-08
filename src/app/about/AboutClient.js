@@ -506,6 +506,7 @@ export default function AboutClient() {
               </div>
             </div>
           </section>
+          
         </>
       )}
     </main>

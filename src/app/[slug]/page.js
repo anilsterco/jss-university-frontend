@@ -18,7 +18,7 @@ import PlacementProcedure from "@/component/sections/PlacementProcedure";
 import PlacementRequest from "@/component/sections/PlacementRequest";
 import FacilitySeven from "@/component/sections/FacilitySeven";
 import HeritageSection from "@/component/sections/HeritageSection";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import EmpowringPeople from "@/component/sections/EmpowringPeople";
 import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
 import AcademicLabs from "@/component/sections/AcademicLabs";
@@ -72,13 +72,26 @@ import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+import societiesFculties from "@/component/sections/SocietiesFculties";
+import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
+
+import SocietiesEvents from "@/component/sections/SocietiesEvents";
 import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
+import Accordions1 from "@/component/sections/Accordions1";
+import '../../styles/custom.style.css'
+import { headers } from "next/headers";
+import getPageRedirect from "@/utils/getPageRedirect";
+import GrantsReceived1 from "@/component/sections/GrantsReceived1";
 
 async function fetchPageData(slug) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}pages/${slug}`, {
+    const res = await fetch(`${BASE_URL}pages/${slug}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;
@@ -94,6 +107,9 @@ export async function generateMetadata({ params }) {
 
 export default async function DynamicPage({ params }) {
   const { slug } = await params;
+
+//  await getPageRedirect(slug);
+
   const actualSlug = slug ?? "home";
   const [data, seoData] = await Promise.all([
     fetchPageData(actualSlug),
@@ -171,6 +187,7 @@ export default async function DynamicPage({ params }) {
     indexedResearch: IndexedResearch,
     publicationPatents: PublicationPatents,
     grantsreceived: GrantsReceived,
+    tab_with_custom_data: GrantsReceived1,
     grants: Grants,
     auditoriumSeminar: AuditoriumSeminar,
     universityGreen: UniversityGreen,
@@ -199,11 +216,16 @@ export default async function DynamicPage({ params }) {
     tabsContents: TabsContents,
     labCard: LabCard,
     table_section_tabs: Accordions,
+    accordionTabs: Accordions1,
     accordion: Accordion,
     gridCardDesign3: GridCardDesign3,
     tabTableMultiple: TabTableMultiple,
     tabCustomTableMultiple: TabCustomTableMultiple,
     textArea: Textarea,
+    societiesFculties: societiesFculties,
+    societiesEvent: SocietiesEvents,
+    AchievementsRecognitions:AchievementsRecognitions,
+    
   };
 
   return (

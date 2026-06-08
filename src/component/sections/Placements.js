@@ -32,13 +32,12 @@ export default function Placements({ data }) {
                 >
                   <div className="container">
                     <div
-                      className={`${
-                        item?.category === "research"
+                      className={`${item?.category === "research"
                           ? "mt_3xl_10"
                           : item?.category === "placement"
                             ? "mt_3xl_7"
                             : ""
-                      }`}
+                        }`}
                     >
                       {item?.heading && (
                         <h5 className="section_title">{item.heading}</h5>
@@ -57,9 +56,7 @@ export default function Placements({ data }) {
                         <h6 className="section_subTitle">{item.subTitle}</h6>
                       )}
 
-                      <div
-                        className={`placement_stats ${item?.totalColumns && "column-" + item?.totalColumns}`}
-                      >
+                      <div className={`placement_stats ${item?.totalColumns && "column-" + item?.totalColumns}`}>
                         {boxes.map((box, i) => (
                           <div
                             key={i}
@@ -95,7 +92,7 @@ export default function Placements({ data }) {
                               {box.mail && (
                                 <Link
                                   href={`mailto:${box.mail}`}
-                                  className="mail"
+                                  className="mail CTA_Email"
                                   dangerouslySetInnerHTML={{
                                     __html: box.mail,
                                   }}
@@ -112,15 +109,20 @@ export default function Placements({ data }) {
                               {box.listGroup && (
                                 <ul className="box_ul">
                                   {box.listGroup.map((list, listIdx) => (
-                                    <li key={listIdx}>{list.list}</li>
+                                    <li
+                                      key={listIdx}
+                                      dangerouslySetInnerHTML={{ __html: list.list }}
+                                    />
                                   ))}
                                 </ul>
                               )}
+                                 {box.subdecs && <p>{box.subdecs}</p>}
+
+                              
                             </div>
                           </div>
                         ))}
                       </div>
-
                       {item?.description && (
                         <div className="placeBottom">
                           <p>{item.description}</p>

@@ -187,26 +187,29 @@ export default function EventsGrid({ data }) {
                       eventsData.happenings[1].event_date_from}
                   </p>
                 </div>
-                {eventsData.happenings?.[0]?.slug && (
+                {eventsData.happenings?.[1]?.slug && (
                   <Link
-                    href={`${WEB_URL}happenings/${eventsData.happenings[0].slug}`}
+                    href={`${WEB_URL}happenings/${eventsData.happenings[1].slug}`}
                     className={styles.full_link}
                   />
                 )}
               </div>
 
-              <div className={`${styles.card} ${styles.card_overlay}`}>
+              <div className={`${styles.card} ${styles.col_2}`}>
+              <span className={styles.overlay} style={{backgroundColor:"#fff"}}></span>
                 {eventsData.happenings[2] && (
-                  <Image
-                    src={eventsData.happenings[2].image}
-                    alt="img"
-                    fill
-                    className={styles.cardImage}
-                  />
+                  <div className={`position-relative  ${styles.card_overlay}`}>
+                    <Image
+                      src={eventsData.happenings[2].image}
+                      alt="img"
+                      fill
+                      className={styles.cardImage}
+                    />
+                  </div>
                 )}
-                <div className={styles.miniContentPart}>
+                <div className={`${styles.miniContentPart}`} >
                   <p
-                    className={styles.cardTag}
+                    className={`${styles.cardTag} ${styles.cardTagDark}`}
                     data-aos="fade-up"
                     data-aos-delay="400"
                   >
@@ -215,7 +218,7 @@ export default function EventsGrid({ data }) {
                   </p>
                   <div>
                     <h3
-                      className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
+                      className={`${styles.cardTitle}`}
                       data-aos="fade-up"
                       data-aos-delay="500"
                     >
@@ -223,7 +226,7 @@ export default function EventsGrid({ data }) {
                         eventsData.happenings[2].title}
                     </h3>
                     <p
-                      className={`${styles.cardDate} ${styles.cardDateWhite}`}
+                      className={`${styles.cardDate}`}
                       data-aos="fade-up"
                       data-aos-delay="600"
                     >
@@ -240,7 +243,8 @@ export default function EventsGrid({ data }) {
                 </div>
               </div>
 
-              <div className={styles.card} style={{ backgroundColor: "#fff" }}>
+              {/*
+                <div className={styles.card} style={{ backgroundColor: "#fff" }}>
                 <p
                   className={`${styles.cardTag} ${styles.cardTagDark}`}
                   data-aos="fade-up"
@@ -249,15 +253,6 @@ export default function EventsGrid({ data }) {
                   {eventsData.happenings[3] &&
                     eventsData.happenings[3].event_type}
                 </p>
-                {/* {eventsData.happenings[3] && (
-                  <Image
-                    src={eventsData.happenings[3].image}
-                    alt="img"
-                    width={145}
-                    height={160}
-                    className={styles.cardImage}
-                  />
-                )} */}
                 <div>
                   <h3
                     className={styles.cardTitle}
@@ -278,6 +273,7 @@ export default function EventsGrid({ data }) {
                   />
                 )}
               </div>
+              */}
 
               <div className={`${styles.card} ${styles.card_overlay}`}>
                 {eventsData.happenings[4] && (
@@ -365,17 +361,21 @@ export default function EventsGrid({ data }) {
               </div>
 
               {/* Event 7 */}
-              <div className={`${styles.card} ${styles.card_overlay}`}>
+              <div className={`${styles.card} ${styles.col_2}`}>
+                
+              <span className={styles.overlay} style={{backgroundColor:"rgb(0, 72, 154)"}}></span>
                 {eventsData.happenings[6] && (
                   <>
-                    <Image
-                      src={eventsData.happenings[6].image}
-                      alt="img"
-                      fill
-                      className={styles.cardImage}
-                    />
+                    <div className={`position-relative ${styles.card_overlay}`}>
+                      <Image
+                        src={eventsData.happenings[6].image}
+                        alt="img"
+                        fill
+                        className={styles.cardImage}
+                      />
+                    </div>
 
-                    <div className={styles.miniContentPart}>
+                    <div className={`${styles.miniContentPart}  `}>
                       <p
                         className={styles.cardTag}
                         data-aos="fade-up"
@@ -414,8 +414,9 @@ export default function EventsGrid({ data }) {
                 )}
               </div>
 
-              <div
-                className={styles.card}
+              {/*
+                <div
+                className={styles.card + ' 7'}
                 style={{ backgroundColor: "#00489A" }}
               >
                 <p
@@ -427,15 +428,6 @@ export default function EventsGrid({ data }) {
                     eventsData.happenings[7].event_type}
                 </p>
                 <div>
-                  {/* {eventsData.happenings[7] && (
-                    <Image
-                      src={eventsData.happenings[7].image}
-                      alt="img"
-                      height={57}
-                      width={253}
-                      className={styles.cardImage}
-                    />
-                  )} */}
                   <div>
                     <h3
                       className={`${styles.cardTitle} ${styles.cardTitleWhite}`}
@@ -463,6 +455,7 @@ export default function EventsGrid({ data }) {
                   )}
                 </div>
               </div>
+              */}
 
               <div className={styles.card} style={{ backgroundColor: "#fff" }}>
                 <p
@@ -765,7 +758,7 @@ export default function EventsGrid({ data }) {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <Link href="#">
+              <Link href="/happenings">
                 <button
                   type="button"
                   className={styles.circleArrowBtn}

@@ -10,7 +10,7 @@ export default function TestimonialDetail({ data }) {
 
   const imageUrl = data.image?.startsWith("http")
     ? data.image
-    : `https://project-demo.in/jss/${data.image}`;
+    : `${ASSETS_URL}${data.image}`;
 
   return (
     <>

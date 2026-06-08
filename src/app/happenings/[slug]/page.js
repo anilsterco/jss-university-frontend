@@ -4,8 +4,11 @@ import { getPageSEO } from "@/lib/seo";
 import HappeningsClientDetail from "./HappeningsClientDetail";
 
 async function fetchHappening(slug) {
+  const isDev = process.env.NODE_ENV === 'development';
   try {
-    const res = await fetch(`${BASE_URL}happenings/${slug}`, {
+    const res = await fetch(`${BASE_URL}happenings/${slug}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;

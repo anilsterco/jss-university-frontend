@@ -5,6 +5,7 @@ import FacilitiesComponent from "../component/home-components/facilities/Facilit
 import AboutHomeComponent from "../component/home-components/about-home-jss/AboutHomeComponent";
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
+// import PhDApplicationForm from "../component/common/Phd-form/PhDApplicationForm";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
@@ -17,8 +18,12 @@ export async function generateMetadata() {
 }
 
 async function getSchoolData() {
-  const res = await fetch(`${BASE_URL}homepage`, {
-    next: { revalidate: 120 }, // cache for 2 mins
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}homepage`, isDev ? {
+    cache:"no-store"
+  } : {
+    next: { revalidate: 120 },
   });
 
   if (!res.ok) {
@@ -59,9 +64,15 @@ export default async function HomePage() {
 
       <div className="fixButtons">
         <Link
-          href={WEB_URL + 'apply-now'}
-          // target="_blank"
+          href={WEB_URL + 'upcoming-events'}
           className="vertical-floating-btn"
+        >
+          Upcoming Events
+        </Link>
+        <Link
+          href={APPLY_NOW}
+          target="_blank"
+          className="vertical-floating-btn CTA_Applynow"
         >
           Apply Now
         </Link>
@@ -71,6 +82,8 @@ export default async function HomePage() {
       </div>
 
       <PopupModal />
+      {/* <PhDApplicationForm />
+      <CareersFormData /> */}
     </div>
   );
 }

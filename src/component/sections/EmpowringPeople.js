@@ -64,7 +64,7 @@ export default function EmpowringPeople({ data }) {
                                 alt={item.title}
                                 width={800}
                                 height={520}
-                                className=""
+                                className="img-fluid"
                               />
                             </figure>
                           </div>

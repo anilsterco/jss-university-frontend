@@ -364,6 +364,10 @@
   .card {
     padding-top: 4rem;
   }
+  .hodName{
+    font: var(--font-18);
+    font-weight: 500;
+  }
 
 }
 
@@ -390,4 +394,9 @@
   .hod_img {
     height: 100% !important;
   }
+}
+
+.messageText .arrowLink:hover img{
+      filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+    -webkit-filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }

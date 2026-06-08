@@ -147,12 +147,12 @@
 }
 
 /* Gradient Overlay */
-.gradientOverlay {
+.gradientOverlay_lab {
   position: absolute;
-  bottom: 0;
+  bottom: -1;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 100%;
   background: linear-gradient(to top,
       rgba(0, 0, 0, 0.9) 0%,
       rgba(0, 0, 0, 0.5) 50%,
@@ -294,15 +294,30 @@
   }
 }
 
+@media (max-width:767px) {
+  .title{
+    font: var(--font-30);
+  }
+  
+}
+
 @media (max-width: 575px) {
   .dep_cutting_edge {
     padding: 4rem 0 2rem 0rem;
   }
 
   .title {
-    font: var(--font-40);
+    font: var(--font-30);
     font-family: var(--font-Condensed);
     font-weight: 700;
-    letter-spacing: -2.20px;
+    letter-spacing: 0.8px;
   }
+  .labTitle{
+    font:var(--font-18);
+    font-weight: 700;
+  }
+}
+
+.headerSection a svg:hover{
+  fill:var(--color-100)
 }

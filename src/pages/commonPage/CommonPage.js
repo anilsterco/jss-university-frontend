@@ -65,6 +65,8 @@ import AmenitiesList from "@/component/sections/AmenitiesList";
 import Accordions from "@/component/sections/Accordions";
 import DepartmentResearch from "@/component/sections/DepartmentResearch";
 import TabsDataContent from "@/component/sections/TabsDataContents";
+import DepartmentSocietyOverview from "@/component/sections/DepartmentSocietyOverview";
+import SocietiesEvent from "@/component/sections/SocietiesEvents";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -165,6 +167,8 @@ export default function CommonPage({ data }) {
     labCard: LabCard,
     table_section_tabs: Accordions,
     departmentResearch: DepartmentResearch,
+    department_society_overview: DepartmentSocietyOverview,
+    societiesEvent: SocietiesEvent,
   };
 
   return (

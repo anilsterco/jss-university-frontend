@@ -1,24 +1,55 @@
 import { BASE_URL, SEO_URL } from "@/config/config";
 import { headers } from "next/headers";
 
+const SEO_BASE = (SEO_URL || "").replace(/\/$/, "");
+
+function resolvePathname(slug) {
+  if (slug !== undefined && slug !== null && slug !== "") {
+    const path = slug.startsWith("/") ? slug : `/${slug}`;
+    return path;
+  }
+
+  return "/";
+}
+
+async function detectPathname() {
+  const headersList = await headers();
+  return (
+    headersList.get("x-pathname") ||
+    headersList.get("x-invoke-path") ||
+    "/"
+  );
+}
+
+/** Always return an absolute canonical URL. */
+function normalizeCanonical(canonical, pathname) {
+  const path = pathname?.startsWith("/") ? pathname : `/${pathname || ""}`;
+
+  if (!canonical) {
+    return path === "/" ? `${SEO_BASE}/` : `${SEO_BASE}${path}`;
+  }
+
+  if (/^https?:\/\//i.test(canonical)) {
+    return canonical;
+  }
+
+  const canonicalPath = canonical.startsWith("/") ? canonical : `/${canonical}`;
+  return `${SEO_BASE}${canonicalPath}`;
+}
+
 export async function getPageSEO(slug) {
+  let pathname = resolvePathname(slug);
+
   try {
-    // If no slug passed, auto-detect full URL from request headers
-    if (!slug) {
-      const headersList = await headers();
-      const host = headersList.get("host");
-      const protocol = "https";
-      const pathname =
-        headersList.get("x-invoke-path") ||
-        headersList.get("x-pathname") ||
-        "/";
-      // slug = `${protocol}://${host}${pathname}`;
-      slug = `${SEO_URL}${pathname}`;
+    if (slug === undefined || slug === null || slug === "") {
+      pathname = await detectPathname();
     }
 
-    const res = await fetch(`${BASE_URL}seo/${encodeURIComponent(slug)}`, {
-      cache: "force-cache",
-      next: { revalidate: 3600 },
+    const apiSlug = pathname === "/" ? "home" : pathname.replace(/^\//, "");
+
+    const res = await fetch(`${BASE_URL}seo/${apiSlug}`, {
+      cache: "no-store",
+      // next: { revalidate: 600 },
     });
 
     if (!res.ok) throw new Error("SEO data not found");
@@ -39,7 +70,10 @@ export async function getPageSEO(slug) {
         },
       },
       alternates: {
-        canonical: data.data.alternates?.canonical || slug,
+        canonical: normalizeCanonical(
+          data.data.alternates?.canonical,
+          pathname
+        ),
       },
       openGraph: {
         title: data.data.openGraph?.title || data.data.title,
@@ -65,11 +99,11 @@ export async function getPageSEO(slug) {
       description: "JSS University",
       keywords: "JSS University",
       alternates: {
-        canonical: "/",
+        canonical: normalizeCanonical(null, pathname),
       },
       robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
       },
     };
   }

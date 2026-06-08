@@ -25,6 +25,14 @@ export default function LeadershipClient() {
 
   const pathname = usePathname();
 
+  const currentSlug = pathname.split("/").filter(Boolean).pop();
+
+  const pageName = currentSlug.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   useEffect(() => {
     setLoading(true);
 
@@ -116,6 +124,7 @@ export default function LeadershipClient() {
           <section className="inner-title">
             <div className="container">
               <div className="innnr_head text-center">
+                <h1 className="d-none">{titleCase}</h1>
                 <h2>{aboutPage.subTitle}</h2>
                 <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }} />
                 <ul>

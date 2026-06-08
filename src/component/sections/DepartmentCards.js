@@ -14,8 +14,6 @@ export default function DepartmentCards({
   const filteredFaculty =
     tabs?.filter((tab) => tab.category === activeTab) || data;
 
-  console.log(filteredFaculty);
-
   return (
     <div className="faculty_grids">
       <div className="container">

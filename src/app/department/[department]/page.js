@@ -14,11 +14,16 @@ import { BASE_URL } from "@/config/config";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { department } = await params;
+  return getPageSEO(`department/${department}`);
 }
 
 async function getDepartmentData(slug) {
-  const res = await fetch(`${BASE_URL}department/${slug}`, {
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}department/${slug}`, isDev ? {
+    cache:"no-store"
+  } : {
     next: { revalidate: 120 },
   });
 
@@ -39,7 +44,7 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department);
   if (!departmentData) notFound();
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`department/${department}`);
 
   return (
     <>
@@ -91,7 +96,7 @@ export default async function DepartmentPage({ params }) {
         <PlacementDepartment data={departmentData.sections.placements} />
       )}
 
-      {departmentData?.sections?.happenings && (
+      {departmentData?.sections?.happenings?.happenings.length > 0 && (
         <HappingsHomeComponent data={departmentData.sections.happenings} />
       )}
       {/* {departmentData?.sections?.faqs && (

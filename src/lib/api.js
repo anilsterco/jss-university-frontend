@@ -1,9 +1,12 @@
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://project-demo.in/jss/api";
+import { BASE_URL } from "@/config/config";
 
 // --- Generic fetch function with SSR caching ---
 async function fetchData(endpoint, options = {}) {
-  const res = await fetch(`${BASE_URL}${endpoint}`, {
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const res = await fetch(`${BASE_URL}${endpoint}`, isDev ? {
+    cache:"no-store"
+  } : {
     next: { revalidate: 120 }, // cache for 2 mins, change as needed
     ...options,
   });
@@ -18,10 +21,10 @@ async function fetchData(endpoint, options = {}) {
 
 // --- 🔹 HOME PAGE APIs ---
 export const happeningAPI = {
-  getEvents: (endpoint = "/happenings") => fetchData(endpoint),
+  getEvents: (endpoint = "happenings") => fetchData(endpoint),
 };
 export const schoolListAPI = {
-  getSchoolList: (endpoint = "/schools/all") => fetchData(endpoint),
+  getSchoolList: (endpoint = "schools/all") => fetchData(endpoint),
 };
 export const galleryAPI = {
   getGallery: (endpoint) =>

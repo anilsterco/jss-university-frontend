@@ -71,8 +71,8 @@
   z-index: 999;
 }
 
-.engineeringDropdownContainer.single{
-  width:45rem;
+.engineeringDropdownContainer.single {
+  width: 45rem;
 }
 
 .engineeringDropdown {
@@ -81,8 +81,8 @@
   min-height: 300px;
 }
 
-.engineeringDropdownContainer.single .engineeringDropdown{
-  display:block;
+.engineeringDropdownContainer.single .engineeringDropdown {
+  display: block;
 }
 
 .schoolsList {
@@ -204,7 +204,7 @@
 .departmentHeaderWrapper {
   /* position: relative; */
   position: sticky;
-  top: 125px;
+  top: 134px;
   z-index: 1000;
   z-index: 1000;
 }
@@ -221,7 +221,7 @@
 
 .navLinksWrapper {
   display: flex;
-  gap: 45px;
+  gap: 2.7rem;
 }
 
 .hamburgerBtn {
@@ -238,23 +238,57 @@
   }
 }
 
+@media (max-width: 1749px) {
+  .departmentHeaderWrapper {
+    top: 106px;
+  }
+}
+
 @media (max-width: 1649px) {
   .departmentMenu {
     padding-inline: 3rem;
-    padding-top: 6rem;
+    padding-top: 3.3rem;
   }
 }
+
+@media (max-width: 1400px) {
+  .departmentHeaderWrapper {
+    top: 102px;
+  }
+}
+
 @media (max-width: 1366px) {
   .departmentMenu {
-    padding-top: 8rem;
+    padding-top: 3.5rem;
+  }
+
+  .departmentHeaderWrapper {
+    top: 97px;
   }
 }
+
 @media (max-width: 1199px) {
   .departmentMenu {
     padding-top: 2rem;
   }
+
+  .departmentHeaderWrapper {
+    top: 90px;
+  }
 }
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+  .departmentHeaderWrapper {
+    top: 90px;
+  }
+
+}
+
 @media (max-width: 991px) {
+  .departmentHeaderWrapper {
+    top: 0;
+  }
+
   .mobileToggle {
     display: block;
   }
@@ -305,22 +339,43 @@
 }
 
 @media (max-width: 991px) {
-  
+
   .navItem {
     padding: 1.5rem 0;
   }
+
   .engineeringDropdownContainer,
   .engineeringDropdownContainer.single {
     width: 40rem;
   }
 }
 
+@media (max-width: 767px) {
+
+  /* .departmentHeaderWrapper{top: 133px;} */
+  .schoolToggle span:first-child {
+    font: var(--font-14);
+    font-weight: bold;
+    margin-top: 0.7rem;
+  }
+
+  .schoolToggle span:last-child {
+    font: var(--font-16)
+  }
+}
+
 @media (max-width: 520px) {
+
   .engineeringDropdownContainer,
   .engineeringDropdownContainer.single {
     width: 35rem;
   }
+
   .departmentMenu {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
+
+/* @media (max-width: 420px) {
+  .departmentHeaderWrapper{top: 128px;}
+} */

@@ -99,7 +99,7 @@ export default function EventsSection({ className, programId, type }) {
     ],
     queryFn: () => {
       const queryParams = buildQueryParams(resolvedProgramId);
-      return happeningAPI.getEvents(`/happenings?${queryParams}`);
+      return happeningAPI.getEvents(`happenings?${queryParams}`);
     },
     staleTime: 5 * 60 * 1000,
     cacheTime: 10 * 60 * 1000,
@@ -226,7 +226,7 @@ export default function EventsSection({ className, programId, type }) {
           </Swiper>
         ) : (
           <div style={{ textAlign: "center", padding: "4rem" }}>
-            No Upcoming Events
+            {/* No Upcoming Events */}
           </div>
         )}
 

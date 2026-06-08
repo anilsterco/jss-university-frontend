@@ -72,8 +72,6 @@ export default function LeadershipClient() {
                     </thead>
                     <tbody>
 
-                      {console.log(academicCouncil)
-                      }
                       {academicCouncil.map((leader, itemIdx) => (
                         <tr key={leader.id}>
                           <td>{itemIdx + 1}</td>

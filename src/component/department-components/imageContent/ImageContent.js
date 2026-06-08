@@ -2,7 +2,9 @@
 import Image from "next/image";
 import styles from "./imageContent.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -15,13 +17,25 @@ export default function ImageContent({ data, id, type, extraClass }) {
 
   const visibleMessages = expanded ? data.desc : data.desc.slice(0, 2);
 
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+    }, []);
+  
+    useEffect(() => {
+      AOS.refresh();
+    }, [data]);
+
   return (
     <div
       key={id}
-      className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]}`}
+      className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]} aos-init aos-animate`}
     >
       <div
-        className={`align-items-center row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
+        className={`row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
         <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border px-0">
           {data?.imageVideo?.length > 0 ? (
@@ -37,6 +51,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     muted
                     loop
                     playsInline
+                    className="img-fluid"
                     style={{
                       width: "100%",
                       // height: "auto",
@@ -49,6 +64,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
                     width={683}
                     height={520}
+                    className="img-fluid"
                     style={{
                       width: "100%",
                       // height: "auto",
@@ -87,6 +103,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           muted
                           loop
                           playsInline
+                          className="img-fluid"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -103,6 +120,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           }
                           width={683}
                           height={520}
+                          className="img-fluid"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -139,6 +157,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 width={683}
                 height={520}
                 alt=""
+                className="img-fluid"
                 style={
                   {
                     // width: "100%",
@@ -266,6 +285,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
               ))}
           </div>
         </div>
+
+        <div className="inner_bottom_data" dangerouslySetInnerHTML={{__html:data?.bottomHTML}} />
       </div>
     </div>
   );

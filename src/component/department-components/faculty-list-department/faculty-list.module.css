@@ -255,9 +255,19 @@
 @media (max-width: 480px) {
   .title {
     width: 100%;
-    font: var(--font-36);
+    font: var(--font-28);
     font-family: var(--font-Condensed);
     font-weight: 700;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
   }
+  .facultyName{
+    font: var(--font-18);
+    font-weight: 500;
+  }
+}
+
+
+.dep_faculty svg:hover,
+.dep_faculty svg:hover{
+  filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }

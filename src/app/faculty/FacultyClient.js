@@ -18,10 +18,12 @@ export default function FacultyClient() {
   const [facultyListData, setFacultyListData] = useState([]);
   const [typesList, setTypesList] = useState([]);
 
-  // Pagination
-  const [nextPageUrl, setNextPageUrl] = useState(null);
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
 
   const [schoolsList, setSchoolsList] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
@@ -33,11 +35,16 @@ export default function FacultyClient() {
   const accumulateTypes = (newFaculty) => {
     setTypesList((prev) => {
       const existingIds = new Map(prev.map((t) => [t.type_id, t]));
+
       newFaculty.forEach((f) => {
         if (f.type_id && !existingIds.has(f.type_id)) {
-          existingIds.set(f.type_id, { type_id: f.type_id, type: f.type });
+          existingIds.set(f.type_id, {
+            type_id: f.type_id,
+            type: f.type,
+          });
         }
       });
+
       return Array.from(existingIds.values());
     });
   };
@@ -48,8 +55,13 @@ export default function FacultyClient() {
   const fetchSchoolsData = async () => {
     try {
       const res = await fetch(SCHOOLS_API_URL);
-      if (!res.ok) throw new Error(`Schools API error: ${res.status}`);
+
+      if (!res.ok) {
+        throw new Error(`Schools API error: ${res.status}`);
+      }
+
       const data = await res.json();
+
       setSchoolsList(data.data || []);
     } catch (err) {
       console.error("Schools fetch error:", err);
@@ -58,77 +70,90 @@ export default function FacultyClient() {
   };
 
   // --------------------------
-  // Fetch Faculty (page 1 or filters)
+  // Fetch Faculty
   // --------------------------
   const fetchFacultyData = async (
     page = 1,
     search = "",
     schoolId = "",
     type = "",
+    append = false
   ) => {
     try {
-      setLoading(true);
+      if (append) {
+        setIsLoadingMore(true);
+      } else {
+        setLoading(true);
+      }
 
       const params = new URLSearchParams();
-      if (search) params.append("search", search);
-      if (schoolId) params.append("school", schoolId);
-      if (type) params.append("type", type);
+
+      if (search) {
+        params.append("search", search);
+      }
+
+      if (schoolId) {
+        params.append("school", schoolId);
+      }
+
+      if (type) {
+        params.append("type", type);
+      }
+
       params.append("page", page);
 
-      const res = await fetch(`${BASE_URL}faculties?${params.toString()}`);
-      if (!res.ok) throw new Error(`Faculty API error: ${res.status}`);
+      const res = await fetch(
+        `${BASE_URL}faculties?${params.toString()}`
+      );
+
+      if (!res.ok) {
+        throw new Error(`Faculty API error: ${res.status}`);
+      }
+
       const data = await res.json();
 
       const faculty = data.data?.faculty || [];
-      const pagination = data.data?.pagination;
+      const pagination = data.data?.pagination || {};
 
-      setFacultyListData(faculty);
-      setNextPageUrl(pagination?.next_page_url || null);
+      if (append) {
+        setFacultyListData((prev) => [...prev, ...faculty]);
+      } else {
+        setFacultyListData(faculty);
+      }
+
+      setCurrentPage(pagination.current_page || 1);
+      setLastPage(pagination.last_page || 1);
+
       accumulateTypes(faculty);
+
     } catch (err) {
       console.error("Faculty fetch error:", err);
-      setFacultyListData([]);
+
+      if (!append) {
+        setFacultyListData([]);
+      }
+
     } finally {
       setLoading(false);
+      setIsLoadingMore(false);
     }
   };
 
   // --------------------------
-  // Load More Faculty (pagination)
+  // Load More
   // --------------------------
   const loadMore = async () => {
-    if (!nextPageUrl) return;
+    const nextPage = currentPage + 1;
 
-    try {
-      setIsLoadingMore(true);
+    if (nextPage > lastPage) return;
 
-      // ✅ Build URL with current active filters instead of trusting nextPageUrl blindly
-      const urlObj = new URL(nextPageUrl);
-      const params = urlObj.searchParams;
-
-      if (searchTerm) params.set("search", searchTerm);
-      if (selectedSchool) params.set("school", selectedSchool);
-      if (selectedType) params.set("type", selectedType);
-
-      const proxiedUrl = urlObj
-        .toString()
-        .replace("https://project-demo.in/jss/api", "/api");
-
-      const res = await fetch(proxiedUrl);
-      if (!res.ok) throw new Error(`Load More API error: ${res.status}`);
-      const data = await res.json();
-
-      const newFaculty = data.data?.faculty || [];
-      const pagination = data.data?.pagination;
-
-      setFacultyListData((prev) => [...prev, ...newFaculty]);
-      setNextPageUrl(pagination?.next_page_url || null);
-      accumulateTypes(newFaculty);
-    } catch (err) {
-      console.error("Load More error:", err);
-    } finally {
-      setIsLoadingMore(false);
-    }
+    await fetchFacultyData(
+      nextPage,
+      searchTerm,
+      selectedSchool,
+      selectedType,
+      true
+    );
   };
 
   // --------------------------
@@ -136,6 +161,7 @@ export default function FacultyClient() {
   // --------------------------
   useEffect(() => {
     fetchSchoolsData();
+
     fetchFacultyData(1);
   }, []);
 
@@ -148,32 +174,38 @@ export default function FacultyClient() {
       return;
     }
 
-    // ✅ Reset immediately to prevent stale loadMore calls
-    setNextPageUrl(null);
-    setFacultyListData([]);
-
     const timeoutId = setTimeout(() => {
-      fetchFacultyData(1, searchTerm, selectedSchool, selectedType);
+      setCurrentPage(1);
+      fetchFacultyData(
+        1,
+        searchTerm,
+        selectedSchool,
+        selectedType
+      );
     }, 500);
 
     return () => clearTimeout(timeoutId);
+
   }, [searchTerm, selectedSchool, selectedType]);
 
   // --------------------------
-  // JSX Render
+  // JSX
   // --------------------------
   return (
     <main className="site_main">
-      {/* Title Section */}
+
+      {/* Title */}
       <section className="inner-title">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h2>FACULTY</h2>
+                <h1>FACULTY</h1>
+
                 <h3>
-                TEACHING <span>FACULTY</span>
+                  TEACHING <span>FACULTY</span>
                 </h3>
+
               </div>
             </div>
           </div>
@@ -185,7 +217,9 @@ export default function FacultyClient() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
+
               <div className="faulty-box">
+
                 {/* Search */}
                 <div className="search-box">
                   <input
@@ -193,8 +227,11 @@ export default function FacultyClient() {
                     className="input-fild"
                     placeholder="Search by Name"
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e) =>
+                      setSearchTerm(e.target.value)
+                    }
                   />
+
                   <img
                     src="/images/custom-page/facility/serch-icon.svg"
                     alt="Search"
@@ -202,38 +239,56 @@ export default function FacultyClient() {
                   />
                 </div>
 
-                {/* School Dropdown */}
+                {/* School */}
                 <div className="faulty-drop-down">
                   <select
                     className="form-select"
                     value={selectedSchool}
-                    onChange={(e) => setSelectedSchool(e.target.value)}
+                    onChange={(e) =>
+                      setSelectedSchool(e.target.value)
+                    }
                   >
-                    <option value="">Select School</option>
+                    <option value="">
+                      Select School
+                    </option>
+
                     {schoolsList.map((s) => (
-                      <option key={s.id} value={s.id}>
+                      <option
+                        key={s.id}
+                        value={s.id}
+                      >
                         {s.name}
                       </option>
                     ))}
                   </select>
                 </div>
 
-                {/* Type Dropdown */}
+                {/* Type */}
                 <div className="faulty-drop-down">
                   <select
                     className="form-select"
                     value={selectedType}
-                    onChange={(e) => setSelectedType(e.target.value)}
+                    onChange={(e) =>
+                      setSelectedType(e.target.value)
+                    }
                   >
-                    <option value="">Select Faculty Type</option>
+                    <option value="">
+                      Select Faculty Type
+                    </option>
+
                     {typesList.map((f) => (
-                      <option key={f.type_id} value={f.type_id}>
+                      <option
+                        key={f.type_id}
+                        value={f.type_id}
+                      >
                         {f.type}
                       </option>
                     ))}
                   </select>
                 </div>
+
               </div>
+
             </div>
           </div>
         </div>
@@ -244,21 +299,34 @@ export default function FacultyClient() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
+
               {loading ? (
+
                 <div className="text-center py-5">
                   <p>Loading faculty...</p>
                 </div>
+
               ) : (
+
                 <>
                   {facultyListData.length === 0 ? (
+
                     <div className="text-center py-5">
                       <p>No faculty found.</p>
                     </div>
+
                   ) : (
+
                     <div className="program-list-boxs faulty-list">
+
                       {facultyListData.map((faculty) => (
-                        <div className="faulty-list-box" key={faculty.id}>
+
+                        <div
+                          className="faulty-list-box"
+                          key={faculty.id}
+                        >
                           <div className="faulty-img">
+
                             <figure>
                               <Image
                                 src={faculty.image}
@@ -266,13 +334,22 @@ export default function FacultyClient() {
                                 className="img-fluid w-100"
                                 width={300}
                                 height={300}
-                                style={{ objectFit: "cover" }}
+                                style={{
+                                  objectFit: "cover",
+                                }}
                               />
                             </figure>
+
                           </div>
+
                           <div className="faulty-text">
+
                             <h4>{faculty.name}</h4>
-                            <p>{faculty.designation || faculty.type}</p>
+
+                            <p>
+                              {faculty.designation ||
+                                faculty.type}
+                            </p>
                             <span>
                               <RxCaretRight className="right-arrow" />
                             </span>
@@ -287,15 +364,19 @@ export default function FacultyClient() {
                   )}
 
                   {/* Load More */}
-                  {nextPageUrl && (
+                  {currentPage < lastPage && (
                     <div className="load-more-container text-center mt-4">
                       <button
                         onClick={loadMore}
                         disabled={isLoadingMore}
                         style={{ cursor: "pointer" }}
                       >
-                        {isLoadingMore ? "Loading..." : "Load More"}{" "}
+                        {isLoadingMore
+                          ? "Loading..."
+                          : "Load More"}
+
                         <i className="bi bi-arrow-down ps-2"></i>
+
                       </button>
                     </div>
                   )}

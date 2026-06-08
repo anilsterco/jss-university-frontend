@@ -44,7 +44,7 @@ export default function ResearchLabs({ data }) {
                       <figure className="shine-effect">
                         {item.imageVideo[0].video ? (
                           <video
-                            src={item.imageVideo[0].video}
+                            src={item.imageVideo[0].video1}
                             width={683}
                             height={520}
                             autoPlay
@@ -67,6 +67,7 @@ export default function ResearchLabs({ data }) {
                             }
                             width={683}
                             height={520}
+                            className="img-fluid"
                             style={{ width: "100%", height: "auto" }}
                           />
                         )}
@@ -117,6 +118,7 @@ export default function ResearchLabs({ data }) {
                                   }
                                   width={683}
                                   height={520}
+                            className="img-fluid"
                                   style={{
                                     // width: "100%",
                                     // height: "auto",
@@ -151,7 +153,7 @@ export default function ResearchLabs({ data }) {
                       <Image
                         src={item.image}
                         alt={item.title || "Research Labs"}
-                        // className="w-100"
+                        className="img-fluid"
                         width={683}
                         height={520}
                       />
@@ -199,6 +201,7 @@ export default function ResearchLabs({ data }) {
                             muted
                             loop
                             playsInline
+                            className="img-fluid"
                             style={{
                               width: "100%",
                               height: "auto",
@@ -215,6 +218,7 @@ export default function ResearchLabs({ data }) {
                             }
                             width={683}
                             height={520}
+                            className="img-fluid"
                             style={{ width: "100%", height: "auto" }}
                           />
                         )}
@@ -250,9 +254,10 @@ export default function ResearchLabs({ data }) {
                                     muted
                                     loop
                                     playsInline
+                                    
                                     style={{
-                                      // width: "100%",
-                                      // height: "auto",
+                                      width: "100%",
+                                      height: "auto",
                                       objectFit: "cover",
                                     }}
                                   />
@@ -266,6 +271,7 @@ export default function ResearchLabs({ data }) {
                                     }
                                     width={683}
                                     height={520}
+                                    className="img-fluid"
                                     style={{
                                       // width: "100%",
                                       // height: "auto",
@@ -301,7 +307,7 @@ export default function ResearchLabs({ data }) {
                       <Image
                         src={item.image}
                         alt={item.title || "Research Labs"}
-                        // className="w-100"
+                        className="img-fluid"
                         width={683}
                         height={520}
                       />

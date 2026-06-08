@@ -1,49 +1,62 @@
-// middleware.js
 import { NextResponse } from "next/server";
+import getPageRedirect from "./utils/getPageRedirect";
 
-export function middleware(request) {
-  // Generate a random nonce for this request
-  const nonce = crypto.randomUUID();
+export async function middleware(request) {
+  const { pathname } = request.nextUrl;
 
-  // 'unsafe-eval' is only needed for Next.js in development mode
-  const isDev = process.env.NODE_ENV === "development";
+  if (pathname === "/phd-application-form") {
+    const nonce = crypto.randomUUID();
 
-  const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' ${isDev ? "'unsafe-eval'" : ""};
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
-    img-src 'self' data: blob: https:;
-    media-src 'self' https:;
-    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
-    connect-src 'self' https:;
-    frame-src 'self' https://www.youtube.com https://youtube.com;
-    frame-ancestors 'none';
-  `
-    .replace(/\s{2,}/g, " ")
-    .trim();
+    const isDev = process.env.NODE_ENV === "development"; 
 
-  // Clone headers and add CSP & Nonce for Next.js to pick up in Server Components
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
-  requestHeaders.set("Content-Security-Policy", cspHeader);
-  requestHeaders.set("x-pathname", request.nextUrl.pathname);
+    const cspHeader = `
+      default-src 'self';
+      script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com ${isDev ? "'unsafe-eval'" : ""};
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+      img-src 'self' data: blob: https:;
+      media-src 'self' https:;
+      font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
+      connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https:;
+      frame-src 'self'
+        https://www.youtube.com https://youtube.com
+        https://www.google.com https://www.gstatic.com
+        https://maps.google.com https://www.google.com/maps/
+        https://www.googletagmanager.com;
+      frame-ancestors 'none';
+    `
+      .replace(/\s{2,}/g, " ")
+      .trim();
 
-  // Set response headers for the browser
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-nonce", nonce);
+    requestHeaders.set("Content-Security-Policy", cspHeader);
+    requestHeaders.set("x-pathname", pathname);
 
-  response.headers.set("Content-Security-Policy", cspHeader);
-  response.headers.set("x-pathname", request.nextUrl.pathname);
+    const response = NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
 
-  return response;
+    response.headers.set("Content-Security-Policy", cspHeader);
+    response.headers.set("x-pathname", pathname);
+
+    return response;
+  }
+
+  const redirectUrl = await getPageRedirect(
+    pathname.replace(/^\//, "")
+  );
+
+  if (redirectUrl) {
+    return NextResponse.redirect(redirectUrl, { status: 301 });
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    // Apply Middleware to all routes except API, static assets, internal Next.js files
     "/((?!_next/static|_next/image|favicon.ico|api).*)",
   ],
 };

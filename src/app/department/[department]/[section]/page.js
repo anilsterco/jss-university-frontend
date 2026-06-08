@@ -19,14 +19,20 @@ import { notFound } from "next/navigation";
 import TabsContent from "@/component/common/tabsContent/TabsContent";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import Departments from "@/pages/departments/Departments";
+import TestimonialInnerPage from "@/pages/testimonials/Testimonials";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { department, section } = await params;
+  return getPageSEO(`department/${department}/${section}`);
 }
 
 async function getDepartmentData(slug, section) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, {
+    const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 120 },
     });
 
@@ -47,7 +53,13 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department, section);
   if (!departmentData) notFound();
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`department/${department}/${section}`);
+
+  const pageName = department.replace(/-/g, ' ') + " " + section.replace(/-/g, ' ');
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
 
   return (
     <>
@@ -60,6 +72,10 @@ export default async function DepartmentPage({ params }) {
           strategy="beforeInteractive"
         />
       )}
+
+      
+
+        <h1 className="d-none">{titleCase}</h1>
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader
@@ -90,6 +106,10 @@ export default async function DepartmentPage({ params }) {
       ) : section == "labs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <Labspage data={departmentData?.sections} />
+        </Suspense>
+      ) : section == "testimonials" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <TestimonialInnerPage data={departmentData?.data} />
         </Suspense>
       ) : section == "faqs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>

@@ -78,7 +78,7 @@ export default function Gallery({ className, programId }) {
     queryKey: ["happeningsGallery", resolvedProgramId, filterType, currentPage],
     queryFn: () => {
       const queryParams = buildQueryParams();
-      return galleryAPI.getGallery(`/happenings/gallery?${queryParams}`);
+      return galleryAPI.getGallery(`happenings/gallery?${queryParams}`);
     },
     staleTime: 5 * 60 * 1000,
     cacheTime: 10 * 60 * 1000,

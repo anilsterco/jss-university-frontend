@@ -7,8 +7,6 @@ export default function FacultyCards({ tabs, heading, activeTab, data }) {
   const filteredFaculty =
     tabs?.filter((tab) => tab.category === activeTab) || data;
 
-  console.log(filteredFaculty);
-
   return (
     <div className="faculty_grids">
       <div className="container">

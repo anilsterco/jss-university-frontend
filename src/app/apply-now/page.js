@@ -7,7 +7,7 @@ export default async function ApplyNowPage() {
 
   try {
     const res = await fetch(`${BASE_URL}school-department-list`, {
-      cache: "no-store", // or "force-cache" / revalidate if data is stable
+      next: { revalidate: 600 },
     });
 
     if (!res.ok) throw new Error("Failed to fetch schools");

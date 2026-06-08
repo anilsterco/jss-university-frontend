@@ -128,9 +128,9 @@ export default function DepartmentHeader({ className, data }) {
   // Replace the static Home Link with this:
   const homeHref =
     currentPage === "schools"
-      ? `/schools/${currentSlug}`
+      ? `schools/${currentSlug}`
       : currentPage === "department"
-        ? `/department/${currentSlug}`
+        ? `department/${currentSlug}`
         : WEB_URL;
 
   // Home is active when there's no program segment in the URL
@@ -241,7 +241,7 @@ export default function DepartmentHeader({ className, data }) {
               }`}
             >
               <Link
-                href={homeHref}
+                href={WEB_URL + homeHref}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`${styles.navItem} ${isHomeActive ? styles.activeNav : ""}`}
                 aria-label={`View Home`}

@@ -1629,6 +1629,7 @@
     .cusProgramText {
         padding: 4rem 1.5rem 1.5rem 1.5rem;
         bottom: 0rem;
+        position:relative;
     }
 
     .cusProgramText h6 {
@@ -1638,6 +1639,7 @@
 
     .cusProgramText p {
         font-size: 1.3rem;
+        margin-bottom: 1rem;
     }
 
     .cusProgramText span {
@@ -1662,6 +1664,10 @@
         height: 35px;
         left: -3rem;
     }
+
+    .program_box{
+        background:red;
+      }
 
 }
 
@@ -1709,8 +1715,10 @@
         padding-block: 2rem;
     }
 
+    
+
     .cusProgramText {
-        padding: 3rem 1rem 1rem 1rem;
+        padding: 2rem 0.8rem 0.8rem 1.5rem;
         bottom: 0rem;
     }
 
@@ -1747,8 +1755,13 @@
         min-height: 44px;
     }
 
-    .cusProgramBox {
+    .cusProgramBox figure{
+        display:none;
         /* min-height: 200px; */
+    }
+
+    .cusProgramBox a:before{
+        display:none;
     }
     
     .loadMoreContainer a {
@@ -1756,6 +1769,20 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .cusProgramText{
+        background:#fff;
+    }
+
+    .cusProgramText p{
+        color:#333;
+    }
+
+    .cusProgramText h6{
+        color:#333;
+        padding:0;
+        margin:0;
     }
    
 }
@@ -1768,9 +1795,5 @@
 
     .searchBox input {
         padding: 0.8rem 1rem;
-    }
-
-    .cusProgramText {
-        padding: 2rem 0.8rem 0.8rem 0.8rem;
     }
 }

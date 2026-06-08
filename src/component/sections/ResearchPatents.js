@@ -7,8 +7,6 @@ import TabSection from "./TabSection";
 import TabsGridComponent from "./TabsGridComponent";
 
 export default function ResearchPatents({ data }) {
-  console.log("research data", data);
-
   const renderSection = (section, sectionIndex) => {
     switch (section.type) {
       case "ResearchPatents":

@@ -95,7 +95,8 @@ export default function FacultyList({ data, schoolName }) {
               nextEl: ".faculty-next",
               prevEl: ".faculty-prev",
             }}
-            loop={true}
+             loop={false}
+            rewind={false}
             spaceBetween={47}
             slidesPerView={3}
             autoplay={{

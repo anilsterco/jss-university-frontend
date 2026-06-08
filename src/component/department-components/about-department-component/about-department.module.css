@@ -358,6 +358,11 @@
 }
 
 @media (max-width: 767px) {
+  .description{
+    font: var(--font-16);
+    font-weight: 300;
+    line-height: 1.4;
+  }
   .header {
     margin-bottom: 2.9rem;
     margin-top: 3rem;
@@ -367,10 +372,12 @@
     padding-inline: 0rem;
     margin-top: 2rem;
     max-width: 100%;
+    font: var(--font-14);
+    line-height: 1.5;
   }
 
   .title {
-    font: var(--font-40);
+    font: var(--font-26);
     margin-bottom: 1.5rem;
     font-family: var(--font-Condensed);
     font-weight: 700;
@@ -449,7 +456,6 @@
   }
 
   .title {
-    font: var(--font-30);
     margin-bottom: 1.5rem;
     font-family: var(--font-Condensed);
     font-weight: 700;
@@ -476,4 +482,9 @@
     font: var(--font-16);
   }
 
+}
+
+.aboutDepartment .arrowLink img:hover {
+    filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
+    -webkit-filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }

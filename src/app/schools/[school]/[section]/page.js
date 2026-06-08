@@ -17,12 +17,17 @@ import { notFound } from "next/navigation";
 import Departments from "@/pages/departments/Departments";
 
 export async function generateMetadata({ params }) {
-  return getPageSEO();
+  const { school, section } = await params;
+  return getPageSEO(`schools/${school}/${section}`);
 }
 
 async function getSchoolData(slug, section) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   try {
-    const res = await fetch(`${BASE_URL}school-pages/${slug}/${section}`, {
+    const res = await fetch(`${BASE_URL}school-pages/${slug}/${section}`, isDev ? {
+      cache:"no-store"
+    } : {
       next: { revalidate: 120 },
     });
 
@@ -46,7 +51,13 @@ export default async function SchoolPage({ params }) {
 
   if (!schoolData) notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`schools/${school}/${section}`);
+
+  const pageName = school.replace(/-/g, ' ') + " " + section;
+  const titleCase = pageName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
 
   return (
     <>
@@ -58,6 +69,8 @@ export default async function SchoolPage({ params }) {
           }}
         />
       )}
+
+      <h1 className="d-none">{titleCase}</h1>
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />

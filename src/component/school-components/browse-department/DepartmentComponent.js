@@ -222,7 +222,7 @@ export default function DepartmentSection({
               </div>
               <Link
                 href={APPLY_NOW}
-                className=" btn btn-warning"
+                className=" btn btn-warning CTA_Applynow"
                 target="_blank"
                 aria-label="Apply Now"
               >
@@ -248,7 +248,8 @@ export default function DepartmentSection({
 
                   return (
                     <>
-                      Departments of <span>{isPharmacy ? last : words}</span>
+                      Departments
+                       {/* of <span>{isPharmacy ? last : words}</span> */}
                     </>
                   );
                 })()}
@@ -256,7 +257,7 @@ export default function DepartmentSection({
             </div>
 
             <div className={styles.departmentRow}>
-              {departments?.slice(0, 4).map((dept, index) => (
+              {departments?.map((dept, index) => (
                 <div
                   className={styles.departmentCol}
                   key={index}

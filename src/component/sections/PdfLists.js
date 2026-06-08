@@ -1,5 +1,4 @@
 import React from "react";
-import HODMessage from "../department-components/hod-message-component/HodMessageComponent";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,43 +8,69 @@ export default function PdfLists({ data }) {
       case "pdf_lists":
         return (
           <div key={sectionIndex} className="pdfs_row">
-            {section?.items &&
-              section.items.length >= -1 &&
-              section.items.map((item, idx) => (
-                <React.Fragment key={idx}>
-                  {item?.mainTitle && (
-                    <h3 className="mainTitle">{item.mainTitle}</h3>
-                  )}
-                  <ul>
-                    {item.pdfs.map((singlePdf, pdfIdx) => (
+            {section?.items?.map((item, idx) => (
+              <React.Fragment key={idx}>
+                {item?.mainTitle && (
+                  <h3 className="mainTitle">{item.mainTitle}</h3>
+                )}
+
+                <ul>
+                  {item?.pdfs?.map((singlePdf, pdfIdx) => {
+                    const fileUrl =
+                      singlePdf?.pdf ||
+                      singlePdf?.url ||
+                      singlePdf?.link ||
+                      singlePdf?.pdf_url || 
+                      "";
+
+                    const isPdf =
+                      fileUrl.toLowerCase().includes(".pdf");
+
+                    return (
                       <li key={pdfIdx}>
                         <Link
-                          href={singlePdf?.pdf ? singlePdf.pdf : ""}
-                          target="_blank"
-                        >  <p>{singlePdf.pdf_type}</p>
-                          <Image
-                            src="/images/icons/pdf.png"
+                          href={fileUrl}
+                          target={singlePdf?.pdf ? '_blank' : '_self'}
+                          rel="noopener noreferrer"
+                        >
+                          <p>{singlePdf?.pdf_type}</p>
+
+                          {singlePdf?.pdf && (
+                              <Image
+                            src={
+                              isPdf
+                                ? "/images/icons/pdf.png"
+                                : "/images/icons/link.png"
+                            }
                             width={20}
                             height={20}
-                            alt="pdf"
+                            alt={isPdf ? "pdf" : "link"}
                           />
-                        
+                          )}
+
+                          
                         </Link>
                       </li>
-                    ))}
-                  </ul>
-                </React.Fragment>
-              ))}
+                    );
+                  })}
+                </ul>
+              </React.Fragment>
+            ))}
           </div>
         );
+
+      default:
+        return null;
     }
   };
 
   return (
     <section className="pdf_list_section">
       <div className="container">
-        {data && data.length > 0 ? (
-          data.map((section, index) => renderSection(section, index))
+        {data?.length > 0 ? (
+          data.map((section, index) =>
+            renderSection(section, index)
+          )
         ) : (
           <div className="abt_cntnt" data-aos="fade-up">
             <p>There is no data!</p>

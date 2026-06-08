@@ -22,7 +22,8 @@ export default function PlacementRequest({ data }) {
 
   return (
     <section className="placement_requ">
-      <div className="container">
+     <div className="col-lg-7 mx-auto">
+       <div className="container">
         {section.items.map((item, index) => (
           <div className="request_Row" key={index}>
             {/* LEFT IMAGE */}
@@ -34,7 +35,7 @@ export default function PlacementRequest({ data }) {
                     alt={item.name || "Placement Officer"}
                     width={600}
                     height={450}
-                    className=""
+                    style={{width:"100%", height:"auto"}}
                   />
                 </figure>
               )}
@@ -196,6 +197,7 @@ export default function PlacementRequest({ data }) {
           </div>
         ))}
       </div>
+     </div>
     </section>
   );
 }
