@@ -26,11 +26,12 @@ export default function SocietiesEvent({ data }) {
     if (!section?.items?.length) return null;
 
     const content = section.items[0];
+console.log('data',content);
 
     return (
-        <section className="societies_events">
+        <section className={`societies_events ${content?.custom_class}`}>
             <div className="container">
-                <div className="col-lg-10 mx-auto">
+                <div className={`${content?.custom_class!='department_society_achivement'?'col-lg-10 mx-auto':''}`}>
                     {/* Header */}
                     <div
                         className="societies_events_header"

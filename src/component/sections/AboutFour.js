@@ -180,11 +180,7 @@ export default function AboutFour({ data }) {
                       data-aos="fade-up"
                       data-aos-delay="400"
                     >
-                      <h5 >{item.topheading}</h5>
-                      {item.title && <h3
-                        dangerouslySetInnerHTML={{ __html: item.title }}
-                      />}
-
+                      {item.title && <h3 dangerouslySetInnerHTML={{__html:item.title}}/>}
                       {item.paragraph?.length > 0 && (
                         <div className="des_group">
                           {item.paragraph.map((p, i) => (

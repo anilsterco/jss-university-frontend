@@ -2253,7 +2253,8 @@ a:active {
 .placement_stats.column-1 {
   grid-template-columns: repeat(1, 1fr);
 }
-
+.society_custom_box .section_title{text-align: center;}
+.society_custom_box .placement_stats {grid-template-columns: repeat(4,1fr);}
 .curriculum_box {
   background-color: var(--color-white);
   /* padding: 4rem 4.9rem 6.8rem 4rem; */
@@ -3123,6 +3124,10 @@ a:active {
 .societies_grid .faculty_card::after {content: ''; position: absolute;bottom: 0;background-color:var(--color-ec);width: 7rem;height: 0.5rem;left: 0;}
 .societies .placement_page {padding-block: 15rem;}
 .societies .curriculum_box {padding-block: 7.9rem;padding-inline: 4.8rem;}
+.society_custom_box .curriculum_box {padding: 3rem;background-color: var(--color-f6);}
+.societies .top_section {background-color: #fff;margin-top: 0;padding-top: 12rem;}
+.societies .society_custom_box{background-color: #fff;padding-block: 5rem;}
+.societies .top_section .container{border-bottom: 1px solid lightgray;padding-bottom: 5rem;}
 .societies .curriculum_box h3 {font: var(--font-26);font-family: var(--font-Roboto);letter-spacing: 0;color: #16344e;margin-bottom: 3rem;font-weight: bold;line-height: 1.3;padding-right: 14rem;}
 .societies .curriculum_box .box_ul{margin-block: 3rem;}
 .societies .curriculum_box .box_ul li>span{font-weight: bold;}
@@ -3164,3 +3169,87 @@ a:active {
     position: relative;
 }
 .achievements_bottom p{font: var(--font-16);font-weight: normal;font-family: var(--font-Roboto);color: var(--color-black);margin-bottom: 0;line-height: 2.8rem;color: #444444;padding-right: 3rem;}
+.society_contact_info{
+    max-width: 600px;
+}
+
+.society_contact_info .info_item{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.society_contact_info .info_item img{
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 2px;
+    margin-left: 1px;
+}
+
+.society_contact_info .info_item a{
+    color: var(--color-44);
+    text-decoration: underline !important;
+    word-break: break-word;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+.icon_wrappper{
+  background-color: var(--color-f6);
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+}
+.societies .society_contact {background-color: var(--color-white);}
+.society_contact .about_two{background-color: var(--color-white);}
+.society_contact_info h6{color: var(--color-e8);font: var(--font-16);letter-spacing: -0.32px;margin-top: 4rem;margin-bottom: 1.6rem;}
+.society_contact .about_two .early-slide .early_rgt{padding-top: 7rem;}
+.society_contact .about_two  .single_lab_card  .early-slide .early_rgt h5{font-weight: 600;}
+
+/* Department Society */
+.department_society_overview {margin-top: 12rem;}
+.society_overview_grid {grid-template-columns: 24.662% auto;
+    display: grid;
+    gap: 5.3rem;align-items:start;
+  }
+.left_side_content h1{font: var(--font-60);
+    color: var(--color-4e);
+    font-family: var(--font-Condensed);
+    text-transform: uppercase;
+    letter-spacing: -2.88px;
+    font-weight: 700;
+    line-height: 5.4rem;
+}
+.left_side_content span{ color: var(--color-ff);}
+.left_side_content h2{font:var(--font-24);color: var(--color-33);line-height: 3.6rem;font-weight: 300;margin-top: 4rem;margin-bottom: 3rem;}
+.left_side_content p{color: var(--color-44);}
+.overview_bottom_data {margin-top: 7rem;}
+.content_pdf_wrapper{    width: 88%;margin-inline: auto;}
+.content_pdf_wrapper .pdf_div{display: flex;gap: 2rem;justify-content: center;}
+.content_pdf_wrapper .pdf_div a{font: var(--font-18);line-height: 29px;font-weight: bold;color: var(--color-33);}
+.content_pdf_wrapper .pdf_div img{margin-right: 1rem;}
+.overview_bottom_data p{color: var(--color-44);margin-top: 5rem;margin-bottom: 4rem;}
+.right_side_menus {background-color: var(--color-white);padding-left: 2.35rem;padding-right: 2.6rem;padding-block:2.1rem;border-radius: 8px ;height: fit-content; max-height: 40rem; overflow-y: auto;}
+.right_side_menus .society_links{border-bottom: 1px solid #e2e2e2;margin-bottom: 1.3rem;padding-bottom: 0.5rem;}
+.right_side_menus a{font: var(--font-14);line-height: 2.8rem;color: var(--color-44);}
+.right_side_menus .society_links:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.department_society_achivement{background-color: var(--color-f6);padding-block: 8rem 6rem;}
+.department_society_achivement .societies_events_header  .event_subheading{text-align: left;}
+.department_society_achivement .societies_events_header  .event_heading{text-align: left;}
+.department_society_achivement .societies_events_header { margin-bottom: 4.2rem;}
+.department_society_objective {background-color: var(--color-9a) !important;}
+.department_society_objective .about_two {background-color: transparent;}
+.department_society_objective .about_two .single_lab_card .early-slide {align-items: center;}
+.department_society_objective .about_two .single_lab_card .early-slide .early_rgt  h5 {color: var(--color-white);font-weight: bold;}
+.department_society_objective .about_two .single_lab_card .early-slide p {color: var(--color-white);}
+.department_society_objective .about_two .single_lab_card .early-slide .image_col {border-radius: 0 0 0 6rem;}
+.department_society_overview .overview_bottom_data{border-bottom: 1px solid #e2e2e2;    padding-bottom: 4rem;}
+@media (max-width:991px) {
+  .events_grid{grid-template-columns: 1fr;}
+  .society_custom_box .placement_stats{grid-template-columns: 1fr;}
+}

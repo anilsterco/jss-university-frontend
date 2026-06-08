@@ -269,7 +269,7 @@ export default function LabCard({ data }) {
 
                               {item?.description?.length > 0 &&
                                 item.description.map((singleDes, desIdx) => (
-                                  <p key={desIdx}>{singleDes.description}</p>
+                                  <p key={desIdx} dangerouslySetInnerHTML={{ __html: singleDes.description }}/>
                                 ))}
 
                               {item?.listTitle && (
