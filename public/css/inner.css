@@ -10308,13 +10308,26 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }
 
-
 .society_tables_depart .fee_strcu_table:nth-of-type(2){
   margin-top: 6rem;
 }
-/* .society_tables_depart .fee_strcu_table .fee_table td{color: var(--color-white);} */
-
-
+.department_society_objective{margin-top: 5rem;}
+.society_tables_depart .fee_strcu_table:first-of-type .fee_table tbody tr:first-child{background: var(--color-ef);}
+.math_society h5{font-weight: 600;margin-top: 3rem; font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-bottom: 1rem;line-height: 1.6}
+.aim_sec p{text-align: left;font-weight: 500;}
+.achievements_li_grid{display: grid;grid-template-columns: repeat(4, 1fr);gap: 3rem;margin-top: 2rem;}
+.achievements_li_grid p{background-color: white;padding: 3rem;text-align: center;   font-weight: normal; border-bottom: 1px solid #ffc100;}
+.internal_soc_content p{color: var(--color-44);}
+.internal_soc_content h5{font-weight: 600;margin-top: 3rem; font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-bottom: 1rem;line-height: 1.6}
+.society_tables_depart h5{margin-bottom: 3rem;}
+.internal_soc_content .achievements_li_grid{grid-template-columns: repeat(3, 1fr)}
+.benift_sec{padding-top:2rem}
+.achivmnt h5{text-align: center;}
+.achivmnt .elec_seed_image {margin-top: 2rem;padding-bottom: 8rem;}
+.all_data {padding-bottom: 7rem;}
+.student_soc {padding-top: 5rem;}
+@media(max-width:991px) {
+.achievements_li_grid{grid-template-columns: 1fr;}
+}
 /* css ends here */
 
- .society_tables_depart .fee_strcu_table:first-of-type .fee_table tbody tr:first-child{background: var(--color-ef);}

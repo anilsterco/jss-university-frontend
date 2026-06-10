@@ -54,7 +54,6 @@ export default function DepartmentSocietyOverview({ data }) {
                           })}
                         </div>
                       }
-                      {/* use for single pages */}
                       <div className="left_side_content">
                         <h1 dangerouslySetInnerHTML={{ __html: item?.heading }} />
                         <h2>{item?.sub_heading}</h2>
@@ -87,6 +86,7 @@ export default function DepartmentSocietyOverview({ data }) {
                             }
                           </div>
                     </div>
+                    
                   </div>
                     {/* html */}
                     <div dangerouslySetInnerHTML={{__html:item?.html_data}}/>

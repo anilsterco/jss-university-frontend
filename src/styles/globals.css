@@ -3168,6 +3168,7 @@ a:active {
     line-height: 2.8rem;
     list-style: none;
     position: relative;
+    text-align: left;
 }
 .achievements_bottom p{font: var(--font-16);font-weight: normal;font-family: var(--font-Roboto);color: var(--color-black);margin-bottom: 0;line-height: 2.8rem;color: #444444;padding-right: 3rem;}
 .society_contact_info{
@@ -3211,15 +3212,8 @@ a:active {
 /* Department Society */
 .department_society_overview {margin-top: 12rem;}
 .society_overview_grid {grid-template-columns: 24.662% auto;display: grid;gap: 5.3rem;align-items:start;}
-.society_overview_center {text-align: center;}
-.left_side_content h1{font: var(--font-60);
-    color: var(--color-4e);
-    font-family: var(--font-Condensed);
-    text-transform: uppercase;
-    letter-spacing: -2.88px;
-    font-weight: 700;
-    line-height: 5.4rem;
-}
+.society_overview_center {text-align: center;padding-bottom: 5rem;}
+.left_side_content h1{font: var(--font-60);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -2.88px;font-weight: 700;line-height: 5.4rem;}
 .left_side_content span{ color: var(--color-ff);}
 .left_side_content h2{font:var(--font-24);color: var(--color-33);line-height: 3.6rem;font-weight: 300;margin-top: 4rem;margin-bottom: 3rem;}
 .left_side_content p{color: var(--color-44);}
@@ -3231,12 +3225,10 @@ a:active {
 .overview_bottom_data p{color: var(--color-44);margin-top: 5rem;margin-bottom: 4rem;}
 .right_side_menus {background-color: var(--color-white);padding-left: 2.35rem;padding-right: 2.6rem;padding-block:2.1rem;border-radius: 8px ;height: fit-content; max-height: 40rem; overflow-y: auto;}
 .right_side_menus .society_links{border-bottom: 1px solid #e2e2e2;margin-bottom: 1.3rem;padding-bottom: 0.5rem;}
-.right_side_menus a{font: var(--font-14);line-height: 2.8rem;color: var(--color-44);}
-.right_side_menus .society_links:last-child{
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
+.right_side_menus a{font: var(--font-14);line-height: 2.8rem;}
+.active_society {color: var(--color-9a);font-weight: 500;}
+.inactive_society {color: var(--color-44);}
+.right_side_menus .society_links:last-child{border-bottom: none;margin-bottom: 0;padding-bottom: 0;}
 .department_society_achivement{background-color: var(--color-f6);padding-block: 8rem 6rem;}
 .department_society_achivement .societies_events_header  .event_subheading{text-align: left;}
 .department_society_achivement .societies_events_header  .event_heading{text-align: left;}
@@ -3252,7 +3244,7 @@ a:active {
 .department_society_achivement .achievements_list {margin-top: 2rem;}
 .faculty_cordinator {margin-top: 1rem;}
 .department_society_objective .achievements_list li{color: var(--color-white);}
-.active_society {color: #018ce8;}
+.department_society_objective p:last-of-type {color: var(--color-white);margin-top: 5rem;text-align: center;}
 @media (max-width:991px) {
   .events_grid{grid-template-columns: 1fr;}
   .society_custom_box .placement_stats{grid-template-columns: 1fr;}
