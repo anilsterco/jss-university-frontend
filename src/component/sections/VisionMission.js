@@ -9,7 +9,7 @@ export default function VisionMission({ data }) {
             {section?.items &&
               section.items.length > -1 &&
               section.items.map((item, idx) => (
-                <section key={idx} className="vision_mission_section">
+                <section key={idx} className={`vision_mission_section ${item?.custom_class}`}>
                   <div className="container">
                     <div className="row">
                       <div className="col-lg-6 col-md-12 left_col">
@@ -17,7 +17,7 @@ export default function VisionMission({ data }) {
                           {item?.leftTitle && (
                             <h2 className="title">{item.leftTitle}</h2>
                           )}
-                          {item?.leftContent && <p>{item.leftContent}</p>}
+                          {item?.leftContent && <p dangerouslySetInnerHTML={{__html:item.leftContent}}/>}
                         </div>
                       </div>
 

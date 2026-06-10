@@ -169,6 +169,7 @@ export default function CommonPage({ data }) {
     departmentResearch: DepartmentResearch,
     department_society_overview: DepartmentSocietyOverview,
     societiesEvent: SocietiesEvent,
+    
   };
 
   return (

@@ -3210,10 +3210,8 @@ a:active {
 
 /* Department Society */
 .department_society_overview {margin-top: 12rem;}
-.society_overview_grid {grid-template-columns: 24.662% auto;
-    display: grid;
-    gap: 5.3rem;align-items:start;
-  }
+.society_overview_grid {grid-template-columns: 24.662% auto;display: grid;gap: 5.3rem;align-items:start;}
+.society_overview_center {text-align: center;}
 .left_side_content h1{font: var(--font-60);
     color: var(--color-4e);
     font-family: var(--font-Condensed);
@@ -3250,6 +3248,11 @@ a:active {
 .department_society_objective .about_two .single_lab_card .early-slide p {color: var(--color-white);}
 .department_society_objective .about_two .single_lab_card .early-slide .image_col {border-radius: 0 0 0 6rem;}
 .department_society_overview .overview_bottom_data{border-bottom: 1px solid #e2e2e2;    padding-bottom: 4rem;}
+.department_society_achivement .societies_events_header  p{text-align: left !important;}
+.department_society_achivement .achievements_list {margin-top: 2rem;}
+.faculty_cordinator {margin-top: 1rem;}
+.department_society_objective .achievements_list li{color: var(--color-white);}
+.active_society {color: #018ce8;}
 @media (max-width:991px) {
   .events_grid{grid-template-columns: 1fr;}
   .society_custom_box .placement_stats{grid-template-columns: 1fr;}

@@ -53,11 +53,17 @@ console.log('data',content);
                             />
                         )}
 
-                        {content?.decs && (
+                        {/* {content?.decs && (
                             <p className="event_desc">
                                 {content.decs}
                             </p>
-                        )}
+                        )} */}
+                        {content?.decs && (
+    <p
+        className=""
+        dangerouslySetInnerHTML={{ __html: content.decs }}
+    />
+)}
                     </div>
                 </div>
 
