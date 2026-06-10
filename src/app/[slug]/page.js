@@ -74,7 +74,7 @@ import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
 import societiesFculties from "@/component/sections/SocietiesFculties";
 import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
-
+import Yukti from "@/component/sections/Yukti";
 import SocietiesEvents from "@/component/sections/SocietiesEvents";
 import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
@@ -225,6 +225,7 @@ export default async function DynamicPage({ params }) {
     societiesFculties: societiesFculties,
     societiesEvent: SocietiesEvents,
     AchievementsRecognitions:AchievementsRecognitions,
+    Yukti:Yukti,
     
   };
 
