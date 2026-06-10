@@ -67,8 +67,10 @@ export default function AboutOne({ data }) {
                         </li>
                       ))}
                     </ul>
-                  )}
 
+
+                  )}
+                  {section.items[0]?.title && <p>{section.items[0].description}</p>}
                   {section.items[0]?.pdfIcons?.length > 0 && (
                     <div className="downlo_guides">
                       {section.items[0]?.pdfIcons.map((pdf, i) => (
