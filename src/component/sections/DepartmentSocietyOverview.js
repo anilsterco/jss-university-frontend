@@ -36,7 +36,6 @@ export default function DepartmentSocietyOverview({ data }) {
         return (
 
           <React.Fragment key={sectionIndex}>
-
             {section.items.map((item, itemIndex) => {
               // if (!item.content) return null;
               console.log('item>>>', item)
@@ -62,7 +61,7 @@ export default function DepartmentSocietyOverview({ data }) {
                         <p dangerouslySetInnerHTML={{__html:item?.description}} />
                       </div>
                     </div>
-                      <div className="overview_bottom_data">
+                    <div className="overview_bottom_data">
                         {
                           item?.image&&
                           <div className="">
@@ -87,8 +86,14 @@ export default function DepartmentSocietyOverview({ data }) {
                               </div>
                             }
                           </div>
-                      </div>
+                    </div>
+                    
                   </div>
+                    {/* html */}
+                    <div dangerouslySetInnerHTML={{__html:item?.html_data}}/>
+                    <div className="container">
+                        <div className="border_line"></div>
+                    </div>
                 </div>
               );
             })}

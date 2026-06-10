@@ -10309,7 +10309,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 }
 
 
+.society_tables_depart .fee_strcu_table:nth-of-type(2){
+  margin-top: 6rem;
+}
+/* .society_tables_depart .fee_strcu_table .fee_table td{color: var(--color-white);} */
+
 
 /* css ends here */
 
-  
+ .society_tables_depart .fee_strcu_table:first-of-type .fee_table tbody tr:first-child{background: var(--color-ef);}
