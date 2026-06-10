@@ -74,10 +74,7 @@ export default async function DepartmentInnerPage({ params }) {
           strategy="beforeInteractive"
         />
       )}
-
-      
-
-        <h1 className="d-none">{titleCase}</h1>
+      <h1 className="d-none">{titleCase}</h1>
 
       {/* <BelowBannerComponent /> */}
       <DepartmentHeader

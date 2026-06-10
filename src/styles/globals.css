@@ -3247,7 +3247,7 @@ a:active {
 .department_society_objective .about_two .single_lab_card .early-slide .early_rgt  h5 {color: var(--color-white);font-weight: bold;}
 .department_society_objective .about_two .single_lab_card .early-slide p {color: var(--color-white);}
 .department_society_objective .about_two .single_lab_card .early-slide .image_col {border-radius: 0 0 0 6rem;}
-.department_society_overview .overview_bottom_data{border-bottom: 1px solid #e2e2e2;    padding-bottom: 4rem;}
+.department_society_overview .border_line {margin-top: 6rem;    border-bottom: .1rem solid var(--color-d6)}
 .department_society_achivement .societies_events_header  p{text-align: left !important;}
 .department_society_achivement .achievements_list {margin-top: 2rem;}
 .faculty_cordinator {margin-top: 1rem;}
