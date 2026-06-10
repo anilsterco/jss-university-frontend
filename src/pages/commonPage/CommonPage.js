@@ -67,6 +67,8 @@ import DepartmentResearch from "@/component/sections/DepartmentResearch";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import DepartmentSocietyOverview from "@/component/sections/DepartmentSocietyOverview";
 import SocietiesEvent from "@/component/sections/SocietiesEvents";
+import Textarea from "@/component/sections/Textarea";
+import TextareaCustom from "@/component/sections/TextareaCustom";
 
 export default function CommonPage({ data }) {
   const groupedSections = [];
@@ -169,6 +171,7 @@ export default function CommonPage({ data }) {
     departmentResearch: DepartmentResearch,
     department_society_overview: DepartmentSocietyOverview,
     societiesEvent: SocietiesEvent,
+    textArea_custom: TextareaCustom,
     
   };
 
