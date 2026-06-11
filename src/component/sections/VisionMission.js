@@ -20,7 +20,6 @@ export default function VisionMission({ data }) {
                           {item?.leftContent && <p dangerouslySetInnerHTML={{__html:item.leftContent}}/>}
                         </div>
                       </div>
-
                       <div className="col-lg-6 col-md-12">
                         <div className="mission-card">
                           {item?.rightTitle && (
@@ -45,7 +44,6 @@ export default function VisionMission({ data }) {
         );
     }
   };
-
   return (
     <>
       {data && data.length > 0 ? (
@@ -55,7 +53,7 @@ export default function VisionMission({ data }) {
           <p>There is no data!</p>
         </div>
       )}
-      {/* // <h1 style={{ fontSize: '100px' }}>testing</h1> */}
+  
     </>
   );
 }

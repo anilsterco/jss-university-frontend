@@ -228,6 +228,7 @@ html {
     max-width: 640px;
     padding-inline: 2rem;
   }
+  .mobile_society_view .container {max-width: 100%;}
 
 }
 
