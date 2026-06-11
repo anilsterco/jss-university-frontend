@@ -10355,43 +10355,20 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .divercity_chem_soc .society_gallery{grid-template-columns: repeat(3,1fr);}
 .pixel_society >p{margin-top: 3rem;}
 .mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
-.desktop_society_view{
-    display:block;
-}
-
-.mobile_society_view{
-    display:none;
-}
-
+.desktop_society_view{display:block;}
+.mobile_society_view{display:none;}
 /* Accordion */
-
-.accordion_item{
-    border-bottom:1px solid #e5e5e5;
-    background-color: #fff;
-    padding-inline: 2rem;
-
-}
+.accordion_item{border-bottom:1px solid #e5e5e5;background-color: #fff;padding-inline: 2rem;}
 .accordion_item .active_society {color: var(--color-9a);font-weight: 500;}
 .accordion_item .inactive_society {color: var(--color-44);}
 .accordion_item a{font: var(--font-14);line-height: 2.8rem;color: var(--color-44);}
 .accordion_title{width:100%;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:none;border:none;cursor:pointer;font:var(--font-18);font-weight:500;padding-block: 3rem;}
 .accordion_content{padding-bottom:2rem;transition:max-height 0.4s ease,opacity 0.3s ease,padding 0.3s ease;}
 .accordion_arrow{width:20px;height:20px;transition:transform 0.3s ease;flex-shrink:0;}
-.accordion_arrow.rotate{
-    transform:rotate(180deg);
-}
+.accordion_arrow.rotate{transform:rotate(180deg);}
 .mobile_society_view .accordion_item:last-child {border: none;}
-.accordion_content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-.accordion_content.open {
-    max-height: 3000px; /* content ke hisab se bada value */
-    opacity: 1;
-}
+.accordion_content {max-height: 0;overflow: hidden;opacity: 0;transition: max-height 0.4s ease, opacity 0.3s ease;}
+.accordion_content.open {max-height: 3000px; /* content ke hisab se bada value */opacity: 1;}
 .pixel_society img{width:100%}
 @media(max-width:991px) {
 .achievements_li_grid{grid-template-columns: 1fr;}
