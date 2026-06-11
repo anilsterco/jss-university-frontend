@@ -1489,8 +1489,6 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list li {color: #444;margin-bottom: 2rem;}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list li:before {background-color:var(--color-100); }
 
-
-
 .yukti_section .section_heading h2{font: var(--font-48);font-family: var(--font-Condensed);letter-spacing: -2.3px;color: var(--color-white);text-transform: uppercase;text-align: left;margin-bottom: 2rem;font-weight: bold;line-height: 5.4rem;}
 .yukti_section .section_heading p {color: var(--color-white);}
 .yukti_section .yukti_grid p {color: var(--color-white);padding-top: 2rem;}
@@ -1501,3 +1499,30 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_grid .custom-list li:before {background-color: var(--color-white);}
 .nisp-by-iic .placeBottom p {padding-bottom: 8rem;margin: 0;text-align: left;max-width: 100%;}
 .iic .placeBottom p {padding-bottom: 8rem;margin: 0;text-align: left;max-width: 100%;}
+.iic-student-club .resea_facili_main .exte_mainsec h6 {text-align: center;}
+
+.iic_activities .section_heading h2{font: var(--font-26);color: var(--color-4e);margin-block: 3rem;}
+.iic_activities:last-child{padding-bottom: 6rem;}
+.iic_activities .iic_gallery:last-child{border: none;}
+.iic .about_subHeading.less {padding-bottom: 6rem;}
+.iic .nisp-by-iic .placeBottom p, .iic .placeBottom p {padding-bottom: 2rem;}
+.iic_activities .iic_content p:first-child{font: var(--font-24);text-align: left;margin: 0 auto;padding-bottom: 5rem;font-weight: 300;line-height: 1.4;}
+.iic_activities .iic_content p{font-family: var(--font-Roboto);color: #444;text-align: left;margin-bottom:3rem;}
+.iic_activities .imageWrapper {position: relative;width: 100%;height: 500px;object-fit: cover;}
+.iic_activities .iic_gallery{ display: grid;grid-template-columns: repeat(3,1fr);gap: 2.5rem;padding-block:6rem 6rem;border-bottom: solid 1px #e1e1e1;}
+.iic_activities .imageWrapper {position: relative;width: 100%;cursor: pointer;overflow: hidden;border-radius: 0.75rem;}
+.iic_activities .imageWrapper img {transition: transform 0.4s ease;}
+.iic_activities .imageWrapper:hover img {transform: scale(1.05);}
+/* Popup */
+.IICPopup { position: fixed;inset: 0;background: rgba(0, 0, 0, 0.9);display: flex;justify-content: center;align-items: center;padding: 2rem;z-index: 9999;}
+.popupContent {position: relative;max-width: 90vw;max-height: 90vh;}
+.IICpopupImage {width: auto;height: auto;max-width: 100%;max-height: auto;object-fit: contain;border-radius: 0.75rem;}
+.IICPopup .closeBtn {position: absolute;top: -1rem;right: -1rem;width: 2.5rem;height: 2.5rem;border: none;border-radius: 50%;background: #fff;cursor: pointer;font-size: 1.5rem;font-weight: 700;line-height: 1;z-index: 10;}
+
+/* responsive page */
+
+/* @media (max-width: 1366px) {
+
+} */
+
+

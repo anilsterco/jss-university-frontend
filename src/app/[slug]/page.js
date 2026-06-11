@@ -72,6 +72,7 @@ import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
 import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+import IICActivities from "@/component/sections/IICActivities";
 import societiesFculties from "@/component/sections/SocietiesFculties";
 import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
 import Yukti from "@/component/sections/Yukti";
@@ -226,6 +227,8 @@ export default async function DynamicPage({ params }) {
     societiesEvent: SocietiesEvents,
     AchievementsRecognitions:AchievementsRecognitions,
     Yukti:Yukti,
+    IICActivities:IICActivities,
+    
     
   };
 
