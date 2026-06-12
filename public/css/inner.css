@@ -10308,11 +10308,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
   filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }
 
-.society_tables_depart .fee_strcu_table:nth-of-type(2){
-  margin-top: 6rem;
-}
+.society_tables_depart {margin-top: 5rem;}
+.society_tables_depart .fee_strcu_table:nth-of-type(2){  margin-top: 6rem;}
 .department_society_objective{margin-top: 5rem;}
-.society_tables_depart .fee_strcu_table:first-of-type .fee_table tbody tr:first-child{background: var(--color-ef);}
 .math_society h5{font-weight: 600;margin-top: 3rem; font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-bottom: 1rem;line-height: 1.6}
 .aim_sec p{text-align: left;font-weight: 500;}
 .achievements_li_grid{display: grid;grid-template-columns: repeat(4, 1fr);gap: 3rem;margin-top: 2rem;}
@@ -10330,7 +10328,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .right_side_menus .active_society {color: var(--color-9a);font-weight: 500;}
 .right_side_menus .inactive_society {color: var(--color-44);}
 .department_society_objective p:last-of-type {color: var(--color-white);margin-top: 5rem;text-align: center;}
-.event_boxes{display:grid;grid-template-columns:repeat(6,1fr);gap:3rem;margin-block: 2rem 3rem;}
+.event_boxes{display:grid;grid-template-columns:repeat(6,1fr);gap:3rem;margin-block: 3rem;}
 .event_box{grid-column:span 2;padding:3rem;border-bottom: 1px solid #ffc100;background:#fff;}
 .event_box h5{margin-top: 0;}
 .event_box:nth-child(4){grid-column:2 / span 2;}
@@ -10354,41 +10352,60 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .internal_soc_content .single_lab_card  .early-slide{align-items: center;}
 .divercity_chem_soc .society_gallery{grid-template-columns: repeat(3,1fr);}
 .pixel_society >p{margin-top: 3rem;}
-.mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
-.desktop_society_view{display:block;}
-.mobile_society_view{display:none;}
 /* Accordion */
-.accordion_item{border-bottom:1px solid #e5e5e5;background-color: #fff;padding-inline: 2rem;}
+.accordion_item{border-bottom:1px solid #e5e5e5;background-color: #fff;padding-inline: 2rem; scroll-margin-top:10rem;}
 .accordion_item .active_society {color: var(--color-9a);font-weight: 500;}
 .accordion_item .inactive_society {color: var(--color-44);}
 .accordion_item a{font: var(--font-14);line-height: 2.8rem;color: var(--color-44);}
 .accordion_title{width:100%;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:none;border:none;cursor:pointer;font:var(--font-18);font-weight:500;padding-block: 3rem;}
-.accordion_content{padding-bottom:2rem;transition:max-height 0.4s ease,opacity 0.3s ease,padding 0.3s ease;}
 .accordion_arrow{width:20px;height:20px;transition:transform 0.3s ease;flex-shrink:0;}
 .accordion_arrow.rotate{transform:rotate(180deg);}
-.mobile_society_view .accordion_item:last-child {border: none;}
-.accordion_content {max-height: 0;overflow: hidden;opacity: 0;transition: max-height 0.4s ease, opacity 0.3s ease;}
-.accordion_content.open {max-height: 3000px; /* content ke hisab se bada value */opacity: 1;}
+.department_society_overview .accordion_item:last-child {border: none;}
+.accordion_content{max-height:0;overflow:hidden;opacity:0;padding-bottom:2rem;transition:max-height .45s ease,opacity .3s ease,padding-bottom .3s ease;}
+.accordion_content.open{max-height:5000px;opacity:1;padding-bottom:2rem;}
 .pixel_society img{width:100%}
+.cse_society {margin-block: 7rem;}
+.club_image {padding-block: 3rem;}
+.club_image img{width: 100%;}
+.benefits_grid {display: grid;grid-template-columns: repeat(2, 1fr);border: 1px solid #ffc100;background: #fff;}
+.benefit_item {padding: 1rem;padding-inline: 2rem;border-right: 1px solid #ffc100;border-bottom: 1px solid #ffc100;background: #fff;}
+.benefit_item:nth-child(2n) {border-right: none;}
+.benefit_item:nth-last-child(-n + 2) {border-bottom: none;}
+.benefit_item h5 {margin: 0 0 0.5rem;}
+.benefit_item p {margin: 0;}
+.custom_order_listing{padding-left: 2rem;margin-top: 3rem;}
+.custom_order_listing li{font: var(--font-16);color: #444;margin-bottom: 2rem;padding-left: 2.2rem;line-height: 2.8rem;}
+.custom_order_listing li::marker{color: #ffc107; /* yellow */font-weight: 700;}
+.aiml_soc_bg_white {background-color: var(--color-white);}
+.aiml_soc_bg_white .labs_group_section{margin-top: 10rem;padding-top: 0;}
+.aiml_soc_bg_white .society_tables_depart{margin-top: 4rem;}
+.aiml_society .society_gallery {padding-top: 3rem;}
+.aiml_society .society_gallery:nth-of-type(2)  {padding-bottom: 10rem;}
+.aiml_soc_bg_white h5{ padding-block: 5rem 2rem;}
 @media(max-width:991px) {
 .achievements_li_grid{grid-template-columns: 1fr;}
 .event_boxes{grid-template-columns:repeat(2,1fr);}
 .event_box,.event_box:nth-child(4),.event_box:nth-child(5){grid-column:auto;}
 .divercity_chem_soc .society_gallery{grid-template-columns: 1fr;}
-.desktop_society_view{display:none;}
-.mobile_society_view{display:block;}
-.left_side_content h1{font:var(--font-30);letter-spacing: 0;}
+.left_side_content h1{font:var(--font-30);letter-spacing: 0; margin-top: 3rem;}
 .student_soc {padding-top: 1rem;}
 .internal_soc_content .about_two{background-color: transparent;}
 .left_side_content h2 {margin-block:0.7rem}
 .faculty_cordinator {margin-bottom: 1rem;}
+.mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
+.aiml_soc_bg_white .society_contact .about_two .early-slide .early_rgt{padding-top: 0;margin-top: 0rem;}
+.aiml_soc_bg_white h5:last-of-type{padding-top: 2rem;padding-bottom: 0;}
+.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem;}
 }
 @media(max-width:767px){
 .event_boxes{grid-template-columns:1fr;gap:2rem;}
 .event_box{padding:2rem;}
 .other_initiative .event_boxes {grid-template-columns: 1fr;}
 .society_gallery{grid-template-columns:1fr;}
-.accordion_title{padding-block: 2rem 0rem;   font:var(--font-16);}
+.accordion_title{padding-block: 2rem 0rem; font:var(--font-16);}
+.benefits_grid {grid-template-columns: 1fr;}
+.benefit_item {border-right: none;}
+.benefit_item:last-child {border-bottom: none;}
 }
 /* css ends here */
 
