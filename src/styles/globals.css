@@ -1373,7 +1373,7 @@ to {opacity: 1;transform: translateY(0);}}
 .societies_header h5 {font: var(--font-18);color: var(--color-white);font-weight: bold;font-family: var(--font-Condensed);margin-bottom: 1.1rem;line-height: 3rem;}
 .societies_header h2 {font: var(--font-60);color: var(--color-white);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -2.88px;line-height: 5.4rem;font-weight: bold;margin-bottom: 1rem;}
 .societies_header p{font: var(--font-16);font-weight: normal;color: var(--color-white);margin-bottom: 3.4rem;font-family: var(--font-Roboto);}
-.societies_faculties .faculty_image img{border-radius: 0.8rem;box-shadow: inset 0px 50px 50px #00000008;}
+.societies_faculties .faculty_image img{border-radius: 0.8rem;box-shadow: inset 0px 50px 50px #00000008;height: auto;}
 .societies_faculties .faculty_content{padding-top: 2rem;}
 .societies_faculties .faculty_content h3{font: var(--font-21);color: var(--color-4e);font-family: var(--font-Condensed);font-weight: 600;color: var(--color-white);margin-bottom: 1rem;}
 .societies_faculties .faculty_content h6{font: var(--font-16);color: var(--color-white);font-family: var(--font-Roboto);font-weight: normal;letter-spacing: -0.32px;margin-bottom: 0.5rem;line-height: 2.7rem;}
@@ -1412,7 +1412,7 @@ to {opacity: 1;transform: translateY(0);}}
 .achievements_section{padding-block: 10rem 15rem;}
 .achievements_header{margin-bottom: 7rem;}
 .achievements_header>h2{font: var(--font-48);font-family: var(--font-Condensed);letter-spacing: -2.3px;color: var(--color-4e);text-transform: uppercase;text-align: left;margin-bottom: 4rem;font-weight: bold;line-height: 5.4rem;}
-.achievements_banner img{border-radius: 6rem 0.8rem 0.8rem 0.8rem;margin-bottom: 4rem;}
+.achievements_banner img{border-radius: 6rem 0.8rem 0.8rem 0.8rem;margin-bottom: 4rem;height: auto;}
 .achievements_heading>span{color: var(--color-e8);}
 .achievements_desc {max-width: 70%; font: var(--font-16);font-weight: normal;font-family: var(--font-Roboto);margin-bottom: 0;line-height: 2.8rem;color: #444444;}
 .achievements_list{position: relative;padding: 0;}
@@ -1492,6 +1492,7 @@ to {opacity: 1;transform: translateY(0);}}
 
 .yukti_section .section_heading h2{font: var(--font-48);font-family: var(--font-Condensed);letter-spacing: -2.3px;color: var(--color-white);text-transform: uppercase;text-align: left;margin-bottom: 2rem;font-weight: bold;line-height: 5.4rem;}
 .yukti_section .section_heading p {color: var(--color-white);}
+.yukti_section p{color: var(--color-white);padding-top: 6rem;}
 .yukti_section .yukti_grid p {color: var(--color-white);padding-top: 2rem;}
 .yukti_section .yukti_card h3{font: var(--font-24);font-family: var(--font-Roboto);letter-spacing: 0;color: var(--color-white);text-transform: uppercase;text-align: left;padding-bottom: 2rem;font-weight: bold;line-height: normal; border-bottom: solid 1px #ffffff45;}
 .yukti_grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 4rem;margin-block: 4rem 0;}
@@ -1519,11 +1520,114 @@ to {opacity: 1;transform: translateY(0);}}
 .popupContent {position: relative;max-width: 90vw;max-height: 90vh;}
 .IICpopupImage {width: auto;height: auto;max-width: 100%;max-height: auto;object-fit: contain;border-radius: 0.75rem;}
 .IICPopup .closeBtn {position: absolute;top: -1rem;right: -1rem;width: 2.5rem;height: 2.5rem;border: none;border-radius: 50%;background: #fff;cursor: pointer;font-size: 1.5rem;font-weight: 700;line-height: 1;z-index: 10;}
-
+.student-welfare-societies .about_f_value {padding-top: 0;grid-template-columns: 50% 50%;gap: 2rem;}
+.student-welfare-societies .about_f_value .ab_f_content h3 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Roboto);text-transform: uppercase;letter-spacing: -1.02px;font-weight: 700;}
 /* responsive page */
 
-/* @media (max-width: 1366px) {
+@media (max-width: 1366px) {
+.societies_events {padding-block: 10rem 6rem;}
+.societies .placement_page {padding-block: 12rem 8rem;}
+.societies_faculties {padding-block: 12rem;}
+.societies .top_section {padding-top: 8rem;}
+.achievements_section {padding-block: 8rem 10rem;}
+.iic_activities .imageWrapper {height: 45rem;}
+}
 
-} */
+@media (max-width: 1024px){
+.societies .about_f_value {gap: 5rem;padding-top: 4rem;display: flex;flex-direction: column-reverse;}
+.societies .labs_group_section.about_two .about_two.reverse .early_rgt {padding-left: 0;padding-right: 0;}
+.societies .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;}
+.societies .curriculum_box h3 {margin-bottom: 3rem;padding-right: 4rem;}
+.societies .placement_page {padding-block: 6rem 6rem;}
+.societies .events_grid {grid-template-columns: repeat(2, 1fr);gap: 4rem;}
+.societies .grands_maingrid {gap: 8.6rem;}
+.societies .grands_content {padding-inline: 0 0rem;}
+.societies .society_custom_box .placement_stats {grid-template-columns: repeat(2, 1fr);padding-bottom: 0;}
+.placement_page.society_custom_box + .society_contact .about_two .early-slide .early_rgt {padding-top: 0;}
+.societies .placement_page.society_custom_box + .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;display: flex !important;flex-direction: column-reverse;}.societies .achievements_desc {max-width: 100%;}
+}
+@media (max-width: 991px){
+.societies .grands_maingrid {gap: 1.6rem;}
+.societies_events_header {margin-bottom: 4.2rem;}
+.societies .societies_events {padding-block: 6rem 6rem;}
+.societies .placement_stats {padding-bottom: 0;}
+.societies .curriculum_box h3 {padding-right: 0;}
+.societies .societies_faculties {padding-block: 8rem;}
+.societies .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
+.societies .labs_group_section.about_two .about_two.reverse .early-slide {display: grid!important;grid-template-columns: 100%;}.societies .about_f_value {gap: 3rem;padding-top: 1rem;  } .societies .societies_grid {grid-template-columns: repeat(1, 1fr);gap: 2.5rem;display: grid;}
 
+.student-welfare-societies .top_section {margin-block: 6rem 4rem;}
+.student-welfare-societies .labs_group_section.about_two .about_two.reverse .early_rgt{margin-block: 4rem 3rem;}
+.student-welfare-societies .about_two.labs_group_section .early-slide .early_rgt h4 { margin-bottom: 2rem;}
+.student-welfare-societies .about_four {padding-bottom: 2rem; }
+.student-welfare-societies .placement_stats {padding-bottom: 6rem;}
+.iic .iic_activities .imageWrapper {height: 30rem;}
+.iic_activities .iic_gallery {padding-block: 2rem;}
+.iic_activities .iic_content p:first-child {padding-bottom: 3rem;}
+.iic-student-club .top_section {margin-top: 8rem;}
+.iic-student-club .exte_mainsec h6 {padding-block: 0 3rem;}
+.iic-student-club .exten_listyle {padding-inline: 0;padding-top: 0;}
+.iic-student-club .exte_mainsec {padding-bottom: 3rem;}
+.iic-student-club .grid_3 {grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 767px){
+.societies .placement_page {padding-block: 4rem;}
+.societies .top_section .container {padding-bottom: 4rem;}
+.societies .top_section {padding-top: 4rem;}
+.societies .society_custom_box .placement_stats {grid-template-columns: repeat(1, 1fr);padding-bottom: 0;}
+.achievements_header {margin-bottom: 4rem;}
+.achievements_section {padding-block: 4rem 4rem;}
+.societies .grands_content p:last-child{margin-bottom: 0;}
+.societies .grands_mainsec .publi_title h4 {margin-bottom: 4rem;}
+.societies .event_content > p {margin-bottom: 0;padding-right: 0;}
+.societies .events_grid {gap: 1.5rem;}.societies .societies_events_header {margin-bottom: 2.2rem;}
+.societies_events .societies_events_header > h2 {margin-bottom: 2rem; }
+.societies .societies_events {padding-block: 4rem;}.societies .curriculum_box {padding-block: 4rem;padding-inline: 3rem;}
+.societies_faculties .faculty_content p {padding-bottom: 0;}
+.societies .societies_faculties {padding-block: 4rem;}
+.societies_header h2 {font: var(--font-36);color: var(--color-white);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;margin-bottom: 1rem;font-weight: bold;line-height: normal;}
+.societies .about_f_value .ab_f_content h3 {font: var(--font-36);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
+.societies .about_f_value .ab_f_content {padding-block: 2rem 0;  }.societies .about_one .estblish {padding-block: 3rem 2rem;}
+.student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
+.student-welfare-societies .about_subHeading {padding-bottom: 4rem;max-width: 100%;padding-inline:0;text-align: left;}
+.student-welfare-societies .about_desc {text-align: left;max-width: 100%;}
+.iic .iic_activities .imageWrapper {height: 25rem;}
+.iic_activities .iic_gallery{grid-template-columns: repeat(2, 1fr);}
+.curriculum_box .box_ul {margin: 2rem 0 0;}
+.iic .about_subHeading {text-align: left;max-width: 100%;}
+.iic .top_section {margin-top: 4rem;}
+.iic .about_subHeading.less {padding-bottom: 3rem;}
+.about-iic .grid_card_design1_section {padding-block: 0;}
+.achievements_header > h2 {font: var(--font-32);font-family: var(--font-Condensed);letter-spacing: -1.3px;text-align: left;margin-bottom: 3rem;font-weight: bold;line-height:normal;}
+.achievements_desc {max-width: 100%;}
+.achievements_header {margin-bottom: 3rem;}
+.about-iic .achievements_list {grid-template-columns: repeat(2, 1fr);gap: 2rem;}
+.achievements_list li {margin-bottom: 0;}
+.achievements_bottom p {padding-top: 2rem;padding-inline: 0;}
+.iic-student-club .top_section {margin-top: 4rem;}
+.iic-student-club .exten_listyle {padding-top: 3rem;}
+.iic-student-club .exte_mainsec {padding-bottom: 1rem;}
+.iic-student-club .heading {margin-bottom: 3rem;}
+.iic-student-club .grid_3{display: block;}
 
+}
+@media (max-width: 575px){
+.societies .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
+.societies .about_one .abt_cntnt > span {max-width: 100%;padding-bottom: 0;line-height: 2.8rem;text-align: left;}
+.achievements_header > h2 {font: var(--font-36);font-family: var(--font-Condensed);letter-spacing: -1.3px;text-align: left;margin-bottom: 2rem;line-height: normal;}
+.societies  .grands_content {padding-block: 1rem 0;padding-inline: 0;}
+.societies_events .societies_events_header > h2 {font: var(--font-36);font-family: var(--font-Condensed);letter-spacing: -2.3px;color: var(--color-4e);text-transform: uppercase;text-align: center;margin-bottom: 2rem;font-weight: bold;line-height: normal;}
+.societies .about_one {padding-block: 6rem 0;}.societies .about_one .abt_cntnt .about_subtitle {font: var(--font-38);color: #018ce8;letter-spacing: -2.3px;line-height: normal;font-family: var(--font-Condensed);margin-bottom: 3rem;font-weight: bold;display: block;}
+.student-welfare-societies .top_section {margin-block: 4rem 1rem;}
+.student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-24);   }
+.student-welfare-societies .about_f_value .ab_f_content h3 {font: var(--font-24);}
+.iic_activities .iic_gallery{grid-template-columns: repeat(1, 1fr);}
+.iic .iic_activities .imageWrapper {height: 50rem;}
+.iic .atm_g_imgsec {padding-top: 0rem;}
+.iic .gridCard-module__aVLOja__card {padding: 2rem 0;}
+.about-iic .achievements_list {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
+.resea_facili_main {padding-top: 0;}
+.iic-student-club .rea_main .comon_list {margin-bottom: 2rem;}
+.iic-student-club .about_subHeading { text-align: left;max-width: 100%;margin: 0;padding: 0;}
+
+}

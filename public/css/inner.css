@@ -10151,7 +10151,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .about_subtitle {font: var(--font-20);}
 .about_subtitle h5 {font: var(--font-20);}
 .ab_jss_c_col h4 {font: var(--font-22);}
-.inner-title .innnr_head h3 {font: var(--font-24);}
+.inner-title .innnr_head h3 {font: var(--font-24);letter-spacing: -1.25px;font-family: var(--font-Condensed);font-weight: bold;}
 .ab_fost_lft_col h5 {font: var(--font-20);}
 .abou_t_sec h2 {font: var(--font-20);font-weight: 300;}
 .institutional-development-plan section:nth-child(6).amenities_section .grid_group .right_col ul {flex-direction: column;}
