@@ -101,22 +101,21 @@ function DesktopTab({ societies, activeId, setActiveId }) {
           )}
 
           <div className="left_side_content">
-            {activeSociety?.heading && <h1 data-aos="fade-up" data-aos-delay="100" dangerouslySetInnerHTML={{ __html: activeSociety.heading }} />}
+            {activeSociety?.heading && <div dangerouslySetInnerHTML={{ __html: activeSociety.heading }} />}
 
           </div>
         </div>
 
+        </div>
         {activeSociety?.description && (
           <div
             className="all_data"
           >
-            <div className="container internal_soc_content student_soc" data-aos="fade-up" data-aos-delay="100"
-              dangerouslySetInnerHTML={{ __html: activeSociety.description }} />
+            <div dangerouslySetInnerHTML={{ __html: activeSociety.description }} />
           </div>
         )}
 
 
-      </div>
 
         {activeSociety?.happenings?.length > 0 && (
           <SocietyHappenings allEvents={activeSociety?.happenings ?? []} />
