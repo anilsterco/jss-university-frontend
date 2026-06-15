@@ -56,7 +56,7 @@ function MobileTab({ societies, activeId, setActiveId }) {
               className={`accordion_content left_side_content ${activeId === society.id ? "open" : ""
                 }`}
             >
-              {society.heading && <h2>{society.heading}</h2>}
+              {society.heading && <div dangerouslySetInnerHTML={{__html:society.heading}} />}
               {society.description && (
                 <div dangerouslySetInnerHTML={{ __html: society.description }} />
               )}

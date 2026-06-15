@@ -10400,7 +10400,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
 .aiml_soc_bg_white .society_contact .about_two .early-slide .early_rgt{padding-top: 0;margin-top: 0rem;}
 .aiml_soc_bg_white h5:last-of-type{padding-top: 2rem;padding-bottom: 0;}
-.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem;}
+.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem; padding-top:0;}
 }
 @media(max-width:767px){
 .event_boxes{grid-template-columns:1fr;gap:2rem;}
