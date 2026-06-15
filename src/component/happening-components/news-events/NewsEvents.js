@@ -291,64 +291,64 @@ export default function EventsSection({ className, programId, type }) {
 */}
 
       <div className="container midd_events">
-  {upCommingEvents?.length > 0 ? (
-    <>
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        navigation={{
-          nextEl: ".secondary-next",
-          prevEl: ".secondary-prev",
-        }}
-        loop={true}
-        autoplay={{
-          delay: 8000,
-          disableOnInteraction: false,
-        }}
-        spaceBetween={20}
-        slidesPerView={1}
-      >
-        {upCommingEvents.map((event) => (
-          <SwiperSlide key={event.id}>
-            <div className={`row ${styles.secondarySection}`}>
-              <div className="col-lg-7 col-md-12">
-                <div className={styles.secondaryImageWrapper}>
-                  {event.banner_image && (
-                    <Image
-                      src={event.banner_image}
-                      alt={event.title}
-                      width={812}
-                      height={437}
-                      className={styles.secondaryImage}
-                    />
-                  )}
-                </div>
-              </div>
+        {upCommingEvents?.length > 0 ? (
+          <>
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              navigation={{
+                nextEl: ".secondary-next",
+                prevEl: ".secondary-prev",
+              }}
+              loop={true}
+              autoplay={{
+                delay: 8000,
+                disableOnInteraction: false,
+              }}
+              spaceBetween={20}
+              slidesPerView={1}
+            >
+              {upCommingEvents.map((event) => (
+                <SwiperSlide key={event.id}>
+                  <div className={`row ${styles.secondarySection}`}>
+                    <div className="col-lg-7 col-md-12">
+                      <div className={styles.secondaryImageWrapper}>
+                        {event.banner_image && (
+                          <Image
+                            src={event.banner_image}
+                            alt={event.title}
+                            width={812}
+                            height={437}
+                            className={styles.secondaryImage}
+                          />
+                        )}
+                      </div>
+                    </div>
 
-              <div className="col-lg-5 col-md-12">
-                <div className={styles.secondaryText}>
-                  <p className={styles.eventDate}>
-                    {formatDate(event.event_date_from)}
-                  </p>
+                    <div className="col-lg-5 col-md-12">
+                      <div className={styles.secondaryText}>
+                        <p className={styles.eventDate}>
+                          {formatDate(event.event_date_from)}
+                        </p>
 
-                  <h3
-                    className={styles.eventTitle}
-                    dangerouslySetInnerHTML={{
-                      __html: event.title,
-                    }}
-                  />
+                        <h3
+                          className={styles.eventTitle}
+                          dangerouslySetInnerHTML={{
+                            __html: event.title,
+                          }}
+                        />
 
-                  <p className={styles.eventDesc}>
-                    {event.desc}
-                  </p>
+                        <p className={styles.eventDesc}>
+                          {event.desc}
+                        </p>
 
-                  <Link
-                    href={`/happenings/${event.slug || event.id}`}
-                    style={{ color: "inherit" }}
-                  >
-                    <BsArrowRightCircle fontSize={20} />
-                  </Link>
+                        <Link
+                          href={`/happenings/${event.slug || event.id}`}
+                          style={{ color: "inherit" }}
+                        >
+                          <BsArrowRightCircle fontSize={20} />
+                        </Link>
 
-                  {/* <div className="d-flex gap-2 mt-4">
+                        {/* <div className="d-flex gap-2 mt-4">
                     <button className="secondary-prev btn btn-outline-secondary btn-sm rounded-circle">
                       <FaChevronLeft size={10} />
                     </button>
@@ -357,19 +357,19 @@ export default function EventsSection({ className, programId, type }) {
                       <FaChevronRight size={10} />
                     </button>
                   </div> */}
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
-  ) : (
-    <div style={{ textAlign: "center", marginTop: "5rem" }}>
-      No Result Found
-    </div>
-  )}
-</div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </>
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            No Result Found
+          </div>
+        )}
+      </div>
 
       <div className="container">
         {allEvents.length > 0 ? (
@@ -410,6 +410,8 @@ export default function EventsSection({ className, programId, type }) {
                             height={250}
                             layout="responsive"
                             className={styles.eventImage}
+                           
+
                           />
                         ) : null}
                         <div className={styles.cardBody}>
