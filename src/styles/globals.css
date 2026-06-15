@@ -1431,7 +1431,7 @@ to {opacity: 1;transform: translateY(0);}}
 .society_contact .about_tw.single_lab_car.early-slide .early_rgt h5{font-weight: 600;}
 
 /* Department Society */
-.department_society_overview {margin-top: 12rem;}
+.department_society_overview {padding-block: 12rem 5rem;}
 .society_overview_grid {grid-template-columns: 24.662% auto;display: grid;gap: 5.3rem;align-items:start;}
 .society_overview_center {text-align: center;}
 .left_side_content h1{font: var(--font-60);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -2.88px;font-weight: 700;line-height: 5.4rem;}

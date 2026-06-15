@@ -72,7 +72,7 @@
 
 .institutional-development-plan .vision_mission_section+.amenities_section .left_col ul li:before {
   content: "";
-  background: #ffc100;
+  background: var(--color-100);
   border-radius: 50%;
   width: .7rem;
   height: .7rem;
@@ -200,7 +200,7 @@
 .inner-title .innnr_head ul li.active,
 .inner-title .innnr_head ul li:hover {
   color: var(--color-e8);
-  border-top: 2px solid #ffc100;
+  border-top: 2px solid var(--color-100);
 }
 
 .inner-title .innnr_head ul li a {
@@ -1428,7 +1428,7 @@ ul.comon_list li:before {
 
 .patent_boxgrid .patent_box {
   background-color: var(--color-white);
-  border-bottom: 1px solid #ffc100;
+  border-bottom: 1px solid var(--color-100);
   padding: 3rem;
   font: var(--font-16);
   color: #444;
@@ -6634,6 +6634,11 @@ ul.comon_list li:before {
 
 }
 
+
+.department_society_happenings{margin-top:5rem;}
+.department_society_happenings .latest-event{top:0; padding-block: 10rem 10rem;}
+.department_society_happenings .latest-event .about_subtitle{margin-bottom: 7rem;}
+
 /* Responsive */
 
 @media (min-width: 2550px) {
@@ -10316,33 +10321,33 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .math_society h5{font-weight: 600;margin-top: 3rem; font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-bottom: 1rem;line-height: 1.6}
 .aim_sec p{text-align: left;font-weight: 500;}
 .achievements_li_grid{display: grid;grid-template-columns: repeat(4, 1fr);gap: 3rem;margin-top: 2rem;}
-.achievements_li_grid p{background-color: white;padding: 3rem;text-align: center;   font-weight: normal; border-bottom: 1px solid #ffc100;}
+.achievements_li_grid p{background-color: white;padding: 3rem;text-align: center;   font-weight: normal; border-bottom: 1px solid var(--color-100);}
 .internal_soc_content p{color: var(--color-44);}
 .internal_soc_content h5{font-weight: 600;margin-top: 3rem; font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-bottom: 1rem;line-height: 1.6}
 .society_tables_depart h5{margin-bottom: 3rem;}
 .internal_soc_content .achievements_li_grid{grid-template-columns: repeat(3, 1fr)}
 .benift_sec{padding-top:2rem}
-.achivmnt h5{text-align: center;}
+/* .achivmnt h5{text-align: center;} */
+.elec_seed_image{margin-top: 3rem;}
 .achivmnt .elec_seed_image {margin-top: 2rem;padding-bottom: 8rem;}
-.all_data {padding-bottom: 7rem;}
+/* .all_data {padding-bottom: 7rem;} */
 .INKSPIRE_pad_btm {padding-bottom: 7rem;}
-.student_soc {padding-top: 5rem;}
+.student_soc {padding-top: 2.5rem;}
 .right_side_menus .active_society {color: var(--color-9a);font-weight: 500;}
 .right_side_menus .inactive_society {color: var(--color-44);}
 .department_society_objective p:last-of-type {color: var(--color-white);margin-top: 5rem;text-align: center;}
 .event_boxes{display:grid;grid-template-columns:repeat(6,1fr);gap:3rem;margin-block: 3rem;}
-.event_box{grid-column:span 2;padding:3rem;border-bottom: 1px solid #ffc100;background:#fff;}
+.event_box{grid-column:span 2;padding:3rem;border-bottom: 1px solid var(--color-100);background:#fff;}
 .event_box h5{margin-top: 0;}
-.event_box:nth-child(4){grid-column:2 / span 2;}
-.event_box:nth-child(5){grid-column:4 / span 2;}
+/* .event_box:nth-child(4){grid-column:2 / span 2;}
+.event_box:nth-child(5){grid-column:4 / span 2;} */
 .other_initiative .event_boxes {grid-template-columns: repeat(2,1fr);}
 .other_initiative .event_box{grid-column:auto;}
-/* .other_initiative > h5:first-child{text-align:center;} */
-.achievement_dot_design_list{
-    margin-top: 3.5rem;
-}
+.achievement_dot_design_list{margin-top: 3.5rem;padding-bottom: 1rem;}
 .achievement_dot_design_list h5{margin-bottom: 2rem;}
-.achievement_item{position:relative;padding:0 0 3rem 4rem;border-left:1px solid #d9d9d9;}
+.achievement_item{position:relative;padding: 0 0 1rem 3rem;border-left:1px solid #d9d9d9;}
+.achievement_dot_design_list p{color:var(--color-44)}
+.aiml_soc_bg_white p{color:var(--color-44)}
 .achievement_item:last-child{padding-bottom:0;}
 .achievement_item::before{content:'';position:absolute;left:-0.8rem;top:0.4rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--color-9a);}
 .achievement_item .year{display:inline-block;font-weight:600;margin-bottom:1rem;}
@@ -10369,21 +10374,54 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .cse_society {margin-block: 7rem;}
 .club_image {padding-block: 3rem;}
 .club_image img{width: 100%;}
-.benefits_grid {display: grid;grid-template-columns: repeat(2, 1fr);border: 1px solid #ffc100;background: #fff;}
-.benefit_item {padding: 1rem;padding-inline: 2rem;border-right: 1px solid #ffc100;border-bottom: 1px solid #ffc100;background: #fff;}
+.elec_seed_image  img{width: 100%;}
+.benefits_grid {display: grid;grid-template-columns: repeat(2, 1fr);border: 1px solid var(--color-100);background: #fff;    margin-top: 2rem;}
+.benefit_item {padding: 1rem;padding-inline: 2rem;border-right: 1px solid var(--color-100);border-bottom: 1px solid var(--color-100);background: #fff;}
 .benefit_item:nth-child(2n) {border-right: none;}
 .benefit_item:nth-last-child(-n + 2) {border-bottom: none;}
 .benefit_item h5 {margin: 0 0 0.5rem;}
 .benefit_item p {margin: 0;}
+.department_society_achivement .societies_events_header h5{text-align: left;}
 .custom_order_listing{padding-left: 2rem;margin-top: 3rem;}
 .custom_order_listing li{font: var(--font-16);color: #444;margin-bottom: 2rem;padding-left: 2.2rem;line-height: 2.8rem;}
-.custom_order_listing li::marker{color: #ffc107; /* yellow */font-weight: 700;}
+.custom_order_listing li::marker{color: var(--color-100); /* yellow */font-weight: 700;}
 .aiml_soc_bg_white {background-color: var(--color-white);}
 .aiml_soc_bg_white .labs_group_section{margin-top: 10rem;padding-top: 0;}
 .aiml_soc_bg_white .society_tables_depart{margin-top: 4rem;}
-.aiml_society .society_gallery {padding-top: 3rem;}
+.aiml_soc_bg_white h5{font: var(--font-21);color: var(--color-4e);font-weight: 700;font-family: var(--font-Condensed);text-align: left;margin-top: 3rem;margin-bottom: 1rem;line-height: 1.6;}
+.society_tables_depart .fee_strcu_table .fee_table_wrapper .fee_table th:first-child{min-width: 10rem;}
+.society_tables_depart .fee_strcu_table .fee_table_wrapper .fee_table th:nth-child(2){min-width: 19rem;}
+.society_tables_depart .fee_strcu_table .fee_table_wrapper .fee_table th:nth-child(3){min-width: 24rem;}
+.society_tables_depart .fee_strcu_table .fee_table_wrapper .fee_table th:nth-child(4){min-width: 27rem;}
+.aiml_society .society_gallery {padding-block: 3rem;}
 .aiml_society .society_gallery:nth-of-type(2)  {padding-bottom: 10rem;}
 .aiml_soc_bg_white h5{ padding-block: 5rem 2rem;}
+.connect_us_faculty {padding-top:6rem}
+.achievement_timeline{position:relative;margin-block: 3rem;}
+.achievement_timeline::before{content:"";position:absolute;left:8rem;top:0;bottom:0;width:1px;background:#d9d9d9;}
+.timeline_item{position:relative;display:grid;grid-template-columns:6rem 1fr;gap:4rem;padding-bottom:3rem;}
+.timeline_item:last-child{padding-bottom:0;}
+.timeline_year{position:relative;z-index:2;text-align:center;font-weight:600;background:#fff;padding:.5rem 0;height: 3rem;}
+.timeline_year::after{content:"";position:absolute;top:1rem;right:-2.6rem;width:1.2rem;height:1.2rem;border-radius:50%;background:#f7b500;}
+.timeline_content{padding-bottom:1rem;}
+.timeline_content p{margin:0 0 1.2rem;}
+.timeline_content p:last-child{margin-bottom:0;}
+.achievement_dot_design_list h5{padding-top: 0;margin-top: 0;}
+.nibble_bits{display:flex;flex-direction:column;gap:4rem;margin-top:4rem;}
+.bit_row{display:flex;}
+.bit_row:nth-child(odd){justify-content:flex-start;}
+.bit_row:nth-child(even){justify-content:flex-end;}
+.bit_card{width:min(75rem,100%);padding:4rem;background:#fff;border-left:2px solid var(--color-100);position:relative;}
+.bit_number{position:absolute;top:2rem;right:3rem;line-height:1;font-size:8rem;font-weight:700;opacity:.08;}
+.bit_card h5{margin-bottom:1.5rem;}
+.bit_card > p{margin-bottom:2.5rem;}
+.bit_features{display:flex;flex-direction:column;gap:1.5rem;}
+.feature_item{position:relative;padding-left:2rem;}
+.feature_item::before{content:"";position:absolute;left:0;top:.8rem;width:.8rem;height:.8rem;border-radius:50%;background:currentColor;}
+.aiml_clubs .event_boxes {grid-template-columns: repeat(4, 1fr);}
+@media(max-width:1030px) {
+.aiml_clubs .event_boxes {grid-template-columns: repeat(2, 1fr);}
+}
 @media(max-width:991px) {
 .achievements_li_grid{grid-template-columns: 1fr;}
 .event_boxes{grid-template-columns:repeat(2,1fr);}
@@ -10397,7 +10435,23 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
 .aiml_soc_bg_white .society_contact .about_two .early-slide .early_rgt{padding-top: 0;margin-top: 0rem;}
 .aiml_soc_bg_white h5:last-of-type{padding-top: 2rem;padding-bottom: 0;}
-.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem;}
+.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem; padding-top:0;}
+    .bit_row,
+    .bit_row:nth-child(even),
+    .bit_row:nth-child(odd){
+        justify-content:flex-start;
+    }
+
+    .bit_card{
+        width:100%;
+        padding:3rem;
+    }
+
+    .bit_number{
+        font-size:5rem;
+        top:1.5rem;
+        right:2rem;
+    }
 }
 @media(max-width:767px){
 .event_boxes{grid-template-columns:1fr;gap:2rem;}
@@ -10408,6 +10462,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .benefits_grid {grid-template-columns: 1fr;}
 .benefit_item {border-right: none;}
 .benefit_item:last-child {border-bottom: none;}
+
+}
+@media(max-width:575px){
+.internal_soc_content .achievements_li_grid {    grid-template-columns: 1fr;}
+.internal_soc_content h5{font:var(--font-18);font-weight: 600;}
+
 }
 /* css ends here */
 
