@@ -6634,6 +6634,11 @@ ul.comon_list li:before {
 
 }
 
+
+.department_society_happenings{margin-top:5rem;}
+.department_society_happenings .latest-event{top:0; padding-block: 10rem 10rem;}
+.department_society_happenings .latest-event .about_subtitle{margin-bottom: 7rem;}
+
 /* Responsive */
 
 @media (min-width: 2550px) {
@@ -10323,7 +10328,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 /* .achivmnt h5{text-align: center;} */
 .elec_seed_image{margin-top: 3rem;}
 .achivmnt .elec_seed_image {margin-top: 2rem;padding-bottom: 8rem;}
-.all_data {padding-bottom: 7rem;}
+/* .all_data {padding-bottom: 7rem;} */
 .INKSPIRE_pad_btm {padding-bottom: 7rem;}
 .student_soc {padding-top: 2.5rem;}
 .right_side_menus .active_society {color: var(--color-9a);font-weight: 500;}

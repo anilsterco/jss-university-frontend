@@ -20,29 +20,58 @@ import TabsContent from "@/component/common/tabsContent/TabsContent";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import Departments from "@/pages/departments/Departments";
 import TestimonialInnerPage from "@/pages/testimonials/Testimonials";
+import SocietyPage from "@/pages/society/Society";
 
 export async function generateMetadata({ params }) {
   const { department, section } = await params;
   return getPageSEO(`department/${department}/${section}`);
 }
 
+const fetchDepartmentPage = async(slug, section, isDev)=>{
+  const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, isDev ? {
+    cache:"no-store"
+  } : {
+    next: { revalidate: 120 },
+  });
+
+  if (!res.ok) {
+    return null;
+  }
+
+  const data = await res.json();
+  if (!data) return null;
+  return data;
+}
+
+const fetchDepartmentSociety = async(slug, isDev)=>{
+  const res = await fetch(`${BASE_URL}societies/${slug}`, isDev ? {
+    cache:"no-store"
+  } : {
+    next: { revalidate: 120 },
+  });
+
+  if (!res.ok) {
+    return null;
+  }
+
+  const data = await res.json();
+  if (!data) return null;
+  return data?.data?.societies;
+}
+
 async function getDepartmentData(slug, section) {
   const isDev = process.env.NODE_ENV === 'development';
 
   try {
-    const res = await fetch(`${BASE_URL}department-pages/${slug}/${section}`, isDev ? {
-      cache:"no-store"
-    } : {
-      next: { revalidate: 120 },
-    });
+    const [pageData, societyData] = await Promise.all([fetchDepartmentPage(slug, section, isDev), fetchDepartmentSociety(slug, isDev)]);
 
-    if (!res.ok) {
-      return null;
-    }
+    if (!pageData) return null;
 
-    const data = await res.json();
-    if (!data) return null;
-    return data;
+    return {
+      ...pageData,
+      societyData
+    };
+    
   } catch (err) {
     return null;
   }
@@ -53,6 +82,7 @@ export default async function DepartmentPage({ params }) {
 
   const departmentData = await getDepartmentData(department, section);
   if (!departmentData) notFound();
+  console.log('departmentData',departmentData);
   const seoData = await getPageSEO(`department/${department}/${section}`);
 
   const pageName = department.replace(/-/g, ' ') + " " + section.replace(/-/g, ' ');
@@ -114,6 +144,10 @@ export default async function DepartmentPage({ params }) {
       ) : section == "faqs" ? (
         <Suspense fallback={<h1>Loading...</h1>}>
           <FaqPage data={departmentData?.data} />
+        </Suspense>
+      ) : section == "society" ? (
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <SocietyPage societies={departmentData?.societyData} />
         </Suspense>
       ) : departmentData?.slug?.includes(section) ? (
         <CommonPage data={departmentData.sections} />
