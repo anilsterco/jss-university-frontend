@@ -1320,7 +1320,7 @@ to {opacity: 1;transform: translateY(0);}}
 .green-initiative .about_f_value .ab_f_content h3>span {color: var(--color-ff);}
 .about-jss-university .about_four + .container {padding-bottom: 8rem;}
 .about-jss-university .about_four + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 2rem;display: flex;}
-.about-jss-university .about_four + .container .estab_slide_itefigure img {width: 60%;height: auto;}
+.about-jss-university .about_four + .container .estab_slide_item figure img {width: 60%;height: auto;}
 .overview .grans_tab_mainsec {padding-block: 0rem 8rem;}
 .jss-legacy .about_jsstwo {padding-block: 4rem;}
 .overview .image_content_repeat_section .hostel-rules {margin: 0rem 0 0;}
@@ -1351,8 +1351,8 @@ to {opacity: 1;transform: translateY(0);}}
 
 .recruiters .grands_mainsec + .container {padding-bottom: 8rem;}
 .recruiters .grands_mainsec + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 2rem;display: flex;}
-.recruiters .grands_mainsec + .container .estab_slide_itefigure img {width: 70%;height: auto;}
-.recruiters .grands_mainsec + .container .estab_slide_ite{min-height: 0;}
+.recruiters .grands_mainsec + .container .estab_slide_item figure img {width: 70%;height: auto;}
+.recruiters .grands_mainsec + .container .estab_slide_item {min-height: 0;}
 .societies .about_one .abt_cntnt>p {padding-bottom: 3rem}
 .societies .about_one .abt_cntnt .about_subtitle {font: var(--font-48);color: #018CE8;line-height: 5.4rem;letter-spacing: -2.3px;margin-bottom: 3rem;font-family: var(--font-Condensed);font-weight: bold;display: block;}
 .societies .about_one .abt_cntnt>span {font: var(--font-16);color: #444;line-height: 2.8rem;max-width: 90%;margin: 0 auto;padding-bottom: 3rem;display: block;}
@@ -1464,7 +1464,8 @@ to {opacity: 1;transform: translateY(0);}}
 .faculty_cordinator {margin-top: 1rem;}
 .department_society_objective .achievements_list li{color: var(--color-white);}
 @media (max-width:991px) {.events_grid{grid-template-columns:1fr;}
-.society_custom_box .placement_stats{grid-template-columns: 1fr;}}
+.society_custom_box .placement_stats{grid-template-columns: 1fr;}
+.overview .grans_tab_mainsec {padding-block: 0 2rem;}}
 .about-iic .about_one .estblish {padding-block: 4rem 0;}
 .about-iic .grid_card_design1_section{padding-block: 4rem 0rem;}
 .about-iic .achievements_list {display: grid;grid-template-columns: repeat(3,1fr);}
@@ -1484,7 +1485,7 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section + .yukti_section .section_heading p {color: #444;}
 .yir-yic .top_section + .yukti_section .yukti_card h3{font: var(--font-24);font-family: var(--font-Roboto);letter-spacing: 0;color:var(--color-black);text-transform: uppercase;text-align: left;padding-bottom: 2rem;font-weight: bold;line-height: normal; border-bottom: solid 1px #38383845;}
 .yir-yic .top_section + .yukti_section .section_heading h2>span{color: var(--color-e8);}
-.yir-yic .top_section + .yukti_section .yukti_grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 4rem;margin-block: 4rem 0;}
+.yir-yic .top_section + .yukti_section .yukti_grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 4rem;margin-block: 6rem 0;}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list{padding-top: 4rem;}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list li {color: #444;margin-bottom: 2rem;}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list li:before {background-color:var(--color-100); }
@@ -1494,7 +1495,7 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_section p{color: var(--color-white);padding-top: 6rem;}
 .yukti_section .yukti_grid p {color: var(--color-white);padding-top: 2rem;}
 .yukti_section .yukti_card h3{font: var(--font-24);font-family: var(--font-Roboto);letter-spacing: 0;color: var(--color-white);text-transform: uppercase;text-align: left;padding-bottom: 2rem;font-weight: bold;line-height: normal; border-bottom: solid 1px #ffffff45;}
-.yukti_grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 4rem;margin-block: 4rem 0;}
+.yukti_grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 4rem;margin-block: 6rem 0;}
 .yukti_grid .custom-list{padding-top: 4rem;}
 .yukti_grid .custom-list li {color: var(--color-white);margin-bottom: 2rem;}
 .yukti_grid .custom-list li:before {background-color: var(--color-white);}
@@ -1530,6 +1531,21 @@ to {opacity: 1;transform: translateY(0);}}
 .societies .top_section {padding-top: 8rem;}
 .achievements_section {padding-block: 8rem 10rem;}
 .iic_activities .imageWrapper {height: 45rem;}
+.iic-council .top_section {margin-top: 8rem;}
+.iic-council .amenities_section {padding: 8rem 0;}
+.iic-council .top_section {margin-top: 8rem;}
+.nisp-by-iic .top_section {margin-top: 8rem;}
+.about_one .abt_cntnt {padding-top: 0;}
+.events .about_f_value .ab_f_content {padding-left: 6.8rem;padding-right: 2rem;}
+.events .research_grid_one .research_cont {padding-right: 3rem;}
+.events .about_f_value {padding-top: 4rem;}
+.yir-yic .top_section {margin-top: 8rem;}
+.yukti_section {padding-block: 6rem;}
+.yukti_section p {padding-top: 4rem;}
+.kapila-scheme .top_section {margin-top: 8rem;}
+.kapila-scheme .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
+.kapila-scheme .labs_group_section {padding-top: 4rem;}
+.kapila-scheme .yukti_section {padding-block: 2rem;}
 }
 
 @media (max-width: 1024px){
@@ -1544,6 +1560,14 @@ to {opacity: 1;transform: translateY(0);}}
 .societies .society_custom_box .placement_stats {grid-template-columns: repeat(2, 1fr);padding-bottom: 0;}
 .placement_page.society_custom_box + .society_contact .about_two .early-slide .early_rgt {padding-top: 0;}
 .societies .placement_page.society_custom_box + .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;display: flex !important;flex-direction: column-reverse;}.societies .achievements_desc {max-width: 100%;}
+.iic-council .grid_3 {grid-template-columns: repeat(2, 1fr);}
+.iic-council .amenities_section {padding: 6rem 0;}
+.nisp-by-iic .labs_group_section.about_two .about_two.reverse .early_rgt {padding-right: 2rem;}
+.student-resources .top_section {margin-top: 8rem;}
+.innovation-ambassadors .top_section {margin-top: 8rem;}
+.yukti_grid {margin-block: 4rem 0;}
+.yir-yic .top_section + .yukti_section .yukti_grid {margin-block: 4rem 0;}
+.yukti_section {padding-block: 4rem;}
 }
 @media (max-width: 991px){
 .societies .grands_maingrid {gap: 1.6rem;}
@@ -1568,6 +1592,15 @@ to {opacity: 1;transform: translateY(0);}}
 .iic-student-club .exten_listyle {padding-inline: 0;padding-top: 0;}
 .iic-student-club .exte_mainsec {padding-bottom: 3rem;}
 .iic-student-club .grid_3 {grid-template-columns: repeat(2, 1fr);}
+.iic-council .top_section, .nisp-by-iic .top_section {margin-top: 6rem;}
+.events .about_f_value .ab_f_content {padding-left: 0;padding-right: 0;}
+.events .hostel_list{margin: 4rem 0 0;}
+.events .research_grid_one .research_cont {padding-right: 0;}
+.events .about_four {padding-bottom: 3rem;}
+.events .atm_g_imgsec {padding-top: 0rem;}
+.events .research_labmain .research_grid_one {margin-bottom: 0;}
+.events .hostel_list_cont{gap: 4rem;}
+.kapila-scheme .labs_group_section{padding-top: 0;}
 }
 @media (max-width: 767px){
 .societies .placement_page {padding-block: 4rem;}
@@ -1608,7 +1641,16 @@ to {opacity: 1;transform: translateY(0);}}
 .iic-student-club .exte_mainsec {padding-bottom: 1rem;}
 .iic-student-club .heading {margin-bottom: 3rem;}
 .iic-student-club .grid_3{display: block;}
-
+.iic-council .grid_3 {grid-template-columns: repeat(1, 1fr);}
+.iic-council .amenities_section {padding: 3rem 0;}
+.iic-council .rea_main .comon_list {margin-bottom: 0;}
+.student-resources .amenities_section .grid_group {padding: 3rem;}
+.student-resources .amenities_section .grid_group h5 {margin-bottom: 2rem;}
+.student-resources .top_section {margin-top: 4rem;}
+.yir-yic .top_section {margin-top: 4rem;}
+.yir-yic .top_section + .yukti_section .yukti_grid{grid-template-columns: repeat(2,1fr);gap: 4rem;}
+.yukti_section p {padding-top: 2rem;}
+.yukti_grid {grid-template-columns: repeat(2,1fr);gap: 4rem;margin-block: 4rem 0;}
 }
 @media (max-width: 575px){
 .societies .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
@@ -1628,5 +1670,35 @@ to {opacity: 1;transform: translateY(0);}}
 .resea_facili_main {padding-top: 0;}
 .iic-student-club .rea_main .comon_list {margin-bottom: 2rem;}
 .iic-student-club .about_subHeading { text-align: left;max-width: 100%;margin: 0;padding: 0;}
-
+.iic-student-club .about_subHeading {text-align: left;padding-bottom: 0;max-width: 100%;padding-inline: 0;padding-bottom: 0;}
+.iic-student-club .about_subHeading.less{padding-bottom: 0;}
+.iic-council .top_section {margin-top: 4rem;}
+.iic-council .about_subtitle, .about_subtitle h5 {text-align: left;}
+.iic-council .rea_main .comon_list li:last-child{margin-bottom: 0;}
+.iic-council .rea_main:last-child{padding-bottom: 3rem;}
+.iic-student-club .about_subtitle {text-align: left;}
+.iic-council .about_subHeading {text-align: left;padding-bottom: 0;max-width: 100%;padding-inline: 0;padding-bottom: 0;}
+.nisp-by-iic .about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
+.nisp-by-iic .about_desc {text-align: left;}
+.student-resources .about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
+.student-resources .about_desc {text-align: left;max-width: 100%;}
+.recruiters .grands_mainsec + .container .estab_slide_item figure{padding: 0;}
+.student-resources .about_subtitle, .about_subtitle h5 {text-align: left;}
+.nisp-by-iic .about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
+.nisp-by-iic .about_subtitle, .about_subtitle h5 {text-align: left;}
+.nisp-by-iic .top_section {margin-top: 4rem;}
+.nisp-by-iic .about_desc {text-align: left;max-width: 100%;}
+.innovation-ambassadors .about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
+.innovation-ambassadors .about_subtitle, .about_subtitle h5 {text-align: left;}
+.innovation-ambassadors .top_section:last-child {padding-bottom: 6rem;}
+.innovation-ambassadors .top_section, .innovation-ambassadors .top_section {margin-top: 4rem;}
+.yir-yic .top_section + .yukti_section .section_heading h2{font: var(--font-30);font-family: var(--font-Condensed);letter-spacing: -1.3px;margin-bottom: 0;font-weight: bold;line-height: normal;}
+.top_section + .yukti_section  {padding-block: 0 4rem;}
+.yir-yic .top_section + .yukti_section .yukti_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
+.yir-yic .top_section + .yukti_section .yukti_grid .custom-list {padding-top: 2rem;}
+.yir-yic .top_section + .yukti_section .yukti_grid .custom-list li:last-child{margin-bottom: 0;}
+.yukti_section .section_heading h2{font: var(--font-30);font-family: var(--font-Condensed);letter-spacing: -1.3px;margin-bottom: 0;font-weight: bold;line-height: normal;}
+.yukti_grid{grid-template-columns: repeat(1, 1fr);gap: 2rem;margin-block: 2rem 0;}
+.yukti_grid .custom-list {padding-top: 2rem;}
 }
+

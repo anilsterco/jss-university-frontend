@@ -1,5 +1,5 @@
 .eventsSection {
-  padding: 4rem 0;
+  padding: 6rem 0;
   position: relative;
 }
 
@@ -85,9 +85,9 @@
   overflow: hidden;
 }
 
-.secondaryImageWrapper img {
+/* .secondaryImageWrapper img {
   object-fit: cover;
-}
+} */
 
 .eventCard {
   border-radius: 10px;
@@ -101,6 +101,7 @@
 
 .eventImage {
   object-fit: cover;
+  height: 239px!important;
 }
 
 .cardBody {
