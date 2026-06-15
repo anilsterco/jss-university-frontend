@@ -10291,6 +10291,8 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .campus-facilities .uni_boa_grid {margin-top: 0;}
 .campus-facilities .atm_fac_grid h5 {margin-bottom: 2rem;}
 .campus-facilities .about_two.labs_group_section {padding-bottom: 4rem;}
+.about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
+.about_subtitle{text-align: left;}
 }
 
 @media(max-width:480px) {
