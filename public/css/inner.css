@@ -10379,6 +10379,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .benefit_item:nth-last-child(-n + 2) {border-bottom: none;}
 .benefit_item h5 {margin: 0 0 0.5rem;}
 .benefit_item p {margin: 0;}
+.department_society_achivement .societies_events_header h5{text-align: left;}
 .custom_order_listing{padding-left: 2rem;margin-top: 3rem;}
 .custom_order_listing li{font: var(--font-16);color: #444;margin-bottom: 2rem;padding-left: 2.2rem;line-height: 2.8rem;}
 .custom_order_listing li::marker{color: #ffc107; /* yellow */font-weight: 700;}
