@@ -16,8 +16,8 @@
 .header {
   text-align: center;
   margin: auto;
-  padding-bottom: 7.2rem;
-  padding-top: 10rem;
+  padding-block: 7rem;
+  
 }
 
 .headerSmall {
@@ -219,7 +219,7 @@
 
 .desktopView::after {
   content: "";
-  background-color: #e5e5e5;
+  background-color: #ddd;
   width: 82%;
   height: 1px;
   position: absolute;
@@ -242,7 +242,7 @@
   top:0;
   content:''
 }
-
+.grid .card:nth-child(3){padding: 0;}
 /* Responsive Design */
 
 @media (min-width: 2200px) and (max-width:2550) {
