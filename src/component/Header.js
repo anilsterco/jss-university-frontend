@@ -545,7 +545,7 @@ export default function Header() {
       <div
         className={`header-inner ${!isHomeLikePage ? "innerPage" : ""} ${scrolled ? "header-scrolled" : ""} ${isAcademic ? "academics" : ""} ${scrollDirection === "down" ? "header-hidden" : ""}`}
       >
-        <div className="containerXl">
+        <div className="containerMD">
           <div
             className={`nav-container ${!isHomeLikePage ? "scroll_bg programs-nav not-home" : ""
               }`}

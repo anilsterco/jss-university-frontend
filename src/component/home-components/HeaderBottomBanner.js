@@ -25,7 +25,7 @@ const HeaderBottomBanner = () => {
                         <Link href="admission-faq">FAQs</Link>
                     </div>
 
-                    <div className="headerBottomBanner__actions">
+                    <div className="headerBottomBanner__actions ">
                         <Link href={APPLY_NOW} target="_blank" className="apply-btn1 CTA_Applynow" rel="noopener noreferrer">Apply Now</Link>
                     </div>
 
