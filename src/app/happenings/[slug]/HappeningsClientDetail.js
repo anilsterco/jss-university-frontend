@@ -8,6 +8,7 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import styles from "./page.module.css";
 import { usePathname, useRouter } from "next/navigation";
+import HappeningsGallery from "@/component/happening-components/happeningsGallery/HappeningsGallery";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
@@ -117,6 +118,12 @@ export default function HappeningsClientDetail({ happeningsData }) {
                     )}
                   </div>
                 </div>
+
+                    {/* here gallery part */}
+
+                    {/* <h1>Gallery</h1> */}
+                    <HappeningsGallery gallery={happeningsData.gallery} />
+
               </div>
             </div>
           ))}

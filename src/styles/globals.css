@@ -1067,6 +1067,7 @@ a:active {
 .midd_events {position: relative;z-index: 2;}
 .links-itams {text-transform: uppercase;}
 .latest-event {position: relative;top: -8rem;/* top: 10rem; */}
+.latest-event.no_upcoming_events{top:0; padding-block: 10rem;}
 .latest-event::after {content: "";position: absolute;bottom: 0;left: -12rem;top: 0;width: 13rem;height: 100%;background: #fff;z-index: 1;}
 .latest-event::before {content: "";position: absolute;bottom: 0;right: -12rem;top: 0;width: 13rem;height: 100%;background: #fff;z-index: 1;}
 .events_row {display: grid;grid-template-columns: repeat(4, 1fr);gap: 4.4rem 3.2rem;}
@@ -1651,6 +1652,7 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section + .yukti_section .yukti_grid{grid-template-columns: repeat(2,1fr);gap: 4rem;}
 .yukti_section p {padding-top: 2rem;}
 .yukti_grid {grid-template-columns: repeat(2,1fr);gap: 4rem;margin-block: 4rem 0;}
+.latest-event.no_upcoming_events{padding-block: 4rem;}
 }
 @media (max-width: 575px){
 .societies .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
