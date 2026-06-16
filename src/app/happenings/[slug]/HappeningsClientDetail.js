@@ -117,7 +117,9 @@ export default function HappeningsClientDetail({ happeningsData }) {
                     {/* here gallery part */}
 
                     {/* <h1>Gallery</h1> */}
-                    <HappeningsGallery gallery={happeningsData.gallery} />
+                    {(happeningsData?.gallery?.images.length > 0 || happeningsData?.gallery?.videos.length > 0) && (
+                      <HappeningsGallery gallery={happeningsData.gallery} />
+                    )}
 
               </div>
             </div>

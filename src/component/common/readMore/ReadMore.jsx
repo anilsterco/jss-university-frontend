@@ -14,10 +14,34 @@ export default function ReadMore({ html, className = "" }) {
     const el = contentRef.current;
     if (!el) return;
 
-    const lineHeight = parseFloat(getComputedStyle(el).lineHeight) || 20;
+    // Force a clean (unclamped) measurement of natural content height
+    const prevWebkitLineClamp = el.style.webkitLineClamp;
+    const prevDisplay = el.style.display;
+    const prevMaxHeight = el.style.maxHeight;
+    const prevOverflow = el.style.overflow;
+
+    el.style.webkitLineClamp = "unset";
+    el.style.display = "block";
+    el.style.maxHeight = "none";
+    el.style.overflow = "visible";
+
+    const computedLineHeight = parseFloat(getComputedStyle(el).lineHeight);
+    const fontSize = parseFloat(getComputedStyle(el).fontSize) || 16;
+    // Fallback if lineHeight is "normal" (NaN): approximate as 1.5x font size
+    const lineHeight = !isNaN(computedLineHeight)
+      ? computedLineHeight
+      : fontSize * 1.5;
+
+    const naturalHeight = el.scrollHeight;
     const maxCollapsedHeight = lineHeight * LINE_CLAMP;
 
-    setIsOverflowing(el.scrollHeight > maxCollapsedHeight + 1);
+    // Restore styles (React state below will reapply clamped class as needed)
+    el.style.webkitLineClamp = prevWebkitLineClamp;
+    el.style.display = prevDisplay;
+    el.style.maxHeight = prevMaxHeight;
+    el.style.overflow = prevOverflow;
+
+    setIsOverflowing(naturalHeight > maxCollapsedHeight + 1);
   }, [html]);
 
   if (!html) return null;

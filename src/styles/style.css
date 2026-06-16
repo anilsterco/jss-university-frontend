@@ -1099,3 +1099,11 @@ body:has(.modal.show) {
   transform: rotate(180deg);
 }
 
+ .happen_detail_top span{
+  margin-bottom: 0.7rem ;
+  font: var(--font-16);
+  /* color: #212121; */
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  display: block;
+}
