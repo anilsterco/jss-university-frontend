@@ -9,6 +9,7 @@ import "@/styles/custom.style.css";
 import styles from "./page.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import HappeningsGallery from "@/component/happening-components/happeningsGallery/HappeningsGallery";
+import ReadMore from "@/component/common/readMore/ReadMore";
 
 const icons = [
   { src: "/images/custom-page/printIcon.svg" },
@@ -105,18 +106,12 @@ export default function HappeningsClientDetail({ happeningsData }) {
                       className="img-fluid w-100"
                     />
                   </figure>
+
+
                   <div className={styles.happContant}>
-                    {/* {section.content.map((paragraph, pIdx) => (
-                      <p key={pIdx}>{paragraph}</p>
-                    ))} */}
-                    {section.content && (
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: section.content,
-                        }}
-                      ></p>
-                    )}
+                    {section.content && <ReadMore html={section.content} />}
                   </div>
+
                 </div>
 
                     {/* here gallery part */}
