@@ -291,7 +291,7 @@ export default function EventsSection({ className, programId, type }) {
 */}
 
       <div className="container midd_events">
-        {upCommingEvents?.length > 0 ? (
+        {upCommingEvents?.length > 0 && (
           <>
             <Swiper
               modules={[Navigation, Autoplay]}
@@ -364,10 +364,6 @@ export default function EventsSection({ className, programId, type }) {
               ))}
             </Swiper>
           </>
-        ) : (
-          <div style={{ textAlign: "center", marginTop: "5rem" }}>
-            No Result Found
-          </div>
         )}
       </div>
 
@@ -375,7 +371,7 @@ export default function EventsSection({ className, programId, type }) {
         {allEvents.length > 0 ? (
           <>
             <div
-              className={`events_row latest-event m-auto ${styles.cardsRow}`}
+              className={`events_row latest-event m-auto ${styles.cardsRow} ${upCommingEvents?.length == 0 ? 'no_upcoming_events' : ''}`}
             >
               {allEvents.map((event, index) => {
                 const darkColors = ["#00489A", "#AF251C", "#AF251C"];
@@ -415,7 +411,7 @@ export default function EventsSection({ className, programId, type }) {
                           />
                         ) : null}
                         <div className={styles.cardBody}>
-                          <h5 className={styles.cardTitle}>{event.title}</h5>
+                          <h5 className={styles.cardTitle} dangerouslySetInnerHTML={{__html:event.title}} />
                           <p className={styles.cardDate}>
                             {formatDate(event.event_date_from)}
                           </p>
