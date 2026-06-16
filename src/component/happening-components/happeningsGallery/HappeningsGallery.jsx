@@ -75,24 +75,27 @@ export default function HappeningsGallery({ gallery }) {
   return (
     <div className={styles.gallerySection}>
       {/* Filter Buttons */}
-      <div className={styles.filterBox}>
-        <button
-          className={`${styles.imageFilterButton} ${
-            filterType === "image" ? styles.activeFilter : ""
-          }`}
-          onClick={() => setFilterType("image")}
-        >
-          <CiImageOn fontSize={20} /> Images
-        </button>
-        <button
-          className={`${styles.videoFilterButton} ${
-            filterType === "video" ? styles.activeFilter : ""
-          }`}
-          onClick={() => setFilterType("video")}
-        >
-          <PiVideoCameraLight fontSize={20} /> Videos
-        </button>
-      </div>
+      {images.length != 0 && videos.length != 0 && (
+        <div className={styles.filterBox}>
+          <button
+            className={`${styles.imageFilterButton} ${
+              filterType === "image" ? styles.activeFilter : ""
+            }`}
+            onClick={() => setFilterType("image")}
+          >
+            <CiImageOn fontSize={20} /> Images
+          </button>
+          <button
+            className={`${styles.videoFilterButton} ${
+              filterType === "video" ? styles.activeFilter : ""
+            }`}
+            onClick={() => setFilterType("video")}
+          >
+            <PiVideoCameraLight fontSize={20} /> Videos
+          </button>
+        </div>
+      )}
+      
 
       {/* Gallery Grid */}
       <div className={styles.galleryGrid}>
