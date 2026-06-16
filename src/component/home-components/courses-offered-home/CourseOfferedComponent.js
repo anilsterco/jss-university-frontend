@@ -266,7 +266,7 @@ export default function CoursesOffered({ data }) {
                 <div className={styles.lastCardContentSection}>
                   <p>Explore All</p>
                   <h1
-                     className="blue-text"
+                    className="blue-text"
                   >
                     <Counter start={1} end={coursesData.programs_count} duration={2500} />+
                   </h1>
@@ -282,7 +282,7 @@ export default function CoursesOffered({ data }) {
 
         {/* ================= BOTTOM SECTION ================= */}
         <div className="program_heading">
-          <h6 className={`fw-bold ${styles.bottomSectionH6}`}>
+          <h6 className={` ${styles.bottomSectionH6}`}>
             Explore Programs by School of
           </h6>
         </div>
@@ -292,8 +292,8 @@ export default function CoursesOffered({ data }) {
           data-aos-delay="200"
         >
           <div className="programs_col">
-            <div className={` explore-program-section ${styles.schoolsList}`}>
-              {coursesData.departments.map((school, i) => (
+            <div className={`explore-program-section ${styles.schoolsList}`}>
+              {coursesData.departments?.slice(0, 6).map((school, i) => (
                 <Link
                   key={i}
                   href={`${WEB_URL}schools/${school.slug}/programs`}
@@ -312,7 +312,7 @@ export default function CoursesOffered({ data }) {
           >
             <div className="addmission-col">
               <h4
-                className="fw-bold add-item"
+                className="add-item"
                 dangerouslySetInnerHTML={{
                   __html: coursesData.academic_year.year,
                 }}

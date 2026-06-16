@@ -213,8 +213,7 @@ export default function MediaCoverage({ className, programId }) {
                   type="button"
                   className={`${styles.sliderArrow} ${styles.sliderArrowRight}`}
                   onClick={nextSlide}
-                  aria-label="Next slide"
-                >
+                  aria-label="Next slide">
                   <svg
                     width="24"
                     height="24"
