@@ -2652,6 +2652,19 @@
   margin-top:2rem;
 }
 
+.common_read_more_btn{
+  font: var(--font-18);
+    color: #16344e;
+    background: none;
+    font-weight: 500;
+    border: none !important;
+    margin-top:2rem;
+}
+
+.common_read_more_btn img{
+  margin-left: 1rem;
+}
+
 
 @media (max-width: 991px) {
   .inner_page {

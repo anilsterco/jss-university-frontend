@@ -61,10 +61,10 @@
 }
 
 .happiningSec {
-  position: relative;
+  /* position: relative; */
   padding-block: 0;
   background-color: #f6f6f6;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .happiningSec::before {
