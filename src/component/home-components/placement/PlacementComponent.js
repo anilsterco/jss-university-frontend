@@ -82,9 +82,10 @@ useEffect(() => {
   router.refresh();
 }, []);
   return (
-    <section className={`${category !== "slider" && styles.thirdSection}`}>
-      <div className="container">
-        <div
+    <section className={`section-placment ${category !== "slider" && styles.thirdSection}`}>
+      <div className="containerMD">
+       <div className="container">
+         <div
           className={` ${styles.sectionHeader}`}
           data-aos="fade-up"
           data-aos-delay="100"
@@ -299,6 +300,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
+       </div>
       </div>
     </section>
   );
