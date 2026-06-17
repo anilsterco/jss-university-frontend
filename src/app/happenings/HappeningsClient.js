@@ -29,7 +29,6 @@ export default function HappeningsClient({ className }) {
   const [programId, setProgramId] = useState(null);
   const [visibleTabs, setVisibleTabs] = useState([ALL_TABS[0]]);
   const [loading, setLoading] = useState(true);
-
   const pathname = usePathname();
   const isGlobalHappenings = pathname === "/happenings";
   const type = isGlobalHappenings || pathname.split("/")[1] === "schools" 

@@ -10328,7 +10328,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .internal_soc_content .achievements_li_grid{grid-template-columns: repeat(3, 1fr)}
 .benift_sec{padding-top:2rem}
 /* .achivmnt h5{text-align: center;} */
-.elec_seed_image{margin-top: 3rem;}
+.elec_seed_image{margin-block: 3rem;}
 .achivmnt .elec_seed_image {margin-top: 2rem;padding-bottom: 8rem;}
 /* .all_data {padding-bottom: 7rem;} */
 .INKSPIRE_pad_btm {padding-bottom: 7rem;}
@@ -10419,6 +10419,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .feature_item{position:relative;padding-left:2rem;}
 .feature_item::before{content:"";position:absolute;left:0;top:.8rem;width:.8rem;height:.8rem;border-radius:50%;background:currentColor;}
 .aiml_clubs .event_boxes {grid-template-columns: repeat(4, 1fr);}
+
 @media(max-width:1030px) {
 .aiml_clubs .event_boxes {grid-template-columns: repeat(2, 1fr);}
 }

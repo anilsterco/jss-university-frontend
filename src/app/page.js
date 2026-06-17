@@ -46,11 +46,8 @@ export default async function HomePage() {
           }}
         />
       )}
-
       <BannerComponent data={homepageData.sections.banners} />
-
       <HeaderBottomBanner/>
-
       <div className="animated-hover">
         <CourseOfferedComponent
           data={homepageData.sections.departments_section}
@@ -61,7 +58,6 @@ export default async function HomePage() {
       <AboutHomeComponent data={homepageData.sections.about_section} />
       <TestimonialComponent data={homepageData.sections.testimonial_section} />
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
-
       <div className="fixButtons">
         <Link
           href={WEB_URL + 'upcoming-events'}
@@ -80,7 +76,6 @@ export default async function HomePage() {
           Programs
         </Link>
       </div>
-
       <PopupModal />
       {/* <PhDApplicationForm />
       <CareersFormData /> */}

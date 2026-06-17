@@ -1,7 +1,7 @@
 /* components/home-components/LegacySection/LegacySection.module.css */
 
 .fifthSection {
-  background: var(--color-fff);
+  background:var(--color-white);
   padding-block: 7.6rem 7.1rem;
 }
 
@@ -13,7 +13,7 @@
   width: 40%;
   font: var(--font-60);
   font-family: var(--font-Condensed);
-  color: var(--color-black);
+  color: var(--color-4e);
   letter-spacing: -2.88px;
   font-weight: bold;
   line-height: 0.9;
@@ -32,17 +32,17 @@
 
 .fifthMiddleSection {
   display: grid;
-  grid-template-columns: repeat(1, 45.1% auto);
+  grid-template-columns: repeat(1, 44.2% auto);
   align-items: center;
   margin-right: 1.3rem;
 }
 
 .navButtons {
-  background: #16344e;
+  background:var(--color-100);
   padding: 1.1rem 2.4rem;
   font: var(--font-14);
   font-family: var(--font-Condensed);
-  color: var(--color-fff);
+  color: #00489A;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -80,13 +80,20 @@
 }
 
 .description {
-  color: var(--color-black);
-  font: var(--font-16);
+  font: var(--font-21);
   font-family: var(--font-Roboto);
   letter-spacing: 0px;
   margin-bottom: 2rem;
-  max-width: 80%;
+  max-width: 84.4%;
   font-weight: 300;
+  color:#333333;
+  line-height: 1.5;
+   display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
 }
 
 .leftColumn {
@@ -110,24 +117,23 @@
   padding: 2.4rem 1.9rem 1.9rem 2.9rem;
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 3.6rem;
 
 }
 
 .highlightNumber {
   font: var(--font-48);
-  font-family: var(--font-Condensed);
+  font-family: var(--font-Roboto);
   line-height: 0.8;
-  color: #16344E;
+  color:var(--color-e8);
   letter-spacing: -1.92px;
   display: flex;
   gap: 0.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .highlightNumber span {
   font: var(--font-24);
-  color: #16344E;
+  color:var(--color-e8);
   letter-spacing: -1.2px;
   line-height: 1.3;
 }
