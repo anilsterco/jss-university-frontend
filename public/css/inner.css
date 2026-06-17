@@ -10298,6 +10298,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .campus-facilities .about_two.labs_group_section {padding-bottom: 4rem;}
 .about_subHeading {text-align: left;max-width: 100%;padding-inline: 0;}
 .about_subtitle{text-align: left;}
+
 }
 
 @media(max-width:480px) {
@@ -10437,22 +10438,9 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .aiml_soc_bg_white .society_contact .about_two .early-slide .early_rgt{padding-top: 0;margin-top: 0rem;}
 .aiml_soc_bg_white h5:last-of-type{padding-top: 2rem;padding-bottom: 0;}
 .department_society_overview {   margin-top: 6rem;padding-bottom: 6rem; padding-top:0;}
-    .bit_row,
-    .bit_row:nth-child(even),
-    .bit_row:nth-child(odd){
-        justify-content:flex-start;
-    }
-
-    .bit_card{
-        width:100%;
-        padding:3rem;
-    }
-
-    .bit_number{
-        font-size:5rem;
-        top:1.5rem;
-        right:2rem;
-    }
+.bit_row,.bit_row:nth-child(even),.bit_row:nth-child(odd){justify-content:flex-start;}
+.bit_card{width:100%;padding:3rem;}
+.bit_number{font-size:5rem;top:1.5rem;right:2rem;}
 }
 @media(max-width:767px){
 .event_boxes{grid-template-columns:1fr;gap:2rem;}

@@ -239,7 +239,7 @@ export default function ReadMore({ html, className = "" }) {
   if (!html) return null;
 
   return (
-    <div className={`${styles.readMoreWrapper} ${className}`}>
+    <div className={`${styles.readMoreWrapper} ${className} happen_descr`}>
       <div ref={contentRef} className={styles.contentBox} />
 
       {isOverflowing && (

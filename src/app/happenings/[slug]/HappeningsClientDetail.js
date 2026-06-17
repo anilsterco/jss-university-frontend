@@ -108,7 +108,7 @@ export default function HappeningsClientDetail({ happeningsData }) {
                   </figure>
 
 
-                  <div className={styles.happContant}>
+                  <div className={`${styles.happContant}`} >
                     {section.content && <ReadMore html={section.content} />}
                   </div>
 
