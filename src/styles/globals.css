@@ -120,7 +120,7 @@ p {
 
 
 .footer_section .container {
-  max-width: 1412px;
+  max-width: 1421px;
   padding-inline: 1.5rem;
 }
 
@@ -774,7 +774,7 @@ a:active {
 
 .dashbord-logo .uniname {
   font: var(--font-40);
-  color: var(--color-white);
+  color: var(--color-4e);
   letter-spacing: -1px;
   font-weight: 700;
   font-family: var(--font-Condensed);
@@ -785,7 +785,7 @@ a:active {
 
 .dashbord-logo .uni_addrese {
   font: var(--font-22);
-  color: var(--color-white);
+  color: var(--color-4e);
   font-weight: 500;
   font-family: var(--font-Condensed);
   text-transform: uppercase;
@@ -951,7 +951,7 @@ a:active {
 .nav-buttons svg {font-size: 2.2rem;}
 .divider {margin-bottom: 3.6rem;}
 .highlight-col {display: grid;grid-template-columns: repeat(2, 1fr);gap: 2.8rem;margin-bottom: 3.6rem;}
-.site-header {background: transparent linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0% no-repeat padding-box;}
+/* .site-header {background: transparent linear-gradient(180deg, rgb(0 0 0 / 51%) 0%, rgb(0 0 0 / 0%) 100%) 0% 0% no-repeat padding-box;} */
 .table-responsive {width: 100%;overflow-x: auto;}
 .section-placment .containerMD {background-color: var(--color-white);padding-block: 10.8rem 9.5rem;padding-inline: 0;}
 /* .active_head .nav-list {background-color: transparent;
@@ -1112,7 +1112,7 @@ a:active {
 .programsList_row {grid-template-columns: repeat(1, 50% auto);gap: 8.5rem;}
 .explore-program-section {grid-template-columns: repeat(2, 1fr);}}
 @media (max-width: 1100px) {.school_row {display: block;}
-.dashbord-logo .uniname {font: var(--font-30);color: var(--color-white);letter-spacing: -1px;font-weight: 700;font-family: var(--font-Condensed);text-transform: uppercase;margin-bottom: 1.5rem;line-height: 0.9;}
+.dashbord-logo .uniname {font: var(--font-30);letter-spacing: -1px;font-weight: 700;font-family: var(--font-Condensed);text-transform: uppercase;margin-bottom: 1.5rem;line-height: 0.9;}
 .logo-content img {width: 10rem;height: auto;}
 .inner_sub_header {margin-top: 14.5rem;}}
 /* ========================== GLOBAL ANIMATION WRAPPER

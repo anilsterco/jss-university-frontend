@@ -1,7 +1,7 @@
 .bannerContent {
   color: #fff;
   margin: 10rem 0 0 0;
-  width: 39%;
+  width: 43%;
   display: flex;
   flex-direction: column;
 
@@ -11,11 +11,11 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background: linear-gradient(to left,
+  /* background: linear-gradient(to left,
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.4) 70%,
       rgba(0, 0, 0, 0.8) 100%);
-  bottom: 0;
+  bottom: 0; */
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
 
 .bannerSmall {
   font: var(--font-24);
-  color: #fff;
+  color:var(--color-4e);
   letter-spacing: -.67px;
   text-transform: uppercase;
   font-weight: bold;
@@ -35,18 +35,20 @@
 
 .bannerContentH1 {
   font: var(--font-60);
-  color: var(--color-white);
+  color: var(--color-4e);
   font-weight: bold;
-  letter-spacing: -2.88px;
+  letter-spacing:-2.88px;
   font-family: var(--font-Condensed);
   padding-bottom: 4rem;
   line-height: 0.9;
   text-transform: uppercase;
 }
-
+.bannerContentH1>span{
+  color: var(--color-e8);
+}
 .bannerContentP {
-  font: var(--font-16);
-  color: var(--color-white);
+  font: var(--font-18);
+  color: var(--color-4e);
   font-family: var(--font-Roboto);
   font-weight: 300;
   padding-right: 8rem;
@@ -54,8 +56,8 @@
 }
 
 .bannerContentA {
-  font: var(--font-16);
-  color: var(--color-white);
+  font: var(--font-18);
+  color: var(--color-4e);
   font-family: var(--font-Roboto);
   display: flex;
   align-items: center;
@@ -89,6 +91,49 @@
   filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }
 
+
+
+.bannerGrid {
+  display: grid;
+  grid-template-columns:44% 56%;
+  min-height: 100%;;
+  gap: 8.7rem;
+  overflow: hidden;
+  align-items: center;
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.bannerRight {
+   min-height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .bannerGrid {
+    display: none;
+  }
+}
+.mobileContent {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .bannerGrid {
+    display: none;
+  }
+
+  .mobileContent {
+    display: block;
+  }
+}
+
+
+
+
 /* Responsive Design */
 @media (min-width: 2550px) and (max-width:3800) {
   .bannerContent {
@@ -98,6 +143,16 @@
   .blueBg {
     max-width: 25%;
   }
+  .bannerContentH1 {
+  font: var(--font-80);
+  color: var(--color-4e);
+  font-weight: bold;
+  letter-spacing:-3.84px;
+  font-family: var(--font-Condensed);
+  padding-bottom: 4rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
 
 }
 
