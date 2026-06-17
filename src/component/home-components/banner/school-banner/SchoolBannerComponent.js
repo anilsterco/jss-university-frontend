@@ -28,7 +28,7 @@ export default function SchoolSlider({
   const isSchoolPage =
     currentPage === "schools" && currentSlug !== "college-of-pharmacy"
       ? "School of"
-      : currentSlug == "college-of-pharmacy"
+      : currentSlug === "college-of-pharmacy"
         ? "College of"
         : "Department of";
 
@@ -43,9 +43,9 @@ export default function SchoolSlider({
   const defaultBanner = [
     {
       id: 1,
-      label: "SCHOOL OF ENGINEERING1",
+      label: "SCHOOL OF ENGINEERING",
       title:
-        "A1 TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
+        "A TRADITION OF <span>INNOVATION</span> AND <span>LEADERSHIP</span>",
       desc: "A long-standing history of fostering new ideas and guiding students.",
       linked_text: "Learn more about JSS",
       url: "/about-us",
@@ -66,42 +66,100 @@ export default function SchoolSlider({
     >
       {bannerData.map((slide, index) => (
         <SwiperSlide key={slide.id || index}>
-          <div className={styles.slideWrapper}>
-            <Image
-              src={slide.desktop_banner}
-              alt="banner image"
-              fill
-              priority
-              className={styles.desktopBanner}
-            />
-            <Image
-              src={slide.mobile_banner}
-              alt="mobile banner"
-              width={300}
-              height={382}
-              className={styles.mobileBanner}
-            />
-            <div className={styles.overlay}>
+          {/* Desktop Layout */}
+          <div className={styles.bannerGrid}>
+            <div className={styles.bannerLeft}>
+              <div className={`${styles.bannerOverlay}`}>
+                <div className="containerMD">
+                  <div className={styles.bannerContent}>
+                    <div className={styles.bannerLabel}>
+                      {isDepartment ? name : slide.label}
+                    </div>
+
+                    <span className={styles.bannerSmall}>
+                      {isSchoolPage}
+                    </span>
+                    <h1
+                      className={styles.bannerContentH1}
+                      dangerouslySetInnerHTML={{ __html: slide.title }}
+                    />
+                    <p className={styles.bannerContentP}>
+                      {slide.desc}
+                    </p>
+                    {slide.url && (
+                      <Link
+                        href={`${WEB_URL + "schools/" + slug + slide.url}`}
+                        className={styles.bannerContentA}>
+                        {slide.linked_text || "Learn more"}
+                        <Image
+                          src="/images/header/banner-arrow.svg"
+                          alt="arrow"
+                          width={22}
+                          height={22}
+                          className={styles.iconSpacing}
+                        />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div className={styles.bannerRight}>
+              <Image
+                src={slide.desktop_banner}
+                alt="banner image"
+                width={1920}
+                height={810}
+                priority
+                className={styles.desktopBanner}
+              />
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <Image
+            src={slide.mobile_banner}
+            alt="mobile banner"
+            width={400}
+            height={500}
+            className={styles.mobileBanner}
+          />
+
+          <div className={styles.mobileContent}>
+            <div className={styles.mobileOverlay}>
               <div className="container">
                 <div className={styles.bannerContent}>
                   <div className={styles.bannerLabel}>
                     {isDepartment ? name : slide.label}
                   </div>
-                  <span className={styles.bannerSmall}>{isSchoolPage}</span>
+
+                  <span className={styles.bannerSmall}>
+                    {isSchoolPage}
+                  </span>
+
                   <h1
                     className={styles.bannerContentH1}
                     dangerouslySetInnerHTML={{ __html: slide.title }}
                   />
-                  <p className={styles.bannerContentP}>{slide.desc}</p>
+
+                  <p className={styles.bannerContentP}>
+                    {slide.desc}
+                  </p>
+
                   {slide.url && (
                     <Link
                       href={`${WEB_URL + "schools/" + slug + slide.url}`}
                       className={styles.bannerContentA}
                     >
                       {slide.linked_text || "Learn more"}
-                      <img
+
+                      <Image
                         src="/images/header/banner-arrow.svg"
                         alt="arrow"
+                        width={22}
+                        height={22}
                         className={styles.iconSpacing}
                       />
                     </Link>

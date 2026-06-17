@@ -343,7 +343,7 @@
     left: 11.7%;
   }
   .headerContent {
-    width: 141rem;
+    width: 100%;
   }
 }
 @media (max-width:1024px) {

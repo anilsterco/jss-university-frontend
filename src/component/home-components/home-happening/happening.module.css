@@ -243,6 +243,7 @@
   content:''
 }
 .grid .card:nth-child(3){padding: 0;}
+.grid .card:nth-child(6){padding: 0;}
 /* Responsive Design */
 
 @media (min-width: 2200px) and (max-width:2550) {

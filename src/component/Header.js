@@ -1953,7 +1953,7 @@ export default function Header() {
             padding-right: 0;
           }
           .header-inner.header-scrolled {
-            background-color: var(--color-4e);
+            background-color:#deebf4;
           }
             .header-inner.header-scrolled.academics {
             background-color: transparent;
@@ -2806,9 +2806,7 @@ export default function Header() {
             .mega-right-text {
               width: 26%;
             }
-            .nav-list {
-            gap: 2.9rem;
-          }
+           
            .banner-label {
             padding:1.6rem 10.2rem 1.6rem 2.2rem;
           }
@@ -2869,10 +2867,11 @@ export default function Header() {
               top: 16rem;
             }
        .right-inner .first-content h1 {
-           
             max-width: 95%;
           }
-          
+           .nav-list {
+            gap: 2.9rem;
+          }
           }
           @media (max-width: 1024px) {
             .menu-middle {
