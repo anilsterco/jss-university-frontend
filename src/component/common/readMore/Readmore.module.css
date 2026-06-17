@@ -4,10 +4,15 @@
 
 .contentBox {
   overflow: hidden;
+  font: var(--font-16);
+  color: #212121;
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  letter-spacing: 0;
 }
 
-.contentBox.clamped {
-  max-height: 300px;
+.hiddenBlock {
+  display: none !important;
 }
 
 .arrowIcon {
