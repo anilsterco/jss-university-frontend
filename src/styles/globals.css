@@ -382,7 +382,6 @@ p {
 
   .tableContentSection .right_col.grid_design .right_lists {
     display: block;
-    /* grid-template-columns: repeat(3, 1fr); */
   }
 }
 
