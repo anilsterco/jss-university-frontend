@@ -539,7 +539,7 @@
 
 }
 
-@media(max-width:1799px){
+/* @media(max-width:1799px){
   .cardTitle {
     min-height: 14rem;
   }
@@ -573,7 +573,7 @@
   .cardTitle {
     min-height: auto;
   }
-}
+} */
 
 .news-events-module__WsP3GG__secondaryText + a svg:hover{
   stroke: var(--color-100);
