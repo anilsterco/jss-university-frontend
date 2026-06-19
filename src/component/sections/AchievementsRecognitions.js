@@ -87,16 +87,15 @@ export default function AchievementsRecognitions({ data }) {
                     </ul>
                 )}
 
-                {/* Bottom Description */}
-                {content?.bottomdesc && (
+                {content?.bottomdesc?.length > 0 && (
                     <div
                         className="achievements_bottom"
                         data-aos="fade-up"
-                        data-aos-delay={
-                            300 + (content.listing?.length || 0) * 100
-                        }
+                        data-aos-delay={300 + (content.listing?.length || 0) * 100}
                     >
-                        <p>{content.bottomdesc}</p>
+                        {content.bottomdesc.map((item, index) => (
+                            <p key={index}>{item.bottomdesc}</p>
+                        ))}
                     </div>
                 )}
             </div>

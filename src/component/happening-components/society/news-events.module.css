@@ -120,10 +120,10 @@
   letter-spacing: 0px;
   line-height: 1.4;
   margin-bottom: 1.4rem;
-  min-height: 11rem;
+  min-height: 0;
 }
 
-.cardDate {
+.department-civil-engineering-society .cardDate {
   font: var(--font-14);
   color: #17536B;
 }

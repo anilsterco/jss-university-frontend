@@ -33,10 +33,10 @@ export default function Placements({ data }) {
                   <div className="container">
                     <div
                       className={`${item?.category === "research"
-                          ? "mt_3xl_10"
-                          : item?.category === "placement"
-                            ? "mt_3xl_7"
-                            : ""
+                        ? "mt_3xl_10"
+                        : item?.category === "placement"
+                          ? "mt_3xl_7"
+                          : ""
                         }`}
                     >
                       {item?.heading && (
@@ -116,9 +116,9 @@ export default function Placements({ data }) {
                                   ))}
                                 </ul>
                               )}
-                                 {box.subdecs && <p>{box.subdecs}</p>}
+                              {box.subdecs && <p>{box.subdecs}</p>}
 
-                              
+
                             </div>
                           </div>
                         ))}
@@ -126,6 +126,16 @@ export default function Placements({ data }) {
                       {item?.description && (
                         <div className="placeBottom">
                           <p>{item.description}</p>
+                        </div>
+                      )}
+
+                      {item?.bottomdesc && (
+                        <div className="placeBottom">
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: item.bottomdesc,
+                            }}
+                          ></p>
                         </div>
                       )}
                     </div>

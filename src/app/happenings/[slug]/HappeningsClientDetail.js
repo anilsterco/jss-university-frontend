@@ -35,9 +35,9 @@ export default function HappeningsClientDetail({ happeningsData }) {
 
   const pageName = currentSlug.replace(/-/g, ' ');
   const titleCase = pageName
-  .split(' ')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' ');
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 
   return (
     <div ref={contentRef}>
@@ -96,8 +96,9 @@ export default function HappeningsClientDetail({ happeningsData }) {
           </div>
 
           {happeningsData.sections?.map((section, idx) => (
-            <div className="container" key={idx}>
+            <div className="container gallery-title" key={idx}>
               <div className="col-lg-10 mx-auto">
+
                 <div className={styles.Grid2}>
                   <figure>
                     <img
@@ -106,20 +107,19 @@ export default function HappeningsClientDetail({ happeningsData }) {
                       className="img-fluid w-100"
                     />
                   </figure>
-
-
                   <div className={`${styles.happContant}`} >
                     {section.content && <ReadMore html={section.content} />}
                   </div>
-
                 </div>
+                {/* here gallery part */}
 
-                    {/* here gallery part */}
-
-                    {/* <h1>Gallery</h1> */}
-                    {(happeningsData?.gallery?.images.length > 0 || happeningsData?.gallery?.videos.length > 0) && (
+                {(happeningsData?.gallery?.images?.length > 0 ||
+                  happeningsData?.gallery?.videos?.length > 0) && (
+                    <>
+                      <h5>Event Gallery</h5>
                       <HappeningsGallery gallery={happeningsData.gallery} />
-                    )}
+                    </>
+                  )}
 
               </div>
             </div>
