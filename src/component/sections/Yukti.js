@@ -74,9 +74,17 @@ export default function AboutFive({ data }) {
                                     )
                                 )}
                             </div>
-                            {yukti?.bottomdesc && (
-                                <p>{yukti.bottomdesc}</p>
-                            )}
+                            {yukti?.bottomdesc?.length > 0 &&
+                                yukti.bottomdesc.map((item, index) => (
+                                    <p
+                                        key={index}
+                                        dangerouslySetInnerHTML={{ __html: item.bottomdesc }}
+                                    />
+                                ))
+                            }
+
+
+
                         </div>
                     </section>
                 );
@@ -84,3 +92,4 @@ export default function AboutFive({ data }) {
         </>
     );
 }
+

@@ -1498,10 +1498,12 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_grid .custom-list{padding-top: 4rem;}
 .yukti_grid .custom-list li {color: var(--color-white);margin-bottom: 2rem;}
 .yukti_grid .custom-list li:before {background-color: var(--color-white);}
-.nisp-by-iic .placeBottom p {padding-bottom: 8rem;margin: 0;text-align: left;max-width: 100%;}
+.nisp-by-iic .placeBottom p {padding-bottom:3rem;margin: 0;text-align: left;max-width: 100%;}
+.nisp-by-iic .placement_page{padding-bottom: 6rem;}
 .iic .placeBottom p {padding-bottom: 8rem;margin: 0;text-align: left;max-width: 100%;}
 .iic-student-club .resea_facili_main .exte_mainsec h6 {text-align: center;}
-
+.yukti_section p:last-child{padding-top: 0;}
+.yukti_section p>a {color: #e6b000;}
 .iic_activities .section_heading h2{font: var(--font-26);color: var(--color-4e);margin-block: 3rem;}
 .iic_activities:last-child{padding-bottom: 6rem;}
 .iic_activities .iic_gallery:last-child{border: none;}
@@ -1541,6 +1543,7 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section {margin-top: 8rem;}
 .yukti_section {padding-block: 6rem;}
 .yukti_section p {padding-top: 4rem;}
+
 .kapila-scheme .top_section {margin-top: 8rem;}
 .kapila-scheme .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
 .kapila-scheme .labs_group_section {padding-top: 4rem;}
@@ -1583,7 +1586,7 @@ to {opacity: 1;transform: translateY(0);}}
 .student-welfare-societies .about_two.labs_group_section .early-slide .early_rgt h4 { margin-bottom: 2rem;}
 .student-welfare-societies .about_four {padding-bottom: 2rem; }
 .student-welfare-societies .placement_stats {padding-bottom: 6rem;}
-.iic .iic_activities .imageWrapper {height: 30rem;}
+.activities .iic_activities .imageWrapper {height: 30rem;}
 .iic_activities .iic_gallery {padding-block: 2rem;}
 .iic_activities .iic_content p:first-child {padding-bottom: 3rem;}
 .iic-student-club .top_section {margin-top: 8rem;}
@@ -1622,12 +1625,12 @@ to {opacity: 1;transform: translateY(0);}}
 .student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
 .student-welfare-societies .about_subHeading {padding-bottom: 4rem;max-width: 100%;padding-inline:0;text-align: left;}
 .student-welfare-societies .about_desc {text-align: left;max-width: 100%;}
-.iic .iic_activities .imageWrapper {height: 25rem;}
+.activities .iic_activities .imageWrapper {height: 25rem;}
 .iic_activities .iic_gallery{grid-template-columns: repeat(2, 1fr);}
 .curriculum_box .box_ul {margin: 2rem 0 0;}
-.iic .about_subHeading {text-align: left;max-width: 100%;}
-.iic .top_section {margin-top: 4rem;}
-.iic .about_subHeading.less {padding-bottom: 3rem;}
+.activities .about_subHeading {text-align: left;max-width: 100%;}
+.activities .top_section {margin-top: 4rem;}
+.activities .about_subHeading.less {padding-bottom: 3rem;}
 .about-iic .grid_card_design1_section {padding-block: 0;}
 .achievements_header > h2 {font: var(--font-32);font-family: var(--font-Condensed);letter-spacing: -1.3px;text-align: left;margin-bottom: 3rem;font-weight: bold;line-height:normal;}
 .achievements_desc {max-width: 100%;}
@@ -1663,9 +1666,9 @@ to {opacity: 1;transform: translateY(0);}}
 .student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-24);   }
 .student-welfare-societies .about_f_value .ab_f_content h3 {font: var(--font-24);}
 .iic_activities .iic_gallery{grid-template-columns: repeat(1, 1fr);}
-.iic .iic_activities .imageWrapper {height: 50rem;}
-.iic .atm_g_imgsec {padding-top: 0rem;}
-.iic .gridCard-module__aVLOja__card {padding: 2rem 0;}
+.activities .iic_activities .imageWrapper {height: 50rem;}
+.activities .atm_g_imgsec {padding-top: 0rem;}
+.activities .gridCard-module__aVLOja__card {padding: 2rem 0;}
 .about-iic .achievements_list {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
 .resea_facili_main {padding-top: 0;}
 .iic-student-club .rea_main .comon_list {margin-bottom: 2rem;}
@@ -1699,6 +1702,10 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section + .yukti_section .yukti_grid .custom-list li:last-child{margin-bottom: 0;}
 .yukti_section .section_heading h2{font: var(--font-30);font-family: var(--font-Condensed);letter-spacing: -1.3px;margin-bottom: 0;font-weight: bold;line-height: normal;}
 .yukti_grid{grid-template-columns: repeat(1, 1fr);gap: 2rem;margin-block: 2rem 0;}
-.yukti_grid .custom-list {padding-top: 2rem;}
-}
-
+.yukti_grid .custom-list {padding-top: 2rem;}}
+.left_side_content:first-child p{padding-top: 2rem;}
+ .left_side_content h1 {margin-bottom: 2rem;}
+.benefits_section .bottom_content{margin-block: 6rem;}
+.benefits_section .bottom_content h5{text-align: center;}
+.benefits_section .bottom_content p{text-align: center;}
+.gallery-title h5 {text-align: left;font: var(--font-24);color: var(--color-29);font-family: var(--font-Roboto);letter-spacing: 0;margin-bottom: 4rem;font-weight: 600;}
