@@ -26,12 +26,12 @@ export default function SocietiesEvent({ data }) {
     if (!section?.items?.length) return null;
 
     const content = section.items[0];
-console.log('data',content);
+    console.log('data', content);
 
     return (
         <section className={`societies_events ${content?.custom_class}`}>
             <div className="container">
-                <div className={`${content?.custom_class!='department_society_achivement'?'col-lg-10 mx-auto':''}`}>
+                <div className={`${content?.custom_class != 'department_society_achivement' ? 'col-lg-10 mx-auto' : ''}`}>
                     {/* Header */}
                     <div
                         className="societies_events_header"
@@ -59,11 +59,11 @@ console.log('data',content);
                             </p>
                         )} */}
                         {content?.decs && (
-    <p
-        className=""
-        dangerouslySetInnerHTML={{ __html: content.decs }}
-    />
-)}
+                            <p
+                                className=""
+                                dangerouslySetInnerHTML={{ __html: content.decs }}
+                            />
+                        )}
                     </div>
                 </div>
 
@@ -106,6 +106,16 @@ console.log('data',content);
 
                                 {event?.decs && (
                                     <p>{event.decs}</p>
+                                )}
+                                {event?.icon && (
+                                    <div className="event_icon">
+                                        <Image
+                                            src={event.icon}
+                                            alt={event.title || "Icon"}
+                                            width={40}
+                                            height={40}
+                                        />
+                                    </div>
                                 )}
                             </div>
                         </Link>
