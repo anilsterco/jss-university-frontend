@@ -1510,7 +1510,10 @@ to {opacity: 1;transform: translateY(0);}}
 .iic .about_subHeading.less {padding-bottom: 6rem;}
 .iic .nisp-by-iic .placeBottom p, .iic .placeBottom p {padding-bottom: 2rem;}
 .iic_activities .iic_content p:first-child{font: var(--font-24);text-align: left;margin: 0 auto;padding-bottom: 5rem;font-weight: 300;line-height: 1.4;}
-.iic_activities .iic_content p{font-family: var(--font-Roboto);color: #444;text-align: left;margin-bottom:3rem;}
+.iic_activities .iic_content p:first-of-type {position: relative;padding-left: 2rem;}
+.iic_activities .iic_content p:first-of-type::before {content: "";width: 6px;height: 6px;border-radius: 50%;background: #e6b000;position: absolute;left: 0;top: 1rem;
+}
+.iic_activities .iic_content p{font-family: var(--font-Roboto);color: #444;text-align: left;margin-bottom:3rem;padding-left: 3rem;}
 .iic_activities .imageWrapper {position: relative;width: 100%;height: 500px;object-fit: cover;}
 .iic_activities .iic_gallery{ display: grid;grid-template-columns: repeat(3,1fr);gap: 2.5rem;padding-block:6rem 6rem;border-bottom: solid 1px #e1e1e1;}
 .iic_activities .imageWrapper {position: relative;width: 100%;cursor: pointer;overflow: hidden;border-radius: 0.75rem;}
@@ -1529,6 +1532,7 @@ to {opacity: 1;transform: translateY(0);}}
 .societies .event_card:hover .event_icon {background:#16344e}
 .event_card:hover .event_icon img {transform: scale(1.1);transition: all 0.3s ease;}
 .event_card:hover .event_icon img {filter: brightness(0) invert(1);}
+
 /* responsive page */
 
 @media (max-width: 1366px) {
@@ -1595,6 +1599,7 @@ to {opacity: 1;transform: translateY(0);}}
 .activities .iic_activities .imageWrapper {height: 30rem;}
 .iic_activities .iic_gallery {padding-block: 2rem;}
 .iic_activities .iic_content p:first-child {padding-bottom: 3rem;}
+
 .iic-student-club .top_section {margin-top: 8rem;}
 .iic-student-club .exte_mainsec h6 {padding-block: 0 3rem;}
 .iic-student-club .exten_listyle {padding-inline: 0;padding-top: 0;}
@@ -1715,3 +1720,5 @@ to {opacity: 1;transform: translateY(0);}}
 .benefits_section .bottom_content h5{text-align: center;}
 .benefits_section .bottom_content p{text-align: center;}
 .gallery-title h5 {text-align: left;font: var(--font-24);color: var(--color-29);font-family: var(--font-Roboto);letter-spacing: 0;margin-bottom: 4rem;font-weight: 600;}
+.achievements_list {margin-top: 2rem;}
+.bottom_hod {padding-block: 4rem;}
