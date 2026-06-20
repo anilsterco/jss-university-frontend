@@ -1445,7 +1445,11 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section {margin-top: 8rem;}
 .yukti_section {padding-block: 6rem;}
 .yukti_section p {padding-top: 4rem;}
-
+  .vision_mission_section .mission-card {
+    background: #fff;
+    border-radius: .6rem;
+    padding: 5.2rem 5.4rem;
+}
 .kapila-scheme .top_section {margin-top: 8rem;}
 .kapila-scheme .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
 .kapila-scheme .labs_group_section {padding-top: 4rem;}
