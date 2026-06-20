@@ -1606,6 +1606,8 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_section .section_heading h2{font: var(--font-30);font-family: var(--font-Condensed);letter-spacing: -1.3px;margin-bottom: 0;font-weight: bold;line-height: normal;}
 .yukti_grid{grid-template-columns: repeat(1, 1fr);gap: 2rem;margin-block: 2rem 0;}
 .yukti_grid .custom-list {padding-top: 2rem;}}
+.event_box .internal_soc_content p {text-align: left;}
+.left_side_content:first-child p{text-align: left;}
 .left_side_content:first-child p{padding-top: 2rem;}
  .left_side_content h1 {margin-bottom: 2rem;}
 .benefits_section .bottom_content{margin-block: 6rem;}
@@ -1614,3 +1616,4 @@ to {opacity: 1;transform: translateY(0);}}
 .gallery-title h5 {text-align: left;font: var(--font-24);color: var(--color-29);font-family: var(--font-Roboto);letter-spacing: 0;margin-bottom: 4rem;font-weight: 600;}
 .achievements_list {margin-top: 2rem;}
 .bottom_hod {padding-block: 4rem;}
+.department-computer-science-and-engineering-society .all_data{padding-top: 8rem;}
