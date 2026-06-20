@@ -240,14 +240,14 @@
 
 @media (max-width: 1749px) {
  .departmentHeaderWrapper {
-    top: 23vh;
+    top: 14vh;
   }
 }
 
 @media (max-width: 1649px) {
   .departmentMenu {
     padding-inline: 3rem;
-    padding-top: 3.3rem;
+    padding-top: 3rem;
   }
   .navLinksWrapper {
   gap: 1.4rem;
@@ -263,7 +263,7 @@
 
 @media (max-width: 1400px) {
    .departmentHeaderWrapper {
-    top: 22vh;
+    top: 13vh;
   }
 }
 
@@ -282,14 +282,14 @@
     padding-top: 2rem;
   }
 
-  .departmentHeaderWrapper {
-    top: 22vh;
+    .departmentHeaderWrapper {
+    top: 13vh;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1280px) {
   .departmentHeaderWrapper {
-    top: 22vh;
+    top: 14vh;
   }
 
 }
