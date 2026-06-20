@@ -73,12 +73,6 @@ html {
   --color-ef: #F0EFEF;
   --color-f33: #FFFFFF33;
 
-
-
-
-
-
-
   /* Font Sizes */
   --font-110: normal 300 11rem / 1.218 var(--font-Geist);
   --font-100: normal 100 10rem / 1.218 var(--font-Roboto);
@@ -149,185 +143,136 @@ html {
 
   }
 }
+/* =========================
+   Typography Scaling
+========================= */
 
+html {
+  font-size: 62.5%; 
+  scroll-behavior: smooth;
+}
 
 @media (max-width: 1750px) {
-  .main-container .container {
+  html {
+    font-size: 60%;
+  }
+
+  .main-container .container,
+  .container {
     max-width: 1274px;
   }
 
   .footer_section .container {
     max-width: 1395px;
   }
+}
 
+@media (max-width: 1650px) {
+  html {
+    font-size: 58%;
+  }
+
+  .containerMD {
+    max-width: 1500px;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 56%;
+  }
+
+  .container,
+  .main-container .container {
+    max-width: 1024px;
+  }
+
+  .containerMD {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 55%;
+  }
+
+  .container,
+  .main-container .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 54%;
+  }
+
+  .container,
+  .main-container .container,
+  .footer_section .container {
+    max-width: 1000px;
+  }
+
+  .containerMD {
+    max-width: 1140px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  html {
+    font-size: 58%;
+  }
+
+  .container,
+  .main-container .container {
+    max-width: 758px;
+  }
+
+  .containerMD {
+    max-width: 960px;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 991px) {
   html {
     font-size: 60%;
   }
 }
 
-@media (max-width: 1650px) {
-  html {
-    font-size: 50.5%;
-  }
-  .containerMD { max-width: 1500px; }
-}
-
-@media (max-width: 1400px) {
-  .container {
-    max-width: 1024px;
-  }
-
-  html {
-    font-size: 48.5%;
-  }
-  .containerMD { max-width: 1320px; }
-}
-
-@media (max-width: 1366px) {
-  .main-container .container {
-    max-width: 1000px;
-  }
-
-     html {
-        font-size: 50.5%;
-    }
-  
-}
-
-@media (max-width: 1280px) {
-  .main-container .container {
-    max-width: 1000px;
-  }
-
-  .footer_section .container {
-    max-width: 1000px;
-  }
-
-  html {
-    font-size: 45.5%;
-  }
-  .containerMD { max-width: 1140px; }
-
-}
-
-@media (max-width: 1024px) {
-  .main-container .container {
-    max-width: 758;
-  }
-  .containerMD { max-width: 960px; }
-
-}
-
-@media (max-width: 767px) {
-  .main-container .container {
-    max-width: 640px;
-    padding-inline: 2rem;
-  }
-
-  .footer_section .container {
-    max-width: 640px;
-    padding-inline: 2rem;
-  }
-  .mobile_society_view .container {max-width: 100%;}
-
-}
-
-
-@media (max-width: 991px) {
-  html {
-    font-size: 50.5%;
-    scroll-behavior: smooth;
-  }
-}
-
+/* Mobile */
 @media (max-width: 767px) {
   html {
     font-size: 62.5%;
-    scroll-behavior: smooth;
+  }
+
+  .container,
+  .main-container .container,
+  .footer_section .container {
+    max-width: 640px;
+    padding-inline: 2rem;
+  }
+
+  .mobile_society_view .container {
+    max-width: 100%;
   }
 }
 
-
-
-@media (max-width: 1750px) {
-  .container {
-    max-width: 1274px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .container {
-    max-width: 1000px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .container {
-    max-width: 844px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    max-width: 758;
-  }
-}
-
+/* Ultra Wide Screens */
 @media (min-width: 2500px) {
+  html {
+    font-size: 69.5%;
+  }
+
   .container {
     max-width: 1780px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
-  html {
-    font-size: 69.5%;
-  }
 }
 
-/* ::after,
-::before {
-    box-sizing: border-box;
-}
-
-audio,
-canvas,
-embed,
-iframe,
-img,
-object,
-svg,
-video {
-    display: block;
-    max-width: 100%;
-    width: 100%;
-}
-
-body {
-    margin: 0;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-    background-color: var(--color-f6);
-    scroll-behavior: unset !important;
-}
-
-p {
-    font: var(--font-16);
-    font-weight: normal;
-    font-family: var(--font-Roboto);
-    color: var(--color-black);
-    margin-bottom: 3rem;
-}
-
-p:last-of-type {
-    margin-bottom: 0;
-} */
 
 @media (max-width: 1549px) {
   p {

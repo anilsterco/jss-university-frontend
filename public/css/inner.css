@@ -10437,10 +10437,14 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .mobile_overview{ padding-bottom: 6rem;margin-top: 3rem;}
 .aiml_soc_bg_white .society_contact .about_two .early-slide .early_rgt{padding-top: 0;margin-top: 0rem;}
 .aiml_soc_bg_white h5:last-of-type{padding-top: 2rem;padding-bottom: 0;}
-.department_society_overview {   margin-top: 6rem;padding-bottom: 6rem; padding-top:0;}
+.department_society_overview {   margin-top: 4rem;padding-bottom: 4rem; padding-top:0;}
 .bit_row,.bit_row:nth-child(even),.bit_row:nth-child(odd){justify-content:flex-start;}
 .bit_card{width:100%;padding:3rem;}
 .bit_number{font-size:5rem;top:1.5rem;right:2rem;}
+.connect_us_faculty {padding-top: 2rem;}
+.aiml_soc_bg_white .labs_group_section {margin-top: 6rem;}
+.accordion_title {padding-block: 2rem;}
+
 }
 @media(max-width:767px){
 .event_boxes{grid-template-columns:1fr;gap:2rem;}
@@ -10451,7 +10455,8 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .benefits_grid {grid-template-columns: 1fr;}
 .benefit_item {border-right: none;}
 .benefit_item:last-child {border-bottom: none;}
-
+.left_side_content h2 {font: var(--font-22);font-weight: 300;line-height: normal;text-align: left;}
+.left_side_content h1 {font: var(--font-30);letter-spacing: 0;margin-top: 3rem;text-align: left;}
 }
 @media(max-width:575px){
 .internal_soc_content .achievements_li_grid {    grid-template-columns: 1fr;}
