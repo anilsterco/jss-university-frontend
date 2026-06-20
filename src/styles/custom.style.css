@@ -7079,8 +7079,13 @@ hr {
     max-width: 80rem;
 
   }
+  
 }
-
+@media screen and (max-width: 1090px){
+.inner_sub_header {
+    margin-top: 14.5rem;
+  }
+}
 @media screen and (max-width: 1024px) {
   .about_one {
     padding-block: 6rem 2rem;
