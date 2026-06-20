@@ -249,6 +249,15 @@
     padding-inline: 3rem;
     padding-top: 3.3rem;
   }
+  .navLinksWrapper {
+  gap: 1.4rem;
+}
+.navItem {
+  font: var(--font-16);
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
 }
 
 @media (max-width: 1400px) {
