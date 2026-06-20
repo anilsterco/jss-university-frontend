@@ -1,6 +1,7 @@
 "use client";
 
 import SocietyHappenings from "@/component/happening-components/society/SocietyHappenigs";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 function MobileTab({ societies, activeId, setActiveId }) {
@@ -68,18 +69,18 @@ function MobileTab({ societies, activeId, setActiveId }) {
   );
 }
 
-function DesktopTab({ societies, activeId, setActiveId }) {
+function DesktopTab({ societies, activeId, setActiveId, isCSEPage }) {
   const activeSociety = societies?.find((s) => s.id === activeId) || societies?.[0];
 
   return (
     <section>
-      <div className="container">
+      <div className={!isCSEPage && 'container'}>
         <div
           className={
-            societies?.length > 1 ? "society_overview_grid" : "society_overview_center"
+            societies?.length > 1 && !isCSEPage ? "society_overview_grid" : "society_overview_center"
           }
         >
-          {societies?.length > 1 && (
+          {societies?.length > 1 && !isCSEPage && (
             <div className="right_side_menus">
               {societies.map((society) => (
                 <div key={society.id} className="society_links">
@@ -111,7 +112,32 @@ function DesktopTab({ societies, activeId, setActiveId }) {
           <div
             className="all_data"
           >
-            <div dangerouslySetInnerHTML={{ __html: activeSociety.description }} />
+            <div className={isCSEPage && 'container'}>
+              <div className="tab_grids_col">
+                {societies?.length > 1 && isCSEPage && (
+                  <div className="right_side_menus">
+                    {societies.map((society) => (
+                      <div key={society.id} className="society_links">
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActiveId(society.id);
+                          }}
+                          className={
+                            activeId === society.id ? "active_society" : "inactive_society"
+                          }
+                        >
+                          {society.name}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="" dangerouslySetInnerHTML={{ __html: activeSociety.description }} />
+              </div>
+            </div>
           </div>
         )}
 
@@ -127,6 +153,9 @@ function DesktopTab({ societies, activeId, setActiveId }) {
 export default function SocietiesComponent({ societies }) {
   const [activeId, setActiveId] = useState(societies?.[0]?.id ?? null);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+
+  const isCSEPage = pathname.includes('computer-science-and-engineering');
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 991);
@@ -150,6 +179,7 @@ export default function SocietiesComponent({ societies }) {
           societies={societies}
           activeId={activeId}
           setActiveId={setActiveId}
+          isCSEPage={isCSEPage}
         />
       )}
     </div>
