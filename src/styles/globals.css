@@ -302,9 +302,6 @@ p {
     padding-inline: 1.5rem;
   }
 
-  html {
-    font-size: 50%;
-  }
 }
 
 @media (max-width: 1549px) {
@@ -317,28 +314,16 @@ p {
     max-width: 1064px;
     padding-inline: 1.5rem;
   }
-
-  html {
-    font-size: 50%;
-  }
-
   .footer_section .container {
     max-width: 1064px;
     padding-inline: 1.5rem;
   }
 
-  html {
-    font-size: 50%;
-  }
 }
 
 @media (max-width: 1400px) {
   .container {
     max-width: 1024px;
-  }
-
-  html {
-    font-size: 48.5%;
   }
 }
 
@@ -347,21 +332,13 @@ p {
     max-width: 1000px;
   }
 
-  html {
-    font-size: 50.5%;
-  }
-}
-
-@media (max-width: 1280px) {
-  html {
-    font-size: 48.5%;
-  }
 }
 
 @media (max-width: 1024px) {
   .main-container .container {
     max-width: 758;
   }
+ 
 }
 
 @media (max-width: 767px) {
@@ -417,10 +394,6 @@ p {
   background: #1b7fc1;
 }
 
-.mobile_menus .menu-bottom .menu-children {
-  /* background: #bee5e5; */
-}
-
 .mobile_menus .menu-children li {
   padding: 1rem 0 !important;
   margin-top: 1rem;
@@ -435,88 +408,6 @@ p {
 .mobile_menus .menu-bottom .menu-link {
   color: #000;
 }
-
-/* 
-@media (min-width: 1921px) {
-  html {
-    font-size: 65%;
-  }
-
-  .main-container .container {
-    max-width: 1374px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .footer_section .container {
-    max-width: 1374px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .hamb_grid_menus {
-    grid-template-columns: 20% 78%;
-    min-height: 66vh;
-  }
-
-  .hamb_grid_menus .hamb_menu_item {
-    grid-template-columns: 21% 79%;
-  }
-
-  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
-    padding-right: 12rem;
-  }
-
-  .dropdown {
-    max-width: 1820px;
-  }
-
-  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
-    max-width: 70%;
-  }
-
-  .menu-counter p {
-    max-width: 36.5%;
-  }
-
-  .mega-menu.active-hover .hambmenu_panel {
-    padding: 19rem 0 0 0;
-  }
-}
-
-@media (min-width: 2200px) {
-  .main-container .container {
-    max-width: 1840px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .footer_section .container {
-    max-width: 1840px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  html {
-    font-size: 87.5%;
-  }
-
-  .mega-menu .hambsub_panel .ham-grp .hamb_menu_item .items-menu_ttl {
-    padding-right: 8rem;
-  }
-
-  .hamb_grid_menus .hamb_menu_item p {
-    max-width: 90%;
-  }
-
-  .hamb_grid_menus {
-    min-height: 60vh;
-  }
-
-  .hamb_menu_item .items-menu_img-grp .items-menu_ttl h3 {
-    max-width: 68%;
-  }
-} */
 
 @media (max-width: 991px) {
   html {

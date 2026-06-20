@@ -335,7 +335,7 @@
     padding: 0 1rem;
     margin-block: 2rem 3rem;
     font-weight: 300;
-    line-height: 1.8rem;
+    line-height: normal;
   }
 
   .showOnlyMobileCard {
