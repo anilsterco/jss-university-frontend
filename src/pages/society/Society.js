@@ -113,7 +113,7 @@ function DesktopTab({ societies, activeId, setActiveId, isCSEPage }) {
             className="all_data"
           >
             <div className={isCSEPage && 'container'}>
-              <div className="tab_grids_col">
+              <div className={isCSEPage && 'tab_grids_col'}>
                 {societies?.length > 1 && isCSEPage && (
                   <div className="right_side_menus">
                     {societies.map((society) => (
