@@ -239,8 +239,8 @@
 }
 
 @media (max-width: 1749px) {
-  .departmentHeaderWrapper {
-    top: 106px;
+ .departmentHeaderWrapper {
+    top: 23vh;
   }
 }
 
@@ -258,38 +258,38 @@
   letter-spacing: 0;
   font-weight: 400;
 }
+ 
 }
 
 @media (max-width: 1400px) {
-  .departmentHeaderWrapper {
-    top: 102px;
+   .departmentHeaderWrapper {
+    top: 22vh;
   }
 }
 
 @media (max-width: 1366px) {
   .departmentMenu {
-    padding-top: 6rem;
+    padding-top: 3.5rem;
   }
 
   .departmentHeaderWrapper {
     top: 97px;
   }
-  
 }
 
 @media (max-width: 1199px) {
   .departmentMenu {
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
 
   .departmentHeaderWrapper {
-    top: 90px;
+    top: 22vh;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1280px) {
   .departmentHeaderWrapper {
-    top: 90px;
+    top: 22vh;
   }
 
 }
