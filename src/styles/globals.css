@@ -302,6 +302,9 @@ p {
     padding-inline: 1.5rem;
   }
 
+  html {
+    font-size: 58%;
+  }
 }
 
 @media (max-width: 1549px) {
@@ -314,19 +317,42 @@ p {
     max-width: 1064px;
     padding-inline: 1.5rem;
   }
+
   .footer_section .container {
     max-width: 1064px;
     padding-inline: 1.5rem;
   }
 
+  html {
+    font-size: 52%;
+  }
 }
 
 @media (max-width: 1400px) {
   .container {
     max-width: 1024px;
   }
+
+  html {
+    font-size: 48.5%;
+  }
 }
 
+@media (max-width: 1366px) {
+  .main-container .container {
+    max-width: 1000px;
+  }
+
+  html {
+    font-size: 50.5%;
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 52%;
+  }
+}
 @media (max-width: 1366px) {
   .main-container .container {
     max-width: 1000px;
@@ -895,6 +921,12 @@ a:active {
 .facilities-img .sticky-box {position: sticky;top: 20px;z-index: 10;}
 .right-transport-titel p {font: var(--font-16);font-weight: normal;font-family: var(--font-Roboto);color: var(--color-black);}
 
+@media (max-width: 1749px){
+.admission_btn {
+    gap: 2.7rem;
+}
+}
+  
 @media (max-width: 1599px) {.menu-left-item .hambur_links {padding-inline: 2rem;padding-block: 0;}}
 @media (max-width: 1100px) {.mega-left-item .dropdown-item {padding-inline: 2rem;}}
 @media (max-width: 1024px) {.logo-content img {max-width: 25rem;}

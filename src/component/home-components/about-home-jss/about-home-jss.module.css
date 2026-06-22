@@ -275,6 +275,9 @@
   .rightColumn {
     padding-left: 12.2rem;
   }
+  .topSectionHeading {
+  width: 50%;
+}
 }
 
 @media (max-width: 1366px){

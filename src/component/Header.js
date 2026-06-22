@@ -2829,6 +2829,7 @@ export default function Header() {
                .meg_drop_main{
             grid-template-columns:29.9% 66.5%
                 }
+            
           }
         
            @media (max-width: 1200px){
