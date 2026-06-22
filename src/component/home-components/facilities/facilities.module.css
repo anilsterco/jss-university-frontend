@@ -295,13 +295,22 @@
 } 
 @media (max-width:1749px) {
   .verticalLine {
-    left: 9.1%;
+    left: 5%;
   }
-
+ .headerContent {
+    width: 100%;
+  }
+  .bannerContent {
+  left: 14rem;
+}
+.bannerLinks {
+   left: 14rem;
+ 
+}
 } 
 @media (max-width:1549px) {
   .verticalLine {
-    left: 12%;
+    left: 5.5%;
   }
 
 } 
@@ -320,7 +329,7 @@
   }
 
   .headerContent {
-    width: 148rem;
+    width: 100%;
   }
 
   .bannerContent {
