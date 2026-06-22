@@ -360,78 +360,177 @@
     adjustMaxContent();
   });
 
-  function adjustMaxContent() {
-    const container = document.querySelector(".container");
-    if (!container) return;
+  // function adjustMaxContent() {
+  //   const container = document.querySelector(".container");
+  //   if (!container) return;
 
-    let containerWidth = container.clientWidth;
-    let windowWidth = document.body.clientWidth;
+  //   let containerWidth = container.clientWidth;
+  //   let windowWidth = document.body.clientWidth;
 
-    if (windowWidth > 4000) windowWidth = 4000;
+  //   if (windowWidth > 4000) windowWidth = 4000;
 
-    let maxContentWidth = windowWidth - (windowWidth - containerWidth) / 2 + 16;
+  //   let maxContentWidth = windowWidth - (windowWidth - containerWidth) / 2 + 16;
 
-    const setMax = (selector, value) => {
-      document.querySelectorAll(selector).forEach((el) => {
-        el.style.maxWidth = value;
-      });
-    };
+  //   const setMax = (selector, value) => {
+  //     document.querySelectorAll(selector).forEach((el) => {
+  //       el.style.maxWidth = value;
+  //     });
+  //   };
 
-    const resetMax = (selector) => {
-      document.querySelectorAll(selector).forEach((el) => {
+  //   const resetMax = (selector) => {
+  //     document.querySelectorAll(selector).forEach((el) => {
+  //       el.style.maxWidth = "";
+  //     });
+  //   };
+
+  //   if (windowWidth >= 1920) {
+  //     setMax(
+  //       ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+  //       maxContentWidth + "px",
+  //     );
+
+  //     if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
+  //     if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
+  //   } else if (windowWidth >= 1400) {
+  //     setMax(
+  //       ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+  //       maxContentWidth + "px",
+  //     );
+  //   } else if (windowWidth >= 1200) {
+  //     resetMax(".max-content-xxl");
+  //     setMax(
+  //       ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
+  //       maxContentWidth + "px",
+  //     );
+  //   } else if (windowWidth >= 992) {
+  //     resetMax(".max-content-xxl, .max-content-xl");
+  //     setMax(
+  //       ".max-content-lg, .max-content-md, .max-content-sm, .max-content",
+  //       maxContentWidth + "px",
+  //     );
+  //   } else if (windowWidth >= 768) {
+  //     resetMax(".max-content-xxl, .max-content-xl, .max-content-lg");
+  //     setMax(
+  //       ".max-content-md, .max-content-sm, .max-content",
+  //       maxContentWidth + "px",
+  //     );
+  //   } else if (windowWidth >= 575) {
+  //     resetMax(
+  //       ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md",
+  //     );
+  //     setMax(".max-content-sm, .max-content", maxContentWidth + "px");
+  //   } else {
+  //     document
+  //       .querySelectorAll(
+  //         ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm",
+  //       )
+  //       .forEach((el) => (el.style.width = ""));
+
+  //     document.querySelectorAll(".max-content").forEach((el) => {
+  //       el.style.width = maxContentWidth + "px";
+  //     });
+  //   }
+  // }
+
+
+
+    function adjustMaxContent() {
+  const containers = document.querySelectorAll(".container");
+
+  let windowWidth = window.innerWidth;
+
+  if (windowWidth > 4000) windowWidth = 4000;
+
+  const setMax = (selector, value) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.style.maxWidth = value;
+    });
+  };
+
+  const resetMax = (selector) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.style.maxWidth = "";
+      el.style.width = "";
+    });
+  };
+
+  document
+    .querySelectorAll(
+      ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content"
+    )
+    .forEach((el) => {
+      const container = el.closest(".container");
+
+      if (!container) return;
+
+      const containerWidth = container.clientWidth;
+
+      let maxContentWidth =
+        windowWidth - (windowWidth - containerWidth) / 2 + 16;
+
+      if (windowWidth >= 1920) {
+        el.style.maxWidth = `${maxContentWidth}px`;
+
+        if (el.classList.contains("max-content-lg")) {
+          if (windowWidth >= 2540) {
+            el.style.maxWidth = "2180px";
+          } else if (windowWidth >= 2200) {
+            el.style.maxWidth = "2018px";
+          }
+          else if (windowWidth >= 1920) {
+            el.style.maxWidth = "1700px";
+          }
+        }
+      } else if (windowWidth >= 1400) {
+        el.style.maxWidth = `${maxContentWidth}px`;
+      } else if (windowWidth >= 1200) {
+        if (!el.classList.contains("max-content-xxl")) {
+          el.style.maxWidth = `${maxContentWidth}px`;
+        } else {
+          el.style.maxWidth = "";
+        }
+      } else if (windowWidth >= 992) {
+        if (
+          !el.classList.contains("max-content-xxl") &&
+          !el.classList.contains("max-content-xl")
+        ) {
+          el.style.maxWidth = `${maxContentWidth}px`;
+        } else {
+          el.style.maxWidth = "";
+        }
+      } else if (windowWidth >= 768) {
+        if (
+          !el.classList.contains("max-content-xxl") &&
+          !el.classList.contains("max-content-xl") &&
+          !el.classList.contains("max-content-lg")
+        ) {
+          el.style.maxWidth = `${maxContentWidth}px`;
+        } else {
+          el.style.maxWidth = "";
+        }
+      } else if (windowWidth >= 575) {
+        if (
+          el.classList.contains("max-content-sm") ||
+          el.classList.contains("max-content")
+        ) {
+          el.style.maxWidth = `${maxContentWidth}px`;
+        } else {
+          el.style.maxWidth = "";
+        }
+      } else {
         el.style.maxWidth = "";
-      });
-    };
 
-    if (windowWidth >= 1920) {
-      setMax(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-        maxContentWidth + "px",
-      );
+        if (el.classList.contains("max-content")) {
+          el.style.width = `${maxContentWidth}px`;
+        } else {
+          el.style.width = "";
+        }
+      }
+    });
+}
 
-      if (windowWidth >= 2200) setMax(".max-content-lg", "2018px");
-      if (windowWidth >= 2540) setMax(".max-content-lg", "2180px");
-    } else if (windowWidth >= 1400) {
-      setMax(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-        maxContentWidth + "px",
-      );
-    } else if (windowWidth >= 1200) {
-      resetMax(".max-content-xxl");
-      setMax(
-        ".max-content-xl, .max-content-lg, .max-content-md, .max-content-sm, .max-content",
-        maxContentWidth + "px",
-      );
-    } else if (windowWidth >= 992) {
-      resetMax(".max-content-xxl, .max-content-xl");
-      setMax(
-        ".max-content-lg, .max-content-md, .max-content-sm, .max-content",
-        maxContentWidth + "px",
-      );
-    } else if (windowWidth >= 768) {
-      resetMax(".max-content-xxl, .max-content-xl, .max-content-lg");
-      setMax(
-        ".max-content-md, .max-content-sm, .max-content",
-        maxContentWidth + "px",
-      );
-    } else if (windowWidth >= 575) {
-      resetMax(
-        ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md",
-      );
-      setMax(".max-content-sm, .max-content", maxContentWidth + "px");
-    } else {
-      document
-        .querySelectorAll(
-          ".max-content-xxl, .max-content-xl, .max-content-lg, .max-content-md, .max-content-sm",
-        )
-        .forEach((el) => (el.style.width = ""));
-
-      document.querySelectorAll(".max-content").forEach((el) => {
-        el.style.width = maxContentWidth + "px";
-      });
-    }
-  }
-
+window.addEventListener("load", adjustMaxContent);
+window.addEventListener("resize", adjustMaxContent);
   /* =====================================
    EDGE ALIGN ELEMENTS
 ===================================== */
