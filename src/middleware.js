@@ -4,10 +4,14 @@ import getPageRedirect from "./utils/getPageRedirect";
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
+  // Always attach x-pathname so layout.js can read it for schema injection
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+
   if (pathname === "/phd-application-form") {
     const nonce = crypto.randomUUID();
 
-    const isDev = process.env.NODE_ENV === "development"; 
+    const isDev = process.env.NODE_ENV === "development";
 
     const cspHeader = `
       default-src 'self';
@@ -27,15 +31,11 @@ export async function middleware(request) {
       .replace(/\s{2,}/g, " ")
       .trim();
 
-    const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-nonce", nonce);
     requestHeaders.set("Content-Security-Policy", cspHeader);
-    requestHeaders.set("x-pathname", pathname);
 
     const response = NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
+      request: { headers: requestHeaders },
     });
 
     response.headers.set("Content-Security-Policy", cspHeader);
@@ -44,19 +44,18 @@ export async function middleware(request) {
     return response;
   }
 
-  const redirectUrl = await getPageRedirect(
-    pathname.replace(/^\//, "")
-  );
+  const redirectUrl = await getPageRedirect(pathname.replace(/^\//, ""));
 
   if (redirectUrl) {
     return NextResponse.redirect(redirectUrl, { status: 301 });
   }
 
-  return NextResponse.next();
+  // For all other routes, pass through with x-pathname set
+  return NextResponse.next({
+    request: { headers: requestHeaders },
+  });
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|api).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)"],
 };
