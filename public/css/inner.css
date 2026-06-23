@@ -7737,7 +7737,9 @@ ul.comon_list li:before {
 .admission .fee_sturc_admain {padding-block: 8rem;}
 .admission .admins_of_con {padding-bottom: 6rem;}
 .admission .hostal_title {max-width: 100%;}
-
+.inner-title .innnr_head ul {
+    gap: 2rem;
+}
 }
 
 @media screen and (max-width: 1100px) {
@@ -7768,7 +7770,9 @@ ul.comon_list li:before {
   .leadership_two_cnt p {
     padding-bottom: 2.2rem;
   }
-
+.inner-title .innnr_head ul li a {
+    font: var(--font-15);
+}
   .about_one .estblish {
     padding-block: 4rem 4rem;
   }
@@ -10089,7 +10093,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .campus-facilities .about_one .atm_g_imgsec {padding-top: 4rem;}
 .campus-facilities .singleImageContent .row {gap: 0;}
 .campus-facilities .content_col {padding-right:0}
-.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {padding-top: 1rem;}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {padding-block: 2rem;}
 .campus-facilities .image_content_repeat_section.hostel_repeatsec .single_image_content {padding-bottom: 6rem}
 .campus-facilities .uni_boasts_rag_sec {padding-block: 6rem;}
 .campus-facilities .uni_boasts_rag_sec .uni_bo_text {padding: 4rem 0 0;}
@@ -10216,7 +10220,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .academic-facilities .about_one .estblish {padding-block: 2rem 0;}
 .campus-facilities .about_one {padding-block: 4rem 0;}
 .campus-facilities .image_content_repeat_section {padding: 4rem 0;}
-.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {padding-top: 1rem;}
+.campus-facilities .image_content_repeat_section.hostel_repeatsec .content_col {padding-block: 2rem;}
 .campus-facilities .image_content_repeat_section .hostel-rules {margin: 2rem 0 0;}
 .image_content_repeat_section.hostel_repeatsec .hostel_list {margin: 5rem 0 0;}
 .campus-facilities .image_content_repeat_section.hostel_repeatsec .single_image_content {padding-bottom: 4rem;}
