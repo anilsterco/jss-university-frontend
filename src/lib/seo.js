@@ -80,18 +80,7 @@ export async function getPageSEO(slug) {
         description: data.data.openGraph?.description || data.data.description,
         images: data.data.openGraph?.images || [],
       },
-      schema: data.data.schema || {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: "Article Title",
-        description: "Article Description",
-        image: "https://yoursite.com/image.jpg",
-        datePublished: "2024-01-01",
-        author: {
-          "@type": "Person",
-          name: "JSS University",
-        },
-      },
+      schema: data.data.schema
     };
   } catch (error) {
     return {
