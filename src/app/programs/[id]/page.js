@@ -15,7 +15,7 @@ async function getCourseDetail(id) {
   }
 }
 
-function buildCourseSchema(id, data) {
+function buildCourseSchema(id, data, seoData) {
   const pageUrl = `${WEB_URL}programs/${id}`;
 
   // Fields mapped from ProgramDetailClient destructuring
@@ -51,7 +51,7 @@ function buildCourseSchema(id, data) {
       name,
       url: pageUrl,
       image,
-      description: `Full-time undergraduate programme in ${name}.`,
+      description: seoData?.description ?? '',
       courseMode: "onsite",
       courseWorkload: durationISO,
       courseSchedule: {
@@ -86,7 +86,7 @@ export default async function ProgramDetail({ params }) {
     getCourseDetail(id),
   ]);
 
-  const courseSchema = courseData ? buildCourseSchema(id, courseData) : null;
+  const courseSchema = courseData ? buildCourseSchema(id, courseData, seoData) : null;
 
   return (
     <>
