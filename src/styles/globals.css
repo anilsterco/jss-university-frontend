@@ -1641,7 +1641,7 @@ to {opacity: 1;transform: translateY(0);}}
 .event_box .internal_soc_content p {text-align: left;}
 .left_side_content:first-child p{text-align: left;}
 .left_side_content:first-child p{padding-top: 2rem;}
- .left_side_content h1 {margin-bottom: 2rem;}
+ .left_side_content h1 {margin-bottom: 2rem;line-height: 6rem;}
 .benefits_section .bottom_content{margin-block: 6rem;}
 .benefits_section .bottom_content h5{text-align: center;}
 .benefits_section .bottom_content p{text-align: center;}
