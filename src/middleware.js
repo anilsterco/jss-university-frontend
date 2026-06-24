@@ -1,59 +1,74 @@
 import { NextResponse } from "next/server";
 import getPageRedirect from "./utils/getPageRedirect";
 
+function buildCsp(nonce, isDev) {
+  return `
+    default-src 'self';
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic'
+      https://www.google.com
+      https://www.gstatic.com
+      https://www.recaptcha.net
+      https://www.googletagmanager.com
+      https://www.google-analytics.com
+      ${isDev ? "'unsafe-eval'" : ""};
+    style-src 'self' 'unsafe-inline'
+      https://fonts.googleapis.com
+      https://cdn.jsdelivr.net;
+    img-src 'self' data: blob: https:;
+    media-src 'self' https:;
+    font-src 'self'
+      https://fonts.gstatic.com
+      https://cdn.jsdelivr.net
+      data:;
+    connect-src 'self'
+      https://www.google-analytics.com
+      https://analytics.google.com
+      https://stats.g.doubleclick.net
+      https://www.gstatic.com
+      https://www.recaptcha.net
+      https:;
+    frame-src 'self'
+      https://www.youtube.com
+      https://youtube.com
+      https://www.google.com
+      https://www.gstatic.com
+      https://www.recaptcha.net
+      https://maps.google.com
+      https://www.google.com/maps/
+      https://maps.googleapis.com
+      https://www.googletagmanager.com;
+    frame-ancestors 'self';
+    object-src 'none';
+    base-uri 'self';
+  `
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
+  const isDev = process.env.NODE_ENV === "development";
+  const nonce = crypto.randomUUID();
+  const cspHeader = buildCsp(nonce, isDev);
 
-  // Always attach x-pathname so layout.js can read it for schema injection
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", pathname);
-
-  if (pathname === "/phd-application-form") {
-    const nonce = crypto.randomUUID();
-
-    const isDev = process.env.NODE_ENV === "development";
-
-    const cspHeader = `
-      default-src 'self';
-      script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com ${isDev ? "'unsafe-eval'" : ""};
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
-      img-src 'self' data: blob: https:;
-      media-src 'self' https:;
-      font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
-      connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https:;
-      frame-src 'self'
-        https://www.youtube.com https://youtube.com
-        https://www.google.com https://www.gstatic.com
-        https://maps.google.com https://www.google.com/maps/
-        https://www.googletagmanager.com;
-      frame-ancestors 'none';
-    `
-      .replace(/\s{2,}/g, " ")
-      .trim();
-
-    requestHeaders.set("x-nonce", nonce);
-    requestHeaders.set("Content-Security-Policy", cspHeader);
-
-    const response = NextResponse.next({
-      request: { headers: requestHeaders },
-    });
-
-    response.headers.set("Content-Security-Policy", cspHeader);
-    response.headers.set("x-pathname", pathname);
-
-    return response;
-  }
+  requestHeaders.set("x-nonce", nonce);
+  requestHeaders.set("Content-Security-Policy", cspHeader);
 
   const redirectUrl = await getPageRedirect(pathname.replace(/^\//, ""));
-
   if (redirectUrl) {
     return NextResponse.redirect(redirectUrl, { status: 301 });
   }
 
-  // For all other routes, pass through with x-pathname set
-  return NextResponse.next({
+  const response = NextResponse.next({
     request: { headers: requestHeaders },
   });
+
+  response.headers.set("Content-Security-Policy", cspHeader);
+  response.headers.set("x-pathname", pathname);
+
+  return response;
 }
 
 export const config = {

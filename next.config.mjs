@@ -2,18 +2,15 @@
 import { BASE_URL } from "./src/config/config.js";
 
 const nextConfig = {
-  // ✅ ADD THIS (fix your warning)
-  allowedDevOrigins: ['192.168.100.27'],
+  allowedDevOrigins: ["192.168.100.27"],
 
   async headers() {
     return [
       {
         source: "/(.*)",
         headers: [
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
+          // NOTE: X-Frame-Options removed — frame-ancestors in CSP takes precedence
+          // and they conflict. CSP frame-ancestors 'self' is set in middleware.
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
@@ -49,10 +46,6 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-
-    // ⚠️ REMOVE THIS (deprecated warning)
-    // domains: ["sd7", "localhost", "backoffice.jssuninoida.edu.in"],
-
     unoptimized: true,
   },
 
