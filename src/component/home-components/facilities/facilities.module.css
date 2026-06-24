@@ -316,7 +316,7 @@
 } 
 @media (max-width:1400px) {
   .verticalLine {
-    left: 9.2%;
+    left: 4.7%;
   }
 
 } 
@@ -325,7 +325,7 @@
 
 @media (max-width:1366px) {
   .verticalLine {
-    left: 10.7%;
+    left: 5%;
   }
 
   .headerContent {
@@ -333,26 +333,42 @@
   }
 
   .bannerContent {
-    left: 14.5%;
+    left: 9%;
   }
 
   .bannerLinks {
-    left: 14.5%;
+    left: 9%;
   }
 } 
 
 @media (max-width:1200px) {
    .verticalLine {
-    left: 8.4%;
+    left: 6%;
+  }
+  
+   .bannerContent {
+    left: 10.5%;
+  }
+
+  .bannerLinks {
+    left: 10.5%;
   }
 
 }
 @media (max-width:1100px) {
    .verticalLine {
-    left: 11.7%;
+    left: 6.7%;
   }
+  
   .headerContent {
     width: 100%;
+  }
+   .bannerContent {
+    left: 11.5%;
+  }
+
+  .bannerLinks {
+    left: 11.5%;
   }
 }
 @media (max-width:1024px) {
