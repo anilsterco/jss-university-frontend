@@ -76,7 +76,7 @@ export default function FacultyDetailClient({ faculty }) {
                     <div className="cus-profile-text">
                       <h6>Profile</h6>
                       <div className="para-scroll">
-                        <p>{facultyProfile}</p>
+                        <p dangerouslySetInnerHTML={{ __html: facultyProfile }} />
                       </div>
                     </div>
                   )}

@@ -3519,7 +3519,7 @@ G41 .core-pdf::after {
 
 .faulty-text span svg {
   color: var(--color-73);
-  font-size: 22px;
+  font: var(--font-22);
 }
 
 .faulty-list-box:hover .faulty-text span {
