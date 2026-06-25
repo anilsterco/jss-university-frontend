@@ -243,14 +243,14 @@ export default function ProgramDetailClient({ params }) {
         ))}
       </div>
       {/* {apply_now_link && ( */}
-        <a
-          href={APPLY_NOW}
-          className="apply-btn1 CTA_Applynow"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply Now
-        </a>
+      <a
+        href={APPLY_NOW}
+        className="apply-btn1 CTA_Applynow"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Apply Now
+      </a>
       {/* )} */}
     </div>
   );
@@ -270,7 +270,7 @@ export default function ProgramDetailClient({ params }) {
             <figcaption>
               <div className="program-detail-text">
                 <div className="innnr_head">
-                {name && <h1 className="d-none">{name}</h1>}
+                  {name && <h1 className="d-none">{name}</h1>}
                   <h2>PROGRAMS</h2>
                   {name && <h3>{name}</h3>}
                 </div>
@@ -357,14 +357,14 @@ export default function ProgramDetailClient({ params }) {
                           </a>
                         )}
                         {/* {(admissionSection?.apply_now_link || apply_now_link) && ( */}
-                          <a
-                            href={APPLY_NOW}
-                            target="_blank"
-                            className="apply-btn1 CTA_Applynow"
-                            rel="noopener noreferrer"
-                          >
-                            Apply Now
-                          </a>
+                        <a
+                          href={APPLY_NOW}
+                          target="_blank"
+                          className="apply-btn1 CTA_Applynow"
+                          rel="noopener noreferrer"
+                        >
+                          Apply Now
+                        </a>
                         {/* )} */}
                       </div>
                     </div>
@@ -409,9 +409,12 @@ export default function ProgramDetailClient({ params }) {
                   <div className="overview-text">
                     <h5>Overview</h5>
                     <h6>{overview?.overview_title || name}</h6>
-                    <p className={expanded ? "expanded_text" : ""}>
-                      {overview?.overview_desc}
-                    </p>
+                    <p
+                      className={expanded ? "expanded_text" : ""}
+                      dangerouslySetInnerHTML={{
+                        __html: overview?.overview_desc || "",
+                      }}
+                    />
                     {overview?.overview_desc &&
                       overview?.overview_desc.split(" ").length > 1 && (
                         <button
@@ -708,16 +711,16 @@ export default function ProgramDetailClient({ params }) {
                     <span>{fee_structure?.academic_year}</span>
                     <div className="engineering-btn">
                       {/* {(fee_structure?.apply_now_link || apply_now_link) && ( */}
-                        <a
-                          href={
-                            APPLY_NOW
-                          }
-                          className="apply-btn1 CTA_Applynow"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
+                      <a
+                        href={
+                          APPLY_NOW
+                        }
+                        className="apply-btn1 CTA_Applynow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Apply Now
+                      </a>
                       {/* )} */}
                       {fee_structure?.fee_structure_pdf && (
                         <a
@@ -786,16 +789,16 @@ export default function ProgramDetailClient({ params }) {
                       <h2>{firstWord}</h2>
                       <p>{restWords.join(" ")}</p>
                       {/* {(currentTestimonial?.apply_now_link || apply_now_link) && ( */}
-                        <a
-                          href={
-                            APPLY_NOW
-                          }
-                          className="apply-btn1 CTA_Applynow"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Apply Now
-                        </a>
+                      <a
+                        href={
+                          APPLY_NOW
+                        }
+                        className="apply-btn1 CTA_Applynow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Apply Now
+                      </a>
                       {/* )} */}
                     </div>
                   </div>

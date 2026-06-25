@@ -193,9 +193,9 @@ export default function ProgramClient() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h1>PROGRAMS</h1>
+                <h1>PROGRAMME</h1>
                 <h3>
-                  COMPREHENSIVE <span>ACADEMIC PROGRAMS</span> <br />
+                  COMPREHENSIVE <span>ACADEMIC PROGRAMME</span> <br />
                   FOR <span>LIFELONG LEARNING</span>
                 </h3>
                 <ul>
@@ -363,7 +363,7 @@ export default function ProgramClient() {
                       ))}
                     </div>
                   ) : (
-                    <h6 className="text-center">No programs available</h6>
+                    <h6 className="text-center">No Programme available</h6>
                   )}
                   {programs && programs.length > 0 && hasMorePages && (
                     <div className={styles.loadMoreContainer}>

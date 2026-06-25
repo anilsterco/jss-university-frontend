@@ -1270,19 +1270,19 @@ to {opacity: 1;transform: translateY(0);}}
 .recruiters .grands_mainsec + .container .estab_slide_item figure {justify-content: center;align-items: center;padding: 2rem;display: flex;}
 .recruiters .grands_mainsec + .container .estab_slide_item figure img {width: 70%;height: auto;}
 .recruiters .grands_mainsec + .container .estab_slide_item {min-height: 0;}
-.societies .about_one .abt_cntnt>p {padding-bottom: 3rem}
-.societies .about_one .abt_cntnt .about_subtitle {font: var(--font-48);color: #018CE8;line-height: 5.4rem;letter-spacing: -2.3px;margin-bottom: 3rem;font-family: var(--font-Condensed);font-weight: bold;display: block;}
-.societies .about_one .abt_cntnt>span {font: var(--font-16);color: #444;line-height: 2.8rem;max-width: 90%;margin: 0 auto;padding-bottom: 3rem;display: block;}
-.societies .about_one .estblish {border-bottom: solid 1px #ddd;}
-.societies .about_f_value .ab_f_content h3 {font: var(--font-60);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -2.88px;line-height: 5.4rem;font-weight: bold;}
-.societies .about_four{padding-bottom: 0;}
-.societies .labs_group_section {padding: 0;}
-.societies .about_f_value {grid-template-columns: repeat(1, 49.4% auto);align-items: center;padding-top: 6rem;gap: 11.8rem;display: grid;}
-.societies .about_one .estblish {padding-block: 4rem 3rem;}
-.societies .about_f_value .ab_f_content{padding-inline:0 2rem;}
-.societies .about_f_value .ab_f_content h3>span {color: var(--color-ff);}
-.societies .labs_group_section.about_two .about_two.reverse .image_col img {border-radius:0.8rem 6rem 0.8rem 0.8rem;}
-.societies .about_f_value .ab_f_content h5{font: var(--font-18);color: var(--color-4e);font-weight: bold;font-family: var(--font-Condensed);margin-bottom: 1.1rem;}
+.ieee .about_one .abt_cntnt>p {padding-bottom: 3rem}
+.ieee .about_one .abt_cntnt .about_subtitle {font: var(--font-48);color: #018CE8;line-height: 5.4rem;letter-spacing: -2.3px;margin-bottom: 3rem;font-family: var(--font-Condensed);font-weight: bold;display: block;}
+.ieee .about_one .abt_cntnt>span {font: var(--font-16);color: #444;line-height: 2.8rem;max-width: 90%;margin: 0 auto;padding-bottom: 3rem;display: block;}
+.ieee .about_one .estblish {border-bottom: solid 1px #ddd;}
+.ieee .about_f_value .ab_f_content h3 {font: var(--font-60);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -2.88px;line-height: 5.4rem;font-weight: bold;}
+.ieee .about_four{padding-bottom: 0;}
+.ieee .labs_group_section {padding: 0;}
+.ieee .about_f_value {grid-template-columns: repeat(1, 49.4% auto);align-items: center;padding-top: 6rem;gap: 11.8rem;display: grid;}
+.ieee .about_one .estblish {padding-block: 4rem 3rem;}
+.ieee .about_f_value .ab_f_content{padding-inline:0 2rem;}
+.ieee .about_f_value .ab_f_content h3>span {color: var(--color-ff);}
+.ieee .labs_group_section.about_two .about_two.reverse .image_col img {border-radius:0.8rem 6rem 0.8rem 0.8rem;}
+.ieee .about_f_value .ab_f_content h5{font: var(--font-18);color: var(--color-4e);font-weight: bold;font-family: var(--font-Condensed);margin-bottom: 1.1rem;}
 
 /* societies_faculties page css :start */
 .societies_faculties {padding-block:16rem;background-color: var(--color-9a);}
@@ -1297,15 +1297,15 @@ to {opacity: 1;transform: translateY(0);}}
 .societies_faculties .faculty_content p{font: var(--font-15);color: var(--color-white);font-family: var(--font-Roboto);font-weight: normal;letter-spacing: 0;padding-bottom: 2.5rem;line-height: 2.8rem;}
 .societies_grid .faculty_card {position: relative;}
 .societies_grid .faculty_card::after {content: ''; position: absolute;bottom: 0;background-color:var(--color-ec);width: 7rem;height: 0.5rem;left: 0;}
-.societies .placement_page {padding-block: 15rem;}
-.societies .curriculum_box {padding-block: 7.9rem;padding-inline: 4.8rem;}
+.ieee .placement_page {padding-block: 15rem;}
+.ieee .curriculum_box {padding-block: 7.9rem;padding-inline: 4.8rem;}
 .society_custom_box .curriculum_box {padding: 3rem;background-color: var(--color-f6);}
-.societies .top_section {background-color: #fff;margin-top: 0;padding-top: 12rem;}
-.societies .society_custom_box{background-color: #fff;padding-block: 5rem;}
-.societies .top_section .container{border-bottom: 1px solid lightgray;padding-bottom: 5rem;}
-.societies .curriculum_box h3 {font: var(--font-26);font-family: var(--font-Roboto);letter-spacing: 0;color: #16344e;margin-bottom: 3rem;font-weight: bold;line-height: 1.3;padding-right: 14rem;}
-.societies .curriculum_box .box_ul{margin-block: 3rem;}
-.societies .curriculum_box .box_ul li>span{font-weight: bold;}
+.ieee .top_section {background-color: #fff;margin-top: 0;padding-top: 12rem;}
+.ieee .society_custom_box{background-color: #fff;padding-block: 5rem;}
+.ieee .top_section .container{border-bottom: 1px solid lightgray;padding-bottom: 5rem;}
+.ieee .curriculum_box h3 {font: var(--font-26);font-family: var(--font-Roboto);letter-spacing: 0;color: #16344e;margin-bottom: 3rem;font-weight: bold;line-height: 1.3;padding-right: 14rem;}
+.ieee .curriculum_box .box_ul{margin-block: 3rem;}
+.ieee .curriculum_box .box_ul li>span{font-weight: bold;}
 
 
 .societies_events {background-color: var(--color-white);padding-block: 15rem 6rem;}
@@ -1320,10 +1320,10 @@ to {opacity: 1;transform: translateY(0);}}
 .event_content{padding-block: 2rem 0;}
 .event_content>h4{font: var(--font-21);color: var(--color-4e);font-family: var(--font-Condensed);font-weight: 600;margin-bottom: 2.4rem;}
 .event_content>p{font: var(--font-16);font-weight: normal;font-family: var(--font-Roboto);color: var(--color-black);margin-bottom: 0;line-height: 2.8rem;color: #444444;padding-right: 3rem;}
-.societies .grands_mainsec{background-color: var(--color-white);}
-.societies .grands_mainsec .publi_title h4{margin-bottom: 7rem;}
-.societies .grands_maingrid{align-items: center;gap: 12.6rem;}
-.societies .grands_content{padding-inline: 0 8rem;}
+.ieee .grands_mainsec{background-color: var(--color-white);}
+.ieee .grands_mainsec .publi_title h4{margin-bottom: 7rem;}
+.ieee .grands_maingrid{align-items: center;gap: 12.6rem;}
+.ieee .grands_content{padding-inline: 0 8rem;}
 .grands_content > p:last-child{letter-spacing: -0.32px;}
 
 .achievements_section{padding-block: 10rem 15rem;}
@@ -1341,7 +1341,7 @@ to {opacity: 1;transform: translateY(0);}}
 .society_contact_info .info_item img{object-fit: contain;flex-shrink: 0;margin-top: 2px;margin-left: 1px;}
 .society_contact_info .info_item a{color: var(--color-44);text-decoration: underline !important;word-break: break-word;font-size: 1.8rem;line-height: 2.8rem;}
 .icon_wrappper{background-color: var(--color-f6);border-radius: 100%;width: 3rem;height: 3rem;text-align: center;}
-.societies .society_contact {background-color: var(--color-white);}
+.ieee .society_contact {background-color: var(--color-white);}
 .society_contact .about_two{background-color: var(--color-white);}
 .society_contact_info h6{color: var(--color-e8);font: var(--font-16);letter-spacing: -0.32px;margin-top: 4rem;margin-bottom: 1.6rem;}
 .society_contact .about_two .early-slide .early_rgt{padding-top: 7rem;}
@@ -1445,10 +1445,10 @@ to {opacity: 1;transform: translateY(0);}}
 .IICPopup .closeBtn {position: absolute;top: -1rem;right: -1rem;width: 2.5rem;height: 2.5rem;border: none;border-radius: 50%;background: #fff;cursor: pointer;font-size: 1.5rem;font-weight: 700;line-height: 1;z-index: 10;}
 .student-welfare-societies .about_f_value {padding-top: 0;grid-template-columns: 50% 50%;gap: 2rem;}
 .student-welfare-societies .about_f_value .ab_f_content h3 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Roboto);text-transform: uppercase;letter-spacing: -1.02px;font-weight: 700;}
-.societies .event_icon img{width: 2.2rem;height: 2.2rem;}
-.societies .event_content > p {margin-bottom: 1.5rem;}
-.societies .event_icon {width: 2.2rem;height: 2.2rem;border-radius: 50%;background: #f5f5f5;display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;}
-.societies .event_card:hover .event_icon {background:#16344e}
+.ieee .event_icon img{width: 2.2rem;height: 2.2rem;}
+.ieee .event_content > p {margin-bottom: 1.5rem;}
+.ieee .event_icon {width: 2.2rem;height: 2.2rem;border-radius: 50%;background: #f5f5f5;display: flex;align-items: center;justify-content: center;transition: all 0.3s ease;}
+.ieee .event_card:hover .event_icon {background:#16344e}
 .event_card:hover .event_icon img {transform: scale(1.1);transition: all 0.3s ease;}
 .event_card:hover .event_icon img {filter: brightness(0) invert(1);}
 
@@ -1458,7 +1458,7 @@ to {opacity: 1;transform: translateY(0);}}
 .societies_events {padding-block: 10rem 6rem;}
 .societies .placement_page {padding-block: 12rem 8rem;}
 .societies_faculties {padding-block: 12rem;}
-.societies .top_section {padding-top: 8rem;}
+.ieee .top_section {padding-top: 8rem;}
 .achievements_section {padding-block: 8rem 10rem;}
 .iic_activities .imageWrapper {height: 45rem;}
 .iic-council .top_section {margin-top: 8rem;}
@@ -1484,17 +1484,17 @@ to {opacity: 1;transform: translateY(0);}}
 }
 
 @media (max-width: 1024px){
-.societies .about_f_value {gap: 5rem;padding-top: 4rem;display: flex;flex-direction: column-reverse;}
-.societies .labs_group_section.about_two .about_two.reverse .early_rgt {padding-left: 0;padding-right: 0;}
-.societies .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;}
-.societies .curriculum_box h3 {margin-bottom: 3rem;padding-right: 4rem;}
-.societies .placement_page {padding-block: 6rem 6rem;}
-.societies .events_grid {grid-template-columns: repeat(2, 1fr);gap: 4rem;}
-.societies .grands_maingrid {gap: 8.6rem;}
-.societies .grands_content {padding-inline: 0 0rem;}
-.societies .society_custom_box .placement_stats {grid-template-columns: repeat(2, 1fr);padding-bottom: 0;}
+.ieee .about_f_value {gap: 5rem;padding-top: 4rem;display: flex;flex-direction: column-reverse;}
+.ieee .labs_group_section.about_two .about_two.reverse .early_rgt {padding-left: 0;padding-right: 0;}
+.ieee .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;}
+.ieee .curriculum_box h3 {margin-bottom: 3rem;padding-right: 4rem;}
+.ieee .placement_page {padding-block: 6rem 6rem;}
+.ieee .events_grid {grid-template-columns: repeat(2, 1fr);gap: 4rem;}
+.ieee .grands_maingrid {gap: 8.6rem;}
+.ieee .grands_content {padding-inline: 0 0rem;}
+.ieee .society_custom_box .placement_stats {grid-template-columns: repeat(2, 1fr);padding-bottom: 0;}
 .placement_page.society_custom_box + .society_contact .about_two .early-slide .early_rgt {padding-top: 0;}
-.societies .placement_page.society_custom_box + .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;display: flex !important;flex-direction: column-reverse;}.societies .achievements_desc {max-width: 100%;}
+.ieee .placement_page.society_custom_box + .labs_group_section.about_two .about_two.reverse .early-slide {grid-template-columns: 100%;display: flex !important;flex-direction: column-reverse;}.societies .achievements_desc {max-width: 100%;}
 .iic-council .grid_3 {grid-template-columns: repeat(2, 1fr);}
 .iic-council .amenities_section {padding: 6rem 0;}
 .nisp-by-iic .labs_group_section.about_two .about_two.reverse .early_rgt {padding-right: 2rem;}
@@ -1505,14 +1505,14 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_section {padding-block: 4rem;}
 }
 @media (max-width: 991px){
-.societies .grands_maingrid {gap: 1.6rem;}
+.ieee .grands_maingrid {gap: 1.6rem;}
 .societies_events_header {margin-bottom: 4.2rem;}
-.societies .societies_events {padding-block: 6rem 6rem;}
-.societies .placement_stats {padding-bottom: 0;}
-.societies .curriculum_box h3 {padding-right: 0;}
-.societies .societies_faculties {padding-block: 8rem;}
-.societies .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
-.societies .labs_group_section.about_two .about_two.reverse .early-slide {display: grid!important;grid-template-columns: 100%;}.societies .about_f_value {gap: 3rem;padding-top: 1rem;  } .societies .societies_grid {grid-template-columns: repeat(1, 1fr);gap: 2.5rem;display: grid;}
+.ieee .societies_events {padding-block: 6rem 6rem;}
+.ieee .placement_stats {padding-bottom: 0;}
+.ieee .curriculum_box h3 {padding-right: 0;}
+.ieee .societies_faculties {padding-block: 8rem;}
+.ieee .labs_group_section.about_two .about_two {padding-bottom: 4rem;}
+.ieee .labs_group_section.about_two .about_two.reverse .early-slide {display: grid!important;grid-template-columns: 100%;}.societies .about_f_value {gap: 3rem;padding-top: 1rem;  } .societies .societies_grid {grid-template-columns: repeat(1, 1fr);gap: 2.5rem;display: grid;}
 
 .student-welfare-societies .top_section {margin-block: 6rem 4rem;}
 .student-welfare-societies .labs_group_section.about_two .about_two.reverse .early_rgt{margin-block: 4rem 3rem;}
@@ -1540,23 +1540,23 @@ to {opacity: 1;transform: translateY(0);}}
 .campus-facilities .content_col {padding-inline: 0;}
 }
 @media (max-width: 767px){
-.societies .placement_page {padding-block: 4rem;}
-.societies .top_section .container {padding-bottom: 4rem;}
-.societies .top_section {padding-top: 4rem;}
-.societies .society_custom_box .placement_stats {grid-template-columns: repeat(1, 1fr);padding-bottom: 0;}
+.ieee .placement_page {padding-block: 4rem;}
+.ieee .top_section .container {padding-bottom: 4rem;}
+.ieee .top_section {padding-top: 4rem;}
+.ieee .society_custom_box .placement_stats {grid-template-columns: repeat(1, 1fr);padding-bottom: 0;}
 .achievements_header {margin-bottom: 4rem;}
 .achievements_section {padding-block: 4rem 4rem;}
-.societies .grands_content p:last-child{margin-bottom: 0;}
-.societies .grands_mainsec .publi_title h4 {margin-bottom: 4rem;}
-.societies .event_content > p {margin-bottom: 0;padding-right: 0;}
-.societies .events_grid {gap: 1.5rem;}.societies .societies_events_header {margin-bottom: 2.2rem;}
+.ieee .grands_content p:last-child{margin-bottom: 0;}
+.ieee .grands_mainsec .publi_title h4 {margin-bottom: 4rem;}
+.ieee .event_content > p {margin-bottom: 0;padding-right: 0;}
+.ieee .events_grid {gap: 1.5rem;}.ieee .societies_events_header {margin-bottom: 2.2rem;}
 .societies_events .societies_events_header > h2 {margin-bottom: 2rem; }
-.societies .societies_events {padding-block: 4rem;}.societies .curriculum_box {padding-block: 4rem;padding-inline: 3rem;}
+.ieee .societies_events {padding-block: 4rem;}.ieee .curriculum_box {padding-block: 4rem;padding-inline: 3rem;}
 .societies_faculties .faculty_content p {padding-bottom: 0;}
-.societies .societies_faculties {padding-block: 4rem;}
+.ieee .societies_faculties {padding-block: 4rem;}
 .societies_header h2 {font: var(--font-36);color: var(--color-white);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;margin-bottom: 1rem;font-weight: bold;line-height: normal;}
-.societies .about_f_value .ab_f_content h3 {font: var(--font-36);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
-.societies .about_f_value .ab_f_content {padding-block: 2rem 0;  }.societies .about_one .estblish {padding-block: 3rem 2rem;}
+.ieee .about_f_value .ab_f_content h3 {font: var(--font-36);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
+.ieee .about_f_value .ab_f_content {padding-block: 2rem 0;  }.ieee .about_one .estblish {padding-block: 3rem 2rem;}
 .student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-34);color: var(--color-4e);font-family: var(--font-Condensed);text-transform: uppercase;letter-spacing: -1.3px;font-weight: bold;line-height: normal;}
 .student-welfare-societies .about_subHeading {padding-bottom: 4rem;max-width: 100%;padding-inline:0;text-align: left;}
 .student-welfare-societies .about_desc {text-align: left;max-width: 100%;}
@@ -1591,12 +1591,12 @@ to {opacity: 1;transform: translateY(0);}}
 .latest-event.no_upcoming_events{padding-block: 4rem;}
 }
 @media (max-width: 575px){
-.societies .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
-.societies .about_one .abt_cntnt > span {max-width: 100%;padding-bottom: 0;line-height: 2.8rem;text-align: left;}
+.ieee .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
+.ieee .about_one .abt_cntnt > span {max-width: 100%;padding-bottom: 0;line-height: 2.8rem;text-align: left;}
 .achievements_header > h2 {font: var(--font-36);font-family: var(--font-Condensed);letter-spacing: -1.3px;text-align: left;margin-bottom: 2rem;line-height: normal;}
-.societies  .grands_content {padding-block: 1rem 0;padding-inline: 0;}
+.ieee  .grands_content {padding-block: 1rem 0;padding-inline: 0;}
 .societies_events .societies_events_header > h2 {font: var(--font-36);font-family: var(--font-Condensed);letter-spacing: -2.3px;color: var(--color-4e);text-transform: uppercase;text-align: center;margin-bottom: 2rem;font-weight: bold;line-height: normal;}
-.societies .about_one {padding-block: 6rem 0;}.societies .about_one .abt_cntnt .about_subtitle {font: var(--font-38);color: #018ce8;letter-spacing: -2.3px;line-height: normal;font-family: var(--font-Condensed);margin-bottom: 3rem;font-weight: bold;display: block;}
+.ieee .about_one {padding-block: 6rem 0;}.ieee .about_one .abt_cntnt .about_subtitle {font: var(--font-38);color: #018ce8;letter-spacing: -2.3px;line-height: normal;font-family: var(--font-Condensed);margin-bottom: 3rem;font-weight: bold;display: block;}
 .student-welfare-societies .top_section {margin-block: 4rem 1rem;}
 .student-welfare-societies .about_two .early-slide .early_rgt h4 {font: var(--font-24);   }
 .student-welfare-societies .about_f_value .ab_f_content h3 {font: var(--font-24);}
@@ -1649,8 +1649,8 @@ to {opacity: 1;transform: translateY(0);}}
 .achievements_list {margin-top: 2rem;}
 .bottom_hod {padding-block: 4rem;}
 .department-computer-science-and-engineering-society .all_data{padding-top: 8rem;}
-  .profile-info-text .back_btn {background-color: transparent;} 
-  .profile-info-text .back_btn {background-color: transparent;} 
+.profile-info-text .back_btn {background-color: transparent;} 
+.profile-info-text .back_btn {background-color: transparent;} 
 .placement .placement_highlights {margin-top: 4rem;}
 
 .comman_profile ul {padding-block: 2rem;}
