@@ -61,7 +61,7 @@ export default function DepartmentSection({
           <div className="deparCol">
             <div className={styles.leftSide}>
               <div data-aos="fade-up" data-aos-delay="100">
-                <span className={styles.smallHeadline}>PROGRAMS OFFERED</span>
+                <span className={styles.smallHeadline}>PROGRAMME OFFERED</span>
                 <h1
                   className={`${styles.title}`}
                   dangerouslySetInnerHTML={{ __html: departmentSection.title }}
@@ -109,7 +109,7 @@ export default function DepartmentSection({
                           ) : (
                             hasSearched && (
                               <div className="no-results">
-                                No Programs found
+                                No Programme found
                               </div>
                             )
                           )}

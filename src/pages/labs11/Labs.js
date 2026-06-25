@@ -30,7 +30,7 @@ export default function Labspage({ data }) {
                   </p>
     
                   <p className="topBanner_para">
-                  Each laboratory is equipped with the necessary hardware and software resources aligned with the curriculum requirements of undergraduate and postgraduate programs. They facilitate practical sessions, project development, and research activities, thereby enhancing students’ technical competencies and problem-solving skills.
+                  Each laboratory is equipped with the necessary hardware and software resources aligned with the curriculum requirements of undergraduate and postgraduate Programme. They facilitate practical sessions, project development, and research activities, thereby enhancing students’ technical competencies and problem-solving skills.
                   </p>
     
                   <p className="topBanner_para">

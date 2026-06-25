@@ -2937,7 +2937,7 @@ This is the minimum CSS that you will need in order for this to work
 
 .peo-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
   padding: 3rem 0 5.1rem;
 }
@@ -6830,7 +6830,9 @@ hr {
   .peo-list {
     padding: 4rem 0 4rem;
   }
-
+.peo-list{
+  grid-template-columns: repeat(2,1fr);
+}
   .educational-box {
     padding-bottom: 4rem;
   }
@@ -7383,6 +7385,9 @@ hr {
     line-height: normal;
     margin-bottom: 1rem;
   }
+  .peo-list{
+  grid-template-columns: repeat(1,1fr);
+}
 }
 
 @media (max-width: 480px) {

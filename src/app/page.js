@@ -73,7 +73,7 @@ export default async function HomePage() {
           Apply Now
         </Link>
         <Link href={WEB_URL + "programs"} className="vertical-floating-btn">
-          Programs
+          programme
         </Link>
       </div>
       <PopupModal />

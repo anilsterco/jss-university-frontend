@@ -2329,7 +2329,7 @@ const Page = () => {
                 <div className="eligib_cont">
                   <h5>Eligibility</h5>
                   <h2>
-                    PROGRAMS OFFERED FOR ADMISSION IN THE ACADEMIC{" "}
+                    PROGRAMME OFFERED FOR ADMISSION IN THE ACADEMIC{" "}
                     <span>YEAR 2025-26</span>
                   </h2>
                   <div className="edigiblity_tabs">
@@ -2345,7 +2345,7 @@ const Page = () => {
                             }
                             onClick={() => handleeligiblitytab("eligi_tab_01")}
                           >
-                            Undergraduate Programs
+                            Undergraduate Programme
                           </button>
                         </li>
 
@@ -2359,7 +2359,7 @@ const Page = () => {
                             }
                             onClick={() => handleeligiblitytab("eligi_tab_02")}
                           >
-                            Post graduate programs
+                            Post graduate Programme
                           </button>
                         </li>
 
@@ -2373,7 +2373,7 @@ const Page = () => {
                             }
                             onClick={() => handleeligiblitytab("eligi_tab_03")}
                           >
-                            Pharmacy Programs
+                            Pharmacy Programme
                           </button>
                         </li>
                       </ul>
@@ -3481,16 +3481,16 @@ const Page = () => {
                       </li>
                       <li>
                         There shall be provision for the following categories of
-                        candidates for admission to Ph.D. Programs
+                        candidates for admission to Ph.D. Programme
                       </li>
                       <li>
-                        Full-Time: Candidates who shall pursue P.hD. program on
+                        Full-Time: Candidates who shall pursue P.hD. Programme on
                         full time basis
                       </li>
                       <li>
                         Part-Time: In-service candidates having a minimum
                         professional experience of one year after his / her PG
-                        Degree are eligible to pursue Ph.D. program on a part
+                        Degree are eligible to pursue Ph.D. Programme on a part
                         time basis. (Refer AKTU guidelines for more details).
                       </li>
                     </ul>
@@ -3837,7 +3837,7 @@ const Page = () => {
                               Sanitary Napkins production
                             </td>
                             <td>14,97,000</td>
-                            <td>DSIR-TDUPW programme of A2K+ Scheme</td>
+                            <td>DSIR-TDUPW Programme of A2K+ Scheme</td>
                             <td>Dr Ashima Srivastava</td>
                             <td>2022</td>
                           </tr>
@@ -3946,7 +3946,7 @@ const Page = () => {
                               Sanitary Napkins production
                             </td>
                             <td>14,97,000</td>
-                            <td>DSIR-TDUPW programme of A2K+ Scheme</td>
+                            <td>DSIR-TDUPW Programme of A2K+ Scheme</td>
                             <td>Dr Ashima Srivastava</td>
                             <td>2022</td>
                           </tr>

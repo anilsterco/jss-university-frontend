@@ -237,7 +237,7 @@ export default function FacilitiesPage() {
       subtitle:
         "JSS University Noida, is deeply committed to environmental sustainability.",
       description:
-        "The university has implemented a comprehensive Green Policy to promote eco-friendly practices across the campus. This policy encompasses a wide range of initiatives aimed at reducing the university's carbon footprint and fostering a culture of environmental responsibility. Key components of the Green Policy include waste reduction programs, such as extensive recycling efforts and the minimization of single-use plastics.",
+        "The university has implemented a comprehensive Green Policy to promote eco-friendly practices across the campus. This policy encompasses a wide range of initiatives aimed at reducing the university's carbon footprint and fostering a culture of environmental responsibility. Key components of the Green Policy include waste reduction Programme, such as extensive recycling efforts and the minimization of single-use plastics.",
       image: "/images/custom-page/facility/green-initiatives-banner.png",
       vision: {
         title: "To realise its vision, the University will:",
