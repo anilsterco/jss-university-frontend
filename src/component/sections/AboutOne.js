@@ -62,7 +62,6 @@ export default function AboutOne({ data, extraClass }) {
                         <div className="atm_g_imgsec">
                           {item?.imageVideo?.length > 0 ? (
                             item.imageVideo.length === 1 ? (
-                              // ✅ Single media
                               <figure className="shine-effect image-overlay-figure">
                                 {item.imageVideo[0].video ? (
                                   <video
