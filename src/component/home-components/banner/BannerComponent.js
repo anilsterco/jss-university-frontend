@@ -80,14 +80,14 @@ export default function HeroSlider({ data, slug }) {
                       <h1
                         className={styles.bannerContentH1}
                         dangerouslySetInnerHTML={{ __html: slide.title }}
-                        data-aos="fade-right"
-                        data-aos-delay="0"
+                        // data-aos="fade-right"
+                        // data-aos-delay="0"
                       />
 
                       <p
                         className={styles.bannerContentP}
-                        data-aos="fade-right"
-                        data-aos-delay="200"
+                        // data-aos="fade-right"
+                        // data-aos-delay="200"
                       >
                         {slide.desc}
                       </p>
@@ -99,8 +99,8 @@ export default function HeroSlider({ data, slug }) {
                               : WEB_URL + slide.url
                             }`}
                           className={`${styles.bannerContentA} bannerBtn`}
-                          data-aos="fade-right"
-                          data-aos-delay="300"
+                          // data-aos="fade-right"
+                          // data-aos-delay="300"
                         >
                           {slide.linked_text}
 
@@ -147,9 +147,9 @@ export default function HeroSlider({ data, slug }) {
                         height={810}
                         style={{
                           width: "100%",
-  
                           objectFit: "cover",
                         }}
+                        preload="metadata"
                       />
                     ) : (
                       slide.desktop_banner && (
@@ -214,14 +214,14 @@ export default function HeroSlider({ data, slug }) {
                     <h1
                       className={styles.bannerContentH1}
                       dangerouslySetInnerHTML={{ __html: slide.title }}
-                      data-aos="fade-right"
-                      data-aos-delay="0"
+                      // data-aos="fade-right"
+                      // data-aos-delay="0"
                     ></h1>
 
                     <p
                       className={styles.bannerContentP}
-                      data-aos="fade-right"
-                      data-aos-delay="200"
+                      // data-aos="fade-right"
+                      // data-aos-delay="200"
                     >
                       {slide.desc}
                     </p>
@@ -233,8 +233,8 @@ export default function HeroSlider({ data, slug }) {
                             : WEB_URL + slide.url
                           }`}
                         className={`${styles.bannerContentA} bannerBtn`}
-                        data-aos="fade-right"
-                        data-aos-delay="300"
+                        // data-aos="fade-right"
+                        // data-aos-delay="300"
                       >
                         {slide.linked_text}
 

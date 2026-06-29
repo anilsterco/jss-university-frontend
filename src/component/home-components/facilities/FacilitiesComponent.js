@@ -16,118 +16,6 @@ export default function FacilitiesComponent({ data }) {
   const home5Ref = useRef(null);
   const home6Ref = useRef(null);
 
-  const dummyFacilitiesData = {
-    subheading: "FACILITIES @ JSS UNIVERSITY",
-    heading:
-      '<span class="dark-blue-text ">INFRA THAT </span> <span class="blue-text">ELEVATES</span>',
-    facilities: [
-      {
-        id: 1,
-        title: "CLASSROOM",
-        description:
-          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        image: "/images/home-page/fourth-section-first-banner.png",
-        links: [
-          {
-            url: "/",
-            text: "SMART CLASSROOM1",
-          },
-          {
-            url: "/",
-            text: "VIRTUAL CLASSROOM1",
-          },
-          {
-            url: "/",
-            text: "LECTURE HALL1",
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: "ACADEMICS LABS",
-        description:
-          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        image: "/images/home-page/fourth-section-second-banner.png",
-        links: [
-          {
-            url: "/",
-            text: "SMART CLASSROOM2",
-          },
-          {
-            url: "/",
-            text: "VIRTUAL CLASSROOM2",
-          },
-          {
-            url: "/",
-            text: "LECTURE HALL2",
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "CAMPUS",
-        description:
-          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        image: "/images/home-page/fourth-section-third-banner.png",
-        links: [
-          {
-            url: "/",
-            text: "SMART CLASSROOM3",
-          },
-          {
-            url: "/",
-            text: "VIRTUAL CLASSROOM3",
-          },
-          {
-            url: "/",
-            text: "LECTURE HALL3",
-          },
-        ],
-      },
-      {
-        id: 4,
-        title: "SPORTS AND HEALTH",
-        description:
-          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        image: "/images/home-page/fourth-section-fourth-banner.png",
-        links: [
-          {
-            url: "/",
-            text: "SMART CLASSROOM4",
-          },
-          {
-            url: "/",
-            text: "VIRTUAL CLASSROOM4",
-          },
-          {
-            url: "/",
-            text: "LECTURE HALL4",
-          },
-        ],
-      },
-      {
-        id: 5,
-        title: "HOSTEL & CANTEEN",
-        description:
-          "JSS University offers to its students all the dimensions of education needed for leadership in a rapidly changing world.",
-        image: "/images/home-page/fourth-section-second-banner.png",
-        links: [
-          {
-            url: "/",
-            text: "SMART CLASSROOM2",
-          },
-          {
-            url: "/",
-            text: "VIRTUAL CLASSROOM2",
-          },
-          {
-            url: "/",
-            text: "LECTURE HALL2",
-          },
-        ],
-      },
-    ],
-  };
 
   useEffect(() => {
     const root = home41Ref.current;
@@ -168,7 +56,7 @@ export default function FacilitiesComponent({ data }) {
     return () => window.removeEventListener("resize", updateStickyTop);
   }, []);
 
-  const facilitiesData = data ? data : dummyFacilitiesData;
+  const facilitiesData = data ? data : {};
   return (
     <>
       <div className="container">
@@ -242,12 +130,14 @@ export default function FacilitiesComponent({ data }) {
                 className={`panel imageWrapper panel-${index + 1}`}
               >
                 <figure className={styles.slideContainer}>
-                  <img
+                  <Image
                     className="img-fluid image"
                     src={panel.image}
                     alt={`Panel ${index + 1}`}
                     style={{ width: "100%", objectFit: "cover" }}
-                
+                    loading="lazy"
+                    width={1920}
+                    height={654}
                   />
                   <div className={styles.verticalLine}>
                     <div className={styles.slideNumberBox}>

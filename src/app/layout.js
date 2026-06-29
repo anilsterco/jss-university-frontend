@@ -1,12 +1,21 @@
+
+import {
+  Roboto,
+  Roboto_Condensed,
+  Oswald,
+  Geist,
+  Noto_Sans,
+  Open_Sans,
+} from "next/font/google";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Providers from "./providers";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "@fontsource/roboto-condensed/300.css";
-import "@fontsource/roboto-condensed/400.css";
-import "@fontsource/roboto-condensed/700.css";
-import "../../public/js/aos";
+// import "@fontsource/roboto-condensed/300.css";
+// import "@fontsource/roboto-condensed/400.css";
+// import "@fontsource/roboto-condensed/700.css";
+// import "../../public/js/aos";
 import "../styles/custom.style.css";
 
 import Script from "next/script";
@@ -14,11 +23,59 @@ import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 import { BASE_URL, WEB_URL } from "@/config/config";
-import getPageRedirect from "@/utils/getPageRedirect";
 import GoogleAnalytics from "@/component/GoogleAnalytics";
-import { headers as nextHeaders } from "next/headers";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-Roboto",
+  preload: true,
+});
+ 
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-Condensed",
+  preload: true,
+});
+ 
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["200", "300", "700"],
+  display: "swap",
+  variable: "--font-Oswald",
+  preload: false, // load lazily if not above-the-fold
+});
+ 
+const geist = Geist({
+  subsets: ["latin"],
+  weight: ["200", "300", "700"],
+  display: "swap",
+  variable: "--font-Geist",
+  preload: false,
+});
+ 
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-Noto",
+  preload: false,
+});
+ 
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-OpenSans",
+  preload: false,
+});
 
 export const metadata = {
   title: "JSS University Noida",
@@ -83,10 +140,34 @@ export default async function RootLayout({ children }) {
   const isBlogPage = pathname.startsWith("/blog/");
   const showUniversitySchema = !isBlogPage && !isCoursePage;
 
+  const fontClassNames = [
+    roboto.variable,
+    robotoCondensed.variable,
+    oswald.variable,
+    geist.variable,
+    notoSans.variable,
+    openSans.variable,
+  ].join(" ");
+
   return (
-    <html lang="en">
+    <html lang="en" className={fontClassNames}>
       {/* Google Tag Manager */}
       <head>
+        <link
+          rel="preload"
+          href="https://backoffice.jssuninoida.edu.in/assets/video/banners/1775207103_69cf82bf29841.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link rel="preconnect" href="https://backoffice.jssuninoida.edu.in" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://backoffice.jssuninoida.edu.in" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];
