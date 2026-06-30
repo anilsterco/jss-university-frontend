@@ -118,7 +118,7 @@ const CoursesOffered = ({ data }) => {
                         ) : (
                           hasSearched && (
                             <div className="no-results">
-                              No Programe found
+                              No Programme found
                             </div>
                           )
                         )}
@@ -163,7 +163,7 @@ const CoursesOffered = ({ data }) => {
                         }/programs`}
                         className={styles.link}
                       >
-                        VIEW ALL PROGRAMES <GoArrowRight />
+                        VIEW ALL PROGRAMME <GoArrowRight />
                       </Link>
                     </div>
                   </div>

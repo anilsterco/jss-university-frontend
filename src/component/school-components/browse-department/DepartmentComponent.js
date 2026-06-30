@@ -149,7 +149,7 @@ export default function DepartmentSection({
                       href={`${WEB_URL + pageType + "/" + departmentSlug}/programs`}
                     >
                       <button className={styles.viewAllButton}>
-                        VIEW ALL PROGRAMES <GoArrowRight />
+                        VIEW ALL PROGRAMME <GoArrowRight />
                       </button>
                     </Link>
                   </div>
