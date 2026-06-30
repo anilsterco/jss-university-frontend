@@ -768,7 +768,7 @@ export default function Header() {
                                   }
 
                                   // SCHOOLS (index 1)
-                                  if (activeMegaChildIndex === 1) {
+                                  if (activeMegaChildIndex === 0) {
                                     return (
                                       <div className="mega-schools-list">
                                         <ul>
@@ -799,7 +799,7 @@ export default function Header() {
                                   }
 
                                   // DEPARTMENTS (index 2)
-                                  if (activeMegaChildIndex === 0) {
+                                  if (activeMegaChildIndex === 1) {
                                     // Define column sizes explicitly: 2, 2, 3
                                     const columnSizes = [2, 2, 3];
                                     const columns = [];
