@@ -10449,6 +10449,7 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .oorja_gallery_item img{width: 100%;display: block;}
 .oorja_gallery_item h4 {margin-top: 1.8rem;font: var(--font-18);font-weight: 600;line-height: 1.3;color: var(--color-4e);}
 
+
 @media(max-width:1030px) {
 .aiml_clubs .event_boxes {grid-template-columns: repeat(2, 1fr);}
 }
@@ -10493,5 +10494,19 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .internal_soc_content h5{font:var(--font-18);font-weight: 600;}
 
 }
+
+.about-iic .grid_card_design1_section h4{text-align: center;font: var(--font-18);font-weight: 500;}
+.about-iic .achievements_section .achievements_bottom > :last-child {margin-top: 3rem;}
+.iic-council .about_top {padding-top:0}
+.iic-council .about_one .about_subtitle{display:none}
+.innovation-ambassadors .about_top {padding-top:0}
+.innovation-ambassadors .about_one .about_subtitle{display:none}
+.innovation-ambassadors .about_one .atm_g_imgsec{    margin-bottom: 9rem;}
+.iic-student-club .about_one .about_subtitle{display:none}
+.iic-student-club .about_one .atm_g_imgsec{padding-bottom: 10rem;}
+.iic-student-club .about_one .about_top{padding-top: 0;}
+.iic-student-club .placement_stats{padding-bottom: 5rem;}
+
+
 /* css ends here */
 
