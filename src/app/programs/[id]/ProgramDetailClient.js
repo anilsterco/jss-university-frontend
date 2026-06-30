@@ -319,7 +319,7 @@ export default function ProgramDetailClient({ params }) {
                               height={20}
                               className="img-fluid "
                             />
-                            Programe Structure
+                            Programme Structure
                           </a>
                         )}
                         {admissionSection?.scholarship && (
