@@ -57,26 +57,12 @@
   position: absolute;
 }
 
-.early-slide figure,
-.early-slide .early_rgt {
-  /* width: 50%; */
-}
 
 .early-slide {
   display: flex;
   gap: 8rem;
 }
 
-.early-slide .early_rgt {
-  /* padding-top: 3.2rem; */
-  /* max-width: 33%; */
-}
-
-/* .about_two .early-slide .early_rgt h4 {
-  font: var(--font-24);
-  color: var(--color-29);
-  margin-bottom: 2.1rem;
-} */
 .about_one .overlap_contents {
   z-index: 0;
 }
