@@ -11,6 +11,11 @@ import { happeningAPI } from "@/lib/api";
 import Pagination from "@/component/common/pagination-component/Pagination";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function UpcomingEvents({ className, programId, type }) {
   const [filters, setFilters] = useState({
@@ -99,7 +104,7 @@ export default function UpcomingEvents({ className, programId, type }) {
       </section>
       <section className={`${styles.eventsSection}`}>
 
-        <div className="container midd_events">
+        {/* <div className="container midd_events">
           {secondryItem != null ? (
             <div className={`row ${styles.secondarySection}`}>
               <div className="col-lg-7 col-md-12">
@@ -134,6 +139,80 @@ export default function UpcomingEvents({ className, programId, type }) {
                 </div>
               </div>
             </div>
+          ) : (
+            <div style={{ textAlign: "center", marginTop: "5rem" }}>
+              No Result Found
+            </div>
+          )}
+        </div> */}
+
+
+
+
+        <div className="container midd_events">
+          {allEvents?.length > 0 ? (
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              navigation={{
+                nextEl: ".secondary-next",
+                prevEl: ".secondary-prev",
+              }}
+              loop={true}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              spaceBetween={20}
+              slidesPerView={1}
+            >
+              {allEvents.map((event) => (
+                <SwiperSlide key={event.id}>
+                  <div className={`row ${styles.secondarySection}`}>
+                    <div className="col-lg-7 col-md-12">
+                      <div className={styles.secondaryImageWrapper}>
+                        {event.banner_image && (
+                          <Image
+                            src={event.banner_image}
+                            alt={event.title}
+                            width={812}
+                            height={437}
+                            className={styles.secondaryImage}
+                          />
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="col-lg-5 col-md-12">
+                      <div className={styles.secondaryText}>
+                        <p className={styles.eventDate}>
+                          {formatDate(event.event_date_from)}
+                        </p>
+
+                        <h3
+                          className={styles.eventTitle}
+                          dangerouslySetInnerHTML={{
+                            __html: event.title,
+                          }}
+                        />
+
+                        <p className={styles.eventDesc}>
+                          {event.desc}
+                        </p>
+
+                        <Link
+                          href={`/happenings/${event.slug || event.id}`}
+                          style={{ color: "inherit" }}
+                        >
+                          <BsArrowRightCircle fontSize={20} />
+                        </Link>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           ) : (
             <div style={{ textAlign: "center", marginTop: "5rem" }}>
               No Result Found
