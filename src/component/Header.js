@@ -670,7 +670,7 @@ export default function Header() {
                                   const activeChild =
                                     l.children?.[activeMegaChildIndex];
                                   const isFirstChild =
-                                    activeMegaChildIndex === 0;
+                                    activeMegaChildIndex === 2;
                                   const rightData =
                                     activeChild?.right ||
                                     (isFirstChild ? l.right : null);
@@ -799,7 +799,7 @@ export default function Header() {
                                   }
 
                                   // DEPARTMENTS (index 2)
-                                  if (activeMegaChildIndex === 2) {
+                                  if (activeMegaChildIndex === 0) {
                                     // Define column sizes explicitly: 2, 2, 3
                                     const columnSizes = [2, 2, 3];
                                     const columns = [];

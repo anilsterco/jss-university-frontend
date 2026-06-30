@@ -67,9 +67,10 @@ export default function PopupModal() {
                     // layout="responsive"
                     width={720}
                     height={553}
-                    loading="lazy"
+                    loading="eager"
                     alt={item?.title}
                     style={{ width: '100%', height: 'auto' }}
+                  
                   />
                   {/* <h5 className="title">{item?.title}</h5> */}
                   {/* <span>Visit Us</span> */}
