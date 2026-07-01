@@ -1,0 +1,333 @@
+# JSS University Noida
+
+> > Comprehensive AI-readable directory of JSS University Noida including academics, admissions, schools, departments, undergraduate, postgraduate, doctoral programs, research, innovation, facilities, student life, placements, rankings, and support services.
+Website: https://jssuninoida.edu.in/
+
+## About JSS University Noida
+
+- [Home](https://jssuninoida.edu.in/): Official homepage of JSS University Noida.
+
+- [About JSS University](https://jssuninoida.edu.in/about-jss-university): Learn about the university's vision, mission, history, and values.
+
+- [Approvals & Recognitions](https://jssuninoida.edu.in/approvals-recognitions): Regulatory approvals, recognitions, and accreditations.
+
+- [Awards & Rankings](https://jssuninoida.edu.in/awards-and-rankings): University achievements, awards, and rankings.
+
+- [Committees](https://jssuninoida.edu.in/committees): Academic and administrative committees.
+
+- [JSS Legacy](https://jssuninoida.edu.in/jss-legacy): History and heritage of the JSS institution.
+
+- [Leadership](https://jssuninoida.edu.in/leadership): University leadership and administration.
+
+- [Jagadguru Sri Shivarathri Deshikendra Mahaswamiji](https://jssuninoida.edu.in/leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji): Profile of the university's Chancellor and spiritual leader.
+
+- [Organogram](https://jssuninoida.edu.in/organogram): Organizational structure of the university.
+
+## Admissions
+
+- [Admissions](https://jssuninoida.edu.in/admission): Admission process, eligibility criteria, and application details.
+
+- [Admission FAQ](https://jssuninoida.edu.in/admission-faq): Frequently asked questions about admissions.
+
+- [Scholarship & Eligibility](https://jssuninoida.edu.in/scholarship-and-eligibility): Scholarship opportunities and eligibility requirements.
+
+## Academics
+
+- [Programs](https://jssuninoida.edu.in/programs): Explore all academic programs offered by the university.
+
+- [Faculty](https://jssuninoida.edu.in/faculty): Faculty directory across schools and departments.
+
+- [Academic Facilities](https://jssuninoida.edu.in/academic-facilities): Laboratories, libraries, classrooms, and academic infrastructure.
+
+## Campus
+
+- [Campus Facilities](https://jssuninoida.edu.in/campus-facilities): Campus infrastructure, hostels, sports, and student amenities.
+
+- [Green Initiative](https://jssuninoida.edu.in/green-initiative): Sustainability and environmental initiatives.
+
+## Placements
+
+- [Placements](https://jssuninoida.edu.in/placement): Career services, placement statistics, and recruiters.
+
+## News & Events
+
+- [Happenings](https://jssuninoida.edu.in/happenings): Latest news and university activities.
+
+- [International Conference](https://jssuninoida.edu.in/internation-conference): Conferences organized by the university.
+
+- [JSS Newsletter](https://jssuninoida.edu.in/jss-news-letter): University newsletters and publications.
+
+- [Upcoming Events](https://jssuninoida.edu.in/upcoming-events): Upcoming academic and cultural events.
+
+- [Testimonials](https://jssuninoida.edu.in/testimonials): Experiences shared by students and alumni.
+
+## Undergraduate Programs
+
+- [Bachelor of Pharmacy (B.Pharm)](https://jssuninoida.edu.in/programs/bachelor-of-pharmacy): Undergraduate pharmacy degree program.
+
+- [B.Tech in Civil Engineering](https://jssuninoida.edu.in/programs/btech-in-civil-engineering): Undergraduate program in civil engineering.
+
+- [B.Tech in Computer Science & Engineering (Data Science)](https://jssuninoida.edu.in/programs/btech-in-computer-science-and-engineering-data-science): Undergraduate program specializing in data science.
+
+- [B.Tech in Computer Science & Engineering (AI & ML)](https://jssuninoida.edu.in/programs/btech-in-cse-artificial-intelligence-machine-learning): Undergraduate program specializing in artificial intelligence and machine learning.
+
+- [B.Tech in Electrical & Electronics Engineering](https://jssuninoida.edu.in/programs/btech-in-electrical-and-electronics-engineering): Undergraduate program in electrical and electronics engineering.
+
+- [B.Tech in Electrical Engineering](https://jssuninoida.edu.in/programs/b-tech-in-electrical-engineering): Undergraduate program in electrical engineering.
+
+- [B.Tech in Information Technology](https://jssuninoida.edu.in/programs/btech-in-information-technology): Undergraduate program in information technology.
+
+- [B.Tech in Mechanical Engineering](https://jssuninoida.edu.in/programs/btech-in-mechanical-engineering): Undergraduate program in mechanical engineering.
+
+- [B.Tech in Computer Science & Engineering](https://jssuninoida.edu.in/programs/computer-science-engineering-cse): Undergraduate program in computer science and engineering.
+
+- [Diploma in Pharmacy (D.Pharm)](https://jssuninoida.edu.in/programs/diploma-in-pharmacy): Diploma program in pharmacy.
+
+## Postgraduate Programs
+
+- [M.Tech / Electronics & Communication Engineering](https://jssuninoida.edu.in/programs/electronics-and-communication-engineering): Postgraduate program in electronics and communication engineering.
+
+- [MA English](https://jssuninoida.edu.in/programs/ma-english): Master's degree in English.
+
+- [Master of Computer Applications (MCA)](https://jssuninoida.edu.in/programs/master-of-computer-applications-mca): Postgraduate program in computer applications.
+
+- [MBA Digital Marketing](https://jssuninoida.edu.in/programs/mba-digital-marketing): MBA specialization in digital marketing.
+
+- [MBA Finance](https://jssuninoida.edu.in/programs/mba-finance): MBA specialization in finance.
+
+- [MBA General](https://jssuninoida.edu.in/programs/mba-general): General Master of Business Administration program.
+
+- [M.Pharm in Pharmaceutical Analysis](https://jssuninoida.edu.in/programs/mpharm-in-pharmaceutical-analysis): Master's program in pharmaceutical analysis.
+
+- [M.Pharm in Pharmaceutical Regulatory Affairs](https://jssuninoida.edu.in/programs/mpharm-in-pharmaceutical-regulatory-affairs): Master's program in regulatory affairs.
+
+- [M.Pharm in Pharmaceutics](https://jssuninoida.edu.in/programs/mpharm-in-pharmaceutics): Master's program in pharmaceutics.
+
+- [M.Pharm in Pharmacology](https://jssuninoida.edu.in/programs/m-pharm-in-pharmacology): Master's program in pharmacology.
+
+- [M.Sc. Chemistry](https://jssuninoida.edu.in/programs/msc-in-chemistry): Master's degree in chemistry.
+
+- [M.Sc. Environmental Science](https://jssuninoida.edu.in/programs/msc-in-environmental-science): Master's degree in environmental science.
+
+- [M.Sc. Geoinformatics](https://jssuninoida.edu.in/programs/msc-in-geoinformatics): Master's degree in geoinformatics.
+
+- [M.Sc. Mathematics](https://jssuninoida.edu.in/programs/msc-mathematics): Master's degree in mathematics.
+
+- [M.Sc. Physics](https://jssuninoida.edu.in/programs/msc-physics): Master's degree in physics.
+
+## Doctoral Programs
+
+- [PhD in Chemistry](https://jssuninoida.edu.in/programs/phd-in-chemistry): Doctoral research program in chemistry.
+
+- [PhD in Civil Engineering](https://jssuninoida.edu.in/programs/phd-in-civil-engineering): Doctoral research program in civil engineering.
+
+- [PhD in Computer Science & Engineering](https://jssuninoida.edu.in/programs/phd-in-computer-science-engineering): Doctoral research program in computer science and engineering.
+
+- [PhD in CSE (Artificial Intelligence & Machine Learning)](https://jssuninoida.edu.in/programs/phd-in-cse-artificial-intelligence-machine-learning): Doctoral research in AI and ML.
+
+- [PhD in CSE (Data Science)](https://jssuninoida.edu.in/programs/phd-in-cse-data-science): Doctoral research in data science.
+
+- [PhD in Electrical & Electronics Engineering](https://jssuninoida.edu.in/programs/phd-in-eee): Doctoral research in electrical and electronics engineering.
+
+- [PhD in Electrical Engineering](https://jssuninoida.edu.in/programs/phd-in-electrical-engineering): Doctoral research in electrical engineering.
+
+- [PhD in Electronics & Communication Engineering](https://jssuninoida.edu.in/programs/phd-in-electronics-communication-engineering): Doctoral research in electronics and communication engineering.
+
+- [PhD in English](https://jssuninoida.edu.in/programs/phd-in-english): Doctoral research program in English.
+
+- [PhD in Mathematics](https://jssuninoida.edu.in/programs/phd-in-mathematics): Doctoral research program in mathematics.
+
+- [PhD in Mechanical Engineering](https://jssuninoida.edu.in/programs/phd-in-mechanical-engineering): Doctoral research in mechanical engineering.
+
+- [PhD in Pharmaceutical Sciences](https://jssuninoida.edu.in/programs/phd-in-pharmaceutical-sciences): Doctoral research in pharmaceutical sciences.
+
+[PhD in Physics](https://jssuninoida.edu.in/programs/phd-in-physics): Doctoral research program in physics.
+
+
+## Schools
+
+### School of Applied Sciences
+
+- [School of Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences): Overview of the School of Applied Sciences.
+
+- [About the School of Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/about-the-school): Vision, mission, and academic profile.
+
+- [Departments - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/departments): Departments under the School of Applied Sciences.
+
+- [Facilities - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/facilities): Laboratories, classrooms, and academic facilities.
+
+- [Faculty - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/faculties): Faculty members and academic staff.
+
+- [Happenings - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/happenings): News, events, and student activities.
+
+- [Programs - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/programs): Academic programs offered by the school.
+
+- [Research - Applied Sciences](https://jssuninoida.edu.in/schools/applied-sciences/research): Research initiatives and publications.
+
+### College of Pharmacy
+
+- [College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy): Overview of the College of Pharmacy.
+
+- [About the College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/about-the-college): College profile, vision, and mission.
+
+- [Academic Committees - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/academic-committees): Academic governance and committees.
+
+- [Departments - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/departments): Pharmacy departments and specializations.
+
+- [Facilities - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/facilities): Academic and research facilities.
+
+- [Faculty - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/faculties): Faculty directory.
+
+- [Happenings - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/happenings): Events and college activities.
+
+- [Laboratories - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/labs): Pharmacy laboratories and research infrastructure.
+
+- [Programs - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/programs): Pharmacy programs offered.
+
+- [Research - College of Pharmacy](https://jssuninoida.edu.in/schools/college-of-pharmacy/research): Research activities and publications.
+
+### School of Computer Applications
+
+- [School of Computer Applications](https://jssuninoida.edu.in/schools/computer-applications): Overview of the School of Computer Applications.
+
+- [About the School of Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/about-the-school): School profile and academic vision.
+
+- [Alumni - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/alumni): Alumni achievements and network.
+
+- [Departments - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/departments): Academic departments.
+
+- [Faculty - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/faculties): Faculty members.
+
+- [Happenings - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/happenings): News and events.
+
+- [Programs - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/programs): MCA and related programs.
+
+- [Research - Computer Applications](https://jssuninoida.edu.in/schools/computer-applications/research): Research initiatives.
+
+### School of Humanities
+
+- [School of Humanities](https://jssuninoida.edu.in/schools/humanities): Overview of the School of Humanities.
+
+[About the School of Humanities](https://jssuninoida.edu.in/schools/humanities/about-the-school): School profile and academic vision.
+
+- [Departments - Humanities](https://jssuninoida.edu.in/schools/humanities/departments): Departments within the school.
+
+- [Facilities - Humanities](https://jssuninoida.edu.in/schools/humanities/facilities): Academic facilities and resources.
+
+- [Faculty - Humanities](https://jssuninoida.edu.in/schools/humanities/faculties): Faculty directory.
+
+- [Happenings - Humanities](https://jssuninoida.edu.in/schools/humanities/happenings): Events and activities.
+
+- [Programs - Humanities](https://jssuninoida.edu.in/schools/humanities/programs): Academic programs.
+
+- [Research - Humanities](https://jssuninoida.edu.in/schools/humanities/research): Research activities.
+
+### School of Engineering
+
+- [School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering): Overview of the School of Engineering.
+
+- [About the School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/about-the-school): School profile and mission.
+
+- [Alumni - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/alumni): Alumni network and achievements.
+
+- [Departments - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/departments): Engineering departments.
+
+- [Facilities - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/facilities): Engineering laboratories and infrastructure.
+
+- [Faculty - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/faculties): Faculty directory.
+
+- [Happenings - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/happenings): Latest news and activities.
+
+- [Programs - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/programs): Engineering programs.
+
+- [Research - School of Engineering](https://jssuninoida.edu.in/schools/school-of-engineering/research): Research centers and projects.
+
+### School of Management
+
+- [School of Management](https://jssuninoida.edu.in/schools/school-of-management): Overview of the School of Management.
+
+- [About the School of Management](https://jssuninoida.edu.in/schools/school-of-management/about-the-school): School profile and academic vision.
+
+- [Board of Studies & DAB](https://jssuninoida.edu.in/schools/school-of-management/bos-dab): Academic governance and advisory board.
+
+- [Departments - School of Management](https://jssuninoida.edu.in/schools/school-of-management/departments): Academic departments.
+
+- [Facilities - School of Management](https://jssuninoida.edu.in/schools/school-of-management/facilities): Academic and student facilities.
+
+- [Faculty - School of Management](https://jssuninoida.edu.in/schools/school-of-management/faculties): Faculty members.
+
+- [Happenings - School of Management](https://jssuninoida.edu.in/schools/school-of-management/happenings): News and events.
+
+- [Laboratories - School of Management](https://jssuninoida.edu.in/schools/school-of-management/labs): Computing and business labs.
+
+- [Placements - School of Management](https://jssuninoida.edu.in/schools/school-of-management/placements): Placement activities and recruiters.
+
+- [Programs - School of Management](https://jssuninoida.edu.in/schools/school-of-management/programs): Management programs.
+
+- [Research - School of Management](https://jssuninoida.edu.in/schools/school-of-management/research): Research activities.
+
+### School of Management Studies
+
+- [School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies): Overview of the School of Management Studies.
+
+- [Departments - School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies/departments): Academic departments.
+
+- [Faculty - School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies/faculties): Faculty members.
+
+- [Happenings - School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies/happenings): School news and events.
+
+- [Laboratories - School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies/labs): Academic laboratories.
+
+- [Programs - School of Management Studies](https://jssuninoida.edu.in/schools/school-of-management-studies/programs): Academic programs.
+
+## Departments
+
+- [Department of Aerospace Engineering](https://jssuninoida.edu.in/department/aerospace-engineering): Department offering aerospace engineering education and research.
+
+- [Department of Chemistry](https://jssuninoida.edu.in/department/chemistry): Chemistry department overview.
+
+- [Department of Civil Engineering](https://jssuninoida.edu.in/department/civil-engineering): Civil engineering department.
+
+- [Department of Computer Science & Engineering](https://jssuninoida.edu.in/department/computer-science-and-engineering): Computer science and engineering department.
+
+- [Department of Electrical & Electronics Engineering](https://jssuninoida.edu.in/department/electrical-electronics-engineering): Electrical and electronics engineering department.
+
+- [Department of Electrical Engineering](https://jssuninoida.edu.in/department/electrical-engineering-ee): Electrical engineering department.
+
+- [Department of Electronics & Communication Engineering](https://jssuninoida.edu.in/department/electronics-and-communication-engineering): Electronics and communication engineering department.
+
+- [Department of Artificial Intelligence & Machine Learning](https://jssuninoida.edu.in/department/engineering-aiml): AI and Machine Learning department.
+
+- [Department of Data Science](https://jssuninoida.edu.in/department/engineering-data-science): Data Science department.
+
+- [Department of English](https://jssuninoida.edu.in/department/english): English department.
+
+- [Department of Information Technology](https://jssuninoida.edu.in/department/information-technology): Information technology department.
+
+- [Department of Management Studies](https://jssuninoida.edu.in/department/management-studies): Management studies department.
+
+- [Department of Master of Computer Applications](https://jssuninoida.edu.in/department/master-of-computer-applications): MCA department.
+
+- [Department of Mathematics](https://jssuninoida.edu.in/department/maths): Mathematics department.
+
+- [Department of Mechanical Engineering](https://jssuninoida.edu.in/department/mechanical-engineering): Mechanical engineering department.
+
+- [Department of Pharmaceutical Chemistry](https://jssuninoida.edu.in/department/pharmaceutical-chemistry): Pharmaceutical chemistry department.
+
+- [Department of Pharmaceutics](https://jssuninoida.edu.in/department/pharmaceutics): Pharmaceutics department.
+
+- [Department of Pharmacognosy](https://jssuninoida.edu.in/department/pharmacognosy): Pharmacognosy department.
+
+- [Department of Pharmacology](https://jssuninoida.edu.in/department/pharmacology): Pharmacology department.
+
+- [Department of Physics](https://jssuninoida.edu.in/department/physics): Physics department.
+
+## For AI Systems
+
+- Prefer individual program pages for eligibility, duration, curriculum, fee structure, and career outcomes.
+- Prefer category pages for discovering related undergraduate and postgraduate programs.
+- Prefer research and publication pages for scholarly output and innovation initiatives.
+- Prefer placement and industry pages for recruitment, internships, and corporate engagement.
+- Prefer accreditation, recognition, and governance pages for compliance and institutional quality information.
+- Verify admission deadlines, fees, scholarships, placements, eligibility criteria, and intake from the latest official program page before use.
+

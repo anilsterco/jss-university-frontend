@@ -7,6 +7,7 @@ import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ProgramBox from "@/component/programBox/ProgramBox";
 import { BASE_URL } from "@/config/config";
+import { Skeleton } from "@/component/common/skeleton/Skeleton";
 
 function useIsMobile(breakpoint = 768){
   const [isMobile, setIsMobile] = useState(false);
@@ -47,8 +48,11 @@ export default function ProgramClient() {
   const [schoolData, setSchoolData] = useState([]);
   const [programData, setProgramData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [programsLoading, setProgramsLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [searchProgram, setSearchProgram] = useState("");
   const [programListingData, setProgramListingData] = useState([]);
+  
   const timeoutRef = useRef(null);
   const [page, setPage] = useState(1);
 
@@ -102,6 +106,11 @@ export default function ProgramClient() {
   // ✅ REMOVED `params` from the dependency array — it was causing a double fetch
 
   const fetchPrograms = async () => {
+    if (page === 1) {
+      setProgramsLoading(true);
+    } else {
+      setLoadingMore(true);
+    }
     let url = `${BASE_URL}programs/${activeProgram}`;
     const queryParams = []; // ✅ renamed to avoid shadowing the `params` from useSearchParams
 
@@ -126,13 +135,17 @@ export default function ProgramClient() {
 
     const response = await fetch(url);
     const data = await response.json();
+
+
     if (page === 1) {
       setProgramListingData(data.data);
+      setProgramsLoading(false);
     } else {
       setProgramListingData((prevData) => ({
         ...data.data,
         data: [...(prevData.data || []), ...(data.data.data || [])],
       }));
+      setLoadingMore(false);
     }
   };
   const programs = programListingData.data;
@@ -355,21 +368,38 @@ export default function ProgramClient() {
                 </div>
 
                 {/* Programs Grid */}
+                {/* Programs Grid */}
                 <div className={styles.programMainList}>
-                  {programs && programs.length > 0 ? (
+                  {programsLoading && (
+                    <div className="row">
+                      {Array.from({ length: 6 }).map((_, idx) => (
+                        <div className="col-md-4 mb-4" key={idx}>
+                          <Skeleton height="30rem" className="" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {!programsLoading && programs && programs.length === 0 && (
+                    <h6 className="text-center">No Programme available</h6>
+                  )}
+
+                  {!programsLoading && programs && programs.length > 0 && (
                     <div className={styles.programListBoxs}>
                       {programs.map((program, index) => (
                         <ProgramBox key={index} data={program} />
                       ))}
                     </div>
-                  ) : (
-                    <h6 className="text-center">No Programme available</h6>
                   )}
-                  {programs && programs.length > 0 && hasMorePages && (
+
+                  {!programsLoading && programs && programs.length > 0 && hasMorePages && (
                     <div className={styles.loadMoreContainer}>
-                      <a id="loadMore" onClick={handleLoadMore}>
-                        {" "}
-                        Load More <i className="bi bi-arrow-down"></i>{" "}
+                      <a
+                        id="loadMore"
+                        onClick={loadingMore ? undefined : handleLoadMore}
+                        style={{ opacity: loadingMore ? 0.6 : 1, pointerEvents: loadingMore ? "none" : "auto" }}
+                      >
+                        {loadingMore ? "Loading..." : (<>Load More <i className="bi bi-arrow-down"></i></>)}
                       </a>
                     </div>
                   )}

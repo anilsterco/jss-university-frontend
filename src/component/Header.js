@@ -738,16 +738,9 @@ export default function Header() {
                                         {rightData.banners?.length > 0 && (
                                           <div className="mega-right-banners">
                                             {rightData.banners.map((b, idx) => (
-                                              <Link
+                                              <a
                                                 key={idx}
-                                                href={{
-                                                  pathname: `${WEB_URL}programs`,
-                                                  query: {
-                                                    type: b.title
-                                                      .toLowerCase()
-                                                      .replace(/\s+/g, "-"),
-                                                  },
-                                                }}
+                                                href={`${WEB_URL}programs?type=${b.url}`}
                                               >
                                                 <div
                                                   className="banner shine-effect"
@@ -766,7 +759,7 @@ export default function Header() {
                                                     {b.title}
                                                   </span>
                                                 </div>
-                                              </Link>
+                                              </a>
                                             ))}
                                           </div>
                                         )}
