@@ -47,7 +47,7 @@ export default function ScriptLoader() {
         lazyOnload = lowest priority, loads during browser idle time.
         Moves them fully off the critical path.
       */}
-      <Script src="/js/aos.js" strategy="lazyOnload" />
+      <Script src="/js/aos.js" strategy="beforeInteractive" />
       <Script src="/js/swiper-bundle.min.js" strategy="lazyOnload" />
       <Script src="/js/SmoothScroll.min.js" strategy="lazyOnload" />
 
