@@ -138,6 +138,7 @@ export default function Header() {
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
   const [openChildAccordion, setOpenChildAccordion] = useState(null);
   const [activeMegaChildIndex, setActiveMegaChildIndex] = useState(0);
+  const [activeMegaChildName, setActiveMegaChildName] = useState(null);
   const [activeLeftIndex, setActiveLeftIndex] = useState(0);
   const [activeMiddleIndex, setActiveMiddleIndex] = useState(null);
   const [globleSearch, setglobleSearch] = useState(false);
@@ -151,6 +152,11 @@ export default function Header() {
 
   const closeTimeoutRef = useRef(null);
   const prevScrollY = useRef(0);
+
+  
+  const [activePanel, setActivePanel] = useState(null);
+  const navLinks = headerData || [];
+  const admissionsData = admissionData || [];
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -170,6 +176,12 @@ export default function Header() {
     setIsAcademic(pageName?.toLowerCase() === "academics");
     setActiveDropdown(i);
     setActiveMegaChildIndex(0);
+
+    const firstChild = navLinks?.[i]?.children?.[0];
+    if (firstChild?.title) {
+      setActiveMegaChildName(firstChild.title.toLowerCase());
+    }
+    // setActiveMegaChildName(pageName);
   };
 
   const handleNavMouseLeave = () => {
@@ -238,9 +250,6 @@ export default function Header() {
     fetchHeaderData();
   }, [pathname]);
 
-  const [activePanel, setActivePanel] = useState(null);
-  const navLinks = headerData || [];
-  const admissionsData = admissionData || [];
   const hamburgerMenudata = [
     {
       name: "About JSS University",
@@ -646,8 +655,10 @@ export default function Header() {
                                           d.url === ""
                                         ) {
                                           setActiveMegaChildIndex(j);
+                                          setActiveMegaChildName(d.title.toLowerCase());
                                         } else {
                                           setActiveDropdown(null);
+                                          setActiveMegaChildName('');
                                         }
                                       }}
                                     >
@@ -667,13 +678,9 @@ export default function Header() {
 
                               <div className="mega-right">
                                 {(() => {
-                                  const activeChild =
-                                    l.children?.[activeMegaChildIndex];
-                                  const isFirstChild =
-                                    activeMegaChildIndex === 2;
-                                  const rightData =
-                                    activeChild?.right ||
-                                    (isFirstChild ? l.right : null);
+                                  const activeChild = l.children?.[activeMegaChildIndex];
+                                  const isProgramsChild = activeMegaChildName?.includes("program");
+                                  const rightData = activeChild?.right || (isProgramsChild ? l.right : null);
 
                                   // PROGRAMS (index 0) — existing content
                                   if (rightData) {
@@ -768,7 +775,7 @@ export default function Header() {
                                   }
 
                                   // SCHOOLS (index 1)
-                                  if (activeMegaChildIndex === 0) {
+                                    if (activeMegaChildName.includes("school")) {
                                     return (
                                       <div className="mega-schools-list">
                                         <ul>
@@ -799,7 +806,7 @@ export default function Header() {
                                   }
 
                                   // DEPARTMENTS (index 2)
-                                  if (activeMegaChildIndex === 1) {
+                                  if (activeMegaChildName.includes("department")) {
                                     // Define column sizes explicitly: 2, 2, 3
                                     const columnSizes = [2, 2, 3];
                                     const columns = [];
