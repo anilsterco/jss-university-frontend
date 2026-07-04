@@ -167,22 +167,22 @@ export default function UpcomingEvents({ className, programId, type }) {
             >
               {allEvents.map((event) => (
                 <SwiperSlide key={event.id}>
-                  <div className={`row ${styles.secondarySection}`}>
-                    <div className="col-lg-7 col-md-12">
-                      <div className={styles.secondaryImageWrapper}>
+                  <div className={`upcomiRow ${styles.secondarySection}`}>
+                    <div className="upcom-evenCol">
+                      <div className={ `${styles.secondaryImageWrapper} eventtop`}>
                         {event.banner_image && (
                           <Image
                             src={event.banner_image}
                             alt={event.title}
                             width={812}
                             height={437}
-                            className={styles.secondaryImage}
+                             className={`${styles.secondaryImage} w-100`}
                           />
                         )}
                       </div>
                     </div>
 
-                    <div className="col-lg-5 col-md-12">
+                    <div className="upcom-evenContent">
                       <div className={styles.secondaryText}>
                         <p className={styles.eventDate}>
                           {formatDate(event.event_date_from)}
@@ -234,7 +234,7 @@ export default function UpcomingEvents({ className, programId, type }) {
                   const bgColor = shuffledColors[index % 4];
 
                   return (
-                    <div key={event.id} className="events_col">
+                    <div key={event.id} className="events_col upco-event">
                       <Link
                         href={`/happenings/${event.slug || event.id}`}
                         style={{ color: "inherit" }}

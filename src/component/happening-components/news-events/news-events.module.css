@@ -299,9 +299,7 @@
   transform: translateY(-3px);
 }
 
-.eventImage {
-  object-fit: cover;
-}
+
 
 .cardBody {
   padding: 15px;
@@ -315,11 +313,21 @@
   display: flex;
   padding: 2rem 2rem;
 }
+.eventCard .eventImage {
+  object-fit: fill;
+}
+@media (max-width: 1750px) {
+.secondaryText {
+  padding-top: 3.8rem;
+  padding-inline: 6rem 2rem;
 
+}
+}
 @media (max-width: 1650px) {
   .bannerWrapper::before {
     bottom: 18%;
   }
+
 
   .secondaryText {
     padding-inline: 8rem 10rem;
@@ -346,7 +354,7 @@
   }
 
   .secondaryText {
-    padding-inline: 8rem 10rem;
+    padding-inline: 4rem 2rem;
 
   }
 }
@@ -378,7 +386,9 @@
     padding-block: 4rem 6rem;
 
   }
-
+.upcomiRow .secondaryImageWrapper {
+    margin-top: 0rem;
+  }
 }
 
 @media (max-width: 991px) {
@@ -451,8 +461,8 @@
   }
 
   .eventTitle {
-    font: var(--font-34);
-    letter-spacing: -1.2px;
+    font: var(--font-30);
+    letter-spacing: -1px;
     color: #018ce8;
     font-weight: bold;
     font-family: var(--font-Condensed);
