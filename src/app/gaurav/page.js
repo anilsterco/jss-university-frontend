@@ -2741,7 +2741,7 @@ const Page = () => {
                   <h5>Admissions Office Contacts</h5>
                   <ul>
                     <li>
-                      Phone : <a className="CTA_Number" href="tel:+91- 9311830458">+91- 9311830458</a>
+                      Phone : <a className="CTA_Number" href="tel:+91-9311830458">+91- 9311830458</a>
                     </li>
                     <li>
                       Email :{" "}
@@ -2751,10 +2751,10 @@ const Page = () => {
                     </li>
                     <li>
                       Landline :{" "}
-                      <a href="tel:0120-2401484">0120-2401484 (Direct)</a>
-                      <a href="tel:0120-2400115">0120-2400115</a>
-                      <a href="tel:0120-2401442">0120-2401442</a>
-                      <a href="tel:0120-2401449">0120-2401449 (EPBX)</a>
+                      <a className="CTA_Number" href="tel:0120-2401484">0120-2401484 (Direct)</a>
+                      <a className="CTA_Number" href="tel:0120-2400115">0120-2400115</a>
+                      <a className="CTA_Number" href="tel:0120-2401442">0120-2401442</a>
+                      <a className="CTA_Number" href="tel:0120-2401449">0120-2401449 (EPBX)</a>
                     </li>
                   </ul>
                 </div>
