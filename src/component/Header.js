@@ -480,16 +480,19 @@ export default function Header() {
                   name: data.address,
                   url: data.direction_url,
                   contactIcon: "/images/header/address-icon.svg",
+                  class:""
                 },
                 {
                   name: data.email,
                   url: `mailto:${data.email}`,
                   contactIcon: "/images/header/mail-icon.svg",
+                  class:"CTA_Email"
                 },
                 {
                   name: '+' + data.phone,
                   url: `tel:+${data.phone}`,
                   contactIcon: "/images/header/phone-icon.svg",
+                  class:"CTA_Number"
                 },
               ],
             }
@@ -1496,7 +1499,7 @@ export default function Header() {
                             <div className="icon-img">
                               <img src={sub.contactIcon} alt={sub.name} />
                             </div>
-                            <a href={sub.url}>{sub.name}</a>
+                            <a href={sub.url} className={sub.class ? sub.class : ''}>{sub.name}</a>
                           </li>
                         ))}
                       </ul>

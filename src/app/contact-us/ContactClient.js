@@ -360,7 +360,7 @@ export default function ContactClient() {
                         fontSize={16}
                         className={styles.ContactIcons}
                       />
-                      <span>{contactUsData.email}</span>
+                      <span className="CTA_Email">{contactUsData.email}</span>
                     </a>
 
                     <a
@@ -372,7 +372,7 @@ export default function ContactClient() {
                         fontSize={16}
                         className={styles.ContactIcons}
                       />
-                      <span>+{contactUsData.phone}</span>
+                      <span className="CTA_Number">+{contactUsData.phone}</span>
                     </a>
                   </li>
                 </ul>
