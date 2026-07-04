@@ -825,6 +825,22 @@ a:active {
   right: 58%;
   bottom: 0rem;
 }
+
+
+.upcomiRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 991px) {
+ .upcomiRow {
+    grid-template-columns: repeat(1, 1fr);
+}
+ .upcomiRow .eventtop {
+    margin-top: 0rem;
+  }
+  .upcom-evenContent{margin-bottom:0}
+}
 .menu-left-item .hambur_links {font: var(--font-21);color: var(--color-white);font-weight: normal;transition: all 0.3s ease;display: inline-block;padding: 1rem 7rem 1rem 10rem;width: 100%;}
 .menu-left-item:hover .hambur_links {color: #16344e;font-weight: bold;}
 .menu-left-item.active .hambur_links {color: var(--color-4e);font-weight: bold;}

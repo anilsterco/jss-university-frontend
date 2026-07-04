@@ -73,7 +73,7 @@ export default function DepartmentSection({
                       className="search-wrapper position-relative"
                       data-aos="fade-up"
                       data-aos-delay="300"
-                    >
+                    > 
                       <div className="input-group programs_search overflow-hidden">
                         <input
                           type="text"
