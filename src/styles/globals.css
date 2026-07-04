@@ -789,13 +789,14 @@ a:active {
 .logo-content img {
   height: auto;
   object-fit: contain;
+  width: 10.5rem;
   transition:
     width 0.4s ease,
     height 0.4s ease;
 }
 
 .logo-content.scrolled img {
-  width: 10.5rem;
+  width: 9.5rem;
   height: auto;
 }
 
