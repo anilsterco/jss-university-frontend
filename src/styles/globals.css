@@ -787,11 +787,12 @@ a:active {
 }
 
 .logo-content img {
-  height: auto;
   object-fit: contain;
+      width: 10.5rem;
+    height: auto;
   transition:
-    width 0.4s ease,
-    height 0.4s ease;
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
 .logo-content.scrolled img {

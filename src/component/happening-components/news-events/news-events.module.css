@@ -344,11 +344,9 @@
   .bannerWrapper::before {
     bottom: 17%;
   }
-
   .eventTitle {
     line-height: 1;
   }
-
   .filterItem svg {
     top: 10px;
   }

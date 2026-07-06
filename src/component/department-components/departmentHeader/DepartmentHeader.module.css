@@ -240,14 +240,14 @@
 
 @media (max-width: 1749px) {
  .departmentHeaderWrapper {
-    top: 14vh;
+    top: 10vh;
   }
 }
 
 @media (max-width: 1649px) {
   .departmentMenu {
     padding-inline: 3rem;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
   }
   .navLinksWrapper {
   gap: 1.4rem;
@@ -282,13 +282,13 @@
     padding-top: 2rem;
   }
   .departmentHeaderWrapper {
-    top: 13vh;
+    top: 10vh;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1280px) {
   .departmentHeaderWrapper {
-    top: 14vh;
+    top: 10.5vh;
   }
 
 }
