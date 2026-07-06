@@ -285,6 +285,8 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
+
+
 @media (min-width: 1921px) {
   .containerXl {
     padding-inline: 9.8rem;
@@ -1398,6 +1400,22 @@ to {opacity: 1;transform: translateY(0);}}
 .department_society_achivement .achievements_list {margin-top: 2rem;text-align: left;}
 .faculty_cordinator {margin-top: 1rem;}
 .department_society_objective .achievements_list li{color: var(--color-white);}
+
+
+/* blogs_list_page */
+
+.blogs_list_page{
+  top:unset;
+}
+
+.blogs_list_page:before,
+.blogs_list_page:after{
+  background:unset;
+}
+
+/* blogs_list_page */
+
+
 @media (max-width:991px) {.events_grid{grid-template-columns:1fr;}
 .society_custom_box .placement_stats{grid-template-columns: 1fr;}
 .overview .grans_tab_mainsec {padding-block: 0 2rem;}}

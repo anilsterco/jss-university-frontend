@@ -1,0 +1,93 @@
+.happeningsContainer {
+  background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 37rem, var(--color-f6) 0%, var(--color-f6) 100%);
+  padding-top: 20rem;
+  padding-bottom: 4.5rem;
+}
+
+.happeningsContainer.inner_happening {
+  padding-top: 10rem;
+  background:transparent;
+}
+
+.happeningsTitle {
+  font: var(--font-45);
+  letter-spacing: -1.35px;
+  color: var(--color-4e);
+  font-family: var(--font-Condensed);
+  margin-bottom: 3.8rem;
+  line-height: 46px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.happeningsSubTitle {
+  color: #16344E;
+  font: var(--font-18);
+  letter-spacing: 0;
+  font-family: var(--font-Condensed);
+   font-weight: 600;
+}
+
+.tabButton {
+  background: unset;
+  border: unset;
+  font: var(--font-14);
+  line-height: 17px;
+  font-weight: normal;
+  font-family: var(--font-Roboto);
+  padding-top: 2rem;
+  opacity: 0.6;
+  color: #000000;
+}
+
+.tabHeaders {
+  border-top: 2px solid #d1cbcb75;
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
+  width: 70%;
+  margin: auto;
+}
+
+.activeTab {
+  color: #ff6600;
+  border-top: 2px solid orange;
+  font-weight: bold;
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .happeningsContainer {
+    padding-top: 10rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .happeningsContainer {
+    padding-top: 3rem;
+    background: linear-gradient(to bottom, var(--color-f5) 0%, var(--color-f5) 13%, var(--color-f6) 0%, var(--color-f6) 100%);
+
+  }
+
+  .happeningsTitle {
+    font: var(--font-26);
+    letter-spacing: -1.35px;
+    color: var(--color-4e);
+    font-family: var(--font-Condensed);
+
+  }
+
+  .tabHeaders {
+    width: 100%;
+    margin: auto;
+  }
+
+  .tabHeaders {
+    flex-wrap: wrap;
+  }
+   .happeningsTitle {
+   padding-inline: 2rem!important;
+  }
+}
