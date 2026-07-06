@@ -47,9 +47,7 @@ export default function IICActivities({ data }) {
                                         key={i}
                                         data-aos="fade-up"
                                         data-aos-delay={i * 100}
-                                    >
-                                        {descItem.desc}
-                                    </p>
+                                   dangerouslySetInnerHTML={{__html:descItem.desc}} />
                                 ))}
                             </div>
 

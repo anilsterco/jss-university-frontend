@@ -39,7 +39,7 @@ function buildCourseSchema(id, data, seoData) {
     name,
     url: pageUrl,
     image,
-    description,
+    description:seoData?.description ?? '',
     provider: {
       "@type": "Organization",
       name: "JSS University Noida",

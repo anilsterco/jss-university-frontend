@@ -46,6 +46,8 @@ export default async function HomePage() {
           }}
         />
       )}
+      
+      <PopupModal />
       <BannerComponent data={homepageData.sections.banners} />
       <HeaderBottomBanner/>
       <div className="animated-hover">
@@ -76,7 +78,6 @@ export default async function HomePage() {
           programme
         </Link>
       </div>
-      <PopupModal />
       {/* <PhDApplicationForm />
       <CareersFormData /> */}
     </div>
