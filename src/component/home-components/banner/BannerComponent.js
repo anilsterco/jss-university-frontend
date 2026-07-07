@@ -43,16 +43,16 @@ export default function HeroSlider({ data, slug }) {
   const bannerData = data?.length
     ? data
     : [
-      {
-        id: 1,
-        title: "No Data Found",
-        desc: "",
-        linked_text: "",
-        url: "about-us",
-        desktop_banner: "/images/home-page/placeholder-banner.png",
-        mobile_banner: "/images/home-page/mobile-main-banner.png",
-      },
-    ];
+        {
+          id: 1,
+          title: "No Data Found",
+          desc: "",
+          linked_text: "",
+          url: "about-us",
+          desktop_banner: "/images/home-page/placeholder-banner.png",
+          mobile_banner: "/images/home-page/mobile-main-banner.png",
+        },
+      ];
 
   return (
     <>
@@ -62,19 +62,24 @@ export default function HeroSlider({ data, slug }) {
         loop={true}
         spaceBetween={0}
         slidesPerView={1}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         className={styles.swiperContainer}
       >
         {bannerData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className={styles.bannerGrid}>
-
               {/* Left Content */}
               <div className={styles.bannerLeft}>
                 <div className={`departBanner ${styles.bannerOverlay}`}>
                   <div className="containerMD">
                     <div className={`departtext ${styles.bannerContent}`}>
                       {isDepartmentPage && (
-                        <span className={styles.bannerSmall}>Department of</span>
+                        <span className={styles.bannerSmall}>
+                          Department of
+                        </span>
                       )}
 
                       <h1
@@ -94,10 +99,11 @@ export default function HeroSlider({ data, slug }) {
 
                       {slide.url && (
                         <Link
-                          href={`${slug
+                          href={`${
+                            slug
                               ? WEB_URL + "department/" + slug + slide.url
                               : WEB_URL + slide.url
-                            }`}
+                          }`}
                           className={`${styles.bannerContentA} bannerBtn`}
                           // data-aos="fade-right"
                           // data-aos-delay="300"
@@ -161,7 +167,7 @@ export default function HeroSlider({ data, slug }) {
                           priority
                           style={{
                             width: "100%",
-    
+
                             objectFit: "cover",
                           }}
                           className={styles.desktopBanner}
@@ -228,10 +234,11 @@ export default function HeroSlider({ data, slug }) {
 
                     {slide.url && (
                       <Link
-                        href={`${slug
+                        href={`${
+                          slug
                             ? WEB_URL + "department/" + slug + slide.url
                             : WEB_URL + slide.url
-                          }`}
+                        }`}
                         className={`${styles.bannerContentA} bannerBtn`}
                         // data-aos="fade-right"
                         // data-aos-delay="300"
