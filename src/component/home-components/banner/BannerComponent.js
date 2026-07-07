@@ -6,10 +6,14 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./banner.module.css";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+
 
 const getYouTubeEmbedUrl = (url) => {
   if (!url) return "";
@@ -43,27 +47,30 @@ export default function HeroSlider({ data, slug }) {
   const bannerData = data?.length
     ? data
     : [
-        {
-          id: 1,
-          title: "No Data Found",
-          desc: "",
-          linked_text: "",
-          url: "about-us",
-          desktop_banner: "/images/home-page/placeholder-banner.png",
-          mobile_banner: "/images/home-page/mobile-main-banner.png",
-        },
-      ];
+      {
+        id: 1,
+        title: "No Data Found",
+        desc: "",
+        linked_text: "",
+        url: "about-us",
+        desktop_banner: "/images/home-page/placeholder-banner.png",
+        mobile_banner: "/images/home-page/mobile-main-banner.png",
+      },
+    ];
 
   return (
     <>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
+        pagination={{
+          clickable: true,
+        }}
         loop={true}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         className={styles.swiperContainer}
@@ -85,28 +92,27 @@ export default function HeroSlider({ data, slug }) {
                       <h1
                         className={styles.bannerContentH1}
                         dangerouslySetInnerHTML={{ __html: slide.title }}
-                        // data-aos="fade-right"
-                        // data-aos-delay="0"
+                      // data-aos="fade-right"
+                      // data-aos-delay="0"
                       />
 
                       <p
                         className={styles.bannerContentP}
-                        // data-aos="fade-right"
-                        // data-aos-delay="200"
+                      // data-aos="fade-right"
+                      // data-aos-delay="200"
                       >
                         {slide.desc}
                       </p>
 
                       {slide.url && (
                         <Link
-                          href={`${
-                            slug
+                          href={`${slug
                               ? WEB_URL + "department/" + slug + slide.url
                               : WEB_URL + slide.url
-                          }`}
+                            }`}
                           className={`${styles.bannerContentA} bannerBtn`}
-                          // data-aos="fade-right"
-                          // data-aos-delay="300"
+                        // data-aos="fade-right"
+                        // data-aos-delay="300"
                         >
                           {slide.linked_text}
 
@@ -153,7 +159,7 @@ export default function HeroSlider({ data, slug }) {
                         height={810}
                         style={{
                           width: "100%",
-                          objectFit: "cover",
+                          objectFit: "fill",
                         }}
                         preload="metadata"
                       />
@@ -168,7 +174,7 @@ export default function HeroSlider({ data, slug }) {
                           style={{
                             width: "100%",
 
-                            objectFit: "cover",
+                            objectFit: "fill",
                           }}
                           className={styles.desktopBanner}
                         />
@@ -193,7 +199,7 @@ export default function HeroSlider({ data, slug }) {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  objectFit: "fill",
                 }}
               />
             ) : (
@@ -220,28 +226,27 @@ export default function HeroSlider({ data, slug }) {
                     <h1
                       className={styles.bannerContentH1}
                       dangerouslySetInnerHTML={{ __html: slide.title }}
-                      // data-aos="fade-right"
-                      // data-aos-delay="0"
+                    // data-aos="fade-right"
+                    // data-aos-delay="0"
                     ></h1>
 
                     <p
                       className={styles.bannerContentP}
-                      // data-aos="fade-right"
-                      // data-aos-delay="200"
+                    // data-aos="fade-right"
+                    // data-aos-delay="200"
                     >
                       {slide.desc}
                     </p>
 
                     {slide.url && (
                       <Link
-                        href={`${
-                          slug
+                        href={`${slug
                             ? WEB_URL + "department/" + slug + slide.url
                             : WEB_URL + slide.url
-                        }`}
+                          }`}
                         className={`${styles.bannerContentA} bannerBtn`}
-                        // data-aos="fade-right"
-                        // data-aos-delay="300"
+                      // data-aos="fade-right"
+                      // data-aos-delay="300"
                       >
                         {slide.linked_text}
 
