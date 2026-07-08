@@ -41,7 +41,7 @@ export default function BlogsGrid({ className, blogs }) {
             >
               {blogList.map((blog) => (
                 <div key={blog.id} className="events_col">
-                  <Link href={`/blogs/${blog.slug || blog.id}`} style={{ color: "inherit" }}>
+                  <Link href={`/blog/${blog.slug || blog.id}`} style={{ color: "inherit" }}>
                     <div className={styles.eventCard}>
                       {blog.image ? (
                         <Image
