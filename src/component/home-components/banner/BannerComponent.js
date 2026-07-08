@@ -159,7 +159,7 @@ export default function HeroSlider({ data, slug }) {
                         height={810}
                         style={{
                           width: "100%",
-                          objectFit: "fill",
+                          objectFit: "cover",
                         }}
                         preload="metadata"
                       />
@@ -174,7 +174,7 @@ export default function HeroSlider({ data, slug }) {
                           style={{
                             width: "100%",
 
-                            objectFit: "fill",
+                            objectFit: "cover",
                           }}
                           className={styles.desktopBanner}
                         />
@@ -199,7 +199,7 @@ export default function HeroSlider({ data, slug }) {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "fill",
+                  objectFit: "cover",
                 }}
               />
             ) : (
