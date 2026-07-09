@@ -11,7 +11,7 @@ const isDev = process.env.NODE_ENV === "development";
 
 export const getBlogPageData = async () => {
   const res = await fetch(
-    `${BASE_URL}pages/blogs`,
+    `${BASE_URL}pages/blog`,
     isDev ? { cache: "no-store" } : { next: { revalidate: 120 } }
   );
   if (!res.ok) {
