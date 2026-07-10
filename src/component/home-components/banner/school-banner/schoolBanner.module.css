@@ -114,7 +114,7 @@
   grid-template-columns:47.5% 53%;
   overflow: hidden;
   align-items: center;
-   min-height: 81rem;
+   min-height: 100%;
 }
 
 .bannerLeft {
@@ -125,15 +125,10 @@
 
 .bannerRight {
   overflow: hidden;
-  height: 81rem;
-}
-
-
-.desktopBanner {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
 }
+
+
 .desktopBanner {
   width: 100%;
   height: 100%;
@@ -166,6 +161,20 @@
 .mobileBanner {
   display: none;
 }
+@media (max-width: 1200px){
+  .bannerContentH1 {
+  font: var(--font-32);
+        letter-spacing: -1.3px;
+        font-family: var(--font-Condensed);
+        
+}
+.bannerContent {
+    width: 85%;
+    margin-top: 10rem;
+  }
+  
+}
+
 
 @media (max-width: 991px) {
   .bannerGrid {
@@ -213,17 +222,7 @@
     justify-content: center;
   }
 }
-@media (max-width: 1200px) {
-  .bannerContent {
-    width: 55%;
-  }
-}
 
-@media (max-width: 991px) {
-  .bannerContent {
-    width: 65%;
-  }
-}
 
 @media (max-width: 767px) {
 
