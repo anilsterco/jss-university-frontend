@@ -70,10 +70,10 @@ export default function HeroSlider({ data, slug }) {
         loop={true}
         spaceBetween={0}
         slidesPerView={1}
-        // autoplay={{
-        //   delay: 10000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         className={styles.swiperContainer}
       >
         {bannerData.map((slide) => (
