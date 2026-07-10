@@ -1047,7 +1047,17 @@ a:active {
 @media (max-width: 1200px) {.logo-content img {width: 12rem;height: auto;}
 .cource-sec .cource_top {padding-top: 6rem;margin-bottom: 2rem;}
 .programsList_row {grid-template-columns: repeat(1, 50% auto);gap: 8.5rem;}
-.explore-program-section {grid-template-columns: repeat(2, 1fr);}}
+.explore-program-section {grid-template-columns: repeat(2, 1fr);}
+.nav-link.nav-lists {
+  display: block;
+  font: var(--font-18);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: var(--font-Condensed);
+}
+
+}
 @media (max-width: 1100px) {.school_row {display: block;}
 .dashbord-logo .uniname {font: var(--font-30);letter-spacing: -1px;font-weight: 700;font-family: var(--font-Condensed);text-transform: uppercase;margin-bottom: 1.5rem;line-height: 0.9;}
 .logo-content img {width: 10rem;height: auto;}
@@ -1543,8 +1553,11 @@ to {opacity: 1;transform: translateY(0);}}
 .yir-yic .top_section + .yukti_section .yukti_grid {margin-block: 4rem 0;}
 .yukti_section {padding-block: 4rem;}
 }
+
+.homeSlider .swiper-slide{height: auto;}
 @media (max-width: 991px){
 .ieee .grands_maingrid {gap: 1.6rem;}
+.homeSlider .swiper-slide{height: 100%;}
 .societies_events_header {margin-bottom: 4.2rem;}
 .ieee .societies_events {padding-block: 6rem 6rem;}
 .ieee .placement_stats {padding-bottom: 0;}
@@ -1718,4 +1731,3 @@ to {opacity: 1;transform: translateY(0);}}
     margin: 0 0 3rem;
 }
 }
-.homeSlider .swiper-slide{height: auto;}

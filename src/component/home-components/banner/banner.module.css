@@ -277,15 +277,15 @@
 
 @media (max-width: 1200px) {
   .bannerContentH1 {
-    font: var(--font-40);
-    letter-spacing: -1.40px;
+    font: var(--font-32);
+    letter-spacing: -1.30px;
     font-family: var(--font-Condensed);
     padding-bottom: 1rem;
     margin: 0;
   }
   .bannerContent {
     color: #fff;
-    margin: 5rem 0 0 0;
+    margin: 10rem 0 0 0;
   }
 
   .bannerContentA {

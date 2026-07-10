@@ -2842,6 +2842,12 @@ export default function Header() {
            .menu-left-item {
               padding: 1rem 5rem 1rem 6rem;
             }
+               .nav-list {
+            padding: 0 1.8rem;
+          }
+            .nav-list {
+            gap: 1.9rem;
+          }
            }
    
           @media (max-width: 1149px) {
@@ -2874,7 +2880,7 @@ export default function Header() {
             max-width: 95%;
           }
            .nav-list {
-            gap: 2.9rem;
+            gap: 1.9rem;
           }
           }
           @media (max-width: 1024px) {
