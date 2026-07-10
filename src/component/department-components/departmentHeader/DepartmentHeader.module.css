@@ -204,7 +204,7 @@
 .departmentHeaderWrapper {
   /* position: relative; */
   position: sticky;
-  top: 134px;
+  top: 124px;
   z-index: 1000;
   z-index: 1000;
 }
@@ -240,7 +240,7 @@
 
 @media (max-width: 1749px) {
  .departmentHeaderWrapper {
-    top: 10vh;
+    top: 14vh;
   }
 }
 
