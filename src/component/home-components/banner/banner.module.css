@@ -93,6 +93,7 @@
 
 
 
+
 .bannerGrid {
   display: grid;
   grid-template-columns:44% 56%;
@@ -108,7 +109,7 @@
 }
 
 .bannerRight {
-   min-height: 100%;
+   height: 100%;
   overflow: hidden;
 }
 
@@ -163,7 +164,22 @@
   height: 100%;
   object-fit: cover;
 }
+ 
+@media (min-width: 2650px) and (max-width: 4000px){
+ .desktopBanner,
+.bannerRight video {
+  width: 100%;
+  height: 1200px;   
+  object-fit: cover;
+}
+}
 
+@media  (max-width: 1649px){
+ .desktopBanner,
+.bannerRight video {
+  height: 688px;   
+}
+}
 @media (min-width: 992px) and (max-width: 1649px) {
   .desktopBanner {
     object-fit: contain;
@@ -179,9 +195,12 @@
     align-items: center;
     justify-content: center;
   }
-
-
-  
+  .desktopBanner,
+.bannerRight video {
+  width: 100%;
+  height: 100%;   
+  object-fit: cover;
+}
 }
 
 
