@@ -2943,7 +2943,13 @@ ul.comon_list li:before {
   background-color: var(--color-white);
   padding: 2rem;
 }
-
+.eligib_imgsec {
+  align-self: flex-start;
+}
+.eligib_grid_ad {
+  display: flex;
+  align-items: flex-start;
+}
 .admission_faq_inner h5 {
   font: var(--font-18);
   font-weight: bold;
@@ -3860,7 +3866,7 @@ ul.comon_list li:before {
 }
 
 .growth-tabs ul li:not(:last-child) {
-  margin-right: 3rem;
+  margin-right: 1.5rem;
 }
 
 .grow_tb_contsec .growth-item::before {
@@ -5169,7 +5175,7 @@ ul.comon_list li:before {
 
 .eligib_grid_ad {
   grid-template-columns: 50.5% 49.45%;
-  align-items: center;
+  align-items: self-start;
   display: grid;
 }
 
@@ -5218,7 +5224,8 @@ ul.comon_list li:before {
 }
 
 .eligib_grid_ad .eligib_cont {
-  padding-right: 8.7rem;
+  padding-right: 6.7rem;
+  padding-block: 6rem;
 }
 
 .eligi_tab_con {
@@ -5287,7 +5294,7 @@ ul.comon_list li:before {
 
 .eligi_tab_con .growth-item .program_tabs .courses {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .eligi_tab_con .growth-item .program_tabs .courses li {
@@ -6646,6 +6653,10 @@ ul.comon_list li:before {
   .pb_max_4rem {
     padding-bottom: 4rem !important;
   }
+  .eligi_tab_con .growth-item .program_tabs .courses {
+    grid-template-columns: repeat(1, 1fr);
+
+}
 }
 
 @media (min-width: 1920px) {
@@ -6887,6 +6898,8 @@ ul.comon_list li:before {
   .eligi_tab_con .growth-item .program_tabs .courses {
     grid-template-columns: repeat(1, 1fr);
   }
+
+
 
   .eligibilty_main .eligib_grid_ad.programs {
     padding: 0;
@@ -7729,7 +7742,9 @@ ul.comon_list li:before {
   .popup-modal {
     width: 80%;
   }
-.admission .eligib_grid_ad .eligib_cont {padding-right: 0rem;}
+.eligi_tab_con .growth-item .program_tabs .courses {
+    grid-template-columns: repeat(1, 1fr);
+}
 .admission .eligi_tab_con .growth-item {padding-right: 0;}
 .admission  .about_one .abt_cntnt {padding-top: 0rem;}
 .admission-selection-process.ad_selec_procss {padding-top: 8rem;padding-bottom: 8rem;}
@@ -8399,9 +8414,7 @@ ul.comon_list li:before {
     padding-right: 0;
   }
 
-  .eligibilty_main {
-    padding-block: 6rem;
-  }
+  
 
   .edigiblity_tabs .growth-tabs {
     text-align: left;
@@ -9978,7 +9991,16 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
     height: 100%;
     object-fit: cover;
   }
-
+.eligib_grid_ad {display: block;}
+.growth-tabs button {
+    font-size: 2rem;
+}
+.growth-tabs ul li:not(:last-child) {
+    margin-right: 2.5rem;
+}
+.eligib_grid_ad .eligib_cont {
+    padding-block: 6rem 0;
+}
   .academic-facilities .academic_labmain .acade_lab_slider .swiper-slide figure {
     height: 100%;
   }
