@@ -93,6 +93,7 @@
 
 
 
+
 .bannerGrid {
   display: grid;
   grid-template-columns:44% 56%;
@@ -108,7 +109,7 @@
 }
 
 .bannerRight {
-   min-height: 100%;
+   height: 100%;
   overflow: hidden;
 }
 
@@ -148,6 +149,74 @@
   opacity: 1;
   width: 0.8rem;
   border-radius: 50%;
+}
+
+
+
+
+.desktopBanner {
+  width: 100%;
+   height: auto;
+  object-fit: cover;
+}
+.bannerRight video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+@media (min-width: 2650px) and (max-width: 4000px){
+ .desktopBanner,
+.bannerRight video {
+  width: 100%;
+  height: 1200px;   
+  object-fit: cover;
+}
+}
+
+@media  (max-width: 1649px){
+ .desktopBanner,
+.bannerRight video {
+  height: 688px;   
+}
+}
+@media (min-width: 992px) and (max-width: 1649px) {
+  .desktopBanner {
+    object-fit: contain;
+    background: #fff; 
+  }
+   .desktopBanner,
+  .bannerRight video {
+    object-fit: contain;
+  }
+
+  .bannerRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .desktopBanner,
+.bannerRight video {
+  width: 100%;
+  height: 100%;   
+  object-fit: cover;
+}
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1649px) {
+  .bannerGrid {
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+  }
+
+  .bannerContent {
+    width: 95%;
+  }
+  .bannerOverlay {
+    position: relative;
+  }
 }
 
 @media (max-width: 991px) {
@@ -203,7 +272,6 @@
   .bannerContent {
   color: #fff;
   margin: 20rem 0 0 0;
-  width: 40%;
 }
 }
 
@@ -416,3 +484,4 @@
   }
 
 }
+

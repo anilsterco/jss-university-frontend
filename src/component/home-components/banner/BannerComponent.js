@@ -60,7 +60,8 @@ export default function HeroSlider({ data, slug }) {
 
   return (
     <>
-      <Swiper
+     <div className="homeSlider">
+       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
         pagination={{
@@ -70,7 +71,7 @@ export default function HeroSlider({ data, slug }) {
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
-          delay: 3000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         className={styles.swiperContainer}
@@ -266,6 +267,8 @@ export default function HeroSlider({ data, slug }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
+     </div>
     </>
   );
 }
