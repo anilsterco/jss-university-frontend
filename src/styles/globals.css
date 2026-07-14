@@ -1704,6 +1704,7 @@ to {opacity: 1;transform: translateY(0);}}
 .profile-info-text .back_btn {background-color: transparent;} 
 .profile-info-text .back_btn {background-color: transparent;} 
 .placement .placement_highlights {margin-top: 4rem;}
+.schools-page.schools-college-of-pharmacy-facilities .about_four .about_f_value{padding-top: 6rem;}
 
 .comman_profile ul {padding-block: 2rem;}
 .vision_mission_section.department_society_objective .mission-card p {color: var(--color-33);text-align: left;}
@@ -1731,3 +1732,4 @@ to {opacity: 1;transform: translateY(0);}}
     margin: 0 0 3rem;
 }
 }
+
