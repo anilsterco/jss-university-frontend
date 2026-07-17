@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { APPLY_NOW } from "@/config/config";
+import { WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
 
 export default function AboutOne({ data }) {
@@ -50,7 +51,7 @@ export default function AboutOne({ data }) {
   const pathname = usePathname();
 
   const applyNowLink = pathname?.includes("careers")
-    ? "https://jss-university-frontend-sepia.vercel.app/career-form"
+    ? `${WEB_URL}career-form`
     : APPLY_NOW;
 
   const renderSection = (section, sectionIndex) => {
