@@ -127,8 +127,8 @@ export default function CoursesOffered({ data }) {
           <div className="cource_col">
             <h5
               className={styles.topSectionH5}
-              data-aos="fade-up"
-              data-aos-delay="0"
+              // data-aos="fade-up"
+              // data-aos-delay="0"
             >
               {coursesData.subtitle}
             </h5>
@@ -136,14 +136,14 @@ export default function CoursesOffered({ data }) {
             <h1
               className={`fw-bold ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
-              data-aos="fade-up"
-              data-aos-delay="100"
+              // data-aos="fade-up"
+              // data-aos-delay="100"
             />
 
             <p
               className={styles.showOnlyMobileSubHeading}
-              data-aos="fade-up"
-              data-aos-delay="200"
+              // data-aos="fade-up"
+              // data-aos-delay="200"
             >
               {coursesData.programs_text}
             </p>
@@ -151,8 +151,8 @@ export default function CoursesOffered({ data }) {
             {/* SEARCH */}
             <div
               className="search-wrapper position-relative"
-              data-aos="fade-up"
-              data-aos-delay="300"
+              // data-aos="fade-up"
+              // data-aos-delay="300"
               ref={searchRef}
             >
               <div className="input-group programs_search overflow-hidden">
@@ -200,8 +200,8 @@ export default function CoursesOffered({ data }) {
             {/* COUNT */}
             <div
               className={`d-flex align-items-center ${styles.programsCountSection}`}
-              data-aos="fade-up"
-              data-aos-delay="400"
+              // data-aos="fade-up"
+              // data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
                 <h1
@@ -230,14 +230,14 @@ export default function CoursesOffered({ data }) {
                   },
                 }}
                 className="second-section-cards-image position-relative"
-                data-aos="fade-up"
-                data-aos-delay={i * 150}
+                // data-aos="fade-up"
+                // data-aos-delay={i * 150}
               >
                 <Image
                   src={level.image}
                   alt="slide image"
-                  width={252}
-                  height={387}
+                  width={302}
+                  height={389}
                   className={styles.cardImage}
                 />
 

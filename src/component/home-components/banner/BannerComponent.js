@@ -150,6 +150,7 @@ export default function HeroSlider({ data, slug }) {
                   <>
                     {slide.desktop_video ? (
                       <video
+                        poster={slide.desktop_banner}
                         src={slide.desktop_video}
                         autoPlay
                         loop
@@ -162,15 +163,15 @@ export default function HeroSlider({ data, slug }) {
                           width: "100%",
                           objectFit: "cover",
                         }}
-                        preload="metadata"
+                        preload="auto"
                       />
                     ) : (
                       slide.desktop_banner && (
                         <Image
                           src={slide.desktop_banner}
                           alt="slide image"
-                          width={1920}
-                          height={810}
+                          width={750}
+                          height={764}
                           priority
                           style={{
                             width: "100%",
@@ -208,8 +209,8 @@ export default function HeroSlider({ data, slug }) {
                 <Image
                   src={slide.mobile_banner}
                   alt="slide image"
-                  width={1920}
-                  height={810}
+                  width={750}
+                  height={764}
                   priority
                   style={{ width: "100%", height: "100%" }}
                   className={styles.mobileBanner}

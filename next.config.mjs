@@ -46,7 +46,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-    unoptimized: true,
+    // unoptimized: true,
   },
 
   async rewrites() {

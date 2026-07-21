@@ -147,8 +147,8 @@ export default function Footer() {
                 GET DIRECTIONS
               </a>
               <div className="social-icons">
-                <ul className="list-unstyled">
                   <p>Follow us on</p>
+                <ul className="list-unstyled">
                   {data.socials.map((s, i) => (
                     <li key={i}>
                       <Link
@@ -404,6 +404,10 @@ export default function Footer() {
           opacity: 0.8;
           margin-bottom: 0;
         }
+          .social-icons{
+            display: flex;
+            gap: 0.5rem;
+          }
         .list-unstyled {
           display: flex;
           padding: 0;
@@ -625,15 +629,19 @@ export default function Footer() {
         }
           @media (max-width:767px){
            .mobFooter .footer_link {
-            padding-inline:0.3rem;
-          }
-          .mobFooter .quick_link{ padding-inline:0.3rem;}
-          .mobFooter .quick-item {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-          }
+              padding-inline:0.3rem;
+            }
+            .mobFooter .quick_link{ padding-inline:0.3rem;}
+            .mobFooter .quick-item {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+            }
 
-        }
+            .social-icons{
+              display: block;
+            }
+
+          }
       `}</style>
     </footer>
   );

@@ -144,7 +144,7 @@ export default function LegacySection({ data }) {
                       )}
                       <div className="chance-msg-contant">
                         <p>{legacyData.chancellor_title}</p>
-                        <h5>{legacyData.chancellor_name}</h5>
+                        <h6>{legacyData.chancellor_name}</h6>
                       </div>
                     </div>
                   </div>

@@ -5,9 +5,7 @@ import FacilitiesComponent from "../component/home-components/facilities/Facilit
 import AboutHomeComponent from "../component/home-components/about-home-jss/AboutHomeComponent";
 import TestimonialComponent from "../component/home-components/testimonial/TestimonialComponent";
 import HappingsHomeComponent from "../component/home-components/home-happening/HappeningsHomeComponent";
-// import PhDApplicationForm from "../component/common/Phd-form/PhDApplicationForm";
 import { getPageSEO } from "@/lib/seo";
-import Script from "next/script";
 import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import PopupModal from "@/component/PopupModal";
 import Link from "next/link";
@@ -17,25 +15,42 @@ export async function generateMetadata() {
   return await getPageSEO();
 }
 
+const fetchOpts = process.env.NODE_ENV === "development"
+  ? { cache: "no-store" }
+  : { next: { revalidate: 120 } };
+
 async function getSchoolData() {
-  const isDev = process.env.NODE_ENV === 'development';
-
-  const res = await fetch(`${BASE_URL}homepage`, isDev ? {
-    cache:"no-store"
-  } : {
-    next: { revalidate: 120 },
-  });
-
+  const res = await fetch(`${BASE_URL}homepage`, fetchOpts);
   if (!res.ok) {
-    console.error("? API Error:", res.status);
-    throw new Error(`Failed to fetch data`);
+    console.error("Homepage API Error:", res.status);
+    throw new Error("Failed to fetch homepage data");
   }
   return res.json();
 }
 
+async function getPopupData() {
+  try {
+    const res = await fetch(`${BASE_URL}popup`, fetchOpts);
+    if (!res.ok) {
+      console.error("Popup API Error:", res.status);
+      return null;
+    }
+    const data = await res.json();
+    return data?.popup ?? null;
+  } catch (error) {
+    console.error("Error fetching popup data:", error);
+    return null;
+  }
+}
+
 export default async function HomePage() {
-  const seoData = await getPageSEO();
-  const homepageData = await getSchoolData();
+  // fetch all three in parallel instead of sequentially awaiting each one
+  const [seoData, homepageData, popupData] = await Promise.all([
+    getPageSEO(),
+    getSchoolData(),
+    getPopupData(),
+  ]);
+
   return (
     <div>
       {seoData.schema && (
@@ -46,10 +61,10 @@ export default async function HomePage() {
           }}
         />
       )}
-      
-      <PopupModal />
+
+      <PopupModal data={popupData} />
       <BannerComponent data={homepageData.sections.banners} />
-      <HeaderBottomBanner/>
+      <HeaderBottomBanner />
       <div className="animated-hover">
         <CourseOfferedComponent
           data={homepageData.sections.departments_section}
@@ -61,10 +76,7 @@ export default async function HomePage() {
       <TestimonialComponent data={homepageData.sections.testimonial_section} />
       <HappingsHomeComponent data={homepageData.sections.happening_section} />
       <div className="fixButtons">
-        <Link
-          href={WEB_URL + 'upcoming-events'}
-          className="vertical-floating-btn"
-        >
+        <Link href={WEB_URL + "upcoming-events"} className="vertical-floating-btn">
           Upcoming Events
         </Link>
         <Link
@@ -78,8 +90,6 @@ export default async function HomePage() {
           programme
         </Link>
       </div>
-      {/* <PhDApplicationForm />
-      <CareersFormData /> */}
     </div>
   );
 }

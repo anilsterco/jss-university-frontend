@@ -13,7 +13,6 @@ import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
 import { useRouter } from "next/navigation";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import { Counter } from "./home-components/courses-offered-home/CourseOfferedComponent";
-import './header.css'
 
 const ContactApi = `${BASE_URL}contact-info`;
 const Addmision_Api = `${BASE_URL}admission`;
@@ -115,7 +114,7 @@ const mobilePanelsData = [
   },
 ];
 
-export default function Header({
+export default function HeaderClient({
   initialNavLinks = [],
   initialAdmissionData = null,
   initialEngineeringData = [],
@@ -1641,8 +1640,6 @@ export default function Header({
         </div>
       </div>
 
-
-      
     </header>
   );
 }
