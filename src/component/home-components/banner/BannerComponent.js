@@ -77,7 +77,7 @@ export default function HeroSlider({ data, slug }) {
         className={styles.swiperContainer}
       >
         {bannerData.map((slide) => (
-          <SwiperSlide key={slide.id}>
+          <SwiperSlide key={slide.id} className={styles.slide}>
             <div className={styles.bannerGrid}>
               {/* Left Content */}
               <div className={styles.bannerLeft}>
@@ -170,6 +170,8 @@ export default function HeroSlider({ data, slug }) {
                         <Image
                           src={slide.desktop_banner}
                           alt="slide image"
+                          
+                          fetchPriority="high"
                           width={750}
                           height={764}
                           priority
@@ -214,6 +216,7 @@ export default function HeroSlider({ data, slug }) {
                   priority
                   style={{ width: "100%", height: "100%" }}
                   className={styles.mobileBanner}
+                  fetchPriority="high"
                 />
               )
             )}

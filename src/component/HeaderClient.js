@@ -114,7 +114,7 @@ const mobilePanelsData = [
   },
 ];
 
-export default function HeaderClient({
+export default function Header({
   initialNavLinks = [],
   initialAdmissionData = null,
   initialEngineeringData = [],
@@ -153,7 +153,7 @@ export default function HeaderClient({
   const closeTimeoutRef = useRef(null);
   const prevScrollY = useRef(0);
 
-  
+
   const [activePanel, setActivePanel] = useState(null);
   const navLinks = headerData || [];
   const admissionsData = admissionData || [];
@@ -424,19 +424,19 @@ export default function HeaderClient({
                   name: data.address,
                   url: data.direction_url,
                   contactIcon: "/images/header/address-icon.svg",
-                  class:""
+                  class: ""
                 },
                 {
                   name: data.email,
                   url: `mailto:${data.email}`,
                   contactIcon: "/images/header/mail-icon.svg",
-                  class:"CTA_Email"
+                  class: "CTA_Email"
                 },
                 {
                   name: '+' + data.phone,
                   url: `tel:+${data.phone}`,
                   contactIcon: "/images/header/phone-icon.svg",
-                  class:"CTA_Number"
+                  class: "CTA_Number"
                 },
               ],
             }
@@ -714,7 +714,7 @@ export default function HeaderClient({
                                   }
 
                                   // SCHOOLS (index 1)
-                                    if (activeMegaChildName.includes("school")) {
+                                  if (activeMegaChildName.includes("school")) {
                                     return (
                                       <div className="mega-schools-list">
                                         <ul>
@@ -1320,32 +1320,32 @@ export default function HeaderClient({
                           </li>
                         ))}
                         <li>
-                            <Link
-                              href={`${WEB_URL}programs`}
-                              className="explore_programs"
-                              onClick={() => {
-                                // setMenuOpen(false);
-                                setActivePanel(null);
-                              }}
-                            >
-                              <div>
-                                <p>Explore All</p>
-                                <h4
-                                  className="blue-text counter"
-                                >
-                                  <Counter start={1} end={programsCount} duration={2500} />+
-                                </h4>
-                                <h5 className="title">ACADEMIC PROGRAMS</h5>
-                              </div>
-                              <div className="arrow_btn">
-                                <img
-                                    src={"/images/header/courseIcon.svg"}
-                                    alt={`icon`}
-                                    className="course-icon"
-                                  />
-                              </div>
-                            </Link>
-                          </li>
+                          <Link
+                            href={`${WEB_URL}programs`}
+                            className="explore_programs"
+                            onClick={() => {
+                              // setMenuOpen(false);
+                              setActivePanel(null);
+                            }}
+                          >
+                            <div>
+                              <p>Explore All</p>
+                              <h4
+                                className="blue-text counter"
+                              >
+                                <Counter start={1} end={programsCount} duration={2500} />+
+                              </h4>
+                              <h5 className="title">ACADEMIC PROGRAMS</h5>
+                            </div>
+                            <div className="arrow_btn">
+                              <img
+                                src={"/images/header/courseIcon.svg"}
+                                alt={`icon`}
+                                className="course-icon"
+                              />
+                            </div>
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   )}
@@ -1630,7 +1630,7 @@ export default function HeaderClient({
               >
                 <button onClick={() => togglePanel(item.name)}>
                   <div className="icon">
-                    <img src={item.icon} alt={`${item.name} icon`}  />
+                    <img src={item.icon} alt={`${item.name} icon`} />
                   </div>
                   <p className="menu-name">{item.title}</p>
                 </button>
@@ -1639,6 +1639,8 @@ export default function HeaderClient({
           </ul>
         </div>
       </div>
+
+
 
     </header>
   );

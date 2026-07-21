@@ -79,7 +79,7 @@
 .ad-left .ad-ctas .cta.applynow.primary { background: #ffc100; border: 1px solid #ffc100; padding: 1rem 2rem; display: inline-flex; font: var(--font-18); font-family: var(--font-Condensed); align-items: center; gap: 3rem; /* var(--color-4e)-space: nowrap; */
             -webkit-transition: all 0.5s ease; color: #000; font-weight: 600; letter-spacing: 0.72px; }
 .mega-ctas { font: var(--font-13); font-family: var(--font-Condensed); letter-spacing: 0.72px; cursor: pointer; color: #16344e !important; background: #fff; border: 1px solid rgba(22, 52, 78, 0.4); padding: 1rem 1.5rem; font-weight: 600; transition: all 0.3s; max-width: 22rem; }
-.ad-left .ad-ctas .cta.applynow.secondary { border: 1px solid #fff; color: #fff; font: var(--font-18); font-family: var(--font-Condensed); font-weight: 600; letter-spacing: 0.72px; }
+.ad-left .ad-ctas .cta.applynow.secondary { border: 1px solid #fff; color: #fff; font: var(--font-18); font-family: var(--font-Condensed); font-weight: 600; letter-spacing: 0.72px; padding: 8px 14px; transition: opacity .3s;}
 .applynow.primary { background: #ffc100; font: var(--font-18); font-family: var(--font-Condensed); }
 .applynow.primary:hover { color: #fff !important; }
 .ad-middle { width: 100%; padding: 9rem 9.2rem 8rem 8rem; border-right: 1px solid #eee; }
@@ -148,8 +148,7 @@
 .mega-ctas { display: flex; gap: 12px; }
 .mega-banners { display: flex; gap: 12px; align-items: center; }
 .banner { position: relative; display: block; overflow: hidden; border-radius: 6px; width: 100%; height: 100%; text-decoration: none; }
-.banner img,
-          .banner :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+.banner img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 .banner-label { background: transparent; width: 100%; padding:1.6rem 12.2rem 1.6rem 2.2rem; padding-block: 1.6rem; font-weight: 700; position: absolute; bottom: 0; left: 0; font: var(--font-28); color: var(--color-white); font-family: var(--font-Condensed); font-weight: 600; text-transform: uppercase; z-index: 9; }
 .banner-label:before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; opacity: 0.85; background: transparent
               linear-gradient(

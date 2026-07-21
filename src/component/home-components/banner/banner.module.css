@@ -1,3 +1,9 @@
+
+
+/* .homeSlider .slide{
+  height: 100%;
+} */
+
 .bannerContent {
   color: #fff;
   margin: 10rem 0 0 0;
@@ -164,6 +170,7 @@
   height: 100%;
   object-fit: cover;
 }
+
  
 @media (min-width: 2650px) and (max-width: 4000px){
  .desktopBanner,

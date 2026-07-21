@@ -277,11 +277,19 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
-
+.homeSlider{
+  max-height: 99.7rem;
+  overflow: hidden;
+  height: 100%;
+}
 
 @media (min-width: 1921px) {
   .containerXl {
     padding-inline: 9.8rem;
+  }
+
+  .homeSlider{
+    max-height: 74.6rem;
   }
 }
 
@@ -374,6 +382,11 @@ p {
 
   .tableContentSection .right_col.grid_design .right_lists {
     display: block;
+  }
+
+  .homeSlider{
+    min-height: 70rem;
+    max-height:unset;
   }
 }
 
