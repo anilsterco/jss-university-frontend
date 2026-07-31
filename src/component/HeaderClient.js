@@ -535,6 +535,7 @@ export default function Header({
                     width={127}
                     height={129}
                     priority
+                    fetchPriority="high"
                   />
                   <div className="logo_text">
                     <div className="uniname">JSS University</div>

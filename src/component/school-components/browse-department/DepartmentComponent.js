@@ -78,7 +78,7 @@ export default function DepartmentSection({
                         <input
                           type="text"
                           className="form-control border-0"
-                          placeholder="Search Programs"
+                          placeholder="Search Programmes"
                           value={query}
                           onChange={(e) => setQuery(e.target.value)}
                           style={{ padding: "10px 20px" }}

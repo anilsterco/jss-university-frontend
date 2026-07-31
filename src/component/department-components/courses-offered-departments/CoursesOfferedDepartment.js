@@ -56,7 +56,7 @@ const CoursesOffered = ({ data }) => {
             >
               <div className={`cource_col ${styles.left_col}`}>
                 <h5 className={styles.topSectionH5} data-aos="fade-up">
-                  Programs Offered
+                  Programmes Offered
                 </h5>
                 {data?.title && (
                   <h1
@@ -86,7 +86,7 @@ const CoursesOffered = ({ data }) => {
                       <input
                         type="text"
                         className="form-control border-0"
-                        placeholder="Search Programs"
+                        placeholder="Search Programmes"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         style={{ padding: "10px 20px" }}

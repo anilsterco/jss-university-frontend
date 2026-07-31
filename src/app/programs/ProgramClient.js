@@ -241,12 +241,12 @@ export default function ProgramClient() {
                 <>
                   <input
                     type="text"
-                    placeholder="Search Programs"
+                    placeholder="Search Programmes"
                     name="search"
                     value={searchProgram}
                     onChange={(e) => handleSearch(e.target.value)}
                   />
-                  <button type="button" aria-label="Search programs">
+                  <button type="button" aria-label="Search programmes">
                     <i className="bi bi-search"></i>
                   </button>
                 </>
