@@ -80,7 +80,6 @@ export async function generateMetadata({ params }) {
 export default async function ProgramDetail({ params }) {
   const { id } = await params;
 
-  // Fetch both in parallel — no extra waterfall
   const [seoData, courseData] = await Promise.all([
     getPageSEO(),
     getCourseDetail(id),
@@ -90,7 +89,6 @@ export default async function ProgramDetail({ params }) {
 
   return (
     <>
-      {/* SEO schema from CMS (title, description, etc.) */}
       {seoData?.schema && (
         <script
           type="application/ld+json"
@@ -98,7 +96,6 @@ export default async function ProgramDetail({ params }) {
         />
       )}
 
-      {/* Course JSON-LD — built from course API data */}
       {courseSchema && (
         <script
           type="application/ld+json"
