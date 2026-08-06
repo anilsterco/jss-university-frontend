@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ProgramBox from "@/component/programBox/ProgramBox";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { Skeleton } from "@/component/common/skeleton/Skeleton";
 
 function useIsMobile(breakpoint = 768){

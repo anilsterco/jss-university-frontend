@@ -5,13 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import styles from "./schoolBanner.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
 
 export default function SchoolSlider({
@@ -32,13 +31,6 @@ export default function SchoolSlider({
         ? "College of"
         : "Department of";
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 
   const defaultBanner = [
     {
@@ -79,7 +71,7 @@ export default function SchoolSlider({
                     <span className={styles.bannerSmall}>
                       {isSchoolPage}
                     </span>
-                    <h1
+                    <h2
                       className={styles.bannerContentH1}
                       dangerouslySetInnerHTML={{ __html: slide.title }}
                     />

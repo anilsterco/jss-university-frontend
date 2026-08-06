@@ -9,14 +9,13 @@ import { FaArrowRight } from "react-icons/fa6";
 import styles from "./about-home-jss.module.css";
 import "swiper/css";
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { WEB_URL } from "@/config/config";
+
+import { WEB_URL } from "@/config/config.mjs";
 
 const dummyLegacyData = {
   title:
     '<span class="dark-blue-text ">SRI SUTTUR MATH THE</span> <span class="blue-text">1000-YEAR LEGACY </span>',
-  subtitle: "ABOUT JSS UNIVERSITY",
+  subtitle: "ABOUT JSS UNIVERSITY1",
   description:
     "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.",
   url: "/",
@@ -63,13 +62,6 @@ export default function LegacySection({ data }) {
   const [videoPopup, setVideoPopup] = useState(false);
   const legacyData = data ? data : dummyLegacyData;
 
-  // Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return "";
@@ -182,9 +174,9 @@ export default function LegacySection({ data }) {
                     data-aos="fade-up"
                     data-aos-delay={i * 200}
                   >
-                    <h1 className={`${styles.highlightNumber}`}>
+                    <h3 className={`${styles.highlightNumber}`}>
                       <span>#</span> {h.rank}
-                    </h1>
+                    </h3>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
                       <div className="d-flex align-items-center gap-2">
@@ -211,9 +203,9 @@ export default function LegacySection({ data }) {
                     key={i}
                     className={`col-md-5 ${styles.highlightBox}`}
                   >
-                    <h1 className={`fw-bold ${styles.highlightNumber}`}>
+                    <h3 className={`fw-bold ${styles.highlightNumber}`}>
                       {h.rank}
-                    </h1>
+                    </h3>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
                       <Image

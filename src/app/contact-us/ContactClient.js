@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { useRouter } from "next/navigation";
 
 export default function ContactClient() {
@@ -154,7 +154,7 @@ export default function ContactClient() {
       <section className={styles.contactSection}>
         <div className="container">
           <div className="text-center mb-4">
-            <h2 className={styles.topText}>{contactData.subtitle}</h2>
+            <h1 className={styles.topText}>{contactData.subtitle}</h1>
             <h3
               className={styles.topText}
               dangerouslySetInnerHTML={{ __html: contactData.title }}

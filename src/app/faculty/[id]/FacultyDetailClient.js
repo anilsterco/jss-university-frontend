@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import { usePathname } from "next/navigation";
@@ -123,7 +123,7 @@ export default function FacultyDetailClient({ faculty }) {
                       <div className="profile-email">
                         <p>LinkedIn Profile</p>
                         <a
-                          href={facultyLinkedin}
+                          href={`${facultyLinkedin.startsWith('http') ? facultyLinkedin : `https://${facultyLinkedin}`}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >

@@ -1,7 +1,7 @@
 // SearchClient.js
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
 

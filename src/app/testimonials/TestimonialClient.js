@@ -7,7 +7,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
-import { ASSETS_URL, BASE_URL } from "@/config/config";
+import { ASSETS_URL, BASE_URL } from "@/config/config.mjs";
 
 export default function TestimonialClient() {
   const [testimonialData, setTestimonialData] = useState([]);

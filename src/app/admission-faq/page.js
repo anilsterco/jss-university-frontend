@@ -2,7 +2,7 @@ import React from "react";
 import Faq from "@/component/common/faq/Faq";
 import TabSection from "@/component/sections/TabSection";
 import styles from "./page.module.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { getPageSEO } from "@/lib/seo";
 
 export async function generateMetadata() {

@@ -264,15 +264,12 @@ export default function MobileMenuOverlay({
                       </div> */}
 
                                     <div className="acresData">
-                                        <h1
+                                        <span
+                                            className="heading"
                                             dangerouslySetInnerHTML={{
                                                 __html: activeRightMenu.second_section?.heading,
                                             }}
                                         />
-                                        {/* <h1>
-                          <span>21+</span>
-                          Acres
-                        </h1> */}
                                         {activeRightMenu.second_section?.subheading && (
                                             <p>{activeRightMenu.second_section?.subheading}</p>
                                         )}

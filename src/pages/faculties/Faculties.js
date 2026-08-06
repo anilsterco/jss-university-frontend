@@ -167,7 +167,7 @@ export default function Faculties({ data }) {
   return (
     <section className={styles.inner_page}>
       <div className="container">
-        <h1 className={`${styles.innerPage_title} text-center`}>Faculty</h1>
+        <h2 className={`${styles.innerPage_title} text-center`}>Faculty</h2>
 
         {/* Filters */}
         <section className="program-search faulty-sec inner_faculties_search">

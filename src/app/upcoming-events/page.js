@@ -19,6 +19,9 @@ export default async function Faculty() {
           strategy="beforeInteractive"
         />
       )}
+      <h1 style={{
+        display:'none'
+      }}>Upcoming Events</h1>
       <UpcomingEvents />
     </>
   );

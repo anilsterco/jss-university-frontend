@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { getPageSEO } from "@/lib/seo";
 import HappeningsClientDetail from "./blogsClientDetail";
 import BlogsClientDetail from "./blogsClientDetail";

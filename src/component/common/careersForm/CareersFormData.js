@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 
 import styles from "./CareersFormData.module.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export default function CareersFormData() {
     const [loading, setLoading] = useState(false);

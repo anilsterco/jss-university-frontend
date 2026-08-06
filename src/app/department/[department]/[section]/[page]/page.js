@@ -7,7 +7,7 @@ import FacultySchool from "@/component/school-components/faculty-list-school/Fac
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
 import Faculties from "@/pages/faculties/Faculties";

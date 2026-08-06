@@ -2,16 +2,13 @@
 import {
   Roboto,
   Roboto_Condensed,
-  Oswald,
-  Geist,
-  Noto_Sans,
-  Open_Sans,
+ 
 } from "next/font/google";
 import Header from "../component/Header";
-import Footer from "../component/Footer";
+import Footer from "../component/footer/Footer";
 import Providers from "./providers";
-import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.css";
 // import "@fontsource/roboto-condensed/300.css";
 // import "@fontsource/roboto-condensed/400.css";
 // import "@fontsource/roboto-condensed/700.css";
@@ -23,7 +20,7 @@ import ScriptLoader from "@/component/ScriptLoader";
 import MainWrapper from "@/component/MainWrapper";
 import HashScrollHandler from "@/component/HashScrollHandler";
 import { headers } from "next/headers";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import GoogleAnalytics from "@/component/GoogleAnalytics";
 
 const roboto = Roboto({
@@ -43,39 +40,39 @@ const robotoCondensed = Roboto_Condensed({
   preload: true,
 });
  
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["200", "300", "700"],
-  display: "swap",
-  variable: "--font-Oswald",
-  preload: false, // load lazily if not above-the-fold
-});
+// const oswald = Oswald({
+//   subsets: ["latin"],
+//   weight: ["200", "300", "700"],
+//   display: "swap",
+//   variable: "--font-Oswald",
+//   preload: false, // load lazily if not above-the-fold
+// });
  
-const geist = Geist({
-  subsets: ["latin"],
-  weight: ["200", "300", "700"],
-  display: "swap",
-  variable: "--font-Geist",
-  preload: false,
-});
+// const geist = Geist({
+//   subsets: ["latin"],
+//   weight: ["200", "300", "700"],
+//   display: "swap",
+//   variable: "--font-Geist",
+//   preload: false,
+// });
  
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-Noto",
-  preload: false,
-});
+// const notoSans = Noto_Sans({
+//   subsets: ["latin"],
+//   weight: ["200", "300", "400", "500", "600", "700"],
+//   style: ["normal", "italic"],
+//   display: "swap",
+//   variable: "--font-Noto",
+//   preload: false,
+// });
  
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-OpenSans",
-  preload: false,
-});
+// const openSans = Open_Sans({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "700"],
+//   style: ["normal", "italic"],
+//   display: "swap",
+//   variable: "--font-OpenSans",
+//   preload: false,
+// });
 
 export const metadata = {
   title: "JSS University Noida",
@@ -115,42 +112,6 @@ function generateBreadcrumbs(pathname) {
   return crumbs;
 }
 
-const fetchOpts = process.env.NODE_ENV === "development"
-  ? { cache: "no-store" }
-  : { next: { revalidate: 300 } };
-
-async function getHeaderData() {
-  try {
-    const [navRes, admissionRes, schoolRes, hamburgerRes] = await Promise.all([
-      fetch(`${BASE_URL}header`, fetchOpts),
-      fetch(`${BASE_URL}admission`, fetchOpts),
-      fetch(`${BASE_URL}school-department-list`, fetchOpts),
-      fetch(`${BASE_URL}hamburger`, fetchOpts),
-    ]);
-
-    const [nav, admission, school, hamburger] = await Promise.all([
-      navRes.ok ? navRes.json() : { data: [] },
-      admissionRes.ok ? admissionRes.json() : { data: [] },
-      schoolRes.ok ? schoolRes.json() : { data: [] },
-      hamburgerRes.ok ? hamburgerRes.json() : { data: [] },
-    ]);
-
-    return {
-      navLinks: nav.data || [],
-      admissionData: admission.data || null,
-      engineeringData: school.data || [],
-      megaMenuData: hamburger.data || [],
-    };
-  } catch (err) {
-    console.error("Header data fetch error:", err);
-    return {
-      navLinks: [],
-      admissionData: null,
-      engineeringData: [],
-      megaMenuData: [],
-    };
-  }
-}
 
 export default async function RootLayout({ children }) {
   const headersList = await headers();
@@ -158,8 +119,6 @@ export default async function RootLayout({ children }) {
 
   // Determine current pathname for conditional schema injection
   const pathname = headersList.get("x-pathname") || headersList.get("x-invoke-path") || "";
-
-  const headerData = await getHeaderData();
 
   // Breadcrumb schema — dynamic for every page
   const breadcrumbSchema = {
@@ -180,10 +139,7 @@ export default async function RootLayout({ children }) {
   const fontClassNames = [
     roboto.variable,
     robotoCondensed.variable,
-    oswald.variable,
-    geist.variable,
-    notoSans.variable,
-    openSans.variable,
+    
   ].join(" ");
 
   return (
@@ -553,12 +509,7 @@ export default async function RootLayout({ children }) {
 
         <Providers>
           <GoogleAnalytics />
-          <Header
-            initialNavLinks={headerData.navLinks}
-            initialAdmissionData={headerData.admissionData}
-            initialEngineeringData={headerData.engineeringData}
-            initialMegaMenuData={headerData.megaMenuData}
-          />
+          <Header />
           <HashScrollHandler />
           <MainWrapper>{children}</MainWrapper>
           <ScriptLoader />

@@ -3,14 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { WEB_URL } from "@/config/config.mjs";
+import { ASSETS_URL } from "@/config/config.mjs";
 
-export default function FacilitiesPage() {
+export default function FacilitiesClient() {
   const [activeTab, setActiveTab] = useState("academic");
   const [activeLab, setActiveLab] = useState(0);
   const [facilitiesData, setFacilitiesData] = useState(null);
@@ -124,7 +122,7 @@ export default function FacilitiesPage() {
           description:
             "Some lecture halls are air-conditioned, creating a conducive academic atmosphere, especially during warmer months.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/aicte-idea",
         },
         {
@@ -143,7 +141,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/cs-labs",
         },
         {
@@ -162,7 +160,7 @@ export default function FacilitiesPage() {
           description:
             "Focused on operations, production, and industrial process simulations.",
           image:
-            `${WEB_URL}assets/img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
+            `${ASSETS_URL}img/homepage/facilities/1762414408_facility_0_690c4f487e87d.png`,
           link: "/labs/electrical-labs",
         },
         {
@@ -237,7 +235,7 @@ export default function FacilitiesPage() {
       subtitle:
         "JSS University Noida, is deeply committed to environmental sustainability.",
       description:
-        "The university has implemented a comprehensive Green Policy to promote eco-friendly practices across the campus. This policy encompasses a wide range of initiatives aimed at reducing the university's carbon footprint and fostering a culture of environmental responsibility. Key components of the Green Policy include waste reduction programme, such as extensive recycling efforts and the minimization of single-use plastics.",
+        "The university has implemented a comprehensive Green Policy to promote eco-friendly practices across the campus. This policy encompasses a wide range of initiatives aimed at reducing the university's carbon footprint and fostering a culture of environmental responsibility. Key components of the Green Policy include waste reduction Programme, such as extensive recycling efforts and the minimization of single-use plastics.",
       image: "/images/custom-page/facility/green-initiatives-banner.png",
       vision: {
         title: "To realise its vision, the University will:",

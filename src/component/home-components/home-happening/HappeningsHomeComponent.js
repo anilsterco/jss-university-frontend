@@ -105,12 +105,12 @@ export default function EventsGrid({ data }) {
         >
           <div className={styles.header}>
             <p className={styles.headerSmall}>{eventsData.subtitle}</p>
-            <h1
+            <h2
               className={`${styles.headerTitle}`}
               dangerouslySetInnerHTML={{ __html: eventsData.title }}
               data-aos="fade-up"
               data-aos-delay="200"
-            ></h1>
+            ></h2>
           </div>
           {eventsData.happenings && eventsData.happenings.length > 0 && (
             <div className={styles.grid}>

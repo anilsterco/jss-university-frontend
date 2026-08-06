@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 // --- Generic fetch function with SSR caching ---
 async function fetchData(endpoint, options = {}) {

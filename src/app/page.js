@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { cache } from "react";
 import BannerComponent from "../component/home-components/banner/BannerComponent";
 import CourseOfferedComponent from "../component/home-components/courses-offered-home/CourseOfferedComponent";
 import PlacementComponent from "../component/home-components/placement/PlacementComponent";
@@ -11,8 +13,10 @@ import PopupModal from "@/component/PopupModal";
 import Link from "next/link";
 import HeaderBottomBanner from "@/component/home-components/HeaderBottomBanner";
 
+const getPageSEOCached = cache(getPageSEO);
+
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEOCached();
 }
 
 const fetchOpts = process.env.NODE_ENV === "development"
@@ -43,12 +47,16 @@ async function getPopupData() {
   }
 }
 
+async function PopupModalServer() {
+  const popupData = await getPopupData();
+  return <PopupModal data={popupData} />;
+}
+
 export default async function HomePage() {
-  // fetch all three in parallel instead of sequentially awaiting each one
-  const [seoData, homepageData, popupData] = await Promise.all([
-    getPageSEO(),
+
+  const [seoData, homepageData] = await Promise.all([
+    getPageSEOCached(),
     getSchoolData(),
-    getPopupData(),
   ]);
 
   return (
@@ -62,7 +70,14 @@ export default async function HomePage() {
         />
       )}
 
-      <PopupModal data={popupData} />
+      {/* <Suspense fallback={null}>
+        <PopupModalServer />
+      </Suspense> */}
+
+      <h1 style={{
+        display: "none",
+      }}>Private University In Noida</h1>
+
       <BannerComponent data={homepageData.sections.banners} />
       <HeaderBottomBanner />
       <div className="animated-hover">

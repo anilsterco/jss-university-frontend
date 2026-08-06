@@ -1,5 +1,5 @@
 import ApplyNowFormClient from "./ApplyNowFormClient";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import '@/styles/custom.style.css'
 
 export default async function ApplyNowPage() {

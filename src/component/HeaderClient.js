@@ -4,20 +4,26 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import "@fontsource/roboto-condensed";
 import { FaChevronDown } from "react-icons/fa6";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 import { FiSearch } from "react-icons/fi";
-import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config.mjs";
 import { useRouter } from "next/navigation";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import { Counter } from "./home-components/courses-offered-home/CourseOfferedComponent";
 
 const ContactApi = `${BASE_URL}contact-info`;
-const Addmision_Api = `${BASE_URL}admission`;
 const Program_Api = `${BASE_URL}program-list`;
 const MOBILE_HEADER_URL = `${BASE_URL}mobile-header`;
+
+// NEW: these used to be fetched server-side and passed as initial props.
+// They're now fetched client-side, on demand, the first time the user
+// interacts with the relevant UI (hover on nav item, click admissions,
+// open hamburger menu). This keeps them off the SSR critical path.
+const ADMISSION_API = `${BASE_URL}admission`;
+const SCHOOL_API = `${BASE_URL}school-department-list`;
+const HAMBURGER_API = `${BASE_URL}hamburger`;
 
 const mobilePanelsData = [
   {
@@ -114,11 +120,8 @@ const mobilePanelsData = [
   },
 ];
 
-export default function Header({
+export default function HeaderClient({
   initialNavLinks = [],
-  initialAdmissionData = null,
-  initialEngineeringData = [],
-  initialMegaMenuData = [],
 }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -128,12 +131,23 @@ export default function Header({
   const [isMounted, setIsMounted] = useState(false);
   const admissionRef = useRef(null);
   const [headerData, setHeaderData] = useState(initialNavLinks);
-  const [admissionData, setAdmissionData] = useState(initialAdmissionData);
-  const [engineeringData, setEngineeringData] = useState(initialEngineeringData);
+
+  // NEW: these start empty/null and are populated lazily
+  const [admissionData, setAdmissionData] = useState(null);
+  const [engineeringData, setEngineeringData] = useState([]);
+  const [megaMenuData, setMegaMenuData] = useState([]);
+
+  // NEW: simple loading + fetched-once guards so we don't refire on every hover
+  const [admissionLoading, setAdmissionLoading] = useState(false);
+  const [engineeringLoading, setEngineeringLoading] = useState(false);
+  const [megaMenuLoading, setMegaMenuLoading] = useState(false);
+  const admissionFetchedRef = useRef(false);
+  const engineeringFetchedRef = useRef(false);
+  const megaMenuFetchedRef = useRef(false);
+
   const [mobilePanels, setMobilePanels] = useState(mobilePanelsData);
   const [mobProgramList, setMobProgramList] = useState([]);
   const [activeDropdown, setActiveDropdown] = useState([]); //[]
-  const [megaMenuData, setMegaMenuData] = useState(initialMegaMenuData);
   const [isAcademic, setIsAcademic] = useState(false);
   const [openMenuAccordion, setOpenMenuAccordion] = useState(null);
   const [openChildAccordion, setOpenChildAccordion] = useState(null);
@@ -144,7 +158,6 @@ export default function Header({
   const [globleSearch, setglobleSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [programsCount, setProgramsCount] = useState(null);
-  // Add this state near other states
   const [searchError, setSearchError] = useState("");
   const [scrollDirection, setScrollDirection] = useState("up");
 
@@ -153,10 +166,61 @@ export default function Header({
   const closeTimeoutRef = useRef(null);
   const prevScrollY = useRef(0);
 
-
   const [activePanel, setActivePanel] = useState(null);
   const navLinks = headerData || [];
-  const admissionsData = admissionData || [];
+  const admissionsData = admissionData || null;
+
+  // ---- NEW: lazy loaders -----------------------------------------------
+
+  const loadAdmissionData = async () => {
+    if (admissionFetchedRef.current) return;
+    admissionFetchedRef.current = true;
+    setAdmissionLoading(true);
+    try {
+      const res = await fetch(ADMISSION_API);
+      const json = await res.json();
+      setAdmissionData(json.data || null);
+    } catch (err) {
+      console.error("Admission data fetch error:", err);
+      admissionFetchedRef.current = false; // allow retry on next interaction
+    } finally {
+      setAdmissionLoading(false);
+    }
+  };
+
+  const loadEngineeringData = async () => {
+    if (engineeringFetchedRef.current) return;
+    engineeringFetchedRef.current = true;
+    setEngineeringLoading(true);
+    try {
+      const res = await fetch(SCHOOL_API);
+      const json = await res.json();
+      setEngineeringData(json.data || []);
+    } catch (err) {
+      console.error("School/department data fetch error:", err);
+      engineeringFetchedRef.current = false;
+    } finally {
+      setEngineeringLoading(false);
+    }
+  };
+
+  const loadMegaMenuData = async () => {
+    if (megaMenuFetchedRef.current) return;
+    megaMenuFetchedRef.current = true;
+    setMegaMenuLoading(true);
+    try {
+      const res = await fetch(HAMBURGER_API);
+      const json = await res.json();
+      setMegaMenuData(json.data || []);
+    } catch (err) {
+      console.error("Hamburger menu data fetch error:", err);
+      megaMenuFetchedRef.current = false;
+    } finally {
+      setMegaMenuLoading(false);
+    }
+  };
+
+  // ------------------------------------------------------------------------
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -177,11 +241,14 @@ export default function Header({
     setActiveDropdown(i);
     setActiveMegaChildIndex(0);
 
+    // NEW: mega dropdown needs engineeringData (schools/departments) —
+    // fetch it the first time any nav item is hovered.
+    loadEngineeringData();
+
     const firstChild = navLinks?.[i]?.children?.[0];
     if (firstChild?.title) {
       setActiveMegaChildName(firstChild.title.toLowerCase());
     }
-    // setActiveMegaChildName(pageName);
   };
 
   const handleNavMouseLeave = () => {
@@ -192,7 +259,6 @@ export default function Header({
   };
 
   const handleDropdownMouseEnter = () => {
-    // Mouse reached the dropdown — cancel the pending close
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
@@ -200,7 +266,6 @@ export default function Header({
   };
 
   const handleDropdownMouseLeave = () => {
-    // Mouse left the dropdown — close it
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
       setIsAcademic(false);
@@ -219,7 +284,7 @@ export default function Header({
 
   const hamburgerMenudata = [
     {
-      name: "About JSS University",
+      name: "About JSS University1",
       Menu: ["Overview", "Scholarships", "International Students"],
       firstContent: {
         title:
@@ -333,6 +398,8 @@ export default function Header({
   }, [isMounted]);
 
   const openMenu = () => {
+    // NEW: hamburger mega menu needs megaMenuData — fetch on open
+    loadMegaMenuData();
     setMenuOpen(true);
     setActiveLeftIndex(0);
     setActiveMiddleIndex(null);
@@ -350,7 +417,6 @@ export default function Header({
       if (e.key === "Escape") {
         closeMenu();
         setAdmissionOpen(false);
-        setEngineeringDropdown(false);
       }
     };
     window.addEventListener("keydown", handleEsc);
@@ -358,21 +424,6 @@ export default function Header({
   }, [isMounted]);
 
   const activeData = hamburgerMenudata[activeIndex] || hamburgerMenudata[0];
-
-  // if (!isMounted) {
-  //   return (
-  //     <header
-  //       style={{
-  //         position: "fixed",
-  //         top: 0,
-  //         left: 0,
-  //         right: 0,
-  //         zIndex: 1100,
-  //         height: "80px",
-  //       }}
-  //     ></header>
-  //   );
-  // }
 
   const handleSearch = () => {
     const trimmed = searchQuery.trim();
@@ -461,7 +512,7 @@ export default function Header({
                 Menu: json.data.map((d) => ({
                   name: d.title,
                   url: d.url,
-                  children: d.children || [], // ← store children
+                  children: d.children || [],
                 })),
               }
               : item,
@@ -482,6 +533,8 @@ export default function Header({
     if (name === "Courses") await loadPrograms();
     if (name === "Contact") await loadContacts();
     if (name === "Menu") await loadMenu();
+    // NEW: mobile admissions panel also needs admissionData now
+    if (name === "Admissions") await loadAdmissionData();
 
     setActivePanel(name);
   };
@@ -509,20 +562,6 @@ export default function Header({
               className={`brand-wrap logo-content ${scrolled ? "scrolled" : ""}`}
             >
               <div className="dashbord-logo">
-                {/* <Link href="/" aria-label="Home">
-                  <Image
-                    src={
-                      isHomeLikePage
-                        ? "/images/header/home.png"
-                        : "/images/header/inner-page.png"
-                    }
-                    className="site-logo"
-                    alt="Site Logo"
-                    width={325}
-                    height={116}
-                    priority
-                  />
-                </Link> */}
                 <Link href="/" aria-label="Home" className="nav_logo">
                   <Image
                     src={
@@ -554,10 +593,6 @@ export default function Header({
                     height={70}
                     priority
                   />
-                  {/* <div className="logo_text">
-                    <div className="uniname">JSS University</div>
-                    <div className="uni_addrese">Noida, Uttar Pradesh</div>
-                  </div> */}
                 </Link>
               </div>
             </div>
@@ -629,7 +664,7 @@ export default function Header({
                                   const isProgramsChild = activeMegaChildName?.includes("program");
                                   const rightData = activeChild?.right || (isProgramsChild ? l.right : null);
 
-                                  // PROGRAMS (index 0) — existing content
+                                  // PROGRAMS (index 0)
                                   if (rightData) {
                                     return (
                                       <>
@@ -647,7 +682,6 @@ export default function Header({
                                             {rightData.desc}
                                           </p>
 
-                                          {/* apply now button */}
                                           <div className="mega-ctas">
                                             {rightData.ctas?.map((cta, idx) => (
                                               <Link
@@ -715,7 +749,10 @@ export default function Header({
                                   }
 
                                   // SCHOOLS (index 1)
-                                  if (activeMegaChildName.includes("school")) {
+                                  if (activeMegaChildName?.includes("school")) {
+                                    if (engineeringLoading && engineeringData.length === 0) {
+                                      return <div className="mega-loading-placeholder" style={{ height: "200px" }} />;
+                                    }
                                     return (
                                       <div className="mega-schools-list">
                                         <ul>
@@ -746,8 +783,10 @@ export default function Header({
                                   }
 
                                   // DEPARTMENTS (index 2)
-                                  if (activeMegaChildName.includes("department")) {
-                                    // Define column sizes explicitly: 2, 2, 3
+                                  if (activeMegaChildName?.includes("department")) {
+                                    if (engineeringLoading && engineeringData.length === 0) {
+                                      return <div className="mega-loading-placeholder" style={{ height: "200px" }} />;
+                                    }
                                     const columnSizes = [2, 2, 3];
                                     const columns = [];
                                     let index = 0;
@@ -793,7 +832,6 @@ export default function Header({
                                     );
                                   }
 
-                                  // FACULTY LIST (index 3) or any other — placeholder
                                   return (
                                     <div style={{ height: "200px" }}>
                                       other content
@@ -814,7 +852,10 @@ export default function Header({
                 <div className="admission-wrap" ref={admissionRef}>
                   <button
                     className="admission-btn"
-                    onClick={() => setAdmissionOpen((prev) => !prev)}
+                    onClick={() => {
+                      setAdmissionOpen((prev) => !prev);
+                      loadAdmissionData();
+                    }}
                   >
                     ADMISSIONS
                   </button>
@@ -822,98 +863,105 @@ export default function Header({
                   {admissionOpen && (
                     <div className="admission-dropdown">
                       <span className="dropdown-arrow"></span>
-                      <div className="ad-left">
-                        <p className="ad-subtitle">
-                          {admissionsData.left.subtitle}
-                        </p>
-                        <h2 className="ad-title">
-                          {admissionsData.left.title}
-                        </h2>
-                        <p className="ad-desc">{admissionsData.left.desc}</p>
-                        <div className="ad-contact">
-                          <span> {admissionsData.left.querytext} </span>
-                          <p>
-                            <a className="CTA_Email" href={`mailto:${admissionsData.left.email}`}>
-                              <img
-                                src="/images/header/mailicon.svg"
-                                className="img-fluid"
-                                alt="Email"
-                              />
-                              {admissionsData.left.email}
-                            </a>
-                          </p>
-                          <p>
-                            <a className="CTA_Number" href={`tel:${admissionsData.left.phone}`}>
-                              <img
-                                src="/images/header/phoneicon.svg"
-                                className="img-fluid"
-                                alt="Phone"
-                              />
-                              {admissionsData.left.phone}
-                            </a>
-                          </p>
-                        </div>
-                        <div className="ad-ctas">
-                          {admissionsData.left.ctas.map((cta, idx) => (
-                            <a
-                              key={idx}
-                              target="_blank"
-                              href={`${cta.url || APPLY_NOW}`}
-                              className={`cta applynow ${cta.type} ${cta.text == 'APPLY NOW' ? 'CTA_Applynow' : 'CTA_Brochure'}`}
-                            >
-                              {cta.text}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
+                      {!admissionsData ? (
+                        // NEW: lightweight placeholder while first fetch resolves
+                        <div className="admission-loading-placeholder" style={{ minHeight: "300px" }} />
+                      ) : (
+                        <>
+                          <div className="ad-left">
+                            <p className="ad-subtitle">
+                              {admissionsData.left.subtitle}
+                            </p>
+                            <h2 className="ad-title">
+                              {admissionsData.left.title}
+                            </h2>
+                            <p className="ad-desc">{admissionsData.left.desc}</p>
+                            <div className="ad-contact">
+                              <span> {admissionsData.left.querytext} </span>
+                              <p>
+                                <a className="CTA_Email" href={`mailto:${admissionsData.left.email}`}>
+                                  <img
+                                    src="/images/header/mailicon.svg"
+                                    className="img-fluid"
+                                    alt="Email"
+                                  />
+                                  {admissionsData.left.email}
+                                </a>
+                              </p>
+                              <p>
+                                <a className="CTA_Number" href={`tel:${admissionsData.left.phone}`}>
+                                  <img
+                                    src="/images/header/phoneicon.svg"
+                                    className="img-fluid"
+                                    alt="Phone"
+                                  />
+                                  {admissionsData.left.phone}
+                                </a>
+                              </p>
+                            </div>
+                            <div className="ad-ctas">
+                              {admissionsData.left.ctas.map((cta, idx) => (
+                                <a
+                                  key={idx}
+                                  target="_blank"
+                                  href={`${cta.url || APPLY_NOW}`}
+                                  className={`cta applynow ${cta.type} ${cta.text == 'APPLY NOW' ? 'CTA_Applynow' : 'CTA_Brochure'}`}
+                                >
+                                  {cta.text}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
 
-                      <div className="ad-middle">
-                        <ul>
-                          {admissionsData.middle.links.map((link, idx) => (
-                            <li key={idx} className="ad-link">
+                          <div className="ad-middle">
+                            <ul>
+                              {admissionsData.middle.links.map((link, idx) => (
+                                <li key={idx} className="ad-link">
+                                  <Link
+                                    href={`${link?.target == "_blank" ? link.url : WEB_URL + link.url}`}
+                                    style={{ color: "inherit" }}
+                                    onClick={() => setAdmissionOpen(false)}
+                                    target={link?.target}
+                                    aria-label={`View ${link.title}`}
+                                  >
+                                    {link.title}
+                                    <img
+                                      src="/images/header/listicon.svg"
+                                      className="img-fluid"
+                                      alt="Arrow"
+                                    />
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="ad-stats">
+                              <h3>{admissionsData.middle.stats.text}</h3>
+                              <p>{admissionsData.middle.stats.subtext}</p>
                               <Link
-                                href={`${link?.target == "_blank" ? link.url : WEB_URL + link.url}`}
+                                href={
+                                  WEB_URL + admissionsData.middle.stats.btnText.url
+                                }
                                 style={{ color: "inherit" }}
-                                onClick={() => setAdmissionOpen(false)}
-                                target={link?.target}
-                                aria-label={`View ${link.title}`}
                               >
-                                {link.title}
-                                <img
-                                  src="/images/header/listicon.svg"
-                                  className="img-fluid"
-                                  alt="Arrow"
-                                />
+                                <button className="stats-btn">
+                                  {admissionsData.middle.stats.btnText.text}
+                                </button>
                               </Link>
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="ad-stats">
-                          <h3>{admissionsData.middle.stats.text}</h3>
-                          <p>{admissionsData.middle.stats.subtext}</p>
-                          <Link
-                            href={
-                              WEB_URL + admissionsData.middle.stats.btnText.url
-                            }
-                            style={{ color: "inherit" }}
-                          >
-                            <button className="stats-btn">
-                              {admissionsData.middle.stats.btnText.text}
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
+                            </div>
+                          </div>
 
-                      {admissionsData.right && (
-                        <div className="ad-right">
-                          <Image
-                            src={admissionsData.right.img}
-                            alt={admissionsData.right.alt}
-                            width={400}
-                            height={400}
-                            className="addmision-section-img"
-                          />
-                        </div>
+                          {admissionsData.right && (
+                            <div className="ad-right">
+                              <Image
+                                src={admissionsData.right.img}
+                                alt={admissionsData.right.alt}
+                                width={400}
+                                height={400}
+                                className="addmision-section-img"
+                              />
+                            </div>
+                          )}
+                        </>
                       )}
                     </div>
                   )}
@@ -962,259 +1010,218 @@ export default function Header({
               <img src="/images/header/close-icon.svg" alt="Close menu" aria-hidden="true" />
             </button>
 
-            <div className="hamburger-layout">
-              <aside className="menu-left">
-                <ul>
-                  {megaMenuData.map((item, idx) => (
-                    <li
-                      key={item.id}
-                      className={`menu-left-item ${activeLeftIndex === idx ? "active" : ""}`}
-                      onClick={() => {
-                        setActiveLeftIndex(idx);
-                        setActiveMiddleIndex(null);
-                      }}
-                    >
-                      <Link
-                        href={
-                          item.url && item.url.includes('.pdf')
-                            ? item.url
-                            : WEB_URL + item.url
-                        }
-                        target={item?.target_blank ? '_blank' : '_self'}
-                        className="hambur_links"
-                        aria-label={`View ${item.title}`}
-                        onClick={(e) => {
-                          if (!item.url || item.url === "#") {
-                            e.preventDefault();
-                          } else {
-                            closeMenu();
-                          }
-                        }}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </aside>
-
-              <section className="menu-middle">
-                <div className="middle-title">
+            {megaMenuLoading && megaMenuData.length === 0 ? (
+              // NEW: placeholder while hamburger data loads
+              <div className="hamburger-loading-placeholder" style={{ minHeight: "400px" }} />
+            ) : (
+              <div className="hamburger-layout">
+                <aside className="menu-left">
                   <ul>
-                    {activeLeftMenu.children?.map((item, idx) => (
+                    {megaMenuData.map((item, idx) => (
                       <li
                         key={item.id}
-                        className={activeMiddleIndex === idx ? "active" : ""}
-                        onMouseEnter={() => setActiveMiddleIndex(idx)}
+                        className={`menu-left-item ${activeLeftIndex === idx ? "active" : ""}`}
+                        onClick={() => {
+                          setActiveLeftIndex(idx);
+                          setActiveMiddleIndex(null);
+                        }}
                       >
                         <Link
                           href={
-                            item.url && (item.url.includes('.pdf') || item?.target_blank)
+                            item.url && item.url.includes('.pdf')
                               ? item.url
                               : WEB_URL + item.url
                           }
-                          className="hambur_link"
-                          onClick={() => {
-                            closeMenu();
+                          target={item?.target_blank ? '_blank' : '_self'}
+                          className="hambur_links"
+                          aria-label={`View ${item.title}`}
+                          onClick={(e) => {
+                            if (!item.url || item.url === "#") {
+                              e.preventDefault();
+                            } else {
+                              closeMenu();
+                            }
                           }}
-                          target={item?.target_blank ? "_blank" : "_self"}
                         >
                           {item.title}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </div>
-                <ul className="middle-submenu">
-                  {activeMiddleMenu.children?.map((sub) => (
-                    <li key={sub.id}>
-                      <Link
-                        href={WEB_URL + sub.url}
-                        onClick={() => {
-                          closeMenu();
-                        }}
-                      >
-                        {sub.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+                </aside>
 
-              <section className="menu-right">
-                <div className="right-inner h-100">
-                  <div className="image-box">
-                    <div className="first-content">
-                      {activeRightMenu?.first_section?.title && (
-                        <h1
-                          dangerouslySetInnerHTML={{
-                            __html: activeRightMenu?.first_section?.title,
-                          }}
-                        />
-                      )}
-                      {activeRightMenu.first_section?.subtitle && (
-                        <p>{activeRightMenu.first_section.subtitle}</p>
-                      )}
-
-                      {activeRightMenu.first_section?.link && (
+                <section className="menu-middle">
+                  <div className="middle-title">
+                    <ul>
+                      {activeLeftMenu.children?.map((item, idx) => (
+                        <li
+                          key={item.id}
+                          className={activeMiddleIndex === idx ? "active" : ""}
+                          onMouseEnter={() => setActiveMiddleIndex(idx)}
+                        >
+                          <Link
+                            href={
+                              item.url && (item.url.includes('.pdf') || item?.target_blank)
+                                ? item.url
+                                : WEB_URL + item.url
+                            }
+                            className="hambur_link"
+                            onClick={() => {
+                              closeMenu();
+                            }}
+                            target={item?.target_blank ? "_blank" : "_self"}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <ul className="middle-submenu">
+                    {activeMiddleMenu.children?.map((sub) => (
+                      <li key={sub.id}>
                         <Link
-                          href={WEB_URL + activeRightMenu.first_section.link}
+                          href={WEB_URL + sub.url}
                           onClick={() => {
                             closeMenu();
                           }}
                         >
-                          <img
-                            src="/images/header/banner-arrow.svg"
-                            alt="Arrow"
-                          />
+                          {sub.title}
                         </Link>
-                      )}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
 
-                      {activeRightMenu?.first_section?.image && (
-                        <div className="hamburger-section-img virtural-img">
-                          <Image
-                            className="hum-small"
-                            src={activeRightMenu?.first_section?.image}
-                            alt={"image"}
-                            fill
-                            style={{ objectFit: "cover" }}
-                          />
-
-                          <div className="items-menu_grp">
-                            <div className="items-menu_grp_cont">
-                              {activeRightMenu?.first_section?.heading && (
-                                <h4>
-                                  {activeRightMenu?.first_section?.heading}
-                                </h4>
-                              )}
-                              {activeRightMenu?.first_section?.subheading && (
-                                <p>
-                                  {activeRightMenu?.first_section?.subheading}
-                                </p>
-                              )}
-                            </div>
-                          </div>
-
-                          <Link
-                            href="#"
-                            className="links"
-                            aria-label={`View ${activeRightMenu?.first_section?.title}`}
-                            onClick={() => {
-                              closeMenu();
+                <section className="menu-right">
+                  <div className="right-inner h-100">
+                    <div className="image-box">
+                      <div className="first-content">
+                        {activeRightMenu?.first_section?.title && (
+                          <h1
+                            dangerouslySetInnerHTML={{
+                              __html: activeRightMenu?.first_section?.title,
                             }}
                           />
-                        </div>
-                      )}
-
-                      {/* <div className="hamburger-section-img virtural-img">
-                        <Image
-                          className="hum-small"
-                          src={"/images/virtual-campus.png"}
-                          alt={"image"}
-                          fill
-                          style={{ objectFit: "cover" }}
-                        />
-
-                        <div className="items-menu_grp">
-                          <div className="items-menu_grp_cont">
-                            <h4>Virtual campus</h4>
-                            <p>Sed ut perspiciatis</p>
-                          </div>
-                        </div>
-                      </div> */}
-                    </div>
-
-                    <div className="second-content">
-                      {activeRightMenu.second_section?.image && (
-                        <div className="hamburger-section-img">
-                          <Image
-                            src={activeRightMenu.second_section.image}
-                            alt={activeData.secondContent.alt}
-                            fill
-                            style={{ objectFit: "cover" }}
-                            sizes="100vw"
-                          />
-
-                          <div className="vid-thumb-grp">
-                            {activeRightMenu.video_section?.video_url && (
-                              <div className="vid-thumb-icon"></div>
-                            )}
-
-                            <div className="vid-thumb-cont">
-                              {activeRightMenu.second_section?.title && (
-                                <h6>{activeRightMenu.second_section?.title}</h6>
-                              )}
-
-                              {activeRightMenu.second_section?.subtitle && (
-                                <h4>
-                                  {activeRightMenu.second_section?.subtitle}
-                                </h4>
-                              )}
-                            </div>
-                          </div>
-
-                          <Link
-                            href={
-                              activeRightMenu.video_section?.video_url
-                                ? activeRightMenu.video_section.video_url
-                                : WEB_URL +
-                                "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
-                            }
-                            className="links"
-                            aria-label={`View ${activeRightMenu.video_section?.video_url ? activeRightMenu.video_section.video_url : "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji"}`}
-                            onClick={() => {
-                              closeMenu();
-                            }}
-                          />
-                        </div>
-                      )}
-
-                      {/* <div className="hamburger-section-img">
-                        <Image
-                          src={"/images/header/humburger-second-banner.png"}
-                          alt={"image"}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="100vw"
-                        />
-
-                        <div className="vid-thumb-grp">
-                          <div className="vid-thumb-cont">
-                            <h6>MESSAGE FROM CHANCELLOR</h6>
-
-                            <h4>
-                              JAGADGURU SRI SHIVARATHRI DESHIKENDRA MAHASWAMIJI
-                            </h4>
-                          </div>
-                        </div>
-                      </div> */}
-
-                      <div className="acresData">
-                        <h1
-                          dangerouslySetInnerHTML={{
-                            __html: activeRightMenu.second_section?.heading,
-                          }}
-                        />
-                        {/* <h1>
-                          <span>21+</span>
-                          Acres
-                        </h1> */}
-                        {activeRightMenu.second_section?.subheading && (
-                          <p>{activeRightMenu.second_section?.subheading}</p>
                         )}
-                        {/* <p>
-                          Campus Area of the social-educational-spritual
-                          philosophy
-                        </p> */}
+                        {activeRightMenu.first_section?.subtitle && (
+                          <p>{activeRightMenu.first_section.subtitle}</p>
+                        )}
+
+                        {activeRightMenu.first_section?.link && (
+                          <Link
+                            href={WEB_URL + activeRightMenu.first_section.link}
+                            onClick={() => {
+                              closeMenu();
+                            }}
+                          >
+                            <img
+                              src="/images/header/banner-arrow.svg"
+                              alt="Arrow"
+                            />
+                          </Link>
+                        )}
+
+                        {activeRightMenu?.first_section?.image && (
+                          <div className="hamburger-section-img virtural-img">
+                            <Image
+                              className="hum-small"
+                              src={activeRightMenu?.first_section?.image}
+                              alt={"image"}
+                              fill
+                              style={{ objectFit: "cover" }}
+                            />
+
+                            <div className="items-menu_grp">
+                              <div className="items-menu_grp_cont">
+                                {activeRightMenu?.first_section?.heading && (
+                                  <h4>
+                                    {activeRightMenu?.first_section?.heading}
+                                  </h4>
+                                )}
+                                {activeRightMenu?.first_section?.subheading && (
+                                  <p>
+                                    {activeRightMenu?.first_section?.subheading}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+
+                            <Link
+                              href="#"
+                              className="links"
+                              aria-label={`View ${activeRightMenu?.first_section?.title}`}
+                              onClick={() => {
+                                closeMenu();
+                              }}
+                            />
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="second-content">
+                        {activeRightMenu.second_section?.image && (
+                          <div className="hamburger-section-img">
+                            <Image
+                              src={activeRightMenu.second_section.image}
+                              alt={activeData.secondContent.alt}
+                              fill
+                              style={{ objectFit: "cover" }}
+                              sizes="100vw"
+                            />
+
+                            <div className="vid-thumb-grp">
+                              {activeRightMenu.video_section?.video_url && (
+                                <div className="vid-thumb-icon"></div>
+                              )}
+
+                              <div className="vid-thumb-cont">
+                                {activeRightMenu.second_section?.title && (
+                                  <h6>{activeRightMenu.second_section?.title}</h6>
+                                )}
+
+                                {activeRightMenu.second_section?.subtitle && (
+                                  <h4>
+                                    {activeRightMenu.second_section?.subtitle}
+                                  </h4>
+                                )}
+                              </div>
+                            </div>
+
+                            <Link
+                              href={
+                                activeRightMenu.video_section?.video_url
+                                  ? activeRightMenu.video_section.video_url
+                                  : WEB_URL +
+                                  "leadership/jagadguru-sri-shivarathri-deshikendra-mahaswamiji"
+                              }
+                              className="links"
+                              aria-label={`View ${activeRightMenu.video_section?.video_url ? activeRightMenu.video_section.video_url : "Jagadguru Sri Shivarathri Deshikendra Mahaswamiji"}`}
+                              onClick={() => {
+                                closeMenu();
+                              }}
+                            />
+                          </div>
+                        )}
+
+                        <div className="acresData">
+                          <span
+                            className="heading"
+                            dangerouslySetInnerHTML={{
+                              __html: activeRightMenu.second_section?.heading,
+                            }}
+                          />
+                          {activeRightMenu.second_section?.subheading && (
+                            <p>{activeRightMenu.second_section?.subheading}</p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </section>
-            </div>
+                </section>
+              </div>
+            )}
           </div>
-
-
 
           {/* Popup */}
           {globleSearch && (
@@ -1258,7 +1265,6 @@ export default function Header({
                   )}
                 </div>
 
-                {/* Error message */}
                 <button
                   onClick={() => {
                     setglobleSearch(false);
@@ -1296,7 +1302,6 @@ export default function Header({
                             <Link
                               href={`${WEB_URL}programs?type=${sub.slug}`}
                               onClick={() => {
-                                // setMenuOpen(false);
                                 setActivePanel(null);
                               }}
                             >
@@ -1325,7 +1330,6 @@ export default function Header({
                             href={`${WEB_URL}programs`}
                             className="explore_programs"
                             onClick={() => {
-                              // setMenuOpen(false);
                               setActivePanel(null);
                             }}
                           >
@@ -1470,7 +1474,7 @@ export default function Header({
                                         ? null
                                         : idx,
                                     )
-                                  : () => setActivePanel(null) // ← add this
+                                  : () => setActivePanel(null)
                               }
                               style={
                                 sub.children?.length > 0
@@ -1576,7 +1580,7 @@ export default function Header({
                                           ? null
                                           : `b${idx}`,
                                       )
-                                    : () => setActivePanel(null) // ← add this
+                                    : () => setActivePanel(null)
                                 }
                                 style={
                                   sub.children?.length > 0
@@ -1640,9 +1644,6 @@ export default function Header({
           </ul>
         </div>
       </div>
-
-
-
     </header>
   );
 }

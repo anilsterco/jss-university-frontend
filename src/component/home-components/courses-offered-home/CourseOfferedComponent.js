@@ -5,9 +5,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./courses-offered.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { APPLY_NOW, WEB_URL } from "@/config/config";
+
 
 export const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
   const [count, setCount] = useState(start);
@@ -79,13 +78,6 @@ export default function CoursesOffered({ data }) {
   const [hasSearched, setHasSearched] = useState(false);
   const searchRef = useRef(null);
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      easing: "ease-in-out",
-      duration: 800,
-    });
-  }, []);
 
   useEffect(() => {
     if (query.trim() === "") {
@@ -133,7 +125,7 @@ export default function CoursesOffered({ data }) {
               {coursesData.subtitle}
             </h5>
 
-            <h1
+            <h2
               className={`fw-bold ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
               // data-aos="fade-up"
@@ -204,12 +196,12 @@ export default function CoursesOffered({ data }) {
               // data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
-                <h1
+                <h2
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
                   <Counter start={1} end={coursesData.programs_count} duration={2500} />
                   <span className={styles.programsCountPlus}>+</span>
-                </h1>
+                </h2>
               </div>
 
               <p className={`program-hide ${styles.programsText}`}>
@@ -265,11 +257,11 @@ export default function CoursesOffered({ data }) {
               >
                 <div className={styles.lastCardContentSection}>
                   <p>Explore All</p>
-                  <h1
-                    className="blue-text"
+                  <h2
+                    className={`blue-text counter_heading ${styles.counter_heading}`}
                   >
                     <Counter start={1} end={coursesData.programs_count} duration={2500} />+
-                  </h1>
+                  </h2>
                   <h5>ACADEMIC PROGRAMS</h5>
                 </div>
                 <div className={styles.lastCardArrow}>

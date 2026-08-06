@@ -1,5 +1,5 @@
 import { getPageSEO } from "@/lib/seo";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import ProgramDetailClient from "./ProgramDetailClient";
 
 async function getCourseDetail(id) {
@@ -102,7 +102,7 @@ export default async function ProgramDetail({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
         />
       )}
-
+      <h1>Programs {courseData.name}</h1>
       <ProgramDetailClient params={id} />
     </>
   );

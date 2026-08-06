@@ -3787,7 +3787,7 @@ hr {
   pointer-events: none;
 }
 
-.inner-title .innnr_head h3 {
+.inner-title .innnr_head h1 {
   font: var(--font-45);
   letter-spacing: -1.35px;
   color: var(--color-4e);
@@ -7802,7 +7802,7 @@ hr {
 }
 
 @media (max-width: 640px) {
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     font: var(--font-30);
     margin-bottom: 2rem;
     line-height: 1.2;
@@ -7881,7 +7881,7 @@ hr {
 }
 
 @media screen and (max-width: 480px) {
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     margin-bottom: 0rem;
   }
 
@@ -8150,7 +8150,7 @@ hr {
     line-height: 1.2;
   }
 
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     font: var(--font-22);
     font-family: var(--font-Condensed);
     letter-spacing: -1px;

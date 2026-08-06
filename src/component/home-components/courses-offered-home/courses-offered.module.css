@@ -355,7 +355,7 @@
     padding-inline: 2.5rem 3.3rem;
   }
 
-  .showOnlyMobileCard h1 {
+  .showOnlyMobileCard .counter_heading {
     font: var(--font-60);
     letter-spacing: -2.4px;
     color: #018CE8;
@@ -583,7 +583,7 @@
    margin: 0 auto;
    line-height: 3rem;
   }
-    .showOnlyMobileCard h1{margin-bottom: 0rem;}
+    .showOnlyMobileCard .counter_heading{margin-bottom: 0rem;}
 }
 
 @media (max-width: 420px) {
@@ -605,7 +605,7 @@
     padding: 3rem 3.4rem 1.3rem 1.5rem;
   }
 
-  .showOnlyMobileCard h1 {
+  .showOnlyMobileCard .counter_heading {
     font: var(--font-48);
     letter-spacing: -2.4px;
     margin-bottom: 0rem;

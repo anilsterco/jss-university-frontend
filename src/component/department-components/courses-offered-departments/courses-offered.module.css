@@ -446,7 +446,7 @@
     list-style: 30px;
   }
 
-  .showOnlyMobileCard h1 {
+  .showOnlyMobileCard .counter_heading {
     font: var(--font-48);
     letter-spacing: -2.4px;
     color: #018CE8;

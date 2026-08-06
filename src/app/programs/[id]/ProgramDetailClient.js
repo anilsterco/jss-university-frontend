@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "@/styles/custom.style.css";
 import "@/styles/style.css";
-import { APPLY_NOW, BASE_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL } from "@/config/config.mjs";
 import Faq from "@/component/common/faq/Faq";
 import EligibilityPrograms from "@/component/sections/EligibilityData";
 
@@ -270,7 +270,6 @@ export default function ProgramDetailClient({ params }) {
             <figcaption>
               <div className="program-detail-text">
                 <div className="innnr_head">
-                  {name && <h1 className="d-none">{name}</h1>}
                   <h2>PROGRAMMES</h2>
                   {name && <h3>{name}</h3>}
                 </div>

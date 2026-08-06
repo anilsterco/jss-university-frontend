@@ -10,7 +10,7 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import PlacementDepartment from "@/component/department-components/Placement-department/PlacementDepartment";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {

@@ -1,7 +1,7 @@
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import BlogsClient from "./BlogsClient";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export async function generateMetadata() {
   return await getPageSEO();

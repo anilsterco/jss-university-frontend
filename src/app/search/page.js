@@ -22,6 +22,9 @@ export default async function SearchPage({ searchParams }) {
           }}
         />
       )}
+      <h1 style={{
+        display:'none'
+      }}>Search</h1>
       <SearchClient query={query} />
     </>
   );

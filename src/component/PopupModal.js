@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import { APPLY_NOW } from "@/config/config";
+import { APPLY_NOW } from "@/config/config.mjs";
 import Link from "next/link";
 
 export default function PopupModal({ data }) {

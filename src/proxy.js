@@ -45,7 +45,7 @@ function buildCsp(nonce, isDev) {
     .trim();
 }
 
-export async function middleware(request) {
+export async function proxy(request) {
   const { pathname } = request.nextUrl;
   const isDev = process.env.NODE_ENV === "development";
   const nonce = crypto.randomUUID();
@@ -67,6 +67,10 @@ export async function middleware(request) {
 
   response.headers.set("Content-Security-Policy", cspHeader);
   response.headers.set("x-pathname", pathname);
+
+  if (pathname === "/&") {
+    return NextResponse.redirect(new URL("/", request.url), 301);
+  }
 
   return response;
 }

@@ -6,7 +6,7 @@ import { RxCaretRight } from "react-icons/rx";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 const SCHOOLS_API_URL = "/api/schools/all";
 

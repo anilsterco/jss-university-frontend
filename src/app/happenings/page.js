@@ -19,6 +19,9 @@ export default async function Happenings() {
           strategy="beforeInteractive"
         />
       )}
+      <h1 style={{
+        display:'none'
+      }}>Happenings</h1>
       <HappeningsClient />
     </>
   );

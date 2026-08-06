@@ -7,7 +7,7 @@ import styles from "./facilities.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +85,7 @@ export default function FacilitiesComponent({ data }) {
                 >
                   <div className={styles.lastCardContentSection}>
                     <p>Explore All</p>
-                    <h1 className="blue-text">28+</h1>
+                    <h2 className={`blue-text ${styles.counter_heading}`}>28+</h2>
                     <h5>acres of innovation, comfort, and opportunity</h5>
                   </div>
                   <div className={`py-0 ${styles.sectionHeader}`}>
@@ -111,11 +111,13 @@ export default function FacilitiesComponent({ data }) {
             </div>
             <div>
               <h5
+              className={styles.sub_heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.subheading }}
               ></h5>
-              <h1
+              <h2
+              className={styles.heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}
-              ></h1>
+              ></h2>
             </div>
           </div>
           <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>

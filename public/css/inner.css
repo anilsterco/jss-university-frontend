@@ -20,6 +20,7 @@
   letter-spacing: 0.72px;
   color: var(--color-4e);
   font-weight: 600;
+  margin-bottom: 0;
   font-family: var(--font-Condensed);
 }
 
@@ -10480,7 +10481,7 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .event_boxes{grid-template-columns:repeat(2,1fr);}
 .event_box,.event_box:nth-child(4),.event_box:nth-child(5){grid-column:auto;}
 .divercity_chem_soc .society_gallery{grid-template-columns: 1fr;}
-.left_side_content h1{font:var(--font-30);letter-spacing: 0; margin-top: 3rem;}
+.left_side_content h1,.left_side_content .heading{font:var(--font-30);letter-spacing: 0; margin-top: 3rem;}
 .student_soc {padding-top: 1rem;}
 .internal_soc_content .about_two{background-color: transparent;}
 .left_side_content h2 {margin-block:0.7rem}
@@ -10509,7 +10510,7 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .benefit_item {border-right: none;}
 .benefit_item:last-child {border-bottom: none;}
 .left_side_content h2 {font: var(--font-22);font-weight: 300;line-height: normal;text-align: left;}
-.left_side_content h1 {font: var(--font-30);letter-spacing: 0;margin-top: 3rem;text-align: left;}
+.left_side_content h1,.left_side_content .heading {font: var(--font-30);letter-spacing: 0;margin-top: 3rem;text-align: left;}
 }
 @media(max-width:575px){
 .internal_soc_content .achievements_li_grid {    grid-template-columns: 1fr;}

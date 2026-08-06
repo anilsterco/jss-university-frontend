@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import NewsEvents from "@/component/happening-components/news-events/NewsEvents";
 import NoticeAnnouncement from "@/component/happening-components/notice-announcement/NoticeAnnouncement";
 import { usePathname } from "next/navigation";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import Gallery from "@/component/happening-components/gallery/Gallery";
 import MediaCoverage from "@/component/happening-components/media-coverage/MediaCoverage";
 import NewsLetter from "@/component/happening-components/news-letter/NewsLetter";
@@ -94,9 +94,9 @@ export default function HappeningsClient({ className }) {
   return (
     <div className={`${styles.happeningsContainer} ${styles[className]}`}>
       <p className={`${styles.happeningsSubTitle} text-center`}>HAPPENINGS</p>
-      <h1 className={styles.happeningsTitle}>
+      <h2 className={styles.happeningsTitle}>
         STAY UP-TO-DATE ON CAMPUS NEWS AND EVENTS
-      </h1>
+      </h2>
 
       <div className={styles.tabHeaders}>
         {loading ? (

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { SiAdobeacrobatreader } from "react-icons/si";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export default function NoticeAnnouncement({ programId }) {
   const [resolvedProgramId, setResolvedProgramId] = useState(null);

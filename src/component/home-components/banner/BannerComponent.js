@@ -5,14 +5,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./banner.module.css";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
+import styles from "./banner.module.css";
 
 
 const getYouTubeEmbedUrl = (url) => {
@@ -37,13 +35,6 @@ export default function HeroSlider({ data, slug }) {
 
   const isDepartmentPage = currentPage === "department" && true;
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      easing: "ease-in-out",
-      duration: 800,
-    });
-  }, []);
   const bannerData = data?.length
     ? data
     : [
@@ -90,7 +81,7 @@ export default function HeroSlider({ data, slug }) {
                         </span>
                       )}
 
-                      <h1
+                      <h2
                         className={styles.bannerContentH1}
                         dangerouslySetInnerHTML={{ __html: slide.title }}
                       // data-aos="fade-right"
@@ -214,9 +205,10 @@ export default function HeroSlider({ data, slug }) {
                   width={750}
                   height={764}
                   priority
+                  fetchPriority="high"
+                  loading="eager"
                   style={{ width: "100%", height: "100%" }}
                   className={styles.mobileBanner}
-                  fetchPriority="high"
                 />
               )
             )}
@@ -228,12 +220,12 @@ export default function HeroSlider({ data, slug }) {
                       <span className={styles.bannerSmall}>Department of</span>
                     )}
 
-                    <h1
+                    <h2
                       className={styles.bannerContentH1}
                       dangerouslySetInnerHTML={{ __html: slide.title }}
                     // data-aos="fade-right"
                     // data-aos-delay="0"
-                    ></h1>
+                    />
 
                     <p
                       className={styles.bannerContentP}
