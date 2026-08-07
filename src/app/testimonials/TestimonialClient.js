@@ -123,9 +123,9 @@ export default function TestimonialClient() {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h1>Testimonials</h1>
-                <h3>
+                <h2>
                   Discover Student Journeys of <span>Success</span>
-                </h3>
+                </h2>
               </div>
             </div>
           </div>

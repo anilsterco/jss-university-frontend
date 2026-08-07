@@ -87,7 +87,7 @@
   color:var(--color-4e);
   text-decoration: none;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color-4e);
   transition: 0.3s ease;
 }
 
@@ -99,7 +99,7 @@
   margin-left: 15px;
   transition: transform 0.3s ease;
   color:var(--color-4e);
-  filter: invert(1);
+  /* filter: invert(1); */
 }
 
 .bannerContentA:hover .iconSpacing {
@@ -257,16 +257,16 @@
 
   .bannerContentH1 {
     font: var(--font-28);
-    color: var(--color-white);
+    /* color: var(--color-white); */
   }
 
   .bannerContentP {
-    color: var(--color-white);
+    /* color: var(--color-white); */
   }
 
   .bannerContentA {
-    color: var(--color-white);
-    border-bottom: 1px solid var(--color-white);
+    /* color: var(--color-white); */
+    /* border-bottom: 1px solid var(--color-white); */
     justify-content: center;
   }
 }

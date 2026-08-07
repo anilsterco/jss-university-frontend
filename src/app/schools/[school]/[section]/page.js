@@ -76,28 +76,28 @@ export default async function SchoolPage({ params }) {
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
 
       {section && section == "programs" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Programs data={schoolData?.data} />
         </Suspense>
       ) : section == "faculties" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Faculties data={schoolData?.data} />
         </Suspense>
       ) : section == "departments" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Departments data={schoolData?.data} />
         </Suspense>
       ) : section == "alumni" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Departments data={schoolData?.data} title="Alumni" type="alumni" />
         </Suspense>
       ) : section == "happenings" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <HappeningsClient className="inner_happening" />
         </Suspense>
       ) : section == "faqs" ? (
-        <Suspense fallback={<h2>Loading...</h2>}>
-          <FaqPage data={departmentData?.data} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <FaqPage data={schoolData?.data} />
         </Suspense>
       ) : schoolData?.slug?.includes(section) ? (
         <CommonPage data={schoolData.sections} />

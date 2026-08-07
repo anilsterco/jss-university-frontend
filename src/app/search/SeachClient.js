@@ -30,7 +30,7 @@ export default async function SearchClient({ query }) {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head">
-                <h2>Search</h2>
+                <h2 className="sub_heading">Search</h2>
                 <h3>
                   Shaping Excellence with
                   <span> Modern Learning Spaces</span>

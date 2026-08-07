@@ -2,14 +2,11 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
-import "swiper/css";
-import "swiper/css/pagination";
 import styles from "./banner.module.css";
 
 
@@ -27,7 +24,7 @@ const getYouTubeEmbedUrl = (url) => {
     : url;
 };
 
-export default function HeroSlider({ data, slug }) {
+export default function HeroSlider({ data, slug, classname='' }) {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const currentPage = pathParts[1];
@@ -51,7 +48,7 @@ export default function HeroSlider({ data, slug }) {
 
   return (
     <>
-     <div className="homeSlider">
+     <div className={`homeSlider ${classname}`}>
        <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}

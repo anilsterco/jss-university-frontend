@@ -5,12 +5,10 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
-import styles from "./happening.module.css";
-import "swiper/css";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import { WEB_URL } from "@/config/config";
+import styles from "./happening.module.css";
+
+
 export default function EventsGrid({ data }) {
   const dummyEventsData = {
     title:
@@ -88,12 +86,6 @@ export default function EventsGrid({ data }) {
       },
     ],
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
   const eventsData = data ? data : dummyEventsData;
   return (
     <section className={`${styles.eventSection} homepage_happenings`}>

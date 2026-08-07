@@ -55,8 +55,9 @@ border: .1rem solid var(--color-4e);    padding: 1rem 1.5rem; position: relative
 .program-detail-img figure{display: grid;}
 .program-detail-img figure>* { grid-area: 1 / 1;}
 .program-detail-text { text-align: center;width: 100%; height: 100%; display: flex;justify-content: center;align-items: center;position: relative;}
-.program-detail-text .innnr_head h2 {font: var(--font-18); padding-bottom: 1rem;letter-spacing: 0.72px;color: var(--color-white);font-weight: 600;}
-.program-detail-text .innnr_head h3 { font: var(--font-45);letter-spacing: -1.35px;color: var(--color-white); margin-bottom: 3.8rem;}
+.program-detail-text .innnr_head .sub_heading {font: var(--font-18); padding-bottom: 1rem;letter-spacing: 0.72px;color: var(--color-white);font-weight: 600;
+  margin-bottom: 0;}
+.program-detail-text .innnr_head .heading { font: var(--font-45);letter-spacing: -1.35px;color: var(--color-white); margin-bottom: 3.8rem;}
 .admission-sec { margin-top: -12.5rem;position: relative;}
 .admission-box {display: flex;flex-direction: column; align-items: flex-end;text-align: left;}
 .admission-box-text{background-color: var(--color-100); padding: 3rem; border-radius: 5rem 0 0 0;width: 22%;}

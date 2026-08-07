@@ -273,6 +273,9 @@ p {
   height: 100%;
 }
 
+
+.coming-container {width: 100%;height: 100vh;background: #f4f4f4;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;padding: 2rem;}
+
 @media (min-width: 1921px) {
   .containerXl {
     padding-inline: 9.8rem;
@@ -377,6 +380,9 @@ p {
   .homeSlider{
     min-height: 70rem;
     max-height:unset;
+  }
+  .homeSlider.department{
+    min-height: unset;
   }
 }
 
@@ -1030,7 +1036,6 @@ a:active {
 @media (max-width: 575px) {.container.p-sm-0 {padding-inline: 0 !important;}
 .bannerTextBox {margin-top: 2rem;}
 .events_row {grid-template-columns: repeat(1, 1fr);gap: 1.5rem;}}
-.coming-container {width: 100%;height: 100vh;background: #f4f4f4;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;padding: 2rem;}
 .title {font: var(--font-80);letter-spacing: -3.2px;font-family: var(--font-Condensed);color: var(--color-4e);margin-bottom: 3rem;}
 .subtitle {font: var(--font-18);color: #555;margin-bottom: 3rem;}
 .btn-div a {color: var(--color-black);letter-spacing: 0.8px !important;background-color: var(--color-100) !important;font: var(--font-20);font-family: var(--font-Condensed) !important;border: none;padding: 1.4rem 2rem 1.2rem;}
@@ -1637,6 +1642,8 @@ to {opacity: 1;transform: translateY(0);}}
 .yukti_section p {padding-top: 2rem;}
 .yukti_grid {grid-template-columns: repeat(2,1fr);gap: 4rem;margin-block: 4rem 0;}
 .latest-event.no_upcoming_events{padding-block: 4rem;}
+.coming-container{height: auto; padding: 10rem 0;}
+.coming-container .title{font:var(--font-32); letter-spacing: 0;}
 }
 @media (max-width: 575px){
 .ieee .events_grid {grid-template-columns: repeat(1, 1fr);gap: 2rem;}
@@ -1689,7 +1696,7 @@ to {opacity: 1;transform: translateY(0);}}
 .event_box .internal_soc_content p {text-align: left;}
 .left_side_content:first-child p{text-align: left;}
 .left_side_content:first-child p{padding-top: 2rem;}
- .left_side_content h1,.left_side_content .heading {margin-bottom: 2rem;line-height: 6rem;}
+ .left_side_content h1,.left_side_content .heading {margin-bottom: 2rem;line-height: 6rem; text-align: left;}
 .benefits_section .bottom_content{margin-block: 6rem;}
 .benefits_section .bottom_content h5{text-align: center;}
 .benefits_section .bottom_content p{text-align: center;}

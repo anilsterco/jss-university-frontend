@@ -42,10 +42,10 @@ export default function FacultyDetailClient({ faculty }) {
             <div className="col-lg-10">
               <div className="innnr_head faculty-heading">
                 <h1 className="d-none">{titleCase}</h1>
-                <h2>FACULTY</h2>
-                <h3>
+                <p className="sub_heading">FACULTY</p>
+                <h2>
                   MEET OUR <span>FACULTY</span>
-                </h3>
+                </h2>
               </div>
             </div>
           </div>

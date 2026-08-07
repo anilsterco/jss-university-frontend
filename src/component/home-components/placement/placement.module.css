@@ -21,6 +21,7 @@
   color: var(--color-4e);
   font-weight: 500;
   line-height: 5.2rem;
+  margin-bottom: .5rem;
 }
 
 .testimonialSwiper .eachSlide {
@@ -39,7 +40,8 @@
   line-height: 1.3;
 }
 
-.testimonialSwiper h6 {
+.testimonialSwiper h6,
+.testimonialSwiper .username {
   color: #0036a1;
   font: var(--font-12);
   letter-spacing: 0px;

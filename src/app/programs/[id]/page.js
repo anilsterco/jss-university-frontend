@@ -102,7 +102,9 @@ export default async function ProgramDetail({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
         />
       )}
-      <h1>Programs {courseData.name}</h1>
+      <h1 style={{
+        display:'none'
+      }}>{courseData.name}</h1>
       <ProgramDetailClient params={id} />
     </>
   );

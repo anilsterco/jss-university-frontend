@@ -202,9 +202,9 @@ export default function FacultyClient() {
               <div className="innnr_head">
                 <h1>FACULTY</h1>
 
-                <h3>
+                <h2>
                   TEACHING <span>FACULTY</span>
-                </h3>
+                </h2>
 
               </div>
             </div>

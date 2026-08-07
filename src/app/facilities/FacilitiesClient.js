@@ -322,7 +322,7 @@ export default function FacilitiesClient() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="innnr_head faclity-header-tabs">
-                <h2>{facilitiesData.pageTitle.main}</h2>
+                <h2 className="sub_heading">{facilitiesData.pageTitle.main}</h2>
                 <h3>{facilitiesData.pageTitle.subtitle}</h3>
 
                 <ul>

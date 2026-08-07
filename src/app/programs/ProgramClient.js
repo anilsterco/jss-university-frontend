@@ -207,10 +207,10 @@ export default function ProgramClient() {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h1>PROGRAMME</h1>
-                <h3>
+                <h2>
                   COMPREHENSIVE <span>ACADEMIC PROGRAMME</span> <br />
                   FOR <span>LIFELONG LEARNING</span>
-                </h3>
+                </h2>
                 <ul>
                   {tabs.map((tab) => (
                     <li

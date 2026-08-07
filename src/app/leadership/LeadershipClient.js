@@ -124,7 +124,7 @@ export default function LeadershipClient() {
           <section className="inner-title">
             <div className="container">
               <div className="innnr_head text-center">
-                <h2>{aboutPage.subTitle}</h2>
+                <h2 className="sub_heading">{aboutPage.subTitle}</h2>
                 <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }} />
                 <ul>
                   {aboutPage.tabs.map((tab, i) => (

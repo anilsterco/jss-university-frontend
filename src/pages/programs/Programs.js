@@ -5,7 +5,7 @@ export default function Programs({ data }) {
   return (
     <section className={styles.inner_page}>
       <div className="container">
-        <h2 className={`${styles.innerPage_title} text-center`}>Programme</h2>
+        <p className={`${styles.innerPage_title} text-center`}>Programme</p>
 
         <div className={styles.programs_grid}>
           {data?.map((singleData, singleIdx) => (

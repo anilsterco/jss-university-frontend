@@ -4,8 +4,8 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
-import styles from "./courses-offered.module.css";
 import { APPLY_NOW, WEB_URL } from "@/config/config";
+import styles from "./courses-offered.module.css";
 
 
 export const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
@@ -117,13 +117,13 @@ export default function CoursesOffered({ data }) {
         <div className={`cource_top ${styles.topSection}`}>
           {/* LEFT CONTENT */}
           <div className="cource_col">
-            <h5
+            <p
               className={styles.topSectionH5}
               // data-aos="fade-up"
               // data-aos-delay="0"
             >
               {coursesData.subtitle}
-            </h5>
+            </p>
 
             <h2
               className={`fw-bold ${styles.topSectionH1}`}
@@ -274,9 +274,9 @@ export default function CoursesOffered({ data }) {
 
         {/* ================= BOTTOM SECTION ================= */}
         <div className="program_heading">
-          <h6 className={` ${styles.bottomSectionH6}`}>
+          <p className={` ${styles.bottomSectionH6}`}>
             Explore Programs by School of
-          </h6>
+          </p>
         </div>
         <div
           className={`programsList_row align-items-center program-row ${styles.exploreProgramSectionWrapper}`}

@@ -1,15 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./facilities.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import { WEB_URL } from "@/config/config.mjs";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function FacilitiesComponent({ data }) {
   const home41Ref = useRef(null);
@@ -68,9 +64,12 @@ export default function FacilitiesComponent({ data }) {
               {facilitiesData.facilities.map((card, index) => (
                 <div key={index} className={styles.cardImageContainer}>
                   <Link href={WEB_URL + card?.main_link ?? "#"}>
-                    <img
+                    <Image
                       src={card.image}
                       alt={card.title}
+                      width={320}
+                      height={290}
+                      loading="lazy"
                       style={{ width: "100%", objectFit: "cover" }}
                     />
                     <div className={styles.cardOverlay}></div>
@@ -110,10 +109,10 @@ export default function FacilitiesComponent({ data }) {
               <span className={styles.straightLine}></span>
             </div>
             <div>
-              <h5
+              <p
               className={styles.sub_heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.subheading }}
-              ></h5>
+              ></p>
               <h2
               className={styles.heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}

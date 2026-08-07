@@ -6,11 +6,11 @@ export default function Departments({ data, title, type }) {
   return (
     <section className={styles.inner_page}>
       <div className="container">
-        <h2
+        <p
           className={`${styles.innerPage_title} ${type == "alumni" ? "text-center" : "text-center"}`}
         >
           {title ? title : "Departments"}
-        </h2>
+        </p>
 
         <DepartmentCards data={data} type={type} />
       </div>

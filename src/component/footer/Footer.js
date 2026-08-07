@@ -172,7 +172,7 @@ export default async function Footer() {
         <div className="col-md-10 mx-auto">
           <div className="connect_contant space-y-4">
             <div className="col-md-12 text-center">
-              <h4 className="fw-bold text-info text-lg">Connect with us</h4>
+              <p className="fw-bold text-info text-lg connect">Connect with us</p>
               <p className="text-sm">{data.address}</p>
               <ul className="list-unstyled d-block text-center">
                 {data.phone && (
@@ -199,7 +199,7 @@ export default async function Footer() {
             </ul>
           </div>
           <div className="quick_link">
-            <h4>Quick Links</h4>
+            <p>Quick Links</p>
             <ul className="quick-item">
               {data.quickLinks?.map((link, i) => (
                 <li key={i}>
@@ -218,7 +218,7 @@ export default async function Footer() {
 
           <div className="follow-col">
             <div className="social-icons">
-              <h4 className="font-medium ">Follow us on</h4>
+              <p className="font-medium ">Follow us on</p>
               <ul className="list-unstyled mb-1 mx-auto justify-content-center flex gap-3">
                 {data.socials.map((icon, iconIdx) => (
                   <li key={iconIdx}>

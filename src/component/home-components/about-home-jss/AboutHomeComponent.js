@@ -7,7 +7,6 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa6";
 import styles from "./about-home-jss.module.css";
-import "swiper/css";
 import { useState, useEffect } from "react";
 
 import { WEB_URL } from "@/config/config.mjs";

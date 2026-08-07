@@ -270,8 +270,8 @@ export default function ProgramDetailClient({ params }) {
             <figcaption>
               <div className="program-detail-text">
                 <div className="innnr_head">
-                  <h2>PROGRAMMES</h2>
-                  {name && <h3>{name}</h3>}
+                  <p className="sub_heading">PROGRAMMES</p>
+                  {name && <h2 className="heading">{name}</h2>}
                 </div>
               </div>
             </figcaption>
