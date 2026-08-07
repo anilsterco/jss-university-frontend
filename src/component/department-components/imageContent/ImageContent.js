@@ -64,6 +64,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
                     width={683}
                     height={520}
+                    loading="lazy"
                     className="img-fluid"
                     style={{
                       width: "100%",
@@ -121,6 +122,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           width={683}
                           height={520}
                           className="img-fluid"
+                          loading="lazy"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -156,7 +158,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 src={data.thumbnailImage || data.image || null}
                 width={683}
                 height={520}
-                alt=""
+                loading="lazy"
+                alt={data.heading || data.title || 'Image'}
                 className="img-fluid"
                 style={
                   {

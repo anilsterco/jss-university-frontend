@@ -170,7 +170,7 @@ export default function FacultyDetailClient({ faculty }) {
                               key={index}
                               href={key.link}
                               target="_blank"
-                              rel="noopener noreferrer"
+                              rel="nofollow noopener noreferrer"
                             >
                               <div className="research-box">
                                 <div className="research-icon">
