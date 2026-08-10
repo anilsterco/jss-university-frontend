@@ -200,11 +200,11 @@ export default function HeroSlider({ data, slug, classname='' }) {
                 <Image
                   src={slide.mobile_banner}
                   alt="slide image"
-                  width={750}
-                  height={764}
+                  width={500}
+                  height={509}
                   priority
                   fetchPriority="high"
-                  loading="eager"
+                  sizes="100vw"
                   style={{ width: "100%", height: "100%" }}
                   className={styles.mobileBanner}
                 />

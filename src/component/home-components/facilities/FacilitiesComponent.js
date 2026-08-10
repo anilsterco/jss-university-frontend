@@ -70,6 +70,7 @@ export default function FacilitiesComponent({ data }) {
                       width={320}
                       height={290}
                       loading="lazy"
+                      sizes="(max-width:991px) 50vw, 100vw"
                       style={{ width: "100%", objectFit: "cover" }}
                     />
                     <div className={styles.cardOverlay}></div>

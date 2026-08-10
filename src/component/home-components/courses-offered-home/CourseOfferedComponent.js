@@ -228,10 +228,11 @@ export default function CoursesOffered({ data }) {
                 <Image
                   src={level.image}
                   fetchPriority="high"
-                  loading="eager"
+                  priority
                   alt="slide image"
                   width={302}
                   height={389}
+                  sizes="(max-width: 991px) 50vw, 302px"
                   className={styles.cardImage}
                 />
 

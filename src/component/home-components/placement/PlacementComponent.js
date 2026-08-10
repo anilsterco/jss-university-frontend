@@ -149,7 +149,7 @@ useEffect(() => {
                             height: "100%",
                             position: "relative",
                           }}
-                          priority
+                          loading="lazy"
                           className={`top-0 start-0 testiimg rounded ${styles.testimonialImage}`}
                         />
                       </div>
