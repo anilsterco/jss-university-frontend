@@ -281,9 +281,9 @@ p {
     padding-inline: 9.8rem;
   }
 
-  .homeSlider{
+  /* .homeSlider{
     max-height: 74.6rem;
-  }
+  } */
 }
 
 @media (min-width: 1549px) and (max-width: 1749px) {
