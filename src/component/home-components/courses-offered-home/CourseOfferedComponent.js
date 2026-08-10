@@ -227,6 +227,8 @@ export default function CoursesOffered({ data }) {
               >
                 <Image
                   src={level.image}
+                  fetchPriority="high"
+                  loading="eager"
                   alt="slide image"
                   width={302}
                   height={389}

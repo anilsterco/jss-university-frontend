@@ -160,6 +160,7 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           alt="slide image"
                           
                           fetchPriority="high"
+                          loading="eager"
                           width={750}
                           height={764}
                           priority
