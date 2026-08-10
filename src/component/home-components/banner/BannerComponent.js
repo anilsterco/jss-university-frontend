@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 
 import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
@@ -64,8 +64,38 @@ export default function HeroSlider({ data, slug, classname='' }) {
         }}
         className={styles.swiperContainer}
       >
-        {bannerData.map((slide) => (
-          <SwiperSlide key={slide.id} className={styles.slide}>
+        {bannerData.map((slide, index) => {
+          const isFirstSlide = index === 0;
+
+          let desktopImageProps = null;
+          let mobileImageProps = null;
+
+          if (slide.desktop_banner) {
+            desktopImageProps = getImageProps({
+              src: slide.desktop_banner,
+              alt: slide.title || "Banner",
+              width: 1920,
+              height: 810,
+              sizes: "100vw",
+              fetchPriority: isFirstSlide ? "high" : "auto",
+            });
+          }
+
+          if (slide.mobile_banner) {
+            mobileImageProps = getImageProps({
+              src: slide.mobile_banner,
+              alt: slide.title || "Banner",
+              width: 500,
+              height: 509,
+              sizes: "100vw",
+              fetchPriority: isFirstSlide ? "high" : "auto",
+            });
+          }
+
+
+
+          return(
+            <SwiperSlide key={slide.id} className={styles.slide}>
             <div className={styles.bannerGrid}>
               {/* Left Content */}
               <div className={styles.bannerLeft}>
@@ -133,6 +163,7 @@ export default function HeroSlider({ data, slug, classname='' }) {
                       width: "100%",
                       pointerEvents: "none",
                     }}
+                    loading={isFirstSlide ? 'eager' : 'lazy'}
                   />
                 ) : (
                   <>
@@ -151,19 +182,23 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           width: "100%",
                           objectFit: "cover",
                         }}
-                        preload="auto"
+                        preload={isFirstSlide ? 'metadata' : 'none'}
                       />
                     ) : (
-                      slide.desktop_banner && (
+                      desktopImageProps && (
                         <Image
                           src={slide.desktop_banner}
                           alt="slide image"
                           
-                          fetchPriority="high"
-                          loading="eager"
+                          fetchPriority={
+                            isFirstSlide ? "high" : "auto"
+                          }
+                          loading={
+                            isFirstSlide ? "eager" : "lazy"
+                          }
+                          priority={isFirstSlide}
                           width={750}
                           height={764}
-                          priority
                           style={{
                             width: "100%",
 
@@ -202,10 +237,18 @@ export default function HeroSlider({ data, slug, classname='' }) {
                   alt="slide image"
                   width={500}
                   height={509}
-                  priority
-                  fetchPriority="high"
+                  priority={isFirstSlide}
+                  fetchPriority={
+                    isFirstSlide ? "high" : "auto"
+                  }
+                  loading={
+                    isFirstSlide ? "eager" : "lazy"
+                  }
                   sizes="100vw"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
                   className={styles.mobileBanner}
                 />
               )
@@ -259,7 +302,8 @@ export default function HeroSlider({ data, slug, classname='' }) {
               </div>
             </div>
           </SwiperSlide>
-        ))}
+          )
+        })}
       </Swiper>
 
      </div>
