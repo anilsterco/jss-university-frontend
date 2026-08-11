@@ -183,7 +183,7 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           objectFit: "cover",
                         }}
                         preload={isFirstSlide ? 'metadata' : 'none'}
-                      />
+                      />     
                     ) : (
                       desktopImageProps && (
                         <Image
