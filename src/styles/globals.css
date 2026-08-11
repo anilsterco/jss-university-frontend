@@ -273,6 +273,9 @@ p {
   height: 100%;
 }
 
+.onlyMobile {
+  display: none;
+}
 
 .coming-container {width: 100%;height: 100vh;background: #f4f4f4;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;padding: 2rem;}
 
@@ -358,6 +361,14 @@ p {
 }
 
 @media (max-width: 767px) {
+  .onlyMobile {
+    display: block;
+  }
+
+  .onlyDesktop {
+    display: none !important;
+  }
+
   .main-container .container {
     max-width: 640px;
     padding-inline: 2rem;
