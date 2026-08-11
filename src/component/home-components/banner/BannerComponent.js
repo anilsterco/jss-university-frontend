@@ -7,6 +7,9 @@ import Image, { getImageProps } from "next/image";
 
 import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import styles from "./banner.module.css";
 
 
@@ -190,8 +193,8 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           src={slide.desktop_banner}
                           alt="slide image"
                           
-                          fetchPriority="high"
-                          loading="eager"
+                          fetchPriority={isFirstSlide ? 'high' : 'low'}
+                          loading={isFirstSlide ? 'eager' : 'lazy'}
                           priority={isFirstSlide}
                           width={750}
                           height={764}

@@ -274,7 +274,7 @@ p {
 }
 
 .onlyMobile {
-  display: none;
+  display: none!important;
 }
 
 .coming-container {width: 100%;height: 100vh;background: #f4f4f4;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;padding: 2rem;}
@@ -362,7 +362,7 @@ p {
 
 @media (max-width: 767px) {
   .onlyMobile {
-    display: block;
+    display: block!important;
   }
 
   .onlyDesktop {

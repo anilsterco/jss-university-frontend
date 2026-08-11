@@ -85,6 +85,7 @@ import '../../styles/custom.style.css'
 import { headers } from "next/headers";
 import getPageRedirect from "@/utils/getPageRedirect";
 import GrantsReceived1 from "@/component/sections/GrantsReceived1";
+import Editor from "@/component/sections/Editor";
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === 'development';
@@ -228,7 +229,7 @@ export default async function DynamicPage({ params }) {
     AchievementsRecognitions:AchievementsRecognitions,
     Yukti:Yukti,
     IICActivities:IICActivities,
-    
+    editor:Editor
     
   };
 

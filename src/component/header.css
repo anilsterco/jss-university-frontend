@@ -351,6 +351,7 @@
 .courses-menu li { padding: 0; }
 .brand-wrap.logo-content { display: block; }
 .engineering-dropdown-container { top: 85%; left: 13%; }
+.hamburger-layout:before{background-image:none;}
  }
 .header-inner { width: 100%; padding-block: 2.4rem; }
 @media (max-width: 667px) {

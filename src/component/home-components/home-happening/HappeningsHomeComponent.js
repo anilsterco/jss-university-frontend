@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 import { WEB_URL } from "@/config/config";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import styles from "./happening.module.css";
 
 

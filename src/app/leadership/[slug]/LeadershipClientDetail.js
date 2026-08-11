@@ -32,7 +32,7 @@ export default async function LeadershipClientDetail({ leader }) {
                       key={index}
                       className={tab.url.includes("leadership") ? "active" : ""}
                     >
-                      <Link href={`${WEB_URL + tab.url}`}>{tab.text}</Link>
+                      <Link href={`${tab.url}`}>{tab.text}</Link>
                     </li>
                   ))}
                 </ul>
