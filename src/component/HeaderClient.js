@@ -1638,7 +1638,7 @@ export default function HeaderClient({
               >
                 <button onClick={() => togglePanel(item.name)}>
                   <div className="icon">
-                    <img src={item.icon} alt={`${item.name} icon`} />
+                    <img width={28} height={18} src={item.icon} alt={`${item.name} icon`} />
                   </div>
                   <p className="menu-name">{item.title}</p>
                 </button>
