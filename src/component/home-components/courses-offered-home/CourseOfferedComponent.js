@@ -157,7 +157,7 @@ export default function CoursesOffered({ data }) {
                   style={{ padding: "10px 16px" }}
                 />
                 <span className="input-group-text bg-white border-0">
-                  <img src="images/home-page/icon-search.svg" alt="search" />
+                  <img src="images/home-page/icon-search.svg" alt="search" width={25} height={25} />
                 </span>
               </div>
 
@@ -242,7 +242,9 @@ export default function CoursesOffered({ data }) {
                   >
                     {level.name_short}
                     <img
-                      src="images/home-page/course_list_icon.svg"
+                      src="images/home-page/course_list_icon.svg" 
+                      width={23}
+                  height={19}
                       alt="slide image"
                       className={styles.cardIcons}
                     />

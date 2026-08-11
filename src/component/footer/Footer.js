@@ -20,13 +20,13 @@ async function getFooterData() {
 function renderIcon(icon) {
   switch (icon) {
     case "facebook":
-      return <img src="/images/footer/dash_facebook.svg" alt="Facebook" />;
+      return <img src="/images/footer/dash_facebook.svg" alt="Facebook" width={20} height={20}/>;
     case "instagram":
-      return <img src="/images/footer/dash_insta.svg" alt="Instagram" />;
+      return <img src="/images/footer/dash_insta.svg" alt="Instagram" width={20} height={20}/>;
     case "youtube":
-      return <img src="/images/footer/dash_youtube.svg" alt="YouTube" />;
+      return <img src="/images/footer/dash_youtube.svg" alt="YouTube" width={20} height={20}/>;
     case "twitter":
-      return <img src="/images/footer/dash_linkdin.svg" alt="Twitter" />;
+      return <img src="/images/footer/dash_linkdin.svg" alt="Twitter" width={20} height={20}/>;
     default:
       return null;
   }
@@ -58,9 +58,8 @@ export default async function Footer() {
               <div className="footer_logo">
                 <img
                   src="/images/footer/footer-logo.webp"
-                  alt="Logo"
-                  style={{ width: "9rem" }}
-                />
+                  alt="Logo" width={90} height={90}
+                  />
               </div>
               <div className="connect_contant">
                 <p className="fw-bold text-info">Connect with us</p>
