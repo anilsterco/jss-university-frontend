@@ -7,6 +7,9 @@ import Image, { getImageProps } from "next/image";
 
 import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import styles from "./banner.module.css";
 
 
@@ -182,7 +185,6 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           width: "100%",
                           objectFit: "cover",
                         }}
-                        preload={isFirstSlide ? 'metadata' : 'none'}
                       />
                     ) : (
                       desktopImageProps && (

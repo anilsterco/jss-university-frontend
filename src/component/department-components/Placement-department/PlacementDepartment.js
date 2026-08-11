@@ -7,13 +7,11 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import AOS from "aos";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
-import "aos/dist/aos.css";
 import styles from "./Placement.module.css";
 
 // const placementsData = {
@@ -79,7 +77,6 @@ export default function PlacementsSection({ data }) {
       : recruiters;
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
 
     // Force Swiper update after mount
     setTimeout(() => {

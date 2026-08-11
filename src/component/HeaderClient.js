@@ -109,7 +109,7 @@ const mobilePanelsData = [
     title: "Contact",
     name: "Contact",
     heading: "CAMPUS ADDRESS ",
-    bgImg: "/images/header/cont-mobmenu.png",
+    bgImg: "/images/header/cont-mobmenu.webp",
     icon: "/images/header/contact-mob.svg",
   },
 
@@ -1437,10 +1437,13 @@ export default function HeaderClient({
                       </div>
 
                       <div className="contactBanner">
-                        <img
-                          src={item.bgImg}
+                        <Image
+                          src={item?.bgImg}
                           alt="contact"
                           className="contact-banner"
+                          width={500}
+                          height={316}
+                          // loading="lazy"
                         />
                       </div>
                       <ul className="contact-info">

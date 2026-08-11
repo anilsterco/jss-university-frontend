@@ -191,7 +191,7 @@ export default function TestimonialClient() {
                                 ? item.image
                                 : `${ASSETS_URL}${item.image}`
                             }
-                            alt={item.alt_text || item.name}
+                            alt={item.alt_text || item.name || 'faculty'}
                             className="img-fluid w-100"
                             width={300}
                             height={300}
