@@ -70,9 +70,9 @@ export default async function HomePage() {
         />
       )}
 
-      {/* <Suspense fallback={null}>
+      <Suspense fallback={null}>
         <PopupModalServer />
-      </Suspense> */}
+      </Suspense>
 
       <h1 style={{
         display: "none",

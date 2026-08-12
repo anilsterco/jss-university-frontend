@@ -134,13 +134,13 @@
 }
 
 /* Pagination Position */
-.swiperContainer :global(.swiper-pagination) {
+/* .swiperContainer :global(.swiper-pagination) {
   position: absolute;
   bottom: 3rem;
   left: 95%;
   transform: translateX(-50%);
   z-index: 10;
-}
+} */
 
 /* Pagination Dot */
 .swiperContainer :global(.swiper-pagination-bullet) {

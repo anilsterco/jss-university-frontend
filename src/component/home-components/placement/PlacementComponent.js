@@ -7,6 +7,9 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { WEB_URL } from "@/config/config";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import styles from "./placement.module.css";
 
 const dummyPlacementsData = {

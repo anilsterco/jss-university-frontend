@@ -309,7 +309,7 @@
 .containerXl { max-width: 1920px; width: 100%; margin: 0 auto; box-sizing: border-box; }
 .nav-container { width: 100%; }
 .contact-panel .contact-info li:nth-child(3) a { color: #018ce8; font: var(--font-21); font-weight: 600; }
-.panel .menu-bottom li > a { color: #000; }
+.panel .mobile_menus .menu-bottom li > a { color: #000; }
 .admissions-menu li > a { color: #000 !important; }
 .panel-wrapper .panel ul:nth-of-type(2) { background: #e6ffff; padding-top: 0; height: auto; }
 .panel-wrapper .panel ul:nth-of-type(2) li { color: #000; }
@@ -351,6 +351,7 @@
 .courses-menu li { padding: 0; }
 .brand-wrap.logo-content { display: block; }
 .engineering-dropdown-container { top: 85%; left: 13%; }
+.hamburger-layout:before{background-image:none;}
  }
 .header-inner { width: 100%; padding-block: 2.4rem; }
 @media (max-width: 667px) {

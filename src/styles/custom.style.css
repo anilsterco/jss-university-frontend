@@ -2653,6 +2653,22 @@
   margin-left: 1rem;
 }
 
+@media (min-width: 1700px) and (max-width: 1900px) {
+.homeSlider{
+  min-height: 666px;
+}
+}
+@media (min-width: 1400px) and (max-width: 1699px) {
+.homeSlider{
+  min-height: 587px;
+}
+}
+@media (min-width: 1023px) and (max-width: 1399px) {
+.homeSlider{
+  min-height: 429px;
+}
+}
+
 
 @media (max-width: 991px) {
   .inner_page {

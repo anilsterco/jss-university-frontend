@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
-import { TfiArrowCircleRight } from "react-icons/tfi";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -490,7 +489,7 @@ export default function AboutClient() {
                             <h3>{leader.name}</h3>
                             <p>
                               {leader.designation}
-                              <TfiArrowCircleRight className="leadership-arrow-icon" />
+                              <BsArrowRightCircle className="leadership-arrow-icon" />
                             </p>
                           </figcaption>
                         </figure>

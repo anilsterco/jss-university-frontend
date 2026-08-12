@@ -165,7 +165,7 @@ export default function LegacySection({ data }) {
               </div>
 
               {/* Highlight Boxes */}
-              <div className={`highlight-col ${styles.onlyDesktop}`}>
+              <div className={`highlight-col onlyDesktop`}>
                 {legacyData.highlights.map((h, i) => (
                   <div
                     key={i}
@@ -195,7 +195,7 @@ export default function LegacySection({ data }) {
               <Swiper
                 spaceBetween={100}
                 slidesPerView={1}
-                className={styles.onlyMobile}
+                className="onlyMobile"
               >
                 {legacyData.highlights.map((h, i) => (
                   <SwiperSlide

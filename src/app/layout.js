@@ -7,10 +7,10 @@ import {
 import Header from "../component/Header";
 import Footer from "../component/footer/Footer";
 import Providers from "./providers";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "../styles/globals.css";
 // import "@fontsource/roboto-condensed/300.css";
 // import "@fontsource/roboto-condensed/400.css";
@@ -28,8 +28,8 @@ import GoogleAnalytics from "@/component/GoogleAnalytics";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
-  style: ["normal", "italic"],
+  // weight: ["200", "300", "400", "500", "700"],
+  // style: ["normal"],
   display: "swap",
   variable: "--font-Roboto",
   preload: true,
@@ -37,7 +37,7 @@ const roboto = Roboto({
  
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
+  // weight: ["200", "300", "400", "500", "700"],
   display: "swap",
   variable: "--font-Condensed",
   preload: true,
@@ -149,20 +149,22 @@ export default async function RootLayout({ children }) {
     <html lang="en" className={fontClassNames}>
       {/* Google Tag Manager */}
       <head>
-        <link
-          rel="preload"
-          href="https://backoffice.jssuninoida.edu.in/assets/video/banners/1775207103_69cf82bf29841.mp4"
-          as="video"
-          type="video/mp4"
-        />
+        <link rel="preload" as="image" href="https://jssuninoida.edu.in/images/header/homenew.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="https://backoffice.jssuninoida.edu.in/assets/img/banners/1786345479_6a797807c30d3.webp" fetchPriority="high" />        
+
         <link rel="preconnect" href="https://backoffice.jssuninoida.edu.in" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://backoffice.jssuninoida.edu.in" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.clarity.ms" />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="//www.facebook.com" />
+        <link rel="dns-prefetch" href="//x.com" />
+        <link rel="dns-prefetch" href="//www.youtube.com" />
+        <link rel="dns-prefetch" href="//www.instagram.com" />
+        <link rel="dns-prefetch" href="//api.whatsapp.com" />
+
+
+      
 
         <Script id="gtm-script" strategy="afterInteractive">
           {`
