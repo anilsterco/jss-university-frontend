@@ -35,12 +35,12 @@
 .desktopQuoteIcon { display: block; margin-bottom: 2.4rem; }
 /* .testimonialImageContainer { width: 43%; padding: 0; }
 */
-.testimonialSwiper { padding: 3rem; }
+.testimonialSwiper { padding: 3rem!important; }
 .placement_row { display: grid; grid-template-columns: repeat(1, 59.2% auto); gap: 6.7rem; }
 .figcount { padding: 3.8rem 4.4rem 3.8rem; display: flex; align-items: center; flex-direction: column; justify-content: center; }
 .placement_slider { padding-bottom: 5rem; border-bottom: solid 1px #DFDFDF; }
 .recruiterSection { margin-top: 3rem; }
-.testimonial-slider{padding: 3rem!important;}
+.testimonial-slider{padding: 3rem;}
 @media (max-width: 1599px) {
  .thirdSection { padding-block: 8rem 4rem; }
 .figcount { padding: 3.8rem 4.4rem; }
