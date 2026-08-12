@@ -266,7 +266,7 @@ function TestimonialCard({ data, onPlay }) {
       <div className={styles.cardInfo}>
         <h3 className={styles.personName}>{data.name}</h3>
         <p className={styles.personBatch}>
-          {data.course}, {data.batch}
+          {data.course && `${data.course},`} {data.batch}
         </p>
         <p className={styles.personRole}>
           {data.designation && data.designation} {data.company && data.company}{" "}
