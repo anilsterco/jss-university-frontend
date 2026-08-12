@@ -193,9 +193,9 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           src={slide.desktop_banner}
                           alt="slide image"
                           
-                          fetchPriority={isFirstSlide ? 'high' : 'low'}
-                          loading={isFirstSlide ? 'eager' : 'lazy'}
-                          priority={isFirstSlide}
+                          fetchPriority="high"
+                          loading={'eager'}
+                          priority
                           width={750}
                           height={764}
                           style={{
