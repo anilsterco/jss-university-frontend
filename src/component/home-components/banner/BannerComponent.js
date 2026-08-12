@@ -80,7 +80,7 @@ export default function HeroSlider({ data, slug, classname='' }) {
               width: 1920,
               height: 810,
               sizes: "100vw",
-              fetchPriority: isFirstSlide ? "high" : "auto",
+              fetchPriority: "high",
             });
           }
 
