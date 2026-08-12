@@ -208,7 +208,7 @@
 .testimonialSwiper {
   padding: 3rem;
 }
-.testimonial-slider{padding: 3rem;}
+.testimonial-slider{padding: 3rem !important;}
 
 .placement_row {
   display: grid;
