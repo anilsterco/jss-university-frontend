@@ -208,6 +208,7 @@
 .testimonialSwiper {
   padding: 3rem;
 }
+.testimonial-slider{padding: 3rem;}
 
 .placement_row {
   display: grid;
@@ -231,6 +232,7 @@
 .recruiterSection {
   margin-top: 3rem;
 }
+
 
 
 @media (max-width: 1599px) {
