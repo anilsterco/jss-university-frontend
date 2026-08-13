@@ -45,6 +45,11 @@ const nextConfig = {
         hostname: "backoffice.jssuninoida.edu.in",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "staging.jssuninoida.edu.in",
+        pathname: "/**",
+      },
     ],
     // unoptimized: true,
   },
