@@ -14,13 +14,11 @@ export default function Editor({ data }) {
           section.items.length >= -1 &&
           section.items.map((item, idx) => (
             <section key={idx} className={`editor_page`}>
-              <div className="container">
                 <div key={idx}>
                   {item?.editor && (
                     <div dangerouslySetInnerHTML={{ __html: item.editor }} />
                   )}
                 </div>
-              </div>
             </section>
           ))
         );
