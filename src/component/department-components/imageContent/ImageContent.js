@@ -3,8 +3,6 @@ import Image from "next/image";
 import styles from "./imageContent.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -17,18 +15,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
 
   const visibleMessages = expanded ? data.desc : data.desc.slice(0, 2);
 
-  useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-      });
-    }, []);
   
-    useEffect(() => {
-      AOS.refresh();
-    }, [data]);
-
   return (
     <div
       key={id}
@@ -64,6 +51,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                     alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
                     width={683}
                     height={520}
+                    loading="lazy"
                     className="img-fluid"
                     style={{
                       width: "100%",
@@ -121,6 +109,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
                           width={683}
                           height={520}
                           className="img-fluid"
+                          loading="lazy"
                           style={{
                             width: "100%",
                             // height: "auto",
@@ -156,7 +145,8 @@ export default function ImageContent({ data, id, type, extraClass }) {
                 src={data.thumbnailImage || data.image || null}
                 width={683}
                 height={520}
-                alt=""
+                loading="lazy"
+                alt={data.heading || data.title || 'Image'}
                 className="img-fluid"
                 style={
                   {

@@ -4,10 +4,9 @@ import styles from "./courses-offered.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import { PiArrowCircleRightThin } from "react-icons/pi";
-import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config";
+import { APPLY_NOW, BASE_URL, WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
 import { GoArrowRight } from "react-icons/go";
 
@@ -19,10 +18,6 @@ const CoursesOffered = ({ data }) => {
 
   const pathname = usePathname();
   const departmentSlug = pathname.split("/").filter(Boolean).pop();
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
 
   useEffect(() => {
     if (!query) return;
@@ -55,11 +50,11 @@ const CoursesOffered = ({ data }) => {
               className={`cource_top ${styles.topSection} program_section_${data.programs.length}`}
             >
               <div className={`cource_col ${styles.left_col}`}>
-                <h5 className={styles.topSectionH5} data-aos="fade-up">
-                  Programs Offered
-                </h5>
+                <p className={styles.topSectionH5} data-aos="fade-up">
+                  Programmes Offered
+                </p>
                 {data?.title && (
-                  <h1
+                  <h2
                     className={`fw-bold ${styles.topSectionH1}`}
                     data-aos="fade-up"
                     data-aos-delay="100"
@@ -86,7 +81,7 @@ const CoursesOffered = ({ data }) => {
                       <input
                         type="text"
                         className="form-control border-0"
-                        placeholder="Search Programs"
+                        placeholder="Search Programmes"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         style={{ padding: "10px 20px" }}
@@ -137,9 +132,9 @@ const CoursesOffered = ({ data }) => {
                     <div
                       className={`program-hide ${styles.programsCountWrapper}`}
                     >
-                      <h1 className={`display-4 ${styles.programsCount}`}>
+                      <h3 className={`display-4 ${styles.programsCount}`}>
                         {data.course_count}
-                      </h1>
+                      </h3>
 
                       <span className={styles.programsCountPlus}>+</span>
                     </div>

@@ -3,77 +3,61 @@ import { useEffect, useState } from "react";
 import "@/styles/custom.style.css";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import { APPLY_NOW, BASE_URL } from "@/config/config";
+import { APPLY_NOW } from "@/config/config.mjs";
 import Link from "next/link";
 
-export default function PopupModal() {
+export default function PopupModal({ data }) {
   const [isVisible, setIsVisible] = useState(false);
-  const [popupData, setPopupData] = useState([]);
-
-  const fetchPopupData = async () => {
-    try {
-      const response = await fetch(`${BASE_URL}popup`);
-      const data = await response.json();
-      setPopupData(data.popup);
-    } catch (error) {
-      setPopupData([]);
-      console.error("Error fetching popup data:", error);
-    }
-  };
 
   useEffect(() => {
-    fetchPopupData();
+    // nothing to show, don't even bother with the timer
+    if (!data) return;
+
     const timer = setTimeout(() => {
       document.body.classList.add("overflow-hidden");
       setIsVisible(true);
-    }, 6000);
+    }, 7000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [data]);
 
   const closePopup = () => {
     setIsVisible(false);
-    document.body.classList.remove("overflow-hidden"); // ✅ restore scroll
+    document.body.classList.remove("overflow-hidden");
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || !data) return null;
 
   return (
     <>
-      {/* Overlay */}
       <div className="popup-overlay" onClick={closePopup} />
 
       <div className="popup-modal">
-        <button className="popup-close" onClick={closePopup}>
-          <IoClose fontSize={18} />
+        <button className="popup-close" onClick={closePopup} aria-label="Close popup">
+          <IoClose fontSize={18} aria-hidden="true" />
         </button>
 
-        {/* Your content here */}
         <div className="popup-content">
-          {popupData?.heading && (
-            <h4
+          {data?.heading && (
+            <div
               className="popup-title"
-              dangerouslySetInnerHTML={{ __html: popupData.heading }}
-            ></h4>
+              dangerouslySetInnerHTML={{ __html: data.heading }}
+            ></div>
           )}
 
-          {popupData?.items?.length > 0 ? (
+          {data?.items?.length > 0 ? (
             <div className="grid popup_grid">
-              {popupData?.items?.map((item, index) => (
+              {data.items.map((item, index) => (
                 <div key={index} className="grid-item">
                   <Image
                     src={item?.image}
                     className="img-fluid"
-                    // layout="responsive"
                     width={720}
                     height={553}
                     loading="eager"
                     alt={item?.title}
-                    style={{ width: '100%', height: 'auto' }}
-                  
+                    style={{ width: "100%", height: "auto" }}
                   />
-                  {/* <h5 className="title">{item?.title}</h5> */}
-                  {/* <span>Visit Us</span> */}
                   <div className="visit_button">
                     <Link
                       className="apply-btn1 CTA_Applynow"
@@ -81,9 +65,9 @@ export default function PopupModal() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Visit ${item?.title}`}
-                    >Apply Now</Link>
-                    {/* <Link href={item.link} className="apply-btn1" rel="noopener noreferrer">Visit Us</Link> */}
-
+                    >
+                      Apply Now
+                    </Link>
                   </div>
                 </div>
               ))}

@@ -10,7 +10,7 @@ import HappingsHomeComponent from "@/component/home-components/home-happening/Ha
 import PlacementDepartment from "@/component/department-components/Placement-department/PlacementDepartment";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
@@ -62,11 +62,13 @@ export default async function DepartmentPage({ params }) {
         name={departmentData?.departments_name}
         isDepartment={true}
       /> */}
+      <h1 style={{display:'none'}}>{departmentData?.departments_name}</h1>
       <BannerComponent
         data={departmentData?.sections?.banners}
         name={departmentData?.department_name}
         isDepartment={true}
         slug={departmentData?.departments_slug}
+        classname="department"
       />
       {departmentData?.sections?.tabs && (
         <DepartmentHeader data={departmentData.sections.tabs} />

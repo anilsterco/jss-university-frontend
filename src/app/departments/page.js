@@ -1,6 +1,6 @@
 import { getPageSEO } from "@/lib/seo";
 import DepartmentClient from "./DepartmentClient";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export async function generateMetadata() {
   return await getPageSEO();

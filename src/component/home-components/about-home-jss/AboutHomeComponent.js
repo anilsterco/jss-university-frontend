@@ -7,16 +7,14 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa6";
 import styles from "./about-home-jss.module.css";
-import "swiper/css";
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { WEB_URL } from "@/config/config";
+
+import { WEB_URL } from "@/config/config.mjs";
 
 const dummyLegacyData = {
   title:
     '<span class="dark-blue-text ">SRI SUTTUR MATH THE</span> <span class="blue-text">1000-YEAR LEGACY </span>',
-  subtitle: "ABOUT JSS UNIVERSITY",
+  subtitle: "ABOUT JSS UNIVERSITY1",
   description:
     "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.",
   url: "/",
@@ -63,13 +61,6 @@ export default function LegacySection({ data }) {
   const [videoPopup, setVideoPopup] = useState(false);
   const legacyData = data ? data : dummyLegacyData;
 
-  // Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return "";
@@ -144,7 +135,7 @@ export default function LegacySection({ data }) {
                       )}
                       <div className="chance-msg-contant">
                         <p>{legacyData.chancellor_title}</p>
-                        <h5>{legacyData.chancellor_name}</h5>
+                        <h6>{legacyData.chancellor_name}</h6>
                       </div>
                     </div>
                   </div>
@@ -174,7 +165,7 @@ export default function LegacySection({ data }) {
               </div>
 
               {/* Highlight Boxes */}
-              <div className={`highlight-col ${styles.onlyDesktop}`}>
+              <div className={`highlight-col onlyDesktop`}>
                 {legacyData.highlights.map((h, i) => (
                   <div
                     key={i}
@@ -182,9 +173,9 @@ export default function LegacySection({ data }) {
                     data-aos="fade-up"
                     data-aos-delay={i * 200}
                   >
-                    <h1 className={`${styles.highlightNumber}`}>
+                    <h3 className={`${styles.highlightNumber}`}>
                       <span>#</span> {h.rank}
-                    </h1>
+                    </h3>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
                       <div className="d-flex align-items-center gap-2">
@@ -204,16 +195,16 @@ export default function LegacySection({ data }) {
               <Swiper
                 spaceBetween={100}
                 slidesPerView={1}
-                className={styles.onlyMobile}
+                className="onlyMobile"
               >
                 {legacyData.highlights.map((h, i) => (
                   <SwiperSlide
                     key={i}
                     className={`col-md-5 ${styles.highlightBox}`}
                   >
-                    <h1 className={`fw-bold ${styles.highlightNumber}`}>
+                    <h3 className={`fw-bold ${styles.highlightNumber}`}>
                       {h.rank}
-                    </h1>
+                    </h3>
                     <div className="left-content">
                       <p className={styles.cardTitle}>{h.text}</p>
                       <Image

@@ -5,8 +5,7 @@ import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
 import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import styles from "./department.module.css";
 import { usePathname } from "next/navigation";
@@ -31,10 +30,6 @@ export default function DepartmentSection({
 
   const pageType = pathParts[0];
   const departmentSlug = pathParts[1];
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
 
   useEffect(() => {
     if (!query) return;
@@ -62,10 +57,10 @@ export default function DepartmentSection({
             <div className={styles.leftSide}>
               <div data-aos="fade-up" data-aos-delay="100">
                 <span className={styles.smallHeadline}>PROGRAMME OFFERED</span>
-                <h1
+                <h2
                   className={`${styles.title}`}
                   dangerouslySetInnerHTML={{ __html: departmentSection.title }}
-                ></h1>
+                ></h2>
 
                 {departmentSection?.programs_count &&
                   departmentSection.programs_count.length > 0 && (
@@ -78,7 +73,7 @@ export default function DepartmentSection({
                         <input
                           type="text"
                           className="form-control border-0"
-                          placeholder="Search Programs"
+                          placeholder="Search Programmes"
                           value={query}
                           onChange={(e) => setQuery(e.target.value)}
                           style={{ padding: "10px 20px" }}
@@ -126,14 +121,14 @@ export default function DepartmentSection({
                   <div
                     className={`program-hide ${styles.programsCountWrapper}`}
                   >
-                    <h1 className={`display-4 ${styles.programsCount}`}>
+                    <h2 className={`display-4 ${styles.programsCount}`}>
                       {departmentSection?.programs_count
                         ? departmentSection.programs_count
                         : "0"}
                       {departmentSection?.programs_count && (
                         <sup className={styles.Plusicon}>+</sup>
                       )}
-                    </h1>
+                    </h2>
                   </div>
 
                   <p className={`program-hide ${styles.programsText}`}>

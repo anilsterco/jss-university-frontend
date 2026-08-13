@@ -168,7 +168,7 @@
   display: block;
 }
 
-.headerContent h1 {
+.headerContent .heading {
   font: var(--font-60);
   font-family: var(--font-Condensed);
   letter-spacing: -2.88px;
@@ -176,20 +176,21 @@
   line-height: 0.9;
 }
 
-.headerContent h1 span {
+.headerContent .heading span {
   font: var(--font-60);
   font-family: var(--font-Condensed);
   letter-spacing: -2.88px;
   font-weight: bold;
 }
 
-.headerContent h5 {
+.headerContent .sub_heading {
   font: var(--font-18);
   color: var(--color-4e);
   text-transform: uppercase;
   font-family: var(--font-Condensed);
   font-weight: bold;
   line-height: 1.7;
+  margin-bottom: .5rem;
 }
 
 .mobileContainer {
@@ -492,7 +493,7 @@
     letter-spacing: -0.21px;
   }
 
-  .showOnlyMobileCard h1 {
+  .showOnlyMobileCard .counter_heading {
     font: var(--font-48);
     letter-spacing: -2.4px;
     font-weight: 600;
@@ -524,12 +525,16 @@
     font: var(--font-14);
     font-family: var(--font-Condensed);
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     letter-spacing: 0px;
   }
   .sectionHeader {
     margin-top: 1.5rem;
   }
+   .showOnlyMobileCard div {
+    padding: 1.5rem 1.8rem 0;
+  }
+  .mobileCardsContainer{padding-top: 2.5rem;}
 }
 @media (max-width: 420px) {
   .sectionHeader {

@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-import { BASE_URL } from "./src/config/config.js";
+import { BASE_URL } from "./src/config/config.mjs";
 
 const nextConfig = {
   allowedDevOrigins: ["192.168.100.27"],
@@ -46,7 +46,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-    unoptimized: true,
+    // unoptimized: true,
   },
 
   async rewrites() {

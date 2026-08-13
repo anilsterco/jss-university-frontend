@@ -1,3 +1,9 @@
+
+
+/* .homeSlider .slide{
+  height: 100%;
+} */
+
 .bannerContent {
   color: #fff;
   margin: 10rem 0 0 0;
@@ -87,6 +93,9 @@
 .iconSpacing {
   margin-left: 3.3rem;
 }
+.department .iconSpacing{
+  filter:invert(1)
+}
 .iconSpacing:hover {
   filter: invert(41%) sepia(94%) saturate(707%) hue-rotate(9deg) brightness(101%) contrast(102%);
 }
@@ -125,13 +134,13 @@
 }
 
 /* Pagination Position */
-.swiperContainer :global(.swiper-pagination) {
+/* .swiperContainer :global(.swiper-pagination) {
   position: absolute;
   bottom: 3rem;
   left: 95%;
   transform: translateX(-50%);
   z-index: 10;
-}
+} */
 
 /* Pagination Dot */
 .swiperContainer :global(.swiper-pagination-bullet) {
@@ -164,6 +173,7 @@
   height: 100%;
   object-fit: cover;
 }
+
  
 @media (min-width: 2650px) and (max-width: 4000px){
  .desktopBanner,

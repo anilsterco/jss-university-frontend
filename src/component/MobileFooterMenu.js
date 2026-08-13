@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const mobilePanelsData = [
   {
-    name: "About JSS University",
+    name: "About JSS University1",
     subMenu: ["Overview", "Scholarships", "International Students"],
     firstContent: {
       title:

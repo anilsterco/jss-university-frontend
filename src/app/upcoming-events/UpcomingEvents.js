@@ -93,9 +93,9 @@ export default function UpcomingEvents({ className, programId, type }) {
             <div className="col-lg-10">
               <div className="innnr_head">
 
-                <h3>
+                <h1>
                   Upcoming <span>Events</span>
-                </h3>
+                </h1>
 
               </div>
             </div>

@@ -592,15 +592,16 @@
   max-width: 45%;
 }
 
-.program-detail-text .innnr_head h2 {
+.program-detail-text .innnr_head .sub_heading {
   font: var(--font-18);
   padding-bottom: 1rem;
   letter-spacing: 0.72px;
   color: var(--color-white);
   font-weight: 600;
+  margin-bottom: 0;
 }
 
-.program-detail-text .innnr_head h3 {
+.program-detail-text .innnr_head .heading {
   font: var(--font-45);
   letter-spacing: -1.35px;
   color: var(--color-white);
@@ -2652,6 +2653,22 @@
   margin-left: 1rem;
 }
 
+@media (min-width: 1700px) and (max-width: 1900px) {
+.homeSlider{
+  min-height: 666px;
+}
+}
+@media (min-width: 1400px) and (max-width: 1699px) {
+.homeSlider{
+  min-height: 587px;
+}
+}
+@media (min-width: 1023px) and (max-width: 1399px) {
+.homeSlider{
+  min-height: 429px;
+}
+}
+
 
 @media (max-width: 991px) {
   .inner_page {
@@ -2734,6 +2751,7 @@
 .placement .about_two.tabs_group_section:nth-child(6) {
     padding-top: 4rem;
 }
+.structure-btn{margin-bottom: 0;}
 }
 
 @media (max-width: 600px) {
@@ -3787,7 +3805,7 @@ hr {
   pointer-events: none;
 }
 
-.inner-title .innnr_head h3 {
+.inner-title .innnr_head h1 {
   font: var(--font-45);
   letter-spacing: -1.35px;
   color: var(--color-4e);
@@ -6734,7 +6752,7 @@ hr {
 }
 
 @media (max-width: 991px) {
-  .program-detail-text .innnr_head h3 {
+  .program-detail-text .innnr_head .heading {
     font: var(--font-40);
     letter-spacing: -1px;
     margin-bottom: 2rem;
@@ -6865,7 +6883,7 @@ hr {
     margin-top: 4rem;
   }
 
-  .program-detail-text .innnr_head h3 {
+  .program-detail-text .innnr_head .heading {
     font: var(--font-30);
   }
 
@@ -7288,7 +7306,7 @@ hr {
 }
 
 @media (max-width: 575px) {
-  .program-detail-text .innnr_head h3 {
+  .program-detail-text .innnr_head .heading {
     margin-block: 0;
   }
 
@@ -7802,7 +7820,7 @@ hr {
 }
 
 @media (max-width: 640px) {
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     font: var(--font-30);
     margin-bottom: 2rem;
     line-height: 1.2;
@@ -7881,7 +7899,7 @@ hr {
 }
 
 @media screen and (max-width: 480px) {
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     margin-bottom: 0rem;
   }
 
@@ -8150,7 +8168,7 @@ hr {
     line-height: 1.2;
   }
 
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h1 {
     font: var(--font-22);
     font-family: var(--font-Condensed);
     letter-spacing: -1px;

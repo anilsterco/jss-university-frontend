@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import styles from "./about-school.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,13 +17,8 @@ export default function AboutSchool({ data }) {
   const pathname = usePathname();
   const schoolSlug = pathname.split("/").filter(Boolean).pop();
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
+  const isCollege = pathname.includes("college");
+
 
   const aboutSchoolContent = {
     ...data,
@@ -51,15 +45,15 @@ export default function AboutSchool({ data }) {
         <div className={styles.school_row}>
           <div className="school_about">
             <div className="about_school_left">
-              <h6
+              <p
                 className={styles.subtitle}
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 {aboutSchoolContent.subtitle}
-              </h6>
+              </p>
 
-              <h1
+              <h2
                 className={styles.title}
                 dangerouslySetInnerHTML={{
                   __html: aboutSchoolContent.title,
@@ -78,7 +72,7 @@ export default function AboutSchool({ data }) {
 
               <div data-aos="fade-up" data-aos-delay="400">
                 <button className={styles.arrowButton}>
-                  <Link href={`${schoolSlug}/about-the-school`}>
+                  <Link href={`${schoolSlug}${isCollege ? "/about-the-college" : "/about-the-school"}`}>
                     <SlArrowRightCircle />
                   </Link>
                 </button>

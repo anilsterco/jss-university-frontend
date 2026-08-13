@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import "@/styles/custom.style.css";
 
 export default function NewsLetter({ className, programId }) {

@@ -28,7 +28,7 @@ export default function TabSection({ title, subtitle, tabs }) {
       <div className="container">
         <div className="innnr_head text-center">
           <h1 className="d-none">{titleCase}</h1>
-          <h2>{subtitle}</h2>
+          <h2 className="sub_heading">{subtitle}</h2>
 
           <h3 dangerouslySetInnerHTML={{ __html: title }} />
 

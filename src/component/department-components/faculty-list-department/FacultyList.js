@@ -7,22 +7,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import AOS from "aos";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "aos/dist/aos.css";
+
 
 export default function FacultyList({ data }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
   const facultyData = data || {};
 
   return (

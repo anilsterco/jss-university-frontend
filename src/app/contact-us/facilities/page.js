@@ -8,7 +8,7 @@ import "@/styles/custom.style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 
 export default function FacilitiesPage() {
   const [activeTab, setActiveTab] = useState("academic");

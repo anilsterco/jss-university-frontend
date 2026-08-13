@@ -2,7 +2,7 @@ import TabSection from "@/component/sections/TabSection";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
 import TestimonialDetail from "../TestimonialDetail";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export async function generateMetadata() {
   return await getPageSEO("happenings");

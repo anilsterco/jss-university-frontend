@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import "@/styles/style.css";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ProgramBox from "@/component/programBox/ProgramBox";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { Skeleton } from "@/component/common/skeleton/Skeleton";
 
 function useIsMobile(breakpoint = 768){
@@ -207,10 +207,10 @@ export default function ProgramClient() {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h1>PROGRAMME</h1>
-                <h3>
+                <h2>
                   COMPREHENSIVE <span>ACADEMIC PROGRAMME</span> <br />
                   FOR <span>LIFELONG LEARNING</span>
-                </h3>
+                </h2>
                 <ul>
                   {tabs.map((tab) => (
                     <li
@@ -241,12 +241,12 @@ export default function ProgramClient() {
                 <>
                   <input
                     type="text"
-                    placeholder="Search Programs"
+                    placeholder="Search Programmes"
                     name="search"
                     value={searchProgram}
                     onChange={(e) => handleSearch(e.target.value)}
                   />
-                  <button type="button" aria-label="Search programs">
+                  <button type="button" aria-label="Search programmes">
                     <i className="bi bi-search"></i>
                   </button>
                 </>

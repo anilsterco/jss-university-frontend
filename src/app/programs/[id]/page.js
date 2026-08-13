@@ -1,5 +1,5 @@
 import { getPageSEO } from "@/lib/seo";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import ProgramDetailClient from "./ProgramDetailClient";
 
 async function getCourseDetail(id) {
@@ -80,7 +80,6 @@ export async function generateMetadata({ params }) {
 export default async function ProgramDetail({ params }) {
   const { id } = await params;
 
-  // Fetch both in parallel — no extra waterfall
   const [seoData, courseData] = await Promise.all([
     getPageSEO(),
     getCourseDetail(id),
@@ -90,7 +89,6 @@ export default async function ProgramDetail({ params }) {
 
   return (
     <>
-      {/* SEO schema from CMS (title, description, etc.) */}
       {seoData?.schema && (
         <script
           type="application/ld+json"
@@ -98,14 +96,15 @@ export default async function ProgramDetail({ params }) {
         />
       )}
 
-      {/* Course JSON-LD — built from course API data */}
       {courseSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
         />
       )}
-
+      <h1 style={{
+        display:'none'
+      }}>{courseData.name}</h1>
       <ProgramDetailClient params={id} />
     </>
   );

@@ -6,7 +6,7 @@ import AboutSchoolComponent from "@/component/school-components/about-school-com
 import FacultySchool from "@/component/school-components/faculty-list-school/FacultySchool";
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
 import Faculties from "@/pages/faculties/Faculties";
@@ -76,33 +76,33 @@ export default async function SchoolPage({ params }) {
       <DepartmentHeader data={schoolData?.tabs} className="inner_sub_header" />
 
       {section && section == "programs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Programs data={schoolData?.data} />
         </Suspense>
       ) : section == "faculties" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Faculties data={schoolData?.data} />
         </Suspense>
       ) : section == "departments" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Departments data={schoolData?.data} />
         </Suspense>
       ) : section == "alumni" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Departments data={schoolData?.data} title="Alumni" type="alumni" />
         </Suspense>
       ) : section == "happenings" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <HappeningsClient className="inner_happening" />
         </Suspense>
       ) : section == "faqs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <FaqPage data={departmentData?.data} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <FaqPage data={schoolData?.data} />
         </Suspense>
       ) : schoolData?.slug?.includes(section) ? (
         <CommonPage data={schoolData.sections} />
       ) : (
-        <h1>no data</h1>
+        <h2>no data</h2>
       )}
     </>
   );

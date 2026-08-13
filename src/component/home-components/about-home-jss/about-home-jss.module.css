@@ -32,7 +32,7 @@
 
 .fifthMiddleSection {
   display: grid;
-  grid-template-columns: repeat(1, 44.2% auto);
+  grid-template-columns: 50% 50%;
   align-items: center;
   margin-right: 1.3rem;
 }
@@ -355,7 +355,7 @@ margin-bottom: 2rem;
 
 
   .fifthSection {
-    padding-block: 4.4rem;
+    padding-block: 3rem;
     background-color: #e6ffff;
   }
 
@@ -421,6 +421,7 @@ margin-bottom: 2rem;
 
   .fifthMiddleSection {
     margin-top: 2rem;
+    margin-right: 0;
   }
 
   .onlyDesktop {
@@ -475,7 +476,7 @@ margin-bottom: 2rem;
     padding: 3rem 4.1rem 3rem;
     display: flex;
     gap: 0.75rem;
-    margin-bottom: 2.6rem;
+    margin-bottom: 0rem;
 
   }
 
@@ -519,7 +520,9 @@ margin-bottom: 2rem;
 @media (max-width: 767px) {
   .topSectionHeading {
     width: 100%;
-  }
+  }.topSection {
+  margin-bottom: 2.4rem;
+}
 
   .topSectionHeading span {
     max-width: 100%;

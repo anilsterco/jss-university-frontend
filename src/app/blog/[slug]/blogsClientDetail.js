@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Link from "next/link";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";

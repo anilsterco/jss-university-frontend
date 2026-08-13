@@ -1,4 +1,4 @@
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import Link from "next/link";
 
 export default function ThankYouPage(){

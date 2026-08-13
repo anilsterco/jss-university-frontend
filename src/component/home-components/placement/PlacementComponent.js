@@ -6,12 +6,11 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { WEB_URL } from "@/config/config";
 import "swiper/css";
 import "swiper/css/navigation";
-import "aos/dist/aos.css";
-import AOS from "aos";
+import "swiper/css/pagination";
 import styles from "./placement.module.css";
-import { WEB_URL } from "@/config/config";
 
 const dummyPlacementsData = {
   title:
@@ -70,13 +69,6 @@ export default function PlacementsSection({ data, category, pageType }) {
   } else {
     placementsData = data || dummyPlacementsData;
   }
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 const router = useRouter();
 useEffect(() => {
   router.refresh();
@@ -116,7 +108,7 @@ useEffect(() => {
                     data-aos-delay={i * 150}
                   >
                     <div className={`${styles.figcount}`}>
-                      <h3 className={`${styles.statsNumber}`}>{stat.figure}</h3>
+                      <p className={`${styles.statsNumber}`}>{stat.figure}</p>
                       <p className={`mb-0 ${styles.statsLabel}`}>
                         {stat.title}
                       </p>
@@ -160,7 +152,7 @@ useEffect(() => {
                             height: "100%",
                             position: "relative",
                           }}
-                          priority
+                          loading="lazy"
                           className={`top-0 start-0 testiimg rounded ${styles.testimonialImage}`}
                         />
                       </div>
@@ -171,7 +163,7 @@ useEffect(() => {
                           fontSize={36}
                         />
                         <p>{t.short_description}</p>
-                        <h6 className="small fw-bold">{t.name}</h6>
+                        <p className={`small fw-bold ${styles.username}`}>{t.name}</p>
                         <small className="small-text">
                           {t.designation} {t.company}
                         </small>

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import "./applyNow.css";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import Link from "next/link";
 
 export default function ApplyNowFormClient({ schools = [] }) {

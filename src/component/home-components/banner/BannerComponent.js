@@ -2,17 +2,15 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import styles from "./banner.module.css";
+import Image, { getImageProps } from "next/image";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+import styles from "./banner.module.css";
 
 
 const getYouTubeEmbedUrl = (url) => {
@@ -29,7 +27,7 @@ const getYouTubeEmbedUrl = (url) => {
     : url;
 };
 
-export default function HeroSlider({ data, slug }) {
+export default function HeroSlider({ data, slug, classname='' }) {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const currentPage = pathParts[1];
@@ -37,13 +35,6 @@ export default function HeroSlider({ data, slug }) {
 
   const isDepartmentPage = currentPage === "department" && true;
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      easing: "ease-in-out",
-      duration: 800,
-    });
-  }, []);
   const bannerData = data?.length
     ? data
     : [
@@ -60,7 +51,7 @@ export default function HeroSlider({ data, slug }) {
 
   return (
     <>
-     <div className="homeSlider">
+     <div className={`homeSlider ${classname}`}>
        <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
@@ -76,8 +67,38 @@ export default function HeroSlider({ data, slug }) {
         }}
         className={styles.swiperContainer}
       >
-        {bannerData.map((slide) => (
-          <SwiperSlide key={slide.id}>
+        {bannerData.map((slide, index) => {
+          const isFirstSlide = index === 0;
+
+          let desktopImageProps = null;
+          let mobileImageProps = null;
+
+          if (slide.desktop_banner) {
+            desktopImageProps = getImageProps({
+              src: slide.desktop_banner,
+              alt: slide.title || "Banner",
+              width: 1920,
+              height: 810,
+              sizes: "100vw",
+              fetchPriority: "high",
+            });
+          }
+
+          if (slide.mobile_banner) {
+            mobileImageProps = getImageProps({
+              src: slide.mobile_banner,
+              alt: slide.title || "Banner",
+              width: 500,
+              height: 509,
+              sizes: "100vw",
+              fetchPriority: isFirstSlide ? "high" : "auto",
+            });
+          }
+
+
+
+          return(
+            <SwiperSlide key={slide.id} className={styles.slide}>
             <div className={styles.bannerGrid}>
               {/* Left Content */}
               <div className={styles.bannerLeft}>
@@ -90,7 +111,7 @@ export default function HeroSlider({ data, slug }) {
                         </span>
                       )}
 
-                      <h1
+                      <h2
                         className={styles.bannerContentH1}
                         dangerouslySetInnerHTML={{ __html: slide.title }}
                       // data-aos="fade-right"
@@ -145,11 +166,13 @@ export default function HeroSlider({ data, slug }) {
                       width: "100%",
                       pointerEvents: "none",
                     }}
+                    loading={isFirstSlide ? 'eager' : 'lazy'}
                   />
                 ) : (
                   <>
                     {slide.desktop_video ? (
                       <video
+                        poster={slide.desktop_banner}
                         src={slide.desktop_video}
                         autoPlay
                         loop
@@ -162,16 +185,19 @@ export default function HeroSlider({ data, slug }) {
                           width: "100%",
                           objectFit: "cover",
                         }}
-                        preload="metadata"
-                      />
+                        preload={isFirstSlide ? 'metadata' : 'none'}
+                      />     
                     ) : (
-                      slide.desktop_banner && (
+                      desktopImageProps && (
                         <Image
                           src={slide.desktop_banner}
                           alt="slide image"
-                          width={1920}
-                          height={810}
+                          
+                          fetchPriority="high"
+                          loading={'eager'}
                           priority
+                          width={750}
+                          height={764}
                           style={{
                             width: "100%",
 
@@ -208,10 +234,20 @@ export default function HeroSlider({ data, slug }) {
                 <Image
                   src={slide.mobile_banner}
                   alt="slide image"
-                  width={1920}
-                  height={810}
-                  priority
-                  style={{ width: "100%", height: "100%" }}
+                  width={500}
+                  height={509}
+                  priority={isFirstSlide}
+                  fetchPriority={
+                    isFirstSlide ? "high" : "auto"
+                  }
+                  loading={
+                    isFirstSlide ? "eager" : "lazy"
+                  }
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
                   className={styles.mobileBanner}
                 />
               )
@@ -224,12 +260,12 @@ export default function HeroSlider({ data, slug }) {
                       <span className={styles.bannerSmall}>Department of</span>
                     )}
 
-                    <h1
+                    <h2
                       className={styles.bannerContentH1}
                       dangerouslySetInnerHTML={{ __html: slide.title }}
                     // data-aos="fade-right"
                     // data-aos-delay="0"
-                    ></h1>
+                    />
 
                     <p
                       className={styles.bannerContentP}
@@ -265,7 +301,8 @@ export default function HeroSlider({ data, slug }) {
               </div>
             </div>
           </SwiperSlide>
-        ))}
+          )
+        })}
       </Swiper>
 
      </div>

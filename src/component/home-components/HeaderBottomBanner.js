@@ -1,4 +1,4 @@
-import { APPLY_NOW } from "@/config/config";
+import { APPLY_NOW } from "@/config/config.mjs";
 import Link from "next/link";
 import React from "react";
 // import "./headerBottomBanner.css";

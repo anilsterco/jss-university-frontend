@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import { getPageSEO } from "@/lib/seo";
 import LeadershipClientDetail from "./LeadershipClientDetail";
 
@@ -55,6 +55,9 @@ export default async function LeadershipDetailPage({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(seoData.schema) }}
         />
       )}
+      <h1 style={{
+        display:'none'
+      }}>{leader?.leadership_name}</h1>
       <LeadershipClientDetail leader={leader} />
     </>
   );

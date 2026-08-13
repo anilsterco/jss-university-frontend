@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export default function LeadershipClient() {
   const [academicCouncil, setAcademicCouncil] = useState(null);

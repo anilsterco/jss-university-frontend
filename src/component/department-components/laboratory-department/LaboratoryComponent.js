@@ -5,7 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 import { SlArrowRightCircle } from "react-icons/sl";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 import { usePathname } from "next/navigation";
 
 export default function Laboratories({ data }) {

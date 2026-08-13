@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { IoChevronDownOutline, IoMenu, IoClose } from "react-icons/io5";
 import styles from "./DepartmentHeader.module.css";
 import "@/styles/custom.style.css";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import { Skeleton } from "@/component/common/skeleton/Skeleton";
 
 // Converts slug to readable label while API loads

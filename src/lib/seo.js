@@ -1,4 +1,4 @@
-import { BASE_URL, SEO_URL } from "@/config/config";
+import { BASE_URL, SEO_URL } from "@/config/config.mjs";
 import { headers } from "next/headers";
 
 const SEO_BASE = (SEO_URL || "").replace(/\/$/, "");

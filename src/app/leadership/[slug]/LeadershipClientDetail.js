@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-import { BASE_URL, WEB_URL } from "@/config/config";
+import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 
 export default async function LeadershipClientDetail({ leader }) {
   const { sections } = leader;
@@ -32,7 +32,7 @@ export default async function LeadershipClientDetail({ leader }) {
                       key={index}
                       className={tab.url.includes("leadership") ? "active" : ""}
                     >
-                      <Link href={`${WEB_URL + tab.url}`}>{tab.text}</Link>
+                      <Link href={`${tab.url}`}>{tab.text}</Link>
                     </li>
                   ))}
                 </ul>

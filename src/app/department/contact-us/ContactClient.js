@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { MdMailOutline } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { State } from "country-state-city";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({

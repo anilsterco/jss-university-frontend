@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
-import { TfiArrowCircleRight } from "react-icons/tfi";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -217,7 +216,7 @@ export default function AboutClient() {
       <section className="inner-title">
         <div className="container">
           <div className="innnr_head text-center">
-            <h2>{aboutPage.subTitle}</h2>
+            <h2 className="sub_heading">{aboutPage.subTitle}</h2>
             <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }}></h3>
             <ul>
               {aboutPage.tabs.map((tab, i) => (
@@ -490,7 +489,7 @@ export default function AboutClient() {
                             <h3>{leader.name}</h3>
                             <p>
                               {leader.designation}
-                              <TfiArrowCircleRight className="leadership-arrow-icon" />
+                              <BsArrowRightCircle className="leadership-arrow-icon" />
                             </p>
                           </figcaption>
                         </figure>

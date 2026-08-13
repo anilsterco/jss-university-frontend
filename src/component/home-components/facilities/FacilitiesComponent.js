@@ -1,15 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./facilities.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
-import { WEB_URL } from "@/config/config";
+import { WEB_URL } from "@/config/config.mjs";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function FacilitiesComponent({ data }) {
   const home41Ref = useRef(null);
@@ -68,9 +64,14 @@ export default function FacilitiesComponent({ data }) {
               {facilitiesData.facilities.map((card, index) => (
                 <div key={index} className={styles.cardImageContainer}>
                   <Link href={WEB_URL + card?.main_link ?? "#"}>
-                    <img
+                    <Image
                       src={card.image}
-                      alt={card.title}
+                      alt={''}
+                      aria-hidden="true"
+                      width={320}
+                      height={290}
+                      loading="lazy"
+                      sizes="(max-width:991px) 50vw, 100vw"
                       style={{ width: "100%", objectFit: "cover" }}
                     />
                     <div className={styles.cardOverlay}></div>
@@ -85,7 +86,7 @@ export default function FacilitiesComponent({ data }) {
                 >
                   <div className={styles.lastCardContentSection}>
                     <p>Explore All</p>
-                    <h1 className="blue-text">28+</h1>
+                    <h2 className={`blue-text ${styles.counter_heading}`}>28+</h2>
                     <h5>acres of innovation, comfort, and opportunity</h5>
                   </div>
                   <div className={`py-0 ${styles.sectionHeader}`}>
@@ -110,12 +111,14 @@ export default function FacilitiesComponent({ data }) {
               <span className={styles.straightLine}></span>
             </div>
             <div>
-              <h5
+              <p
+              className={styles.sub_heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.subheading }}
-              ></h5>
-              <h1
+              ></p>
+              <h2
+              className={styles.heading}
                 dangerouslySetInnerHTML={{ __html: facilitiesData.heading }}
-              ></h1>
+              ></h2>
             </div>
           </div>
           <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>
@@ -133,7 +136,8 @@ export default function FacilitiesComponent({ data }) {
                   <Image
                     className="img-fluid image"
                     src={panel.image}
-                    alt={`Panel ${index + 1}`}
+                    alt={``}
+                    aria-hidden="true"
                     style={{ width: "100%", objectFit: "cover" }}
                     loading="lazy"
                     width={1920}

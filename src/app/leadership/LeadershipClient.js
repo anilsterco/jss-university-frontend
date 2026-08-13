@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 // ── Shimmer base style ─────────────────────────────────────────
 const shimmer = {
@@ -124,8 +124,7 @@ export default function LeadershipClient() {
           <section className="inner-title">
             <div className="container">
               <div className="innnr_head text-center">
-                <h1 className="d-none">{titleCase}</h1>
-                <h2>{aboutPage.subTitle}</h2>
+                <h2 className="sub_heading">{aboutPage.subTitle}</h2>
                 <h3 dangerouslySetInnerHTML={{ __html: aboutPage.title }} />
                 <ul>
                   {aboutPage.tabs.map((tab, i) => (

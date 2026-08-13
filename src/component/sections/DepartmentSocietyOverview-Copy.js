@@ -55,7 +55,7 @@ export default function DepartmentSocietyOverview({ data }) {
                         </div>
                       }
                       <div className="left_side_content">
-                        <h1 dangerouslySetInnerHTML={{ __html: item?.heading }} />
+                        <h2 className="heading" dangerouslySetInnerHTML={{ __html: item?.heading }} />
                         <h2>{item?.sub_heading}</h2>
                         <p dangerouslySetInnerHTML={{__html:item?.description}} />
                       </div>

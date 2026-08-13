@@ -5,7 +5,7 @@ import styles from "./media-coverage.module.css";
 import Image from "next/image";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 
 export default function MediaCoverage({ className, programId }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

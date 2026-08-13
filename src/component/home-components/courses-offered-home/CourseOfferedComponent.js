@@ -4,10 +4,9 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { PiArrowCircleRightThin } from "react-icons/pi";
-import styles from "./courses-offered.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { APPLY_NOW, WEB_URL } from "@/config/config";
+import styles from "./courses-offered.module.css";
+
 
 export const Counter = ({ start = 1, end = 200, duration = 2000 }) => {
   const [count, setCount] = useState(start);
@@ -79,13 +78,6 @@ export default function CoursesOffered({ data }) {
   const [hasSearched, setHasSearched] = useState(false);
   const searchRef = useRef(null);
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      easing: "ease-in-out",
-      duration: 800,
-    });
-  }, []);
 
   useEffect(() => {
     if (query.trim() === "") {
@@ -125,25 +117,25 @@ export default function CoursesOffered({ data }) {
         <div className={`cource_top ${styles.topSection}`}>
           {/* LEFT CONTENT */}
           <div className="cource_col">
-            <h5
+            <p
               className={styles.topSectionH5}
-              data-aos="fade-up"
-              data-aos-delay="0"
+              // data-aos="fade-up"
+              // data-aos-delay="0"
             >
               {coursesData.subtitle}
-            </h5>
+            </p>
 
-            <h1
+            <h2
               className={`fw-bold ${styles.topSectionH1}`}
               dangerouslySetInnerHTML={{ __html: coursesData.title }}
-              data-aos="fade-up"
-              data-aos-delay="100"
+              // data-aos="fade-up"
+              // data-aos-delay="100"
             />
 
             <p
               className={styles.showOnlyMobileSubHeading}
-              data-aos="fade-up"
-              data-aos-delay="200"
+              // data-aos="fade-up"
+              // data-aos-delay="200"
             >
               {coursesData.programs_text}
             </p>
@@ -151,21 +143,21 @@ export default function CoursesOffered({ data }) {
             {/* SEARCH */}
             <div
               className="search-wrapper position-relative"
-              data-aos="fade-up"
-              data-aos-delay="300"
+              // data-aos="fade-up"
+              // data-aos-delay="300"
               ref={searchRef}
             >
               <div className="input-group programs_search overflow-hidden">
                 <input
                   type="text"
                   className="form-control border-0"
-                  placeholder="Search Programs"
+                  placeholder="Search Programmes"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   style={{ padding: "10px 16px" }}
                 />
                 <span className="input-group-text bg-white border-0">
-                  <img src="images/home-page/icon-search.svg" alt="search" />
+                  <img src="images/home-page/icon-search.svg" alt="search" width={25} height={25} />
                 </span>
               </div>
 
@@ -200,16 +192,16 @@ export default function CoursesOffered({ data }) {
             {/* COUNT */}
             <div
               className={`d-flex align-items-center ${styles.programsCountSection}`}
-              data-aos="fade-up"
-              data-aos-delay="400"
+              // data-aos="fade-up"
+              // data-aos-delay="400"
             >
               <div className={`program-hide ${styles.programsCountWrapper}`}>
-                <h1
+                <h2
                   className={`display-4 programs-count ${styles.programsCount}`}
                 >
                   <Counter start={1} end={coursesData.programs_count} duration={2500} />
                   <span className={styles.programsCountPlus}>+</span>
-                </h1>
+                </h2>
               </div>
 
               <p className={`program-hide ${styles.programsText}`}>
@@ -230,14 +222,17 @@ export default function CoursesOffered({ data }) {
                   },
                 }}
                 className="second-section-cards-image position-relative"
-                data-aos="fade-up"
-                data-aos-delay={i * 150}
+                // data-aos="fade-up"
+                // data-aos-delay={i * 150}
               >
                 <Image
                   src={level.image}
+                  fetchPriority="high"
+                  priority
                   alt="slide image"
-                  width={252}
-                  height={387}
+                  width={302}
+                  height={389}
+                  sizes="(max-width: 991px) 50vw, 302px"
                   className={styles.cardImage}
                 />
 
@@ -247,7 +242,9 @@ export default function CoursesOffered({ data }) {
                   >
                     {level.name_short}
                     <img
-                      src="images/home-page/course_list_icon.svg"
+                      src="images/home-page/course_list_icon.svg" 
+                      width={23}
+                  height={19}
                       alt="slide image"
                       className={styles.cardIcons}
                     />
@@ -265,11 +262,11 @@ export default function CoursesOffered({ data }) {
               >
                 <div className={styles.lastCardContentSection}>
                   <p>Explore All</p>
-                  <h1
-                    className="blue-text"
+                  <h2
+                    className={`blue-text counter_heading ${styles.counter_heading}`}
                   >
                     <Counter start={1} end={coursesData.programs_count} duration={2500} />+
-                  </h1>
+                  </h2>
                   <h5>ACADEMIC PROGRAMS</h5>
                 </div>
                 <div className={styles.lastCardArrow}>
@@ -282,9 +279,9 @@ export default function CoursesOffered({ data }) {
 
         {/* ================= BOTTOM SECTION ================= */}
         <div className="program_heading">
-          <h6 className={` ${styles.bottomSectionH6}`}>
+          <p className={` ${styles.bottomSectionH6}`}>
             Explore Programs by School of
-          </h6>
+          </p>
         </div>
         <div
           className={`programsList_row align-items-center program-row ${styles.exploreProgramSectionWrapper}`}

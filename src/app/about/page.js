@@ -17,6 +17,9 @@ export default async function AboutPage() {
           }}
         />
       )}
+      <h1 style={{
+        display:'none'
+      }}>About</h1>
       <AboutClient />
     </>
   );

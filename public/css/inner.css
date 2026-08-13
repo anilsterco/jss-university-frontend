@@ -14,22 +14,25 @@
 }
 
 .inner-title .innnr_head h2,
-.inner-title .innnr_head h1 {
+.inner-title .innnr_head h1,
+.inner-title .innnr_head .sub_heading{
   font: var(--font-18);
   padding-bottom: 2rem;
   letter-spacing: 0.72px;
   color: var(--color-4e);
   font-weight: 600;
+  margin-bottom: 0;
   font-family: var(--font-Condensed);
 }
 
-.inner-title .innnr_head h3 {
+.inner-title .innnr_head h2,.inner-title .innnr_head h3, .inner-title .innnr_head .heading {
   font: var(--font-45);
   letter-spacing: -1.35px;
   color: var(--color-4e);
   margin-bottom: 3.8rem;
   font-family: var(--font-Condensed);
   text-transform: uppercase;
+  padding-bottom: 0;
 }
 
 .ombudsperson .about_one .abt_cntnt p {
@@ -165,7 +168,7 @@
   color: #444;
 }
 
-.inner-title .innnr_head h3>span {
+.inner-title .innnr_head h2 > span,.inner-title .innnr_head h3>span {
   color: var(--color-e8);
   font-family: var(--font-Condensed);
 }
@@ -6749,7 +6752,7 @@ ul.comon_list li:before {
     padding-block: 4rem 0;
   }
 
-  /* .inner-title .innnr_head h3  {
+  /* .inner-title .innnr_head h2,.inner-title .innnr_head h3, .inner-title .innnr_head .heading  {
     font: var(--font-20);
     letter-spacing: -1.30px;
 } */
@@ -9169,7 +9172,7 @@ ul.comon_list li:before {
     margin-top: 2rem;
   }
 
-  .inner-title .innnr_head h3 {
+  .inner-title .innnr_head h2,.inner-title .innnr_head h3, .inner-title .innnr_head .heading {
     font: var(--font-30);
     margin-bottom: -0.2rem;
   }
@@ -10179,11 +10182,12 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .awards-and-rankings .estab_slide_item h5 {margin-bottom: 1.5rem;}
 .inner-title {padding-top: 1.5rem;}
 .inner-title .innnr_head h2,
-.inner-title .innnr_head h1 {padding-bottom: 1rem;}
+.inner-title .innnr_head h1,
+.inner-title .innnr_head .sub_heading {padding-bottom: 1rem;}
 .about_subtitle {font: var(--font-20);}
 .about_subtitle h5 {font: var(--font-20);}
 .ab_jss_c_col h4 {font: var(--font-22);}
-.inner-title .innnr_head h3 {font: var(--font-24);letter-spacing: -1.25px;font-family: var(--font-Condensed);font-weight: bold;}
+.inner-title .innnr_head h2,.inner-title .innnr_head h3, .inner-title .innnr_head .heading {font: var(--font-24);letter-spacing: -1.25px;font-family: var(--font-Condensed);font-weight: bold;}
 .ab_fost_lft_col h5 {font: var(--font-20);}
 .abou_t_sec h2 {font: var(--font-20);font-weight: 300;}
 .institutional-development-plan section:nth-child(6).amenities_section .grid_group .right_col ul {flex-direction: column;}
@@ -10203,6 +10207,7 @@ main.main-container.department-about-us.department-page.department-chemistry-abo
 .institutional-development-plan section:nth-child(6).amenities_section .grid_group ul li:before {top: 12px;}
 .institutional-development-plan .vision_mission_section .mission-card ul li:before {margin-top: 0.6rem;}
 .program-search.faulty-sec .search-box {margin-bottom: 0;}
+.program-search.faulty-sec.inner_faculties_search .search-box{margin-bottom:1rem;}
 .legacy .heri_principalmain .heri_prici_names .titleOne {border-bottom: 1px solid #ddd;border-right: 0;padding-bottom: 2rem;text-align: center;}
 .legacy .heri_principalmain .heri_prici_names {flex-direction: column;gap: 2rem 0;margin-top: 4rem;}
 .legacy .heri_principalmain .heri_prici_names .titleTwo {padding-left: 0;text-align: center;}
@@ -10480,7 +10485,7 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .event_boxes{grid-template-columns:repeat(2,1fr);}
 .event_box,.event_box:nth-child(4),.event_box:nth-child(5){grid-column:auto;}
 .divercity_chem_soc .society_gallery{grid-template-columns: 1fr;}
-.left_side_content h1{font:var(--font-30);letter-spacing: 0; margin-top: 3rem;}
+.left_side_content h1,.left_side_content .heading{font:var(--font-30);letter-spacing: 0; margin-top: 3rem;}
 .student_soc {padding-top: 1rem;}
 .internal_soc_content .about_two{background-color: transparent;}
 .left_side_content h2 {margin-block:0.7rem}
@@ -10509,7 +10514,7 @@ h5.text-center.event_org_orojo {padding-block: 4rem 0;}
 .benefit_item {border-right: none;}
 .benefit_item:last-child {border-bottom: none;}
 .left_side_content h2 {font: var(--font-22);font-weight: 300;line-height: normal;text-align: left;}
-.left_side_content h1 {font: var(--font-30);letter-spacing: 0;margin-top: 3rem;text-align: left;}
+.left_side_content h1,.left_side_content .heading {font: var(--font-30);letter-spacing: 0;margin-top: 3rem;text-align: left;}
 }
 @media(max-width:575px){
 .internal_soc_content .achievements_li_grid {    grid-template-columns: 1fr;}

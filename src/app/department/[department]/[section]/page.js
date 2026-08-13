@@ -7,7 +7,7 @@ import FacultySchool from "@/component/school-components/faculty-list-school/Fac
 import HappingsHomeComponent from "@/component/home-components/home-happening/HappeningsHomeComponent";
 import { getPageSEO } from "@/lib/seo";
 import Script from "next/script";
-import { BASE_URL } from "@/config/config";
+import { BASE_URL } from "@/config/config.mjs";
 import Programs from "@/pages/programs/Programs";
 import { Suspense } from "react";
 import Faculties from "@/pages/faculties/Faculties";
@@ -114,15 +114,15 @@ export default async function DepartmentPage({ params }) {
       />
 
       {section && section == "programs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Programs data={departmentData?.data} />
         </Suspense>
       ) : section == "faculties" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Faculties data={departmentData?.data} />
         </Suspense>
       ) : section == "alumni" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Departments
             data={departmentData?.data}
             title="Alumni"
@@ -130,29 +130,29 @@ export default async function DepartmentPage({ params }) {
           />
         </Suspense>
       ) : section == "happenings" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <HappeningsClient className="inner_happening" />
         </Suspense>
       ) : section == "labs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Labspage data={departmentData?.sections} />
         </Suspense>
       ) : section == "testimonials" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <TestimonialInnerPage data={departmentData?.data} />
         </Suspense>
       ) : section == "faqs" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <FaqPage data={departmentData?.data} />
         </Suspense>
       ) : section == "society" ? (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <SocietyPage societies={departmentData?.societyData} />
         </Suspense>
       ) : departmentData?.slug?.includes(section) ? (
         <CommonPage data={departmentData.sections} />
       ) : (
-        <h1>no data</h1>
+        <p>no data</p>
       )}
 
       {section && section == "research" && <TabsContent />}

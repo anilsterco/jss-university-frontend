@@ -17,7 +17,9 @@ export default async function Leadership() {
           }}
         />
       )}
-
+      <h1 style={{
+        display:'none'
+      }}>Leadership</h1>
       <LeadershipClient />
     </>
   );

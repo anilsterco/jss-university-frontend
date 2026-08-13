@@ -7,7 +7,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import Link from "next/link";
-import { ASSETS_URL, BASE_URL } from "@/config/config";
+import { ASSETS_URL, BASE_URL } from "@/config/config.mjs";
 
 export default function TestimonialClient() {
   const [testimonialData, setTestimonialData] = useState([]);
@@ -123,9 +123,9 @@ export default function TestimonialClient() {
             <div className="col-lg-10">
               <div className="innnr_head">
                 <h1>Testimonials</h1>
-                <h3>
+                <h2>
                   Discover Student Journeys of <span>Success</span>
-                </h3>
+                </h2>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function TestimonialClient() {
                                 ? item.image
                                 : `${ASSETS_URL}${item.image}`
                             }
-                            alt={item.alt_text || item.name}
+                            alt={item.alt_text || item.name || 'faculty'}
                             className="img-fluid w-100"
                             width={300}
                             height={300}
