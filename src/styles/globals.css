@@ -1733,3 +1733,72 @@ to {opacity: 1;transform: translateY(0);}}
 }
 }
 
+
+
+
+
+/* new page css 07/08/1989 */
+
+
+
+.internation-about h3{margin-bottom: 3rem;}
+.internation-about i {font: var(--font-18);text-align: center;font-weight: 200;padding-bottom:2rem!important;display:block;font-style: italic;    color: slategrey;}
+.internation-vision .about_f_value {padding-top: 4rem!important;}
+.vision-gray{background-color: #dfebf3;    padding: 3rem 3rem 1rem;}
+.vision-gray i {font: var(--font-18);font-weight: 200;padding-bottom:2rem!important;display:block;font-style: italic; color: #19334d;}
+.internation-vision{padding-bottom:10rem;}
+.internation-vision h3{padding-bottom: 2rem!important;color:#737373!important; font: var(--font-21)!important;}
+.internation-vision h5{margin-bottom: 3rem;}
+.internation-vision.international-statis-dashboard{    margin: 0 0 10rem;padding: 10rem 0;background-color: var(--color-9a);}
+.internation-vision.international-statis-dashboard h3, .internation-vision.international-statis-dashboard h5, .internation-vision.international-statis-dashboard p{color:#fff!important;}
+.international-statis-dashboard i {font-style: italic;font: var(--font-14);margin-top: 4rem; display: block;color:#737373;}
+.ab_jss_c_col.dashboard h4{color:#fff!important;}
+.internation-vision.international-statis-dashboard i{color:#ffffff8a;}
+.highlights-sec{padding: 0 0 10rem;}
+.highlights-sec h3, .about-testimonial h3, .why-study-sec h3{padding-bottom: 2rem!important;color:#737373!important; font: var(--font-21)!important;}
+.highlights-sec h5{padding-bottom: 2rem!important; font: var(--font-26)!important;}
+.highlights-sec ul{display: grid;grid-template-columns: repeat(5, 1fr);gap:2rem;padding-left: 0;margin-top: 3rem;}
+.highlights-sec ul li{list-style: none;padding: 3rem;background-color: #f3cf5f6e;text-align: center;}
+.highlights-sec ul li h4{ font: var(--font-18)!important;min-height: 56px;}
+.highlights-sec ul li p{line-height: 2.4rem;margin-bottom: 1rem;}
+.highlights-sec ul li .highlight-icon{background: #b08f29;display: inline-block;margin-bottom: 3rem;border-radius: 60px;width: 70px;height: 70px;}
+.highlights-sec ul li .highlight-icon img{margin-top: 1rem;}
+.about-icge-sec{background-color: #fff;padding: 10rem 0;}
+.about-icge-sec .about-icge-left h3{padding-bottom: 2rem!important;color:#737373!important; font: var(--font-21)!important;}
+.about-icge-sec .about-icge-left h5{padding-bottom: 2rem!important; font: var(--font-26)!important;}
+.about-icge-sec .about-icge-left{padding-right: 3rem;}
+.about-icge-right{padding:3rem;background-color: #16344ec7;}
+.about-icge-right span{display: block;font: var(--font-20);color:#fff;margin-bottom: 2rem;}
+.about-icge-right p{display: block;color:#fff;}
+.about-icge-right img{ filter: invert(1);margin-bottom: 1rem;}
+.about-testimonial{background-color: #fff;padding: 10rem 0;}
+.about-testimonial h3{margin-bottom: 2rem;}
+.highlights-sec.why-jss ul{display: grid;grid-template-columns: repeat(3, 1fr);gap:2rem;padding-left: 0;margin-top: 3rem;}
+.highlights-sec.why-jss ul li h4 { font: var(--font-18)!important;min-height: auto;margin-bottom: 2rem;}
+.why-study-sec h5{padding-bottom: 1rem!important; font: var(--font-24)!important;}
+.why-study-sec p{margin-bottom: 5rem;}
+.why-study-sec .estab_slide_item h5{font: var(--font-18)!important;margin-top: 3rem!important;}
+.why-study-sec .why-icon{background: #b08f29;display: inline-block;margin-bottom: 1rem;border-radius: 60px;width: 70px;height: 70px;}
+.why-study-sec .why-icon img{margin-top: 1rem;}
+.why-study-sec .estab_slide_item p{margin-bottom: 2rem;}
+.why-welcome{margin-top: 10rem; margin-bottom: 7rem;}
+.why-welcome h3{padding-bottom: 2rem!important;color:#737373!important; font: var(--font-21)!important;}
+.why-welcome h5{padding-bottom: 1rem!important; font: var(--font-24)!important;}
+.why-welcome .content h3{margin-bottom: 0;font: var(--font-16)!important; font-weight:400!important;}
+.why-welcome .box_ul {margin:2rem 0 0;}
+.why-study-sec.partner{padding: 10rem 0;}
+.contact-igce{margin:7rem 0 10rem;}
+.contact-igce ul li{list-style:none;margin-bottom:2rem;font: var(--font-16)!important; font-weight:400!important;color:#000!important;display:flex;}
+.contact-igce ul li a span{color:#000;}
+.contact-igce ul li a span:hover{color:var(--color-100);}
+.contact-igce ul li svg{margin-right:2rem;}
+.contact-igce ul li span{display:block;}
+.contact-igce-left{background-color:#fff;padding:5rem 5rem 3rem 2rem;height:100%;}
+.page-module__IEM2ma__ContactIcons {
+    background-color: #018ce833;
+    border-radius: 5rem;
+    width: 5rem;
+    height: 5rem;
+    padding: 1.5rem;
+
+}
