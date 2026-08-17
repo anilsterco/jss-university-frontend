@@ -65,7 +65,7 @@ function buildCourseSchema(id, data, seoData) {
 
       courseMode: "onsite",
 
-      courseWorkload: `${durationYears * 35} hours per week`,
+      courseWorkload: `35 hours per week`,
 
       courseSchedule: {
         "@type": "Schedule",
