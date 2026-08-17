@@ -18,56 +18,68 @@ async function getCourseDetail(id) {
 function buildCourseSchema(id, data, seoData) {
   const pageUrl = `${WEB_URL}programs/${id}`;
 
-  // Fields mapped from ProgramDetailClient destructuring
-  const name        = data.name ?? id;
-  const image       = data.overview?.overview_image ?? "";
-  const description = data.overview?.overview_desc ?? "";
-  const duration    = data.admissionSection?.course_duration ?? "4 Years";
+  const name = data.name ?? id;
 
-  const durationISO = duration.toLowerCase().includes("2") ? "P2Y"
-                    : duration.toLowerCase().includes("3") ? "P3Y"
-                    : duration.toLowerCase().includes("5") ? "P5Y"
-                    : "P4Y";
+  const description =
+    seoData?.description ??
+    data.overview?.overview_desc ??
+    "";
 
-  const academicYear     = data.admissionSection?.academic_year ?? "2026-27";
-  const availabilityDate = `${academicYear.split("-")[0]}-07-12`;
+  const duration = data.admissionSection?.course_duration ?? "4 Years";
+
+  // Extract number from "2 Years", "3 Years", etc.
+  const durationYears = parseInt(duration.match(/\d+/)?.[0] ?? "4", 10);
+
+  const durationISO = `P${durationYears}Y`;
+
+  // One semester = 6 months
+  const repeatCount = durationYears * 2;
 
   return {
     "@context": "https://schema.org",
     "@type": "Course",
     "@id": pageUrl,
+
     name,
-    url: pageUrl,
-    image,
-    description:seoData?.description ?? '',
+
+    description,
+
     provider: {
       "@type": "Organization",
-      name: "JSS University Noida",
-      sameAs: `${WEB_URL}`,
+      name: "JSS University, Noida",
+      sameAs: WEB_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${WEB_URL}images/header/homenew.png`,
+      },
     },
-    educationalCredentialAwarded: data.admissionSection?.degree_awarded ?? "Bachelor of Technology (B.Tech)",
+
     hasCourseInstance: {
       "@type": "CourseInstance",
+
       name,
+
       url: pageUrl,
-      image,
-      description: seoData?.description ?? '',
+
+      description,
+
       courseMode: "onsite",
-      courseWorkload: durationISO,
+
+      courseWorkload: `${durationYears * 35} hours per week`,
+
       courseSchedule: {
         "@type": "Schedule",
         duration: durationISO,
-        repeatFrequency: "Daily",
-        repeatCount: 48,
+        repeatFrequency: "P6M",
+        repeatCount,
       },
-      offers: {
-        "@type": "Offer",
-        url: pageUrl,
-        category: "Paid",
-        availability: "https://schema.org/InStock",
-        availabilityStarts: availabilityDate,
-        validFrom: `${availabilityDate}T00:00:00`,
-      },
+    },
+
+    offers: {
+      "@type": "Offer",
+      url: pageUrl,
+      category: "Paid",
+      availability: "https://schema.org/InStock",
     },
   };
 }
