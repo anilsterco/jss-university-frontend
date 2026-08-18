@@ -50,6 +50,11 @@ const nextConfig = {
         hostname: "staging.jssuninoida.edu.in",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname: "sd7:8080",
+        pathname: "/**",
+      },
     ],
     unoptimized: true,
   },
@@ -57,8 +62,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/:path*",
-        destination: `${BASE_URL}:path*`,
+        source: "/api/:path((?!files).*)",
+        destination: `${BASE_URL}:path`,
       },
     ];
   },

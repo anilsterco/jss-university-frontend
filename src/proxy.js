@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import getPageRedirect from "./utils/getPageRedirect";
+import { verifyToken } from "./lib/auth";
 
 function buildCsp(nonce, isDev) {
   return `
@@ -45,11 +46,29 @@ function buildCsp(nonce, isDev) {
     .trim();
 }
 
+const PROTECTED_PATHS = ["/protected-files"];
+
+function isProtectedPath(pathname) {
+  return PROTECTED_PATHS.some(
+    (path) => pathname === path || pathname.startsWith(`${path}/`)
+  );
+}
+
+
 export async function proxy(request) {
   const { pathname } = request.nextUrl;
   const isDev = process.env.NODE_ENV === "development";
   const nonce = crypto.randomUUID();
   const cspHeader = buildCsp(nonce, isDev);
+
+  if (isProtectedPath(pathname)) {
+    const token = request.cookies.get("token")?.value;
+    const payload = token ? await verifyToken(token) : null;
+
+    if (!payload) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  }
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", pathname);

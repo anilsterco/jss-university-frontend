@@ -1,0 +1,52 @@
+.login_page .container{
+    min-height: 100vh;
+}
+
+.login_card{
+    padding: 3rem 4rem;
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.login_card .login_heading{
+    text-align: center;
+    margin-bottom: 3rem;
+    font: var(--font-24);
+}
+
+.login_card .form-group{
+    margin-bottom:2rem;
+}
+
+.login_card label{
+    font:var(--font-12)
+}
+
+.login_card .form-control{
+    min-height:4rem;
+    font:var(--font-12)
+}
+
+.login_card .form-control::placeholder{
+    font:var(--font-12)
+}
+
+.login_card .submit_btn{
+    height: 4rem;
+    font:var(--font-14);
+    text-transform: uppercase;
+}
+
+.login_card .alert{
+    font: var(--font-12);
+    margin-bottom: 2rem;
+}
+
+/* start responsive */
+
+@media(max-width:767px){
+    .login_page .container{
+        min-height: auto;
+        padding: 7rem 1.5rem;
+    }
+}
