@@ -81,21 +81,27 @@ import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
 import Accordions1 from "@/component/sections/Accordions1";
-import '../../styles/custom.style.css'
+import "../../styles/custom.style.css";
 import { headers } from "next/headers";
 import getPageRedirect from "@/utils/getPageRedirect";
 import GrantsReceived1 from "@/component/sections/GrantsReceived1";
 import Editor from "@/component/sections/Editor";
+import CmsEnhancer from "@/component/common/CmsEnhancer";
 
 async function fetchPageData(slug) {
-  const isDev = process.env.NODE_ENV === 'development';
+  const isDev = process.env.NODE_ENV === "development";
 
   try {
-    const res = await fetch(`${BASE_URL}pages/${slug}`, isDev ? {
-      cache:"no-store"
-    } : {
-      next: { revalidate: 60 },
-    });
+    const res = await fetch(
+      `${BASE_URL}pages/${slug}`,
+      isDev
+        ? {
+            cache: "no-store",
+          }
+        : {
+            next: { revalidate: 60 },
+          },
+    );
     if (!res.ok) return null;
     return await res.json();
   } catch (error) {
@@ -110,7 +116,7 @@ export async function generateMetadata({ params }) {
 export default async function DynamicPage({ params }) {
   const { slug } = await params;
 
-//  await getPageRedirect(slug);
+  //  await getPageRedirect(slug);
 
   const actualSlug = slug ?? "home";
   const [data, seoData] = await Promise.all([
@@ -202,7 +208,7 @@ export default async function DynamicPage({ params }) {
     pdf_lists: PdfLists,
     gridCardDesign2: GridCardDesign2,
     table_section: TableSection,
-    custom_table_section:CustomTableSection,
+    custom_table_section: CustomTableSection,
     top_section: TopSection,
     logo_slider: LogoSlider,
     tabsGrid: TabsGrid,
@@ -226,12 +232,15 @@ export default async function DynamicPage({ params }) {
     textArea: Textarea,
     societiesFculties: societiesFculties,
     societiesEvent: SocietiesEvents,
-    AchievementsRecognitions:AchievementsRecognitions,
-    Yukti:Yukti,
-    IICActivities:IICActivities,
-    editor:Editor
-    
+    AchievementsRecognitions: AchievementsRecognitions,
+    Yukti: Yukti,
+    IICActivities: IICActivities,
+    editor: Editor,
   };
+
+  const cmsContainerId = `cms-page-${data.slug
+    .replace(/[^a-zA-Z0-9-_]/g, "-")
+    .toLowerCase()}`;
 
   return (
     <>
@@ -245,27 +254,31 @@ export default async function DynamicPage({ params }) {
         />
       )}
 
-      {hasTabs && (
-        <TabSection
-          title={data.tabs.title}
-          subtitle={data.tabs.subTitle}
-          tabs={data.tabs.tabs}
-          slug={data.slug}
-        />
-      )}
+      <div id={cmsContainerId}>
+        {hasTabs && (
+          <TabSection
+            title={data.tabs.title}
+            subtitle={data.tabs.subTitle}
+            tabs={data.tabs.tabs}
+            slug={data.slug}
+          />
+        )}
 
-      {groupedSections?.map((section, index) => {
-        const Component =
-          sectionComponents[
-            section.type === "facilityGroup" ? "facilityGroup" : section.type
-          ];
-        if (Component === FacilityOne) {
-          return <Component key={index} data={section.sections} />;
-        } else if (Component) {
-          return <Component key={index} data={[section]} />;
-        }
-        return null;
-      })}
+        {groupedSections?.map((section, index) => {
+          const Component =
+            sectionComponents[
+              section.type === "facilityGroup" ? "facilityGroup" : section.type
+            ];
+          if (Component === FacilityOne) {
+            return <Component key={index} data={section.sections} />;
+          } else if (Component) {
+            return <Component key={index} data={[section]} />;
+          }
+          return null;
+        })}
+      </div>
+
+      <CmsEnhancer containerId={cmsContainerId} />
     </>
   );
 }
