@@ -20,7 +20,7 @@ export async function loginAction(username, password) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
     path: "/",
-    maxAge: 60 * 60 * 2,
+    // maxAge: 60 * 60 * 1,
   });
 
   redirect("/protected-files");
@@ -28,5 +28,7 @@ export async function loginAction(username, password) {
 
 export async function logoutAction() {
   const cookieStore = await cookies();     
-  cookieStore.set("token", "", { maxAge: 0, path: "/" });
+  // cookieStore.set("token", "", { maxAge: 0, path: "/" });
+  cookieStore.delete('token');
+  redirect("/login");
 }

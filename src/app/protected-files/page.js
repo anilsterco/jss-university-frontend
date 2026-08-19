@@ -3,6 +3,7 @@ import "@/styles/style.css";
 import "@/styles/custom.style.css";
 import "./protected.css";
 import Link from "next/link";
+import { logoutAction } from "@/actions/auth";
 
 async function getFiles() {
   const res = await fetch(`${process.env.LARAVEL_API_URL}/files`, {
@@ -75,7 +76,7 @@ export default async function ProtectedRoutePage() {
     // point every file at our own proxy route, not Laravel directly
     files = raw.map((f) => ({ ...f, file_path: `/api/files/${f.id}` }));
   } catch (err) {
-    fetchError = "Could not load files. Please try again later.";
+    fetchError = `Could not load files. Please try again later. ${err}`;
   }
 
   return (
@@ -91,6 +92,9 @@ export default async function ProtectedRoutePage() {
 
       <section className="protected-files-grid">
         <div className="container">
+          <div className="logout_strip">
+            <button className="btn btn-warning logout_btn" onClick={logoutAction}>Logout</button>
+          </div>
           {fetchError && <p className="text-center">{fetchError}</p>}
           {!fetchError && files.length === 0 && (
             <p className="text-center">No files found.</p>
@@ -119,6 +123,8 @@ export default async function ProtectedRoutePage() {
           )}
         </div>
       </section>
+
+
     </main>
   );
 }
