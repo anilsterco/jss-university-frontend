@@ -2047,8 +2047,65 @@ color: var(--color-4e);
 font-family: var(--font-Condensed);
 margin-bottom: 3rem;
 }
+
 .internation-about.jss-contact .about_top h3>span{
 color: var(--color-ff);
+}
+
+.internation-about.jss-contact .abt_cntnt > i {
+font: var(--font-18);
+text-align: center;
+color: var(--color-black);
+margin: 0 auto;
+padding-bottom: 2rem;
+font-style: italic;
+font-weight: 400;
+display: block;
+}
+
+
+
+
+.contact-igce {
+margin: 7rem 0 10rem
+}
+
+.contact-igce ul li {
+margin-bottom: 2rem;
+list-style: none;
+display: flex;
+font: var(--font-16);
+color: #000;
+font-weight: 400
+}
+
+.contact-igce ul li a span {
+color: #000
+}
+
+.contact-igce ul li a span:hover {
+color: var(--color-100)
+}
+
+.contact-igce ul li svg {
+margin-right: 2rem
+}
+
+.contact-igce ul li span {
+display: block
+}
+
+.contact-igce-left {
+background-color: #fff;
+height: 100%;
+padding: 5rem 5rem 3rem 2rem
+}
+.page-module__IEM2ma__ContactIcons {
+background-color: #018ce833;
+border-radius: 5rem;
+width: 5rem;
+height: 5rem;
+padding: 1.5rem
 }
 /* =========================================================
 05. ABOUT ICGE
