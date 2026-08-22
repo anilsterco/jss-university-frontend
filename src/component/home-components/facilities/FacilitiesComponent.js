@@ -1,56 +1,13 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import styles from "./facilities.module.css";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PiArrowCircleRightThin } from "react-icons/pi";
 import { WEB_URL } from "@/config/config.mjs";
-
+import styles from "./facilities.module.css";
+import './facility.css'
 
 export default function FacilitiesComponent({ data }) {
-  const home41Ref = useRef(null);
-  const home5Ref = useRef(null);
-  const home6Ref = useRef(null);
-
-
-  useEffect(() => {
-    const root = home41Ref.current;
-    const lastPanel = home5Ref.current?.lastElementChild;
-    const panelsEl = home5Ref.current?.children;
-    const home6 = home6Ref.current;
-
-    if (!root || !lastPanel || !home6) return;
-
-    // Pin the top banner
-    ScrollTrigger.create({
-      trigger: root,
-      pin: true,
-      pinSpacing: false,
-      start: "top -10px",
-      endTrigger: lastPanel,
-      end: () => {
-        const offset = window.innerHeight * 0.01;
-        return `bottom-=${offset} bottom`;
-      },
-      scrub: false,
-    });
-
-    // Adjust sticky top dynamically
-    function updateStickyTop() {
-      const headerHeight = root.offsetHeight;
-      const scrollOffset = -60; // matches "top -20px"
-      const totalOffset = headerHeight + scrollOffset;
-
-      Array.from(panelsEl).forEach((panel) => {
-        panel.style.top = totalOffset + "px";
-      });
-    }
-
-    updateStickyTop();
-    window.addEventListener("resize", updateStickyTop);
-
-    return () => window.removeEventListener("resize", updateStickyTop);
-  }, []);
 
   const facilitiesData = data ? data : {};
   return (
@@ -121,12 +78,12 @@ export default function FacilitiesComponent({ data }) {
               ></h2>
             </div>
           </div>
-          <section className={`home-41 ${styles.sectionHeader}`} ref={home41Ref}>
+          <section className={`home-41 ${styles.sectionHeader}`}>
             <article className="imageWrapper zero"></article>
           </section>
 
           {/* Panels */}
-          <section className="home5" ref={home5Ref}>
+          <section className="home5">
             {facilitiesData.facilities.map((panel, index) => (
               <article
                 key={index}
@@ -189,24 +146,6 @@ export default function FacilitiesComponent({ data }) {
             ))}
           </section>
 
-          {/* Placeholder Section */}
-          {/* <section className="home6" ref={home6Ref}>
-            <figure></figure>
-          </section> */}
-          <style>{`
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          section.home2, section.home3, section.home-41, .home7 { margin-top: -.5rem; }
-          .home5, .how-we-jam { width: 100%; padding: 0; margin: 0; }
-          .panel figure { margin: 0; padding: 0; }
-          .panel .image { width: 100%; height: 100%; object-fit: cover; display: block; }
-          section.home8 { margin-top: -.5rem; }
-          .home5 { position: relative; }
-          section.home9 { background: #333333; }
-          .zero { z-index: 2; top: -5rem; }
-          section.home-41 { z-index: 1; }
-          .panel { position: sticky; background: #fff; }
-          .home8 figure img { display: block; }
-        `}</style>
         </div>
     </>
   );

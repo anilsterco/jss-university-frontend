@@ -1,0 +1,11 @@
+section.home2, section.home3, section.home-41, .home7 { margin-top: -.5rem; }
+.home5, .how-we-jam { width: 100%; padding: 0; margin: 0; }
+.panel figure { margin: 0; padding: 0; }
+.panel .image { width: 100%; height: 100%; object-fit: cover; display: block; }
+section.home8 { margin-top: -.5rem; }
+.home5 { position: relative; }
+section.home9 { background: #333333; }
+.zero { z-index: 2; top: -5rem; }
+section.home-41 { position: sticky; top: -10px; z-index: 1; }
+.panel { position: sticky; top: 10%; background: #fff; }
+.home8 figure img { display: block; }
