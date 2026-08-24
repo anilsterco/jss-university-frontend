@@ -1,15 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 export default function PlacementProcedure({ data }) {
-
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
-
   const renderSection = (section, index) => {
     if (section.type !== "placementProcedure") return null;
 
@@ -17,9 +6,7 @@ export default function PlacementProcedure({ data }) {
     if (!item) return null;
 
     const boxes =
-      item.boxes?.filter(
-        (box) => box?.title || box?.subtitle
-      ) || [];
+      item.boxes?.filter((box) => box?.title || box?.subtitle) || [];
 
     return (
       <div key={index}>
@@ -36,25 +23,27 @@ export default function PlacementProcedure({ data }) {
               {box.subtitle && <p>{box.subtitle}</p>}
             </div>
           ))}
-
-          
-
-          
         </div>
 
         {item?.bottomDescription && item?.bottomDescription.length > 0 && (
-            <div className="bottom_desc">
-              {item.bottomDescription?.map((desc, descIdx)=>(
-                <p key={descIdx} dangerouslySetInnerHTML={{__html:desc.desc}} className="mt-5" />
-              ))}
-            </div>
-          )}
+          <div className="bottom_desc">
+            {item.bottomDescription?.map((desc, descIdx) => (
+              <p
+                key={descIdx}
+                dangerouslySetInnerHTML={{ __html: desc.desc }}
+                className="mt-5"
+              />
+            ))}
+          </div>
+        )}
       </div>
     );
   };
 
   return (
-    <section className={`placement_proSec ${data?.[0]?.items?.[0].sectionType}`}>
+    <section
+      className={`placement_proSec ${data?.[0]?.items?.[0].sectionType}`}
+    >
       <div className="container">
         {data?.map((section, index) => renderSection(section, index))}
       </div>

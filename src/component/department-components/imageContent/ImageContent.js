@@ -1,165 +1,45 @@
 "use client";
 import Image from "next/image";
-import styles from "./imageContent.module.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import "swiper/css/navigation";
-import "swiper/css";
+import { useState } from "react";
+import styles from "./imageContent.module.css";
+import MediaSwiper from "@/component/common/MediaSwiper";
 
 export default function ImageContent({ data, id, type, extraClass }) {
   const [expanded, setExpanded] = useState(false);
-  const hasMore = data.desc.length > 2;
 
-  const visibleMessages = expanded ? data.desc : data.desc.slice(0, 2);
+  const descList = Array.isArray(data?.desc) ? data.desc : [];
+  const hasMore = descList.length > 2;
+  const visibleMessages = expanded ? descList : descList.slice(0, 2);
 
-  
+  const uid = `${id}-imagecontent`;
+
   return (
     <div
       key={id}
       className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]} aos-init aos-animate`}
     >
       <div
-        className={`row ${type == "bg_image_content" || data?.type == "reverse_bg_white" ? "flex-row-reverse" : ""} ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
+        className={`row ${
+          type == "bg_image_content" || data?.type == "reverse_bg_white"
+            ? "flex-row-reverse"
+            : ""
+        } ${data?.type !== "facilities" && id % 2 !== 0 && "flex-row-reverse"}`}
       >
         <div className="col-lg-6 col-md-12 px_3xl_1_2 rep_border px-0">
-          {data?.imageVideo?.length > 0 ? (
-            data.imageVideo.length === 1 ? (
-              // Single media item
-              <figure className="shine-effect">
-                {data.imageVideo[0].video ? (
-                  <video
-                    src={data.imageVideo[0].video}
-                    width={683}
-                    height={520}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="img-fluid"
-                    style={{
-                      width: "100%",
-                      // height: "auto",
-                      objectFit: "cover",
-                    }}
-                  />
-                ) : (
-                  <Image
-                    src={data.imageVideo[0].image}
-                    alt={data.title ? data.title.slice(0, 50) : "Research Lab"}
-                    width={683}
-                    height={520}
-                    loading="lazy"
-                    className="img-fluid"
-                    style={{
-                      width: "100%",
-                      // height: "auto",
-                      objectFit: "cover",
-                    }}
-                  />
-                )}
-              </figure>
-            ) : (
-              // Multiple media items → Swiper
-              <div
-                className="research_swiper_wrapper"
-                style={{ position: "relative" }}
-              >
-                <Swiper
-                  modules={[Autoplay, Navigation]}
-                  autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }}
-                  navigation={{
-                    nextEl: `.swiper-next-image-content`,
-                    prevEl: `.swiper-prev-image-content`,
-                  }}
-                  loop={true}
-                  slidesPerView={1}
-                >
-                  {data.imageVideo.map((media, mediaIdx) => (
-                    <SwiperSlide key={mediaIdx}>
-                      {media.video ? (
-                        <video
-                          src={media.video}
-                          width={683}
-                          height={520}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="img-fluid"
-                          style={{
-                            width: "100%",
-                            // height: "auto",
-                            objectFit: "cover",
-                          }}
-                        />
-                      ) : (
-                        <Image
-                          src={media.image}
-                          alt={
-                            data.title
-                              ? data.title.slice(0, 50)
-                              : "Research Lab"
-                          }
-                          width={683}
-                          height={520}
-                          className="img-fluid"
-                          loading="lazy"
-                          style={{
-                            width: "100%",
-                            // height: "auto",
-                            objectFit: "cover",
-                          }}
-                        />
-                      )}
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-
-                {/* Unique nav buttons per slide instance */}
-                <button
-                  type="button"
-                  className={`swiper-button-prev swiper-prev-image-content`}
-                  aria-label="Previous slide"
-                >
-                  <MdChevronLeft />
-                </button>
-                <button
-                  type="button"
-                  className={`swiper-button-next swiper-next-image-content`}
-                  aria-label="Next slide"
-                >
-                  <MdChevronRight />
-                </button>
-              </div>
-            )
-          ) : data?.thumbnailImage || data.image ? (
-            // Case 2: fallback to item.image
-            <figure className="shine-effect">
-              <Image
-                src={data.thumbnailImage || data.image || null}
-                width={683}
-                height={520}
-                loading="lazy"
-                alt={data.heading || data.title || 'Image'}
-                className="img-fluid"
-                style={
-                  {
-                    // width: "100%",
-                    // height: "auto",
-                    // objectFit: "cover",
-                  }
-                }
-              />
-            </figure>
-          ) : null}
+          <MediaSwiper
+            media={data?.imageVideo}
+            uid={uid}
+            width={683}
+            height={520}
+            alt={data.title || data.heading || "Image"}
+            fallbackImage={data.thumbnailImage || data.image}
+            imgClassName="img-fluid"
+            mediaStyle={{ width: "100%", objectFit: "cover" }}
+          />
         </div>
-        <div className={`col-lg-6 col-md-12 px_3xl_1_2 `}>
+
+        <div className="col-lg-6 col-md-12 px_3xl_1_2 ">
           <div
             className={`content_col ${styles.content_col} ${type
               ?.split(" ")
@@ -183,9 +63,9 @@ export default function ImageContent({ data, id, type, extraClass }) {
             {data?.subHeading && (
               <h5 className={styles.subHeading}>{data.subHeading}</h5>
             )}
-            {data.desc.length > 0 && (
+            {descList.length > 0 && (
               <div className={`${styles.descGroup} desc_group`}>
-                {visibleMessages?.map((singleDesc, descIdx) => (
+                {visibleMessages.map((singleDesc, descIdx) => (
                   <p key={descIdx} className={styles.desc}>
                     {singleDesc.desc}
                   </p>
@@ -276,7 +156,12 @@ export default function ImageContent({ data, id, type, extraClass }) {
           </div>
         </div>
 
-        <div className="inner_bottom_data" dangerouslySetInnerHTML={{__html:data?.bottomHTML}} />
+        {data?.bottomHTML && (
+          <div
+            className="inner_bottom_data"
+            dangerouslySetInnerHTML={{ __html: data.bottomHTML }}
+          />
+        )}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { BASE_URL, WEB_URL } from "@/config/config.mjs";
 import "./footer.css";
+import Image from "next/image";
 
 async function getFooterData() {
   try {
@@ -56,9 +57,10 @@ export default async function Footer() {
           <div className="footer_contact">
             <div className="footer_left">
               <div className="footer_logo">
-                <img
+                <Image
                   src="/images/footer/footer-logo.webp"
                   alt="Logo" width={90} height={90}
+                  loading="lazy"
                   />
               </div>
               <div className="connect_contant">

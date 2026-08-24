@@ -5,12 +5,8 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -73,6 +69,7 @@ function EarlyGrowthSlider({ items }) {
                       className="imgsli_left"
                       width={600}
                       height={400}
+                      loading="lazy"
                       style={{ objectFit: "cover", width: "100%", height: "auto" }}
                     />
                   )}
@@ -99,7 +96,7 @@ function EarlyGrowthSlider({ items }) {
                       role="button"
                       aria-label="Previous slide"
                     >
-                      <Image src="/images/icons/circle-arrow-left.svg" alt="Prev" width={22} height={22} />
+                      <Image src="/images/icons/circle-arrow-left.svg" alt="Prev" width={22} height={22} loading="lazy" />
                     </div>
                     <div
                       className="earlygrowth-nav earlygrowth-nav-next"
@@ -107,7 +104,7 @@ function EarlyGrowthSlider({ items }) {
                       role="button"
                       aria-label="Next slide"
                     >
-                      <Image src="/images/icons/circle-arrow-right.svg" alt="Next" width={22} height={22} />
+                      <Image src="/images/icons/circle-arrow-right.svg" alt="Next" width={22} height={22} loading="lazy" />
                     </div>
                   </div>
                 )}
@@ -132,14 +129,6 @@ export default function AboutTwo({ data }) {
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   const tabs = data?.[0]?.items || [];
 

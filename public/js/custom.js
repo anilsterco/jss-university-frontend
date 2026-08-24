@@ -1,16 +1,5 @@
-// UIAM - 02031998
-
 (function () {
   "use strict";
-
-  if (typeof AOS !== "undefined") {
-    AOS.init({
-      easing: "linear",
-      disable: "mobile",
-      duration: 500,
-      once: true,
-    });
-  }
 
   function onReady(fn) {
     if (document.readyState === "loading") {

@@ -1,25 +1,7 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 import Link from "next/link";
 
 export default function GridCardDesign3({ data }) {
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   return (
     <>
@@ -51,6 +33,7 @@ export default function GridCardDesign3({ data }) {
                                 alt={item?.title}
                                 width={400}
                                 height={250}
+                                loading="lazy"
                                 layout="responsive"
                                 className="eventImage"
                               />

@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -44,7 +42,7 @@ export default function GrantsReceived1({ data = [] }) {
 
       const activeTab = getActiveTab(
         `${sectionIndex}-${itemIndex}`,
-        tabs[0]?.title
+        tabs[0]?.title,
       );
 
       return (
@@ -54,7 +52,6 @@ export default function GrantsReceived1({ data = [] }) {
         >
           <div className="container">
             <div className="grand_tabs_main faci_diff_tabs">
-
               {/* ================= DESKTOP TABS ================= */}
               {!isMobile && (
                 <>
@@ -64,13 +61,11 @@ export default function GrantsReceived1({ data = [] }) {
                       {tabs.map((tab, tabIndex) => (
                         <li key={tabIndex}>
                           <button
-                            className={
-                              activeTab === tab.title ? "active" : ""
-                            }
+                            className={activeTab === tab.title ? "active" : ""}
                             onClick={() =>
                               handleTabClick(
                                 `${sectionIndex}-${itemIndex}`,
-                                tab.title
+                                tab.title,
                               )
                             }
                           >
@@ -122,9 +117,7 @@ export default function GrantsReceived1({ data = [] }) {
                       >
                         {/* ACCORDION TITLE */}
                         <summary className="faqQuestion">
-                          <span className="faq_heading">
-                            {tab.title}
-                          </span>
+                          <span className="faq_heading">{tab.title}</span>
 
                           <span className="icon"></span>
                         </summary>

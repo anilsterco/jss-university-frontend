@@ -44,6 +44,7 @@ export default function PdfLists({ data }) {
                             }
                             width={20}
                             height={20}
+                            loading="lazy"
                             alt={isPdf ? "pdf" : "link"}
                           />
                           )}

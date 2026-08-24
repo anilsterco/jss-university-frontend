@@ -1,25 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function AboutThree({ data }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   if (!data || data.length === 0) return null;
 
@@ -90,6 +71,7 @@ export default function AboutThree({ data }) {
                       }
                       height={750}
                       width={683}
+                      loading="lazy"
                       style={{
                         width: "100%",
                         height: "100%",

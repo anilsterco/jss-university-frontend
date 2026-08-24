@@ -1,13 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function FacilityTwo({ data }) {
-  const [visibleCount, setVisibleCount] = useState(3);
-
   if (!data || data.length === 0) return null;
 
   return (
@@ -42,6 +35,7 @@ export default function FacilityTwo({ data }) {
                               alt={box.heading || "Amenity"}
                               width={800}
                               height={520}
+                              loading="lazy"
                               className="img-fluid w-100"
                             />
                           </figure>

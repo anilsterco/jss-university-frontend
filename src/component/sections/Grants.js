@@ -1,8 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function Grants({ data = [] }) {
   const renderSection = (section, index) => {
@@ -28,6 +24,7 @@ export default function Grants({ data = [] }) {
                   width={683}
                   height={520}
                   className="img-fluid"
+                  loading="lazy"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 />
@@ -51,6 +48,7 @@ export default function Grants({ data = [] }) {
                           alt="PDF Icon"
                           width={15}
                           height={20}
+                          loading="lazy"
                           className="img-fluid"
                         />
                       </figure>

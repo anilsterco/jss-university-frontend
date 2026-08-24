@@ -1,92 +1,95 @@
-import AboutFive from "@/component/sections/AboutFive";
-import AboutFour from "@/component/sections/AboutFour";
-import AboutOne from "@/component/sections/AboutOne";
+
+import dynamic from "next/dynamic";
+// import AboutFive from "@/component/sections/AboutFive";
+const AboutFour = dynamic(()=>import("@/component/sections/AboutFour"));
+const AboutOne = dynamic(()=>import("@/component/sections/AboutOne"))
 import AboutThree from "@/component/sections/AboutThree";
-import AboutTwo from "@/component/sections/AboutTwo";
-import ComingSoon from "@/component/sections/ComingSoon";
-import FacilityFive from "@/component/sections/FacilityFive";
+const AboutTwo = dynamic(()=>import("@/component/sections/AboutTwo"));
+// import ComingSoon from "@/component/sections/ComingSoon";
+const FacilityFive = dynamic(()=>import("@/component/sections/FacilityFive"));
 import FacilityFour from "@/component/sections/FacilityFour";
 import FacilityOne from "@/component/sections/FacilityOne";
-import FacilitySix from "@/component/sections/FacilitySix";
-import FacilityThree from "@/component/sections/FacilityThree";
+// import FacilitySix from "@/component/sections/FacilitySix";
+const FacilityThree = dynamic(()=>import("@/component/sections/FacilityThree"));
 import FacilityTwo from "@/component/sections/FacilityTwo";
 import TabSection from "@/component/sections/TabSection";
 import Placements from "@/component/sections/Placements";
-import PlacementHighlights from "@/component/sections/PlacementHighlights";
+// import PlacementHighlights from "@/component/sections/PlacementHighlights";
 import PlacementProcedure from "@/component/sections/PlacementProcedure";
 
-import PlacementRequest from "@/component/sections/PlacementRequest";
-import FacilitySeven from "@/component/sections/FacilitySeven";
+// import PlacementRequest from "@/component/sections/PlacementRequest";
+// import FacilitySeven from "@/component/sections/FacilitySeven";
 import HeritageSection from "@/component/sections/HeritageSection";
 import { notFound, redirect } from "next/navigation";
-import EmpowringPeople from "@/component/sections/EmpowringPeople";
-import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
-import AcademicLabs from "@/component/sections/AcademicLabs";
-import ResearchLabs from "@/component/sections/ResearchLabs";
-import SelectionProcess from "@/component/sections/SelectionProcess";
-import RightCounterSection from "@/component/sections/RightCounterSection";
-import EligibilityData from "@/component/sections/EligibilityData";
-import AdmissionTableSection from "@/component/sections/AdmissionTableSection";
-import AdmissionOffice from "@/component/sections/AdmissionOffice";
-import HostelDetail from "@/component/sections/HostelDetail";
-import SocioEconomically from "@/component/sections/SocioEconomically";
-import CocurricularSupport from "@/component/sections/CocurricularSupport";
+const EmpowringPeople = dynamic(()=>import("@/component/sections/EmpowringPeople"));
+const Fosteringcreativity = dynamic(()=>import("@/component/sections/Fosteringcreativity"));
+const AcademicLabs = dynamic(()=>import("@/component/sections/AcademicLabs"));
+const ResearchLabs = dynamic(()=>import("@/component/sections/ResearchLabs"));
+// import SelectionProcess from "@/component/sections/SelectionProcess";
+const RightCounterSection = dynamic(()=>import("@/component/sections/RightCounterSection"));
+// import EligibilityData from "@/component/sections/EligibilityData";
+// import AdmissionTableSection from "@/component/sections/AdmissionTableSection";
+// import AdmissionOffice from "@/component/sections/AdmissionOffice";
+// import HostelDetail from "@/component/sections/HostelDetail";
+// import SocioEconomically from "@/component/sections/SocioEconomically";
+// import CocurricularSupport from "@/component/sections/CocurricularSupport";
 import Thefollowingfacilities from "@/component/sections/Thefollowingfacilities";
-import IndexedResearch from "@/component/sections/IndexedResearch";
-import PublicationPatents from "@/component/sections/PublicationPatents";
-import GrantsReceived from "@/component/sections/GrantsReceived";
+// import IndexedResearch from "@/component/sections/IndexedResearch";
+// import PublicationPatents from "@/component/sections/PublicationPatents";
+// import GrantsReceived from "@/component/sections/GrantsReceived";
 import Grants from "@/component/sections/Grants";
-import AuditoriumSeminar from "@/component/sections/AuditoriumSeminar";
-import UniversityGreen from "@/component/sections/UniversityGreen";
-import Transportation from "@/component/sections/Transportation";
-import CountAlumni from "@/component/sections/CountAlumni";
-import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
-import ImageContentRepeat from "@/component/sections/ImageContentRepeat";
+// import AuditoriumSeminar from "@/component/sections/AuditoriumSeminar";
+// import UniversityGreen from "@/component/sections/UniversityGreen";
+// import Transportation from "@/component/sections/Transportation";
+// import CountAlumni from "@/component/sections/CountAlumni";
+// import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
+const ImageContentRepeat = dynamic(()=>import("@/component/sections/ImageContentRepeat"));
 import GridCardDesign1 from "@/component/sections/GridCardDesign1";
-import VisionMission from "@/component/sections/VisionMission";
-import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
+// import VisionMission from "@/component/sections/VisionMission";
+// import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 import HodMessage from "@/component/sections/HodMessage";
-import PacementTabSection from "@/component/sections/pacementTabSection";
+// import PacementTabSection from "@/component/sections/pacementTabSection";
 import PdfLists from "@/component/sections/PdfLists";
-import GridCardDesign2 from "@/component/sections/GridCardDesign2";
-import TableSection from "@/component/sections/TableSection";
-import TopSection from "@/component/sections/TopSection";
-import LogoSlider from "@/component/sections/LogoSlider";
-import TabsGrid from "@/component/sections/TabsGrid";
+// import GridCardDesign2 from "@/component/sections/GridCardDesign2";
+// import TableSection from "@/component/sections/TableSection";
+// import TopSection from "@/component/sections/TopSection";
+// import LogoSlider from "@/component/sections/LogoSlider";
+// import TabsGrid from "@/component/sections/TabsGrid";
 import { BASE_URL } from "@/config/config";
-import ResearchPatents from "@/component/sections/ResearchPatents";
+// import ResearchPatents from "@/component/sections/ResearchPatents";
 import FacilityTab from "@/component/sections/FacilityTab";
-import StudentClub from "@/component/sections/StudentClub";
-import AmenitiesList from "@/component/sections/AmenitiesList";
-import LabCard from "@/component/sections/LabCard";
-import BgImageContent from "@/component/sections/BgImageContent";
-import GridDepartment from "@/component/sections/GridDepartment";
-import InnovationPanel from "@/component/sections/InnovationPanel";
-import TableContent from "@/component/sections/TableContent";
-import TabsContents from "@/component/sections/TabsContents";
-import FaqPage from "@/pages/faq/Faq";
-import Accordions from "@/component/sections/Accordions";
-import Accordion from "@/component/sections/Accordion";
+// import StudentClub from "@/component/sections/StudentClub";
+// import AmenitiesList from "@/component/sections/AmenitiesList";
+const LabCard = dynamic(()=>import("@/component/sections/LabCard"));
+// import BgImageContent from "@/component/sections/BgImageContent";
+// import GridDepartment from "@/component/sections/GridDepartment";
+// import InnovationPanel from "@/component/sections/InnovationPanel";
+// import TableContent from "@/component/sections/TableContent";
+// import TabsContents from "@/component/sections/TabsContents";
+// import FaqPage from "@/pages/faq/Faq";
+// import Accordions from "@/component/sections/Accordions";
+// import Accordion from "@/component/sections/Accordion";
 import GridCardDesign3 from "@/component/sections/GridCardDesign3";
 import { getPageSEO } from "@/lib/seo";
-import TabsDataContent from "@/component/sections/TabsDataContents";
-import TabTableMultiple from "@/component/sections/TabTableMultiple";
-import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
-import IICActivities from "@/component/sections/IICActivities";
-import societiesFculties from "@/component/sections/SocietiesFculties";
-import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
-import Yukti from "@/component/sections/Yukti";
-import SocietiesEvents from "@/component/sections/SocietiesEvents";
-import Textarea from "@/component/sections/Textarea";
-import CustomTableSection from "@/component/sections/CustomTableSection";
+// import TabsDataContent from "@/component/sections/TabsDataContents";
+// import TabTableMultiple from "@/component/sections/TabTableMultiple";
+// import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+// import IICActivities from "@/component/sections/IICActivities";
+// import societiesFculties from "@/component/sections/SocietiesFculties";
+// import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
+// import Yukti from "@/component/sections/Yukti";
+// import SocietiesEvents from "@/component/sections/SocietiesEvents";
+// import Textarea from "@/component/sections/Textarea";
+// import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
-import Accordions1 from "@/component/sections/Accordions1";
-import "../../styles/custom.style.css";
-import { headers } from "next/headers";
-import getPageRedirect from "@/utils/getPageRedirect";
+// import Accordions1 from "@/component/sections/Accordions1";
 import GrantsReceived1 from "@/component/sections/GrantsReceived1";
-import Editor from "@/component/sections/Editor";
+// import Editor from "@/component/sections/Editor";
 import CmsEnhancer from "@/component/common/CmsEnhancer";
+import AOSInit from "@/component/AOSInit";
+
+import "@/styles/style.css";
+import "@/styles/custom.style.css";
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === "development";
@@ -156,86 +159,86 @@ export default async function DynamicPage({ params }) {
     topBanner: AboutOne,
     logoDesc: AboutOne,
     logoDescGrid: AboutOne,
-    figureDesc: AboutOne,
+    // figureDesc: AboutOne,
     earlyGrowth: AboutTwo,
     vision: AboutThree,
     leftSection: AboutFour,
-    qualityPolicy: AboutFive,
-    facilityGroup: FacilityOne,
-    heading: FacilityTwo,
+    // qualityPolicy: AboutFive,
+    // facilityGroup: FacilityOne,
+    // heading: FacilityTwo,
     amenitiescentre: FacilityTwo,
     sportsfacilities: FacilityThree,
-    objectives: FacilityThree,
+    // objectives: FacilityThree,
     universityboasts: FacilityFour,
     bankAtm: FacilityFive,
-    cafeteriaGuest: FacilitySix,
-    comingSoon: ComingSoon,
+    // cafeteriaGuest: FacilitySix,
+    // comingSoon: ComingSoon,
     whiteboxes: Placements,
-    placementHighlights: PlacementHighlights,
+    // placementHighlights: PlacementHighlights,
     placementProcedure: PlacementProcedure,
-    pacementTabSection: PacementTabSection,
-    placementOfficer: PlacementRequest,
+    // pacementTabSection: PacementTabSection,
+    // placementOfficer: PlacementRequest,
     empowringPeople: EmpowringPeople,
     fosteringcreativity: Fosteringcreativity,
-    guestHouse: FacilitySeven,
+    // guestHouse: FacilitySeven,
     academicLabs: AcademicLabs,
     researchLabs: ResearchLabs,
     researchSectionSecond: ResearchLabs,
     objectiveSection: ResearchLabs,
     heritageSection: HeritageSection,
-    selectionProcess: SelectionProcess,
+    // selectionProcess: SelectionProcess,
     rightCounterSection: RightCounterSection,
-    eligibilityData: EligibilityData,
-    tableSection: AdmissionTableSection,
-    admissionOffice: AdmissionOffice,
-    hostelDetail: HostelDetail,
-    socioEconomically: SocioEconomically,
-    cocurricularSupport: CocurricularSupport,
+    // eligibilityData: EligibilityData,
+    // tableSection: AdmissionTableSection,
+    // admissionOffice: AdmissionOffice,
+    // hostelDetail: HostelDetail,
+    // socioEconomically: SocioEconomically,
+    // cocurricularSupport: CocurricularSupport,
     thefollowingfacilities: Thefollowingfacilities,
-    indexedResearch: IndexedResearch,
-    publicationPatents: PublicationPatents,
-    grantsreceived: GrantsReceived,
+    // indexedResearch: IndexedResearch,
+    // publicationPatents: PublicationPatents,
+    // grantsreceived: GrantsReceived,
     tab_with_custom_data: GrantsReceived1,
     grants: Grants,
-    auditoriumSeminar: AuditoriumSeminar,
-    universityGreen: UniversityGreen,
-    transportation: Transportation,
-    countAlumni: CountAlumni,
+    // auditoriumSeminar: AuditoriumSeminar,
+    // universityGreen: UniversityGreen,
+    // transportation: Transportation,
+    // countAlumni: CountAlumni,
     imageContentRepeat: ImageContentRepeat,
     gridCardDesign1: GridCardDesign1,
-    vision_mission: VisionMission,
+    // vision_mission: VisionMission,
     hod_section: HodMessage,
     pdf_lists: PdfLists,
-    gridCardDesign2: GridCardDesign2,
-    table_section: TableSection,
-    custom_table_section: CustomTableSection,
-    top_section: TopSection,
-    logo_slider: LogoSlider,
-    tabsGrid: TabsGrid,
-    ResearchPatents: ResearchPatents,
+    // gridCardDesign2: GridCardDesign2,
+    // table_section: TableSection,
+    // custom_table_section: CustomTableSection,
+    // top_section: TopSection,
+    // logo_slider: LogoSlider,
+    // tabsGrid: TabsGrid,
+    // ResearchPatents: ResearchPatents,
     facilitiesTab: FacilityTab,
-    studentClub: StudentClub,
-    amenities_list: AmenitiesList,
-    bg_image_content: BgImageContent,
-    gridDepartment: GridDepartment,
-    innovation_panel: InnovationPanel,
-    tableContent: TableContent,
-    tabsData: TabsDataContent,
-    tabsContents: TabsContents,
+    // studentClub: StudentClub,
+    // amenities_list: AmenitiesList,
+    // bg_image_content: BgImageContent,
+    // gridDepartment: GridDepartment,
+    // innovation_panel: InnovationPanel,
+    // tableContent: TableContent,
+    // tabsData: TabsDataContent,
+    // tabsContents: TabsContents,
     labCard: LabCard,
-    table_section_tabs: Accordions,
-    accordionTabs: Accordions1,
-    accordion: Accordion,
+    // table_section_tabs: Accordions,
+    // accordionTabs: Accordions1,
+    // accordion: Accordion,
     gridCardDesign3: GridCardDesign3,
-    tabTableMultiple: TabTableMultiple,
+    // tabTableMultiple: TabTableMultiple,
     tabCustomTableMultiple: TabCustomTableMultiple,
-    textArea: Textarea,
-    societiesFculties: societiesFculties,
-    societiesEvent: SocietiesEvents,
-    AchievementsRecognitions: AchievementsRecognitions,
-    Yukti: Yukti,
-    IICActivities: IICActivities,
-    editor: Editor,
+    // textArea: Textarea,
+    // societiesFculties: societiesFculties,
+    // societiesEvent: SocietiesEvents,
+    // AchievementsRecognitions: AchievementsRecognitions,
+    // Yukti: Yukti,
+    // IICActivities: IICActivities,
+    // editor: Editor,
   };
 
   const cmsContainerId = `cms-page-${data.slug
@@ -278,6 +281,8 @@ export default async function DynamicPage({ params }) {
         })}
       </div>
 
+
+      <AOSInit />
       <CmsEnhancer containerId={cmsContainerId} />
     </>
   );

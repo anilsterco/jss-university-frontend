@@ -1,14 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import "swiper/css/navigation";
-import "swiper/css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
+import MediaSwiper from "@/component/common/MediaSwiper";
 
 export default function ResearchLabs({ data }) {
   if (!Array.isArray(data)) return null;
@@ -17,15 +9,18 @@ export default function ResearchLabs({ data }) {
   const researchSecond = data.find((s) => s.type === "researchSectionSecond");
   const objectiveSection = data.find((s) => s.type === "objectiveSection");
 
+  const sortByPosition = (items) =>
+    [...(items || [])].sort(
+      (a, b) => Number(a.position || 0) - Number(b.position || 0)
+    );
+
   return (
     <>
-      {researchLabs?.items
-        ?.sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
-        .map((item, idx) => (
-          <section
-            key={`researchLabs-${idx}`}
-            className="research_labmain pb-0"
-          >
+      {sortByPosition(researchLabs?.items).map((item, idx) => {
+        const uid = `researchlabs-${idx}`;
+
+        return (
+          <section key={uid} className="research_labmain pb-0">
             <div className="container">
               <div className="amenities_title">
                 {item.title && <h5>{item.title}</h5>}
@@ -35,133 +30,19 @@ export default function ResearchLabs({ data }) {
 
             <div className="container">
               <div className="research_grid_one">
-                {/* ── Image / Video / Swiper ── */}
                 <div className="researh_imgsec">
-                  {/* Case 1: imageVideo array exists → use it (ignore item.image) */}
-                  {item?.imageVideo?.length > 0 ? (
-                    item.imageVideo.length === 1 ? (
-                      // Single media item
-                      <figure className="shine-effect">
-                        {item.imageVideo[0].video ? (
-                          <video
-                            src={item.imageVideo[0].video1}
-                            width={683}
-                            height={520}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                              objectFit: "cover",
-                            }}
-                          />
-                        ) : (
-                          <Image
-                            src={item.imageVideo[0].image}
-                            alt={
-                              item.title
-                                ? item.title.slice(0, 50)
-                                : "Research Lab"
-                            }
-                            width={683}
-                            height={520}
-                            className="img-fluid"
-                            style={{ width: "100%", height: "auto" }}
-                          />
-                        )}
-                      </figure>
-                    ) : (
-                      // Multiple media items → Swiper
-                      <div
-                        className="research_swiper_wrapper"
-                        style={{ position: "relative" }}
-                      >
-                        <Swiper
-                          modules={[Autoplay, Navigation]}
-                          autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                          }}
-                          navigation={{
-                            nextEl: `.swiper-next-research-${idx}`,
-                            prevEl: `.swiper-prev-research-${idx}`,
-                          }}
-                          loop={true}
-                          slidesPerView={1}
-                        >
-                          {item.imageVideo.map((media, mediaIdx) => (
-                            <SwiperSlide key={mediaIdx}>
-                              {media.video ? (
-                                <video
-                                  src={media.video}
-                                  width={683}
-                                  height={520}
-                                  autoPlay
-                                  muted
-                                  loop
-                                  playsInline
-                                  style={{
-                                    // width: "100%",
-                                    // height: "auto",
-                                    objectFit: "cover",
-                                  }}
-                                />
-                              ) : (
-                                <Image
-                                  src={media.image}
-                                  alt={
-                                    item.title
-                                      ? item.title.slice(0, 50)
-                                      : "Research Lab"
-                                  }
-                                  width={683}
-                                  height={520}
-                            className="img-fluid"
-                                  style={{
-                                    // width: "100%",
-                                    // height: "auto",
-                                    objectFit: "cover",
-                                  }}
-                                />
-                              )}
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-
-                        {/* Unique nav buttons per slide instance */}
-                        <button
-                          type="button"
-                          className={`swiper-button-prev swiper-prev-research-${idx}`}
-                          aria-label="Previous slide"
-                        >
-                          <MdChevronLeft />
-                        </button>
-                        <button
-                          type="button"
-                          className={`swiper-button-next swiper-next-research-${idx}`}
-                          aria-label="Next slide"
-                        >
-                          <MdChevronRight />
-                        </button>
-                      </div>
-                    )
-                  ) : item?.image ? (
-                    // Case 2: fallback to item.image
-                    <figure className="shine-effect img-full">
-                      <Image
-                        src={item.image}
-                        alt={item.title || "Research Labs"}
-                        className="img-fluid"
-                        width={683}
-                        height={520}
-                      />
-                    </figure>
-                  ) : null}
+                  <MediaSwiper
+                    media={item.imageVideo}
+                    uid={uid}
+                    width={683}
+                    height={520}
+                    alt={item.title || "Research Lab"}
+                    fallbackImage={item.image}
+                    imgClassName="img-fluid"
+                    mediaStyle={{ width: "100%", height: "auto", objectFit: "cover" }}
+                  />
                 </div>
 
-                {/* ── Text Content ── */}
                 <div className="research_cont">
                   {Array.isArray(item.decs) &&
                     item.decs.map((d, i) => <p key={i}>{d.paragraph}</p>)}
@@ -169,14 +50,18 @@ export default function ResearchLabs({ data }) {
               </div>
             </div>
           </section>
-        ))}
+        );
+      })}
 
-      {researchSecond?.items
-        ?.sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
-        .map((item, idx) => (
+      {sortByPosition(researchSecond?.items).map((item, idx) => {
+        const uid = `researchsecond-${idx}`;
+
+        return (
           <section
-            key={`researchSecond-${idx}`}
-            className={`research_labmain second pb-0 pt-0 ${idx % 2 === 0 ? "section_right" : "left"}`}
+            key={uid}
+            className={`research_labmain second pb-0 pt-0 ${
+              idx % 2 === 0 ? "section_right" : "left"
+            }`}
           >
             <div className="container">
               <div className="research_grid_two research_at">
@@ -187,157 +72,42 @@ export default function ResearchLabs({ data }) {
                   {Array.isArray(item.desc) &&
                     item.desc.map((d, i) => <p key={i}>{d.paragraph}</p>)}
                 </div>
+
                 <div className="researh_imgsec">
-                  {item?.imageVideo?.length > 0 ? (
-                    item.imageVideo.length === 1 ? (
-                      // Single media item
-                      <figure className="shine-effect">
-                        {item.imageVideo[0].video ? (
-                          <video
-                            src={item.imageVideo[0].video}
-                            width={683}
-                            height={520}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="img-fluid"
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                              objectFit: "cover",
-                            }}
-                          />
-                        ) : (
-                          <Image
-                            src={item.imageVideo[0].image}
-                            alt={
-                              item.title
-                                ? item.title.slice(0, 50)
-                                : "Research Lab"
-                            }
-                            width={683}
-                            height={520}
-                            className="img-fluid"
-                            style={{ width: "100%", height: "auto" }}
-                          />
-                        )}
-                      </figure>
-                    ) : (
-                      // Multiple media items → Swiper
-                      <div
-                        className="research_swiper_wrapper"
-                        style={{ position: "relative" }}
-                      >
-                        <Swiper
-                          modules={[Autoplay, Navigation]}
-                          autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                          }}
-                          navigation={{
-                            nextEl: `.swiper-next-research-${idx}`,
-                            prevEl: `.swiper-prev-research-${idx}`,
-                          }}
-                          loop={true}
-                          slidesPerView={1}
-                        >
-                          {item.imageVideo.map((media, mediaIdx) => (
-                            <SwiperSlide key={mediaIdx}>
-                              <figure className="shine-effect">
-                                {media.video ? (
-                                  <video
-                                    src={media.video}
-                                    width={683}
-                                    height={520}
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    
-                                    style={{
-                                      width: "100%",
-                                      height: "auto",
-                                      objectFit: "cover",
-                                    }}
-                                  />
-                                ) : (
-                                  <Image
-                                    src={media.image}
-                                    alt={
-                                      item.title
-                                        ? item.title.slice(0, 50)
-                                        : "Research Lab"
-                                    }
-                                    width={683}
-                                    height={520}
-                                    className="img-fluid"
-                                    style={{
-                                      // width: "100%",
-                                      // height: "auto",
-                                      objectFit: "cover",
-                                    }}
-                                  />
-                                )}
-                              </figure>
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-
-                        {/* Unique nav buttons per slide instance */}
-                        <button
-                          type="button"
-                          className={`swiper-button-prev swiper-prev-research-${idx}`}
-                          aria-label="Previous slide"
-                        >
-                          <MdChevronLeft />
-                        </button>
-                        <button
-                          type="button"
-                          className={`swiper-button-next swiper-next-research-${idx}`}
-                          aria-label="Next slide"
-                        >
-                          <MdChevronRight />
-                        </button>
-                      </div>
-                    )
-                  ) : item?.image ? (
-                    // Case 2: fallback to item.image
-                    <figure className="shine-effect img-full">
-                      <Image
-                        src={item.image}
-                        alt={item.title || "Research Labs"}
-                        className="img-fluid"
-                        width={683}
-                        height={520}
-                      />
-                    </figure>
-                  ) : null}
+                  <MediaSwiper
+                    media={item.imageVideo}
+                    uid={uid}
+                    width={683}
+                    height={520}
+                    alt={item.title || "Research Lab"}
+                    fallbackImage={item.image}
+                    imgClassName="img-fluid"
+                    mediaStyle={{ width: "100%", height: "auto", objectFit: "cover" }}
+                  />
                 </div>
               </div>
             </div>
           </section>
-        ))}
+        );
+      })}
 
-      {objectiveSection?.items
-        ?.sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
-        .map((item, idx) => (
-          <section key={`objective-${idx}`} className="research_labmain pt-0">
-            <div className="container">
-              <div className="re_lab_objective">
-                {item.heading && <h4>{item.heading}</h4>}
-                <div className="re_obj_grid">
-                  {Array.isArray(item.boxes) &&
-                    item.boxes.map((box, bidx) => (
-                      <div className="re_obj_card" key={bidx}>
-                        <p>{box.desc}</p>
-                      </div>
-                    ))}
-                </div>
+      {sortByPosition(objectiveSection?.items).map((item, idx) => (
+        <section key={`objective-${idx}`} className="research_labmain pt-0">
+          <div className="container">
+            <div className="re_lab_objective">
+              {item.heading && <h4>{item.heading}</h4>}
+              <div className="re_obj_grid">
+                {Array.isArray(item.boxes) &&
+                  item.boxes.map((box, bidx) => (
+                    <div className="re_obj_card" key={bidx}>
+                      <p>{box.desc}</p>
+                    </div>
+                  ))}
               </div>
             </div>
-          </section>
-        ))}
+          </div>
+        </section>
+      ))}
     </>
   );
 }
