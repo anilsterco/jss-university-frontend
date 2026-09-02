@@ -1,52 +1,11 @@
-"use client";
-
-import { useEffect } from "react";
+"use client"
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 import { APPLY_NOW } from "@/config/config";
 import { WEB_URL } from "@/config/config";
 import { usePathname } from "next/navigation";
 
 export default function AboutOne({ data }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
-
-  const renderContactValue = (v, i, arr) => {
-    const cleaned = v.trim();
-
-    const element = cleaned.match(/^\+?\d/) ? (
-      <a key={i} className="CTA_Number" href={`tel:${cleaned.replace(/\s/g, "")}`}>
-        {cleaned}
-      </a>
-    ) : cleaned.includes("@") ? (
-      <a className="CTA_Email" key={i} href={`mailto:${cleaned}`}>
-        {cleaned}
-      </a>
-    ) : (
-      <span key={i}>{cleaned}</span>
-    );
-
-    // Add comma separator between values, but not after last
-    return i < arr.length - 1 ? (
-      <span key={`wrap-${i}`}>{element}, </span>
-    ) : (
-      element
-    );
-  };
-
 
   const pathname = usePathname();
 

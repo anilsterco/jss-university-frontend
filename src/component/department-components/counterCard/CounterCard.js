@@ -11,6 +11,7 @@ export default function CounterCard({ data }) {
                     height={73}
                     width={73}
                     alt={data.desc || data.title || 'image'}
+                    loading='lazy'
                 />
             )}
             <p className={styles.desc}>{data.desc}</p>

@@ -1,9 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
-import Link from "next/link";
 
 export default function FacilityFour({ data }) {
   if (!data || data.length === 0) return null;
@@ -36,6 +31,7 @@ export default function FacilityFour({ data }) {
                           src="/images/about-page/uni_boa_main.webp"
                           alt="University Sports"
                           className="w-100"
+                          loading="lazy"
                           width={800}
                           height={520}
                         />
@@ -85,6 +81,7 @@ export default function FacilityFour({ data }) {
                                             }
                                             width={446}
                                             height={300}
+                                            loading="lazy"
                                             style={{
                                               // width: "100%",
                                               objectFit: "cover",
@@ -143,6 +140,7 @@ export default function FacilityFour({ data }) {
                                                       }
                                                       width={446}
                                                       height={300}
+                                                      loading="lazy"
                                                       style={{
                                                         // width: "100%",
                                                         // height: "auto",
@@ -185,6 +183,7 @@ export default function FacilityFour({ data }) {
                                         className="imgsli_left"
                                         width={446}
                                         height={300}
+                                        loading="lazy"
                                         style={{
                                           // height: "100%",
                                           objectFit: "cover",
@@ -204,6 +203,7 @@ export default function FacilityFour({ data }) {
                               className="w-100"
                               width={446}
                               height={300}
+                          loading="lazy"
                             />
                           </figure> */}
                           <figcaption>

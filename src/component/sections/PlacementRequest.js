@@ -1,20 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import "aos/dist/aos.css";
 import "swiper/css/navigation";
 import "swiper/css";
 import Link from "next/link";
 
 export default function PlacementRequest({ data }) {
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
 
   if (!data || data.length === 0) return null;
   const section = data.find((sec) => sec.type === "placementOfficer");
@@ -36,6 +30,7 @@ export default function PlacementRequest({ data }) {
                     width={600}
                     height={450}
                     style={{width:"100%", height:"auto"}}
+                    loading="lazy"
                   />
                 </figure>
               )}
@@ -72,6 +67,7 @@ export default function PlacementRequest({ data }) {
                           // height: "auto",
                           objectFit: "cover",
                         }}
+                        loading="lazy"
                       />
                     )
                   ) : (
@@ -121,6 +117,7 @@ export default function PlacementRequest({ data }) {
                                   // height: "auto",
                                   objectFit: "cover",
                                 }}
+                                loading="lazy"
                               />
                             )}
                           </SwiperSlide>

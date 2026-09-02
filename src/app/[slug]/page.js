@@ -1,14 +1,16 @@
+
+import dynamic from "next/dynamic";
 import AboutFive from "@/component/sections/AboutFive";
-import AboutFour from "@/component/sections/AboutFour";
-import AboutOne from "@/component/sections/AboutOne";
+const AboutFour = dynamic(()=>import("@/component/sections/AboutFour"));
+const AboutOne = dynamic(()=>import("@/component/sections/AboutOne"))
 import AboutThree from "@/component/sections/AboutThree";
-import AboutTwo from "@/component/sections/AboutTwo";
+const AboutTwo = dynamic(()=>import("@/component/sections/AboutTwo"));
 import ComingSoon from "@/component/sections/ComingSoon";
-import FacilityFive from "@/component/sections/FacilityFive";
+const FacilityFive = dynamic(()=>import("@/component/sections/FacilityFive"));
 import FacilityFour from "@/component/sections/FacilityFour";
 import FacilityOne from "@/component/sections/FacilityOne";
 import FacilitySix from "@/component/sections/FacilitySix";
-import FacilityThree from "@/component/sections/FacilityThree";
+const FacilityThree = dynamic(()=>import("@/component/sections/FacilityThree"));
 import FacilityTwo from "@/component/sections/FacilityTwo";
 import TabSection from "@/component/sections/TabSection";
 import Placements from "@/component/sections/Placements";
@@ -19,12 +21,12 @@ import PlacementRequest from "@/component/sections/PlacementRequest";
 import FacilitySeven from "@/component/sections/FacilitySeven";
 import HeritageSection from "@/component/sections/HeritageSection";
 import { notFound, redirect } from "next/navigation";
-import EmpowringPeople from "@/component/sections/EmpowringPeople";
-import Fosteringcreativity from "@/component/sections/Fosteringcreativity";
-import AcademicLabs from "@/component/sections/AcademicLabs";
-import ResearchLabs from "@/component/sections/ResearchLabs";
+const EmpowringPeople = dynamic(()=>import("@/component/sections/EmpowringPeople"));
+const Fosteringcreativity = dynamic(()=>import("@/component/sections/Fosteringcreativity"));
+const AcademicLabs = dynamic(()=>import("@/component/sections/AcademicLabs"));
+const ResearchLabs = dynamic(()=>import("@/component/sections/ResearchLabs"));
 import SelectionProcess from "@/component/sections/SelectionProcess";
-import RightCounterSection from "@/component/sections/RightCounterSection";
+const RightCounterSection = dynamic(()=>import("@/component/sections/RightCounterSection"));
 import EligibilityData from "@/component/sections/EligibilityData";
 import AdmissionTableSection from "@/component/sections/AdmissionTableSection";
 import AdmissionOffice from "@/component/sections/AdmissionOffice";
@@ -40,11 +42,11 @@ import AuditoriumSeminar from "@/component/sections/AuditoriumSeminar";
 import UniversityGreen from "@/component/sections/UniversityGreen";
 import Transportation from "@/component/sections/Transportation";
 import CountAlumni from "@/component/sections/CountAlumni";
-import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
-import ImageContentRepeat from "@/component/sections/ImageContentRepeat";
+// import DepartmentHeader from "@/component/department-components/departmentHeader/DepartmentHeader";
+const ImageContentRepeat = dynamic(()=>import("@/component/sections/ImageContentRepeat"));
 import GridCardDesign1 from "@/component/sections/GridCardDesign1";
 import VisionMission from "@/component/sections/VisionMission";
-import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
+// import HODMessage from "@/component/department-components/hod-message-component/HodMessageComponent";
 import HodMessage from "@/component/sections/HodMessage";
 import PacementTabSection from "@/component/sections/pacementTabSection";
 import PdfLists from "@/component/sections/PdfLists";
@@ -58,21 +60,21 @@ import ResearchPatents from "@/component/sections/ResearchPatents";
 import FacilityTab from "@/component/sections/FacilityTab";
 import StudentClub from "@/component/sections/StudentClub";
 import AmenitiesList from "@/component/sections/AmenitiesList";
-import LabCard from "@/component/sections/LabCard";
+const LabCard = dynamic(()=>import("@/component/sections/LabCard"));
 import BgImageContent from "@/component/sections/BgImageContent";
 import GridDepartment from "@/component/sections/GridDepartment";
 import InnovationPanel from "@/component/sections/InnovationPanel";
 import TableContent from "@/component/sections/TableContent";
 import TabsContents from "@/component/sections/TabsContents";
-import FaqPage from "@/pages/faq/Faq";
+// import FaqPage from "@/pages/faq/Faq";
 import Accordions from "@/component/sections/Accordions";
 import Accordion from "@/component/sections/Accordion";
 import GridCardDesign3 from "@/component/sections/GridCardDesign3";
 import { getPageSEO } from "@/lib/seo";
 import TabsDataContent from "@/component/sections/TabsDataContents";
 import TabTableMultiple from "@/component/sections/TabTableMultiple";
-import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
-import IICActivities from "@/component/sections/IICActivities";
+// import ResearchLabsSecond from "@/component/sections/ResearchLabsSecond";
+const IICActivities = dynamic(()=>import("@/component/sections/IICActivities"));
 import societiesFculties from "@/component/sections/SocietiesFculties";
 import AchievementsRecognitions from "@/component/sections/AchievementsRecognitions";
 import Yukti from "@/component/sections/Yukti";
@@ -81,12 +83,13 @@ import Textarea from "@/component/sections/Textarea";
 import CustomTableSection from "@/component/sections/CustomTableSection";
 import TabCustomTableMultiple from "@/component/sections/TabCustomTableMultiple";
 import Accordions1 from "@/component/sections/Accordions1";
-import "../../styles/custom.style.css";
-import { headers } from "next/headers";
-import getPageRedirect from "@/utils/getPageRedirect";
 import GrantsReceived1 from "@/component/sections/GrantsReceived1";
 import Editor from "@/component/sections/Editor";
 import CmsEnhancer from "@/component/common/CmsEnhancer";
+import AOSInit from "@/component/AOSInit";
+
+import "@/styles/style.css";
+import "@/styles/custom.style.css";
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === "development";
@@ -278,6 +281,8 @@ export default async function DynamicPage({ params }) {
         })}
       </div>
 
+
+      <AOSInit />
       <CmsEnhancer containerId={cmsContainerId} />
     </>
   );

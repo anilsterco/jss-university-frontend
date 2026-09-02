@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function TabSection({ title, subtitle, tabs }) {
   const pathname = usePathname();

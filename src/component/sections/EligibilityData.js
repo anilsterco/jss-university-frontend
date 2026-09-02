@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Link from "next/link";
 import { BASE_URL, WEB_URL } from "@/config/config";
 import { Skeleton } from "../common/skeleton/Skeleton";
@@ -24,14 +22,6 @@ export default function EligibilityPrograms({ data }) {
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   const eligibilitySection = data?.find(
     (sec) => sec.type === "eligibilityData"

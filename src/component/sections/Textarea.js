@@ -1,27 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Image from "next/image";
-
 export default function Textarea({ data }) {
-  const [visibleCounts, setVisibleCounts] = useState({});
-
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
-
-  const handleLoadMore = (sectionIndex, itemIndex, totalCount) => {
-    setVisibleCounts((prev) => ({
-      ...prev,
-      [`${sectionIndex}-${itemIndex}`]: totalCount,
-    }));
-  };
 
   return (
     <>
-      {data?.map((section, sectionIndex) => {
+      {data?.map((section) => {
         if (section.type !== "textArea") return null;
         if (!section.items?.length) return null;
 

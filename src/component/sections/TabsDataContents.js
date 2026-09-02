@@ -1,20 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
+import { useState } from "react";
 
 export default function TabsDataContent({ data }) {
   const [activeTab, setActiveTab] = useState(0);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   if (!data || data.length === 0) return null;
 

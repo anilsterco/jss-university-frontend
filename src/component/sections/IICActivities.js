@@ -2,23 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function IICActivities({ data }) {
     const [selectedImage, setSelectedImage] = useState(null);
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-        });
-    }, []);
-
-    useEffect(() => {
-        AOS.refresh();
-    }, [data]);
 
     if (!data?.length) return null;
 
@@ -73,6 +59,7 @@ export default function IICActivities({ data }) {
                                                 style={{
                                                     objectFit: "cover",
                                                 }}
+                                                loading="lazy"
                                             />
                                         </div>
                                     </div>
@@ -104,6 +91,7 @@ export default function IICActivities({ data }) {
                             width={1200}
                             height={800}
                             className="IICpopupImage"
+                            loading="lazy"
                         />
                     </div>
                 </div>

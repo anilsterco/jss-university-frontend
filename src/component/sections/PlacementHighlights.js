@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 /* ================= COUNTER COMPONENT ================= */
 function Counter({ value, duration = 1500 }) {
@@ -53,9 +51,6 @@ function Counter({ value, duration = 1500 }) {
 
 /* ================= MAIN COMPONENT ================= */
 export default function PlacementHighlights({ data }) {
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
 
   const renderSection = (section, index) => {
     if (section.type !== "placementHighlights") return null;

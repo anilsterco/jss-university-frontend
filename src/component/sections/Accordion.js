@@ -1,25 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
-
 export default function Accordion({ data }) {
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
-
   return (
     <section className="accordion_section">
       <div className="container">

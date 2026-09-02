@@ -1,8 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function FacilityOne({ data }) {
   if (!data || data.length === 0) return null;
@@ -36,6 +32,7 @@ export default function FacilityOne({ data }) {
                           className="img-fluid"
                           data-aos="fade-up"
                           data-aos-delay="200"
+                          loading="lazy"
                         />
                       </figure>
                     )}

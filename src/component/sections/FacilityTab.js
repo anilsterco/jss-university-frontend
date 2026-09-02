@@ -1,37 +1,113 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
+
+function FacilityTabsBlock({ tabs }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const [activeAccordion, setActiveAccordion] = useState(0);
+
+  if (!tabs || tabs.length === 0) return null;
+
+  const handleTabClick = (tabIdx) => {
+    setActiveTab(tabIdx);
+    setActiveAccordion(0);
+  };
+
+  const toggleAccordion = (accIdx) => {
+    setActiveAccordion((prev) => (prev === accIdx ? null : accIdx));
+  };
+
+  return (
+    <div className="faci_diff_tabs">
+      <nav className="growth-tabs">
+        <ul>
+          {tabs.map((tab, tabIdx) => (
+            <li key={tabIdx}>
+              <button
+                type="button"
+                className={activeTab === tabIdx ? "active" : ""}
+                onClick={() => handleTabClick(tabIdx)}
+              >
+                {tab.tabname}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="grow_tb_contsec">
+        {tabs.map((tab, tabIdx) => (
+          <div
+            key={tabIdx}
+            id={`faci_di_tab${tabIdx + 1}`}
+            className={`growth-item ${activeTab === tabIdx ? "active" : ""}`}
+          >
+            <div className="fac_tab_con">
+              {tab.image && (
+                <div className="fac_dif_tbimg">
+                  <figure className="shine-effect">
+                    <Image
+                      src={tab.image}
+                      alt={tab.tabname}
+                      width={800}
+                      height={520}
+                      loading="lazy"
+                      className="img-fluid w-100"
+                    />
+                  </figure>
+                </div>
+              )}
+
+              {tab.accordian?.length > 0 && (
+                <div className="faci_accordion">
+                  {tab.accordian.map((accordionItem, accIdx) => (
+                    <div className="faci_acc_item" key={accIdx}>
+                      <button
+                        className={`faci_acc_header ${
+                          activeAccordion === accIdx ? "active" : ""
+                        }`}
+                        onClick={() => toggleAccordion(accIdx)}
+                      >
+                        <span className="faci_acc_icon">
+                          <figure className="shine-effect">
+                            <Image
+                              src={
+                                activeAccordion === accIdx
+                                  ? "/images/about-page/accodin_minus.svg"
+                                  : "/images/about-page/accodin_plus.svg"
+                              }
+                              alt="Toggle"
+                              width={18}
+                              height={18}
+                      loading="lazy"
+                              className="img-fluid w-100"
+                            />
+                          </figure>
+                        </span>
+                        <span>{accordionItem.title}</span>
+                      </button>
+
+                      <div
+                        className={`faci_acc_body ${
+                          activeAccordion === accIdx ? "open" : ""
+                        }`}
+                      >
+                        <p>{accordionItem.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function FacilityTab({ data }) {
-  const [activeTab, setActiveTab] = useState("tab0");
-  const [activeAccordion, setActiveAccordion] = useState(null);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
-
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-    setActiveAccordion(0); // Reset accordion to first item when tab changes
-  };
-
-  const toggleAccordion = (index) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
-
   if (!data || data.length === 0) return null;
 
   return (
@@ -39,116 +115,30 @@ export default function FacilityTab({ data }) {
       {data.map((section, sectionIndex) => {
         if (section.type !== "facilitiesTab") return null;
 
+        const items = [...(section.items || [])].sort(
+          (a, b) => a.position - b.position
+        );
+
         return (
           <section
             key={`facilities-tab-${sectionIndex}`}
             className="facilities_diffent"
           >
             <div className="container">
-              {section.items
-                ?.sort((a, b) => a.position - b.position)
-                .map((item, itemIdx) => (
-                  <div key={itemIdx}>
-                    <div className="fac_diff_title" >
-                      <h5>{item.heading}</h5>
-                      <p>{item.subheading}</p>
-                    </div>
-
-                    {item.tabs && item.tabs.length > 0 && (
-                      <div className="faci_diff_tabs">
-                        <nav className="growth-tabs">
-                          <ul>
-                            {item.tabs.map((tab, tabIdx) => (
-                              <li key={tabIdx}>
-                                <button
-                                  type="button"
-                                  className={activeTab === `tab${tabIdx}` ? "active" : ""}
-                                  onClick={() => handleTabClick(`tab${tabIdx}`)}
-                                >
-                                  {tab.tabname}
-                                </button>
-                              </li>
-                            ))}
-                          </ul>
-                        </nav>
-
-                        <div className="grow_tb_contsec">
-                          {item.tabs.map((tab, tabIdx) => (
-                            <div
-                              key={tabIdx}
-                              id={`faci_di_tab${tabIdx + 1}`}
-                              className={`growth-item ${activeTab === `tab${tabIdx}` ? "active" : ""}`}
-                            >
-                              <div className="fac_tab_con">
-                                {tab.image && (
-                                  <div
-                                    className="fac_dif_tbimg"
-                                  >
-                                    <figure className="shine-effect">
-                                      <Image
-                                        src={tab.image}
-                                        alt={tab.tabname}
-                                        width={800}
-                                        height={520}
-                                        className="img-fluid w-100"
-                                      />
-                                    </figure>
-                                  </div>
-                                )}
-
-                                {tab.accordian && tab.accordian.length > 0 && (
-                                  <div
-                                    className="faci_accordion"
-                                  >
-                                    {tab.accordian.map((accordionItem, accIdx) => (
-                                      <div className="faci_acc_item" key={accIdx}>
-                                        <button
-                                          className={`faci_acc_header ${
-                                            activeAccordion === accIdx ? "active" : ""
-                                          }`}
-                                          onClick={() => toggleAccordion(accIdx)}
-                                        >
-                                          <span className="faci_acc_icon">
-                                            <figure className="shine-effect">
-                                              <Image
-                                                src={
-                                                  activeAccordion === accIdx
-                                                    ? "/images/about-page/accodin_minus.svg"
-                                                    : "/images/about-page/accodin_plus.svg"
-                                                }
-                                                alt="Toggle"
-                                                width={18}
-                                                height={18}
-                                                className="img-fluid w-100"
-                                              />
-                                            </figure>
-                                          </span>
-                                          <span>{accordionItem.title}</span>
-                                        </button>
-
-                                        <div
-                                          className={`faci_acc_body ${
-                                            activeAccordion === accIdx ? "open" : ""
-                                          }`}
-                                        >
-                                          <p>{accordionItem.desc}</p>
-                                        </div>
-                                      </div>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <p className="fac_accbtm" data-aos="fade-up">
-                        {item.description}
-                    </p>
+              {items.map((item, itemIdx) => (
+                <div key={itemIdx}>
+                  <div className="fac_diff_title">
+                    <h5>{item.heading}</h5>
+                    <p>{item.subheading}</p>
                   </div>
-                ))}
+
+                  <FacilityTabsBlock tabs={item.tabs} />
+
+                  <p className="fac_accbtm" data-aos="fade-up">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
         );

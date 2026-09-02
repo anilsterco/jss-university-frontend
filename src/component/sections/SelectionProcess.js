@@ -1,28 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function AboutOne({ data }) {
   const pathname = usePathname();
   const slug = pathname?.split("/").pop();
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   if (!data || data.length === 0) return null;
 

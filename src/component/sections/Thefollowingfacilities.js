@@ -1,25 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function AboutOne({ data }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   const renderSection = (section, sectionIndex) => {
     if (section.type === "thefollowingfacilities") {
@@ -42,6 +23,7 @@ export default function AboutOne({ data }) {
                         alt={section.items[0].title || "Facility Image"}
                         width={1390}
                         height={550}
+                        loading="lazy"
                         className="img-fluid"
                         data-aos="fade-up"
                         data-aos-delay="200"

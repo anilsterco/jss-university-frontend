@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./hod-message.module.css";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { usePathname } from "next/navigation";
 
 const HODMessage = ({ data }) => {
@@ -16,23 +14,23 @@ const HODMessage = ({ data }) => {
   useEffect(() => {
     const updateCharLimit = () => {
       const width = window.innerWidth;
-  
+
       if (width < 480) {
-        setCharLimit(200);       // mobile small
+        setCharLimit(200); // mobile small
       } else if (width < 768) {
-        setCharLimit(300);       // mobile large
+        setCharLimit(300); // mobile large
       } else if (width < 1024) {
-        setCharLimit(400);       // tablet
+        setCharLimit(400); // tablet
       } else if (width < 1280) {
-        setCharLimit(500);       // small desktop
-      }else if (width < 2000) {
-        setCharLimit(500);       // small desktop
+        setCharLimit(500); // small desktop
+      } else if (width < 2000) {
+        setCharLimit(500); // small desktop
       } else {
-        setCharLimit(440);       // large desktop
+        setCharLimit(440); // large desktop
       }
     };
-  
-    updateCharLimit();           // run on mount
+
+    updateCharLimit(); // run on mount
     window.addEventListener("resize", updateCharLimit);
     return () => window.removeEventListener("resize", updateCharLimit);
   }, []);
@@ -78,21 +76,21 @@ const HODMessage = ({ data }) => {
   const fullText = hodData.messages.join(" ");
 
   const hasMore =
-    fullText.length > charLimit ||        // ← was CHAR_LIMIT
+    fullText.length > charLimit || // ← was CHAR_LIMIT
     hodData?.message_list?.length > 0 ||
     hodData?.listGroup?.length > 0;
 
   const getVisibleMessages = () => {
     if (expanded) return hodData.messages;
-  
+
     let charCount = 0;
     const result = [];
-  
+
     for (const msg of hodData.messages) {
       if (charCount >= charLimit) break;
-  
+
       const remaining = charLimit - charCount;
-  
+
       if (charCount + msg.length <= charLimit) {
         result.push(msg);
         charCount += msg.length;
@@ -102,20 +100,11 @@ const HODMessage = ({ data }) => {
         break;
       }
     }
-  
+
     return result;
   };
 
   const visibleMessages = getVisibleMessages();
-
-  // 🔹 Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 
   return (
     <div
@@ -138,6 +127,7 @@ const HODMessage = ({ data }) => {
                   alt={hodData?.name || "Head of Department"}
                   width={590}
                   height={700}
+                  loading="lazy"
                   className={`w-100 hod_img ${styles.hodImage} ${styles.shineImage}`}
                 />
               </div>
@@ -154,6 +144,7 @@ const HODMessage = ({ data }) => {
                       alt="icon"
                       width={36}
                       height={31}
+                      loading="lazy"
                       className={styles.icons}
                     />
                   )}
@@ -206,6 +197,7 @@ const HODMessage = ({ data }) => {
                             alt="arrow"
                             width={22}
                             height={22}
+                            loading="lazy"
                             style={{
                               transform: expanded
                                 ? "rotate(180deg)"
@@ -236,6 +228,7 @@ const HODMessage = ({ data }) => {
                       alt="arrow"
                       width={5}
                       height={430}
+                      loading="lazy"
                     />
                   </div>
                 </div>

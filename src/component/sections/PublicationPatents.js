@@ -1,25 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function PublicationPatents({ data = [] }) {
-  useEffect(() => {
-    import("aos").then((AOS) => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    import("aos").then((AOS) => AOS.refresh());
-  }, [data]);
 
   const renderSection = (section, index) => {
     if (section.type !== "publicationPatents") return null;
@@ -69,6 +51,7 @@ export default function PublicationPatents({ data = [] }) {
                                     alt="PDF"
                                     width={30}
                                     height={40}
+                                    loading="lazy"
                                   />
                                 </Link>
                               ))}

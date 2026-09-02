@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function GrantsReceived({ data = [] }) {
   const [activeTabMap, setActiveTabMap] = useState({});

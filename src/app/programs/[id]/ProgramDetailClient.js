@@ -266,6 +266,9 @@ export default function ProgramDetailClient({ params }) {
               width={1200}
               height={600}
               className="img-fluid w-100"
+              loading="eager"
+              fetchPriority="high"
+              priority
             />
             <figcaption>
               <div className="program-detail-text">

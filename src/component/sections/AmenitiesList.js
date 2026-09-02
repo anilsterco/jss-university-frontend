@@ -1,23 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Image from "next/image";
-
 export default function AmenitiesList({ data }) {
-  const [visibleCounts, setVisibleCounts] = useState({});
-
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
-
-  const handleLoadMore = (sectionIndex, itemIndex, totalCount) => {
-    setVisibleCounts((prev) => ({
-      ...prev,
-      [`${sectionIndex}-${itemIndex}`]: totalCount,
-    }));
-  };
 
   return (
     <>
@@ -40,7 +21,7 @@ export default function AmenitiesList({ data }) {
                 const boxes =
                   item.boxes?.filter((box) => box?.title || box?.subtitle) ||
                   [];
-                const visibleCount = visibleCounts[key] ?? 4;
+                const visibleCount = 4;
                 const visibleItems = boxes.slice(0, visibleCount);
                 const hasMore = visibleCount < boxes.length;
 

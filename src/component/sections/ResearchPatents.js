@@ -1,10 +1,4 @@
 import React from "react";
-import HODMessage from "../department-components/hod-message-component/HodMessageComponent";
-import Image from "next/image";
-import Link from "next/link";
-import PlacementComponent from "../home-components/placement/PlacementComponent";
-import TabSection from "./TabSection";
-import TabsGridComponent from "./TabsGridComponent";
 
 export default function ResearchPatents({ data }) {
   const renderSection = (section, sectionIndex) => {

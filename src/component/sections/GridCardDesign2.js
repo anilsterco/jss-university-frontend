@@ -1,5 +1,4 @@
 import React from 'react'
-import GridCard1 from "../department-components/gridCard1/GridCard1";
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -29,6 +28,7 @@ export default function GridCardDesign2({ data }) {
                                                             maxWidth: "100%",
                                                             height: "auto"
                                                         }}
+                                                        loading='lazy'
                                                     />
                                                 </div>
 
@@ -46,6 +46,7 @@ export default function GridCardDesign2({ data }) {
                                                                 src="/images/icons/arrow2.svg"
                                                                 height={22}
                                                                 width={22}
+                                                                loading='lazy'
                                                             />
                                                         </Link>
                                                     </div>

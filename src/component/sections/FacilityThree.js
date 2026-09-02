@@ -9,9 +9,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
-
 export default function FacilityThree({ data }) {
   if (!data || data.length === 0) return null;
 
@@ -21,7 +18,7 @@ export default function FacilityThree({ data }) {
         if (section.type !== "sportsfacilities") return null;
 
         const item = section.items?.[0];
-        const slides = item?.boxex || [];
+        const slides = Array.isArray(item?.boxex) ? item.boxex : [];
 
         if (slides.length === 0) return null;
 
@@ -29,7 +26,7 @@ export default function FacilityThree({ data }) {
           <section
             className="sport_fac_swiper"
             key={`sports-${sectionIndex}`}
-           id={`${item?.sectionId || "library"}`}
+            id={item?.sectionId || `sports-facilities-${sectionIndex}`}
           >
             <Swiper
               modules={[Navigation, EffectFade, Autoplay, Pagination]}
@@ -37,7 +34,7 @@ export default function FacilityThree({ data }) {
               fadeEffect={{ crossFade: true }}
               slidesPerView={1}
               loop={true}
-              autoplay={{ delay: 3500 }}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
               navigation
               pagination={{ clickable: true }}
             >
@@ -52,7 +49,9 @@ export default function FacilityThree({ data }) {
                           className="w-100"
                           width={1920}
                           height={790}
+                          loading={idx === 0 ?'eager':'lazy'}
                           style={{ objectFit: "cover" }}
+                          priority={idx === 0}
                         />
                       </figure>
                     )}
@@ -61,7 +60,7 @@ export default function FacilityThree({ data }) {
                       <figure className="shine-effect img-full">
                         <video
                           src={slide.video}
-                          alt={slide.title || "Sports Facility"}
+                          aria-label={slide.title || "Sports Facility"}
                           className="w-100"
                           width={1920}
                           height={790}
@@ -73,6 +72,7 @@ export default function FacilityThree({ data }) {
                         />
                       </figure>
                     )}
+
                     <div className="container">
                       <div className="spo_fa_content">
                         <div className="spo_sli_hed">

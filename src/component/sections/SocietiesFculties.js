@@ -1,23 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function SocietiesFaculties({ data }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
-
   const section = data?.find(
     (item) => item.type === "societiesFculties"
   );
@@ -79,6 +62,7 @@ export default function SocietiesFaculties({ data }) {
                     width={684}
                     height={428}
                     className="w-100 faculty_img"
+                    loading="lazy"
                   />
                 </figure>
               </div>

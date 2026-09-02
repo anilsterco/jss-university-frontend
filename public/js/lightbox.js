@@ -23,27 +23,30 @@ activeImage= lightboxArray.indexOf(image);
 
 const transitionSlidesLeft = () => {
   lightboxBtnLeft.focus();
-  $('.lightbox-image').addClass('slideright'); 
-   setTimeout(function() {
-  activeImage === 0 ? setActiveImage(lightboxArray[lastImage]) : setActiveImage(lightboxArray[activeImage-1]);
-}, 250); 
+  lightboxImage.classList.add("slideright");
+  setTimeout(function () {
+    activeImage === 0
+      ? setActiveImage(lightboxArray[lastImage])
+      : setActiveImage(lightboxArray[activeImage - 1]);
+  }, 250);
 
-
-  setTimeout(function() {
-    $('.lightbox-image').removeClass('slideright');
-}, 500);   
-}
+  setTimeout(function () {
+    lightboxImage.classList.remove("slideright");
+  }, 500);
+};
 
 const transitionSlidesRight = () => {
- lightboxBtnRight.focus();
-$('.lightbox-image').addClass('slideleft');  
-  setTimeout(function() {
-   activeImage === lastImage ? setActiveImage(lightboxArray[0]) : setActiveImage(lightboxArray[activeImage+1]);
-}, 250); 
-  setTimeout(function() {
-    $('.lightbox-image').removeClass('slideleft');
-}, 500);  
-}
+  lightboxBtnRight.focus();
+  lightboxImage.classList.add("slideleft");
+  setTimeout(function () {
+    activeImage === lastImage
+      ? setActiveImage(lightboxArray[0])
+      : setActiveImage(lightboxArray[activeImage + 1]);
+  }, 250);
+  setTimeout(function () {
+    lightboxImage.classList.remove("slideleft");
+  }, 500);
+};
 
 const transitionSlideHandler = (moveItem) => {
   moveItem.includes('left') ? transitionSlidesLeft() : transitionSlidesRight();

@@ -1,7 +1,4 @@
 import React from "react";
-import HODMessage from "../department-components/hod-message-component/HodMessageComponent";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function TopSection({ data }) {
   const renderSection = (section, sectionIndex) => {
@@ -18,7 +15,10 @@ export default function TopSection({ data }) {
                   section.items.length >= -1 &&
                   section.items.map((item, idx) => (
                     <React.Fragment key={idx}>
-                      <h5 className="about_subtitle" dangerouslySetInnerHTML={{__html:item?.heading}}/>
+                      <h5
+                        className="about_subtitle"
+                        dangerouslySetInnerHTML={{ __html: item?.heading }}
+                      />
                       <p
                         className={`about_subHeading ${item?.sub_heading && "less"}`}
                       >

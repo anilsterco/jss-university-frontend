@@ -1,8 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function Transportation({ data = [] }) {
   const renderSection = (section, index) => {
@@ -32,6 +28,7 @@ export default function Transportation({ data = [] }) {
                       className="img-fluid w-100"
                       data-aos="fade-up"
                       data-aos-delay="200"
+                      loading="lazy"
                     />
                   </figure>
                 </div>

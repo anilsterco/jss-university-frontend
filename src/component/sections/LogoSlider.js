@@ -1,7 +1,4 @@
 import React from 'react'
-import HODMessage from '../department-components/hod-message-component/HodMessageComponent'
-import Image from 'next/image';
-import Link from 'next/link';
 import PlacementComponent from '../../component/home-components/placement/PlacementComponent'
 
 export default function LogoSlider({ data }) {
