@@ -1,22 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 
 export default function AchievementsRecognitions({ data }) {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-        });
-    }, []);
-
-    useEffect(() => {
-        AOS.refresh();
-    }, [data]);
 
     const section = data?.find(
         (item) => item.type === "AchievementsRecognitions"
@@ -67,6 +51,7 @@ export default function AchievementsRecognitions({ data }) {
                                 width={1391}
                                 height={550}
                                 className="w-100 achievements_img"
+                                loading="lazy"
                             />
                         </figure>
                     </div>

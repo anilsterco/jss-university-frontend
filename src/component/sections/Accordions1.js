@@ -1,5 +1,4 @@
 import React from "react";
-import IQAC from "@/pages/IQAC/IQAC";
 import AccordionTabs from "../common/accordionTabs/AccordionTabs";
 
 export default function Accordions1({ data }) {

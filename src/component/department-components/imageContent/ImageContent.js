@@ -17,7 +17,7 @@ export default function ImageContent({ data, id, type, extraClass }) {
   return (
     <div
       key={id}
-      className={`singleImageContent ${styles.singleImageContent} ${styles[data.type]} aos-init aos-animate`}
+      className={`singleImageContent ${data?.type} ${styles.singleImageContent} ${styles[data.type]} aos-init aos-animate`}
     >
       <div
         className={`row ${

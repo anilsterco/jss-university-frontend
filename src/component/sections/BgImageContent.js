@@ -1,5 +1,3 @@
-import Image from "next/image";
-import CounterCard from "../department-components/counterCard/CounterCard";
 import ImageContent from "../department-components/imageContent/ImageContent";
 
 export default function BgImageContent({ data }) {

@@ -1,23 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function SocietiesEvent({ data }) {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-        });
-    }, []);
-
-    useEffect(() => {
-        AOS.refresh();
-    }, [data]);
 
     const section = data?.find(
         (item) => item.type === "societiesEvent"
@@ -97,6 +81,7 @@ export default function SocietiesEvent({ data }) {
                                         width={432}
                                         height={428}
                                         className="w-100 event_img"
+                                        loading="lazy"
                                     />
                                 </div>
                             )}
@@ -114,6 +99,7 @@ export default function SocietiesEvent({ data }) {
                                             alt={event.title || "Icon"}
                                             width={40}
                                             height={40}
+                                            loading="lazy"
                                         />
                                     </div>
                                 )}

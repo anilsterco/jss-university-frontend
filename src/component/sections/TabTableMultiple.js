@@ -1,21 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
+import React, { useState } from "react";
 
 export default function TabTableMultiple({ data }) {
   const [activeTabs, setActiveTabs] = useState({});
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   const handleTabClick = (sectionIndex, tabIndex) => {
     setActiveTabs((prev) => ({ ...prev, [sectionIndex]: tabIndex }));

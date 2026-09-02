@@ -1,8 +1,4 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import styles from "./tableContent.module.css";
 import { usePathname } from "next/navigation";
 
@@ -10,14 +6,6 @@ const TableContent = ({ data }) => {
   const pathname = usePathname();
 
   const hideGrid = pathname === "/department/engineering-aiml/research";
-  // 🔹 Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 
   return (
     <section

@@ -32,7 +32,7 @@ const roboto = Roboto({
   // style: ["normal"],
   display: "swap",
   variable: "--font-Roboto",
-  preload: true,
+  // preload: true,
 });
  
 const robotoCondensed = Roboto_Condensed({
@@ -40,7 +40,7 @@ const robotoCondensed = Roboto_Condensed({
   // weight: ["200", "300", "400", "500", "700"],
   display: "swap",
   variable: "--font-Condensed",
-  preload: true,
+  // preload: true,
 });
  
 // const oswald = Oswald({

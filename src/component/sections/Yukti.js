@@ -1,25 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
-
 export default function AboutFive({ data }) {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-        });
-    }, []);
-
-    useEffect(() => {
-        AOS.refresh();
-    }, [data]);
-
     if (!data?.length) return null;
 
     return (

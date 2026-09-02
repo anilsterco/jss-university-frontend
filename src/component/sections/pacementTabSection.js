@@ -2,15 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function PacementTabSection({ data }) {
   const [activeGrowthTab, setActiveGrowthTab] = useState(null);
-
-  useEffect(() => {
-    AOS.init({ once: true, duration: 1000 });
-  }, []);
 
   useEffect(() => {
     const section = data?.find(
@@ -86,6 +80,7 @@ export default function PacementTabSection({ data }) {
                                 width={180}
                                 height={100}
                                 className="img-fluid"
+                                loading="lazy"
                               />
                               {img.title && (
                                 <h5 className="name">{img.title}</h5>

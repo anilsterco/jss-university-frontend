@@ -1,7 +1,4 @@
 import React from "react";
-import GridCard1 from "../department-components/gridCard1/GridCard1";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function CustomTableSection({ data }) {
   const renderSection = (section, sectionIndex) => {

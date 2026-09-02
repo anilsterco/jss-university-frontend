@@ -1,8 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function FacilitySix({ data }) {
   if (!data || data.length === 0) return null;
@@ -37,6 +33,7 @@ export default function FacilitySix({ data }) {
                         className="w-100"
                         width={800}
                         height={520}
+                        loading="lazy"
                       />
                     </figure>
                   </div>

@@ -1,24 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
-
 export default function IndexedResearch({ data }) {
-  useEffect(() => {
-    import("aos").then((AOS) => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    import("aos").then((AOS) => AOS.refresh());
-  }, [data]);
-
   const renderSection = (section, sectionIndex) => {
     if (section.type === "indexedResearch") {
       const counts = section.items[0]?.count || [];

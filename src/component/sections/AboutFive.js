@@ -1,28 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 export default function AboutFive({ data }) {
-
-  // 🔹 AOS INIT
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  // 🔹 Refresh AOS when data updates
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   const renderSection = (section, index) => {
     switch (section.type) {
@@ -52,6 +30,7 @@ export default function AboutFive({ data }) {
                     width={700}
                     height={500}
                     style={{ width: "100%", height: "auto" }}
+                    loading="lazy"
                   />
                 </figure>
 

@@ -2,10 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "@/styles/style.css";
-import "@/styles/custom.style.css";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -17,18 +13,6 @@ export default function StudentClub({ data }) {
   // MOBILE ACCORDION
   const [isMobile, setIsMobile] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(0);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [data]);
 
   // MOBILE CHECK
   useEffect(() => {
@@ -136,6 +120,7 @@ export default function StudentClub({ data }) {
                                                 width={800}
                                                 height={520}
                                                 className="img-fluid"
+                                                loading="lazy"
                                               />
                                             </figure>
                                           </div>
@@ -283,6 +268,7 @@ export default function StudentClub({ data }) {
                                                   width={800}
                                                   height={520}
                                                   className="img-fluid"
+                                                  loading="lazy"
                                                 />
                                               </figure>
                                             </div>
