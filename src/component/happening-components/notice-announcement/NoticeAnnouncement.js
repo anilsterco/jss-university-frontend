@@ -1,7 +1,7 @@
 "use client";
 import styles from "./notice-announcement.module.css";
 import React, { useState, useEffect } from "react";
-import { SiAdobeacrobatreader } from "react-icons/si";
+import { FaFilePdf } from "react-icons/fa";
 import { LuLoader } from "react-icons/lu";
 import { useQuery } from "@tanstack/react-query";
 import { BASE_URL } from "@/config/config.mjs";
@@ -69,7 +69,7 @@ export default function NoticeAnnouncement({ programId }) {
                   <p className={styles.documentDate}>{doc.date}</p>
                 </div>
                 <div className={styles.pdfIcon}>
-                  <SiAdobeacrobatreader color="#e74c3c" size={20} />
+                  <FaFilePdf color="#e74c3c" size={20} />
                 </div>
               </div>
             ))

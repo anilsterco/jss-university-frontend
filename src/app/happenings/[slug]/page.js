@@ -22,7 +22,7 @@ async function fetchHappening(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const [seoData, happeningsData] = await Promise.all([
-    getPageSEO(),
+    getPageSEO(slug),
     fetchHappening(slug),
   ]);
 
@@ -45,7 +45,7 @@ export default async function HappeningsPage({ params }) {
 
   if (!happeningsData) return notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(slug);
 
   return (
     <>

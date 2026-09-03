@@ -3,11 +3,11 @@ import { Suspense } from "react";
 import ProgramClient from "./ProgramClient";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO('programs');
 }
 
 export default async function Program() {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO('programs');
 
   return (
     <>

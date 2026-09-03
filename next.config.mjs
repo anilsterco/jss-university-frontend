@@ -4,6 +4,10 @@ import { BASE_URL } from "./src/config/config.mjs";
 const nextConfig = {
   allowedDevOrigins: ["192.168.100.27"],
 
+  experimental: {
+    optimizePackageImports: ['react-icons'],
+  },
+
   async headers() {
     return [
       {

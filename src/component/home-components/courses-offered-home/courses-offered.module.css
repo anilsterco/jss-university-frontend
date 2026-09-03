@@ -174,7 +174,7 @@
   font-family: Geist, sans-serif;
   font: var(--font-28);
   position: absolute;
-  bottom: 2.2rem;
+  bottom:0;
   padding-left: 1.2rem;
   gap: 1.2rem;
   left: 0;

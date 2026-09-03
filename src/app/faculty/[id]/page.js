@@ -23,7 +23,7 @@ async function fetchFaculty(id) {
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const [seoData, faculty] = await Promise.all([
-    getPageSEO(),
+    getPageSEO(id),
     fetchFaculty(id),
   ]);
 
@@ -44,7 +44,7 @@ export default async function FacultyDetailPage({ params }) {
 
   if (!faculty || Object.keys(faculty).length === 0) return notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(id);
 
   return (
     <>
