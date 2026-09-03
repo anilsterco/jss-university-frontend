@@ -86,10 +86,10 @@ import Accordions1 from "@/component/sections/Accordions1";
 import GrantsReceived1 from "@/component/sections/GrantsReceived1";
 import Editor from "@/component/sections/Editor";
 import CmsEnhancer from "@/component/common/CmsEnhancer";
-import AOSInit from "@/component/AOSInit";
 
 import "@/styles/style.css";
 import "@/styles/custom.style.css";
+import '@/styles/inner.css';
 
 async function fetchPageData(slug) {
   const isDev = process.env.NODE_ENV === "development";
@@ -113,7 +113,8 @@ async function fetchPageData(slug) {
 }
 
 export async function generateMetadata({ params }) {
-  return await getPageSEO();
+  const { slug } = await params;
+  return await getPageSEO(slug);
 }
 
 export default async function DynamicPage({ params }) {
@@ -124,7 +125,7 @@ export default async function DynamicPage({ params }) {
   const actualSlug = slug ?? "home";
   const [data, seoData] = await Promise.all([
     fetchPageData(actualSlug),
-    getPageSEO(),
+    getPageSEO(slug),
   ]);
   if (!data) return notFound();
 
@@ -282,7 +283,6 @@ export default async function DynamicPage({ params }) {
       </div>
 
 
-      <AOSInit />
       <CmsEnhancer containerId={cmsContainerId} />
     </>
   );

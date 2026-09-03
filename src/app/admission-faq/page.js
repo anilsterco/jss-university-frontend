@@ -6,7 +6,7 @@ import { BASE_URL } from "@/config/config.mjs";
 import { getPageSEO } from "@/lib/seo";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO('admission-faq');
 }
 
 async function getFaq() {
@@ -30,7 +30,7 @@ async function getFaq() {
 
 export default async function Page() {
   const data = await getFaq();
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO('admission-faq');
 
   return (
     <>

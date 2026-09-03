@@ -3,11 +3,11 @@ import ContactClient from "./ContactClient";
 import Script from "next/script";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO('contact-us');
 }
 
 export default async function Contact() {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO('contact-us');
   return (
     <>
       {seoData?.schema && (

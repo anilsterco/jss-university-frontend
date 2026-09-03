@@ -4,11 +4,11 @@ import { getPageSEO } from "@/lib/seo";
 import SearchClient from "./SeachClient";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO(`search`);
 }
 
 export default async function SearchPage({ searchParams }) {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`search`);
   const { q } = await searchParams;
   const query = q || "";
 

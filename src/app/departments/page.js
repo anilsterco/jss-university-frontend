@@ -1,13 +1,14 @@
 import { getPageSEO } from "@/lib/seo";
 import DepartmentClient from "./DepartmentClient";
 import { BASE_URL } from "@/config/config.mjs";
+import '@/styles/inner.css';
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO('departments');
 }
 
 export default async function DepartmentsPage() {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO('departments');
 
   let schools = [];
   try {

@@ -2,11 +2,11 @@ import PhDApplicationForm from "@/component/common/Phd-form/PhDApplicationForm";
 import { getPageSEO } from "@/lib/seo";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO(`phd-application-form`);
 }
 
 export default async function Page() {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`phd-application-form`);
 
   return (
     <>
