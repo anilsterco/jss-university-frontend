@@ -3,11 +3,11 @@ import Script from "next/script";
 import UpcomingEvents from "./UpcomingEvents";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO(`upcoming-events`);
 }
 
 export default async function Faculty() {
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`upcoming-events`);
   return (
     <>
       {seoData?.schema && (

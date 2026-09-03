@@ -4,7 +4,7 @@ import BlogsClient from "./BlogsClient";
 import { BASE_URL } from "@/config/config.mjs";
 
 export async function generateMetadata() {
-  return await getPageSEO();
+  return await getPageSEO('blog');
 }
 
 const isDev = process.env.NODE_ENV === "development";
@@ -37,7 +37,7 @@ export default async function BlogsPage({ searchParams }) {
   const params = await searchParams; // Next 15 - searchParams is a promise
   const page = Number(params?.page) || 1;
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO('blog');
 
   const [blogPageData, blogData] = await Promise.all([
     getBlogPageData(),

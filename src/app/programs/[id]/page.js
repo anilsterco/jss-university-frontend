@@ -86,14 +86,14 @@ function buildCourseSchema(id, data, seoData) {
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  return await getPageSEO(id);
+  return await getPageSEO(`programs/${id}`);
 }
 
 export default async function ProgramDetail({ params }) {
   const { id } = await params;
 
   const [seoData, courseData] = await Promise.all([
-    getPageSEO(id),
+    getPageSEO(`programs/${id}`),
     getCourseDetail(id),
   ]);
 
