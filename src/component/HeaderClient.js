@@ -1467,7 +1467,7 @@ export default function HeaderClient({
                         {item.Menu.slice(0, 6).map((sub, idx) => (
                           <li key={idx} className="">
                             <Link
-                              href={sub.children?.length > 0 ? "" : sub.url}
+                              href={sub.children?.length > 0 ? "#" : sub.url}
                               className="menu-link"
                               onClick={
                                 sub.children?.length > 0
@@ -1571,7 +1571,7 @@ export default function HeaderClient({
                               <Link
                                 href={
                                   sub.children?.length > 0
-                                    ? ""
+                                    ? "#"
                                     : WEB_URL + sub.url
                                 }
                                 className="menu-link"
