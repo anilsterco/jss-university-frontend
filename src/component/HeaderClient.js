@@ -156,6 +156,7 @@ export default function HeaderClient({ initialNavLinks = [] }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const admissionRef = useRef(null);
+  const admissionButtonRef = useRef(null);
   const [headerData] = useState(initialNavLinks);
 
   const [admissionData, setAdmissionData] = useState(null);
@@ -309,7 +310,10 @@ export default function HeaderClient({ initialNavLinks = [] }) {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (admissionRef.current && !admissionRef.current.contains(e.target)) {
+      if(admissionButtonRef.current && admissionButtonRef.current.contains(e.target)) {
+        return;
+      }
+      if ((admissionRef.current && !admissionRef.current.contains(e.target))) {
         setAdmissionOpen(false);
       }
     };
@@ -513,8 +517,9 @@ export default function HeaderClient({ initialNavLinks = [] }) {
               </nav>
 
               <div className="right-navbar-section">
-                <div className="admission-wrap" ref={admissionRef}>
+                <div className="admission-wrap">
                   <button
+                    ref={admissionButtonRef}
                     className="admission-btn"
                     onClick={() => {
                       setAdmissionOpen((prev) => !prev);
@@ -608,6 +613,7 @@ export default function HeaderClient({ initialNavLinks = [] }) {
         setOpenMenuAccordion={setOpenMenuAccordion}
         openChildAccordion={openChildAccordion}
         setOpenChildAccordion={setOpenChildAccordion}
+        admissionRef={admissionRef}
       />
     </header>
   );

@@ -49,6 +49,7 @@ export default function HeaderOverlays({
   setOpenMenuAccordion,
   openChildAccordion,
   setOpenChildAccordion,
+  admissionRef,
 }) {
   const activeNavItem = activeDropdown !== null ? navLinks?.[activeDropdown] : null;
   const activeLeftMenu = megaMenuData?.[activeLeftIndex] || {};
@@ -251,7 +252,7 @@ export default function HeaderOverlays({
 
       {/* ---------- Admission dropdown ---------- */}
       {admissionOpen && (
-        <div className="admission-dropdown">
+        <div className="admission-dropdown" ref={admissionRef}>
           <span className="dropdown-arrow"></span>
           {!admissionsData ? (
             <div className="admission-loading-placeholder" style={{ minHeight: "300px" }} />
