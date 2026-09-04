@@ -100,8 +100,7 @@ export async function proxy(request) {
     return NextResponse.redirect(new URL("/", request.url), 301);
   }
 
-  // return response;
-  return NextResponse.next();
+  return response;
 }
 
 export const config = {
