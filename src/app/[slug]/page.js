@@ -239,7 +239,7 @@ export default async function DynamicPage({ params }) {
     AchievementsRecognitions: AchievementsRecognitions,
     Yukti: Yukti,
     IICActivities: IICActivities,
-    editor: Editor,
+    editor: Editor, 
   };
 
   const cmsContainerId = `cms-page-${data.slug
