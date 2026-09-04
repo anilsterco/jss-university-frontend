@@ -18,6 +18,7 @@ import HashScrollHandler from "@/component/HashScrollHandler";
 import GoogleAnalytics from "@/component/GoogleAnalytics";
 import PageSchema from "@/component/PageSchema";
 import AOSInit from "@/component/AOSInit";
+import DeferredAnalytics from "@/component/DeferredAnalytics";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -70,33 +71,6 @@ export default async function RootLayout({ children }) {
         <link rel="dns-prefetch" href="//api.whatsapp.com" />
 
 
-      
-
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];
-            w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-M7QC44X3');
-          `}
-        </Script>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4F2ZKG2HVD"
-          strategy="afterInteractive" 
-        />
-        <Script id="google-analytics" strategy="afterInteractive" >
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4F2ZKG2HVD');
-          `}
-        </Script>
 
         <Script id="microsoft-clarity" strategy="lazyOnload" >
           {`
@@ -125,6 +99,7 @@ export default async function RootLayout({ children }) {
 
         <Providers>
           <GoogleAnalytics />
+          <DeferredAnalytics />
           <Header />
           <HashScrollHandler />
           <MainWrapper>{children}</MainWrapper>
