@@ -52,6 +52,7 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ["react-icons"],
+    optimizeCss: true,
   },
 
   async headers() {

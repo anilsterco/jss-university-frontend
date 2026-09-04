@@ -32,5 +32,8 @@
     "sass": "^1.103.1",
     "swiper": "^12.0.2",
     "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "critters": "^0.0.23"
   }
 }
