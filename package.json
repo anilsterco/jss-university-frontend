@@ -9,7 +9,6 @@
     "preview": "next build && next start"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.10.3",
     "@fontsource/roboto-condensed": "^5.2.8",
     "@gsap/react": "^2.1.2",
     "@studio-freight/lenis": "^1.0.42",
