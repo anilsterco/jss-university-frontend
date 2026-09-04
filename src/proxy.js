@@ -59,7 +59,10 @@ export async function proxy(request) {
   const { pathname } = request.nextUrl;
   const isDev = process.env.NODE_ENV === "development";
   const nonce = crypto.randomUUID();
-  const cspHeader = buildCsp(nonce, isDev);
+
+  // uncomment if need
+
+  // const cspHeader = buildCsp(nonce, isDev);
 
   if (isProtectedPath(pathname)) {
     const token = request.cookies.get("token")?.value;
@@ -72,8 +75,12 @@ export async function proxy(request) {
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", pathname);
-  requestHeaders.set("x-nonce", nonce);
-  requestHeaders.set("Content-Security-Policy", cspHeader);
+
+
+  // uncomment if need
+
+  // requestHeaders.set("x-nonce", nonce);
+  // requestHeaders.set("Content-Security-Policy", cspHeader);
 
   const redirectUrl = await getPageRedirect(pathname.replace(/^\//, ""));
   if (redirectUrl) {
@@ -84,14 +91,17 @@ export async function proxy(request) {
     request: { headers: requestHeaders },
   });
 
-  response.headers.set("Content-Security-Policy", cspHeader);
+  // uncomment if need
+
+  // response.headers.set("Content-Security-Policy", cspHeader);
   response.headers.set("x-pathname", pathname);
 
   if (pathname === "/&") {
     return NextResponse.redirect(new URL("/", request.url), 301);
   }
 
-  return response;
+  // return response;
+  return NextResponse.next();
 }
 
 export const config = {

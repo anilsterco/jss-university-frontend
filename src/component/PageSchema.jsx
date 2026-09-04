@@ -28,7 +28,7 @@ function generateBreadcrumbs(pathname) {
   return crumbs;
 }
 
-export default function PageSchema(nonce) {
+export default function PageSchema() {
   const pathname = usePathname() || "";
 
   const breadcrumbSchema = {
@@ -49,7 +49,7 @@ export default function PageSchema(nonce) {
     <>
       {showUniversitySchema && (
         <script
-        nonce={nonce}
+        
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -82,7 +82,7 @@ export default function PageSchema(nonce) {
 
       {isHomePage && (
         <script
-        nonce={nonce}
+        
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -102,7 +102,7 @@ export default function PageSchema(nonce) {
 
       {isAdmissionFaq && (
         <script
-        nonce={nonce}
+        
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -126,7 +126,7 @@ export default function PageSchema(nonce) {
 
       {isPlacement && (
         <script
-        nonce={nonce}
+        
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -149,7 +149,7 @@ export default function PageSchema(nonce) {
 
       {isAdmission && (
         <script
-        nonce={nonce}
+        
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -179,7 +179,7 @@ export default function PageSchema(nonce) {
       )}
 
       <script
-       nonce={nonce}
+       
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

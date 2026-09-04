@@ -1,4 +1,4 @@
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
 import {
   Roboto,
   Roboto_Condensed,
@@ -43,8 +43,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  const headersList = await headers();
-  const nonce = headersList.get("x-nonce") ?? undefined;
+  // const headersList = await headers();
+  // const nonce = headersList.get("x-nonce") ?? undefined;
 
   const fontClassNames = [
     roboto.variable,
@@ -72,7 +72,7 @@ export default async function RootLayout({ children }) {
 
       
 
-        <Script id="gtm-script" strategy="afterInteractive" nonce={nonce}>
+        <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];
             w[l].push({'gtm.start':
@@ -87,9 +87,9 @@ export default async function RootLayout({ children }) {
         </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4F2ZKG2HVD"
-          strategy="afterInteractive"  nonce={nonce}
+          strategy="afterInteractive" 
         />
-        <Script id="google-analytics" strategy="afterInteractive"  nonce={nonce}>
+        <Script id="google-analytics" strategy="afterInteractive" >
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -98,7 +98,7 @@ export default async function RootLayout({ children }) {
           `}
         </Script>
 
-        <Script id="microsoft-clarity" strategy="lazyOnload"  nonce={nonce}>
+        <Script id="microsoft-clarity" strategy="lazyOnload" >
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -108,7 +108,7 @@ export default async function RootLayout({ children }) {
           `}
         </Script>
 
-        <PageSchema nonce={nonce} />
+        <PageSchema />
 
       </head>
 
