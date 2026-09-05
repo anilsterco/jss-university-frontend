@@ -84,6 +84,7 @@
 .applynow.primary:hover { color: #fff !important; }
 .ad-middle { width: 100%; padding: 9rem 9.2rem 8rem 8rem; border-right: 1px solid #eee; }
 .ad-middle ul { list-style: none; padding: 0; margin: 0; }
+/* .admission-dropdown .ad-link img{width} */
 .ad-link { font: var(--font-21); color: var(--color-4e); padding-block: 1rem; border-bottom: 1px dashed #16344e33; display: block; position: relative; cursor: pointer; }
 .ad-link:hover { color: var(--color-e8); text-decoration: none; }
 .ad-stats { margin-top: 5.8rem; }

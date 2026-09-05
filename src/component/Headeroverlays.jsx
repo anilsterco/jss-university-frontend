@@ -266,13 +266,13 @@ export default function HeaderOverlays({
                   <span> {admissionsData.left.querytext} </span>
                   <p>
                     <a className="CTA_Email" href={`mailto:${admissionsData.left.email}`}>
-                      <img src="/images/header/mailicon.svg" className="img-fluid" alt="Email" />
+                      <img src="/images/header/mailicon.svg" className="" alt="Email" />
                       {admissionsData.left.email}
                     </a>
                   </p>
                   <p>
                     <a className="CTA_Number" href={`tel:${admissionsData.left.phone}`}>
-                      <img src="/images/header/phoneicon.svg" className="img-fluid" alt="Phone" />
+                      <img src="/images/header/phoneicon.svg" className="" alt="Phone" />
                       {admissionsData.left.phone}
                     </a>
                   </p>
@@ -303,7 +303,7 @@ export default function HeaderOverlays({
                         aria-label={`View ${link.title}`}
                       >
                         {link.title}
-                        <img src="/images/header/listicon.svg" className="img-fluid" alt="Arrow" />
+                        <img src="/images/header/listicon.svg" className="" alt="Arrow" />
                       </Link>
                     </li>
                   ))}
