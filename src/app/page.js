@@ -16,7 +16,7 @@ import HeaderBottomBanner from "@/component/home-components/HeaderBottomBanner";
 const getPageSEOCached = cache(getPageSEO);
 
 export async function generateMetadata() {
-  return await getPageSEOCached();
+  return await getPageSEOCached('/');
 }
 
 const fetchOpts = process.env.NODE_ENV === "development"
@@ -55,7 +55,7 @@ async function PopupModalServer() {
 export default async function HomePage() {
 
   const [seoData, homepageData] = await Promise.all([
-    getPageSEOCached(),
+    getPageSEOCached('/'),
     getSchoolData(),
   ]);
 

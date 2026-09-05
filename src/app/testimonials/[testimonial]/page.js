@@ -4,13 +4,14 @@ import Script from "next/script";
 import TestimonialDetail from "../TestimonialDetail";
 import { BASE_URL } from "@/config/config.mjs";
 
-export async function generateMetadata() {
-  return await getPageSEO("happenings");
+export async function generateMetadata({ params }) {
+  const { testimonial } = await params;
+  return await getPageSEO(`testimonials/${testimonial}`);
 }
 
 export default async function TestimonialDe({ params }) {
   const { testimonial } = await params;
-  const seoData = await getPageSEO("testimonial");
+  const seoData = await getPageSEO(`testimonials/${testimonial}`);
 
   const res = await fetch(`${BASE_URL}testimonials/${testimonial}`, {
     cache: "no-store",

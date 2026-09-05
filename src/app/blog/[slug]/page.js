@@ -23,7 +23,7 @@ async function fetchBlogDetail(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const [seoData, blogsDetailData] = await Promise.all([
-    getPageSEO(),
+    getPageSEO(`blog/${slug}`),
     fetchBlogDetail(slug),
   ]);
 
@@ -47,7 +47,7 @@ export default async function BlogDetailPage({ params }) {
 
   if (!blogsDetailData) return notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`blog/${slug}`);
 
   return (
     <>

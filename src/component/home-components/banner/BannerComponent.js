@@ -308,7 +308,8 @@ export default function HeroSlider({ data, slug, classname='' }) {
                       desktopSrc={slide.desktop_banner}
                       mobileSrc={slide.mobile_banner}
                       alt={slideAlt}
-                      priority={isFirstSlide}
+                      priority
+                      loading="eager"
                       className={styles.heroBanner}
                     />
                 )}

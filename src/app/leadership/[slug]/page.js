@@ -22,7 +22,7 @@ async function fetchLeader(slug) {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const [seoData, leader] = await Promise.all([
-    getPageSEO(),
+    getPageSEO(`leadership/${slug}`),
     fetchLeader(slug),
   ]);
 
@@ -45,7 +45,7 @@ export default async function LeadershipDetailPage({ params }) {
 
   if (!leader) return notFound();
 
-  const seoData = await getPageSEO();
+  const seoData = await getPageSEO(`leadership/${slug}`);
 
   return (
     <>
