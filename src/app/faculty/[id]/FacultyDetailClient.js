@@ -66,6 +66,8 @@ export default function FacultyDetailClient({ faculty }) {
                       width={550}
                       height={500}
                       className="img-fluid faculty-banner w-100"
+                      priority
+                      fetchPriority="high"
                     />
                   </figure>
                 </div>

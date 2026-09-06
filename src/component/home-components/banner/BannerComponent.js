@@ -260,6 +260,8 @@ export default function HeroSlider({ data, slug, classname='' }) {
                             width={22}
                             height={22}
                             className={styles.iconSpacing}
+                            priority
+                            fetchPriority="high"
                           />
                         </Link>
                       )}
@@ -375,6 +377,8 @@ export default function HeroSlider({ data, slug, classname='' }) {
                           width={22}
                           height={22}
                           className={styles.iconSpacing}
+                          priority
+                          fetchPriority="high"
                         />
                       </Link>
                     )}

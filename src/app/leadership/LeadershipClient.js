@@ -216,6 +216,8 @@ export default function LeadershipClient() {
                     width={1200}
                     height={600}
                     className="img-fluid w-100"
+                    priority
+                    fetchPriority="high"
                   />
                   <figcaption>
                     <h3>

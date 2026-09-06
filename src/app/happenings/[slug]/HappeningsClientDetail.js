@@ -88,10 +88,14 @@ export default function HappeningsClientDetail({ happeningsData }) {
         <div className="col-lg-12 mx-auto">
           <div className={styles.banner}>
             <figure>
-              <img
+              <Image
                 src={happeningsData.mainBanner?.img}
                 alt={happeningsData.mainBanner?.alt}
                 className="img-fluid w-100"
+                priority
+                fetchPriority="high"
+                width={1640}
+                height={578}
               />
             </figure>
           </div>
