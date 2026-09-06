@@ -392,8 +392,8 @@ export default function HeaderClient({ initialNavLinks = [] }) {
   const handleNavMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-      setIsAcademic(false);
     }, 100);
+    setIsAcademic(false);
   };
 
   const handleDropdownMouseEnter = () => {
