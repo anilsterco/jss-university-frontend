@@ -7,7 +7,8 @@ import {
 import Header from "../component/Header";
 import Footer from "../component/footer/Footer";
 import Providers from "./providers";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/bootstrap.scss";
 import "../styles/globals.css";
 import "../styles/custom.style.css";
 
@@ -57,8 +58,6 @@ export default async function RootLayout({ children }) {
     <html lang="en" className={fontClassNames}>
       {/* Google Tag Manager */}
       <head>
-        <link rel="preload" as="image" href="https://jssuninoida.edu.in/images/header/homenew.png" />
-
         <link rel="preconnect" href="https://backoffice.jssuninoida.edu.in" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
